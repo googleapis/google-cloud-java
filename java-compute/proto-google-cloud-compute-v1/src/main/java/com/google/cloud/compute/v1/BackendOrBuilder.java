@@ -341,7 +341,7 @@ public interface BackendOrBuilder
    *
    *
    * <pre>
-   * Optional parameter to define a target capacity for the UTILIZATIONbalancing mode. The valid range is [0.0, 1.0]. For usage guidelines, see Utilization balancing mode.
+   * Optional parameter to define a target capacity for the UTILIZATION balancing mode. The valid range is [0.0, 1.0]. For usage guidelines, see Utilization balancing mode.
    * </pre>
    *
    * <code>optional float max_utilization = 148192199;</code>
@@ -353,7 +353,7 @@ public interface BackendOrBuilder
    *
    *
    * <pre>
-   * Optional parameter to define a target capacity for the UTILIZATIONbalancing mode. The valid range is [0.0, 1.0]. For usage guidelines, see Utilization balancing mode.
+   * Optional parameter to define a target capacity for the UTILIZATION balancing mode. The valid range is [0.0, 1.0]. For usage guidelines, see Utilization balancing mode.
    * </pre>
    *
    * <code>optional float max_utilization = 148192199;</code>

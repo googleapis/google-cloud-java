@@ -42,6 +42,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
   private VmEndpointNatMappingsInterfaceNatMappings() {
     drainNatIpPortRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     natIpPortRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    ruleMappings_ = java.util.Collections.emptyList();
     sourceAliasIpRange_ = "";
     sourceVirtualIp_ = "";
   }
@@ -112,6 +113,22 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
               sourceAliasIpRange_ = s;
               break;
             }
+          case -405423550:
+            {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                ruleMappings_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.compute.v1
+                            .VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              ruleMappings_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1
+                          .VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings.parser(),
+                      extensionRegistry));
+              break;
+            }
           case -40320814:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -140,6 +157,9 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         drainNatIpPortRanges_ = drainNatIpPortRanges_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        ruleMappings_ = java.util.Collections.unmodifiableList(ruleMappings_);
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         natIpPortRanges_ = natIpPortRanges_.getUnmodifiableView();
@@ -353,6 +373,95 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     return numTotalNatPorts_;
   }
 
+  public static final int RULE_MAPPINGS_FIELD_NUMBER = 486192968;
+  private java.util.List<
+          com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings>
+      ruleMappings_;
+  /**
+   *
+   *
+   * <pre>
+   * Information about mappings provided by rules in this NAT.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings>
+      getRuleMappingsList() {
+    return ruleMappings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information about mappings provided by rules in this NAT.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.cloud.compute.v1
+                  .VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuilder>
+      getRuleMappingsOrBuilderList() {
+    return ruleMappings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information about mappings provided by rules in this NAT.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+   * </code>
+   */
+  @java.lang.Override
+  public int getRuleMappingsCount() {
+    return ruleMappings_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information about mappings provided by rules in this NAT.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
+      getRuleMappings(int index) {
+    return ruleMappings_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information about mappings provided by rules in this NAT.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1
+          .VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuilder
+      getRuleMappingsOrBuilder(int index) {
+    return ruleMappings_.get(index);
+  }
+
   public static final int SOURCE_ALIAS_IP_RANGE_FIELD_NUMBER = 440340952;
   private volatile java.lang.Object sourceAliasIpRange_;
   /**
@@ -511,6 +620,9 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 440340952, sourceAliasIpRange_);
     }
+    for (int i = 0; i < ruleMappings_.size(); i++) {
+      output.writeMessage(486192968, ruleMappings_.get(i));
+    }
     for (int i = 0; i < natIpPortRanges_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 531830810, natIpPortRanges_.getRaw(i));
@@ -546,6 +658,10 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(440340952, sourceAliasIpRange_);
     }
+    for (int i = 0; i < ruleMappings_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(486192968, ruleMappings_.get(i));
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < natIpPortRanges_.size(); i++) {
@@ -580,6 +696,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     if (hasNumTotalNatPorts()) {
       if (getNumTotalNatPorts() != other.getNumTotalNatPorts()) return false;
     }
+    if (!getRuleMappingsList().equals(other.getRuleMappingsList())) return false;
     if (hasSourceAliasIpRange() != other.hasSourceAliasIpRange()) return false;
     if (hasSourceAliasIpRange()) {
       if (!getSourceAliasIpRange().equals(other.getSourceAliasIpRange())) return false;
@@ -614,6 +731,10 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     if (hasNumTotalNatPorts()) {
       hash = (37 * hash) + NUM_TOTAL_NAT_PORTS_FIELD_NUMBER;
       hash = (53 * hash) + getNumTotalNatPorts();
+    }
+    if (getRuleMappingsCount() > 0) {
+      hash = (37 * hash) + RULE_MAPPINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getRuleMappingsList().hashCode();
     }
     if (hasSourceAliasIpRange()) {
       hash = (37 * hash) + SOURCE_ALIAS_IP_RANGE_FIELD_NUMBER;
@@ -765,7 +886,9 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getRuleMappingsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -779,10 +902,16 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       bitField0_ = (bitField0_ & ~0x00000004);
       numTotalNatPorts_ = 0;
       bitField0_ = (bitField0_ & ~0x00000008);
+      if (ruleMappingsBuilder_ == null) {
+        ruleMappings_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      } else {
+        ruleMappingsBuilder_.clear();
+      }
       sourceAliasIpRange_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
-      sourceVirtualIp_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
+      sourceVirtualIp_ = "";
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -832,11 +961,20 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
         result.numTotalNatPorts_ = numTotalNatPorts_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (ruleMappingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)) {
+          ruleMappings_ = java.util.Collections.unmodifiableList(ruleMappings_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.ruleMappings_ = ruleMappings_;
+      } else {
+        result.ruleMappings_ = ruleMappingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         to_bitField0_ |= 0x00000004;
       }
       result.sourceAliasIpRange_ = sourceAliasIpRange_;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         to_bitField0_ |= 0x00000008;
       }
       result.sourceVirtualIp_ = sourceVirtualIp_;
@@ -920,13 +1058,40 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       if (other.hasNumTotalNatPorts()) {
         setNumTotalNatPorts(other.getNumTotalNatPorts());
       }
+      if (ruleMappingsBuilder_ == null) {
+        if (!other.ruleMappings_.isEmpty()) {
+          if (ruleMappings_.isEmpty()) {
+            ruleMappings_ = other.ruleMappings_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureRuleMappingsIsMutable();
+            ruleMappings_.addAll(other.ruleMappings_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.ruleMappings_.isEmpty()) {
+          if (ruleMappingsBuilder_.isEmpty()) {
+            ruleMappingsBuilder_.dispose();
+            ruleMappingsBuilder_ = null;
+            ruleMappings_ = other.ruleMappings_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            ruleMappingsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getRuleMappingsFieldBuilder()
+                    : null;
+          } else {
+            ruleMappingsBuilder_.addAllMessages(other.ruleMappings_);
+          }
+        }
+      }
       if (other.hasSourceAliasIpRange()) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         sourceAliasIpRange_ = other.sourceAliasIpRange_;
         onChanged();
       }
       if (other.hasSourceVirtualIp()) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         sourceVirtualIp_ = other.sourceVirtualIp_;
         onChanged();
       }
@@ -1433,6 +1598,441 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       return this;
     }
 
+    private java.util.List<
+            com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings>
+        ruleMappings_ = java.util.Collections.emptyList();
+
+    private void ensureRuleMappingsIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        ruleMappings_ =
+            new java.util.ArrayList<
+                com.google.cloud.compute.v1
+                    .VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings>(ruleMappings_);
+        bitField0_ |= 0x00000010;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings,
+            com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
+                .Builder,
+            com.google.cloud.compute.v1
+                .VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuilder>
+        ruleMappingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about mappings provided by rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings>
+        getRuleMappingsList() {
+      if (ruleMappingsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(ruleMappings_);
+      } else {
+        return ruleMappingsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about mappings provided by rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+     * </code>
+     */
+    public int getRuleMappingsCount() {
+      if (ruleMappingsBuilder_ == null) {
+        return ruleMappings_.size();
+      } else {
+        return ruleMappingsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about mappings provided by rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
+        getRuleMappings(int index) {
+      if (ruleMappingsBuilder_ == null) {
+        return ruleMappings_.get(index);
+      } else {
+        return ruleMappingsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about mappings provided by rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+     * </code>
+     */
+    public Builder setRuleMappings(
+        int index,
+        com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
+            value) {
+      if (ruleMappingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRuleMappingsIsMutable();
+        ruleMappings_.set(index, value);
+        onChanged();
+      } else {
+        ruleMappingsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about mappings provided by rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+     * </code>
+     */
+    public Builder setRuleMappings(
+        int index,
+        com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings.Builder
+            builderForValue) {
+      if (ruleMappingsBuilder_ == null) {
+        ensureRuleMappingsIsMutable();
+        ruleMappings_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        ruleMappingsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about mappings provided by rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+     * </code>
+     */
+    public Builder addRuleMappings(
+        com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
+            value) {
+      if (ruleMappingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRuleMappingsIsMutable();
+        ruleMappings_.add(value);
+        onChanged();
+      } else {
+        ruleMappingsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about mappings provided by rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+     * </code>
+     */
+    public Builder addRuleMappings(
+        int index,
+        com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
+            value) {
+      if (ruleMappingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRuleMappingsIsMutable();
+        ruleMappings_.add(index, value);
+        onChanged();
+      } else {
+        ruleMappingsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about mappings provided by rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+     * </code>
+     */
+    public Builder addRuleMappings(
+        com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings.Builder
+            builderForValue) {
+      if (ruleMappingsBuilder_ == null) {
+        ensureRuleMappingsIsMutable();
+        ruleMappings_.add(builderForValue.build());
+        onChanged();
+      } else {
+        ruleMappingsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about mappings provided by rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+     * </code>
+     */
+    public Builder addRuleMappings(
+        int index,
+        com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings.Builder
+            builderForValue) {
+      if (ruleMappingsBuilder_ == null) {
+        ensureRuleMappingsIsMutable();
+        ruleMappings_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        ruleMappingsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about mappings provided by rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+     * </code>
+     */
+    public Builder addAllRuleMappings(
+        java.lang.Iterable<
+                ? extends
+                    com.google.cloud.compute.v1
+                        .VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings>
+            values) {
+      if (ruleMappingsBuilder_ == null) {
+        ensureRuleMappingsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ruleMappings_);
+        onChanged();
+      } else {
+        ruleMappingsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about mappings provided by rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+     * </code>
+     */
+    public Builder clearRuleMappings() {
+      if (ruleMappingsBuilder_ == null) {
+        ruleMappings_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        ruleMappingsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about mappings provided by rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+     * </code>
+     */
+    public Builder removeRuleMappings(int index) {
+      if (ruleMappingsBuilder_ == null) {
+        ensureRuleMappingsIsMutable();
+        ruleMappings_.remove(index);
+        onChanged();
+      } else {
+        ruleMappingsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about mappings provided by rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
+            .Builder
+        getRuleMappingsBuilder(int index) {
+      return getRuleMappingsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about mappings provided by rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+     * </code>
+     */
+    public com.google.cloud.compute.v1
+            .VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuilder
+        getRuleMappingsOrBuilder(int index) {
+      if (ruleMappingsBuilder_ == null) {
+        return ruleMappings_.get(index);
+      } else {
+        return ruleMappingsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about mappings provided by rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.cloud.compute.v1
+                    .VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuilder>
+        getRuleMappingsOrBuilderList() {
+      if (ruleMappingsBuilder_ != null) {
+        return ruleMappingsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(ruleMappings_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about mappings provided by rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
+            .Builder
+        addRuleMappingsBuilder() {
+      return getRuleMappingsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about mappings provided by rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
+            .Builder
+        addRuleMappingsBuilder(int index) {
+      return getRuleMappingsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about mappings provided by rules in this NAT.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
+                .Builder>
+        getRuleMappingsBuilderList() {
+      return getRuleMappingsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings,
+            com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
+                .Builder,
+            com.google.cloud.compute.v1
+                .VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuilder>
+        getRuleMappingsFieldBuilder() {
+      if (ruleMappingsBuilder_ == null) {
+        ruleMappingsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.compute.v1
+                    .VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings,
+                com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
+                    .Builder,
+                com.google.cloud.compute.v1
+                    .VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuilder>(
+                ruleMappings_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+        ruleMappings_ = null;
+      }
+      return ruleMappingsBuilder_;
+    }
+
     private java.lang.Object sourceAliasIpRange_ = "";
     /**
      *
@@ -1446,7 +2046,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * @return Whether the sourceAliasIpRange field is set.
      */
     public boolean hasSourceAliasIpRange() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1508,7 +2108,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       sourceAliasIpRange_ = value;
       onChanged();
       return this;
@@ -1525,7 +2125,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * @return This builder for chaining.
      */
     public Builder clearSourceAliasIpRange() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       sourceAliasIpRange_ = getDefaultInstance().getSourceAliasIpRange();
       onChanged();
       return this;
@@ -1547,7 +2147,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       sourceAliasIpRange_ = value;
       onChanged();
       return this;
@@ -1566,7 +2166,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * @return Whether the sourceVirtualIp field is set.
      */
     public boolean hasSourceVirtualIp() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1628,7 +2228,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       sourceVirtualIp_ = value;
       onChanged();
       return this;
@@ -1645,7 +2245,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      * @return This builder for chaining.
      */
     public Builder clearSourceVirtualIp() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       sourceVirtualIp_ = getDefaultInstance().getSourceVirtualIp();
       onChanged();
       return this;
@@ -1667,7 +2267,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       sourceVirtualIp_ = value;
       onChanged();
       return this;

@@ -228,6 +228,7 @@ public class NetworksClientTest {
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
             .setEnableUlaInternalIpv6(true)
+            .setFirewallPolicy("firewallPolicy1819692626")
             .setGatewayIPv4("gatewayIPv4-435687895")
             .setId(3355)
             .setInternalIpv6Range("internalIpv6Range1368723801")

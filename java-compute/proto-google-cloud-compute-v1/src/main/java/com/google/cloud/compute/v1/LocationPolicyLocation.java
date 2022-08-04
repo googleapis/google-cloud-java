@@ -70,10 +70,28 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
           case 0:
             done = true;
             break;
+          case 31273394:
+            {
+              com.google.cloud.compute.v1.LocationPolicyLocationConstraints.Builder subBuilder =
+                  null;
+              if (((bitField0_ & 0x00000001) != 0)) {
+                subBuilder = constraints_.toBuilder();
+              }
+              constraints_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.LocationPolicyLocationConstraints.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(constraints_);
+                constraints_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
           case 1206249178:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
+              bitField0_ |= 0x00000002;
               preference_ = s;
               break;
             }
@@ -117,7 +135,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Preference for a given location.
+   * Preference for a given location. Set to either ALLOW or DENY.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.LocationPolicyLocation.Preference}
@@ -295,13 +313,70 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
   }
 
   private int bitField0_;
+  public static final int CONSTRAINTS_FIELD_NUMBER = 3909174;
+  private com.google.cloud.compute.v1.LocationPolicyLocationConstraints constraints_;
+  /**
+   *
+   *
+   * <pre>
+   * Constraints that the caller requires on the result distribution in this zone.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.LocationPolicyLocationConstraints constraints = 3909174;
+   * </code>
+   *
+   * @return Whether the constraints field is set.
+   */
+  @java.lang.Override
+  public boolean hasConstraints() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Constraints that the caller requires on the result distribution in this zone.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.LocationPolicyLocationConstraints constraints = 3909174;
+   * </code>
+   *
+   * @return The constraints.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.LocationPolicyLocationConstraints getConstraints() {
+    return constraints_ == null
+        ? com.google.cloud.compute.v1.LocationPolicyLocationConstraints.getDefaultInstance()
+        : constraints_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Constraints that the caller requires on the result distribution in this zone.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.LocationPolicyLocationConstraints constraints = 3909174;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.LocationPolicyLocationConstraintsOrBuilder
+      getConstraintsOrBuilder() {
+    return constraints_ == null
+        ? com.google.cloud.compute.v1.LocationPolicyLocationConstraints.getDefaultInstance()
+        : constraints_;
+  }
+
   public static final int PREFERENCE_FIELD_NUMBER = 150781147;
   private volatile java.lang.Object preference_;
   /**
    *
    *
    * <pre>
-   * Preference for a given location.
+   * Preference for a given location. Set to either ALLOW or DENY.
    * Check the Preference enum for the list of possible values.
    * </pre>
    *
@@ -311,13 +386,13 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasPreference() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
    *
    * <pre>
-   * Preference for a given location.
+   * Preference for a given location. Set to either ALLOW or DENY.
    * Check the Preference enum for the list of possible values.
    * </pre>
    *
@@ -341,7 +416,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Preference for a given location.
+   * Preference for a given location. Set to either ALLOW or DENY.
    * Check the Preference enum for the list of possible values.
    * </pre>
    *
@@ -377,6 +452,9 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(3909174, getConstraints());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 150781147, preference_);
     }
     unknownFields.writeTo(output);
@@ -389,6 +467,9 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3909174, getConstraints());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(150781147, preference_);
     }
     size += unknownFields.getSerializedSize();
@@ -407,6 +488,10 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
     com.google.cloud.compute.v1.LocationPolicyLocation other =
         (com.google.cloud.compute.v1.LocationPolicyLocation) obj;
 
+    if (hasConstraints() != other.hasConstraints()) return false;
+    if (hasConstraints()) {
+      if (!getConstraints().equals(other.getConstraints())) return false;
+    }
     if (hasPreference() != other.hasPreference()) return false;
     if (hasPreference()) {
       if (!getPreference().equals(other.getPreference())) return false;
@@ -422,6 +507,10 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasConstraints()) {
+      hash = (37 * hash) + CONSTRAINTS_FIELD_NUMBER;
+      hash = (53 * hash) + getConstraints().hashCode();
+    }
     if (hasPreference()) {
       hash = (37 * hash) + PREFERENCE_FIELD_NUMBER;
       hash = (53 * hash) + getPreference().hashCode();
@@ -564,14 +653,22 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getConstraintsFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      preference_ = "";
+      if (constraintsBuilder_ == null) {
+        constraints_ = null;
+      } else {
+        constraintsBuilder_.clear();
+      }
       bitField0_ = (bitField0_ & ~0x00000001);
+      preference_ = "";
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -602,7 +699,15 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (constraintsBuilder_ == null) {
+          result.constraints_ = constraints_;
+        } else {
+          result.constraints_ = constraintsBuilder_.build();
+        }
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
       }
       result.preference_ = preference_;
       result.bitField0_ = to_bitField0_;
@@ -656,8 +761,11 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
     public Builder mergeFrom(com.google.cloud.compute.v1.LocationPolicyLocation other) {
       if (other == com.google.cloud.compute.v1.LocationPolicyLocation.getDefaultInstance())
         return this;
+      if (other.hasConstraints()) {
+        mergeConstraints(other.getConstraints());
+      }
       if (other.hasPreference()) {
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         preference_ = other.preference_;
         onChanged();
       }
@@ -693,12 +801,223 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
 
     private int bitField0_;
 
+    private com.google.cloud.compute.v1.LocationPolicyLocationConstraints constraints_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.LocationPolicyLocationConstraints,
+            com.google.cloud.compute.v1.LocationPolicyLocationConstraints.Builder,
+            com.google.cloud.compute.v1.LocationPolicyLocationConstraintsOrBuilder>
+        constraintsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Constraints that the caller requires on the result distribution in this zone.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.LocationPolicyLocationConstraints constraints = 3909174;
+     * </code>
+     *
+     * @return Whether the constraints field is set.
+     */
+    public boolean hasConstraints() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Constraints that the caller requires on the result distribution in this zone.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.LocationPolicyLocationConstraints constraints = 3909174;
+     * </code>
+     *
+     * @return The constraints.
+     */
+    public com.google.cloud.compute.v1.LocationPolicyLocationConstraints getConstraints() {
+      if (constraintsBuilder_ == null) {
+        return constraints_ == null
+            ? com.google.cloud.compute.v1.LocationPolicyLocationConstraints.getDefaultInstance()
+            : constraints_;
+      } else {
+        return constraintsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Constraints that the caller requires on the result distribution in this zone.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.LocationPolicyLocationConstraints constraints = 3909174;
+     * </code>
+     */
+    public Builder setConstraints(
+        com.google.cloud.compute.v1.LocationPolicyLocationConstraints value) {
+      if (constraintsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        constraints_ = value;
+        onChanged();
+      } else {
+        constraintsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Constraints that the caller requires on the result distribution in this zone.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.LocationPolicyLocationConstraints constraints = 3909174;
+     * </code>
+     */
+    public Builder setConstraints(
+        com.google.cloud.compute.v1.LocationPolicyLocationConstraints.Builder builderForValue) {
+      if (constraintsBuilder_ == null) {
+        constraints_ = builderForValue.build();
+        onChanged();
+      } else {
+        constraintsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Constraints that the caller requires on the result distribution in this zone.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.LocationPolicyLocationConstraints constraints = 3909174;
+     * </code>
+     */
+    public Builder mergeConstraints(
+        com.google.cloud.compute.v1.LocationPolicyLocationConstraints value) {
+      if (constraintsBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && constraints_ != null
+            && constraints_
+                != com.google.cloud.compute.v1.LocationPolicyLocationConstraints
+                    .getDefaultInstance()) {
+          constraints_ =
+              com.google.cloud.compute.v1.LocationPolicyLocationConstraints.newBuilder(constraints_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          constraints_ = value;
+        }
+        onChanged();
+      } else {
+        constraintsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000001;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Constraints that the caller requires on the result distribution in this zone.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.LocationPolicyLocationConstraints constraints = 3909174;
+     * </code>
+     */
+    public Builder clearConstraints() {
+      if (constraintsBuilder_ == null) {
+        constraints_ = null;
+        onChanged();
+      } else {
+        constraintsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000001);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Constraints that the caller requires on the result distribution in this zone.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.LocationPolicyLocationConstraints constraints = 3909174;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.LocationPolicyLocationConstraints.Builder
+        getConstraintsBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getConstraintsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Constraints that the caller requires on the result distribution in this zone.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.LocationPolicyLocationConstraints constraints = 3909174;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.LocationPolicyLocationConstraintsOrBuilder
+        getConstraintsOrBuilder() {
+      if (constraintsBuilder_ != null) {
+        return constraintsBuilder_.getMessageOrBuilder();
+      } else {
+        return constraints_ == null
+            ? com.google.cloud.compute.v1.LocationPolicyLocationConstraints.getDefaultInstance()
+            : constraints_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Constraints that the caller requires on the result distribution in this zone.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.LocationPolicyLocationConstraints constraints = 3909174;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.LocationPolicyLocationConstraints,
+            com.google.cloud.compute.v1.LocationPolicyLocationConstraints.Builder,
+            com.google.cloud.compute.v1.LocationPolicyLocationConstraintsOrBuilder>
+        getConstraintsFieldBuilder() {
+      if (constraintsBuilder_ == null) {
+        constraintsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.LocationPolicyLocationConstraints,
+                com.google.cloud.compute.v1.LocationPolicyLocationConstraints.Builder,
+                com.google.cloud.compute.v1.LocationPolicyLocationConstraintsOrBuilder>(
+                getConstraints(), getParentForChildren(), isClean());
+        constraints_ = null;
+      }
+      return constraintsBuilder_;
+    }
+
     private java.lang.Object preference_ = "";
     /**
      *
      *
      * <pre>
-     * Preference for a given location.
+     * Preference for a given location. Set to either ALLOW or DENY.
      * Check the Preference enum for the list of possible values.
      * </pre>
      *
@@ -707,13 +1026,13 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      * @return Whether the preference field is set.
      */
     public boolean hasPreference() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Preference for a given location.
+     * Preference for a given location. Set to either ALLOW or DENY.
      * Check the Preference enum for the list of possible values.
      * </pre>
      *
@@ -736,7 +1055,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Preference for a given location.
+     * Preference for a given location. Set to either ALLOW or DENY.
      * Check the Preference enum for the list of possible values.
      * </pre>
      *
@@ -759,7 +1078,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Preference for a given location.
+     * Preference for a given location. Set to either ALLOW or DENY.
      * Check the Preference enum for the list of possible values.
      * </pre>
      *
@@ -772,7 +1091,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       preference_ = value;
       onChanged();
       return this;
@@ -781,7 +1100,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Preference for a given location.
+     * Preference for a given location. Set to either ALLOW or DENY.
      * Check the Preference enum for the list of possible values.
      * </pre>
      *
@@ -790,7 +1109,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearPreference() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       preference_ = getDefaultInstance().getPreference();
       onChanged();
       return this;
@@ -799,7 +1118,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Preference for a given location.
+     * Preference for a given location. Set to either ALLOW or DENY.
      * Check the Preference enum for the list of possible values.
      * </pre>
      *
@@ -813,7 +1132,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       preference_ = value;
       onChanged();
       return this;

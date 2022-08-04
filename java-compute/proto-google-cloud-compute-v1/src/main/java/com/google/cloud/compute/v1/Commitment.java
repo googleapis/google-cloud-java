@@ -554,6 +554,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     UNDEFINED_STATUS(0),
     /** <code>ACTIVE = 314733318;</code> */
     ACTIVE(314733318),
+    /** <code>CANCELLED = 41957681;</code> */
+    CANCELLED(41957681),
     /** <code>CREATING = 455564985;</code> */
     CREATING(455564985),
     /** <code>EXPIRED = 482489093;</code> */
@@ -575,6 +577,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     public static final int UNDEFINED_STATUS_VALUE = 0;
     /** <code>ACTIVE = 314733318;</code> */
     public static final int ACTIVE_VALUE = 314733318;
+    /** <code>CANCELLED = 41957681;</code> */
+    public static final int CANCELLED_VALUE = 41957681;
     /** <code>CREATING = 455564985;</code> */
     public static final int CREATING_VALUE = 455564985;
     /** <code>EXPIRED = 482489093;</code> */
@@ -610,6 +614,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
           return UNDEFINED_STATUS;
         case 314733318:
           return ACTIVE;
+        case 41957681:
+          return CANCELLED;
         case 455564985:
           return CREATING;
         case 482489093:

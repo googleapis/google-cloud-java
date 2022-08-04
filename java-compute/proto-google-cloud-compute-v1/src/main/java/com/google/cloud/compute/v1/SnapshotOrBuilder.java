@@ -27,6 +27,46 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
+   * [Output Only] The architecture of the snapshot. Valid values are ARM64 or X86_64.
+   * Check the Architecture enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string architecture = 302803283;</code>
+   *
+   * @return Whether the architecture field is set.
+   */
+  boolean hasArchitecture();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The architecture of the snapshot. Valid values are ARM64 or X86_64.
+   * Check the Architecture enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string architecture = 302803283;</code>
+   *
+   * @return The architecture.
+   */
+  java.lang.String getArchitecture();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The architecture of the snapshot. Valid values are ARM64 or X86_64.
+   * Check the Architecture enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string architecture = 302803283;</code>
+   *
+   * @return The bytes for architecture.
+   */
+  com.google.protobuf.ByteString getArchitectureBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Set to true if snapshots are automatically created by applying resource policy on the target disk.
    * </pre>
    *
@@ -84,6 +124,31 @@ public interface SnapshotOrBuilder
    * @return The bytes for chainName.
    */
   com.google.protobuf.ByteString getChainNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Size in bytes of the snapshot at creation time.
+   * </pre>
+   *
+   * <code>optional int64 creation_size_bytes = 125400077;</code>
+   *
+   * @return Whether the creationSizeBytes field is set.
+   */
+  boolean hasCreationSizeBytes();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Size in bytes of the snapshot at creation time.
+   * </pre>
+   *
+   * <code>optional int64 creation_size_bytes = 125400077;</code>
+   *
+   * @return The creationSizeBytes.
+   */
+  long getCreationSizeBytes();
 
   /**
    *
@@ -637,6 +702,46 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
+   * Indicates the type of the snapshot.
+   * Check the SnapshotType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string snapshot_type = 124349653;</code>
+   *
+   * @return Whether the snapshotType field is set.
+   */
+  boolean hasSnapshotType();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the type of the snapshot.
+   * Check the SnapshotType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string snapshot_type = 124349653;</code>
+   *
+   * @return The snapshotType.
+   */
+  java.lang.String getSnapshotType();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the type of the snapshot.
+   * Check the SnapshotType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string snapshot_type = 124349653;</code>
+   *
+   * @return The bytes for snapshotType.
+   */
+  com.google.protobuf.ByteString getSnapshotTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The source disk used to create this snapshot.
    * </pre>
    *
@@ -747,6 +852,80 @@ public interface SnapshotOrBuilder
    * @return The bytes for sourceDiskId.
    */
   com.google.protobuf.ByteString getSourceDiskIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the resource policy which created this scheduled snapshot.
+   * </pre>
+   *
+   * <code>optional string source_snapshot_schedule_policy = 235756291;</code>
+   *
+   * @return Whether the sourceSnapshotSchedulePolicy field is set.
+   */
+  boolean hasSourceSnapshotSchedulePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the resource policy which created this scheduled snapshot.
+   * </pre>
+   *
+   * <code>optional string source_snapshot_schedule_policy = 235756291;</code>
+   *
+   * @return The sourceSnapshotSchedulePolicy.
+   */
+  java.lang.String getSourceSnapshotSchedulePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the resource policy which created this scheduled snapshot.
+   * </pre>
+   *
+   * <code>optional string source_snapshot_schedule_policy = 235756291;</code>
+   *
+   * @return The bytes for sourceSnapshotSchedulePolicy.
+   */
+  com.google.protobuf.ByteString getSourceSnapshotSchedulePolicyBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] ID of the resource policy which created this scheduled snapshot.
+   * </pre>
+   *
+   * <code>optional string source_snapshot_schedule_policy_id = 70489047;</code>
+   *
+   * @return Whether the sourceSnapshotSchedulePolicyId field is set.
+   */
+  boolean hasSourceSnapshotSchedulePolicyId();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] ID of the resource policy which created this scheduled snapshot.
+   * </pre>
+   *
+   * <code>optional string source_snapshot_schedule_policy_id = 70489047;</code>
+   *
+   * @return The sourceSnapshotSchedulePolicyId.
+   */
+  java.lang.String getSourceSnapshotSchedulePolicyId();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] ID of the resource policy which created this scheduled snapshot.
+   * </pre>
+   *
+   * <code>optional string source_snapshot_schedule_policy_id = 70489047;</code>
+   *
+   * @return The bytes for sourceSnapshotSchedulePolicyId.
+   */
+  com.google.protobuf.ByteString getSourceSnapshotSchedulePolicyIdBytes();
 
   /**
    *

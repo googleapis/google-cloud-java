@@ -1683,7 +1683,9 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
   /**
    * Lists the instances in the managed instance group and instances that are scheduled to be
    * created. The list includes any current actions that the group has scheduled for its instances.
-   * The orderBy query parameter is not supported.
+   * The orderBy query parameter is not supported. The `pageToken` query parameter is supported only
+   * in the alpha and beta API and only if the group's `listManagedInstancesResults` field is set to
+   * `PAGINATED`.
    *
    * <p>Sample code:
    *
@@ -1724,7 +1726,9 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
   /**
    * Lists the instances in the managed instance group and instances that are scheduled to be
    * created. The list includes any current actions that the group has scheduled for its instances.
-   * The orderBy query parameter is not supported.
+   * The orderBy query parameter is not supported. The `pageToken` query parameter is supported only
+   * in the alpha and beta API and only if the group's `listManagedInstancesResults` field is set to
+   * `PAGINATED`.
    *
    * <p>Sample code:
    *
@@ -1763,7 +1767,9 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
   /**
    * Lists the instances in the managed instance group and instances that are scheduled to be
    * created. The list includes any current actions that the group has scheduled for its instances.
-   * The orderBy query parameter is not supported.
+   * The orderBy query parameter is not supported. The `pageToken` query parameter is supported only
+   * in the alpha and beta API and only if the group's `listManagedInstancesResults` field is set to
+   * `PAGINATED`.
    *
    * <p>Sample code:
    *
@@ -1802,7 +1808,9 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
   /**
    * Lists the instances in the managed instance group and instances that are scheduled to be
    * created. The list includes any current actions that the group has scheduled for its instances.
-   * The orderBy query parameter is not supported.
+   * The orderBy query parameter is not supported. The `pageToken` query parameter is supported only
+   * in the alpha and beta API and only if the group's `listManagedInstancesResults` field is set to
+   * `PAGINATED`.
    *
    * <p>Sample code:
    *

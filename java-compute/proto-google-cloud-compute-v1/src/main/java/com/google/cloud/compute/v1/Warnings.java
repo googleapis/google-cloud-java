@@ -239,6 +239,16 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * A WEIGHTED_MAGLEV backend service is associated with a health check that is not of type HTTP/HTTPS/HTTP2.
+     * </pre>
+     *
+     * <code>INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB = 401542606;</code>
+     */
+    INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB(401542606),
+    /**
+     *
+     *
+     * <pre>
      * When deploying a deployment with a exceedingly large number of resources
      * </pre>
      *
@@ -512,6 +522,16 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * A WEIGHTED_MAGLEV backend service is associated with a health check that is not of type HTTP/HTTPS/HTTP2.
+     * </pre>
+     *
+     * <code>INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB = 401542606;</code>
+     */
+    public static final int INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB_VALUE = 401542606;
+    /**
+     *
+     *
+     * <pre>
      * When deploying a deployment with a exceedingly large number of resources
      * </pre>
      *
@@ -731,6 +751,8 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
           return FIELD_VALUE_OVERRIDEN;
         case 417377419:
           return INJECTED_KERNELS_DEPRECATED;
+        case 401542606:
+          return INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB;
         case 481440678:
           return LARGE_DEPLOYMENT_WARNING;
         case 344505463:

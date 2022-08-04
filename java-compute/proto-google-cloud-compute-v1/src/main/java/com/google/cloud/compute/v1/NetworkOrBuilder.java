@@ -188,6 +188,43 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
+   * [Output Only] URL of the firewall policy the network is associated with.
+   * </pre>
+   *
+   * <code>optional string firewall_policy = 498173265;</code>
+   *
+   * @return Whether the firewallPolicy field is set.
+   */
+  boolean hasFirewallPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the firewall policy the network is associated with.
+   * </pre>
+   *
+   * <code>optional string firewall_policy = 498173265;</code>
+   *
+   * @return The firewallPolicy.
+   */
+  java.lang.String getFirewallPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the firewall policy the network is associated with.
+   * </pre>
+   *
+   * <code>optional string firewall_policy = 498173265;</code>
+   *
+   * @return The bytes for firewallPolicy.
+   */
+  com.google.protobuf.ByteString getFirewallPolicyBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The gateway address for default routing out of the network, selected by GCP.
    * </pre>
    *

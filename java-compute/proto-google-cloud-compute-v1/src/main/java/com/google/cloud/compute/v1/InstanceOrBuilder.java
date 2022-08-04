@@ -497,6 +497,46 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
+   * KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
+   * Check the KeyRevocationActionType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string key_revocation_action_type = 235941474;</code>
+   *
+   * @return Whether the keyRevocationActionType field is set.
+   */
+  boolean hasKeyRevocationActionType();
+  /**
+   *
+   *
+   * <pre>
+   * KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
+   * Check the KeyRevocationActionType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string key_revocation_action_type = 235941474;</code>
+   *
+   * @return The keyRevocationActionType.
+   */
+  java.lang.String getKeyRevocationActionType();
+  /**
+   *
+   *
+   * <pre>
+   * KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
+   * Check the KeyRevocationActionType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string key_revocation_action_type = 235941474;</code>
+   *
+   * @return The bytes for keyRevocationActionType.
+   */
+  com.google.protobuf.ByteString getKeyRevocationActionTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Type of the resource. Always compute#instance for instances.
    * </pre>
    *

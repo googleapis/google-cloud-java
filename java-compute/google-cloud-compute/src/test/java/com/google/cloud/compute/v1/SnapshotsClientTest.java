@@ -150,8 +150,10 @@ public class SnapshotsClientTest {
   public void getTest() throws Exception {
     Snapshot expectedResponse =
         Snapshot.newBuilder()
+            .setArchitecture("architecture839674195")
             .setAutoCreated(true)
             .setChainName("chainName1317895404")
+            .setCreationSizeBytes(1199141901)
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
             .setDiskSizeGb(-757478089)
@@ -167,9 +169,12 @@ public class SnapshotsClientTest {
             .setSatisfiesPzs(true)
             .setSelfLink("selfLink1191800166")
             .setSnapshotEncryptionKey(CustomerEncryptionKey.newBuilder().build())
+            .setSnapshotType("snapshotType-931506402")
             .setSourceDisk("sourceDisk-1111923624")
             .setSourceDiskEncryptionKey(CustomerEncryptionKey.newBuilder().build())
             .setSourceDiskId("sourceDiskId888256403")
+            .setSourceSnapshotSchedulePolicy("sourceSnapshotSchedulePolicy-1664282744")
+            .setSourceSnapshotSchedulePolicyId("sourceSnapshotSchedulePolicyId-1647880509")
             .setStatus("status-892481550")
             .setStorageBytes(2035244455)
             .setStorageBytesStatus("storageBytesStatus-1653482814")

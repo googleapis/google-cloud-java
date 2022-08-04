@@ -27,6 +27,46 @@ public interface AttachedDiskInitializeParamsOrBuilder
    *
    *
    * <pre>
+   * The architecture of the attached disk. Valid values are arm64 or x86_64.
+   * Check the Architecture enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string architecture = 302803283;</code>
+   *
+   * @return Whether the architecture field is set.
+   */
+  boolean hasArchitecture();
+  /**
+   *
+   *
+   * <pre>
+   * The architecture of the attached disk. Valid values are arm64 or x86_64.
+   * Check the Architecture enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string architecture = 302803283;</code>
+   *
+   * @return The architecture.
+   */
+  java.lang.String getArchitecture();
+  /**
+   *
+   *
+   * <pre>
+   * The architecture of the attached disk. Valid values are arm64 or x86_64.
+   * Check the Architecture enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string architecture = 302803283;</code>
+   *
+   * @return The bytes for architecture.
+   */
+  com.google.protobuf.ByteString getArchitectureBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * An optional description. Provide this property when creating the disk.
    * </pre>
    *
