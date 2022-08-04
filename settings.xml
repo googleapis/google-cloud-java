@@ -18,6 +18,14 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
                           https://maven.apache.org/xsd/settings-1.0.0.xsd">
+<!--  <mirrors>-->
+<!--    <mirror>-->
+<!--      <id>google-maven-central</id>-->
+<!--      <name>GCS Maven Central mirror</name>-->
+<!--      <url>https://maven-central.storage-download.googleapis.com/repos/central/data/</url>-->
+<!--      <mirrorOf>central</mirrorOf>-->
+<!--    </mirror>-->
+<!--  </mirrors>-->
   <profiles>
     <profile>
       <id>enable-integration-tests</id>
@@ -30,26 +38,6 @@
           </releases>
           <snapshots>
             <enabled>true</enabled>
-          </snapshots>
-        </repository>
-        <repository>
-          <id>google-maven-central</id>
-          <url>https://maven-central.storage-download.googleapis.com/maven2/</url>
-          <releases>
-            <enabled>false</enabled>
-          </releases>
-          <snapshots>
-            <enabled>true</enabled>
-          </snapshots>
-        </repository>
-        <repository>
-          <id>central</id>
-          <url>http://repo1.maven.org/maven2</url>
-          <releases>
-            <enabled>true</enabled>
-          </releases>
-          <snapshots>
-            <enabled>false</enabled>
           </snapshots>
         </repository>
       </repositories>
