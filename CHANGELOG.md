@@ -1,5 +1,34 @@
 # Changelog
 
+## [2.19.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.18.0...v2.19.0) (2022-08-05)
+
+
+### Features
+
+* Add CANCELLED to StreamWriter retryable error code ([#1725](https://github.com/googleapis/java-bigquerystorage/issues/1725)) ([6d4c004](https://github.com/googleapis/java-bigquerystorage/commit/6d4c00474a4056d72544b5a8966de6acaf0eecd3))
+* remove a dummy WriterClosedException ([0b3018d](https://github.com/googleapis/java-bigquerystorage/commit/0b3018d9e4cd64402f8d111aa9b4857224b8134e))
+
+
+### Bug Fixes
+
+* Switch integration test onto v1 write api ([#1731](https://github.com/googleapis/java-bigquerystorage/issues/1731)) ([2ccb96e](https://github.com/googleapis/java-bigquerystorage/commit/2ccb96ecd7431a53ccd3a1b2bfd7df5a8e76498e))
+
+
+### Documentation
+
+* **owlbot-java:** explaining why not using formatter in pom.xml ([#1511](https://github.com/googleapis/java-bigquerystorage/issues/1511)) ([#1723](https://github.com/googleapis/java-bigquerystorage/issues/1723)) ([eabfa93](https://github.com/googleapis/java-bigquerystorage/commit/eabfa937fbda2244e67765aa6a01399ae04b943a)), closes [#1502](https://github.com/googleapis/java-bigquerystorage/issues/1502)
+
+
+### Dependencies
+
+* update arrow.version to v9 (major) ([#1728](https://github.com/googleapis/java-bigquerystorage/issues/1728)) ([3694243](https://github.com/googleapis/java-bigquerystorage/commit/3694243b5f9e392b475c2a9fbb66979ff510781f))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.14.1 ([#1721](https://github.com/googleapis/java-bigquerystorage/issues/1721)) ([e27a9e9](https://github.com/googleapis/java-bigquerystorage/commit/e27a9e97ac2bf1e7a40bed17c67b3244f03c7d7a))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.14.2 ([#1734](https://github.com/googleapis/java-bigquerystorage/issues/1734)) ([0115e98](https://github.com/googleapis/java-bigquerystorage/commit/0115e98f8c11694183741c352ce97e0ab45894c7))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#1718](https://github.com/googleapis/java-bigquerystorage/issues/1718)) ([940c613](https://github.com/googleapis/java-bigquerystorage/commit/940c613b1480948c3561df6e19a650b14dbf051f))
+* update dependency org.apache.arrow:arrow-memory-netty to v9 ([#1729](https://github.com/googleapis/java-bigquerystorage/issues/1729)) ([297ee99](https://github.com/googleapis/java-bigquerystorage/commit/297ee998f8f868480477dabff0e0a4b3417d7129))
+* update dependency org.apache.arrow:arrow-vector to v9 ([#1730](https://github.com/googleapis/java-bigquerystorage/issues/1730)) ([6010b42](https://github.com/googleapis/java-bigquerystorage/commit/6010b42c6d14f15681ee97a83c64136aefb75028))
+* update dependency org.apache.avro:avro to v1.11.1 ([#1719](https://github.com/googleapis/java-bigquerystorage/issues/1719)) ([754296f](https://github.com/googleapis/java-bigquerystorage/commit/754296fd24635e20edccb7371b27474f825741ba))
+
 ## [2.18.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.17.0...v2.18.0) (2022-07-27)
 
 
