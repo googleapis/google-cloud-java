@@ -7,7 +7,7 @@ on:
 # Keeping this file separate as the dependencies check would use more
 # repositories than needed this downstream check for GraalVM native image
 # compilation.
-name: downstream
+name: downstream-native-image
 jobs:
   # GraalVM job ensures the compatibility of GraaVM version
   graalvm:
@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        graalvm: [22.1.0]
+        graalvm: [22.1.0, 22.0.0.2, 21.3.2]
         java: [11, 17]
         repo:
           # GAPIC library that doesn't use a real GCP project in integration tests
