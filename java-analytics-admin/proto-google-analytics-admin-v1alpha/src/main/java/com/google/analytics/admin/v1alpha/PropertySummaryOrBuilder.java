@@ -76,4 +76,60 @@ public interface PropertySummaryOrBuilder
    * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The property's property type.
+   * </pre>
+   *
+   * <code>.google.analytics.admin.v1alpha.PropertyType property_type = 3;</code>
+   *
+   * @return The enum numeric value on the wire for propertyType.
+   */
+  int getPropertyTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * The property's property type.
+   * </pre>
+   *
+   * <code>.google.analytics.admin.v1alpha.PropertyType property_type = 3;</code>
+   *
+   * @return The propertyType.
+   */
+  com.google.analytics.admin.v1alpha.PropertyType getPropertyType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Resource name of this property's logical parent.
+   * Note: The Property-Moving UI can be used to change the parent.
+   * Format: accounts/{account}, properties/{property}
+   * Example: "accounts/100", "properties/200"
+   * </pre>
+   *
+   * <code>string parent = 4;</code>
+   *
+   * @return The parent.
+   */
+  java.lang.String getParent();
+  /**
+   *
+   *
+   * <pre>
+   * Resource name of this property's logical parent.
+   * Note: The Property-Moving UI can be used to change the parent.
+   * Format: accounts/{account}, properties/{property}
+   * Example: "accounts/100", "properties/200"
+   * </pre>
+   *
+   * <code>string parent = 4;</code>
+   *
+   * @return The bytes for parent.
+   */
+  com.google.protobuf.ByteString getParentBytes();
 }

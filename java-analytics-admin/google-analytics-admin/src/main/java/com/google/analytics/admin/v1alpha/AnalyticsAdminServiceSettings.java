@@ -19,6 +19,7 @@ package com.google.analytics.admin.v1alpha;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
@@ -563,6 +564,45 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
   /** Returns the object with the settings used for calls to getDataStream. */
   public UnaryCallSettings<GetDataStreamRequest, DataStream> getDataStreamSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).getDataStreamSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAudience. */
+  public UnaryCallSettings<GetAudienceRequest, Audience> getAudienceSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).getAudienceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAudiences. */
+  public PagedCallSettings<ListAudiencesRequest, ListAudiencesResponse, ListAudiencesPagedResponse>
+      listAudiencesSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listAudiencesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAudience. */
+  public UnaryCallSettings<CreateAudienceRequest, Audience> createAudienceSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createAudienceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAudience. */
+  public UnaryCallSettings<UpdateAudienceRequest, Audience> updateAudienceSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).updateAudienceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to archiveAudience. */
+  public UnaryCallSettings<ArchiveAudienceRequest, Empty> archiveAudienceSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).archiveAudienceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAttributionSettings. */
+  public UnaryCallSettings<GetAttributionSettingsRequest, AttributionSettings>
+      getAttributionSettingsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).getAttributionSettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAttributionSettings. */
+  public UnaryCallSettings<UpdateAttributionSettingsRequest, AttributionSettings>
+      updateAttributionSettingsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .updateAttributionSettingsSettings();
   }
 
   public static final AnalyticsAdminServiceSettings create(AnalyticsAdminServiceStubSettings stub)
@@ -1160,6 +1200,45 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     /** Returns the builder for the settings used for calls to getDataStream. */
     public UnaryCallSettings.Builder<GetDataStreamRequest, DataStream> getDataStreamSettings() {
       return getStubSettingsBuilder().getDataStreamSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAudience. */
+    public UnaryCallSettings.Builder<GetAudienceRequest, Audience> getAudienceSettings() {
+      return getStubSettingsBuilder().getAudienceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAudiences. */
+    public PagedCallSettings.Builder<
+            ListAudiencesRequest, ListAudiencesResponse, ListAudiencesPagedResponse>
+        listAudiencesSettings() {
+      return getStubSettingsBuilder().listAudiencesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAudience. */
+    public UnaryCallSettings.Builder<CreateAudienceRequest, Audience> createAudienceSettings() {
+      return getStubSettingsBuilder().createAudienceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAudience. */
+    public UnaryCallSettings.Builder<UpdateAudienceRequest, Audience> updateAudienceSettings() {
+      return getStubSettingsBuilder().updateAudienceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to archiveAudience. */
+    public UnaryCallSettings.Builder<ArchiveAudienceRequest, Empty> archiveAudienceSettings() {
+      return getStubSettingsBuilder().archiveAudienceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAttributionSettings. */
+    public UnaryCallSettings.Builder<GetAttributionSettingsRequest, AttributionSettings>
+        getAttributionSettingsSettings() {
+      return getStubSettingsBuilder().getAttributionSettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAttributionSettings. */
+    public UnaryCallSettings.Builder<UpdateAttributionSettingsRequest, AttributionSettings>
+        updateAttributionSettingsSettings() {
+      return getStubSettingsBuilder().updateAttributionSettingsSettings();
     }
 
     @Override

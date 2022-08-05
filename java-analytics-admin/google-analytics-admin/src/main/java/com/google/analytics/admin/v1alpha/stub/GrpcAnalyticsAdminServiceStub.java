@@ -19,6 +19,7 @@ package com.google.analytics.admin.v1alpha.stub;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
@@ -37,8 +38,11 @@ import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest;
 import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse;
 import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalResponse;
+import com.google.analytics.admin.v1alpha.ArchiveAudienceRequest;
 import com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest;
+import com.google.analytics.admin.v1alpha.AttributionSettings;
+import com.google.analytics.admin.v1alpha.Audience;
 import com.google.analytics.admin.v1alpha.AuditUserLinksRequest;
 import com.google.analytics.admin.v1alpha.AuditUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest;
@@ -50,6 +54,7 @@ import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
 import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
+import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
 import com.google.analytics.admin.v1alpha.CreateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomMetricRequest;
@@ -80,6 +85,8 @@ import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
+import com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest;
+import com.google.analytics.admin.v1alpha.GetAudienceRequest;
 import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
 import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.GetCustomMetricRequest;
@@ -100,6 +107,8 @@ import com.google.analytics.admin.v1alpha.ListAccountSummariesRequest;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesResponse;
 import com.google.analytics.admin.v1alpha.ListAccountsRequest;
 import com.google.analytics.admin.v1alpha.ListAccountsResponse;
+import com.google.analytics.admin.v1alpha.ListAudiencesRequest;
+import com.google.analytics.admin.v1alpha.ListAudiencesResponse;
 import com.google.analytics.admin.v1alpha.ListConversionEventsRequest;
 import com.google.analytics.admin.v1alpha.ListConversionEventsResponse;
 import com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest;
@@ -129,6 +138,8 @@ import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
+import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
+import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
@@ -1036,6 +1047,83 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(DataStream.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetAudienceRequest, Audience> getAudienceMethodDescriptor =
+      MethodDescriptor.<GetAudienceRequest, Audience>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.analytics.admin.v1alpha.AnalyticsAdminService/GetAudience")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetAudienceRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Audience.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<ListAudiencesRequest, ListAudiencesResponse>
+      listAudiencesMethodDescriptor =
+          MethodDescriptor.<ListAudiencesRequest, ListAudiencesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListAudiences")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAudiencesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAudiencesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateAudienceRequest, Audience>
+      createAudienceMethodDescriptor =
+          MethodDescriptor.<CreateAudienceRequest, Audience>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateAudience")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateAudienceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Audience.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateAudienceRequest, Audience>
+      updateAudienceMethodDescriptor =
+          MethodDescriptor.<UpdateAudienceRequest, Audience>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateAudience")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateAudienceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Audience.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ArchiveAudienceRequest, Empty>
+      archiveAudienceMethodDescriptor =
+          MethodDescriptor.<ArchiveAudienceRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ArchiveAudience")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ArchiveAudienceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetAttributionSettingsRequest, AttributionSettings>
+      getAttributionSettingsMethodDescriptor =
+          MethodDescriptor.<GetAttributionSettingsRequest, AttributionSettings>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetAttributionSettings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAttributionSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AttributionSettings.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateAttributionSettingsRequest, AttributionSettings>
+      updateAttributionSettingsMethodDescriptor =
+          MethodDescriptor.<UpdateAttributionSettingsRequest, AttributionSettings>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateAttributionSettings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateAttributionSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AttributionSettings.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsResponse> listAccountsCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsPagedResponse>
@@ -1197,6 +1285,17 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   private final UnaryCallable<ListDataStreamsRequest, ListDataStreamsPagedResponse>
       listDataStreamsPagedCallable;
   private final UnaryCallable<GetDataStreamRequest, DataStream> getDataStreamCallable;
+  private final UnaryCallable<GetAudienceRequest, Audience> getAudienceCallable;
+  private final UnaryCallable<ListAudiencesRequest, ListAudiencesResponse> listAudiencesCallable;
+  private final UnaryCallable<ListAudiencesRequest, ListAudiencesPagedResponse>
+      listAudiencesPagedCallable;
+  private final UnaryCallable<CreateAudienceRequest, Audience> createAudienceCallable;
+  private final UnaryCallable<UpdateAudienceRequest, Audience> updateAudienceCallable;
+  private final UnaryCallable<ArchiveAudienceRequest, Empty> archiveAudienceCallable;
+  private final UnaryCallable<GetAttributionSettingsRequest, AttributionSettings>
+      getAttributionSettingsCallable;
+  private final UnaryCallable<UpdateAttributionSettingsRequest, AttributionSettings>
+      updateAttributionSettingsCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -2021,6 +2120,80 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<GetAudienceRequest, Audience> getAudienceTransportSettings =
+        GrpcCallSettings.<GetAudienceRequest, Audience>newBuilder()
+            .setMethodDescriptor(getAudienceMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<ListAudiencesRequest, ListAudiencesResponse> listAudiencesTransportSettings =
+        GrpcCallSettings.<ListAudiencesRequest, ListAudiencesResponse>newBuilder()
+            .setMethodDescriptor(listAudiencesMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<CreateAudienceRequest, Audience> createAudienceTransportSettings =
+        GrpcCallSettings.<CreateAudienceRequest, Audience>newBuilder()
+            .setMethodDescriptor(createAudienceMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateAudienceRequest, Audience> updateAudienceTransportSettings =
+        GrpcCallSettings.<UpdateAudienceRequest, Audience>newBuilder()
+            .setMethodDescriptor(updateAudienceMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("audience.name", String.valueOf(request.getAudience().getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<ArchiveAudienceRequest, Empty> archiveAudienceTransportSettings =
+        GrpcCallSettings.<ArchiveAudienceRequest, Empty>newBuilder()
+            .setMethodDescriptor(archiveAudienceMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<GetAttributionSettingsRequest, AttributionSettings>
+        getAttributionSettingsTransportSettings =
+            GrpcCallSettings.<GetAttributionSettingsRequest, AttributionSettings>newBuilder()
+                .setMethodDescriptor(getAttributionSettingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateAttributionSettingsRequest, AttributionSettings>
+        updateAttributionSettingsTransportSettings =
+            GrpcCallSettings.<UpdateAttributionSettingsRequest, AttributionSettings>newBuilder()
+                .setMethodDescriptor(updateAttributionSettingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "attribution_settings.name",
+                          String.valueOf(request.getAttributionSettings().getName()));
+                      return params.build();
+                    })
+                .build();
 
     this.getAccountCallable =
         callableFactory.createUnaryCallable(
@@ -2398,6 +2571,34 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
     this.getDataStreamCallable =
         callableFactory.createUnaryCallable(
             getDataStreamTransportSettings, settings.getDataStreamSettings(), clientContext);
+    this.getAudienceCallable =
+        callableFactory.createUnaryCallable(
+            getAudienceTransportSettings, settings.getAudienceSettings(), clientContext);
+    this.listAudiencesCallable =
+        callableFactory.createUnaryCallable(
+            listAudiencesTransportSettings, settings.listAudiencesSettings(), clientContext);
+    this.listAudiencesPagedCallable =
+        callableFactory.createPagedCallable(
+            listAudiencesTransportSettings, settings.listAudiencesSettings(), clientContext);
+    this.createAudienceCallable =
+        callableFactory.createUnaryCallable(
+            createAudienceTransportSettings, settings.createAudienceSettings(), clientContext);
+    this.updateAudienceCallable =
+        callableFactory.createUnaryCallable(
+            updateAudienceTransportSettings, settings.updateAudienceSettings(), clientContext);
+    this.archiveAudienceCallable =
+        callableFactory.createUnaryCallable(
+            archiveAudienceTransportSettings, settings.archiveAudienceSettings(), clientContext);
+    this.getAttributionSettingsCallable =
+        callableFactory.createUnaryCallable(
+            getAttributionSettingsTransportSettings,
+            settings.getAttributionSettingsSettings(),
+            clientContext);
+    this.updateAttributionSettingsCallable =
+        callableFactory.createUnaryCallable(
+            updateAttributionSettingsTransportSettings,
+            settings.updateAttributionSettingsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -2899,6 +3100,49 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   @Override
   public UnaryCallable<GetDataStreamRequest, DataStream> getDataStreamCallable() {
     return getDataStreamCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAudienceRequest, Audience> getAudienceCallable() {
+    return getAudienceCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAudiencesRequest, ListAudiencesResponse> listAudiencesCallable() {
+    return listAudiencesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAudiencesRequest, ListAudiencesPagedResponse>
+      listAudiencesPagedCallable() {
+    return listAudiencesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAudienceRequest, Audience> createAudienceCallable() {
+    return createAudienceCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAudienceRequest, Audience> updateAudienceCallable() {
+    return updateAudienceCallable;
+  }
+
+  @Override
+  public UnaryCallable<ArchiveAudienceRequest, Empty> archiveAudienceCallable() {
+    return archiveAudienceCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAttributionSettingsRequest, AttributionSettings>
+      getAttributionSettingsCallable() {
+    return getAttributionSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAttributionSettingsRequest, AttributionSettings>
+      updateAttributionSettingsCallable() {
+    return updateAttributionSettingsCallable;
   }
 
   @Override

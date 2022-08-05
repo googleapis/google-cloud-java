@@ -19,6 +19,7 @@ package com.google.analytics.admin.v1alpha;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
@@ -514,6 +515,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
     Property expectedResponse =
         Property.newBuilder()
             .setName(PropertyName.of("[PROPERTY]").toString())
+            .setPropertyType(PropertyType.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setParent("parent-995424086")
@@ -569,6 +571,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
     Property expectedResponse =
         Property.newBuilder()
             .setName(PropertyName.of("[PROPERTY]").toString())
+            .setPropertyType(PropertyType.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setParent("parent-995424086")
@@ -686,6 +689,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
     Property expectedResponse =
         Property.newBuilder()
             .setName(PropertyName.of("[PROPERTY]").toString())
+            .setPropertyType(PropertyType.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setParent("parent-995424086")
@@ -741,6 +745,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
     Property expectedResponse =
         Property.newBuilder()
             .setName(PropertyName.of("[PROPERTY]").toString())
+            .setPropertyType(PropertyType.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setParent("parent-995424086")
@@ -796,6 +801,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
     Property expectedResponse =
         Property.newBuilder()
             .setName(PropertyName.of("[PROPERTY]").toString())
+            .setPropertyType(PropertyType.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setParent("parent-995424086")
@@ -851,6 +857,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
     Property expectedResponse =
         Property.newBuilder()
             .setName(PropertyName.of("[PROPERTY]").toString())
+            .setPropertyType(PropertyType.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setParent("parent-995424086")
@@ -868,6 +875,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
     Property property =
         Property.newBuilder()
             .setName(PropertyName.of("[PROPERTY]").toString())
+            .setPropertyType(PropertyType.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setParent("parent-995424086")
@@ -911,6 +919,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
       Property property =
           Property.newBuilder()
               .setName(PropertyName.of("[PROPERTY]").toString())
+              .setPropertyType(PropertyType.forNumber(0))
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
               .setParent("parent-995424086")
@@ -6156,6 +6165,567 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
     try {
       String name = "properties/propertie-9806/dataStreams/dataStream-9806";
       client.getDataStream(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAudienceTest() throws Exception {
+    Audience expectedResponse =
+        Audience.newBuilder()
+            .setName(AudienceName.of("[PROPERTY]", "[AUDIENCE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setMembershipDurationDays(1702404985)
+            .setAdsPersonalizationEnabled(true)
+            .setEventTrigger(AudienceEventTrigger.newBuilder().build())
+            .addAllFilterClauses(new ArrayList<AudienceFilterClause>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AudienceName name = AudienceName.of("[PROPERTY]", "[AUDIENCE]");
+
+    Audience actualResponse = client.getAudience(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAudienceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AudienceName name = AudienceName.of("[PROPERTY]", "[AUDIENCE]");
+      client.getAudience(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAudienceTest2() throws Exception {
+    Audience expectedResponse =
+        Audience.newBuilder()
+            .setName(AudienceName.of("[PROPERTY]", "[AUDIENCE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setMembershipDurationDays(1702404985)
+            .setAdsPersonalizationEnabled(true)
+            .setEventTrigger(AudienceEventTrigger.newBuilder().build())
+            .addAllFilterClauses(new ArrayList<AudienceFilterClause>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "properties/propertie-2172/audiences/audience-2172";
+
+    Audience actualResponse = client.getAudience(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAudienceExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "properties/propertie-2172/audiences/audience-2172";
+      client.getAudience(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAudiencesTest() throws Exception {
+    Audience responsesElement = Audience.newBuilder().build();
+    ListAudiencesResponse expectedResponse =
+        ListAudiencesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAudiences(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+
+    ListAudiencesPagedResponse pagedListResponse = client.listAudiences(parent);
+
+    List<Audience> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAudiencesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAudiencesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      client.listAudiences(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAudiencesTest2() throws Exception {
+    Audience responsesElement = Audience.newBuilder().build();
+    ListAudiencesResponse expectedResponse =
+        ListAudiencesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAudiences(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "properties/propertie-2024";
+
+    ListAudiencesPagedResponse pagedListResponse = client.listAudiences(parent);
+
+    List<Audience> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAudiencesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAudiencesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "properties/propertie-2024";
+      client.listAudiences(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAudienceTest() throws Exception {
+    Audience expectedResponse =
+        Audience.newBuilder()
+            .setName(AudienceName.of("[PROPERTY]", "[AUDIENCE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setMembershipDurationDays(1702404985)
+            .setAdsPersonalizationEnabled(true)
+            .setEventTrigger(AudienceEventTrigger.newBuilder().build())
+            .addAllFilterClauses(new ArrayList<AudienceFilterClause>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+    Audience audience = Audience.newBuilder().build();
+
+    Audience actualResponse = client.createAudience(parent, audience);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAudienceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      Audience audience = Audience.newBuilder().build();
+      client.createAudience(parent, audience);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAudienceTest2() throws Exception {
+    Audience expectedResponse =
+        Audience.newBuilder()
+            .setName(AudienceName.of("[PROPERTY]", "[AUDIENCE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setMembershipDurationDays(1702404985)
+            .setAdsPersonalizationEnabled(true)
+            .setEventTrigger(AudienceEventTrigger.newBuilder().build())
+            .addAllFilterClauses(new ArrayList<AudienceFilterClause>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "properties/propertie-2024";
+    Audience audience = Audience.newBuilder().build();
+
+    Audience actualResponse = client.createAudience(parent, audience);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAudienceExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "properties/propertie-2024";
+      Audience audience = Audience.newBuilder().build();
+      client.createAudience(parent, audience);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateAudienceTest() throws Exception {
+    Audience expectedResponse =
+        Audience.newBuilder()
+            .setName(AudienceName.of("[PROPERTY]", "[AUDIENCE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setMembershipDurationDays(1702404985)
+            .setAdsPersonalizationEnabled(true)
+            .setEventTrigger(AudienceEventTrigger.newBuilder().build())
+            .addAllFilterClauses(new ArrayList<AudienceFilterClause>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    Audience audience =
+        Audience.newBuilder()
+            .setName(AudienceName.of("[PROPERTY]", "[AUDIENCE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setMembershipDurationDays(1702404985)
+            .setAdsPersonalizationEnabled(true)
+            .setEventTrigger(AudienceEventTrigger.newBuilder().build())
+            .addAllFilterClauses(new ArrayList<AudienceFilterClause>())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Audience actualResponse = client.updateAudience(audience, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateAudienceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Audience audience =
+          Audience.newBuilder()
+              .setName(AudienceName.of("[PROPERTY]", "[AUDIENCE]").toString())
+              .setDisplayName("displayName1714148973")
+              .setDescription("description-1724546052")
+              .setMembershipDurationDays(1702404985)
+              .setAdsPersonalizationEnabled(true)
+              .setEventTrigger(AudienceEventTrigger.newBuilder().build())
+              .addAllFilterClauses(new ArrayList<AudienceFilterClause>())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAudience(audience, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void archiveAudienceTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    ArchiveAudienceRequest request =
+        ArchiveAudienceRequest.newBuilder()
+            .setName(PropertyName.of("[PROPERTY]").toString())
+            .build();
+
+    client.archiveAudience(request);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void archiveAudienceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ArchiveAudienceRequest request =
+          ArchiveAudienceRequest.newBuilder()
+              .setName(PropertyName.of("[PROPERTY]").toString())
+              .build();
+      client.archiveAudience(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAttributionSettingsTest() throws Exception {
+    AttributionSettings expectedResponse =
+        AttributionSettings.newBuilder()
+            .setName(AttributionSettingsName.of("[PROPERTY]").toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AttributionSettingsName name = AttributionSettingsName.of("[PROPERTY]");
+
+    AttributionSettings actualResponse = client.getAttributionSettings(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAttributionSettingsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AttributionSettingsName name = AttributionSettingsName.of("[PROPERTY]");
+      client.getAttributionSettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAttributionSettingsTest2() throws Exception {
+    AttributionSettings expectedResponse =
+        AttributionSettings.newBuilder()
+            .setName(AttributionSettingsName.of("[PROPERTY]").toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "properties/propertie-492/attributionSettings";
+
+    AttributionSettings actualResponse = client.getAttributionSettings(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAttributionSettingsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "properties/propertie-492/attributionSettings";
+      client.getAttributionSettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateAttributionSettingsTest() throws Exception {
+    AttributionSettings expectedResponse =
+        AttributionSettings.newBuilder()
+            .setName(AttributionSettingsName.of("[PROPERTY]").toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AttributionSettings attributionSettings =
+        AttributionSettings.newBuilder()
+            .setName(AttributionSettingsName.of("[PROPERTY]").toString())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    AttributionSettings actualResponse =
+        client.updateAttributionSettings(attributionSettings, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateAttributionSettingsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AttributionSettings attributionSettings =
+          AttributionSettings.newBuilder()
+              .setName(AttributionSettingsName.of("[PROPERTY]").toString())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAttributionSettings(attributionSettings, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

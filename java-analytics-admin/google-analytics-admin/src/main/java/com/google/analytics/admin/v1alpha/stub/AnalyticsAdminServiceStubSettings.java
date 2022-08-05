@@ -19,6 +19,7 @@ package com.google.analytics.admin.v1alpha.stub;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
@@ -38,8 +39,11 @@ import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest;
 import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse;
 import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalResponse;
+import com.google.analytics.admin.v1alpha.ArchiveAudienceRequest;
 import com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest;
+import com.google.analytics.admin.v1alpha.AttributionSettings;
+import com.google.analytics.admin.v1alpha.Audience;
 import com.google.analytics.admin.v1alpha.AuditUserLink;
 import com.google.analytics.admin.v1alpha.AuditUserLinksRequest;
 import com.google.analytics.admin.v1alpha.AuditUserLinksResponse;
@@ -53,6 +57,7 @@ import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
 import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ChangeHistoryEvent;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
+import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
 import com.google.analytics.admin.v1alpha.CreateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomMetricRequest;
@@ -83,6 +88,8 @@ import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
+import com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest;
+import com.google.analytics.admin.v1alpha.GetAudienceRequest;
 import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
 import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.GetCustomMetricRequest;
@@ -103,6 +110,8 @@ import com.google.analytics.admin.v1alpha.ListAccountSummariesRequest;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesResponse;
 import com.google.analytics.admin.v1alpha.ListAccountsRequest;
 import com.google.analytics.admin.v1alpha.ListAccountsResponse;
+import com.google.analytics.admin.v1alpha.ListAudiencesRequest;
+import com.google.analytics.admin.v1alpha.ListAudiencesResponse;
 import com.google.analytics.admin.v1alpha.ListConversionEventsRequest;
 import com.google.analytics.admin.v1alpha.ListConversionEventsResponse;
 import com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest;
@@ -132,6 +141,8 @@ import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
+import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
+import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
@@ -386,6 +397,17 @@ public class AnalyticsAdminServiceStubSettings
           ListDataStreamsRequest, ListDataStreamsResponse, ListDataStreamsPagedResponse>
       listDataStreamsSettings;
   private final UnaryCallSettings<GetDataStreamRequest, DataStream> getDataStreamSettings;
+  private final UnaryCallSettings<GetAudienceRequest, Audience> getAudienceSettings;
+  private final PagedCallSettings<
+          ListAudiencesRequest, ListAudiencesResponse, ListAudiencesPagedResponse>
+      listAudiencesSettings;
+  private final UnaryCallSettings<CreateAudienceRequest, Audience> createAudienceSettings;
+  private final UnaryCallSettings<UpdateAudienceRequest, Audience> updateAudienceSettings;
+  private final UnaryCallSettings<ArchiveAudienceRequest, Empty> archiveAudienceSettings;
+  private final UnaryCallSettings<GetAttributionSettingsRequest, AttributionSettings>
+      getAttributionSettingsSettings;
+  private final UnaryCallSettings<UpdateAttributionSettingsRequest, AttributionSettings>
+      updateAttributionSettingsSettings;
 
   private static final PagedListDescriptor<ListAccountsRequest, ListAccountsResponse, Account>
       LIST_ACCOUNTS_PAGE_STR_DESC =
@@ -1011,6 +1033,42 @@ public class AnalyticsAdminServiceStubSettings
             }
           };
 
+  private static final PagedListDescriptor<ListAudiencesRequest, ListAudiencesResponse, Audience>
+      LIST_AUDIENCES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListAudiencesRequest, ListAudiencesResponse, Audience>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAudiencesRequest injectToken(ListAudiencesRequest payload, String token) {
+              return ListAudiencesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAudiencesRequest injectPageSize(ListAudiencesRequest payload, int pageSize) {
+              return ListAudiencesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAudiencesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAudiencesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Audience> extractResources(ListAudiencesResponse payload) {
+              return payload.getAudiencesList() == null
+                  ? ImmutableList.<Audience>of()
+                  : payload.getAudiencesList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListAccountsRequest, ListAccountsResponse, ListAccountsPagedResponse>
       LIST_ACCOUNTS_PAGE_STR_FACT =
@@ -1358,6 +1416,23 @@ public class AnalyticsAdminServiceStubSettings
               PageContext<ListDataStreamsRequest, ListDataStreamsResponse, DataStream> pageContext =
                   PageContext.create(callable, LIST_DATA_STREAMS_PAGE_STR_DESC, request, context);
               return ListDataStreamsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAudiencesRequest, ListAudiencesResponse, ListAudiencesPagedResponse>
+      LIST_AUDIENCES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAudiencesRequest, ListAudiencesResponse, ListAudiencesPagedResponse>() {
+            @Override
+            public ApiFuture<ListAudiencesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAudiencesRequest, ListAudiencesResponse> callable,
+                ListAudiencesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAudiencesResponse> futureResponse) {
+              PageContext<ListAudiencesRequest, ListAudiencesResponse, Audience> pageContext =
+                  PageContext.create(callable, LIST_AUDIENCES_PAGE_STR_DESC, request, context);
+              return ListAudiencesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -1814,6 +1889,44 @@ public class AnalyticsAdminServiceStubSettings
     return getDataStreamSettings;
   }
 
+  /** Returns the object with the settings used for calls to getAudience. */
+  public UnaryCallSettings<GetAudienceRequest, Audience> getAudienceSettings() {
+    return getAudienceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAudiences. */
+  public PagedCallSettings<ListAudiencesRequest, ListAudiencesResponse, ListAudiencesPagedResponse>
+      listAudiencesSettings() {
+    return listAudiencesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAudience. */
+  public UnaryCallSettings<CreateAudienceRequest, Audience> createAudienceSettings() {
+    return createAudienceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAudience. */
+  public UnaryCallSettings<UpdateAudienceRequest, Audience> updateAudienceSettings() {
+    return updateAudienceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to archiveAudience. */
+  public UnaryCallSettings<ArchiveAudienceRequest, Empty> archiveAudienceSettings() {
+    return archiveAudienceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAttributionSettings. */
+  public UnaryCallSettings<GetAttributionSettingsRequest, AttributionSettings>
+      getAttributionSettingsSettings() {
+    return getAttributionSettingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAttributionSettings. */
+  public UnaryCallSettings<UpdateAttributionSettingsRequest, AttributionSettings>
+      updateAttributionSettingsSettings() {
+    return updateAttributionSettingsSettings;
+  }
+
   public AnalyticsAdminServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -2010,6 +2123,13 @@ public class AnalyticsAdminServiceStubSettings
     updateDataStreamSettings = settingsBuilder.updateDataStreamSettings().build();
     listDataStreamsSettings = settingsBuilder.listDataStreamsSettings().build();
     getDataStreamSettings = settingsBuilder.getDataStreamSettings().build();
+    getAudienceSettings = settingsBuilder.getAudienceSettings().build();
+    listAudiencesSettings = settingsBuilder.listAudiencesSettings().build();
+    createAudienceSettings = settingsBuilder.createAudienceSettings().build();
+    updateAudienceSettings = settingsBuilder.updateAudienceSettings().build();
+    archiveAudienceSettings = settingsBuilder.archiveAudienceSettings().build();
+    getAttributionSettingsSettings = settingsBuilder.getAttributionSettingsSettings().build();
+    updateAttributionSettingsSettings = settingsBuilder.updateAttributionSettingsSettings().build();
   }
 
   /** Builder for AnalyticsAdminServiceStubSettings. */
@@ -2195,6 +2315,17 @@ public class AnalyticsAdminServiceStubSettings
             ListDataStreamsRequest, ListDataStreamsResponse, ListDataStreamsPagedResponse>
         listDataStreamsSettings;
     private final UnaryCallSettings.Builder<GetDataStreamRequest, DataStream> getDataStreamSettings;
+    private final UnaryCallSettings.Builder<GetAudienceRequest, Audience> getAudienceSettings;
+    private final PagedCallSettings.Builder<
+            ListAudiencesRequest, ListAudiencesResponse, ListAudiencesPagedResponse>
+        listAudiencesSettings;
+    private final UnaryCallSettings.Builder<CreateAudienceRequest, Audience> createAudienceSettings;
+    private final UnaryCallSettings.Builder<UpdateAudienceRequest, Audience> updateAudienceSettings;
+    private final UnaryCallSettings.Builder<ArchiveAudienceRequest, Empty> archiveAudienceSettings;
+    private final UnaryCallSettings.Builder<GetAttributionSettingsRequest, AttributionSettings>
+        getAttributionSettingsSettings;
+    private final UnaryCallSettings.Builder<UpdateAttributionSettingsRequest, AttributionSettings>
+        updateAttributionSettingsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -2320,6 +2451,13 @@ public class AnalyticsAdminServiceStubSettings
       updateDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listDataStreamsSettings = PagedCallSettings.newBuilder(LIST_DATA_STREAMS_PAGE_STR_FACT);
       getDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getAudienceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listAudiencesSettings = PagedCallSettings.newBuilder(LIST_AUDIENCES_PAGE_STR_FACT);
+      createAudienceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAudienceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      archiveAudienceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getAttributionSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAttributionSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -2393,7 +2531,14 @@ public class AnalyticsAdminServiceStubSettings
               deleteDataStreamSettings,
               updateDataStreamSettings,
               listDataStreamsSettings,
-              getDataStreamSettings);
+              getDataStreamSettings,
+              getAudienceSettings,
+              listAudiencesSettings,
+              createAudienceSettings,
+              updateAudienceSettings,
+              archiveAudienceSettings,
+              getAttributionSettingsSettings,
+              updateAttributionSettingsSettings);
       initDefaults(this);
     }
 
@@ -2490,6 +2635,13 @@ public class AnalyticsAdminServiceStubSettings
       updateDataStreamSettings = settings.updateDataStreamSettings.toBuilder();
       listDataStreamsSettings = settings.listDataStreamsSettings.toBuilder();
       getDataStreamSettings = settings.getDataStreamSettings.toBuilder();
+      getAudienceSettings = settings.getAudienceSettings.toBuilder();
+      listAudiencesSettings = settings.listAudiencesSettings.toBuilder();
+      createAudienceSettings = settings.createAudienceSettings.toBuilder();
+      updateAudienceSettings = settings.updateAudienceSettings.toBuilder();
+      archiveAudienceSettings = settings.archiveAudienceSettings.toBuilder();
+      getAttributionSettingsSettings = settings.getAttributionSettingsSettings.toBuilder();
+      updateAttributionSettingsSettings = settings.updateAttributionSettingsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -2563,7 +2715,14 @@ public class AnalyticsAdminServiceStubSettings
               deleteDataStreamSettings,
               updateDataStreamSettings,
               listDataStreamsSettings,
-              getDataStreamSettings);
+              getDataStreamSettings,
+              getAudienceSettings,
+              listAudiencesSettings,
+              createAudienceSettings,
+              updateAudienceSettings,
+              archiveAudienceSettings,
+              getAttributionSettingsSettings,
+              updateAttributionSettingsSettings);
     }
 
     private static Builder createDefault() {
@@ -2945,6 +3104,41 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .getDataStreamSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getAudienceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listAudiencesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createAudienceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateAudienceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .archiveAudienceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getAttributionSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateAttributionSettingsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -3445,6 +3639,45 @@ public class AnalyticsAdminServiceStubSettings
     /** Returns the builder for the settings used for calls to getDataStream. */
     public UnaryCallSettings.Builder<GetDataStreamRequest, DataStream> getDataStreamSettings() {
       return getDataStreamSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAudience. */
+    public UnaryCallSettings.Builder<GetAudienceRequest, Audience> getAudienceSettings() {
+      return getAudienceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAudiences. */
+    public PagedCallSettings.Builder<
+            ListAudiencesRequest, ListAudiencesResponse, ListAudiencesPagedResponse>
+        listAudiencesSettings() {
+      return listAudiencesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAudience. */
+    public UnaryCallSettings.Builder<CreateAudienceRequest, Audience> createAudienceSettings() {
+      return createAudienceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAudience. */
+    public UnaryCallSettings.Builder<UpdateAudienceRequest, Audience> updateAudienceSettings() {
+      return updateAudienceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to archiveAudience. */
+    public UnaryCallSettings.Builder<ArchiveAudienceRequest, Empty> archiveAudienceSettings() {
+      return archiveAudienceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAttributionSettings. */
+    public UnaryCallSettings.Builder<GetAttributionSettingsRequest, AttributionSettings>
+        getAttributionSettingsSettings() {
+      return getAttributionSettingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAttributionSettings. */
+    public UnaryCallSettings.Builder<UpdateAttributionSettingsRequest, AttributionSettings>
+        updateAttributionSettingsSettings() {
+      return updateAttributionSettingsSettings;
     }
 
     @Override

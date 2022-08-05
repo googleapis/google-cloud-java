@@ -19,6 +19,7 @@ package com.google.analytics.admin.v1alpha.stub;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
@@ -37,8 +38,11 @@ import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest;
 import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse;
 import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalResponse;
+import com.google.analytics.admin.v1alpha.ArchiveAudienceRequest;
 import com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest;
+import com.google.analytics.admin.v1alpha.AttributionSettings;
+import com.google.analytics.admin.v1alpha.Audience;
 import com.google.analytics.admin.v1alpha.AuditUserLinksRequest;
 import com.google.analytics.admin.v1alpha.AuditUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest;
@@ -50,6 +54,7 @@ import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
 import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
+import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
 import com.google.analytics.admin.v1alpha.CreateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomMetricRequest;
@@ -80,6 +85,8 @@ import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
+import com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest;
+import com.google.analytics.admin.v1alpha.GetAudienceRequest;
 import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
 import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.GetCustomMetricRequest;
@@ -100,6 +107,8 @@ import com.google.analytics.admin.v1alpha.ListAccountSummariesRequest;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesResponse;
 import com.google.analytics.admin.v1alpha.ListAccountsRequest;
 import com.google.analytics.admin.v1alpha.ListAccountsResponse;
+import com.google.analytics.admin.v1alpha.ListAudiencesRequest;
+import com.google.analytics.admin.v1alpha.ListAudiencesResponse;
 import com.google.analytics.admin.v1alpha.ListConversionEventsRequest;
 import com.google.analytics.admin.v1alpha.ListConversionEventsResponse;
 import com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest;
@@ -129,6 +138,8 @@ import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
+import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
+import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
@@ -585,6 +596,41 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetDataStreamRequest, DataStream> getDataStreamCallable() {
     throw new UnsupportedOperationException("Not implemented: getDataStreamCallable()");
+  }
+
+  public UnaryCallable<GetAudienceRequest, Audience> getAudienceCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAudienceCallable()");
+  }
+
+  public UnaryCallable<ListAudiencesRequest, ListAudiencesPagedResponse>
+      listAudiencesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAudiencesPagedCallable()");
+  }
+
+  public UnaryCallable<ListAudiencesRequest, ListAudiencesResponse> listAudiencesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAudiencesCallable()");
+  }
+
+  public UnaryCallable<CreateAudienceRequest, Audience> createAudienceCallable() {
+    throw new UnsupportedOperationException("Not implemented: createAudienceCallable()");
+  }
+
+  public UnaryCallable<UpdateAudienceRequest, Audience> updateAudienceCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAudienceCallable()");
+  }
+
+  public UnaryCallable<ArchiveAudienceRequest, Empty> archiveAudienceCallable() {
+    throw new UnsupportedOperationException("Not implemented: archiveAudienceCallable()");
+  }
+
+  public UnaryCallable<GetAttributionSettingsRequest, AttributionSettings>
+      getAttributionSettingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAttributionSettingsCallable()");
+  }
+
+  public UnaryCallable<UpdateAttributionSettingsRequest, AttributionSettings>
+      updateAttributionSettingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAttributionSettingsCallable()");
   }
 
   @Override

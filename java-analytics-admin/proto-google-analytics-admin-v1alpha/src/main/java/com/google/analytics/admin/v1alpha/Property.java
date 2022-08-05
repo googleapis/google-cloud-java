@@ -39,6 +39,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
 
   private Property() {
     name_ = "";
+    propertyType_ = 0;
     parent_ = "";
     displayName_ = "";
     industryCategory_ = 0;
@@ -193,6 +194,13 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
               account_ = s;
               break;
             }
+          case 112:
+            {
+              int rawValue = input.readEnum();
+
+              propertyType_ = rawValue;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -280,6 +288,52 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int PROPERTY_TYPE_FIELD_NUMBER = 14;
+  private int propertyType_;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The property type for this Property resource. When creating a property, if
+   * the type is "PROPERTY_TYPE_UNSPECIFIED", then "ORDINARY_PROPERTY" will be
+   * implied. "SUBPROPERTY" and "ROLLUP_PROPERTY" types cannot yet be created
+   * via Google Analytics Admin API.
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1alpha.PropertyType property_type = 14 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for propertyType.
+   */
+  @java.lang.Override
+  public int getPropertyTypeValue() {
+    return propertyType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The property type for this Property resource. When creating a property, if
+   * the type is "PROPERTY_TYPE_UNSPECIFIED", then "ORDINARY_PROPERTY" will be
+   * implied. "SUBPROPERTY" and "ROLLUP_PROPERTY" types cannot yet be created
+   * via Google Analytics Admin API.
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1alpha.PropertyType property_type = 14 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The propertyType.
+   */
+  @java.lang.Override
+  public com.google.analytics.admin.v1alpha.PropertyType getPropertyType() {
+    @SuppressWarnings("deprecation")
+    com.google.analytics.admin.v1alpha.PropertyType result =
+        com.google.analytics.admin.v1alpha.PropertyType.valueOf(propertyType_);
+    return result == null ? com.google.analytics.admin.v1alpha.PropertyType.UNRECOGNIZED : result;
   }
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
@@ -388,8 +442,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Immutable. Resource name of this property's logical parent.
    * Note: The Property-Moving UI can be used to change the parent.
-   * Format: accounts/{account}
-   * Example: "accounts/100"
+   * Format: accounts/{account}, properties/{property}
+   * Example: "accounts/100", "properties/101"
    * </pre>
    *
    * <code>string parent = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -414,8 +468,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Immutable. Resource name of this property's logical parent.
    * Note: The Property-Moving UI can be used to change the parent.
-   * Format: accounts/{account}
-   * Example: "accounts/100"
+   * Format: accounts/{account}, properties/{property}
+   * Example: "accounts/100", "properties/101"
    * </pre>
    *
    * <code>string parent = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -897,6 +951,10 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(account_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, account_);
     }
+    if (propertyType_
+        != com.google.analytics.admin.v1alpha.PropertyType.PROPERTY_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(14, propertyType_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -945,6 +1003,10 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(account_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, account_);
     }
+    if (propertyType_
+        != com.google.analytics.admin.v1alpha.PropertyType.PROPERTY_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, propertyType_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -962,6 +1024,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
         (com.google.analytics.admin.v1alpha.Property) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (propertyType_ != other.propertyType_) return false;
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
@@ -998,6 +1061,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + PROPERTY_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + propertyType_;
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
@@ -1175,6 +1240,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       name_ = "";
 
+      propertyType_ = 0;
+
       if (createTimeBuilder_ == null) {
         createTime_ = null;
       } else {
@@ -1241,6 +1308,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       com.google.analytics.admin.v1alpha.Property result =
           new com.google.analytics.admin.v1alpha.Property(this);
       result.name_ = name_;
+      result.propertyType_ = propertyType_;
       if (createTimeBuilder_ == null) {
         result.createTime_ = createTime_;
       } else {
@@ -1320,6 +1388,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
+      }
+      if (other.propertyType_ != 0) {
+        setPropertyTypeValue(other.getPropertyTypeValue());
       }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
@@ -1500,6 +1571,122 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int propertyType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The property type for this Property resource. When creating a property, if
+     * the type is "PROPERTY_TYPE_UNSPECIFIED", then "ORDINARY_PROPERTY" will be
+     * implied. "SUBPROPERTY" and "ROLLUP_PROPERTY" types cannot yet be created
+     * via Google Analytics Admin API.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.PropertyType property_type = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for propertyType.
+     */
+    @java.lang.Override
+    public int getPropertyTypeValue() {
+      return propertyType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The property type for this Property resource. When creating a property, if
+     * the type is "PROPERTY_TYPE_UNSPECIFIED", then "ORDINARY_PROPERTY" will be
+     * implied. "SUBPROPERTY" and "ROLLUP_PROPERTY" types cannot yet be created
+     * via Google Analytics Admin API.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.PropertyType property_type = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for propertyType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPropertyTypeValue(int value) {
+
+      propertyType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The property type for this Property resource. When creating a property, if
+     * the type is "PROPERTY_TYPE_UNSPECIFIED", then "ORDINARY_PROPERTY" will be
+     * implied. "SUBPROPERTY" and "ROLLUP_PROPERTY" types cannot yet be created
+     * via Google Analytics Admin API.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.PropertyType property_type = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The propertyType.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.PropertyType getPropertyType() {
+      @SuppressWarnings("deprecation")
+      com.google.analytics.admin.v1alpha.PropertyType result =
+          com.google.analytics.admin.v1alpha.PropertyType.valueOf(propertyType_);
+      return result == null ? com.google.analytics.admin.v1alpha.PropertyType.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The property type for this Property resource. When creating a property, if
+     * the type is "PROPERTY_TYPE_UNSPECIFIED", then "ORDINARY_PROPERTY" will be
+     * implied. "SUBPROPERTY" and "ROLLUP_PROPERTY" types cannot yet be created
+     * via Google Analytics Admin API.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.PropertyType property_type = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The propertyType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPropertyType(com.google.analytics.admin.v1alpha.PropertyType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      propertyType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The property type for this Property resource. When creating a property, if
+     * the type is "PROPERTY_TYPE_UNSPECIFIED", then "ORDINARY_PROPERTY" will be
+     * implied. "SUBPROPERTY" and "ROLLUP_PROPERTY" types cannot yet be created
+     * via Google Analytics Admin API.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.PropertyType property_type = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPropertyType() {
+
+      propertyType_ = 0;
       onChanged();
       return this;
     }
@@ -1913,8 +2100,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. Resource name of this property's logical parent.
      * Note: The Property-Moving UI can be used to change the parent.
-     * Format: accounts/{account}
-     * Example: "accounts/100"
+     * Format: accounts/{account}, properties/{property}
+     * Example: "accounts/100", "properties/101"
      * </pre>
      *
      * <code>string parent = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1938,8 +2125,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. Resource name of this property's logical parent.
      * Note: The Property-Moving UI can be used to change the parent.
-     * Format: accounts/{account}
-     * Example: "accounts/100"
+     * Format: accounts/{account}, properties/{property}
+     * Example: "accounts/100", "properties/101"
      * </pre>
      *
      * <code>string parent = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1963,8 +2150,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. Resource name of this property's logical parent.
      * Note: The Property-Moving UI can be used to change the parent.
-     * Format: accounts/{account}
-     * Example: "accounts/100"
+     * Format: accounts/{account}, properties/{property}
+     * Example: "accounts/100", "properties/101"
      * </pre>
      *
      * <code>string parent = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1987,8 +2174,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. Resource name of this property's logical parent.
      * Note: The Property-Moving UI can be used to change the parent.
-     * Format: accounts/{account}
-     * Example: "accounts/100"
+     * Format: accounts/{account}, properties/{property}
+     * Example: "accounts/100", "properties/101"
      * </pre>
      *
      * <code>string parent = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2007,8 +2194,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. Resource name of this property's logical parent.
      * Note: The Property-Moving UI can be used to change the parent.
-     * Format: accounts/{account}
-     * Example: "accounts/100"
+     * Format: accounts/{account}, properties/{property}
+     * Example: "accounts/100", "properties/101"
      * </pre>
      *
      * <code>string parent = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>

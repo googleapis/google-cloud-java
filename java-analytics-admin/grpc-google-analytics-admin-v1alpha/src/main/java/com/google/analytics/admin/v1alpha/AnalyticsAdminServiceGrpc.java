@@ -3611,6 +3611,341 @@ public final class AnalyticsAdminServiceGrpc {
     return getGetDataStreamMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetAudienceRequest,
+          com.google.analytics.admin.v1alpha.Audience>
+      getGetAudienceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAudience",
+      requestType = com.google.analytics.admin.v1alpha.GetAudienceRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.Audience.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetAudienceRequest,
+          com.google.analytics.admin.v1alpha.Audience>
+      getGetAudienceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetAudienceRequest,
+            com.google.analytics.admin.v1alpha.Audience>
+        getGetAudienceMethod;
+    if ((getGetAudienceMethod = AnalyticsAdminServiceGrpc.getGetAudienceMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetAudienceMethod = AnalyticsAdminServiceGrpc.getGetAudienceMethod) == null) {
+          AnalyticsAdminServiceGrpc.getGetAudienceMethod =
+              getGetAudienceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetAudienceRequest,
+                          com.google.analytics.admin.v1alpha.Audience>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAudience"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetAudienceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.Audience.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("GetAudience"))
+                      .build();
+        }
+      }
+    }
+    return getGetAudienceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListAudiencesRequest,
+          com.google.analytics.admin.v1alpha.ListAudiencesResponse>
+      getListAudiencesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAudiences",
+      requestType = com.google.analytics.admin.v1alpha.ListAudiencesRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ListAudiencesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListAudiencesRequest,
+          com.google.analytics.admin.v1alpha.ListAudiencesResponse>
+      getListAudiencesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListAudiencesRequest,
+            com.google.analytics.admin.v1alpha.ListAudiencesResponse>
+        getListAudiencesMethod;
+    if ((getListAudiencesMethod = AnalyticsAdminServiceGrpc.getListAudiencesMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListAudiencesMethod = AnalyticsAdminServiceGrpc.getListAudiencesMethod) == null) {
+          AnalyticsAdminServiceGrpc.getListAudiencesMethod =
+              getListAudiencesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ListAudiencesRequest,
+                          com.google.analytics.admin.v1alpha.ListAudiencesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAudiences"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListAudiencesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListAudiencesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("ListAudiences"))
+                      .build();
+        }
+      }
+    }
+    return getListAudiencesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateAudienceRequest,
+          com.google.analytics.admin.v1alpha.Audience>
+      getCreateAudienceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateAudience",
+      requestType = com.google.analytics.admin.v1alpha.CreateAudienceRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.Audience.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateAudienceRequest,
+          com.google.analytics.admin.v1alpha.Audience>
+      getCreateAudienceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CreateAudienceRequest,
+            com.google.analytics.admin.v1alpha.Audience>
+        getCreateAudienceMethod;
+    if ((getCreateAudienceMethod = AnalyticsAdminServiceGrpc.getCreateAudienceMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateAudienceMethod = AnalyticsAdminServiceGrpc.getCreateAudienceMethod) == null) {
+          AnalyticsAdminServiceGrpc.getCreateAudienceMethod =
+              getCreateAudienceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.CreateAudienceRequest,
+                          com.google.analytics.admin.v1alpha.Audience>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateAudience"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CreateAudienceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.Audience.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("CreateAudience"))
+                      .build();
+        }
+      }
+    }
+    return getCreateAudienceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateAudienceRequest,
+          com.google.analytics.admin.v1alpha.Audience>
+      getUpdateAudienceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAudience",
+      requestType = com.google.analytics.admin.v1alpha.UpdateAudienceRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.Audience.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateAudienceRequest,
+          com.google.analytics.admin.v1alpha.Audience>
+      getUpdateAudienceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateAudienceRequest,
+            com.google.analytics.admin.v1alpha.Audience>
+        getUpdateAudienceMethod;
+    if ((getUpdateAudienceMethod = AnalyticsAdminServiceGrpc.getUpdateAudienceMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateAudienceMethod = AnalyticsAdminServiceGrpc.getUpdateAudienceMethod) == null) {
+          AnalyticsAdminServiceGrpc.getUpdateAudienceMethod =
+              getUpdateAudienceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateAudienceRequest,
+                          com.google.analytics.admin.v1alpha.Audience>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateAudience"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.UpdateAudienceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.Audience.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("UpdateAudience"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateAudienceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ArchiveAudienceRequest, com.google.protobuf.Empty>
+      getArchiveAudienceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ArchiveAudience",
+      requestType = com.google.analytics.admin.v1alpha.ArchiveAudienceRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ArchiveAudienceRequest, com.google.protobuf.Empty>
+      getArchiveAudienceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ArchiveAudienceRequest, com.google.protobuf.Empty>
+        getArchiveAudienceMethod;
+    if ((getArchiveAudienceMethod = AnalyticsAdminServiceGrpc.getArchiveAudienceMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getArchiveAudienceMethod = AnalyticsAdminServiceGrpc.getArchiveAudienceMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getArchiveAudienceMethod =
+              getArchiveAudienceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ArchiveAudienceRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ArchiveAudience"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ArchiveAudienceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("ArchiveAudience"))
+                      .build();
+        }
+      }
+    }
+    return getArchiveAudienceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest,
+          com.google.analytics.admin.v1alpha.AttributionSettings>
+      getGetAttributionSettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAttributionSettings",
+      requestType = com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.AttributionSettings.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest,
+          com.google.analytics.admin.v1alpha.AttributionSettings>
+      getGetAttributionSettingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest,
+            com.google.analytics.admin.v1alpha.AttributionSettings>
+        getGetAttributionSettingsMethod;
+    if ((getGetAttributionSettingsMethod =
+            AnalyticsAdminServiceGrpc.getGetAttributionSettingsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetAttributionSettingsMethod =
+                AnalyticsAdminServiceGrpc.getGetAttributionSettingsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetAttributionSettingsMethod =
+              getGetAttributionSettingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest,
+                          com.google.analytics.admin.v1alpha.AttributionSettings>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetAttributionSettings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.AttributionSettings
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "GetAttributionSettings"))
+                      .build();
+        }
+      }
+    }
+    return getGetAttributionSettingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest,
+          com.google.analytics.admin.v1alpha.AttributionSettings>
+      getUpdateAttributionSettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAttributionSettings",
+      requestType = com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.AttributionSettings.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest,
+          com.google.analytics.admin.v1alpha.AttributionSettings>
+      getUpdateAttributionSettingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest,
+            com.google.analytics.admin.v1alpha.AttributionSettings>
+        getUpdateAttributionSettingsMethod;
+    if ((getUpdateAttributionSettingsMethod =
+            AnalyticsAdminServiceGrpc.getUpdateAttributionSettingsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateAttributionSettingsMethod =
+                AnalyticsAdminServiceGrpc.getUpdateAttributionSettingsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateAttributionSettingsMethod =
+              getUpdateAttributionSettingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest,
+                          com.google.analytics.admin.v1alpha.AttributionSettings>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateAttributionSettings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.AttributionSettings
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "UpdateAttributionSettings"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateAttributionSettingsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AnalyticsAdminServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AnalyticsAdminServiceStub> factory =
@@ -4777,6 +5112,109 @@ public final class AnalyticsAdminServiceGrpc {
           getGetDataStreamMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single Audience.
+     * Audiences created before 2020 may not be supported.
+     * </pre>
+     */
+    public void getAudience(
+        com.google.analytics.admin.v1alpha.GetAudienceRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Audience> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAudienceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Audiences on a property.
+     * Audiences created before 2020 may not be supported.
+     * </pre>
+     */
+    public void listAudiences(
+        com.google.analytics.admin.v1alpha.ListAudiencesRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListAudiencesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAudiencesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Audience.
+     * </pre>
+     */
+    public void createAudience(
+        com.google.analytics.admin.v1alpha.CreateAudienceRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Audience> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateAudienceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an Audience on a property.
+     * </pre>
+     */
+    public void updateAudience(
+        com.google.analytics.admin.v1alpha.UpdateAudienceRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Audience> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateAudienceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Archives an Audience on a property.
+     * </pre>
+     */
+    public void archiveAudience(
+        com.google.analytics.admin.v1alpha.ArchiveAudienceRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getArchiveAudienceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a AttributionSettings singleton.
+     * </pre>
+     */
+    public void getAttributionSettings(
+        com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AttributionSettings>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAttributionSettingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates attribution settings on a property.
+     * </pre>
+     */
+    public void updateAttributionSettings(
+        com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AttributionSettings>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateAttributionSettingsMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -5270,6 +5708,51 @@ public final class AnalyticsAdminServiceGrpc {
                       com.google.analytics.admin.v1alpha.GetDataStreamRequest,
                       com.google.analytics.admin.v1alpha.DataStream>(
                       this, METHODID_GET_DATA_STREAM)))
+          .addMethod(
+              getGetAudienceMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.GetAudienceRequest,
+                      com.google.analytics.admin.v1alpha.Audience>(this, METHODID_GET_AUDIENCE)))
+          .addMethod(
+              getListAudiencesMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.ListAudiencesRequest,
+                      com.google.analytics.admin.v1alpha.ListAudiencesResponse>(
+                      this, METHODID_LIST_AUDIENCES)))
+          .addMethod(
+              getCreateAudienceMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.CreateAudienceRequest,
+                      com.google.analytics.admin.v1alpha.Audience>(this, METHODID_CREATE_AUDIENCE)))
+          .addMethod(
+              getUpdateAudienceMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.UpdateAudienceRequest,
+                      com.google.analytics.admin.v1alpha.Audience>(this, METHODID_UPDATE_AUDIENCE)))
+          .addMethod(
+              getArchiveAudienceMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.ArchiveAudienceRequest,
+                      com.google.protobuf.Empty>(this, METHODID_ARCHIVE_AUDIENCE)))
+          .addMethod(
+              getGetAttributionSettingsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest,
+                      com.google.analytics.admin.v1alpha.AttributionSettings>(
+                      this, METHODID_GET_ATTRIBUTION_SETTINGS)))
+          .addMethod(
+              getUpdateAttributionSettingsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest,
+                      com.google.analytics.admin.v1alpha.AttributionSettings>(
+                      this, METHODID_UPDATE_ATTRIBUTION_SETTINGS)))
           .build();
     }
   }
@@ -6555,6 +7038,123 @@ public final class AnalyticsAdminServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single Audience.
+     * Audiences created before 2020 may not be supported.
+     * </pre>
+     */
+    public void getAudience(
+        com.google.analytics.admin.v1alpha.GetAudienceRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Audience> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAudienceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Audiences on a property.
+     * Audiences created before 2020 may not be supported.
+     * </pre>
+     */
+    public void listAudiences(
+        com.google.analytics.admin.v1alpha.ListAudiencesRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListAudiencesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAudiencesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Audience.
+     * </pre>
+     */
+    public void createAudience(
+        com.google.analytics.admin.v1alpha.CreateAudienceRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Audience> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateAudienceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an Audience on a property.
+     * </pre>
+     */
+    public void updateAudience(
+        com.google.analytics.admin.v1alpha.UpdateAudienceRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Audience> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAudienceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Archives an Audience on a property.
+     * </pre>
+     */
+    public void archiveAudience(
+        com.google.analytics.admin.v1alpha.ArchiveAudienceRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getArchiveAudienceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a AttributionSettings singleton.
+     * </pre>
+     */
+    public void getAttributionSettings(
+        com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AttributionSettings>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAttributionSettingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates attribution settings on a property.
+     * </pre>
+     */
+    public void updateAttributionSettings(
+        com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AttributionSettings>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAttributionSettingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -7590,6 +8190,99 @@ public final class AnalyticsAdminServiceGrpc {
         com.google.analytics.admin.v1alpha.GetDataStreamRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetDataStreamMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single Audience.
+     * Audiences created before 2020 may not be supported.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.Audience getAudience(
+        com.google.analytics.admin.v1alpha.GetAudienceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAudienceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Audiences on a property.
+     * Audiences created before 2020 may not be supported.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListAudiencesResponse listAudiences(
+        com.google.analytics.admin.v1alpha.ListAudiencesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAudiencesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Audience.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.Audience createAudience(
+        com.google.analytics.admin.v1alpha.CreateAudienceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAudienceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an Audience on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.Audience updateAudience(
+        com.google.analytics.admin.v1alpha.UpdateAudienceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAudienceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Archives an Audience on a property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty archiveAudience(
+        com.google.analytics.admin.v1alpha.ArchiveAudienceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getArchiveAudienceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a AttributionSettings singleton.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.AttributionSettings getAttributionSettings(
+        com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAttributionSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates attribution settings on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.AttributionSettings updateAttributionSettings(
+        com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAttributionSettingsMethod(), getCallOptions(), request);
     }
   }
 
@@ -8710,6 +9403,107 @@ public final class AnalyticsAdminServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetDataStreamMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single Audience.
+     * Audiences created before 2020 may not be supported.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.Audience>
+        getAudience(com.google.analytics.admin.v1alpha.GetAudienceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAudienceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Audiences on a property.
+     * Audiences created before 2020 may not be supported.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListAudiencesResponse>
+        listAudiences(com.google.analytics.admin.v1alpha.ListAudiencesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAudiencesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Audience.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.Audience>
+        createAudience(com.google.analytics.admin.v1alpha.CreateAudienceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateAudienceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an Audience on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.Audience>
+        updateAudience(com.google.analytics.admin.v1alpha.UpdateAudienceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAudienceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Archives an Audience on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        archiveAudience(com.google.analytics.admin.v1alpha.ArchiveAudienceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getArchiveAudienceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a AttributionSettings singleton.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.AttributionSettings>
+        getAttributionSettings(
+            com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAttributionSettingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates attribution settings on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.AttributionSettings>
+        updateAttributionSettings(
+            com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAttributionSettingsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_ACCOUNT = 0;
@@ -8783,6 +9577,13 @@ public final class AnalyticsAdminServiceGrpc {
   private static final int METHODID_UPDATE_DATA_STREAM = 68;
   private static final int METHODID_LIST_DATA_STREAMS = 69;
   private static final int METHODID_GET_DATA_STREAM = 70;
+  private static final int METHODID_GET_AUDIENCE = 71;
+  private static final int METHODID_LIST_AUDIENCES = 72;
+  private static final int METHODID_CREATE_AUDIENCE = 73;
+  private static final int METHODID_UPDATE_AUDIENCE = 74;
+  private static final int METHODID_ARCHIVE_AUDIENCE = 75;
+  private static final int METHODID_GET_ATTRIBUTION_SETTINGS = 76;
+  private static final int METHODID_UPDATE_ATTRIBUTION_SETTINGS = 77;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -9265,6 +10066,48 @@ public final class AnalyticsAdminServiceGrpc {
               (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataStream>)
                   responseObserver);
           break;
+        case METHODID_GET_AUDIENCE:
+          serviceImpl.getAudience(
+              (com.google.analytics.admin.v1alpha.GetAudienceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Audience>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_AUDIENCES:
+          serviceImpl.listAudiences(
+              (com.google.analytics.admin.v1alpha.ListAudiencesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ListAudiencesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_AUDIENCE:
+          serviceImpl.createAudience(
+              (com.google.analytics.admin.v1alpha.CreateAudienceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Audience>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_AUDIENCE:
+          serviceImpl.updateAudience(
+              (com.google.analytics.admin.v1alpha.UpdateAudienceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Audience>)
+                  responseObserver);
+          break;
+        case METHODID_ARCHIVE_AUDIENCE:
+          serviceImpl.archiveAudience(
+              (com.google.analytics.admin.v1alpha.ArchiveAudienceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_GET_ATTRIBUTION_SETTINGS:
+          serviceImpl.getAttributionSettings(
+              (com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AttributionSettings>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_ATTRIBUTION_SETTINGS:
+          serviceImpl.updateAttributionSettings(
+              (com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AttributionSettings>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -9400,6 +10243,13 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getUpdateDataStreamMethod())
                       .addMethod(getListDataStreamsMethod())
                       .addMethod(getGetDataStreamMethod())
+                      .addMethod(getGetAudienceMethod())
+                      .addMethod(getListAudiencesMethod())
+                      .addMethod(getCreateAudienceMethod())
+                      .addMethod(getUpdateAudienceMethod())
+                      .addMethod(getArchiveAudienceMethod())
+                      .addMethod(getGetAttributionSettingsMethod())
+                      .addMethod(getUpdateAttributionSettingsMethod())
                       .build();
         }
       }
