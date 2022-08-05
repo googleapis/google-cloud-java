@@ -4,3 +4,5 @@
 google-cloud-dataform:0.1.0:0.1.0
 proto-google-cloud-dataform-v1alpha2:0.1.0:0.1.0
 grpc-google-cloud-dataform-v1alpha2:0.1.0:0.1.0
+proto-google-cloud-dataform-v1beta1:0.1.0:0.1.0
+grpc-google-cloud-dataform-v1beta1:0.1.0:0.1.0

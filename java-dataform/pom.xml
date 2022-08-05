@@ -73,6 +73,16 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-dataform-v1beta1</artifactId>
+        <version>0.1.0</version><!-- {x-version-update:proto-google-cloud-dataform-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-dataform-v1beta1</artifactId>
+        <version>0.1.0</version><!-- {x-version-update:grpc-google-cloud-dataform-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dataform-v1alpha2</artifactId>
         <version>0.1.0</version><!-- {x-version-update:grpc-google-cloud-dataform-v1alpha2:current} -->
       </dependency>
@@ -112,7 +122,9 @@
   <modules>
     <module>google-cloud-dataform</module>
     <module>grpc-google-cloud-dataform-v1alpha2</module>
+    <module>grpc-google-cloud-dataform-v1beta1</module>
     <module>proto-google-cloud-dataform-v1alpha2</module>
+    <module>proto-google-cloud-dataform-v1beta1</module>
     <module>google-cloud-dataform-bom</module>
   </modules>
 
