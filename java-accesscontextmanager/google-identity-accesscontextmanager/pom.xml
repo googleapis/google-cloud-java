@@ -67,7 +67,7 @@
       <artifactId>threetenbp</artifactId>
     </dependency>
 
-    <!-- Test dependencies -->
+    <!-- Test dependencies test -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
