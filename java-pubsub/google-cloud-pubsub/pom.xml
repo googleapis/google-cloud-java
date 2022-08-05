@@ -24,7 +24,7 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-stub</artifactId>
-      <scope>test</scope>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
@@ -85,7 +85,7 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-core</artifactId>
-      <scope>test</scope>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>com.google.errorprone</groupId>
@@ -98,7 +98,7 @@
     <dependency>
       <groupId>com.google.http-client</groupId>
       <artifactId>google-http-client</artifactId>
-      <scope>test</scope>
+      <scope>runtime</scope>
     </dependency>
 
     <!-- Test dependencies -->
@@ -169,7 +169,6 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>3.3.0</version>
           <configuration>
             <ignoredUnusedDeclaredDependencies>
               <ignoredUnusedDeclaredDependency>com.google.auth:google-auth-library-oauth2-http:jar</ignoredUnusedDeclaredDependency>
