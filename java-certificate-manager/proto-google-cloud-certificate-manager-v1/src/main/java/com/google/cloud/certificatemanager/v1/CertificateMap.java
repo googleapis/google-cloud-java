@@ -203,11 +203,11 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A name must be in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;targetHttpsProxies/&#42;`.
+     * This field returns the resource name in the following format:
+     * `//compute.googleapis.com/projects/&#42;&#47;global/targetHttpsProxies/&#42;`.
      * </pre>
      *
-     * <code>string target_https_proxy = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string target_https_proxy = 1;</code>
      *
      * @return Whether the targetHttpsProxy field is set.
      */
@@ -216,11 +216,11 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A name must be in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;targetHttpsProxies/&#42;`.
+     * This field returns the resource name in the following format:
+     * `//compute.googleapis.com/projects/&#42;&#47;global/targetHttpsProxies/&#42;`.
      * </pre>
      *
-     * <code>string target_https_proxy = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string target_https_proxy = 1;</code>
      *
      * @return The targetHttpsProxy.
      */
@@ -229,11 +229,11 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A name must be in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;targetHttpsProxies/&#42;`.
+     * This field returns the resource name in the following format:
+     * `//compute.googleapis.com/projects/&#42;&#47;global/targetHttpsProxies/&#42;`.
      * </pre>
      *
-     * <code>string target_https_proxy = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string target_https_proxy = 1;</code>
      *
      * @return The bytes for targetHttpsProxy.
      */
@@ -243,11 +243,11 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A name must be in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;targetSslProxies/&#42;`.
+     * This field returns the resource name in the following format:
+     * `//compute.googleapis.com/projects/&#42;&#47;global/targetSslProxies/&#42;`.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string target_ssl_proxy = 3;</code>
      *
      * @return Whether the targetSslProxy field is set.
      */
@@ -256,11 +256,11 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A name must be in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;targetSslProxies/&#42;`.
+     * This field returns the resource name in the following format:
+     * `//compute.googleapis.com/projects/&#42;&#47;global/targetSslProxies/&#42;`.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string target_ssl_proxy = 3;</code>
      *
      * @return The targetSslProxy.
      */
@@ -269,11 +269,11 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A name must be in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;targetSslProxies/&#42;`.
+     * This field returns the resource name in the following format:
+     * `//compute.googleapis.com/projects/&#42;&#47;global/targetSslProxies/&#42;`.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string target_ssl_proxy = 3;</code>
      *
      * @return The bytes for targetSslProxy.
      */
@@ -1498,11 +1498,11 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A name must be in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;targetHttpsProxies/&#42;`.
+     * This field returns the resource name in the following format:
+     * `//compute.googleapis.com/projects/&#42;&#47;global/targetHttpsProxies/&#42;`.
      * </pre>
      *
-     * <code>string target_https_proxy = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string target_https_proxy = 1;</code>
      *
      * @return Whether the targetHttpsProxy field is set.
      */
@@ -1513,11 +1513,11 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A name must be in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;targetHttpsProxies/&#42;`.
+     * This field returns the resource name in the following format:
+     * `//compute.googleapis.com/projects/&#42;&#47;global/targetHttpsProxies/&#42;`.
      * </pre>
      *
-     * <code>string target_https_proxy = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string target_https_proxy = 1;</code>
      *
      * @return The targetHttpsProxy.
      */
@@ -1541,11 +1541,11 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A name must be in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;targetHttpsProxies/&#42;`.
+     * This field returns the resource name in the following format:
+     * `//compute.googleapis.com/projects/&#42;&#47;global/targetHttpsProxies/&#42;`.
      * </pre>
      *
-     * <code>string target_https_proxy = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string target_https_proxy = 1;</code>
      *
      * @return The bytes for targetHttpsProxy.
      */
@@ -1571,11 +1571,11 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A name must be in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;targetSslProxies/&#42;`.
+     * This field returns the resource name in the following format:
+     * `//compute.googleapis.com/projects/&#42;&#47;global/targetSslProxies/&#42;`.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string target_ssl_proxy = 3;</code>
      *
      * @return Whether the targetSslProxy field is set.
      */
@@ -1586,11 +1586,11 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A name must be in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;targetSslProxies/&#42;`.
+     * This field returns the resource name in the following format:
+     * `//compute.googleapis.com/projects/&#42;&#47;global/targetSslProxies/&#42;`.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string target_ssl_proxy = 3;</code>
      *
      * @return The targetSslProxy.
      */
@@ -1614,11 +1614,11 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A name must be in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;targetSslProxies/&#42;`.
+     * This field returns the resource name in the following format:
+     * `//compute.googleapis.com/projects/&#42;&#47;global/targetSslProxies/&#42;`.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string target_ssl_proxy = 3;</code>
      *
      * @return The bytes for targetSslProxy.
      */
@@ -2185,11 +2185,11 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A name must be in the format
-       * `projects/&#42;&#47;locations/&#42;&#47;targetHttpsProxies/&#42;`.
+       * This field returns the resource name in the following format:
+       * `//compute.googleapis.com/projects/&#42;&#47;global/targetHttpsProxies/&#42;`.
        * </pre>
        *
-       * <code>string target_https_proxy = 1 [(.google.api.resource_reference) = { ... }</code>
+       * <code>string target_https_proxy = 1;</code>
        *
        * @return Whether the targetHttpsProxy field is set.
        */
@@ -2201,11 +2201,11 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A name must be in the format
-       * `projects/&#42;&#47;locations/&#42;&#47;targetHttpsProxies/&#42;`.
+       * This field returns the resource name in the following format:
+       * `//compute.googleapis.com/projects/&#42;&#47;global/targetHttpsProxies/&#42;`.
        * </pre>
        *
-       * <code>string target_https_proxy = 1 [(.google.api.resource_reference) = { ... }</code>
+       * <code>string target_https_proxy = 1;</code>
        *
        * @return The targetHttpsProxy.
        */
@@ -2230,11 +2230,11 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A name must be in the format
-       * `projects/&#42;&#47;locations/&#42;&#47;targetHttpsProxies/&#42;`.
+       * This field returns the resource name in the following format:
+       * `//compute.googleapis.com/projects/&#42;&#47;global/targetHttpsProxies/&#42;`.
        * </pre>
        *
-       * <code>string target_https_proxy = 1 [(.google.api.resource_reference) = { ... }</code>
+       * <code>string target_https_proxy = 1;</code>
        *
        * @return The bytes for targetHttpsProxy.
        */
@@ -2259,11 +2259,11 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A name must be in the format
-       * `projects/&#42;&#47;locations/&#42;&#47;targetHttpsProxies/&#42;`.
+       * This field returns the resource name in the following format:
+       * `//compute.googleapis.com/projects/&#42;&#47;global/targetHttpsProxies/&#42;`.
        * </pre>
        *
-       * <code>string target_https_proxy = 1 [(.google.api.resource_reference) = { ... }</code>
+       * <code>string target_https_proxy = 1;</code>
        *
        * @param value The targetHttpsProxy to set.
        * @return This builder for chaining.
@@ -2281,11 +2281,11 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A name must be in the format
-       * `projects/&#42;&#47;locations/&#42;&#47;targetHttpsProxies/&#42;`.
+       * This field returns the resource name in the following format:
+       * `//compute.googleapis.com/projects/&#42;&#47;global/targetHttpsProxies/&#42;`.
        * </pre>
        *
-       * <code>string target_https_proxy = 1 [(.google.api.resource_reference) = { ... }</code>
+       * <code>string target_https_proxy = 1;</code>
        *
        * @return This builder for chaining.
        */
@@ -2301,11 +2301,11 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A name must be in the format
-       * `projects/&#42;&#47;locations/&#42;&#47;targetHttpsProxies/&#42;`.
+       * This field returns the resource name in the following format:
+       * `//compute.googleapis.com/projects/&#42;&#47;global/targetHttpsProxies/&#42;`.
        * </pre>
        *
-       * <code>string target_https_proxy = 1 [(.google.api.resource_reference) = { ... }</code>
+       * <code>string target_https_proxy = 1;</code>
        *
        * @param value The bytes for targetHttpsProxy to set.
        * @return This builder for chaining.
@@ -2325,11 +2325,11 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A name must be in the format
-       * `projects/&#42;&#47;locations/&#42;&#47;targetSslProxies/&#42;`.
+       * This field returns the resource name in the following format:
+       * `//compute.googleapis.com/projects/&#42;&#47;global/targetSslProxies/&#42;`.
        * </pre>
        *
-       * <code>string target_ssl_proxy = 3 [(.google.api.resource_reference) = { ... }</code>
+       * <code>string target_ssl_proxy = 3;</code>
        *
        * @return Whether the targetSslProxy field is set.
        */
@@ -2341,11 +2341,11 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A name must be in the format
-       * `projects/&#42;&#47;locations/&#42;&#47;targetSslProxies/&#42;`.
+       * This field returns the resource name in the following format:
+       * `//compute.googleapis.com/projects/&#42;&#47;global/targetSslProxies/&#42;`.
        * </pre>
        *
-       * <code>string target_ssl_proxy = 3 [(.google.api.resource_reference) = { ... }</code>
+       * <code>string target_ssl_proxy = 3;</code>
        *
        * @return The targetSslProxy.
        */
@@ -2370,11 +2370,11 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A name must be in the format
-       * `projects/&#42;&#47;locations/&#42;&#47;targetSslProxies/&#42;`.
+       * This field returns the resource name in the following format:
+       * `//compute.googleapis.com/projects/&#42;&#47;global/targetSslProxies/&#42;`.
        * </pre>
        *
-       * <code>string target_ssl_proxy = 3 [(.google.api.resource_reference) = { ... }</code>
+       * <code>string target_ssl_proxy = 3;</code>
        *
        * @return The bytes for targetSslProxy.
        */
@@ -2399,11 +2399,11 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A name must be in the format
-       * `projects/&#42;&#47;locations/&#42;&#47;targetSslProxies/&#42;`.
+       * This field returns the resource name in the following format:
+       * `//compute.googleapis.com/projects/&#42;&#47;global/targetSslProxies/&#42;`.
        * </pre>
        *
-       * <code>string target_ssl_proxy = 3 [(.google.api.resource_reference) = { ... }</code>
+       * <code>string target_ssl_proxy = 3;</code>
        *
        * @param value The targetSslProxy to set.
        * @return This builder for chaining.
@@ -2421,11 +2421,11 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A name must be in the format
-       * `projects/&#42;&#47;locations/&#42;&#47;targetSslProxies/&#42;`.
+       * This field returns the resource name in the following format:
+       * `//compute.googleapis.com/projects/&#42;&#47;global/targetSslProxies/&#42;`.
        * </pre>
        *
-       * <code>string target_ssl_proxy = 3 [(.google.api.resource_reference) = { ... }</code>
+       * <code>string target_ssl_proxy = 3;</code>
        *
        * @return This builder for chaining.
        */
@@ -2441,11 +2441,11 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A name must be in the format
-       * `projects/&#42;&#47;locations/&#42;&#47;targetSslProxies/&#42;`.
+       * This field returns the resource name in the following format:
+       * `//compute.googleapis.com/projects/&#42;&#47;global/targetSslProxies/&#42;`.
        * </pre>
        *
-       * <code>string target_ssl_proxy = 3 [(.google.api.resource_reference) = { ... }</code>
+       * <code>string target_ssl_proxy = 3;</code>
        *
        * @param value The bytes for targetSslProxy to set.
        * @return This builder for chaining.

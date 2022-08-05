@@ -20,6 +20,7 @@ import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.Li
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificateMapsPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificatesPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListDnsAuthorizationsPagedResponse;
+import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -79,6 +80,10 @@ import com.google.cloud.certificatemanager.v1.UpdateCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateRequest;
 import com.google.cloud.certificatemanager.v1.UpdateDnsAuthorizationRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -206,6 +211,10 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
       deleteDnsAuthorizationSettings;
   private final OperationCallSettings<DeleteDnsAuthorizationRequest, Empty, OperationMetadata>
       deleteDnsAuthorizationOperationSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
 
   private static final PagedListDescriptor<
           ListCertificatesRequest, ListCertificatesResponse, Certificate>
@@ -375,6 +384,42 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListCertificatesRequest, ListCertificatesResponse, ListCertificatesPagedResponse>
       LIST_CERTIFICATES_PAGE_STR_FACT =
@@ -464,6 +509,23 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
                       PageContext.create(
                           callable, LIST_DNS_AUTHORIZATIONS_PAGE_STR_DESC, request, context);
               return ListDnsAuthorizationsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -661,6 +723,17 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     return deleteDnsAuthorizationOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
+  }
+
   public CertificateManagerStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -811,6 +884,8 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     deleteDnsAuthorizationSettings = settingsBuilder.deleteDnsAuthorizationSettings().build();
     deleteDnsAuthorizationOperationSettings =
         settingsBuilder.deleteDnsAuthorizationOperationSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
   /** Builder for CertificateManagerStubSettings. */
@@ -902,6 +977,10 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     private final OperationCallSettings.Builder<
             DeleteDnsAuthorizationRequest, Empty, OperationMetadata>
         deleteDnsAuthorizationOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -911,6 +990,7 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -930,6 +1010,8 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -975,6 +1057,8 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
       updateDnsAuthorizationOperationSettings = OperationCallSettings.newBuilder();
       deleteDnsAuthorizationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteDnsAuthorizationOperationSettings = OperationCallSettings.newBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -997,7 +1081,9 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
               getDnsAuthorizationSettings,
               createDnsAuthorizationSettings,
               updateDnsAuthorizationSettings,
-              deleteDnsAuthorizationSettings);
+              deleteDnsAuthorizationSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -1045,6 +1131,8 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
       deleteDnsAuthorizationSettings = settings.deleteDnsAuthorizationSettings.toBuilder();
       deleteDnsAuthorizationOperationSettings =
           settings.deleteDnsAuthorizationOperationSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1067,7 +1155,9 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
               getDnsAuthorizationSettings,
               createDnsAuthorizationSettings,
               updateDnsAuthorizationSettings,
-              deleteDnsAuthorizationSettings);
+              deleteDnsAuthorizationSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -1196,6 +1286,16 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
           .deleteDnsAuthorizationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getLocationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .createCertificateOperationSettings()
@@ -1735,6 +1835,18 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     public OperationCallSettings.Builder<DeleteDnsAuthorizationRequest, Empty, OperationMetadata>
         deleteDnsAuthorizationOperationSettings() {
       return deleteDnsAuthorizationOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override

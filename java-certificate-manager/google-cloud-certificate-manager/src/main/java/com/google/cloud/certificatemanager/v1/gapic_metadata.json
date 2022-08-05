@@ -46,6 +46,9 @@
             "GetDnsAuthorization": {
               "methods": ["getDnsAuthorization", "getDnsAuthorization", "getDnsAuthorization", "getDnsAuthorizationCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "ListCertificateMapEntries": {
               "methods": ["listCertificateMapEntries", "listCertificateMapEntries", "listCertificateMapEntries", "listCertificateMapEntriesPagedCallable", "listCertificateMapEntriesCallable"]
             },
@@ -57,6 +60,9 @@
             },
             "ListDnsAuthorizations": {
               "methods": ["listDnsAuthorizations", "listDnsAuthorizations", "listDnsAuthorizations", "listDnsAuthorizationsPagedCallable", "listDnsAuthorizationsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "UpdateCertificate": {
               "methods": ["updateCertificateAsync", "updateCertificateAsync", "updateCertificateOperationCallable", "updateCertificateCallable"]
