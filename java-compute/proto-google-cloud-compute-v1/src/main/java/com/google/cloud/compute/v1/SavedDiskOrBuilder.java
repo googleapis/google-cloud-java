@@ -27,6 +27,46 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
+   * [Output Only] The architecture of the attached disk.
+   * Check the Architecture enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string architecture = 302803283;</code>
+   *
+   * @return Whether the architecture field is set.
+   */
+  boolean hasArchitecture();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The architecture of the attached disk.
+   * Check the Architecture enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string architecture = 302803283;</code>
+   *
+   * @return The architecture.
+   */
+  java.lang.String getArchitecture();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The architecture of the attached disk.
+   * Check the Architecture enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string architecture = 302803283;</code>
+   *
+   * @return The bytes for architecture.
+   */
+  com.google.protobuf.ByteString getArchitectureBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Type of the resource. Always compute#savedDisk for attached disks.
    * </pre>
    *

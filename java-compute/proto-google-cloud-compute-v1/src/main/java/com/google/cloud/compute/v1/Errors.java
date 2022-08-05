@@ -38,6 +38,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
 
   private Errors() {
     code_ = "";
+    errorDetails_ = java.util.Collections.emptyList();
     location_ = "";
     message_ = "";
   }
@@ -79,6 +80,17 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
               code_ = s;
               break;
             }
+          case -2097735590:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                errorDetails_ = new java.util.ArrayList<com.google.cloud.compute.v1.ErrorDetails>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              errorDetails_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.ErrorDetails.parser(), extensionRegistry));
+              break;
+            }
           case -1971520086:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -109,6 +121,9 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        errorDetails_ = java.util.Collections.unmodifiableList(errorDetails_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -192,6 +207,75 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int ERROR_DETAILS_FIELD_NUMBER = 274653963;
+  private java.util.List<com.google.cloud.compute.v1.ErrorDetails> errorDetails_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.ErrorDetails> getErrorDetailsList() {
+    return errorDetails_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.compute.v1.ErrorDetailsOrBuilder>
+      getErrorDetailsOrBuilderList() {
+    return errorDetails_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+   */
+  @java.lang.Override
+  public int getErrorDetailsCount() {
+    return errorDetails_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ErrorDetails getErrorDetails(int index) {
+    return errorDetails_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ErrorDetailsOrBuilder getErrorDetailsOrBuilder(int index) {
+    return errorDetails_.get(index);
   }
 
   public static final int LOCATION_FIELD_NUMBER = 290430901;
@@ -339,6 +423,9 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3059181, code_);
     }
+    for (int i = 0; i < errorDetails_.size(); i++) {
+      output.writeMessage(274653963, errorDetails_.get(i));
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 290430901, location_);
     }
@@ -356,6 +443,10 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3059181, code_);
+    }
+    for (int i = 0; i < errorDetails_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(274653963, errorDetails_.get(i));
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(290430901, location_);
@@ -382,6 +473,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
     if (hasCode()) {
       if (!getCode().equals(other.getCode())) return false;
     }
+    if (!getErrorDetailsList().equals(other.getErrorDetailsList())) return false;
     if (hasLocation() != other.hasLocation()) return false;
     if (hasLocation()) {
       if (!getLocation().equals(other.getLocation())) return false;
@@ -404,6 +496,10 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
     if (hasCode()) {
       hash = (37 * hash) + CODE_FIELD_NUMBER;
       hash = (53 * hash) + getCode().hashCode();
+    }
+    if (getErrorDetailsCount() > 0) {
+      hash = (37 * hash) + ERROR_DETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getErrorDetailsList().hashCode();
     }
     if (hasLocation()) {
       hash = (37 * hash) + LOCATION_FIELD_NUMBER;
@@ -550,7 +646,9 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getErrorDetailsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -558,10 +656,16 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       code_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
+      if (errorDetailsBuilder_ == null) {
+        errorDetails_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        errorDetailsBuilder_.clear();
+      }
       location_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
-      message_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
+      message_ = "";
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -594,11 +698,20 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000001;
       }
       result.code_ = code_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (errorDetailsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          errorDetails_ = java.util.Collections.unmodifiableList(errorDetails_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.errorDetails_ = errorDetails_;
+      } else {
+        result.errorDetails_ = errorDetailsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         to_bitField0_ |= 0x00000002;
       }
       result.location_ = location_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         to_bitField0_ |= 0x00000004;
       }
       result.message_ = message_;
@@ -657,13 +770,40 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
         code_ = other.code_;
         onChanged();
       }
+      if (errorDetailsBuilder_ == null) {
+        if (!other.errorDetails_.isEmpty()) {
+          if (errorDetails_.isEmpty()) {
+            errorDetails_ = other.errorDetails_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureErrorDetailsIsMutable();
+            errorDetails_.addAll(other.errorDetails_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.errorDetails_.isEmpty()) {
+          if (errorDetailsBuilder_.isEmpty()) {
+            errorDetailsBuilder_.dispose();
+            errorDetailsBuilder_ = null;
+            errorDetails_ = other.errorDetails_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            errorDetailsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getErrorDetailsFieldBuilder()
+                    : null;
+          } else {
+            errorDetailsBuilder_.addAllMessages(other.errorDetails_);
+          }
+        }
+      }
       if (other.hasLocation()) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         location_ = other.location_;
         onChanged();
       }
       if (other.hasMessage()) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         message_ = other.message_;
         onChanged();
       }
@@ -818,6 +958,357 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.util.List<com.google.cloud.compute.v1.ErrorDetails> errorDetails_ =
+        java.util.Collections.emptyList();
+
+    private void ensureErrorDetailsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        errorDetails_ =
+            new java.util.ArrayList<com.google.cloud.compute.v1.ErrorDetails>(errorDetails_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.ErrorDetails,
+            com.google.cloud.compute.v1.ErrorDetails.Builder,
+            com.google.cloud.compute.v1.ErrorDetailsOrBuilder>
+        errorDetailsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.ErrorDetails> getErrorDetailsList() {
+      if (errorDetailsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(errorDetails_);
+      } else {
+        return errorDetailsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+     */
+    public int getErrorDetailsCount() {
+      if (errorDetailsBuilder_ == null) {
+        return errorDetails_.size();
+      } else {
+        return errorDetailsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+     */
+    public com.google.cloud.compute.v1.ErrorDetails getErrorDetails(int index) {
+      if (errorDetailsBuilder_ == null) {
+        return errorDetails_.get(index);
+      } else {
+        return errorDetailsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+     */
+    public Builder setErrorDetails(int index, com.google.cloud.compute.v1.ErrorDetails value) {
+      if (errorDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureErrorDetailsIsMutable();
+        errorDetails_.set(index, value);
+        onChanged();
+      } else {
+        errorDetailsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+     */
+    public Builder setErrorDetails(
+        int index, com.google.cloud.compute.v1.ErrorDetails.Builder builderForValue) {
+      if (errorDetailsBuilder_ == null) {
+        ensureErrorDetailsIsMutable();
+        errorDetails_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        errorDetailsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+     */
+    public Builder addErrorDetails(com.google.cloud.compute.v1.ErrorDetails value) {
+      if (errorDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureErrorDetailsIsMutable();
+        errorDetails_.add(value);
+        onChanged();
+      } else {
+        errorDetailsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+     */
+    public Builder addErrorDetails(int index, com.google.cloud.compute.v1.ErrorDetails value) {
+      if (errorDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureErrorDetailsIsMutable();
+        errorDetails_.add(index, value);
+        onChanged();
+      } else {
+        errorDetailsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+     */
+    public Builder addErrorDetails(
+        com.google.cloud.compute.v1.ErrorDetails.Builder builderForValue) {
+      if (errorDetailsBuilder_ == null) {
+        ensureErrorDetailsIsMutable();
+        errorDetails_.add(builderForValue.build());
+        onChanged();
+      } else {
+        errorDetailsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+     */
+    public Builder addErrorDetails(
+        int index, com.google.cloud.compute.v1.ErrorDetails.Builder builderForValue) {
+      if (errorDetailsBuilder_ == null) {
+        ensureErrorDetailsIsMutable();
+        errorDetails_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        errorDetailsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+     */
+    public Builder addAllErrorDetails(
+        java.lang.Iterable<? extends com.google.cloud.compute.v1.ErrorDetails> values) {
+      if (errorDetailsBuilder_ == null) {
+        ensureErrorDetailsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, errorDetails_);
+        onChanged();
+      } else {
+        errorDetailsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+     */
+    public Builder clearErrorDetails() {
+      if (errorDetailsBuilder_ == null) {
+        errorDetails_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        errorDetailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+     */
+    public Builder removeErrorDetails(int index) {
+      if (errorDetailsBuilder_ == null) {
+        ensureErrorDetailsIsMutable();
+        errorDetails_.remove(index);
+        onChanged();
+      } else {
+        errorDetailsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+     */
+    public com.google.cloud.compute.v1.ErrorDetails.Builder getErrorDetailsBuilder(int index) {
+      return getErrorDetailsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+     */
+    public com.google.cloud.compute.v1.ErrorDetailsOrBuilder getErrorDetailsOrBuilder(int index) {
+      if (errorDetailsBuilder_ == null) {
+        return errorDetails_.get(index);
+      } else {
+        return errorDetailsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+     */
+    public java.util.List<? extends com.google.cloud.compute.v1.ErrorDetailsOrBuilder>
+        getErrorDetailsOrBuilderList() {
+      if (errorDetailsBuilder_ != null) {
+        return errorDetailsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(errorDetails_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+     */
+    public com.google.cloud.compute.v1.ErrorDetails.Builder addErrorDetailsBuilder() {
+      return getErrorDetailsFieldBuilder()
+          .addBuilder(com.google.cloud.compute.v1.ErrorDetails.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+     */
+    public com.google.cloud.compute.v1.ErrorDetails.Builder addErrorDetailsBuilder(int index) {
+      return getErrorDetailsFieldBuilder()
+          .addBuilder(index, com.google.cloud.compute.v1.ErrorDetails.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.ErrorDetails.Builder>
+        getErrorDetailsBuilderList() {
+      return getErrorDetailsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.ErrorDetails,
+            com.google.cloud.compute.v1.ErrorDetails.Builder,
+            com.google.cloud.compute.v1.ErrorDetailsOrBuilder>
+        getErrorDetailsFieldBuilder() {
+      if (errorDetailsBuilder_ == null) {
+        errorDetailsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.compute.v1.ErrorDetails,
+                com.google.cloud.compute.v1.ErrorDetails.Builder,
+                com.google.cloud.compute.v1.ErrorDetailsOrBuilder>(
+                errorDetails_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+        errorDetails_ = null;
+      }
+      return errorDetailsBuilder_;
+    }
+
     private java.lang.Object location_ = "";
     /**
      *
@@ -831,7 +1322,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the location field is set.
      */
     public boolean hasLocation() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -893,7 +1384,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       location_ = value;
       onChanged();
       return this;
@@ -910,7 +1401,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocation() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       location_ = getDefaultInstance().getLocation();
       onChanged();
       return this;
@@ -932,7 +1423,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       location_ = value;
       onChanged();
       return this;
@@ -951,7 +1442,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the message field is set.
      */
     public boolean hasMessage() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1013,7 +1504,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       message_ = value;
       onChanged();
       return this;
@@ -1030,7 +1521,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       message_ = getDefaultInstance().getMessage();
       onChanged();
       return this;
@@ -1052,7 +1543,7 @@ public final class Errors extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       message_ = value;
       onChanged();
       return this;

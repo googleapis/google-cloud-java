@@ -237,7 +237,7 @@ public interface TargetInstanceOrBuilder
    *
    *
    * <pre>
-   * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
+   * Must have a value of NO_NAT. Protocol forwarding delivers packets while preserving the destination IP address of the forwarding rule referencing the target instance.
    * Check the NatPolicy enum for the list of possible values.
    * </pre>
    *
@@ -250,7 +250,7 @@ public interface TargetInstanceOrBuilder
    *
    *
    * <pre>
-   * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
+   * Must have a value of NO_NAT. Protocol forwarding delivers packets while preserving the destination IP address of the forwarding rule referencing the target instance.
    * Check the NatPolicy enum for the list of possible values.
    * </pre>
    *
@@ -263,7 +263,7 @@ public interface TargetInstanceOrBuilder
    *
    *
    * <pre>
-   * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
+   * Must have a value of NO_NAT. Protocol forwarding delivers packets while preserving the destination IP address of the forwarding rule referencing the target instance.
    * Check the NatPolicy enum for the list of possible values.
    * </pre>
    *

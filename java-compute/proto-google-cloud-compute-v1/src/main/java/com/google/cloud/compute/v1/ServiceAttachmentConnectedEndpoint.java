@@ -173,6 +173,16 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
+     * The connection has been accepted by the producer, but the producer needs to take further action before the forwarding rule can serve traffic.
+     * </pre>
+     *
+     * <code>NEEDS_ATTENTION = 344491452;</code>
+     */
+    NEEDS_ATTENTION(344491452),
+    /**
+     *
+     *
+     * <pre>
      * The connection is pending acceptance by the producer.
      * </pre>
      *
@@ -228,6 +238,16 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
+     * The connection has been accepted by the producer, but the producer needs to take further action before the forwarding rule can serve traffic.
+     * </pre>
+     *
+     * <code>NEEDS_ATTENTION = 344491452;</code>
+     */
+    public static final int NEEDS_ATTENTION_VALUE = 344491452;
+    /**
+     *
+     *
+     * <pre>
      * The connection is pending acceptance by the producer.
      * </pre>
      *
@@ -277,6 +297,8 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
           return ACCEPTED;
         case 380163436:
           return CLOSED;
+        case 344491452:
+          return NEEDS_ATTENTION;
         case 35394935:
           return PENDING;
         case 174130302:

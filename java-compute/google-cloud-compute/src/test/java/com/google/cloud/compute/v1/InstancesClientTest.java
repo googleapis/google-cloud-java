@@ -676,6 +676,7 @@ public class InstancesClientTest {
             .addAllGuestAccelerators(new ArrayList<AcceleratorConfig>())
             .setHostname("hostname-299803597")
             .setId(3355)
+            .setKeyRevocationActionType("keyRevocationActionType-1643749939")
             .setKind("kind3292052")
             .setLabelFingerprint("labelFingerprint379449680")
             .putAllLabels(new HashMap<String, String>())

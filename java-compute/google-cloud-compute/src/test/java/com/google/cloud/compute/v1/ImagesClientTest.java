@@ -221,6 +221,7 @@ public class ImagesClientTest {
   public void getTest() throws Exception {
     Image expectedResponse =
         Image.newBuilder()
+            .setArchitecture("architecture839674195")
             .setArchiveSizeBytes(-1766390198)
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDeprecated(DeprecationStatus.newBuilder().build())
@@ -297,6 +298,7 @@ public class ImagesClientTest {
   public void getFromFamilyTest() throws Exception {
     Image expectedResponse =
         Image.newBuilder()
+            .setArchitecture("architecture839674195")
             .setArchiveSizeBytes(-1766390198)
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDeprecated(DeprecationStatus.newBuilder().build())

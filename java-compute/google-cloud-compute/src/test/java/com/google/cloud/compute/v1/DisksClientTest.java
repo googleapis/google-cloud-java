@@ -359,6 +359,7 @@ public class DisksClientTest {
   public void getTest() throws Exception {
     Disk expectedResponse =
         Disk.newBuilder()
+            .setArchitecture("architecture839674195")
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
             .setDiskEncryptionKey(CustomerEncryptionKey.newBuilder().build())

@@ -22,31 +22,30 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Configuration for a Cloud Function network endpoint group (NEG). The function must be provided explicitly or in the URL mask. Note: Cloud Function must be in the same project and located in the same region as the Serverless NEG.
+ * Provides a localized error message that is safe to return to the user which can be attached to an RPC error.
  * </pre>
  *
- * Protobuf type {@code google.cloud.compute.v1.NetworkEndpointGroupCloudFunction}
+ * Protobuf type {@code google.cloud.compute.v1.LocalizedMessage}
  */
-public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf.GeneratedMessageV3
+public final class LocalizedMessage extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NetworkEndpointGroupCloudFunction)
-    NetworkEndpointGroupCloudFunctionOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.LocalizedMessage)
+    LocalizedMessageOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use NetworkEndpointGroupCloudFunction.newBuilder() to construct.
-  private NetworkEndpointGroupCloudFunction(
-      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use LocalizedMessage.newBuilder() to construct.
+  private LocalizedMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private NetworkEndpointGroupCloudFunction() {
-    function_ = "";
-    urlMask_ = "";
+  private LocalizedMessage() {
+    locale_ = "";
+    message_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new NetworkEndpointGroupCloudFunction();
+    return new LocalizedMessage();
   }
 
   @java.lang.Override
@@ -54,7 +53,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
     return this.unknownFields;
   }
 
-  private NetworkEndpointGroupCloudFunction(
+  private LocalizedMessage(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -73,18 +72,18 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
           case 0:
             done = true;
             break;
-          case 826818018:
+          case -950534086:
             {
               java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
-              urlMask_ = s;
+              message_ = s;
               break;
             }
-          case -1837392190:
+          case -189762862:
             {
               java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
-              function_ = s;
+              locale_ = s;
               break;
             }
           default:
@@ -110,57 +109,57 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
-        .internal_static_google_cloud_compute_v1_NetworkEndpointGroupCloudFunction_descriptor;
+        .internal_static_google_cloud_compute_v1_LocalizedMessage_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.compute.v1.Compute
-        .internal_static_google_cloud_compute_v1_NetworkEndpointGroupCloudFunction_fieldAccessorTable
+        .internal_static_google_cloud_compute_v1_LocalizedMessage_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction.class,
-            com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction.Builder.class);
+            com.google.cloud.compute.v1.LocalizedMessage.class,
+            com.google.cloud.compute.v1.LocalizedMessage.Builder.class);
   }
 
   private int bitField0_;
-  public static final int FUNCTION_FIELD_NUMBER = 307196888;
-  private volatile java.lang.Object function_;
+  public static final int LOCALE_FIELD_NUMBER = 513150554;
+  private volatile java.lang.Object locale_;
   /**
    *
    *
    * <pre>
-   * A user-defined name of the Cloud Function. The function name is case-sensitive and must be 1-63 characters long. Example value: "func1".
+   * The locale used following the specification defined at http://www.rfc-editor.org/rfc/bcp/bcp47.txt. Examples are: "en-US", "fr-CH", "es-MX"
    * </pre>
    *
-   * <code>optional string function = 307196888;</code>
+   * <code>optional string locale = 513150554;</code>
    *
-   * @return Whether the function field is set.
+   * @return Whether the locale field is set.
    */
   @java.lang.Override
-  public boolean hasFunction() {
+  public boolean hasLocale() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
    *
    * <pre>
-   * A user-defined name of the Cloud Function. The function name is case-sensitive and must be 1-63 characters long. Example value: "func1".
+   * The locale used following the specification defined at http://www.rfc-editor.org/rfc/bcp/bcp47.txt. Examples are: "en-US", "fr-CH", "es-MX"
    * </pre>
    *
-   * <code>optional string function = 307196888;</code>
+   * <code>optional string locale = 513150554;</code>
    *
-   * @return The function.
+   * @return The locale.
    */
   @java.lang.Override
-  public java.lang.String getFunction() {
-    java.lang.Object ref = function_;
+  public java.lang.String getLocale() {
+    java.lang.Object ref = locale_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      function_ = s;
+      locale_ = s;
       return s;
     }
   }
@@ -168,63 +167,63 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
    *
    *
    * <pre>
-   * A user-defined name of the Cloud Function. The function name is case-sensitive and must be 1-63 characters long. Example value: "func1".
+   * The locale used following the specification defined at http://www.rfc-editor.org/rfc/bcp/bcp47.txt. Examples are: "en-US", "fr-CH", "es-MX"
    * </pre>
    *
-   * <code>optional string function = 307196888;</code>
+   * <code>optional string locale = 513150554;</code>
    *
-   * @return The bytes for function.
+   * @return The bytes for locale.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getFunctionBytes() {
-    java.lang.Object ref = function_;
+  public com.google.protobuf.ByteString getLocaleBytes() {
+    java.lang.Object ref = locale_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      function_ = b;
+      locale_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int URL_MASK_FIELD_NUMBER = 103352252;
-  private volatile java.lang.Object urlMask_;
+  public static final int MESSAGE_FIELD_NUMBER = 418054151;
+  private volatile java.lang.Object message_;
   /**
    *
    *
    * <pre>
-   * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services. For example, request URLs " mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/&lt;function&gt;". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
+   * The localized error message in the above locale.
    * </pre>
    *
-   * <code>optional string url_mask = 103352252;</code>
+   * <code>optional string message = 418054151;</code>
    *
-   * @return Whether the urlMask field is set.
+   * @return Whether the message field is set.
    */
   @java.lang.Override
-  public boolean hasUrlMask() {
+  public boolean hasMessage() {
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
    *
    * <pre>
-   * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services. For example, request URLs " mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/&lt;function&gt;". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
+   * The localized error message in the above locale.
    * </pre>
    *
-   * <code>optional string url_mask = 103352252;</code>
+   * <code>optional string message = 418054151;</code>
    *
-   * @return The urlMask.
+   * @return The message.
    */
   @java.lang.Override
-  public java.lang.String getUrlMask() {
-    java.lang.Object ref = urlMask_;
+  public java.lang.String getMessage() {
+    java.lang.Object ref = message_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      urlMask_ = s;
+      message_ = s;
       return s;
     }
   }
@@ -232,20 +231,20 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
    *
    *
    * <pre>
-   * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services. For example, request URLs " mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/&lt;function&gt;". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
+   * The localized error message in the above locale.
    * </pre>
    *
-   * <code>optional string url_mask = 103352252;</code>
+   * <code>optional string message = 418054151;</code>
    *
-   * @return The bytes for urlMask.
+   * @return The bytes for message.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getUrlMaskBytes() {
-    java.lang.Object ref = urlMask_;
+  public com.google.protobuf.ByteString getMessageBytes() {
+    java.lang.Object ref = message_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      urlMask_ = b;
+      message_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -267,10 +266,10 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000002) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 103352252, urlMask_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 418054151, message_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 307196888, function_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 513150554, locale_);
     }
     unknownFields.writeTo(output);
   }
@@ -282,10 +281,10 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
 
     size = 0;
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(103352252, urlMask_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(418054151, message_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307196888, function_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(513150554, locale_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -297,19 +296,19 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction)) {
+    if (!(obj instanceof com.google.cloud.compute.v1.LocalizedMessage)) {
       return super.equals(obj);
     }
-    com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction other =
-        (com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction) obj;
+    com.google.cloud.compute.v1.LocalizedMessage other =
+        (com.google.cloud.compute.v1.LocalizedMessage) obj;
 
-    if (hasFunction() != other.hasFunction()) return false;
-    if (hasFunction()) {
-      if (!getFunction().equals(other.getFunction())) return false;
+    if (hasLocale() != other.hasLocale()) return false;
+    if (hasLocale()) {
+      if (!getLocale().equals(other.getLocale())) return false;
     }
-    if (hasUrlMask() != other.hasUrlMask()) return false;
-    if (hasUrlMask()) {
-      if (!getUrlMask().equals(other.getUrlMask())) return false;
+    if (hasMessage() != other.hasMessage()) return false;
+    if (hasMessage()) {
+      if (!getMessage().equals(other.getMessage())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -322,84 +321,84 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasFunction()) {
-      hash = (37 * hash) + FUNCTION_FIELD_NUMBER;
-      hash = (53 * hash) + getFunction().hashCode();
+    if (hasLocale()) {
+      hash = (37 * hash) + LOCALE_FIELD_NUMBER;
+      hash = (53 * hash) + getLocale().hashCode();
     }
-    if (hasUrlMask()) {
-      hash = (37 * hash) + URL_MASK_FIELD_NUMBER;
-      hash = (53 * hash) + getUrlMask().hashCode();
+    if (hasMessage()) {
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction parseFrom(
-      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.compute.v1.LocalizedMessage parseFrom(java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction parseFrom(
+  public static com.google.cloud.compute.v1.LocalizedMessage parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction parseFrom(
+  public static com.google.cloud.compute.v1.LocalizedMessage parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction parseFrom(
+  public static com.google.cloud.compute.v1.LocalizedMessage parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction parseFrom(byte[] data)
+  public static com.google.cloud.compute.v1.LocalizedMessage parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction parseFrom(
+  public static com.google.cloud.compute.v1.LocalizedMessage parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction parseFrom(
-      java.io.InputStream input) throws java.io.IOException {
+  public static com.google.cloud.compute.v1.LocalizedMessage parseFrom(java.io.InputStream input)
+      throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction parseFrom(
+  public static com.google.cloud.compute.v1.LocalizedMessage parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction parseDelimitedFrom(
+  public static com.google.cloud.compute.v1.LocalizedMessage parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction parseDelimitedFrom(
+  public static com.google.cloud.compute.v1.LocalizedMessage parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction parseFrom(
+  public static com.google.cloud.compute.v1.LocalizedMessage parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction parseFrom(
+  public static com.google.cloud.compute.v1.LocalizedMessage parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -416,8 +415,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(
-      com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction prototype) {
+  public static Builder newBuilder(com.google.cloud.compute.v1.LocalizedMessage prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -435,31 +433,31 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
    *
    *
    * <pre>
-   * Configuration for a Cloud Function network endpoint group (NEG). The function must be provided explicitly or in the URL mask. Note: Cloud Function must be in the same project and located in the same region as the Serverless NEG.
+   * Provides a localized error message that is safe to return to the user which can be attached to an RPC error.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.compute.v1.NetworkEndpointGroupCloudFunction}
+   * Protobuf type {@code google.cloud.compute.v1.LocalizedMessage}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.compute.v1.NetworkEndpointGroupCloudFunction)
-      com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunctionOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.compute.v1.LocalizedMessage)
+      com.google.cloud.compute.v1.LocalizedMessageOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.compute.v1.Compute
-          .internal_static_google_cloud_compute_v1_NetworkEndpointGroupCloudFunction_descriptor;
+          .internal_static_google_cloud_compute_v1_LocalizedMessage_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.compute.v1.Compute
-          .internal_static_google_cloud_compute_v1_NetworkEndpointGroupCloudFunction_fieldAccessorTable
+          .internal_static_google_cloud_compute_v1_LocalizedMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction.class,
-              com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction.Builder.class);
+              com.google.cloud.compute.v1.LocalizedMessage.class,
+              com.google.cloud.compute.v1.LocalizedMessage.Builder.class);
     }
 
-    // Construct using com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction.newBuilder()
+    // Construct using com.google.cloud.compute.v1.LocalizedMessage.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -476,9 +474,9 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      function_ = "";
+      locale_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
-      urlMask_ = "";
+      message_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
@@ -486,18 +484,17 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.compute.v1.Compute
-          .internal_static_google_cloud_compute_v1_NetworkEndpointGroupCloudFunction_descriptor;
+          .internal_static_google_cloud_compute_v1_LocalizedMessage_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction
-        getDefaultInstanceForType() {
-      return com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction.getDefaultInstance();
+    public com.google.cloud.compute.v1.LocalizedMessage getDefaultInstanceForType() {
+      return com.google.cloud.compute.v1.LocalizedMessage.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction build() {
-      com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction result = buildPartial();
+    public com.google.cloud.compute.v1.LocalizedMessage build() {
+      com.google.cloud.compute.v1.LocalizedMessage result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -505,19 +502,19 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
     }
 
     @java.lang.Override
-    public com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction buildPartial() {
-      com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction result =
-          new com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction(this);
+    public com.google.cloud.compute.v1.LocalizedMessage buildPartial() {
+      com.google.cloud.compute.v1.LocalizedMessage result =
+          new com.google.cloud.compute.v1.LocalizedMessage(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         to_bitField0_ |= 0x00000001;
       }
-      result.function_ = function_;
+      result.locale_ = locale_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         to_bitField0_ |= 0x00000002;
       }
-      result.urlMask_ = urlMask_;
+      result.message_ = message_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -558,26 +555,24 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction) {
-        return mergeFrom((com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction) other);
+      if (other instanceof com.google.cloud.compute.v1.LocalizedMessage) {
+        return mergeFrom((com.google.cloud.compute.v1.LocalizedMessage) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction other) {
-      if (other
-          == com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction.getDefaultInstance())
-        return this;
-      if (other.hasFunction()) {
+    public Builder mergeFrom(com.google.cloud.compute.v1.LocalizedMessage other) {
+      if (other == com.google.cloud.compute.v1.LocalizedMessage.getDefaultInstance()) return this;
+      if (other.hasLocale()) {
         bitField0_ |= 0x00000001;
-        function_ = other.function_;
+        locale_ = other.locale_;
         onChanged();
       }
-      if (other.hasUrlMask()) {
+      if (other.hasMessage()) {
         bitField0_ |= 0x00000002;
-        urlMask_ = other.urlMask_;
+        message_ = other.message_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -595,13 +590,11 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction parsedMessage = null;
+      com.google.cloud.compute.v1.LocalizedMessage parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction)
-                e.getUnfinishedMessage();
+        parsedMessage = (com.google.cloud.compute.v1.LocalizedMessage) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -613,38 +606,38 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
 
     private int bitField0_;
 
-    private java.lang.Object function_ = "";
+    private java.lang.Object locale_ = "";
     /**
      *
      *
      * <pre>
-     * A user-defined name of the Cloud Function. The function name is case-sensitive and must be 1-63 characters long. Example value: "func1".
+     * The locale used following the specification defined at http://www.rfc-editor.org/rfc/bcp/bcp47.txt. Examples are: "en-US", "fr-CH", "es-MX"
      * </pre>
      *
-     * <code>optional string function = 307196888;</code>
+     * <code>optional string locale = 513150554;</code>
      *
-     * @return Whether the function field is set.
+     * @return Whether the locale field is set.
      */
-    public boolean hasFunction() {
+    public boolean hasLocale() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
      *
      * <pre>
-     * A user-defined name of the Cloud Function. The function name is case-sensitive and must be 1-63 characters long. Example value: "func1".
+     * The locale used following the specification defined at http://www.rfc-editor.org/rfc/bcp/bcp47.txt. Examples are: "en-US", "fr-CH", "es-MX"
      * </pre>
      *
-     * <code>optional string function = 307196888;</code>
+     * <code>optional string locale = 513150554;</code>
      *
-     * @return The function.
+     * @return The locale.
      */
-    public java.lang.String getFunction() {
-      java.lang.Object ref = function_;
+    public java.lang.String getLocale() {
+      java.lang.Object ref = locale_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        function_ = s;
+        locale_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -654,19 +647,19 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      *
      *
      * <pre>
-     * A user-defined name of the Cloud Function. The function name is case-sensitive and must be 1-63 characters long. Example value: "func1".
+     * The locale used following the specification defined at http://www.rfc-editor.org/rfc/bcp/bcp47.txt. Examples are: "en-US", "fr-CH", "es-MX"
      * </pre>
      *
-     * <code>optional string function = 307196888;</code>
+     * <code>optional string locale = 513150554;</code>
      *
-     * @return The bytes for function.
+     * @return The bytes for locale.
      */
-    public com.google.protobuf.ByteString getFunctionBytes() {
-      java.lang.Object ref = function_;
+    public com.google.protobuf.ByteString getLocaleBytes() {
+      java.lang.Object ref = locale_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        function_ = b;
+        locale_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -676,20 +669,20 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      *
      *
      * <pre>
-     * A user-defined name of the Cloud Function. The function name is case-sensitive and must be 1-63 characters long. Example value: "func1".
+     * The locale used following the specification defined at http://www.rfc-editor.org/rfc/bcp/bcp47.txt. Examples are: "en-US", "fr-CH", "es-MX"
      * </pre>
      *
-     * <code>optional string function = 307196888;</code>
+     * <code>optional string locale = 513150554;</code>
      *
-     * @param value The function to set.
+     * @param value The locale to set.
      * @return This builder for chaining.
      */
-    public Builder setFunction(java.lang.String value) {
+    public Builder setLocale(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
       bitField0_ |= 0x00000001;
-      function_ = value;
+      locale_ = value;
       onChanged();
       return this;
     }
@@ -697,16 +690,16 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      *
      *
      * <pre>
-     * A user-defined name of the Cloud Function. The function name is case-sensitive and must be 1-63 characters long. Example value: "func1".
+     * The locale used following the specification defined at http://www.rfc-editor.org/rfc/bcp/bcp47.txt. Examples are: "en-US", "fr-CH", "es-MX"
      * </pre>
      *
-     * <code>optional string function = 307196888;</code>
+     * <code>optional string locale = 513150554;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearFunction() {
+    public Builder clearLocale() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      function_ = getDefaultInstance().getFunction();
+      locale_ = getDefaultInstance().getLocale();
       onChanged();
       return this;
     }
@@ -714,57 +707,57 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      *
      *
      * <pre>
-     * A user-defined name of the Cloud Function. The function name is case-sensitive and must be 1-63 characters long. Example value: "func1".
+     * The locale used following the specification defined at http://www.rfc-editor.org/rfc/bcp/bcp47.txt. Examples are: "en-US", "fr-CH", "es-MX"
      * </pre>
      *
-     * <code>optional string function = 307196888;</code>
+     * <code>optional string locale = 513150554;</code>
      *
-     * @param value The bytes for function to set.
+     * @param value The bytes for locale to set.
      * @return This builder for chaining.
      */
-    public Builder setFunctionBytes(com.google.protobuf.ByteString value) {
+    public Builder setLocaleBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
       bitField0_ |= 0x00000001;
-      function_ = value;
+      locale_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object urlMask_ = "";
+    private java.lang.Object message_ = "";
     /**
      *
      *
      * <pre>
-     * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services. For example, request URLs " mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/&lt;function&gt;". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
+     * The localized error message in the above locale.
      * </pre>
      *
-     * <code>optional string url_mask = 103352252;</code>
+     * <code>optional string message = 418054151;</code>
      *
-     * @return Whether the urlMask field is set.
+     * @return Whether the message field is set.
      */
-    public boolean hasUrlMask() {
+    public boolean hasMessage() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
      *
      * <pre>
-     * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services. For example, request URLs " mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/&lt;function&gt;". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
+     * The localized error message in the above locale.
      * </pre>
      *
-     * <code>optional string url_mask = 103352252;</code>
+     * <code>optional string message = 418054151;</code>
      *
-     * @return The urlMask.
+     * @return The message.
      */
-    public java.lang.String getUrlMask() {
-      java.lang.Object ref = urlMask_;
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        urlMask_ = s;
+        message_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -774,19 +767,19 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      *
      *
      * <pre>
-     * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services. For example, request URLs " mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/&lt;function&gt;". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
+     * The localized error message in the above locale.
      * </pre>
      *
-     * <code>optional string url_mask = 103352252;</code>
+     * <code>optional string message = 418054151;</code>
      *
-     * @return The bytes for urlMask.
+     * @return The bytes for message.
      */
-    public com.google.protobuf.ByteString getUrlMaskBytes() {
-      java.lang.Object ref = urlMask_;
+    public com.google.protobuf.ByteString getMessageBytes() {
+      java.lang.Object ref = message_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        urlMask_ = b;
+        message_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -796,20 +789,20 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      *
      *
      * <pre>
-     * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services. For example, request URLs " mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/&lt;function&gt;". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
+     * The localized error message in the above locale.
      * </pre>
      *
-     * <code>optional string url_mask = 103352252;</code>
+     * <code>optional string message = 418054151;</code>
      *
-     * @param value The urlMask to set.
+     * @param value The message to set.
      * @return This builder for chaining.
      */
-    public Builder setUrlMask(java.lang.String value) {
+    public Builder setMessage(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
       bitField0_ |= 0x00000002;
-      urlMask_ = value;
+      message_ = value;
       onChanged();
       return this;
     }
@@ -817,16 +810,16 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      *
      *
      * <pre>
-     * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services. For example, request URLs " mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/&lt;function&gt;". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
+     * The localized error message in the above locale.
      * </pre>
      *
-     * <code>optional string url_mask = 103352252;</code>
+     * <code>optional string message = 418054151;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearUrlMask() {
+    public Builder clearMessage() {
       bitField0_ = (bitField0_ & ~0x00000002);
-      urlMask_ = getDefaultInstance().getUrlMask();
+      message_ = getDefaultInstance().getMessage();
       onChanged();
       return this;
     }
@@ -834,21 +827,21 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      *
      *
      * <pre>
-     * A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services. For example, request URLs " mydomain.com/function1" and "mydomain.com/function2" can be backed by the same Serverless NEG with URL mask "/&lt;function&gt;". The URL mask will parse them to { function = "function1" } and { function = "function2" } respectively.
+     * The localized error message in the above locale.
      * </pre>
      *
-     * <code>optional string url_mask = 103352252;</code>
+     * <code>optional string message = 418054151;</code>
      *
-     * @param value The bytes for urlMask to set.
+     * @param value The bytes for message to set.
      * @return This builder for chaining.
      */
-    public Builder setUrlMaskBytes(com.google.protobuf.ByteString value) {
+    public Builder setMessageBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
       bitField0_ |= 0x00000002;
-      urlMask_ = value;
+      message_ = value;
       onChanged();
       return this;
     }
@@ -864,43 +857,42 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.compute.v1.NetworkEndpointGroupCloudFunction)
+    // @@protoc_insertion_point(builder_scope:google.cloud.compute.v1.LocalizedMessage)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.compute.v1.NetworkEndpointGroupCloudFunction)
-  private static final com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction
-      DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.compute.v1.LocalizedMessage)
+  private static final com.google.cloud.compute.v1.LocalizedMessage DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction();
+    DEFAULT_INSTANCE = new com.google.cloud.compute.v1.LocalizedMessage();
   }
 
-  public static com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction getDefaultInstance() {
+  public static com.google.cloud.compute.v1.LocalizedMessage getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<NetworkEndpointGroupCloudFunction> PARSER =
-      new com.google.protobuf.AbstractParser<NetworkEndpointGroupCloudFunction>() {
+  private static final com.google.protobuf.Parser<LocalizedMessage> PARSER =
+      new com.google.protobuf.AbstractParser<LocalizedMessage>() {
         @java.lang.Override
-        public NetworkEndpointGroupCloudFunction parsePartialFrom(
+        public LocalizedMessage parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new NetworkEndpointGroupCloudFunction(input, extensionRegistry);
+          return new LocalizedMessage(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<NetworkEndpointGroupCloudFunction> parser() {
+  public static com.google.protobuf.Parser<LocalizedMessage> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<NetworkEndpointGroupCloudFunction> getParserForType() {
+  public com.google.protobuf.Parser<LocalizedMessage> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction getDefaultInstanceForType() {
+  public com.google.cloud.compute.v1.LocalizedMessage getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }
