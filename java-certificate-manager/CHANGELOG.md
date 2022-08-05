@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.5.0](https://github.com/googleapis/java-certificate-manager/compare/v0.4.1...v0.5.0) (2022-08-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* Removed resource definition of Compute API resources and incorrect resource references that used them (#58)
+
+### Bug Fixes
+
+* Removed resource definition of Compute API resources and incorrect resource references that used them ([#58](https://github.com/googleapis/java-certificate-manager/issues/58)) ([f3c48b4](https://github.com/googleapis/java-certificate-manager/commit/f3c48b404d9f305e08d0621d849786ffff829493))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#66](https://github.com/googleapis/java-certificate-manager/issues/66)) ([93e3a01](https://github.com/googleapis/java-certificate-manager/commit/93e3a0143ae1aa82ac02d8f7b90a1ff2579f4781))
+
 ## [0.4.1](https://github.com/googleapis/java-certificate-manager/compare/v0.4.0...v0.4.1) (2022-07-13)
 
 
