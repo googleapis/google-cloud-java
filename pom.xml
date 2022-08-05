@@ -176,9 +176,7 @@
       <artifactId>maven-failsafe-plugin</artifactId>
       <configuration>
         <forkCount>2</forkCount>
-        <useUnlimitedThreads>true</useUnlimitedThreads>
         <reuseForks>true</reuseForks>
-        <parallel>classesAndMethods</parallel>
       </configuration>
     </plugin>
   </plugins>
