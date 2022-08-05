@@ -175,7 +175,8 @@
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-failsafe-plugin</artifactId>
       <configuration>
-        <forkCount>4</forkCount>
+        <forkCount>2</forkCount>
+        <threadCount>2</threadCount>
         <reuseForks>true</reuseForks>
       </configuration>
     </plugin>
