@@ -1575,4 +1575,151 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void getAudience(GetAudienceRequest request, StreamObserver<Audience> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Audience) {
+      requests.add(request);
+      responseObserver.onNext(((Audience) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAudience, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Audience.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listAudiences(
+      ListAudiencesRequest request, StreamObserver<ListAudiencesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAudiencesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAudiencesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAudiences, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAudiencesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createAudience(
+      CreateAudienceRequest request, StreamObserver<Audience> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Audience) {
+      requests.add(request);
+      responseObserver.onNext(((Audience) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAudience, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Audience.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateAudience(
+      UpdateAudienceRequest request, StreamObserver<Audience> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Audience) {
+      requests.add(request);
+      responseObserver.onNext(((Audience) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAudience, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Audience.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void archiveAudience(
+      ArchiveAudienceRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ArchiveAudience, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAttributionSettings(
+      GetAttributionSettingsRequest request, StreamObserver<AttributionSettings> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AttributionSettings) {
+      requests.add(request);
+      responseObserver.onNext(((AttributionSettings) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAttributionSettings, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AttributionSettings.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateAttributionSettings(
+      UpdateAttributionSettingsRequest request,
+      StreamObserver<AttributionSettings> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AttributionSettings) {
+      requests.add(request);
+      responseObserver.onNext(((AttributionSettings) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAttributionSettings, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AttributionSettings.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

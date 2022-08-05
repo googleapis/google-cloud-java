@@ -56,6 +56,41 @@ public interface PropertyOrBuilder
    *
    *
    * <pre>
+   * Immutable. The property type for this Property resource. When creating a property, if
+   * the type is "PROPERTY_TYPE_UNSPECIFIED", then "ORDINARY_PROPERTY" will be
+   * implied. "SUBPROPERTY" and "ROLLUP_PROPERTY" types cannot yet be created
+   * via Google Analytics Admin API.
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1alpha.PropertyType property_type = 14 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for propertyType.
+   */
+  int getPropertyTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The property type for this Property resource. When creating a property, if
+   * the type is "PROPERTY_TYPE_UNSPECIFIED", then "ORDINARY_PROPERTY" will be
+   * implied. "SUBPROPERTY" and "ROLLUP_PROPERTY" types cannot yet be created
+   * via Google Analytics Admin API.
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1alpha.PropertyType property_type = 14 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The propertyType.
+   */
+  com.google.analytics.admin.v1alpha.PropertyType getPropertyType();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Time when the entity was originally created.
    * </pre>
    *
@@ -134,8 +169,8 @@ public interface PropertyOrBuilder
    * <pre>
    * Immutable. Resource name of this property's logical parent.
    * Note: The Property-Moving UI can be used to change the parent.
-   * Format: accounts/{account}
-   * Example: "accounts/100"
+   * Format: accounts/{account}, properties/{property}
+   * Example: "accounts/100", "properties/101"
    * </pre>
    *
    * <code>string parent = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -149,8 +184,8 @@ public interface PropertyOrBuilder
    * <pre>
    * Immutable. Resource name of this property's logical parent.
    * Note: The Property-Moving UI can be used to change the parent.
-   * Format: accounts/{account}
-   * Example: "accounts/100"
+   * Format: accounts/{account}, properties/{property}
+   * Example: "accounts/100", "properties/101"
    * </pre>
    *
    * <code>string parent = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>

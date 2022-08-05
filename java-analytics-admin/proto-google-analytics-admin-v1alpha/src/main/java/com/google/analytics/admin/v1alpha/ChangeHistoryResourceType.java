@@ -162,12 +162,32 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    *
    *
    * <pre>
+   * SearchAds360Link resource
+   * </pre>
+   *
+   * <code>SEARCH_ADS_360_LINK = 16;</code>
+   */
+  SEARCH_ADS_360_LINK(16),
+  /**
+   *
+   *
+   * <pre>
    * DataStream resource
    * </pre>
    *
    * <code>DATA_STREAM = 18;</code>
    */
   DATA_STREAM(18),
+  /**
+   *
+   *
+   * <pre>
+   * AttributionSettings resource
+   * </pre>
+   *
+   * <code>ATTRIBUTION_SETTINGS = 20;</code>
+   */
+  ATTRIBUTION_SETTINGS(20),
   UNRECOGNIZED(-1),
   ;
 
@@ -305,12 +325,32 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    *
    *
    * <pre>
+   * SearchAds360Link resource
+   * </pre>
+   *
+   * <code>SEARCH_ADS_360_LINK = 16;</code>
+   */
+  public static final int SEARCH_ADS_360_LINK_VALUE = 16;
+  /**
+   *
+   *
+   * <pre>
    * DataStream resource
    * </pre>
    *
    * <code>DATA_STREAM = 18;</code>
    */
   public static final int DATA_STREAM_VALUE = 18;
+  /**
+   *
+   *
+   * <pre>
+   * AttributionSettings resource
+   * </pre>
+   *
+   * <code>ATTRIBUTION_SETTINGS = 20;</code>
+   */
+  public static final int ATTRIBUTION_SETTINGS_VALUE = 20;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -362,8 +402,12 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
         return DISPLAY_VIDEO_360_ADVERTISER_LINK;
       case 15:
         return DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL;
+      case 16:
+        return SEARCH_ADS_360_LINK;
       case 18:
         return DATA_STREAM;
+      case 20:
+        return ATTRIBUTION_SETTINGS;
       default:
         return null;
     }

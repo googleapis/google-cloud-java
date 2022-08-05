@@ -19,6 +19,7 @@ package com.google.analytics.admin.v1alpha.stub;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
@@ -37,8 +38,11 @@ import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest;
 import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse;
 import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalResponse;
+import com.google.analytics.admin.v1alpha.ArchiveAudienceRequest;
 import com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest;
+import com.google.analytics.admin.v1alpha.AttributionSettings;
+import com.google.analytics.admin.v1alpha.Audience;
 import com.google.analytics.admin.v1alpha.AuditUserLinksRequest;
 import com.google.analytics.admin.v1alpha.AuditUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest;
@@ -50,6 +54,7 @@ import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
 import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
+import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
 import com.google.analytics.admin.v1alpha.CreateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomMetricRequest;
@@ -80,6 +85,8 @@ import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
+import com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest;
+import com.google.analytics.admin.v1alpha.GetAudienceRequest;
 import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
 import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.GetCustomMetricRequest;
@@ -100,6 +107,8 @@ import com.google.analytics.admin.v1alpha.ListAccountSummariesRequest;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesResponse;
 import com.google.analytics.admin.v1alpha.ListAccountsRequest;
 import com.google.analytics.admin.v1alpha.ListAccountsResponse;
+import com.google.analytics.admin.v1alpha.ListAudiencesRequest;
+import com.google.analytics.admin.v1alpha.ListAudiencesResponse;
 import com.google.analytics.admin.v1alpha.ListConversionEventsRequest;
 import com.google.analytics.admin.v1alpha.ListConversionEventsResponse;
 import com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest;
@@ -129,6 +138,8 @@ import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
+import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
+import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
@@ -2849,6 +2860,263 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetAudienceRequest, Audience>
+      getAudienceMethodDescriptor =
+          ApiMethodDescriptor.<GetAudienceRequest, Audience>newBuilder()
+              .setFullMethodName("google.analytics.admin.v1alpha.AnalyticsAdminService/GetAudience")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAudienceRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=properties/*/audiences/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAudienceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAudienceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Audience>newBuilder()
+                      .setDefaultInstance(Audience.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListAudiencesRequest, ListAudiencesResponse>
+      listAudiencesMethodDescriptor =
+          ApiMethodDescriptor.<ListAudiencesRequest, ListAudiencesResponse>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListAudiences")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAudiencesRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=properties/*}/audiences",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAudiencesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAudiencesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAudiencesResponse>newBuilder()
+                      .setDefaultInstance(ListAudiencesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateAudienceRequest, Audience>
+      createAudienceMethodDescriptor =
+          ApiMethodDescriptor.<CreateAudienceRequest, Audience>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateAudience")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateAudienceRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=properties/*}/audiences",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAudienceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAudienceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("audience", request.getAudience()))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Audience>newBuilder()
+                      .setDefaultInstance(Audience.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateAudienceRequest, Audience>
+      updateAudienceMethodDescriptor =
+          ApiMethodDescriptor.<UpdateAudienceRequest, Audience>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateAudience")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateAudienceRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{audience.name=properties/*/audiences/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAudienceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "audience.name", request.getAudience().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAudienceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("audience", request.getAudience()))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Audience>newBuilder()
+                      .setDefaultInstance(Audience.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ArchiveAudienceRequest, Empty>
+      archiveAudienceMethodDescriptor =
+          ApiMethodDescriptor.<ArchiveAudienceRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ArchiveAudience")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ArchiveAudienceRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=properties/*/audiences/*}:archive",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ArchiveAudienceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ArchiveAudienceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build()))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetAttributionSettingsRequest, AttributionSettings>
+      getAttributionSettingsMethodDescriptor =
+          ApiMethodDescriptor.<GetAttributionSettingsRequest, AttributionSettings>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetAttributionSettings")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAttributionSettingsRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=properties/*/attributionSettings}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAttributionSettingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAttributionSettingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AttributionSettings>newBuilder()
+                      .setDefaultInstance(AttributionSettings.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateAttributionSettingsRequest, AttributionSettings>
+      updateAttributionSettingsMethodDescriptor =
+          ApiMethodDescriptor.<UpdateAttributionSettingsRequest, AttributionSettings>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateAttributionSettings")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateAttributionSettingsRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{attributionSettings.name=properties/*/attributionSettings}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAttributionSettingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "attributionSettings.name",
+                                request.getAttributionSettings().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAttributionSettingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("attributionSettings", request.getAttributionSettings()))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AttributionSettings>newBuilder()
+                      .setDefaultInstance(AttributionSettings.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsResponse> listAccountsCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsPagedResponse>
@@ -3010,6 +3278,17 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
   private final UnaryCallable<ListDataStreamsRequest, ListDataStreamsPagedResponse>
       listDataStreamsPagedCallable;
   private final UnaryCallable<GetDataStreamRequest, DataStream> getDataStreamCallable;
+  private final UnaryCallable<GetAudienceRequest, Audience> getAudienceCallable;
+  private final UnaryCallable<ListAudiencesRequest, ListAudiencesResponse> listAudiencesCallable;
+  private final UnaryCallable<ListAudiencesRequest, ListAudiencesPagedResponse>
+      listAudiencesPagedCallable;
+  private final UnaryCallable<CreateAudienceRequest, Audience> createAudienceCallable;
+  private final UnaryCallable<UpdateAudienceRequest, Audience> updateAudienceCallable;
+  private final UnaryCallable<ArchiveAudienceRequest, Empty> archiveAudienceCallable;
+  private final UnaryCallable<GetAttributionSettingsRequest, AttributionSettings>
+      getAttributionSettingsCallable;
+  private final UnaryCallable<UpdateAttributionSettingsRequest, AttributionSettings>
+      updateAttributionSettingsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -3514,6 +3793,44 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
             .setMethodDescriptor(getDataStreamMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<GetAudienceRequest, Audience> getAudienceTransportSettings =
+        HttpJsonCallSettings.<GetAudienceRequest, Audience>newBuilder()
+            .setMethodDescriptor(getAudienceMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<ListAudiencesRequest, ListAudiencesResponse>
+        listAudiencesTransportSettings =
+            HttpJsonCallSettings.<ListAudiencesRequest, ListAudiencesResponse>newBuilder()
+                .setMethodDescriptor(listAudiencesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<CreateAudienceRequest, Audience> createAudienceTransportSettings =
+        HttpJsonCallSettings.<CreateAudienceRequest, Audience>newBuilder()
+            .setMethodDescriptor(createAudienceMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<UpdateAudienceRequest, Audience> updateAudienceTransportSettings =
+        HttpJsonCallSettings.<UpdateAudienceRequest, Audience>newBuilder()
+            .setMethodDescriptor(updateAudienceMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<ArchiveAudienceRequest, Empty> archiveAudienceTransportSettings =
+        HttpJsonCallSettings.<ArchiveAudienceRequest, Empty>newBuilder()
+            .setMethodDescriptor(archiveAudienceMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<GetAttributionSettingsRequest, AttributionSettings>
+        getAttributionSettingsTransportSettings =
+            HttpJsonCallSettings.<GetAttributionSettingsRequest, AttributionSettings>newBuilder()
+                .setMethodDescriptor(getAttributionSettingsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<UpdateAttributionSettingsRequest, AttributionSettings>
+        updateAttributionSettingsTransportSettings =
+            HttpJsonCallSettings.<UpdateAttributionSettingsRequest, AttributionSettings>newBuilder()
+                .setMethodDescriptor(updateAttributionSettingsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
 
     this.getAccountCallable =
         callableFactory.createUnaryCallable(
@@ -3891,6 +4208,34 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
     this.getDataStreamCallable =
         callableFactory.createUnaryCallable(
             getDataStreamTransportSettings, settings.getDataStreamSettings(), clientContext);
+    this.getAudienceCallable =
+        callableFactory.createUnaryCallable(
+            getAudienceTransportSettings, settings.getAudienceSettings(), clientContext);
+    this.listAudiencesCallable =
+        callableFactory.createUnaryCallable(
+            listAudiencesTransportSettings, settings.listAudiencesSettings(), clientContext);
+    this.listAudiencesPagedCallable =
+        callableFactory.createPagedCallable(
+            listAudiencesTransportSettings, settings.listAudiencesSettings(), clientContext);
+    this.createAudienceCallable =
+        callableFactory.createUnaryCallable(
+            createAudienceTransportSettings, settings.createAudienceSettings(), clientContext);
+    this.updateAudienceCallable =
+        callableFactory.createUnaryCallable(
+            updateAudienceTransportSettings, settings.updateAudienceSettings(), clientContext);
+    this.archiveAudienceCallable =
+        callableFactory.createUnaryCallable(
+            archiveAudienceTransportSettings, settings.archiveAudienceSettings(), clientContext);
+    this.getAttributionSettingsCallable =
+        callableFactory.createUnaryCallable(
+            getAttributionSettingsTransportSettings,
+            settings.getAttributionSettingsSettings(),
+            clientContext);
+    this.updateAttributionSettingsCallable =
+        callableFactory.createUnaryCallable(
+            updateAttributionSettingsTransportSettings,
+            settings.updateAttributionSettingsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -3970,6 +4315,13 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
     methodDescriptors.add(updateDataStreamMethodDescriptor);
     methodDescriptors.add(listDataStreamsMethodDescriptor);
     methodDescriptors.add(getDataStreamMethodDescriptor);
+    methodDescriptors.add(getAudienceMethodDescriptor);
+    methodDescriptors.add(listAudiencesMethodDescriptor);
+    methodDescriptors.add(createAudienceMethodDescriptor);
+    methodDescriptors.add(updateAudienceMethodDescriptor);
+    methodDescriptors.add(archiveAudienceMethodDescriptor);
+    methodDescriptors.add(getAttributionSettingsMethodDescriptor);
+    methodDescriptors.add(updateAttributionSettingsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -4465,6 +4817,49 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
   @Override
   public UnaryCallable<GetDataStreamRequest, DataStream> getDataStreamCallable() {
     return getDataStreamCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAudienceRequest, Audience> getAudienceCallable() {
+    return getAudienceCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAudiencesRequest, ListAudiencesResponse> listAudiencesCallable() {
+    return listAudiencesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAudiencesRequest, ListAudiencesPagedResponse>
+      listAudiencesPagedCallable() {
+    return listAudiencesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAudienceRequest, Audience> createAudienceCallable() {
+    return createAudienceCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAudienceRequest, Audience> updateAudienceCallable() {
+    return updateAudienceCallable;
+  }
+
+  @Override
+  public UnaryCallable<ArchiveAudienceRequest, Empty> archiveAudienceCallable() {
+    return archiveAudienceCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAttributionSettingsRequest, AttributionSettings>
+      getAttributionSettingsCallable() {
+    return getAttributionSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAttributionSettingsRequest, AttributionSettings>
+      updateAttributionSettingsCallable() {
+    return updateAttributionSettingsCallable;
   }
 
   @Override

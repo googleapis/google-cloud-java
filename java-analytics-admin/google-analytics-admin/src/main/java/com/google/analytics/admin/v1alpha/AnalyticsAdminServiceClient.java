@@ -8076,6 +8076,707 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     return stub.getDataStreamCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single Audience. Audiences created before 2020 may not be supported.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   AudienceName name = AudienceName.of("[PROPERTY]", "[AUDIENCE]");
+   *   Audience response = analyticsAdminServiceClient.getAudience(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Audience to get. Example format:
+   *     properties/1234/audiences/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Audience getAudience(AudienceName name) {
+    GetAudienceRequest request =
+        GetAudienceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getAudience(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single Audience. Audiences created before 2020 may not be supported.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = AudienceName.of("[PROPERTY]", "[AUDIENCE]").toString();
+   *   Audience response = analyticsAdminServiceClient.getAudience(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Audience to get. Example format:
+   *     properties/1234/audiences/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Audience getAudience(String name) {
+    GetAudienceRequest request = GetAudienceRequest.newBuilder().setName(name).build();
+    return getAudience(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single Audience. Audiences created before 2020 may not be supported.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetAudienceRequest request =
+   *       GetAudienceRequest.newBuilder()
+   *           .setName(AudienceName.of("[PROPERTY]", "[AUDIENCE]").toString())
+   *           .build();
+   *   Audience response = analyticsAdminServiceClient.getAudience(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Audience getAudience(GetAudienceRequest request) {
+    return getAudienceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single Audience. Audiences created before 2020 may not be supported.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetAudienceRequest request =
+   *       GetAudienceRequest.newBuilder()
+   *           .setName(AudienceName.of("[PROPERTY]", "[AUDIENCE]").toString())
+   *           .build();
+   *   ApiFuture<Audience> future =
+   *       analyticsAdminServiceClient.getAudienceCallable().futureCall(request);
+   *   // Do something.
+   *   Audience response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAudienceRequest, Audience> getAudienceCallable() {
+    return stub.getAudienceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Audiences on a property. Audiences created before 2020 may not be supported.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (Audience element : analyticsAdminServiceClient.listAudiences(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAudiencesPagedResponse listAudiences(PropertyName parent) {
+    ListAudiencesRequest request =
+        ListAudiencesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAudiences(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Audiences on a property. Audiences created before 2020 may not be supported.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   for (Audience element : analyticsAdminServiceClient.listAudiences(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAudiencesPagedResponse listAudiences(String parent) {
+    ListAudiencesRequest request = ListAudiencesRequest.newBuilder().setParent(parent).build();
+    return listAudiences(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Audiences on a property. Audiences created before 2020 may not be supported.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListAudiencesRequest request =
+   *       ListAudiencesRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Audience element : analyticsAdminServiceClient.listAudiences(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAudiencesPagedResponse listAudiences(ListAudiencesRequest request) {
+    return listAudiencesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Audiences on a property. Audiences created before 2020 may not be supported.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListAudiencesRequest request =
+   *       ListAudiencesRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Audience> future =
+   *       analyticsAdminServiceClient.listAudiencesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Audience element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAudiencesRequest, ListAudiencesPagedResponse>
+      listAudiencesPagedCallable() {
+    return stub.listAudiencesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Audiences on a property. Audiences created before 2020 may not be supported.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListAudiencesRequest request =
+   *       ListAudiencesRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListAudiencesResponse response =
+   *         analyticsAdminServiceClient.listAudiencesCallable().call(request);
+   *     for (Audience element : response.getAudiencesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAudiencesRequest, ListAudiencesResponse> listAudiencesCallable() {
+    return stub.listAudiencesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an Audience.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   Audience audience = Audience.newBuilder().build();
+   *   Audience response = analyticsAdminServiceClient.createAudience(parent, audience);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @param audience Required. The audience to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Audience createAudience(PropertyName parent, Audience audience) {
+    CreateAudienceRequest request =
+        CreateAudienceRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setAudience(audience)
+            .build();
+    return createAudience(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an Audience.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   Audience audience = Audience.newBuilder().build();
+   *   Audience response = analyticsAdminServiceClient.createAudience(parent, audience);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Example format: properties/1234
+   * @param audience Required. The audience to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Audience createAudience(String parent, Audience audience) {
+    CreateAudienceRequest request =
+        CreateAudienceRequest.newBuilder().setParent(parent).setAudience(audience).build();
+    return createAudience(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an Audience.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateAudienceRequest request =
+   *       CreateAudienceRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setAudience(Audience.newBuilder().build())
+   *           .build();
+   *   Audience response = analyticsAdminServiceClient.createAudience(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Audience createAudience(CreateAudienceRequest request) {
+    return createAudienceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an Audience.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateAudienceRequest request =
+   *       CreateAudienceRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setAudience(Audience.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Audience> future =
+   *       analyticsAdminServiceClient.createAudienceCallable().futureCall(request);
+   *   // Do something.
+   *   Audience response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateAudienceRequest, Audience> createAudienceCallable() {
+    return stub.createAudienceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an Audience on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   Audience audience = Audience.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Audience response = analyticsAdminServiceClient.updateAudience(audience, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param audience Required. The audience to update. The audience's `name` field is used to
+   *     identify the audience to be updated.
+   * @param updateMask Required. The list of fields to be updated. Field names must be in snake case
+   *     (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Audience updateAudience(Audience audience, FieldMask updateMask) {
+    UpdateAudienceRequest request =
+        UpdateAudienceRequest.newBuilder().setAudience(audience).setUpdateMask(updateMask).build();
+    return updateAudience(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an Audience on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateAudienceRequest request =
+   *       UpdateAudienceRequest.newBuilder()
+   *           .setAudience(Audience.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Audience response = analyticsAdminServiceClient.updateAudience(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Audience updateAudience(UpdateAudienceRequest request) {
+    return updateAudienceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an Audience on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateAudienceRequest request =
+   *       UpdateAudienceRequest.newBuilder()
+   *           .setAudience(Audience.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Audience> future =
+   *       analyticsAdminServiceClient.updateAudienceCallable().futureCall(request);
+   *   // Do something.
+   *   Audience response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateAudienceRequest, Audience> updateAudienceCallable() {
+    return stub.updateAudienceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Archives an Audience on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ArchiveAudienceRequest request =
+   *       ArchiveAudienceRequest.newBuilder()
+   *           .setName(PropertyName.of("[PROPERTY]").toString())
+   *           .build();
+   *   analyticsAdminServiceClient.archiveAudience(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void archiveAudience(ArchiveAudienceRequest request) {
+    archiveAudienceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Archives an Audience on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ArchiveAudienceRequest request =
+   *       ArchiveAudienceRequest.newBuilder()
+   *           .setName(PropertyName.of("[PROPERTY]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.archiveAudienceCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ArchiveAudienceRequest, Empty> archiveAudienceCallable() {
+    return stub.archiveAudienceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a AttributionSettings singleton.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   AttributionSettingsName name = AttributionSettingsName.of("[PROPERTY]");
+   *   AttributionSettings response = analyticsAdminServiceClient.getAttributionSettings(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the attribution settings to retrieve. Format:
+   *     properties/{property}/attributionSettings
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AttributionSettings getAttributionSettings(AttributionSettingsName name) {
+    GetAttributionSettingsRequest request =
+        GetAttributionSettingsRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getAttributionSettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a AttributionSettings singleton.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = AttributionSettingsName.of("[PROPERTY]").toString();
+   *   AttributionSettings response = analyticsAdminServiceClient.getAttributionSettings(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the attribution settings to retrieve. Format:
+   *     properties/{property}/attributionSettings
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AttributionSettings getAttributionSettings(String name) {
+    GetAttributionSettingsRequest request =
+        GetAttributionSettingsRequest.newBuilder().setName(name).build();
+    return getAttributionSettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a AttributionSettings singleton.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetAttributionSettingsRequest request =
+   *       GetAttributionSettingsRequest.newBuilder()
+   *           .setName(AttributionSettingsName.of("[PROPERTY]").toString())
+   *           .build();
+   *   AttributionSettings response = analyticsAdminServiceClient.getAttributionSettings(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AttributionSettings getAttributionSettings(GetAttributionSettingsRequest request) {
+    return getAttributionSettingsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a AttributionSettings singleton.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetAttributionSettingsRequest request =
+   *       GetAttributionSettingsRequest.newBuilder()
+   *           .setName(AttributionSettingsName.of("[PROPERTY]").toString())
+   *           .build();
+   *   ApiFuture<AttributionSettings> future =
+   *       analyticsAdminServiceClient.getAttributionSettingsCallable().futureCall(request);
+   *   // Do something.
+   *   AttributionSettings response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAttributionSettingsRequest, AttributionSettings>
+      getAttributionSettingsCallable() {
+    return stub.getAttributionSettingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates attribution settings on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   AttributionSettings attributionSettings = AttributionSettings.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   AttributionSettings response =
+   *       analyticsAdminServiceClient.updateAttributionSettings(attributionSettings, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param attributionSettings Required. The attribution settings to update. The `name` field is
+   *     used to identify the settings to be updated.
+   * @param updateMask Required. The list of fields to be updated. Field names must be in snake case
+   *     (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AttributionSettings updateAttributionSettings(
+      AttributionSettings attributionSettings, FieldMask updateMask) {
+    UpdateAttributionSettingsRequest request =
+        UpdateAttributionSettingsRequest.newBuilder()
+            .setAttributionSettings(attributionSettings)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateAttributionSettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates attribution settings on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateAttributionSettingsRequest request =
+   *       UpdateAttributionSettingsRequest.newBuilder()
+   *           .setAttributionSettings(AttributionSettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   AttributionSettings response = analyticsAdminServiceClient.updateAttributionSettings(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AttributionSettings updateAttributionSettings(
+      UpdateAttributionSettingsRequest request) {
+    return updateAttributionSettingsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates attribution settings on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateAttributionSettingsRequest request =
+   *       UpdateAttributionSettingsRequest.newBuilder()
+   *           .setAttributionSettings(AttributionSettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<AttributionSettings> future =
+   *       analyticsAdminServiceClient.updateAttributionSettingsCallable().futureCall(request);
+   *   // Do something.
+   *   AttributionSettings response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateAttributionSettingsRequest, AttributionSettings>
+      updateAttributionSettingsCallable() {
+    return stub.updateAttributionSettingsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -9368,6 +10069,82 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     protected ListDataStreamsFixedSizeCollection createCollection(
         List<ListDataStreamsPage> pages, int collectionSize) {
       return new ListDataStreamsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAudiencesPagedResponse
+      extends AbstractPagedListResponse<
+          ListAudiencesRequest,
+          ListAudiencesResponse,
+          Audience,
+          ListAudiencesPage,
+          ListAudiencesFixedSizeCollection> {
+
+    public static ApiFuture<ListAudiencesPagedResponse> createAsync(
+        PageContext<ListAudiencesRequest, ListAudiencesResponse, Audience> context,
+        ApiFuture<ListAudiencesResponse> futureResponse) {
+      ApiFuture<ListAudiencesPage> futurePage =
+          ListAudiencesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAudiencesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAudiencesPagedResponse(ListAudiencesPage page) {
+      super(page, ListAudiencesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAudiencesPage
+      extends AbstractPage<
+          ListAudiencesRequest, ListAudiencesResponse, Audience, ListAudiencesPage> {
+
+    private ListAudiencesPage(
+        PageContext<ListAudiencesRequest, ListAudiencesResponse, Audience> context,
+        ListAudiencesResponse response) {
+      super(context, response);
+    }
+
+    private static ListAudiencesPage createEmptyPage() {
+      return new ListAudiencesPage(null, null);
+    }
+
+    @Override
+    protected ListAudiencesPage createPage(
+        PageContext<ListAudiencesRequest, ListAudiencesResponse, Audience> context,
+        ListAudiencesResponse response) {
+      return new ListAudiencesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAudiencesPage> createPageAsync(
+        PageContext<ListAudiencesRequest, ListAudiencesResponse, Audience> context,
+        ApiFuture<ListAudiencesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAudiencesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAudiencesRequest,
+          ListAudiencesResponse,
+          Audience,
+          ListAudiencesPage,
+          ListAudiencesFixedSizeCollection> {
+
+    private ListAudiencesFixedSizeCollection(List<ListAudiencesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAudiencesFixedSizeCollection createEmptyCollection() {
+      return new ListAudiencesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAudiencesFixedSizeCollection createCollection(
+        List<ListAudiencesPage> pages, int collectionSize) {
+      return new ListAudiencesFixedSizeCollection(pages, collectionSize);
     }
   }
 }

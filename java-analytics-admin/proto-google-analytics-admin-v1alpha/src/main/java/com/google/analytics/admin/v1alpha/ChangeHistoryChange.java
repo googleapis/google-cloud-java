@@ -656,6 +656,42 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      */
     com.google.analytics.admin.v1alpha.DataStreamOrBuilder getDataStreamOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of AttributionSettings resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.AttributionSettings attribution_settings = 20;</code>
+     *
+     * @return Whether the attributionSettings field is set.
+     */
+    boolean hasAttributionSettings();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of AttributionSettings resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.AttributionSettings attribution_settings = 20;</code>
+     *
+     * @return The attributionSettings.
+     */
+    com.google.analytics.admin.v1alpha.AttributionSettings getAttributionSettings();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of AttributionSettings resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.AttributionSettings attribution_settings = 20;</code>
+     */
+    com.google.analytics.admin.v1alpha.AttributionSettingsOrBuilder
+        getAttributionSettingsOrBuilder();
+
     public com.google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResource.ResourceCase
         getResourceCase();
   }
@@ -959,6 +995,26 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
                 resourceCase_ = 18;
                 break;
               }
+            case 162:
+              {
+                com.google.analytics.admin.v1alpha.AttributionSettings.Builder subBuilder = null;
+                if (resourceCase_ == 20) {
+                  subBuilder =
+                      ((com.google.analytics.admin.v1alpha.AttributionSettings) resource_)
+                          .toBuilder();
+                }
+                resource_ =
+                    input.readMessage(
+                        com.google.analytics.admin.v1alpha.AttributionSettings.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(
+                      (com.google.analytics.admin.v1alpha.AttributionSettings) resource_);
+                  resource_ = subBuilder.buildPartial();
+                }
+                resourceCase_ = 20;
+                break;
+              }
             default:
               {
                 if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1016,6 +1072,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       CUSTOM_METRIC(14),
       DATA_RETENTION_SETTINGS(15),
       DATA_STREAM(18),
+      ATTRIBUTION_SETTINGS(20),
       RESOURCE_NOT_SET(0);
       private final int value;
 
@@ -1060,6 +1117,8 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             return DATA_RETENTION_SETTINGS;
           case 18:
             return DATA_STREAM;
+          case 20:
+            return ATTRIBUTION_SETTINGS;
           case 0:
             return RESOURCE_NOT_SET;
           default:
@@ -1781,6 +1840,58 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       return com.google.analytics.admin.v1alpha.DataStream.getDefaultInstance();
     }
 
+    public static final int ATTRIBUTION_SETTINGS_FIELD_NUMBER = 20;
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of AttributionSettings resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.AttributionSettings attribution_settings = 20;</code>
+     *
+     * @return Whether the attributionSettings field is set.
+     */
+    @java.lang.Override
+    public boolean hasAttributionSettings() {
+      return resourceCase_ == 20;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of AttributionSettings resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.AttributionSettings attribution_settings = 20;</code>
+     *
+     * @return The attributionSettings.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.AttributionSettings getAttributionSettings() {
+      if (resourceCase_ == 20) {
+        return (com.google.analytics.admin.v1alpha.AttributionSettings) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.AttributionSettings.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of AttributionSettings resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.AttributionSettings attribution_settings = 20;</code>
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.AttributionSettingsOrBuilder
+        getAttributionSettingsOrBuilder() {
+      if (resourceCase_ == 20) {
+        return (com.google.analytics.admin.v1alpha.AttributionSettings) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.AttributionSettings.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1839,6 +1950,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       if (resourceCase_ == 18) {
         output.writeMessage(18, (com.google.analytics.admin.v1alpha.DataStream) resource_);
+      }
+      if (resourceCase_ == 20) {
+        output.writeMessage(20, (com.google.analytics.admin.v1alpha.AttributionSettings) resource_);
       }
       unknownFields.writeTo(output);
     }
@@ -1916,6 +2030,11 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 18, (com.google.analytics.admin.v1alpha.DataStream) resource_);
       }
+      if (resourceCase_ == 20) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                20, (com.google.analytics.admin.v1alpha.AttributionSettings) resource_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1977,6 +2096,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           break;
         case 18:
           if (!getDataStream().equals(other.getDataStream())) return false;
+          break;
+        case 20:
+          if (!getAttributionSettings().equals(other.getAttributionSettings())) return false;
           break;
         case 0:
         default:
@@ -2044,6 +2166,10 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         case 18:
           hash = (37 * hash) + DATA_STREAM_FIELD_NUMBER;
           hash = (53 * hash) + getDataStream().hashCode();
+          break;
+        case 20:
+          hash = (37 * hash) + ATTRIBUTION_SETTINGS_FIELD_NUMBER;
+          hash = (53 * hash) + getAttributionSettings().hashCode();
           break;
         case 0:
         default:
@@ -2330,6 +2456,13 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             result.resource_ = dataStreamBuilder_.build();
           }
         }
+        if (resourceCase_ == 20) {
+          if (attributionSettingsBuilder_ == null) {
+            result.resource_ = resource_;
+          } else {
+            result.resource_ = attributionSettingsBuilder_.build();
+          }
+        }
         result.resourceCase_ = resourceCase_;
         onBuilt();
         return result;
@@ -2453,6 +2586,11 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           case DATA_STREAM:
             {
               mergeDataStream(other.getDataStream());
+              break;
+            }
+          case ATTRIBUTION_SETTINGS:
+            {
+              mergeAttributionSettings(other.getAttributionSettings());
               break;
             }
           case RESOURCE_NOT_SET:
@@ -5389,6 +5527,221 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         onChanged();
         ;
         return dataStreamBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.AttributionSettings,
+              com.google.analytics.admin.v1alpha.AttributionSettings.Builder,
+              com.google.analytics.admin.v1alpha.AttributionSettingsOrBuilder>
+          attributionSettingsBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of AttributionSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.AttributionSettings attribution_settings = 20;</code>
+       *
+       * @return Whether the attributionSettings field is set.
+       */
+      @java.lang.Override
+      public boolean hasAttributionSettings() {
+        return resourceCase_ == 20;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of AttributionSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.AttributionSettings attribution_settings = 20;</code>
+       *
+       * @return The attributionSettings.
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.AttributionSettings getAttributionSettings() {
+        if (attributionSettingsBuilder_ == null) {
+          if (resourceCase_ == 20) {
+            return (com.google.analytics.admin.v1alpha.AttributionSettings) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.AttributionSettings.getDefaultInstance();
+        } else {
+          if (resourceCase_ == 20) {
+            return attributionSettingsBuilder_.getMessage();
+          }
+          return com.google.analytics.admin.v1alpha.AttributionSettings.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of AttributionSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.AttributionSettings attribution_settings = 20;</code>
+       */
+      public Builder setAttributionSettings(
+          com.google.analytics.admin.v1alpha.AttributionSettings value) {
+        if (attributionSettingsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          attributionSettingsBuilder_.setMessage(value);
+        }
+        resourceCase_ = 20;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of AttributionSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.AttributionSettings attribution_settings = 20;</code>
+       */
+      public Builder setAttributionSettings(
+          com.google.analytics.admin.v1alpha.AttributionSettings.Builder builderForValue) {
+        if (attributionSettingsBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          attributionSettingsBuilder_.setMessage(builderForValue.build());
+        }
+        resourceCase_ = 20;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of AttributionSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.AttributionSettings attribution_settings = 20;</code>
+       */
+      public Builder mergeAttributionSettings(
+          com.google.analytics.admin.v1alpha.AttributionSettings value) {
+        if (attributionSettingsBuilder_ == null) {
+          if (resourceCase_ == 20
+              && resource_
+                  != com.google.analytics.admin.v1alpha.AttributionSettings.getDefaultInstance()) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.AttributionSettings.newBuilder(
+                        (com.google.analytics.admin.v1alpha.AttributionSettings) resource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          if (resourceCase_ == 20) {
+            attributionSettingsBuilder_.mergeFrom(value);
+          } else {
+            attributionSettingsBuilder_.setMessage(value);
+          }
+        }
+        resourceCase_ = 20;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of AttributionSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.AttributionSettings attribution_settings = 20;</code>
+       */
+      public Builder clearAttributionSettings() {
+        if (attributionSettingsBuilder_ == null) {
+          if (resourceCase_ == 20) {
+            resourceCase_ = 0;
+            resource_ = null;
+            onChanged();
+          }
+        } else {
+          if (resourceCase_ == 20) {
+            resourceCase_ = 0;
+            resource_ = null;
+          }
+          attributionSettingsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of AttributionSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.AttributionSettings attribution_settings = 20;</code>
+       */
+      public com.google.analytics.admin.v1alpha.AttributionSettings.Builder
+          getAttributionSettingsBuilder() {
+        return getAttributionSettingsFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of AttributionSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.AttributionSettings attribution_settings = 20;</code>
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.AttributionSettingsOrBuilder
+          getAttributionSettingsOrBuilder() {
+        if ((resourceCase_ == 20) && (attributionSettingsBuilder_ != null)) {
+          return attributionSettingsBuilder_.getMessageOrBuilder();
+        } else {
+          if (resourceCase_ == 20) {
+            return (com.google.analytics.admin.v1alpha.AttributionSettings) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.AttributionSettings.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of AttributionSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.AttributionSettings attribution_settings = 20;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.AttributionSettings,
+              com.google.analytics.admin.v1alpha.AttributionSettings.Builder,
+              com.google.analytics.admin.v1alpha.AttributionSettingsOrBuilder>
+          getAttributionSettingsFieldBuilder() {
+        if (attributionSettingsBuilder_ == null) {
+          if (!(resourceCase_ == 20)) {
+            resource_ = com.google.analytics.admin.v1alpha.AttributionSettings.getDefaultInstance();
+          }
+          attributionSettingsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.analytics.admin.v1alpha.AttributionSettings,
+                  com.google.analytics.admin.v1alpha.AttributionSettings.Builder,
+                  com.google.analytics.admin.v1alpha.AttributionSettingsOrBuilder>(
+                  (com.google.analytics.admin.v1alpha.AttributionSettings) resource_,
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        resourceCase_ = 20;
+        onChanged();
+        ;
+        return attributionSettingsBuilder_;
       }
 
       @java.lang.Override

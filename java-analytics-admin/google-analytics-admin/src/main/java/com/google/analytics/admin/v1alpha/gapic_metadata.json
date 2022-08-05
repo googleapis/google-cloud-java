@@ -16,6 +16,9 @@
             "ApproveDisplayVideo360AdvertiserLinkProposal": {
               "methods": ["approveDisplayVideo360AdvertiserLinkProposal", "approveDisplayVideo360AdvertiserLinkProposalCallable"]
             },
+            "ArchiveAudience": {
+              "methods": ["archiveAudience", "archiveAudienceCallable"]
+            },
             "ArchiveCustomDimension": {
               "methods": ["archiveCustomDimension", "archiveCustomDimension", "archiveCustomDimension", "archiveCustomDimensionCallable"]
             },
@@ -39,6 +42,9 @@
             },
             "CancelDisplayVideo360AdvertiserLinkProposal": {
               "methods": ["cancelDisplayVideo360AdvertiserLinkProposal", "cancelDisplayVideo360AdvertiserLinkProposalCallable"]
+            },
+            "CreateAudience": {
+              "methods": ["createAudience", "createAudience", "createAudience", "createAudienceCallable"]
             },
             "CreateConversionEvent": {
               "methods": ["createConversionEvent", "createConversionEvent", "createConversionEvent", "createConversionEventCallable"]
@@ -106,6 +112,12 @@
             "GetAccount": {
               "methods": ["getAccount", "getAccount", "getAccount", "getAccountCallable"]
             },
+            "GetAttributionSettings": {
+              "methods": ["getAttributionSettings", "getAttributionSettings", "getAttributionSettings", "getAttributionSettingsCallable"]
+            },
+            "GetAudience": {
+              "methods": ["getAudience", "getAudience", "getAudience", "getAudienceCallable"]
+            },
             "GetConversionEvent": {
               "methods": ["getConversionEvent", "getConversionEvent", "getConversionEvent", "getConversionEventCallable"]
             },
@@ -151,6 +163,9 @@
             "ListAccounts": {
               "methods": ["listAccounts", "listAccountsPagedCallable", "listAccountsCallable"]
             },
+            "ListAudiences": {
+              "methods": ["listAudiences", "listAudiences", "listAudiences", "listAudiencesPagedCallable", "listAudiencesCallable"]
+            },
             "ListConversionEvents": {
               "methods": ["listConversionEvents", "listConversionEvents", "listConversionEvents", "listConversionEventsPagedCallable", "listConversionEventsCallable"]
             },
@@ -192,6 +207,12 @@
             },
             "UpdateAccount": {
               "methods": ["updateAccount", "updateAccount", "updateAccountCallable"]
+            },
+            "UpdateAttributionSettings": {
+              "methods": ["updateAttributionSettings", "updateAttributionSettings", "updateAttributionSettingsCallable"]
+            },
+            "UpdateAudience": {
+              "methods": ["updateAudience", "updateAudience", "updateAudienceCallable"]
             },
             "UpdateCustomDimension": {
               "methods": ["updateCustomDimension", "updateCustomDimension", "updateCustomDimensionCallable"]

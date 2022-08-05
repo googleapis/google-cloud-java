@@ -138,7 +138,7 @@ public final class MeasurementProtocolSecret extends com.google.protobuf.Generat
    * Output only. Resource name of this secret. This secret may be a child of any type of
    * stream.
    * Format:
-   * properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
+   * properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -164,7 +164,7 @@ public final class MeasurementProtocolSecret extends com.google.protobuf.Generat
    * Output only. Resource name of this secret. This secret may be a child of any type of
    * stream.
    * Format:
-   * properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
+   * properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -647,7 +647,7 @@ public final class MeasurementProtocolSecret extends com.google.protobuf.Generat
      * Output only. Resource name of this secret. This secret may be a child of any type of
      * stream.
      * Format:
-     * properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
+     * properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -672,7 +672,7 @@ public final class MeasurementProtocolSecret extends com.google.protobuf.Generat
      * Output only. Resource name of this secret. This secret may be a child of any type of
      * stream.
      * Format:
-     * properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
+     * properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -697,7 +697,7 @@ public final class MeasurementProtocolSecret extends com.google.protobuf.Generat
      * Output only. Resource name of this secret. This secret may be a child of any type of
      * stream.
      * Format:
-     * properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
+     * properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -721,7 +721,7 @@ public final class MeasurementProtocolSecret extends com.google.protobuf.Generat
      * Output only. Resource name of this secret. This secret may be a child of any type of
      * stream.
      * Format:
-     * properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
+     * properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -741,7 +741,7 @@ public final class MeasurementProtocolSecret extends com.google.protobuf.Generat
      * Output only. Resource name of this secret. This secret may be a child of any type of
      * stream.
      * Format:
-     * properties/{property}/webDataStreams/{webDataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
+     * properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

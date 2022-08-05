@@ -40,6 +40,8 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
   private PropertySummary() {
     property_ = "";
     displayName_ = "";
+    propertyType_ = 0;
+    parent_ = "";
   }
 
   @java.lang.Override
@@ -83,6 +85,20 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
               java.lang.String s = input.readStringRequireUtf8();
 
               displayName_ = s;
+              break;
+            }
+          case 24:
+            {
+              int rawValue = input.readEnum();
+
+              propertyType_ = rawValue;
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              parent_ = s;
               break;
             }
           default:
@@ -223,6 +239,97 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int PROPERTY_TYPE_FIELD_NUMBER = 3;
+  private int propertyType_;
+  /**
+   *
+   *
+   * <pre>
+   * The property's property type.
+   * </pre>
+   *
+   * <code>.google.analytics.admin.v1alpha.PropertyType property_type = 3;</code>
+   *
+   * @return The enum numeric value on the wire for propertyType.
+   */
+  @java.lang.Override
+  public int getPropertyTypeValue() {
+    return propertyType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The property's property type.
+   * </pre>
+   *
+   * <code>.google.analytics.admin.v1alpha.PropertyType property_type = 3;</code>
+   *
+   * @return The propertyType.
+   */
+  @java.lang.Override
+  public com.google.analytics.admin.v1alpha.PropertyType getPropertyType() {
+    @SuppressWarnings("deprecation")
+    com.google.analytics.admin.v1alpha.PropertyType result =
+        com.google.analytics.admin.v1alpha.PropertyType.valueOf(propertyType_);
+    return result == null ? com.google.analytics.admin.v1alpha.PropertyType.UNRECOGNIZED : result;
+  }
+
+  public static final int PARENT_FIELD_NUMBER = 4;
+  private volatile java.lang.Object parent_;
+  /**
+   *
+   *
+   * <pre>
+   * Resource name of this property's logical parent.
+   * Note: The Property-Moving UI can be used to change the parent.
+   * Format: accounts/{account}, properties/{property}
+   * Example: "accounts/100", "properties/200"
+   * </pre>
+   *
+   * <code>string parent = 4;</code>
+   *
+   * @return The parent.
+   */
+  @java.lang.Override
+  public java.lang.String getParent() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      parent_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Resource name of this property's logical parent.
+   * Note: The Property-Moving UI can be used to change the parent.
+   * Format: accounts/{account}, properties/{property}
+   * Example: "accounts/100", "properties/200"
+   * </pre>
+   *
+   * <code>string parent = 4;</code>
+   *
+   * @return The bytes for parent.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getParentBytes() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      parent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -243,6 +350,13 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
     }
+    if (propertyType_
+        != com.google.analytics.admin.v1alpha.PropertyType.PROPERTY_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(3, propertyType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, parent_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -257,6 +371,13 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
+    }
+    if (propertyType_
+        != com.google.analytics.admin.v1alpha.PropertyType.PROPERTY_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, propertyType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, parent_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -276,6 +397,8 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
 
     if (!getProperty().equals(other.getProperty())) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (propertyType_ != other.propertyType_) return false;
+    if (!getParent().equals(other.getParent())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -291,6 +414,10 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + getProperty().hashCode();
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
+    hash = (37 * hash) + PROPERTY_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + propertyType_;
+    hash = (37 * hash) + PARENT_FIELD_NUMBER;
+    hash = (53 * hash) + getParent().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -440,6 +567,10 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
 
       displayName_ = "";
 
+      propertyType_ = 0;
+
+      parent_ = "";
+
       return this;
     }
 
@@ -469,6 +600,8 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
           new com.google.analytics.admin.v1alpha.PropertySummary(this);
       result.property_ = property_;
       result.displayName_ = displayName_;
+      result.propertyType_ = propertyType_;
+      result.parent_ = parent_;
       onBuilt();
       return result;
     }
@@ -525,6 +658,13 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        onChanged();
+      }
+      if (other.propertyType_ != 0) {
+        setPropertyTypeValue(other.getPropertyTypeValue());
+      }
+      if (!other.getParent().isEmpty()) {
+        parent_ = other.parent_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -775,6 +915,218 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
 
       displayName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int propertyType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The property's property type.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.PropertyType property_type = 3;</code>
+     *
+     * @return The enum numeric value on the wire for propertyType.
+     */
+    @java.lang.Override
+    public int getPropertyTypeValue() {
+      return propertyType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The property's property type.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.PropertyType property_type = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for propertyType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPropertyTypeValue(int value) {
+
+      propertyType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The property's property type.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.PropertyType property_type = 3;</code>
+     *
+     * @return The propertyType.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.PropertyType getPropertyType() {
+      @SuppressWarnings("deprecation")
+      com.google.analytics.admin.v1alpha.PropertyType result =
+          com.google.analytics.admin.v1alpha.PropertyType.valueOf(propertyType_);
+      return result == null ? com.google.analytics.admin.v1alpha.PropertyType.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The property's property type.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.PropertyType property_type = 3;</code>
+     *
+     * @param value The propertyType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPropertyType(com.google.analytics.admin.v1alpha.PropertyType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      propertyType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The property's property type.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.PropertyType property_type = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPropertyType() {
+
+      propertyType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object parent_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of this property's logical parent.
+     * Note: The Property-Moving UI can be used to change the parent.
+     * Format: accounts/{account}, properties/{property}
+     * Example: "accounts/100", "properties/200"
+     * </pre>
+     *
+     * <code>string parent = 4;</code>
+     *
+     * @return The parent.
+     */
+    public java.lang.String getParent() {
+      java.lang.Object ref = parent_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parent_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of this property's logical parent.
+     * Note: The Property-Moving UI can be used to change the parent.
+     * Format: accounts/{account}, properties/{property}
+     * Example: "accounts/100", "properties/200"
+     * </pre>
+     *
+     * <code>string parent = 4;</code>
+     *
+     * @return The bytes for parent.
+     */
+    public com.google.protobuf.ByteString getParentBytes() {
+      java.lang.Object ref = parent_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        parent_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of this property's logical parent.
+     * Note: The Property-Moving UI can be used to change the parent.
+     * Format: accounts/{account}, properties/{property}
+     * Example: "accounts/100", "properties/200"
+     * </pre>
+     *
+     * <code>string parent = 4;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParent(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      parent_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of this property's logical parent.
+     * Note: The Property-Moving UI can be used to change the parent.
+     * Format: accounts/{account}, properties/{property}
+     * Example: "accounts/100", "properties/200"
+     * </pre>
+     *
+     * <code>string parent = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearParent() {
+
+      parent_ = getDefaultInstance().getParent();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of this property's logical parent.
+     * Note: The Property-Moving UI can be used to change the parent.
+     * Format: accounts/{account}, properties/{property}
+     * Example: "accounts/100", "properties/200"
+     * </pre>
+     *
+     * <code>string parent = 4;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      parent_ = value;
       onChanged();
       return this;
     }
