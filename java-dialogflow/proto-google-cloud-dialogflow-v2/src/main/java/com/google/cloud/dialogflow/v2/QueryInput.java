@@ -262,7 +262,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The natural language text to be processed.
+   * The natural language text to be processed. Text length must not exceed
+   * 256 character for virtual agent interactions.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.TextInput text = 2;</code>
@@ -277,7 +278,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The natural language text to be processed.
+   * The natural language text to be processed. Text length must not exceed
+   * 256 character for virtual agent interactions.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.TextInput text = 2;</code>
@@ -295,7 +297,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The natural language text to be processed.
+   * The natural language text to be processed. Text length must not exceed
+   * 256 character for virtual agent interactions.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.TextInput text = 2;</code>
@@ -995,7 +998,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The natural language text to be processed.
+     * The natural language text to be processed. Text length must not exceed
+     * 256 character for virtual agent interactions.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.TextInput text = 2;</code>
@@ -1010,7 +1014,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The natural language text to be processed.
+     * The natural language text to be processed. Text length must not exceed
+     * 256 character for virtual agent interactions.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.TextInput text = 2;</code>
@@ -1035,7 +1040,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The natural language text to be processed.
+     * The natural language text to be processed. Text length must not exceed
+     * 256 character for virtual agent interactions.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.TextInput text = 2;</code>
@@ -1057,7 +1063,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The natural language text to be processed.
+     * The natural language text to be processed. Text length must not exceed
+     * 256 character for virtual agent interactions.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.TextInput text = 2;</code>
@@ -1076,7 +1083,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The natural language text to be processed.
+     * The natural language text to be processed. Text length must not exceed
+     * 256 character for virtual agent interactions.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.TextInput text = 2;</code>
@@ -1108,7 +1116,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The natural language text to be processed.
+     * The natural language text to be processed. Text length must not exceed
+     * 256 character for virtual agent interactions.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.TextInput text = 2;</code>
@@ -1133,7 +1142,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The natural language text to be processed.
+     * The natural language text to be processed. Text length must not exceed
+     * 256 character for virtual agent interactions.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.TextInput text = 2;</code>
@@ -1145,7 +1155,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The natural language text to be processed.
+     * The natural language text to be processed. Text length must not exceed
+     * 256 character for virtual agent interactions.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.TextInput text = 2;</code>
@@ -1165,7 +1176,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The natural language text to be processed.
+     * The natural language text to be processed. Text length must not exceed
+     * 256 character for virtual agent interactions.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.TextInput text = 2;</code>

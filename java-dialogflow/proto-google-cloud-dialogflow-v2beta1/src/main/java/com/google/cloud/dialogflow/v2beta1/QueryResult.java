@@ -600,7 +600,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Indicates whether the conversational query triggers a cancellation for slot
-   * filling.
+   * filling. For more information, see the [cancel slot filling
+   * documentation](https://cloud.google.com/dialogflow/es/docs/intents-actions-parameters#cancel).
    * </pre>
    *
    * <code>bool cancels_slot_filling = 21;</code>
@@ -2705,7 +2706,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates whether the conversational query triggers a cancellation for slot
-     * filling.
+     * filling. For more information, see the [cancel slot filling
+     * documentation](https://cloud.google.com/dialogflow/es/docs/intents-actions-parameters#cancel).
      * </pre>
      *
      * <code>bool cancels_slot_filling = 21;</code>
@@ -2721,7 +2723,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates whether the conversational query triggers a cancellation for slot
-     * filling.
+     * filling. For more information, see the [cancel slot filling
+     * documentation](https://cloud.google.com/dialogflow/es/docs/intents-actions-parameters#cancel).
      * </pre>
      *
      * <code>bool cancels_slot_filling = 21;</code>
@@ -2740,7 +2743,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates whether the conversational query triggers a cancellation for slot
-     * filling.
+     * filling. For more information, see the [cancel slot filling
+     * documentation](https://cloud.google.com/dialogflow/es/docs/intents-actions-parameters#cancel).
      * </pre>
      *
      * <code>bool cancels_slot_filling = 21;</code>

@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
+import static com.google.cloud.dialogflow.v2beta1.ParticipantsClient.ListLocationsPagedResponse;
 import static com.google.cloud.dialogflow.v2beta1.ParticipantsClient.ListParticipantsPagedResponse;
 import static com.google.cloud.dialogflow.v2beta1.ParticipantsClient.ListSuggestionsPagedResponse;
 
@@ -30,8 +31,13 @@ import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Any;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Struct;
 import io.grpc.StatusRuntimeException;
@@ -52,6 +58,7 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class ParticipantsClientTest {
+  private static MockLocations mockLocations;
   private static MockParticipants mockParticipants;
   private static MockServiceHelper mockServiceHelper;
   private LocalChannelProvider channelProvider;
@@ -60,9 +67,11 @@ public class ParticipantsClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockParticipants = new MockParticipants();
+    mockLocations = new MockLocations();
     mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockParticipants));
+            UUID.randomUUID().toString(),
+            Arrays.<MockGrpcService>asList(mockParticipants, mockLocations));
     mockServiceHelper.start();
   }
 
@@ -425,6 +434,57 @@ public class ParticipantsClientTest {
     ParticipantName participant =
         ParticipantName.ofProjectConversationParticipantName(
             "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
+    AudioInput audioInput = AudioInput.newBuilder().build();
+
+    AnalyzeContentResponse actualResponse = client.analyzeContent(participant, audioInput);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockParticipants.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AnalyzeContentRequest actualRequest = ((AnalyzeContentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(participant.toString(), actualRequest.getParticipant());
+    Assert.assertEquals(audioInput, actualRequest.getAudioInput());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void analyzeContentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockParticipants.addException(exception);
+
+    try {
+      ParticipantName participant =
+          ParticipantName.ofProjectConversationParticipantName(
+              "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
+      AudioInput audioInput = AudioInput.newBuilder().build();
+      client.analyzeContent(participant, audioInput);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void analyzeContentTest2() throws Exception {
+    AnalyzeContentResponse expectedResponse =
+        AnalyzeContentResponse.newBuilder()
+            .setReplyText("replyText-433699017")
+            .setReplyAudio(OutputAudio.newBuilder().build())
+            .setAutomatedAgentReply(AutomatedAgentReply.newBuilder().build())
+            .setMessage(Message.newBuilder().build())
+            .addAllHumanAgentSuggestionResults(new ArrayList<SuggestionResult>())
+            .addAllEndUserSuggestionResults(new ArrayList<SuggestionResult>())
+            .setDtmfParameters(DtmfParameters.newBuilder().build())
+            .build();
+    mockParticipants.addResponse(expectedResponse);
+
+    ParticipantName participant =
+        ParticipantName.ofProjectConversationParticipantName(
+            "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
     EventInput eventInput = EventInput.newBuilder().build();
 
     AnalyzeContentResponse actualResponse = client.analyzeContent(participant, eventInput);
@@ -443,7 +503,7 @@ public class ParticipantsClientTest {
   }
 
   @Test
-  public void analyzeContentExceptionTest() throws Exception {
+  public void analyzeContentExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockParticipants.addException(exception);
 
@@ -460,7 +520,7 @@ public class ParticipantsClientTest {
   }
 
   @Test
-  public void analyzeContentTest2() throws Exception {
+  public void analyzeContentTest3() throws Exception {
     AnalyzeContentResponse expectedResponse =
         AnalyzeContentResponse.newBuilder()
             .setReplyText("replyText-433699017")
@@ -494,7 +554,7 @@ public class ParticipantsClientTest {
   }
 
   @Test
-  public void analyzeContentExceptionTest2() throws Exception {
+  public void analyzeContentExceptionTest3() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockParticipants.addException(exception);
 
@@ -511,7 +571,54 @@ public class ParticipantsClientTest {
   }
 
   @Test
-  public void analyzeContentTest3() throws Exception {
+  public void analyzeContentTest4() throws Exception {
+    AnalyzeContentResponse expectedResponse =
+        AnalyzeContentResponse.newBuilder()
+            .setReplyText("replyText-433699017")
+            .setReplyAudio(OutputAudio.newBuilder().build())
+            .setAutomatedAgentReply(AutomatedAgentReply.newBuilder().build())
+            .setMessage(Message.newBuilder().build())
+            .addAllHumanAgentSuggestionResults(new ArrayList<SuggestionResult>())
+            .addAllEndUserSuggestionResults(new ArrayList<SuggestionResult>())
+            .setDtmfParameters(DtmfParameters.newBuilder().build())
+            .build();
+    mockParticipants.addResponse(expectedResponse);
+
+    String participant = "participant767422259";
+    AudioInput audioInput = AudioInput.newBuilder().build();
+
+    AnalyzeContentResponse actualResponse = client.analyzeContent(participant, audioInput);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockParticipants.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AnalyzeContentRequest actualRequest = ((AnalyzeContentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(participant, actualRequest.getParticipant());
+    Assert.assertEquals(audioInput, actualRequest.getAudioInput());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void analyzeContentExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockParticipants.addException(exception);
+
+    try {
+      String participant = "participant767422259";
+      AudioInput audioInput = AudioInput.newBuilder().build();
+      client.analyzeContent(participant, audioInput);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void analyzeContentTest5() throws Exception {
     AnalyzeContentResponse expectedResponse =
         AnalyzeContentResponse.newBuilder()
             .setReplyText("replyText-433699017")
@@ -543,7 +650,7 @@ public class ParticipantsClientTest {
   }
 
   @Test
-  public void analyzeContentExceptionTest3() throws Exception {
+  public void analyzeContentExceptionTest5() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockParticipants.addException(exception);
 
@@ -558,7 +665,7 @@ public class ParticipantsClientTest {
   }
 
   @Test
-  public void analyzeContentTest4() throws Exception {
+  public void analyzeContentTest6() throws Exception {
     AnalyzeContentResponse expectedResponse =
         AnalyzeContentResponse.newBuilder()
             .setReplyText("replyText-433699017")
@@ -590,7 +697,7 @@ public class ParticipantsClientTest {
   }
 
   @Test
-  public void analyzeContentExceptionTest4() throws Exception {
+  public void analyzeContentExceptionTest6() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockParticipants.addException(exception);
 
@@ -628,6 +735,7 @@ public class ParticipantsClientTest {
             .setQueryParams(QueryParameters.newBuilder().build())
             .setAssistQueryParams(AssistQueryParameters.newBuilder().build())
             .setCxParameters(Struct.newBuilder().build())
+            .setCxCurrentPage("cxCurrentPage1596907507")
             .setEnablePartialAutomatedAgentReply(true)
             .build();
 
@@ -661,6 +769,7 @@ public class ParticipantsClientTest {
             .setQueryParams(QueryParameters.newBuilder().build())
             .setAssistQueryParams(AssistQueryParameters.newBuilder().build())
             .setCxParameters(Struct.newBuilder().build())
+            .setCxCurrentPage("cxCurrentPage1596907507")
             .setEnablePartialAutomatedAgentReply(true)
             .build();
 
@@ -1047,6 +1156,107 @@ public class ParticipantsClientTest {
               .setContextSize(1116903569)
               .build();
       client.compileSuggestion(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listLocationsTest() throws Exception {
+    Location responsesElement = Location.newBuilder().build();
+    ListLocationsResponse expectedResponse =
+        ListLocationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllLocations(Arrays.asList(responsesElement))
+            .build();
+    mockLocations.addResponse(expectedResponse);
+
+    ListLocationsRequest request =
+        ListLocationsRequest.newBuilder()
+            .setName("name3373707")
+            .setFilter("filter-1274492040")
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    ListLocationsPagedResponse pagedListResponse = client.listLocations(request);
+
+    List<Location> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getLocationsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockLocations.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListLocationsRequest actualRequest = ((ListLocationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listLocationsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLocations.addException(exception);
+
+    try {
+      ListLocationsRequest request =
+          ListLocationsRequest.newBuilder()
+              .setName("name3373707")
+              .setFilter("filter-1274492040")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.listLocations(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getLocationTest() throws Exception {
+    Location expectedResponse =
+        Location.newBuilder()
+            .setName("name3373707")
+            .setLocationId("locationId1541836720")
+            .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
+            .setMetadata(Any.newBuilder().build())
+            .build();
+    mockLocations.addResponse(expectedResponse);
+
+    GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+
+    Location actualResponse = client.getLocation(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLocations.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetLocationRequest actualRequest = ((GetLocationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getLocationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLocations.addException(exception);
+
+    try {
+      GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+      client.getLocation(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

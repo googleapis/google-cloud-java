@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
+import static com.google.cloud.dialogflow.v2beta1.ParticipantsClient.ListLocationsPagedResponse;
 import static com.google.cloud.dialogflow.v2beta1.ParticipantsClient.ListParticipantsPagedResponse;
 import static com.google.cloud.dialogflow.v2beta1.ParticipantsClient.ListSuggestionsPagedResponse;
 
@@ -33,6 +34,10 @@ import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dialogflow.v2beta1.stub.ParticipantsStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -146,6 +151,17 @@ public class ParticipantsSettings extends ClientSettings<ParticipantsSettings> {
   public UnaryCallSettings<CompileSuggestionRequest, CompileSuggestionResponse>
       compileSuggestionSettings() {
     return ((ParticipantsStubSettings) getStubSettings()).compileSuggestionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((ParticipantsStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((ParticipantsStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final ParticipantsSettings create(ParticipantsStubSettings stub)
@@ -339,6 +355,18 @@ public class ParticipantsSettings extends ClientSettings<ParticipantsSettings> {
     public UnaryCallSettings.Builder<CompileSuggestionRequest, CompileSuggestionResponse>
         compileSuggestionSettings() {
       return getStubSettingsBuilder().compileSuggestionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

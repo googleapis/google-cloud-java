@@ -28,6 +28,10 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.stub.ParticipantsStub;
 import com.google.cloud.dialogflow.v2beta1.stub.ParticipantsStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -657,6 +661,44 @@ public class ParticipantsClient implements BackgroundResource {
    *   ParticipantName participant =
    *       ParticipantName.ofProjectConversationParticipantName(
    *           "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
+   *   AudioInput audioInput = AudioInput.newBuilder().build();
+   *   AnalyzeContentResponse response = participantsClient.analyzeContent(participant, audioInput);
+   * }
+   * }</pre>
+   *
+   * @param participant Required. The name of the participant this text comes from. Format:
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/conversations/&lt;Conversation
+   *     ID&gt;/participants/&lt;Participant ID&gt;`.
+   * @param audioInput The natural language speech audio to be processed.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalyzeContentResponse analyzeContent(
+      ParticipantName participant, AudioInput audioInput) {
+    AnalyzeContentRequest request =
+        AnalyzeContentRequest.newBuilder()
+            .setParticipant(participant == null ? null : participant.toString())
+            .setAudioInput(audioInput)
+            .build();
+    return analyzeContent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds a text (chat, for example), or audio (phone recording, for example) message from a
+   * participant into the conversation.
+   *
+   * <p>Note: Always use agent versions for production traffic sent to virtual agents. See [Versions
+   * and environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   ParticipantName participant =
+   *       ParticipantName.ofProjectConversationParticipantName(
+   *           "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
    *   EventInput eventInput = EventInput.newBuilder().build();
    *   AnalyzeContentResponse response = participantsClient.analyzeContent(participant, eventInput);
    * }
@@ -712,6 +754,44 @@ public class ParticipantsClient implements BackgroundResource {
         AnalyzeContentRequest.newBuilder()
             .setParticipant(participant == null ? null : participant.toString())
             .setTextInput(textInput)
+            .build();
+    return analyzeContent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds a text (chat, for example), or audio (phone recording, for example) message from a
+   * participant into the conversation.
+   *
+   * <p>Note: Always use agent versions for production traffic sent to virtual agents. See [Versions
+   * and environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   String participant =
+   *       ParticipantName.ofProjectConversationParticipantName(
+   *               "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+   *           .toString();
+   *   AudioInput audioInput = AudioInput.newBuilder().build();
+   *   AnalyzeContentResponse response = participantsClient.analyzeContent(participant, audioInput);
+   * }
+   * }</pre>
+   *
+   * @param participant Required. The name of the participant this text comes from. Format:
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/conversations/&lt;Conversation
+   *     ID&gt;/participants/&lt;Participant ID&gt;`.
+   * @param audioInput The natural language speech audio to be processed.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalyzeContentResponse analyzeContent(String participant, AudioInput audioInput) {
+    AnalyzeContentRequest request =
+        AnalyzeContentRequest.newBuilder()
+            .setParticipant(participant)
+            .setAudioInput(audioInput)
             .build();
     return analyzeContent(request);
   }
@@ -816,6 +896,7 @@ public class ParticipantsClient implements BackgroundResource {
    *           .setQueryParams(QueryParameters.newBuilder().build())
    *           .setAssistQueryParams(AssistQueryParameters.newBuilder().build())
    *           .setCxParameters(Struct.newBuilder().build())
+   *           .setCxCurrentPage("cxCurrentPage1596907507")
    *           .setMessageSendTime(Timestamp.newBuilder().build())
    *           .setRequestId("requestId693933066")
    *           .build();
@@ -854,6 +935,7 @@ public class ParticipantsClient implements BackgroundResource {
    *           .setQueryParams(QueryParameters.newBuilder().build())
    *           .setAssistQueryParams(AssistQueryParameters.newBuilder().build())
    *           .setCxParameters(Struct.newBuilder().build())
+   *           .setCxCurrentPage("cxCurrentPage1596907507")
    *           .setMessageSendTime(Timestamp.newBuilder().build())
    *           .setRequestId("requestId693933066")
    *           .build();
@@ -901,6 +983,7 @@ public class ParticipantsClient implements BackgroundResource {
    *           .setQueryParams(QueryParameters.newBuilder().build())
    *           .setAssistQueryParams(AssistQueryParameters.newBuilder().build())
    *           .setCxParameters(Struct.newBuilder().build())
+   *           .setCxCurrentPage("cxCurrentPage1596907507")
    *           .setEnablePartialAutomatedAgentReply(true)
    *           .build();
    *   bidiStream.send(request);
@@ -1546,6 +1629,146 @@ public class ParticipantsClient implements BackgroundResource {
     return stub.compileSuggestionCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Location element : participantsClient.listLocations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLocationsPagedResponse listLocations(ListLocationsRequest request) {
+    return listLocationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Location> future =
+   *       participantsClient.listLocationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Location element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return stub.listLocationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListLocationsResponse response = participantsClient.listLocationsCallable().call(request);
+   *     for (Location element : response.getLocationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return stub.listLocationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   Location response = participantsClient.getLocation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Location getLocation(GetLocationRequest request) {
+    return getLocationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Location> future = participantsClient.getLocationCallable().futureCall(request);
+   *   // Do something.
+   *   Location response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return stub.getLocationCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -1727,6 +1950,82 @@ public class ParticipantsClient implements BackgroundResource {
     protected ListSuggestionsFixedSizeCollection createCollection(
         List<ListSuggestionsPage> pages, int collectionSize) {
       return new ListSuggestionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListLocationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    public static ApiFuture<ListLocationsPagedResponse> createAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      ApiFuture<ListLocationsPage> futurePage =
+          ListLocationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListLocationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListLocationsPagedResponse(ListLocationsPage page) {
+      super(page, ListLocationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListLocationsPage
+      extends AbstractPage<
+          ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
+
+    private ListLocationsPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListLocationsPage createEmptyPage() {
+      return new ListLocationsPage(null, null);
+    }
+
+    @Override
+    protected ListLocationsPage createPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      return new ListLocationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListLocationsPage> createPageAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListLocationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListLocationsFixedSizeCollection createEmptyCollection() {
+      return new ListLocationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListLocationsFixedSizeCollection createCollection(
+        List<ListLocationsPage> pages, int collectionSize) {
+      return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

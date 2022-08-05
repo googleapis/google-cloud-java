@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.stub;
 
+import static com.google.cloud.dialogflow.v2beta1.AgentsClient.ListLocationsPagedResponse;
 import static com.google.cloud.dialogflow.v2beta1.AgentsClient.SearchAgentsPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -35,6 +36,10 @@ import com.google.cloud.dialogflow.v2beta1.SearchAgentsResponse;
 import com.google.cloud.dialogflow.v2beta1.SetAgentRequest;
 import com.google.cloud.dialogflow.v2beta1.TrainAgentRequest;
 import com.google.cloud.dialogflow.v2beta1.ValidationResult;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -114,6 +119,19 @@ public abstract class AgentsStub implements BackgroundResource {
 
   public UnaryCallable<GetValidationResultRequest, ValidationResult> getValidationResultCallable() {
     throw new UnsupportedOperationException("Not implemented: getValidationResultCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

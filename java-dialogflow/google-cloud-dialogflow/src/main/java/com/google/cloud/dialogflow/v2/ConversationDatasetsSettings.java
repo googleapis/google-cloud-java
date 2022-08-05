@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.v2;
 
 import static com.google.cloud.dialogflow.v2.ConversationDatasetsClient.ListConversationDatasetsPagedResponse;
+import static com.google.cloud.dialogflow.v2.ConversationDatasetsClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -32,6 +33,10 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dialogflow.v2.stub.ConversationDatasetsStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -138,6 +143,17 @@ public class ConversationDatasetsSettings extends ClientSettings<ConversationDat
       importConversationDataOperationSettings() {
     return ((ConversationDatasetsStubSettings) getStubSettings())
         .importConversationDataOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((ConversationDatasetsStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((ConversationDatasetsStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final ConversationDatasetsSettings create(ConversationDatasetsStubSettings stub)
@@ -312,6 +328,18 @@ public class ConversationDatasetsSettings extends ClientSettings<ConversationDat
             ImportConversationDataOperationMetadata>
         importConversationDataOperationSettings() {
       return getStubSettingsBuilder().importConversationDataOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

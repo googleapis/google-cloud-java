@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
+import static com.google.cloud.dialogflow.v2beta1.VersionsClient.ListLocationsPagedResponse;
 import static com.google.cloud.dialogflow.v2beta1.VersionsClient.ListVersionsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -31,6 +32,10 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dialogflow.v2beta1.stub.VersionsStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -97,6 +102,17 @@ public class VersionsSettings extends ClientSettings<VersionsSettings> {
   /** Returns the object with the settings used for calls to deleteVersion. */
   public UnaryCallSettings<DeleteVersionRequest, Empty> deleteVersionSettings() {
     return ((VersionsStubSettings) getStubSettings()).deleteVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((VersionsStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((VersionsStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final VersionsSettings create(VersionsStubSettings stub) throws IOException {
@@ -238,6 +254,18 @@ public class VersionsSettings extends ClientSettings<VersionsSettings> {
     /** Returns the builder for the settings used for calls to deleteVersion. */
     public UnaryCallSettings.Builder<DeleteVersionRequest, Empty> deleteVersionSettings() {
       return getStubSettingsBuilder().deleteVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

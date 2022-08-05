@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.v2beta1.stub;
 
 import static com.google.cloud.dialogflow.v2beta1.IntentsClient.ListIntentsPagedResponse;
+import static com.google.cloud.dialogflow.v2beta1.IntentsClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -57,6 +58,10 @@ import com.google.cloud.dialogflow.v2beta1.Intent;
 import com.google.cloud.dialogflow.v2beta1.ListIntentsRequest;
 import com.google.cloud.dialogflow.v2beta1.ListIntentsResponse;
 import com.google.cloud.dialogflow.v2beta1.UpdateIntentRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -124,6 +129,10 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
   private final UnaryCallSettings<BatchDeleteIntentsRequest, Operation> batchDeleteIntentsSettings;
   private final OperationCallSettings<BatchDeleteIntentsRequest, Empty, Struct>
       batchDeleteIntentsOperationSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
 
   private static final PagedListDescriptor<ListIntentsRequest, ListIntentsResponse, Intent>
       LIST_INTENTS_PAGE_STR_DESC =
@@ -161,6 +170,42 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListIntentsRequest, ListIntentsResponse, ListIntentsPagedResponse>
       LIST_INTENTS_PAGE_STR_FACT =
@@ -175,6 +220,23 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
               PageContext<ListIntentsRequest, ListIntentsResponse, Intent> pageContext =
                   PageContext.create(callable, LIST_INTENTS_PAGE_STR_DESC, request, context);
               return ListIntentsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -224,6 +286,17 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
   public OperationCallSettings<BatchDeleteIntentsRequest, Empty, Struct>
       batchDeleteIntentsOperationSettings() {
     return batchDeleteIntentsOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
   }
 
   public IntentsStub createStub() throws IOException {
@@ -341,6 +414,8 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
     batchDeleteIntentsSettings = settingsBuilder.batchDeleteIntentsSettings().build();
     batchDeleteIntentsOperationSettings =
         settingsBuilder.batchDeleteIntentsOperationSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
   /** Builder for IntentsStubSettings. */
@@ -362,6 +437,10 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
         batchDeleteIntentsSettings;
     private final OperationCallSettings.Builder<BatchDeleteIntentsRequest, Empty, Struct>
         batchDeleteIntentsOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -409,6 +488,8 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
       batchUpdateIntentsOperationSettings = OperationCallSettings.newBuilder();
       batchDeleteIntentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchDeleteIntentsOperationSettings = OperationCallSettings.newBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -418,7 +499,9 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
               updateIntentSettings,
               deleteIntentSettings,
               batchUpdateIntentsSettings,
-              batchDeleteIntentsSettings);
+              batchDeleteIntentsSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -436,6 +519,8 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
       batchDeleteIntentsSettings = settings.batchDeleteIntentsSettings.toBuilder();
       batchDeleteIntentsOperationSettings =
           settings.batchDeleteIntentsOperationSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -445,7 +530,9 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
               updateIntentSettings,
               deleteIntentSettings,
               batchUpdateIntentsSettings,
-              batchDeleteIntentsSettings);
+              batchDeleteIntentsSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -507,6 +594,16 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
 
       builder
           .batchDeleteIntentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getLocationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -631,6 +728,18 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
     public OperationCallSettings.Builder<BatchDeleteIntentsRequest, Empty, Struct>
         batchDeleteIntentsOperationSettings() {
       return batchDeleteIntentsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override

@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
+import static com.google.cloud.dialogflow.v2beta1.ParticipantsClient.ListLocationsPagedResponse;
 import static com.google.cloud.dialogflow.v2beta1.ParticipantsClient.ListParticipantsPagedResponse;
 import static com.google.cloud.dialogflow.v2beta1.ParticipantsClient.ListSuggestionsPagedResponse;
 
@@ -29,7 +30,12 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.cloud.dialogflow.v2beta1.stub.HttpJsonParticipantsStub;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
+import com.google.protobuf.Any;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -473,9 +479,9 @@ public class ParticipantsClientHttpJsonTest {
     ParticipantName participant =
         ParticipantName.ofProjectConversationParticipantName(
             "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
-    EventInput eventInput = EventInput.newBuilder().build();
+    AudioInput audioInput = AudioInput.newBuilder().build();
 
-    AnalyzeContentResponse actualResponse = client.analyzeContent(participant, eventInput);
+    AnalyzeContentResponse actualResponse = client.analyzeContent(participant, audioInput);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -504,6 +510,62 @@ public class ParticipantsClientHttpJsonTest {
       ParticipantName participant =
           ParticipantName.ofProjectConversationParticipantName(
               "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
+      AudioInput audioInput = AudioInput.newBuilder().build();
+      client.analyzeContent(participant, audioInput);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void analyzeContentTest2() throws Exception {
+    AnalyzeContentResponse expectedResponse =
+        AnalyzeContentResponse.newBuilder()
+            .setReplyText("replyText-433699017")
+            .setReplyAudio(OutputAudio.newBuilder().build())
+            .setAutomatedAgentReply(AutomatedAgentReply.newBuilder().build())
+            .setMessage(Message.newBuilder().build())
+            .addAllHumanAgentSuggestionResults(new ArrayList<SuggestionResult>())
+            .addAllEndUserSuggestionResults(new ArrayList<SuggestionResult>())
+            .setDtmfParameters(DtmfParameters.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ParticipantName participant =
+        ParticipantName.ofProjectConversationParticipantName(
+            "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
+    EventInput eventInput = EventInput.newBuilder().build();
+
+    AnalyzeContentResponse actualResponse = client.analyzeContent(participant, eventInput);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void analyzeContentExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ParticipantName participant =
+          ParticipantName.ofProjectConversationParticipantName(
+              "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
       EventInput eventInput = EventInput.newBuilder().build();
       client.analyzeContent(participant, eventInput);
       Assert.fail("No exception raised");
@@ -513,7 +575,7 @@ public class ParticipantsClientHttpJsonTest {
   }
 
   @Test
-  public void analyzeContentTest2() throws Exception {
+  public void analyzeContentTest3() throws Exception {
     AnalyzeContentResponse expectedResponse =
         AnalyzeContentResponse.newBuilder()
             .setReplyText("replyText-433699017")
@@ -550,7 +612,7 @@ public class ParticipantsClientHttpJsonTest {
   }
 
   @Test
-  public void analyzeContentExceptionTest2() throws Exception {
+  public void analyzeContentExceptionTest3() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -569,7 +631,61 @@ public class ParticipantsClientHttpJsonTest {
   }
 
   @Test
-  public void analyzeContentTest3() throws Exception {
+  public void analyzeContentTest4() throws Exception {
+    AnalyzeContentResponse expectedResponse =
+        AnalyzeContentResponse.newBuilder()
+            .setReplyText("replyText-433699017")
+            .setReplyAudio(OutputAudio.newBuilder().build())
+            .setAutomatedAgentReply(AutomatedAgentReply.newBuilder().build())
+            .setMessage(Message.newBuilder().build())
+            .addAllHumanAgentSuggestionResults(new ArrayList<SuggestionResult>())
+            .addAllEndUserSuggestionResults(new ArrayList<SuggestionResult>())
+            .setDtmfParameters(DtmfParameters.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String participant =
+        "projects/project-8054/conversations/conversation-8054/participants/participant-8054";
+    AudioInput audioInput = AudioInput.newBuilder().build();
+
+    AnalyzeContentResponse actualResponse = client.analyzeContent(participant, audioInput);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void analyzeContentExceptionTest4() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String participant =
+          "projects/project-8054/conversations/conversation-8054/participants/participant-8054";
+      AudioInput audioInput = AudioInput.newBuilder().build();
+      client.analyzeContent(participant, audioInput);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void analyzeContentTest5() throws Exception {
     AnalyzeContentResponse expectedResponse =
         AnalyzeContentResponse.newBuilder()
             .setReplyText("replyText-433699017")
@@ -605,7 +721,7 @@ public class ParticipantsClientHttpJsonTest {
   }
 
   @Test
-  public void analyzeContentExceptionTest3() throws Exception {
+  public void analyzeContentExceptionTest5() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -623,7 +739,7 @@ public class ParticipantsClientHttpJsonTest {
   }
 
   @Test
-  public void analyzeContentTest4() throws Exception {
+  public void analyzeContentTest6() throws Exception {
     AnalyzeContentResponse expectedResponse =
         AnalyzeContentResponse.newBuilder()
             .setReplyText("replyText-433699017")
@@ -659,7 +775,7 @@ public class ParticipantsClientHttpJsonTest {
   }
 
   @Test
-  public void analyzeContentExceptionTest4() throws Exception {
+  public void analyzeContentExceptionTest6() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -1098,6 +1214,122 @@ public class ParticipantsClientHttpJsonTest {
               .setContextSize(1116903569)
               .build();
       client.compileSuggestion(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listLocationsTest() throws Exception {
+    Location responsesElement = Location.newBuilder().build();
+    ListLocationsResponse expectedResponse =
+        ListLocationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllLocations(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ListLocationsRequest request =
+        ListLocationsRequest.newBuilder()
+            .setName("projects/project-3664")
+            .setFilter("filter-1274492040")
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    ListLocationsPagedResponse pagedListResponse = client.listLocations(request);
+
+    List<Location> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getLocationsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listLocationsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ListLocationsRequest request =
+          ListLocationsRequest.newBuilder()
+              .setName("projects/project-3664")
+              .setFilter("filter-1274492040")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.listLocations(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getLocationTest() throws Exception {
+    Location expectedResponse =
+        Location.newBuilder()
+            .setName("name3373707")
+            .setLocationId("locationId1541836720")
+            .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
+            .setMetadata(Any.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GetLocationRequest request =
+        GetLocationRequest.newBuilder()
+            .setName("projects/project-9062/locations/location-9062")
+            .build();
+
+    Location actualResponse = client.getLocation(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getLocationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GetLocationRequest request =
+          GetLocationRequest.newBuilder()
+              .setName("projects/project-9062/locations/location-9062")
+              .build();
+      client.getLocation(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.v2;
 
 import static com.google.cloud.dialogflow.v2.EntityTypesClient.ListEntityTypesPagedResponse;
+import static com.google.cloud.dialogflow.v2.EntityTypesClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -32,6 +33,10 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dialogflow.v2.stub.EntityTypesStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.Struct;
@@ -158,6 +163,17 @@ public class EntityTypesSettings extends ClientSettings<EntityTypesSettings> {
   public OperationCallSettings<BatchDeleteEntitiesRequest, Empty, Struct>
       batchDeleteEntitiesOperationSettings() {
     return ((EntityTypesStubSettings) getStubSettings()).batchDeleteEntitiesOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((EntityTypesStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((EntityTypesStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final EntityTypesSettings create(EntityTypesStubSettings stub) throws IOException {
@@ -362,6 +378,18 @@ public class EntityTypesSettings extends ClientSettings<EntityTypesSettings> {
     public OperationCallSettings.Builder<BatchDeleteEntitiesRequest, Empty, Struct>
         batchDeleteEntitiesOperationSettings() {
       return getStubSettingsBuilder().batchDeleteEntitiesOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

@@ -10869,7 +10869,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
    *
    * <pre>
    * Custom conversation models used in agent assist feature.
-   * Supported feature: ARTICLE_SUGGESTION, SMART_COMPOSE, SMART_REPLY.
+   * Supported feature: ARTICLE_SUGGESTION, SMART_COMPOSE, SMART_REPLY,
+   * CONVERSATION_SUMMARIZATION.
    * </pre>
    *
    * Protobuf type {@code
@@ -11202,7 +11203,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      * <pre>
      * Custom conversation models used in agent assist feature.
-     * Supported feature: ARTICLE_SUGGESTION, SMART_COMPOSE, SMART_REPLY.
+     * Supported feature: ARTICLE_SUGGESTION, SMART_COMPOSE, SMART_REPLY,
+     * CONVERSATION_SUMMARIZATION.
      * </pre>
      *
      * Protobuf type {@code

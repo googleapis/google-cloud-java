@@ -18,6 +18,7 @@ package com.google.cloud.dialogflow.v2.stub;
 
 import static com.google.cloud.dialogflow.v2.ConversationModelsClient.ListConversationModelEvaluationsPagedResponse;
 import static com.google.cloud.dialogflow.v2.ConversationModelsClient.ListConversationModelsPagedResponse;
+import static com.google.cloud.dialogflow.v2.ConversationModelsClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
@@ -40,6 +41,10 @@ import com.google.cloud.dialogflow.v2.ListConversationModelsRequest;
 import com.google.cloud.dialogflow.v2.ListConversationModelsResponse;
 import com.google.cloud.dialogflow.v2.UndeployConversationModelOperationMetadata;
 import com.google.cloud.dialogflow.v2.UndeployConversationModelRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -161,6 +166,19 @@ public abstract class ConversationModelsStub implements BackgroundResource {
       createConversationModelEvaluationCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: createConversationModelEvaluationCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

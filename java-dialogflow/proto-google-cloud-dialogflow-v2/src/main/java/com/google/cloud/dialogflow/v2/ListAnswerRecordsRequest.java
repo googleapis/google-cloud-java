@@ -197,18 +197,20 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Filters to restrict results to specific answer records.
-   * Filter on answer record type. Currently predicates on `type` is supported,
-   * valid values are `ARTICLE_ANSWER`, `FAQ_ANSWER`.
+   * Optional. Filters to restrict results to specific answer records.
+   * Marked deprecated as it hasn't been, and isn't currently, supported.
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
    *
-   * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
+   * @deprecated google.cloud.dialogflow.v2.ListAnswerRecordsRequest.filter is deprecated. See
+   *     google/cloud/dialogflow/v2/answer_record.proto;l=135
    * @return The filter.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -224,18 +226,20 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Filters to restrict results to specific answer records.
-   * Filter on answer record type. Currently predicates on `type` is supported,
-   * valid values are `ARTICLE_ANSWER`, `FAQ_ANSWER`.
+   * Optional. Filters to restrict results to specific answer records.
+   * Marked deprecated as it hasn't been, and isn't currently, supported.
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
    *
-   * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
+   * @deprecated google.cloud.dialogflow.v2.ListAnswerRecordsRequest.filter is deprecated. See
+   *     google/cloud/dialogflow/v2/answer_record.proto;l=135
    * @return The bytes for filter.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -820,17 +824,19 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Filters to restrict results to specific answer records.
-     * Filter on answer record type. Currently predicates on `type` is supported,
-     * valid values are `ARTICLE_ANSWER`, `FAQ_ANSWER`.
+     * Optional. Filters to restrict results to specific answer records.
+     * Marked deprecated as it hasn't been, and isn't currently, supported.
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
      *
-     * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
+     * @deprecated google.cloud.dialogflow.v2.ListAnswerRecordsRequest.filter is deprecated. See
+     *     google/cloud/dialogflow/v2/answer_record.proto;l=135
      * @return The filter.
      */
+    @java.lang.Deprecated
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
       if (!(ref instanceof java.lang.String)) {
@@ -846,17 +852,19 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Filters to restrict results to specific answer records.
-     * Filter on answer record type. Currently predicates on `type` is supported,
-     * valid values are `ARTICLE_ANSWER`, `FAQ_ANSWER`.
+     * Optional. Filters to restrict results to specific answer records.
+     * Marked deprecated as it hasn't been, and isn't currently, supported.
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
      *
-     * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
+     * @deprecated google.cloud.dialogflow.v2.ListAnswerRecordsRequest.filter is deprecated. See
+     *     google/cloud/dialogflow/v2/answer_record.proto;l=135
      * @return The bytes for filter.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
       if (ref instanceof String) {
@@ -872,18 +880,20 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Filters to restrict results to specific answer records.
-     * Filter on answer record type. Currently predicates on `type` is supported,
-     * valid values are `ARTICLE_ANSWER`, `FAQ_ANSWER`.
+     * Optional. Filters to restrict results to specific answer records.
+     * Marked deprecated as it hasn't been, and isn't currently, supported.
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
      *
-     * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
+     * @deprecated google.cloud.dialogflow.v2.ListAnswerRecordsRequest.filter is deprecated. See
+     *     google/cloud/dialogflow/v2/answer_record.proto;l=135
      * @param value The filter to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setFilter(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -897,17 +907,19 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Filters to restrict results to specific answer records.
-     * Filter on answer record type. Currently predicates on `type` is supported,
-     * valid values are `ARTICLE_ANSWER`, `FAQ_ANSWER`.
+     * Optional. Filters to restrict results to specific answer records.
+     * Marked deprecated as it hasn't been, and isn't currently, supported.
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
      *
-     * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
+     * @deprecated google.cloud.dialogflow.v2.ListAnswerRecordsRequest.filter is deprecated. See
+     *     google/cloud/dialogflow/v2/answer_record.proto;l=135
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearFilter() {
 
       filter_ = getDefaultInstance().getFilter();
@@ -918,18 +930,20 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Filters to restrict results to specific answer records.
-     * Filter on answer record type. Currently predicates on `type` is supported,
-     * valid values are `ARTICLE_ANSWER`, `FAQ_ANSWER`.
+     * Optional. Filters to restrict results to specific answer records.
+     * Marked deprecated as it hasn't been, and isn't currently, supported.
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      * </pre>
      *
-     * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
+     * @deprecated google.cloud.dialogflow.v2.ListAnswerRecordsRequest.filter is deprecated. See
+     *     google/cloud/dialogflow/v2/answer_record.proto;l=135
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();

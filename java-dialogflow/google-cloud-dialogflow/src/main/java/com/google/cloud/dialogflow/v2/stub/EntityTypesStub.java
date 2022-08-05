@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.v2.stub;
 
 import static com.google.cloud.dialogflow.v2.EntityTypesClient.ListEntityTypesPagedResponse;
+import static com.google.cloud.dialogflow.v2.EntityTypesClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
@@ -34,6 +35,10 @@ import com.google.cloud.dialogflow.v2.GetEntityTypeRequest;
 import com.google.cloud.dialogflow.v2.ListEntityTypesRequest;
 import com.google.cloud.dialogflow.v2.ListEntityTypesResponse;
 import com.google.cloud.dialogflow.v2.UpdateEntityTypeRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -130,6 +135,19 @@ public abstract class EntityTypesStub implements BackgroundResource {
 
   public UnaryCallable<BatchDeleteEntitiesRequest, Operation> batchDeleteEntitiesCallable() {
     throw new UnsupportedOperationException("Not implemented: batchDeleteEntitiesCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

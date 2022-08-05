@@ -39,6 +39,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
 
   private AnalyzeContentRequest() {
     participant_ = "";
+    cxCurrentPage_ = "";
     requestId_ = "";
   }
 
@@ -109,6 +110,22 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
                 input_ = subBuilder.buildPartial();
               }
               inputCase_ = 6;
+              break;
+            }
+          case 58:
+            {
+              com.google.cloud.dialogflow.v2beta1.AudioInput.Builder subBuilder = null;
+              if (inputCase_ == 7) {
+                subBuilder = ((com.google.cloud.dialogflow.v2beta1.AudioInput) input_).toBuilder();
+              }
+              input_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2beta1.AudioInput.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.dialogflow.v2beta1.AudioInput) input_);
+                input_ = subBuilder.buildPartial();
+              }
+              inputCase_ = 7;
               break;
             }
           case 66:
@@ -198,6 +215,13 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
 
               break;
             }
+          case 162:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              cxCurrentPage_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -242,6 +266,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TEXT_INPUT(6),
+    AUDIO_INPUT(7),
     EVENT_INPUT(8),
     INPUT_NOT_SET(0);
     private final int value;
@@ -263,6 +288,8 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       switch (value) {
         case 6:
           return TEXT_INPUT;
+        case 7:
+          return AUDIO_INPUT;
         case 8:
           return EVENT_INPUT;
         case 0:
@@ -387,6 +414,57 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       return (com.google.cloud.dialogflow.v2beta1.TextInput) input_;
     }
     return com.google.cloud.dialogflow.v2beta1.TextInput.getDefaultInstance();
+  }
+
+  public static final int AUDIO_INPUT_FIELD_NUMBER = 7;
+  /**
+   *
+   *
+   * <pre>
+   * The natural language speech audio to be processed.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
+   *
+   * @return Whether the audioInput field is set.
+   */
+  @java.lang.Override
+  public boolean hasAudioInput() {
+    return inputCase_ == 7;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The natural language speech audio to be processed.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
+   *
+   * @return The audioInput.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.AudioInput getAudioInput() {
+    if (inputCase_ == 7) {
+      return (com.google.cloud.dialogflow.v2beta1.AudioInput) input_;
+    }
+    return com.google.cloud.dialogflow.v2beta1.AudioInput.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The natural language speech audio to be processed.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.AudioInputOrBuilder getAudioInputOrBuilder() {
+    if (inputCase_ == 7) {
+      return (com.google.cloud.dialogflow.v2beta1.AudioInput) input_;
+    }
+    return com.google.cloud.dialogflow.v2beta1.AudioInput.getDefaultInstance();
   }
 
   public static final int EVENT_INPUT_FIELD_NUMBER = 8;
@@ -656,6 +734,77 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     return getCxParameters();
   }
 
+  public static final int CX_CURRENT_PAGE_FIELD_NUMBER = 20;
+  private volatile java.lang.Object cxCurrentPage_;
+  /**
+   *
+   *
+   * <pre>
+   * The unique identifier of the CX page to override the `current_page` in the
+   * session.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   * If `cx_current_page` is specified, the previous state of the session will
+   * be ignored by Dialogflow CX, including the [previous
+   * page][QueryResult.current_page] and the [previous session
+   * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
+   * `cx_parameters` should be configured together to direct a session to a
+   * specific state.
+   * Note: this field should only be used if you are connecting to a Dialogflow
+   * CX agent.
+   * </pre>
+   *
+   * <code>string cx_current_page = 20;</code>
+   *
+   * @return The cxCurrentPage.
+   */
+  @java.lang.Override
+  public java.lang.String getCxCurrentPage() {
+    java.lang.Object ref = cxCurrentPage_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      cxCurrentPage_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The unique identifier of the CX page to override the `current_page` in the
+   * session.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   * If `cx_current_page` is specified, the previous state of the session will
+   * be ignored by Dialogflow CX, including the [previous
+   * page][QueryResult.current_page] and the [previous session
+   * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
+   * `cx_parameters` should be configured together to direct a session to a
+   * specific state.
+   * Note: this field should only be used if you are connecting to a Dialogflow
+   * CX agent.
+   * </pre>
+   *
+   * <code>string cx_current_page = 20;</code>
+   *
+   * @return The bytes for cxCurrentPage.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCxCurrentPageBytes() {
+    java.lang.Object ref = cxCurrentPage_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      cxCurrentPage_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int MESSAGE_SEND_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp messageSendTime_;
   /**
@@ -813,6 +962,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     if (inputCase_ == 6) {
       output.writeMessage(6, (com.google.cloud.dialogflow.v2beta1.TextInput) input_);
     }
+    if (inputCase_ == 7) {
+      output.writeMessage(7, (com.google.cloud.dialogflow.v2beta1.AudioInput) input_);
+    }
     if (inputCase_ == 8) {
       output.writeMessage(8, (com.google.cloud.dialogflow.v2beta1.EventInput) input_);
     }
@@ -830,6 +982,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     }
     if (cxParameters_ != null) {
       output.writeMessage(18, getCxParameters());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cxCurrentPage_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 20, cxCurrentPage_);
     }
     unknownFields.writeTo(output);
   }
@@ -851,6 +1006,11 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, (com.google.cloud.dialogflow.v2beta1.TextInput) input_);
     }
+    if (inputCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.cloud.dialogflow.v2beta1.AudioInput) input_);
+    }
     if (inputCase_ == 8) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -870,6 +1030,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     }
     if (cxParameters_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getCxParameters());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cxCurrentPage_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, cxCurrentPage_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -904,6 +1067,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     if (hasCxParameters()) {
       if (!getCxParameters().equals(other.getCxParameters())) return false;
     }
+    if (!getCxCurrentPage().equals(other.getCxCurrentPage())) return false;
     if (hasMessageSendTime() != other.hasMessageSendTime()) return false;
     if (hasMessageSendTime()) {
       if (!getMessageSendTime().equals(other.getMessageSendTime())) return false;
@@ -913,6 +1077,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     switch (inputCase_) {
       case 6:
         if (!getTextInput().equals(other.getTextInput())) return false;
+        break;
+      case 7:
+        if (!getAudioInput().equals(other.getAudioInput())) return false;
         break;
       case 8:
         if (!getEventInput().equals(other.getEventInput())) return false;
@@ -949,6 +1116,8 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + CX_PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getCxParameters().hashCode();
     }
+    hash = (37 * hash) + CX_CURRENT_PAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getCxCurrentPage().hashCode();
     if (hasMessageSendTime()) {
       hash = (37 * hash) + MESSAGE_SEND_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getMessageSendTime().hashCode();
@@ -959,6 +1128,10 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       case 6:
         hash = (37 * hash) + TEXT_INPUT_FIELD_NUMBER;
         hash = (53 * hash) + getTextInput().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + AUDIO_INPUT_FIELD_NUMBER;
+        hash = (53 * hash) + getAudioInput().hashCode();
         break;
       case 8:
         hash = (37 * hash) + EVENT_INPUT_FIELD_NUMBER;
@@ -1139,6 +1312,8 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
         cxParameters_ = null;
         cxParametersBuilder_ = null;
       }
+      cxCurrentPage_ = "";
+
       if (messageSendTimeBuilder_ == null) {
         messageSendTime_ = null;
       } else {
@@ -1184,6 +1359,13 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
           result.input_ = textInputBuilder_.build();
         }
       }
+      if (inputCase_ == 7) {
+        if (audioInputBuilder_ == null) {
+          result.input_ = input_;
+        } else {
+          result.input_ = audioInputBuilder_.build();
+        }
+      }
       if (inputCase_ == 8) {
         if (eventInputBuilder_ == null) {
           result.input_ = input_;
@@ -1211,6 +1393,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         result.cxParameters_ = cxParametersBuilder_.build();
       }
+      result.cxCurrentPage_ = cxCurrentPage_;
       if (messageSendTimeBuilder_ == null) {
         result.messageSendTime_ = messageSendTime_;
       } else {
@@ -1284,6 +1467,10 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       if (other.hasCxParameters()) {
         mergeCxParameters(other.getCxParameters());
       }
+      if (!other.getCxCurrentPage().isEmpty()) {
+        cxCurrentPage_ = other.cxCurrentPage_;
+        onChanged();
+      }
       if (other.hasMessageSendTime()) {
         mergeMessageSendTime(other.getMessageSendTime());
       }
@@ -1295,6 +1482,11 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
         case TEXT_INPUT:
           {
             mergeTextInput(other.getTextInput());
+            break;
+          }
+        case AUDIO_INPUT:
+          {
+            mergeAudioInput(other.getAudioInput());
             break;
           }
         case EVENT_INPUT:
@@ -1685,6 +1877,216 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       ;
       return textInputBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.AudioInput,
+            com.google.cloud.dialogflow.v2beta1.AudioInput.Builder,
+            com.google.cloud.dialogflow.v2beta1.AudioInputOrBuilder>
+        audioInputBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The natural language speech audio to be processed.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
+     *
+     * @return Whether the audioInput field is set.
+     */
+    @java.lang.Override
+    public boolean hasAudioInput() {
+      return inputCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The natural language speech audio to be processed.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
+     *
+     * @return The audioInput.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.AudioInput getAudioInput() {
+      if (audioInputBuilder_ == null) {
+        if (inputCase_ == 7) {
+          return (com.google.cloud.dialogflow.v2beta1.AudioInput) input_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.AudioInput.getDefaultInstance();
+      } else {
+        if (inputCase_ == 7) {
+          return audioInputBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.v2beta1.AudioInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The natural language speech audio to be processed.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
+     */
+    public Builder setAudioInput(com.google.cloud.dialogflow.v2beta1.AudioInput value) {
+      if (audioInputBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        input_ = value;
+        onChanged();
+      } else {
+        audioInputBuilder_.setMessage(value);
+      }
+      inputCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The natural language speech audio to be processed.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
+     */
+    public Builder setAudioInput(
+        com.google.cloud.dialogflow.v2beta1.AudioInput.Builder builderForValue) {
+      if (audioInputBuilder_ == null) {
+        input_ = builderForValue.build();
+        onChanged();
+      } else {
+        audioInputBuilder_.setMessage(builderForValue.build());
+      }
+      inputCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The natural language speech audio to be processed.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
+     */
+    public Builder mergeAudioInput(com.google.cloud.dialogflow.v2beta1.AudioInput value) {
+      if (audioInputBuilder_ == null) {
+        if (inputCase_ == 7
+            && input_ != com.google.cloud.dialogflow.v2beta1.AudioInput.getDefaultInstance()) {
+          input_ =
+              com.google.cloud.dialogflow.v2beta1.AudioInput.newBuilder(
+                      (com.google.cloud.dialogflow.v2beta1.AudioInput) input_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          input_ = value;
+        }
+        onChanged();
+      } else {
+        if (inputCase_ == 7) {
+          audioInputBuilder_.mergeFrom(value);
+        } else {
+          audioInputBuilder_.setMessage(value);
+        }
+      }
+      inputCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The natural language speech audio to be processed.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
+     */
+    public Builder clearAudioInput() {
+      if (audioInputBuilder_ == null) {
+        if (inputCase_ == 7) {
+          inputCase_ = 0;
+          input_ = null;
+          onChanged();
+        }
+      } else {
+        if (inputCase_ == 7) {
+          inputCase_ = 0;
+          input_ = null;
+        }
+        audioInputBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The natural language speech audio to be processed.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.AudioInput.Builder getAudioInputBuilder() {
+      return getAudioInputFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The natural language speech audio to be processed.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.AudioInputOrBuilder getAudioInputOrBuilder() {
+      if ((inputCase_ == 7) && (audioInputBuilder_ != null)) {
+        return audioInputBuilder_.getMessageOrBuilder();
+      } else {
+        if (inputCase_ == 7) {
+          return (com.google.cloud.dialogflow.v2beta1.AudioInput) input_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.AudioInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The natural language speech audio to be processed.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.AudioInput audio_input = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.AudioInput,
+            com.google.cloud.dialogflow.v2beta1.AudioInput.Builder,
+            com.google.cloud.dialogflow.v2beta1.AudioInputOrBuilder>
+        getAudioInputFieldBuilder() {
+      if (audioInputBuilder_ == null) {
+        if (!(inputCase_ == 7)) {
+          input_ = com.google.cloud.dialogflow.v2beta1.AudioInput.getDefaultInstance();
+        }
+        audioInputBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.AudioInput,
+                com.google.cloud.dialogflow.v2beta1.AudioInput.Builder,
+                com.google.cloud.dialogflow.v2beta1.AudioInputOrBuilder>(
+                (com.google.cloud.dialogflow.v2beta1.AudioInput) input_,
+                getParentForChildren(),
+                isClean());
+        input_ = null;
+      }
+      inputCase_ = 7;
+      onChanged();
+      ;
+      return audioInputBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2717,6 +3119,167 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
         cxParameters_ = null;
       }
       return cxParametersBuilder_;
+    }
+
+    private java.lang.Object cxCurrentPage_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The unique identifier of the CX page to override the `current_page` in the
+     * session.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     * If `cx_current_page` is specified, the previous state of the session will
+     * be ignored by Dialogflow CX, including the [previous
+     * page][QueryResult.current_page] and the [previous session
+     * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
+     * `cx_parameters` should be configured together to direct a session to a
+     * specific state.
+     * Note: this field should only be used if you are connecting to a Dialogflow
+     * CX agent.
+     * </pre>
+     *
+     * <code>string cx_current_page = 20;</code>
+     *
+     * @return The cxCurrentPage.
+     */
+    public java.lang.String getCxCurrentPage() {
+      java.lang.Object ref = cxCurrentPage_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cxCurrentPage_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unique identifier of the CX page to override the `current_page` in the
+     * session.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     * If `cx_current_page` is specified, the previous state of the session will
+     * be ignored by Dialogflow CX, including the [previous
+     * page][QueryResult.current_page] and the [previous session
+     * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
+     * `cx_parameters` should be configured together to direct a session to a
+     * specific state.
+     * Note: this field should only be used if you are connecting to a Dialogflow
+     * CX agent.
+     * </pre>
+     *
+     * <code>string cx_current_page = 20;</code>
+     *
+     * @return The bytes for cxCurrentPage.
+     */
+    public com.google.protobuf.ByteString getCxCurrentPageBytes() {
+      java.lang.Object ref = cxCurrentPage_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        cxCurrentPage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unique identifier of the CX page to override the `current_page` in the
+     * session.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     * If `cx_current_page` is specified, the previous state of the session will
+     * be ignored by Dialogflow CX, including the [previous
+     * page][QueryResult.current_page] and the [previous session
+     * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
+     * `cx_parameters` should be configured together to direct a session to a
+     * specific state.
+     * Note: this field should only be used if you are connecting to a Dialogflow
+     * CX agent.
+     * </pre>
+     *
+     * <code>string cx_current_page = 20;</code>
+     *
+     * @param value The cxCurrentPage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCxCurrentPage(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      cxCurrentPage_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unique identifier of the CX page to override the `current_page` in the
+     * session.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     * If `cx_current_page` is specified, the previous state of the session will
+     * be ignored by Dialogflow CX, including the [previous
+     * page][QueryResult.current_page] and the [previous session
+     * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
+     * `cx_parameters` should be configured together to direct a session to a
+     * specific state.
+     * Note: this field should only be used if you are connecting to a Dialogflow
+     * CX agent.
+     * </pre>
+     *
+     * <code>string cx_current_page = 20;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCxCurrentPage() {
+
+      cxCurrentPage_ = getDefaultInstance().getCxCurrentPage();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unique identifier of the CX page to override the `current_page` in the
+     * session.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     * If `cx_current_page` is specified, the previous state of the session will
+     * be ignored by Dialogflow CX, including the [previous
+     * page][QueryResult.current_page] and the [previous session
+     * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
+     * `cx_parameters` should be configured together to direct a session to a
+     * specific state.
+     * Note: this field should only be used if you are connecting to a Dialogflow
+     * CX agent.
+     * </pre>
+     *
+     * <code>string cx_current_page = 20;</code>
+     *
+     * @param value The bytes for cxCurrentPage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCxCurrentPageBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      cxCurrentPage_ = value;
+      onChanged();
+      return this;
     }
 
     private com.google.protobuf.Timestamp messageSendTime_;

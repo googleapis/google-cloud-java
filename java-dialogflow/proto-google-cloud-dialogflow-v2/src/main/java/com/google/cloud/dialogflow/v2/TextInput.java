@@ -22,6 +22,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
+ * ============================================================================
+ * Auxiliary proto messages.
  * Represents the natural language text to be processed.
  * </pre>
  *
@@ -128,7 +130,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The UTF-8 encoded natural language text to be processed.
-   * Text length must not exceed 256 characters.
+   * Text length must not exceed 256 characters for virtual agent interactions.
    * </pre>
    *
    * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -152,7 +154,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The UTF-8 encoded natural language text to be processed.
-   * Text length must not exceed 256 characters.
+   * Text length must not exceed 256 characters for virtual agent interactions.
    * </pre>
    *
    * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -398,6 +400,8 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * ============================================================================
+   * Auxiliary proto messages.
    * Represents the natural language text to be processed.
    * </pre>
    *
@@ -564,7 +568,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The UTF-8 encoded natural language text to be processed.
-     * Text length must not exceed 256 characters.
+     * Text length must not exceed 256 characters for virtual agent interactions.
      * </pre>
      *
      * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -587,7 +591,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The UTF-8 encoded natural language text to be processed.
-     * Text length must not exceed 256 characters.
+     * Text length must not exceed 256 characters for virtual agent interactions.
      * </pre>
      *
      * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -610,7 +614,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The UTF-8 encoded natural language text to be processed.
-     * Text length must not exceed 256 characters.
+     * Text length must not exceed 256 characters for virtual agent interactions.
      * </pre>
      *
      * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -632,7 +636,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The UTF-8 encoded natural language text to be processed.
-     * Text length must not exceed 256 characters.
+     * Text length must not exceed 256 characters for virtual agent interactions.
      * </pre>
      *
      * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -650,7 +654,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The UTF-8 encoded natural language text to be processed.
-     * Text length must not exceed 256 characters.
+     * Text length must not exceed 256 characters for virtual agent interactions.
      * </pre>
      *
      * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>

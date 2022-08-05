@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.v2;
 
+import static com.google.cloud.dialogflow.v2.AgentsClient.ListLocationsPagedResponse;
 import static com.google.cloud.dialogflow.v2.AgentsClient.SearchAgentsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -32,6 +33,10 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dialogflow.v2.stub.AgentsStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.Struct;
@@ -141,6 +146,17 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
   public UnaryCallSettings<GetValidationResultRequest, ValidationResult>
       getValidationResultSettings() {
     return ((AgentsStubSettings) getStubSettings()).getValidationResultSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((AgentsStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((AgentsStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final AgentsSettings create(AgentsStubSettings stub) throws IOException {
@@ -327,6 +343,18 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
     public UnaryCallSettings.Builder<GetValidationResultRequest, ValidationResult>
         getValidationResultSettings() {
       return getStubSettingsBuilder().getValidationResultSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

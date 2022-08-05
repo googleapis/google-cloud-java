@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.v2beta1;
 
 import static com.google.cloud.dialogflow.v2beta1.AnswerRecordsClient.ListAnswerRecordsPagedResponse;
+import static com.google.cloud.dialogflow.v2beta1.AnswerRecordsClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -31,6 +32,10 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dialogflow.v2beta1.stub.AnswerRecordsStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -92,6 +97,17 @@ public class AnswerRecordsSettings extends ClientSettings<AnswerRecordsSettings>
   /** Returns the object with the settings used for calls to updateAnswerRecord. */
   public UnaryCallSettings<UpdateAnswerRecordRequest, AnswerRecord> updateAnswerRecordSettings() {
     return ((AnswerRecordsStubSettings) getStubSettings()).updateAnswerRecordSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((AnswerRecordsStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((AnswerRecordsStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final AnswerRecordsSettings create(AnswerRecordsStubSettings stub)
@@ -231,6 +247,18 @@ public class AnswerRecordsSettings extends ClientSettings<AnswerRecordsSettings>
     public UnaryCallSettings.Builder<UpdateAnswerRecordRequest, AnswerRecord>
         updateAnswerRecordSettings() {
       return getStubSettingsBuilder().updateAnswerRecordSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

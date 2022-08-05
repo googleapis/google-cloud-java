@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.v2beta1.stub;
 
 import static com.google.cloud.dialogflow.v2beta1.AnswerRecordsClient.ListAnswerRecordsPagedResponse;
+import static com.google.cloud.dialogflow.v2beta1.AnswerRecordsClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -48,6 +49,10 @@ import com.google.cloud.dialogflow.v2beta1.GetAnswerRecordRequest;
 import com.google.cloud.dialogflow.v2beta1.ListAnswerRecordsRequest;
 import com.google.cloud.dialogflow.v2beta1.ListAnswerRecordsResponse;
 import com.google.cloud.dialogflow.v2beta1.UpdateAnswerRecordRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -107,6 +112,10 @@ public class AnswerRecordsStubSettings extends StubSettings<AnswerRecordsStubSet
       listAnswerRecordsSettings;
   private final UnaryCallSettings<UpdateAnswerRecordRequest, AnswerRecord>
       updateAnswerRecordSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
 
   private static final PagedListDescriptor<
           ListAnswerRecordsRequest, ListAnswerRecordsResponse, AnswerRecord>
@@ -148,6 +157,42 @@ public class AnswerRecordsStubSettings extends StubSettings<AnswerRecordsStubSet
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListAnswerRecordsRequest, ListAnswerRecordsResponse, ListAnswerRecordsPagedResponse>
       LIST_ANSWER_RECORDS_PAGE_STR_FACT =
@@ -166,6 +211,23 @@ public class AnswerRecordsStubSettings extends StubSettings<AnswerRecordsStubSet
                       PageContext.create(
                           callable, LIST_ANSWER_RECORDS_PAGE_STR_DESC, request, context);
               return ListAnswerRecordsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -189,6 +251,17 @@ public class AnswerRecordsStubSettings extends StubSettings<AnswerRecordsStubSet
   /** Returns the object with the settings used for calls to updateAnswerRecord. */
   public UnaryCallSettings<UpdateAnswerRecordRequest, AnswerRecord> updateAnswerRecordSettings() {
     return updateAnswerRecordSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
   }
 
   public AnswerRecordsStub createStub() throws IOException {
@@ -300,6 +373,8 @@ public class AnswerRecordsStubSettings extends StubSettings<AnswerRecordsStubSet
     getAnswerRecordSettings = settingsBuilder.getAnswerRecordSettings().build();
     listAnswerRecordsSettings = settingsBuilder.listAnswerRecordsSettings().build();
     updateAnswerRecordSettings = settingsBuilder.updateAnswerRecordSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
   /** Builder for AnswerRecordsStubSettings. */
@@ -312,6 +387,10 @@ public class AnswerRecordsStubSettings extends StubSettings<AnswerRecordsStubSet
         listAnswerRecordsSettings;
     private final UnaryCallSettings.Builder<UpdateAnswerRecordRequest, AnswerRecord>
         updateAnswerRecordSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -353,10 +432,16 @@ public class AnswerRecordsStubSettings extends StubSettings<AnswerRecordsStubSet
       getAnswerRecordSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listAnswerRecordsSettings = PagedCallSettings.newBuilder(LIST_ANSWER_RECORDS_PAGE_STR_FACT);
       updateAnswerRecordSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getAnswerRecordSettings, listAnswerRecordsSettings, updateAnswerRecordSettings);
+              getAnswerRecordSettings,
+              listAnswerRecordsSettings,
+              updateAnswerRecordSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -366,10 +451,16 @@ public class AnswerRecordsStubSettings extends StubSettings<AnswerRecordsStubSet
       getAnswerRecordSettings = settings.getAnswerRecordSettings.toBuilder();
       listAnswerRecordsSettings = settings.listAnswerRecordsSettings.toBuilder();
       updateAnswerRecordSettings = settings.updateAnswerRecordSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getAnswerRecordSettings, listAnswerRecordsSettings, updateAnswerRecordSettings);
+              getAnswerRecordSettings,
+              listAnswerRecordsSettings,
+              updateAnswerRecordSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -414,6 +505,16 @@ public class AnswerRecordsStubSettings extends StubSettings<AnswerRecordsStubSet
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getLocationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
       return builder;
     }
 
@@ -454,6 +555,18 @@ public class AnswerRecordsStubSettings extends StubSettings<AnswerRecordsStubSet
     public UnaryCallSettings.Builder<UpdateAnswerRecordRequest, AnswerRecord>
         updateAnswerRecordSettings() {
       return updateAnswerRecordSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override

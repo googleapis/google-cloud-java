@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.v2.stub;
 
 import static com.google.cloud.dialogflow.v2.ContextsClient.ListContextsPagedResponse;
+import static com.google.cloud.dialogflow.v2.ContextsClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -28,6 +29,10 @@ import com.google.cloud.dialogflow.v2.GetContextRequest;
 import com.google.cloud.dialogflow.v2.ListContextsRequest;
 import com.google.cloud.dialogflow.v2.ListContextsResponse;
 import com.google.cloud.dialogflow.v2.UpdateContextRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -66,6 +71,19 @@ public abstract class ContextsStub implements BackgroundResource {
 
   public UnaryCallable<DeleteAllContextsRequest, Empty> deleteAllContextsCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteAllContextsCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

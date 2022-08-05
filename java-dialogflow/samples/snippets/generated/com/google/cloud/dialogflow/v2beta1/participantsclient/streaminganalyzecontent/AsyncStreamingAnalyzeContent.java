@@ -49,6 +49,7 @@ public class AsyncStreamingAnalyzeContent {
               .setQueryParams(QueryParameters.newBuilder().build())
               .setAssistQueryParams(AssistQueryParameters.newBuilder().build())
               .setCxParameters(Struct.newBuilder().build())
+              .setCxCurrentPage("cxCurrentPage1596907507")
               .setEnablePartialAutomatedAgentReply(true)
               .build();
       bidiStream.send(request);

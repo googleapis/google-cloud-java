@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.v2;
 
 import static com.google.cloud.dialogflow.v2.DocumentsClient.ListDocumentsPagedResponse;
+import static com.google.cloud.dialogflow.v2.DocumentsClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -32,6 +33,10 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dialogflow.v2.stub.DocumentsStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -150,6 +155,17 @@ public class DocumentsSettings extends ClientSettings<DocumentsSettings> {
   public OperationCallSettings<ExportDocumentRequest, Document, KnowledgeOperationMetadata>
       exportDocumentOperationSettings() {
     return ((DocumentsStubSettings) getStubSettings()).exportDocumentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((DocumentsStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((DocumentsStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final DocumentsSettings create(DocumentsStubSettings stub) throws IOException {
@@ -347,6 +363,18 @@ public class DocumentsSettings extends ClientSettings<DocumentsSettings> {
             ExportDocumentRequest, Document, KnowledgeOperationMetadata>
         exportDocumentOperationSettings() {
       return getStubSettingsBuilder().exportDocumentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

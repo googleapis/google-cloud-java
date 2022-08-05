@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.v2.stub;
 
 import static com.google.cloud.dialogflow.v2.EntityTypesClient.ListEntityTypesPagedResponse;
+import static com.google.cloud.dialogflow.v2.EntityTypesClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -60,6 +61,10 @@ import com.google.cloud.dialogflow.v2.GetEntityTypeRequest;
 import com.google.cloud.dialogflow.v2.ListEntityTypesRequest;
 import com.google.cloud.dialogflow.v2.ListEntityTypesResponse;
 import com.google.cloud.dialogflow.v2.UpdateEntityTypeRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -143,6 +148,10 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
       batchDeleteEntitiesSettings;
   private final OperationCallSettings<BatchDeleteEntitiesRequest, Empty, Struct>
       batchDeleteEntitiesOperationSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
 
   private static final PagedListDescriptor<
           ListEntityTypesRequest, ListEntityTypesResponse, EntityType>
@@ -183,6 +192,42 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
       LIST_ENTITY_TYPES_PAGE_STR_FACT =
@@ -197,6 +242,23 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
               PageContext<ListEntityTypesRequest, ListEntityTypesResponse, EntityType> pageContext =
                   PageContext.create(callable, LIST_ENTITY_TYPES_PAGE_STR_DESC, request, context);
               return ListEntityTypesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -283,6 +345,17 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
   public OperationCallSettings<BatchDeleteEntitiesRequest, Empty, Struct>
       batchDeleteEntitiesOperationSettings() {
     return batchDeleteEntitiesOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
   }
 
   public EntityTypesStub createStub() throws IOException {
@@ -411,6 +484,8 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
     batchDeleteEntitiesSettings = settingsBuilder.batchDeleteEntitiesSettings().build();
     batchDeleteEntitiesOperationSettings =
         settingsBuilder.batchDeleteEntitiesOperationSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
   /** Builder for EntityTypesStubSettings. */
@@ -447,6 +522,10 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
         batchDeleteEntitiesSettings;
     private final OperationCallSettings.Builder<BatchDeleteEntitiesRequest, Empty, Struct>
         batchDeleteEntitiesOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -500,6 +579,8 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
       batchUpdateEntitiesOperationSettings = OperationCallSettings.newBuilder();
       batchDeleteEntitiesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchDeleteEntitiesOperationSettings = OperationCallSettings.newBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -512,7 +593,9 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
               batchDeleteEntityTypesSettings,
               batchCreateEntitiesSettings,
               batchUpdateEntitiesSettings,
-              batchDeleteEntitiesSettings);
+              batchDeleteEntitiesSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -539,6 +622,8 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
       batchDeleteEntitiesSettings = settings.batchDeleteEntitiesSettings.toBuilder();
       batchDeleteEntitiesOperationSettings =
           settings.batchDeleteEntitiesOperationSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -551,7 +636,9 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
               batchDeleteEntityTypesSettings,
               batchCreateEntitiesSettings,
               batchUpdateEntitiesSettings,
-              batchDeleteEntitiesSettings);
+              batchDeleteEntitiesSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -628,6 +715,16 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
 
       builder
           .batchDeleteEntitiesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getLocationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -868,6 +965,18 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
     public OperationCallSettings.Builder<BatchDeleteEntitiesRequest, Empty, Struct>
         batchDeleteEntitiesOperationSettings() {
       return batchDeleteEntitiesOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override
