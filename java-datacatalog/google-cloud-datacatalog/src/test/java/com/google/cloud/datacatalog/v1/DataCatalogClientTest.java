@@ -568,7 +568,7 @@ public class DataCatalogClientTest {
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
-    EntryGroupName parent = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
     ListEntryGroupsPagedResponse pagedListResponse = client.listEntryGroups(parent);
 
@@ -594,7 +594,7 @@ public class DataCatalogClientTest {
     mockDataCatalog.addException(exception);
 
     try {
-      EntryGroupName parent = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       client.listEntryGroups(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -2206,7 +2206,7 @@ public class DataCatalogClientTest {
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
-    TagName parent = TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]");
+    EntryName parent = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
     Tag tag = Tag.newBuilder().build();
 
     Tag actualResponse = client.createTag(parent, tag);
@@ -2230,7 +2230,7 @@ public class DataCatalogClientTest {
     mockDataCatalog.addException(exception);
 
     try {
-      TagName parent = TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]");
+      EntryName parent = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
       Tag tag = Tag.newBuilder().build();
       client.createTag(parent, tag);
       Assert.fail("No exception raised");

@@ -108,6 +108,20 @@ import javax.annotation.Generated;
  * DataCatalogClient dataCatalogClient = DataCatalogClient.create(dataCatalogSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * DataCatalogSettings dataCatalogSettings =
+ *     DataCatalogSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             DataCatalogSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * DataCatalogClient dataCatalogClient = DataCatalogClient.create(dataCatalogSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi
@@ -893,7 +907,7 @@ public class DataCatalogClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   EntryGroupName parent = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (EntryGroup element : dataCatalogClient.listEntryGroups(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -908,7 +922,7 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEntryGroupsPagedResponse listEntryGroups(EntryGroupName parent) {
+  public final ListEntryGroupsPagedResponse listEntryGroups(LocationName parent) {
     ListEntryGroupsRequest request =
         ListEntryGroupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -926,7 +940,7 @@ public class DataCatalogClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   String parent = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (EntryGroup element : dataCatalogClient.listEntryGroups(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -958,7 +972,7 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   ListEntryGroupsRequest request =
    *       ListEntryGroupsRequest.newBuilder()
-   *           .setParent(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -987,7 +1001,7 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   ListEntryGroupsRequest request =
    *       ListEntryGroupsRequest.newBuilder()
-   *           .setParent(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1017,7 +1031,7 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   ListEntryGroupsRequest request =
    *       ListEntryGroupsRequest.newBuilder()
-   *           .setParent(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -2934,7 +2948,7 @@ public class DataCatalogClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   TagName parent = TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]");
+   *   EntryName parent = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
    *   Tag tag = Tag.newBuilder().build();
    *   Tag response = dataCatalogClient.createTag(parent, tag);
    * }
@@ -2950,7 +2964,7 @@ public class DataCatalogClient implements BackgroundResource {
    * @param tag Required. The tag to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Tag createTag(TagName parent, Tag tag) {
+  public final Tag createTag(EntryName parent, Tag tag) {
     CreateTagRequest request =
         CreateTagRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2975,7 +2989,7 @@ public class DataCatalogClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   String parent =
-   *       TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]").toString();
+   *       EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString();
    *   Tag tag = Tag.newBuilder().build();
    *   Tag response = dataCatalogClient.createTag(parent, tag);
    * }
@@ -3014,8 +3028,7 @@ public class DataCatalogClient implements BackgroundResource {
    *   CreateTagRequest request =
    *       CreateTagRequest.newBuilder()
    *           .setParent(
-   *               TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]")
-   *                   .toString())
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setTag(Tag.newBuilder().build())
    *           .build();
    *   Tag response = dataCatalogClient.createTag(request);
@@ -3047,8 +3060,7 @@ public class DataCatalogClient implements BackgroundResource {
    *   CreateTagRequest request =
    *       CreateTagRequest.newBuilder()
    *           .setParent(
-   *               TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]")
-   *                   .toString())
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setTag(Tag.newBuilder().build())
    *           .build();
    *   ApiFuture<Tag> future = dataCatalogClient.createTagCallable().futureCall(request);
