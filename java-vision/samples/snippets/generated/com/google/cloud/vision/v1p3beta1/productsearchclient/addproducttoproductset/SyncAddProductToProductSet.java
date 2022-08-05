@@ -21,6 +21,7 @@ import com.google.cloud.vision.v1p3beta1.AddProductToProductSetRequest;
 import com.google.cloud.vision.v1p3beta1.ProductName;
 import com.google.cloud.vision.v1p3beta1.ProductSearchClient;
 import com.google.cloud.vision.v1p3beta1.ProductSetName;
+import com.google.protobuf.Empty;
 
 public class SyncAddProductToProductSet {
 

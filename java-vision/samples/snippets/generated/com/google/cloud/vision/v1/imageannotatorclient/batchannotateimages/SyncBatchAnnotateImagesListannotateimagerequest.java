@@ -16,8 +16,7 @@
 
 package com.google.cloud.vision.v1.samples;
 
-// [START
-// vision_v1_generated_imageannotatorclient_batchannotateimages_listannotateimagerequest_sync]
+// [START vision_v1_generated_imageannotatorclient_batchannotateimages_listannotateimagerequest_sync]
 import com.google.cloud.vision.v1.AnnotateImageRequest;
 import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
 import com.google.cloud.vision.v1.ImageAnnotatorClient;

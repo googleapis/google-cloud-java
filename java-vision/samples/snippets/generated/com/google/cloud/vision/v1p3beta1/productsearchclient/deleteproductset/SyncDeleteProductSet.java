@@ -20,6 +20,7 @@ package com.google.cloud.vision.v1p3beta1.samples;
 import com.google.cloud.vision.v1p3beta1.DeleteProductSetRequest;
 import com.google.cloud.vision.v1p3beta1.ProductSearchClient;
 import com.google.cloud.vision.v1p3beta1.ProductSetName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteProductSet {
 

@@ -20,6 +20,7 @@ package com.google.cloud.vision.v1.samples;
 import com.google.cloud.vision.v1.LocationName;
 import com.google.cloud.vision.v1.ProductSearchClient;
 import com.google.cloud.vision.v1.PurgeProductsRequest;
+import com.google.protobuf.Empty;
 
 public class SyncPurgeProducts {
 

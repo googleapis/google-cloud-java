@@ -19,6 +19,7 @@ package com.google.cloud.vision.v1p3beta1.samples;
 // [START vision_v1p3beta1_generated_productsearchclient_deleteproductset_string_sync]
 import com.google.cloud.vision.v1p3beta1.ProductSearchClient;
 import com.google.cloud.vision.v1p3beta1.ProductSetName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteProductSetString {
 

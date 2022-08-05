@@ -20,6 +20,7 @@ package com.google.cloud.vision.v1p4beta1.samples;
 import com.google.cloud.vision.v1p4beta1.ProductName;
 import com.google.cloud.vision.v1p4beta1.ProductSearchClient;
 import com.google.cloud.vision.v1p4beta1.ProductSetName;
+import com.google.protobuf.Empty;
 
 public class SyncAddProductToProductSetStringString {
 

@@ -19,6 +19,7 @@ package com.google.cloud.vision.v1.samples;
 // [START vision_v1_generated_productsearchclient_purgeproducts_string_sync]
 import com.google.cloud.vision.v1.LocationName;
 import com.google.cloud.vision.v1.ProductSearchClient;
+import com.google.protobuf.Empty;
 
 public class SyncPurgeProductsString {
 

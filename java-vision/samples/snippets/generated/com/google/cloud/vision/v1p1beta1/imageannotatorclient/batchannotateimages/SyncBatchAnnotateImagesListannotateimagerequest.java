@@ -16,8 +16,7 @@
 
 package com.google.cloud.vision.v1p1beta1.samples;
 
-// [START
-// vision_v1p1beta1_generated_imageannotatorclient_batchannotateimages_listannotateimagerequest_sync]
+// [START vision_v1p1beta1_generated_imageannotatorclient_batchannotateimages_listannotateimagerequest_sync]
 import com.google.cloud.vision.v1p1beta1.AnnotateImageRequest;
 import com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesResponse;
 import com.google.cloud.vision.v1p1beta1.ImageAnnotatorClient;
@@ -39,5 +38,4 @@ public class SyncBatchAnnotateImagesListannotateimagerequest {
     }
   }
 }
-// [END
-// vision_v1p1beta1_generated_imageannotatorclient_batchannotateimages_listannotateimagerequest_sync]
+// [END vision_v1p1beta1_generated_imageannotatorclient_batchannotateimages_listannotateimagerequest_sync]

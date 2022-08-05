@@ -20,6 +20,7 @@ package com.google.cloud.vision.v1.samples;
 import com.google.cloud.vision.v1.DeleteReferenceImageRequest;
 import com.google.cloud.vision.v1.ProductSearchClient;
 import com.google.cloud.vision.v1.ReferenceImageName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteReferenceImage {
 
