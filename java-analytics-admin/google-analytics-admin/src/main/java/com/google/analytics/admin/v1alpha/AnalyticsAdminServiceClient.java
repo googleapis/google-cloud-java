@@ -8777,6 +8777,99 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     return stub.updateAttributionSettingsCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a customized report of data access records. The report provides records of each time a
+   * user reads Google Analytics reporting data. Access records are retained for up to 2 years.
+   *
+   * <p>Data Access Reports can be requested for a property. The property must be in Google
+   * Analytics 360. This method is only available to Administrators.
+   *
+   * <p>These data access records include GA4 UI Reporting, GA4 UI Explorations, GA4 Data API, and
+   * other products like Firebase &amp; Admob that can retrieve data from Google Analytics through a
+   * linkage. These records don't include property configuration changes like adding a stream or
+   * changing a property's time zone. For configuration change history, see
+   * [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   RunAccessReportRequest request =
+   *       RunAccessReportRequest.newBuilder()
+   *           .setEntity("entity-1298275357")
+   *           .addAllDimensions(new ArrayList<AccessDimension>())
+   *           .addAllMetrics(new ArrayList<AccessMetric>())
+   *           .addAllDateRanges(new ArrayList<AccessDateRange>())
+   *           .setDimensionFilter(AccessFilterExpression.newBuilder().build())
+   *           .setMetricFilter(AccessFilterExpression.newBuilder().build())
+   *           .setOffset(-1019779949)
+   *           .setLimit(102976443)
+   *           .setTimeZone("timeZone-2077180903")
+   *           .addAllOrderBys(new ArrayList<AccessOrderBy>())
+   *           .setReturnEntityQuota(true)
+   *           .build();
+   *   RunAccessReportResponse response = analyticsAdminServiceClient.runAccessReport(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RunAccessReportResponse runAccessReport(RunAccessReportRequest request) {
+    return runAccessReportCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a customized report of data access records. The report provides records of each time a
+   * user reads Google Analytics reporting data. Access records are retained for up to 2 years.
+   *
+   * <p>Data Access Reports can be requested for a property. The property must be in Google
+   * Analytics 360. This method is only available to Administrators.
+   *
+   * <p>These data access records include GA4 UI Reporting, GA4 UI Explorations, GA4 Data API, and
+   * other products like Firebase &amp; Admob that can retrieve data from Google Analytics through a
+   * linkage. These records don't include property configuration changes like adding a stream or
+   * changing a property's time zone. For configuration change history, see
+   * [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   RunAccessReportRequest request =
+   *       RunAccessReportRequest.newBuilder()
+   *           .setEntity("entity-1298275357")
+   *           .addAllDimensions(new ArrayList<AccessDimension>())
+   *           .addAllMetrics(new ArrayList<AccessMetric>())
+   *           .addAllDateRanges(new ArrayList<AccessDateRange>())
+   *           .setDimensionFilter(AccessFilterExpression.newBuilder().build())
+   *           .setMetricFilter(AccessFilterExpression.newBuilder().build())
+   *           .setOffset(-1019779949)
+   *           .setLimit(102976443)
+   *           .setTimeZone("timeZone-2077180903")
+   *           .addAllOrderBys(new ArrayList<AccessOrderBy>())
+   *           .setReturnEntityQuota(true)
+   *           .build();
+   *   ApiFuture<RunAccessReportResponse> future =
+   *       analyticsAdminServiceClient.runAccessReportCallable().futureCall(request);
+   *   // Do something.
+   *   RunAccessReportResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RunAccessReportRequest, RunAccessReportResponse>
+      runAccessReportCallable() {
+    return stub.runAccessReportCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();

@@ -5877,4 +5877,82 @@ public class AnalyticsAdminServiceClientTest {
       // Expected exception.
     }
   }
+
+  @Test
+  public void runAccessReportTest() throws Exception {
+    RunAccessReportResponse expectedResponse =
+        RunAccessReportResponse.newBuilder()
+            .addAllDimensionHeaders(new ArrayList<AccessDimensionHeader>())
+            .addAllMetricHeaders(new ArrayList<AccessMetricHeader>())
+            .addAllRows(new ArrayList<AccessRow>())
+            .setRowCount(1340416618)
+            .setQuota(AccessQuota.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    RunAccessReportRequest request =
+        RunAccessReportRequest.newBuilder()
+            .setEntity("entity-1298275357")
+            .addAllDimensions(new ArrayList<AccessDimension>())
+            .addAllMetrics(new ArrayList<AccessMetric>())
+            .addAllDateRanges(new ArrayList<AccessDateRange>())
+            .setDimensionFilter(AccessFilterExpression.newBuilder().build())
+            .setMetricFilter(AccessFilterExpression.newBuilder().build())
+            .setOffset(-1019779949)
+            .setLimit(102976443)
+            .setTimeZone("timeZone-2077180903")
+            .addAllOrderBys(new ArrayList<AccessOrderBy>())
+            .setReturnEntityQuota(true)
+            .build();
+
+    RunAccessReportResponse actualResponse = client.runAccessReport(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RunAccessReportRequest actualRequest = ((RunAccessReportRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getEntity(), actualRequest.getEntity());
+    Assert.assertEquals(request.getDimensionsList(), actualRequest.getDimensionsList());
+    Assert.assertEquals(request.getMetricsList(), actualRequest.getMetricsList());
+    Assert.assertEquals(request.getDateRangesList(), actualRequest.getDateRangesList());
+    Assert.assertEquals(request.getDimensionFilter(), actualRequest.getDimensionFilter());
+    Assert.assertEquals(request.getMetricFilter(), actualRequest.getMetricFilter());
+    Assert.assertEquals(request.getOffset(), actualRequest.getOffset());
+    Assert.assertEquals(request.getLimit(), actualRequest.getLimit());
+    Assert.assertEquals(request.getTimeZone(), actualRequest.getTimeZone());
+    Assert.assertEquals(request.getOrderBysList(), actualRequest.getOrderBysList());
+    Assert.assertEquals(request.getReturnEntityQuota(), actualRequest.getReturnEntityQuota());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void runAccessReportExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      RunAccessReportRequest request =
+          RunAccessReportRequest.newBuilder()
+              .setEntity("entity-1298275357")
+              .addAllDimensions(new ArrayList<AccessDimension>())
+              .addAllMetrics(new ArrayList<AccessMetric>())
+              .addAllDateRanges(new ArrayList<AccessDateRange>())
+              .setDimensionFilter(AccessFilterExpression.newBuilder().build())
+              .setMetricFilter(AccessFilterExpression.newBuilder().build())
+              .setOffset(-1019779949)
+              .setLimit(102976443)
+              .setTimeZone("timeZone-2077180903")
+              .addAllOrderBys(new ArrayList<AccessOrderBy>())
+              .setReturnEntityQuota(true)
+              .build();
+      client.runAccessReport(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
 }

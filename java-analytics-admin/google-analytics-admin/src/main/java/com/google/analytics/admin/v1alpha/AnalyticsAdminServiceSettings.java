@@ -605,6 +605,12 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
         .updateAttributionSettingsSettings();
   }
 
+  /** Returns the object with the settings used for calls to runAccessReport. */
+  public UnaryCallSettings<RunAccessReportRequest, RunAccessReportResponse>
+      runAccessReportSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).runAccessReportSettings();
+  }
+
   public static final AnalyticsAdminServiceSettings create(AnalyticsAdminServiceStubSettings stub)
       throws IOException {
     return new AnalyticsAdminServiceSettings.Builder(stub.toBuilder()).build();
@@ -1239,6 +1245,12 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     public UnaryCallSettings.Builder<UpdateAttributionSettingsRequest, AttributionSettings>
         updateAttributionSettingsSettings() {
       return getStubSettingsBuilder().updateAttributionSettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to runAccessReport. */
+    public UnaryCallSettings.Builder<RunAccessReportRequest, RunAccessReportResponse>
+        runAccessReportSettings() {
+      return getStubSettingsBuilder().runAccessReportSettings();
     }
 
     @Override

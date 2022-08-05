@@ -3946,6 +3946,54 @@ public final class AnalyticsAdminServiceGrpc {
     return getUpdateAttributionSettingsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.RunAccessReportRequest,
+          com.google.analytics.admin.v1alpha.RunAccessReportResponse>
+      getRunAccessReportMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RunAccessReport",
+      requestType = com.google.analytics.admin.v1alpha.RunAccessReportRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.RunAccessReportResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.RunAccessReportRequest,
+          com.google.analytics.admin.v1alpha.RunAccessReportResponse>
+      getRunAccessReportMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.RunAccessReportRequest,
+            com.google.analytics.admin.v1alpha.RunAccessReportResponse>
+        getRunAccessReportMethod;
+    if ((getRunAccessReportMethod = AnalyticsAdminServiceGrpc.getRunAccessReportMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getRunAccessReportMethod = AnalyticsAdminServiceGrpc.getRunAccessReportMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getRunAccessReportMethod =
+              getRunAccessReportMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.RunAccessReportRequest,
+                          com.google.analytics.admin.v1alpha.RunAccessReportResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RunAccessReport"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.RunAccessReportRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.RunAccessReportResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("RunAccessReport"))
+                      .build();
+        }
+      }
+    }
+    return getRunAccessReportMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AnalyticsAdminServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AnalyticsAdminServiceStub> factory =
@@ -5215,6 +5263,31 @@ public final class AnalyticsAdminServiceGrpc {
           getUpdateAttributionSettingsMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Returns a customized report of data access records. The report provides
+     * records of each time a user reads Google Analytics reporting data. Access
+     * records are retained for up to 2 years.
+     * Data Access Reports can be requested for a property. The property must be
+     * in Google Analytics 360. This method is only available to Administrators.
+     * These data access records include GA4 UI Reporting, GA4 UI Explorations,
+     * GA4 Data API, and other products like Firebase &amp; Admob that can retrieve
+     * data from Google Analytics through a linkage. These records don't include
+     * property configuration changes like adding a stream or changing a
+     * property's time zone. For configuration change history, see
+     * [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
+     * </pre>
+     */
+    public void runAccessReport(
+        com.google.analytics.admin.v1alpha.RunAccessReportRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.RunAccessReportResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRunAccessReportMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -5753,6 +5826,13 @@ public final class AnalyticsAdminServiceGrpc {
                       com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest,
                       com.google.analytics.admin.v1alpha.AttributionSettings>(
                       this, METHODID_UPDATE_ATTRIBUTION_SETTINGS)))
+          .addMethod(
+              getRunAccessReportMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.analytics.admin.v1alpha.RunAccessReportRequest,
+                      com.google.analytics.admin.v1alpha.RunAccessReportResponse>(
+                      this, METHODID_RUN_ACCESS_REPORT)))
           .build();
     }
   }
@@ -7155,6 +7235,33 @@ public final class AnalyticsAdminServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a customized report of data access records. The report provides
+     * records of each time a user reads Google Analytics reporting data. Access
+     * records are retained for up to 2 years.
+     * Data Access Reports can be requested for a property. The property must be
+     * in Google Analytics 360. This method is only available to Administrators.
+     * These data access records include GA4 UI Reporting, GA4 UI Explorations,
+     * GA4 Data API, and other products like Firebase &amp; Admob that can retrieve
+     * data from Google Analytics through a linkage. These records don't include
+     * property configuration changes like adding a stream or changing a
+     * property's time zone. For configuration change history, see
+     * [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
+     * </pre>
+     */
+    public void runAccessReport(
+        com.google.analytics.admin.v1alpha.RunAccessReportRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.RunAccessReportResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRunAccessReportMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -8283,6 +8390,29 @@ public final class AnalyticsAdminServiceGrpc {
         com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateAttributionSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a customized report of data access records. The report provides
+     * records of each time a user reads Google Analytics reporting data. Access
+     * records are retained for up to 2 years.
+     * Data Access Reports can be requested for a property. The property must be
+     * in Google Analytics 360. This method is only available to Administrators.
+     * These data access records include GA4 UI Reporting, GA4 UI Explorations,
+     * GA4 Data API, and other products like Firebase &amp; Admob that can retrieve
+     * data from Google Analytics through a linkage. These records don't include
+     * property configuration changes like adding a stream or changing a
+     * property's time zone. For configuration change history, see
+     * [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.RunAccessReportResponse runAccessReport(
+        com.google.analytics.admin.v1alpha.RunAccessReportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRunAccessReportMethod(), getCallOptions(), request);
     }
   }
 
@@ -9504,6 +9634,30 @@ public final class AnalyticsAdminServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateAttributionSettingsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a customized report of data access records. The report provides
+     * records of each time a user reads Google Analytics reporting data. Access
+     * records are retained for up to 2 years.
+     * Data Access Reports can be requested for a property. The property must be
+     * in Google Analytics 360. This method is only available to Administrators.
+     * These data access records include GA4 UI Reporting, GA4 UI Explorations,
+     * GA4 Data API, and other products like Firebase &amp; Admob that can retrieve
+     * data from Google Analytics through a linkage. These records don't include
+     * property configuration changes like adding a stream or changing a
+     * property's time zone. For configuration change history, see
+     * [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.RunAccessReportResponse>
+        runAccessReport(com.google.analytics.admin.v1alpha.RunAccessReportRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRunAccessReportMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_ACCOUNT = 0;
@@ -9584,6 +9738,7 @@ public final class AnalyticsAdminServiceGrpc {
   private static final int METHODID_ARCHIVE_AUDIENCE = 75;
   private static final int METHODID_GET_ATTRIBUTION_SETTINGS = 76;
   private static final int METHODID_UPDATE_ATTRIBUTION_SETTINGS = 77;
+  private static final int METHODID_RUN_ACCESS_REPORT = 78;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -10108,6 +10263,13 @@ public final class AnalyticsAdminServiceGrpc {
               (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AttributionSettings>)
                   responseObserver);
           break;
+        case METHODID_RUN_ACCESS_REPORT:
+          serviceImpl.runAccessReport(
+              (com.google.analytics.admin.v1alpha.RunAccessReportRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.RunAccessReportResponse>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -10250,6 +10412,7 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getArchiveAudienceMethod())
                       .addMethod(getGetAttributionSettingsMethod())
                       .addMethod(getUpdateAttributionSettingsMethod())
+                      .addMethod(getRunAccessReportMethod())
                       .build();
         }
       }
