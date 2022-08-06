@@ -22,14 +22,14 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  * <pre>
  * The AlertPolicyService API is used to manage (list, create, delete,
- * edit) alert policies in Stackdriver Monitoring. An alerting policy is
+ * edit) alert policies in Cloud Monitoring. An alerting policy is
  * a description of the conditions under which some aspect of your
  * system is considered to be "unhealthy" and the ways to notify
  * people or services about this state. In addition to using this API, alert
  * policies can also be managed through
- * [Stackdriver Monitoring](https://cloud.google.com/monitoring/docs/),
+ * [Cloud Monitoring](https://cloud.google.com/monitoring/docs/),
  * which can be reached by clicking the "Monitoring" tab in
- * [Cloud Console](https://console.cloud.google.com/).
+ * [Cloud console](https://console.cloud.google.com/).
  * </pre>
  */
 @javax.annotation.Generated(
@@ -311,14 +311,14 @@ public final class AlertPolicyServiceGrpc {
    *
    * <pre>
    * The AlertPolicyService API is used to manage (list, create, delete,
-   * edit) alert policies in Stackdriver Monitoring. An alerting policy is
+   * edit) alert policies in Cloud Monitoring. An alerting policy is
    * a description of the conditions under which some aspect of your
    * system is considered to be "unhealthy" and the ways to notify
    * people or services about this state. In addition to using this API, alert
    * policies can also be managed through
-   * [Stackdriver Monitoring](https://cloud.google.com/monitoring/docs/),
+   * [Cloud Monitoring](https://cloud.google.com/monitoring/docs/),
    * which can be reached by clicking the "Monitoring" tab in
-   * [Cloud Console](https://console.cloud.google.com/).
+   * [Cloud console](https://console.cloud.google.com/).
    * </pre>
    */
   public abstract static class AlertPolicyServiceImplBase implements io.grpc.BindableService {
@@ -440,14 +440,14 @@ public final class AlertPolicyServiceGrpc {
    *
    * <pre>
    * The AlertPolicyService API is used to manage (list, create, delete,
-   * edit) alert policies in Stackdriver Monitoring. An alerting policy is
+   * edit) alert policies in Cloud Monitoring. An alerting policy is
    * a description of the conditions under which some aspect of your
    * system is considered to be "unhealthy" and the ways to notify
    * people or services about this state. In addition to using this API, alert
    * policies can also be managed through
-   * [Stackdriver Monitoring](https://cloud.google.com/monitoring/docs/),
+   * [Cloud Monitoring](https://cloud.google.com/monitoring/docs/),
    * which can be reached by clicking the "Monitoring" tab in
-   * [Cloud Console](https://console.cloud.google.com/).
+   * [Cloud console](https://console.cloud.google.com/).
    * </pre>
    */
   public static final class AlertPolicyServiceStub
@@ -552,14 +552,14 @@ public final class AlertPolicyServiceGrpc {
    *
    * <pre>
    * The AlertPolicyService API is used to manage (list, create, delete,
-   * edit) alert policies in Stackdriver Monitoring. An alerting policy is
+   * edit) alert policies in Cloud Monitoring. An alerting policy is
    * a description of the conditions under which some aspect of your
    * system is considered to be "unhealthy" and the ways to notify
    * people or services about this state. In addition to using this API, alert
    * policies can also be managed through
-   * [Stackdriver Monitoring](https://cloud.google.com/monitoring/docs/),
+   * [Cloud Monitoring](https://cloud.google.com/monitoring/docs/),
    * which can be reached by clicking the "Monitoring" tab in
-   * [Cloud Console](https://console.cloud.google.com/).
+   * [Cloud console](https://console.cloud.google.com/).
    * </pre>
    */
   public static final class AlertPolicyServiceBlockingStub
@@ -649,14 +649,14 @@ public final class AlertPolicyServiceGrpc {
    *
    * <pre>
    * The AlertPolicyService API is used to manage (list, create, delete,
-   * edit) alert policies in Stackdriver Monitoring. An alerting policy is
+   * edit) alert policies in Cloud Monitoring. An alerting policy is
    * a description of the conditions under which some aspect of your
    * system is considered to be "unhealthy" and the ways to notify
    * people or services about this state. In addition to using this API, alert
    * policies can also be managed through
-   * [Stackdriver Monitoring](https://cloud.google.com/monitoring/docs/),
+   * [Cloud Monitoring](https://cloud.google.com/monitoring/docs/),
    * which can be reached by clicking the "Monitoring" tab in
-   * [Cloud Console](https://console.cloud.google.com/).
+   * [Cloud console](https://console.cloud.google.com/).
    * </pre>
    */
   public static final class AlertPolicyServiceFutureStub
