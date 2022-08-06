@@ -59,10 +59,6 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-asset-v1p4beta1</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-asset-v1p5beta1</artifactId>
     </dependency>
     <dependency>
@@ -130,11 +126,6 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-asset-v1p2beta1</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-asset-v1p4beta1</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
