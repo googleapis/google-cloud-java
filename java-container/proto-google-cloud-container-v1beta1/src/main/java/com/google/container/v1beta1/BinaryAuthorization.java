@@ -285,15 +285,19 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Enable Binary Authorization for this cluster. If enabled, all container
-   * images will be validated by Binary Authorization.
+   * This field is deprecated. Leave this unset and instead configure
+   * BinaryAuthorization using evaluation_mode. If evaluation_mode is set to
+   * anything other than EVALUATION_MODE_UNSPECIFIED, this field is ignored.
    * </pre>
    *
-   * <code>bool enabled = 1;</code>
+   * <code>bool enabled = 1 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.BinaryAuthorization.enabled is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=1451
    * @return The enabled.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getEnabled() {
     return enabled_;
   }
@@ -682,15 +686,19 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Enable Binary Authorization for this cluster. If enabled, all container
-     * images will be validated by Binary Authorization.
+     * This field is deprecated. Leave this unset and instead configure
+     * BinaryAuthorization using evaluation_mode. If evaluation_mode is set to
+     * anything other than EVALUATION_MODE_UNSPECIFIED, this field is ignored.
      * </pre>
      *
-     * <code>bool enabled = 1;</code>
+     * <code>bool enabled = 1 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1beta1.BinaryAuthorization.enabled is deprecated. See
+     *     google/container/v1beta1/cluster_service.proto;l=1451
      * @return The enabled.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getEnabled() {
       return enabled_;
     }
@@ -698,15 +706,19 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Enable Binary Authorization for this cluster. If enabled, all container
-     * images will be validated by Binary Authorization.
+     * This field is deprecated. Leave this unset and instead configure
+     * BinaryAuthorization using evaluation_mode. If evaluation_mode is set to
+     * anything other than EVALUATION_MODE_UNSPECIFIED, this field is ignored.
      * </pre>
      *
-     * <code>bool enabled = 1;</code>
+     * <code>bool enabled = 1 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1beta1.BinaryAuthorization.enabled is deprecated. See
+     *     google/container/v1beta1/cluster_service.proto;l=1451
      * @param value The enabled to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setEnabled(boolean value) {
 
       enabled_ = value;
@@ -717,14 +729,18 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Enable Binary Authorization for this cluster. If enabled, all container
-     * images will be validated by Binary Authorization.
+     * This field is deprecated. Leave this unset and instead configure
+     * BinaryAuthorization using evaluation_mode. If evaluation_mode is set to
+     * anything other than EVALUATION_MODE_UNSPECIFIED, this field is ignored.
      * </pre>
      *
-     * <code>bool enabled = 1;</code>
+     * <code>bool enabled = 1 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1beta1.BinaryAuthorization.enabled is deprecated. See
+     *     google/container/v1beta1/cluster_service.proto;l=1451
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearEnabled() {
 
       enabled_ = false;
