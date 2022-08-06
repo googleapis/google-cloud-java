@@ -381,6 +381,47 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
+   * Output only. Status of the latest task executions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.Task.ExecutionStatus execution_status = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the executionStatus field is set.
+   */
+  boolean hasExecutionStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Status of the latest task executions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.Task.ExecutionStatus execution_status = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The executionStatus.
+   */
+  com.google.cloud.dataplex.v1.Task.ExecutionStatus getExecutionStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Status of the latest task executions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.Task.ExecutionStatus execution_status = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.Task.ExecutionStatusOrBuilder getExecutionStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Config related to running custom Spark tasks.
    * </pre>
    *

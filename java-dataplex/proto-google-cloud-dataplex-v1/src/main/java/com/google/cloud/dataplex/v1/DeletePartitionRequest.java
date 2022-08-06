@@ -188,13 +188,13 @@ public final class DeletePartitionRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. The etag associated with the partition if it was previously retrieved.
+   * Optional. The etag associated with the partition.
    * </pre>
    *
    * <code>string etag = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.dataplex.v1.DeletePartitionRequest.etag is deprecated. See
-   *     google/cloud/dataplex/v1/metadata.proto;l=325
+   *     google/cloud/dataplex/v1/metadata.proto;l=327
    * @return The etag.
    */
   @java.lang.Override
@@ -214,13 +214,13 @@ public final class DeletePartitionRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. The etag associated with the partition if it was previously retrieved.
+   * Optional. The etag associated with the partition.
    * </pre>
    *
    * <code>string etag = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.dataplex.v1.DeletePartitionRequest.etag is deprecated. See
-   *     google/cloud/dataplex/v1/metadata.proto;l=325
+   *     google/cloud/dataplex/v1/metadata.proto;l=327
    * @return The bytes for etag.
    */
   @java.lang.Override
@@ -712,13 +712,13 @@ public final class DeletePartitionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The etag associated with the partition if it was previously retrieved.
+     * Optional. The etag associated with the partition.
      * </pre>
      *
      * <code>string etag = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.dataplex.v1.DeletePartitionRequest.etag is deprecated. See
-     *     google/cloud/dataplex/v1/metadata.proto;l=325
+     *     google/cloud/dataplex/v1/metadata.proto;l=327
      * @return The etag.
      */
     @java.lang.Deprecated
@@ -737,13 +737,13 @@ public final class DeletePartitionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The etag associated with the partition if it was previously retrieved.
+     * Optional. The etag associated with the partition.
      * </pre>
      *
      * <code>string etag = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.dataplex.v1.DeletePartitionRequest.etag is deprecated. See
-     *     google/cloud/dataplex/v1/metadata.proto;l=325
+     *     google/cloud/dataplex/v1/metadata.proto;l=327
      * @return The bytes for etag.
      */
     @java.lang.Deprecated
@@ -762,13 +762,13 @@ public final class DeletePartitionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The etag associated with the partition if it was previously retrieved.
+     * Optional. The etag associated with the partition.
      * </pre>
      *
      * <code>string etag = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.dataplex.v1.DeletePartitionRequest.etag is deprecated. See
-     *     google/cloud/dataplex/v1/metadata.proto;l=325
+     *     google/cloud/dataplex/v1/metadata.proto;l=327
      * @param value The etag to set.
      * @return This builder for chaining.
      */
@@ -786,13 +786,13 @@ public final class DeletePartitionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The etag associated with the partition if it was previously retrieved.
+     * Optional. The etag associated with the partition.
      * </pre>
      *
      * <code>string etag = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.dataplex.v1.DeletePartitionRequest.etag is deprecated. See
-     *     google/cloud/dataplex/v1/metadata.proto;l=325
+     *     google/cloud/dataplex/v1/metadata.proto;l=327
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -806,13 +806,13 @@ public final class DeletePartitionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The etag associated with the partition if it was previously retrieved.
+     * Optional. The etag associated with the partition.
      * </pre>
      *
      * <code>string etag = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.dataplex.v1.DeletePartitionRequest.etag is deprecated. See
-     *     google/cloud/dataplex/v1/metadata.proto;l=325
+     *     google/cloud/dataplex/v1/metadata.proto;l=327
      * @param value The bytes for etag to set.
      * @return This builder for chaining.
      */

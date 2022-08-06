@@ -68,6 +68,10 @@ public final class TasksProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_Task_SparkTaskConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_Task_ExecutionStatus_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_Task_ExecutionStatus_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dataplex_v1_Task_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_Task_LabelsEntry_fieldAccessorTable;
@@ -89,7 +93,7 @@ public final class TasksProto {
           + "ld_behavior.proto\032\031google/api/resource.p"
           + "roto\032(google/cloud/dataplex/v1/resources"
           + ".proto\032\036google/protobuf/duration.proto\032\037"
-          + "google/protobuf/timestamp.proto\"\220\022\n\004Task"
+          + "google/protobuf/timestamp.proto\"\241\024\n\004Task"
           + "\0222\n\004name\030\001 \001(\tB$\340A\003\372A\036\n\034dataplex.googlea"
           + "pis.com/Task\022\020\n\003uid\030\002 \001(\tB\003\340A\003\0224\n\013create"
           + "_time\030\003 \001(\0132\032.google.protobuf.TimestampB"
@@ -102,9 +106,11 @@ public final class TasksProto {
           + "_spec\030d \001(\0132*.google.cloud.dataplex.v1.T"
           + "ask.TriggerSpecB\003\340A\002\022I\n\016execution_spec\030e"
           + " \001(\0132,.google.cloud.dataplex.v1.Task.Exe"
-          + "cutionSpecB\003\340A\002\022@\n\005spark\030\254\002 \001(\0132..google"
+          + "cutionSpecB\003\340A\002\022N\n\020execution_status\030\311\001 \001"
+          + "(\0132..google.cloud.dataplex.v1.Task.Execu"
+          + "tionStatusB\003\340A\003\022@\n\005spark\030\254\002 \001(\0132..google"
           + ".cloud.dataplex.v1.Task.SparkTaskConfigH"
-          + "\000\032\206\006\n\022InfrastructureSpec\022X\n\005batch\0304 \001(\0132"
+          + "\000\032\232\006\n\022InfrastructureSpec\022X\n\005batch\0304 \001(\0132"
           + "G.google.cloud.dataplex.v1.Task.Infrastr"
           + "uctureSpec.BatchComputeResourcesH\000\022b\n\017co"
           + "ntainer_image\030e \001(\0132G.google.cloud.datap"
@@ -113,61 +119,65 @@ public final class TasksProto {
           + "oogle.cloud.dataplex.v1.Task.Infrastruct"
           + "ureSpec.VpcNetworkH\002\032W\n\025BatchComputeReso"
           + "urces\022\034\n\017executors_count\030\001 \001(\005B\003\340A\001\022 \n\023m"
-          + "ax_executors_count\030\002 \001(\005B\003\340A\001\032\362\001\n\025Contai"
-          + "nerImageRuntime\022\026\n\tjava_jars\030\002 \003(\tB\003\340A\001\022"
-          + "\034\n\017python_packages\030\003 \003(\tB\003\340A\001\022p\n\npropert"
-          + "ies\030\004 \003(\0132W.google.cloud.dataplex.v1.Tas"
-          + "k.InfrastructureSpec.ContainerImageRunti"
-          + "me.PropertiesEntryB\003\340A\001\0321\n\017PropertiesEnt"
-          + "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032k\n\nVp"
-          + "cNetwork\022\026\n\007network\030\001 \001(\tB\003\340A\001H\000\022\032\n\013sub_"
-          + "network\030\002 \001(\tB\003\340A\001H\000\022\031\n\014network_tags\030\003 \003"
-          + "(\tB\003\340A\001B\016\n\014network_nameB\013\n\tresourcesB\t\n\007"
-          + "runtimeB\t\n\007network\032\232\002\n\013TriggerSpec\022E\n\004ty"
-          + "pe\030\005 \001(\0162/.google.cloud.dataplex.v1.Task"
-          + ".TriggerSpec.TypeB\006\340A\002\340A\005\0223\n\nstart_time\030"
-          + "\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\001\022\025"
-          + "\n\010disabled\030\004 \001(\010B\003\340A\001\022\030\n\013max_retries\030\007 \001"
-          + "(\005B\003\340A\001\022\027\n\010schedule\030d \001(\tB\003\340A\001H\000\":\n\004Type"
-          + "\022\024\n\020TYPE_UNSPECIFIED\020\000\022\r\n\tON_DEMAND\020\001\022\r\n"
-          + "\tRECURRING\020\002B\t\n\007trigger\032\351\001\n\rExecutionSpe"
-          + "c\022I\n\004args\030\004 \003(\01326.google.cloud.dataplex."
-          + "v1.Task.ExecutionSpec.ArgsEntryB\003\340A\001\022\034\n\017"
-          + "service_account\030\005 \001(\tB\003\340A\002\022B\n\032max_job_ex"
-          + "ecution_lifetime\030\010 \001(\0132\031.google.protobuf"
-          + ".DurationB\003\340A\001\032+\n\tArgsEntry\022\013\n\003key\030\001 \001(\t"
-          + "\022\r\n\005value\030\002 \001(\t:\0028\001\032\245\002\n\017SparkTaskConfig\022"
-          + "\033\n\021main_jar_file_uri\030d \001(\tH\000\022\024\n\nmain_cla"
-          + "ss\030e \001(\tH\000\022\034\n\022python_script_file\030f \001(\tH\000"
-          + "\022\031\n\017sql_script_file\030h \001(\tH\000\022\024\n\nsql_scrip"
-          + "t\030i \001(\tH\000\022\026\n\tfile_uris\030\003 \003(\tB\003\340A\001\022\031\n\014arc"
-          + "hive_uris\030\004 \003(\tB\003\340A\001\022S\n\023infrastructure_s"
-          + "pec\030\006 \001(\01321.google.cloud.dataplex.v1.Tas"
-          + "k.InfrastructureSpecB\003\340A\001B\010\n\006driver\032-\n\013L"
-          + "abelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002"
-          + "8\001:d\352Aa\n\034dataplex.googleapis.com/Task\022Ap"
-          + "rojects/{project}/locations/{location}/l"
-          + "akes/{lake}/tasks/{task}B\010\n\006config\"\210\005\n\003J"
-          + "ob\0221\n\004name\030\001 \001(\tB#\340A\003\372A\035\n\033dataplex.googl"
-          + "eapis.com/Job\022\020\n\003uid\030\002 \001(\tB\003\340A\003\0223\n\nstart"
-          + "_time\030\003 \001(\0132\032.google.protobuf.TimestampB"
-          + "\003\340A\003\0221\n\010end_time\030\004 \001(\0132\032.google.protobuf"
-          + ".TimestampB\003\340A\003\0227\n\005state\030\005 \001(\0162#.google."
-          + "cloud.dataplex.v1.Job.StateB\003\340A\003\022\030\n\013retr"
-          + "y_count\030\006 \001(\rB\003\340A\003\022;\n\007service\030\007 \001(\0162%.go"
-          + "ogle.cloud.dataplex.v1.Job.ServiceB\003\340A\003\022"
-          + "\030\n\013service_job\030\010 \001(\tB\003\340A\003\022\024\n\007message\030\t \001"
-          + "(\tB\003\340A\003\"0\n\007Service\022\027\n\023SERVICE_UNSPECIFIE"
-          + "D\020\000\022\014\n\010DATAPROC\020\001\"r\n\005State\022\025\n\021STATE_UNSP"
-          + "ECIFIED\020\000\022\013\n\007RUNNING\020\001\022\016\n\nCANCELLING\020\002\022\r"
-          + "\n\tCANCELLED\020\003\022\r\n\tSUCCEEDED\020\004\022\n\n\006FAILED\020\005"
-          + "\022\013\n\007ABORTED\020\006:n\352Ak\n\033dataplex.googleapis."
-          + "com/Job\022Lprojects/{project}/locations/{l"
-          + "ocation}/lakes/{lake}/tasks/{task}/jobs/"
-          + "{job}Bn\n\034com.google.cloud.dataplex.v1B\nT"
-          + "asksProtoP\001Z@google.golang.org/genproto/"
-          + "googleapis/cloud/dataplex/v1;dataplexb\006p"
-          + "roto3"
+          + "ax_executors_count\030\002 \001(\005B\003\340A\001\032\206\002\n\025Contai"
+          + "nerImageRuntime\022\022\n\005image\030\001 \001(\tB\003\340A\001\022\026\n\tj"
+          + "ava_jars\030\002 \003(\tB\003\340A\001\022\034\n\017python_packages\030\003"
+          + " \003(\tB\003\340A\001\022p\n\nproperties\030\004 \003(\0132W.google.c"
+          + "loud.dataplex.v1.Task.InfrastructureSpec"
+          + ".ContainerImageRuntime.PropertiesEntryB\003"
+          + "\340A\001\0321\n\017PropertiesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v"
+          + "alue\030\002 \001(\t:\0028\001\032k\n\nVpcNetwork\022\026\n\007network\030"
+          + "\001 \001(\tB\003\340A\001H\000\022\032\n\013sub_network\030\002 \001(\tB\003\340A\001H\000"
+          + "\022\031\n\014network_tags\030\003 \003(\tB\003\340A\001B\016\n\014network_n"
+          + "ameB\013\n\tresourcesB\t\n\007runtimeB\t\n\007network\032\232"
+          + "\002\n\013TriggerSpec\022E\n\004type\030\005 \001(\0162/.google.cl"
+          + "oud.dataplex.v1.Task.TriggerSpec.TypeB\006\340"
+          + "A\002\340A\005\0223\n\nstart_time\030\006 \001(\0132\032.google.proto"
+          + "buf.TimestampB\003\340A\001\022\025\n\010disabled\030\004 \001(\010B\003\340A"
+          + "\001\022\030\n\013max_retries\030\007 \001(\005B\003\340A\001\022\027\n\010schedule\030"
+          + "d \001(\tB\003\340A\001H\000\":\n\004Type\022\024\n\020TYPE_UNSPECIFIED"
+          + "\020\000\022\r\n\tON_DEMAND\020\001\022\r\n\tRECURRING\020\002B\t\n\007trig"
+          + "ger\032\225\002\n\rExecutionSpec\022I\n\004args\030\004 \003(\01326.go"
+          + "ogle.cloud.dataplex.v1.Task.ExecutionSpe"
+          + "c.ArgsEntryB\003\340A\001\022\034\n\017service_account\030\005 \001("
+          + "\tB\003\340A\002\022\024\n\007project\030\007 \001(\tB\003\340A\001\022B\n\032max_job_"
+          + "execution_lifetime\030\010 \001(\0132\031.google.protob"
+          + "uf.DurationB\003\340A\001\022\024\n\007kms_key\030\t \001(\tB\003\340A\001\032+"
+          + "\n\tArgsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:"
+          + "\0028\001\032\245\002\n\017SparkTaskConfig\022\033\n\021main_jar_file"
+          + "_uri\030d \001(\tH\000\022\024\n\nmain_class\030e \001(\tH\000\022\034\n\022py"
+          + "thon_script_file\030f \001(\tH\000\022\031\n\017sql_script_f"
+          + "ile\030h \001(\tH\000\022\024\n\nsql_script\030i \001(\tH\000\022\026\n\tfil"
+          + "e_uris\030\003 \003(\tB\003\340A\001\022\031\n\014archive_uris\030\004 \003(\tB"
+          + "\003\340A\001\022S\n\023infrastructure_spec\030\006 \001(\01321.goog"
+          + "le.cloud.dataplex.v1.Task.Infrastructure"
+          + "SpecB\003\340A\001B\010\n\006driver\032\177\n\017ExecutionStatus\0224"
+          + "\n\013update_time\030\003 \001(\0132\032.google.protobuf.Ti"
+          + "mestampB\003\340A\003\0226\n\nlatest_job\030\t \001(\0132\035.googl"
+          + "e.cloud.dataplex.v1.JobB\003\340A\003\032-\n\013LabelsEn"
+          + "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:d\352Aa"
+          + "\n\034dataplex.googleapis.com/Task\022Aprojects"
+          + "/{project}/locations/{location}/lakes/{l"
+          + "ake}/tasks/{task}B\010\n\006config\"\210\005\n\003Job\0221\n\004n"
+          + "ame\030\001 \001(\tB#\340A\003\372A\035\n\033dataplex.googleapis.c"
+          + "om/Job\022\020\n\003uid\030\002 \001(\tB\003\340A\003\0223\n\nstart_time\030\003"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
+          + "\010end_time\030\004 \001(\0132\032.google.protobuf.Timest"
+          + "ampB\003\340A\003\0227\n\005state\030\005 \001(\0162#.google.cloud.d"
+          + "ataplex.v1.Job.StateB\003\340A\003\022\030\n\013retry_count"
+          + "\030\006 \001(\rB\003\340A\003\022;\n\007service\030\007 \001(\0162%.google.cl"
+          + "oud.dataplex.v1.Job.ServiceB\003\340A\003\022\030\n\013serv"
+          + "ice_job\030\010 \001(\tB\003\340A\003\022\024\n\007message\030\t \001(\tB\003\340A\003"
+          + "\"0\n\007Service\022\027\n\023SERVICE_UNSPECIFIED\020\000\022\014\n\010"
+          + "DATAPROC\020\001\"r\n\005State\022\025\n\021STATE_UNSPECIFIED"
+          + "\020\000\022\013\n\007RUNNING\020\001\022\016\n\nCANCELLING\020\002\022\r\n\tCANCE"
+          + "LLED\020\003\022\r\n\tSUCCEEDED\020\004\022\n\n\006FAILED\020\005\022\013\n\007ABO"
+          + "RTED\020\006:n\352Ak\n\033dataplex.googleapis.com/Job"
+          + "\022Lprojects/{project}/locations/{location"
+          + "}/lakes/{lake}/tasks/{task}/jobs/{job}Bn"
+          + "\n\034com.google.cloud.dataplex.v1B\nTasksPro"
+          + "toP\001Z@google.golang.org/genproto/googlea"
+          + "pis/cloud/dataplex/v1;dataplexb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -195,6 +205,7 @@ public final class TasksProto {
               "Labels",
               "TriggerSpec",
               "ExecutionSpec",
+              "ExecutionStatus",
               "Spark",
               "Config",
             });
@@ -224,7 +235,7 @@ public final class TasksProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_Task_InfrastructureSpec_ContainerImageRuntime_descriptor,
             new java.lang.String[] {
-              "JavaJars", "PythonPackages", "Properties",
+              "Image", "JavaJars", "PythonPackages", "Properties",
             });
     internal_static_google_cloud_dataplex_v1_Task_InfrastructureSpec_ContainerImageRuntime_PropertiesEntry_descriptor =
         internal_static_google_cloud_dataplex_v1_Task_InfrastructureSpec_ContainerImageRuntime_descriptor
@@ -260,7 +271,7 @@ public final class TasksProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_Task_ExecutionSpec_descriptor,
             new java.lang.String[] {
-              "Args", "ServiceAccount", "MaxJobExecutionLifetime",
+              "Args", "ServiceAccount", "Project", "MaxJobExecutionLifetime", "KmsKey",
             });
     internal_static_google_cloud_dataplex_v1_Task_ExecutionSpec_ArgsEntry_descriptor =
         internal_static_google_cloud_dataplex_v1_Task_ExecutionSpec_descriptor
@@ -288,8 +299,16 @@ public final class TasksProto {
               "InfrastructureSpec",
               "Driver",
             });
-    internal_static_google_cloud_dataplex_v1_Task_LabelsEntry_descriptor =
+    internal_static_google_cloud_dataplex_v1_Task_ExecutionStatus_descriptor =
         internal_static_google_cloud_dataplex_v1_Task_descriptor.getNestedTypes().get(4);
+    internal_static_google_cloud_dataplex_v1_Task_ExecutionStatus_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_Task_ExecutionStatus_descriptor,
+            new java.lang.String[] {
+              "UpdateTime", "LatestJob",
+            });
+    internal_static_google_cloud_dataplex_v1_Task_LabelsEntry_descriptor =
+        internal_static_google_cloud_dataplex_v1_Task_descriptor.getNestedTypes().get(5);
     internal_static_google_cloud_dataplex_v1_Task_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_Task_LabelsEntry_descriptor,

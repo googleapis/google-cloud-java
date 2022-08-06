@@ -149,7 +149,7 @@ public final class ListEnvironmentsRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The resource name of the parent lake:
-   * projects/{project_id}/locations/{location_id}/lakes/{lake_id}
+   * `projects/{project_id}/locations/{location_id}/lakes/{lake_id}`.
    * </pre>
    *
    * <code>
@@ -175,7 +175,7 @@ public final class ListEnvironmentsRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The resource name of the parent lake:
-   * projects/{project_id}/locations/{location_id}/lakes/{lake_id}
+   * `projects/{project_id}/locations/{location_id}/lakes/{lake_id}`.
    * </pre>
    *
    * <code>
@@ -757,7 +757,7 @@ public final class ListEnvironmentsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The resource name of the parent lake:
-     * projects/{project_id}/locations/{location_id}/lakes/{lake_id}
+     * `projects/{project_id}/locations/{location_id}/lakes/{lake_id}`.
      * </pre>
      *
      * <code>
@@ -782,7 +782,7 @@ public final class ListEnvironmentsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The resource name of the parent lake:
-     * projects/{project_id}/locations/{location_id}/lakes/{lake_id}
+     * `projects/{project_id}/locations/{location_id}/lakes/{lake_id}`.
      * </pre>
      *
      * <code>
@@ -807,7 +807,7 @@ public final class ListEnvironmentsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The resource name of the parent lake:
-     * projects/{project_id}/locations/{location_id}/lakes/{lake_id}
+     * `projects/{project_id}/locations/{location_id}/lakes/{lake_id}`.
      * </pre>
      *
      * <code>
@@ -831,7 +831,7 @@ public final class ListEnvironmentsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The resource name of the parent lake:
-     * projects/{project_id}/locations/{location_id}/lakes/{lake_id}
+     * `projects/{project_id}/locations/{location_id}/lakes/{lake_id}`.
      * </pre>
      *
      * <code>
@@ -851,7 +851,7 @@ public final class ListEnvironmentsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The resource name of the parent lake:
-     * projects/{project_id}/locations/{location_id}/lakes/{lake_id}
+     * `projects/{project_id}/locations/{location_id}/lakes/{lake_id}`.
      * </pre>
      *
      * <code>

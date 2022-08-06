@@ -138,8 +138,8 @@ public interface ListEntitiesRequestOrBuilder
    * - Entity ID: ?filter="id=entityID"
    * - Asset ID: ?filter="asset=assetID"
    * - Data path ?filter="data_path=gs://my-bucket"
-   * - Is HIVE compatible: ?filter=”hive_compatible=true”
-   * - Is BigQuery compatible: ?filter=”bigquery_compatible=true”
+   * - Is HIVE compatible: ?filter="hive_compatible=true"
+   * - Is BigQuery compatible: ?filter="bigquery_compatible=true"
    * </pre>
    *
    * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -156,8 +156,8 @@ public interface ListEntitiesRequestOrBuilder
    * - Entity ID: ?filter="id=entityID"
    * - Asset ID: ?filter="asset=assetID"
    * - Data path ?filter="data_path=gs://my-bucket"
-   * - Is HIVE compatible: ?filter=”hive_compatible=true”
-   * - Is BigQuery compatible: ?filter=”bigquery_compatible=true”
+   * - Is HIVE compatible: ?filter="hive_compatible=true"
+   * - Is BigQuery compatible: ?filter="bigquery_compatible=true"
    * </pre>
    *
    * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

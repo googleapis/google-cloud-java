@@ -28,7 +28,7 @@ public interface CreateAssetRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the parent zone:
-   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`
+   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface CreateAssetRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the parent zone:
-   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`
+   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`.
    * </pre>
    *
    * <code>

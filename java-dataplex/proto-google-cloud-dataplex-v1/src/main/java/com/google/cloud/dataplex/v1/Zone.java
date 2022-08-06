@@ -5599,7 +5599,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The relative resource name of the zone, of the form:
-   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`
+   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`.
    * </pre>
    *
    * <code>
@@ -5625,7 +5625,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The relative resource name of the zone, of the form:
-   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`
+   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`.
    * </pre>
    *
    * <code>
@@ -6818,7 +6818,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative resource name of the zone, of the form:
-     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`
+     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`.
      * </pre>
      *
      * <code>
@@ -6843,7 +6843,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative resource name of the zone, of the form:
-     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`
+     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`.
      * </pre>
      *
      * <code>
@@ -6868,7 +6868,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative resource name of the zone, of the form:
-     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`
+     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`.
      * </pre>
      *
      * <code>
@@ -6892,7 +6892,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative resource name of the zone, of the form:
-     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`
+     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`.
      * </pre>
      *
      * <code>
@@ -6912,7 +6912,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative resource name of the zone, of the form:
-     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`
+     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`.
      * </pre>
      *
      * <code>

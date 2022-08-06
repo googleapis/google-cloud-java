@@ -156,7 +156,8 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The default unset value. The API will default to the FULL view.
+     * The default unset value. Return both table and fileset entities
+     * if unspecified.
      * </pre>
      *
      * <code>ENTITY_VIEW_UNSPECIFIED = 0;</code>
@@ -189,7 +190,8 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The default unset value. The API will default to the FULL view.
+     * The default unset value. Return both table and fileset entities
+     * if unspecified.
      * </pre>
      *
      * <code>ENTITY_VIEW_UNSPECIFIED = 0;</code>
@@ -482,8 +484,8 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
    * - Entity ID: ?filter="id=entityID"
    * - Asset ID: ?filter="asset=assetID"
    * - Data path ?filter="data_path=gs://my-bucket"
-   * - Is HIVE compatible: ?filter=”hive_compatible=true”
-   * - Is BigQuery compatible: ?filter=”bigquery_compatible=true”
+   * - Is HIVE compatible: ?filter="hive_compatible=true"
+   * - Is BigQuery compatible: ?filter="bigquery_compatible=true"
    * </pre>
    *
    * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -511,8 +513,8 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
    * - Entity ID: ?filter="id=entityID"
    * - Asset ID: ?filter="asset=assetID"
    * - Data path ?filter="data_path=gs://my-bucket"
-   * - Is HIVE compatible: ?filter=”hive_compatible=true”
-   * - Is BigQuery compatible: ?filter=”bigquery_compatible=true”
+   * - Is HIVE compatible: ?filter="hive_compatible=true"
+   * - Is BigQuery compatible: ?filter="bigquery_compatible=true"
    * </pre>
    *
    * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1328,8 +1330,8 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
      * - Entity ID: ?filter="id=entityID"
      * - Asset ID: ?filter="asset=assetID"
      * - Data path ?filter="data_path=gs://my-bucket"
-     * - Is HIVE compatible: ?filter=”hive_compatible=true”
-     * - Is BigQuery compatible: ?filter=”bigquery_compatible=true”
+     * - Is HIVE compatible: ?filter="hive_compatible=true"
+     * - Is BigQuery compatible: ?filter="bigquery_compatible=true"
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1356,8 +1358,8 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
      * - Entity ID: ?filter="id=entityID"
      * - Asset ID: ?filter="asset=assetID"
      * - Data path ?filter="data_path=gs://my-bucket"
-     * - Is HIVE compatible: ?filter=”hive_compatible=true”
-     * - Is BigQuery compatible: ?filter=”bigquery_compatible=true”
+     * - Is HIVE compatible: ?filter="hive_compatible=true"
+     * - Is BigQuery compatible: ?filter="bigquery_compatible=true"
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1384,8 +1386,8 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
      * - Entity ID: ?filter="id=entityID"
      * - Asset ID: ?filter="asset=assetID"
      * - Data path ?filter="data_path=gs://my-bucket"
-     * - Is HIVE compatible: ?filter=”hive_compatible=true”
-     * - Is BigQuery compatible: ?filter=”bigquery_compatible=true”
+     * - Is HIVE compatible: ?filter="hive_compatible=true"
+     * - Is BigQuery compatible: ?filter="bigquery_compatible=true"
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1411,8 +1413,8 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
      * - Entity ID: ?filter="id=entityID"
      * - Asset ID: ?filter="asset=assetID"
      * - Data path ?filter="data_path=gs://my-bucket"
-     * - Is HIVE compatible: ?filter=”hive_compatible=true”
-     * - Is BigQuery compatible: ?filter=”bigquery_compatible=true”
+     * - Is HIVE compatible: ?filter="hive_compatible=true"
+     * - Is BigQuery compatible: ?filter="bigquery_compatible=true"
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1434,8 +1436,8 @@ public final class ListEntitiesRequest extends com.google.protobuf.GeneratedMess
      * - Entity ID: ?filter="id=entityID"
      * - Asset ID: ?filter="asset=assetID"
      * - Data path ?filter="data_path=gs://my-bucket"
-     * - Is HIVE compatible: ?filter=”hive_compatible=true”
-     * - Is BigQuery compatible: ?filter=”bigquery_compatible=true”
+     * - Is HIVE compatible: ?filter="hive_compatible=true"
+     * - Is BigQuery compatible: ?filter="bigquery_compatible=true"
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

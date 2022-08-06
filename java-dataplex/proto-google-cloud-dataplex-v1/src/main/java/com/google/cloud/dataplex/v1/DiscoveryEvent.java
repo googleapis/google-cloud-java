@@ -2478,6 +2478,61 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * @return The type.
      */
     com.google.cloud.dataplex.v1.DiscoveryEvent.EntityType getType();
+
+    /**
+     *
+     *
+     * <pre>
+     * The locations of the data items (e.g., a Cloud Storage objects) sampled
+     * for metadata inference.
+     * </pre>
+     *
+     * <code>repeated string sampled_data_locations = 4;</code>
+     *
+     * @return A list containing the sampledDataLocations.
+     */
+    java.util.List<java.lang.String> getSampledDataLocationsList();
+    /**
+     *
+     *
+     * <pre>
+     * The locations of the data items (e.g., a Cloud Storage objects) sampled
+     * for metadata inference.
+     * </pre>
+     *
+     * <code>repeated string sampled_data_locations = 4;</code>
+     *
+     * @return The count of sampledDataLocations.
+     */
+    int getSampledDataLocationsCount();
+    /**
+     *
+     *
+     * <pre>
+     * The locations of the data items (e.g., a Cloud Storage objects) sampled
+     * for metadata inference.
+     * </pre>
+     *
+     * <code>repeated string sampled_data_locations = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The sampledDataLocations at the given index.
+     */
+    java.lang.String getSampledDataLocations(int index);
+    /**
+     *
+     *
+     * <pre>
+     * The locations of the data items (e.g., a Cloud Storage objects) sampled
+     * for metadata inference.
+     * </pre>
+     *
+     * <code>repeated string sampled_data_locations = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the sampledDataLocations at the given index.
+     */
+    com.google.protobuf.ByteString getSampledDataLocationsBytes(int index);
   }
   /**
    *
@@ -2502,6 +2557,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       partition_ = "";
       entity_ = "";
       type_ = 0;
+      sampledDataLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -2523,6 +2579,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2554,6 +2611,16 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
                 type_ = rawValue;
                 break;
               }
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  sampledDataLocations_ = new com.google.protobuf.LazyStringArrayList();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                sampledDataLocations_.add(s);
+                break;
+              }
             default:
               {
                 if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -2570,6 +2637,9 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          sampledDataLocations_ = sampledDataLocations_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -2730,6 +2800,71 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           : result;
     }
 
+    public static final int SAMPLED_DATA_LOCATIONS_FIELD_NUMBER = 4;
+    private com.google.protobuf.LazyStringList sampledDataLocations_;
+    /**
+     *
+     *
+     * <pre>
+     * The locations of the data items (e.g., a Cloud Storage objects) sampled
+     * for metadata inference.
+     * </pre>
+     *
+     * <code>repeated string sampled_data_locations = 4;</code>
+     *
+     * @return A list containing the sampledDataLocations.
+     */
+    public com.google.protobuf.ProtocolStringList getSampledDataLocationsList() {
+      return sampledDataLocations_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The locations of the data items (e.g., a Cloud Storage objects) sampled
+     * for metadata inference.
+     * </pre>
+     *
+     * <code>repeated string sampled_data_locations = 4;</code>
+     *
+     * @return The count of sampledDataLocations.
+     */
+    public int getSampledDataLocationsCount() {
+      return sampledDataLocations_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The locations of the data items (e.g., a Cloud Storage objects) sampled
+     * for metadata inference.
+     * </pre>
+     *
+     * <code>repeated string sampled_data_locations = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The sampledDataLocations at the given index.
+     */
+    public java.lang.String getSampledDataLocations(int index) {
+      return sampledDataLocations_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The locations of the data items (e.g., a Cloud Storage objects) sampled
+     * for metadata inference.
+     * </pre>
+     *
+     * <code>repeated string sampled_data_locations = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the sampledDataLocations at the given index.
+     */
+    public com.google.protobuf.ByteString getSampledDataLocationsBytes(int index) {
+      return sampledDataLocations_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2755,6 +2890,10 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         output.writeEnum(3, type_);
       }
+      for (int i = 0; i < sampledDataLocations_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(
+            output, 4, sampledDataLocations_.getRaw(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2775,6 +2914,14 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, type_);
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < sampledDataLocations_.size(); i++) {
+          dataSize += computeStringSizeNoTag(sampledDataLocations_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getSampledDataLocationsList().size();
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2794,6 +2941,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       if (!getPartition().equals(other.getPartition())) return false;
       if (!getEntity().equals(other.getEntity())) return false;
       if (type_ != other.type_) return false;
+      if (!getSampledDataLocationsList().equals(other.getSampledDataLocationsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2811,6 +2959,10 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getEntity().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
+      if (getSampledDataLocationsCount() > 0) {
+        hash = (37 * hash) + SAMPLED_DATA_LOCATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getSampledDataLocationsList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2965,6 +3117,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
 
         type_ = 0;
 
+        sampledDataLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -2993,9 +3147,15 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dataplex.v1.DiscoveryEvent.PartitionDetails buildPartial() {
         com.google.cloud.dataplex.v1.DiscoveryEvent.PartitionDetails result =
             new com.google.cloud.dataplex.v1.DiscoveryEvent.PartitionDetails(this);
+        int from_bitField0_ = bitField0_;
         result.partition_ = partition_;
         result.entity_ = entity_;
         result.type_ = type_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          sampledDataLocations_ = sampledDataLocations_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.sampledDataLocations_ = sampledDataLocations_;
         onBuilt();
         return result;
       }
@@ -3060,6 +3220,16 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
         }
+        if (!other.sampledDataLocations_.isEmpty()) {
+          if (sampledDataLocations_.isEmpty()) {
+            sampledDataLocations_ = other.sampledDataLocations_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureSampledDataLocationsIsMutable();
+            sampledDataLocations_.addAll(other.sampledDataLocations_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -3090,6 +3260,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object partition_ = "";
       /**
@@ -3402,6 +3574,184 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       public Builder clearType() {
 
         type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList sampledDataLocations_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureSampledDataLocationsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          sampledDataLocations_ =
+              new com.google.protobuf.LazyStringArrayList(sampledDataLocations_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The locations of the data items (e.g., a Cloud Storage objects) sampled
+       * for metadata inference.
+       * </pre>
+       *
+       * <code>repeated string sampled_data_locations = 4;</code>
+       *
+       * @return A list containing the sampledDataLocations.
+       */
+      public com.google.protobuf.ProtocolStringList getSampledDataLocationsList() {
+        return sampledDataLocations_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The locations of the data items (e.g., a Cloud Storage objects) sampled
+       * for metadata inference.
+       * </pre>
+       *
+       * <code>repeated string sampled_data_locations = 4;</code>
+       *
+       * @return The count of sampledDataLocations.
+       */
+      public int getSampledDataLocationsCount() {
+        return sampledDataLocations_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The locations of the data items (e.g., a Cloud Storage objects) sampled
+       * for metadata inference.
+       * </pre>
+       *
+       * <code>repeated string sampled_data_locations = 4;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The sampledDataLocations at the given index.
+       */
+      public java.lang.String getSampledDataLocations(int index) {
+        return sampledDataLocations_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The locations of the data items (e.g., a Cloud Storage objects) sampled
+       * for metadata inference.
+       * </pre>
+       *
+       * <code>repeated string sampled_data_locations = 4;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the sampledDataLocations at the given index.
+       */
+      public com.google.protobuf.ByteString getSampledDataLocationsBytes(int index) {
+        return sampledDataLocations_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The locations of the data items (e.g., a Cloud Storage objects) sampled
+       * for metadata inference.
+       * </pre>
+       *
+       * <code>repeated string sampled_data_locations = 4;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The sampledDataLocations to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSampledDataLocations(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSampledDataLocationsIsMutable();
+        sampledDataLocations_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The locations of the data items (e.g., a Cloud Storage objects) sampled
+       * for metadata inference.
+       * </pre>
+       *
+       * <code>repeated string sampled_data_locations = 4;</code>
+       *
+       * @param value The sampledDataLocations to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSampledDataLocations(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSampledDataLocationsIsMutable();
+        sampledDataLocations_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The locations of the data items (e.g., a Cloud Storage objects) sampled
+       * for metadata inference.
+       * </pre>
+       *
+       * <code>repeated string sampled_data_locations = 4;</code>
+       *
+       * @param values The sampledDataLocations to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllSampledDataLocations(java.lang.Iterable<java.lang.String> values) {
+        ensureSampledDataLocationsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sampledDataLocations_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The locations of the data items (e.g., a Cloud Storage objects) sampled
+       * for metadata inference.
+       * </pre>
+       *
+       * <code>repeated string sampled_data_locations = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSampledDataLocations() {
+        sampledDataLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The locations of the data items (e.g., a Cloud Storage objects) sampled
+       * for metadata inference.
+       * </pre>
+       *
+       * <code>repeated string sampled_data_locations = 4;</code>
+       *
+       * @param value The bytes of the sampledDataLocations to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSampledDataLocationsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureSampledDataLocationsIsMutable();
+        sampledDataLocations_.add(value);
         onChanged();
         return this;
       }

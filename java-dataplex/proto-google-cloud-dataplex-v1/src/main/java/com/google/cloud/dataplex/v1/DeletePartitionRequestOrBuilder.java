@@ -64,13 +64,13 @@ public interface DeletePartitionRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The etag associated with the partition if it was previously retrieved.
+   * Optional. The etag associated with the partition.
    * </pre>
    *
    * <code>string etag = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.dataplex.v1.DeletePartitionRequest.etag is deprecated. See
-   *     google/cloud/dataplex/v1/metadata.proto;l=325
+   *     google/cloud/dataplex/v1/metadata.proto;l=327
    * @return The etag.
    */
   @java.lang.Deprecated
@@ -79,13 +79,13 @@ public interface DeletePartitionRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The etag associated with the partition if it was previously retrieved.
+   * Optional. The etag associated with the partition.
    * </pre>
    *
    * <code>string etag = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.dataplex.v1.DeletePartitionRequest.etag is deprecated. See
-   *     google/cloud/dataplex/v1/metadata.proto;l=325
+   *     google/cloud/dataplex/v1/metadata.proto;l=327
    * @return The bytes for etag.
    */
   @java.lang.Deprecated

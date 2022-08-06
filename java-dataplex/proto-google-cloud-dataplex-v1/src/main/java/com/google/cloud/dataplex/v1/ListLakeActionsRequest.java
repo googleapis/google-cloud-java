@@ -133,7 +133,7 @@ public final class ListLakeActionsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The resource name of the parent lake:
-   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`
+   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`.
    * </pre>
    *
    * <code>
@@ -159,7 +159,7 @@ public final class ListLakeActionsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The resource name of the parent lake:
-   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`
+   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`.
    * </pre>
    *
    * <code>
@@ -611,7 +611,7 @@ public final class ListLakeActionsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the parent lake:
-     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`
+     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`.
      * </pre>
      *
      * <code>
@@ -636,7 +636,7 @@ public final class ListLakeActionsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the parent lake:
-     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`
+     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`.
      * </pre>
      *
      * <code>
@@ -661,7 +661,7 @@ public final class ListLakeActionsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the parent lake:
-     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`
+     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`.
      * </pre>
      *
      * <code>
@@ -685,7 +685,7 @@ public final class ListLakeActionsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the parent lake:
-     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`
+     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`.
      * </pre>
      *
      * <code>
@@ -705,7 +705,7 @@ public final class ListLakeActionsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the parent lake:
-     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`
+     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`.
      * </pre>
      *
      * <code>

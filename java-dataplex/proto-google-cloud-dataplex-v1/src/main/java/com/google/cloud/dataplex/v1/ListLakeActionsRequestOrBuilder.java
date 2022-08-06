@@ -28,7 +28,7 @@ public interface ListLakeActionsRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the parent lake:
-   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`
+   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface ListLakeActionsRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the parent lake:
-   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`
+   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`.
    * </pre>
    *
    * <code>

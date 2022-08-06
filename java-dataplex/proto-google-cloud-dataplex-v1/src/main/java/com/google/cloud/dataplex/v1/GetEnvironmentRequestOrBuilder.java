@@ -28,7 +28,7 @@ public interface GetEnvironmentRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the environment:
-   * projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}
+   * `projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}`.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface GetEnvironmentRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the environment:
-   * projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}
+   * `projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}`.
    * </pre>
    *
    * <code>

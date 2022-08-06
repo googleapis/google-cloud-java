@@ -2449,7 +2449,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Display name must be shorter than or equal to 63 characters.
+   * Optional. Display name must be shorter than or equal to 256 characters.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2472,7 +2472,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Display name must be shorter than or equal to 63 characters.
+   * Optional. Display name must be shorter than or equal to 256 characters.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2651,7 +2651,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    * published table name. Specifying a new ID in an update entity
    * request will override the existing value.
    * The ID must contain only letters (a-z, A-Z), numbers (0-9), and
-   * underscores. Must begin with a letter.
+   * underscores. Must begin with a letter and consist of 256 or fewer
+   * characters.
    * </pre>
    *
    * <code>string id = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2678,7 +2679,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    * published table name. Specifying a new ID in an update entity
    * request will override the existing value.
    * The ID must contain only letters (a-z, A-Z), numbers (0-9), and
-   * underscores. Must begin with a letter.
+   * underscores. Must begin with a letter and consist of 256 or fewer
+   * characters.
    * </pre>
    *
    * <code>string id = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2704,8 +2706,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The etag for this entity. Required for update and delete requests. Must
-   * match the server's etag.
+   * Optional. The etag associated with the entity, which can be retrieved with a
+   * [GetEntity][] request. Required for update and delete requests.
    * </pre>
    *
    * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2728,8 +2730,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The etag for this entity. Required for update and delete requests. Must
-   * match the server's etag.
+   * Optional. The etag associated with the entity, which can be retrieved with a
+   * [GetEntity][] request. Required for update and delete requests.
    * </pre>
    *
    * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3953,7 +3955,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Display name must be shorter than or equal to 63 characters.
+     * Optional. Display name must be shorter than or equal to 256 characters.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3975,7 +3977,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Display name must be shorter than or equal to 63 characters.
+     * Optional. Display name must be shorter than or equal to 256 characters.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3997,7 +3999,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Display name must be shorter than or equal to 63 characters.
+     * Optional. Display name must be shorter than or equal to 256 characters.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4018,7 +4020,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Display name must be shorter than or equal to 63 characters.
+     * Optional. Display name must be shorter than or equal to 256 characters.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4035,7 +4037,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Display name must be shorter than or equal to 63 characters.
+     * Optional. Display name must be shorter than or equal to 256 characters.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4576,7 +4578,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * published table name. Specifying a new ID in an update entity
      * request will override the existing value.
      * The ID must contain only letters (a-z, A-Z), numbers (0-9), and
-     * underscores. Must begin with a letter.
+     * underscores. Must begin with a letter and consist of 256 or fewer
+     * characters.
      * </pre>
      *
      * <code>string id = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4602,7 +4605,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * published table name. Specifying a new ID in an update entity
      * request will override the existing value.
      * The ID must contain only letters (a-z, A-Z), numbers (0-9), and
-     * underscores. Must begin with a letter.
+     * underscores. Must begin with a letter and consist of 256 or fewer
+     * characters.
      * </pre>
      *
      * <code>string id = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4628,7 +4632,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * published table name. Specifying a new ID in an update entity
      * request will override the existing value.
      * The ID must contain only letters (a-z, A-Z), numbers (0-9), and
-     * underscores. Must begin with a letter.
+     * underscores. Must begin with a letter and consist of 256 or fewer
+     * characters.
      * </pre>
      *
      * <code>string id = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4653,7 +4658,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * published table name. Specifying a new ID in an update entity
      * request will override the existing value.
      * The ID must contain only letters (a-z, A-Z), numbers (0-9), and
-     * underscores. Must begin with a letter.
+     * underscores. Must begin with a letter and consist of 256 or fewer
+     * characters.
      * </pre>
      *
      * <code>string id = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4674,7 +4680,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * published table name. Specifying a new ID in an update entity
      * request will override the existing value.
      * The ID must contain only letters (a-z, A-Z), numbers (0-9), and
-     * underscores. Must begin with a letter.
+     * underscores. Must begin with a letter and consist of 256 or fewer
+     * characters.
      * </pre>
      *
      * <code>string id = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4698,8 +4705,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The etag for this entity. Required for update and delete requests. Must
-     * match the server's etag.
+     * Optional. The etag associated with the entity, which can be retrieved with a
+     * [GetEntity][] request. Required for update and delete requests.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4721,8 +4728,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The etag for this entity. Required for update and delete requests. Must
-     * match the server's etag.
+     * Optional. The etag associated with the entity, which can be retrieved with a
+     * [GetEntity][] request. Required for update and delete requests.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4744,8 +4751,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The etag for this entity. Required for update and delete requests. Must
-     * match the server's etag.
+     * Optional. The etag associated with the entity, which can be retrieved with a
+     * [GetEntity][] request. Required for update and delete requests.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4766,8 +4773,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The etag for this entity. Required for update and delete requests. Must
-     * match the server's etag.
+     * Optional. The etag associated with the entity, which can be retrieved with a
+     * [GetEntity][] request. Required for update and delete requests.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4784,8 +4791,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The etag for this entity. Required for update and delete requests. Must
-     * match the server's etag.
+     * Optional. The etag associated with the entity, which can be retrieved with a
+     * [GetEntity][] request. Required for update and delete requests.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>

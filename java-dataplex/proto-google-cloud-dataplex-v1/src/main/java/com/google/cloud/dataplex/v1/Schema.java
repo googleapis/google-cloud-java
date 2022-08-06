@@ -924,8 +924,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the field. The maximum length is 767 characters. The name
-     * must begins with a letter and not contains `:` and `.`.
+     * Required. The name of the field. Must contain only letters, numbers and
+     * underscores, with a maximum length of 767 characters,
+     * and must begin with a letter or underscore.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -937,8 +938,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the field. The maximum length is 767 characters. The name
-     * must begins with a letter and not contains `:` and `.`.
+     * Required. The name of the field. Must contain only letters, numbers and
+     * underscores, with a maximum length of 767 characters,
+     * and must begin with a letter or underscore.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1237,8 +1239,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the field. The maximum length is 767 characters. The name
-     * must begins with a letter and not contains `:` and `.`.
+     * Required. The name of the field. Must contain only letters, numbers and
+     * underscores, with a maximum length of 767 characters,
+     * and must begin with a letter or underscore.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1261,8 +1264,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the field. The maximum length is 767 characters. The name
-     * must begins with a letter and not contains `:` and `.`.
+     * Required. The name of the field. Must contain only letters, numbers and
+     * underscores, with a maximum length of 767 characters,
+     * and must begin with a letter or underscore.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1923,8 +1927,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The name of the field. The maximum length is 767 characters. The name
-       * must begins with a letter and not contains `:` and `.`.
+       * Required. The name of the field. Must contain only letters, numbers and
+       * underscores, with a maximum length of 767 characters,
+       * and must begin with a letter or underscore.
        * </pre>
        *
        * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1946,8 +1951,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The name of the field. The maximum length is 767 characters. The name
-       * must begins with a letter and not contains `:` and `.`.
+       * Required. The name of the field. Must contain only letters, numbers and
+       * underscores, with a maximum length of 767 characters,
+       * and must begin with a letter or underscore.
        * </pre>
        *
        * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1969,8 +1975,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The name of the field. The maximum length is 767 characters. The name
-       * must begins with a letter and not contains `:` and `.`.
+       * Required. The name of the field. Must contain only letters, numbers and
+       * underscores, with a maximum length of 767 characters,
+       * and must begin with a letter or underscore.
        * </pre>
        *
        * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1991,8 +1998,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The name of the field. The maximum length is 767 characters. The name
-       * must begins with a letter and not contains `:` and `.`.
+       * Required. The name of the field. Must contain only letters, numbers and
+       * underscores, with a maximum length of 767 characters,
+       * and must begin with a letter or underscore.
        * </pre>
        *
        * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2009,8 +2017,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The name of the field. The maximum length is 767 characters. The name
-       * must begins with a letter and not contains `:` and `.`.
+       * Required. The name of the field. Must contain only letters, numbers and
+       * underscores, with a maximum length of 767 characters,
+       * and must begin with a letter or underscore.
        * </pre>
        *
        * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2792,8 +2801,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Partition name is editable if only the partition style is not HIVE
-     * compatible. The maximum length allowed is 767 characters.
+     * Required. Partition field name must consist of letters, numbers, and underscores
+     * only, with a maximum of length of 256 characters,
+     * and must begin with a letter or underscore..
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2805,8 +2815,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Partition name is editable if only the partition style is not HIVE
-     * compatible. The maximum length allowed is 767 characters.
+     * Required. Partition field name must consist of letters, numbers, and underscores
+     * only, with a maximum of length of 256 characters,
+     * and must begin with a letter or underscore..
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2850,7 +2861,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Represents a key field within the entity's partition structure. You could
    * have up to 20 partition fields, but only the first 10 partitions have the
-   * filtering ability due to performance consideration.
+   * filtering ability due to performance consideration. **Note:**
+   * Partition fields are immutable.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.Schema.PartitionField}
@@ -2955,8 +2967,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Partition name is editable if only the partition style is not HIVE
-     * compatible. The maximum length allowed is 767 characters.
+     * Required. Partition field name must consist of letters, numbers, and underscores
+     * only, with a maximum of length of 256 characters,
+     * and must begin with a letter or underscore..
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2979,8 +2992,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Partition name is editable if only the partition style is not HIVE
-     * compatible. The maximum length allowed is 767 characters.
+     * Required. Partition field name must consist of letters, numbers, and underscores
+     * only, with a maximum of length of 256 characters,
+     * and must begin with a letter or underscore..
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3215,7 +3229,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Represents a key field within the entity's partition structure. You could
      * have up to 20 partition fields, but only the first 10 partitions have the
-     * filtering ability due to performance consideration.
+     * filtering ability due to performance consideration. **Note:**
+     * Partition fields are immutable.
      * </pre>
      *
      * Protobuf type {@code google.cloud.dataplex.v1.Schema.PartitionField}
@@ -3384,8 +3399,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Partition name is editable if only the partition style is not HIVE
-       * compatible. The maximum length allowed is 767 characters.
+       * Required. Partition field name must consist of letters, numbers, and underscores
+       * only, with a maximum of length of 256 characters,
+       * and must begin with a letter or underscore..
        * </pre>
        *
        * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3407,8 +3423,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Partition name is editable if only the partition style is not HIVE
-       * compatible. The maximum length allowed is 767 characters.
+       * Required. Partition field name must consist of letters, numbers, and underscores
+       * only, with a maximum of length of 256 characters,
+       * and must begin with a letter or underscore..
        * </pre>
        *
        * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3430,8 +3447,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Partition name is editable if only the partition style is not HIVE
-       * compatible. The maximum length allowed is 767 characters.
+       * Required. Partition field name must consist of letters, numbers, and underscores
+       * only, with a maximum of length of 256 characters,
+       * and must begin with a letter or underscore..
        * </pre>
        *
        * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3452,8 +3470,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Partition name is editable if only the partition style is not HIVE
-       * compatible. The maximum length allowed is 767 characters.
+       * Required. Partition field name must consist of letters, numbers, and underscores
+       * only, with a maximum of length of 256 characters,
+       * and must begin with a letter or underscore..
        * </pre>
        *
        * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3470,8 +3489,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Partition name is editable if only the partition style is not HIVE
-       * compatible. The maximum length allowed is 767 characters.
+       * Required. Partition field name must consist of letters, numbers, and underscores
+       * only, with a maximum of length of 256 characters,
+       * and must begin with a letter or underscore..
        * </pre>
        *
        * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3649,23 +3669,17 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Whether the schema is user-managed or managed by the service.
-   * - Set user_manage to false if you would like Dataplex to help you manage
-   * the schema. You will get the full service provided by Dataplex discovery,
-   * including new data discovery, schema inference and schema evolution. You
-   * can still provide input the schema of the entities, for example renaming a
-   * schema field, changing CSV or Json options if you think the discovered
-   * values are not as accurate. Dataplex will consider your input as the
-   * initial schema (as if they were produced by the previous discovery run),
-   * and will evolve schema or flag actions based on that.
-   * - Set user_manage to true if you would like to fully manage the entity
-   * schema by yourself. This is useful when you would like to manually specify
-   * the schema for a table. In this case, the schema defined by the user is
-   * guaranteed to be kept unchanged and would not be overwritten. But this also
-   * means Dataplex will not provide schema evolution management for you.
-   * Dataplex will still be able to manage partition registration (i.e., keeping
-   * the list of partitions up to date) when Dataplex discovery is turned on and
-   * user_managed is set to true.
+   * Required. Set to `true` if user-managed or `false` if managed by Dataplex. The
+   * default is `false` (managed by Dataplex).
+   * - Set to `false`to enable Dataplex discovery to update the schema.
+   *   including new data discovery, schema inference, and schema evolution.
+   *   Users retain the ability to input and edit the schema. Dataplex
+   *   treats schema input by the user as though produced
+   *   by a previous Dataplex discovery operation, and it will
+   *   evolve the schema and take action based on that treatment.
+   * - Set to `true` to fully manage the entity
+   *   schema. This setting guarantees that Dataplex will not
+   *   change schema fields.
    * </pre>
    *
    * <code>bool user_managed = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3684,6 +3698,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The sequence of fields describing data in table entities.
+   * **Note:** BigQuery SchemaFields are immutable.
    * </pre>
    *
    * <code>
@@ -3699,6 +3714,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The sequence of fields describing data in table entities.
+   * **Note:** BigQuery SchemaFields are immutable.
    * </pre>
    *
    * <code>
@@ -3715,6 +3731,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The sequence of fields describing data in table entities.
+   * **Note:** BigQuery SchemaFields are immutable.
    * </pre>
    *
    * <code>
@@ -3730,6 +3747,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The sequence of fields describing data in table entities.
+   * **Note:** BigQuery SchemaFields are immutable.
    * </pre>
    *
    * <code>
@@ -3745,6 +3763,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The sequence of fields describing data in table entities.
+   * **Note:** BigQuery SchemaFields are immutable.
    * </pre>
    *
    * <code>
@@ -4332,23 +4351,17 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Whether the schema is user-managed or managed by the service.
-     * - Set user_manage to false if you would like Dataplex to help you manage
-     * the schema. You will get the full service provided by Dataplex discovery,
-     * including new data discovery, schema inference and schema evolution. You
-     * can still provide input the schema of the entities, for example renaming a
-     * schema field, changing CSV or Json options if you think the discovered
-     * values are not as accurate. Dataplex will consider your input as the
-     * initial schema (as if they were produced by the previous discovery run),
-     * and will evolve schema or flag actions based on that.
-     * - Set user_manage to true if you would like to fully manage the entity
-     * schema by yourself. This is useful when you would like to manually specify
-     * the schema for a table. In this case, the schema defined by the user is
-     * guaranteed to be kept unchanged and would not be overwritten. But this also
-     * means Dataplex will not provide schema evolution management for you.
-     * Dataplex will still be able to manage partition registration (i.e., keeping
-     * the list of partitions up to date) when Dataplex discovery is turned on and
-     * user_managed is set to true.
+     * Required. Set to `true` if user-managed or `false` if managed by Dataplex. The
+     * default is `false` (managed by Dataplex).
+     * - Set to `false`to enable Dataplex discovery to update the schema.
+     *   including new data discovery, schema inference, and schema evolution.
+     *   Users retain the ability to input and edit the schema. Dataplex
+     *   treats schema input by the user as though produced
+     *   by a previous Dataplex discovery operation, and it will
+     *   evolve the schema and take action based on that treatment.
+     * - Set to `true` to fully manage the entity
+     *   schema. This setting guarantees that Dataplex will not
+     *   change schema fields.
      * </pre>
      *
      * <code>bool user_managed = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4363,23 +4376,17 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Whether the schema is user-managed or managed by the service.
-     * - Set user_manage to false if you would like Dataplex to help you manage
-     * the schema. You will get the full service provided by Dataplex discovery,
-     * including new data discovery, schema inference and schema evolution. You
-     * can still provide input the schema of the entities, for example renaming a
-     * schema field, changing CSV or Json options if you think the discovered
-     * values are not as accurate. Dataplex will consider your input as the
-     * initial schema (as if they were produced by the previous discovery run),
-     * and will evolve schema or flag actions based on that.
-     * - Set user_manage to true if you would like to fully manage the entity
-     * schema by yourself. This is useful when you would like to manually specify
-     * the schema for a table. In this case, the schema defined by the user is
-     * guaranteed to be kept unchanged and would not be overwritten. But this also
-     * means Dataplex will not provide schema evolution management for you.
-     * Dataplex will still be able to manage partition registration (i.e., keeping
-     * the list of partitions up to date) when Dataplex discovery is turned on and
-     * user_managed is set to true.
+     * Required. Set to `true` if user-managed or `false` if managed by Dataplex. The
+     * default is `false` (managed by Dataplex).
+     * - Set to `false`to enable Dataplex discovery to update the schema.
+     *   including new data discovery, schema inference, and schema evolution.
+     *   Users retain the ability to input and edit the schema. Dataplex
+     *   treats schema input by the user as though produced
+     *   by a previous Dataplex discovery operation, and it will
+     *   evolve the schema and take action based on that treatment.
+     * - Set to `true` to fully manage the entity
+     *   schema. This setting guarantees that Dataplex will not
+     *   change schema fields.
      * </pre>
      *
      * <code>bool user_managed = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4397,23 +4404,17 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Whether the schema is user-managed or managed by the service.
-     * - Set user_manage to false if you would like Dataplex to help you manage
-     * the schema. You will get the full service provided by Dataplex discovery,
-     * including new data discovery, schema inference and schema evolution. You
-     * can still provide input the schema of the entities, for example renaming a
-     * schema field, changing CSV or Json options if you think the discovered
-     * values are not as accurate. Dataplex will consider your input as the
-     * initial schema (as if they were produced by the previous discovery run),
-     * and will evolve schema or flag actions based on that.
-     * - Set user_manage to true if you would like to fully manage the entity
-     * schema by yourself. This is useful when you would like to manually specify
-     * the schema for a table. In this case, the schema defined by the user is
-     * guaranteed to be kept unchanged and would not be overwritten. But this also
-     * means Dataplex will not provide schema evolution management for you.
-     * Dataplex will still be able to manage partition registration (i.e., keeping
-     * the list of partitions up to date) when Dataplex discovery is turned on and
-     * user_managed is set to true.
+     * Required. Set to `true` if user-managed or `false` if managed by Dataplex. The
+     * default is `false` (managed by Dataplex).
+     * - Set to `false`to enable Dataplex discovery to update the schema.
+     *   including new data discovery, schema inference, and schema evolution.
+     *   Users retain the ability to input and edit the schema. Dataplex
+     *   treats schema input by the user as though produced
+     *   by a previous Dataplex discovery operation, and it will
+     *   evolve the schema and take action based on that treatment.
+     * - Set to `true` to fully manage the entity
+     *   schema. This setting guarantees that Dataplex will not
+     *   change schema fields.
      * </pre>
      *
      * <code>bool user_managed = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4448,6 +4449,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The sequence of fields describing data in table entities.
+     * **Note:** BigQuery SchemaFields are immutable.
      * </pre>
      *
      * <code>
@@ -4466,6 +4468,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The sequence of fields describing data in table entities.
+     * **Note:** BigQuery SchemaFields are immutable.
      * </pre>
      *
      * <code>
@@ -4484,6 +4487,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The sequence of fields describing data in table entities.
+     * **Note:** BigQuery SchemaFields are immutable.
      * </pre>
      *
      * <code>
@@ -4502,6 +4506,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The sequence of fields describing data in table entities.
+     * **Note:** BigQuery SchemaFields are immutable.
      * </pre>
      *
      * <code>
@@ -4526,6 +4531,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The sequence of fields describing data in table entities.
+     * **Note:** BigQuery SchemaFields are immutable.
      * </pre>
      *
      * <code>
@@ -4548,6 +4554,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The sequence of fields describing data in table entities.
+     * **Note:** BigQuery SchemaFields are immutable.
      * </pre>
      *
      * <code>
@@ -4572,6 +4579,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The sequence of fields describing data in table entities.
+     * **Note:** BigQuery SchemaFields are immutable.
      * </pre>
      *
      * <code>
@@ -4596,6 +4604,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The sequence of fields describing data in table entities.
+     * **Note:** BigQuery SchemaFields are immutable.
      * </pre>
      *
      * <code>
@@ -4618,6 +4627,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The sequence of fields describing data in table entities.
+     * **Note:** BigQuery SchemaFields are immutable.
      * </pre>
      *
      * <code>
@@ -4640,6 +4650,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The sequence of fields describing data in table entities.
+     * **Note:** BigQuery SchemaFields are immutable.
      * </pre>
      *
      * <code>
@@ -4662,6 +4673,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The sequence of fields describing data in table entities.
+     * **Note:** BigQuery SchemaFields are immutable.
      * </pre>
      *
      * <code>
@@ -4683,6 +4695,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The sequence of fields describing data in table entities.
+     * **Note:** BigQuery SchemaFields are immutable.
      * </pre>
      *
      * <code>
@@ -4704,6 +4717,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The sequence of fields describing data in table entities.
+     * **Note:** BigQuery SchemaFields are immutable.
      * </pre>
      *
      * <code>
@@ -4718,6 +4732,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The sequence of fields describing data in table entities.
+     * **Note:** BigQuery SchemaFields are immutable.
      * </pre>
      *
      * <code>
@@ -4736,6 +4751,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The sequence of fields describing data in table entities.
+     * **Note:** BigQuery SchemaFields are immutable.
      * </pre>
      *
      * <code>
@@ -4755,6 +4771,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The sequence of fields describing data in table entities.
+     * **Note:** BigQuery SchemaFields are immutable.
      * </pre>
      *
      * <code>
@@ -4770,6 +4787,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The sequence of fields describing data in table entities.
+     * **Note:** BigQuery SchemaFields are immutable.
      * </pre>
      *
      * <code>
@@ -4785,6 +4803,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The sequence of fields describing data in table entities.
+     * **Note:** BigQuery SchemaFields are immutable.
      * </pre>
      *
      * <code>

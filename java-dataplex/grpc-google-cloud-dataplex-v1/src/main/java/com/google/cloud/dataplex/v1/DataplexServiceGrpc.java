@@ -23,9 +23,9 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * <pre>
  * Dataplex service provides data lakes as a service. The primary resources
  * offered by this service are Lakes, Zones and Assets which collectively allow
- * a data adminstrator to organize, manage, secure and catalog data across their
- * organization located across cloud projects in a variety of storage systems
- * including Cloud Storage and BigQuery.
+ * a data administrator to organize, manage, secure and catalog data across
+ * their organization located across cloud projects in a variety of storage
+ * systems including Cloud Storage and BigQuery.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -1466,9 +1466,9 @@ public final class DataplexServiceGrpc {
    * <pre>
    * Dataplex service provides data lakes as a service. The primary resources
    * offered by this service are Lakes, Zones and Assets which collectively allow
-   * a data adminstrator to organize, manage, secure and catalog data across their
-   * organization located across cloud projects in a variety of storage systems
-   * including Cloud Storage and BigQuery.
+   * a data administrator to organize, manage, secure and catalog data across
+   * their organization located across cloud projects in a variety of storage
+   * systems including Cloud Storage and BigQuery.
    * </pre>
    */
   public abstract static class DataplexServiceImplBase implements io.grpc.BindableService {
@@ -2125,9 +2125,9 @@ public final class DataplexServiceGrpc {
    * <pre>
    * Dataplex service provides data lakes as a service. The primary resources
    * offered by this service are Lakes, Zones and Assets which collectively allow
-   * a data adminstrator to organize, manage, secure and catalog data across their
-   * organization located across cloud projects in a variety of storage systems
-   * including Cloud Storage and BigQuery.
+   * a data administrator to organize, manage, secure and catalog data across
+   * their organization located across cloud projects in a variety of storage
+   * systems including Cloud Storage and BigQuery.
    * </pre>
    */
   public static final class DataplexServiceStub
@@ -2634,9 +2634,9 @@ public final class DataplexServiceGrpc {
    * <pre>
    * Dataplex service provides data lakes as a service. The primary resources
    * offered by this service are Lakes, Zones and Assets which collectively allow
-   * a data adminstrator to organize, manage, secure and catalog data across their
-   * organization located across cloud projects in a variety of storage systems
-   * including Cloud Storage and BigQuery.
+   * a data administrator to organize, manage, secure and catalog data across
+   * their organization located across cloud projects in a variety of storage
+   * systems including Cloud Storage and BigQuery.
    * </pre>
    */
   public static final class DataplexServiceBlockingStub
@@ -3078,9 +3078,9 @@ public final class DataplexServiceGrpc {
    * <pre>
    * Dataplex service provides data lakes as a service. The primary resources
    * offered by this service are Lakes, Zones and Assets which collectively allow
-   * a data adminstrator to organize, manage, secure and catalog data across their
-   * organization located across cloud projects in a variety of storage systems
-   * including Cloud Storage and BigQuery.
+   * a data administrator to organize, manage, secure and catalog data across
+   * their organization located across cloud projects in a variety of storage
+   * systems including Cloud Storage and BigQuery.
    * </pre>
    */
   public static final class DataplexServiceFutureStub

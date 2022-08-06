@@ -28,7 +28,7 @@ public interface ListSessionsRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the parent environment:
-   * projects/{project_number}/locations/{location_id}/lakes/{lake_id}/environment/{environment_id}
+   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/environment/{environment_id}`.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface ListSessionsRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the parent environment:
-   * projects/{project_number}/locations/{location_id}/lakes/{lake_id}/environment/{environment_id}
+   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/environment/{environment_id}`.
    * </pre>
    *
    * <code>
@@ -99,4 +99,43 @@ public interface ListSessionsRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filter request. The following `mode` filter is supported to return only the
+   * sessions belonging to the requester when the mode is USER and return
+   * sessions of all the users when the mode is ADMIN. When no filter is sent
+   * default to USER mode.
+   * NOTE: When the mode is ADMIN, the requester should have
+   * `dataplex.environments.listAllSessions` permission to list all sessions,
+   * in absence of the permission, the request fails.
+   * mode = ADMIN | USER
+   * </pre>
+   *
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filter request. The following `mode` filter is supported to return only the
+   * sessions belonging to the requester when the mode is USER and return
+   * sessions of all the users when the mode is ADMIN. When no filter is sent
+   * default to USER mode.
+   * NOTE: When the mode is ADMIN, the requester should have
+   * `dataplex.environments.listAllSessions` permission to list all sessions,
+   * in absence of the permission, the request fails.
+   * mode = ADMIN | USER
+   * </pre>
+   *
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
 }

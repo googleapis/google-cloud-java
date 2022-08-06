@@ -120,7 +120,7 @@ public final class DeleteEnvironmentRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The resource name of the environment:
-   * projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}`
+   * `projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}`.
    * </pre>
    *
    * <code>
@@ -146,7 +146,7 @@ public final class DeleteEnvironmentRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The resource name of the environment:
-   * projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}`
+   * `projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}`.
    * </pre>
    *
    * <code>
@@ -493,7 +493,7 @@ public final class DeleteEnvironmentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The resource name of the environment:
-     * projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}`
+     * `projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}`.
      * </pre>
      *
      * <code>
@@ -518,7 +518,7 @@ public final class DeleteEnvironmentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The resource name of the environment:
-     * projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}`
+     * `projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}`.
      * </pre>
      *
      * <code>
@@ -543,7 +543,7 @@ public final class DeleteEnvironmentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The resource name of the environment:
-     * projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}`
+     * `projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}`.
      * </pre>
      *
      * <code>
@@ -567,7 +567,7 @@ public final class DeleteEnvironmentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The resource name of the environment:
-     * projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}`
+     * `projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}`.
      * </pre>
      *
      * <code>
@@ -587,7 +587,7 @@ public final class DeleteEnvironmentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The resource name of the environment:
-     * projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}`
+     * `projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}`.
      * </pre>
      *
      * <code>

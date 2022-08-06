@@ -120,7 +120,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The resource name of the task:
-   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{tasks_id}`
+   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{tasks_id}`.
    * </pre>
    *
    * <code>
@@ -146,7 +146,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The resource name of the task:
-   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{tasks_id}`
+   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{tasks_id}`.
    * </pre>
    *
    * <code>
@@ -490,7 +490,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the task:
-     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{tasks_id}`
+     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{tasks_id}`.
      * </pre>
      *
      * <code>
@@ -515,7 +515,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the task:
-     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{tasks_id}`
+     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{tasks_id}`.
      * </pre>
      *
      * <code>
@@ -540,7 +540,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the task:
-     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{tasks_id}`
+     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{tasks_id}`.
      * </pre>
      *
      * <code>
@@ -564,7 +564,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the task:
-     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{tasks_id}`
+     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{tasks_id}`.
      * </pre>
      *
      * <code>
@@ -584,7 +584,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the task:
-     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{tasks_id}`
+     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{tasks_id}`.
      * </pre>
      *
      * <code>

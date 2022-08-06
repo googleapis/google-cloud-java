@@ -182,7 +182,8 @@ public final class DeleteEntityRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The etag associated with the partition if it was previously retrieved.
+   * Required. The etag associated with the entity, which can be retrieved with a
+   * [GetEntity][] request.
    * </pre>
    *
    * <code>string etag = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -205,7 +206,8 @@ public final class DeleteEntityRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The etag associated with the partition if it was previously retrieved.
+   * Required. The etag associated with the entity, which can be retrieved with a
+   * [GetEntity][] request.
    * </pre>
    *
    * <code>string etag = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -684,7 +686,8 @@ public final class DeleteEntityRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The etag associated with the partition if it was previously retrieved.
+     * Required. The etag associated with the entity, which can be retrieved with a
+     * [GetEntity][] request.
      * </pre>
      *
      * <code>string etag = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -706,7 +709,8 @@ public final class DeleteEntityRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The etag associated with the partition if it was previously retrieved.
+     * Required. The etag associated with the entity, which can be retrieved with a
+     * [GetEntity][] request.
      * </pre>
      *
      * <code>string etag = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -728,7 +732,8 @@ public final class DeleteEntityRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The etag associated with the partition if it was previously retrieved.
+     * Required. The etag associated with the entity, which can be retrieved with a
+     * [GetEntity][] request.
      * </pre>
      *
      * <code>string etag = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -749,7 +754,8 @@ public final class DeleteEntityRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The etag associated with the partition if it was previously retrieved.
+     * Required. The etag associated with the entity, which can be retrieved with a
+     * [GetEntity][] request.
      * </pre>
      *
      * <code>string etag = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -766,7 +772,8 @@ public final class DeleteEntityRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The etag associated with the partition if it was previously retrieved.
+     * Required. The etag associated with the entity, which can be retrieved with a
+     * [GetEntity][] request.
      * </pre>
      *
      * <code>string etag = 2 [(.google.api.field_behavior) = REQUIRED];</code>

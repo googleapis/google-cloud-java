@@ -19,8 +19,23 @@
             "GetContent": {
               "methods": ["getContent", "getContent", "getContent", "getContentCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "ListContent": {
               "methods": ["listContent", "listContent", "listContent", "listContentPagedCallable", "listContentCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
             "UpdateContent": {
               "methods": ["updateContent", "updateContent", "updateContentCallable"]
@@ -49,11 +64,17 @@
             "GetEntity": {
               "methods": ["getEntity", "getEntity", "getEntity", "getEntityCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetPartition": {
               "methods": ["getPartition", "getPartition", "getPartition", "getPartitionCallable"]
             },
             "ListEntities": {
               "methods": ["listEntities", "listEntities", "listEntities", "listEntitiesPagedCallable", "listEntitiesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListPartitions": {
               "methods": ["listPartitions", "listPartitions", "listPartitions", "listPartitionsPagedCallable", "listPartitionsCallable"]
@@ -115,6 +136,9 @@
             "GetLake": {
               "methods": ["getLake", "getLake", "getLake", "getLakeCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetTask": {
               "methods": ["getTask", "getTask", "getTask", "getTaskCallable"]
             },
@@ -138,6 +162,9 @@
             },
             "ListLakes": {
               "methods": ["listLakes", "listLakes", "listLakes", "listLakesPagedCallable", "listLakesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListSessions": {
               "methods": ["listSessions", "listSessions", "listSessions", "listSessionsPagedCallable", "listSessionsCallable"]

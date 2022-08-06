@@ -185,6 +185,23 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 1610:
+            {
+              com.google.cloud.dataplex.v1.Task.ExecutionStatus.Builder subBuilder = null;
+              if (executionStatus_ != null) {
+                subBuilder = executionStatus_.toBuilder();
+              }
+              executionStatus_ =
+                  input.readMessage(
+                      com.google.cloud.dataplex.v1.Task.ExecutionStatus.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(executionStatus_);
+                executionStatus_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 2402:
             {
               com.google.cloud.dataplex.v1.Task.SparkTaskConfig.Builder subBuilder = null;
@@ -543,6 +560,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Total number of job executors.
+       * Executor Count should be between 2 and 100. [Default=2]
        * </pre>
        *
        * <code>int32 executors_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -557,6 +575,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. Max configurable executors.
        * If max_executors_count &gt; executors_count, then auto-scaling is enabled.
+       * Max Executor Count should be between 2 and 1000. [Default=1000]
        * </pre>
        *
        * <code>int32 max_executors_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -670,6 +689,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Total number of job executors.
+       * Executor Count should be between 2 and 100. [Default=2]
        * </pre>
        *
        * <code>int32 executors_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -689,6 +709,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. Max configurable executors.
        * If max_executors_count &gt; executors_count, then auto-scaling is enabled.
+       * Max Executor Count should be between 2 and 1000. [Default=1000]
        * </pre>
        *
        * <code>int32 max_executors_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1067,6 +1088,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. Total number of job executors.
+         * Executor Count should be between 2 and 100. [Default=2]
          * </pre>
          *
          * <code>int32 executors_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1082,6 +1104,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. Total number of job executors.
+         * Executor Count should be between 2 and 100. [Default=2]
          * </pre>
          *
          * <code>int32 executors_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1100,6 +1123,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. Total number of job executors.
+         * Executor Count should be between 2 and 100. [Default=2]
          * </pre>
          *
          * <code>int32 executors_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1120,6 +1144,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Optional. Max configurable executors.
          * If max_executors_count &gt; executors_count, then auto-scaling is enabled.
+         * Max Executor Count should be between 2 and 1000. [Default=1000]
          * </pre>
          *
          * <code>int32 max_executors_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1136,6 +1161,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Optional. Max configurable executors.
          * If max_executors_count &gt; executors_count, then auto-scaling is enabled.
+         * Max Executor Count should be between 2 and 1000. [Default=1000]
          * </pre>
          *
          * <code>int32 max_executors_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1155,6 +1181,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Optional. Max configurable executors.
          * If max_executors_count &gt; executors_count, then auto-scaling is enabled.
+         * Max Executor Count should be between 2 and 1000. [Default=1000]
          * </pre>
          *
          * <code>int32 max_executors_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1234,9 +1261,34 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
+       * Optional. Container image to use.
+       * </pre>
+       *
+       * <code>string image = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The image.
+       */
+      java.lang.String getImage();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Container image to use.
+       * </pre>
+       *
+       * <code>string image = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for image.
+       */
+      com.google.protobuf.ByteString getImageBytes();
+
+      /**
+       *
+       *
+       * <pre>
        * Optional. A list of Java JARS to add to the classpath.
        * Valid input includes Cloud Storage URIs to Jar binaries.
-       * For example, `gs://bucket-name/my/path/to/file.jar`.
+       * For example, gs://bucket-name/my/path/to/file.jar
        * </pre>
        *
        * <code>repeated string java_jars = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1250,7 +1302,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. A list of Java JARS to add to the classpath.
        * Valid input includes Cloud Storage URIs to Jar binaries.
-       * For example, `gs://bucket-name/my/path/to/file.jar`.
+       * For example, gs://bucket-name/my/path/to/file.jar
        * </pre>
        *
        * <code>repeated string java_jars = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1264,7 +1316,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. A list of Java JARS to add to the classpath.
        * Valid input includes Cloud Storage URIs to Jar binaries.
-       * For example, `gs://bucket-name/my/path/to/file.jar`.
+       * For example, gs://bucket-name/my/path/to/file.jar
        * </pre>
        *
        * <code>repeated string java_jars = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1279,7 +1331,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. A list of Java JARS to add to the classpath.
        * Valid input includes Cloud Storage URIs to Jar binaries.
-       * For example, `gs://bucket-name/my/path/to/file.jar`.
+       * For example, gs://bucket-name/my/path/to/file.jar
        * </pre>
        *
        * <code>repeated string java_jars = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1295,7 +1347,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. A list of python packages to be installed.
        * Valid formats include Cloud Storage URI to a PIP installable library.
-       * For example, `gs://bucket-name/my/path/to/lib.tar.gz`.
+       * For example, gs://bucket-name/my/path/to/lib.tar.gz
        * </pre>
        *
        * <code>repeated string python_packages = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1309,7 +1361,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. A list of python packages to be installed.
        * Valid formats include Cloud Storage URI to a PIP installable library.
-       * For example, `gs://bucket-name/my/path/to/lib.tar.gz`.
+       * For example, gs://bucket-name/my/path/to/lib.tar.gz
        * </pre>
        *
        * <code>repeated string python_packages = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1323,7 +1375,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. A list of python packages to be installed.
        * Valid formats include Cloud Storage URI to a PIP installable library.
-       * For example, `gs://bucket-name/my/path/to/lib.tar.gz`.
+       * For example, gs://bucket-name/my/path/to/lib.tar.gz
        * </pre>
        *
        * <code>repeated string python_packages = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1338,7 +1390,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. A list of python packages to be installed.
        * Valid formats include Cloud Storage URI to a PIP installable library.
-       * For example, `gs://bucket-name/my/path/to/lib.tar.gz`.
+       * For example, gs://bucket-name/my/path/to/lib.tar.gz
        * </pre>
        *
        * <code>repeated string python_packages = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1462,6 +1514,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
 
       private ContainerImageRuntime() {
+        image_ = "";
         javaJars_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         pythonPackages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       }
@@ -1496,6 +1549,13 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
               case 0:
                 done = true;
                 break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+
+                  image_ = s;
+                  break;
+                }
               case 18:
                 {
                   java.lang.String s = input.readStringRequireUtf8();
@@ -1586,6 +1646,55 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
                     .class);
       }
 
+      public static final int IMAGE_FIELD_NUMBER = 1;
+      private volatile java.lang.Object image_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Container image to use.
+       * </pre>
+       *
+       * <code>string image = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The image.
+       */
+      @java.lang.Override
+      public java.lang.String getImage() {
+        java.lang.Object ref = image_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          image_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Container image to use.
+       * </pre>
+       *
+       * <code>string image = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for image.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getImageBytes() {
+        java.lang.Object ref = image_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          image_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
       public static final int JAVA_JARS_FIELD_NUMBER = 2;
       private com.google.protobuf.LazyStringList javaJars_;
       /**
@@ -1594,7 +1703,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. A list of Java JARS to add to the classpath.
        * Valid input includes Cloud Storage URIs to Jar binaries.
-       * For example, `gs://bucket-name/my/path/to/file.jar`.
+       * For example, gs://bucket-name/my/path/to/file.jar
        * </pre>
        *
        * <code>repeated string java_jars = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1610,7 +1719,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. A list of Java JARS to add to the classpath.
        * Valid input includes Cloud Storage URIs to Jar binaries.
-       * For example, `gs://bucket-name/my/path/to/file.jar`.
+       * For example, gs://bucket-name/my/path/to/file.jar
        * </pre>
        *
        * <code>repeated string java_jars = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1626,7 +1735,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. A list of Java JARS to add to the classpath.
        * Valid input includes Cloud Storage URIs to Jar binaries.
-       * For example, `gs://bucket-name/my/path/to/file.jar`.
+       * For example, gs://bucket-name/my/path/to/file.jar
        * </pre>
        *
        * <code>repeated string java_jars = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1643,7 +1752,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. A list of Java JARS to add to the classpath.
        * Valid input includes Cloud Storage URIs to Jar binaries.
-       * For example, `gs://bucket-name/my/path/to/file.jar`.
+       * For example, gs://bucket-name/my/path/to/file.jar
        * </pre>
        *
        * <code>repeated string java_jars = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1663,7 +1772,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. A list of python packages to be installed.
        * Valid formats include Cloud Storage URI to a PIP installable library.
-       * For example, `gs://bucket-name/my/path/to/lib.tar.gz`.
+       * For example, gs://bucket-name/my/path/to/lib.tar.gz
        * </pre>
        *
        * <code>repeated string python_packages = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1679,7 +1788,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. A list of python packages to be installed.
        * Valid formats include Cloud Storage URI to a PIP installable library.
-       * For example, `gs://bucket-name/my/path/to/lib.tar.gz`.
+       * For example, gs://bucket-name/my/path/to/lib.tar.gz
        * </pre>
        *
        * <code>repeated string python_packages = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1695,7 +1804,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. A list of python packages to be installed.
        * Valid formats include Cloud Storage URI to a PIP installable library.
-       * For example, `gs://bucket-name/my/path/to/lib.tar.gz`.
+       * For example, gs://bucket-name/my/path/to/lib.tar.gz
        * </pre>
        *
        * <code>repeated string python_packages = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1712,7 +1821,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. A list of python packages to be installed.
        * Valid formats include Cloud Storage URI to a PIP installable library.
-       * For example, `gs://bucket-name/my/path/to/lib.tar.gz`.
+       * For example, gs://bucket-name/my/path/to/lib.tar.gz
        * </pre>
        *
        * <code>repeated string python_packages = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1867,6 +1976,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(image_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, image_);
+        }
         for (int i = 0; i < javaJars_.size(); i++) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, javaJars_.getRaw(i));
         }
@@ -1884,6 +1996,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         if (size != -1) return size;
 
         size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(image_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, image_);
+        }
         {
           int dataSize = 0;
           for (int i = 0; i < javaJars_.size(); i++) {
@@ -1928,6 +2043,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dataplex.v1.Task.InfrastructureSpec.ContainerImageRuntime other =
             (com.google.cloud.dataplex.v1.Task.InfrastructureSpec.ContainerImageRuntime) obj;
 
+        if (!getImage().equals(other.getImage())) return false;
         if (!getJavaJarsList().equals(other.getJavaJarsList())) return false;
         if (!getPythonPackagesList().equals(other.getPythonPackagesList())) return false;
         if (!internalGetProperties().equals(other.internalGetProperties())) return false;
@@ -1942,6 +2058,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + IMAGE_FIELD_NUMBER;
+        hash = (53 * hash) + getImage().hashCode();
         if (getJavaJarsCount() > 0) {
           hash = (37 * hash) + JAVA_JARS_FIELD_NUMBER;
           hash = (53 * hash) + getJavaJarsList().hashCode();
@@ -2133,6 +2251,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          image_ = "";
+
           javaJars_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000001);
           pythonPackages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -2170,6 +2290,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dataplex.v1.Task.InfrastructureSpec.ContainerImageRuntime result =
               new com.google.cloud.dataplex.v1.Task.InfrastructureSpec.ContainerImageRuntime(this);
           int from_bitField0_ = bitField0_;
+          result.image_ = image_;
           if (((bitField0_ & 0x00000001) != 0)) {
             javaJars_ = javaJars_.getUnmodifiableView();
             bitField0_ = (bitField0_ & ~0x00000001);
@@ -2239,6 +2360,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           if (other
               == com.google.cloud.dataplex.v1.Task.InfrastructureSpec.ContainerImageRuntime
                   .getDefaultInstance()) return this;
+          if (!other.getImage().isEmpty()) {
+            image_ = other.image_;
+            onChanged();
+          }
           if (!other.javaJars_.isEmpty()) {
             if (javaJars_.isEmpty()) {
               javaJars_ = other.javaJars_;
@@ -2294,6 +2419,112 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
         private int bitField0_;
 
+        private java.lang.Object image_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Container image to use.
+         * </pre>
+         *
+         * <code>string image = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The image.
+         */
+        public java.lang.String getImage() {
+          java.lang.Object ref = image_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            image_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Container image to use.
+         * </pre>
+         *
+         * <code>string image = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for image.
+         */
+        public com.google.protobuf.ByteString getImageBytes() {
+          java.lang.Object ref = image_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            image_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Container image to use.
+         * </pre>
+         *
+         * <code>string image = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The image to set.
+         * @return This builder for chaining.
+         */
+        public Builder setImage(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+
+          image_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Container image to use.
+         * </pre>
+         *
+         * <code>string image = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearImage() {
+
+          image_ = getDefaultInstance().getImage();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Container image to use.
+         * </pre>
+         *
+         * <code>string image = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for image to set.
+         * @return This builder for chaining.
+         */
+        public Builder setImageBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+
+          image_ = value;
+          onChanged();
+          return this;
+        }
+
         private com.google.protobuf.LazyStringList javaJars_ =
             com.google.protobuf.LazyStringArrayList.EMPTY;
 
@@ -2309,7 +2540,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Optional. A list of Java JARS to add to the classpath.
          * Valid input includes Cloud Storage URIs to Jar binaries.
-         * For example, `gs://bucket-name/my/path/to/file.jar`.
+         * For example, gs://bucket-name/my/path/to/file.jar
          * </pre>
          *
          * <code>repeated string java_jars = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2325,7 +2556,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Optional. A list of Java JARS to add to the classpath.
          * Valid input includes Cloud Storage URIs to Jar binaries.
-         * For example, `gs://bucket-name/my/path/to/file.jar`.
+         * For example, gs://bucket-name/my/path/to/file.jar
          * </pre>
          *
          * <code>repeated string java_jars = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2341,7 +2572,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Optional. A list of Java JARS to add to the classpath.
          * Valid input includes Cloud Storage URIs to Jar binaries.
-         * For example, `gs://bucket-name/my/path/to/file.jar`.
+         * For example, gs://bucket-name/my/path/to/file.jar
          * </pre>
          *
          * <code>repeated string java_jars = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2358,7 +2589,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Optional. A list of Java JARS to add to the classpath.
          * Valid input includes Cloud Storage URIs to Jar binaries.
-         * For example, `gs://bucket-name/my/path/to/file.jar`.
+         * For example, gs://bucket-name/my/path/to/file.jar
          * </pre>
          *
          * <code>repeated string java_jars = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2375,7 +2606,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Optional. A list of Java JARS to add to the classpath.
          * Valid input includes Cloud Storage URIs to Jar binaries.
-         * For example, `gs://bucket-name/my/path/to/file.jar`.
+         * For example, gs://bucket-name/my/path/to/file.jar
          * </pre>
          *
          * <code>repeated string java_jars = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2399,7 +2630,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Optional. A list of Java JARS to add to the classpath.
          * Valid input includes Cloud Storage URIs to Jar binaries.
-         * For example, `gs://bucket-name/my/path/to/file.jar`.
+         * For example, gs://bucket-name/my/path/to/file.jar
          * </pre>
          *
          * <code>repeated string java_jars = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2422,7 +2653,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Optional. A list of Java JARS to add to the classpath.
          * Valid input includes Cloud Storage URIs to Jar binaries.
-         * For example, `gs://bucket-name/my/path/to/file.jar`.
+         * For example, gs://bucket-name/my/path/to/file.jar
          * </pre>
          *
          * <code>repeated string java_jars = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2442,7 +2673,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Optional. A list of Java JARS to add to the classpath.
          * Valid input includes Cloud Storage URIs to Jar binaries.
-         * For example, `gs://bucket-name/my/path/to/file.jar`.
+         * For example, gs://bucket-name/my/path/to/file.jar
          * </pre>
          *
          * <code>repeated string java_jars = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2461,7 +2692,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Optional. A list of Java JARS to add to the classpath.
          * Valid input includes Cloud Storage URIs to Jar binaries.
-         * For example, `gs://bucket-name/my/path/to/file.jar`.
+         * For example, gs://bucket-name/my/path/to/file.jar
          * </pre>
          *
          * <code>repeated string java_jars = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2495,7 +2726,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Optional. A list of python packages to be installed.
          * Valid formats include Cloud Storage URI to a PIP installable library.
-         * For example, `gs://bucket-name/my/path/to/lib.tar.gz`.
+         * For example, gs://bucket-name/my/path/to/lib.tar.gz
          * </pre>
          *
          * <code>repeated string python_packages = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -2512,7 +2743,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Optional. A list of python packages to be installed.
          * Valid formats include Cloud Storage URI to a PIP installable library.
-         * For example, `gs://bucket-name/my/path/to/lib.tar.gz`.
+         * For example, gs://bucket-name/my/path/to/lib.tar.gz
          * </pre>
          *
          * <code>repeated string python_packages = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -2529,7 +2760,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Optional. A list of python packages to be installed.
          * Valid formats include Cloud Storage URI to a PIP installable library.
-         * For example, `gs://bucket-name/my/path/to/lib.tar.gz`.
+         * For example, gs://bucket-name/my/path/to/lib.tar.gz
          * </pre>
          *
          * <code>repeated string python_packages = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -2547,7 +2778,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Optional. A list of python packages to be installed.
          * Valid formats include Cloud Storage URI to a PIP installable library.
-         * For example, `gs://bucket-name/my/path/to/lib.tar.gz`.
+         * For example, gs://bucket-name/my/path/to/lib.tar.gz
          * </pre>
          *
          * <code>repeated string python_packages = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -2565,7 +2796,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Optional. A list of python packages to be installed.
          * Valid formats include Cloud Storage URI to a PIP installable library.
-         * For example, `gs://bucket-name/my/path/to/lib.tar.gz`.
+         * For example, gs://bucket-name/my/path/to/lib.tar.gz
          * </pre>
          *
          * <code>repeated string python_packages = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -2590,7 +2821,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Optional. A list of python packages to be installed.
          * Valid formats include Cloud Storage URI to a PIP installable library.
-         * For example, `gs://bucket-name/my/path/to/lib.tar.gz`.
+         * For example, gs://bucket-name/my/path/to/lib.tar.gz
          * </pre>
          *
          * <code>repeated string python_packages = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -2614,7 +2845,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Optional. A list of python packages to be installed.
          * Valid formats include Cloud Storage URI to a PIP installable library.
-         * For example, `gs://bucket-name/my/path/to/lib.tar.gz`.
+         * For example, gs://bucket-name/my/path/to/lib.tar.gz
          * </pre>
          *
          * <code>repeated string python_packages = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -2635,7 +2866,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Optional. A list of python packages to be installed.
          * Valid formats include Cloud Storage URI to a PIP installable library.
-         * For example, `gs://bucket-name/my/path/to/lib.tar.gz`.
+         * For example, gs://bucket-name/my/path/to/lib.tar.gz
          * </pre>
          *
          * <code>repeated string python_packages = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -2655,7 +2886,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Optional. A list of python packages to be installed.
          * Valid formats include Cloud Storage URI to a PIP installable library.
-         * For example, `gs://bucket-name/my/path/to/lib.tar.gz`.
+         * For example, gs://bucket-name/my/path/to/lib.tar.gz
          * </pre>
          *
          * <code>repeated string python_packages = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -7906,6 +8137,35 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Optional. The project in which jobs are run. By default, the project containing the
+     * Lake is used. If a project is provided, the
+     * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account] must belong to this project.
+     * </pre>
+     *
+     * <code>string project = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The project.
+     */
+    java.lang.String getProject();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The project in which jobs are run. By default, the project containing the
+     * Lake is used. If a project is provided, the
+     * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account] must belong to this project.
+     * </pre>
+     *
+     * <code>string project = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for project.
+     */
+    com.google.protobuf.ByteString getProjectBytes();
+
+    /**
+     *
+     *
+     * <pre>
      * Optional. The maximum duration after which the job execution is expired.
      * </pre>
      *
@@ -7942,6 +8202,33 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.protobuf.DurationOrBuilder getMaxJobExecutionLifetimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Cloud KMS key to use for encryption, of the form:
+     * `projects/{project_number}/locations/{location_id}/keyRings/{key-ring-name}/cryptoKeys/{key-name}`.
+     * </pre>
+     *
+     * <code>string kms_key = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The kmsKey.
+     */
+    java.lang.String getKmsKey();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Cloud KMS key to use for encryption, of the form:
+     * `projects/{project_number}/locations/{location_id}/keyRings/{key-ring-name}/cryptoKeys/{key-name}`.
+     * </pre>
+     *
+     * <code>string kms_key = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for kmsKey.
+     */
+    com.google.protobuf.ByteString getKmsKeyBytes();
   }
   /**
    *
@@ -7964,6 +8251,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
     private ExecutionSpec() {
       serviceAccount_ = "";
+      project_ = "";
+      kmsKey_ = "";
     }
 
     @java.lang.Override
@@ -8016,6 +8305,13 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
                 serviceAccount_ = s;
                 break;
               }
+            case 58:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                project_ = s;
+                break;
+              }
             case 66:
               {
                 com.google.protobuf.Duration.Builder subBuilder = null;
@@ -8029,6 +8325,13 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
                   maxJobExecutionLifetime_ = subBuilder.buildPartial();
                 }
 
+                break;
+              }
+            case 74:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                kmsKey_ = s;
                 break;
               }
             default:
@@ -8273,6 +8576,59 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int PROJECT_FIELD_NUMBER = 7;
+    private volatile java.lang.Object project_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The project in which jobs are run. By default, the project containing the
+     * Lake is used. If a project is provided, the
+     * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account] must belong to this project.
+     * </pre>
+     *
+     * <code>string project = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The project.
+     */
+    @java.lang.Override
+    public java.lang.String getProject() {
+      java.lang.Object ref = project_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        project_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The project in which jobs are run. By default, the project containing the
+     * Lake is used. If a project is provided, the
+     * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account] must belong to this project.
+     * </pre>
+     *
+     * <code>string project = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for project.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getProjectBytes() {
+      java.lang.Object ref = project_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        project_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int MAX_JOB_EXECUTION_LIFETIME_FIELD_NUMBER = 8;
     private com.google.protobuf.Duration maxJobExecutionLifetime_;
     /**
@@ -8327,6 +8683,57 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       return getMaxJobExecutionLifetime();
     }
 
+    public static final int KMS_KEY_FIELD_NUMBER = 9;
+    private volatile java.lang.Object kmsKey_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Cloud KMS key to use for encryption, of the form:
+     * `projects/{project_number}/locations/{location_id}/keyRings/{key-ring-name}/cryptoKeys/{key-name}`.
+     * </pre>
+     *
+     * <code>string kms_key = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The kmsKey.
+     */
+    @java.lang.Override
+    public java.lang.String getKmsKey() {
+      java.lang.Object ref = kmsKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kmsKey_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Cloud KMS key to use for encryption, of the form:
+     * `projects/{project_number}/locations/{location_id}/keyRings/{key-ring-name}/cryptoKeys/{key-name}`.
+     * </pre>
+     *
+     * <code>string kms_key = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for kmsKey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getKmsKeyBytes() {
+      java.lang.Object ref = kmsKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kmsKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -8346,8 +8753,14 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, serviceAccount_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, project_);
+      }
       if (maxJobExecutionLifetime_ != null) {
         output.writeMessage(8, getMaxJobExecutionLifetime());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKey_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, kmsKey_);
       }
       unknownFields.writeTo(output);
     }
@@ -8371,10 +8784,16 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, serviceAccount_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, project_);
+      }
       if (maxJobExecutionLifetime_ != null) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 8, getMaxJobExecutionLifetime());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKey_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, kmsKey_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8394,10 +8813,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
       if (!internalGetArgs().equals(other.internalGetArgs())) return false;
       if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+      if (!getProject().equals(other.getProject())) return false;
       if (hasMaxJobExecutionLifetime() != other.hasMaxJobExecutionLifetime()) return false;
       if (hasMaxJobExecutionLifetime()) {
         if (!getMaxJobExecutionLifetime().equals(other.getMaxJobExecutionLifetime())) return false;
       }
+      if (!getKmsKey().equals(other.getKmsKey())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -8415,10 +8836,14 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
       hash = (53 * hash) + getServiceAccount().hashCode();
+      hash = (37 * hash) + PROJECT_FIELD_NUMBER;
+      hash = (53 * hash) + getProject().hashCode();
       if (hasMaxJobExecutionLifetime()) {
         hash = (37 * hash) + MAX_JOB_EXECUTION_LIFETIME_FIELD_NUMBER;
         hash = (53 * hash) + getMaxJobExecutionLifetime().hashCode();
       }
+      hash = (37 * hash) + KMS_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKmsKey().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8589,12 +9014,16 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableArgs().clear();
         serviceAccount_ = "";
 
+        project_ = "";
+
         if (maxJobExecutionLifetimeBuilder_ == null) {
           maxJobExecutionLifetime_ = null;
         } else {
           maxJobExecutionLifetime_ = null;
           maxJobExecutionLifetimeBuilder_ = null;
         }
+        kmsKey_ = "";
+
         return this;
       }
 
@@ -8626,11 +9055,13 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         result.args_ = internalGetArgs();
         result.args_.makeImmutable();
         result.serviceAccount_ = serviceAccount_;
+        result.project_ = project_;
         if (maxJobExecutionLifetimeBuilder_ == null) {
           result.maxJobExecutionLifetime_ = maxJobExecutionLifetime_;
         } else {
           result.maxJobExecutionLifetime_ = maxJobExecutionLifetimeBuilder_.build();
         }
+        result.kmsKey_ = kmsKey_;
         onBuilt();
         return result;
       }
@@ -8688,8 +9119,16 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           serviceAccount_ = other.serviceAccount_;
           onChanged();
         }
+        if (!other.getProject().isEmpty()) {
+          project_ = other.project_;
+          onChanged();
+        }
         if (other.hasMaxJobExecutionLifetime()) {
           mergeMaxJobExecutionLifetime(other.getMaxJobExecutionLifetime());
+        }
+        if (!other.getKmsKey().isEmpty()) {
+          kmsKey_ = other.kmsKey_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -9074,6 +9513,122 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private java.lang.Object project_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The project in which jobs are run. By default, the project containing the
+       * Lake is used. If a project is provided, the
+       * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account] must belong to this project.
+       * </pre>
+       *
+       * <code>string project = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The project.
+       */
+      public java.lang.String getProject() {
+        java.lang.Object ref = project_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          project_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The project in which jobs are run. By default, the project containing the
+       * Lake is used. If a project is provided, the
+       * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account] must belong to this project.
+       * </pre>
+       *
+       * <code>string project = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for project.
+       */
+      public com.google.protobuf.ByteString getProjectBytes() {
+        java.lang.Object ref = project_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          project_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The project in which jobs are run. By default, the project containing the
+       * Lake is used. If a project is provided, the
+       * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account] must belong to this project.
+       * </pre>
+       *
+       * <code>string project = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The project to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProject(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        project_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The project in which jobs are run. By default, the project containing the
+       * Lake is used. If a project is provided, the
+       * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account] must belong to this project.
+       * </pre>
+       *
+       * <code>string project = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearProject() {
+
+        project_ = getDefaultInstance().getProject();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The project in which jobs are run. By default, the project containing the
+       * Lake is used. If a project is provided, the
+       * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account] must belong to this project.
+       * </pre>
+       *
+       * <code>string project = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for project to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        project_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.Duration maxJobExecutionLifetime_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Duration,
@@ -9276,6 +9831,117 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           maxJobExecutionLifetime_ = null;
         }
         return maxJobExecutionLifetimeBuilder_;
+      }
+
+      private java.lang.Object kmsKey_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Cloud KMS key to use for encryption, of the form:
+       * `projects/{project_number}/locations/{location_id}/keyRings/{key-ring-name}/cryptoKeys/{key-name}`.
+       * </pre>
+       *
+       * <code>string kms_key = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The kmsKey.
+       */
+      public java.lang.String getKmsKey() {
+        java.lang.Object ref = kmsKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          kmsKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Cloud KMS key to use for encryption, of the form:
+       * `projects/{project_number}/locations/{location_id}/keyRings/{key-ring-name}/cryptoKeys/{key-name}`.
+       * </pre>
+       *
+       * <code>string kms_key = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for kmsKey.
+       */
+      public com.google.protobuf.ByteString getKmsKeyBytes() {
+        java.lang.Object ref = kmsKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          kmsKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Cloud KMS key to use for encryption, of the form:
+       * `projects/{project_number}/locations/{location_id}/keyRings/{key-ring-name}/cryptoKeys/{key-name}`.
+       * </pre>
+       *
+       * <code>string kms_key = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The kmsKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKmsKey(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        kmsKey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Cloud KMS key to use for encryption, of the form:
+       * `projects/{project_number}/locations/{location_id}/keyRings/{key-ring-name}/cryptoKeys/{key-name}`.
+       * </pre>
+       *
+       * <code>string kms_key = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearKmsKey() {
+
+        kmsKey_ = getDefaultInstance().getKmsKey();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Cloud KMS key to use for encryption, of the form:
+       * `projects/{project_number}/locations/{location_id}/keyRings/{key-ring-name}/cryptoKeys/{key-name}`.
+       * </pre>
+       *
+       * <code>string kms_key = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for kmsKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKmsKeyBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        kmsKey_ = value;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override
@@ -12440,6 +13106,1135 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface ExecutionStatusOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.Task.ExecutionStatus)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last update time of the status.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
+     */
+    boolean hasUpdateTime();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last update time of the status.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateTime.
+     */
+    com.google.protobuf.Timestamp getUpdateTime();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last update time of the status.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. latest job execution
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Job latest_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the latestJob field is set.
+     */
+    boolean hasLatestJob();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. latest job execution
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Job latest_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The latestJob.
+     */
+    com.google.cloud.dataplex.v1.Job getLatestJob();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. latest job execution
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Job latest_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.dataplex.v1.JobOrBuilder getLatestJobOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Status of the task execution (e.g. Jobs).
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataplex.v1.Task.ExecutionStatus}
+   */
+  public static final class ExecutionStatus extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Task.ExecutionStatus)
+      ExecutionStatusOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ExecutionStatus.newBuilder() to construct.
+    private ExecutionStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ExecutionStatus() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ExecutionStatus();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private ExecutionStatus(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26:
+              {
+                com.google.protobuf.Timestamp.Builder subBuilder = null;
+                if (updateTime_ != null) {
+                  subBuilder = updateTime_.toBuilder();
+                }
+                updateTime_ =
+                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(updateTime_);
+                  updateTime_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            case 74:
+              {
+                com.google.cloud.dataplex.v1.Job.Builder subBuilder = null;
+                if (latestJob_ != null) {
+                  subBuilder = latestJob_.toBuilder();
+                }
+                latestJob_ =
+                    input.readMessage(com.google.cloud.dataplex.v1.Job.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(latestJob_);
+                  latestJob_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.TasksProto
+          .internal_static_google_cloud_dataplex_v1_Task_ExecutionStatus_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataplex.v1.TasksProto
+          .internal_static_google_cloud_dataplex_v1_Task_ExecutionStatus_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataplex.v1.Task.ExecutionStatus.class,
+              com.google.cloud.dataplex.v1.Task.ExecutionStatus.Builder.class);
+    }
+
+    public static final int UPDATE_TIME_FIELD_NUMBER = 3;
+    private com.google.protobuf.Timestamp updateTime_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last update time of the status.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpdateTime() {
+      return updateTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last update time of the status.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last update time of the status.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      return getUpdateTime();
+    }
+
+    public static final int LATEST_JOB_FIELD_NUMBER = 9;
+    private com.google.cloud.dataplex.v1.Job latestJob_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. latest job execution
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Job latest_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the latestJob field is set.
+     */
+    @java.lang.Override
+    public boolean hasLatestJob() {
+      return latestJob_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. latest job execution
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Job latest_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The latestJob.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.Job getLatestJob() {
+      return latestJob_ == null
+          ? com.google.cloud.dataplex.v1.Job.getDefaultInstance()
+          : latestJob_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. latest job execution
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Job latest_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.JobOrBuilder getLatestJobOrBuilder() {
+      return getLatestJob();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (updateTime_ != null) {
+        output.writeMessage(3, getUpdateTime());
+      }
+      if (latestJob_ != null) {
+        output.writeMessage(9, getLatestJob());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (updateTime_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getUpdateTime());
+      }
+      if (latestJob_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getLatestJob());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dataplex.v1.Task.ExecutionStatus)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataplex.v1.Task.ExecutionStatus other =
+          (com.google.cloud.dataplex.v1.Task.ExecutionStatus) obj;
+
+      if (hasUpdateTime() != other.hasUpdateTime()) return false;
+      if (hasUpdateTime()) {
+        if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+      }
+      if (hasLatestJob() != other.hasLatestJob()) return false;
+      if (hasLatestJob()) {
+        if (!getLatestJob().equals(other.getLatestJob())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasUpdateTime()) {
+        hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getUpdateTime().hashCode();
+      }
+      if (hasLatestJob()) {
+        hash = (37 * hash) + LATEST_JOB_FIELD_NUMBER;
+        hash = (53 * hash) + getLatestJob().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataplex.v1.Task.ExecutionStatus parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.Task.ExecutionStatus parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.Task.ExecutionStatus parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.Task.ExecutionStatus parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.Task.ExecutionStatus parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.Task.ExecutionStatus parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.Task.ExecutionStatus parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.Task.ExecutionStatus parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.Task.ExecutionStatus parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.Task.ExecutionStatus parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.Task.ExecutionStatus parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.Task.ExecutionStatus parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.dataplex.v1.Task.ExecutionStatus prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status of the task execution (e.g. Jobs).
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.Task.ExecutionStatus}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.Task.ExecutionStatus)
+        com.google.cloud.dataplex.v1.Task.ExecutionStatusOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.TasksProto
+            .internal_static_google_cloud_dataplex_v1_Task_ExecutionStatus_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.TasksProto
+            .internal_static_google_cloud_dataplex_v1_Task_ExecutionStatus_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.Task.ExecutionStatus.class,
+                com.google.cloud.dataplex.v1.Task.ExecutionStatus.Builder.class);
+      }
+
+      // Construct using com.google.cloud.dataplex.v1.Task.ExecutionStatus.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (updateTimeBuilder_ == null) {
+          updateTime_ = null;
+        } else {
+          updateTime_ = null;
+          updateTimeBuilder_ = null;
+        }
+        if (latestJobBuilder_ == null) {
+          latestJob_ = null;
+        } else {
+          latestJob_ = null;
+          latestJobBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataplex.v1.TasksProto
+            .internal_static_google_cloud_dataplex_v1_Task_ExecutionStatus_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.Task.ExecutionStatus getDefaultInstanceForType() {
+        return com.google.cloud.dataplex.v1.Task.ExecutionStatus.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.Task.ExecutionStatus build() {
+        com.google.cloud.dataplex.v1.Task.ExecutionStatus result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.Task.ExecutionStatus buildPartial() {
+        com.google.cloud.dataplex.v1.Task.ExecutionStatus result =
+            new com.google.cloud.dataplex.v1.Task.ExecutionStatus(this);
+        if (updateTimeBuilder_ == null) {
+          result.updateTime_ = updateTime_;
+        } else {
+          result.updateTime_ = updateTimeBuilder_.build();
+        }
+        if (latestJobBuilder_ == null) {
+          result.latestJob_ = latestJob_;
+        } else {
+          result.latestJob_ = latestJobBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dataplex.v1.Task.ExecutionStatus) {
+          return mergeFrom((com.google.cloud.dataplex.v1.Task.ExecutionStatus) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.dataplex.v1.Task.ExecutionStatus other) {
+        if (other == com.google.cloud.dataplex.v1.Task.ExecutionStatus.getDefaultInstance())
+          return this;
+        if (other.hasUpdateTime()) {
+          mergeUpdateTime(other.getUpdateTime());
+        }
+        if (other.hasLatestJob()) {
+          mergeLatestJob(other.getLatestJob());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.dataplex.v1.Task.ExecutionStatus parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.dataplex.v1.Task.ExecutionStatus) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp updateTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          updateTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Last update time of the status.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the updateTime field is set.
+       */
+      public boolean hasUpdateTime() {
+        return updateTimeBuilder_ != null || updateTime_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Last update time of the status.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The updateTime.
+       */
+      public com.google.protobuf.Timestamp getUpdateTime() {
+        if (updateTimeBuilder_ == null) {
+          return updateTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : updateTime_;
+        } else {
+          return updateTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Last update time of the status.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+        if (updateTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          updateTime_ = value;
+          onChanged();
+        } else {
+          updateTimeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Last update time of the status.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (updateTimeBuilder_ == null) {
+          updateTime_ = builderForValue.build();
+          onChanged();
+        } else {
+          updateTimeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Last update time of the status.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+        if (updateTimeBuilder_ == null) {
+          if (updateTime_ != null) {
+            updateTime_ =
+                com.google.protobuf.Timestamp.newBuilder(updateTime_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            updateTime_ = value;
+          }
+          onChanged();
+        } else {
+          updateTimeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Last update time of the status.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearUpdateTime() {
+        if (updateTimeBuilder_ == null) {
+          updateTime_ = null;
+          onChanged();
+        } else {
+          updateTime_ = null;
+          updateTimeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Last update time of the status.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+
+        onChanged();
+        return getUpdateTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Last update time of the status.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+        if (updateTimeBuilder_ != null) {
+          return updateTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return updateTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : updateTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Last update time of the status.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getUpdateTimeFieldBuilder() {
+        if (updateTimeBuilder_ == null) {
+          updateTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getUpdateTime(), getParentForChildren(), isClean());
+          updateTime_ = null;
+        }
+        return updateTimeBuilder_;
+      }
+
+      private com.google.cloud.dataplex.v1.Job latestJob_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dataplex.v1.Job,
+              com.google.cloud.dataplex.v1.Job.Builder,
+              com.google.cloud.dataplex.v1.JobOrBuilder>
+          latestJobBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. latest job execution
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.Job latest_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the latestJob field is set.
+       */
+      public boolean hasLatestJob() {
+        return latestJobBuilder_ != null || latestJob_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. latest job execution
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.Job latest_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The latestJob.
+       */
+      public com.google.cloud.dataplex.v1.Job getLatestJob() {
+        if (latestJobBuilder_ == null) {
+          return latestJob_ == null
+              ? com.google.cloud.dataplex.v1.Job.getDefaultInstance()
+              : latestJob_;
+        } else {
+          return latestJobBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. latest job execution
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.Job latest_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setLatestJob(com.google.cloud.dataplex.v1.Job value) {
+        if (latestJobBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          latestJob_ = value;
+          onChanged();
+        } else {
+          latestJobBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. latest job execution
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.Job latest_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setLatestJob(com.google.cloud.dataplex.v1.Job.Builder builderForValue) {
+        if (latestJobBuilder_ == null) {
+          latestJob_ = builderForValue.build();
+          onChanged();
+        } else {
+          latestJobBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. latest job execution
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.Job latest_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeLatestJob(com.google.cloud.dataplex.v1.Job value) {
+        if (latestJobBuilder_ == null) {
+          if (latestJob_ != null) {
+            latestJob_ =
+                com.google.cloud.dataplex.v1.Job.newBuilder(latestJob_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            latestJob_ = value;
+          }
+          onChanged();
+        } else {
+          latestJobBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. latest job execution
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.Job latest_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearLatestJob() {
+        if (latestJobBuilder_ == null) {
+          latestJob_ = null;
+          onChanged();
+        } else {
+          latestJob_ = null;
+          latestJobBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. latest job execution
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.Job latest_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.Job.Builder getLatestJobBuilder() {
+
+        onChanged();
+        return getLatestJobFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. latest job execution
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.Job latest_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.JobOrBuilder getLatestJobOrBuilder() {
+        if (latestJobBuilder_ != null) {
+          return latestJobBuilder_.getMessageOrBuilder();
+        } else {
+          return latestJob_ == null
+              ? com.google.cloud.dataplex.v1.Job.getDefaultInstance()
+              : latestJob_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. latest job execution
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.Job latest_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dataplex.v1.Job,
+              com.google.cloud.dataplex.v1.Job.Builder,
+              com.google.cloud.dataplex.v1.JobOrBuilder>
+          getLatestJobFieldBuilder() {
+        if (latestJobBuilder_ == null) {
+          latestJobBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.dataplex.v1.Job,
+                  com.google.cloud.dataplex.v1.Job.Builder,
+                  com.google.cloud.dataplex.v1.JobOrBuilder>(
+                  getLatestJob(), getParentForChildren(), isClean());
+          latestJob_ = null;
+        }
+        return latestJobBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.Task.ExecutionStatus)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.Task.ExecutionStatus)
+    private static final com.google.cloud.dataplex.v1.Task.ExecutionStatus DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dataplex.v1.Task.ExecutionStatus();
+    }
+
+    public static com.google.cloud.dataplex.v1.Task.ExecutionStatus getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ExecutionStatus> PARSER =
+        new com.google.protobuf.AbstractParser<ExecutionStatus>() {
+          @java.lang.Override
+          public ExecutionStatus parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new ExecutionStatus(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<ExecutionStatus> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ExecutionStatus> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.Task.ExecutionStatus getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int configCase_ = 0;
   private java.lang.Object config_;
 
@@ -13031,6 +14826,60 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     return getExecutionSpec();
   }
 
+  public static final int EXECUTION_STATUS_FIELD_NUMBER = 201;
+  private com.google.cloud.dataplex.v1.Task.ExecutionStatus executionStatus_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Status of the latest task executions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.Task.ExecutionStatus execution_status = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the executionStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasExecutionStatus() {
+    return executionStatus_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Status of the latest task executions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.Task.ExecutionStatus execution_status = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The executionStatus.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.Task.ExecutionStatus getExecutionStatus() {
+    return executionStatus_ == null
+        ? com.google.cloud.dataplex.v1.Task.ExecutionStatus.getDefaultInstance()
+        : executionStatus_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Status of the latest task executions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.Task.ExecutionStatus execution_status = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.Task.ExecutionStatusOrBuilder getExecutionStatusOrBuilder() {
+    return getExecutionStatus();
+  }
+
   public static final int SPARK_FIELD_NUMBER = 300;
   /**
    *
@@ -13125,6 +14974,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     if (executionSpec_ != null) {
       output.writeMessage(101, getExecutionSpec());
     }
+    if (executionStatus_ != null) {
+      output.writeMessage(201, getExecutionStatus());
+    }
     if (configCase_ == 300) {
       output.writeMessage(300, (com.google.cloud.dataplex.v1.Task.SparkTaskConfig) config_);
     }
@@ -13174,6 +15026,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     if (executionSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(101, getExecutionSpec());
     }
+    if (executionStatus_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(201, getExecutionStatus());
+    }
     if (configCase_ == 300) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -13215,6 +15070,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     if (hasExecutionSpec() != other.hasExecutionSpec()) return false;
     if (hasExecutionSpec()) {
       if (!getExecutionSpec().equals(other.getExecutionSpec())) return false;
+    }
+    if (hasExecutionStatus() != other.hasExecutionStatus()) return false;
+    if (hasExecutionStatus()) {
+      if (!getExecutionStatus().equals(other.getExecutionStatus())) return false;
     }
     if (!getConfigCase().equals(other.getConfigCase())) return false;
     switch (configCase_) {
@@ -13264,6 +15123,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     if (hasExecutionSpec()) {
       hash = (37 * hash) + EXECUTION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getExecutionSpec().hashCode();
+    }
+    if (hasExecutionStatus()) {
+      hash = (37 * hash) + EXECUTION_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getExecutionStatus().hashCode();
     }
     switch (configCase_) {
       case 300:
@@ -13472,6 +15335,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         executionSpec_ = null;
         executionSpecBuilder_ = null;
       }
+      if (executionStatusBuilder_ == null) {
+        executionStatus_ = null;
+      } else {
+        executionStatus_ = null;
+        executionStatusBuilder_ = null;
+      }
       configCase_ = 0;
       config_ = null;
       return this;
@@ -13527,6 +15396,11 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         result.executionSpec_ = executionSpec_;
       } else {
         result.executionSpec_ = executionSpecBuilder_.build();
+      }
+      if (executionStatusBuilder_ == null) {
+        result.executionStatus_ = executionStatus_;
+      } else {
+        result.executionStatus_ = executionStatusBuilder_.build();
       }
       if (configCase_ == 300) {
         if (sparkBuilder_ == null) {
@@ -13616,6 +15490,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasExecutionSpec()) {
         mergeExecutionSpec(other.getExecutionSpec());
+      }
+      if (other.hasExecutionStatus()) {
+        mergeExecutionStatus(other.getExecutionStatus());
       }
       switch (other.getConfigCase()) {
         case SPARK:
@@ -15184,6 +17061,211 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         executionSpec_ = null;
       }
       return executionSpecBuilder_;
+    }
+
+    private com.google.cloud.dataplex.v1.Task.ExecutionStatus executionStatus_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.Task.ExecutionStatus,
+            com.google.cloud.dataplex.v1.Task.ExecutionStatus.Builder,
+            com.google.cloud.dataplex.v1.Task.ExecutionStatusOrBuilder>
+        executionStatusBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Status of the latest task executions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Task.ExecutionStatus execution_status = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the executionStatus field is set.
+     */
+    public boolean hasExecutionStatus() {
+      return executionStatusBuilder_ != null || executionStatus_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Status of the latest task executions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Task.ExecutionStatus execution_status = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The executionStatus.
+     */
+    public com.google.cloud.dataplex.v1.Task.ExecutionStatus getExecutionStatus() {
+      if (executionStatusBuilder_ == null) {
+        return executionStatus_ == null
+            ? com.google.cloud.dataplex.v1.Task.ExecutionStatus.getDefaultInstance()
+            : executionStatus_;
+      } else {
+        return executionStatusBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Status of the latest task executions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Task.ExecutionStatus execution_status = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setExecutionStatus(com.google.cloud.dataplex.v1.Task.ExecutionStatus value) {
+      if (executionStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        executionStatus_ = value;
+        onChanged();
+      } else {
+        executionStatusBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Status of the latest task executions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Task.ExecutionStatus execution_status = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setExecutionStatus(
+        com.google.cloud.dataplex.v1.Task.ExecutionStatus.Builder builderForValue) {
+      if (executionStatusBuilder_ == null) {
+        executionStatus_ = builderForValue.build();
+        onChanged();
+      } else {
+        executionStatusBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Status of the latest task executions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Task.ExecutionStatus execution_status = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeExecutionStatus(com.google.cloud.dataplex.v1.Task.ExecutionStatus value) {
+      if (executionStatusBuilder_ == null) {
+        if (executionStatus_ != null) {
+          executionStatus_ =
+              com.google.cloud.dataplex.v1.Task.ExecutionStatus.newBuilder(executionStatus_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          executionStatus_ = value;
+        }
+        onChanged();
+      } else {
+        executionStatusBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Status of the latest task executions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Task.ExecutionStatus execution_status = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearExecutionStatus() {
+      if (executionStatusBuilder_ == null) {
+        executionStatus_ = null;
+        onChanged();
+      } else {
+        executionStatus_ = null;
+        executionStatusBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Status of the latest task executions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Task.ExecutionStatus execution_status = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.Task.ExecutionStatus.Builder getExecutionStatusBuilder() {
+
+      onChanged();
+      return getExecutionStatusFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Status of the latest task executions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Task.ExecutionStatus execution_status = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.Task.ExecutionStatusOrBuilder
+        getExecutionStatusOrBuilder() {
+      if (executionStatusBuilder_ != null) {
+        return executionStatusBuilder_.getMessageOrBuilder();
+      } else {
+        return executionStatus_ == null
+            ? com.google.cloud.dataplex.v1.Task.ExecutionStatus.getDefaultInstance()
+            : executionStatus_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Status of the latest task executions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Task.ExecutionStatus execution_status = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.Task.ExecutionStatus,
+            com.google.cloud.dataplex.v1.Task.ExecutionStatus.Builder,
+            com.google.cloud.dataplex.v1.Task.ExecutionStatusOrBuilder>
+        getExecutionStatusFieldBuilder() {
+      if (executionStatusBuilder_ == null) {
+        executionStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.Task.ExecutionStatus,
+                com.google.cloud.dataplex.v1.Task.ExecutionStatus.Builder,
+                com.google.cloud.dataplex.v1.Task.ExecutionStatusOrBuilder>(
+                getExecutionStatus(), getParentForChildren(), isClean());
+        executionStatus_ = null;
+      }
+      return executionStatusBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

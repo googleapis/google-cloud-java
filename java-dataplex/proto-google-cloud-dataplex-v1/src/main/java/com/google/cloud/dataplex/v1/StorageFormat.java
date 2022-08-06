@@ -779,8 +779,9 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The character used to quote column values. Accepts '"' and '''.
-     * Defaults to '"' if unspecified.
+     * Optional. The character used to quote column values. Accepts '"'
+     * (double quotation mark) or ''' (single quotation mark). Defaults to
+     * '"' (double quotation mark) if unspecified.
      * </pre>
      *
      * <code>string quote = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -792,8 +793,9 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The character used to quote column values. Accepts '"' and '''.
-     * Defaults to '"' if unspecified.
+     * Optional. The character used to quote column values. Accepts '"'
+     * (double quotation mark) or ''' (single quotation mark). Defaults to
+     * '"' (double quotation mark) if unspecified.
      * </pre>
      *
      * <code>string quote = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1043,8 +1045,9 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The character used to quote column values. Accepts '"' and '''.
-     * Defaults to '"' if unspecified.
+     * Optional. The character used to quote column values. Accepts '"'
+     * (double quotation mark) or ''' (single quotation mark). Defaults to
+     * '"' (double quotation mark) if unspecified.
      * </pre>
      *
      * <code>string quote = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1067,8 +1070,9 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The character used to quote column values. Accepts '"' and '''.
-     * Defaults to '"' if unspecified.
+     * Optional. The character used to quote column values. Accepts '"'
+     * (double quotation mark) or ''' (single quotation mark). Defaults to
+     * '"' (double quotation mark) if unspecified.
      * </pre>
      *
      * <code>string quote = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1735,8 +1739,9 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character used to quote column values. Accepts '"' and '''.
-       * Defaults to '"' if unspecified.
+       * Optional. The character used to quote column values. Accepts '"'
+       * (double quotation mark) or ''' (single quotation mark). Defaults to
+       * '"' (double quotation mark) if unspecified.
        * </pre>
        *
        * <code>string quote = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1758,8 +1763,9 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character used to quote column values. Accepts '"' and '''.
-       * Defaults to '"' if unspecified.
+       * Optional. The character used to quote column values. Accepts '"'
+       * (double quotation mark) or ''' (single quotation mark). Defaults to
+       * '"' (double quotation mark) if unspecified.
        * </pre>
        *
        * <code>string quote = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1781,8 +1787,9 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character used to quote column values. Accepts '"' and '''.
-       * Defaults to '"' if unspecified.
+       * Optional. The character used to quote column values. Accepts '"'
+       * (double quotation mark) or ''' (single quotation mark). Defaults to
+       * '"' (double quotation mark) if unspecified.
        * </pre>
        *
        * <code>string quote = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1803,8 +1810,9 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character used to quote column values. Accepts '"' and '''.
-       * Defaults to '"' if unspecified.
+       * Optional. The character used to quote column values. Accepts '"'
+       * (double quotation mark) or ''' (single quotation mark). Defaults to
+       * '"' (double quotation mark) if unspecified.
        * </pre>
        *
        * <code>string quote = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1821,8 +1829,9 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character used to quote column values. Accepts '"' and '''.
-       * Defaults to '"' if unspecified.
+       * Optional. The character used to quote column values. Accepts '"'
+       * (double quotation mark) or ''' (single quotation mark). Defaults to
+       * '"' (double quotation mark) if unspecified.
        * </pre>
        *
        * <code>string quote = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

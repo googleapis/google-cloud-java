@@ -150,13 +150,11 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The values must be HTML URL encoded two times before constructing the path.
-   * For example, if you have a value of "US:CA", encoded it two times and you
-   * get "US%253ACA". Then if you have the 2nd value is "CA#Sunnyvale", encoded
-   * two times and you get "CA%2523Sunnyvale". The partition values path is
-   * "US%253ACA/CA%2523Sunnyvale". The final URL will be
-   * "https://.../partitions/US%253ACA/CA%2523Sunnyvale". The name field in the
-   * responses will always have the encoded format.
+   * Output only. Partition values used in the HTTP URL must be
+   * double encoded. For example, `url_encode(url_encode(value))` can be used
+   * to encode "US:CA/CA#Sunnyvale so that the request URL ends
+   * with "/partitions/US%253ACA/CA%2523Sunnyvale".
+   * The name field in the response retains the encoded format.
    * </pre>
    *
    * <code>
@@ -181,13 +179,11 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The values must be HTML URL encoded two times before constructing the path.
-   * For example, if you have a value of "US:CA", encoded it two times and you
-   * get "US%253ACA". Then if you have the 2nd value is "CA#Sunnyvale", encoded
-   * two times and you get "CA%2523Sunnyvale". The partition values path is
-   * "US%253ACA/CA%2523Sunnyvale". The final URL will be
-   * "https://.../partitions/US%253ACA/CA%2523Sunnyvale". The name field in the
-   * responses will always have the encoded format.
+   * Output only. Partition values used in the HTTP URL must be
+   * double encoded. For example, `url_encode(url_encode(value))` can be used
+   * to encode "US:CA/CA#Sunnyvale so that the request URL ends
+   * with "/partitions/US%253ACA/CA%2523Sunnyvale".
+   * The name field in the response retains the encoded format.
    * </pre>
    *
    * <code>
@@ -351,7 +347,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
    * <code>string etag = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.dataplex.v1.Partition.etag is deprecated. See
-   *     google/cloud/dataplex/v1/metadata.proto;l=514
+   *     google/cloud/dataplex/v1/metadata.proto;l=515
    * @return The etag.
    */
   @java.lang.Override
@@ -377,7 +373,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
    * <code>string etag = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.dataplex.v1.Partition.etag is deprecated. See
-   *     google/cloud/dataplex/v1/metadata.proto;l=514
+   *     google/cloud/dataplex/v1/metadata.proto;l=515
    * @return The bytes for etag.
    */
   @java.lang.Override
@@ -782,13 +778,11 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The values must be HTML URL encoded two times before constructing the path.
-     * For example, if you have a value of "US:CA", encoded it two times and you
-     * get "US%253ACA". Then if you have the 2nd value is "CA#Sunnyvale", encoded
-     * two times and you get "CA%2523Sunnyvale". The partition values path is
-     * "US%253ACA/CA%2523Sunnyvale". The final URL will be
-     * "https://.../partitions/US%253ACA/CA%2523Sunnyvale". The name field in the
-     * responses will always have the encoded format.
+     * Output only. Partition values used in the HTTP URL must be
+     * double encoded. For example, `url_encode(url_encode(value))` can be used
+     * to encode "US:CA/CA#Sunnyvale so that the request URL ends
+     * with "/partitions/US%253ACA/CA%2523Sunnyvale".
+     * The name field in the response retains the encoded format.
      * </pre>
      *
      * <code>
@@ -812,13 +806,11 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The values must be HTML URL encoded two times before constructing the path.
-     * For example, if you have a value of "US:CA", encoded it two times and you
-     * get "US%253ACA". Then if you have the 2nd value is "CA#Sunnyvale", encoded
-     * two times and you get "CA%2523Sunnyvale". The partition values path is
-     * "US%253ACA/CA%2523Sunnyvale". The final URL will be
-     * "https://.../partitions/US%253ACA/CA%2523Sunnyvale". The name field in the
-     * responses will always have the encoded format.
+     * Output only. Partition values used in the HTTP URL must be
+     * double encoded. For example, `url_encode(url_encode(value))` can be used
+     * to encode "US:CA/CA#Sunnyvale so that the request URL ends
+     * with "/partitions/US%253ACA/CA%2523Sunnyvale".
+     * The name field in the response retains the encoded format.
      * </pre>
      *
      * <code>
@@ -842,13 +834,11 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The values must be HTML URL encoded two times before constructing the path.
-     * For example, if you have a value of "US:CA", encoded it two times and you
-     * get "US%253ACA". Then if you have the 2nd value is "CA#Sunnyvale", encoded
-     * two times and you get "CA%2523Sunnyvale". The partition values path is
-     * "US%253ACA/CA%2523Sunnyvale". The final URL will be
-     * "https://.../partitions/US%253ACA/CA%2523Sunnyvale". The name field in the
-     * responses will always have the encoded format.
+     * Output only. Partition values used in the HTTP URL must be
+     * double encoded. For example, `url_encode(url_encode(value))` can be used
+     * to encode "US:CA/CA#Sunnyvale so that the request URL ends
+     * with "/partitions/US%253ACA/CA%2523Sunnyvale".
+     * The name field in the response retains the encoded format.
      * </pre>
      *
      * <code>
@@ -871,13 +861,11 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The values must be HTML URL encoded two times before constructing the path.
-     * For example, if you have a value of "US:CA", encoded it two times and you
-     * get "US%253ACA". Then if you have the 2nd value is "CA#Sunnyvale", encoded
-     * two times and you get "CA%2523Sunnyvale". The partition values path is
-     * "US%253ACA/CA%2523Sunnyvale". The final URL will be
-     * "https://.../partitions/US%253ACA/CA%2523Sunnyvale". The name field in the
-     * responses will always have the encoded format.
+     * Output only. Partition values used in the HTTP URL must be
+     * double encoded. For example, `url_encode(url_encode(value))` can be used
+     * to encode "US:CA/CA#Sunnyvale so that the request URL ends
+     * with "/partitions/US%253ACA/CA%2523Sunnyvale".
+     * The name field in the response retains the encoded format.
      * </pre>
      *
      * <code>
@@ -896,13 +884,11 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The values must be HTML URL encoded two times before constructing the path.
-     * For example, if you have a value of "US:CA", encoded it two times and you
-     * get "US%253ACA". Then if you have the 2nd value is "CA#Sunnyvale", encoded
-     * two times and you get "CA%2523Sunnyvale". The partition values path is
-     * "US%253ACA/CA%2523Sunnyvale". The final URL will be
-     * "https://.../partitions/US%253ACA/CA%2523Sunnyvale". The name field in the
-     * responses will always have the encoded format.
+     * Output only. Partition values used in the HTTP URL must be
+     * double encoded. For example, `url_encode(url_encode(value))` can be used
+     * to encode "US:CA/CA#Sunnyvale so that the request URL ends
+     * with "/partitions/US%253ACA/CA%2523Sunnyvale".
+     * The name field in the response retains the encoded format.
      * </pre>
      *
      * <code>
@@ -1255,7 +1241,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      * <code>string etag = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.dataplex.v1.Partition.etag is deprecated. See
-     *     google/cloud/dataplex/v1/metadata.proto;l=514
+     *     google/cloud/dataplex/v1/metadata.proto;l=515
      * @return The etag.
      */
     @java.lang.Deprecated
@@ -1280,7 +1266,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      * <code>string etag = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.dataplex.v1.Partition.etag is deprecated. See
-     *     google/cloud/dataplex/v1/metadata.proto;l=514
+     *     google/cloud/dataplex/v1/metadata.proto;l=515
      * @return The bytes for etag.
      */
     @java.lang.Deprecated
@@ -1305,7 +1291,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      * <code>string etag = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.dataplex.v1.Partition.etag is deprecated. See
-     *     google/cloud/dataplex/v1/metadata.proto;l=514
+     *     google/cloud/dataplex/v1/metadata.proto;l=515
      * @param value The etag to set.
      * @return This builder for chaining.
      */
@@ -1329,7 +1315,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      * <code>string etag = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.dataplex.v1.Partition.etag is deprecated. See
-     *     google/cloud/dataplex/v1/metadata.proto;l=514
+     *     google/cloud/dataplex/v1/metadata.proto;l=515
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1349,7 +1335,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      * <code>string etag = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.dataplex.v1.Partition.etag is deprecated. See
-     *     google/cloud/dataplex/v1/metadata.proto;l=514
+     *     google/cloud/dataplex/v1/metadata.proto;l=515
      * @param value The bytes for etag to set.
      * @return This builder for chaining.
      */

@@ -148,7 +148,7 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The resource name of the parent zone:
-   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`
+   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`.
    * </pre>
    *
    * <code>
@@ -174,7 +174,7 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The resource name of the parent zone:
-   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`
+   * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`.
    * </pre>
    *
    * <code>
@@ -709,7 +709,7 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource name of the parent zone:
-     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`
+     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`.
      * </pre>
      *
      * <code>
@@ -734,7 +734,7 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource name of the parent zone:
-     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`
+     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`.
      * </pre>
      *
      * <code>
@@ -759,7 +759,7 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource name of the parent zone:
-     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`
+     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`.
      * </pre>
      *
      * <code>
@@ -783,7 +783,7 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource name of the parent zone:
-     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`
+     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`.
      * </pre>
      *
      * <code>
@@ -803,7 +803,7 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource name of the parent zone:
-     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`
+     * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`.
      * </pre>
      *
      * <code>
