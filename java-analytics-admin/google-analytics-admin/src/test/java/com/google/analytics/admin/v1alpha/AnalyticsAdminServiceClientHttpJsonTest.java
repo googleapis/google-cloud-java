@@ -6731,4 +6731,78 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
       // Expected exception.
     }
   }
+
+  @Test
+  public void runAccessReportTest() throws Exception {
+    RunAccessReportResponse expectedResponse =
+        RunAccessReportResponse.newBuilder()
+            .addAllDimensionHeaders(new ArrayList<AccessDimensionHeader>())
+            .addAllMetricHeaders(new ArrayList<AccessMetricHeader>())
+            .addAllRows(new ArrayList<AccessRow>())
+            .setRowCount(1340416618)
+            .setQuota(AccessQuota.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    RunAccessReportRequest request =
+        RunAccessReportRequest.newBuilder()
+            .setEntity("properties/propertie-4993")
+            .addAllDimensions(new ArrayList<AccessDimension>())
+            .addAllMetrics(new ArrayList<AccessMetric>())
+            .addAllDateRanges(new ArrayList<AccessDateRange>())
+            .setDimensionFilter(AccessFilterExpression.newBuilder().build())
+            .setMetricFilter(AccessFilterExpression.newBuilder().build())
+            .setOffset(-1019779949)
+            .setLimit(102976443)
+            .setTimeZone("timeZone-2077180903")
+            .addAllOrderBys(new ArrayList<AccessOrderBy>())
+            .setReturnEntityQuota(true)
+            .build();
+
+    RunAccessReportResponse actualResponse = client.runAccessReport(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void runAccessReportExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RunAccessReportRequest request =
+          RunAccessReportRequest.newBuilder()
+              .setEntity("properties/propertie-4993")
+              .addAllDimensions(new ArrayList<AccessDimension>())
+              .addAllMetrics(new ArrayList<AccessMetric>())
+              .addAllDateRanges(new ArrayList<AccessDateRange>())
+              .setDimensionFilter(AccessFilterExpression.newBuilder().build())
+              .setMetricFilter(AccessFilterExpression.newBuilder().build())
+              .setOffset(-1019779949)
+              .setLimit(102976443)
+              .setTimeZone("timeZone-2077180903")
+              .addAllOrderBys(new ArrayList<AccessOrderBy>())
+              .setReturnEntityQuota(true)
+              .build();
+      client.runAccessReport(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
 }

@@ -138,6 +138,8 @@ import com.google.analytics.admin.v1alpha.MeasurementProtocolSecret;
 import com.google.analytics.admin.v1alpha.Property;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
+import com.google.analytics.admin.v1alpha.RunAccessReportRequest;
+import com.google.analytics.admin.v1alpha.RunAccessReportResponse;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
@@ -408,6 +410,8 @@ public class AnalyticsAdminServiceStubSettings
       getAttributionSettingsSettings;
   private final UnaryCallSettings<UpdateAttributionSettingsRequest, AttributionSettings>
       updateAttributionSettingsSettings;
+  private final UnaryCallSettings<RunAccessReportRequest, RunAccessReportResponse>
+      runAccessReportSettings;
 
   private static final PagedListDescriptor<ListAccountsRequest, ListAccountsResponse, Account>
       LIST_ACCOUNTS_PAGE_STR_DESC =
@@ -1927,6 +1931,12 @@ public class AnalyticsAdminServiceStubSettings
     return updateAttributionSettingsSettings;
   }
 
+  /** Returns the object with the settings used for calls to runAccessReport. */
+  public UnaryCallSettings<RunAccessReportRequest, RunAccessReportResponse>
+      runAccessReportSettings() {
+    return runAccessReportSettings;
+  }
+
   public AnalyticsAdminServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -2130,6 +2140,7 @@ public class AnalyticsAdminServiceStubSettings
     archiveAudienceSettings = settingsBuilder.archiveAudienceSettings().build();
     getAttributionSettingsSettings = settingsBuilder.getAttributionSettingsSettings().build();
     updateAttributionSettingsSettings = settingsBuilder.updateAttributionSettingsSettings().build();
+    runAccessReportSettings = settingsBuilder.runAccessReportSettings().build();
   }
 
   /** Builder for AnalyticsAdminServiceStubSettings. */
@@ -2326,6 +2337,8 @@ public class AnalyticsAdminServiceStubSettings
         getAttributionSettingsSettings;
     private final UnaryCallSettings.Builder<UpdateAttributionSettingsRequest, AttributionSettings>
         updateAttributionSettingsSettings;
+    private final UnaryCallSettings.Builder<RunAccessReportRequest, RunAccessReportResponse>
+        runAccessReportSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -2458,6 +2471,7 @@ public class AnalyticsAdminServiceStubSettings
       archiveAudienceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getAttributionSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateAttributionSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      runAccessReportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -2538,7 +2552,8 @@ public class AnalyticsAdminServiceStubSettings
               updateAudienceSettings,
               archiveAudienceSettings,
               getAttributionSettingsSettings,
-              updateAttributionSettingsSettings);
+              updateAttributionSettingsSettings,
+              runAccessReportSettings);
       initDefaults(this);
     }
 
@@ -2642,6 +2657,7 @@ public class AnalyticsAdminServiceStubSettings
       archiveAudienceSettings = settings.archiveAudienceSettings.toBuilder();
       getAttributionSettingsSettings = settings.getAttributionSettingsSettings.toBuilder();
       updateAttributionSettingsSettings = settings.updateAttributionSettingsSettings.toBuilder();
+      runAccessReportSettings = settings.runAccessReportSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -2722,7 +2738,8 @@ public class AnalyticsAdminServiceStubSettings
               updateAudienceSettings,
               archiveAudienceSettings,
               getAttributionSettingsSettings,
-              updateAttributionSettingsSettings);
+              updateAttributionSettingsSettings,
+              runAccessReportSettings);
     }
 
     private static Builder createDefault() {
@@ -3139,6 +3156,11 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .updateAttributionSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .runAccessReportSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -3678,6 +3700,12 @@ public class AnalyticsAdminServiceStubSettings
     public UnaryCallSettings.Builder<UpdateAttributionSettingsRequest, AttributionSettings>
         updateAttributionSettingsSettings() {
       return updateAttributionSettingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to runAccessReport. */
+    public UnaryCallSettings.Builder<RunAccessReportRequest, RunAccessReportResponse>
+        runAccessReportSettings() {
+      return runAccessReportSettings;
     }
 
     @Override

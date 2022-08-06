@@ -135,6 +135,8 @@ import com.google.analytics.admin.v1alpha.MeasurementProtocolSecret;
 import com.google.analytics.admin.v1alpha.Property;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
+import com.google.analytics.admin.v1alpha.RunAccessReportRequest;
+import com.google.analytics.admin.v1alpha.RunAccessReportResponse;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
@@ -1124,6 +1126,18 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(AttributionSettings.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<RunAccessReportRequest, RunAccessReportResponse>
+      runAccessReportMethodDescriptor =
+          MethodDescriptor.<RunAccessReportRequest, RunAccessReportResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/RunAccessReport")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RunAccessReportRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RunAccessReportResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsResponse> listAccountsCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsPagedResponse>
@@ -1296,6 +1310,8 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
       getAttributionSettingsCallable;
   private final UnaryCallable<UpdateAttributionSettingsRequest, AttributionSettings>
       updateAttributionSettingsCallable;
+  private final UnaryCallable<RunAccessReportRequest, RunAccessReportResponse>
+      runAccessReportCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -2194,6 +2210,17 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<RunAccessReportRequest, RunAccessReportResponse>
+        runAccessReportTransportSettings =
+            GrpcCallSettings.<RunAccessReportRequest, RunAccessReportResponse>newBuilder()
+                .setMethodDescriptor(runAccessReportMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("entity", String.valueOf(request.getEntity()));
+                      return params.build();
+                    })
+                .build();
 
     this.getAccountCallable =
         callableFactory.createUnaryCallable(
@@ -2599,6 +2626,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             updateAttributionSettingsTransportSettings,
             settings.updateAttributionSettingsSettings(),
             clientContext);
+    this.runAccessReportCallable =
+        callableFactory.createUnaryCallable(
+            runAccessReportTransportSettings, settings.runAccessReportSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -3143,6 +3173,11 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   public UnaryCallable<UpdateAttributionSettingsRequest, AttributionSettings>
       updateAttributionSettingsCallable() {
     return updateAttributionSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<RunAccessReportRequest, RunAccessReportResponse> runAccessReportCallable() {
+    return runAccessReportCallable;
   }
 
   @Override
