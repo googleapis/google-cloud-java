@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.120.11](https://github.com/googleapis/java-pubsub/compare/v1.120.10...v1.120.11) (2022-08-06)
+
+
+### Bug Fixes
+
+* fix dependency declaration to properly include runtime scope ([#1238](https://github.com/googleapis/java-pubsub/issues/1238)) ([e9a4ce5](https://github.com/googleapis/java-pubsub/commit/e9a4ce59fdf3773fa41698579984af525a277f38))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.14.2 ([#1235](https://github.com/googleapis/java-pubsub/issues/1235)) ([e2af6c3](https://github.com/googleapis/java-pubsub/commit/e2af6c358ef9e7a0d35179bc4a7c793bbc6a0960))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.14.3 ([#1236](https://github.com/googleapis/java-pubsub/issues/1236)) ([399e8d7](https://github.com/googleapis/java-pubsub/commit/399e8d71d5b4aed2fa48e8cba2dce963d25693e3))
+
 ## [1.120.10](https://github.com/googleapis/java-pubsub/compare/v1.120.9...v1.120.10) (2022-08-04)
 
 
