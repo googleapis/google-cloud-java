@@ -490,7 +490,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * The text of the documentation, interpreted according to `mime_type`.
      * The content may not exceed 8,192 Unicode characters and may not exceed
      * more than 10,240 bytes when encoded in UTF-8 format, whichever is
-     * smaller.
+     * smaller. This text can be [templatized by using
+     * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -505,7 +506,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * The text of the documentation, interpreted according to `mime_type`.
      * The content may not exceed 8,192 Unicode characters and may not exceed
      * more than 10,240 bytes when encoded in UTF-8 format, whichever is
-     * smaller.
+     * smaller. This text can be [templatized by using
+     * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -656,7 +658,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * The text of the documentation, interpreted according to `mime_type`.
      * The content may not exceed 8,192 Unicode characters and may not exceed
      * more than 10,240 bytes when encoded in UTF-8 format, whichever is
-     * smaller.
+     * smaller. This text can be [templatized by using
+     * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -682,7 +685,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * The text of the documentation, interpreted according to `mime_type`.
      * The content may not exceed 8,192 Unicode characters and may not exceed
      * more than 10,240 bytes when encoded in UTF-8 format, whichever is
-     * smaller.
+     * smaller. This text can be [templatized by using
+     * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -1102,7 +1106,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * The text of the documentation, interpreted according to `mime_type`.
        * The content may not exceed 8,192 Unicode characters and may not exceed
        * more than 10,240 bytes when encoded in UTF-8 format, whichever is
-       * smaller.
+       * smaller. This text can be [templatized by using
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -1127,7 +1132,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * The text of the documentation, interpreted according to `mime_type`.
        * The content may not exceed 8,192 Unicode characters and may not exceed
        * more than 10,240 bytes when encoded in UTF-8 format, whichever is
-       * smaller.
+       * smaller. This text can be [templatized by using
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -1152,7 +1158,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * The text of the documentation, interpreted according to `mime_type`.
        * The content may not exceed 8,192 Unicode characters and may not exceed
        * more than 10,240 bytes when encoded in UTF-8 format, whichever is
-       * smaller.
+       * smaller. This text can be [templatized by using
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -1176,7 +1183,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * The text of the documentation, interpreted according to `mime_type`.
        * The content may not exceed 8,192 Unicode characters and may not exceed
        * more than 10,240 bytes when encoded in UTF-8 format, whichever is
-       * smaller.
+       * smaller. This text can be [templatized by using
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -1196,7 +1204,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * The text of the documentation, interpreted according to `mime_type`.
        * The content may not exceed 8,192 Unicode characters and may not exceed
        * more than 10,240 bytes when encoded in UTF-8 format, whichever is
-       * smaller.
+       * smaller. This text can be [templatized by using
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -1395,12 +1404,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * Required if the condition exists. The unique resource name for this
      * condition. Its format is:
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
-     * `[CONDITION_ID]` is assigned by Stackdriver Monitoring when the
+     * `[CONDITION_ID]` is assigned by Cloud Monitoring when the
      * condition is created as part of a new or updated alerting policy.
      * When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
      * method, do not include the `name` field in the conditions of the
-     * requested alerting policy. Stackdriver Monitoring creates the
+     * requested alerting policy. Cloud Monitoring creates the
      * condition identifiers and includes them in the new policy.
      * When calling the
      * [alertPolicies.update][google.monitoring.v3.AlertPolicyService.UpdateAlertPolicy]
@@ -1426,12 +1435,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * Required if the condition exists. The unique resource name for this
      * condition. Its format is:
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
-     * `[CONDITION_ID]` is assigned by Stackdriver Monitoring when the
+     * `[CONDITION_ID]` is assigned by Cloud Monitoring when the
      * condition is created as part of a new or updated alerting policy.
      * When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
      * method, do not include the `name` field in the conditions of the
-     * requested alerting policy. Stackdriver Monitoring creates the
+     * requested alerting policy. Cloud Monitoring creates the
      * condition identifiers and includes them in the new policy.
      * When calling the
      * [alertPolicies.update][google.monitoring.v3.AlertPolicyService.UpdateAlertPolicy]
@@ -1837,6 +1846,196 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           .ensureFieldAccessorsInitialized(
               com.google.monitoring.v3.AlertPolicy.Condition.class,
               com.google.monitoring.v3.AlertPolicy.Condition.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A condition control that determines how metric-threshold conditions
+     * are evaluated when data stops arriving.
+     * This control doesn't affect metric-absence policies.
+     * </pre>
+     *
+     * Protobuf enum {@code google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData}
+     */
+    public enum EvaluationMissingData implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * An unspecified evaluation missing data option.  Equivalent to
+       * EVALUATION_MISSING_DATA_NO_OP.
+       * </pre>
+       *
+       * <code>EVALUATION_MISSING_DATA_UNSPECIFIED = 0;</code>
+       */
+      EVALUATION_MISSING_DATA_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * If there is no data to evaluate the condition, then evaluate the
+       * condition as false.
+       * </pre>
+       *
+       * <code>EVALUATION_MISSING_DATA_INACTIVE = 1;</code>
+       */
+      EVALUATION_MISSING_DATA_INACTIVE(1),
+      /**
+       *
+       *
+       * <pre>
+       * If there is no data to evaluate the condition, then evaluate the
+       * condition as true.
+       * </pre>
+       *
+       * <code>EVALUATION_MISSING_DATA_ACTIVE = 2;</code>
+       */
+      EVALUATION_MISSING_DATA_ACTIVE(2),
+      /**
+       *
+       *
+       * <pre>
+       * Do not evaluate the condition to any value if there is no data.
+       * </pre>
+       *
+       * <code>EVALUATION_MISSING_DATA_NO_OP = 3;</code>
+       */
+      EVALUATION_MISSING_DATA_NO_OP(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * An unspecified evaluation missing data option.  Equivalent to
+       * EVALUATION_MISSING_DATA_NO_OP.
+       * </pre>
+       *
+       * <code>EVALUATION_MISSING_DATA_UNSPECIFIED = 0;</code>
+       */
+      public static final int EVALUATION_MISSING_DATA_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * If there is no data to evaluate the condition, then evaluate the
+       * condition as false.
+       * </pre>
+       *
+       * <code>EVALUATION_MISSING_DATA_INACTIVE = 1;</code>
+       */
+      public static final int EVALUATION_MISSING_DATA_INACTIVE_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * If there is no data to evaluate the condition, then evaluate the
+       * condition as true.
+       * </pre>
+       *
+       * <code>EVALUATION_MISSING_DATA_ACTIVE = 2;</code>
+       */
+      public static final int EVALUATION_MISSING_DATA_ACTIVE_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * Do not evaluate the condition to any value if there is no data.
+       * </pre>
+       *
+       * <code>EVALUATION_MISSING_DATA_NO_OP = 3;</code>
+       */
+      public static final int EVALUATION_MISSING_DATA_NO_OP_VALUE = 3;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static EvaluationMissingData valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static EvaluationMissingData forNumber(int value) {
+        switch (value) {
+          case 0:
+            return EVALUATION_MISSING_DATA_UNSPECIFIED;
+          case 1:
+            return EVALUATION_MISSING_DATA_INACTIVE;
+          case 2:
+            return EVALUATION_MISSING_DATA_ACTIVE;
+          case 3:
+            return EVALUATION_MISSING_DATA_NO_OP;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<EvaluationMissingData>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<EvaluationMissingData>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<EvaluationMissingData>() {
+                public EvaluationMissingData findValueByNumber(int number) {
+                  return EvaluationMissingData.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.monitoring.v3.AlertPolicy.Condition.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final EvaluationMissingData[] VALUES = values();
+
+      public static EvaluationMissingData valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private EvaluationMissingData(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData)
     }
 
     public interface TriggerOrBuilder
@@ -3140,6 +3339,38 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 7;</code>
        */
       com.google.monitoring.v3.AlertPolicy.Condition.TriggerOrBuilder getTriggerOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * A condition control that determines how metric-threshold conditions
+       * are evaluated when data stops arriving.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData evaluation_missing_data = 11;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for evaluationMissingData.
+       */
+      int getEvaluationMissingDataValue();
+      /**
+       *
+       *
+       * <pre>
+       * A condition control that determines how metric-threshold conditions
+       * are evaluated when data stops arriving.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData evaluation_missing_data = 11;
+       * </code>
+       *
+       * @return The evaluationMissingData.
+       */
+      com.google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData
+          getEvaluationMissingData();
     }
     /**
      *
@@ -3167,6 +3398,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         denominatorFilter_ = "";
         denominatorAggregations_ = java.util.Collections.emptyList();
         comparison_ = 0;
+        evaluationMissingData_ = 0;
       }
 
       @java.lang.Override
@@ -3278,6 +3510,13 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                   denominatorAggregations_.add(
                       input.readMessage(
                           com.google.monitoring.v3.Aggregation.parser(), extensionRegistry));
+                  break;
+                }
+              case 88:
+                {
+                  int rawValue = input.readEnum();
+
+                  evaluationMissingData_ = rawValue;
                   break;
                 }
               default:
@@ -3874,6 +4113,52 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         return getTrigger();
       }
 
+      public static final int EVALUATION_MISSING_DATA_FIELD_NUMBER = 11;
+      private int evaluationMissingData_;
+      /**
+       *
+       *
+       * <pre>
+       * A condition control that determines how metric-threshold conditions
+       * are evaluated when data stops arriving.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData evaluation_missing_data = 11;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for evaluationMissingData.
+       */
+      @java.lang.Override
+      public int getEvaluationMissingDataValue() {
+        return evaluationMissingData_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition control that determines how metric-threshold conditions
+       * are evaluated when data stops arriving.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData evaluation_missing_data = 11;
+       * </code>
+       *
+       * @return The evaluationMissingData.
+       */
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData
+          getEvaluationMissingData() {
+        @SuppressWarnings("deprecation")
+        com.google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData result =
+            com.google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData.valueOf(
+                evaluationMissingData_);
+        return result == null
+            ? com.google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData.UNRECOGNIZED
+            : result;
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -3913,6 +4198,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         for (int i = 0; i < denominatorAggregations_.size(); i++) {
           output.writeMessage(10, denominatorAggregations_.get(i));
         }
+        if (evaluationMissingData_
+            != com.google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData
+                .EVALUATION_MISSING_DATA_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(11, evaluationMissingData_);
+        }
         unknownFields.writeTo(output);
       }
 
@@ -3949,6 +4240,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedOutputStream.computeMessageSize(
                   10, denominatorAggregations_.get(i));
         }
+        if (evaluationMissingData_
+            != com.google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData
+                .EVALUATION_MISSING_DATA_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, evaluationMissingData_);
+        }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
@@ -3981,6 +4278,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         if (hasTrigger()) {
           if (!getTrigger().equals(other.getTrigger())) return false;
         }
+        if (evaluationMissingData_ != other.evaluationMissingData_) return false;
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -4019,6 +4317,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           hash = (37 * hash) + TRIGGER_FIELD_NUMBER;
           hash = (53 * hash) + getTrigger().hashCode();
         }
+        hash = (37 * hash) + EVALUATION_MISSING_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + evaluationMissingData_;
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -4206,6 +4506,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             trigger_ = null;
             triggerBuilder_ = null;
           }
+          evaluationMissingData_ = 0;
+
           return this;
         }
 
@@ -4269,6 +4571,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           } else {
             result.trigger_ = triggerBuilder_.build();
           }
+          result.evaluationMissingData_ = evaluationMissingData_;
           onBuilt();
           return result;
         }
@@ -4397,6 +4700,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           }
           if (other.hasTrigger()) {
             mergeTrigger(other.getTrigger());
+          }
+          if (other.evaluationMissingData_ != 0) {
+            setEvaluationMissingDataValue(other.getEvaluationMissingDataValue());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -6399,6 +6705,117 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             trigger_ = null;
           }
           return triggerBuilder_;
+        }
+
+        private int evaluationMissingData_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * A condition control that determines how metric-threshold conditions
+         * are evaluated when data stops arriving.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData evaluation_missing_data = 11;
+         * </code>
+         *
+         * @return The enum numeric value on the wire for evaluationMissingData.
+         */
+        @java.lang.Override
+        public int getEvaluationMissingDataValue() {
+          return evaluationMissingData_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A condition control that determines how metric-threshold conditions
+         * are evaluated when data stops arriving.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData evaluation_missing_data = 11;
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for evaluationMissingData to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEvaluationMissingDataValue(int value) {
+
+          evaluationMissingData_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A condition control that determines how metric-threshold conditions
+         * are evaluated when data stops arriving.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData evaluation_missing_data = 11;
+         * </code>
+         *
+         * @return The evaluationMissingData.
+         */
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData
+            getEvaluationMissingData() {
+          @SuppressWarnings("deprecation")
+          com.google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData result =
+              com.google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData.valueOf(
+                  evaluationMissingData_);
+          return result == null
+              ? com.google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData.UNRECOGNIZED
+              : result;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A condition control that determines how metric-threshold conditions
+         * are evaluated when data stops arriving.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData evaluation_missing_data = 11;
+         * </code>
+         *
+         * @param value The evaluationMissingData to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEvaluationMissingData(
+            com.google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+
+          evaluationMissingData_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A condition control that determines how metric-threshold conditions
+         * are evaluated when data stops arriving.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData evaluation_missing_data = 11;
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearEvaluationMissingData() {
+
+          evaluationMissingData_ = 0;
+          onChanged();
+          return this;
         }
 
         @java.lang.Override
@@ -10130,6 +10547,38 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.monitoring.v3.AlertPolicy.Condition.Trigger trigger = 3;</code>
        */
       com.google.monitoring.v3.AlertPolicy.Condition.TriggerOrBuilder getTriggerOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * A condition control that determines how metric-threshold conditions
+       * are evaluated when data stops arriving.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData evaluation_missing_data = 4;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for evaluationMissingData.
+       */
+      int getEvaluationMissingDataValue();
+      /**
+       *
+       *
+       * <pre>
+       * A condition control that determines how metric-threshold conditions
+       * are evaluated when data stops arriving.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData evaluation_missing_data = 4;
+       * </code>
+       *
+       * @return The evaluationMissingData.
+       */
+      com.google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData
+          getEvaluationMissingData();
     }
     /**
      *
@@ -10156,6 +10605,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
 
       private MonitoringQueryLanguageCondition() {
         query_ = "";
+        evaluationMissingData_ = 0;
       }
 
       @java.lang.Override
@@ -10224,6 +10674,13 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                     trigger_ = subBuilder.buildPartial();
                   }
 
+                  break;
+                }
+              case 32:
+                {
+                  int rawValue = input.readEnum();
+
+                  evaluationMissingData_ = rawValue;
                   break;
                 }
               default:
@@ -10452,6 +10909,52 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         return getTrigger();
       }
 
+      public static final int EVALUATION_MISSING_DATA_FIELD_NUMBER = 4;
+      private int evaluationMissingData_;
+      /**
+       *
+       *
+       * <pre>
+       * A condition control that determines how metric-threshold conditions
+       * are evaluated when data stops arriving.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData evaluation_missing_data = 4;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for evaluationMissingData.
+       */
+      @java.lang.Override
+      public int getEvaluationMissingDataValue() {
+        return evaluationMissingData_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition control that determines how metric-threshold conditions
+       * are evaluated when data stops arriving.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData evaluation_missing_data = 4;
+       * </code>
+       *
+       * @return The evaluationMissingData.
+       */
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData
+          getEvaluationMissingData() {
+        @SuppressWarnings("deprecation")
+        com.google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData result =
+            com.google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData.valueOf(
+                evaluationMissingData_);
+        return result == null
+            ? com.google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData.UNRECOGNIZED
+            : result;
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -10475,6 +10978,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         if (trigger_ != null) {
           output.writeMessage(3, getTrigger());
         }
+        if (evaluationMissingData_
+            != com.google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData
+                .EVALUATION_MISSING_DATA_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(4, evaluationMissingData_);
+        }
         unknownFields.writeTo(output);
       }
 
@@ -10492,6 +11001,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         }
         if (trigger_ != null) {
           size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getTrigger());
+        }
+        if (evaluationMissingData_
+            != com.google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData
+                .EVALUATION_MISSING_DATA_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, evaluationMissingData_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -10520,6 +11035,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         if (hasTrigger()) {
           if (!getTrigger().equals(other.getTrigger())) return false;
         }
+        if (evaluationMissingData_ != other.evaluationMissingData_) return false;
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -10541,6 +11057,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           hash = (37 * hash) + TRIGGER_FIELD_NUMBER;
           hash = (53 * hash) + getTrigger().hashCode();
         }
+        hash = (37 * hash) + EVALUATION_MISSING_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + evaluationMissingData_;
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -10717,6 +11235,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             trigger_ = null;
             triggerBuilder_ = null;
           }
+          evaluationMissingData_ = 0;
+
           return this;
         }
 
@@ -10761,6 +11281,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           } else {
             result.trigger_ = triggerBuilder_.build();
           }
+          result.evaluationMissingData_ = evaluationMissingData_;
           onBuilt();
           return result;
         }
@@ -10828,6 +11349,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           }
           if (other.hasTrigger()) {
             mergeTrigger(other.getTrigger());
+          }
+          if (other.evaluationMissingData_ != 0) {
+            setEvaluationMissingDataValue(other.getEvaluationMissingDataValue());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -11470,6 +11994,117 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           return triggerBuilder_;
         }
 
+        private int evaluationMissingData_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * A condition control that determines how metric-threshold conditions
+         * are evaluated when data stops arriving.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData evaluation_missing_data = 4;
+         * </code>
+         *
+         * @return The enum numeric value on the wire for evaluationMissingData.
+         */
+        @java.lang.Override
+        public int getEvaluationMissingDataValue() {
+          return evaluationMissingData_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A condition control that determines how metric-threshold conditions
+         * are evaluated when data stops arriving.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData evaluation_missing_data = 4;
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for evaluationMissingData to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEvaluationMissingDataValue(int value) {
+
+          evaluationMissingData_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A condition control that determines how metric-threshold conditions
+         * are evaluated when data stops arriving.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData evaluation_missing_data = 4;
+         * </code>
+         *
+         * @return The evaluationMissingData.
+         */
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData
+            getEvaluationMissingData() {
+          @SuppressWarnings("deprecation")
+          com.google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData result =
+              com.google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData.valueOf(
+                  evaluationMissingData_);
+          return result == null
+              ? com.google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData.UNRECOGNIZED
+              : result;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A condition control that determines how metric-threshold conditions
+         * are evaluated when data stops arriving.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData evaluation_missing_data = 4;
+         * </code>
+         *
+         * @param value The evaluationMissingData to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEvaluationMissingData(
+            com.google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+
+          evaluationMissingData_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A condition control that determines how metric-threshold conditions
+         * are evaluated when data stops arriving.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.EvaluationMissingData evaluation_missing_data = 4;
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearEvaluationMissingData() {
+
+          evaluationMissingData_ = 0;
+          onChanged();
+          return this;
+        }
+
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -11589,12 +12224,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * Required if the condition exists. The unique resource name for this
      * condition. Its format is:
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
-     * `[CONDITION_ID]` is assigned by Stackdriver Monitoring when the
+     * `[CONDITION_ID]` is assigned by Cloud Monitoring when the
      * condition is created as part of a new or updated alerting policy.
      * When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
      * method, do not include the `name` field in the conditions of the
-     * requested alerting policy. Stackdriver Monitoring creates the
+     * requested alerting policy. Cloud Monitoring creates the
      * condition identifiers and includes them in the new policy.
      * When calling the
      * [alertPolicies.update][google.monitoring.v3.AlertPolicyService.UpdateAlertPolicy]
@@ -11631,12 +12266,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * Required if the condition exists. The unique resource name for this
      * condition. Its format is:
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
-     * `[CONDITION_ID]` is assigned by Stackdriver Monitoring when the
+     * `[CONDITION_ID]` is assigned by Cloud Monitoring when the
      * condition is created as part of a new or updated alerting policy.
      * When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
      * method, do not include the `name` field in the conditions of the
-     * requested alerting policy. Stackdriver Monitoring creates the
+     * requested alerting policy. Cloud Monitoring creates the
      * condition identifiers and includes them in the new policy.
      * When calling the
      * [alertPolicies.update][google.monitoring.v3.AlertPolicyService.UpdateAlertPolicy]
@@ -12447,12 +13082,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * Required if the condition exists. The unique resource name for this
        * condition. Its format is:
        *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
-       * `[CONDITION_ID]` is assigned by Stackdriver Monitoring when the
+       * `[CONDITION_ID]` is assigned by Cloud Monitoring when the
        * condition is created as part of a new or updated alerting policy.
        * When calling the
        * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
        * method, do not include the `name` field in the conditions of the
-       * requested alerting policy. Stackdriver Monitoring creates the
+       * requested alerting policy. Cloud Monitoring creates the
        * condition identifiers and includes them in the new policy.
        * When calling the
        * [alertPolicies.update][google.monitoring.v3.AlertPolicyService.UpdateAlertPolicy]
@@ -12488,12 +13123,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * Required if the condition exists. The unique resource name for this
        * condition. Its format is:
        *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
-       * `[CONDITION_ID]` is assigned by Stackdriver Monitoring when the
+       * `[CONDITION_ID]` is assigned by Cloud Monitoring when the
        * condition is created as part of a new or updated alerting policy.
        * When calling the
        * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
        * method, do not include the `name` field in the conditions of the
-       * requested alerting policy. Stackdriver Monitoring creates the
+       * requested alerting policy. Cloud Monitoring creates the
        * condition identifiers and includes them in the new policy.
        * When calling the
        * [alertPolicies.update][google.monitoring.v3.AlertPolicyService.UpdateAlertPolicy]
@@ -12529,12 +13164,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * Required if the condition exists. The unique resource name for this
        * condition. Its format is:
        *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
-       * `[CONDITION_ID]` is assigned by Stackdriver Monitoring when the
+       * `[CONDITION_ID]` is assigned by Cloud Monitoring when the
        * condition is created as part of a new or updated alerting policy.
        * When calling the
        * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
        * method, do not include the `name` field in the conditions of the
-       * requested alerting policy. Stackdriver Monitoring creates the
+       * requested alerting policy. Cloud Monitoring creates the
        * condition identifiers and includes them in the new policy.
        * When calling the
        * [alertPolicies.update][google.monitoring.v3.AlertPolicyService.UpdateAlertPolicy]
@@ -12569,12 +13204,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * Required if the condition exists. The unique resource name for this
        * condition. Its format is:
        *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
-       * `[CONDITION_ID]` is assigned by Stackdriver Monitoring when the
+       * `[CONDITION_ID]` is assigned by Cloud Monitoring when the
        * condition is created as part of a new or updated alerting policy.
        * When calling the
        * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
        * method, do not include the `name` field in the conditions of the
-       * requested alerting policy. Stackdriver Monitoring creates the
+       * requested alerting policy. Cloud Monitoring creates the
        * condition identifiers and includes them in the new policy.
        * When calling the
        * [alertPolicies.update][google.monitoring.v3.AlertPolicyService.UpdateAlertPolicy]
@@ -12605,12 +13240,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * Required if the condition exists. The unique resource name for this
        * condition. Its format is:
        *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID]
-       * `[CONDITION_ID]` is assigned by Stackdriver Monitoring when the
+       * `[CONDITION_ID]` is assigned by Cloud Monitoring when the
        * condition is created as part of a new or updated alerting policy.
        * When calling the
        * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
        * method, do not include the `name` field in the conditions of the
-       * requested alerting policy. Stackdriver Monitoring creates the
+       * requested alerting policy. Cloud Monitoring creates the
        * condition identifiers and includes them in the new policy.
        * When calling the
        * [alertPolicies.update][google.monitoring.v3.AlertPolicyService.UpdateAlertPolicy]
@@ -15713,7 +16348,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * Required if the policy exists. The resource name for this policy. The
    * format is:
    *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-   * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
+   * `[ALERT_POLICY_ID]` is assigned by Cloud Monitoring when the policy
    * is created. When calling the
    * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
    * method, do not include the `name` field in the alerting policy passed as
@@ -15743,7 +16378,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * Required if the policy exists. The resource name for this policy. The
    * format is:
    *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-   * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
+   * `[ALERT_POLICY_ID]` is assigned by Cloud Monitoring when the policy
    * is created. When calling the
    * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
    * method, do not include the `name` field in the alerting policy passed as
@@ -17149,7 +17784,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * Required if the policy exists. The resource name for this policy. The
      * format is:
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-     * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
+     * `[ALERT_POLICY_ID]` is assigned by Cloud Monitoring when the policy
      * is created. When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
      * method, do not include the `name` field in the alerting policy passed as
@@ -17178,7 +17813,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * Required if the policy exists. The resource name for this policy. The
      * format is:
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-     * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
+     * `[ALERT_POLICY_ID]` is assigned by Cloud Monitoring when the policy
      * is created. When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
      * method, do not include the `name` field in the alerting policy passed as
@@ -17207,7 +17842,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * Required if the policy exists. The resource name for this policy. The
      * format is:
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-     * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
+     * `[ALERT_POLICY_ID]` is assigned by Cloud Monitoring when the policy
      * is created. When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
      * method, do not include the `name` field in the alerting policy passed as
@@ -17235,7 +17870,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * Required if the policy exists. The resource name for this policy. The
      * format is:
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-     * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
+     * `[ALERT_POLICY_ID]` is assigned by Cloud Monitoring when the policy
      * is created. When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
      * method, do not include the `name` field in the alerting policy passed as
@@ -17259,7 +17894,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * Required if the policy exists. The resource name for this policy. The
      * format is:
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-     * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
+     * `[ALERT_POLICY_ID]` is assigned by Cloud Monitoring when the policy
      * is created. When calling the
      * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
      * method, do not include the `name` field in the alerting policy passed as

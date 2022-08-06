@@ -30,7 +30,7 @@ public interface AlertPolicyOrBuilder
    * Required if the policy exists. The resource name for this policy. The
    * format is:
    *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-   * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
+   * `[ALERT_POLICY_ID]` is assigned by Cloud Monitoring when the policy
    * is created. When calling the
    * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
    * method, do not include the `name` field in the alerting policy passed as
@@ -49,7 +49,7 @@ public interface AlertPolicyOrBuilder
    * Required if the policy exists. The resource name for this policy. The
    * format is:
    *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-   * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
+   * `[ALERT_POLICY_ID]` is assigned by Cloud Monitoring when the policy
    * is created. When calling the
    * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
    * method, do not include the `name` field in the alerting policy passed as
