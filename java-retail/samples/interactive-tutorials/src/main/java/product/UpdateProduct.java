@@ -86,6 +86,8 @@ public class UpdateProduct {
               .build();
       System.out.printf("Update product request: %s%n", updateProductRequest);
 
+      // PASTE UPDATE MASK HERE: requires import com.google.protobuf.FieldMask
+
       Product updatedProduct = serviceClient.updateProduct(updateProductRequest);
       System.out.printf("Updated product: %s%n", updatedProduct);
     }
