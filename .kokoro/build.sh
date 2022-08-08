@@ -68,7 +68,7 @@ integration)
     -Djacoco.skip=true \
     -DskipUnitTests=true \
     -fae \
-    -T 1C \
+    -T 2 \
     verify
   RETURN_CODE=$?
   ;;
