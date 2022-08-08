@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.10.2](https://github.com/googleapis/java-bigtable/compare/v2.10.1...v2.10.2) (2022-08-03)
+
+
+### Bug Fixes
+
+* add a ReadFirstRow callable to set future in onComplete ([#1326](https://github.com/googleapis/java-bigtable/issues/1326)) ([cb539b5](https://github.com/googleapis/java-bigtable/commit/cb539b50d98ec2a8538ce4691b2639426ca95464))
+* The metadata could be returned in trailer or header depends on i… ([#1337](https://github.com/googleapis/java-bigtable/issues/1337)) ([c4b8c03](https://github.com/googleapis/java-bigtable/commit/c4b8c03ece7b3f6ec2cea42ff0ca5ac617528060))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#1328](https://github.com/googleapis/java-bigtable/issues/1328)) ([bee0ca0](https://github.com/googleapis/java-bigtable/commit/bee0ca036ab6e711f6069159364f6d3b691e6bfd))
+* upgrade shared config to 1.5.3, exclude google-http-client and google-http-client-gson from gax in google-cloud-bigtable-stats ([#1336](https://github.com/googleapis/java-bigtable/issues/1336)) ([98b3349](https://github.com/googleapis/java-bigtable/commit/98b33498d85325d22737fb4bd66826519e96755a))
+
 ## [2.10.1](https://github.com/googleapis/java-bigtable/compare/v2.10.0...v2.10.1) (2022-08-01)
 
 
