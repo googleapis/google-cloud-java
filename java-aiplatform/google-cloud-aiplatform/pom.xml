@@ -78,6 +78,17 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <!--
+       Within this repository this dependency is only used in tests. However,
+       making this test scope causes undeclared dependencies after the
+       flatten-maven-plugin.
+       https://github.com/mojohaus/flatten-maven-plugin/issues/185
+      -->
+      <scope>runtime</scope>
+    </dependency>
 
     <!-- Test dependencies -->
     <dependency>
@@ -107,11 +118,6 @@
     <dependency>
       <groupId>com.google.protobuf</groupId>
       <artifactId>protobuf-java-util</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.code.gson</groupId>
-      <artifactId>gson</artifactId>
-      <scope>test</scope>
     </dependency>
   </dependencies>
 
