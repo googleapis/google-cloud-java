@@ -121,8 +121,8 @@ public final class DeleteAuthorizationPolicyRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Required. A name of the AuthorizationPolicy to delete. Must be in the format
-   * `projects/{project}/locations/{location}/authorizationPolicies/&#42;`.
+   * Required. A name of the AuthorizationPolicy to delete. Must be in the
+   * format `projects/{project}/locations/{location}/authorizationPolicies/&#42;`.
    * </pre>
    *
    * <code>
@@ -147,8 +147,8 @@ public final class DeleteAuthorizationPolicyRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Required. A name of the AuthorizationPolicy to delete. Must be in the format
-   * `projects/{project}/locations/{location}/authorizationPolicies/&#42;`.
+   * Required. A name of the AuthorizationPolicy to delete. Must be in the
+   * format `projects/{project}/locations/{location}/authorizationPolicies/&#42;`.
    * </pre>
    *
    * <code>
@@ -508,8 +508,8 @@ public final class DeleteAuthorizationPolicyRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. A name of the AuthorizationPolicy to delete. Must be in the format
-     * `projects/{project}/locations/{location}/authorizationPolicies/&#42;`.
+     * Required. A name of the AuthorizationPolicy to delete. Must be in the
+     * format `projects/{project}/locations/{location}/authorizationPolicies/&#42;`.
      * </pre>
      *
      * <code>
@@ -533,8 +533,8 @@ public final class DeleteAuthorizationPolicyRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. A name of the AuthorizationPolicy to delete. Must be in the format
-     * `projects/{project}/locations/{location}/authorizationPolicies/&#42;`.
+     * Required. A name of the AuthorizationPolicy to delete. Must be in the
+     * format `projects/{project}/locations/{location}/authorizationPolicies/&#42;`.
      * </pre>
      *
      * <code>
@@ -558,8 +558,8 @@ public final class DeleteAuthorizationPolicyRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. A name of the AuthorizationPolicy to delete. Must be in the format
-     * `projects/{project}/locations/{location}/authorizationPolicies/&#42;`.
+     * Required. A name of the AuthorizationPolicy to delete. Must be in the
+     * format `projects/{project}/locations/{location}/authorizationPolicies/&#42;`.
      * </pre>
      *
      * <code>
@@ -582,8 +582,8 @@ public final class DeleteAuthorizationPolicyRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. A name of the AuthorizationPolicy to delete. Must be in the format
-     * `projects/{project}/locations/{location}/authorizationPolicies/&#42;`.
+     * Required. A name of the AuthorizationPolicy to delete. Must be in the
+     * format `projects/{project}/locations/{location}/authorizationPolicies/&#42;`.
      * </pre>
      *
      * <code>
@@ -602,8 +602,8 @@ public final class DeleteAuthorizationPolicyRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. A name of the AuthorizationPolicy to delete. Must be in the format
-     * `projects/{project}/locations/{location}/authorizationPolicies/&#42;`.
+     * Required. A name of the AuthorizationPolicy to delete. Must be in the
+     * format `projects/{project}/locations/{location}/authorizationPolicies/&#42;`.
      * </pre>
      *
      * <code>

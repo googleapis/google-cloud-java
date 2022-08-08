@@ -58,9 +58,10 @@ public interface CreateServerTlsPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Short name of the ServerTlsPolicy resource to be created. This value should
-   * be 1-63 characters long, containing only letters, numbers, hyphens, and
-   * underscores, and should not start with a number. E.g. "server_mtls_policy".
+   * Required. Short name of the ServerTlsPolicy resource to be created. This
+   * value should be 1-63 characters long, containing only letters, numbers,
+   * hyphens, and underscores, and should not start with a number. E.g.
+   * "server_mtls_policy".
    * </pre>
    *
    * <code>string server_tls_policy_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -72,9 +73,10 @@ public interface CreateServerTlsPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Short name of the ServerTlsPolicy resource to be created. This value should
-   * be 1-63 characters long, containing only letters, numbers, hyphens, and
-   * underscores, and should not start with a number. E.g. "server_mtls_policy".
+   * Required. Short name of the ServerTlsPolicy resource to be created. This
+   * value should be 1-63 characters long, containing only letters, numbers,
+   * hyphens, and underscores, and should not start with a number. E.g.
+   * "server_mtls_policy".
    * </pre>
    *
    * <code>string server_tls_policy_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

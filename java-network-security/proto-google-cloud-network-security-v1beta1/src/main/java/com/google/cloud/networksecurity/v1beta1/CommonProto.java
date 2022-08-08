@@ -43,21 +43,21 @@ public final class CommonProto {
       "\n1google/cloud/networksecurity/v1beta1/c"
           + "ommon.proto\022$google.cloud.networksecurit"
           + "y.v1beta1\032\037google/api/field_behavior.pro"
-          + "to\032\037google/protobuf/timestamp.proto\032\034goo"
-          + "gle/api/annotations.proto\"\200\002\n\021OperationM"
-          + "etadata\0224\n\013create_time\030\001 \001(\0132\032.google.pr"
-          + "otobuf.TimestampB\003\340A\003\0221\n\010end_time\030\002 \001(\0132"
-          + "\032.google.protobuf.TimestampB\003\340A\003\022\023\n\006targ"
-          + "et\030\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003\022\033\n\016stat"
-          + "us_message\030\005 \001(\tB\003\340A\003\022#\n\026requested_cance"
-          + "llation\030\006 \001(\010B\003\340A\003\022\030\n\013api_version\030\007 \001(\tB"
-          + "\003\340A\003B\206\002\n(com.google.cloud.networksecurit"
-          + "y.v1beta1B\013CommonProtoP\001ZSgoogle.golang."
-          + "org/genproto/googleapis/cloud/networksec"
-          + "urity/v1beta1;networksecurity\252\002$Google.C"
-          + "loud.NetworkSecurity.V1Beta1\312\002$Google\\Cl"
-          + "oud\\NetworkSecurity\\V1beta1\352\002\'Google::Cl"
-          + "oud::NetworkSecurity::V1beta1b\006proto3"
+          + "to\032\037google/protobuf/timestamp.proto\"\200\002\n\021"
+          + "OperationMetadata\0224\n\013create_time\030\001 \001(\0132\032"
+          + ".google.protobuf.TimestampB\003\340A\003\0221\n\010end_t"
+          + "ime\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340"
+          + "A\003\022\023\n\006target\030\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340"
+          + "A\003\022\033\n\016status_message\030\005 \001(\tB\003\340A\003\022#\n\026reque"
+          + "sted_cancellation\030\006 \001(\010B\003\340A\003\022\030\n\013api_vers"
+          + "ion\030\007 \001(\tB\003\340A\003B\206\002\n(com.google.cloud.netw"
+          + "orksecurity.v1beta1B\013CommonProtoP\001ZSgoog"
+          + "le.golang.org/genproto/googleapis/cloud/"
+          + "networksecurity/v1beta1;networksecurity\252"
+          + "\002$Google.Cloud.NetworkSecurity.V1Beta1\312\002"
+          + "$Google\\Cloud\\NetworkSecurity\\V1beta1\352\002\'"
+          + "Google::Cloud::NetworkSecurity::V1beta1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -65,7 +65,6 @@ public final class CommonProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_networksecurity_v1beta1_OperationMetadata_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -88,7 +87,6 @@ public final class CommonProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

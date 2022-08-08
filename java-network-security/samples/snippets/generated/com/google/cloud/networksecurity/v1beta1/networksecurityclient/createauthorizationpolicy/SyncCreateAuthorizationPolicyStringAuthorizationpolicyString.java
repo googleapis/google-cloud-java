@@ -18,7 +18,7 @@ package com.google.cloud.networksecurity.v1beta1.samples;
 
 // [START networksecurity_v1beta1_generated_networksecurityclient_createauthorizationpolicy_stringauthorizationpolicystring_sync]
 import com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy;
-import com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyName;
+import com.google.cloud.networksecurity.v1beta1.LocationName;
 import com.google.cloud.networksecurity.v1beta1.NetworkSecurityClient;
 
 public class SyncCreateAuthorizationPolicyStringAuthorizationpolicyString {
@@ -32,9 +32,7 @@ public class SyncCreateAuthorizationPolicyStringAuthorizationpolicyString {
     // This snippet has been automatically generated for illustrative purposes only.
     // It may require modifications to work in your environment.
     try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
-      String parent =
-          AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
-              .toString();
+      String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
       AuthorizationPolicy authorizationPolicy = AuthorizationPolicy.newBuilder().build();
       String authorizationPolicyId = "authorizationPolicyId1314252166";
       AuthorizationPolicy response =

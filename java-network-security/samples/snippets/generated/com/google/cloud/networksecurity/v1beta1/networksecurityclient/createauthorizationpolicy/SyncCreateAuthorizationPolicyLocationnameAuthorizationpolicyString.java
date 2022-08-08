@@ -16,24 +16,23 @@
 
 package com.google.cloud.networksecurity.v1beta1.samples;
 
-// [START networksecurity_v1beta1_generated_networksecurityclient_createauthorizationpolicy_authorizationpolicynameauthorizationpolicystring_sync]
+// [START networksecurity_v1beta1_generated_networksecurityclient_createauthorizationpolicy_locationnameauthorizationpolicystring_sync]
 import com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy;
-import com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyName;
+import com.google.cloud.networksecurity.v1beta1.LocationName;
 import com.google.cloud.networksecurity.v1beta1.NetworkSecurityClient;
 
-public class SyncCreateAuthorizationPolicyAuthorizationpolicynameAuthorizationpolicyString {
+public class SyncCreateAuthorizationPolicyLocationnameAuthorizationpolicyString {
 
   public static void main(String[] args) throws Exception {
-    syncCreateAuthorizationPolicyAuthorizationpolicynameAuthorizationpolicyString();
+    syncCreateAuthorizationPolicyLocationnameAuthorizationpolicyString();
   }
 
-  public static void syncCreateAuthorizationPolicyAuthorizationpolicynameAuthorizationpolicyString()
+  public static void syncCreateAuthorizationPolicyLocationnameAuthorizationpolicyString()
       throws Exception {
     // This snippet has been automatically generated for illustrative purposes only.
     // It may require modifications to work in your environment.
     try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
-      AuthorizationPolicyName parent =
-          AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       AuthorizationPolicy authorizationPolicy = AuthorizationPolicy.newBuilder().build();
       String authorizationPolicyId = "authorizationPolicyId1314252166";
       AuthorizationPolicy response =
@@ -43,4 +42,4 @@ public class SyncCreateAuthorizationPolicyAuthorizationpolicynameAuthorizationpo
     }
   }
 }
-// [END networksecurity_v1beta1_generated_networksecurityclient_createauthorizationpolicy_authorizationpolicynameauthorizationpolicystring_sync]
+// [END networksecurity_v1beta1_generated_networksecurityclient_createauthorizationpolicy_locationnameauthorizationpolicystring_sync]

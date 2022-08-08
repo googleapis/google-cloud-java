@@ -18,8 +18,8 @@ package com.google.cloud.networksecurity.v1beta1.samples;
 
 // [START networksecurity_v1beta1_generated_networksecurityclient_createauthorizationpolicy_sync]
 import com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy;
-import com.google.cloud.networksecurity.v1beta1.AuthorizationPolicyName;
 import com.google.cloud.networksecurity.v1beta1.CreateAuthorizationPolicyRequest;
+import com.google.cloud.networksecurity.v1beta1.LocationName;
 import com.google.cloud.networksecurity.v1beta1.NetworkSecurityClient;
 
 public class SyncCreateAuthorizationPolicy {
@@ -34,9 +34,7 @@ public class SyncCreateAuthorizationPolicy {
     try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
       CreateAuthorizationPolicyRequest request =
           CreateAuthorizationPolicyRequest.newBuilder()
-              .setParent(
-                  AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
-                      .toString())
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setAuthorizationPolicyId("authorizationPolicyId1314252166")
               .setAuthorizationPolicy(AuthorizationPolicy.newBuilder().build())
               .build();

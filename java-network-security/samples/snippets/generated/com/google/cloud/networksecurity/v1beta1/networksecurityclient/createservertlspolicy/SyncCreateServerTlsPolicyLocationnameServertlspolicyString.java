@@ -16,24 +16,22 @@
 
 package com.google.cloud.networksecurity.v1beta1.samples;
 
-// [START networksecurity_v1beta1_generated_networksecurityclient_createservertlspolicy_servertlspolicynameservertlspolicystring_sync]
+// [START networksecurity_v1beta1_generated_networksecurityclient_createservertlspolicy_locationnameservertlspolicystring_sync]
+import com.google.cloud.networksecurity.v1beta1.LocationName;
 import com.google.cloud.networksecurity.v1beta1.NetworkSecurityClient;
 import com.google.cloud.networksecurity.v1beta1.ServerTlsPolicy;
-import com.google.cloud.networksecurity.v1beta1.ServerTlsPolicyName;
 
-public class SyncCreateServerTlsPolicyServertlspolicynameServertlspolicyString {
+public class SyncCreateServerTlsPolicyLocationnameServertlspolicyString {
 
   public static void main(String[] args) throws Exception {
-    syncCreateServerTlsPolicyServertlspolicynameServertlspolicyString();
+    syncCreateServerTlsPolicyLocationnameServertlspolicyString();
   }
 
-  public static void syncCreateServerTlsPolicyServertlspolicynameServertlspolicyString()
-      throws Exception {
+  public static void syncCreateServerTlsPolicyLocationnameServertlspolicyString() throws Exception {
     // This snippet has been automatically generated for illustrative purposes only.
     // It may require modifications to work in your environment.
     try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
-      ServerTlsPolicyName parent =
-          ServerTlsPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVER_TLS_POLICY]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       ServerTlsPolicy serverTlsPolicy = ServerTlsPolicy.newBuilder().build();
       String serverTlsPolicyId = "serverTlsPolicyId-1966046011";
       ServerTlsPolicy response =
@@ -43,4 +41,4 @@ public class SyncCreateServerTlsPolicyServertlspolicynameServertlspolicyString {
     }
   }
 }
-// [END networksecurity_v1beta1_generated_networksecurityclient_createservertlspolicy_servertlspolicynameservertlspolicystring_sync]
+// [END networksecurity_v1beta1_generated_networksecurityclient_createservertlspolicy_locationnameservertlspolicystring_sync]
