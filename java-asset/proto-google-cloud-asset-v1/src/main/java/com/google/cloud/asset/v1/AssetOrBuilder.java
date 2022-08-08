@@ -171,8 +171,8 @@ public interface AssetOrBuilder
    * effectively policy is the union of both the policy set on this resource
    * and each policy set on all of the resource's ancestry resource levels in
    * the hierarchy. See
-   * [this topic](https://cloud.google.com/iam/docs/policies#inheritance) for
-   * more information.
+   * [this topic](https://cloud.google.com/iam/help/allow-policies/inheritance)
+   * for more information.
    * </pre>
    *
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -191,8 +191,8 @@ public interface AssetOrBuilder
    * effectively policy is the union of both the policy set on this resource
    * and each policy set on all of the resource's ancestry resource levels in
    * the hierarchy. See
-   * [this topic](https://cloud.google.com/iam/docs/policies#inheritance) for
-   * more information.
+   * [this topic](https://cloud.google.com/iam/help/allow-policies/inheritance)
+   * for more information.
    * </pre>
    *
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -211,8 +211,8 @@ public interface AssetOrBuilder
    * effectively policy is the union of both the policy set on this resource
    * and each policy set on all of the resource's ancestry resource levels in
    * the hierarchy. See
-   * [this topic](https://cloud.google.com/iam/docs/policies#inheritance) for
-   * more information.
+   * [this topic](https://cloud.google.com/iam/help/allow-policies/inheritance)
+   * for more information.
    * </pre>
    *
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>

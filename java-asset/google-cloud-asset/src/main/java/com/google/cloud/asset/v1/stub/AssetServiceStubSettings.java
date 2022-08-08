@@ -746,6 +746,9 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
           "retry_policy_3_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_6_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -797,6 +800,17 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
       definitions.put("retry_policy_3_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
       definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(300000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(300000L))
+              .setTotalTimeout(Duration.ofMillis(300000L))
+              .build();
+      definitions.put("retry_policy_6_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -1024,8 +1038,8 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
 
       builder
           .batchGetEffectiveIamPoliciesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
 
       builder
           .exportAssetsOperationSettings()

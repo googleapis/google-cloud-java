@@ -1020,6 +1020,13 @@ public class AssetServiceClient implements BackgroundResource {
    *       <li>`labels.env:&#42;` to find Cloud resources that have a label "env".
    *       <li>`kmsKey:key` to find Cloud resources encrypted with a customer-managed encryption key
    *           whose name contains the word "key".
+   *       <li>`relationships:instance-group-1` to find Cloud resources that have relationships with
+   *           "instance-group-1" in the related resource name.
+   *       <li>`relationships:INSTANCE_TO_INSTANCEGROUP` to find compute instances that have
+   *           relationships of type "INSTANCE_TO_INSTANCEGROUP".
+   *       <li>`relationships.INSTANCE_TO_INSTANCEGROUP:instance-group-1` to find compute instances
+   *           that have relationships with "instance-group-1" in the compute instance group
+   *           resource name, for relationship type "INSTANCE_TO_INSTANCEGROUP".
    *       <li>`state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a word.
    *       <li>`NOT state:ACTIVE` to find Cloud resources whose state doesn't contain "ACTIVE" as a
    *           word.
@@ -1219,8 +1226,8 @@ public class AssetServiceClient implements BackgroundResource {
    *     the specified `scope`. Note that the query string is compared against each Cloud IAM policy
    *     binding, including its principals, roles, and Cloud IAM conditions. The returned Cloud IAM
    *     policies will only contain the bindings that match your query. To learn more about the IAM
-   *     policy structure, see [IAM policy
-   *     doc](https://cloud.google.com/iam/docs/policies#structure).
+   *     policy structure, see the [IAM policy
+   *     documentation](https://cloud.google.com/iam/help/allow-policies/structure).
    *     <p>Examples:
    *     <ul>
    *       <li>`policy:amy{@literal @}gmail.com` to find IAM policy bindings that specify user
