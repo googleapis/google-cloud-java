@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.2](https://github.com/googleapis/java-iot/compare/v2.3.1...v2.3.2) (2022-08-09)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#753](https://github.com/googleapis/java-iot/issues/753)) ([336679d](https://github.com/googleapis/java-iot/commit/336679dc3bd02a1658b4a6dbf27523bb55e33ce4))
+
 ## [2.3.1](https://github.com/googleapis/java-iot/compare/v2.3.0...v2.3.1) (2022-07-13)
 
 
