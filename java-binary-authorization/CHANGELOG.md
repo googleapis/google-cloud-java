@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.2](https://github.com/googleapis/java-binary-authorization/compare/v1.2.1...v1.2.2) (2022-08-04)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-binary-authorization/issues/1485)) ([#242](https://github.com/googleapis/java-binary-authorization/issues/242)) ([8a01271](https://github.com/googleapis/java-binary-authorization/commit/8a01271a54b1160e22cfae302debe2e441cd6485))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#247](https://github.com/googleapis/java-binary-authorization/issues/247)) ([3e9ea1f](https://github.com/googleapis/java-binary-authorization/commit/3e9ea1fb7924148601cef4788cfe7d36543939b3))
+
 ## [1.2.1](https://github.com/googleapis/java-binary-authorization/compare/v1.2.0...v1.2.1) (2022-07-11)
 
 
