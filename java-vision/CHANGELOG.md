@@ -1,5 +1,25 @@
 # Changelog
 
+## [3.1.0](https://github.com/googleapis/java-vision/compare/v3.0.2...v3.1.0) (2022-08-09)
+
+
+### Features
+
+* Add TextDetectionParams.advanced_ocr_options ([#962](https://github.com/googleapis/java-vision/issues/962)) ([62ce19b](https://github.com/googleapis/java-vision/commit/62ce19b72c5cb544819f47b64decc20a9499c6df))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.8.6 ([#955](https://github.com/googleapis/java-vision/issues/955)) ([f245d73](https://github.com/googleapis/java-vision/commit/f245d7396d6e194386f14923e99f921fc535f46e))
+* update dependency com.google.cloud:google-cloud-core to v2.8.7 ([#958](https://github.com/googleapis/java-vision/issues/958)) ([8694f43](https://github.com/googleapis/java-vision/commit/8694f43b12956e24a450c91928d94df5496bcfc5))
+* update dependency com.google.cloud:google-cloud-core to v2.8.8 ([#960](https://github.com/googleapis/java-vision/issues/960)) ([0737a1f](https://github.com/googleapis/java-vision/commit/0737a1ffcd29e87ca64e064fe43cbb29ec6a1de4))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#952](https://github.com/googleapis/java-vision/issues/952)) ([37fdb29](https://github.com/googleapis/java-vision/commit/37fdb29a9364d5423ea2b9e3e4c8ae3cea90d149))
+* update dependency com.google.cloud:google-cloud-storage to v2.10.0 ([#956](https://github.com/googleapis/java-vision/issues/956)) ([0100ccb](https://github.com/googleapis/java-vision/commit/0100ccb7c1b299966d9371783457bf91a6ec4ea6))
+* update dependency com.google.cloud:google-cloud-storage to v2.11.0 ([#959](https://github.com/googleapis/java-vision/issues/959)) ([0ab0e07](https://github.com/googleapis/java-vision/commit/0ab0e07ae7fdfc4b8f7ee50e60ad7132e20a6f41))
+* update dependency com.google.cloud:google-cloud-storage to v2.11.1 ([#961](https://github.com/googleapis/java-vision/issues/961)) ([f6271cb](https://github.com/googleapis/java-vision/commit/f6271cb5a5452f39779ef3f7accc728896e25608))
+* update dependency com.google.cloud:google-cloud-storage to v2.11.2 ([#963](https://github.com/googleapis/java-vision/issues/963)) ([7b55995](https://github.com/googleapis/java-vision/commit/7b559956116ea8b4a3bbb6f6d3214e0c4076a2b5))
+* update spring.version to v2.7.2 ([#951](https://github.com/googleapis/java-vision/issues/951)) ([c86ad9f](https://github.com/googleapis/java-vision/commit/c86ad9fb00e2d88daec9563873d60893242dfc2d))
+
 ## [3.0.2](https://github.com/googleapis/java-vision/compare/v3.0.1...v3.0.2) (2022-07-13)
 
 
