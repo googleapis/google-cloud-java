@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.3.0](https://github.com/googleapis/java-vmmigration/compare/v1.2.1...v1.3.0) (2022-08-09)
+
+
+### Features
+
+* API updates ([1209156](https://github.com/googleapis/java-vmmigration/commit/1209156dcb6c55530820243cc9211245716362a2))
+* Rename product ([#120](https://github.com/googleapis/java-vmmigration/issues/120)) ([1209156](https://github.com/googleapis/java-vmmigration/commit/1209156dcb6c55530820243cc9211245716362a2))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#122](https://github.com/googleapis/java-vmmigration/issues/122)) ([146e589](https://github.com/googleapis/java-vmmigration/commit/146e5890e5a83899a59aa0294b700ec875f0b436))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.1 ([#125](https://github.com/googleapis/java-vmmigration/issues/125)) ([a740360](https://github.com/googleapis/java-vmmigration/commit/a740360b343eb83118eb87b423511f5714ad8930))
+
 ## [1.2.1](https://github.com/googleapis/java-vmmigration/compare/v1.2.0...v1.2.1) (2022-07-13)
 
 
