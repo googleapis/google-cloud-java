@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.13.0](https://github.com/googleapis/java-analytics-admin/compare/v0.12.1...v0.13.0) (2022-08-09)
+
+
+### Features
+
+* add `GetAttributionSettings`, `UpdateAttributionSettings` methods to the Admin API v1alpha ([4a762b4](https://github.com/googleapis/java-analytics-admin/commit/4a762b41a8968884250a4da0de11b0285b863700))
+* add `GetAudience`, 'ListAudience', 'CreateAudience', 'UpdateAudience', 'ArchiveAudience' methods to the Admin API v1alpha ([#441](https://github.com/googleapis/java-analytics-admin/issues/441)) ([4a762b4](https://github.com/googleapis/java-analytics-admin/commit/4a762b41a8968884250a4da0de11b0285b863700))
+* add `RunAccessReport` method to the Admin API v1alpha ([#442](https://github.com/googleapis/java-analytics-admin/issues/442)) ([0d74509](https://github.com/googleapis/java-analytics-admin/commit/0d74509f2ac278f2489903f0c3c404cbf2c7b145))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#438](https://github.com/googleapis/java-analytics-admin/issues/438)) ([916acca](https://github.com/googleapis/java-analytics-admin/commit/916acca60518ee3d017412d594134ca15d92b4a6))
+
 ## [0.12.1](https://github.com/googleapis/java-analytics-admin/compare/v0.12.0...v0.12.1) (2022-07-13)
 
 
