@@ -1,5 +1,16 @@
 # Changelog
 
+## [4.0.2](https://github.com/googleapis/java-dataproc/compare/v4.0.1...v4.0.2) (2022-08-09)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#892](https://github.com/googleapis/java-dataproc/issues/892)) ([6eded42](https://github.com/googleapis/java-dataproc/commit/6eded42a2af6d511430681b3d97c56aabdd61197))
+* update dependency com.google.cloud:google-cloud-storage to v2.10.0 ([#894](https://github.com/googleapis/java-dataproc/issues/894)) ([5b958b6](https://github.com/googleapis/java-dataproc/commit/5b958b630e7fd27d9c70b8f53a577bfad570a1de))
+* update dependency com.google.cloud:google-cloud-storage to v2.11.0 ([#895](https://github.com/googleapis/java-dataproc/issues/895)) ([213a20c](https://github.com/googleapis/java-dataproc/commit/213a20c8dbe6d20c1608928bb622ef8fcbd44e1a))
+* update dependency com.google.cloud:google-cloud-storage to v2.11.1 ([#896](https://github.com/googleapis/java-dataproc/issues/896)) ([c530fb6](https://github.com/googleapis/java-dataproc/commit/c530fb61c1f5adcbe65450dd04ee073ca1cbf9f8))
+* update dependency com.google.cloud:google-cloud-storage to v2.11.2 ([#897](https://github.com/googleapis/java-dataproc/issues/897)) ([b47b000](https://github.com/googleapis/java-dataproc/commit/b47b000285be94dafbf98c7025637dc04703244c))
+
 ## [4.0.1](https://github.com/googleapis/java-dataproc/compare/v4.0.0...v4.0.1) (2022-07-13)
 
 
