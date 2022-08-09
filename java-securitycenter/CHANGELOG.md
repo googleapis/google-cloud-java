@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.9.0](https://github.com/googleapis/java-securitycenter/compare/v2.8.0...v2.9.0) (2022-08-06)
+
+
+### Features
+
+* Added container field to findings attributes ([#875](https://github.com/googleapis/java-securitycenter/issues/875)) ([c4d6791](https://github.com/googleapis/java-securitycenter/commit/c4d6791c7c39cdc8a6a8df3c49e6b169af8f9eb6))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.14.0 ([#878](https://github.com/googleapis/java-securitycenter/issues/878)) ([2f386f0](https://github.com/googleapis/java-securitycenter/commit/2f386f01eacbd9eaa240b9700d40fb61eabe45bf))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.14.1 ([#881](https://github.com/googleapis/java-securitycenter/issues/881)) ([7849ad5](https://github.com/googleapis/java-securitycenter/commit/7849ad52268f975a7cfabecddfd0359c39073230))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.14.2 ([#888](https://github.com/googleapis/java-securitycenter/issues/888)) ([a62e76e](https://github.com/googleapis/java-securitycenter/commit/a62e76ebc6fe6a19a4c280a7ce3d5ddbaf7d708e))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.14.3 ([#889](https://github.com/googleapis/java-securitycenter/issues/889)) ([681c373](https://github.com/googleapis/java-securitycenter/commit/681c373ab43be135f42f1fe6316d928deded8025))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.120.10 ([#887](https://github.com/googleapis/java-securitycenter/issues/887)) ([f4a6509](https://github.com/googleapis/java-securitycenter/commit/f4a6509c110938c4abdf2f81d3d1819a94867b0e))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.120.7 ([#884](https://github.com/googleapis/java-securitycenter/issues/884)) ([d33bf0d](https://github.com/googleapis/java-securitycenter/commit/d33bf0dcd88ac510c6f8df2c5107a379ba1358bf))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.120.9 ([#886](https://github.com/googleapis/java-securitycenter/issues/886)) ([9b7bde3](https://github.com/googleapis/java-securitycenter/commit/9b7bde3cc59c7cb4f24264c430e406f4409e2a93))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#882](https://github.com/googleapis/java-securitycenter/issues/882)) ([8aa3542](https://github.com/googleapis/java-securitycenter/commit/8aa3542f6c943f198db10276d470799266825a58))
+* update dependency com.google.protobuf:protobuf-java-util to v3.21.3 ([#877](https://github.com/googleapis/java-securitycenter/issues/877)) ([990f1ff](https://github.com/googleapis/java-securitycenter/commit/990f1ff91b6ce7a227856638b044c2c5291fbf0b))
+* update dependency com.google.protobuf:protobuf-java-util to v3.21.4 ([#880](https://github.com/googleapis/java-securitycenter/issues/880)) ([73400ea](https://github.com/googleapis/java-securitycenter/commit/73400ea39e50f5689881ca34f4b2604e3898a259))
+
 ## [2.8.0](https://github.com/googleapis/java-securitycenter/compare/v2.7.1...v2.8.0) (2022-07-13)
 
 
