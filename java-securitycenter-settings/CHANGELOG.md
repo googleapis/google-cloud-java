@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.2](https://github.com/googleapis/java-securitycenter-settings/compare/v0.6.1...v0.6.2) (2022-07-27)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-securitycenter-settings/issues/1485)) ([#532](https://github.com/googleapis/java-securitycenter-settings/issues/532)) ([e444215](https://github.com/googleapis/java-securitycenter-settings/commit/e4442151d87bb83f4fc5d64cb7e7d1c352a942f1))
+
 ## [0.6.1](https://github.com/googleapis/java-securitycenter-settings/compare/v0.6.0...v0.6.1) (2022-06-23)
 
 
