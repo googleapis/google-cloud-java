@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.5.0](https://github.com/googleapis/java-bigqueryconnection/compare/v2.4.1...v2.5.0) (2022-08-09)
+
+
+### Features
+
+* Add service_account_id output field to CloudSQL properties ([#724](https://github.com/googleapis/java-bigqueryconnection/issues/724)) ([3f82655](https://github.com/googleapis/java-bigqueryconnection/commit/3f8265525cce8bc14b359902760d7375239ce616))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#725](https://github.com/googleapis/java-bigqueryconnection/issues/725)) ([7a1a834](https://github.com/googleapis/java-bigqueryconnection/commit/7a1a8345035a615028ce68c17c2e67cb14041817))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.1 ([#728](https://github.com/googleapis/java-bigqueryconnection/issues/728)) ([252e904](https://github.com/googleapis/java-bigqueryconnection/commit/252e9042b95f5075d7f006e6e18bb9bfebe918e5))
+* update dependency com.google.protobuf:protobuf-java-util to v3.21.3 ([#722](https://github.com/googleapis/java-bigqueryconnection/issues/722)) ([780f6d4](https://github.com/googleapis/java-bigqueryconnection/commit/780f6d43c9caedd8cfdb173ef2ea68fb371feca1))
+* update dependency com.google.protobuf:protobuf-java-util to v3.21.4 ([#723](https://github.com/googleapis/java-bigqueryconnection/issues/723)) ([6bf4073](https://github.com/googleapis/java-bigqueryconnection/commit/6bf407399a0eb6f9d56d62ec76caf130e683e3e3))
+
 ## [2.4.1](https://github.com/googleapis/java-bigqueryconnection/compare/v2.4.0...v2.4.1) (2022-07-13)
 
 
