@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.5.0](https://github.com/googleapis/java-bigquerymigration/compare/v0.4.1...v0.5.0) (2022-08-02)
+
+
+### Features
+
+* Add Presto dialect to bigquerymigration v2 client library ([#143](https://github.com/googleapis/java-bigquerymigration/issues/143)) ([688b685](https://github.com/googleapis/java-bigquerymigration/commit/688b685e9fd3d3d7a15e80d5c11241ffdf473f09))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#151](https://github.com/googleapis/java-bigquerymigration/issues/151)) ([0dce6f5](https://github.com/googleapis/java-bigquerymigration/commit/0dce6f58f2e8bddf9569d9578101840d3bee8963))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.1 ([#152](https://github.com/googleapis/java-bigquerymigration/issues/152)) ([8e62b93](https://github.com/googleapis/java-bigquerymigration/commit/8e62b933b42b3087a94e44521830ea0190fc0f15))
+
 ## [0.4.1](https://github.com/googleapis/java-bigquerymigration/compare/v0.4.0...v0.4.1) (2022-07-13)
 
 
