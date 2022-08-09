@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.3.3](https://github.com/googleapis/java-translate/compare/v2.3.2...v2.3.3) (2022-08-05)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.8.3 ([#1041](https://github.com/googleapis/java-translate/issues/1041)) ([1787cfe](https://github.com/googleapis/java-translate/commit/1787cfecf9367b8b98afe7797447edc9d2d07c88))
+* update dependency com.google.cloud:google-cloud-core to v2.8.5 ([#1044](https://github.com/googleapis/java-translate/issues/1044)) ([efa25d9](https://github.com/googleapis/java-translate/commit/efa25d9e3ed13f270038fe921b9df02c29d0b24c))
+* update dependency com.google.cloud:google-cloud-core to v2.8.6 ([#1049](https://github.com/googleapis/java-translate/issues/1049)) ([394732c](https://github.com/googleapis/java-translate/commit/394732ccfe65df99fb3ed1748c93b05bbcf908db))
+* update dependency com.google.cloud:google-cloud-core to v2.8.7 ([#1055](https://github.com/googleapis/java-translate/issues/1055)) ([10a399d](https://github.com/googleapis/java-translate/commit/10a399ddf964cb24e6686c75c566af6dd1c0531c))
+* update dependency com.google.cloud:google-cloud-core to v2.8.8 ([#1057](https://github.com/googleapis/java-translate/issues/1057)) ([cae00ac](https://github.com/googleapis/java-translate/commit/cae00ac46b80d8771838758fe584bab007dd8e2b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#1045](https://github.com/googleapis/java-translate/issues/1045)) ([bc9d9ef](https://github.com/googleapis/java-translate/commit/bc9d9ef5f90e1a56386a5515528eaa6dd988c284))
+* update dependency com.google.cloud:google-cloud-storage to v2.10.0 ([#1047](https://github.com/googleapis/java-translate/issues/1047)) ([61d6e8f](https://github.com/googleapis/java-translate/commit/61d6e8f6780d6ae500ea70af00ddec31c44d0b9e))
+* update dependency com.google.cloud:google-cloud-storage to v2.11.0 ([#1056](https://github.com/googleapis/java-translate/issues/1056)) ([775a027](https://github.com/googleapis/java-translate/commit/775a027afa47d1a6d80dc6e0489d0547cb5e85de))
+* update dependency com.google.cloud:google-cloud-storage to v2.11.1 ([#1058](https://github.com/googleapis/java-translate/issues/1058)) ([4687681](https://github.com/googleapis/java-translate/commit/468768168dd63bd59d112e12fe3cde1d1277b638))
+* update dependency com.google.cloud:google-cloud-storage to v2.11.2 ([#1059](https://github.com/googleapis/java-translate/issues/1059)) ([35405cf](https://github.com/googleapis/java-translate/commit/35405cf249e4db8cfb20ccc2d476af4159ebe60a))
+
 ## [2.3.2](https://github.com/googleapis/java-translate/compare/v2.3.1...v2.3.2) (2022-07-13)
 
 
