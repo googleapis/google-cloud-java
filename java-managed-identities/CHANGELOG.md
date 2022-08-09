@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.2](https://github.com/googleapis/java-managed-identities/compare/v1.1.1...v1.1.2) (2022-08-02)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-managed-identities/issues/1485)) ([#250](https://github.com/googleapis/java-managed-identities/issues/250)) ([77aa1f2](https://github.com/googleapis/java-managed-identities/commit/77aa1f2010ce256aa4f4e24b4c0a88af5f07148c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#256](https://github.com/googleapis/java-managed-identities/issues/256)) ([238a96e](https://github.com/googleapis/java-managed-identities/commit/238a96e2f17e7f167c4d241703fffc79722ed8d6))
+
 ## [1.1.1](https://github.com/googleapis/java-managed-identities/compare/v1.1.0...v1.1.1) (2022-06-23)
 
 
