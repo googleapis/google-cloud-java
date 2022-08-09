@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.5.1](https://github.com/googleapis/java-security-private-ca/compare/v2.5.0...v2.5.1) (2022-08-02)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-security-private-ca/issues/1485)) ([#438](https://github.com/googleapis/java-security-private-ca/issues/438)) ([48a1195](https://github.com/googleapis/java-security-private-ca/commit/48a1195c5c0858f5df4675baba3fbd5944c21b95))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#445](https://github.com/googleapis/java-security-private-ca/issues/445)) ([1fa6efc](https://github.com/googleapis/java-security-private-ca/commit/1fa6efce6a6a66ec7dd17a5fb2b15e329b79b716))
+
 ## [2.5.0](https://github.com/googleapis/java-security-private-ca/compare/v2.4.0...v2.5.0) (2022-07-01)
 
 
