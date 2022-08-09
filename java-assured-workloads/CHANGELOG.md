@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://github.com/googleapis/java-assured-workloads/compare/v2.0.1...v2.1.0) (2022-08-09)
+
+
+### Features
+
+* Updated the method signature of analyzeWorkloadMove for v1beta API to accept project as source. AnalyzeWorkloadMove now also returns information about org policy differences between the project and target folder ([#463](https://github.com/googleapis/java-assured-workloads/issues/463)) ([07f3ff5](https://github.com/googleapis/java-assured-workloads/commit/07f3ff5896a92a1ed60414614987ad7273434124))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#466](https://github.com/googleapis/java-assured-workloads/issues/466)) ([6564dd0](https://github.com/googleapis/java-assured-workloads/commit/6564dd05621706511b5d421ac992a3f57824f732))
+
 ## [2.0.1](https://github.com/googleapis/java-assured-workloads/compare/v2.0.0...v2.0.1) (2022-07-13)
 
 
