@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.3.3](https://github.com/googleapis/java-scheduler/compare/v2.3.2...v2.3.3) (2022-08-05)
+
+
+### Documentation
+
+* **owlbot-java:** explaining why not using formatter in pom.xml ([#1511](https://github.com/googleapis/java-scheduler/issues/1511)) ([#796](https://github.com/googleapis/java-scheduler/issues/796)) ([5274520](https://github.com/googleapis/java-scheduler/commit/52745208001cbabe5cd81a4d55b32af543fd3410)), closes [#1502](https://github.com/googleapis/java-scheduler/issues/1502)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.120.10 ([#795](https://github.com/googleapis/java-scheduler/issues/795)) ([f3b3cbd](https://github.com/googleapis/java-scheduler/commit/f3b3cbd1e395c4a4d30469eac28104ea7467e62e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#792](https://github.com/googleapis/java-scheduler/issues/792)) ([fe2ce6e](https://github.com/googleapis/java-scheduler/commit/fe2ce6e5e490aa0837a4f9c6303e5a0230ed91a9))
+
 ## [2.3.2](https://github.com/googleapis/java-scheduler/compare/v2.3.1...v2.3.2) (2022-07-19)
 
 
