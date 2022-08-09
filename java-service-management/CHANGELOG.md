@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.1.3](https://github.com/googleapis/java-service-management/compare/v3.1.2...v3.1.3) (2022-08-02)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-service-management/issues/1485)) ([#263](https://github.com/googleapis/java-service-management/issues/263)) ([bdeabfc](https://github.com/googleapis/java-service-management/commit/bdeabfc65487a2c4e961b2142a6ae02ddbf9a81b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#268](https://github.com/googleapis/java-service-management/issues/268)) ([d45a7eb](https://github.com/googleapis/java-service-management/commit/d45a7eb17f6f1da35f27cf0ccbe63178ad27d570))
+
 ## [3.1.2](https://github.com/googleapis/java-service-management/compare/v3.1.1...v3.1.2) (2022-07-01)
 
 
