@@ -1,0 +1,21 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.documentai.v1beta1",
+  "libraryPackage": "com.google.cloud.documentai.v1beta1",
+  "services": {
+    "DocumentUnderstandingService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DocumentUnderstandingServiceClient",
+          "rpcs": {
+            "BatchProcessDocuments": {
+              "methods": ["batchProcessDocumentsAsync", "batchProcessDocumentsAsync", "batchProcessDocumentsOperationCallable", "batchProcessDocumentsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
