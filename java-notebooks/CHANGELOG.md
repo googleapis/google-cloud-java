@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/googleapis/java-notebooks/compare/v1.1.1...v1.1.2) (2022-07-29)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-notebooks/issues/1485)) ([#401](https://github.com/googleapis/java-notebooks/issues/401)) ([df696eb](https://github.com/googleapis/java-notebooks/commit/df696eb47967ef999567801889b0fc48b7d19638))
+
 ## [1.1.1](https://github.com/googleapis/java-notebooks/compare/v1.1.0...v1.1.1) (2022-07-01)
 
 
