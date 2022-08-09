@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.2](https://github.com/googleapis/java-batch/compare/v0.2.1...v0.2.2) (2022-08-09)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#25](https://github.com/googleapis/java-batch/issues/25)) ([74aada0](https://github.com/googleapis/java-batch/commit/74aada0cc988793580f912b4d385e5f7b035b755))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.1 ([#28](https://github.com/googleapis/java-batch/issues/28)) ([fd55721](https://github.com/googleapis/java-batch/commit/fd5572145d677fe92c58546e0ebd813576c8dd32))
+
 ## [0.2.1](https://github.com/googleapis/java-batch/compare/v0.2.0...v0.2.1) (2022-07-13)
 
 
