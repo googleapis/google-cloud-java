@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/googleapis/java-data-fusion/compare/v1.3.0...v1.3.1) (2022-07-26)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-data-fusion/issues/1485)) ([#190](https://github.com/googleapis/java-data-fusion/issues/190)) ([2d93c01](https://github.com/googleapis/java-data-fusion/commit/2d93c01b9b2f9a5d8e67bbec639a9c62489ded15))
+
 ## [1.3.0](https://github.com/googleapis/java-data-fusion/compare/v1.2.1...v1.3.0) (2022-06-30)
 
 
