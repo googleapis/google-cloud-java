@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.3.1](https://github.com/googleapis/java-trace/compare/v2.3.0...v2.3.1) (2022-07-27)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-trace/issues/1485)) ([#826](https://github.com/googleapis/java-trace/issues/826)) ([a5a7bb1](https://github.com/googleapis/java-trace/commit/a5a7bb1a40d0db6a0351d213af5a0f0c579c87e4))
+
+
+### Dependencies
+
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.13 ([#824](https://github.com/googleapis/java-trace/issues/824)) ([a16ee69](https://github.com/googleapis/java-trace/commit/a16ee69f6118e72daea7f19c72a4dc60372b01d0))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.13 ([#825](https://github.com/googleapis/java-trace/issues/825)) ([3458ed2](https://github.com/googleapis/java-trace/commit/3458ed2457379ec5667b2b45de725f0d7c765948))
+* update dependency org.junit.vintage:junit-vintage-engine to v5.9.0 ([#833](https://github.com/googleapis/java-trace/issues/833)) ([c7a16f0](https://github.com/googleapis/java-trace/commit/c7a16f0b6769af126acdd3c1aa4b10961298709d))
+
 ## [2.3.0](https://github.com/googleapis/java-trace/compare/v2.2.0...v2.3.0) (2022-07-01)
 
 
