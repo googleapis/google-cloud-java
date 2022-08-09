@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-automl:2.3.2:2.3.3-SNAPSHOT
-grpc-google-cloud-automl-v1beta1:0.90.2:0.90.3-SNAPSHOT
-grpc-google-cloud-automl-v1:2.3.2:2.3.3-SNAPSHOT
-proto-google-cloud-automl-v1beta1:0.90.2:0.90.3-SNAPSHOT
-proto-google-cloud-automl-v1:2.3.2:2.3.3-SNAPSHOT
+google-cloud-automl:2.3.3:2.3.3
+grpc-google-cloud-automl-v1beta1:0.90.3:0.90.3
+grpc-google-cloud-automl-v1:2.3.3:2.3.3
+proto-google-cloud-automl-v1beta1:0.90.3:0.90.3
+proto-google-cloud-automl-v1:2.3.3:2.3.3
