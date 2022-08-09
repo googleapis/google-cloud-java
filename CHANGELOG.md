@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.14.4](https://github.com/googleapis/java-bigquery/compare/v2.14.3...v2.14.4) (2022-08-08)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-storage to v2.11.3 ([#2213](https://github.com/googleapis/java-bigquery/issues/2213)) ([a293ab5](https://github.com/googleapis/java-bigquery/commit/a293ab56c5455cef8b9731784ddd78cc6162dca8))
+
 ## [2.14.3](https://github.com/googleapis/java-bigquery/compare/v2.14.2...v2.14.3) (2022-08-05)
 
 
