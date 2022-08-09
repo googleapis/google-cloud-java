@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.1](https://github.com/googleapis/java-profiler/compare/v2.3.0...v2.3.1) (2022-07-26)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-profiler/issues/1485)) ([#286](https://github.com/googleapis/java-profiler/issues/286)) ([9bbff37](https://github.com/googleapis/java-profiler/commit/9bbff37e5394d5c6b125195a42e2912949bd6247))
+
 ## [2.3.0](https://github.com/googleapis/java-profiler/compare/v2.2.0...v2.3.0) (2022-07-01)
 
 
