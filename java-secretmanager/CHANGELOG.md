@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.3.1](https://github.com/googleapis/java-secretmanager/compare/v2.3.0...v2.3.1) (2022-08-03)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-secretmanager/issues/1485)) ([#804](https://github.com/googleapis/java-secretmanager/issues/804)) ([892845c](https://github.com/googleapis/java-secretmanager/commit/892845cda168071dca0f8bda29bd878c07f9386d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#811](https://github.com/googleapis/java-secretmanager/issues/811)) ([9e84f35](https://github.com/googleapis/java-secretmanager/commit/9e84f356a3610b16d9988ebc112d4766b289aeb3))
+* update dependency com.google.protobuf:protobuf-java-util to v3.21.3 ([#808](https://github.com/googleapis/java-secretmanager/issues/808)) ([17cc2d2](https://github.com/googleapis/java-secretmanager/commit/17cc2d2fa1c1d12906d088691f6a86638e9a2404))
+* update dependency com.google.protobuf:protobuf-java-util to v3.21.4 ([#809](https://github.com/googleapis/java-secretmanager/issues/809)) ([5ae26ff](https://github.com/googleapis/java-secretmanager/commit/5ae26fff4de3be3fe66ae94c984c0557099bf29e))
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.13 ([#802](https://github.com/googleapis/java-secretmanager/issues/802)) ([0749cd2](https://github.com/googleapis/java-secretmanager/commit/0749cd2d9fc3f29e9b49e7e76a7fb88af316e5d4))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.13 ([#803](https://github.com/googleapis/java-secretmanager/issues/803)) ([e2d693b](https://github.com/googleapis/java-secretmanager/commit/e2d693b6e2d734a389df61e5b97642d6adbb732d))
+* update dependency org.junit.vintage:junit-vintage-engine to v5.9.0 ([#810](https://github.com/googleapis/java-secretmanager/issues/810)) ([5c5bfb1](https://github.com/googleapis/java-secretmanager/commit/5c5bfb1c1b0185c3c3304c267a633d4354484795))
+
 ## [2.3.0](https://github.com/googleapis/java-secretmanager/compare/v2.2.0...v2.3.0) (2022-07-01)
 
 
