@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.6.2](https://github.com/googleapis/java-kms/compare/v2.6.1...v2.6.2) (2022-08-09)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#826](https://github.com/googleapis/java-kms/issues/826)) ([8c89c10](https://github.com/googleapis/java-kms/commit/8c89c103564b5c17ffec06cd0d09a54b39d7e31f))
+* update dependency com.google.protobuf:protobuf-java-util to v3.21.3 ([#824](https://github.com/googleapis/java-kms/issues/824)) ([c095d71](https://github.com/googleapis/java-kms/commit/c095d716cb4d4a6526fe81a9671ad8cd217efe63))
+* update dependency com.google.protobuf:protobuf-java-util to v3.21.4 ([#825](https://github.com/googleapis/java-kms/issues/825)) ([2403ac6](https://github.com/googleapis/java-kms/commit/2403ac633fa082dd58b5496184655fe19f7cc2cc))
+
 ## [2.6.1](https://github.com/googleapis/java-kms/compare/v2.6.0...v2.6.1) (2022-07-13)
 
 
