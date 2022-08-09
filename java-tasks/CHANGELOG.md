@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.6](https://github.com/googleapis/java-tasks/compare/v2.3.5...v2.3.6) (2022-08-05)
+
+
+### Documentation
+
+* **owlbot-java:** explaining why not using formatter in pom.xml ([#1511](https://github.com/googleapis/java-tasks/issues/1511)) ([#729](https://github.com/googleapis/java-tasks/issues/729)) ([6e136b6](https://github.com/googleapis/java-tasks/commit/6e136b6c880192036af71af5440d81fd21192210)), closes [#1502](https://github.com/googleapis/java-tasks/issues/1502)
+
 ## [2.3.5](https://github.com/googleapis/java-tasks/compare/v2.3.4...v2.3.5) (2022-08-02)
 
 
