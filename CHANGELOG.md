@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.11.0](https://github.com/googleapis/java-datastore/compare/v2.10.1...v2.11.0) (2022-08-04)
+
+
+### Features
+
+* add database_id field ([#802](https://github.com/googleapis/java-datastore/issues/802)) ([6ed09dd](https://github.com/googleapis/java-datastore/commit/6ed09dd44865639922156c85a441b7c6bb751df9))
+
+
+### Documentation
+
+* **sample:** Add a top-level Datastore samples README ([#790](https://github.com/googleapis/java-datastore/issues/790)) ([d3884dc](https://github.com/googleapis/java-datastore/commit/d3884dce1b04f3143190e8cfbb084dd22fa6df15))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#805](https://github.com/googleapis/java-datastore/issues/805)) ([ad467ef](https://github.com/googleapis/java-datastore/commit/ad467ef55696dcb9bb2b340916216000aff6bcc8))
+* update dependency com.google.errorprone:error_prone_core to v2.15.0 ([#810](https://github.com/googleapis/java-datastore/issues/810)) ([fc8cd15](https://github.com/googleapis/java-datastore/commit/fc8cd15a72a80109a519b0dcc1236a2606b41264))
+* update dependency org.junit.vintage:junit-vintage-engine to v5.9.0 ([#804](https://github.com/googleapis/java-datastore/issues/804)) ([6caafd8](https://github.com/googleapis/java-datastore/commit/6caafd854278953de937a4a07c8ef163850ab9b0))
+
 ## [2.10.1](https://github.com/googleapis/java-datastore/compare/v2.10.0...v2.10.1) (2022-07-13)
 
 
