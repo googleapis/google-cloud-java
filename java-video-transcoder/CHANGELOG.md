@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/googleapis/java-video-transcoder/compare/v1.2.0...v1.2.1) (2022-07-19)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-video-transcoder/issues/1485)) ([#364](https://github.com/googleapis/java-video-transcoder/issues/364)) ([5c979ed](https://github.com/googleapis/java-video-transcoder/commit/5c979edcaf59e5d0a43957b6a9fab647ca1079f0))
+
 ## [1.2.0](https://github.com/googleapis/java-video-transcoder/compare/v1.1.0...v1.2.0) (2022-07-01)
 
 
