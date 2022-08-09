@@ -106,6 +106,22 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
               priority_ = rawValue;
               break;
             }
+          case 50:
+            {
+              com.google.cloud.documentai.v1.DocumentSchema.Builder subBuilder = null;
+              if (documentSchema_ != null) {
+                subBuilder = documentSchema_.toBuilder();
+              }
+              documentSchema_ =
+                  input.readMessage(
+                      com.google.cloud.documentai.v1.DocumentSchema.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(documentSchema_);
+                documentSchema_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -487,6 +503,54 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
         : result;
   }
 
+  public static final int DOCUMENT_SCHEMA_FIELD_NUMBER = 6;
+  private com.google.cloud.documentai.v1.DocumentSchema documentSchema_;
+  /**
+   *
+   *
+   * <pre>
+   * The document schema of the human review task.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.DocumentSchema document_schema = 6;</code>
+   *
+   * @return Whether the documentSchema field is set.
+   */
+  @java.lang.Override
+  public boolean hasDocumentSchema() {
+    return documentSchema_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The document schema of the human review task.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.DocumentSchema document_schema = 6;</code>
+   *
+   * @return The documentSchema.
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1.DocumentSchema getDocumentSchema() {
+    return documentSchema_ == null
+        ? com.google.cloud.documentai.v1.DocumentSchema.getDefaultInstance()
+        : documentSchema_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The document schema of the human review task.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.DocumentSchema document_schema = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1.DocumentSchemaOrBuilder getDocumentSchemaOrBuilder() {
+    return getDocumentSchema();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -514,6 +578,9 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
         != com.google.cloud.documentai.v1.ReviewDocumentRequest.Priority.DEFAULT.getNumber()) {
       output.writeEnum(5, priority_);
     }
+    if (documentSchema_ != null) {
+      output.writeMessage(6, getDocumentSchema());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -538,6 +605,9 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
         != com.google.cloud.documentai.v1.ReviewDocumentRequest.Priority.DEFAULT.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, priority_);
     }
+    if (documentSchema_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getDocumentSchema());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -557,6 +627,10 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
     if (!getHumanReviewConfig().equals(other.getHumanReviewConfig())) return false;
     if (getEnableSchemaValidation() != other.getEnableSchemaValidation()) return false;
     if (priority_ != other.priority_) return false;
+    if (hasDocumentSchema() != other.hasDocumentSchema()) return false;
+    if (hasDocumentSchema()) {
+      if (!getDocumentSchema().equals(other.getDocumentSchema())) return false;
+    }
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 4:
@@ -582,6 +656,10 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableSchemaValidation());
     hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
     hash = (53 * hash) + priority_;
+    if (hasDocumentSchema()) {
+      hash = (37 * hash) + DOCUMENT_SCHEMA_FIELD_NUMBER;
+      hash = (53 * hash) + getDocumentSchema().hashCode();
+    }
     switch (sourceCase_) {
       case 4:
         hash = (37 * hash) + INLINE_DOCUMENT_FIELD_NUMBER;
@@ -741,6 +819,12 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
 
       priority_ = 0;
 
+      if (documentSchemaBuilder_ == null) {
+        documentSchema_ = null;
+      } else {
+        documentSchema_ = null;
+        documentSchemaBuilder_ = null;
+      }
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -780,6 +864,11 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       result.humanReviewConfig_ = humanReviewConfig_;
       result.enableSchemaValidation_ = enableSchemaValidation_;
       result.priority_ = priority_;
+      if (documentSchemaBuilder_ == null) {
+        result.documentSchema_ = documentSchema_;
+      } else {
+        result.documentSchema_ = documentSchemaBuilder_.build();
+      }
       result.sourceCase_ = sourceCase_;
       onBuilt();
       return result;
@@ -840,6 +929,9 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       }
       if (other.priority_ != 0) {
         setPriorityValue(other.getPriorityValue());
+      }
+      if (other.hasDocumentSchema()) {
+        mergeDocumentSchema(other.getDocumentSchema());
       }
       switch (other.getSourceCase()) {
         case INLINE_DOCUMENT:
@@ -1371,6 +1463,192 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       priority_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.documentai.v1.DocumentSchema documentSchema_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1.DocumentSchema,
+            com.google.cloud.documentai.v1.DocumentSchema.Builder,
+            com.google.cloud.documentai.v1.DocumentSchemaOrBuilder>
+        documentSchemaBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The document schema of the human review task.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1.DocumentSchema document_schema = 6;</code>
+     *
+     * @return Whether the documentSchema field is set.
+     */
+    public boolean hasDocumentSchema() {
+      return documentSchemaBuilder_ != null || documentSchema_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The document schema of the human review task.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1.DocumentSchema document_schema = 6;</code>
+     *
+     * @return The documentSchema.
+     */
+    public com.google.cloud.documentai.v1.DocumentSchema getDocumentSchema() {
+      if (documentSchemaBuilder_ == null) {
+        return documentSchema_ == null
+            ? com.google.cloud.documentai.v1.DocumentSchema.getDefaultInstance()
+            : documentSchema_;
+      } else {
+        return documentSchemaBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The document schema of the human review task.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1.DocumentSchema document_schema = 6;</code>
+     */
+    public Builder setDocumentSchema(com.google.cloud.documentai.v1.DocumentSchema value) {
+      if (documentSchemaBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        documentSchema_ = value;
+        onChanged();
+      } else {
+        documentSchemaBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The document schema of the human review task.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1.DocumentSchema document_schema = 6;</code>
+     */
+    public Builder setDocumentSchema(
+        com.google.cloud.documentai.v1.DocumentSchema.Builder builderForValue) {
+      if (documentSchemaBuilder_ == null) {
+        documentSchema_ = builderForValue.build();
+        onChanged();
+      } else {
+        documentSchemaBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The document schema of the human review task.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1.DocumentSchema document_schema = 6;</code>
+     */
+    public Builder mergeDocumentSchema(com.google.cloud.documentai.v1.DocumentSchema value) {
+      if (documentSchemaBuilder_ == null) {
+        if (documentSchema_ != null) {
+          documentSchema_ =
+              com.google.cloud.documentai.v1.DocumentSchema.newBuilder(documentSchema_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          documentSchema_ = value;
+        }
+        onChanged();
+      } else {
+        documentSchemaBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The document schema of the human review task.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1.DocumentSchema document_schema = 6;</code>
+     */
+    public Builder clearDocumentSchema() {
+      if (documentSchemaBuilder_ == null) {
+        documentSchema_ = null;
+        onChanged();
+      } else {
+        documentSchema_ = null;
+        documentSchemaBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The document schema of the human review task.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1.DocumentSchema document_schema = 6;</code>
+     */
+    public com.google.cloud.documentai.v1.DocumentSchema.Builder getDocumentSchemaBuilder() {
+
+      onChanged();
+      return getDocumentSchemaFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The document schema of the human review task.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1.DocumentSchema document_schema = 6;</code>
+     */
+    public com.google.cloud.documentai.v1.DocumentSchemaOrBuilder getDocumentSchemaOrBuilder() {
+      if (documentSchemaBuilder_ != null) {
+        return documentSchemaBuilder_.getMessageOrBuilder();
+      } else {
+        return documentSchema_ == null
+            ? com.google.cloud.documentai.v1.DocumentSchema.getDefaultInstance()
+            : documentSchema_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The document schema of the human review task.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1.DocumentSchema document_schema = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1.DocumentSchema,
+            com.google.cloud.documentai.v1.DocumentSchema.Builder,
+            com.google.cloud.documentai.v1.DocumentSchemaOrBuilder>
+        getDocumentSchemaFieldBuilder() {
+      if (documentSchemaBuilder_ == null) {
+        documentSchemaBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1.DocumentSchema,
+                com.google.cloud.documentai.v1.DocumentSchema.Builder,
+                com.google.cloud.documentai.v1.DocumentSchemaOrBuilder>(
+                getDocumentSchema(), getParentForChildren(), isClean());
+        documentSchema_ = null;
+      }
+      return documentSchemaBuilder_;
     }
 
     @java.lang.Override

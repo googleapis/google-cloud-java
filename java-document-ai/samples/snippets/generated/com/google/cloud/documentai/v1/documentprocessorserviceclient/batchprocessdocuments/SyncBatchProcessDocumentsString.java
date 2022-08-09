@@ -19,7 +19,7 @@ package com.google.cloud.documentai.v1.samples;
 // [START documentai_v1_generated_documentprocessorserviceclient_batchprocessdocuments_string_sync]
 import com.google.cloud.documentai.v1.BatchProcessResponse;
 import com.google.cloud.documentai.v1.DocumentProcessorServiceClient;
-import com.google.cloud.documentai.v1.ProcessorName;
+import com.google.cloud.documentai.v1.HumanReviewConfigName;
 
 public class SyncBatchProcessDocumentsString {
 
@@ -32,7 +32,7 @@ public class SyncBatchProcessDocumentsString {
     // It may require modifications to work in your environment.
     try (DocumentProcessorServiceClient documentProcessorServiceClient =
         DocumentProcessorServiceClient.create()) {
-      String name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
+      String name = HumanReviewConfigName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
       BatchProcessResponse response =
           documentProcessorServiceClient.batchProcessDocumentsAsync(name).get();
     }

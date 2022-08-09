@@ -42,21 +42,22 @@ public final class OperationMetadataProto {
     java.lang.String[] descriptorData = {
       "\n3google/cloud/documentai/v1/operation_m"
           + "etadata.proto\022\032google.cloud.documentai.v"
-          + "1\032\037google/protobuf/timestamp.proto\"\303\002\n\027C"
+          + "1\032\037google/protobuf/timestamp.proto\"\325\002\n\027C"
           + "ommonOperationMetadata\022H\n\005state\030\001 \001(\01629."
           + "google.cloud.documentai.v1.CommonOperati"
           + "onMetadata.State\022\025\n\rstate_message\030\002 \001(\t\022"
-          + "/\n\013create_time\030\003 \001(\0132\032.google.protobuf.T"
-          + "imestamp\022/\n\013update_time\030\004 \001(\0132\032.google.p"
-          + "rotobuf.Timestamp\"e\n\005State\022\025\n\021STATE_UNSP"
-          + "ECIFIED\020\000\022\013\n\007RUNNING\020\001\022\016\n\nCANCELLING\020\002\022\r"
-          + "\n\tSUCCEEDED\020\003\022\n\n\006FAILED\020\004\022\r\n\tCANCELLED\020\005"
-          + "B\332\001\n\036com.google.cloud.documentai.v1B\026Ope"
-          + "rationMetadataProtoP\001ZDgoogle.golang.org"
-          + "/genproto/googleapis/cloud/documentai/v1"
-          + ";documentai\252\002\032Google.Cloud.DocumentAI.V1"
-          + "\312\002\032Google\\Cloud\\DocumentAI\\V1\352\002\035Google::"
-          + "Cloud::DocumentAI::V1b\006proto3"
+          + "\020\n\010resource\030\005 \001(\t\022/\n\013create_time\030\003 \001(\0132\032"
+          + ".google.protobuf.Timestamp\022/\n\013update_tim"
+          + "e\030\004 \001(\0132\032.google.protobuf.Timestamp\"e\n\005S"
+          + "tate\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007RUNNING\020\001"
+          + "\022\016\n\nCANCELLING\020\002\022\r\n\tSUCCEEDED\020\003\022\n\n\006FAILE"
+          + "D\020\004\022\r\n\tCANCELLED\020\005B\332\001\n\036com.google.cloud."
+          + "documentai.v1B\026OperationMetadataProtoP\001Z"
+          + "Dgoogle.golang.org/genproto/googleapis/c"
+          + "loud/documentai/v1;documentai\252\002\032Google.C"
+          + "loud.DocumentAI.V1\312\002\032Google\\Cloud\\Docume"
+          + "ntAI\\V1\352\002\035Google::Cloud::DocumentAI::V1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -70,7 +71,7 @@ public final class OperationMetadataProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1_CommonOperationMetadata_descriptor,
             new java.lang.String[] {
-              "State", "StateMessage", "CreateTime", "UpdateTime",
+              "State", "StateMessage", "Resource", "CreateTime", "UpdateTime",
             });
     com.google.protobuf.TimestampProto.getDescriptor();
   }

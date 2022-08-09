@@ -18,6 +18,7 @@ package com.google.cloud.documentai.v1.samples;
 
 // [START documentai_v1_generated_documentprocessorserviceclient_reviewdocument_sync]
 import com.google.cloud.documentai.v1.DocumentProcessorServiceClient;
+import com.google.cloud.documentai.v1.DocumentSchema;
 import com.google.cloud.documentai.v1.HumanReviewConfigName;
 import com.google.cloud.documentai.v1.ReviewDocumentRequest;
 import com.google.cloud.documentai.v1.ReviewDocumentResponse;
@@ -38,6 +39,7 @@ public class SyncReviewDocument {
               .setHumanReviewConfig(
                   HumanReviewConfigName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
               .setEnableSchemaValidation(true)
+              .setDocumentSchema(DocumentSchema.newBuilder().build())
               .build();
       ReviewDocumentResponse response =
           documentProcessorServiceClient.reviewDocumentAsync(request).get();
