@@ -1,0 +1,87 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.automl.v1",
+  "libraryPackage": "com.google.cloud.automl.v1",
+  "services": {
+    "PredictionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PredictionServiceClient",
+          "rpcs": {
+            "BatchPredict": {
+              "methods": ["batchPredictAsync", "batchPredictAsync", "batchPredictAsync", "batchPredictOperationCallable", "batchPredictCallable"]
+            },
+            "Predict": {
+              "methods": ["predict", "predict", "predict", "predictCallable"]
+            }
+          }
+        }
+      }
+    },
+    "AutoMl": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AutoMlClient",
+          "rpcs": {
+            "CreateDataset": {
+              "methods": ["createDatasetAsync", "createDatasetAsync", "createDatasetAsync", "createDatasetOperationCallable", "createDatasetCallable"]
+            },
+            "CreateModel": {
+              "methods": ["createModelAsync", "createModelAsync", "createModelAsync", "createModelOperationCallable", "createModelCallable"]
+            },
+            "DeleteDataset": {
+              "methods": ["deleteDatasetAsync", "deleteDatasetAsync", "deleteDatasetAsync", "deleteDatasetOperationCallable", "deleteDatasetCallable"]
+            },
+            "DeleteModel": {
+              "methods": ["deleteModelAsync", "deleteModelAsync", "deleteModelAsync", "deleteModelOperationCallable", "deleteModelCallable"]
+            },
+            "DeployModel": {
+              "methods": ["deployModelAsync", "deployModelAsync", "deployModelAsync", "deployModelOperationCallable", "deployModelCallable"]
+            },
+            "ExportData": {
+              "methods": ["exportDataAsync", "exportDataAsync", "exportDataAsync", "exportDataOperationCallable", "exportDataCallable"]
+            },
+            "ExportModel": {
+              "methods": ["exportModelAsync", "exportModelAsync", "exportModelAsync", "exportModelOperationCallable", "exportModelCallable"]
+            },
+            "GetAnnotationSpec": {
+              "methods": ["getAnnotationSpec", "getAnnotationSpec", "getAnnotationSpec", "getAnnotationSpecCallable"]
+            },
+            "GetDataset": {
+              "methods": ["getDataset", "getDataset", "getDataset", "getDatasetCallable"]
+            },
+            "GetModel": {
+              "methods": ["getModel", "getModel", "getModel", "getModelCallable"]
+            },
+            "GetModelEvaluation": {
+              "methods": ["getModelEvaluation", "getModelEvaluation", "getModelEvaluation", "getModelEvaluationCallable"]
+            },
+            "ImportData": {
+              "methods": ["importDataAsync", "importDataAsync", "importDataAsync", "importDataOperationCallable", "importDataCallable"]
+            },
+            "ListDatasets": {
+              "methods": ["listDatasets", "listDatasets", "listDatasets", "listDatasetsPagedCallable", "listDatasetsCallable"]
+            },
+            "ListModelEvaluations": {
+              "methods": ["listModelEvaluations", "listModelEvaluations", "listModelEvaluations", "listModelEvaluationsPagedCallable", "listModelEvaluationsCallable"]
+            },
+            "ListModels": {
+              "methods": ["listModels", "listModels", "listModels", "listModelsPagedCallable", "listModelsCallable"]
+            },
+            "UndeployModel": {
+              "methods": ["undeployModelAsync", "undeployModelAsync", "undeployModelAsync", "undeployModelOperationCallable", "undeployModelCallable"]
+            },
+            "UpdateDataset": {
+              "methods": ["updateDataset", "updateDataset", "updateDatasetCallable"]
+            },
+            "UpdateModel": {
+              "methods": ["updateModel", "updateModel", "updateModelCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
