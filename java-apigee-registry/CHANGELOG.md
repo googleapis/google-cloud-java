@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.2](https://github.com/googleapis/java-apigee-registry/compare/v0.2.1...v0.2.2) (2022-08-09)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#26](https://github.com/googleapis/java-apigee-registry/issues/26)) ([fa06925](https://github.com/googleapis/java-apigee-registry/commit/fa069254108fa6a6c9d2ec6daddbf8982d5aae52))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.1 ([#29](https://github.com/googleapis/java-apigee-registry/issues/29)) ([62ad9c6](https://github.com/googleapis/java-apigee-registry/commit/62ad9c69ee3d591062f1a9dc2197284be566e7e1))
+
 ## [0.2.1](https://github.com/googleapis/java-apigee-registry/compare/v0.2.0...v0.2.1) (2022-07-13)
 
 
