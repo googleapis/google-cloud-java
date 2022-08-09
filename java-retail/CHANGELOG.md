@@ -1,5 +1,54 @@
 # Changelog
 
+## [2.4.0](https://github.com/googleapis/java-retail/compare/v2.3.0...v2.4.0) (2022-08-09)
+
+
+### Features
+
+* allow adding labels in search requests ([70ae250](https://github.com/googleapis/java-retail/commit/70ae25069bac1244e50bcaabc98962e3a8471de6))
+* allow adding labels in search requests ([70ae250](https://github.com/googleapis/java-retail/commit/70ae25069bac1244e50bcaabc98962e3a8471de6))
+* allow disabling spell check in search requests ([70ae250](https://github.com/googleapis/java-retail/commit/70ae25069bac1244e50bcaabc98962e3a8471de6))
+* allow disabling spell check in search requests ([70ae250](https://github.com/googleapis/java-retail/commit/70ae25069bac1244e50bcaabc98962e3a8471de6))
+* allow enabling recommendation filtering on custom attributes ([70ae250](https://github.com/googleapis/java-retail/commit/70ae25069bac1244e50bcaabc98962e3a8471de6))
+* allow enabling recommendation filtering on custom attributes ([70ae250](https://github.com/googleapis/java-retail/commit/70ae25069bac1244e50bcaabc98962e3a8471de6))
+* allow returning min/max values on search numeric facets ([70ae250](https://github.com/googleapis/java-retail/commit/70ae25069bac1244e50bcaabc98962e3a8471de6))
+* allow returning min/max values on search numeric facets ([70ae250](https://github.com/googleapis/java-retail/commit/70ae25069bac1244e50bcaabc98962e3a8471de6))
+* allow skiping default branch protection when doing product full import ([70ae250](https://github.com/googleapis/java-retail/commit/70ae25069bac1244e50bcaabc98962e3a8471de6))
+* allow to return min/max values on search numeric facets ([70ae250](https://github.com/googleapis/java-retail/commit/70ae25069bac1244e50bcaabc98962e3a8471de6))
+* allow to use serving configs as an alias of placements ([70ae250](https://github.com/googleapis/java-retail/commit/70ae25069bac1244e50bcaabc98962e3a8471de6))
+* allow using serving configs as an alias of placements ([70ae250](https://github.com/googleapis/java-retail/commit/70ae25069bac1244e50bcaabc98962e3a8471de6))
+* allow using serving configs as an alias of placements ([70ae250](https://github.com/googleapis/java-retail/commit/70ae25069bac1244e50bcaabc98962e3a8471de6))
+* new model service to manage recommendation models ([#497](https://github.com/googleapis/java-retail/issues/497)) ([70ae250](https://github.com/googleapis/java-retail/commit/70ae25069bac1244e50bcaabc98962e3a8471de6))
+* return output BigQuery table on product / event export response ([70ae250](https://github.com/googleapis/java-retail/commit/70ae25069bac1244e50bcaabc98962e3a8471de6))
+* return output BigQuery table on product / event export response ([70ae250](https://github.com/googleapis/java-retail/commit/70ae25069bac1244e50bcaabc98962e3a8471de6))
+* support case insensitive match on search facets ([70ae250](https://github.com/googleapis/java-retail/commit/70ae25069bac1244e50bcaabc98962e3a8471de6))
+* support case insensitive match on search facets ([70ae250](https://github.com/googleapis/java-retail/commit/70ae25069bac1244e50bcaabc98962e3a8471de6))
+* support case insensitive match on search facets ([70ae250](https://github.com/googleapis/java-retail/commit/70ae25069bac1244e50bcaabc98962e3a8471de6))
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-retail/issues/1485)) ([#487](https://github.com/googleapis/java-retail/issues/487)) ([aebd3d2](https://github.com/googleapis/java-retail/commit/aebd3d29de1a46313626a9167ed2129e0de99c06))
+
+
+### Documentation
+
+* keep the API doc up-to-date with recent changes ([70ae250](https://github.com/googleapis/java-retail/commit/70ae25069bac1244e50bcaabc98962e3a8471de6))
+* keep the API doc up-to-date with recent changes ([70ae250](https://github.com/googleapis/java-retail/commit/70ae25069bac1244e50bcaabc98962e3a8471de6))
+* keep the API doc up-to-date with recent changes ([70ae250](https://github.com/googleapis/java-retail/commit/70ae25069bac1244e50bcaabc98962e3a8471de6))
+* **samples:** Refactoring product package (CRUD) ([#417](https://github.com/googleapis/java-retail/issues/417)) ([6b1973d](https://github.com/googleapis/java-retail/commit/6b1973d68830ee93f860f6e9312655518ae082fa))
+* **samples:** Refactoring search package ([#415](https://github.com/googleapis/java-retail/issues/415)) ([ae435e0](https://github.com/googleapis/java-retail/commit/ae435e0a2b25c329409002517d0619e5e38a71ea))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#499](https://github.com/googleapis/java-retail/issues/499)) ([9aff3a0](https://github.com/googleapis/java-retail/commit/9aff3a0c65cc26b75fd7e3a37b3d70f1c9bb6f92))
+* update dependency com.google.cloud:google-cloud-storage to v2.10.0 ([#504](https://github.com/googleapis/java-retail/issues/504)) ([82db98b](https://github.com/googleapis/java-retail/commit/82db98bb13443e3548d4c149145a2700e5e0ff2d))
+* update dependency com.google.cloud:google-cloud-storage to v2.11.0 ([#507](https://github.com/googleapis/java-retail/issues/507)) ([911ff65](https://github.com/googleapis/java-retail/commit/911ff65bf29ffaa3e53f480223f808c005410b52))
+* update dependency com.google.cloud:google-cloud-storage to v2.11.1 ([#509](https://github.com/googleapis/java-retail/issues/509)) ([c6a7c65](https://github.com/googleapis/java-retail/commit/c6a7c6508559befd56071fc0c57adbded7e1f0da))
+* update dependency com.google.cloud:google-cloud-storage to v2.11.2 ([#510](https://github.com/googleapis/java-retail/issues/510)) ([d532bff](https://github.com/googleapis/java-retail/commit/d532bff899659d7f0222dd26e04e08dbd1f3cd66))
+* update dependency com.google.code.gson:gson to v2.9.1 ([#500](https://github.com/googleapis/java-retail/issues/500)) ([2af1d50](https://github.com/googleapis/java-retail/commit/2af1d507833c88a2debbb17ae808df3074f33a98))
+
 ## [2.3.0](https://github.com/googleapis/java-retail/compare/v2.2.4...v2.3.0) (2022-07-01)
 
 
