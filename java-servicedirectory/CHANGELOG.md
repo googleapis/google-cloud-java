@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.1](https://github.com/googleapis/java-servicedirectory/compare/v2.4.0...v2.4.1) (2022-07-19)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-servicedirectory/issues/1485)) ([#692](https://github.com/googleapis/java-servicedirectory/issues/692)) ([2489b2f](https://github.com/googleapis/java-servicedirectory/commit/2489b2f442f7f9fee2d316c99855f699ec64838f))
+
 ## [2.4.0](https://github.com/googleapis/java-servicedirectory/compare/v2.3.0...v2.4.0) (2022-07-01)
 
 
