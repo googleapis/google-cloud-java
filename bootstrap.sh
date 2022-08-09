@@ -31,9 +31,12 @@ do
   cd  ${service}
   git filter-repo --to-subdirectory-filter ${service}
 
-  # Search for <parent> tag and replace the next three lines -- groupId, artifcatId, and version
-  # Doesn't modify the pom.xml for each module's bom package (that still points to shared-config ... for now)
-  sed -i -e '/<parent>/{N;s/com.google.cloud/com.google.api/;N;s/google-cloud-shared-config/google-cloud-java/;N;s/<version>.*<\/version>/<version>0.0.1-SNAPSHOT<\/version>/}' ${service}/pom.xml
+  # Search for <parent> tag in module pom and replace the next three lines -- groupId, artifcatId, and version
+  sed -i.bak -e '/<parent>/{N;s/com.google.cloud/com.google.api/;N;s/google-cloud-shared-config/google-cloud-java/;N;s/<version>.*<\/version>/<version>0.0.1-SNAPSHOT<\/version>/}' ${service}/pom.xml && rm ${service}/pom.xml.bak
+
+  NAME=$(jq -r '.distribution_name' ${service}/.repo-metadata.json | cut -d ':' -f 2)
+  # Search for <parent> tag in module bom and replace the next three lines -- groupId, artifcatId, and version
+  sed -i.bak -e '/<parent>/{N;s/com.google.cloud/com.google.api/;N;s/google-cloud-shared-config/google-cloud-java/;N;s/<version>.*<\/version>/<version>0.0.1-SNAPSHOT<\/version>\n    <relativePath>..\/..\/pom.xml<\/relativePath>/}' ${service}/${NAME}-bom/pom.xml && rm ${service}/${NAME}-bom/pom.xml.bak
 
   # setup owlbot files correctly to match monorepo configuration
   cp ${service}/.github/.OwlBot.yaml ${service}/.OwlBot.yaml
@@ -73,14 +76,55 @@ cd google-cloud-java
 git add pom.xml
 git commit -am 'feat: create aggregator pom'
 
+num_modules="$(wc -l < ../../repos.txt)"
+echo "{" >> .release-please-manifest.json
+
 # generate BOM of the artifacts in this repository
 bom_lines=""
+rp_config_line=""
 for bom_directory in $(find . -name 'google-*-bom' | sort); do
   repo_metadata="${bom_directory}/../.repo-metadata.json"
   pom_file="${bom_directory}/pom.xml"
   groupId_line=$(grep --max-count=1 'groupId' "${pom_file}")
   artifactId_line=$(grep --max-count=1 'artifactId' "${pom_file}")
+
+  # extracting module name
+  prefix="  <artifactId>"
+  suffix="-bom</artifactId>"
+  artifactName=${artifactId_line#"$prefix"}
+  artifactName=${artifactName%"$suffix"}
+  artifactName_config=${artifactName};
+  prefix="./"
+  suffix="/${artifactName}-bom"
+  module=${bom_directory#"$prefix"}
+  module=${module%"$suffix"}
+
   version_line=$(grep --max-count=1 'x-version-update' "${pom_file}")
+
+  #extracting module version
+  prefix="  <version>"
+  suffix="</version><!-- {x-version-update:${artifactName}:current} -->"
+  module_version=${version_line#"$prefix"}
+  module_version=${module_version%"$suffix"}
+
+  #concatenating module name and module version
+  rp_manifest_line=""\""${module}"\"": "\""${module_version}"\"""
+
+  rp_config_line+=""\""${module}"\"": {\n\
+        "\""component"\"": "\""${artifactName_config}"\""\n\
+       }"
+
+  #adding " , " where it's necessary
+  if [[ $num_modules -gt 1 ]]; then
+    rp_manifest_line+=","
+    rp_config_line+=",\n    "
+    num_modules=$((num_modules-1))
+  fi
+
+  #adding the line to manifest config file
+  echo "${rp_manifest_line}" >> .release-please-manifest.json
+
+
   if ! grep --quiet '"release_level": "stable"' "${repo_metadata}"; then
     # Not including non-GA libraries, except those that happened to be included
     # already in google-cloud-bom.
@@ -104,7 +148,13 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
         <scope>import</scope>\n\
       </dependency>\n"
 
+
 done
+
+echo "}" >> .release-please-manifest.json
+
+awk -v "packagesList=$rp_config_line" '{gsub(/ALL_PACKAGES/,packagesList)}1' \
+    ../../release_please_config_raw.json > release-please-config.json
 
 mkdir google-cloud-gapic-bom
 awk -v "dependencyManagements=$bom_lines" '{gsub(/BOM_ARTIFACT_LIST/,dependencyManagements)}1' \
