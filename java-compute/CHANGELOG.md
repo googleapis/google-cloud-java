@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.12.0](https://github.com/googleapis/java-compute/compare/v1.11.0...v1.12.0) (2022-08-05)
+
+
+### Features
+
+* Update Compute Engine API to revision 20220720 ([#723](https://github.com/googleapis/java-compute/issues/723)) ([#713](https://github.com/googleapis/java-compute/issues/713)) ([cd2a10a](https://github.com/googleapis/java-compute/commit/cd2a10a655b6eae29dc5a11e321b933450c2e9a9))
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-compute/issues/1485)) ([#706](https://github.com/googleapis/java-compute/issues/706)) ([c943699](https://github.com/googleapis/java-compute/commit/c94369944f612a4d39162c933ce4f5b678d7274c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#711](https://github.com/googleapis/java-compute/issues/711)) ([63c37c7](https://github.com/googleapis/java-compute/commit/63c37c7aad5e254b2ca7c654fe4f8587c2e7e84f))
+
 ## [1.11.0](https://github.com/googleapis/java-compute/compare/v1.10.0...v1.11.0) (2022-06-30)
 
 
