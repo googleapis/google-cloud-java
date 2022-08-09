@@ -1,5 +1,40 @@
 # Changelog
 
+## [3.5.0](https://github.com/googleapis/java-asset/compare/v3.4.2...v3.5.0) (2022-08-09)
+
+
+### Features
+
+* Remove v1p4beta1 API protos. v1p4beta1 has been deprecated and announced through MSA. This is the cleanup ([d6b588e](https://github.com/googleapis/java-asset/commit/d6b588edd9495f1e4b081e64ece949502af2286b))
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-cloud-orgpolicy-v1 to v2.3.0 ([#1257](https://github.com/googleapis/java-asset/issues/1257)) ([db1917d](https://github.com/googleapis/java-asset/commit/db1917deda44a3545ce5cbca1c778a0a622a0273))
+* update dependency com.google.api.grpc:proto-google-cloud-os-config-v1 to v2.5.1 ([#1279](https://github.com/googleapis/java-asset/issues/1279)) ([a205b9e](https://github.com/googleapis/java-asset/commit/a205b9ee50e77b97fbf1559fb226adbe22d35f09))
+* update dependency com.google.api.grpc:proto-google-cloud-pubsub-v1 to v1.102.10 ([#1292](https://github.com/googleapis/java-asset/issues/1292)) ([ece9b5b](https://github.com/googleapis/java-asset/commit/ece9b5baedc593439e42562b67bf646a7db80f93))
+* update dependency com.google.api.grpc:proto-google-cloud-pubsub-v1 to v1.102.9 ([#1280](https://github.com/googleapis/java-asset/issues/1280)) ([7b63630](https://github.com/googleapis/java-asset/commit/7b636300d4f7516f89e5cedb49edee6698f2450a))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.14.0 ([#1272](https://github.com/googleapis/java-asset/issues/1272)) ([b26cbb6](https://github.com/googleapis/java-asset/commit/b26cbb6c21e2a49835746ca49f08124335185937))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.14.1 ([#1274](https://github.com/googleapis/java-asset/issues/1274)) ([1d3b0cb](https://github.com/googleapis/java-asset/commit/1d3b0cbeea8fc779699f8500ed519ef437398e5c))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.14.2 ([#1294](https://github.com/googleapis/java-asset/issues/1294)) ([24eb462](https://github.com/googleapis/java-asset/commit/24eb46237e411ce46abcf5e720465a741fd92896))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.14.3 ([#1296](https://github.com/googleapis/java-asset/issues/1296)) ([053dcca](https://github.com/googleapis/java-asset/commit/053dcca1381d7e883629423718f29f88aec49b61))
+* update dependency com.google.cloud:google-cloud-core to v2.8.3 ([#1273](https://github.com/googleapis/java-asset/issues/1273)) ([1c29d43](https://github.com/googleapis/java-asset/commit/1c29d43e2d2d65e1ac5757aa402b6ce69cf035a5))
+* update dependency com.google.cloud:google-cloud-core to v2.8.4 ([#1275](https://github.com/googleapis/java-asset/issues/1275)) ([64aba11](https://github.com/googleapis/java-asset/commit/64aba11c0efc9046705aa17f3074a793dcf46bcc))
+* update dependency com.google.cloud:google-cloud-core to v2.8.5 ([#1276](https://github.com/googleapis/java-asset/issues/1276)) ([55b212c](https://github.com/googleapis/java-asset/commit/55b212cb382c19c4f2a742f3d963b0fb98b3f8f8))
+* update dependency com.google.cloud:google-cloud-core to v2.8.6 ([#1283](https://github.com/googleapis/java-asset/issues/1283)) ([2a3e256](https://github.com/googleapis/java-asset/commit/2a3e256e90061fe11d3e9ec2c266f2eb3b308dec))
+* update dependency com.google.cloud:google-cloud-core to v2.8.7 ([#1285](https://github.com/googleapis/java-asset/issues/1285)) ([e25ffc7](https://github.com/googleapis/java-asset/commit/e25ffc729759971bd4f7147efebf999e39800203))
+* update dependency com.google.cloud:google-cloud-core to v2.8.8 ([#1288](https://github.com/googleapis/java-asset/issues/1288)) ([40f8ede](https://github.com/googleapis/java-asset/commit/40f8ede9261bb5c43b51b6c988ed9541b2fd783c))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.120.1 ([#1229](https://github.com/googleapis/java-asset/issues/1229)) ([0f10831](https://github.com/googleapis/java-asset/commit/0f108316eb8f571191be5da48d604ed5969d9da9))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.120.10 ([#1293](https://github.com/googleapis/java-asset/issues/1293)) ([a14890a](https://github.com/googleapis/java-asset/commit/a14890a94aeb63556a5b1ff92ecb1076dc057083))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.120.9 ([#1281](https://github.com/googleapis/java-asset/issues/1281)) ([d6e43fc](https://github.com/googleapis/java-asset/commit/d6e43fc41882868e8ea04f13c96a89f6ffb6766c))
+* update dependency com.google.cloud:google-cloud-resourcemanager to v1.5.0 ([#1261](https://github.com/googleapis/java-asset/issues/1261)) ([41ed2e7](https://github.com/googleapis/java-asset/commit/41ed2e7732d2c13ac38af73005208d0a240dc337))
+* update dependency com.google.cloud:google-cloud-resourcemanager to v1.5.2 ([#1287](https://github.com/googleapis/java-asset/issues/1287)) ([eea1cf4](https://github.com/googleapis/java-asset/commit/eea1cf43f6a23f28445edd60b7c88b7b193b4ecc))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#1277](https://github.com/googleapis/java-asset/issues/1277)) ([d94d674](https://github.com/googleapis/java-asset/commit/d94d674df130bcfaa401d489aa93ab2b232f4057))
+* update dependency com.google.cloud:google-cloud-storage to v2.10.0 ([#1282](https://github.com/googleapis/java-asset/issues/1282)) ([9b6a701](https://github.com/googleapis/java-asset/commit/9b6a701d8e1670fcfd284c73b990dd03c68d76c0))
+* update dependency com.google.cloud:google-cloud-storage to v2.11.0 ([#1286](https://github.com/googleapis/java-asset/issues/1286)) ([c5d97f9](https://github.com/googleapis/java-asset/commit/c5d97f920e6c69331c70ccfa641ade6cde558b9a))
+* update dependency com.google.cloud:google-cloud-storage to v2.11.1 ([#1291](https://github.com/googleapis/java-asset/issues/1291)) ([e8b09b0](https://github.com/googleapis/java-asset/commit/e8b09b0f3ad9173827e017c6b72285f0db1cf21a))
+* update dependency com.google.cloud:google-cloud-storage to v2.11.2 ([#1295](https://github.com/googleapis/java-asset/issues/1295)) ([8ffa15c](https://github.com/googleapis/java-asset/commit/8ffa15c6f7773a1d0e34ea13b7cfbe947d339e0d))
+
 ## [3.4.2](https://github.com/googleapis/java-asset/compare/v3.4.1...v3.4.2) (2022-07-13)
 
 
