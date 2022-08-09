@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.1](https://github.com/googleapis/java-websecurityscanner/compare/v2.2.0...v2.2.1) (2022-08-02)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-websecurityscanner/issues/1485)) ([#716](https://github.com/googleapis/java-websecurityscanner/issues/716)) ([d4577a8](https://github.com/googleapis/java-websecurityscanner/commit/d4577a8d95a149c65028c0de08d53f0530e89567))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#722](https://github.com/googleapis/java-websecurityscanner/issues/722)) ([db65ad5](https://github.com/googleapis/java-websecurityscanner/commit/db65ad50391ee40fd08bc40b6b1884e331a3df9f))
+
 ## [2.2.0](https://github.com/googleapis/java-websecurityscanner/compare/v2.1.1...v2.2.0) (2022-07-01)
 
 
