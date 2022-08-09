@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.4.1](https://github.com/googleapis/java-accesscontextmanager/compare/v1.4.0...v1.4.1) (2022-08-02)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-accesscontextmanager/issues/1485)) ([#361](https://github.com/googleapis/java-accesscontextmanager/issues/361)) ([7c1172c](https://github.com/googleapis/java-accesscontextmanager/commit/7c1172c27301bbe605e82e5b284b26a69fd69849))
+* the bom module was missing in the root pom ([#359](https://github.com/googleapis/java-accesscontextmanager/issues/359)) ([2af19cd](https://github.com/googleapis/java-accesscontextmanager/commit/2af19cd10f4b67eafdfb4a6f197cf6d169628ff3))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#366](https://github.com/googleapis/java-accesscontextmanager/issues/366)) ([3b2f972](https://github.com/googleapis/java-accesscontextmanager/commit/3b2f972ce9d8a0f6482f8a0e4174155c4712c349))
+
 ## [1.4.0](https://github.com/googleapis/java-accesscontextmanager/compare/v1.3.1...v1.4.0) (2022-07-01)
 
 
