@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.4.1](https://github.com/googleapis/java-private-catalog/compare/v0.4.0...v0.4.1) (2022-08-02)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-private-catalog/issues/1485)) ([#203](https://github.com/googleapis/java-private-catalog/issues/203)) ([d2e8955](https://github.com/googleapis/java-private-catalog/commit/d2e895588f18299273437099332285df87808aa7))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#207](https://github.com/googleapis/java-private-catalog/issues/207)) ([2e60416](https://github.com/googleapis/java-private-catalog/commit/2e6041679d5c7abe3a9b4f7463267bb0fbb46a4e))
+
 ## [0.4.0](https://github.com/googleapis/java-private-catalog/compare/v0.3.1...v0.4.0) (2022-07-01)
 
 
