@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.4.3](https://github.com/googleapis/java-accessapproval/compare/v2.4.2...v2.4.3) (2022-08-09)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.8.3 ([#779](https://github.com/googleapis/java-accessapproval/issues/779)) ([8b61cbc](https://github.com/googleapis/java-accessapproval/commit/8b61cbcb999bfb95068620ed9f9a937f80a33642))
+* update dependency com.google.cloud:google-cloud-core to v2.8.5 ([#780](https://github.com/googleapis/java-accessapproval/issues/780)) ([458ad10](https://github.com/googleapis/java-accessapproval/commit/458ad10d637239ddf8d128ff4f963d76d8c96023))
+* update dependency com.google.cloud:google-cloud-core to v2.8.6 ([#784](https://github.com/googleapis/java-accessapproval/issues/784)) ([dad3ea6](https://github.com/googleapis/java-accessapproval/commit/dad3ea60877c3615e0a1a7eccf678cb4f2d3e8e2))
+* update dependency com.google.cloud:google-cloud-core to v2.8.7 ([#785](https://github.com/googleapis/java-accessapproval/issues/785)) ([315ecf3](https://github.com/googleapis/java-accessapproval/commit/315ecf35d2239f26a6ad9ab76c33fa50afd142c7))
+* update dependency com.google.cloud:google-cloud-core to v2.8.8 ([#786](https://github.com/googleapis/java-accessapproval/issues/786)) ([1a40682](https://github.com/googleapis/java-accessapproval/commit/1a40682018c8220f1867f3286d3cff373fb53565))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#781](https://github.com/googleapis/java-accessapproval/issues/781)) ([9f928e5](https://github.com/googleapis/java-accessapproval/commit/9f928e5927a58966b70eba1ab3aafd6822267855))
+
 ## [2.4.2](https://github.com/googleapis/java-accessapproval/compare/v2.4.1...v2.4.2) (2022-07-13)
 
 
