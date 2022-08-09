@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.5](https://github.com/googleapis/java-artifact-registry/compare/v1.2.4...v1.2.5) (2022-08-04)
+
+
+### Documentation
+
+* **owlbot-java:** explaining why not using formatter in pom.xml ([#1511](https://github.com/googleapis/java-artifact-registry/issues/1511)) ([#294](https://github.com/googleapis/java-artifact-registry/issues/294)) ([7c1357e](https://github.com/googleapis/java-artifact-registry/commit/7c1357e908ba457a6820c9777ca26928e8dbd34c)), closes [#1502](https://github.com/googleapis/java-artifact-registry/issues/1502)
+
 ## [1.2.4](https://github.com/googleapis/java-artifact-registry/compare/v1.2.3...v1.2.4) (2022-08-03)
 
 
