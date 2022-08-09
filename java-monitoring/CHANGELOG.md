@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.4.0](https://github.com/googleapis/java-monitoring/compare/v3.3.6...v3.4.0) (2022-08-06)
+
+
+### Features
+
+* Added support for evaluating missing data in AlertPolicy ([#906](https://github.com/googleapis/java-monitoring/issues/906)) ([e9effc8](https://github.com/googleapis/java-monitoring/commit/e9effc85f48d7f64ae5b297bace67e7cbafd27b1))
+
+
+### Documentation
+
+* **owlbot-java:** explaining why not using formatter in pom.xml ([#1511](https://github.com/googleapis/java-monitoring/issues/1511)) ([#901](https://github.com/googleapis/java-monitoring/issues/901)) ([02e3f6b](https://github.com/googleapis/java-monitoring/commit/02e3f6b8af04ad995a488da9794bf391b4c602e5)), closes [#1502](https://github.com/googleapis/java-monitoring/issues/1502)
+
 ## [3.3.6](https://github.com/googleapis/java-monitoring/compare/v3.3.5...v3.3.6) (2022-08-02)
 
 
