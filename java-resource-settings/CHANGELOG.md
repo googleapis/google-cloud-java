@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/googleapis/java-resource-settings/compare/v1.3.0...v1.3.1) (2022-07-19)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-resource-settings/issues/1485)) ([#197](https://github.com/googleapis/java-resource-settings/issues/197)) ([9161daa](https://github.com/googleapis/java-resource-settings/commit/9161daaffd5ef0b8a0d28fe3ad244417a614f12b))
+
 ## [1.3.0](https://github.com/googleapis/java-resource-settings/compare/v1.2.1...v1.3.0) (2022-07-01)
 
 
