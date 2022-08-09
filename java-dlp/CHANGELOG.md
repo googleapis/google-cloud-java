@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.6.7](https://github.com/googleapis/java-dlp/compare/v3.6.6...v3.6.7) (2022-08-05)
+
+
+### Documentation
+
+* **owlbot-java:** explaining why not using formatter in pom.xml ([#1511](https://github.com/googleapis/java-dlp/issues/1511)) ([#945](https://github.com/googleapis/java-dlp/issues/945)) ([ab8d91f](https://github.com/googleapis/java-dlp/commit/ab8d91ffd0eb4a7cf396e305673bcbee1fcd7d52)), closes [#1502](https://github.com/googleapis/java-dlp/issues/1502)
+
 ## [3.6.6](https://github.com/googleapis/java-dlp/compare/v3.6.5...v3.6.6) (2022-08-04)
 
 
