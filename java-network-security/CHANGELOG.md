@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.6.0](https://github.com/googleapis/java-network-security/compare/v0.5.1...v0.6.0) (2022-08-08)
+
+
+### Features
+
+* publish cloud networksecurity v1 ([#183](https://github.com/googleapis/java-network-security/issues/183)) ([9c37c12](https://github.com/googleapis/java-network-security/commit/9c37c12219ccad6f1d8a73a54636d9b4a8bd9593))
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-network-security/issues/1485)) ([#181](https://github.com/googleapis/java-network-security/issues/181)) ([47d1104](https://github.com/googleapis/java-network-security/commit/47d1104ec950d5c93106821f8bbae8cfcf9e3111))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#187](https://github.com/googleapis/java-network-security/issues/187)) ([36d3cdc](https://github.com/googleapis/java-network-security/commit/36d3cdca32a4103e610f91a89955b9ce98e5f953))
+
+
+### Documentation
+
+* update the comments of various networksecurity resources ([#186](https://github.com/googleapis/java-network-security/issues/186)) ([0b8e3c9](https://github.com/googleapis/java-network-security/commit/0b8e3c9bd8628c6acf251bc70c3eeb6fcede88f2))
+
 ## [0.5.1](https://github.com/googleapis/java-network-security/compare/v0.5.0...v0.5.1) (2022-07-01)
 
 
