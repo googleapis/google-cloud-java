@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.5.0](https://github.com/googleapis/java-functions/compare/v2.4.3...v2.5.0) (2022-08-04)
+
+
+### Features
+
+* generating GAPIC libraries for Google Cloud Functions v2beta ([#441](https://github.com/googleapis/java-functions/issues/441)) ([d56a252](https://github.com/googleapis/java-functions/commit/d56a252c7297e57d41f00b676c4bdf0b5f23eb97))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#451](https://github.com/googleapis/java-functions/issues/451)) ([18dbe63](https://github.com/googleapis/java-functions/commit/18dbe63681d756a4d8e8081921a11c798f9a1ca4))
+
 ## [2.4.3](https://github.com/googleapis/java-functions/compare/v2.4.2...v2.4.3) (2022-07-13)
 
 
