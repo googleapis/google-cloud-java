@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.1](https://github.com/googleapis/java-billing/compare/v2.3.0...v2.3.1) (2022-08-02)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-billing/issues/1485)) ([#683](https://github.com/googleapis/java-billing/issues/683)) ([c40d96c](https://github.com/googleapis/java-billing/commit/c40d96c0cb0a43e44fe55aa942eb52089e87f80a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#687](https://github.com/googleapis/java-billing/issues/687)) ([78cf91f](https://github.com/googleapis/java-billing/commit/78cf91fe3362b1a42cf7a5a7cbebb9331b9eec72))
+
 ## [2.3.0](https://github.com/googleapis/java-billing/compare/v2.2.1...v2.3.0) (2022-07-01)
 
 
