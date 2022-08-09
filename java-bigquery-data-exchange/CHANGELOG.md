@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.2](https://github.com/googleapis/java-bigquery-data-exchange/compare/v0.3.1...v0.3.2) (2022-08-09)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#43](https://github.com/googleapis/java-bigquery-data-exchange/issues/43)) ([94c6e1b](https://github.com/googleapis/java-bigquery-data-exchange/commit/94c6e1bdbce3b6995eab60d06e4e5bf95451f858))
+
 ## [0.3.1](https://github.com/googleapis/java-bigquery-data-exchange/compare/v0.3.0...v0.3.1) (2022-07-13)
 
 
