@@ -328,6 +328,26 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
               dialectValueCase_ = 13;
               break;
             }
+          case 114:
+            {
+              com.google.cloud.bigquery.migration.v2.MySQLDialect.Builder subBuilder = null;
+              if (dialectValueCase_ == 14) {
+                subBuilder =
+                    ((com.google.cloud.bigquery.migration.v2.MySQLDialect) dialectValue_)
+                        .toBuilder();
+              }
+              dialectValue_ =
+                  input.readMessage(
+                      com.google.cloud.bigquery.migration.v2.MySQLDialect.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.bigquery.migration.v2.MySQLDialect) dialectValue_);
+                dialectValue_ = subBuilder.buildPartial();
+              }
+              dialectValueCase_ = 14;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -384,6 +404,7 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     SQL_SERVER_DIALECT(11),
     POSTGRESQL_DIALECT(12),
     PRESTO_DIALECT(13),
+    MYSQL_DIALECT(14),
     DIALECTVALUE_NOT_SET(0);
     private final int value;
 
@@ -428,6 +449,8 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
           return POSTGRESQL_DIALECT;
         case 13:
           return PRESTO_DIALECT;
+        case 14:
+          return MYSQL_DIALECT;
         case 0:
           return DIALECTVALUE_NOT_SET;
         default:
@@ -1117,6 +1140,57 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.bigquery.migration.v2.PrestoDialect.getDefaultInstance();
   }
 
+  public static final int MYSQL_DIALECT_FIELD_NUMBER = 14;
+  /**
+   *
+   *
+   * <pre>
+   * The MySQL dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.MySQLDialect mysql_dialect = 14;</code>
+   *
+   * @return Whether the mysqlDialect field is set.
+   */
+  @java.lang.Override
+  public boolean hasMysqlDialect() {
+    return dialectValueCase_ == 14;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The MySQL dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.MySQLDialect mysql_dialect = 14;</code>
+   *
+   * @return The mysqlDialect.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.migration.v2.MySQLDialect getMysqlDialect() {
+    if (dialectValueCase_ == 14) {
+      return (com.google.cloud.bigquery.migration.v2.MySQLDialect) dialectValue_;
+    }
+    return com.google.cloud.bigquery.migration.v2.MySQLDialect.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The MySQL dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.MySQLDialect mysql_dialect = 14;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.migration.v2.MySQLDialectOrBuilder getMysqlDialectOrBuilder() {
+    if (dialectValueCase_ == 14) {
+      return (com.google.cloud.bigquery.migration.v2.MySQLDialect) dialectValue_;
+    }
+    return com.google.cloud.bigquery.migration.v2.MySQLDialect.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1178,6 +1252,9 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     }
     if (dialectValueCase_ == 13) {
       output.writeMessage(13, (com.google.cloud.bigquery.migration.v2.PrestoDialect) dialectValue_);
+    }
+    if (dialectValueCase_ == 14) {
+      output.writeMessage(14, (com.google.cloud.bigquery.migration.v2.MySQLDialect) dialectValue_);
     }
     unknownFields.writeTo(output);
   }
@@ -1253,6 +1330,11 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               13, (com.google.cloud.bigquery.migration.v2.PrestoDialect) dialectValue_);
     }
+    if (dialectValueCase_ == 14) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              14, (com.google.cloud.bigquery.migration.v2.MySQLDialect) dialectValue_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1309,6 +1391,9 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         break;
       case 13:
         if (!getPrestoDialect().equals(other.getPrestoDialect())) return false;
+        break;
+      case 14:
+        if (!getMysqlDialect().equals(other.getMysqlDialect())) return false;
         break;
       case 0:
       default:
@@ -1376,6 +1461,10 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       case 13:
         hash = (37 * hash) + PRESTO_DIALECT_FIELD_NUMBER;
         hash = (53 * hash) + getPrestoDialect().hashCode();
+        break;
+      case 14:
+        hash = (37 * hash) + MYSQL_DIALECT_FIELD_NUMBER;
+        hash = (53 * hash) + getMysqlDialect().hashCode();
         break;
       case 0:
       default:
@@ -1645,6 +1734,13 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
           result.dialectValue_ = prestoDialectBuilder_.build();
         }
       }
+      if (dialectValueCase_ == 14) {
+        if (mysqlDialectBuilder_ == null) {
+          result.dialectValue_ = dialectValue_;
+        } else {
+          result.dialectValue_ = mysqlDialectBuilder_.build();
+        }
+      }
       result.dialectValueCase_ = dialectValueCase_;
       onBuilt();
       return result;
@@ -1759,6 +1855,11 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         case PRESTO_DIALECT:
           {
             mergePrestoDialect(other.getPrestoDialect());
+            break;
+          }
+        case MYSQL_DIALECT:
+          {
+            mergeMysqlDialect(other.getMysqlDialect());
             break;
           }
         case DIALECTVALUE_NOT_SET:
@@ -4611,6 +4712,217 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return prestoDialectBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.migration.v2.MySQLDialect,
+            com.google.cloud.bigquery.migration.v2.MySQLDialect.Builder,
+            com.google.cloud.bigquery.migration.v2.MySQLDialectOrBuilder>
+        mysqlDialectBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The MySQL dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.MySQLDialect mysql_dialect = 14;</code>
+     *
+     * @return Whether the mysqlDialect field is set.
+     */
+    @java.lang.Override
+    public boolean hasMysqlDialect() {
+      return dialectValueCase_ == 14;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The MySQL dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.MySQLDialect mysql_dialect = 14;</code>
+     *
+     * @return The mysqlDialect.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.migration.v2.MySQLDialect getMysqlDialect() {
+      if (mysqlDialectBuilder_ == null) {
+        if (dialectValueCase_ == 14) {
+          return (com.google.cloud.bigquery.migration.v2.MySQLDialect) dialectValue_;
+        }
+        return com.google.cloud.bigquery.migration.v2.MySQLDialect.getDefaultInstance();
+      } else {
+        if (dialectValueCase_ == 14) {
+          return mysqlDialectBuilder_.getMessage();
+        }
+        return com.google.cloud.bigquery.migration.v2.MySQLDialect.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The MySQL dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.MySQLDialect mysql_dialect = 14;</code>
+     */
+    public Builder setMysqlDialect(com.google.cloud.bigquery.migration.v2.MySQLDialect value) {
+      if (mysqlDialectBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dialectValue_ = value;
+        onChanged();
+      } else {
+        mysqlDialectBuilder_.setMessage(value);
+      }
+      dialectValueCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The MySQL dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.MySQLDialect mysql_dialect = 14;</code>
+     */
+    public Builder setMysqlDialect(
+        com.google.cloud.bigquery.migration.v2.MySQLDialect.Builder builderForValue) {
+      if (mysqlDialectBuilder_ == null) {
+        dialectValue_ = builderForValue.build();
+        onChanged();
+      } else {
+        mysqlDialectBuilder_.setMessage(builderForValue.build());
+      }
+      dialectValueCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The MySQL dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.MySQLDialect mysql_dialect = 14;</code>
+     */
+    public Builder mergeMysqlDialect(com.google.cloud.bigquery.migration.v2.MySQLDialect value) {
+      if (mysqlDialectBuilder_ == null) {
+        if (dialectValueCase_ == 14
+            && dialectValue_
+                != com.google.cloud.bigquery.migration.v2.MySQLDialect.getDefaultInstance()) {
+          dialectValue_ =
+              com.google.cloud.bigquery.migration.v2.MySQLDialect.newBuilder(
+                      (com.google.cloud.bigquery.migration.v2.MySQLDialect) dialectValue_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          dialectValue_ = value;
+        }
+        onChanged();
+      } else {
+        if (dialectValueCase_ == 14) {
+          mysqlDialectBuilder_.mergeFrom(value);
+        } else {
+          mysqlDialectBuilder_.setMessage(value);
+        }
+      }
+      dialectValueCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The MySQL dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.MySQLDialect mysql_dialect = 14;</code>
+     */
+    public Builder clearMysqlDialect() {
+      if (mysqlDialectBuilder_ == null) {
+        if (dialectValueCase_ == 14) {
+          dialectValueCase_ = 0;
+          dialectValue_ = null;
+          onChanged();
+        }
+      } else {
+        if (dialectValueCase_ == 14) {
+          dialectValueCase_ = 0;
+          dialectValue_ = null;
+        }
+        mysqlDialectBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The MySQL dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.MySQLDialect mysql_dialect = 14;</code>
+     */
+    public com.google.cloud.bigquery.migration.v2.MySQLDialect.Builder getMysqlDialectBuilder() {
+      return getMysqlDialectFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The MySQL dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.MySQLDialect mysql_dialect = 14;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.migration.v2.MySQLDialectOrBuilder getMysqlDialectOrBuilder() {
+      if ((dialectValueCase_ == 14) && (mysqlDialectBuilder_ != null)) {
+        return mysqlDialectBuilder_.getMessageOrBuilder();
+      } else {
+        if (dialectValueCase_ == 14) {
+          return (com.google.cloud.bigquery.migration.v2.MySQLDialect) dialectValue_;
+        }
+        return com.google.cloud.bigquery.migration.v2.MySQLDialect.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The MySQL dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.MySQLDialect mysql_dialect = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.migration.v2.MySQLDialect,
+            com.google.cloud.bigquery.migration.v2.MySQLDialect.Builder,
+            com.google.cloud.bigquery.migration.v2.MySQLDialectOrBuilder>
+        getMysqlDialectFieldBuilder() {
+      if (mysqlDialectBuilder_ == null) {
+        if (!(dialectValueCase_ == 14)) {
+          dialectValue_ = com.google.cloud.bigquery.migration.v2.MySQLDialect.getDefaultInstance();
+        }
+        mysqlDialectBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.migration.v2.MySQLDialect,
+                com.google.cloud.bigquery.migration.v2.MySQLDialect.Builder,
+                com.google.cloud.bigquery.migration.v2.MySQLDialectOrBuilder>(
+                (com.google.cloud.bigquery.migration.v2.MySQLDialect) dialectValue_,
+                getParentForChildren(),
+                isClean());
+        dialectValue_ = null;
+      }
+      dialectValueCase_ = 14;
+      onChanged();
+      ;
+      return mysqlDialectBuilder_;
     }
 
     @java.lang.Override
