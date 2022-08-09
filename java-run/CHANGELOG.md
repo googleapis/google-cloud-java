@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.3.1](https://github.com/googleapis/java-run/compare/v0.3.0...v0.3.1) (2022-08-02)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-run/issues/1485)) ([#57](https://github.com/googleapis/java-run/issues/57)) ([df899da](https://github.com/googleapis/java-run/commit/df899da29e4e590a96d87c8bb51200aa2dd1f136))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#62](https://github.com/googleapis/java-run/issues/62)) ([c0720f7](https://github.com/googleapis/java-run/commit/c0720f7985a4702a162e1893eb34966941f17665))
+
 ## [0.3.0](https://github.com/googleapis/java-run/compare/v0.2.1...v0.3.0) (2022-07-01)
 
 
