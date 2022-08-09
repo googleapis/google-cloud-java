@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.5](https://github.com/googleapis/java-recaptchaenterprise/compare/v3.0.4...v3.0.5) (2022-08-04)
+
+
+### Documentation
+
+* **owlbot-java:** explaining why not using formatter in pom.xml ([#1511](https://github.com/googleapis/java-recaptchaenterprise/issues/1511)) ([#859](https://github.com/googleapis/java-recaptchaenterprise/issues/859)) ([3eccc8d](https://github.com/googleapis/java-recaptchaenterprise/commit/3eccc8d507f8daad990500416f90fd82a4f3f11f)), closes [#1502](https://github.com/googleapis/java-recaptchaenterprise/issues/1502)
+
 ## [3.0.4](https://github.com/googleapis/java-recaptchaenterprise/compare/v3.0.3...v3.0.4) (2022-08-03)
 
 
