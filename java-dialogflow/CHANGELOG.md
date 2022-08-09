@@ -1,5 +1,27 @@
 # Changelog
 
+## [4.8.0](https://github.com/googleapis/java-dialogflow/compare/v4.7.5...v4.8.0) (2022-08-05)
+
+
+### Features
+
+* deprecated the filter field and add resource_definition ([4d65ea6](https://github.com/googleapis/java-dialogflow/commit/4d65ea6b9dbad39efcb2776c1d112121f55ad896))
+* provide new parameter cx_current_page, the unique identifier of the CX page to override the `current_page` in the session. Add filter field to ListAnswerRecordsRequest. And add AudioInput to analysis requests ([4d65ea6](https://github.com/googleapis/java-dialogflow/commit/4d65ea6b9dbad39efcb2776c1d112121f55ad896))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.8.8 ([#979](https://github.com/googleapis/java-dialogflow/issues/979)) ([695aea7](https://github.com/googleapis/java-dialogflow/commit/695aea7c81ff2fbdd9186dadc047cf36201196ba))
+
+
+### Documentation
+
+* add more meaningful comments ([4d65ea6](https://github.com/googleapis/java-dialogflow/commit/4d65ea6b9dbad39efcb2776c1d112121f55ad896))
+* add more meaningful comments ([4d65ea6](https://github.com/googleapis/java-dialogflow/commit/4d65ea6b9dbad39efcb2776c1d112121f55ad896))
+* added an explicit note that DetectIntentRequest's text input is limited by 256 characters ([4d65ea6](https://github.com/googleapis/java-dialogflow/commit/4d65ea6b9dbad39efcb2776c1d112121f55ad896))
+* **owlbot-java:** explaining why not using formatter in pom.xml ([#1511](https://github.com/googleapis/java-dialogflow/issues/1511)) ([#973](https://github.com/googleapis/java-dialogflow/issues/973)) ([1e04116](https://github.com/googleapis/java-dialogflow/commit/1e04116887b60cf39559462ca8234227af090356)), closes [#1502](https://github.com/googleapis/java-dialogflow/issues/1502)
+* updated some method comments and added an explicit note that DetectIntentRequest's text input is limited by 256 characters ([#954](https://github.com/googleapis/java-dialogflow/issues/954)) ([4d65ea6](https://github.com/googleapis/java-dialogflow/commit/4d65ea6b9dbad39efcb2776c1d112121f55ad896))
+
 ## [4.7.5](https://github.com/googleapis/java-dialogflow/compare/v4.7.4...v4.7.5) (2022-08-03)
 
 
