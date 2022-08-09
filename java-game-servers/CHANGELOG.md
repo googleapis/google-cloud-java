@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.3.2](https://github.com/googleapis/java-game-servers/compare/v2.3.1...v2.3.2) (2022-08-09)
+
+
+### Bug Fixes
+
+* Ignore ITSystemTest ([#700](https://github.com/googleapis/java-game-servers/issues/700)) ([1666f2a](https://github.com/googleapis/java-game-servers/commit/1666f2aa0c4c4c191383e9980558273a55775fdd))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#697](https://github.com/googleapis/java-game-servers/issues/697)) ([501fd45](https://github.com/googleapis/java-game-servers/commit/501fd456b65df9f47c94a05937112846997854b3))
+* update dependency com.google.code.gson:gson to v2.9.1 ([#698](https://github.com/googleapis/java-game-servers/issues/698)) ([bcff637](https://github.com/googleapis/java-game-servers/commit/bcff637badeb83a5c2548a61d14d14ce700cf14a))
+
 ## [2.3.1](https://github.com/googleapis/java-game-servers/compare/v2.3.0...v2.3.1) (2022-07-13)
 
 
