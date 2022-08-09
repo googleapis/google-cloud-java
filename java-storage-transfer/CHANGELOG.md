@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/googleapis/java-storage-transfer/compare/v1.2.0...v1.2.1) (2022-07-26)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-storage-transfer/issues/1485)) ([#170](https://github.com/googleapis/java-storage-transfer/issues/170)) ([faa0b88](https://github.com/googleapis/java-storage-transfer/commit/faa0b88032c4ab7ca775cbaf71697c753fd98cea))
+
 ## [1.2.0](https://github.com/googleapis/java-storage-transfer/compare/v1.1.0...v1.2.0) (2022-07-01)
 
 
