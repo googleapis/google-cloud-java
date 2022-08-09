@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.2](https://github.com/googleapis/java-service-usage/compare/v2.3.1...v2.3.2) (2022-07-26)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-service-usage/issues/1485)) ([#252](https://github.com/googleapis/java-service-usage/issues/252)) ([cd1d293](https://github.com/googleapis/java-service-usage/commit/cd1d293797cde14fc970fc5aafd6c752e42d78c3))
+
 ## [2.3.1](https://github.com/googleapis/java-service-usage/compare/v2.3.0...v2.3.1) (2022-07-01)
 
 
