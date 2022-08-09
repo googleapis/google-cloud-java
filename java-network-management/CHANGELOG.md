@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.4.0](https://github.com/googleapis/java-network-management/compare/v1.3.1...v1.4.0) (2022-08-09)
+
+
+### Features
+
+* add destination egress location field to the probing details ([a746f0a](https://github.com/googleapis/java-network-management/commit/a746f0af79d0f48e7a1137b3d799762a3cdbcf90))
+* add fields to support Cloud functions ([a746f0a](https://github.com/googleapis/java-network-management/commit/a746f0af79d0f48e7a1137b3d799762a3cdbcf90))
+* add new abort cause and new route next hop type ([a746f0a](https://github.com/googleapis/java-network-management/commit/a746f0af79d0f48e7a1137b3d799762a3cdbcf90))
+* add new abort cause to the abort info ([a746f0a](https://github.com/googleapis/java-network-management/commit/a746f0af79d0f48e7a1137b3d799762a3cdbcf90))
+* add new deliver targets and drop causes for Private Service Connect ([#195](https://github.com/googleapis/java-network-management/issues/195)) ([a746f0a](https://github.com/googleapis/java-network-management/commit/a746f0af79d0f48e7a1137b3d799762a3cdbcf90))
+* add new next hop type to the route info ([a746f0a](https://github.com/googleapis/java-network-management/commit/a746f0af79d0f48e7a1137b3d799762a3cdbcf90))
+* add source telemetry agent URI to the endpoint info ([a746f0a](https://github.com/googleapis/java-network-management/commit/a746f0af79d0f48e7a1137b3d799762a3cdbcf90))
+
+
+### Documentation
+
+* update several comments ([a746f0a](https://github.com/googleapis/java-network-management/commit/a746f0af79d0f48e7a1137b3d799762a3cdbcf90))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#202](https://github.com/googleapis/java-network-management/issues/202)) ([a8e211a](https://github.com/googleapis/java-network-management/commit/a8e211a67ae080ace35d7e246993648dbac49fb3))
+
 ## [1.3.1](https://github.com/googleapis/java-network-management/compare/v1.3.0...v1.3.1) (2022-07-13)
 
 
