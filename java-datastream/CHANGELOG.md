@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/googleapis/java-datastream/compare/v1.1.0...v1.1.1) (2022-07-19)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-datastream/issues/1485)) ([#187](https://github.com/googleapis/java-datastream/issues/187)) ([c0a20f8](https://github.com/googleapis/java-datastream/commit/c0a20f8a75a16c81aae0c74cecc91b04ec884c95))
+
 ## [1.1.0](https://github.com/googleapis/java-datastream/compare/v1.0.0...v1.1.0) (2022-07-01)
 
 
