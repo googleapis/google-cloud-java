@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.7](https://github.com/googleapis/java-optimization/compare/v1.1.6...v1.1.7) (2022-08-06)
+
+
+### Documentation
+
+* **owlbot-java:** explaining why not using formatter in pom.xml ([#1511](https://github.com/googleapis/java-optimization/issues/1511)) ([#77](https://github.com/googleapis/java-optimization/issues/77)) ([886de05](https://github.com/googleapis/java-optimization/commit/886de05075db9a308b1b09e29de5c694cce56934)), closes [#1502](https://github.com/googleapis/java-optimization/issues/1502)
+
 ## [1.1.6](https://github.com/googleapis/java-optimization/compare/v1.1.5...v1.1.6) (2022-08-05)
 
 
