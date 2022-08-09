@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.1.0](https://github.com/googleapis/java-dataplex/compare/v1.0.2...v1.1.0) (2022-08-09)
+
+
+### Features
+
+* Add IAM support for Explore content APIs ([#83](https://github.com/googleapis/java-dataplex/issues/83)) ([6939c61](https://github.com/googleapis/java-dataplex/commit/6939c618bcd58694fb129cb98a153cbee8c36e51))
+* Add support for cross project for Task ([6939c61](https://github.com/googleapis/java-dataplex/commit/6939c618bcd58694fb129cb98a153cbee8c36e51))
+* Add support for custom container for Task ([6939c61](https://github.com/googleapis/java-dataplex/commit/6939c618bcd58694fb129cb98a153cbee8c36e51))
+* Add support for custom encryption key to be used for encrypt data on the PDs associated with the VMs in your Dataproc cluster for Task ([6939c61](https://github.com/googleapis/java-dataplex/commit/6939c618bcd58694fb129cb98a153cbee8c36e51))
+* Add support for Latest job in Task resource ([6939c61](https://github.com/googleapis/java-dataplex/commit/6939c618bcd58694fb129cb98a153cbee8c36e51))
+* Support logging sampled file paths per partition to Cloud logging for Discovery event ([6939c61](https://github.com/googleapis/java-dataplex/commit/6939c618bcd58694fb129cb98a153cbee8c36e51))
+* User mode filter in Explore list sessions API ([6939c61](https://github.com/googleapis/java-dataplex/commit/6939c618bcd58694fb129cb98a153cbee8c36e51))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#86](https://github.com/googleapis/java-dataplex/issues/86)) ([f318056](https://github.com/googleapis/java-dataplex/commit/f31805677a34a084d572ad6b217d57ad3d332bdf))
+
 ## [1.0.2](https://github.com/googleapis/java-dataplex/compare/v1.0.1...v1.0.2) (2022-07-13)
 
 
