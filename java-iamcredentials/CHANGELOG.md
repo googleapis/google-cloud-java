@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.2](https://github.com/googleapis/java-iamcredentials/compare/v2.3.1...v2.3.2) (2022-08-09)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#711](https://github.com/googleapis/java-iamcredentials/issues/711)) ([3ad0665](https://github.com/googleapis/java-iamcredentials/commit/3ad0665c9d731634876872c968b42ea24d9d6be3))
+
 ## [2.3.1](https://github.com/googleapis/java-iamcredentials/compare/v2.3.0...v2.3.1) (2022-07-13)
 
 
