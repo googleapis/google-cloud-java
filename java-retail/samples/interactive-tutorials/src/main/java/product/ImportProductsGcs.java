@@ -46,12 +46,12 @@ public class ImportProductsGcs {
             "projects/%s/locations/global/catalogs/default_catalog/branches/0", projectId);
     String gcsBucket = String.format("gs://%s", System.getenv("BUCKET_NAME"));
     String gcsErrorBucket = String.format("%s/errors", gcsBucket);
-    String gscProductsObject = "products.json";
-    // TO CHECK ERROR HANDLING USE THE JSON WITH INVALID PRODUCT
-    // GCS_PRODUCTS_OBJECT = "products_some_invalid.json"
+    String gcsProductsObject = "products.json";
+    // To check error handling, use an invalid product JSON.
+    // gcsProductsObject = "products_some_invalid.json";
 
     ImportProductsRequest importGcsRequest =
-        getImportProductsGcsRequest(gscProductsObject, gcsBucket, gcsErrorBucket, branchName);
+        getImportProductsGcsRequest(gcsProductsObject, gcsBucket, gcsErrorBucket, branchName);
     waitForOperationCompletion(importGcsRequest);
   }
 
