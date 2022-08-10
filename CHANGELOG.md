@@ -1,5 +1,14 @@
 # Changelog
 
+## [3.10.2](https://github.com/googleapis/java-logging/compare/v3.10.1...v3.10.2) (2022-08-08)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#1018](https://github.com/googleapis/java-logging/issues/1018)) ([17efd5c](https://github.com/googleapis/java-logging/commit/17efd5cdcd84ef894afc27afc665661eefb5a22b))
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.13 ([#992](https://github.com/googleapis/java-logging/issues/992)) ([3856e4f](https://github.com/googleapis/java-logging/commit/3856e4fa5105f1da37c98a2fbb5ff5dc9166d41b))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.13 ([#993](https://github.com/googleapis/java-logging/issues/993)) ([a94e428](https://github.com/googleapis/java-logging/commit/a94e42820261caf063b7a8f43df594b873084d7b))
+
 ## [3.10.1](https://github.com/googleapis/java-logging/compare/v3.10.0...v3.10.1) (2022-07-13)
 
 
