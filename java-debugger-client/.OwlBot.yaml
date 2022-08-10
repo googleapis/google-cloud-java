@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker:
-  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
 - "/grpc-google-.*/src"
@@ -25,10 +23,11 @@ deep-preserve-regex:
 
 deep-copy-regex:
 - source: "/google/devtools/clouddebugger/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-debugger-client-$1/src"
+  dest: "/owl-bot-staging/java-debugger-client/$1/proto-google-cloud-debugger-client-$1/src"
 - source: "/google/devtools/clouddebugger/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-debugger-client-$1/src"
+  dest: "/owl-bot-staging/java-debugger-client/$1/grpc-google-cloud-debugger-client-$1/src"
 - source: "/google/devtools/clouddebugger/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-debugger-client/src"
+  dest: "/owl-bot-staging/java-debugger-client/$1/google-cloud-debugger-client/src"
 - source: "/google/devtools/source/v1/google-devtools-source-v1-java/proto-google-devtools-source-v1-java/src"
-  dest: "/owl-bot-staging/v1/proto-google-devtools-source-protos/src"
+  dest: "/owl-bot-staging/java-debugger-client/v1/proto-google-devtools-source-protos/src"
+api-name: clouddebugger
