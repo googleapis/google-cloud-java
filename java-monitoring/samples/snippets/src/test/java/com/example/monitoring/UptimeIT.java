@@ -38,6 +38,7 @@ public class UptimeIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
+  private static String checkName;
 
   private static UptimeCheckConfig config =
       UptimeCheckConfig.newBuilder()
@@ -62,18 +63,20 @@ public class UptimeIT {
   @Test
   public void test1_CreateUptimeCheck() throws Exception {
     UptimeSample.main("create", "-n", config.getDisplayName(), "-o", "test.example.com", "-a", "/");
-    assertThat(bout.toString()).contains("Uptime check created: " + config.getDisplayName());
+    String actual = bout.toString();
+    assertThat(actual).contains(config.getDisplayName());
+    checkName = actual.split(":")[1].trim();
   }
 
   @Test
   public void test2_UpdateUptimeCheck() throws Exception {
-    UptimeSample.main("update", "-n", config.getDisplayName(), "-a", "/updated");
+    UptimeSample.main("update", "-n", checkName, "-a", "/updated");
     assertThat(bout.toString()).contains("/updated");
   }
 
   @Test
   public void test2_GetUptimeCheck() throws Exception {
-    UptimeSample.main("get", "-n", config.getDisplayName());
+    UptimeSample.main("get", "-n", checkName);
     assertThat(bout.toString()).contains(config.getDisplayName());
   }
 
@@ -96,6 +99,6 @@ public class UptimeIT {
 
   @Test
   public void test3_DeleteUptimeCheck() throws Exception {
-    UptimeSample.main("delete", "-n", config.getDisplayName());
+    UptimeSample.main("delete", "-n", checkName);
   }
 }
