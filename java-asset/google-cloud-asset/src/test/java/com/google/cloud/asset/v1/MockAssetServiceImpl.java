@@ -333,6 +333,27 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
   }
 
   @Override
+  public void queryAssets(
+      QueryAssetsRequest request, StreamObserver<QueryAssetsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QueryAssetsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((QueryAssetsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method QueryAssets, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QueryAssetsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createSavedQuery(
       CreateSavedQueryRequest request, StreamObserver<SavedQuery> responseObserver) {
     Object response = responses.poll();

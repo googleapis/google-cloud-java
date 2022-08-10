@@ -971,6 +971,65 @@ public class AssetServiceClientHttpJsonTest {
   }
 
   @Test
+  public void queryAssetsTest() throws Exception {
+    QueryAssetsResponse expectedResponse =
+        QueryAssetsResponse.newBuilder()
+            .setJobReference("jobReference-2094880754")
+            .setDone(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    QueryAssetsRequest request =
+        QueryAssetsRequest.newBuilder()
+            .setParent(FolderName.of("[FOLDER]").toString())
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .setTimeout(Duration.newBuilder().build())
+            .setOutputConfig(QueryAssetsOutputConfig.newBuilder().build())
+            .build();
+
+    QueryAssetsResponse actualResponse = client.queryAssets(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void queryAssetsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QueryAssetsRequest request =
+          QueryAssetsRequest.newBuilder()
+              .setParent(FolderName.of("[FOLDER]").toString())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .setTimeout(Duration.newBuilder().build())
+              .setOutputConfig(QueryAssetsOutputConfig.newBuilder().build())
+              .build();
+      client.queryAssets(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void createSavedQueryTest() throws Exception {
     SavedQuery expectedResponse =
         SavedQuery.newBuilder()

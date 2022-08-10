@@ -168,6 +168,11 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
     return ((AssetServiceStubSettings) getStubSettings()).analyzeMoveSettings();
   }
 
+  /** Returns the object with the settings used for calls to queryAssets. */
+  public UnaryCallSettings<QueryAssetsRequest, QueryAssetsResponse> queryAssetsSettings() {
+    return ((AssetServiceStubSettings) getStubSettings()).queryAssetsSettings();
+  }
+
   /** Returns the object with the settings used for calls to createSavedQuery. */
   public UnaryCallSettings<CreateSavedQueryRequest, SavedQuery> createSavedQuerySettings() {
     return ((AssetServiceStubSettings) getStubSettings()).createSavedQuerySettings();
@@ -407,6 +412,12 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
     public UnaryCallSettings.Builder<AnalyzeMoveRequest, AnalyzeMoveResponse>
         analyzeMoveSettings() {
       return getStubSettingsBuilder().analyzeMoveSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to queryAssets. */
+    public UnaryCallSettings.Builder<QueryAssetsRequest, QueryAssetsResponse>
+        queryAssetsSettings() {
+      return getStubSettingsBuilder().queryAssetsSettings();
     }
 
     /** Returns the builder for the settings used for calls to createSavedQuery. */

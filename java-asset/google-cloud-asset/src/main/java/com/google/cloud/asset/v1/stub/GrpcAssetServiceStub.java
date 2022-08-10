@@ -54,6 +54,8 @@ import com.google.cloud.asset.v1.ListFeedsRequest;
 import com.google.cloud.asset.v1.ListFeedsResponse;
 import com.google.cloud.asset.v1.ListSavedQueriesRequest;
 import com.google.cloud.asset.v1.ListSavedQueriesResponse;
+import com.google.cloud.asset.v1.QueryAssetsRequest;
+import com.google.cloud.asset.v1.QueryAssetsResponse;
 import com.google.cloud.asset.v1.SavedQuery;
 import com.google.cloud.asset.v1.SearchAllIamPoliciesRequest;
 import com.google.cloud.asset.v1.SearchAllIamPoliciesResponse;
@@ -202,6 +204,16 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   ProtoUtils.marshaller(AnalyzeMoveResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<QueryAssetsRequest, QueryAssetsResponse>
+      queryAssetsMethodDescriptor =
+          MethodDescriptor.<QueryAssetsRequest, QueryAssetsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.asset.v1.AssetService/QueryAssets")
+              .setRequestMarshaller(ProtoUtils.marshaller(QueryAssetsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(QueryAssetsResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<CreateSavedQueryRequest, SavedQuery>
       createSavedQueryMethodDescriptor =
           MethodDescriptor.<CreateSavedQueryRequest, SavedQuery>newBuilder()
@@ -297,6 +309,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
           AnalyzeIamPolicyLongrunningMetadata>
       analyzeIamPolicyLongrunningOperationCallable;
   private final UnaryCallable<AnalyzeMoveRequest, AnalyzeMoveResponse> analyzeMoveCallable;
+  private final UnaryCallable<QueryAssetsRequest, QueryAssetsResponse> queryAssetsCallable;
   private final UnaryCallable<CreateSavedQueryRequest, SavedQuery> createSavedQueryCallable;
   private final UnaryCallable<GetSavedQueryRequest, SavedQuery> getSavedQueryCallable;
   private final UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesResponse>
@@ -491,6 +504,16 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<QueryAssetsRequest, QueryAssetsResponse> queryAssetsTransportSettings =
+        GrpcCallSettings.<QueryAssetsRequest, QueryAssetsResponse>newBuilder()
+            .setMethodDescriptor(queryAssetsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<CreateSavedQueryRequest, SavedQuery> createSavedQueryTransportSettings =
         GrpcCallSettings.<CreateSavedQueryRequest, SavedQuery>newBuilder()
             .setMethodDescriptor(createSavedQueryMethodDescriptor)
@@ -628,6 +651,9 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
     this.analyzeMoveCallable =
         callableFactory.createUnaryCallable(
             analyzeMoveTransportSettings, settings.analyzeMoveSettings(), clientContext);
+    this.queryAssetsCallable =
+        callableFactory.createUnaryCallable(
+            queryAssetsTransportSettings, settings.queryAssetsSettings(), clientContext);
     this.createSavedQueryCallable =
         callableFactory.createUnaryCallable(
             createSavedQueryTransportSettings, settings.createSavedQuerySettings(), clientContext);
@@ -760,6 +786,11 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
   @Override
   public UnaryCallable<AnalyzeMoveRequest, AnalyzeMoveResponse> analyzeMoveCallable() {
     return analyzeMoveCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryAssetsRequest, QueryAssetsResponse> queryAssetsCallable() {
+    return queryAssetsCallable;
   }
 
   @Override

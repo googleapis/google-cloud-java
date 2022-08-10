@@ -846,6 +846,67 @@ public class AssetServiceClientTest {
   }
 
   @Test
+  public void queryAssetsTest() throws Exception {
+    QueryAssetsResponse expectedResponse =
+        QueryAssetsResponse.newBuilder()
+            .setJobReference("jobReference-2094880754")
+            .setDone(true)
+            .build();
+    mockAssetService.addResponse(expectedResponse);
+
+    QueryAssetsRequest request =
+        QueryAssetsRequest.newBuilder()
+            .setParent(FolderName.of("[FOLDER]").toString())
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .setTimeout(Duration.newBuilder().build())
+            .setOutputConfig(QueryAssetsOutputConfig.newBuilder().build())
+            .build();
+
+    QueryAssetsResponse actualResponse = client.queryAssets(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    QueryAssetsRequest actualRequest = ((QueryAssetsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getStatement(), actualRequest.getStatement());
+    Assert.assertEquals(request.getJobReference(), actualRequest.getJobReference());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertEquals(request.getTimeout(), actualRequest.getTimeout());
+    Assert.assertEquals(request.getReadTimeWindow(), actualRequest.getReadTimeWindow());
+    Assert.assertEquals(request.getReadTime(), actualRequest.getReadTime());
+    Assert.assertEquals(request.getOutputConfig(), actualRequest.getOutputConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void queryAssetsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssetService.addException(exception);
+
+    try {
+      QueryAssetsRequest request =
+          QueryAssetsRequest.newBuilder()
+              .setParent(FolderName.of("[FOLDER]").toString())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .setTimeout(Duration.newBuilder().build())
+              .setOutputConfig(QueryAssetsOutputConfig.newBuilder().build())
+              .build();
+      client.queryAssets(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void createSavedQueryTest() throws Exception {
     SavedQuery expectedResponse =
         SavedQuery.newBuilder()

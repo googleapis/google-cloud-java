@@ -50,6 +50,8 @@ import com.google.cloud.asset.v1.ListFeedsRequest;
 import com.google.cloud.asset.v1.ListFeedsResponse;
 import com.google.cloud.asset.v1.ListSavedQueriesRequest;
 import com.google.cloud.asset.v1.ListSavedQueriesResponse;
+import com.google.cloud.asset.v1.QueryAssetsRequest;
+import com.google.cloud.asset.v1.QueryAssetsResponse;
 import com.google.cloud.asset.v1.SavedQuery;
 import com.google.cloud.asset.v1.SearchAllIamPoliciesRequest;
 import com.google.cloud.asset.v1.SearchAllIamPoliciesResponse;
@@ -163,6 +165,10 @@ public abstract class AssetServiceStub implements BackgroundResource {
 
   public UnaryCallable<AnalyzeMoveRequest, AnalyzeMoveResponse> analyzeMoveCallable() {
     throw new UnsupportedOperationException("Not implemented: analyzeMoveCallable()");
+  }
+
+  public UnaryCallable<QueryAssetsRequest, QueryAssetsResponse> queryAssetsCallable() {
+    throw new UnsupportedOperationException("Not implemented: queryAssetsCallable()");
   }
 
   public UnaryCallable<CreateSavedQueryRequest, SavedQuery> createSavedQueryCallable() {
