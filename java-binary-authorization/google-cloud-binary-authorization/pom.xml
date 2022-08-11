@@ -70,6 +70,11 @@
       <groupId>org.threeten</groupId>
       <artifactId>threetenbp</artifactId>
     </dependency>
+    <dependency>
+      <groupId>io.grafeas</groupId>
+      <artifactId>grafeas</artifactId>
+      <scope>runtime</scope>
+    </dependency>
 
     <!-- Test dependencies -->
     <dependency>
@@ -77,11 +82,6 @@
       <artifactId>junit</artifactId>
       <scope>test</scope>
       <version>4.13.2</version>
-    </dependency>
-    <dependency>
-      <groupId>io.grafeas</groupId>
-      <artifactId>grafeas</artifactId>
-      <scope>test</scope>
     </dependency>
 
     <dependency>
