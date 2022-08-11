@@ -42,6 +42,7 @@ public class AddFulfillmentPlacesTest {
 
   @Before
   public void setUp() throws IOException, InterruptedException, ExecutionException {
+    // TODO(developer): Replace these variables before running the sample.
     String projectId = ServiceOptions.getDefaultProjectId();
     String generatedProductId = UUID.randomUUID().toString();
     String productName =
@@ -64,7 +65,7 @@ public class AddFulfillmentPlacesTest {
     String outputResult = bout.toString();
 
     assertThat(outputResult).contains("Add fulfilment places with current date");
-    assertThat(outputResult).contains("Add fulfillment places, wait 30 seconds");
+    assertThat(outputResult).contains("Add fulfillment places, wait 45 seconds");
   }
 
   @After

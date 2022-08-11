@@ -77,8 +77,8 @@ public class AddFulfillmentPlaces {
       serviceClient.addFulfillmentPlacesAsync(addFulfillmentPlacesRequest);
       // This is a long-running operation and its result is not immediately
       // present with get operations,thus we simulate wait with sleep method.
-      System.out.println("Add fulfillment places, wait 30 seconds: ");
-      TimeUnit.SECONDS.sleep(30);
+      System.out.println("Add fulfillment places, wait 45 seconds: ");
+      TimeUnit.SECONDS.sleep(45);
     }
   }
 }
