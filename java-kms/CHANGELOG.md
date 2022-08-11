@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.3](https://github.com/googleapis/java-kms/compare/v2.6.2...v2.6.3) (2022-08-11)
+
+
+### Bug Fixes
+
+* google-auth-library-oauth2-http as runtime scope ([#835](https://github.com/googleapis/java-kms/issues/835)) ([90c1ccd](https://github.com/googleapis/java-kms/commit/90c1ccdc1eb12976544fa2dad4913c9110f83f6d))
+
 ## [2.6.2](https://github.com/googleapis/java-kms/compare/v2.6.1...v2.6.2) (2022-08-09)
 
 
