@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.4.1](https://github.com/googleapis/java-monitoring/compare/v3.4.0...v3.4.1) (2022-08-11)
+
+
+### Bug Fixes
+
+* fix samples and samples tests for UptimeCheck. ([#909](https://github.com/googleapis/java-monitoring/issues/909)) ([7143f96](https://github.com/googleapis/java-monitoring/commit/7143f96d3e5b4f7f96f184b6367c45980dbb4140))
+* google-auth-library-oauth2-http is runtime scope ([#911](https://github.com/googleapis/java-monitoring/issues/911)) ([fb080db](https://github.com/googleapis/java-monitoring/commit/fb080dbac9a11563d3b21b1defe34720bbcd2f91))
+
 ## [3.4.0](https://github.com/googleapis/java-monitoring/compare/v3.3.6...v3.4.0) (2022-08-06)
 
 
