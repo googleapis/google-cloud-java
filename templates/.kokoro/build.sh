@@ -23,11 +23,44 @@ cd ${scriptDir}/..
 # include common functions
 source ${scriptDir}/common.sh
 
+# TODO: Switch monorepo_script_output to main
+# Find the root commit between the two branches
+base_commit=$(git merge-base monorepo_script_output HEAD)
+echo "Base Commit: ${base_commit}"
+
+# Find the files changed from when the PR branched to the last commit
+# Filter for java modules and get all the unique elements
+# grep returns 1 (error code) and exits the pipeline if there is no match
+# If there is no match, it will return true so the rest of the commands can run
+directories=$(git diff --name-only "${base_commit}" HEAD | grep -e 'java-.*' || true)
+if [[ -n $directories ]]
+then
+  directories=$(echo "${directories}" | cut -d '/' -f1 | sort -u)
+  dir_list=()
+  for directory in $directories
+  do
+    dir_list+=($directory)
+  done
+  # Combine each entry with a comma
+  module_list=$(IFS=, ; echo "${dir_list[*]}")
+fi
+echo "Module List: ${module_list}"
+
 # Use GCP Maven Mirror
 mkdir -p ${HOME}/.m2
 cp settings.xml ${HOME}/.m2
 
-mvn install -pl '!google-cloud-gapic-bom,!CoverageAggregator' -T 1C -DskipTests=true -Dclirr.skip=true -Denforcer.skip=true -Dcheckstyle.skip=true -Dflatten.skip=true -Danimal.sniffer.skip=true -Djacoco.skip=true
+mvn -B -pl "!google-cloud-gapic-bom,!CoverageAggregator" \
+    -ntp \
+    -DskipTests=true \
+    -Dclirr.skip=true \
+    -Denforcer.skip=true \
+    -Dcheckstyle.skip=true \
+    -Dflatten.skip=true \
+    -Danimal.sniffer.skip=true \
+    -Djacoco.skip=true \
+    -T 1C \
+    install
 
 # if GOOGLE_APPLICATION_CREDENTIALS is specified as a relative path, prepend Kokoro root directory onto it
 if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" && "${GOOGLE_APPLICATION_CREDENTIALS}" != /* ]]; then
@@ -56,21 +89,30 @@ integration)
              source "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secrets"
   fi
 
-  mvn -B -pl '!google-cloud-gapic-bom,!CoverageAggregator,!java-game-servers/google-cloud-game-servers' \
-    -ntp \
-    -Penable-integration-tests \
-    -DtrimStackTrace=false \
-    -Dclirr.skip=true \
-    -Denforcer.skip=true \
-    -Dcheckstyle.skip=true \
-    -Dflatten.skip=true \
-    -Danimal.sniffer.skip=true \
-    -Djacoco.skip=true \
-    -DskipUnitTests=true \
-    -fae \
-    -T 1C \
-    verify
-  RETURN_CODE=$?
+  if [[ -n $module_list ]]
+  then
+    echo "Running Integration Tests for: ${module_list}"
+    mvn -B -pl "${module_list}" \
+        -amd \
+        -ntp \
+        -Penable-integration-tests \
+        -DtrimStackTrace=false \
+        -Dclirr.skip=true \
+        -Denforcer.skip=true \
+        -Dcheckstyle.skip=true \
+        -Dflatten.skip=true \
+        -Danimal.sniffer.skip=true \
+        -Djacoco.skip=true \
+        -DskipUnitTests=true \
+        -fae \
+        -T 1C \
+        verify
+    RETURN_CODE=$?
+    echo "Finished Integration Tests for: ${module_list}"
+  else
+    echo "No integration tests to run"
+    RETURN_CODE=0
+  fi
   ;;
 graalvm)
   # Run Unit and Integration Tests with Native Image
