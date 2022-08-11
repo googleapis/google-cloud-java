@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.2](https://github.com/googleapis/java-os-config/compare/v2.5.1...v2.5.2) (2022-08-11)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#506](https://github.com/googleapis/java-os-config/issues/506)) ([c74db83](https://github.com/googleapis/java-os-config/commit/c74db83d99ff1cb9adb9d8f24eaf2fa91b29340e))
+
 ## [2.5.1](https://github.com/googleapis/java-os-config/compare/v2.5.0...v2.5.1) (2022-07-13)
 
 
