@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.9.2](https://github.com/googleapis/java-datacatalog/compare/v1.9.1...v1.9.2) (2022-08-11)
+
+
+### Bug Fixes
+
+* fix datacatalog resource name config ([8c4ab5c](https://github.com/googleapis/java-datacatalog/commit/8c4ab5c439d6f6ef5f7f1bbc3e6621b7672a96b5))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#840](https://github.com/googleapis/java-datacatalog/issues/840)) ([cd972bd](https://github.com/googleapis/java-datacatalog/commit/cd972bd1724acbdc7f5e5f370e5da2bdda94f977))
+* update dependency com.google.protobuf:protobuf-java-util to v3.21.4 ([#842](https://github.com/googleapis/java-datacatalog/issues/842)) ([08ba23a](https://github.com/googleapis/java-datacatalog/commit/08ba23af0354567f3ddc667893e0a061ea269992))
+
 ## [1.9.1](https://github.com/googleapis/java-datacatalog/compare/v1.9.0...v1.9.1) (2022-07-13)
 
 
