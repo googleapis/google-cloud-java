@@ -101,11 +101,9 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
 
   version_line=$(grep --max-count=1 'x-version-update' "${pom_file}")
 
-  #extracting module version
-  prefix="  <version>"
-  suffix="</version><!-- {x-version-update:${artifactName}:current} -->"
-  module_version=${version_line#"$prefix"}
-  module_version=${module_version%"$suffix"}
+  version_file="${bom_directory}/../versions.txt"
+
+  module_version=$(grep google- ${version_file} |head -1 |awk -F: '{print $2}')
 
   #concatenating module name and module version
   rp_manifest_line=""\""${module}"\"": "\""${module_version}"\"""
