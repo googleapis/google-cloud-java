@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.3](https://github.com/googleapis/java-binary-authorization/compare/v1.2.2...v1.2.3) (2022-08-11)
+
+
+### Bug Fixes
+
+* grafeas is runtime scope ([#251](https://github.com/googleapis/java-binary-authorization/issues/251)) ([f76e876](https://github.com/googleapis/java-binary-authorization/commit/f76e876facc17319638bbc4b87f19941a5acc707))
+
 ## [1.2.2](https://github.com/googleapis/java-binary-authorization/compare/v1.2.1...v1.2.2) (2022-08-04)
 
 
