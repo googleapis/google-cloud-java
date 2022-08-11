@@ -1,0 +1,17 @@
+{
+    "api_shortname": "workflowexecutions",
+    "name_pretty": "Cloud Workflow Executions",
+    "product_documentation": "https://cloud.google.com/workflows",
+    "api_description": "allows you to ochestrate and automate Google Cloud and HTTP-based API services with serverless workflows.",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-workflow-executions/latest/history",
+    "release_level": "stable",
+    "transport": "grpc",
+    "language": "java",
+    "repo": "googleapis/java-workflow-executions",
+    "repo_short": "java-workflow-executions",
+    "distribution_name": "com.google.cloud:google-cloud-workflow-executions",
+    "api_id": "workflowexecutions.googleapis.com",
+    "requires_billing": true,
+    "library_type": "GAPIC_AUTO",
+    "codeowner_team": "@googleapis/aap-dpes"
+}
