@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.3](https://github.com/googleapis/java-os-login/compare/v2.2.2...v2.2.3) (2022-08-11)
+
+
+### Bug Fixes
+
+* 3 dependencies as runtime scope ([#715](https://github.com/googleapis/java-os-login/issues/715)) ([9cbe53f](https://github.com/googleapis/java-os-login/commit/9cbe53fd19c8c2b26090030f035367842f880fb3))
+
 ## [2.2.2](https://github.com/googleapis/java-os-login/compare/v2.2.1...v2.2.2) (2022-08-09)
 
 
