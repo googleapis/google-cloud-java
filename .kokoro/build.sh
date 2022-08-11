@@ -23,11 +23,14 @@ cd ${scriptDir}/..
 # include common functions
 source ${scriptDir}/common.sh
 
+echo $KOKORO_GITHUB_PULL_REQUEST_TARGET_BRANCH
+echo $KOKORO_GITHUB_PULL_REQUEST_COMMIT
+
 # Find the files changed from when the PR branched to the last commit
 # Filter for java modules and get all the unique elements
 # grep returns 1 (error code) and exits the pipeline if there is no match
 # If there is no match, it will return true so the rest of the commands can run
-modified_files=$(git diff --name-only HEAD monorepo_script_output)
+modified_files=$(git diff --name-only $KOKORO_GITHUB_PULL_REQUEST_COMMIT $KOKORO_GITHUB_PULL_REQUEST_TARGET_BRANCH)
 echo "Modified files: ${modified_files}"
 directories=$(echo "${modified_files}" | grep -e 'java-.*' || true)
 echo "Files in java modules: ${directories}"
