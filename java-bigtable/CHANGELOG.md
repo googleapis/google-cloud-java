@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.10.3](https://github.com/googleapis/java-bigtable/compare/v2.10.2...v2.10.3) (2022-08-08)
+
+
+### Bug Fixes
+
+* declaring 2 http libraries as runtime ([#1341](https://github.com/googleapis/java-bigtable/issues/1341)) ([8071de6](https://github.com/googleapis/java-bigtable/commit/8071de6235a6c1aa5873902ca55beaa2a8d64276))
+
 ## [2.10.2](https://github.com/googleapis/java-bigtable/compare/v2.10.1...v2.10.2) (2022-08-03)
 
 
