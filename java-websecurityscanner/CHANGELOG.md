@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.2](https://github.com/googleapis/java-websecurityscanner/compare/v2.2.1...v2.2.2) (2022-08-11)
+
+
+### Bug Fixes
+
+* google-auth-library-oauth2-http is runtime scope ([#727](https://github.com/googleapis/java-websecurityscanner/issues/727)) ([da91ff1](https://github.com/googleapis/java-websecurityscanner/commit/da91ff1fa317148d27bf24b1ccfbed40ba0af6ae))
+
 ## [2.2.1](https://github.com/googleapis/java-websecurityscanner/compare/v2.2.0...v2.2.1) (2022-08-02)
 
 
