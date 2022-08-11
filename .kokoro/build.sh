@@ -23,11 +23,6 @@ cd ${scriptDir}/..
 # include common functions
 source ${scriptDir}/common.sh
 
-# TODO: Switch monorepo_script_output to main
-# Find the root commit between the two branches
-#base_commit=$(git merge-base monorepo_script_output HEAD)
-#echo "Base Commit: ${base_commit}"
-
 # Find the files changed from when the PR branched to the last commit
 # Filter for java modules and get all the unique elements
 # grep returns 1 (error code) and exits the pipeline if there is no match
