@@ -25,14 +25,14 @@ source ${scriptDir}/common.sh
 
 # TODO: Switch monorepo_script_output to main
 # Find the root commit between the two branches
-base_commit=$(git merge-base monorepo_script_output HEAD)
-echo "Base Commit: ${base_commit}"
+#base_commit=$(git merge-base monorepo_script_output HEAD)
+#echo "Base Commit: ${base_commit}"
 
 # Find the files changed from when the PR branched to the last commit
 # Filter for java modules and get all the unique elements
 # grep returns 1 (error code) and exits the pipeline if there is no match
 # If there is no match, it will return true so the rest of the commands can run
-modified_files=$(git diff --name-only "${base_commit}" HEAD)
+modified_files=$(git diff --name-only HEAD monorepo_script_output)
 echo "Modified files: ${modified_files}"
 directories=$(echo "${modified_files}" | grep -e 'java-.*' || true)
 echo "Files in java modules: ${directories}"
