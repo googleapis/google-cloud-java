@@ -1,0 +1,3 @@
+primaryBranch: monorepo_script_output
+releaseType: java-yoshi
+manifest: true
