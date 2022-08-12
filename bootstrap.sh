@@ -109,7 +109,7 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
   pom_file="${bom_directory}/../pom.xml"
   version=""
   if ! [[ "${module_snapshot_version}" =~ .*SNAPSHOT ]]; then
-    # increment the third digit of the version and overwrite the variable
+    # increment the third digit of the version and overwrite it.
     version=$(echo ${module_released_version} |  awk -F'.' '{print $1"."$2"."$3+1}' |  sed s/[.]$//)
     version="${version}-SNAPSHOT"
     # update the pom with the new version
