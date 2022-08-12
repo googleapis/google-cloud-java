@@ -201,7 +201,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
     ImmutableMap<String, String> builtinAttributes =
         ImmutableMap.<String, String>builder()
             .put("project_id", settings.getProjectId())
-            .put("instance_id", settings.getInstanceId())
+            .put("instance", settings.getInstanceId())
             .put("app_profile", settings.getAppProfileId())
             .build();
     // Inject Opencensus instrumentation

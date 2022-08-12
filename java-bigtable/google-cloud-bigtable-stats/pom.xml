@@ -16,6 +16,10 @@
     <version>2.10.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
     <description>Experimental project to shade OpenCensus dependencies.</description>
 
+    <properties>
+        <cloud.monitoring.version>3.3.6</cloud.monitoring.version>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -25,10 +29,60 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>com.google.cloud</groupId>
+                <artifactId>google-cloud-monitoring-bom</artifactId>
+                <version>${cloud.monitoring.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <dependencies>
+        <!-- opencensus dependencies -->
+        <dependency>
+            <groupId>io.opencensus</groupId>
+            <artifactId>opencensus-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.opencensus</groupId>
+            <artifactId>opencensus-exporter-stats-stackdriver</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.opencensus</groupId>
+            <artifactId>opencensus-impl</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- cloud monitoring dependencies -->
+        <dependency>
+            <groupId>com.google.cloud</groupId>
+            <artifactId>google-cloud-monitoring</artifactId>
+            <!-- Excluding http dependencies since they're not used and are causing conflict in google-cloud-bigtable -->
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.http-client</groupId>
+                    <artifactId>google-http-client-gson</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.google.http-client</groupId>
+                    <artifactId>google-http-client</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.google.api.grpc</groupId>
+            <artifactId>proto-google-cloud-monitoring-v3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.api.grpc</groupId>
+            <artifactId>proto-google-common-protos</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.auth</groupId>
+            <artifactId>google-auth-library-credentials</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.google.api</groupId>
             <artifactId>gax</artifactId>
@@ -48,21 +102,35 @@
             <groupId>com.google.api</groupId>
             <artifactId>api-common</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>io.opencensus</groupId>
-            <artifactId>opencensus-api</artifactId>
+            <groupId>com.google.api</groupId>
+            <artifactId>gax-grpc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>io.opencensus</groupId>
-            <artifactId>opencensus-impl</artifactId>
+            <groupId>org.threeten</groupId>
+            <artifactId>threetenbp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+        </dependency>
+
+        <!-- runtime dependency for native image integration test -->
+        <dependency>
+            <groupId>com.google.http-client</groupId>
+            <artifactId>google-http-client</artifactId>
             <scope>runtime</scope>
         </dependency>
+
+        <!-- test dependencies -->
         <dependency>
             <groupId>com.google.truth</groupId>
             <artifactId>truth</artifactId>
@@ -71,6 +139,11 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -111,6 +184,17 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <version>3.3.0</version>
+                <!-- Ignore opencensus-exporter-metrics-util and opencensus-exporter-stats-stackdriver from -->
+                <!-- dependency analyze. opencensus-exporter-metrics-util is a transitive dependency from  -->
+                <!-- opencensus-exporter-stats-stackdriver but it's not defined in java-shared-dependencies. -->
+                <!-- To make the opencensus version consistent, only include opencensus-exporter-stats-stackdriver -->
+                <!-- until opencensus-exporter-metrics-util is added to java-shared-dependencies. -->
+                <configuration>
+                    <ignoredDependencies>
+                        <ignoredDependency>io.opencensus:opencensus-exporter-metrics-util:*</ignoredDependency>
+                        <ignoredDependency>io.opencensus:opencensus-exporter-stats-stackdriver:*</ignoredDependency>
+                    </ignoredDependencies>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -120,6 +204,31 @@
                         <exclude>com/google/bigtable/veneer/repackaged/**</exclude>
                     </excludes>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>enforce-version-consistency</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <bannedDependencies>
+                                    <includes>
+                                        <!-- gax-grpc transitvely brings in opencensus-proto, which the latest version is 0.2.0-->
+                                        <!-- Only allow 0.2.0 for opencensus-proto and then the latest version (currently 0.31.1) for all other modules-->
+                                        <!-- this will need to be updated whenever the opencensus version gets updated -->
+                                        <dependency>io.opencensus:*:[0.31.1]</dependency>
+                                        <dependency>io.opencensus:opencensus-proto:[0.2.0]</dependency>
+                                    </includes>
+                                </bannedDependencies>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

@@ -23,12 +23,11 @@ import io.opencensus.tags.TagKey;
 class BuiltinMeasureConstants {
   // Monitored resource TagKeys
   static final TagKey PROJECT_ID = TagKey.create("project_id");
-  static final TagKey INSTANCE_ID = TagKey.create("instance_id");
+  static final TagKey INSTANCE_ID = TagKey.create("instance");
   static final TagKey CLUSTER = TagKey.create("cluster");
   static final TagKey TABLE = TagKey.create("table");
   static final TagKey ZONE = TagKey.create("zone");
-  // Placeholder TagKey to be used in Stackdriver exporter
-  static final TagKey CLIENT_ID = TagKey.create("client_id");
+  static final TagKey CLIENT_UID = TagKey.create("client_uid");
 
   // Metrics TagKeys
   static final TagKey APP_PROFILE = TagKey.create("app_profile");

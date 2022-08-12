@@ -84,7 +84,7 @@ public class StreamingMetricsMetadataIT {
     Thread.sleep(100);
 
     List<String> tagValueStrings = StatsWrapper.getOperationLatencyViewTagValueStrings();
-    assertThat(tagValueStrings).contains("undefined");
-    assertThat(tagValueStrings).contains("undefined");
+    assertThat(tagValueStrings).contains("unspecified");
+    assertThat(tagValueStrings).contains("global");
   }
 }

@@ -339,8 +339,9 @@ public class BuiltinMetricsTracerTest {
     // and when the record() is called in onOperationCompletion().
     verify(statsRecorderWrapper, timeout(50).times(fakeService.getAttemptCounter().get() + 1))
         .record(status.capture(), tableId.capture(), zone.capture(), cluster.capture());
-    assertThat(zone.getAllValues()).containsExactly("undefined", "undefined", ZONE, ZONE);
-    assertThat(cluster.getAllValues()).containsExactly("undefined", "undefined", CLUSTER, CLUSTER);
+    assertThat(zone.getAllValues()).containsExactly("global", "global", ZONE, ZONE);
+    assertThat(cluster.getAllValues())
+        .containsExactly("unspecified", "unspecified", CLUSTER, CLUSTER);
     assertThat(status.getAllValues()).containsExactly("UNAVAILABLE", "UNAVAILABLE", "OK", "OK");
   }
 

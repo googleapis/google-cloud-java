@@ -64,6 +64,13 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigtable-stats</artifactId>
+      <!-- Exclude all the shaded transitive dependencies -->
+      <exclusions>
+        <exclusion>
+          <groupId>io.opencensus</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <!-- Production dependencies -->
     <dependency>
@@ -147,6 +154,17 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-alts</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <!-- Runtime dependencies for credentials -->
+    <dependency>
+      <groupId>com.google.http-client</groupId>
+      <artifactId>google-http-client</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.http-client</groupId>
+      <artifactId>google-http-client-gson</artifactId>
       <scope>runtime</scope>
     </dependency>
     <!--

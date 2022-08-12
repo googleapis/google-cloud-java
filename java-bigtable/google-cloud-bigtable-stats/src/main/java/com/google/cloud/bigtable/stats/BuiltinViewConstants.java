@@ -59,7 +59,7 @@ class BuiltinViewConstants {
                   1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 15.0, 20.0, 30.0, 40.0, 50.0,
                   100.0)));
 
-  private static final Aggregation AGGREGATION_ERROR_COUNT = Sum.create();
+  private static final Aggregation AGGREGATION_COUNT = Sum.create();
 
   static final View OPERATION_LATENCIES_VIEW =
       View.create(
@@ -102,7 +102,7 @@ class BuiltinViewConstants {
           View.Name.create("bigtable.googleapis.com/internal/client/retry_count"),
           "The number of additional RPCs sent after the initial attempt.",
           RETRY_COUNT,
-          AGGREGATION_RETRY_COUNT,
+          AGGREGATION_COUNT,
           ImmutableList.of(
               PROJECT_ID,
               INSTANCE_ID,
@@ -154,7 +154,7 @@ class BuiltinViewConstants {
           View.Name.create("bigtable.googleapis.com/internal/client/connectivity_error_count"),
           "Number of requests that failed to reach the Google datacenter. (Requests without google response headers).",
           CONNECTIVITY_ERROR_COUNT,
-          AGGREGATION_ERROR_COUNT,
+          AGGREGATION_COUNT,
           ImmutableList.of(
               PROJECT_ID,
               INSTANCE_ID,
@@ -173,15 +173,7 @@ class BuiltinViewConstants {
           APPLICATION_LATENCIES,
           AGGREGATION_WITH_MILLIS_HISTOGRAM,
           ImmutableList.of(
-              PROJECT_ID,
-              INSTANCE_ID,
-              APP_PROFILE,
-              METHOD,
-              STREAMING,
-              CLIENT_NAME,
-              CLUSTER,
-              ZONE,
-              TABLE));
+              PROJECT_ID, INSTANCE_ID, APP_PROFILE, METHOD, CLIENT_NAME, CLUSTER, ZONE, TABLE));
 
   static final View THROTTLING_LATENCIES_VIEW =
       View.create(

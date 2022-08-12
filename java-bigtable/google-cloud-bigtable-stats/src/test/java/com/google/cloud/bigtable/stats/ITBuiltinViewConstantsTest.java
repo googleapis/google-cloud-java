@@ -32,7 +32,7 @@ public class ITBuiltinViewConstantsTest {
       assertWithMessage(view + " should have all basic tags")
           .that(viewToTagMap.get(view))
           .containsAtLeast(
-              "project_id", "instance_id", "app_profile", "method", "zone", "cluster", "table");
+              "project_id", "instance", "app_profile", "method", "zone", "cluster", "table");
     }
   }
 }
