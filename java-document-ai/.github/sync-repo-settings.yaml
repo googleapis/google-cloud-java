@@ -8,10 +8,8 @@ branchProtectionRules:
     requiresCodeOwnerReviews: true
     requiresStrictStatusChecks: false
     requiredStatusCheckContexts:
-      - dependencies (8)
       - dependencies (11)
       - lint
-      - clirr
       - units (8)
       - units (11)
       - 'Kokoro - Test: Integration'
@@ -25,10 +23,8 @@ branchProtectionRules:
     requiresCodeOwnerReviews: true
     requiresStrictStatusChecks: false
     requiredStatusCheckContexts:
-      - dependencies (8)
       - dependencies (11)
       - lint
-      - clirr
       - units (7)
       - units (8)
       - units (11)
