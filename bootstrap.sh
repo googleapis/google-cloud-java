@@ -101,14 +101,25 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
 
   version_line=$(grep --max-count=1 'x-version-update' "${pom_file}")
 
-  #extracting module version
-  prefix="  <version>"
-  suffix="</version><!-- {x-version-update:${artifactName}:current} -->"
-  module_version=${version_line#"$prefix"}
-  module_version=${module_version%"$suffix"}
+  version_file="${bom_directory}/../versions.txt"
+
+  module_released_version=$(grep google- ${version_file} |head -1 |awk -F: '{print $2}')
+
+  module_snapshot_version=$(grep google- ${version_file} |head -1 |awk -F: '{print $3}')
+  pom_file="${bom_directory}/../pom.xml"
+  version=""
+  if ! [[ "${module_snapshot_version}" =~ .*SNAPSHOT ]]; then
+    # increment the third digit of the version and overwrite the variable
+    version=$(echo ${module_released_version} |  awk -F'.' '{print $1"."$2"."$3+1}' |  sed s/[.]$//)
+    version="${version}-SNAPSHOT"
+    # update the pom with the new version
+    mvn -f ${pom_file} -U versions:set -DnewVersion=${version}
+    echo "*******************NON-SNAPSHOT-VERSION-FOUND*************"
+  fi
+
 
   #concatenating module name and module version
-  rp_manifest_line=""\""${module}"\"": "\""${module_version}"\"""
+  rp_manifest_line=""\""${module}"\"": "\""${module_released_version}"\"""
 
   rp_config_line+=""\""${module}"\"": {\n\
         "\""component"\"": "\""${artifactName_config}"\""\n\
@@ -123,7 +134,6 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
 
   #adding the line to manifest config file
   echo "${rp_manifest_line}" >> .release-please-manifest.json
-
 
   if ! grep --quiet '"release_level": "stable"' "${repo_metadata}"; then
     # Not including non-GA libraries, except those that happened to be included
@@ -147,7 +157,6 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
         <type>pom</type>\n\
         <scope>import</scope>\n\
       </dependency>\n"
-
 
 done
 
