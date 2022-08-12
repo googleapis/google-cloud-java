@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker:
-  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
 - "/samples/snippets/generated"
@@ -23,10 +21,12 @@ deep-remove-regex:
 
 deep-copy-regex:
 - source: "/google/cloud/tpu/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-tpu-$1/src"
+  dest: "/owl-bot-staging/java-tpu/$1/proto-google-cloud-tpu-$1/src"
 - source: "/google/cloud/tpu/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-tpu-$1/src"
+  dest: "/owl-bot-staging/java-tpu/$1/grpc-google-cloud-tpu-$1/src"
 - source: "/google/cloud/tpu/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-tpu/src"
+  dest: "/owl-bot-staging/java-tpu/$1/google-cloud-tpu/src"
 - source: "/google/cloud/tpu/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/$1/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-tpu/$1/samples/snippets/generated"
+
+api-name: tpu
