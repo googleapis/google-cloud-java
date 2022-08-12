@@ -171,6 +171,9 @@
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "WriteFeatureValues": {
+              "methods": ["writeFeatureValues", "writeFeatureValues", "writeFeatureValues", "writeFeatureValuesCallable"]
             }
           }
         }
