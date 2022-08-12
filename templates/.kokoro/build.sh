@@ -23,19 +23,14 @@ cd ${scriptDir}/..
 # include common functions
 source ${scriptDir}/common.sh
 
-# TODO: Switch monorepo_script_output to main
-# Find the root commit between the two branches
-base_commit=$(git merge-base monorepo_script_output HEAD)
-echo "Base Commit: ${base_commit}"
-
 # Find the files changed from when the PR branched to the last commit
 # Filter for java modules and get all the unique elements
 # grep returns 1 (error code) and exits the pipeline if there is no match
 # If there is no match, it will return true so the rest of the commands can run
-modified_files=$(git diff --name-only "${base_commit}" HEAD)
-echo "Modified files: ${modified_files}"
+modified_files=$(git diff --name-only $KOKORO_GITHUB_PULL_REQUEST_COMMIT $KOKORO_GITHUB_PULL_REQUEST_TARGET_BRANCH)
+printf "Modified files:\n%s\n" "${modified_files}"
 directories=$(echo "${modified_files}" | grep -e 'java-.*' || true)
-echo "Files in java modules: ${directories}"
+printf "Files in java modules:\n%s\n" "${directories}"
 if [[ -n $directories ]]; then
   directories=$(echo "${directories}" | cut -d '/' -f1 | sort -u)
   dir_list=()
@@ -46,7 +41,7 @@ if [[ -n $directories ]]; then
   # Combine each entry with a comma
   module_list=$(IFS=, ; echo "${dir_list[*]}")
 fi
-echo "Module List: ${module_list}"
+printf "Module List:\n%s\n" "${module_list}"
 
 # Use GCP Maven Mirror
 mkdir -p ${HOME}/.m2
@@ -92,7 +87,7 @@ case ${JOB_TYPE} in
     fi
 
     if [[ -n $module_list ]]; then
-      echo "Running Integration Tests for: ${module_list}"
+      printf "Running Integration Tests for:\n%s\n" "${module_list}"
       mvn -B -pl "${module_list}" \
           -amd \
           -ntp \
@@ -109,7 +104,7 @@ case ${JOB_TYPE} in
           -T 1C \
           verify
       RETURN_CODE=$?
-      echo "Finished Integration Tests for: ${module_list}"
+      printf "Finished Integration Tests for:\n%s\n" "${module_list}"
     else
       echo "No integration tests to run"
       RETURN_CODE=0
