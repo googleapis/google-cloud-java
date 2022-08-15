@@ -122,7 +122,19 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
     version_line="${version_line/${module_snapshot_version}/${snapshot_version}}"
   fi
 
-  module_version=$(grep google- ${version_file} |head -1 |awk -F: '{print $2}')
+  #for modules which have artifacts with different versions, we need to bump to snapshot version
+  cat ${version_file} | while read line
+    do
+       if [[ ${line} =~ [0-9] ]] && ! [[ ${line} == *"SNAPSHOT"* ]] ; then
+         artifact_name=$(echo "${line}" | awk -F':' '{print $1}')
+         old_version=$(echo "${line}" | awk -F':' '{print $3}')
+         new_version=$(echo ${old_version} |  awk -F'.' '{print $1"."$2"."$3+1}' |  sed s/[.]$//)
+         new_version="${new_version}-SNAPSHOT"
+         sed -i.bak "s|${artifact_name}:${old_version}:${old_version}|${artifact_name}:${old_version}:${new_version}|" ${version_file}
+         artifact_directory="${bom_directory}/../${artifact_name}"
+         mvn -f ${artifact_directory} -U versions:set -DnewVersion=${new_version}
+       fi
+    done
 
   #concatenating module name and module version
   rp_manifest_line=""\""${module}"\"": "\""${module_released_version}"\"""
