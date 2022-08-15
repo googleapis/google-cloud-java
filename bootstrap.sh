@@ -118,7 +118,7 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
     # update all the poms with new version
     mvn -f ${pom_directory} -U versions:set -DnewVersion=${snapshot_version}
     mvn -f ${bom_directory} -U versions:set -DnewVersion=${snapshot_version}
-    Test="${Test/Today/$Date}"
+    #updating gapic bom pom.xml with the snapshot version
     version_line="${version_line/${module_snapshot_version}/${snapshot_version}}"
   fi
 
