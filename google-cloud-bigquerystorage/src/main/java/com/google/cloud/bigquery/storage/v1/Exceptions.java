@@ -82,18 +82,6 @@ public final class Exceptions {
   }
 
   /**
-   * This writer instance has either been closed by the user explicitly, or has encountered
-   * non-retriable errors.
-   *
-   * <p>To continue to write to the same stream, you will need to create a new writer instance.
-   */
-  public static final class StreamWriterClosedException extends StorageException {
-    protected StreamWriterClosedException(Status grpcStatus, String name) {
-      super(grpcStatus, name, null, null, ImmutableMap.of());
-    }
-  }
-
-  /**
    * There was a schema mismatch due to bigquery table with fewer fields than the input message.
    * This can be resolved by updating the table's schema with the message schema.
    */
@@ -248,6 +236,81 @@ public final class Exceptions {
 
     public String getStreamName() {
       return streamName;
+    }
+  }
+
+  /**
+   * This writer instance has either been closed by the user explicitly, or has encountered
+   * non-retriable errors.
+   *
+   * <p>To continue to write to the same stream, you will need to create a new writer instance.
+   */
+  public static final class StreamWriterClosedException extends StatusRuntimeException {
+    private final String streamName;
+    private final String writerId;
+
+    protected StreamWriterClosedException(Status grpcStatus, String streamName, String writerId) {
+      super(grpcStatus);
+      this.streamName = streamName;
+      this.writerId = writerId;
+    }
+
+    public String getStreamName() {
+      return streamName;
+    }
+
+    public String getWriterId() {
+      return writerId;
+    }
+  }
+
+  /**
+   * If FlowController.LimitExceededBehavior is set to Block and inflight limit is exceeded, this
+   * exception will be thrown. If it is just a spike, you may retry the request. Otherwise, you can
+   * increase the inflight limit or create more StreamWriter to handle your traffic.
+   */
+  public static class InflightLimitExceededException extends StatusRuntimeException {
+    private final long currentLimit;
+    private final String writerId;
+
+    protected InflightLimitExceededException(
+        Status grpcStatus, String writerId, long currentLimit) {
+      super(grpcStatus);
+      this.currentLimit = currentLimit;
+      this.writerId = writerId;
+    }
+
+    public String getWriterId() {
+      return writerId;
+    }
+
+    public long getCurrentLimit() {
+      return currentLimit;
+    }
+  }
+
+  public static class InflightRequestsLimitExceededException
+      extends InflightLimitExceededException {
+    protected InflightRequestsLimitExceededException(String writerId, long currentLimit) {
+      super(
+          Status.fromCode(Status.Code.RESOURCE_EXHAUSTED)
+              .withDescription(
+                  "Exceeds client side inflight buffer, consider add more buffer or open more connections. Current limit: "
+                      + currentLimit),
+          writerId,
+          currentLimit);
+    }
+  }
+
+  public static class InflightBytesLimitExceededException extends InflightLimitExceededException {
+    protected InflightBytesLimitExceededException(String writerId, long currentLimit) {
+      super(
+          Status.fromCode(Status.Code.RESOURCE_EXHAUSTED)
+              .withDescription(
+                  "Exceeds client side inflight buffer, consider add more buffer or open more connections. Current limit:  "
+                      + currentLimit),
+          writerId,
+          currentLimit);
     }
   }
 

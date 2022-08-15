@@ -34,6 +34,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.Condition;
@@ -173,6 +174,11 @@ public class StreamWriter implements AutoCloseable {
    */
   private final AtomicLong inflightWaitSec = new AtomicLong(0);
 
+  /*
+   * A String that uniquely identifies this writer.
+   */
+  private final String writerId = UUID.randomUUID().toString();
+
   /** The maximum size of one request. Defined by the API. */
   public static long getApiMaxRequestBytes() {
     return 10L * 1000L * 1000L; // 10 megabytes (https://en.wikipedia.org/wiki/Megabyte)
@@ -307,17 +313,19 @@ public class StreamWriter implements AutoCloseable {
             new Exceptions.StreamWriterClosedException(
                 Status.fromCode(Status.Code.FAILED_PRECONDITION)
                     .withDescription("Connection is already closed"),
-                streamName));
+                streamName,
+                writerId));
         return requestWrapper.appendResult;
       }
       // Check if queue is going to be full before adding the request.
-      if ((this.inflightRequests + 1 >= this.maxInflightRequests
-              || this.inflightBytes + requestWrapper.messageSize >= this.maxInflightBytes)
-          && (this.limitExceededBehavior == FlowController.LimitExceededBehavior.ThrowException)) {
-        throw new StatusRuntimeException(
-            Status.fromCode(Code.RESOURCE_EXHAUSTED)
-                .withDescription(
-                    "Exceeds client side inflight buffer, consider add more buffer or open more connections."));
+      if (this.limitExceededBehavior == FlowController.LimitExceededBehavior.ThrowException) {
+        if (this.inflightRequests + 1 >= this.maxInflightRequests) {
+          throw new Exceptions.InflightRequestsLimitExceededException(
+              writerId, this.maxInflightRequests);
+        }
+        if (this.inflightBytes + requestWrapper.messageSize >= this.maxInflightBytes) {
+          throw new Exceptions.InflightBytesLimitExceededException(writerId, this.maxInflightBytes);
+        }
       }
 
       if (connectionFinalStatus != null) {
@@ -326,7 +334,8 @@ public class StreamWriter implements AutoCloseable {
                 Status.fromCode(Status.Code.FAILED_PRECONDITION)
                     .withDescription(
                         "Connection is closed due to " + connectionFinalStatus.toString()),
-                streamName));
+                streamName,
+                writerId));
         return requestWrapper.appendResult;
       }
 
@@ -373,6 +382,16 @@ public class StreamWriter implements AutoCloseable {
    */
   public long getInflightWaitSeconds() {
     return inflightWaitSec.longValue();
+  }
+
+  /** @return a unique Id for the writer. */
+  public String getWriterId() {
+    return writerId;
+  }
+
+  /** @return name of the Stream that this writer is working on. */
+  public String getStreamName() {
+    return streamName;
   }
 
   /** Close the stream writer. Shut down all resources. */
@@ -566,7 +585,8 @@ public class StreamWriter implements AutoCloseable {
         new Exceptions.StreamWriterClosedException(
             Status.fromCode(Status.Code.FAILED_PRECONDITION)
                 .withDescription("Connection is already closed, cleanup inflight request"),
-            streamName);
+            streamName,
+            writerId);
     Deque<AppendRequestAndResponse> localQueue = new LinkedList<AppendRequestAndResponse>();
     this.lock.lock();
     try {

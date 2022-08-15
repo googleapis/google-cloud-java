@@ -643,4 +643,14 @@ public class JsonStreamWriterTest {
       }
     }
   }
+
+  @Test
+  public void testWriterId()
+      throws DescriptorValidationException, IOException, InterruptedException {
+    JsonStreamWriter writer1 = getTestJsonStreamWriterBuilder(TEST_STREAM, TABLE_SCHEMA).build();
+    Assert.assertFalse(writer1.getWriterId().isEmpty());
+    JsonStreamWriter writer2 = getTestJsonStreamWriterBuilder(TEST_STREAM, TABLE_SCHEMA).build();
+    Assert.assertFalse(writer2.getWriterId().isEmpty());
+    Assert.assertNotEquals(writer1.getWriterId(), writer2.getWriterId());
+  }
 }

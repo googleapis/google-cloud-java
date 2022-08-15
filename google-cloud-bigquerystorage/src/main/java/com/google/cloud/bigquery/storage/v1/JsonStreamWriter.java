@@ -168,13 +168,14 @@ public class JsonStreamWriter implements AutoCloseable {
     }
   }
 
-  /**
-   * Gets streamName
-   *
-   * @return String
-   */
+  /** @return The name of the write stream associated with this writer. */
   public String getStreamName() {
     return this.streamName;
+  }
+
+  /** @return A unique Id for this writer. */
+  public String getWriterId() {
+    return streamWriter.getWriterId();
   }
 
   /**
