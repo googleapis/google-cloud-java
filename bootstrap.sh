@@ -122,6 +122,8 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
     version_line="${version_line/${module_snapshot_version}/${snapshot_version}}"
   fi
 
+  module_version=$(grep google- ${version_file} |head -1 |awk -F: '{print $2}')
+
   #concatenating module name and module version
   rp_manifest_line=""\""${module}"\"": "\""${module_released_version}"\"""
 
