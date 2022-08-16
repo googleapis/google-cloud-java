@@ -4,11 +4,11 @@
 # The 1st commit is the last commit that has already been applied
 # to google-cloud-java monorepo.
 # The 2nd commit is the commit you want to apply to google-cloud-java
-# monorepo. This can be "origin/master".
-# This script creates git commits to this google-cloud-java
-# monorepo that correspond to the googleapis commits in between the
-# two commits.
+# monorepo (usually "origin/master").
+# This script creates Git commits to this google-cloud-java monorepo that
+# correspond to the googleapis commits in between the two commits.
 
+# The following environment variables are needed (values below are examples):
 # export GOOGLE_CLOUD_JAVA_DIR=$HOME/google-cloud-java-subject
 # export GOOGLEAPIS_DIR=$HOME/googleapis
 # export GOOGLEAPIS_COMMIT_FILE=googleapis_commit.txt
@@ -48,9 +48,8 @@ if [ -z "${GOOGLEAPIS_COMMIT_FILE}" ]; then
 fi
 
 echo "Operating in ${GOOGLE_CLOUD_JAVA_DIR}"
+
 cd "$GOOGLE_CLOUD_JAVA_DIR"
-git config user.email "google-cloud-java-automation[bot]@users.noreply.github.com"
-git config user.name "google-cloud-java-automation"
 
 OWLBOT_VERSION=latest
 
