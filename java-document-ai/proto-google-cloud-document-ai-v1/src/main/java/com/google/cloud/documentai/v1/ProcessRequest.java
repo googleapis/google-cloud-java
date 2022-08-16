@@ -114,6 +114,21 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
               sourceCase_ = 5;
               break;
             }
+          case 50:
+            {
+              com.google.protobuf.FieldMask.Builder subBuilder = null;
+              if (fieldMask_ != null) {
+                subBuilder = fieldMask_.toBuilder();
+              }
+              fieldMask_ =
+                  input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(fieldMask_);
+                fieldMask_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -305,7 +320,12 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The processor resource name.
+   * Required. The resource name of the [Processor][google.cloud.documentai.v1.Processor] or
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion]
+   * to use for processing. If a [Processor][google.cloud.documentai.v1.Processor] is specified, the server will use
+   * its [default version][google.cloud.documentai.v1.Processor.default_processor_version]. Format:
+   * `projects/{project}/locations/{location}/processors/{processor}`, or
+   * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
    * </pre>
    *
    * <code>
@@ -330,7 +350,12 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The processor resource name.
+   * Required. The resource name of the [Processor][google.cloud.documentai.v1.Processor] or
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion]
+   * to use for processing. If a [Processor][google.cloud.documentai.v1.Processor] is specified, the server will use
+   * its [default version][google.cloud.documentai.v1.Processor.default_processor_version]. Format:
+   * `projects/{project}/locations/{location}/processors/{processor}`, or
+   * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
    * </pre>
    *
    * <code>
@@ -371,6 +396,52 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     return skipHumanReview_;
   }
 
+  public static final int FIELD_MASK_FIELD_NUMBER = 6;
+  private com.google.protobuf.FieldMask fieldMask_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which fields to include in ProcessResponse's document.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask field_mask = 6;</code>
+   *
+   * @return Whether the fieldMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasFieldMask() {
+    return fieldMask_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which fields to include in ProcessResponse's document.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask field_mask = 6;</code>
+   *
+   * @return The fieldMask.
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMask getFieldMask() {
+    return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which fields to include in ProcessResponse's document.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask field_mask = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder() {
+    return getFieldMask();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -397,6 +468,9 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     if (sourceCase_ == 5) {
       output.writeMessage(5, (com.google.cloud.documentai.v1.RawDocument) source_);
     }
+    if (fieldMask_ != null) {
+      output.writeMessage(6, getFieldMask());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -422,6 +496,9 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, (com.google.cloud.documentai.v1.RawDocument) source_);
     }
+    if (fieldMask_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getFieldMask());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -440,6 +517,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
 
     if (!getName().equals(other.getName())) return false;
     if (getSkipHumanReview() != other.getSkipHumanReview()) return false;
+    if (hasFieldMask() != other.hasFieldMask()) return false;
+    if (hasFieldMask()) {
+      if (!getFieldMask().equals(other.getFieldMask())) return false;
+    }
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 4:
@@ -466,6 +547,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + SKIP_HUMAN_REVIEW_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipHumanReview());
+    if (hasFieldMask()) {
+      hash = (37 * hash) + FIELD_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getFieldMask().hashCode();
+    }
     switch (sourceCase_) {
       case 4:
         hash = (37 * hash) + INLINE_DOCUMENT_FIELD_NUMBER;
@@ -627,6 +712,12 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
 
       skipHumanReview_ = false;
 
+      if (fieldMaskBuilder_ == null) {
+        fieldMask_ = null;
+      } else {
+        fieldMask_ = null;
+        fieldMaskBuilder_ = null;
+      }
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -672,6 +763,11 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       }
       result.name_ = name_;
       result.skipHumanReview_ = skipHumanReview_;
+      if (fieldMaskBuilder_ == null) {
+        result.fieldMask_ = fieldMask_;
+      } else {
+        result.fieldMask_ = fieldMaskBuilder_.build();
+      }
       result.sourceCase_ = sourceCase_;
       onBuilt();
       return result;
@@ -728,6 +824,9 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getSkipHumanReview() != false) {
         setSkipHumanReview(other.getSkipHumanReview());
+      }
+      if (other.hasFieldMask()) {
+        mergeFieldMask(other.getFieldMask());
       }
       switch (other.getSourceCase()) {
         case INLINE_DOCUMENT:
@@ -1213,7 +1312,12 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The processor resource name.
+     * Required. The resource name of the [Processor][google.cloud.documentai.v1.Processor] or
+     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion]
+     * to use for processing. If a [Processor][google.cloud.documentai.v1.Processor] is specified, the server will use
+     * its [default version][google.cloud.documentai.v1.Processor.default_processor_version]. Format:
+     * `projects/{project}/locations/{location}/processors/{processor}`, or
+     * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
      * </pre>
      *
      * <code>
@@ -1237,7 +1341,12 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The processor resource name.
+     * Required. The resource name of the [Processor][google.cloud.documentai.v1.Processor] or
+     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion]
+     * to use for processing. If a [Processor][google.cloud.documentai.v1.Processor] is specified, the server will use
+     * its [default version][google.cloud.documentai.v1.Processor.default_processor_version]. Format:
+     * `projects/{project}/locations/{location}/processors/{processor}`, or
+     * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
      * </pre>
      *
      * <code>
@@ -1261,7 +1370,12 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The processor resource name.
+     * Required. The resource name of the [Processor][google.cloud.documentai.v1.Processor] or
+     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion]
+     * to use for processing. If a [Processor][google.cloud.documentai.v1.Processor] is specified, the server will use
+     * its [default version][google.cloud.documentai.v1.Processor.default_processor_version]. Format:
+     * `projects/{project}/locations/{location}/processors/{processor}`, or
+     * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
      * </pre>
      *
      * <code>
@@ -1284,7 +1398,12 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The processor resource name.
+     * Required. The resource name of the [Processor][google.cloud.documentai.v1.Processor] or
+     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion]
+     * to use for processing. If a [Processor][google.cloud.documentai.v1.Processor] is specified, the server will use
+     * its [default version][google.cloud.documentai.v1.Processor.default_processor_version]. Format:
+     * `projects/{project}/locations/{location}/processors/{processor}`, or
+     * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
      * </pre>
      *
      * <code>
@@ -1303,7 +1422,12 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The processor resource name.
+     * Required. The resource name of the [Processor][google.cloud.documentai.v1.Processor] or
+     * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion]
+     * to use for processing. If a [Processor][google.cloud.documentai.v1.Processor] is specified, the server will use
+     * its [default version][google.cloud.documentai.v1.Processor.default_processor_version]. Format:
+     * `projects/{project}/locations/{location}/processors/{processor}`, or
+     * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
      * </pre>
      *
      * <code>
@@ -1377,6 +1501,185 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       skipHumanReview_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.FieldMask fieldMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        fieldMaskBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which fields to include in ProcessResponse's document.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask field_mask = 6;</code>
+     *
+     * @return Whether the fieldMask field is set.
+     */
+    public boolean hasFieldMask() {
+      return fieldMaskBuilder_ != null || fieldMask_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which fields to include in ProcessResponse's document.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask field_mask = 6;</code>
+     *
+     * @return The fieldMask.
+     */
+    public com.google.protobuf.FieldMask getFieldMask() {
+      if (fieldMaskBuilder_ == null) {
+        return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
+      } else {
+        return fieldMaskBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which fields to include in ProcessResponse's document.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask field_mask = 6;</code>
+     */
+    public Builder setFieldMask(com.google.protobuf.FieldMask value) {
+      if (fieldMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        fieldMask_ = value;
+        onChanged();
+      } else {
+        fieldMaskBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which fields to include in ProcessResponse's document.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask field_mask = 6;</code>
+     */
+    public Builder setFieldMask(com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (fieldMaskBuilder_ == null) {
+        fieldMask_ = builderForValue.build();
+        onChanged();
+      } else {
+        fieldMaskBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which fields to include in ProcessResponse's document.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask field_mask = 6;</code>
+     */
+    public Builder mergeFieldMask(com.google.protobuf.FieldMask value) {
+      if (fieldMaskBuilder_ == null) {
+        if (fieldMask_ != null) {
+          fieldMask_ =
+              com.google.protobuf.FieldMask.newBuilder(fieldMask_).mergeFrom(value).buildPartial();
+        } else {
+          fieldMask_ = value;
+        }
+        onChanged();
+      } else {
+        fieldMaskBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which fields to include in ProcessResponse's document.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask field_mask = 6;</code>
+     */
+    public Builder clearFieldMask() {
+      if (fieldMaskBuilder_ == null) {
+        fieldMask_ = null;
+        onChanged();
+      } else {
+        fieldMask_ = null;
+        fieldMaskBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which fields to include in ProcessResponse's document.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask field_mask = 6;</code>
+     */
+    public com.google.protobuf.FieldMask.Builder getFieldMaskBuilder() {
+
+      onChanged();
+      return getFieldMaskFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which fields to include in ProcessResponse's document.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask field_mask = 6;</code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder() {
+      if (fieldMaskBuilder_ != null) {
+        return fieldMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which fields to include in ProcessResponse's document.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask field_mask = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        getFieldMaskFieldBuilder() {
+      if (fieldMaskBuilder_ == null) {
+        fieldMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getFieldMask(), getParentForChildren(), isClean());
+        fieldMask_ = null;
+      }
+      return fieldMaskBuilder_;
     }
 
     @java.lang.Override

@@ -97,7 +97,12 @@ public interface ProcessRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The processor resource name.
+   * Required. The resource name of the [Processor][google.cloud.documentai.v1beta3.Processor] or
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
+   * to use for processing. If a [Processor][google.cloud.documentai.v1beta3.Processor] is specified, the server will use
+   * its [default version][google.cloud.documentai.v1beta3.Processor.default_processor_version]. Format:
+   * `projects/{project}/locations/{location}/processors/{processor}`, or
+   * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
    * </pre>
    *
    * <code>
@@ -111,7 +116,12 @@ public interface ProcessRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The processor resource name.
+   * Required. The resource name of the [Processor][google.cloud.documentai.v1beta3.Processor] or
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
+   * to use for processing. If a [Processor][google.cloud.documentai.v1beta3.Processor] is specified, the server will use
+   * its [default version][google.cloud.documentai.v1beta3.Processor.default_processor_version]. Format:
+   * `projects/{project}/locations/{location}/processors/{processor}`, or
+   * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
    * </pre>
    *
    * <code>
@@ -132,7 +142,7 @@ public interface ProcessRequestOrBuilder
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=182
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=277
    * @return Whether the document field is set.
    */
   @java.lang.Deprecated
@@ -147,7 +157,7 @@ public interface ProcessRequestOrBuilder
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=182
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=277
    * @return The document.
    */
   @java.lang.Deprecated
@@ -177,6 +187,41 @@ public interface ProcessRequestOrBuilder
    * @return The skipHumanReview.
    */
   boolean getSkipHumanReview();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which fields to include in ProcessResponse's document.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask field_mask = 6;</code>
+   *
+   * @return Whether the fieldMask field is set.
+   */
+  boolean hasFieldMask();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which fields to include in ProcessResponse's document.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask field_mask = 6;</code>
+   *
+   * @return The fieldMask.
+   */
+  com.google.protobuf.FieldMask getFieldMask();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which fields to include in ProcessResponse's document.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask field_mask = 6;</code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder();
 
   public com.google.cloud.documentai.v1beta3.ProcessRequest.SourceCase getSourceCase();
 }

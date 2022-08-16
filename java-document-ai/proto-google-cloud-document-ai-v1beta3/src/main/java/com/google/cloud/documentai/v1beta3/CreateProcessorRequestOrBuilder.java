@@ -28,7 +28,7 @@ public interface CreateProcessorRequestOrBuilder
    *
    * <pre>
    * Required. The parent (project and location) under which to create the processor.
-   * Format: projects/{project}/locations/{location}
+   * Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface CreateProcessorRequestOrBuilder
    *
    * <pre>
    * Required. The parent (project and location) under which to create the processor.
-   * Format: projects/{project}/locations/{location}
+   * Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>

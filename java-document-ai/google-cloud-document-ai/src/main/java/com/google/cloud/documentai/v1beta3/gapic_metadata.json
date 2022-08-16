@@ -19,6 +19,12 @@
             "DeleteProcessor": {
               "methods": ["deleteProcessorAsync", "deleteProcessorAsync", "deleteProcessorAsync", "deleteProcessorOperationCallable", "deleteProcessorCallable"]
             },
+            "DeleteProcessorVersion": {
+              "methods": ["deleteProcessorVersionAsync", "deleteProcessorVersionAsync", "deleteProcessorVersionAsync", "deleteProcessorVersionOperationCallable", "deleteProcessorVersionCallable"]
+            },
+            "DeployProcessorVersion": {
+              "methods": ["deployProcessorVersionAsync", "deployProcessorVersionAsync", "deployProcessorVersionAsync", "deployProcessorVersionOperationCallable", "deployProcessorVersionCallable"]
+            },
             "DisableProcessor": {
               "methods": ["disableProcessorAsync", "disableProcessorOperationCallable", "disableProcessorCallable"]
             },
@@ -28,6 +34,24 @@
             "FetchProcessorTypes": {
               "methods": ["fetchProcessorTypes", "fetchProcessorTypes", "fetchProcessorTypes", "fetchProcessorTypesCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetProcessor": {
+              "methods": ["getProcessor", "getProcessor", "getProcessor", "getProcessorCallable"]
+            },
+            "GetProcessorVersion": {
+              "methods": ["getProcessorVersion", "getProcessorVersion", "getProcessorVersion", "getProcessorVersionCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListProcessorTypes": {
+              "methods": ["listProcessorTypes", "listProcessorTypes", "listProcessorTypes", "listProcessorTypesPagedCallable", "listProcessorTypesCallable"]
+            },
+            "ListProcessorVersions": {
+              "methods": ["listProcessorVersions", "listProcessorVersions", "listProcessorVersions", "listProcessorVersionsPagedCallable", "listProcessorVersionsCallable"]
+            },
             "ListProcessors": {
               "methods": ["listProcessors", "listProcessors", "listProcessors", "listProcessorsPagedCallable", "listProcessorsCallable"]
             },
@@ -36,6 +60,12 @@
             },
             "ReviewDocument": {
               "methods": ["reviewDocumentAsync", "reviewDocumentAsync", "reviewDocumentAsync", "reviewDocumentOperationCallable", "reviewDocumentCallable"]
+            },
+            "SetDefaultProcessorVersion": {
+              "methods": ["setDefaultProcessorVersionAsync", "setDefaultProcessorVersionOperationCallable", "setDefaultProcessorVersionCallable"]
+            },
+            "UndeployProcessorVersion": {
+              "methods": ["undeployProcessorVersionAsync", "undeployProcessorVersionAsync", "undeployProcessorVersionAsync", "undeployProcessorVersionOperationCallable", "undeployProcessorVersionCallable"]
             }
           }
         }

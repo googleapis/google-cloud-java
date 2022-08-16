@@ -460,7 +460,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The status of the processing of the document.
+     * The status processing the document.
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
@@ -472,7 +472,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The status of the processing of the document.
+     * The status processing the document.
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
@@ -484,7 +484,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The status of the processing of the document.
+     * The status processing the document.
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
@@ -495,7 +495,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The output_gcs_destination (in the request as 'output_gcs_destination')
+     * The output_gcs_destination (in the request as `output_gcs_destination`)
      * of the processed document if it was successful, otherwise empty.
      * </pre>
      *
@@ -508,7 +508,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The output_gcs_destination (in the request as 'output_gcs_destination')
+     * The output_gcs_destination (in the request as `output_gcs_destination`)
      * of the processed document if it was successful, otherwise empty.
      * </pre>
      *
@@ -532,7 +532,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      * @deprecated
      *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
-     *     is deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=315
+     *     is deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=417
      * @return The humanReviewOperation.
      */
     @java.lang.Deprecated
@@ -551,7 +551,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      * @deprecated
      *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
-     *     is deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=315
+     *     is deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=417
      * @return The bytes for humanReviewOperation.
      */
     @java.lang.Deprecated
@@ -798,7 +798,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The status of the processing of the document.
+     * The status processing the document.
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
@@ -813,7 +813,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The status of the processing of the document.
+     * The status processing the document.
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
@@ -828,7 +828,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The status of the processing of the document.
+     * The status processing the document.
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
@@ -844,7 +844,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The output_gcs_destination (in the request as 'output_gcs_destination')
+     * The output_gcs_destination (in the request as `output_gcs_destination`)
      * of the processed document if it was successful, otherwise empty.
      * </pre>
      *
@@ -868,7 +868,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The output_gcs_destination (in the request as 'output_gcs_destination')
+     * The output_gcs_destination (in the request as `output_gcs_destination`)
      * of the processed document if it was successful, otherwise empty.
      * </pre>
      *
@@ -905,7 +905,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      * @deprecated
      *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
-     *     is deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=315
+     *     is deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=417
      * @return The humanReviewOperation.
      */
     @java.lang.Override
@@ -935,7 +935,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      * @deprecated
      *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
-     *     is deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=315
+     *     is deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=417
      * @return The bytes for humanReviewOperation.
      */
     @java.lang.Override
@@ -1568,7 +1568,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The status of the processing of the document.
+       * The status processing the document.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -1582,7 +1582,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The status of the processing of the document.
+       * The status processing the document.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -1600,7 +1600,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The status of the processing of the document.
+       * The status processing the document.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -1622,7 +1622,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The status of the processing of the document.
+       * The status processing the document.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -1641,7 +1641,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The status of the processing of the document.
+       * The status processing the document.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -1664,7 +1664,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The status of the processing of the document.
+       * The status processing the document.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -1684,7 +1684,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The status of the processing of the document.
+       * The status processing the document.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -1698,7 +1698,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The status of the processing of the document.
+       * The status processing the document.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -1714,7 +1714,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The status of the processing of the document.
+       * The status processing the document.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -1738,7 +1738,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The output_gcs_destination (in the request as 'output_gcs_destination')
+       * The output_gcs_destination (in the request as `output_gcs_destination`)
        * of the processed document if it was successful, otherwise empty.
        * </pre>
        *
@@ -1761,7 +1761,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The output_gcs_destination (in the request as 'output_gcs_destination')
+       * The output_gcs_destination (in the request as `output_gcs_destination`)
        * of the processed document if it was successful, otherwise empty.
        * </pre>
        *
@@ -1784,7 +1784,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The output_gcs_destination (in the request as 'output_gcs_destination')
+       * The output_gcs_destination (in the request as `output_gcs_destination`)
        * of the processed document if it was successful, otherwise empty.
        * </pre>
        *
@@ -1806,7 +1806,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The output_gcs_destination (in the request as 'output_gcs_destination')
+       * The output_gcs_destination (in the request as `output_gcs_destination`)
        * of the processed document if it was successful, otherwise empty.
        * </pre>
        *
@@ -1824,7 +1824,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The output_gcs_destination (in the request as 'output_gcs_destination')
+       * The output_gcs_destination (in the request as `output_gcs_destination`)
        * of the processed document if it was successful, otherwise empty.
        * </pre>
        *
@@ -1860,7 +1860,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        * @deprecated
        *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
        *     is deprecated. See
-       *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=315
+       *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=417
        * @return The humanReviewOperation.
        */
       @java.lang.Deprecated
@@ -1890,7 +1890,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        * @deprecated
        *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
        *     is deprecated. See
-       *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=315
+       *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=417
        * @return The bytes for humanReviewOperation.
        */
       @java.lang.Deprecated
@@ -1920,7 +1920,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        * @deprecated
        *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
        *     is deprecated. See
-       *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=315
+       *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=417
        * @param value The humanReviewOperation to set.
        * @return This builder for chaining.
        */
@@ -1949,7 +1949,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        * @deprecated
        *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
        *     is deprecated. See
-       *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=315
+       *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=417
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -1974,7 +1974,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        * @deprecated
        *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
        *     is deprecated. See
-       *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=315
+       *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=417
        * @param value The bytes for humanReviewOperation to set.
        * @return This builder for chaining.
        */

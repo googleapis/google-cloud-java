@@ -40,6 +40,7 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
   private CommonOperationMetadata() {
     state_ = 0;
     stateMessage_ = "";
+    resource_ = "";
   }
 
   @java.lang.Override
@@ -113,6 +114,13 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
                 updateTime_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              resource_ = s;
               break;
             }
           default:
@@ -463,6 +471,55 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
     }
   }
 
+  public static final int RESOURCE_FIELD_NUMBER = 5;
+  private volatile java.lang.Object resource_;
+  /**
+   *
+   *
+   * <pre>
+   * A related resource to this operation.
+   * </pre>
+   *
+   * <code>string resource = 5;</code>
+   *
+   * @return The resource.
+   */
+  @java.lang.Override
+  public java.lang.String getResource() {
+    java.lang.Object ref = resource_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      resource_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A related resource to this operation.
+   * </pre>
+   *
+   * <code>string resource = 5;</code>
+   *
+   * @return The bytes for resource.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getResourceBytes() {
+    java.lang.Object ref = resource_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      resource_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
   /**
@@ -583,6 +640,9 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
     if (updateTime_ != null) {
       output.writeMessage(4, getUpdateTime());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, resource_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -606,6 +666,9 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getUpdateTime());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, resource_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -624,6 +687,7 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
 
     if (state_ != other.state_) return false;
     if (!getStateMessage().equals(other.getStateMessage())) return false;
+    if (!getResource().equals(other.getResource())) return false;
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
@@ -647,6 +711,8 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
     hash = (53 * hash) + state_;
     hash = (37 * hash) + STATE_MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + getStateMessage().hashCode();
+    hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
+    hash = (53 * hash) + getResource().hashCode();
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
@@ -805,6 +871,8 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
 
       stateMessage_ = "";
 
+      resource_ = "";
+
       if (createTimeBuilder_ == null) {
         createTime_ = null;
       } else {
@@ -846,6 +914,7 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
           new com.google.cloud.documentai.v1beta3.CommonOperationMetadata(this);
       result.state_ = state_;
       result.stateMessage_ = stateMessage_;
+      result.resource_ = resource_;
       if (createTimeBuilder_ == null) {
         result.createTime_ = createTime_;
       } else {
@@ -911,6 +980,10 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
       }
       if (!other.getStateMessage().isEmpty()) {
         stateMessage_ = other.stateMessage_;
+        onChanged();
+      }
+      if (!other.getResource().isEmpty()) {
+        resource_ = other.resource_;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1145,6 +1218,112 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
 
       stateMessage_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object resource_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A related resource to this operation.
+     * </pre>
+     *
+     * <code>string resource = 5;</code>
+     *
+     * @return The resource.
+     */
+    public java.lang.String getResource() {
+      java.lang.Object ref = resource_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resource_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A related resource to this operation.
+     * </pre>
+     *
+     * <code>string resource = 5;</code>
+     *
+     * @return The bytes for resource.
+     */
+    public com.google.protobuf.ByteString getResourceBytes() {
+      java.lang.Object ref = resource_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        resource_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A related resource to this operation.
+     * </pre>
+     *
+     * <code>string resource = 5;</code>
+     *
+     * @param value The resource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResource(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      resource_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A related resource to this operation.
+     * </pre>
+     *
+     * <code>string resource = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearResource() {
+
+      resource_ = getDefaultInstance().getResource();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A related resource to this operation.
+     * </pre>
+     *
+     * <code>string resource = 5;</code>
+     *
+     * @param value The bytes for resource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      resource_ = value;
       onChanged();
       return this;
     }

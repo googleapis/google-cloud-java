@@ -16,6 +16,9 @@
 
 package com.google.cloud.documentai.v1beta3.stub;
 
+import static com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient.ListProcessorTypesPagedResponse;
+import static com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient.ListProcessorVersionsPagedResponse;
 import static com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient.ListProcessorsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -53,6 +56,11 @@ import com.google.cloud.documentai.v1beta3.BatchProcessResponse;
 import com.google.cloud.documentai.v1beta3.CreateProcessorRequest;
 import com.google.cloud.documentai.v1beta3.DeleteProcessorMetadata;
 import com.google.cloud.documentai.v1beta3.DeleteProcessorRequest;
+import com.google.cloud.documentai.v1beta3.DeleteProcessorVersionMetadata;
+import com.google.cloud.documentai.v1beta3.DeleteProcessorVersionRequest;
+import com.google.cloud.documentai.v1beta3.DeployProcessorVersionMetadata;
+import com.google.cloud.documentai.v1beta3.DeployProcessorVersionRequest;
+import com.google.cloud.documentai.v1beta3.DeployProcessorVersionResponse;
 import com.google.cloud.documentai.v1beta3.DisableProcessorMetadata;
 import com.google.cloud.documentai.v1beta3.DisableProcessorRequest;
 import com.google.cloud.documentai.v1beta3.DisableProcessorResponse;
@@ -61,14 +69,32 @@ import com.google.cloud.documentai.v1beta3.EnableProcessorRequest;
 import com.google.cloud.documentai.v1beta3.EnableProcessorResponse;
 import com.google.cloud.documentai.v1beta3.FetchProcessorTypesRequest;
 import com.google.cloud.documentai.v1beta3.FetchProcessorTypesResponse;
+import com.google.cloud.documentai.v1beta3.GetProcessorRequest;
+import com.google.cloud.documentai.v1beta3.GetProcessorVersionRequest;
+import com.google.cloud.documentai.v1beta3.ListProcessorTypesRequest;
+import com.google.cloud.documentai.v1beta3.ListProcessorTypesResponse;
+import com.google.cloud.documentai.v1beta3.ListProcessorVersionsRequest;
+import com.google.cloud.documentai.v1beta3.ListProcessorVersionsResponse;
 import com.google.cloud.documentai.v1beta3.ListProcessorsRequest;
 import com.google.cloud.documentai.v1beta3.ListProcessorsResponse;
 import com.google.cloud.documentai.v1beta3.ProcessRequest;
 import com.google.cloud.documentai.v1beta3.ProcessResponse;
 import com.google.cloud.documentai.v1beta3.Processor;
+import com.google.cloud.documentai.v1beta3.ProcessorType;
+import com.google.cloud.documentai.v1beta3.ProcessorVersion;
 import com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata;
 import com.google.cloud.documentai.v1beta3.ReviewDocumentRequest;
 import com.google.cloud.documentai.v1beta3.ReviewDocumentResponse;
+import com.google.cloud.documentai.v1beta3.SetDefaultProcessorVersionMetadata;
+import com.google.cloud.documentai.v1beta3.SetDefaultProcessorVersionRequest;
+import com.google.cloud.documentai.v1beta3.SetDefaultProcessorVersionResponse;
+import com.google.cloud.documentai.v1beta3.UndeployProcessorVersionMetadata;
+import com.google.cloud.documentai.v1beta3.UndeployProcessorVersionRequest;
+import com.google.cloud.documentai.v1beta3.UndeployProcessorVersionResponse;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -131,8 +157,38 @@ public class DocumentProcessorServiceStubSettings
   private final UnaryCallSettings<FetchProcessorTypesRequest, FetchProcessorTypesResponse>
       fetchProcessorTypesSettings;
   private final PagedCallSettings<
+          ListProcessorTypesRequest, ListProcessorTypesResponse, ListProcessorTypesPagedResponse>
+      listProcessorTypesSettings;
+  private final PagedCallSettings<
           ListProcessorsRequest, ListProcessorsResponse, ListProcessorsPagedResponse>
       listProcessorsSettings;
+  private final UnaryCallSettings<GetProcessorRequest, Processor> getProcessorSettings;
+  private final UnaryCallSettings<GetProcessorVersionRequest, ProcessorVersion>
+      getProcessorVersionSettings;
+  private final PagedCallSettings<
+          ListProcessorVersionsRequest,
+          ListProcessorVersionsResponse,
+          ListProcessorVersionsPagedResponse>
+      listProcessorVersionsSettings;
+  private final UnaryCallSettings<DeleteProcessorVersionRequest, Operation>
+      deleteProcessorVersionSettings;
+  private final OperationCallSettings<
+          DeleteProcessorVersionRequest, Empty, DeleteProcessorVersionMetadata>
+      deleteProcessorVersionOperationSettings;
+  private final UnaryCallSettings<DeployProcessorVersionRequest, Operation>
+      deployProcessorVersionSettings;
+  private final OperationCallSettings<
+          DeployProcessorVersionRequest,
+          DeployProcessorVersionResponse,
+          DeployProcessorVersionMetadata>
+      deployProcessorVersionOperationSettings;
+  private final UnaryCallSettings<UndeployProcessorVersionRequest, Operation>
+      undeployProcessorVersionSettings;
+  private final OperationCallSettings<
+          UndeployProcessorVersionRequest,
+          UndeployProcessorVersionResponse,
+          UndeployProcessorVersionMetadata>
+      undeployProcessorVersionOperationSettings;
   private final UnaryCallSettings<CreateProcessorRequest, Processor> createProcessorSettings;
   private final UnaryCallSettings<DeleteProcessorRequest, Operation> deleteProcessorSettings;
   private final OperationCallSettings<DeleteProcessorRequest, Empty, DeleteProcessorMetadata>
@@ -145,10 +201,61 @@ public class DocumentProcessorServiceStubSettings
   private final OperationCallSettings<
           DisableProcessorRequest, DisableProcessorResponse, DisableProcessorMetadata>
       disableProcessorOperationSettings;
+  private final UnaryCallSettings<SetDefaultProcessorVersionRequest, Operation>
+      setDefaultProcessorVersionSettings;
+  private final OperationCallSettings<
+          SetDefaultProcessorVersionRequest,
+          SetDefaultProcessorVersionResponse,
+          SetDefaultProcessorVersionMetadata>
+      setDefaultProcessorVersionOperationSettings;
   private final UnaryCallSettings<ReviewDocumentRequest, Operation> reviewDocumentSettings;
   private final OperationCallSettings<
           ReviewDocumentRequest, ReviewDocumentResponse, ReviewDocumentOperationMetadata>
       reviewDocumentOperationSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
+
+  private static final PagedListDescriptor<
+          ListProcessorTypesRequest, ListProcessorTypesResponse, ProcessorType>
+      LIST_PROCESSOR_TYPES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListProcessorTypesRequest, ListProcessorTypesResponse, ProcessorType>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListProcessorTypesRequest injectToken(
+                ListProcessorTypesRequest payload, String token) {
+              return ListProcessorTypesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListProcessorTypesRequest injectPageSize(
+                ListProcessorTypesRequest payload, int pageSize) {
+              return ListProcessorTypesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListProcessorTypesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListProcessorTypesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ProcessorType> extractResources(ListProcessorTypesResponse payload) {
+              return payload.getProcessorTypesList() == null
+                  ? ImmutableList.<ProcessorType>of()
+                  : payload.getProcessorTypesList();
+            }
+          };
 
   private static final PagedListDescriptor<ListProcessorsRequest, ListProcessorsResponse, Processor>
       LIST_PROCESSORS_PAGE_STR_DESC =
@@ -187,6 +294,104 @@ public class DocumentProcessorServiceStubSettings
             }
           };
 
+  private static final PagedListDescriptor<
+          ListProcessorVersionsRequest, ListProcessorVersionsResponse, ProcessorVersion>
+      LIST_PROCESSOR_VERSIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListProcessorVersionsRequest, ListProcessorVersionsResponse, ProcessorVersion>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListProcessorVersionsRequest injectToken(
+                ListProcessorVersionsRequest payload, String token) {
+              return ListProcessorVersionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListProcessorVersionsRequest injectPageSize(
+                ListProcessorVersionsRequest payload, int pageSize) {
+              return ListProcessorVersionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListProcessorVersionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListProcessorVersionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ProcessorVersion> extractResources(
+                ListProcessorVersionsResponse payload) {
+              return payload.getProcessorVersionsList() == null
+                  ? ImmutableList.<ProcessorVersion>of()
+                  : payload.getProcessorVersionsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListProcessorTypesRequest, ListProcessorTypesResponse, ListProcessorTypesPagedResponse>
+      LIST_PROCESSOR_TYPES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListProcessorTypesRequest,
+              ListProcessorTypesResponse,
+              ListProcessorTypesPagedResponse>() {
+            @Override
+            public ApiFuture<ListProcessorTypesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListProcessorTypesRequest, ListProcessorTypesResponse> callable,
+                ListProcessorTypesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListProcessorTypesResponse> futureResponse) {
+              PageContext<ListProcessorTypesRequest, ListProcessorTypesResponse, ProcessorType>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_PROCESSOR_TYPES_PAGE_STR_DESC, request, context);
+              return ListProcessorTypesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListProcessorsRequest, ListProcessorsResponse, ListProcessorsPagedResponse>
       LIST_PROCESSORS_PAGE_STR_FACT =
@@ -201,6 +406,47 @@ public class DocumentProcessorServiceStubSettings
               PageContext<ListProcessorsRequest, ListProcessorsResponse, Processor> pageContext =
                   PageContext.create(callable, LIST_PROCESSORS_PAGE_STR_DESC, request, context);
               return ListProcessorsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListProcessorVersionsRequest,
+          ListProcessorVersionsResponse,
+          ListProcessorVersionsPagedResponse>
+      LIST_PROCESSOR_VERSIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListProcessorVersionsRequest,
+              ListProcessorVersionsResponse,
+              ListProcessorVersionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListProcessorVersionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListProcessorVersionsRequest, ListProcessorVersionsResponse> callable,
+                ListProcessorVersionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListProcessorVersionsResponse> futureResponse) {
+              PageContext<
+                      ListProcessorVersionsRequest, ListProcessorVersionsResponse, ProcessorVersion>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_PROCESSOR_VERSIONS_PAGE_STR_DESC, request, context);
+              return ListProcessorVersionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -226,11 +472,80 @@ public class DocumentProcessorServiceStubSettings
     return fetchProcessorTypesSettings;
   }
 
+  /** Returns the object with the settings used for calls to listProcessorTypes. */
+  public PagedCallSettings<
+          ListProcessorTypesRequest, ListProcessorTypesResponse, ListProcessorTypesPagedResponse>
+      listProcessorTypesSettings() {
+    return listProcessorTypesSettings;
+  }
+
   /** Returns the object with the settings used for calls to listProcessors. */
   public PagedCallSettings<
           ListProcessorsRequest, ListProcessorsResponse, ListProcessorsPagedResponse>
       listProcessorsSettings() {
     return listProcessorsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getProcessor. */
+  public UnaryCallSettings<GetProcessorRequest, Processor> getProcessorSettings() {
+    return getProcessorSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getProcessorVersion. */
+  public UnaryCallSettings<GetProcessorVersionRequest, ProcessorVersion>
+      getProcessorVersionSettings() {
+    return getProcessorVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listProcessorVersions. */
+  public PagedCallSettings<
+          ListProcessorVersionsRequest,
+          ListProcessorVersionsResponse,
+          ListProcessorVersionsPagedResponse>
+      listProcessorVersionsSettings() {
+    return listProcessorVersionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteProcessorVersion. */
+  public UnaryCallSettings<DeleteProcessorVersionRequest, Operation>
+      deleteProcessorVersionSettings() {
+    return deleteProcessorVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteProcessorVersion. */
+  public OperationCallSettings<DeleteProcessorVersionRequest, Empty, DeleteProcessorVersionMetadata>
+      deleteProcessorVersionOperationSettings() {
+    return deleteProcessorVersionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deployProcessorVersion. */
+  public UnaryCallSettings<DeployProcessorVersionRequest, Operation>
+      deployProcessorVersionSettings() {
+    return deployProcessorVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deployProcessorVersion. */
+  public OperationCallSettings<
+          DeployProcessorVersionRequest,
+          DeployProcessorVersionResponse,
+          DeployProcessorVersionMetadata>
+      deployProcessorVersionOperationSettings() {
+    return deployProcessorVersionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to undeployProcessorVersion. */
+  public UnaryCallSettings<UndeployProcessorVersionRequest, Operation>
+      undeployProcessorVersionSettings() {
+    return undeployProcessorVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to undeployProcessorVersion. */
+  public OperationCallSettings<
+          UndeployProcessorVersionRequest,
+          UndeployProcessorVersionResponse,
+          UndeployProcessorVersionMetadata>
+      undeployProcessorVersionOperationSettings() {
+    return undeployProcessorVersionOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to createProcessor. */
@@ -273,6 +588,21 @@ public class DocumentProcessorServiceStubSettings
     return disableProcessorOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to setDefaultProcessorVersion. */
+  public UnaryCallSettings<SetDefaultProcessorVersionRequest, Operation>
+      setDefaultProcessorVersionSettings() {
+    return setDefaultProcessorVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setDefaultProcessorVersion. */
+  public OperationCallSettings<
+          SetDefaultProcessorVersionRequest,
+          SetDefaultProcessorVersionResponse,
+          SetDefaultProcessorVersionMetadata>
+      setDefaultProcessorVersionOperationSettings() {
+    return setDefaultProcessorVersionOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to reviewDocument. */
   public UnaryCallSettings<ReviewDocumentRequest, Operation> reviewDocumentSettings() {
     return reviewDocumentSettings;
@@ -283,6 +613,17 @@ public class DocumentProcessorServiceStubSettings
           ReviewDocumentRequest, ReviewDocumentResponse, ReviewDocumentOperationMetadata>
       reviewDocumentOperationSettings() {
     return reviewDocumentOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
   }
 
   public DocumentProcessorServiceStub createStub() throws IOException {
@@ -396,7 +737,20 @@ public class DocumentProcessorServiceStubSettings
     batchProcessDocumentsOperationSettings =
         settingsBuilder.batchProcessDocumentsOperationSettings().build();
     fetchProcessorTypesSettings = settingsBuilder.fetchProcessorTypesSettings().build();
+    listProcessorTypesSettings = settingsBuilder.listProcessorTypesSettings().build();
     listProcessorsSettings = settingsBuilder.listProcessorsSettings().build();
+    getProcessorSettings = settingsBuilder.getProcessorSettings().build();
+    getProcessorVersionSettings = settingsBuilder.getProcessorVersionSettings().build();
+    listProcessorVersionsSettings = settingsBuilder.listProcessorVersionsSettings().build();
+    deleteProcessorVersionSettings = settingsBuilder.deleteProcessorVersionSettings().build();
+    deleteProcessorVersionOperationSettings =
+        settingsBuilder.deleteProcessorVersionOperationSettings().build();
+    deployProcessorVersionSettings = settingsBuilder.deployProcessorVersionSettings().build();
+    deployProcessorVersionOperationSettings =
+        settingsBuilder.deployProcessorVersionOperationSettings().build();
+    undeployProcessorVersionSettings = settingsBuilder.undeployProcessorVersionSettings().build();
+    undeployProcessorVersionOperationSettings =
+        settingsBuilder.undeployProcessorVersionOperationSettings().build();
     createProcessorSettings = settingsBuilder.createProcessorSettings().build();
     deleteProcessorSettings = settingsBuilder.deleteProcessorSettings().build();
     deleteProcessorOperationSettings = settingsBuilder.deleteProcessorOperationSettings().build();
@@ -404,8 +758,14 @@ public class DocumentProcessorServiceStubSettings
     enableProcessorOperationSettings = settingsBuilder.enableProcessorOperationSettings().build();
     disableProcessorSettings = settingsBuilder.disableProcessorSettings().build();
     disableProcessorOperationSettings = settingsBuilder.disableProcessorOperationSettings().build();
+    setDefaultProcessorVersionSettings =
+        settingsBuilder.setDefaultProcessorVersionSettings().build();
+    setDefaultProcessorVersionOperationSettings =
+        settingsBuilder.setDefaultProcessorVersionOperationSettings().build();
     reviewDocumentSettings = settingsBuilder.reviewDocumentSettings().build();
     reviewDocumentOperationSettings = settingsBuilder.reviewDocumentOperationSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
   /** Builder for DocumentProcessorServiceStubSettings. */
@@ -422,8 +782,38 @@ public class DocumentProcessorServiceStubSettings
     private final UnaryCallSettings.Builder<FetchProcessorTypesRequest, FetchProcessorTypesResponse>
         fetchProcessorTypesSettings;
     private final PagedCallSettings.Builder<
+            ListProcessorTypesRequest, ListProcessorTypesResponse, ListProcessorTypesPagedResponse>
+        listProcessorTypesSettings;
+    private final PagedCallSettings.Builder<
             ListProcessorsRequest, ListProcessorsResponse, ListProcessorsPagedResponse>
         listProcessorsSettings;
+    private final UnaryCallSettings.Builder<GetProcessorRequest, Processor> getProcessorSettings;
+    private final UnaryCallSettings.Builder<GetProcessorVersionRequest, ProcessorVersion>
+        getProcessorVersionSettings;
+    private final PagedCallSettings.Builder<
+            ListProcessorVersionsRequest,
+            ListProcessorVersionsResponse,
+            ListProcessorVersionsPagedResponse>
+        listProcessorVersionsSettings;
+    private final UnaryCallSettings.Builder<DeleteProcessorVersionRequest, Operation>
+        deleteProcessorVersionSettings;
+    private final OperationCallSettings.Builder<
+            DeleteProcessorVersionRequest, Empty, DeleteProcessorVersionMetadata>
+        deleteProcessorVersionOperationSettings;
+    private final UnaryCallSettings.Builder<DeployProcessorVersionRequest, Operation>
+        deployProcessorVersionSettings;
+    private final OperationCallSettings.Builder<
+            DeployProcessorVersionRequest,
+            DeployProcessorVersionResponse,
+            DeployProcessorVersionMetadata>
+        deployProcessorVersionOperationSettings;
+    private final UnaryCallSettings.Builder<UndeployProcessorVersionRequest, Operation>
+        undeployProcessorVersionSettings;
+    private final OperationCallSettings.Builder<
+            UndeployProcessorVersionRequest,
+            UndeployProcessorVersionResponse,
+            UndeployProcessorVersionMetadata>
+        undeployProcessorVersionOperationSettings;
     private final UnaryCallSettings.Builder<CreateProcessorRequest, Processor>
         createProcessorSettings;
     private final UnaryCallSettings.Builder<DeleteProcessorRequest, Operation>
@@ -441,11 +831,22 @@ public class DocumentProcessorServiceStubSettings
     private final OperationCallSettings.Builder<
             DisableProcessorRequest, DisableProcessorResponse, DisableProcessorMetadata>
         disableProcessorOperationSettings;
+    private final UnaryCallSettings.Builder<SetDefaultProcessorVersionRequest, Operation>
+        setDefaultProcessorVersionSettings;
+    private final OperationCallSettings.Builder<
+            SetDefaultProcessorVersionRequest,
+            SetDefaultProcessorVersionResponse,
+            SetDefaultProcessorVersionMetadata>
+        setDefaultProcessorVersionOperationSettings;
     private final UnaryCallSettings.Builder<ReviewDocumentRequest, Operation>
         reviewDocumentSettings;
     private final OperationCallSettings.Builder<
             ReviewDocumentRequest, ReviewDocumentResponse, ReviewDocumentOperationMetadata>
         reviewDocumentOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -493,7 +894,18 @@ public class DocumentProcessorServiceStubSettings
       batchProcessDocumentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchProcessDocumentsOperationSettings = OperationCallSettings.newBuilder();
       fetchProcessorTypesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listProcessorTypesSettings = PagedCallSettings.newBuilder(LIST_PROCESSOR_TYPES_PAGE_STR_FACT);
       listProcessorsSettings = PagedCallSettings.newBuilder(LIST_PROCESSORS_PAGE_STR_FACT);
+      getProcessorSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getProcessorVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listProcessorVersionsSettings =
+          PagedCallSettings.newBuilder(LIST_PROCESSOR_VERSIONS_PAGE_STR_FACT);
+      deleteProcessorVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteProcessorVersionOperationSettings = OperationCallSettings.newBuilder();
+      deployProcessorVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deployProcessorVersionOperationSettings = OperationCallSettings.newBuilder();
+      undeployProcessorVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      undeployProcessorVersionOperationSettings = OperationCallSettings.newBuilder();
       createProcessorSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteProcessorSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteProcessorOperationSettings = OperationCallSettings.newBuilder();
@@ -501,20 +913,34 @@ public class DocumentProcessorServiceStubSettings
       enableProcessorOperationSettings = OperationCallSettings.newBuilder();
       disableProcessorSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       disableProcessorOperationSettings = OperationCallSettings.newBuilder();
+      setDefaultProcessorVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setDefaultProcessorVersionOperationSettings = OperationCallSettings.newBuilder();
       reviewDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       reviewDocumentOperationSettings = OperationCallSettings.newBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               processDocumentSettings,
               batchProcessDocumentsSettings,
               fetchProcessorTypesSettings,
+              listProcessorTypesSettings,
               listProcessorsSettings,
+              getProcessorSettings,
+              getProcessorVersionSettings,
+              listProcessorVersionsSettings,
+              deleteProcessorVersionSettings,
+              deployProcessorVersionSettings,
+              undeployProcessorVersionSettings,
               createProcessorSettings,
               deleteProcessorSettings,
               enableProcessorSettings,
               disableProcessorSettings,
-              reviewDocumentSettings);
+              setDefaultProcessorVersionSettings,
+              reviewDocumentSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -526,7 +952,20 @@ public class DocumentProcessorServiceStubSettings
       batchProcessDocumentsOperationSettings =
           settings.batchProcessDocumentsOperationSettings.toBuilder();
       fetchProcessorTypesSettings = settings.fetchProcessorTypesSettings.toBuilder();
+      listProcessorTypesSettings = settings.listProcessorTypesSettings.toBuilder();
       listProcessorsSettings = settings.listProcessorsSettings.toBuilder();
+      getProcessorSettings = settings.getProcessorSettings.toBuilder();
+      getProcessorVersionSettings = settings.getProcessorVersionSettings.toBuilder();
+      listProcessorVersionsSettings = settings.listProcessorVersionsSettings.toBuilder();
+      deleteProcessorVersionSettings = settings.deleteProcessorVersionSettings.toBuilder();
+      deleteProcessorVersionOperationSettings =
+          settings.deleteProcessorVersionOperationSettings.toBuilder();
+      deployProcessorVersionSettings = settings.deployProcessorVersionSettings.toBuilder();
+      deployProcessorVersionOperationSettings =
+          settings.deployProcessorVersionOperationSettings.toBuilder();
+      undeployProcessorVersionSettings = settings.undeployProcessorVersionSettings.toBuilder();
+      undeployProcessorVersionOperationSettings =
+          settings.undeployProcessorVersionOperationSettings.toBuilder();
       createProcessorSettings = settings.createProcessorSettings.toBuilder();
       deleteProcessorSettings = settings.deleteProcessorSettings.toBuilder();
       deleteProcessorOperationSettings = settings.deleteProcessorOperationSettings.toBuilder();
@@ -534,20 +973,35 @@ public class DocumentProcessorServiceStubSettings
       enableProcessorOperationSettings = settings.enableProcessorOperationSettings.toBuilder();
       disableProcessorSettings = settings.disableProcessorSettings.toBuilder();
       disableProcessorOperationSettings = settings.disableProcessorOperationSettings.toBuilder();
+      setDefaultProcessorVersionSettings = settings.setDefaultProcessorVersionSettings.toBuilder();
+      setDefaultProcessorVersionOperationSettings =
+          settings.setDefaultProcessorVersionOperationSettings.toBuilder();
       reviewDocumentSettings = settings.reviewDocumentSettings.toBuilder();
       reviewDocumentOperationSettings = settings.reviewDocumentOperationSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               processDocumentSettings,
               batchProcessDocumentsSettings,
               fetchProcessorTypesSettings,
+              listProcessorTypesSettings,
               listProcessorsSettings,
+              getProcessorSettings,
+              getProcessorVersionSettings,
+              listProcessorVersionsSettings,
+              deleteProcessorVersionSettings,
+              deployProcessorVersionSettings,
+              undeployProcessorVersionSettings,
               createProcessorSettings,
               deleteProcessorSettings,
               enableProcessorSettings,
               disableProcessorSettings,
-              reviewDocumentSettings);
+              setDefaultProcessorVersionSettings,
+              reviewDocumentSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -593,7 +1047,42 @@ public class DocumentProcessorServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .listProcessorTypesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .listProcessorsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getProcessorSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getProcessorVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listProcessorVersionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteProcessorVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deployProcessorVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .undeployProcessorVersionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -618,9 +1107,24 @@ public class DocumentProcessorServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .setDefaultProcessorVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .reviewDocumentSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getLocationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .batchProcessDocumentsOperationSettings()
@@ -634,6 +1138,83 @@ public class DocumentProcessorServiceStubSettings
               ProtoOperationTransformers.ResponseTransformer.create(BatchProcessResponse.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(BatchProcessMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteProcessorVersionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteProcessorVersionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  DeleteProcessorVersionMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deployProcessorVersionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeployProcessorVersionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  DeployProcessorVersionResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  DeployProcessorVersionMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .undeployProcessorVersionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UndeployProcessorVersionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  UndeployProcessorVersionResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  UndeployProcessorVersionMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -719,6 +1300,33 @@ public class DocumentProcessorServiceStubSettings
                       .build()));
 
       builder
+          .setDefaultProcessorVersionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetDefaultProcessorVersionRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  SetDefaultProcessorVersionResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  SetDefaultProcessorVersionMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .reviewDocumentOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -787,11 +1395,87 @@ public class DocumentProcessorServiceStubSettings
       return fetchProcessorTypesSettings;
     }
 
+    /** Returns the builder for the settings used for calls to listProcessorTypes. */
+    public PagedCallSettings.Builder<
+            ListProcessorTypesRequest, ListProcessorTypesResponse, ListProcessorTypesPagedResponse>
+        listProcessorTypesSettings() {
+      return listProcessorTypesSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listProcessors. */
     public PagedCallSettings.Builder<
             ListProcessorsRequest, ListProcessorsResponse, ListProcessorsPagedResponse>
         listProcessorsSettings() {
       return listProcessorsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getProcessor. */
+    public UnaryCallSettings.Builder<GetProcessorRequest, Processor> getProcessorSettings() {
+      return getProcessorSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getProcessorVersion. */
+    public UnaryCallSettings.Builder<GetProcessorVersionRequest, ProcessorVersion>
+        getProcessorVersionSettings() {
+      return getProcessorVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listProcessorVersions. */
+    public PagedCallSettings.Builder<
+            ListProcessorVersionsRequest,
+            ListProcessorVersionsResponse,
+            ListProcessorVersionsPagedResponse>
+        listProcessorVersionsSettings() {
+      return listProcessorVersionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteProcessorVersion. */
+    public UnaryCallSettings.Builder<DeleteProcessorVersionRequest, Operation>
+        deleteProcessorVersionSettings() {
+      return deleteProcessorVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteProcessorVersion. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            DeleteProcessorVersionRequest, Empty, DeleteProcessorVersionMetadata>
+        deleteProcessorVersionOperationSettings() {
+      return deleteProcessorVersionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deployProcessorVersion. */
+    public UnaryCallSettings.Builder<DeployProcessorVersionRequest, Operation>
+        deployProcessorVersionSettings() {
+      return deployProcessorVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deployProcessorVersion. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            DeployProcessorVersionRequest,
+            DeployProcessorVersionResponse,
+            DeployProcessorVersionMetadata>
+        deployProcessorVersionOperationSettings() {
+      return deployProcessorVersionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to undeployProcessorVersion. */
+    public UnaryCallSettings.Builder<UndeployProcessorVersionRequest, Operation>
+        undeployProcessorVersionSettings() {
+      return undeployProcessorVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to undeployProcessorVersion. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            UndeployProcessorVersionRequest,
+            UndeployProcessorVersionResponse,
+            UndeployProcessorVersionMetadata>
+        undeployProcessorVersionOperationSettings() {
+      return undeployProcessorVersionOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to createProcessor. */
@@ -841,6 +1525,23 @@ public class DocumentProcessorServiceStubSettings
       return disableProcessorOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to setDefaultProcessorVersion. */
+    public UnaryCallSettings.Builder<SetDefaultProcessorVersionRequest, Operation>
+        setDefaultProcessorVersionSettings() {
+      return setDefaultProcessorVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setDefaultProcessorVersion. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            SetDefaultProcessorVersionRequest,
+            SetDefaultProcessorVersionResponse,
+            SetDefaultProcessorVersionMetadata>
+        setDefaultProcessorVersionOperationSettings() {
+      return setDefaultProcessorVersionOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to reviewDocument. */
     public UnaryCallSettings.Builder<ReviewDocumentRequest, Operation> reviewDocumentSettings() {
       return reviewDocumentSettings;
@@ -853,6 +1554,18 @@ public class DocumentProcessorServiceStubSettings
             ReviewDocumentRequest, ReviewDocumentResponse, ReviewDocumentOperationMetadata>
         reviewDocumentOperationSettings() {
       return reviewDocumentOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override

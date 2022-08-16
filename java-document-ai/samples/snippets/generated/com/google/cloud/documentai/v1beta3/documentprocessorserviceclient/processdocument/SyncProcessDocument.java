@@ -22,6 +22,7 @@ import com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient;
 import com.google.cloud.documentai.v1beta3.ProcessRequest;
 import com.google.cloud.documentai.v1beta3.ProcessResponse;
 import com.google.cloud.documentai.v1beta3.ProcessorName;
+import com.google.protobuf.FieldMask;
 
 public class SyncProcessDocument {
 
@@ -39,6 +40,7 @@ public class SyncProcessDocument {
               .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
               .setDocument(Document.newBuilder().build())
               .setSkipHumanReview(true)
+              .setFieldMask(FieldMask.newBuilder().build())
               .build();
       ProcessResponse response = documentProcessorServiceClient.processDocument(request);
     }

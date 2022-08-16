@@ -23,6 +23,7 @@ package com.google.cloud.documentai.v1beta3;
  *
  * <pre>
  * Response message for the disable processor method.
+ * Intentionally empty proto for adding fields in future.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1beta3.DisableProcessorResponse}
@@ -260,6 +261,7 @@ public final class DisableProcessorResponse extends com.google.protobuf.Generate
    *
    * <pre>
    * Response message for the disable processor method.
+   * Intentionally empty proto for adding fields in future.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.DisableProcessorResponse}

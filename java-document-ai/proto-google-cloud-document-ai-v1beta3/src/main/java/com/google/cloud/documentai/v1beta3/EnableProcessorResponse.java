@@ -23,6 +23,7 @@ package com.google.cloud.documentai.v1beta3;
  *
  * <pre>
  * Response message for the enable processor method.
+ * Intentionally empty proto for adding fields in future.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1beta3.EnableProcessorResponse}
@@ -260,6 +261,7 @@ public final class EnableProcessorResponse extends com.google.protobuf.Generated
    *
    * <pre>
    * Response message for the enable processor method.
+   * Intentionally empty proto for adding fields in future.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.EnableProcessorResponse}

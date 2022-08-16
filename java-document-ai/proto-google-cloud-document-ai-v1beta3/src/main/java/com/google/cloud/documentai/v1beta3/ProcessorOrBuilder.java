@@ -28,7 +28,7 @@ public interface ProcessorOrBuilder
    *
    * <pre>
    * Output only. Immutable. The resource name of the processor.
-   * Format: projects/{project}/locations/{location}/processors/{processor}
+   * Format: `projects/{project}/locations/{location}/processors/{processor}`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface ProcessorOrBuilder
    *
    * <pre>
    * Output only. Immutable. The resource name of the processor.
-   * Format: projects/{project}/locations/{location}/processors/{processor}
+   * Format: `projects/{project}/locations/{location}/processors/{processor}`
    * </pre>
    *
    * <code>
@@ -58,7 +58,9 @@ public interface ProcessorOrBuilder
    *
    *
    * <pre>
-   * The processor type.
+   * The processor type, e.g., OCR_PROCESSOR, INVOICE_PROCESSOR, etc.
+   * To get a list of processors types, see
+   * [FetchProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.FetchProcessorTypes].
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -70,7 +72,9 @@ public interface ProcessorOrBuilder
    *
    *
    * <pre>
-   * The processor type.
+   * The processor type, e.g., OCR_PROCESSOR, INVOICE_PROCESSOR, etc.
+   * To get a list of processors types, see
+   * [FetchProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.FetchProcessorTypes].
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -140,7 +144,7 @@ public interface ProcessorOrBuilder
    * The default processor version.
    * </pre>
    *
-   * <code>string default_processor_version = 9;</code>
+   * <code>string default_processor_version = 9 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The defaultProcessorVersion.
    */
@@ -152,7 +156,7 @@ public interface ProcessorOrBuilder
    * The default processor version.
    * </pre>
    *
-   * <code>string default_processor_version = 9;</code>
+   * <code>string default_processor_version = 9 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for defaultProcessorVersion.
    */

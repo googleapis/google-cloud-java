@@ -20,6 +20,7 @@ package com.google.cloud.documentai.v1beta3.samples;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.documentai.v1beta3.Document;
 import com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient;
+import com.google.cloud.documentai.v1beta3.DocumentSchema;
 import com.google.cloud.documentai.v1beta3.HumanReviewConfigName;
 import com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata;
 import com.google.cloud.documentai.v1beta3.ReviewDocumentRequest;
@@ -42,6 +43,7 @@ public class AsyncReviewDocumentLRO {
                   HumanReviewConfigName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
               .setDocument(Document.newBuilder().build())
               .setEnableSchemaValidation(true)
+              .setDocumentSchema(DocumentSchema.newBuilder().build())
               .build();
       OperationFuture<ReviewDocumentResponse, ReviewDocumentOperationMetadata> future =
           documentProcessorServiceClient.reviewDocumentOperationCallable().futureCall(request);

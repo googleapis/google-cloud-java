@@ -16,6 +16,9 @@
 
 package com.google.cloud.documentai.v1beta3;
 
+import static com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient.ListProcessorTypesPagedResponse;
+import static com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient.ListProcessorVersionsPagedResponse;
 import static com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient.ListProcessorsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -32,6 +35,10 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.documentai.v1beta3.stub.DocumentProcessorServiceStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -102,11 +109,87 @@ public class DocumentProcessorServiceSettings
     return ((DocumentProcessorServiceStubSettings) getStubSettings()).fetchProcessorTypesSettings();
   }
 
+  /** Returns the object with the settings used for calls to listProcessorTypes. */
+  public PagedCallSettings<
+          ListProcessorTypesRequest, ListProcessorTypesResponse, ListProcessorTypesPagedResponse>
+      listProcessorTypesSettings() {
+    return ((DocumentProcessorServiceStubSettings) getStubSettings()).listProcessorTypesSettings();
+  }
+
   /** Returns the object with the settings used for calls to listProcessors. */
   public PagedCallSettings<
           ListProcessorsRequest, ListProcessorsResponse, ListProcessorsPagedResponse>
       listProcessorsSettings() {
     return ((DocumentProcessorServiceStubSettings) getStubSettings()).listProcessorsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getProcessor. */
+  public UnaryCallSettings<GetProcessorRequest, Processor> getProcessorSettings() {
+    return ((DocumentProcessorServiceStubSettings) getStubSettings()).getProcessorSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getProcessorVersion. */
+  public UnaryCallSettings<GetProcessorVersionRequest, ProcessorVersion>
+      getProcessorVersionSettings() {
+    return ((DocumentProcessorServiceStubSettings) getStubSettings()).getProcessorVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listProcessorVersions. */
+  public PagedCallSettings<
+          ListProcessorVersionsRequest,
+          ListProcessorVersionsResponse,
+          ListProcessorVersionsPagedResponse>
+      listProcessorVersionsSettings() {
+    return ((DocumentProcessorServiceStubSettings) getStubSettings())
+        .listProcessorVersionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteProcessorVersion. */
+  public UnaryCallSettings<DeleteProcessorVersionRequest, Operation>
+      deleteProcessorVersionSettings() {
+    return ((DocumentProcessorServiceStubSettings) getStubSettings())
+        .deleteProcessorVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteProcessorVersion. */
+  public OperationCallSettings<DeleteProcessorVersionRequest, Empty, DeleteProcessorVersionMetadata>
+      deleteProcessorVersionOperationSettings() {
+    return ((DocumentProcessorServiceStubSettings) getStubSettings())
+        .deleteProcessorVersionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deployProcessorVersion. */
+  public UnaryCallSettings<DeployProcessorVersionRequest, Operation>
+      deployProcessorVersionSettings() {
+    return ((DocumentProcessorServiceStubSettings) getStubSettings())
+        .deployProcessorVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deployProcessorVersion. */
+  public OperationCallSettings<
+          DeployProcessorVersionRequest,
+          DeployProcessorVersionResponse,
+          DeployProcessorVersionMetadata>
+      deployProcessorVersionOperationSettings() {
+    return ((DocumentProcessorServiceStubSettings) getStubSettings())
+        .deployProcessorVersionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to undeployProcessorVersion. */
+  public UnaryCallSettings<UndeployProcessorVersionRequest, Operation>
+      undeployProcessorVersionSettings() {
+    return ((DocumentProcessorServiceStubSettings) getStubSettings())
+        .undeployProcessorVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to undeployProcessorVersion. */
+  public OperationCallSettings<
+          UndeployProcessorVersionRequest,
+          UndeployProcessorVersionResponse,
+          UndeployProcessorVersionMetadata>
+      undeployProcessorVersionOperationSettings() {
+    return ((DocumentProcessorServiceStubSettings) getStubSettings())
+        .undeployProcessorVersionOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to createProcessor. */
@@ -152,6 +235,23 @@ public class DocumentProcessorServiceSettings
         .disableProcessorOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to setDefaultProcessorVersion. */
+  public UnaryCallSettings<SetDefaultProcessorVersionRequest, Operation>
+      setDefaultProcessorVersionSettings() {
+    return ((DocumentProcessorServiceStubSettings) getStubSettings())
+        .setDefaultProcessorVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setDefaultProcessorVersion. */
+  public OperationCallSettings<
+          SetDefaultProcessorVersionRequest,
+          SetDefaultProcessorVersionResponse,
+          SetDefaultProcessorVersionMetadata>
+      setDefaultProcessorVersionOperationSettings() {
+    return ((DocumentProcessorServiceStubSettings) getStubSettings())
+        .setDefaultProcessorVersionOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to reviewDocument. */
   public UnaryCallSettings<ReviewDocumentRequest, Operation> reviewDocumentSettings() {
     return ((DocumentProcessorServiceStubSettings) getStubSettings()).reviewDocumentSettings();
@@ -163,6 +263,17 @@ public class DocumentProcessorServiceSettings
       reviewDocumentOperationSettings() {
     return ((DocumentProcessorServiceStubSettings) getStubSettings())
         .reviewDocumentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((DocumentProcessorServiceStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((DocumentProcessorServiceStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final DocumentProcessorServiceSettings create(
@@ -305,11 +416,81 @@ public class DocumentProcessorServiceSettings
       return getStubSettingsBuilder().fetchProcessorTypesSettings();
     }
 
+    /** Returns the builder for the settings used for calls to listProcessorTypes. */
+    public PagedCallSettings.Builder<
+            ListProcessorTypesRequest, ListProcessorTypesResponse, ListProcessorTypesPagedResponse>
+        listProcessorTypesSettings() {
+      return getStubSettingsBuilder().listProcessorTypesSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listProcessors. */
     public PagedCallSettings.Builder<
             ListProcessorsRequest, ListProcessorsResponse, ListProcessorsPagedResponse>
         listProcessorsSettings() {
       return getStubSettingsBuilder().listProcessorsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getProcessor. */
+    public UnaryCallSettings.Builder<GetProcessorRequest, Processor> getProcessorSettings() {
+      return getStubSettingsBuilder().getProcessorSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getProcessorVersion. */
+    public UnaryCallSettings.Builder<GetProcessorVersionRequest, ProcessorVersion>
+        getProcessorVersionSettings() {
+      return getStubSettingsBuilder().getProcessorVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listProcessorVersions. */
+    public PagedCallSettings.Builder<
+            ListProcessorVersionsRequest,
+            ListProcessorVersionsResponse,
+            ListProcessorVersionsPagedResponse>
+        listProcessorVersionsSettings() {
+      return getStubSettingsBuilder().listProcessorVersionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteProcessorVersion. */
+    public UnaryCallSettings.Builder<DeleteProcessorVersionRequest, Operation>
+        deleteProcessorVersionSettings() {
+      return getStubSettingsBuilder().deleteProcessorVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteProcessorVersion. */
+    public OperationCallSettings.Builder<
+            DeleteProcessorVersionRequest, Empty, DeleteProcessorVersionMetadata>
+        deleteProcessorVersionOperationSettings() {
+      return getStubSettingsBuilder().deleteProcessorVersionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deployProcessorVersion. */
+    public UnaryCallSettings.Builder<DeployProcessorVersionRequest, Operation>
+        deployProcessorVersionSettings() {
+      return getStubSettingsBuilder().deployProcessorVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deployProcessorVersion. */
+    public OperationCallSettings.Builder<
+            DeployProcessorVersionRequest,
+            DeployProcessorVersionResponse,
+            DeployProcessorVersionMetadata>
+        deployProcessorVersionOperationSettings() {
+      return getStubSettingsBuilder().deployProcessorVersionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to undeployProcessorVersion. */
+    public UnaryCallSettings.Builder<UndeployProcessorVersionRequest, Operation>
+        undeployProcessorVersionSettings() {
+      return getStubSettingsBuilder().undeployProcessorVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to undeployProcessorVersion. */
+    public OperationCallSettings.Builder<
+            UndeployProcessorVersionRequest,
+            UndeployProcessorVersionResponse,
+            UndeployProcessorVersionMetadata>
+        undeployProcessorVersionOperationSettings() {
+      return getStubSettingsBuilder().undeployProcessorVersionOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createProcessor. */
@@ -353,6 +534,21 @@ public class DocumentProcessorServiceSettings
       return getStubSettingsBuilder().disableProcessorOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to setDefaultProcessorVersion. */
+    public UnaryCallSettings.Builder<SetDefaultProcessorVersionRequest, Operation>
+        setDefaultProcessorVersionSettings() {
+      return getStubSettingsBuilder().setDefaultProcessorVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setDefaultProcessorVersion. */
+    public OperationCallSettings.Builder<
+            SetDefaultProcessorVersionRequest,
+            SetDefaultProcessorVersionResponse,
+            SetDefaultProcessorVersionMetadata>
+        setDefaultProcessorVersionOperationSettings() {
+      return getStubSettingsBuilder().setDefaultProcessorVersionOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to reviewDocument. */
     public UnaryCallSettings.Builder<ReviewDocumentRequest, Operation> reviewDocumentSettings() {
       return getStubSettingsBuilder().reviewDocumentSettings();
@@ -363,6 +559,18 @@ public class DocumentProcessorServiceSettings
             ReviewDocumentRequest, ReviewDocumentResponse, ReviewDocumentOperationMetadata>
         reviewDocumentOperationSettings() {
       return getStubSettingsBuilder().reviewDocumentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

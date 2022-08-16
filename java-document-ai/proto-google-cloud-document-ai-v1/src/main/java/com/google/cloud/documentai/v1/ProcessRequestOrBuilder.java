@@ -97,7 +97,12 @@ public interface ProcessRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The processor resource name.
+   * Required. The resource name of the [Processor][google.cloud.documentai.v1.Processor] or
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion]
+   * to use for processing. If a [Processor][google.cloud.documentai.v1.Processor] is specified, the server will use
+   * its [default version][google.cloud.documentai.v1.Processor.default_processor_version]. Format:
+   * `projects/{project}/locations/{location}/processors/{processor}`, or
+   * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
    * </pre>
    *
    * <code>
@@ -111,7 +116,12 @@ public interface ProcessRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The processor resource name.
+   * Required. The resource name of the [Processor][google.cloud.documentai.v1.Processor] or
+   * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion]
+   * to use for processing. If a [Processor][google.cloud.documentai.v1.Processor] is specified, the server will use
+   * its [default version][google.cloud.documentai.v1.Processor.default_processor_version]. Format:
+   * `projects/{project}/locations/{location}/processors/{processor}`, or
+   * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
    * </pre>
    *
    * <code>
@@ -135,6 +145,41 @@ public interface ProcessRequestOrBuilder
    * @return The skipHumanReview.
    */
   boolean getSkipHumanReview();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which fields to include in ProcessResponse's document.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask field_mask = 6;</code>
+   *
+   * @return Whether the fieldMask field is set.
+   */
+  boolean hasFieldMask();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which fields to include in ProcessResponse's document.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask field_mask = 6;</code>
+   *
+   * @return The fieldMask.
+   */
+  com.google.protobuf.FieldMask getFieldMask();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which fields to include in ProcessResponse's document.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask field_mask = 6;</code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder();
 
   public com.google.cloud.documentai.v1.ProcessRequest.SourceCase getSourceCase();
 }

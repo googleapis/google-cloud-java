@@ -66,35 +66,31 @@ public final class DocumentIoProto {
     java.lang.String[] descriptorData = {
       "\n1google/cloud/documentai/v1beta3/docume"
           + "nt_io.proto\022\037google.cloud.documentai.v1b"
-          + "eta3\032\034google/api/annotations.proto\"1\n\013Ra"
-          + "wDocument\022\017\n\007content\030\001 \001(\014\022\021\n\tmime_type\030"
-          + "\002 \001(\t\"1\n\013GcsDocument\022\017\n\007gcs_uri\030\001 \001(\t\022\021\n"
-          + "\tmime_type\030\002 \001(\t\"O\n\014GcsDocuments\022?\n\tdocu"
-          + "ments\030\001 \003(\0132,.google.cloud.documentai.v1"
-          + "beta3.GcsDocument\"#\n\tGcsPrefix\022\026\n\016gcs_ur"
-          + "i_prefix\030\001 \001(\t\"\257\001\n\031BatchDocumentsInputCo"
-          + "nfig\022@\n\ngcs_prefix\030\001 \001(\0132*.google.cloud."
-          + "documentai.v1beta3.GcsPrefixH\000\022F\n\rgcs_do"
-          + "cuments\030\002 \001(\0132-.google.cloud.documentai."
-          + "v1beta3.GcsDocumentsH\000B\010\n\006source\"\255\001\n\024Doc"
-          + "umentOutputConfig\022b\n\021gcs_output_config\030\001"
-          + " \001(\0132E.google.cloud.documentai.v1beta3.D"
-          + "ocumentOutputConfig.GcsOutputConfigH\000\032\"\n"
-          + "\017GcsOutputConfig\022\017\n\007gcs_uri\030\001 \001(\tB\r\n\013des"
-          + "tinationB\354\001\n#com.google.cloud.documentai"
-          + ".v1beta3B\017DocumentIoProtoP\001ZIgoogle.gola"
-          + "ng.org/genproto/googleapis/cloud/documen"
-          + "tai/v1beta3;documentai\252\002\037Google.Cloud.Do"
-          + "cumentAI.V1Beta3\312\002\037Google\\Cloud\\Document"
-          + "AI\\V1beta3\352\002\"Google::Cloud::DocumentAI::"
-          + "V1beta3b\006proto3"
+          + "eta3\"1\n\013RawDocument\022\017\n\007content\030\001 \001(\014\022\021\n\t"
+          + "mime_type\030\002 \001(\t\"1\n\013GcsDocument\022\017\n\007gcs_ur"
+          + "i\030\001 \001(\t\022\021\n\tmime_type\030\002 \001(\t\"O\n\014GcsDocumen"
+          + "ts\022?\n\tdocuments\030\001 \003(\0132,.google.cloud.doc"
+          + "umentai.v1beta3.GcsDocument\"#\n\tGcsPrefix"
+          + "\022\026\n\016gcs_uri_prefix\030\001 \001(\t\"\257\001\n\031BatchDocume"
+          + "ntsInputConfig\022@\n\ngcs_prefix\030\001 \001(\0132*.goo"
+          + "gle.cloud.documentai.v1beta3.GcsPrefixH\000"
+          + "\022F\n\rgcs_documents\030\002 \001(\0132-.google.cloud.d"
+          + "ocumentai.v1beta3.GcsDocumentsH\000B\010\n\006sour"
+          + "ce\"\255\001\n\024DocumentOutputConfig\022b\n\021gcs_outpu"
+          + "t_config\030\001 \001(\0132E.google.cloud.documentai"
+          + ".v1beta3.DocumentOutputConfig.GcsOutputC"
+          + "onfigH\000\032\"\n\017GcsOutputConfig\022\017\n\007gcs_uri\030\001 "
+          + "\001(\tB\r\n\013destinationB\354\001\n#com.google.cloud."
+          + "documentai.v1beta3B\017DocumentIoProtoP\001ZIg"
+          + "oogle.golang.org/genproto/googleapis/clo"
+          + "ud/documentai/v1beta3;documentai\252\002\037Googl"
+          + "e.Cloud.DocumentAI.V1Beta3\312\002\037Google\\Clou"
+          + "d\\DocumentAI\\V1beta3\352\002\"Google::Cloud::Do"
+          + "cumentAI::V1beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_documentai_v1beta3_RawDocument_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_documentai_v1beta3_RawDocument_fieldAccessorTable =
@@ -153,7 +149,6 @@ public final class DocumentIoProto {
             new java.lang.String[] {
               "GcsUri",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -1782,7 +1782,11 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The processor resource name.
+   * Required. The resource name of [Processor][google.cloud.documentai.v1beta3.Processor] or
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
+   * Format: `projects/{project}/locations/{location}/processors/{processor}`,
+   * or
+   * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
    * </pre>
    *
    * <code>
@@ -1807,7 +1811,11 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The processor resource name.
+   * Required. The resource name of [Processor][google.cloud.documentai.v1beta3.Processor] or
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
+   * Format: `projects/{project}/locations/{location}/processors/{processor}`,
+   * or
+   * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
    * </pre>
    *
    * <code>
@@ -1933,7 +1941,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    * </code>
    *
    * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=276
+   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=378
    * @return Whether the outputConfig field is set.
    */
   @java.lang.Override
@@ -1953,7 +1961,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    * </code>
    *
    * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=276
+   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=378
    * @return The outputConfig.
    */
   @java.lang.Override
@@ -2582,7 +2590,11 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The processor resource name.
+     * Required. The resource name of [Processor][google.cloud.documentai.v1beta3.Processor] or
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
+     * Format: `projects/{project}/locations/{location}/processors/{processor}`,
+     * or
+     * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
      * </pre>
      *
      * <code>
@@ -2606,7 +2618,11 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The processor resource name.
+     * Required. The resource name of [Processor][google.cloud.documentai.v1beta3.Processor] or
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
+     * Format: `projects/{project}/locations/{location}/processors/{processor}`,
+     * or
+     * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
      * </pre>
      *
      * <code>
@@ -2630,7 +2646,11 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The processor resource name.
+     * Required. The resource name of [Processor][google.cloud.documentai.v1beta3.Processor] or
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
+     * Format: `projects/{project}/locations/{location}/processors/{processor}`,
+     * or
+     * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
      * </pre>
      *
      * <code>
@@ -2653,7 +2673,11 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The processor resource name.
+     * Required. The resource name of [Processor][google.cloud.documentai.v1beta3.Processor] or
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
+     * Format: `projects/{project}/locations/{location}/processors/{processor}`,
+     * or
+     * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
      * </pre>
      *
      * <code>
@@ -2672,7 +2696,11 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The processor resource name.
+     * Required. The resource name of [Processor][google.cloud.documentai.v1beta3.Processor] or
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
+     * Format: `projects/{project}/locations/{location}/processors/{processor}`,
+     * or
+     * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
      * </pre>
      *
      * <code>
@@ -3142,7 +3170,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-     *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=276
+     *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=378
      * @return Whether the outputConfig field is set.
      */
     @java.lang.Deprecated
@@ -3161,7 +3189,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-     *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=276
+     *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=378
      * @return The outputConfig.
      */
     @java.lang.Deprecated

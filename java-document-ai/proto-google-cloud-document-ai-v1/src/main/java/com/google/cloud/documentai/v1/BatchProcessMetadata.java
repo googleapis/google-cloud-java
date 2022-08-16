@@ -460,7 +460,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The status of the processing of the document.
+     * The status processing the document.
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
@@ -472,7 +472,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The status of the processing of the document.
+     * The status processing the document.
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
@@ -484,7 +484,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The status of the processing of the document.
+     * The status processing the document.
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
@@ -495,7 +495,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The output_gcs_destination (in the request as 'output_gcs_destination')
+     * The output_gcs_destination (in the request as `output_gcs_destination`)
      * of the processed document if it was successful, otherwise empty.
      * </pre>
      *
@@ -508,7 +508,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The output_gcs_destination (in the request as 'output_gcs_destination')
+     * The output_gcs_destination (in the request as `output_gcs_destination`)
      * of the processed document if it was successful, otherwise empty.
      * </pre>
      *
@@ -749,7 +749,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The status of the processing of the document.
+     * The status processing the document.
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
@@ -764,7 +764,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The status of the processing of the document.
+     * The status processing the document.
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
@@ -779,7 +779,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The status of the processing of the document.
+     * The status processing the document.
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
@@ -795,7 +795,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The output_gcs_destination (in the request as 'output_gcs_destination')
+     * The output_gcs_destination (in the request as `output_gcs_destination`)
      * of the processed document if it was successful, otherwise empty.
      * </pre>
      *
@@ -819,7 +819,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The output_gcs_destination (in the request as 'output_gcs_destination')
+     * The output_gcs_destination (in the request as `output_gcs_destination`)
      * of the processed document if it was successful, otherwise empty.
      * </pre>
      *
@@ -1433,7 +1433,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The status of the processing of the document.
+       * The status processing the document.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -1447,7 +1447,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The status of the processing of the document.
+       * The status processing the document.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -1465,7 +1465,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The status of the processing of the document.
+       * The status processing the document.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -1487,7 +1487,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The status of the processing of the document.
+       * The status processing the document.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -1506,7 +1506,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The status of the processing of the document.
+       * The status processing the document.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -1529,7 +1529,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The status of the processing of the document.
+       * The status processing the document.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -1549,7 +1549,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The status of the processing of the document.
+       * The status processing the document.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -1563,7 +1563,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The status of the processing of the document.
+       * The status processing the document.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -1579,7 +1579,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The status of the processing of the document.
+       * The status processing the document.
        * </pre>
        *
        * <code>.google.rpc.Status status = 2;</code>
@@ -1603,7 +1603,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The output_gcs_destination (in the request as 'output_gcs_destination')
+       * The output_gcs_destination (in the request as `output_gcs_destination`)
        * of the processed document if it was successful, otherwise empty.
        * </pre>
        *
@@ -1626,7 +1626,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The output_gcs_destination (in the request as 'output_gcs_destination')
+       * The output_gcs_destination (in the request as `output_gcs_destination`)
        * of the processed document if it was successful, otherwise empty.
        * </pre>
        *
@@ -1649,7 +1649,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The output_gcs_destination (in the request as 'output_gcs_destination')
+       * The output_gcs_destination (in the request as `output_gcs_destination`)
        * of the processed document if it was successful, otherwise empty.
        * </pre>
        *
@@ -1671,7 +1671,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The output_gcs_destination (in the request as 'output_gcs_destination')
+       * The output_gcs_destination (in the request as `output_gcs_destination`)
        * of the processed document if it was successful, otherwise empty.
        * </pre>
        *
@@ -1689,7 +1689,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The output_gcs_destination (in the request as 'output_gcs_destination')
+       * The output_gcs_destination (in the request as `output_gcs_destination`)
        * of the processed document if it was successful, otherwise empty.
        * </pre>
        *
