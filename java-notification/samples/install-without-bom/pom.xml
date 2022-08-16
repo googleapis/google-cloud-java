@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-notification</artifactId>
-      <version>0.123.4-beta</version>
+      <version>0.123.7-beta</version>
     </dependency>
 
     <dependency>
