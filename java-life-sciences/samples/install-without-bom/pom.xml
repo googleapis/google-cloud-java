@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-life-sciences</artifactId>
-      <version>0.5.0</version>
+      <version>0.5.2</version>
     </dependency>
     <!-- [END life-sciences_install_without_bom] -->
 
