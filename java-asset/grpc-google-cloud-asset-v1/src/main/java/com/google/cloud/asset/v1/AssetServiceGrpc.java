@@ -607,6 +607,50 @@ public final class AssetServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.QueryAssetsRequest,
+          com.google.cloud.asset.v1.QueryAssetsResponse>
+      getQueryAssetsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "QueryAssets",
+      requestType = com.google.cloud.asset.v1.QueryAssetsRequest.class,
+      responseType = com.google.cloud.asset.v1.QueryAssetsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.QueryAssetsRequest,
+          com.google.cloud.asset.v1.QueryAssetsResponse>
+      getQueryAssetsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.asset.v1.QueryAssetsRequest,
+            com.google.cloud.asset.v1.QueryAssetsResponse>
+        getQueryAssetsMethod;
+    if ((getQueryAssetsMethod = AssetServiceGrpc.getQueryAssetsMethod) == null) {
+      synchronized (AssetServiceGrpc.class) {
+        if ((getQueryAssetsMethod = AssetServiceGrpc.getQueryAssetsMethod) == null) {
+          AssetServiceGrpc.getQueryAssetsMethod =
+              getQueryAssetsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.asset.v1.QueryAssetsRequest,
+                          com.google.cloud.asset.v1.QueryAssetsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "QueryAssets"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.QueryAssetsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.QueryAssetsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(new AssetServiceMethodDescriptorSupplier("QueryAssets"))
+                      .build();
+        }
+      }
+    }
+    return getQueryAssetsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.asset.v1.CreateSavedQueryRequest, com.google.cloud.asset.v1.SavedQuery>
       getCreateSavedQueryMethod;
 
@@ -1150,6 +1194,31 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
+     * Issue a job that queries assets using a SQL statement compatible with
+     * [BigQuery Standard
+     * SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql).
+     * If the query execution finishes within timeout and there's no pagination,
+     * the full query results will be returned in the `QueryAssetsResponse`.
+     * Otherwise, full query results can be obtained by issuing extra requests
+     * with the `job_reference` from the a previous `QueryAssets` call.
+     * Note, the query result has approximately 10 GB limitation enforced by
+     * BigQuery
+     * https://cloud.google.com/bigquery/docs/best-practices-performance-output,
+     * queries return larger results will result in errors.
+     * </pre>
+     */
+    public void queryAssets(
+        com.google.cloud.asset.v1.QueryAssetsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.QueryAssetsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getQueryAssetsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a saved query in a parent project/folder/organization.
      * </pre>
      */
@@ -1318,6 +1387,12 @@ public final class AssetServiceGrpc {
                   new MethodHandlers<
                       com.google.cloud.asset.v1.AnalyzeMoveRequest,
                       com.google.cloud.asset.v1.AnalyzeMoveResponse>(this, METHODID_ANALYZE_MOVE)))
+          .addMethod(
+              getQueryAssetsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.asset.v1.QueryAssetsRequest,
+                      com.google.cloud.asset.v1.QueryAssetsResponse>(this, METHODID_QUERY_ASSETS)))
           .addMethod(
               getCreateSavedQueryMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1614,6 +1689,33 @@ public final class AssetServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getAnalyzeMoveMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Issue a job that queries assets using a SQL statement compatible with
+     * [BigQuery Standard
+     * SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql).
+     * If the query execution finishes within timeout and there's no pagination,
+     * the full query results will be returned in the `QueryAssetsResponse`.
+     * Otherwise, full query results can be obtained by issuing extra requests
+     * with the `job_reference` from the a previous `QueryAssets` call.
+     * Note, the query result has approximately 10 GB limitation enforced by
+     * BigQuery
+     * https://cloud.google.com/bigquery/docs/best-practices-performance-output,
+     * queries return larger results will result in errors.
+     * </pre>
+     */
+    public void queryAssets(
+        com.google.cloud.asset.v1.QueryAssetsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.QueryAssetsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getQueryAssetsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1947,6 +2049,29 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
+     * Issue a job that queries assets using a SQL statement compatible with
+     * [BigQuery Standard
+     * SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql).
+     * If the query execution finishes within timeout and there's no pagination,
+     * the full query results will be returned in the `QueryAssetsResponse`.
+     * Otherwise, full query results can be obtained by issuing extra requests
+     * with the `job_reference` from the a previous `QueryAssets` call.
+     * Note, the query result has approximately 10 GB limitation enforced by
+     * BigQuery
+     * https://cloud.google.com/bigquery/docs/best-practices-performance-output,
+     * queries return larger results will result in errors.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.QueryAssetsResponse queryAssets(
+        com.google.cloud.asset.v1.QueryAssetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getQueryAssetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a saved query in a parent project/folder/organization.
      * </pre>
      */
@@ -2261,6 +2386,30 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
+     * Issue a job that queries assets using a SQL statement compatible with
+     * [BigQuery Standard
+     * SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql).
+     * If the query execution finishes within timeout and there's no pagination,
+     * the full query results will be returned in the `QueryAssetsResponse`.
+     * Otherwise, full query results can be obtained by issuing extra requests
+     * with the `job_reference` from the a previous `QueryAssets` call.
+     * Note, the query result has approximately 10 GB limitation enforced by
+     * BigQuery
+     * https://cloud.google.com/bigquery/docs/best-practices-performance-output,
+     * queries return larger results will result in errors.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.asset.v1.QueryAssetsResponse>
+        queryAssets(com.google.cloud.asset.v1.QueryAssetsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getQueryAssetsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a saved query in a parent project/folder/organization.
      * </pre>
      */
@@ -2352,12 +2501,13 @@ public final class AssetServiceGrpc {
   private static final int METHODID_ANALYZE_IAM_POLICY = 10;
   private static final int METHODID_ANALYZE_IAM_POLICY_LONGRUNNING = 11;
   private static final int METHODID_ANALYZE_MOVE = 12;
-  private static final int METHODID_CREATE_SAVED_QUERY = 13;
-  private static final int METHODID_GET_SAVED_QUERY = 14;
-  private static final int METHODID_LIST_SAVED_QUERIES = 15;
-  private static final int METHODID_UPDATE_SAVED_QUERY = 16;
-  private static final int METHODID_DELETE_SAVED_QUERY = 17;
-  private static final int METHODID_BATCH_GET_EFFECTIVE_IAM_POLICIES = 18;
+  private static final int METHODID_QUERY_ASSETS = 13;
+  private static final int METHODID_CREATE_SAVED_QUERY = 14;
+  private static final int METHODID_GET_SAVED_QUERY = 15;
+  private static final int METHODID_LIST_SAVED_QUERIES = 16;
+  private static final int METHODID_UPDATE_SAVED_QUERY = 17;
+  private static final int METHODID_DELETE_SAVED_QUERY = 18;
+  private static final int METHODID_BATCH_GET_EFFECTIVE_IAM_POLICIES = 19;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2446,6 +2596,12 @@ public final class AssetServiceGrpc {
           serviceImpl.analyzeMove(
               (com.google.cloud.asset.v1.AnalyzeMoveRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.AnalyzeMoveResponse>)
+                  responseObserver);
+          break;
+        case METHODID_QUERY_ASSETS:
+          serviceImpl.queryAssets(
+              (com.google.cloud.asset.v1.QueryAssetsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.QueryAssetsResponse>)
                   responseObserver);
           break;
         case METHODID_CREATE_SAVED_QUERY:
@@ -2558,6 +2714,7 @@ public final class AssetServiceGrpc {
                       .addMethod(getAnalyzeIamPolicyMethod())
                       .addMethod(getAnalyzeIamPolicyLongrunningMethod())
                       .addMethod(getAnalyzeMoveMethod())
+                      .addMethod(getQueryAssetsMethod())
                       .addMethod(getCreateSavedQueryMethod())
                       .addMethod(getGetSavedQueryMethod())
                       .addMethod(getListSavedQueriesMethod())

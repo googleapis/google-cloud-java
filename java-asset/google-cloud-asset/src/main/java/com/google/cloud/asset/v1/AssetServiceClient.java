@@ -1020,6 +1020,13 @@ public class AssetServiceClient implements BackgroundResource {
    *       <li>`labels.env:&#42;` to find Cloud resources that have a label "env".
    *       <li>`kmsKey:key` to find Cloud resources encrypted with a customer-managed encryption key
    *           whose name contains the word "key".
+   *       <li>`relationships:instance-group-1` to find Cloud resources that have relationships with
+   *           "instance-group-1" in the related resource name.
+   *       <li>`relationships:INSTANCE_TO_INSTANCEGROUP` to find compute instances that have
+   *           relationships of type "INSTANCE_TO_INSTANCEGROUP".
+   *       <li>`relationships.INSTANCE_TO_INSTANCEGROUP:instance-group-1` to find compute instances
+   *           that have relationships with "instance-group-1" in the compute instance group
+   *           resource name, for relationship type "INSTANCE_TO_INSTANCEGROUP".
    *       <li>`state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a word.
    *       <li>`NOT state:ACTIVE` to find Cloud resources whose state doesn't contain "ACTIVE" as a
    *           word.
@@ -1219,8 +1226,8 @@ public class AssetServiceClient implements BackgroundResource {
    *     the specified `scope`. Note that the query string is compared against each Cloud IAM policy
    *     binding, including its principals, roles, and Cloud IAM conditions. The returned Cloud IAM
    *     policies will only contain the bindings that match your query. To learn more about the IAM
-   *     policy structure, see [IAM policy
-   *     doc](https://cloud.google.com/iam/docs/policies#structure).
+   *     policy structure, see the [IAM policy
+   *     documentation](https://cloud.google.com/iam/help/allow-policies/structure).
    *     <p>Examples:
    *     <ul>
    *       <li>`policy:amy{@literal @}gmail.com` to find IAM policy bindings that specify user
@@ -1594,6 +1601,86 @@ public class AssetServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<AnalyzeMoveRequest, AnalyzeMoveResponse> analyzeMoveCallable() {
     return stub.analyzeMoveCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Issue a job that queries assets using a SQL statement compatible with [BigQuery Standard
+   * SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql).
+   *
+   * <p>If the query execution finishes within timeout and there's no pagination, the full query
+   * results will be returned in the `QueryAssetsResponse`.
+   *
+   * <p>Otherwise, full query results can be obtained by issuing extra requests with the
+   * `job_reference` from the a previous `QueryAssets` call.
+   *
+   * <p>Note, the query result has approximately 10 GB limitation enforced by BigQuery
+   * https://cloud.google.com/bigquery/docs/best-practices-performance-output, queries return larger
+   * results will result in errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   QueryAssetsRequest request =
+   *       QueryAssetsRequest.newBuilder()
+   *           .setParent(FolderName.of("[FOLDER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setTimeout(Duration.newBuilder().build())
+   *           .setOutputConfig(QueryAssetsOutputConfig.newBuilder().build())
+   *           .build();
+   *   QueryAssetsResponse response = assetServiceClient.queryAssets(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryAssetsResponse queryAssets(QueryAssetsRequest request) {
+    return queryAssetsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Issue a job that queries assets using a SQL statement compatible with [BigQuery Standard
+   * SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql).
+   *
+   * <p>If the query execution finishes within timeout and there's no pagination, the full query
+   * results will be returned in the `QueryAssetsResponse`.
+   *
+   * <p>Otherwise, full query results can be obtained by issuing extra requests with the
+   * `job_reference` from the a previous `QueryAssets` call.
+   *
+   * <p>Note, the query result has approximately 10 GB limitation enforced by BigQuery
+   * https://cloud.google.com/bigquery/docs/best-practices-performance-output, queries return larger
+   * results will result in errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   QueryAssetsRequest request =
+   *       QueryAssetsRequest.newBuilder()
+   *           .setParent(FolderName.of("[FOLDER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setTimeout(Duration.newBuilder().build())
+   *           .setOutputConfig(QueryAssetsOutputConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<QueryAssetsResponse> future =
+   *       assetServiceClient.queryAssetsCallable().futureCall(request);
+   *   // Do something.
+   *   QueryAssetsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<QueryAssetsRequest, QueryAssetsResponse> queryAssetsCallable() {
+    return stub.queryAssetsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

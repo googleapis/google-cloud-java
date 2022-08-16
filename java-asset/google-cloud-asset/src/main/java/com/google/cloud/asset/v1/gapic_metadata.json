@@ -55,6 +55,9 @@
             "ListSavedQueries": {
               "methods": ["listSavedQueries", "listSavedQueries", "listSavedQueries", "listSavedQueries", "listSavedQueries", "listSavedQueriesPagedCallable", "listSavedQueriesCallable"]
             },
+            "QueryAssets": {
+              "methods": ["queryAssets", "queryAssetsCallable"]
+            },
             "SearchAllIamPolicies": {
               "methods": ["searchAllIamPolicies", "searchAllIamPolicies", "searchAllIamPoliciesPagedCallable", "searchAllIamPoliciesCallable"]
             },

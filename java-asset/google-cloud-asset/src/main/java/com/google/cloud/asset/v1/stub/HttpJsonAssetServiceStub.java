@@ -62,6 +62,8 @@ import com.google.cloud.asset.v1.ListFeedsRequest;
 import com.google.cloud.asset.v1.ListFeedsResponse;
 import com.google.cloud.asset.v1.ListSavedQueriesRequest;
 import com.google.cloud.asset.v1.ListSavedQueriesResponse;
+import com.google.cloud.asset.v1.QueryAssetsRequest;
+import com.google.cloud.asset.v1.QueryAssetsResponse;
 import com.google.cloud.asset.v1.SavedQuery;
 import com.google.cloud.asset.v1.SearchAllIamPoliciesRequest;
 import com.google.cloud.asset.v1.SearchAllIamPoliciesResponse;
@@ -587,6 +589,42 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<QueryAssetsRequest, QueryAssetsResponse>
+      queryAssetsMethodDescriptor =
+          ApiMethodDescriptor.<QueryAssetsRequest, QueryAssetsResponse>newBuilder()
+              .setFullMethodName("google.cloud.asset.v1.AssetService/QueryAssets")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<QueryAssetsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=*/*}:queryAssets",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryAssetsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryAssetsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build()))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QueryAssetsResponse>newBuilder()
+                      .setDefaultInstance(QueryAssetsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<CreateSavedQueryRequest, SavedQuery>
       createSavedQueryMethodDescriptor =
           ApiMethodDescriptor.<CreateSavedQueryRequest, SavedQuery>newBuilder()
@@ -832,6 +870,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
           AnalyzeIamPolicyLongrunningMetadata>
       analyzeIamPolicyLongrunningOperationCallable;
   private final UnaryCallable<AnalyzeMoveRequest, AnalyzeMoveResponse> analyzeMoveCallable;
+  private final UnaryCallable<QueryAssetsRequest, QueryAssetsResponse> queryAssetsCallable;
   private final UnaryCallable<CreateSavedQueryRequest, SavedQuery> createSavedQueryCallable;
   private final UnaryCallable<GetSavedQueryRequest, SavedQuery> getSavedQueryCallable;
   private final UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesResponse>
@@ -961,6 +1000,11 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
             .setMethodDescriptor(analyzeMoveMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<QueryAssetsRequest, QueryAssetsResponse> queryAssetsTransportSettings =
+        HttpJsonCallSettings.<QueryAssetsRequest, QueryAssetsResponse>newBuilder()
+            .setMethodDescriptor(queryAssetsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
     HttpJsonCallSettings<CreateSavedQueryRequest, SavedQuery> createSavedQueryTransportSettings =
         HttpJsonCallSettings.<CreateSavedQueryRequest, SavedQuery>newBuilder()
             .setMethodDescriptor(createSavedQueryMethodDescriptor)
@@ -1068,6 +1112,9 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
     this.analyzeMoveCallable =
         callableFactory.createUnaryCallable(
             analyzeMoveTransportSettings, settings.analyzeMoveSettings(), clientContext);
+    this.queryAssetsCallable =
+        callableFactory.createUnaryCallable(
+            queryAssetsTransportSettings, settings.queryAssetsSettings(), clientContext);
     this.createSavedQueryCallable =
         callableFactory.createUnaryCallable(
             createSavedQueryTransportSettings, settings.createSavedQuerySettings(), clientContext);
@@ -1112,6 +1159,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
     methodDescriptors.add(analyzeIamPolicyMethodDescriptor);
     methodDescriptors.add(analyzeIamPolicyLongrunningMethodDescriptor);
     methodDescriptors.add(analyzeMoveMethodDescriptor);
+    methodDescriptors.add(queryAssetsMethodDescriptor);
     methodDescriptors.add(createSavedQueryMethodDescriptor);
     methodDescriptors.add(getSavedQueryMethodDescriptor);
     methodDescriptors.add(listSavedQueriesMethodDescriptor);
@@ -1225,6 +1273,11 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
   @Override
   public UnaryCallable<AnalyzeMoveRequest, AnalyzeMoveResponse> analyzeMoveCallable() {
     return analyzeMoveCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryAssetsRequest, QueryAssetsResponse> queryAssetsCallable() {
+    return queryAssetsCallable;
   }
 
   @Override
