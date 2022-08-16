@@ -41,7 +41,7 @@
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-iam</artifactId>
-      <version>v2beta-rev20220713-1.32.1</version>
+      <version>v2beta-rev20220713-2.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.apis</groupId>
