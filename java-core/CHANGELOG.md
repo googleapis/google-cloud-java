@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.8.9](https://github.com/googleapis/java-core/compare/v2.8.8...v2.8.9) (2022-08-16)
+
+
+### Dependencies
+
+* update dependency com.google.auth:google-auth-library-bom to v1.10.0 ([#900](https://github.com/googleapis/java-core/issues/900)) ([c01b47a](https://github.com/googleapis/java-core/commit/c01b47a122a9036f8c594cb583dab3512a257597))
+* update dependency com.google.protobuf:protobuf-bom to v3.21.5 ([#901](https://github.com/googleapis/java-core/issues/901)) ([13e2fd6](https://github.com/googleapis/java-core/commit/13e2fd6fbae1d34385ec500aaf4a2b38e19dd6de))
+* update dependency org.threeten:threetenbp to v1.6.1 ([#902](https://github.com/googleapis/java-core/issues/902)) ([02dac62](https://github.com/googleapis/java-core/commit/02dac62784a6614291836917b022a32745312157))
+
 ## [2.8.8](https://github.com/googleapis/java-core/compare/v2.8.7...v2.8.8) (2022-08-04)
 
 
