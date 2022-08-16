@@ -216,6 +216,11 @@ mvn compile -Dexec.executable='echo' \
 -Dexec.args='<dependency><groupId>${project.groupId}</groupId><artifactId>${project.artifactId}</artifactId><version>${project.version}</version></dependency>' \
 exec:exec -q -B | grep -v 'CoverageAggregator\|bom\|parent\|proto\-\|grpc-\|google\-cloud\-java' >> ../coverage-modules.txt
 
+if grep -q ERROR ../coverage-modules.txt; then
+  echo "There was an error in generating coverage-modules.txt"
+  exit 1
+fi
+
 # insert processed modules into coverage aggregator pom.xml
 awk -v MODULES="`awk -v ORS='\\\\n' '1' ../coverage-modules.txt`" '1;/<dependencies>/{print MODULES}' ../../coverage.pom.xml > CoverageAggregator/pom.xml
 
