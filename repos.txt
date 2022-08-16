@@ -12,6 +12,11 @@ java-asset
 java-assured-workloads
 java-automl
 java-bare-metal-solution
+java-beyondcorp-appconnections
+java-beyondcorp-appconnectors
+java-beyondcorp-appgateways
+java-beyondcorp-clientconnectorservices
+java-beyondcorp-clientgateways
 java-bigquery-data-exchange
 java-bigqueryconnection
 java-bigquerydatatransfer
@@ -23,6 +28,7 @@ java-binary-authorization
 java-certificate-manager
 java-channel
 java-cloudbuild
+java-cloudcommerceconsumerprocurement
 java-compute
 java-contact-center-insights
 java-container
