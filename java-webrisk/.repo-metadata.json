@@ -1,0 +1,16 @@
+{
+    "api_shortname": "webrisk",
+    "name_pretty": "Web Risk",
+    "product_documentation": "https://cloud.google.com/web-risk/docs/",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-webrisk/latest/history",
+    "api_description": "is a Google Cloud service that lets client applications check URLs against Google's constantly updated lists of unsafe web resources. Unsafe web resources include social engineering sites\u2014such as phishing and deceptive sites\u2014and sites that host malware or unwanted software. With the Web Risk API, you can quickly identify known bad sites, warn users before they click infected links, and prevent users from posting links to known infected pages from your site. The Web Risk API includes data on more than a million unsafe URLs and stays up to date by examining billions of URLs each day.",
+    "issue_tracker": "",
+    "release_level": "stable",
+    "language": "java",
+    "transport": "grpc",
+    "repo": "googleapis/java-webrisk",
+    "repo_short": "java-webrisk",
+    "distribution_name": "com.google.cloud:google-cloud-webrisk",
+    "api_id": "webrisk.googleapis.com",
+    "library_type": "GAPIC_AUTO"
+}
