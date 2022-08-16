@@ -1,0 +1,17 @@
+{
+    "api_shortname": "documentai",
+    "name_pretty": "Document AI",
+    "product_documentation": "https://cloud.google.com/compute/docs/documentai/",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-document-ai/latest/history",
+    "api_description": "allows developers to unlock insights from your documents with machine learning.",
+    "issue_tracker": "https://issuetracker.google.com/savedsearches/559755",
+    "release_level": "stable",
+    "language": "java",
+    "repo": "googleapis/java-document-ai",
+    "repo_short": "java-document-ai",
+    "distribution_name": "com.google.cloud:google-cloud-document-ai",
+    "api_id": "documentai.googleapis.com",
+    "transport": "grpc",
+    "requires_billing": true,
+    "library_type": "GAPIC_AUTO"
+}
