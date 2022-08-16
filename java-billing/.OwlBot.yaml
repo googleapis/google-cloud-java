@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker:
-  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
 - "/samples/snippets/generated"
@@ -23,10 +21,12 @@ deep-remove-regex:
 
 deep-copy-regex:
 - source: "/google/cloud/billing/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-billing-$1/src"
+  dest: "/owl-bot-staging/java-billing/$1/proto-google-cloud-billing-$1/src"
 - source: "/google/cloud/billing/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-billing-$1/src"
+  dest: "/owl-bot-staging/java-billing/$1/grpc-google-cloud-billing-$1/src"
 - source: "/google/cloud/billing/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-billing/src"
+  dest: "/owl-bot-staging/java-billing/$1/google-cloud-billing/src"
 - source: "/google/cloud/billing/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/$1/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-billing/$1/samples/snippets/generated"
+
+api-name: cloudbilling
