@@ -479,5 +479,40 @@ public interface DialectOrBuilder
    */
   com.google.cloud.bigquery.migration.v2.PrestoDialectOrBuilder getPrestoDialectOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The MySQL dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.MySQLDialect mysql_dialect = 14;</code>
+   *
+   * @return Whether the mysqlDialect field is set.
+   */
+  boolean hasMysqlDialect();
+  /**
+   *
+   *
+   * <pre>
+   * The MySQL dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.MySQLDialect mysql_dialect = 14;</code>
+   *
+   * @return The mysqlDialect.
+   */
+  com.google.cloud.bigquery.migration.v2.MySQLDialect getMysqlDialect();
+  /**
+   *
+   *
+   * <pre>
+   * The MySQL dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.MySQLDialect mysql_dialect = 14;</code>
+   */
+  com.google.cloud.bigquery.migration.v2.MySQLDialectOrBuilder getMysqlDialectOrBuilder();
+
   public com.google.cloud.bigquery.migration.v2.Dialect.DialectValueCase getDialectValueCase();
 }
