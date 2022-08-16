@@ -39,3 +39,12 @@ For Day 1 cutover, once we have main branch:
 - Update `googleapis_commit.txt` to an appropriate value
 - Update `.github/workflows/googleapis_hermetic_sync.yaml` to point to
   the main branch.
+
+### The BOM coverage and its version
+
+Review the artifact name "google-cloud-gapic-bom" in the bom directory and
+configure the version managed by Release Please. Ensure the BOM is part of the
+entire release pipeline.
+
+Confirm the effective-pom (`mvn help:effective-pom`) of the BOM covers the same
+member of the google-cloud-bom except the handwritten libraries.

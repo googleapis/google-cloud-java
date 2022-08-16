@@ -54,7 +54,6 @@ java-gke-backup
 java-gke-connect-gateway
 java-gke-multi-cloud
 java-gkehub
-java-grafeas
 java-gsuite-addons
 java-iam-admin
 java-iamcredentials
@@ -86,6 +85,7 @@ java-recommendations-ai
 java-recommender
 java-redis
 java-resource-settings
+java-resourcemanager
 java-retail
 java-run
 java-scheduler
