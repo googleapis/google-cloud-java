@@ -25,6 +25,8 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest;
 import com.google.cloud.aiplatform.v1beta1.ReadFeatureValuesResponse;
 import com.google.cloud.aiplatform.v1beta1.StreamingReadFeatureValuesRequest;
+import com.google.cloud.aiplatform.v1beta1.WriteFeatureValuesRequest;
+import com.google.cloud.aiplatform.v1beta1.WriteFeatureValuesResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -55,6 +57,11 @@ public abstract class FeaturestoreOnlineServingServiceStub implements Background
       streamingReadFeatureValuesCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: streamingReadFeatureValuesCallable()");
+  }
+
+  public UnaryCallable<WriteFeatureValuesRequest, WriteFeatureValuesResponse>
+      writeFeatureValuesCallable() {
+    throw new UnsupportedOperationException("Not implemented: writeFeatureValuesCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
