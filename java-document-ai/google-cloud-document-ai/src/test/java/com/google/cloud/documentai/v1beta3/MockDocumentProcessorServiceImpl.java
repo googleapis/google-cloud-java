@@ -124,6 +124,28 @@ public class MockDocumentProcessorServiceImpl extends DocumentProcessorServiceIm
   }
 
   @Override
+  public void listProcessorTypes(
+      ListProcessorTypesRequest request,
+      StreamObserver<ListProcessorTypesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListProcessorTypesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListProcessorTypesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListProcessorTypes, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListProcessorTypesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listProcessors(
       ListProcessorsRequest request, StreamObserver<ListProcessorsResponse> responseObserver) {
     Object response = responses.poll();
@@ -140,6 +162,133 @@ public class MockDocumentProcessorServiceImpl extends DocumentProcessorServiceIm
                   "Unrecognized response type %s for method ListProcessors, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListProcessorsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getProcessor(
+      GetProcessorRequest request, StreamObserver<Processor> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Processor) {
+      requests.add(request);
+      responseObserver.onNext(((Processor) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetProcessor, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Processor.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getProcessorVersion(
+      GetProcessorVersionRequest request, StreamObserver<ProcessorVersion> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ProcessorVersion) {
+      requests.add(request);
+      responseObserver.onNext(((ProcessorVersion) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetProcessorVersion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ProcessorVersion.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listProcessorVersions(
+      ListProcessorVersionsRequest request,
+      StreamObserver<ListProcessorVersionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListProcessorVersionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListProcessorVersionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListProcessorVersions, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListProcessorVersionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteProcessorVersion(
+      DeleteProcessorVersionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteProcessorVersion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deployProcessorVersion(
+      DeployProcessorVersionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeployProcessorVersion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void undeployProcessorVersion(
+      UndeployProcessorVersionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UndeployProcessorVersion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -222,6 +371,27 @@ public class MockDocumentProcessorServiceImpl extends DocumentProcessorServiceIm
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DisableProcessor, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void setDefaultProcessorVersion(
+      SetDefaultProcessorVersionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SetDefaultProcessorVersion, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

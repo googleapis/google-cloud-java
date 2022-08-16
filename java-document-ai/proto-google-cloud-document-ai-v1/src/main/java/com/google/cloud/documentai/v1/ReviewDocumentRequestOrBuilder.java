@@ -127,5 +127,40 @@ public interface ReviewDocumentRequestOrBuilder
    */
   com.google.cloud.documentai.v1.ReviewDocumentRequest.Priority getPriority();
 
+  /**
+   *
+   *
+   * <pre>
+   * The document schema of the human review task.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.DocumentSchema document_schema = 6;</code>
+   *
+   * @return Whether the documentSchema field is set.
+   */
+  boolean hasDocumentSchema();
+  /**
+   *
+   *
+   * <pre>
+   * The document schema of the human review task.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.DocumentSchema document_schema = 6;</code>
+   *
+   * @return The documentSchema.
+   */
+  com.google.cloud.documentai.v1.DocumentSchema getDocumentSchema();
+  /**
+   *
+   *
+   * <pre>
+   * The document schema of the human review task.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.DocumentSchema document_schema = 6;</code>
+   */
+  com.google.cloud.documentai.v1.DocumentSchemaOrBuilder getDocumentSchemaOrBuilder();
+
   public com.google.cloud.documentai.v1.ReviewDocumentRequest.SourceCase getSourceCase();
 }

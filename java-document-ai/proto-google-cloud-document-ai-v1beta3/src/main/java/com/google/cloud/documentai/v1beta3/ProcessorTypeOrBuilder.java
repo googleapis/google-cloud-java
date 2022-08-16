@@ -28,6 +28,7 @@ public interface ProcessorTypeOrBuilder
    *
    * <pre>
    * The resource name of the processor type.
+   * Format: projects/{project}/processorTypes/{processor_type}
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -40,6 +41,7 @@ public interface ProcessorTypeOrBuilder
    *
    * <pre>
    * The resource name of the processor type.
+   * Format: projects/{project}/processorTypes/{processor_type}
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -52,7 +54,7 @@ public interface ProcessorTypeOrBuilder
    *
    *
    * <pre>
-   * The type of the processor.
+   * The type of the processor, e.g., "invoice_parsing".
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -64,7 +66,7 @@ public interface ProcessorTypeOrBuilder
    *
    *
    * <pre>
-   * The type of the processor.
+   * The type of the processor, e.g., "invoice_parsing".
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -77,7 +79,7 @@ public interface ProcessorTypeOrBuilder
    *
    *
    * <pre>
-   * The processor category.
+   * The processor category, used by UI to group processor types.
    * </pre>
    *
    * <code>string category = 3;</code>
@@ -89,7 +91,7 @@ public interface ProcessorTypeOrBuilder
    *
    *
    * <pre>
-   * The processor category.
+   * The processor category, used by UI to group processor types.
    * </pre>
    *
    * <code>string category = 3;</code>
@@ -166,9 +168,8 @@ public interface ProcessorTypeOrBuilder
    *
    *
    * <pre>
-   * Whether the processor type allows creation. If yes, user can create a
-   * processor of this processor type. Otherwise, user needs to require for
-   * whitelisting.
+   * Whether the processor type allows creation. If true, users can create a
+   * processor of this processor type. Otherwise, users need to request access.
    * </pre>
    *
    * <code>bool allow_creation = 6;</code>
@@ -176,4 +177,29 @@ public interface ProcessorTypeOrBuilder
    * @return The allowCreation.
    */
   boolean getAllowCreation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Launch stage of the processor type
+   * </pre>
+   *
+   * <code>.google.api.LaunchStage launch_stage = 8;</code>
+   *
+   * @return The enum numeric value on the wire for launchStage.
+   */
+  int getLaunchStageValue();
+  /**
+   *
+   *
+   * <pre>
+   * Launch stage of the processor type
+   * </pre>
+   *
+   * <code>.google.api.LaunchStage launch_stage = 8;</code>
+   *
+   * @return The launchStage.
+   */
+  com.google.api.LaunchStage getLaunchStage();
 }

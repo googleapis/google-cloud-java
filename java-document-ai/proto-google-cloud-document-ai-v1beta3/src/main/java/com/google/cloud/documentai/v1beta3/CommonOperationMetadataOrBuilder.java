@@ -77,6 +77,31 @@ public interface CommonOperationMetadataOrBuilder
    *
    *
    * <pre>
+   * A related resource to this operation.
+   * </pre>
+   *
+   * <code>string resource = 5;</code>
+   *
+   * @return The resource.
+   */
+  java.lang.String getResource();
+  /**
+   *
+   *
+   * <pre>
+   * A related resource to this operation.
+   * </pre>
+   *
+   * <code>string resource = 5;</code>
+   *
+   * @return The bytes for resource.
+   */
+  com.google.protobuf.ByteString getResourceBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The creation time of the operation.
    * </pre>
    *

@@ -43,6 +43,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     type_ = "";
     category_ = "";
     availableLocations_ = java.util.Collections.emptyList();
+    launchStage_ = 0;
   }
 
   @java.lang.Override
@@ -115,6 +116,13 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
               allowCreation_ = input.readBool();
               break;
             }
+          case 64:
+            {
+              int rawValue = input.readEnum();
+
+              launchStage_ = rawValue;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -163,7 +171,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The location id.
+     * The location id, currently must be one of [us, eu].
      * </pre>
      *
      * <code>string location_id = 1;</code>
@@ -175,7 +183,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The location id.
+     * The location id, currently must be one of [us, eu].
      * </pre>
      *
      * <code>string location_id = 1;</code>
@@ -285,7 +293,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The location id.
+     * The location id, currently must be one of [us, eu].
      * </pre>
      *
      * <code>string location_id = 1;</code>
@@ -308,7 +316,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The location id.
+     * The location id, currently must be one of [us, eu].
      * </pre>
      *
      * <code>string location_id = 1;</code>
@@ -660,7 +668,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The location id.
+       * The location id, currently must be one of [us, eu].
        * </pre>
        *
        * <code>string location_id = 1;</code>
@@ -682,7 +690,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The location id.
+       * The location id, currently must be one of [us, eu].
        * </pre>
        *
        * <code>string location_id = 1;</code>
@@ -704,7 +712,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The location id.
+       * The location id, currently must be one of [us, eu].
        * </pre>
        *
        * <code>string location_id = 1;</code>
@@ -725,7 +733,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The location id.
+       * The location id, currently must be one of [us, eu].
        * </pre>
        *
        * <code>string location_id = 1;</code>
@@ -742,7 +750,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The location id.
+       * The location id, currently must be one of [us, eu].
        * </pre>
        *
        * <code>string location_id = 1;</code>
@@ -823,6 +831,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the processor type.
+   * Format: projects/{project}/processorTypes/{processor_type}
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -846,6 +855,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the processor type.
+   * Format: projects/{project}/processorTypes/{processor_type}
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -871,7 +881,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of the processor.
+   * The type of the processor, e.g., "invoice_parsing".
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -894,7 +904,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of the processor.
+   * The type of the processor, e.g., "invoice_parsing".
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -920,7 +930,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The processor category.
+   * The processor category, used by UI to group processor types.
    * </pre>
    *
    * <code>string category = 3;</code>
@@ -943,7 +953,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The processor category.
+   * The processor category, used by UI to group processor types.
    * </pre>
    *
    * <code>string category = 3;</code>
@@ -1053,9 +1063,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Whether the processor type allows creation. If yes, user can create a
-   * processor of this processor type. Otherwise, user needs to require for
-   * whitelisting.
+   * Whether the processor type allows creation. If true, users can create a
+   * processor of this processor type. Otherwise, users need to request access.
    * </pre>
    *
    * <code>bool allow_creation = 6;</code>
@@ -1065,6 +1074,41 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getAllowCreation() {
     return allowCreation_;
+  }
+
+  public static final int LAUNCH_STAGE_FIELD_NUMBER = 8;
+  private int launchStage_;
+  /**
+   *
+   *
+   * <pre>
+   * Launch stage of the processor type
+   * </pre>
+   *
+   * <code>.google.api.LaunchStage launch_stage = 8;</code>
+   *
+   * @return The enum numeric value on the wire for launchStage.
+   */
+  @java.lang.Override
+  public int getLaunchStageValue() {
+    return launchStage_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Launch stage of the processor type
+   * </pre>
+   *
+   * <code>.google.api.LaunchStage launch_stage = 8;</code>
+   *
+   * @return The launchStage.
+   */
+  @java.lang.Override
+  public com.google.api.LaunchStage getLaunchStage() {
+    @SuppressWarnings("deprecation")
+    com.google.api.LaunchStage result = com.google.api.LaunchStage.valueOf(launchStage_);
+    return result == null ? com.google.api.LaunchStage.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1096,6 +1140,9 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     if (allowCreation_ != false) {
       output.writeBool(6, allowCreation_);
     }
+    if (launchStage_ != com.google.api.LaunchStage.LAUNCH_STAGE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(8, launchStage_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1121,6 +1168,9 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     if (allowCreation_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, allowCreation_);
     }
+    if (launchStage_ != com.google.api.LaunchStage.LAUNCH_STAGE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, launchStage_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1142,6 +1192,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     if (!getCategory().equals(other.getCategory())) return false;
     if (!getAvailableLocationsList().equals(other.getAvailableLocationsList())) return false;
     if (getAllowCreation() != other.getAllowCreation()) return false;
+    if (launchStage_ != other.launchStage_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1165,6 +1216,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ALLOW_CREATION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowCreation());
+    hash = (37 * hash) + LAUNCH_STAGE_FIELD_NUMBER;
+    hash = (53 * hash) + launchStage_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1327,6 +1380,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       }
       allowCreation_ = false;
 
+      launchStage_ = 0;
+
       return this;
     }
 
@@ -1368,6 +1423,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
         result.availableLocations_ = availableLocationsBuilder_.build();
       }
       result.allowCreation_ = allowCreation_;
+      result.launchStage_ = launchStage_;
       onBuilt();
       return result;
     }
@@ -1460,6 +1516,9 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       if (other.getAllowCreation() != false) {
         setAllowCreation(other.getAllowCreation());
       }
+      if (other.launchStage_ != 0) {
+        setLaunchStageValue(other.getLaunchStageValue());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1498,6 +1557,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the processor type.
+     * Format: projects/{project}/processorTypes/{processor_type}
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1520,6 +1580,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the processor type.
+     * Format: projects/{project}/processorTypes/{processor_type}
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1542,6 +1603,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the processor type.
+     * Format: projects/{project}/processorTypes/{processor_type}
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1563,6 +1625,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the processor type.
+     * Format: projects/{project}/processorTypes/{processor_type}
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1580,6 +1643,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the processor type.
+     * Format: projects/{project}/processorTypes/{processor_type}
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1603,7 +1667,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the processor.
+     * The type of the processor, e.g., "invoice_parsing".
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -1625,7 +1689,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the processor.
+     * The type of the processor, e.g., "invoice_parsing".
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -1647,7 +1711,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the processor.
+     * The type of the processor, e.g., "invoice_parsing".
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -1668,7 +1732,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the processor.
+     * The type of the processor, e.g., "invoice_parsing".
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -1685,7 +1749,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the processor.
+     * The type of the processor, e.g., "invoice_parsing".
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -1709,7 +1773,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor category.
+     * The processor category, used by UI to group processor types.
      * </pre>
      *
      * <code>string category = 3;</code>
@@ -1731,7 +1795,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor category.
+     * The processor category, used by UI to group processor types.
      * </pre>
      *
      * <code>string category = 3;</code>
@@ -1753,7 +1817,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor category.
+     * The processor category, used by UI to group processor types.
      * </pre>
      *
      * <code>string category = 3;</code>
@@ -1774,7 +1838,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor category.
+     * The processor category, used by UI to group processor types.
      * </pre>
      *
      * <code>string category = 3;</code>
@@ -1791,7 +1855,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor category.
+     * The processor category, used by UI to group processor types.
      * </pre>
      *
      * <code>string category = 3;</code>
@@ -2222,9 +2286,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether the processor type allows creation. If yes, user can create a
-     * processor of this processor type. Otherwise, user needs to require for
-     * whitelisting.
+     * Whether the processor type allows creation. If true, users can create a
+     * processor of this processor type. Otherwise, users need to request access.
      * </pre>
      *
      * <code>bool allow_creation = 6;</code>
@@ -2239,9 +2302,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether the processor type allows creation. If yes, user can create a
-     * processor of this processor type. Otherwise, user needs to require for
-     * whitelisting.
+     * Whether the processor type allows creation. If true, users can create a
+     * processor of this processor type. Otherwise, users need to request access.
      * </pre>
      *
      * <code>bool allow_creation = 6;</code>
@@ -2259,9 +2321,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether the processor type allows creation. If yes, user can create a
-     * processor of this processor type. Otherwise, user needs to require for
-     * whitelisting.
+     * Whether the processor type allows creation. If true, users can create a
+     * processor of this processor type. Otherwise, users need to request access.
      * </pre>
      *
      * <code>bool allow_creation = 6;</code>
@@ -2271,6 +2332,96 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAllowCreation() {
 
       allowCreation_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int launchStage_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Launch stage of the processor type
+     * </pre>
+     *
+     * <code>.google.api.LaunchStage launch_stage = 8;</code>
+     *
+     * @return The enum numeric value on the wire for launchStage.
+     */
+    @java.lang.Override
+    public int getLaunchStageValue() {
+      return launchStage_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Launch stage of the processor type
+     * </pre>
+     *
+     * <code>.google.api.LaunchStage launch_stage = 8;</code>
+     *
+     * @param value The enum numeric value on the wire for launchStage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLaunchStageValue(int value) {
+
+      launchStage_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Launch stage of the processor type
+     * </pre>
+     *
+     * <code>.google.api.LaunchStage launch_stage = 8;</code>
+     *
+     * @return The launchStage.
+     */
+    @java.lang.Override
+    public com.google.api.LaunchStage getLaunchStage() {
+      @SuppressWarnings("deprecation")
+      com.google.api.LaunchStage result = com.google.api.LaunchStage.valueOf(launchStage_);
+      return result == null ? com.google.api.LaunchStage.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Launch stage of the processor type
+     * </pre>
+     *
+     * <code>.google.api.LaunchStage launch_stage = 8;</code>
+     *
+     * @param value The launchStage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLaunchStage(com.google.api.LaunchStage value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      launchStage_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Launch stage of the processor type
+     * </pre>
+     *
+     * <code>.google.api.LaunchStage launch_stage = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLaunchStage() {
+
+      launchStage_ = 0;
       onChanged();
       return this;
     }

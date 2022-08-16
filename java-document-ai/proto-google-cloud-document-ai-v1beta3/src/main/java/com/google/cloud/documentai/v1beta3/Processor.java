@@ -22,8 +22,8 @@ package com.google.cloud.documentai.v1beta3;
  *
  *
  * <pre>
- * The first-class citizen for DocumentAI. Each processor defines how to extract
- * structural information from a document.
+ * The first-class citizen for Document AI. Each processor defines how to
+ * extract structural information from a document.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1beta3.Processor}
@@ -201,7 +201,9 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor is enabled.
+     * The processor is enabled, i.e., has an enabled version which can
+     * currently serve processing requests and all the feature dependencies have
+     * been successfully initialized.
      * </pre>
      *
      * <code>ENABLED = 1;</code>
@@ -241,7 +243,11 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor is being created.
+     * The processor is being created, will become either ENABLED (for
+     * successful creation) or FAILED (for failed ones).
+     * Once a processor is in this state, it can then be used for document
+     * processing, but the feature dependencies of the processor might not be
+     * fully created yet.
      * </pre>
      *
      * <code>CREATING = 5;</code>
@@ -251,7 +257,9 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor failed during creation.
+     * The processor failed during creation or initialization of feature
+     * dependencies. The user should delete the processor and recreate one as
+     * all the functionalities of the processor are disabled.
      * </pre>
      *
      * <code>FAILED = 6;</code>
@@ -284,7 +292,9 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor is enabled.
+     * The processor is enabled, i.e., has an enabled version which can
+     * currently serve processing requests and all the feature dependencies have
+     * been successfully initialized.
      * </pre>
      *
      * <code>ENABLED = 1;</code>
@@ -324,7 +334,11 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor is being created.
+     * The processor is being created, will become either ENABLED (for
+     * successful creation) or FAILED (for failed ones).
+     * Once a processor is in this state, it can then be used for document
+     * processing, but the feature dependencies of the processor might not be
+     * fully created yet.
      * </pre>
      *
      * <code>CREATING = 5;</code>
@@ -334,7 +348,9 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor failed during creation.
+     * The processor failed during creation or initialization of feature
+     * dependencies. The user should delete the processor and recreate one as
+     * all the functionalities of the processor are disabled.
      * </pre>
      *
      * <code>FAILED = 6;</code>
@@ -451,7 +467,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Immutable. The resource name of the processor.
-   * Format: projects/{project}/locations/{location}/processors/{processor}
+   * Format: `projects/{project}/locations/{location}/processors/{processor}`
    * </pre>
    *
    * <code>
@@ -477,7 +493,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Immutable. The resource name of the processor.
-   * Format: projects/{project}/locations/{location}/processors/{processor}
+   * Format: `projects/{project}/locations/{location}/processors/{processor}`
    * </pre>
    *
    * <code>
@@ -505,7 +521,9 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The processor type.
+   * The processor type, e.g., OCR_PROCESSOR, INVOICE_PROCESSOR, etc.
+   * To get a list of processors types, see
+   * [FetchProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.FetchProcessorTypes].
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -528,7 +546,9 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The processor type.
+   * The processor type, e.g., OCR_PROCESSOR, INVOICE_PROCESSOR, etc.
+   * To get a list of processors types, see
+   * [FetchProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.FetchProcessorTypes].
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -648,7 +668,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
    * The default processor version.
    * </pre>
    *
-   * <code>string default_processor_version = 9;</code>
+   * <code>string default_processor_version = 9 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The defaultProcessorVersion.
    */
@@ -671,7 +691,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
    * The default processor version.
    * </pre>
    *
-   * <code>string default_processor_version = 9;</code>
+   * <code>string default_processor_version = 9 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for defaultProcessorVersion.
    */
@@ -1071,8 +1091,8 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The first-class citizen for DocumentAI. Each processor defines how to extract
-   * structural information from a document.
+   * The first-class citizen for Document AI. Each processor defines how to
+   * extract structural information from a document.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.Processor}
@@ -1286,7 +1306,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Immutable. The resource name of the processor.
-     * Format: projects/{project}/locations/{location}/processors/{processor}
+     * Format: `projects/{project}/locations/{location}/processors/{processor}`
      * </pre>
      *
      * <code>
@@ -1311,7 +1331,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Immutable. The resource name of the processor.
-     * Format: projects/{project}/locations/{location}/processors/{processor}
+     * Format: `projects/{project}/locations/{location}/processors/{processor}`
      * </pre>
      *
      * <code>
@@ -1336,7 +1356,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Immutable. The resource name of the processor.
-     * Format: projects/{project}/locations/{location}/processors/{processor}
+     * Format: `projects/{project}/locations/{location}/processors/{processor}`
      * </pre>
      *
      * <code>
@@ -1360,7 +1380,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Immutable. The resource name of the processor.
-     * Format: projects/{project}/locations/{location}/processors/{processor}
+     * Format: `projects/{project}/locations/{location}/processors/{processor}`
      * </pre>
      *
      * <code>
@@ -1380,7 +1400,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Immutable. The resource name of the processor.
-     * Format: projects/{project}/locations/{location}/processors/{processor}
+     * Format: `projects/{project}/locations/{location}/processors/{processor}`
      * </pre>
      *
      * <code>
@@ -1406,7 +1426,9 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor type.
+     * The processor type, e.g., OCR_PROCESSOR, INVOICE_PROCESSOR, etc.
+     * To get a list of processors types, see
+     * [FetchProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.FetchProcessorTypes].
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -1428,7 +1450,9 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor type.
+     * The processor type, e.g., OCR_PROCESSOR, INVOICE_PROCESSOR, etc.
+     * To get a list of processors types, see
+     * [FetchProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.FetchProcessorTypes].
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -1450,7 +1474,9 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor type.
+     * The processor type, e.g., OCR_PROCESSOR, INVOICE_PROCESSOR, etc.
+     * To get a list of processors types, see
+     * [FetchProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.FetchProcessorTypes].
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -1471,7 +1497,9 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor type.
+     * The processor type, e.g., OCR_PROCESSOR, INVOICE_PROCESSOR, etc.
+     * To get a list of processors types, see
+     * [FetchProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.FetchProcessorTypes].
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -1488,7 +1516,9 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor type.
+     * The processor type, e.g., OCR_PROCESSOR, INVOICE_PROCESSOR, etc.
+     * To get a list of processors types, see
+     * [FetchProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.FetchProcessorTypes].
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -1724,7 +1754,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      * The default processor version.
      * </pre>
      *
-     * <code>string default_processor_version = 9;</code>
+     * <code>string default_processor_version = 9 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The defaultProcessorVersion.
      */
@@ -1746,7 +1776,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      * The default processor version.
      * </pre>
      *
-     * <code>string default_processor_version = 9;</code>
+     * <code>string default_processor_version = 9 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for defaultProcessorVersion.
      */
@@ -1768,7 +1798,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      * The default processor version.
      * </pre>
      *
-     * <code>string default_processor_version = 9;</code>
+     * <code>string default_processor_version = 9 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The defaultProcessorVersion to set.
      * @return This builder for chaining.
@@ -1789,7 +1819,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      * The default processor version.
      * </pre>
      *
-     * <code>string default_processor_version = 9;</code>
+     * <code>string default_processor_version = 9 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -1806,7 +1836,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      * The default processor version.
      * </pre>
      *
-     * <code>string default_processor_version = 9;</code>
+     * <code>string default_processor_version = 9 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for defaultProcessorVersion to set.
      * @return This builder for chaining.

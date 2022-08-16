@@ -18,8 +18,8 @@ package com.google.cloud.documentai.v1beta3.samples;
 
 // [START documentai_v1beta3_generated_documentprocessorserviceclient_processdocument_string_sync]
 import com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient;
+import com.google.cloud.documentai.v1beta3.HumanReviewConfigName;
 import com.google.cloud.documentai.v1beta3.ProcessResponse;
-import com.google.cloud.documentai.v1beta3.ProcessorName;
 
 public class SyncProcessDocumentString {
 
@@ -32,7 +32,7 @@ public class SyncProcessDocumentString {
     // It may require modifications to work in your environment.
     try (DocumentProcessorServiceClient documentProcessorServiceClient =
         DocumentProcessorServiceClient.create()) {
-      String name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
+      String name = HumanReviewConfigName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
       ProcessResponse response = documentProcessorServiceClient.processDocument(name);
     }
   }

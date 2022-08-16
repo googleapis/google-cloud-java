@@ -15,7 +15,9 @@
  */
 
 /**
- * The interfaces provided are listed below, along with usage samples.
+ * A client to Cloud Document AI API
+ *
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= DocumentProcessorServiceClient =======================
  *
@@ -31,7 +33,7 @@
  * // It may require modifications to work in your environment.
  * try (DocumentProcessorServiceClient documentProcessorServiceClient =
  *     DocumentProcessorServiceClient.create()) {
- *   ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+ *   ResourceName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
  *   ProcessResponse response = documentProcessorServiceClient.processDocument(name);
  * }
  * }</pre>

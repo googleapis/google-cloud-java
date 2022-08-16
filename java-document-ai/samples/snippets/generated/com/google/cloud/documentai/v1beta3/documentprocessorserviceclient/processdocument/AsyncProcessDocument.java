@@ -23,6 +23,7 @@ import com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient;
 import com.google.cloud.documentai.v1beta3.ProcessRequest;
 import com.google.cloud.documentai.v1beta3.ProcessResponse;
 import com.google.cloud.documentai.v1beta3.ProcessorName;
+import com.google.protobuf.FieldMask;
 
 public class AsyncProcessDocument {
 
@@ -40,6 +41,7 @@ public class AsyncProcessDocument {
               .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
               .setDocument(Document.newBuilder().build())
               .setSkipHumanReview(true)
+              .setFieldMask(FieldMask.newBuilder().build())
               .build();
       ApiFuture<ProcessResponse> future =
           documentProcessorServiceClient.processDocumentCallable().futureCall(request);

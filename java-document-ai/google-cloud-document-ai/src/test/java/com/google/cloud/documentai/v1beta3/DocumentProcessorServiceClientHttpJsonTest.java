@@ -16,6 +16,9 @@
 
 package com.google.cloud.documentai.v1beta3;
 
+import static com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient.ListProcessorTypesPagedResponse;
+import static com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient.ListProcessorVersionsPagedResponse;
 import static com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient.ListProcessorsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -27,7 +30,12 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.documentai.v1beta3.stub.HttpJsonDocumentProcessorServiceStub;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
@@ -36,6 +44,7 @@ import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
@@ -91,7 +100,7 @@ public class DocumentProcessorServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+    ResourceName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
 
     ProcessResponse actualResponse = client.processDocument(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -119,7 +128,7 @@ public class DocumentProcessorServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+      ResourceName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
       client.processDocument(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -184,7 +193,7 @@ public class DocumentProcessorServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(resultOperation);
 
-    ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+    ResourceName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
 
     BatchProcessResponse actualResponse = client.batchProcessDocumentsAsync(name).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -212,7 +221,7 @@ public class DocumentProcessorServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+      ResourceName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
       client.batchProcessDocumentsAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -354,6 +363,106 @@ public class DocumentProcessorServiceClientHttpJsonTest {
   }
 
   @Test
+  public void listProcessorTypesTest() throws Exception {
+    ProcessorType responsesElement = ProcessorType.newBuilder().build();
+    ListProcessorTypesResponse expectedResponse =
+        ListProcessorTypesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllProcessorTypes(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListProcessorTypesPagedResponse pagedListResponse = client.listProcessorTypes(parent);
+
+    List<ProcessorType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getProcessorTypesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listProcessorTypesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listProcessorTypes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listProcessorTypesTest2() throws Exception {
+    ProcessorType responsesElement = ProcessorType.newBuilder().build();
+    ListProcessorTypesResponse expectedResponse =
+        ListProcessorTypesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllProcessorTypes(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListProcessorTypesPagedResponse pagedListResponse = client.listProcessorTypes(parent);
+
+    List<ProcessorType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getProcessorTypesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listProcessorTypesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listProcessorTypes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listProcessorsTest() throws Exception {
     Processor responsesElement = Processor.newBuilder().build();
     ListProcessorsResponse expectedResponse =
@@ -454,13 +563,624 @@ public class DocumentProcessorServiceClientHttpJsonTest {
   }
 
   @Test
+  public void getProcessorTest() throws Exception {
+    Processor expectedResponse =
+        Processor.newBuilder()
+            .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+            .setType("type3575610")
+            .setDisplayName("displayName1714148973")
+            .setDefaultProcessorVersion(
+                ProcessorVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+                    .toString())
+            .setProcessEndpoint("processEndpoint-891502300")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+
+    Processor actualResponse = client.getProcessor(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getProcessorExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+      client.getProcessor(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getProcessorTest2() throws Exception {
+    Processor expectedResponse =
+        Processor.newBuilder()
+            .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+            .setType("type3575610")
+            .setDisplayName("displayName1714148973")
+            .setDefaultProcessorVersion(
+                ProcessorVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+                    .toString())
+            .setProcessEndpoint("processEndpoint-891502300")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-5167/locations/location-5167/processors/processor-5167";
+
+    Processor actualResponse = client.getProcessor(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getProcessorExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-5167/locations/location-5167/processors/processor-5167";
+      client.getProcessor(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getProcessorVersionTest() throws Exception {
+    ProcessorVersion expectedResponse =
+        ProcessorVersion.newBuilder()
+            .setName(
+                ProcessorVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .setGoogleManaged(true)
+            .setDeprecationInfo(ProcessorVersion.DeprecationInfo.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProcessorVersionName name =
+        ProcessorVersionName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]");
+
+    ProcessorVersion actualResponse = client.getProcessorVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getProcessorVersionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProcessorVersionName name =
+          ProcessorVersionName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]");
+      client.getProcessorVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getProcessorVersionTest2() throws Exception {
+    ProcessorVersion expectedResponse =
+        ProcessorVersion.newBuilder()
+            .setName(
+                ProcessorVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .setGoogleManaged(true)
+            .setDeprecationInfo(ProcessorVersion.DeprecationInfo.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-1178/locations/location-1178/processors/processor-1178/processorVersions/processorVersion-1178";
+
+    ProcessorVersion actualResponse = client.getProcessorVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getProcessorVersionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-1178/locations/location-1178/processors/processor-1178/processorVersions/processorVersion-1178";
+      client.getProcessorVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listProcessorVersionsTest() throws Exception {
+    ProcessorVersion responsesElement = ProcessorVersion.newBuilder().build();
+    ListProcessorVersionsResponse expectedResponse =
+        ListProcessorVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllProcessorVersions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProcessorName parent = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+
+    ListProcessorVersionsPagedResponse pagedListResponse = client.listProcessorVersions(parent);
+
+    List<ProcessorVersion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getProcessorVersionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listProcessorVersionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProcessorName parent = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+      client.listProcessorVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listProcessorVersionsTest2() throws Exception {
+    ProcessorVersion responsesElement = ProcessorVersion.newBuilder().build();
+    ListProcessorVersionsResponse expectedResponse =
+        ListProcessorVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllProcessorVersions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-3198/locations/location-3198/processors/processor-3198";
+
+    ListProcessorVersionsPagedResponse pagedListResponse = client.listProcessorVersions(parent);
+
+    List<ProcessorVersion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getProcessorVersionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listProcessorVersionsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-3198/locations/location-3198/processors/processor-3198";
+      client.listProcessorVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteProcessorVersionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteProcessorVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ProcessorVersionName name =
+        ProcessorVersionName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]");
+
+    client.deleteProcessorVersionAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteProcessorVersionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProcessorVersionName name =
+          ProcessorVersionName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]");
+      client.deleteProcessorVersionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteProcessorVersionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteProcessorVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-1178/locations/location-1178/processors/processor-1178/processorVersions/processorVersion-1178";
+
+    client.deleteProcessorVersionAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteProcessorVersionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-1178/locations/location-1178/processors/processor-1178/processorVersions/processorVersion-1178";
+      client.deleteProcessorVersionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deployProcessorVersionTest() throws Exception {
+    DeployProcessorVersionResponse expectedResponse =
+        DeployProcessorVersionResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deployProcessorVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ProcessorVersionName name =
+        ProcessorVersionName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]");
+
+    DeployProcessorVersionResponse actualResponse = client.deployProcessorVersionAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deployProcessorVersionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProcessorVersionName name =
+          ProcessorVersionName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]");
+      client.deployProcessorVersionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deployProcessorVersionTest2() throws Exception {
+    DeployProcessorVersionResponse expectedResponse =
+        DeployProcessorVersionResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deployProcessorVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-1178/locations/location-1178/processors/processor-1178/processorVersions/processorVersion-1178";
+
+    DeployProcessorVersionResponse actualResponse = client.deployProcessorVersionAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deployProcessorVersionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-1178/locations/location-1178/processors/processor-1178/processorVersions/processorVersion-1178";
+      client.deployProcessorVersionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void undeployProcessorVersionTest() throws Exception {
+    UndeployProcessorVersionResponse expectedResponse =
+        UndeployProcessorVersionResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("undeployProcessorVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ProcessorVersionName name =
+        ProcessorVersionName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]");
+
+    UndeployProcessorVersionResponse actualResponse =
+        client.undeployProcessorVersionAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void undeployProcessorVersionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProcessorVersionName name =
+          ProcessorVersionName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]");
+      client.undeployProcessorVersionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void undeployProcessorVersionTest2() throws Exception {
+    UndeployProcessorVersionResponse expectedResponse =
+        UndeployProcessorVersionResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("undeployProcessorVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-1178/locations/location-1178/processors/processor-1178/processorVersions/processorVersion-1178";
+
+    UndeployProcessorVersionResponse actualResponse =
+        client.undeployProcessorVersionAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void undeployProcessorVersionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-1178/locations/location-1178/processors/processor-1178/processorVersions/processorVersion-1178";
+      client.undeployProcessorVersionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void createProcessorTest() throws Exception {
     Processor expectedResponse =
         Processor.newBuilder()
             .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
             .setType("type3575610")
             .setDisplayName("displayName1714148973")
-            .setDefaultProcessorVersion("defaultProcessorVersion-1428555705")
+            .setDefaultProcessorVersion(
+                ProcessorVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+                    .toString())
             .setProcessEndpoint("processEndpoint-891502300")
             .setCreateTime(Timestamp.newBuilder().build())
             .setKmsKeyName("kmsKeyName412586233")
@@ -512,7 +1232,10 @@ public class DocumentProcessorServiceClientHttpJsonTest {
             .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
             .setType("type3575610")
             .setDisplayName("displayName1714148973")
-            .setDefaultProcessorVersion("defaultProcessorVersion-1428555705")
+            .setDefaultProcessorVersion(
+                ProcessorVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+                    .toString())
             .setProcessEndpoint("processEndpoint-891502300")
             .setCreateTime(Timestamp.newBuilder().build())
             .setKmsKeyName("kmsKeyName412586233")
@@ -752,9 +1475,74 @@ public class DocumentProcessorServiceClientHttpJsonTest {
   }
 
   @Test
+  public void setDefaultProcessorVersionTest() throws Exception {
+    SetDefaultProcessorVersionResponse expectedResponse =
+        SetDefaultProcessorVersionResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("setDefaultProcessorVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    SetDefaultProcessorVersionRequest request =
+        SetDefaultProcessorVersionRequest.newBuilder()
+            .setProcessor(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+            .setDefaultProcessorVersion(
+                ProcessorVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+                    .toString())
+            .build();
+
+    SetDefaultProcessorVersionResponse actualResponse =
+        client.setDefaultProcessorVersionAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void setDefaultProcessorVersionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SetDefaultProcessorVersionRequest request =
+          SetDefaultProcessorVersionRequest.newBuilder()
+              .setProcessor(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+              .setDefaultProcessorVersion(
+                  ProcessorVersionName.of(
+                          "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+                      .toString())
+              .build();
+      client.setDefaultProcessorVersionAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void reviewDocumentTest() throws Exception {
     ReviewDocumentResponse expectedResponse =
-        ReviewDocumentResponse.newBuilder().setGcsDestination("gcsDestination-1612392329").build();
+        ReviewDocumentResponse.newBuilder()
+            .setGcsDestination("gcsDestination-1612392329")
+            .setRejectionReason("rejectionReason1485905837")
+            .build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("reviewDocumentTest")
@@ -803,7 +1591,10 @@ public class DocumentProcessorServiceClientHttpJsonTest {
   @Test
   public void reviewDocumentTest2() throws Exception {
     ReviewDocumentResponse expectedResponse =
-        ReviewDocumentResponse.newBuilder().setGcsDestination("gcsDestination-1612392329").build();
+        ReviewDocumentResponse.newBuilder()
+            .setGcsDestination("gcsDestination-1612392329")
+            .setRejectionReason("rejectionReason1485905837")
+            .build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("reviewDocumentTest")
@@ -846,6 +1637,122 @@ public class DocumentProcessorServiceClientHttpJsonTest {
       client.reviewDocumentAsync(humanReviewConfig).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listLocationsTest() throws Exception {
+    Location responsesElement = Location.newBuilder().build();
+    ListLocationsResponse expectedResponse =
+        ListLocationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllLocations(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ListLocationsRequest request =
+        ListLocationsRequest.newBuilder()
+            .setName("projects/project-3664")
+            .setFilter("filter-1274492040")
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    ListLocationsPagedResponse pagedListResponse = client.listLocations(request);
+
+    List<Location> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getLocationsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listLocationsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ListLocationsRequest request =
+          ListLocationsRequest.newBuilder()
+              .setName("projects/project-3664")
+              .setFilter("filter-1274492040")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.listLocations(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getLocationTest() throws Exception {
+    Location expectedResponse =
+        Location.newBuilder()
+            .setName("name3373707")
+            .setLocationId("locationId1541836720")
+            .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
+            .setMetadata(Any.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GetLocationRequest request =
+        GetLocationRequest.newBuilder()
+            .setName("projects/project-9062/locations/location-9062")
+            .build();
+
+    Location actualResponse = client.getLocation(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getLocationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GetLocationRequest request =
+          GetLocationRequest.newBuilder()
+              .setName("projects/project-9062/locations/location-9062")
+              .build();
+      client.getLocation(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

@@ -28,8 +28,13 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.documentai.v1beta3.stub.DocumentProcessorServiceStub;
 import com.google.cloud.documentai.v1beta3.stub.DocumentProcessorServiceStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -53,7 +58,7 @@ import javax.annotation.Generated;
  * // It may require modifications to work in your environment.
  * try (DocumentProcessorServiceClient documentProcessorServiceClient =
  *     DocumentProcessorServiceClient.create()) {
- *   ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+ *   ResourceName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
  *   ProcessResponse response = documentProcessorServiceClient.processDocument(name);
  * }
  * }</pre>
@@ -215,15 +220,22 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
-   *   ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+   *   ResourceName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
    *   ProcessResponse response = documentProcessorServiceClient.processDocument(name);
    * }
    * }</pre>
    *
-   * @param name Required. The processor resource name.
+   * @param name Required. The resource name of the
+   *     [Processor][google.cloud.documentai.v1beta3.Processor] or
+   *     [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion] to use for processing.
+   *     If a [Processor][google.cloud.documentai.v1beta3.Processor] is specified, the server will
+   *     use its [default
+   *     version][google.cloud.documentai.v1beta3.Processor.default_processor_version]. Format:
+   *     `projects/{project}/locations/{location}/processors/{processor}`, or
+   *     `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ProcessResponse processDocument(ProcessorName name) {
+  public final ProcessResponse processDocument(ResourceName name) {
     ProcessRequest request =
         ProcessRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return processDocument(request);
@@ -240,12 +252,19 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
-   *   String name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
+   *   String name = HumanReviewConfigName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
    *   ProcessResponse response = documentProcessorServiceClient.processDocument(name);
    * }
    * }</pre>
    *
-   * @param name Required. The processor resource name.
+   * @param name Required. The resource name of the
+   *     [Processor][google.cloud.documentai.v1beta3.Processor] or
+   *     [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion] to use for processing.
+   *     If a [Processor][google.cloud.documentai.v1beta3.Processor] is specified, the server will
+   *     use its [default
+   *     version][google.cloud.documentai.v1beta3.Processor.default_processor_version]. Format:
+   *     `projects/{project}/locations/{location}/processors/{processor}`, or
+   *     `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ProcessResponse processDocument(String name) {
@@ -269,6 +288,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
    *           .setDocument(Document.newBuilder().build())
    *           .setSkipHumanReview(true)
+   *           .setFieldMask(FieldMask.newBuilder().build())
    *           .build();
    *   ProcessResponse response = documentProcessorServiceClient.processDocument(request);
    * }
@@ -297,6 +317,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
    *           .setDocument(Document.newBuilder().build())
    *           .setSkipHumanReview(true)
+   *           .setFieldMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<ProcessResponse> future =
    *       documentProcessorServiceClient.processDocumentCallable().futureCall(request);
@@ -321,17 +342,21 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
-   *   ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+   *   ResourceName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
    *   BatchProcessResponse response =
    *       documentProcessorServiceClient.batchProcessDocumentsAsync(name).get();
    * }
    * }</pre>
    *
-   * @param name Required. The processor resource name.
+   * @param name Required. The resource name of
+   *     [Processor][google.cloud.documentai.v1beta3.Processor] or
+   *     [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]. Format:
+   *     `projects/{project}/locations/{location}/processors/{processor}`, or
+   *     `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BatchProcessResponse, BatchProcessMetadata>
-      batchProcessDocumentsAsync(ProcessorName name) {
+      batchProcessDocumentsAsync(ResourceName name) {
     BatchProcessRequest request =
         BatchProcessRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return batchProcessDocumentsAsync(request);
@@ -349,13 +374,17 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
-   *   String name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
+   *   String name = HumanReviewConfigName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
    *   BatchProcessResponse response =
    *       documentProcessorServiceClient.batchProcessDocumentsAsync(name).get();
    * }
    * }</pre>
    *
-   * @param name Required. The processor resource name.
+   * @param name Required. The resource name of
+   *     [Processor][google.cloud.documentai.v1beta3.Processor] or
+   *     [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]. Format:
+   *     `projects/{project}/locations/{location}/processors/{processor}`, or
+   *     `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BatchProcessResponse, BatchProcessMetadata>
@@ -467,7 +496,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Fetches processor types.
+   * Fetches processor types. Note that we do not use ListProcessorTypes here because it is not
+   * paginated.
    *
    * <p>Sample code:
    *
@@ -482,8 +512,9 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The project of processor type to list. Format:
-   *     projects/{project}/locations/{location}
+   * @param parent Required. The project of processor type to list. The available processor types
+   *     may depend on the allow-listing on projects. Format:
+   *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FetchProcessorTypesResponse fetchProcessorTypes(LocationName parent) {
@@ -496,7 +527,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Fetches processor types.
+   * Fetches processor types. Note that we do not use ListProcessorTypes here because it is not
+   * paginated.
    *
    * <p>Sample code:
    *
@@ -511,8 +543,9 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The project of processor type to list. Format:
-   *     projects/{project}/locations/{location}
+   * @param parent Required. The project of processor type to list. The available processor types
+   *     may depend on the allow-listing on projects. Format:
+   *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FetchProcessorTypesResponse fetchProcessorTypes(String parent) {
@@ -523,7 +556,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Fetches processor types.
+   * Fetches processor types. Note that we do not use ListProcessorTypes here because it is not
+   * paginated.
    *
    * <p>Sample code:
    *
@@ -550,7 +584,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Fetches processor types.
+   * Fetches processor types. Note that we do not use ListProcessorTypes here because it is not
+   * paginated.
    *
    * <p>Sample code:
    *
@@ -577,6 +612,169 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists the processor types that exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (ProcessorType element :
+   *       documentProcessorServiceClient.listProcessorTypes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The location of processor type to list. The available processor types
+   *     may depend on the allow-listing on projects. Format:
+   *     `projects/{project}/locations/{location}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListProcessorTypesPagedResponse listProcessorTypes(LocationName parent) {
+    ListProcessorTypesRequest request =
+        ListProcessorTypesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listProcessorTypes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the processor types that exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (ProcessorType element :
+   *       documentProcessorServiceClient.listProcessorTypes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The location of processor type to list. The available processor types
+   *     may depend on the allow-listing on projects. Format:
+   *     `projects/{project}/locations/{location}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListProcessorTypesPagedResponse listProcessorTypes(String parent) {
+    ListProcessorTypesRequest request =
+        ListProcessorTypesRequest.newBuilder().setParent(parent).build();
+    return listProcessorTypes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the processor types that exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ListProcessorTypesRequest request =
+   *       ListProcessorTypesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (ProcessorType element :
+   *       documentProcessorServiceClient.listProcessorTypes(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListProcessorTypesPagedResponse listProcessorTypes(
+      ListProcessorTypesRequest request) {
+    return listProcessorTypesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the processor types that exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ListProcessorTypesRequest request =
+   *       ListProcessorTypesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<ProcessorType> future =
+   *       documentProcessorServiceClient.listProcessorTypesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ProcessorType element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListProcessorTypesRequest, ListProcessorTypesPagedResponse>
+      listProcessorTypesPagedCallable() {
+    return stub.listProcessorTypesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the processor types that exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ListProcessorTypesRequest request =
+   *       ListProcessorTypesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListProcessorTypesResponse response =
+   *         documentProcessorServiceClient.listProcessorTypesCallable().call(request);
+   *     for (ProcessorType element : response.getProcessorTypesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListProcessorTypesRequest, ListProcessorTypesResponse>
+      listProcessorTypesCallable() {
+    return stub.listProcessorTypesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists all processors which belong to this project.
    *
    * <p>Sample code:
@@ -594,7 +792,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent (project and location) which owns this collection of
-   *     Processors. Format: projects/{project}/locations/{location}
+   *     Processors. Format: `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListProcessorsPagedResponse listProcessors(LocationName parent) {
@@ -624,7 +822,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent (project and location) which owns this collection of
-   *     Processors. Format: projects/{project}/locations/{location}
+   *     Processors. Format: `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListProcessorsPagedResponse listProcessors(String parent) {
@@ -734,6 +932,842 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Gets a processor detail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+   *   Processor response = documentProcessorServiceClient.getProcessor(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The processor resource name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Processor getProcessor(ProcessorName name) {
+    GetProcessorRequest request =
+        GetProcessorRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getProcessor(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a processor detail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   String name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
+   *   Processor response = documentProcessorServiceClient.getProcessor(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The processor resource name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Processor getProcessor(String name) {
+    GetProcessorRequest request = GetProcessorRequest.newBuilder().setName(name).build();
+    return getProcessor(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a processor detail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   GetProcessorRequest request =
+   *       GetProcessorRequest.newBuilder()
+   *           .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .build();
+   *   Processor response = documentProcessorServiceClient.getProcessor(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Processor getProcessor(GetProcessorRequest request) {
+    return getProcessorCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a processor detail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   GetProcessorRequest request =
+   *       GetProcessorRequest.newBuilder()
+   *           .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .build();
+   *   ApiFuture<Processor> future =
+   *       documentProcessorServiceClient.getProcessorCallable().futureCall(request);
+   *   // Do something.
+   *   Processor response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetProcessorRequest, Processor> getProcessorCallable() {
+    return stub.getProcessorCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a processor version detail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ProcessorVersionName name =
+   *       ProcessorVersionName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]");
+   *   ProcessorVersion response = documentProcessorServiceClient.getProcessorVersion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The processor resource name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProcessorVersion getProcessorVersion(ProcessorVersionName name) {
+    GetProcessorVersionRequest request =
+        GetProcessorVersionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getProcessorVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a processor version detail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   String name =
+   *       ProcessorVersionName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+   *           .toString();
+   *   ProcessorVersion response = documentProcessorServiceClient.getProcessorVersion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The processor resource name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProcessorVersion getProcessorVersion(String name) {
+    GetProcessorVersionRequest request =
+        GetProcessorVersionRequest.newBuilder().setName(name).build();
+    return getProcessorVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a processor version detail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   GetProcessorVersionRequest request =
+   *       GetProcessorVersionRequest.newBuilder()
+   *           .setName(
+   *               ProcessorVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   ProcessorVersion response = documentProcessorServiceClient.getProcessorVersion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProcessorVersion getProcessorVersion(GetProcessorVersionRequest request) {
+    return getProcessorVersionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a processor version detail.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   GetProcessorVersionRequest request =
+   *       GetProcessorVersionRequest.newBuilder()
+   *           .setName(
+   *               ProcessorVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ProcessorVersion> future =
+   *       documentProcessorServiceClient.getProcessorVersionCallable().futureCall(request);
+   *   // Do something.
+   *   ProcessorVersion response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetProcessorVersionRequest, ProcessorVersion>
+      getProcessorVersionCallable() {
+    return stub.getProcessorVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all versions of a processor.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ProcessorName parent = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+   *   for (ProcessorVersion element :
+   *       documentProcessorServiceClient.listProcessorVersions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent (project, location and processor) to list all versions.
+   *     Format: `projects/{project}/locations/{location}/processors/{processor}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListProcessorVersionsPagedResponse listProcessorVersions(ProcessorName parent) {
+    ListProcessorVersionsRequest request =
+        ListProcessorVersionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listProcessorVersions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all versions of a processor.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   String parent = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
+   *   for (ProcessorVersion element :
+   *       documentProcessorServiceClient.listProcessorVersions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent (project, location and processor) to list all versions.
+   *     Format: `projects/{project}/locations/{location}/processors/{processor}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListProcessorVersionsPagedResponse listProcessorVersions(String parent) {
+    ListProcessorVersionsRequest request =
+        ListProcessorVersionsRequest.newBuilder().setParent(parent).build();
+    return listProcessorVersions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all versions of a processor.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ListProcessorVersionsRequest request =
+   *       ListProcessorVersionsRequest.newBuilder()
+   *           .setParent(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (ProcessorVersion element :
+   *       documentProcessorServiceClient.listProcessorVersions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListProcessorVersionsPagedResponse listProcessorVersions(
+      ListProcessorVersionsRequest request) {
+    return listProcessorVersionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all versions of a processor.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ListProcessorVersionsRequest request =
+   *       ListProcessorVersionsRequest.newBuilder()
+   *           .setParent(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<ProcessorVersion> future =
+   *       documentProcessorServiceClient.listProcessorVersionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ProcessorVersion element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListProcessorVersionsRequest, ListProcessorVersionsPagedResponse>
+      listProcessorVersionsPagedCallable() {
+    return stub.listProcessorVersionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all versions of a processor.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ListProcessorVersionsRequest request =
+   *       ListProcessorVersionsRequest.newBuilder()
+   *           .setParent(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListProcessorVersionsResponse response =
+   *         documentProcessorServiceClient.listProcessorVersionsCallable().call(request);
+   *     for (ProcessorVersion element : response.getProcessorVersionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListProcessorVersionsRequest, ListProcessorVersionsResponse>
+      listProcessorVersionsCallable() {
+    return stub.listProcessorVersionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the processor version, all artifacts under the processor version will be deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ProcessorVersionName name =
+   *       ProcessorVersionName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]");
+   *   documentProcessorServiceClient.deleteProcessorVersionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The processor version resource name to be deleted.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteProcessorVersionMetadata> deleteProcessorVersionAsync(
+      ProcessorVersionName name) {
+    DeleteProcessorVersionRequest request =
+        DeleteProcessorVersionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteProcessorVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the processor version, all artifacts under the processor version will be deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   String name =
+   *       ProcessorVersionName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+   *           .toString();
+   *   documentProcessorServiceClient.deleteProcessorVersionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The processor version resource name to be deleted.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteProcessorVersionMetadata> deleteProcessorVersionAsync(
+      String name) {
+    DeleteProcessorVersionRequest request =
+        DeleteProcessorVersionRequest.newBuilder().setName(name).build();
+    return deleteProcessorVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the processor version, all artifacts under the processor version will be deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   DeleteProcessorVersionRequest request =
+   *       DeleteProcessorVersionRequest.newBuilder()
+   *           .setName(
+   *               ProcessorVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   documentProcessorServiceClient.deleteProcessorVersionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteProcessorVersionMetadata> deleteProcessorVersionAsync(
+      DeleteProcessorVersionRequest request) {
+    return deleteProcessorVersionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the processor version, all artifacts under the processor version will be deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   DeleteProcessorVersionRequest request =
+   *       DeleteProcessorVersionRequest.newBuilder()
+   *           .setName(
+   *               ProcessorVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Empty, DeleteProcessorVersionMetadata> future =
+   *       documentProcessorServiceClient
+   *           .deleteProcessorVersionOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          DeleteProcessorVersionRequest, Empty, DeleteProcessorVersionMetadata>
+      deleteProcessorVersionOperationCallable() {
+    return stub.deleteProcessorVersionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the processor version, all artifacts under the processor version will be deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   DeleteProcessorVersionRequest request =
+   *       DeleteProcessorVersionRequest.newBuilder()
+   *           .setName(
+   *               ProcessorVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       documentProcessorServiceClient.deleteProcessorVersionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteProcessorVersionRequest, Operation>
+      deleteProcessorVersionCallable() {
+    return stub.deleteProcessorVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys the processor version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ProcessorVersionName name =
+   *       ProcessorVersionName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]");
+   *   DeployProcessorVersionResponse response =
+   *       documentProcessorServiceClient.deployProcessorVersionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The processor version resource name to be deployed.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeployProcessorVersionResponse, DeployProcessorVersionMetadata>
+      deployProcessorVersionAsync(ProcessorVersionName name) {
+    DeployProcessorVersionRequest request =
+        DeployProcessorVersionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deployProcessorVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys the processor version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   String name =
+   *       ProcessorVersionName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+   *           .toString();
+   *   DeployProcessorVersionResponse response =
+   *       documentProcessorServiceClient.deployProcessorVersionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The processor version resource name to be deployed.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeployProcessorVersionResponse, DeployProcessorVersionMetadata>
+      deployProcessorVersionAsync(String name) {
+    DeployProcessorVersionRequest request =
+        DeployProcessorVersionRequest.newBuilder().setName(name).build();
+    return deployProcessorVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys the processor version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   DeployProcessorVersionRequest request =
+   *       DeployProcessorVersionRequest.newBuilder()
+   *           .setName(
+   *               ProcessorVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   DeployProcessorVersionResponse response =
+   *       documentProcessorServiceClient.deployProcessorVersionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeployProcessorVersionResponse, DeployProcessorVersionMetadata>
+      deployProcessorVersionAsync(DeployProcessorVersionRequest request) {
+    return deployProcessorVersionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys the processor version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   DeployProcessorVersionRequest request =
+   *       DeployProcessorVersionRequest.newBuilder()
+   *           .setName(
+   *               ProcessorVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<DeployProcessorVersionResponse, DeployProcessorVersionMetadata> future =
+   *       documentProcessorServiceClient
+   *           .deployProcessorVersionOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   DeployProcessorVersionResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          DeployProcessorVersionRequest,
+          DeployProcessorVersionResponse,
+          DeployProcessorVersionMetadata>
+      deployProcessorVersionOperationCallable() {
+    return stub.deployProcessorVersionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys the processor version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   DeployProcessorVersionRequest request =
+   *       DeployProcessorVersionRequest.newBuilder()
+   *           .setName(
+   *               ProcessorVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       documentProcessorServiceClient.deployProcessorVersionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeployProcessorVersionRequest, Operation>
+      deployProcessorVersionCallable() {
+    return stub.deployProcessorVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Undeploys the processor version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ProcessorVersionName name =
+   *       ProcessorVersionName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]");
+   *   UndeployProcessorVersionResponse response =
+   *       documentProcessorServiceClient.undeployProcessorVersionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The processor version resource name to be undeployed.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<UndeployProcessorVersionResponse, UndeployProcessorVersionMetadata>
+      undeployProcessorVersionAsync(ProcessorVersionName name) {
+    UndeployProcessorVersionRequest request =
+        UndeployProcessorVersionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return undeployProcessorVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Undeploys the processor version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   String name =
+   *       ProcessorVersionName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+   *           .toString();
+   *   UndeployProcessorVersionResponse response =
+   *       documentProcessorServiceClient.undeployProcessorVersionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The processor version resource name to be undeployed.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<UndeployProcessorVersionResponse, UndeployProcessorVersionMetadata>
+      undeployProcessorVersionAsync(String name) {
+    UndeployProcessorVersionRequest request =
+        UndeployProcessorVersionRequest.newBuilder().setName(name).build();
+    return undeployProcessorVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Undeploys the processor version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   UndeployProcessorVersionRequest request =
+   *       UndeployProcessorVersionRequest.newBuilder()
+   *           .setName(
+   *               ProcessorVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   UndeployProcessorVersionResponse response =
+   *       documentProcessorServiceClient.undeployProcessorVersionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<UndeployProcessorVersionResponse, UndeployProcessorVersionMetadata>
+      undeployProcessorVersionAsync(UndeployProcessorVersionRequest request) {
+    return undeployProcessorVersionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Undeploys the processor version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   UndeployProcessorVersionRequest request =
+   *       UndeployProcessorVersionRequest.newBuilder()
+   *           .setName(
+   *               ProcessorVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<UndeployProcessorVersionResponse, UndeployProcessorVersionMetadata> future =
+   *       documentProcessorServiceClient
+   *           .undeployProcessorVersionOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   UndeployProcessorVersionResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UndeployProcessorVersionRequest,
+          UndeployProcessorVersionResponse,
+          UndeployProcessorVersionMetadata>
+      undeployProcessorVersionOperationCallable() {
+    return stub.undeployProcessorVersionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Undeploys the processor version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   UndeployProcessorVersionRequest request =
+   *       UndeployProcessorVersionRequest.newBuilder()
+   *           .setName(
+   *               ProcessorVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       documentProcessorServiceClient.undeployProcessorVersionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UndeployProcessorVersionRequest, Operation>
+      undeployProcessorVersionCallable() {
+    return stub.undeployProcessorVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates a processor from the type processor that the user chose. The processor will be at
    * "ENABLED" state by default after its creation.
    *
@@ -751,7 +1785,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent (project and location) under which to create the processor.
-   *     Format: projects/{project}/locations/{location}
+   *     Format: `projects/{project}/locations/{location}`
    * @param processor Required. The processor to be created, requires [processor_type] and
    *     [display_name] to be set. Also, the processor is under CMEK if CMEK fields are set.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -784,7 +1818,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent (project and location) under which to create the processor.
-   *     Format: projects/{project}/locations/{location}
+   *     Format: `projects/{project}/locations/{location}`
    * @param processor Required. The processor to be created, requires [processor_type] and
    *     [display_name] to be set. Also, the processor is under CMEK if CMEK fields are set.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1152,6 +2186,116 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Set the default (active) version of a [Processor][google.cloud.documentai.v1beta3.Processor]
+   * that will be used in
+   * [ProcessDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ProcessDocument] and
+   * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   SetDefaultProcessorVersionRequest request =
+   *       SetDefaultProcessorVersionRequest.newBuilder()
+   *           .setProcessor(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setDefaultProcessorVersion(
+   *               ProcessorVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   SetDefaultProcessorVersionResponse response =
+   *       documentProcessorServiceClient.setDefaultProcessorVersionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          SetDefaultProcessorVersionResponse, SetDefaultProcessorVersionMetadata>
+      setDefaultProcessorVersionAsync(SetDefaultProcessorVersionRequest request) {
+    return setDefaultProcessorVersionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Set the default (active) version of a [Processor][google.cloud.documentai.v1beta3.Processor]
+   * that will be used in
+   * [ProcessDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ProcessDocument] and
+   * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   SetDefaultProcessorVersionRequest request =
+   *       SetDefaultProcessorVersionRequest.newBuilder()
+   *           .setProcessor(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setDefaultProcessorVersion(
+   *               ProcessorVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<SetDefaultProcessorVersionResponse, SetDefaultProcessorVersionMetadata>
+   *       future =
+   *           documentProcessorServiceClient
+   *               .setDefaultProcessorVersionOperationCallable()
+   *               .futureCall(request);
+   *   // Do something.
+   *   SetDefaultProcessorVersionResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          SetDefaultProcessorVersionRequest,
+          SetDefaultProcessorVersionResponse,
+          SetDefaultProcessorVersionMetadata>
+      setDefaultProcessorVersionOperationCallable() {
+    return stub.setDefaultProcessorVersionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Set the default (active) version of a [Processor][google.cloud.documentai.v1beta3.Processor]
+   * that will be used in
+   * [ProcessDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ProcessDocument] and
+   * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   SetDefaultProcessorVersionRequest request =
+   *       SetDefaultProcessorVersionRequest.newBuilder()
+   *           .setProcessor(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setDefaultProcessorVersion(
+   *               ProcessorVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       documentProcessorServiceClient.setDefaultProcessorVersionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetDefaultProcessorVersionRequest, Operation>
+      setDefaultProcessorVersionCallable() {
+    return stub.setDefaultProcessorVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Send a document for Human Review. The input document should be processed by the specified
    * processor.
    *
@@ -1230,6 +2374,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *               HumanReviewConfigName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
    *           .setDocument(Document.newBuilder().build())
    *           .setEnableSchemaValidation(true)
+   *           .setDocumentSchema(DocumentSchema.newBuilder().build())
    *           .build();
    *   ReviewDocumentResponse response =
    *       documentProcessorServiceClient.reviewDocumentAsync(request).get();
@@ -1262,6 +2407,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *               HumanReviewConfigName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
    *           .setDocument(Document.newBuilder().build())
    *           .setEnableSchemaValidation(true)
+   *           .setDocumentSchema(DocumentSchema.newBuilder().build())
    *           .build();
    *   OperationFuture<ReviewDocumentResponse, ReviewDocumentOperationMetadata> future =
    *       documentProcessorServiceClient.reviewDocumentOperationCallable().futureCall(request);
@@ -1294,6 +2440,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *               HumanReviewConfigName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
    *           .setDocument(Document.newBuilder().build())
    *           .setEnableSchemaValidation(true)
+   *           .setDocumentSchema(DocumentSchema.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       documentProcessorServiceClient.reviewDocumentCallable().futureCall(request);
@@ -1304,6 +2451,153 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ReviewDocumentRequest, Operation> reviewDocumentCallable() {
     return stub.reviewDocumentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Location element : documentProcessorServiceClient.listLocations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLocationsPagedResponse listLocations(ListLocationsRequest request) {
+    return listLocationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Location> future =
+   *       documentProcessorServiceClient.listLocationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Location element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return stub.listLocationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListLocationsResponse response =
+   *         documentProcessorServiceClient.listLocationsCallable().call(request);
+   *     for (Location element : response.getLocationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return stub.listLocationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   Location response = documentProcessorServiceClient.getLocation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Location getLocation(GetLocationRequest request) {
+    return getLocationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Location> future =
+   *       documentProcessorServiceClient.getLocationCallable().futureCall(request);
+   *   // Do something.
+   *   Location response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return stub.getLocationCallable();
   }
 
   @Override
@@ -1334,6 +2628,86 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListProcessorTypesPagedResponse
+      extends AbstractPagedListResponse<
+          ListProcessorTypesRequest,
+          ListProcessorTypesResponse,
+          ProcessorType,
+          ListProcessorTypesPage,
+          ListProcessorTypesFixedSizeCollection> {
+
+    public static ApiFuture<ListProcessorTypesPagedResponse> createAsync(
+        PageContext<ListProcessorTypesRequest, ListProcessorTypesResponse, ProcessorType> context,
+        ApiFuture<ListProcessorTypesResponse> futureResponse) {
+      ApiFuture<ListProcessorTypesPage> futurePage =
+          ListProcessorTypesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListProcessorTypesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListProcessorTypesPagedResponse(ListProcessorTypesPage page) {
+      super(page, ListProcessorTypesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListProcessorTypesPage
+      extends AbstractPage<
+          ListProcessorTypesRequest,
+          ListProcessorTypesResponse,
+          ProcessorType,
+          ListProcessorTypesPage> {
+
+    private ListProcessorTypesPage(
+        PageContext<ListProcessorTypesRequest, ListProcessorTypesResponse, ProcessorType> context,
+        ListProcessorTypesResponse response) {
+      super(context, response);
+    }
+
+    private static ListProcessorTypesPage createEmptyPage() {
+      return new ListProcessorTypesPage(null, null);
+    }
+
+    @Override
+    protected ListProcessorTypesPage createPage(
+        PageContext<ListProcessorTypesRequest, ListProcessorTypesResponse, ProcessorType> context,
+        ListProcessorTypesResponse response) {
+      return new ListProcessorTypesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListProcessorTypesPage> createPageAsync(
+        PageContext<ListProcessorTypesRequest, ListProcessorTypesResponse, ProcessorType> context,
+        ApiFuture<ListProcessorTypesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListProcessorTypesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListProcessorTypesRequest,
+          ListProcessorTypesResponse,
+          ProcessorType,
+          ListProcessorTypesPage,
+          ListProcessorTypesFixedSizeCollection> {
+
+    private ListProcessorTypesFixedSizeCollection(
+        List<ListProcessorTypesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListProcessorTypesFixedSizeCollection createEmptyCollection() {
+      return new ListProcessorTypesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListProcessorTypesFixedSizeCollection createCollection(
+        List<ListProcessorTypesPage> pages, int collectionSize) {
+      return new ListProcessorTypesFixedSizeCollection(pages, collectionSize);
+    }
   }
 
   public static class ListProcessorsPagedResponse
@@ -1409,6 +2783,166 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
     protected ListProcessorsFixedSizeCollection createCollection(
         List<ListProcessorsPage> pages, int collectionSize) {
       return new ListProcessorsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListProcessorVersionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListProcessorVersionsRequest,
+          ListProcessorVersionsResponse,
+          ProcessorVersion,
+          ListProcessorVersionsPage,
+          ListProcessorVersionsFixedSizeCollection> {
+
+    public static ApiFuture<ListProcessorVersionsPagedResponse> createAsync(
+        PageContext<ListProcessorVersionsRequest, ListProcessorVersionsResponse, ProcessorVersion>
+            context,
+        ApiFuture<ListProcessorVersionsResponse> futureResponse) {
+      ApiFuture<ListProcessorVersionsPage> futurePage =
+          ListProcessorVersionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListProcessorVersionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListProcessorVersionsPagedResponse(ListProcessorVersionsPage page) {
+      super(page, ListProcessorVersionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListProcessorVersionsPage
+      extends AbstractPage<
+          ListProcessorVersionsRequest,
+          ListProcessorVersionsResponse,
+          ProcessorVersion,
+          ListProcessorVersionsPage> {
+
+    private ListProcessorVersionsPage(
+        PageContext<ListProcessorVersionsRequest, ListProcessorVersionsResponse, ProcessorVersion>
+            context,
+        ListProcessorVersionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListProcessorVersionsPage createEmptyPage() {
+      return new ListProcessorVersionsPage(null, null);
+    }
+
+    @Override
+    protected ListProcessorVersionsPage createPage(
+        PageContext<ListProcessorVersionsRequest, ListProcessorVersionsResponse, ProcessorVersion>
+            context,
+        ListProcessorVersionsResponse response) {
+      return new ListProcessorVersionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListProcessorVersionsPage> createPageAsync(
+        PageContext<ListProcessorVersionsRequest, ListProcessorVersionsResponse, ProcessorVersion>
+            context,
+        ApiFuture<ListProcessorVersionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListProcessorVersionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListProcessorVersionsRequest,
+          ListProcessorVersionsResponse,
+          ProcessorVersion,
+          ListProcessorVersionsPage,
+          ListProcessorVersionsFixedSizeCollection> {
+
+    private ListProcessorVersionsFixedSizeCollection(
+        List<ListProcessorVersionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListProcessorVersionsFixedSizeCollection createEmptyCollection() {
+      return new ListProcessorVersionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListProcessorVersionsFixedSizeCollection createCollection(
+        List<ListProcessorVersionsPage> pages, int collectionSize) {
+      return new ListProcessorVersionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListLocationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    public static ApiFuture<ListLocationsPagedResponse> createAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      ApiFuture<ListLocationsPage> futurePage =
+          ListLocationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListLocationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListLocationsPagedResponse(ListLocationsPage page) {
+      super(page, ListLocationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListLocationsPage
+      extends AbstractPage<
+          ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
+
+    private ListLocationsPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListLocationsPage createEmptyPage() {
+      return new ListLocationsPage(null, null);
+    }
+
+    @Override
+    protected ListLocationsPage createPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      return new ListLocationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListLocationsPage> createPageAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListLocationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListLocationsFixedSizeCollection createEmptyCollection() {
+      return new ListLocationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListLocationsFixedSizeCollection createCollection(
+        List<ListLocationsPage> pages, int collectionSize) {
+      return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

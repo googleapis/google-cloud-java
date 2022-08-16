@@ -43,29 +43,28 @@ public final class OperationMetadataProto {
       "\n8google/cloud/documentai/v1beta3/operat"
           + "ion_metadata.proto\022\037google.cloud.documen"
           + "tai.v1beta3\032\037google/protobuf/timestamp.p"
-          + "roto\032\034google/api/annotations.proto\"\310\002\n\027C"
-          + "ommonOperationMetadata\022M\n\005state\030\001 \001(\0162>."
-          + "google.cloud.documentai.v1beta3.CommonOp"
-          + "erationMetadata.State\022\025\n\rstate_message\030\002"
-          + " \001(\t\022/\n\013create_time\030\003 \001(\0132\032.google.proto"
-          + "buf.Timestamp\022/\n\013update_time\030\004 \001(\0132\032.goo"
-          + "gle.protobuf.Timestamp\"e\n\005State\022\025\n\021STATE"
-          + "_UNSPECIFIED\020\000\022\013\n\007RUNNING\020\001\022\016\n\nCANCELLIN"
-          + "G\020\002\022\r\n\tSUCCEEDED\020\003\022\n\n\006FAILED\020\004\022\r\n\tCANCEL"
-          + "LED\020\005B\363\001\n#com.google.cloud.documentai.v1"
-          + "beta3B\026OperationMetadataProtoP\001ZIgoogle."
-          + "golang.org/genproto/googleapis/cloud/doc"
-          + "umentai/v1beta3;documentai\252\002\037Google.Clou"
-          + "d.DocumentAI.V1Beta3\312\002\037Google\\Cloud\\Docu"
-          + "mentAI\\V1beta3\352\002\"Google::Cloud::Document"
-          + "AI::V1beta3b\006proto3"
+          + "roto\"\332\002\n\027CommonOperationMetadata\022M\n\005stat"
+          + "e\030\001 \001(\0162>.google.cloud.documentai.v1beta"
+          + "3.CommonOperationMetadata.State\022\025\n\rstate"
+          + "_message\030\002 \001(\t\022\020\n\010resource\030\005 \001(\t\022/\n\013crea"
+          + "te_time\030\003 \001(\0132\032.google.protobuf.Timestam"
+          + "p\022/\n\013update_time\030\004 \001(\0132\032.google.protobuf"
+          + ".Timestamp\"e\n\005State\022\025\n\021STATE_UNSPECIFIED"
+          + "\020\000\022\013\n\007RUNNING\020\001\022\016\n\nCANCELLING\020\002\022\r\n\tSUCCE"
+          + "EDED\020\003\022\n\n\006FAILED\020\004\022\r\n\tCANCELLED\020\005B\363\001\n#co"
+          + "m.google.cloud.documentai.v1beta3B\026Opera"
+          + "tionMetadataProtoP\001ZIgoogle.golang.org/g"
+          + "enproto/googleapis/cloud/documentai/v1be"
+          + "ta3;documentai\252\002\037Google.Cloud.DocumentAI"
+          + ".V1Beta3\312\002\037Google\\Cloud\\DocumentAI\\V1bet"
+          + "a3\352\002\"Google::Cloud::DocumentAI::V1beta3b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_documentai_v1beta3_CommonOperationMetadata_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -73,10 +72,9 @@ public final class OperationMetadataProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_CommonOperationMetadata_descriptor,
             new java.lang.String[] {
-              "State", "StateMessage", "CreateTime", "UpdateTime",
+              "State", "StateMessage", "Resource", "CreateTime", "UpdateTime",
             });
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -120,7 +120,8 @@ public final class FetchProcessorTypesRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The project of processor type to list.
-   * Format: projects/{project}/locations/{location}
+   * The available processor types may depend on the allow-listing on projects.
+   * Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -146,7 +147,8 @@ public final class FetchProcessorTypesRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The project of processor type to list.
-   * Format: projects/{project}/locations/{location}
+   * The available processor types may depend on the allow-listing on projects.
+   * Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -496,7 +498,8 @@ public final class FetchProcessorTypesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The project of processor type to list.
-     * Format: projects/{project}/locations/{location}
+     * The available processor types may depend on the allow-listing on projects.
+     * Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -521,7 +524,8 @@ public final class FetchProcessorTypesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The project of processor type to list.
-     * Format: projects/{project}/locations/{location}
+     * The available processor types may depend on the allow-listing on projects.
+     * Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -546,7 +550,8 @@ public final class FetchProcessorTypesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The project of processor type to list.
-     * Format: projects/{project}/locations/{location}
+     * The available processor types may depend on the allow-listing on projects.
+     * Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -570,7 +575,8 @@ public final class FetchProcessorTypesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The project of processor type to list.
-     * Format: projects/{project}/locations/{location}
+     * The available processor types may depend on the allow-listing on projects.
+     * Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -590,7 +596,8 @@ public final class FetchProcessorTypesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The project of processor type to list.
-     * Format: projects/{project}/locations/{location}
+     * The available processor types may depend on the allow-listing on projects.
+     * Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
