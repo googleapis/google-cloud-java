@@ -78,6 +78,8 @@ import com.google.cloud.asset.v1.ListFeedsRequest;
 import com.google.cloud.asset.v1.ListFeedsResponse;
 import com.google.cloud.asset.v1.ListSavedQueriesRequest;
 import com.google.cloud.asset.v1.ListSavedQueriesResponse;
+import com.google.cloud.asset.v1.QueryAssetsRequest;
+import com.google.cloud.asset.v1.QueryAssetsResponse;
 import com.google.cloud.asset.v1.ResourceSearchResult;
 import com.google.cloud.asset.v1.SavedQuery;
 import com.google.cloud.asset.v1.SearchAllIamPoliciesRequest;
@@ -168,6 +170,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
           AnalyzeIamPolicyLongrunningMetadata>
       analyzeIamPolicyLongrunningOperationSettings;
   private final UnaryCallSettings<AnalyzeMoveRequest, AnalyzeMoveResponse> analyzeMoveSettings;
+  private final UnaryCallSettings<QueryAssetsRequest, QueryAssetsResponse> queryAssetsSettings;
   private final UnaryCallSettings<CreateSavedQueryRequest, SavedQuery> createSavedQuerySettings;
   private final UnaryCallSettings<GetSavedQueryRequest, SavedQuery> getSavedQuerySettings;
   private final PagedCallSettings<
@@ -510,6 +513,11 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     return analyzeMoveSettings;
   }
 
+  /** Returns the object with the settings used for calls to queryAssets. */
+  public UnaryCallSettings<QueryAssetsRequest, QueryAssetsResponse> queryAssetsSettings() {
+    return queryAssetsSettings;
+  }
+
   /** Returns the object with the settings used for calls to createSavedQuery. */
   public UnaryCallSettings<CreateSavedQueryRequest, SavedQuery> createSavedQuerySettings() {
     return createSavedQuerySettings;
@@ -667,6 +675,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     analyzeIamPolicyLongrunningOperationSettings =
         settingsBuilder.analyzeIamPolicyLongrunningOperationSettings().build();
     analyzeMoveSettings = settingsBuilder.analyzeMoveSettings().build();
+    queryAssetsSettings = settingsBuilder.queryAssetsSettings().build();
     createSavedQuerySettings = settingsBuilder.createSavedQuerySettings().build();
     getSavedQuerySettings = settingsBuilder.getSavedQuerySettings().build();
     listSavedQueriesSettings = settingsBuilder.listSavedQueriesSettings().build();
@@ -713,6 +722,8 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
         analyzeIamPolicyLongrunningOperationSettings;
     private final UnaryCallSettings.Builder<AnalyzeMoveRequest, AnalyzeMoveResponse>
         analyzeMoveSettings;
+    private final UnaryCallSettings.Builder<QueryAssetsRequest, QueryAssetsResponse>
+        queryAssetsSettings;
     private final UnaryCallSettings.Builder<CreateSavedQueryRequest, SavedQuery>
         createSavedQuerySettings;
     private final UnaryCallSettings.Builder<GetSavedQueryRequest, SavedQuery> getSavedQuerySettings;
@@ -746,6 +757,12 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
           "retry_policy_3_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_4_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "retry_policy_6_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -797,6 +814,28 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
       definitions.put("retry_policy_3_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
       definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(200000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(200000L))
+              .setTotalTimeout(Duration.ofMillis(200000L))
+              .build();
+      definitions.put("retry_policy_4_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(300000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(300000L))
+              .setTotalTimeout(Duration.ofMillis(300000L))
+              .build();
+      definitions.put("retry_policy_6_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -823,6 +862,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
       analyzeIamPolicyLongrunningSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       analyzeIamPolicyLongrunningOperationSettings = OperationCallSettings.newBuilder();
       analyzeMoveSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      queryAssetsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createSavedQuerySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getSavedQuerySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listSavedQueriesSettings = PagedCallSettings.newBuilder(LIST_SAVED_QUERIES_PAGE_STR_FACT);
@@ -845,6 +885,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
               analyzeIamPolicySettings,
               analyzeIamPolicyLongrunningSettings,
               analyzeMoveSettings,
+              queryAssetsSettings,
               createSavedQuerySettings,
               getSavedQuerySettings,
               listSavedQueriesSettings,
@@ -874,6 +915,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
       analyzeIamPolicyLongrunningOperationSettings =
           settings.analyzeIamPolicyLongrunningOperationSettings.toBuilder();
       analyzeMoveSettings = settings.analyzeMoveSettings.toBuilder();
+      queryAssetsSettings = settings.queryAssetsSettings.toBuilder();
       createSavedQuerySettings = settings.createSavedQuerySettings.toBuilder();
       getSavedQuerySettings = settings.getSavedQuerySettings.toBuilder();
       listSavedQueriesSettings = settings.listSavedQueriesSettings.toBuilder();
@@ -897,6 +939,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
               analyzeIamPolicySettings,
               analyzeIamPolicyLongrunningSettings,
               analyzeMoveSettings,
+              queryAssetsSettings,
               createSavedQuerySettings,
               getSavedQuerySettings,
               listSavedQueriesSettings,
@@ -998,6 +1041,11 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .queryAssetsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
+
+      builder
           .createSavedQuerySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -1024,8 +1072,8 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
 
       builder
           .batchGetEffectiveIamPoliciesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
 
       builder
           .exportAssetsOperationSettings()
@@ -1190,6 +1238,12 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     public UnaryCallSettings.Builder<AnalyzeMoveRequest, AnalyzeMoveResponse>
         analyzeMoveSettings() {
       return analyzeMoveSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to queryAssets. */
+    public UnaryCallSettings.Builder<QueryAssetsRequest, QueryAssetsResponse>
+        queryAssetsSettings() {
+      return queryAssetsSettings;
     }
 
     /** Returns the builder for the settings used for calls to createSavedQuery. */
