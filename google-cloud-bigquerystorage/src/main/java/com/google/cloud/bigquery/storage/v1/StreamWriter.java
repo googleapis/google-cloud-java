@@ -538,7 +538,7 @@ public class StreamWriter implements AutoCloseable {
     while (System.nanoTime() <= deadline) {
       this.lock.lock();
       try {
-        if (connectionFinalStatus != null) {
+        if (!this.streamConnectionIsConnected) {
           // Done callback is received, return.
           return;
         }
