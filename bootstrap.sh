@@ -79,6 +79,8 @@ git commit -am 'feat: create aggregator pom'
 num_modules="$(wc -l < ../../repos.txt)"
 echo "{" >> .release-please-manifest.json
 
+echo ""\""google-cloud-gapic-bom"\"": "\""0.0.0"\""," >> .release-please-manifest.json
+
 # generate BOM of the artifacts in this repository
 bom_lines=""
 rp_config_line=""
@@ -140,7 +142,8 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
   rp_manifest_line=""\""${module}"\"": "\""${module_released_version}"\"""
 
   rp_config_line+=""\""${module}"\"": {\n\
-        "\""component"\"": "\""${artifactName_config}"\""\n\
+        "\""component"\"": ""\""${artifactName_config}"\"","\n\
+        "\""skip-github-release"\"": "true"\n\
        }"
 
   #adding " , " where it's necessary
@@ -184,6 +187,7 @@ awk -v "packagesList=$rp_config_line" '{gsub(/ALL_PACKAGES/,packagesList)}1' \
     ../../release_please_config_raw.json > release-please-config.json
 
 mkdir google-cloud-gapic-bom
+cp ../../gapic_bom_versions.txt google-cloud-gapic-bom/versions.txt
 awk -v "dependencyManagements=$bom_lines" '{gsub(/BOM_ARTIFACT_LIST/,dependencyManagements)}1' \
     ../../bom.pom.xml > google-cloud-gapic-bom/pom.xml
 
