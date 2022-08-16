@@ -1,0 +1,19 @@
+# Configuration for the Blunderbuss GitHub app. For more info see
+# https://github.com/googleapis/repo-automation-bots/tree/main/packages/blunderbuss
+assign_issues_by:
+- labels:
+  - 'api: cloudiot'
+  to:
+  - attilagargyan
+  - simoncsaba-g
+
+assign_prs_by:
+- labels:
+  - samples
+  to:
+  - googleapis/java-samples-reviewers
+- labels:
+  - 'api: cloudiot'
+  to:
+  - attilagargyan
+  - simoncsaba-g
