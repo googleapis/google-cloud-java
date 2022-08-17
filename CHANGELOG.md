@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.20.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.19.1...v2.20.0) (2022-08-17)
+
+
+### Features
+
+* introduce InflightLimitExceededException ([#1746](https://github.com/googleapis/java-bigquerystorage/issues/1746)) ([449353b](https://github.com/googleapis/java-bigquerystorage/commit/449353bd3b1fc78d46990c8203e1607d83f7ad03))
+
+
+### Bug Fixes
+
+* Add documentation to Exceptions ([#1745](https://github.com/googleapis/java-bigquerystorage/issues/1745)) ([3bc7aca](https://github.com/googleapis/java-bigquerystorage/commit/3bc7acaa4a110a0ce487e3976b5fd4ddb865ea24))
+* Add missing field error to row error message ([#1752](https://github.com/googleapis/java-bigquerystorage/issues/1752)) ([186d213](https://github.com/googleapis/java-bigquerystorage/commit/186d2135cb7e18410b89c93e909b03dc8e92ac6c))
+* Close based on whether connection is active, not status variable ([#1750](https://github.com/googleapis/java-bigquerystorage/issues/1750)) ([ce7f3e0](https://github.com/googleapis/java-bigquerystorage/commit/ce7f3e04046be6b4c1321be877034f5d0ab007f4))
+
+
+### Dependencies
+
+* fixing the test scope dependency to runtime ([#1742](https://github.com/googleapis/java-bigquerystorage/issues/1742)) ([878020b](https://github.com/googleapis/java-bigquerystorage/commit/878020b3667040aef1b8d610b37cd678ef932870))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.14.4 ([#1740](https://github.com/googleapis/java-bigquerystorage/issues/1740)) ([f842d51](https://github.com/googleapis/java-bigquerystorage/commit/f842d517b70847b8e67359257a213129586513f6))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.14.6 ([#1747](https://github.com/googleapis/java-bigquerystorage/issues/1747)) ([329bd9d](https://github.com/googleapis/java-bigquerystorage/commit/329bd9da268f48a4d18158845895b07a43c766ab))
+
 ## [2.19.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.19.0...v2.19.1) (2022-08-06)
 
 
