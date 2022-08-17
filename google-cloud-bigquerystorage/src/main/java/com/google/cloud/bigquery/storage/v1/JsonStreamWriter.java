@@ -155,7 +155,19 @@ public class JsonStreamWriter implements AutoCloseable {
           rowsBuilder.addSerializedRows(protoMessage.toByteString());
           currentRequestSize += protoMessage.getSerializedSize();
         } catch (IllegalArgumentException exception) {
-          rowIndexToErrorMessage.put(i, exception.getMessage());
+          if (exception instanceof Exceptions.FieldParseError) {
+            Exceptions.FieldParseError ex = (Exceptions.FieldParseError) exception;
+            rowIndexToErrorMessage.put(
+                i,
+                "Field "
+                    + ex.getFieldName()
+                    + " failed to convert to "
+                    + ex.getBqType()
+                    + ". Error: "
+                    + ex.getCause().getMessage());
+          } else {
+            rowIndexToErrorMessage.put(i, exception.getMessage());
+          }
         }
       }
 

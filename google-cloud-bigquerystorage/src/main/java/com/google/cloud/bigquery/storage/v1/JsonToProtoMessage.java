@@ -221,11 +221,24 @@ public class JsonToProtoMessage {
                   + ")");
         }
       }
-      if (!field.isRepeated()) {
-        fillField(protoMsg, field, fieldSchema, json, jsonName, currentScope, ignoreUnknownFields);
-      } else {
-        fillRepeatedField(
-            protoMsg, field, fieldSchema, json, jsonName, currentScope, ignoreUnknownFields);
+      try {
+        if (!field.isRepeated()) {
+          fillField(
+              protoMsg, field, fieldSchema, json, jsonName, currentScope, ignoreUnknownFields);
+        } else {
+          fillRepeatedField(
+              protoMsg, field, fieldSchema, json, jsonName, currentScope, ignoreUnknownFields);
+        }
+      } catch (Exceptions.FieldParseError ex) {
+        throw ex;
+      } catch (Exception ex) {
+        // This function is recursively called, so this throw will be caught and throw directly out
+        // by the catch
+        // above.
+        throw new Exceptions.FieldParseError(
+            currentScope,
+            fieldSchema != null ? fieldSchema.getType().name() : field.getType().name(),
+            ex);
       }
     }
 
@@ -329,26 +342,17 @@ public class JsonToProtoMessage {
           protoMsg.setField(fieldDescriptor, ((ByteString) val).toByteArray());
           return;
         } else if (val instanceof JSONArray) {
-          try {
-            byte[] bytes = new byte[((JSONArray) val).length()];
-            for (int j = 0; j < ((JSONArray) val).length(); j++) {
-              bytes[j] = (byte) ((JSONArray) val).getInt(j);
-              if (bytes[j] != ((JSONArray) val).getInt(j)) {
-                throw new IllegalArgumentException(
-                    String.format(
-                        "Error: "
-                            + currentScope
-                            + "["
-                            + j
-                            + "] could not be converted to byte[]."));
-              }
+          byte[] bytes = new byte[((JSONArray) val).length()];
+          for (int j = 0; j < ((JSONArray) val).length(); j++) {
+            bytes[j] = (byte) ((JSONArray) val).getInt(j);
+            if (bytes[j] != ((JSONArray) val).getInt(j)) {
+              throw new IllegalArgumentException(
+                  String.format(
+                      "Error: " + currentScope + "[" + j + "] could not be converted to byte[]."));
             }
-            protoMsg.setField(fieldDescriptor, bytes);
-            return;
-          } catch (JSONException e) {
-            throw new IllegalArgumentException(
-                String.format("Error: " + currentScope + "could not be converted to byte[]."));
           }
+          protoMsg.setField(fieldDescriptor, bytes);
+          return;
         }
         break;
       case INT64:

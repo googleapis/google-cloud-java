@@ -1226,4 +1226,53 @@ public class JsonToProtoMessageTest {
         JsonToProtoMessage.convertJsonToProtoMessage(TestInt64.getDescriptor(), json);
     assertEquals(expectedProto, protoMsg);
   }
+
+  @Test
+  public void testBadJsonFieldRepeated() throws Exception {
+    TableSchema ts =
+        TableSchema.newBuilder()
+            .addFields(
+                0,
+                TableFieldSchema.newBuilder()
+                    .setName("test_repeated")
+                    .setType(TableFieldSchema.Type.NUMERIC)
+                    .setMode(TableFieldSchema.Mode.REPEATED)
+                    .build())
+            .build();
+    JSONObject json = new JSONObject();
+    json.put("test_repeated", new JSONArray(new String[] {"123", "blah"}));
+
+    try {
+      DynamicMessage protoMsg =
+          JsonToProtoMessage.convertJsonToProtoMessage(RepeatedBytes.getDescriptor(), ts, json);
+      Assert.fail("Should fail");
+    } catch (Exceptions.FieldParseError ex) {
+      assertEquals(ex.getBqType(), "NUMERIC");
+      assertEquals(ex.getFieldName(), "root.test_repeated");
+    }
+  }
+
+  @Test
+  public void testBadJsonFieldIntRepeated() throws Exception {
+    TableSchema ts =
+        TableSchema.newBuilder()
+            .addFields(
+                0,
+                TableFieldSchema.newBuilder()
+                    .setName("test_repeated")
+                    .setType(TableFieldSchema.Type.DATE)
+                    .setMode(TableFieldSchema.Mode.REPEATED)
+                    .build())
+            .build();
+    JSONObject json = new JSONObject();
+    json.put("test_repeated", new JSONArray(new String[] {"blah"}));
+
+    try {
+      DynamicMessage protoMsg =
+          JsonToProtoMessage.convertJsonToProtoMessage(RepeatedInt32.getDescriptor(), ts, json);
+      Assert.fail("Should fail");
+    } catch (IllegalArgumentException ex) {
+      assertEquals(ex.getMessage(), "Text 'blah' could not be parsed at index 0");
+    }
+  }
 }

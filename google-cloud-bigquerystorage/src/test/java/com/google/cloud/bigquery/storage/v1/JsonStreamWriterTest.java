@@ -29,6 +29,7 @@ import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.cloud.bigquery.storage.test.JsonTest;
+import com.google.cloud.bigquery.storage.test.SchemaTest;
 import com.google.cloud.bigquery.storage.test.Test.FooType;
 import com.google.cloud.bigquery.storage.test.Test.UpdatedFooType;
 import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializtionError;
@@ -639,7 +640,46 @@ public class JsonStreamWriterTest {
             "JSONObject has fields unknown to BigQuery: root.not_foo.",
             rowIndexToErrorMessage.get(0));
         assertEquals(
-            "JSONObject does not have a string field at root.foo.", rowIndexToErrorMessage.get(2));
+            "Field root.foo failed to convert to STRING. Error: JSONObject does not have a string field at root.foo.",
+            rowIndexToErrorMessage.get(2));
+      }
+    }
+  }
+
+  @Test
+  public void testBadStringToNumericRowError()
+      throws DescriptorValidationException, IOException, InterruptedException {
+    TableSchema TABLE_SCHEMA =
+        TableSchema.newBuilder()
+            .addFields(
+                0,
+                TableFieldSchema.newBuilder()
+                    .setName("test_field_type")
+                    .setType(TableFieldSchema.Type.NUMERIC)
+                    .setMode(TableFieldSchema.Mode.NULLABLE)
+                    .build())
+            .build();
+    SchemaTest.StringType expectedProto =
+        SchemaTest.StringType.newBuilder().setTestFieldType("allen").build();
+    JSONObject foo = new JSONObject();
+    // put a field which is not part of the expected schema
+    foo.put("test_field_type", "allen");
+    JSONArray jsonArr = new JSONArray();
+    jsonArr.put(foo);
+
+    try (JsonStreamWriter writer =
+        getTestJsonStreamWriterBuilder(TEST_STREAM, TABLE_SCHEMA).build()) {
+      try {
+        ApiFuture<AppendRowsResponse> appendFuture = writer.append(jsonArr);
+        Assert.fail("expected AppendSerializtionError");
+      } catch (AppendSerializtionError appendSerializtionError) {
+        Map<Integer, String> rowIndexToErrorMessage =
+            appendSerializtionError.getRowIndexToErrorMessage();
+        assertEquals(1, rowIndexToErrorMessage.size());
+        assertTrue(
+            rowIndexToErrorMessage
+                .get(0)
+                .startsWith("Field root.test_field_type failed to convert to NUMERIC. Error:"));
       }
     }
   }
