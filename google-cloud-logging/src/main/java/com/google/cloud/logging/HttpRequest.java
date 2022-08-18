@@ -21,6 +21,7 @@ import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Strings;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.Serializable;
 import java.util.Objects;
 import org.threeten.bp.Duration;
@@ -134,6 +135,7 @@ public final class HttpRequest implements Serializable {
     }
 
     /** Sets the HTTP request method. */
+    @CanIgnoreReturnValue
     public Builder setRequestMethod(RequestMethod requestMethod) {
       this.requestMethod = requestMethod;
       return this;
@@ -144,6 +146,7 @@ public final class HttpRequest implements Serializable {
      * host name, the path and the query portion of the URL that was requested. Example: {@code
      * http://example.com/some/info?color=red}.
      */
+    @CanIgnoreReturnValue
     public Builder setRequestUrl(String requestUrl) {
       this.requestUrl = requestUrl;
       return this;
@@ -153,12 +156,14 @@ public final class HttpRequest implements Serializable {
      * Sets the size of the HTTP request message in bytes, including the request headers and the
      * request body.
      */
+    @CanIgnoreReturnValue
     public Builder setRequestSize(long requestSize) {
       this.requestSize = requestSize;
       return this;
     }
 
     /** Sets the response code indicating the status of response. */
+    @CanIgnoreReturnValue
     public Builder setStatus(int status) {
       this.status = status;
       return this;
@@ -168,6 +173,7 @@ public final class HttpRequest implements Serializable {
      * Sets the size of the HTTP response message sent back to the client, in bytes, including the
      * response headers and the response body.
      */
+    @CanIgnoreReturnValue
     public Builder setResponseSize(long responseSize) {
       this.responseSize = responseSize;
       return this;
@@ -177,6 +183,7 @@ public final class HttpRequest implements Serializable {
      * Sets the user agent sent by the client. Example: {@code Mozilla/4.0 (compatible; MSIE 6.0;
      * Windows 98; Q312461; .NET CLR 1.0.3705)}.
      */
+    @CanIgnoreReturnValue
     public Builder setUserAgent(String userAgent) {
       this.userAgent = userAgent;
       return this;
@@ -186,6 +193,7 @@ public final class HttpRequest implements Serializable {
      * Sets the IP address (IPv4 or IPv6) of the client that issued the HTTP request. Examples:
      * {@code 192.168.1.1}, {@code FE80::0202:B3FF:FE1E:8329}.
      */
+    @CanIgnoreReturnValue
     public Builder setRemoteIp(String remoteIp) {
       this.remoteIp = remoteIp;
       return this;
@@ -195,6 +203,7 @@ public final class HttpRequest implements Serializable {
      * Sets the IP address (IPv4 or IPv6) of the origin server that the request was sent to.
      * Examples: {@code 192.168.1.1}, {@code FE80::0202:B3FF:FE1E:8329}.
      */
+    @CanIgnoreReturnValue
     public Builder setServerIp(String serverIp) {
       this.serverIp = serverIp;
       return this;
@@ -206,12 +215,14 @@ public final class HttpRequest implements Serializable {
      * @see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">HTTP/1.1 Header Field
      *     Definitions</a>
      */
+    @CanIgnoreReturnValue
     public Builder setReferer(String referer) {
       this.referer = referer;
       return this;
     }
 
     /** Sets whether or not a cache lookup was attempted. If not set, {@code false} is used. */
+    @CanIgnoreReturnValue
     public Builder setCacheLookup(boolean cacheLookup) {
       this.cacheLookup = cacheLookup;
       return this;
@@ -221,6 +232,7 @@ public final class HttpRequest implements Serializable {
      * Sets whether or not an entity was served from cache (with or without validation). If not set,
      * {@code false} is used.
      */
+    @CanIgnoreReturnValue
     public Builder setCacheHit(boolean cacheHit) {
       this.cacheHit = cacheHit;
       return this;
@@ -231,6 +243,7 @@ public final class HttpRequest implements Serializable {
      * from cache. This field is only meaningful if {@link #setCacheHit(boolean)} is set to {@code
      * true}. If not set, {@code false} is used.
      */
+    @CanIgnoreReturnValue
     public Builder setCacheValidatedWithOriginServer(boolean cacheValidatedWithOriginServer) {
       this.cacheValidatedWithOriginServer = cacheValidatedWithOriginServer;
       return this;
@@ -240,6 +253,7 @@ public final class HttpRequest implements Serializable {
      * Sets the number of HTTP response bytes inserted into cache. Set only when a cache fill was
      * attempted.
      */
+    @CanIgnoreReturnValue
     public Builder setCacheFillBytes(long cacheFillBytes) {
       this.cacheFillBytes = cacheFillBytes;
       return this;
@@ -249,6 +263,7 @@ public final class HttpRequest implements Serializable {
      * Sets the latency on the server, from the time the request was received until the response was
      * sent.
      */
+    @CanIgnoreReturnValue
     public Builder setLatency(Duration latency) {
       this.latency = latency;
       return this;

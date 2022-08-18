@@ -19,6 +19,7 @@ package com.google.cloud.logging;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import com.google.logging.v2.LogEntryOperation;
 import java.io.Serializable;
 import java.util.Objects;
@@ -64,6 +65,7 @@ public final class Operation implements Serializable {
      * Sets the operation identifier. Log entries with the same identifier are assumed to be part of
      * the same operation. The combination of id and producer must be globally unique.
      */
+    @CanIgnoreReturnValue
     public Builder setId(String id) {
       this.id = id;
       return this;
@@ -74,6 +76,7 @@ public final class Operation implements Serializable {
      * unique. Examples: {@code MyDivision.MyBigCompany.com}, {@code
      * github.com/MyProject/MyApplication}.
      */
+    @CanIgnoreReturnValue
     public Builder setProducer(String producer) {
       this.producer = producer;
       return this;
@@ -83,6 +86,7 @@ public final class Operation implements Serializable {
      * Sets whether the corresponding entry is the first log entry in the operation. If not set,
      * {@code false} is used.
      */
+    @CanIgnoreReturnValue
     public Builder setFirst(boolean first) {
       this.first = first;
       return this;
@@ -92,6 +96,7 @@ public final class Operation implements Serializable {
      * Sets whether the corresponding entry is the last log entry in the operation. If not set,
      * {@code false} is used.
      */
+    @CanIgnoreReturnValue
     public Builder setLast(boolean last) {
       this.last = last;
       return this;
@@ -155,8 +160,8 @@ public final class Operation implements Serializable {
     Operation other = (Operation) obj;
     return Objects.equals(id, other.id)
         && Objects.equals(producer, other.producer)
-        && Objects.equals(first, other.first)
-        && Objects.equals(last, other.last);
+        && (first == other.first)
+        && (last == other.last);
   }
 
   @Override

@@ -20,10 +20,12 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.ApiFuture;
 import com.google.common.base.Function;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import com.google.logging.v2.LogSink;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Objects;
+import org.jspecify.nullness.Nullable;
 
 /**
  * Cloud Logging sinks can be used to control the export of your logs. Each sink specifies the
@@ -61,24 +63,28 @@ public class Sink extends SinkInfo {
     }
 
     @Override
+    @CanIgnoreReturnValue
     public Builder setName(String name) {
       delegate.setName(name);
       return this;
     }
 
     @Override
+    @CanIgnoreReturnValue
     public Builder setDestination(Destination destination) {
       delegate.setDestination(destination);
       return this;
     }
 
     @Override
+    @CanIgnoreReturnValue
     public Builder setFilter(String filter) {
       delegate.setFilter(filter);
       return this;
     }
 
     @Override
+    @CanIgnoreReturnValue
     public Builder setVersionFormat(VersionFormat versionFormat) {
       delegate.setVersionFormat(versionFormat);
       return this;
@@ -263,7 +269,7 @@ public class Sink extends SinkInfo {
   static Function<LogSink, Sink> fromPbFunction(final Logging logging) {
     return new Function<LogSink, Sink>() {
       @Override
-      public Sink apply(LogSink sinkPb) {
+      public @Nullable Sink apply(LogSink sinkPb) {
         return sinkPb != null ? fromPb(logging, sinkPb) : null;
       }
     };

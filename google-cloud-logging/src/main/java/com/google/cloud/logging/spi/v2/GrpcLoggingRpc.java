@@ -188,8 +188,7 @@ public class GrpcLoggingRpc implements LoggingRpc {
     }
   }
 
-  private static <V> ApiFuture<V> translate(
-      ApiFuture<V> from, final boolean idempotent, StatusCode.Code... returnNullOn) {
+  private static <V> ApiFuture<V> translate(ApiFuture<V> from, StatusCode.Code... returnNullOn) {
     final Set<StatusCode.Code> returnNullOnSet;
     if (returnNullOn.length > 0) {
       returnNullOnSet = EnumSet.of(returnNullOn[0], returnNullOn);
@@ -213,79 +212,76 @@ public class GrpcLoggingRpc implements LoggingRpc {
 
   @Override
   public ApiFuture<LogSink> create(CreateSinkRequest request) {
-    return translate(configClient.createSinkCallable().futureCall(request), true);
+    return translate(configClient.createSinkCallable().futureCall(request));
   }
 
   @Override
   public ApiFuture<LogSink> update(UpdateSinkRequest request) {
-    return translate(configClient.updateSinkCallable().futureCall(request), true);
+    return translate(configClient.updateSinkCallable().futureCall(request));
   }
 
   @Override
   public ApiFuture<LogSink> get(GetSinkRequest request) {
-    return translate(
-        configClient.getSinkCallable().futureCall(request), true, StatusCode.Code.NOT_FOUND);
+    return translate(configClient.getSinkCallable().futureCall(request), StatusCode.Code.NOT_FOUND);
   }
 
   @Override
   public ApiFuture<ListSinksResponse> list(ListSinksRequest request) {
-    return translate(configClient.listSinksCallable().futureCall(request), true);
+    return translate(configClient.listSinksCallable().futureCall(request));
   }
 
   @Override
   public ApiFuture<Empty> delete(DeleteSinkRequest request) {
     return translate(
-        configClient.deleteSinkCallable().futureCall(request), true, StatusCode.Code.NOT_FOUND);
+        configClient.deleteSinkCallable().futureCall(request), StatusCode.Code.NOT_FOUND);
   }
 
   @Override
   public ApiFuture<LogExclusion> create(CreateExclusionRequest request) {
-    return translate(configClient.createExclusionCallable().futureCall(request), true);
+    return translate(configClient.createExclusionCallable().futureCall(request));
   }
 
   @Override
   public ApiFuture<LogExclusion> get(GetExclusionRequest request) {
     return translate(
-        configClient.getExclusionCallable().futureCall(request), true, StatusCode.Code.NOT_FOUND);
+        configClient.getExclusionCallable().futureCall(request), StatusCode.Code.NOT_FOUND);
   }
 
   @Override
   public ApiFuture<LogExclusion> update(UpdateExclusionRequest request) {
-    return translate(configClient.updateExclusionCallable().futureCall(request), true);
+    return translate(configClient.updateExclusionCallable().futureCall(request));
   }
 
   @Override
   public ApiFuture<ListExclusionsResponse> list(ListExclusionsRequest request) {
-    return translate(configClient.listExclusionsCallable().futureCall(request), true);
+    return translate(configClient.listExclusionsCallable().futureCall(request));
   }
 
   @Override
   public ApiFuture<Empty> delete(DeleteExclusionRequest request) {
     return translate(
-        configClient.deleteExclusionCallable().futureCall(request),
-        true,
-        StatusCode.Code.NOT_FOUND);
+        configClient.deleteExclusionCallable().futureCall(request), StatusCode.Code.NOT_FOUND);
   }
 
   @Override
   public ApiFuture<ListLogsResponse> listLogs(ListLogsRequest request) {
-    return translate(loggingClient.listLogsCallable().futureCall(request), true);
+    return translate(loggingClient.listLogsCallable().futureCall(request));
   }
 
   @Override
   public ApiFuture<Empty> delete(DeleteLogRequest request) {
     return translate(
-        loggingClient.deleteLogCallable().futureCall(request), true, StatusCode.Code.NOT_FOUND);
+        loggingClient.deleteLogCallable().futureCall(request), StatusCode.Code.NOT_FOUND);
   }
 
   @Override
   public ApiFuture<WriteLogEntriesResponse> write(WriteLogEntriesRequest request) {
-    return translate(loggingClient.writeLogEntriesCallable().futureCall(request), false);
+    return translate(loggingClient.writeLogEntriesCallable().futureCall(request));
   }
 
   @Override
   public ApiFuture<ListLogEntriesResponse> list(ListLogEntriesRequest request) {
-    return translate(loggingClient.listLogEntriesCallable().futureCall(request), true);
+    return translate(loggingClient.listLogEntriesCallable().futureCall(request));
   }
 
   @Override
@@ -296,37 +292,34 @@ public class GrpcLoggingRpc implements LoggingRpc {
   @Override
   public ApiFuture<ListMonitoredResourceDescriptorsResponse> list(
       ListMonitoredResourceDescriptorsRequest request) {
-    return translate(
-        loggingClient.listMonitoredResourceDescriptorsCallable().futureCall(request), true);
+    return translate(loggingClient.listMonitoredResourceDescriptorsCallable().futureCall(request));
   }
 
   @Override
   public ApiFuture<LogMetric> create(CreateLogMetricRequest request) {
-    return translate(metricsClient.createLogMetricCallable().futureCall(request), true);
+    return translate(metricsClient.createLogMetricCallable().futureCall(request));
   }
 
   @Override
   public ApiFuture<LogMetric> update(UpdateLogMetricRequest request) {
-    return translate(metricsClient.updateLogMetricCallable().futureCall(request), true);
+    return translate(metricsClient.updateLogMetricCallable().futureCall(request));
   }
 
   @Override
   public ApiFuture<LogMetric> get(GetLogMetricRequest request) {
     return translate(
-        metricsClient.getLogMetricCallable().futureCall(request), true, StatusCode.Code.NOT_FOUND);
+        metricsClient.getLogMetricCallable().futureCall(request), StatusCode.Code.NOT_FOUND);
   }
 
   @Override
   public ApiFuture<ListLogMetricsResponse> list(ListLogMetricsRequest request) {
-    return translate(metricsClient.listLogMetricsCallable().futureCall(request), true);
+    return translate(metricsClient.listLogMetricsCallable().futureCall(request));
   }
 
   @Override
   public ApiFuture<Empty> delete(DeleteLogMetricRequest request) {
     return translate(
-        metricsClient.deleteLogMetricCallable().futureCall(request),
-        true,
-        StatusCode.Code.NOT_FOUND);
+        metricsClient.deleteLogMetricCallable().futureCall(request), StatusCode.Code.NOT_FOUND);
   }
 
   @Override

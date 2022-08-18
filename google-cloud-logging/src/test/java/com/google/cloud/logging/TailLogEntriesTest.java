@@ -80,7 +80,6 @@ public class TailLogEntriesTest {
     // setup
     LoggingRpcFactory rpcFactoryMock = EasyMock.createStrictMock(LoggingRpcFactory.class);
     LoggingRpc loggingRpcMock = EasyMock.createStrictMock(LoggingRpc.class);
-    @SuppressWarnings("unchecked")
     BidiStream<TailLogEntriesRequest, TailLogEntriesResponse> bidiStreamMock =
         EasyMock.createStrictMock(BidiStream.class);
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(LoggingOptions.class)))

@@ -27,6 +27,7 @@ import com.google.cloud.logging.spi.v2.GrpcLoggingRpc;
 import com.google.cloud.logging.spi.v2.LoggingRpc;
 import com.google.cloud.logging.v2.LoggingSettings;
 import com.google.common.collect.ImmutableSet;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
 import java.util.Set;
 
@@ -91,6 +92,7 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingOptions> {
       return super.setTransportOptions(transportOptions);
     }
 
+    @CanIgnoreReturnValue
     public Builder setAutoPopulateMetadata(boolean autoPopulateMetadataOnWrite) {
       this.autoPopulateMetadataOnWrite = autoPopulateMetadataOnWrite;
       return this;

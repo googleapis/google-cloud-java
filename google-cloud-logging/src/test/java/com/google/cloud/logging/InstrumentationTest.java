@@ -51,8 +51,7 @@ public class InstrumentationTest {
         1,
         2,
         new HashSet<>(Arrays.asList(Instrumentation.JAVA_LIBRARY_NAME_PREFIX)),
-        new HashSet<>(
-            Arrays.asList(Instrumentation.getLibraryVersion(Instrumentation.class.getClass()))));
+        new HashSet<>(Arrays.asList(Instrumentation.getLibraryVersion(Instrumentation.class))));
   }
 
   @Test
@@ -62,7 +61,7 @@ public class InstrumentationTest {
         Instrumentation.populateInstrumentationInfo(ImmutableList.of(STRING_ENTRY));
     ArrayList<LogEntry> entries = Lists.newArrayList(pair.y());
     Assert.assertFalse(pair.x());
-    Assert.assertEquals(entries.size(), 1);
+    Assert.assertEquals(1, entries.size());
     Assert.assertTrue(entries.get(0).getPayload().getType() == Type.STRING);
   }
 
@@ -79,8 +78,7 @@ public class InstrumentationTest {
         new HashSet<>(Arrays.asList(Instrumentation.JAVA_LIBRARY_NAME_PREFIX, JAVA_OTHER_NAME)),
         new HashSet<>(
             Arrays.asList(
-                Instrumentation.getLibraryVersion(Instrumentation.class.getClass()),
-                JAVA_OTHER_VERSION)));
+                Instrumentation.getLibraryVersion(Instrumentation.class), JAVA_OTHER_VERSION)));
   }
 
   @Test
@@ -94,8 +92,7 @@ public class InstrumentationTest {
         0,
         1,
         new HashSet<>(Arrays.asList(Instrumentation.JAVA_LIBRARY_NAME_PREFIX)),
-        new HashSet<>(
-            Arrays.asList(Instrumentation.getLibraryVersion(Instrumentation.class.getClass()))));
+        new HashSet<>(Arrays.asList(Instrumentation.getLibraryVersion(Instrumentation.class))));
   }
 
   public static JsonPayload generateInstrumentationPayload(
@@ -119,7 +116,7 @@ public class InstrumentationTest {
       HashSet<String> versions) {
     ArrayList<LogEntry> entries = Lists.newArrayList(pair.y());
     Assert.assertTrue(pair.x());
-    Assert.assertEquals(entries.size(), expected);
+    Assert.assertEquals(expected, entries.size());
     Assert.assertTrue(entries.get(index).getPayload().getType() == Type.JSON);
     ListValue infoList =
         entries
@@ -142,7 +139,7 @@ public class InstrumentationTest {
                   .getFieldsOrThrow(Instrumentation.INSTRUMENTATION_VERSION_KEY)
                   .getStringValue()));
     }
-    Assert.assertEquals(names.size(), 0);
-    Assert.assertEquals(versions.size(), 0);
+    Assert.assertEquals(0, names.size());
+    Assert.assertEquals(0, versions.size());
   }
 }

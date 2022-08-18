@@ -21,6 +21,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.logging.v2.LogName;
 import java.util.Map;
+import org.jspecify.nullness.Nullable;
 
 /**
  * Class for specifying resource name of the log to which this log entry belongs (see 'logName'
@@ -87,7 +88,7 @@ public final class LogDestinationName extends Option {
   }
 
   /** Creates a {@code LogEntry} object for given log ID. */
-  public LogName toLogName(String logId) {
+  public @Nullable LogName toLogName(String logId) {
     if (logId == null) {
       return null;
     }
@@ -120,7 +121,7 @@ public final class LogDestinationName extends Option {
   }
 
   /** Creates a {@code LogDestinationName} object from given {@code LogName}. */
-  public static LogDestinationName fromLogName(LogName logName) {
+  public static @Nullable LogDestinationName fromLogName(LogName logName) {
     if (logName == null) {
       return null;
     }

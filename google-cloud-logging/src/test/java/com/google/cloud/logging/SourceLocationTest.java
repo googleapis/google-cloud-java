@@ -88,11 +88,6 @@ public class SourceLocationTest {
     assertEquals(Long.valueOf(expectedData.getLineNumber() + 1), data.getLine());
   }
 
-  public void testFromCurrentContextWithNegativeLevel() {
-    SourceLocation data = SourceLocation.fromCurrentContext((String[]) null);
-    assertNull(data);
-  }
-
   @Test
   public void testFromCurrentContextWithVeryLargeLevel() {
     SourceLocation data =

@@ -18,10 +18,12 @@ package com.google.cloud.logging;
 
 import com.google.api.client.util.Strings;
 import com.google.common.base.MoreObjects;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import com.google.logging.v2.LogEntrySourceLocation;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Objects;
+import org.jspecify.nullness.Nullable;
 
 /** Additional information about the source code location that produced the log entry. */
 public final class SourceLocation implements Serializable {
@@ -55,12 +57,14 @@ public final class SourceLocation implements Serializable {
      * Sets the source file name. Depending on the runtime environment, this might be a simple name
      * or a fully-qualified name.
      */
+    @CanIgnoreReturnValue
     public Builder setFile(String file) {
       this.file = file;
       return this;
     }
 
     /** Sets the line within the source file. 1-based; 0 indicates no line number available. */
+    @CanIgnoreReturnValue
     public Builder setLine(Long line) {
       this.line = line;
       return this;
@@ -71,6 +75,7 @@ public final class SourceLocation implements Serializable {
      * such as the class or package name. This information may be used in contexts such as the logs
      * viewer, where a file and line number are less meaningful. The format can vary by language.
      */
+    @CanIgnoreReturnValue
     public Builder setFunction(String function) {
       this.function = function;
       return this;
@@ -168,7 +173,7 @@ public final class SourceLocation implements Serializable {
    * @return a new instance of {@link SourceLocation} populated with file name, method and line
    *     number information.
    */
-  static SourceLocation fromCurrentContext(String... exclusionClassPaths) {
+  static @Nullable SourceLocation fromCurrentContext(String... exclusionClassPaths) {
     StackTraceElement[] stackTrace = (new Exception()).getStackTrace();
 
     for (int level = 1; level < stackTrace.length; level++) {

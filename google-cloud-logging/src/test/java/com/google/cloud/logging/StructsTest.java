@@ -190,7 +190,8 @@ public class StructsTest {
             "int", intNumber, "long", longNumber, "float", floatNumber, "double", doubleNumber);
     Struct struct = Structs.newStruct(map);
     checkStructField(struct, "int", Value.newBuilder().setNumberValue(intNumber).build());
-    checkStructField(struct, "long", Value.newBuilder().setNumberValue(longNumber).build());
+    checkStructField(
+        struct, "long", Value.newBuilder().setNumberValue((double) longNumber).build());
     checkStructField(struct, "float", Value.newBuilder().setNumberValue(floatNumber).build());
     checkStructField(struct, "double", Value.newBuilder().setNumberValue(doubleNumber).build());
     Map<String, Object> convertedMap = Structs.asMap(struct);

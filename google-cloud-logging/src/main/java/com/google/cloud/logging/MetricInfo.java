@@ -19,6 +19,7 @@ package com.google.cloud.logging;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import com.google.logging.v2.LogMetric;
 import java.io.Serializable;
 import java.util.Objects;
@@ -85,18 +86,21 @@ public class MetricInfo implements Serializable {
       this.filter = metric.filter;
     }
 
+    @CanIgnoreReturnValue
     @Override
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    @CanIgnoreReturnValue
     @Override
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    @CanIgnoreReturnValue
     @Override
     public Builder setFilter(String filter) {
       this.filter = filter;

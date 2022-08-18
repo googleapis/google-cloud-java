@@ -23,6 +23,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.function.Supplier;
+import org.jspecify.nullness.Nullable;
 
 public final class MetadataLoader {
   public static final String ENV_FLEXIBLE = "flex";
@@ -62,7 +63,7 @@ public final class MetadataLoader {
    * @param label A resource metadata label of type {@see MonitoredResourceUtil.Label}
    * @return A string with metadata value or {@code null} if the label is not supported.
    */
-  public String getValue(MonitoredResourceUtil.Label label) {
+  public @Nullable String getValue(MonitoredResourceUtil.Label label) {
     Supplier<String> lambda = labelResolvers.get(label);
     if (lambda != null) {
       return lambda.get();
@@ -173,7 +174,7 @@ public final class MetadataLoader {
    *
    * @return region string id
    */
-  private String getRegion() {
+  private @Nullable String getRegion() {
     String loc = getter.getAttribute("instance/region");
     if (loc != null) {
       return loc.substring(loc.lastIndexOf('/') + 1);
@@ -197,7 +198,7 @@ public final class MetadataLoader {
    *
    * @return zone string id
    */
-  private String getZone() {
+  private @Nullable String getZone() {
     String loc = getter.getAttribute("instance/zone");
     if (loc != null) {
       return loc.substring(loc.lastIndexOf('/') + 1);

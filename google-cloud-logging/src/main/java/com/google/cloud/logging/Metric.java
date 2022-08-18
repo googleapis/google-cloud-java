@@ -20,10 +20,12 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.ApiFuture;
 import com.google.common.base.Function;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import com.google.logging.v2.LogMetric;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Objects;
+import org.jspecify.nullness.Nullable;
 
 /**
  * Cloud Logging metrics describe logs-based metric. The value of the metric is the number of log
@@ -55,18 +57,21 @@ public class Metric extends MetricInfo {
     }
 
     @Override
+    @CanIgnoreReturnValue
     public Builder setName(String name) {
       delegate.setName(name);
       return this;
     }
 
     @Override
+    @CanIgnoreReturnValue
     public Builder setDescription(String description) {
       delegate.setDescription(description);
       return this;
     }
 
     @Override
+    @CanIgnoreReturnValue
     public Builder setFilter(String filter) {
       delegate.setFilter(filter);
       return this;
@@ -251,7 +256,7 @@ public class Metric extends MetricInfo {
   static Function<LogMetric, Metric> fromPbFunction(final Logging logging) {
     return new Function<LogMetric, Metric>() {
       @Override
-      public Metric apply(LogMetric metricPb) {
+      public @Nullable Metric apply(LogMetric metricPb) {
         return metricPb != null ? fromPb(logging, metricPb) : null;
       }
     };

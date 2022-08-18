@@ -19,9 +19,11 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import com.google.logging.v2.LogExclusion;
 import com.google.protobuf.Timestamp;
 import java.util.Objects;
+import org.jspecify.nullness.Nullable;
 
 /**
  * Specifies a set of log entries that are not to be stored in Logging. If your GCP resource
@@ -35,7 +37,7 @@ public class Exclusion {
   static final Function<LogExclusion, Exclusion> FROM_PROTOBUF_FUNCTION =
       new Function<LogExclusion, Exclusion>() {
         @Override
-        public Exclusion apply(LogExclusion exclusionPb) {
+        public @Nullable Exclusion apply(LogExclusion exclusionPb) {
           return exclusionPb != null ? Exclusion.fromProtobuf(exclusionPb) : null;
         }
       };
@@ -43,7 +45,7 @@ public class Exclusion {
   static final Function<Exclusion, LogExclusion> TO_PROTOBUF_FUNCTION =
       new Function<Exclusion, LogExclusion>() {
         @Override
-        public LogExclusion apply(Exclusion exclusion) {
+        public @Nullable LogExclusion apply(Exclusion exclusion) {
           return exclusion != null ? exclusion.toProtobuf() : null;
         }
       };
@@ -84,12 +86,14 @@ public class Exclusion {
      * limited to 100 characters and can include only letters, digits, underscores, hyphens, and
      * periods. First character has to be alphanumeric.
      */
+    @CanIgnoreReturnValue
     public Builder setName(String name) {
       this.name = checkNotNull(name);
       return this;
     }
 
     /** [Optional] A description of this exclusion. */
+    @CanIgnoreReturnValue
     public Builder setDescription(String description) {
       this.description = description;
       return this;
@@ -99,6 +103,7 @@ public class Exclusion {
      * [Required] An advanced logs filter that matches the log entries to be excluded. By using the
      * sample function, you can exclude less than 100% of the matching log entries.
      */
+    @CanIgnoreReturnValue
     public Builder setFilter(String filter) {
       this.filter = checkNotNull(filter);
       return this;
@@ -108,18 +113,21 @@ public class Exclusion {
      * [Optional] If set to True, then this exclusion is disabled and it does not exclude any log
      * entries.
      */
+    @CanIgnoreReturnValue
     public Builder setDisabled(boolean disabled) {
       this.disabled = disabled;
       return this;
     }
 
     /** [Output only] The creation timestamp of the exclusion. */
+    @CanIgnoreReturnValue
     public Builder setCreateTime(Timestamp createTime) {
       this.createTime = createTime;
       return this;
     }
 
     /** [Output only] The last update timestamp of the exclusion. */
+    @CanIgnoreReturnValue
     public Builder setUpdateTime(Timestamp updateTime) {
       this.updateTime = updateTime;
       return this;

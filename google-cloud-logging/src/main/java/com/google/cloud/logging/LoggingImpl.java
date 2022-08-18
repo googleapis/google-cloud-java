@@ -92,6 +92,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import org.jspecify.nullness.Nullable;
 
 class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   protected static final String RESOURCE_NAME_FORMAT = "projects/%s/traces/%s";
@@ -348,7 +349,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
           @Override
           public AsyncPage<Sink> apply(ListSinksResponse listSinksResponse) {
             List<Sink> sinks =
-                listSinksResponse.getSinksList() == null
+                listSinksResponse.getSinksList().isEmpty()
                     ? ImmutableList.<Sink>of()
                     : Lists.transform(
                         listSinksResponse.getSinksList(),
@@ -422,7 +423,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
           @Override
           public AsyncPage<String> apply(ListLogsResponse listLogsResponse) {
             List<String> logNames =
-                listLogsResponse.getLogNamesList() == null
+                listLogsResponse.getLogNamesList().isEmpty()
                     ? ImmutableList.<String>of()
                     : listLogsResponse.getLogNamesList();
             String cursor =
@@ -500,7 +501,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
           public AsyncPage<MonitoredResourceDescriptor> apply(
               ListMonitoredResourceDescriptorsResponse listDescriptorsResponse) {
             List<MonitoredResourceDescriptor> descriptors =
-                listDescriptorsResponse.getResourceDescriptorsList() == null
+                listDescriptorsResponse.getResourceDescriptorsList().isEmpty()
                     ? ImmutableList.<MonitoredResourceDescriptor>of()
                     : Lists.transform(
                         listDescriptorsResponse.getResourceDescriptorsList(),
@@ -606,7 +607,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
           @Override
           public AsyncPage<Metric> apply(ListLogMetricsResponse listMetricsResponse) {
             List<Metric> metrics =
-                listMetricsResponse.getMetricsList() == null
+                listMetricsResponse.getMetricsList().isEmpty()
                     ? ImmutableList.<Metric>of()
                     : Lists.transform(
                         listMetricsResponse.getMetricsList(),
@@ -739,7 +740,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
           @Override
           public AsyncPage<Exclusion> apply(ListExclusionsResponse listExclusionsResponse) {
             List<Exclusion> exclusions =
-                listExclusionsResponse.getExclusionsList() == null
+                listExclusionsResponse.getExclusionsList().isEmpty()
                     ? ImmutableList.<Exclusion>of()
                     : Lists.transform(
                         listExclusionsResponse.getExclusionsList(),
@@ -780,7 +781,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     return builder.build();
   }
 
-  private static LogName getLogName(
+  private static @Nullable LogName getLogName(
       String projectId, String logName, LogDestinationName destination) {
     if (logName == null) {
       return null;
@@ -899,7 +900,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
    * @param resource A {@see MonitoredResource} describing environment metadata.
    * @return A formatted trace id string.
    */
-  private String getFormattedTrace(String traceId, MonitoredResource resource) {
+  private @Nullable String getFormattedTrace(String traceId, MonitoredResource resource) {
     if (traceId == null) {
       return null;
     }
@@ -1023,7 +1024,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
           @Override
           public AsyncPage<LogEntry> apply(ListLogEntriesResponse listLogEntriesResponse) {
             List<LogEntry> entries =
-                listLogEntriesResponse.getEntriesList() == null
+                listLogEntriesResponse.getEntriesList().isEmpty()
                     ? ImmutableList.<LogEntry>of()
                     : Lists.transform(
                         listLogEntriesResponse.getEntriesList(), LogEntry.FROM_PB_FUNCTION);
@@ -1105,7 +1106,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     rpc.close();
   }
 
-  static <T extends Option.OptionType> Map<Option.OptionType, ?> optionMap(Option... options) {
+  static Map<Option.OptionType, ?> optionMap(Option... options) {
     Map<Option.OptionType, Object> optionMap = Maps.newHashMap();
     for (Option option : options) {
       Object prev = optionMap.put(option.getOptionType(), option.getValue());

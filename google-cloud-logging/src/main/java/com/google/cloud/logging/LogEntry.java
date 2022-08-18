@@ -23,6 +23,7 @@ import com.google.cloud.logging.Payload.Type;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableMap;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
@@ -38,6 +39,7 @@ import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import org.jspecify.nullness.Nullable;
 
 /**
  * A Cloud Logging log entry. All log entries are represented via objects of this class. Log entries
@@ -124,6 +126,7 @@ public class LogEntry implements Serializable {
      * forward-slash ({@code /}) characters in the log name must be URL-encoded. Examples: {@code
      * syslog}, {@code library.googleapis.com%2Fbook_log}.
      */
+    @CanIgnoreReturnValue
     public Builder setLogName(String logName) {
       this.logName = logName;
       return this;
@@ -134,6 +137,7 @@ public class LogEntry implements Serializable {
      * a database error would be associated with the monitored resource designating the particular
      * database that reported the error.
      */
+    @CanIgnoreReturnValue
     public Builder setResource(MonitoredResource resource) {
       this.resource = resource;
       return this;
@@ -146,6 +150,7 @@ public class LogEntry implements Serializable {
      * @deprecated This method is no longer recommended to setup the entry timestamp.
      *     <p>Use {@link setTimeStamp(Instant)} instead.
      */
+    @CanIgnoreReturnValue
     @Deprecated
     public Builder setTimestamp(long milliseconds) {
       this.timestamp = Instant.ofEpochMilli(milliseconds);
@@ -156,6 +161,7 @@ public class LogEntry implements Serializable {
      * Sets the time at which the event described by the log entry occurred. If omitted, the Logging
      * service will use the time at which the log entry is received.
      */
+    @CanIgnoreReturnValue
     public Builder setTimestamp(Instant timestamp) {
       this.timestamp = timestamp;
       return this;
@@ -168,10 +174,10 @@ public class LogEntry implements Serializable {
      * @deprecated This method is no longer recommended to setup the receive time timestamp.
      *     <p>Use {@link setReceiveTimestamp(Instant)} instead.
      */
+    @CanIgnoreReturnValue
     @Deprecated
     public Builder setReceiveTimestamp(long milliseconds) {
       this.receiveTimestamp = Instant.ofEpochMilli(milliseconds);
-      ;
       return this;
     }
 
@@ -179,12 +185,14 @@ public class LogEntry implements Serializable {
      * Sets the time the log entry was received by Cloud Logging. If omitted, the Logging service
      * will set the time at which the log entry is received.
      */
+    @CanIgnoreReturnValue
     public Builder setReceiveTimestamp(Instant receiveTimestamp) {
       this.receiveTimestamp = receiveTimestamp;
       return this;
     }
 
     /** Sets the severity of the log entry. If not set, {@link Severity#DEFAULT} is used. */
+    @CanIgnoreReturnValue
     public Builder setSeverity(Severity severity) {
       this.severity = severity;
       return this;
@@ -195,12 +203,14 @@ public class LogEntry implements Serializable {
      * other log entries in the same log with the same ID as duplicates which can be removed. If
      * omitted, the Logging service will generate a unique ID for this log entry.
      */
+    @CanIgnoreReturnValue
     public Builder setInsertId(String insertId) {
       this.insertId = insertId;
       return this;
     }
 
     /** Sets information about the HTTP request associated with this log entry, if applicable. */
+    @CanIgnoreReturnValue
     public Builder setHttpRequest(HttpRequest httpRequest) {
       this.httpRequest = httpRequest;
       return this;
@@ -210,6 +220,7 @@ public class LogEntry implements Serializable {
      * Sets an optional set of user-defined (key, value) data that provides additional information
      * about the log entry.
      */
+    @CanIgnoreReturnValue
     public Builder setLabels(Map<String, String> labels) {
       this.labels = new HashMap<>(checkNotNull(labels));
       return this;
@@ -219,6 +230,7 @@ public class LogEntry implements Serializable {
      * Adds a label to the log entry's labels. Labels are user-defined (key, value) data that
      * provides additional information about the log entry.
      */
+    @CanIgnoreReturnValue
     public Builder addLabel(String key, String value) {
       this.labels.put(key, value);
       return this;
@@ -228,12 +240,14 @@ public class LogEntry implements Serializable {
      * Clears all the labels of the log entry. Labels are user-defined (key, value) data that
      * provides additional information about the log entry.
      */
+    @CanIgnoreReturnValue
     public Builder clearLabels() {
       this.labels.clear();
       return this;
     }
 
     /** Sets information about an operation associated with the log entry, if applicable. */
+    @CanIgnoreReturnValue
     public Builder setOperation(Operation operation) {
       this.operation = operation;
       return this;
@@ -243,6 +257,7 @@ public class LogEntry implements Serializable {
      * Sets the resource name of the trace associated with the log entry, if any. If it contains a
      * relative resource name, the name is assumed to be relative to `//tracing.googleapis.com`.
      */
+    @CanIgnoreReturnValue
     public Builder setTrace(String trace) {
       this.trace = trace;
       return this;
@@ -252,30 +267,35 @@ public class LogEntry implements Serializable {
      * Sets the resource name of the trace associated with the log entry, if any. If it contains a
      * relative resource name, the name is assumed to be relative to `//tracing.googleapis.com`.
      */
+    @CanIgnoreReturnValue
     public Builder setTrace(Object trace) {
       this.trace = trace != null ? trace.toString() : null;
       return this;
     }
 
     /** Sets the ID of the trace span associated with the log entry, if any. */
+    @CanIgnoreReturnValue
     public Builder setSpanId(String spanId) {
       this.spanId = spanId;
       return this;
     }
 
     /** Sets the ID of the trace span associated with the log entry, if any. */
+    @CanIgnoreReturnValue
     public Builder setSpanId(Object spanId) {
       this.spanId = spanId != null ? spanId.toString() : null;
       return this;
     }
 
     /** Sets the sampling decision of the trace span associated with the log entry. */
+    @CanIgnoreReturnValue
     public Builder setTraceSampled(boolean traceSampled) {
       this.traceSampled = traceSampled;
       return this;
     }
 
     /** Sets the source code location information associated with the log entry if any. */
+    @CanIgnoreReturnValue
     public Builder setSourceLocation(SourceLocation sourceLocation) {
       this.sourceLocation = sourceLocation;
       return this;
@@ -288,12 +308,14 @@ public class LogEntry implements Serializable {
      *
      * @see <a href="https://cloud.google.com/logging/docs/view/logs_index">Log Entries and Logs</a>
      */
+    @CanIgnoreReturnValue
     public Builder setPayload(Payload<?> payload) {
       this.payload = payload;
       return this;
     }
 
     /** Sets the log path destination name type associated with the log entry. */
+    @CanIgnoreReturnValue
     public Builder setDestination(LogDestinationName destination) {
       this.destination = destination;
       return this;
@@ -351,7 +373,7 @@ public class LogEntry implements Serializable {
    * @return timestamp in milliseconds
    */
   @Deprecated
-  public Long getTimestamp() {
+  public @Nullable Long getTimestamp() {
     return timestamp != null ? timestamp.toEpochMilli() : null;
   }
 
@@ -372,7 +394,7 @@ public class LogEntry implements Serializable {
    * @return timestamp in milliseconds
    */
   @Deprecated
-  public Long getReceiveTimestamp() {
+  public @Nullable Long getReceiveTimestamp() {
     return receiveTimestamp != null ? receiveTimestamp.toEpochMilli() : null;
   }
 
@@ -420,13 +442,13 @@ public class LogEntry implements Serializable {
    * Returns the resource name of the trace associated with the log entry, if any. If it contains a
    * relative resource name, the name is assumed to be relative to `//tracing.googleapis.com`.
    */
-  public String getTrace() {
+  public @Nullable String getTrace() {
     // For backwards compatibility return null when trace not set instead of "null".
     return trace == null ? null : String.valueOf(trace);
   }
 
   /** Returns the ID of the trace span associated with the log entry, if any. */
-  public String getSpanId() {
+  public @Nullable String getSpanId() {
     // For backwards compatibility return null when spanId not set instead of "null".
     return spanId == null ? null : String.valueOf(spanId);
   }
@@ -506,7 +528,7 @@ public class LogEntry implements Serializable {
         && Objects.equals(operation, other.operation)
         && Objects.equals(getTrace(), other.getTrace())
         && Objects.equals(getSpanId(), other.getSpanId())
-        && Objects.equals(traceSampled, other.traceSampled)
+        && (traceSampled == other.traceSampled)
         && Objects.equals(sourceLocation, other.sourceLocation)
         && Objects.equals(payload, other.payload)
         && Objects.equals(destination, other.destination);
@@ -649,6 +671,7 @@ public class LogEntry implements Serializable {
      * @param appendComma a flag to add a trailing comma.
      * @return a reference to this object.
      */
+    @CanIgnoreReturnValue
     public StructuredLogFormatter appendField(String name, Object value, boolean appendComma) {
       checkNotNull(name);
       if (value != null) {
@@ -660,6 +683,7 @@ public class LogEntry implements Serializable {
       return this;
     }
 
+    @CanIgnoreReturnValue
     public StructuredLogFormatter appendField(String name, Object value) {
       return appendField(name, value, true);
     }
@@ -671,6 +695,7 @@ public class LogEntry implements Serializable {
      * @param appendComma a flag to add a trailing comma.
      * @return a reference to this object.
      */
+    @CanIgnoreReturnValue
     public StructuredLogFormatter appendDict(Map<String, Object> value, boolean appendComma) {
       if (value != null) {
         String json = gson.toJson(value);

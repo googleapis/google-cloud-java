@@ -19,8 +19,8 @@ package com.google.cloud.logging;
 import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.cloud.MonitoredResource;
+import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.logging.Filter;
 import java.util.logging.Formatter;
@@ -105,11 +105,11 @@ class LoggingConfig {
           enhancers.add(clazz.getDeclaredConstructor().newInstance());
         }
       }
-      return enhancers;
+      return ImmutableList.copyOf(enhancers);
     } catch (Exception ex) {
       // If we cannot create the enhancers we fall back to the default
     }
-    return Collections.emptyList();
+    return ImmutableList.of();
   }
 
   /**

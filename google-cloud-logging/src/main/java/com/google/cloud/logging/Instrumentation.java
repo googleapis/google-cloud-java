@@ -30,6 +30,7 @@ import com.google.protobuf.Value;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.jspecify.nullness.Nullable;
 
 public class Instrumentation {
   public static final String DIAGNOSTIC_INFO_KEY = "logging.googleapis.com/diagnostic";
@@ -96,7 +97,7 @@ public class Instrumentation {
    * @return The new array of oprions containing WriteOption.OptionType.PARTIAL_SUCCESS flag set to
    *     true
    */
-  public static WriteOption[] addPartialSuccessOption(WriteOption[] options) {
+  public static WriteOption @Nullable [] addPartialSuccessOption(WriteOption[] options) {
     if (options == null) return options;
     List<WriteOption> writeOptions = new ArrayList<WriteOption>();
     writeOptions.addAll(Arrays.asList(options));
@@ -151,7 +152,7 @@ public class Instrumentation {
     if (Strings.isNullOrEmpty(libraryName) || !libraryName.startsWith(JAVA_LIBRARY_NAME_PREFIX))
       libraryName = JAVA_LIBRARY_NAME_PREFIX;
     if (Strings.isNullOrEmpty(libraryVersion)) {
-      libraryVersion = getLibraryVersion(Instrumentation.class.getClass());
+      libraryVersion = getLibraryVersion(Instrumentation.class);
     }
     Struct libraryInfo = createInfoStruct(libraryName, libraryVersion);
     ListValue.Builder libraryList = ListValue.newBuilder();

@@ -18,6 +18,7 @@ package com.google.cloud.logging;
 
 import com.google.cloud.logging.HttpRequest.RequestMethod;
 import com.google.common.base.MoreObjects;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -48,17 +49,20 @@ public class Context {
     }
 
     /** Sets the HTTP request. */
+    @CanIgnoreReturnValue
     public Builder setRequest(HttpRequest request) {
       this.requestBuilder = request != null ? request.toBuilder() : HttpRequest.newBuilder();
       return this;
     }
 
+    @CanIgnoreReturnValue
     public Builder setRequestUrl(String url) {
       this.requestBuilder.setRequestUrl(url);
       return this;
     }
 
     /** Sets the HTTP request method. */
+    @CanIgnoreReturnValue
     public Builder setRequestMethod(RequestMethod method) {
       this.requestBuilder.setRequestMethod(method);
       return this;
@@ -70,6 +74,7 @@ public class Context {
      * @see <a href= "http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">HTTP/1.1 Header Field
      *     Definitions</a>
      */
+    @CanIgnoreReturnValue
     public Builder setReferer(String referer) {
       this.requestBuilder.setReferer(referer);
       return this;
@@ -79,6 +84,7 @@ public class Context {
      * Sets the IP address (IPv4 or IPv6) of the client that issued the HTTP request. Examples:
      * {@code 192.168.1.1}, {@code FE80::0202:B3FF:FE1E:8329}.
      */
+    @CanIgnoreReturnValue
     public Builder setRemoteIp(String remoteIp) {
       this.requestBuilder.setRemoteIp(remoteIp);
       return this;
@@ -88,18 +94,21 @@ public class Context {
      * Sets the IP address (IPv4 or IPv6) of the origin server that the request was sent to.
      * Examples: {@code 192.168.1.1}, {@code FE80::0202:B3FF:FE1E:8329}.
      */
+    @CanIgnoreReturnValue
     public Builder setServerIp(String serverIp) {
       this.requestBuilder.setServerIp(serverIp);
       return this;
     }
 
     /** Sets the string as a trace id value. */
+    @CanIgnoreReturnValue
     public Builder setTraceId(String traceId) {
       this.traceId = traceId;
       return this;
     }
 
     /** Sets the string as a span id value. */
+    @CanIgnoreReturnValue
     public Builder setSpanId(String spanId) {
       this.spanId = spanId;
       return this;
@@ -113,6 +122,7 @@ public class Context {
      * @see <a href="https://cloud.google.com/trace/docs/setup#force-trace">Cloud Trace header
      *     format.</a>
      */
+    @CanIgnoreReturnValue
     public Builder loadCloudTraceContext(String cloudTrace) {
       if (cloudTrace != null) {
         cloudTrace = cloudTrace.split(";")[0];
@@ -146,6 +156,7 @@ public class Context {
      * @throws IllegalArgumentException if passed argument does not follow the @W3C trace format or
      *     the format version is not supported.
      */
+    @CanIgnoreReturnValue
     public Builder loadW3CTraceParentContext(String traceParent) throws IllegalArgumentException {
       if (traceParent != null) {
         Matcher validator = W3C_TRACE_CONTEXT_FORMAT.matcher(traceParent.toLowerCase());

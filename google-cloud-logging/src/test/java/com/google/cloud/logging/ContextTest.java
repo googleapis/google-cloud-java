@@ -148,7 +148,7 @@ public class ContextTest {
   }
 
   private void assertTraceAndSpan(Context context, String expectedTraceId, String expectedSpanId) {
-    assertEquals(context.getTraceId(), expectedTraceId);
-    assertEquals(context.getSpanId(), expectedSpanId);
+    assertEquals(expectedTraceId, context.getTraceId());
+    assertEquals(expectedSpanId, context.getSpanId());
   }
 }
