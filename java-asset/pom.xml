@@ -157,7 +157,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-pubsub-v1</artifactId>
-        <version>1.102.11</version>
+        <version>1.102.12</version>
         <scope>test</scope>
       </dependency>
       <dependency>
