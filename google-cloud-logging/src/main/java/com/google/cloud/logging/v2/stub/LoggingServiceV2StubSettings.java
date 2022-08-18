@@ -331,7 +331,7 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
             @Override
             public PartitionKey getBatchPartitionKey(WriteLogEntriesRequest request) {
               return new PartitionKey(
-                  request.getLogName(), request.getResource(), request.getLabels());
+                  request.getLogName(), request.getResource(), request.getLabelsMap());
             }
 
             @Override
