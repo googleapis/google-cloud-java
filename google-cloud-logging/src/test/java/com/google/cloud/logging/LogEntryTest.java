@@ -25,6 +25,7 @@ import com.google.cloud.logging.Payload.JsonPayload;
 import com.google.cloud.logging.Payload.ProtoPayload;
 import com.google.cloud.logging.Payload.StringPayload;
 import com.google.common.collect.ImmutableMap;
+import com.google.gson.JsonParser;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import java.time.Instant;
@@ -380,7 +381,10 @@ public class LogEntryTest {
   public void testStructureLogPresentations() {
     for (int i = 0; i < TEST_LOG_ENTRIES.length; i++) {
       String structured_log = TEST_LOG_ENTRIES[i].toStructuredJsonString();
-      assertEquals(EXPECTED_STRUCTURED_LOGS[i], structured_log);
+
+      assertEquals(
+          JsonParser.parseString(EXPECTED_STRUCTURED_LOGS[i]),
+          JsonParser.parseString(structured_log));
     }
   }
 
