@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker:
-  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
 - "/grpc-google-.*/src"
@@ -22,8 +20,10 @@ deep-remove-regex:
 
 deep-copy-regex:
 - source: "/google/devtools/cloudbuild/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-build-$1/src"
+  dest: "/owl-bot-staging/java-cloudbuild/$1/proto-google-cloud-build-$1/src"
 - source: "/google/devtools/cloudbuild/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-build-$1/src"
+  dest: "/owl-bot-staging/java-cloudbuild/$1/grpc-google-cloud-build-$1/src"
 - source: "/google/devtools/cloudbuild/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-build/src"
+  dest: "/owl-bot-staging/java-cloudbuild/$1/google-cloud-build/src"
+
+api-name: cloudbuild
