@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker:
-  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
 - "/samples/snippets/generated"
@@ -26,10 +24,12 @@ deep-preserve-regex:
 
 deep-copy-regex:
 - source: "/google/cloud/phishingprotection/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-phishingprotection-$1/src"
+  dest: "/owl-bot-staging/java-phishingprotection/$1/proto-google-cloud-phishingprotection-$1/src"
 - source: "/google/cloud/phishingprotection/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-phishingprotection-$1/src"
+  dest: "/owl-bot-staging/java-phishingprotection/$1/grpc-google-cloud-phishingprotection-$1/src"
 - source: "/google/cloud/phishingprotection/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-phishingprotection/src"
+  dest: "/owl-bot-staging/java-phishingprotection/$1/google-cloud-phishingprotection/src"
 - source: "/google/cloud/phishingprotection/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/$1/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-phishingprotection/$1/samples/snippets/generated"
+
+api-name: phishingprotection
