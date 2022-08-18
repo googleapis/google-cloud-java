@@ -36,6 +36,7 @@ java-containeranalysis
 java-data-fusion
 java-datacatalog
 java-dataflow
+java-dataform
 java-datalabeling
 java-dataplex
 java-dataproc
