@@ -702,4 +702,22 @@ public class StreamWriterTest {
     Assert.assertFalse(writer2.getWriterId().isEmpty());
     Assert.assertNotEquals(writer1.getWriterId(), writer2.getWriterId());
   }
+
+  // Timeout to ensure close() doesn't wait for done callback timeout.
+  @Test(timeout = 10000)
+  public void testCloseDisconnectedStream() throws Exception {
+    StreamWriter writer =
+        StreamWriter.newBuilder(TEST_STREAM)
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setChannelProvider(serviceHelper.createChannelProvider())
+            .setWriterSchema(createProtoSchema())
+            .build();
+
+    testBigQueryWrite.addResponse(createAppendResponse(0));
+    ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
+    assertEquals(0, appendFuture1.get().getAppendResult().getOffset().getValue());
+    serviceHelper.stop();
+    // Ensure closing the writer after disconnect succeeds.
+    writer.close();
+  }
 }
