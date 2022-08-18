@@ -16,15 +16,13 @@
 
 package com.google.cloud.logging;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static com.google.common.truth.Truth.assertThat;
+import static java.time.ZoneOffset.UTC;
+import static java.util.Locale.US;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.TimeZone;
-import javax.management.timer.Timer;
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import org.junit.Test;
 
 public class TimestampDefaultFilterTest {
@@ -33,23 +31,20 @@ public class TimestampDefaultFilterTest {
   public void DefaultTimestampFilterTest() {
     ITimestampDefaultFilter filter = new TimestampDefaultFilter();
 
-    TimeZone timeZone = TimeZone.getTimeZone("UTC");
-    Calendar calendar = Calendar.getInstance(timeZone);
-    calendar.add(Calendar.DATE, -1);
-    Date expected = calendar.getTime();
-
     // Timestamp filter exists
     String defaultFilter = filter.createDefaultTimestampFilter();
-    assertTrue(defaultFilter.contains("timestamp>="));
+    assertThat(defaultFilter).contains("timestamp>=");
 
     // Time is last 24 hours
-    try {
-      DateFormat rfcDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-      rfcDateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
-      Date actual = rfcDateFormat.parse(defaultFilter.substring(12, defaultFilter.length() - 1));
-      assertTrue(Math.abs(expected.getTime() - actual.getTime()) < Timer.ONE_MINUTE);
-    } catch (java.text.ParseException ex) {
-      fail(); // Just fail if exception is thrown
-    }
+    DateTimeFormatter rfcDateFormat =
+        DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", US);
+    LocalDateTime actual =
+        LocalDateTime.parse(defaultFilter.substring(12, defaultFilter.length() - 1), rfcDateFormat);
+    assertThat(
+            Duration.between(actual, LocalDateTime.now(UTC))
+                .minus(Duration.ofDays(1))
+                .abs()
+                .compareTo(Duration.ofMinutes(1)))
+        .isLessThan(0);
   }
 }

@@ -16,13 +16,14 @@
 
 package com.google.cloud.logging;
 
+import static java.time.ZoneOffset.UTC;
+
 import com.google.api.gax.paging.Page;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.testing.RemoteLoggingHelper;
-import com.google.common.collect.Iterators;
+import com.google.common.collect.Iterables;
 import com.google.logging.v2.LogName;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Iterator;
 import org.junit.AfterClass;
@@ -38,7 +39,8 @@ public class BaseSystemTest {
 
   @Rule public Timeout globalTimeout = Timeout.seconds(600);
 
-  private static DateFormat RFC_3339 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+  private static final DateTimeFormatter RFC_3339 =
+      DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
 
   protected static Logging logging;
 
@@ -60,7 +62,7 @@ public class BaseSystemTest {
    *     Filters Documentation</a>
    */
   protected static <V> String createEqualityFilter(String name, V value) {
-    return name + "=" + "\"" + value.toString() + "\"";
+    return name + "=" + "\"" + value + "\"";
   }
 
   protected static boolean cleanupLog(String logName) throws InterruptedException {
@@ -84,7 +86,9 @@ public class BaseSystemTest {
   protected static String createTimestampFilter(int hoursAgo) {
     Calendar calendar = Calendar.getInstance();
     calendar.add(Calendar.HOUR, -1 * hoursAgo);
-    return "timestamp>=\"" + RFC_3339.format(calendar.getTime()) + "\"";
+    return "timestamp>=\""
+        + calendar.getTime().toInstant().atZone(UTC).toLocalDateTime().format(RFC_3339)
+        + "\"";
   }
 
   protected static String appendResourceTypeFilter(
@@ -133,7 +137,7 @@ public class BaseSystemTest {
   protected static Iterator<LogEntry> waitForLogs(Logging.EntryListOption[] options, int minLogs)
       throws InterruptedException {
     Page<LogEntry> page = logging.listLogEntries(options);
-    while (Iterators.size(page.iterateAll().iterator()) < minLogs) {
+    while (Iterables.size(page.iterateAll()) < minLogs) {
       Thread.sleep(500);
       page = logging.listLogEntries(options);
     }

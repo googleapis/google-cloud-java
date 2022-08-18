@@ -16,25 +16,22 @@
 
 package com.google.cloud.logging;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.TimeZone;
+import static java.time.ZoneOffset.UTC;
+import static java.util.Locale.US;
+
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class TimestampDefaultFilter implements ITimestampDefaultFilter {
   @Override
   public String createDefaultTimestampFilter() {
-    DateFormat rfcDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-    rfcDateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+    DateTimeFormatter rfcDateFormat =
+        DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", US);
     return "timestamp>=\"" + rfcDateFormat.format(yesterday()) + "\"";
   }
 
-  private Date yesterday() {
-    TimeZone timeZone = TimeZone.getTimeZone("UTC");
-    Calendar calendar = Calendar.getInstance(timeZone);
-    calendar.add(Calendar.DATE, -1);
-
-    return calendar.getTime();
+  private LocalDateTime yesterday() {
+    return LocalDateTime.now(UTC).minus(Duration.ofDays(1));
   }
 }
