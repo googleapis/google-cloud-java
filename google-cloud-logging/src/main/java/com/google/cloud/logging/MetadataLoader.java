@@ -105,7 +105,7 @@ public final class MetadataLoader {
     String value = getter.getEnv("K_SERVICE");
     if (value == null) {
       // keep supporting custom function name if is not provided by default
-      // for backward compatability only; reconsider removing it after Gen2
+      // for backward compatibility only; reconsider removing it after Gen2
       // environment is enrolled for Cloud Function
       value = getter.getEnv("FUNCTION_NAME");
     }
@@ -132,7 +132,7 @@ public final class MetadataLoader {
     return getter.getEnv("GAE_SERVICE");
   }
   /**
-   * Heuristic to discover the namespace name of the current environment. There is no determenistic
+   * Heuristic to discover the namespace name of the current environment. There is no deterministic
    * way to discover the namespace name of the process. The name is read from the {@link
    * K8S_POD_NAMESPACE_PATH} when available or read from a user defined environment variable
    * "NAMESPACE_NAME"

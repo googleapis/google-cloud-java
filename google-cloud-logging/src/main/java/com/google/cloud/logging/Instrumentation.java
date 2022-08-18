@@ -48,8 +48,8 @@ public class Instrumentation {
    * Populates entries with instrumentation info which is added in separate log entry
    *
    * @param logEntries {Iterable<LogEntry>} The list of entries to be populated
-   * @return {Tuple<Boolean, Iterable<LogEntry>>} containg a flag if instrumentation info was added
-   *     or not and a modified list of log entries
+   * @return {Tuple<Boolean, Iterable<LogEntry>>} containing a flag if instrumentation info was
+   *     added or not and a modified list of log entries
    */
   public static Tuple<Boolean, Iterable<LogEntry>> populateInstrumentationInfo(
       Iterable<LogEntry> logEntries) {
@@ -114,7 +114,7 @@ public class Instrumentation {
    *     with 'java'. Will be truncated if longer than 14 characters.
    * @param libraryVersion {string} The version of the logging library to be reported. Will be
    *     truncated if longer than 14 characters.
-   * @returns {LogEntry} The entry with diagnostic instrumentation data.
+   * @return {LogEntry} The entry with diagnostic instrumentation data.
    */
   public static LogEntry createDiagnosticEntry(String libraryName, String libraryVersion) {
     return createDiagnosticEntry(libraryName, libraryVersion, null);
@@ -193,7 +193,7 @@ public class Instrumentation {
    * The package-private helper method used to set the flag which indicates if instrumentation info
    * already written or not.
    *
-   * @returns The value of the flag before it was set.
+   * @return The value of the flag before it was set.
    */
   static boolean setInstrumentationStatus(boolean value) {
     if (instrumentationAdded == value) return instrumentationAdded;

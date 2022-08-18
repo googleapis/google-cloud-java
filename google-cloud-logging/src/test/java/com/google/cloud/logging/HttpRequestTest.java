@@ -34,7 +34,7 @@ public class HttpRequestTest {
   private static final String REQUEST_URL = "http://www.example.com";
   private static final Long REQUEST_SIZE = 1L;
   private static final Integer STATUS = 200;
-  private static final Long REPONSE_SIZE = 2L;
+  private static final Long RESPONSE_SIZE = 2L;
   private static final String USER_AGENT =
       "Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET CLR 1.0.3705)";
   private static final String REMOTE_IP = "192.168.1.1";
@@ -50,7 +50,7 @@ public class HttpRequestTest {
           .setRequestUrl(REQUEST_URL)
           .setRequestSize(REQUEST_SIZE)
           .setStatus(STATUS)
-          .setResponseSize(REPONSE_SIZE)
+          .setResponseSize(RESPONSE_SIZE)
           .setUserAgent(USER_AGENT)
           .setRemoteIp(REMOTE_IP)
           .setServerIp(SERVER_IP)
@@ -68,7 +68,7 @@ public class HttpRequestTest {
     assertEquals(REQUEST_URL, HTTP_REQUEST.getRequestUrl());
     assertEquals(REQUEST_SIZE, HTTP_REQUEST.getRequestSize());
     assertEquals(STATUS, HTTP_REQUEST.getStatus());
-    assertEquals(REPONSE_SIZE, HTTP_REQUEST.getResponseSize());
+    assertEquals(RESPONSE_SIZE, HTTP_REQUEST.getResponseSize());
     assertEquals(USER_AGENT, HTTP_REQUEST.getUserAgent());
     assertEquals(REMOTE_IP, HTTP_REQUEST.getRemoteIp());
     assertEquals(SERVER_IP, HTTP_REQUEST.getServerIp());
@@ -141,7 +141,7 @@ public class HttpRequestTest {
     assertEquals(REQUEST_URL, httpRequest.getRequestUrl());
     assertEquals(REQUEST_SIZE, httpRequest.getRequestSize());
     assertEquals(STATUS, httpRequest.getStatus());
-    assertEquals(REPONSE_SIZE, httpRequest.getResponseSize());
+    assertEquals(RESPONSE_SIZE, httpRequest.getResponseSize());
     assertEquals(USER_AGENT, httpRequest.getUserAgent());
     assertEquals(REMOTE_IP, httpRequest.getRemoteIp());
     assertEquals(SERVER_IP, httpRequest.getServerIp());

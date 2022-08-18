@@ -850,7 +850,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
 
     try {
       final Map<Option.OptionType, ?> writeOptions = optionMap(options);
-      final Boolean logingOptionsPopulateFlag = getOptions().getAutoPopulateMetadata();
+      final Boolean loggingOptionsPopulateFlag = getOptions().getAutoPopulateMetadata();
       final Boolean writeOptionPopulateFlga =
           WriteOption.OptionType.AUTO_POPULATE_METADATA.get(writeOptions);
       Tuple<Boolean, Iterable<LogEntry>> pair =
@@ -858,7 +858,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
       logEntries = pair.y();
 
       if (writeOptionPopulateFlga == Boolean.TRUE
-          || (writeOptionPopulateFlga == null && logingOptionsPopulateFlag == Boolean.TRUE)) {
+          || (writeOptionPopulateFlga == null && loggingOptionsPopulateFlag == Boolean.TRUE)) {
         final MonitoredResource sharedResourceMetadata = RESOURCE.get(writeOptions);
         logEntries =
             populateMetadata(logEntries, sharedResourceMetadata, this.getClass().getName());

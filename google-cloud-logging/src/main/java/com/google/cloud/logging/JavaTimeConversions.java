@@ -31,7 +31,7 @@ import java.time.Instant;
  *   <li>Protobuf's {@link Timestamp} and {@link java.time.Instant}
  * </ul>
  *
- * The class complements convertion methods that are currently not supported in the published
+ * The class complements conversion methods that are currently not supported in the published
  * protobuf-java-util. After migrating protobuf-java-util to Java 8 this class can be removed.
  *
  * @see <a href=
