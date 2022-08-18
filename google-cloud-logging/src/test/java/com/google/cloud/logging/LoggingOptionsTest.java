@@ -21,7 +21,10 @@ import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.TransportOptions;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
+@RunWith(JUnit4.class)
 public class LoggingOptionsTest {
   private static final Boolean DONT_AUTO_POPULATE_METADATA = false;
   private static final String PROJECT_ID = "fake-project-id";

@@ -32,7 +32,10 @@ import java.util.List;
 import java.util.Map;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
+@RunWith(JUnit4.class)
 public class InstrumentationTest {
   private static final StringPayload STRING_PAYLOAD = StringPayload.of("payload");
   private static final LogEntry STRING_ENTRY = LogEntry.newBuilder(STRING_PAYLOAD).build();

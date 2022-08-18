@@ -24,7 +24,10 @@ import com.google.cloud.logging.Logging.ListOption;
 import com.google.cloud.logging.Option.OptionType;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
+@RunWith(JUnit4.class)
 public class OptionTest {
 
   private static final OptionType OPTION_TYPE = ListOption.OptionType.PAGE_SIZE;

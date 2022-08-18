@@ -30,7 +30,10 @@ import java.util.Map;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
+@RunWith(JUnit4.class)
 public class MonitoredResourceUtilTest {
   private static final String MOCKED_PROJECT_ID = "mocked-project-id";
   private static final String MOCKED_ZONE = "mocked-zone-id";

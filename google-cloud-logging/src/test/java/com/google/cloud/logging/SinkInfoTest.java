@@ -27,7 +27,10 @@ import com.google.cloud.logging.SinkInfo.Destination.LoggingBucketDestination;
 import com.google.cloud.logging.SinkInfo.Destination.TopicDestination;
 import com.google.cloud.logging.SinkInfo.VersionFormat;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
+@RunWith(JUnit4.class)
 public class SinkInfoTest {
 
   private static final String NAME = "name";

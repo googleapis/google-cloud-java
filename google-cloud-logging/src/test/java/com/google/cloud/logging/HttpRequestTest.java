@@ -23,8 +23,11 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.logging.HttpRequest.RequestMethod;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 import org.threeten.bp.Duration;
 
+@RunWith(JUnit4.class)
 public class HttpRequestTest {
 
   private static final RequestMethod REQUEST_METHOD = RequestMethod.GET;
