@@ -1,0 +1,16 @@
+{
+  "api_shortname": "dataform2",
+  "name_pretty": "Dataform Tomo Test",
+  "product_documentation": "https://cloud.google.com/suztomotest",
+  "api_description": "API generation test by suztomo",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-dataform2/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-dataform2",
+  "repo_short": "java-dataform2",
+  "distribution_name": "com.google.cloud:google-cloud-dataform2",
+  "api_id": "dataform2.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}

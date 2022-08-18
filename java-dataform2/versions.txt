@@ -1,0 +1,8 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-dataform2:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-dataform2-v1alpha2:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-dataform2-v1beta1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-dataform2-v1alpha2:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-dataform2-v1beta1:0.0.0:0.0.1-SNAPSHOT

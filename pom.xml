@@ -57,6 +57,7 @@
     <module>java-data-fusion</module>
     <module>java-datacatalog</module>
     <module>java-dataflow</module>
+    <module>java-dataform2</module>
     <module>java-datalabeling</module>
     <module>java-dataplex</module>
     <module>java-dataproc</module>
@@ -143,9 +144,8 @@
     <module>java-websecurityscanner</module>
     <module>java-workflow-executions</module>
     <module>java-workflows</module>
-
-    <module>google-cloud-gapic-bom</module>
     <module>CoverageAggregator</module>
+    <module>google-cloud-gapic-bom</module>
   </modules>
 
   <build>
