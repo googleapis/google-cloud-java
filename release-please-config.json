@@ -12,6 +12,7 @@
         "component": "google-identity-accesscontextmanager",
         "skip-github-release": true
        }
+  },
   "plugins": [
     "maven-workspace"
   ]
