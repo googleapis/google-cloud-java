@@ -49,7 +49,7 @@
     <dependency>
       <groupId>com.google.cloud.functions</groupId>
       <artifactId>function-maven-plugin</artifactId>
-      <version>0.10.0</version>
+      <version>0.10.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
