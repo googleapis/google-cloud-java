@@ -1,19 +1,23 @@
 {
-  "release-type": "java-yoshi",
-  "skip-github-release": true,
-  "separate-pull-requests": false,
-  "include-component-in-tag": true,
-  "packages": {
-    "java-accessapproval": {
-        "component": "google-cloud-accessapproval",
-        "skip-github-release": true
-       },
-    "java-accesscontextmanager": {
-        "component": "google-identity-accesscontextmanager",
-        "skip-github-release": true
-       }
-  },
-  "plugins": [
-    "maven-workspace"
-  ]
+	"release-type": "java-yoshi",
+	"skip-github-release": true,
+	"separate-pull-requests": false,
+	"include-component-in-tag": true,
+	"bootstrap-sha": {
+		"description": "f25bae5735ea796dbdcdc002c87bf61264133b2d",
+		"type": "string"
+	},
+	"packages": {
+		"java-accessapproval": {
+			"component": "google-cloud-accessapproval",
+			"skip-github-release": true
+		},
+		"java-accesscontextmanager": {
+			"component": "google-identity-accesscontextmanager",
+			"skip-github-release": true
+		}
+	},
+	"plugins": [
+		"maven-workspace"
+	]
 }
