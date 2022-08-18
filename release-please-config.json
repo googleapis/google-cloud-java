@@ -3,10 +3,7 @@
 	"skip-github-release": true,
 	"separate-pull-requests": false,
 	"include-component-in-tag": true,
-	"bootstrap-sha": {
-		"description": "f25bae5735ea796dbdcdc002c87bf61264133b2d",
-		"type": "string"
-	},
+	"bootstrap-sha": "f25bae5735ea796dbdcdc002c87bf61264133b2d",
 	"packages": {
 		"java-accessapproval": {
 			"component": "google-cloud-accessapproval",
