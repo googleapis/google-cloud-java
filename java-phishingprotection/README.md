@@ -44,7 +44,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-phishingprotection</artifactId>
-  <version>0.34.0</version>
+  <version>0.34.2</version>
 </dependency>
 
 ```
