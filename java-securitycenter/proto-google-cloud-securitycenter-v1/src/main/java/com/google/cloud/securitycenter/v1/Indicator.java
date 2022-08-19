@@ -44,6 +44,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
     ipAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     domains_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     signatures_ = java.util.Collections.emptyList();
+    uris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -110,6 +111,16 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
                       extensionRegistry));
               break;
             }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                uris_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              uris_.add(s);
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -134,6 +145,9 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       }
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
         signatures_ = java.util.Collections.unmodifiableList(signatures_);
+      }
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        uris_ = uris_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -4713,6 +4727,67 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
     return signatures_.get(index);
   }
 
+  public static final int URIS_FIELD_NUMBER = 4;
+  private com.google.protobuf.LazyStringList uris_;
+  /**
+   *
+   *
+   * <pre>
+   * The list of URIs associated to the Findings.
+   * </pre>
+   *
+   * <code>repeated string uris = 4;</code>
+   *
+   * @return A list containing the uris.
+   */
+  public com.google.protobuf.ProtocolStringList getUrisList() {
+    return uris_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of URIs associated to the Findings.
+   * </pre>
+   *
+   * <code>repeated string uris = 4;</code>
+   *
+   * @return The count of uris.
+   */
+  public int getUrisCount() {
+    return uris_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of URIs associated to the Findings.
+   * </pre>
+   *
+   * <code>repeated string uris = 4;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The uris at the given index.
+   */
+  public java.lang.String getUris(int index) {
+    return uris_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of URIs associated to the Findings.
+   * </pre>
+   *
+   * <code>repeated string uris = 4;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the uris at the given index.
+   */
+  public com.google.protobuf.ByteString getUrisBytes(int index) {
+    return uris_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4735,6 +4810,9 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < signatures_.size(); i++) {
       output.writeMessage(3, signatures_.get(i));
+    }
+    for (int i = 0; i < uris_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, uris_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -4764,6 +4842,14 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < signatures_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, signatures_.get(i));
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < uris_.size(); i++) {
+        dataSize += computeStringSizeNoTag(uris_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getUrisList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4783,6 +4869,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
     if (!getIpAddressesList().equals(other.getIpAddressesList())) return false;
     if (!getDomainsList().equals(other.getDomainsList())) return false;
     if (!getSignaturesList().equals(other.getSignaturesList())) return false;
+    if (!getUrisList().equals(other.getUrisList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -4805,6 +4892,10 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
     if (getSignaturesCount() > 0) {
       hash = (37 * hash) + SIGNATURES_FIELD_NUMBER;
       hash = (53 * hash) + getSignaturesList().hashCode();
+    }
+    if (getUrisCount() > 0) {
+      hash = (37 * hash) + URIS_FIELD_NUMBER;
+      hash = (53 * hash) + getUrisList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -4966,6 +5057,8 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       } else {
         signaturesBuilder_.clear();
       }
+      uris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -5013,6 +5106,11 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.signatures_ = signaturesBuilder_.build();
       }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        uris_ = uris_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.uris_ = uris_;
       onBuilt();
       return result;
     }
@@ -5108,6 +5206,16 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
             signaturesBuilder_.addAllMessages(other.signatures_);
           }
         }
+      }
+      if (!other.uris_.isEmpty()) {
+        if (uris_.isEmpty()) {
+          uris_ = other.uris_;
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          ensureUrisIsMutable();
+          uris_.addAll(other.uris_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -5877,6 +5985,174 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         signatures_ = null;
       }
       return signaturesBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringList uris_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureUrisIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        uris_ = new com.google.protobuf.LazyStringArrayList(uris_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of URIs associated to the Findings.
+     * </pre>
+     *
+     * <code>repeated string uris = 4;</code>
+     *
+     * @return A list containing the uris.
+     */
+    public com.google.protobuf.ProtocolStringList getUrisList() {
+      return uris_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of URIs associated to the Findings.
+     * </pre>
+     *
+     * <code>repeated string uris = 4;</code>
+     *
+     * @return The count of uris.
+     */
+    public int getUrisCount() {
+      return uris_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of URIs associated to the Findings.
+     * </pre>
+     *
+     * <code>repeated string uris = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The uris at the given index.
+     */
+    public java.lang.String getUris(int index) {
+      return uris_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of URIs associated to the Findings.
+     * </pre>
+     *
+     * <code>repeated string uris = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the uris at the given index.
+     */
+    public com.google.protobuf.ByteString getUrisBytes(int index) {
+      return uris_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of URIs associated to the Findings.
+     * </pre>
+     *
+     * <code>repeated string uris = 4;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The uris to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUris(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureUrisIsMutable();
+      uris_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of URIs associated to the Findings.
+     * </pre>
+     *
+     * <code>repeated string uris = 4;</code>
+     *
+     * @param value The uris to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUris(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureUrisIsMutable();
+      uris_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of URIs associated to the Findings.
+     * </pre>
+     *
+     * <code>repeated string uris = 4;</code>
+     *
+     * @param values The uris to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllUris(java.lang.Iterable<java.lang.String> values) {
+      ensureUrisIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, uris_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of URIs associated to the Findings.
+     * </pre>
+     *
+     * <code>repeated string uris = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUris() {
+      uris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of URIs associated to the Findings.
+     * </pre>
+     *
+     * <code>repeated string uris = 4;</code>
+     *
+     * @param value The bytes of the uris to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUrisBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureUrisIsMutable();
+      uris_.add(value);
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

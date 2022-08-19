@@ -187,4 +187,55 @@ public interface IndicatorOrBuilder
    */
   com.google.cloud.securitycenter.v1.Indicator.ProcessSignatureOrBuilder getSignaturesOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of URIs associated to the Findings.
+   * </pre>
+   *
+   * <code>repeated string uris = 4;</code>
+   *
+   * @return A list containing the uris.
+   */
+  java.util.List<java.lang.String> getUrisList();
+  /**
+   *
+   *
+   * <pre>
+   * The list of URIs associated to the Findings.
+   * </pre>
+   *
+   * <code>repeated string uris = 4;</code>
+   *
+   * @return The count of uris.
+   */
+  int getUrisCount();
+  /**
+   *
+   *
+   * <pre>
+   * The list of URIs associated to the Findings.
+   * </pre>
+   *
+   * <code>repeated string uris = 4;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The uris at the given index.
+   */
+  java.lang.String getUris(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The list of URIs associated to the Findings.
+   * </pre>
+   *
+   * <code>repeated string uris = 4;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the uris at the given index.
+   */
+  com.google.protobuf.ByteString getUrisBytes(int index);
 }
