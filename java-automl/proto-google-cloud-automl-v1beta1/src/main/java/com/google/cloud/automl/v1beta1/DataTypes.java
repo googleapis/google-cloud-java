@@ -49,33 +49,29 @@ public final class DataTypes {
   static {
     java.lang.String[] descriptorData = {
       "\n,google/cloud/automl/v1beta1/data_types"
-          + ".proto\022\033google.cloud.automl.v1beta1\032\034goo"
-          + "gle/api/annotations.proto\"\374\001\n\010DataType\022B"
-          + "\n\021list_element_type\030\002 \001(\0132%.google.cloud"
-          + ".automl.v1beta1.DataTypeH\000\022>\n\013struct_typ"
-          + "e\030\003 \001(\0132\'.google.cloud.automl.v1beta1.St"
-          + "ructTypeH\000\022\025\n\013time_format\030\005 \001(\tH\000\0228\n\ttyp"
-          + "e_code\030\001 \001(\0162%.google.cloud.automl.v1bet"
-          + "a1.TypeCode\022\020\n\010nullable\030\004 \001(\010B\t\n\007details"
-          + "\"\247\001\n\nStructType\022C\n\006fields\030\001 \003(\01323.google"
-          + ".cloud.automl.v1beta1.StructType.FieldsE"
-          + "ntry\032T\n\013FieldsEntry\022\013\n\003key\030\001 \001(\t\0224\n\005valu"
-          + "e\030\002 \001(\0132%.google.cloud.automl.v1beta1.Da"
-          + "taType:\0028\001*r\n\010TypeCode\022\031\n\025TYPE_CODE_UNSP"
-          + "ECIFIED\020\000\022\013\n\007FLOAT64\020\003\022\r\n\tTIMESTAMP\020\004\022\n\n"
-          + "\006STRING\020\006\022\t\n\005ARRAY\020\010\022\n\n\006STRUCT\020\t\022\014\n\010CATE"
-          + "GORY\020\nB\245\001\n\037com.google.cloud.automl.v1bet"
-          + "a1P\001ZAgoogle.golang.org/genproto/googlea"
-          + "pis/cloud/automl/v1beta1;automl\312\002\033Google"
-          + "\\Cloud\\AutoMl\\V1beta1\352\002\036Google::Cloud::A"
-          + "utoML::V1beta1b\006proto3"
+          + ".proto\022\033google.cloud.automl.v1beta1\"\374\001\n\010"
+          + "DataType\022B\n\021list_element_type\030\002 \001(\0132%.go"
+          + "ogle.cloud.automl.v1beta1.DataTypeH\000\022>\n\013"
+          + "struct_type\030\003 \001(\0132\'.google.cloud.automl."
+          + "v1beta1.StructTypeH\000\022\025\n\013time_format\030\005 \001("
+          + "\tH\000\0228\n\ttype_code\030\001 \001(\0162%.google.cloud.au"
+          + "toml.v1beta1.TypeCode\022\020\n\010nullable\030\004 \001(\010B"
+          + "\t\n\007details\"\247\001\n\nStructType\022C\n\006fields\030\001 \003("
+          + "\01323.google.cloud.automl.v1beta1.StructTy"
+          + "pe.FieldsEntry\032T\n\013FieldsEntry\022\013\n\003key\030\001 \001"
+          + "(\t\0224\n\005value\030\002 \001(\0132%.google.cloud.automl."
+          + "v1beta1.DataType:\0028\001*r\n\010TypeCode\022\031\n\025TYPE"
+          + "_CODE_UNSPECIFIED\020\000\022\013\n\007FLOAT64\020\003\022\r\n\tTIME"
+          + "STAMP\020\004\022\n\n\006STRING\020\006\022\t\n\005ARRAY\020\010\022\n\n\006STRUCT"
+          + "\020\t\022\014\n\010CATEGORY\020\nB\245\001\n\037com.google.cloud.au"
+          + "toml.v1beta1P\001ZAgoogle.golang.org/genpro"
+          + "to/googleapis/cloud/automl/v1beta1;autom"
+          + "l\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Google"
+          + "::Cloud::AutoML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_automl_v1beta1_DataType_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_automl_v1beta1_DataType_fieldAccessorTable =
@@ -100,7 +96,6 @@ public final class DataTypes {
             new java.lang.String[] {
               "Key", "Value",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

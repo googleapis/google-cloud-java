@@ -16,8 +16,7 @@
 
 package com.google.cloud.secretmanager.v1.samples;
 
-// [START
-// secretmanager_v1_generated_secretmanagerserviceclient_createsecret_stringstringsecret_sync]
+// [START secretmanager_v1_generated_secretmanagerserviceclient_createsecret_stringstringsecret_sync]
 import com.google.cloud.secretmanager.v1.ProjectName;
 import com.google.cloud.secretmanager.v1.Secret;
 import com.google.cloud.secretmanager.v1.SecretManagerServiceClient;

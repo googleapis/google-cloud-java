@@ -52,49 +52,45 @@ public final class AutoMLImageClassificationProto {
       "\nZgoogle/cloud/aiplatform/v1/schema/trai"
           + "ningjob/definition/automl_image_classifi"
           + "cation.proto\0228google.cloud.aiplatform.v1"
-          + ".schema.trainingjob.definition\032\034google/a"
-          + "pi/annotations.proto\"\365\001\n\031AutoMlImageClas"
-          + "sification\022i\n\006inputs\030\001 \001(\0132Y.google.clou"
+          + ".schema.trainingjob.definition\"\365\001\n\031AutoM"
+          + "lImageClassification\022i\n\006inputs\030\001 \001(\0132Y.g"
+          + "oogle.cloud.aiplatform.v1.schema.trainin"
+          + "gjob.definition.AutoMlImageClassificatio"
+          + "nInputs\022m\n\010metadata\030\002 \001(\0132[.google.cloud"
+          + ".aiplatform.v1.schema.trainingjob.defini"
+          + "tion.AutoMlImageClassificationMetadata\"\223"
+          + "\003\n\037AutoMlImageClassificationInputs\022w\n\nmo"
+          + "del_type\030\001 \001(\0162c.google.cloud.aiplatform"
+          + ".v1.schema.trainingjob.definition.AutoMl"
+          + "ImageClassificationInputs.ModelType\022\025\n\rb"
+          + "ase_model_id\030\002 \001(\t\022\037\n\027budget_milli_node_"
+          + "hours\030\003 \001(\003\022\036\n\026disable_early_stopping\030\004 "
+          + "\001(\010\022\023\n\013multi_label\030\005 \001(\010\"\211\001\n\tModelType\022\032"
+          + "\n\026MODEL_TYPE_UNSPECIFIED\020\000\022\t\n\005CLOUD\020\001\022\033\n"
+          + "\027MOBILE_TF_LOW_LATENCY_1\020\002\022\031\n\025MOBILE_TF_"
+          + "VERSATILE_1\020\003\022\035\n\031MOBILE_TF_HIGH_ACCURACY"
+          + "_1\020\004\"\276\002\n!AutoMlImageClassificationMetada"
+          + "ta\022\035\n\025cost_milli_node_hours\030\001 \001(\003\022\220\001\n\026su"
+          + "ccessful_stop_reason\030\002 \001(\0162p.google.clou"
           + "d.aiplatform.v1.schema.trainingjob.defin"
-          + "ition.AutoMlImageClassificationInputs\022m\n"
-          + "\010metadata\030\002 \001(\0132[.google.cloud.aiplatfor"
-          + "m.v1.schema.trainingjob.definition.AutoM"
-          + "lImageClassificationMetadata\"\223\003\n\037AutoMlI"
-          + "mageClassificationInputs\022w\n\nmodel_type\030\001"
-          + " \001(\0162c.google.cloud.aiplatform.v1.schema"
-          + ".trainingjob.definition.AutoMlImageClass"
-          + "ificationInputs.ModelType\022\025\n\rbase_model_"
-          + "id\030\002 \001(\t\022\037\n\027budget_milli_node_hours\030\003 \001("
-          + "\003\022\036\n\026disable_early_stopping\030\004 \001(\010\022\023\n\013mul"
-          + "ti_label\030\005 \001(\010\"\211\001\n\tModelType\022\032\n\026MODEL_TY"
-          + "PE_UNSPECIFIED\020\000\022\t\n\005CLOUD\020\001\022\033\n\027MOBILE_TF"
-          + "_LOW_LATENCY_1\020\002\022\031\n\025MOBILE_TF_VERSATILE_"
-          + "1\020\003\022\035\n\031MOBILE_TF_HIGH_ACCURACY_1\020\004\"\276\002\n!A"
-          + "utoMlImageClassificationMetadata\022\035\n\025cost"
-          + "_milli_node_hours\030\001 \001(\003\022\220\001\n\026successful_s"
-          + "top_reason\030\002 \001(\0162p.google.cloud.aiplatfo"
-          + "rm.v1.schema.trainingjob.definition.Auto"
-          + "MlImageClassificationMetadata.Successful"
-          + "StopReason\"g\n\024SuccessfulStopReason\022&\n\"SU"
-          + "CCESSFUL_STOP_REASON_UNSPECIFIED\020\000\022\022\n\016BU"
-          + "DGET_REACHED\020\001\022\023\n\017MODEL_CONVERGED\020\002B\373\002\n<"
-          + "com.google.cloud.aiplatform.v1.schema.tr"
-          + "ainingjob.definitionB\036AutoMLImageClassif"
-          + "icationProtoP\001Zbgoogle.golang.org/genpro"
-          + "to/googleapis/cloud/aiplatform/v1/schema"
-          + "/trainingjob/definition;definition\252\0028Goo"
-          + "gle.Cloud.AIPlatform.V1.Schema.TrainingJ"
-          + "ob.Definition\312\0028Google\\Cloud\\AIPlatform\\"
-          + "V1\\Schema\\TrainingJob\\Definition\352\002>Googl"
-          + "e::Cloud::AIPlatform::V1::Schema::Traini"
-          + "ngJob::Definitionb\006proto3"
+          + "ition.AutoMlImageClassificationMetadata."
+          + "SuccessfulStopReason\"g\n\024SuccessfulStopRe"
+          + "ason\022&\n\"SUCCESSFUL_STOP_REASON_UNSPECIFI"
+          + "ED\020\000\022\022\n\016BUDGET_REACHED\020\001\022\023\n\017MODEL_CONVER"
+          + "GED\020\002B\373\002\n<com.google.cloud.aiplatform.v1"
+          + ".schema.trainingjob.definitionB\036AutoMLIm"
+          + "ageClassificationProtoP\001Zbgoogle.golang."
+          + "org/genproto/googleapis/cloud/aiplatform"
+          + "/v1/schema/trainingjob/definition;defini"
+          + "tion\252\0028Google.Cloud.AIPlatform.V1.Schema"
+          + ".TrainingJob.Definition\312\0028Google\\Cloud\\A"
+          + "IPlatform\\V1\\Schema\\TrainingJob\\Definiti"
+          + "on\352\002>Google::Cloud::AIPlatform::V1::Sche"
+          + "ma::TrainingJob::Definitionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlImageClassification_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlImageClassification_fieldAccessorTable =
@@ -123,7 +119,6 @@ public final class AutoMLImageClassificationProto {
             new java.lang.String[] {
               "CostMilliNodeHours", "SuccessfulStopReason",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

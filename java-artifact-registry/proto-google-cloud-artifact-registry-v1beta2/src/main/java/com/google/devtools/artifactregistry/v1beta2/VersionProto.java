@@ -58,48 +58,47 @@ public final class VersionProto {
     java.lang.String[] descriptorData = {
       "\n6google/devtools/artifactregistry/v1bet"
           + "a2/version.proto\022(google.devtools.artifa"
-          + "ctregistry.v1beta2\032\034google/api/annotatio"
-          + "ns.proto\032\037google/api/field_behavior.prot"
-          + "o\032\031google/api/resource.proto\0322google/dev"
-          + "tools/artifactregistry/v1beta2/tag.proto"
-          + "\032\034google/protobuf/struct.proto\032\037google/p"
-          + "rotobuf/timestamp.proto\"\234\003\n\007Version\022\014\n\004n"
-          + "ame\030\001 \001(\t\022\023\n\013description\030\003 \001(\t\022/\n\013create"
-          + "_time\030\005 \001(\0132\032.google.protobuf.Timestamp\022"
-          + "/\n\013update_time\030\006 \001(\0132\032.google.protobuf.T"
-          + "imestamp\022C\n\014related_tags\030\007 \003(\0132-.google."
-          + "devtools.artifactregistry.v1beta2.Tag\022.\n"
-          + "\010metadata\030\010 \001(\0132\027.google.protobuf.Struct"
-          + "B\003\340A\003:\226\001\352A\222\001\n\'artifactregistry.googleapi"
-          + "s.com/Version\022gprojects/{project}/locati"
-          + "ons/{location}/repositories/{repository}"
-          + "/packages/{package}/versions/{version}\"\250"
-          + "\001\n\023ListVersionsRequest\022\016\n\006parent\030\001 \001(\t\022\021"
-          + "\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022C\n"
-          + "\004view\030\004 \001(\01625.google.devtools.artifactre"
-          + "gistry.v1beta2.VersionView\022\025\n\010order_by\030\005"
-          + " \001(\tB\003\340A\001\"t\n\024ListVersionsResponse\022C\n\010ver"
-          + "sions\030\001 \003(\01321.google.devtools.artifactre"
-          + "gistry.v1beta2.Version\022\027\n\017next_page_toke"
-          + "n\030\002 \001(\t\"f\n\021GetVersionRequest\022\014\n\004name\030\001 \001"
-          + "(\t\022C\n\004view\030\002 \001(\01625.google.devtools.artif"
-          + "actregistry.v1beta2.VersionView\"3\n\024Delet"
-          + "eVersionRequest\022\014\n\004name\030\001 \001(\t\022\r\n\005force\030\002"
-          + " \001(\010*@\n\013VersionView\022\034\n\030VERSION_VIEW_UNSP"
-          + "ECIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\002B\223\002\n,com.g"
-          + "oogle.devtools.artifactregistry.v1beta2B"
-          + "\014VersionProtoP\001ZXgoogle.golang.org/genpr"
-          + "oto/googleapis/devtools/artifactregistry"
-          + "/v1beta2;artifactregistry\252\002%Google.Cloud"
-          + ".ArtifactRegistry.V1Beta2\312\002%Google\\Cloud"
-          + "\\ArtifactRegistry\\V1beta2\352\002(Google::Clou"
-          + "d::ArtifactRegistry::V1beta2b\006proto3"
+          + "ctregistry.v1beta2\032\037google/api/field_beh"
+          + "avior.proto\032\031google/api/resource.proto\0322"
+          + "google/devtools/artifactregistry/v1beta2"
+          + "/tag.proto\032\034google/protobuf/struct.proto"
+          + "\032\037google/protobuf/timestamp.proto\"\234\003\n\007Ve"
+          + "rsion\022\014\n\004name\030\001 \001(\t\022\023\n\013description\030\003 \001(\t"
+          + "\022/\n\013create_time\030\005 \001(\0132\032.google.protobuf."
+          + "Timestamp\022/\n\013update_time\030\006 \001(\0132\032.google."
+          + "protobuf.Timestamp\022C\n\014related_tags\030\007 \003(\013"
+          + "2-.google.devtools.artifactregistry.v1be"
+          + "ta2.Tag\022.\n\010metadata\030\010 \001(\0132\027.google.proto"
+          + "buf.StructB\003\340A\003:\226\001\352A\222\001\n\'artifactregistry"
+          + ".googleapis.com/Version\022gprojects/{proje"
+          + "ct}/locations/{location}/repositories/{r"
+          + "epository}/packages/{package}/versions/{"
+          + "version}\"\250\001\n\023ListVersionsRequest\022\016\n\006pare"
+          + "nt\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_toke"
+          + "n\030\003 \001(\t\022C\n\004view\030\004 \001(\01625.google.devtools."
+          + "artifactregistry.v1beta2.VersionView\022\025\n\010"
+          + "order_by\030\005 \001(\tB\003\340A\001\"t\n\024ListVersionsRespo"
+          + "nse\022C\n\010versions\030\001 \003(\01321.google.devtools."
+          + "artifactregistry.v1beta2.Version\022\027\n\017next"
+          + "_page_token\030\002 \001(\t\"f\n\021GetVersionRequest\022\014"
+          + "\n\004name\030\001 \001(\t\022C\n\004view\030\002 \001(\01625.google.devt"
+          + "ools.artifactregistry.v1beta2.VersionVie"
+          + "w\"3\n\024DeleteVersionRequest\022\014\n\004name\030\001 \001(\t\022"
+          + "\r\n\005force\030\002 \001(\010*@\n\013VersionView\022\034\n\030VERSION"
+          + "_VIEW_UNSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\002"
+          + "B\223\002\n,com.google.devtools.artifactregistr"
+          + "y.v1beta2B\014VersionProtoP\001ZXgoogle.golang"
+          + ".org/genproto/googleapis/devtools/artifa"
+          + "ctregistry/v1beta2;artifactregistry\252\002%Go"
+          + "ogle.Cloud.ArtifactRegistry.V1Beta2\312\002%Go"
+          + "ogle\\Cloud\\ArtifactRegistry\\V1beta2\352\002(Go"
+          + "ogle::Cloud::ArtifactRegistry::V1beta2b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.devtools.artifactregistry.v1beta2.TagProto.getDescriptor(),
@@ -152,7 +151,6 @@ public final class VersionProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.devtools.artifactregistry.v1beta2.TagProto.getDescriptor();

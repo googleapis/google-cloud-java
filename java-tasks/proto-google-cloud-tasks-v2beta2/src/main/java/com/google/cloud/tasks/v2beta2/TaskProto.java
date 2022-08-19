@@ -52,36 +52,35 @@ public final class TaskProto {
           + "\032google.cloud.tasks.v2beta2\032\031google/api/"
           + "resource.proto\032\'google/cloud/tasks/v2bet"
           + "a2/target.proto\032\037google/protobuf/timesta"
-          + "mp.proto\032\027google/rpc/status.proto\032\034googl"
-          + "e/api/annotations.proto\"\250\004\n\004Task\022\014\n\004name"
-          + "\030\001 \001(\t\022S\n\027app_engine_http_request\030\003 \001(\0132"
-          + "0.google.cloud.tasks.v2beta2.AppEngineHt"
-          + "tpRequestH\000\022?\n\014pull_message\030\004 \001(\0132\'.goog"
-          + "le.cloud.tasks.v2beta2.PullMessageH\000\0221\n\r"
-          + "schedule_time\030\005 \001(\0132\032.google.protobuf.Ti"
-          + "mestamp\022/\n\013create_time\030\006 \001(\0132\032.google.pr"
-          + "otobuf.Timestamp\0226\n\006status\030\007 \001(\0132&.googl"
-          + "e.cloud.tasks.v2beta2.TaskStatus\0223\n\004view"
-          + "\030\010 \001(\0162%.google.cloud.tasks.v2beta2.Task"
-          + ".View\"1\n\004View\022\024\n\020VIEW_UNSPECIFIED\020\000\022\t\n\005B"
-          + "ASIC\020\001\022\010\n\004FULL\020\002:h\352Ae\n\036cloudtasks.google"
-          + "apis.com/Task\022Cprojects/{project}/locati"
-          + "ons/{location}/queues/{queue}/tasks/{tas"
-          + "k}B\016\n\014payload_type\"\335\001\n\nTaskStatus\022\036\n\026att"
-          + "empt_dispatch_count\030\001 \001(\005\022\036\n\026attempt_res"
-          + "ponse_count\030\002 \001(\005\022G\n\024first_attempt_statu"
-          + "s\030\003 \001(\0132).google.cloud.tasks.v2beta2.Att"
-          + "emptStatus\022F\n\023last_attempt_status\030\004 \001(\0132"
-          + ").google.cloud.tasks.v2beta2.AttemptStat"
-          + "us\"\325\001\n\rAttemptStatus\0221\n\rschedule_time\030\001 "
-          + "\001(\0132\032.google.protobuf.Timestamp\0221\n\rdispa"
-          + "tch_time\030\002 \001(\0132\032.google.protobuf.Timesta"
-          + "mp\0221\n\rresponse_time\030\003 \001(\0132\032.google.proto"
-          + "buf.Timestamp\022+\n\017response_status\030\004 \001(\0132\022"
-          + ".google.rpc.StatusBn\n\036com.google.cloud.t"
-          + "asks.v2beta2B\tTaskProtoP\001Z?google.golang"
-          + ".org/genproto/googleapis/cloud/tasks/v2b"
-          + "eta2;tasksb\006proto3"
+          + "mp.proto\032\027google/rpc/status.proto\"\250\004\n\004Ta"
+          + "sk\022\014\n\004name\030\001 \001(\t\022S\n\027app_engine_http_requ"
+          + "est\030\003 \001(\01320.google.cloud.tasks.v2beta2.A"
+          + "ppEngineHttpRequestH\000\022?\n\014pull_message\030\004 "
+          + "\001(\0132\'.google.cloud.tasks.v2beta2.PullMes"
+          + "sageH\000\0221\n\rschedule_time\030\005 \001(\0132\032.google.p"
+          + "rotobuf.Timestamp\022/\n\013create_time\030\006 \001(\0132\032"
+          + ".google.protobuf.Timestamp\0226\n\006status\030\007 \001"
+          + "(\0132&.google.cloud.tasks.v2beta2.TaskStat"
+          + "us\0223\n\004view\030\010 \001(\0162%.google.cloud.tasks.v2"
+          + "beta2.Task.View\"1\n\004View\022\024\n\020VIEW_UNSPECIF"
+          + "IED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\002:h\352Ae\n\036cloudta"
+          + "sks.googleapis.com/Task\022Cprojects/{proje"
+          + "ct}/locations/{location}/queues/{queue}/"
+          + "tasks/{task}B\016\n\014payload_type\"\335\001\n\nTaskSta"
+          + "tus\022\036\n\026attempt_dispatch_count\030\001 \001(\005\022\036\n\026a"
+          + "ttempt_response_count\030\002 \001(\005\022G\n\024first_att"
+          + "empt_status\030\003 \001(\0132).google.cloud.tasks.v"
+          + "2beta2.AttemptStatus\022F\n\023last_attempt_sta"
+          + "tus\030\004 \001(\0132).google.cloud.tasks.v2beta2.A"
+          + "ttemptStatus\"\325\001\n\rAttemptStatus\0221\n\rschedu"
+          + "le_time\030\001 \001(\0132\032.google.protobuf.Timestam"
+          + "p\0221\n\rdispatch_time\030\002 \001(\0132\032.google.protob"
+          + "uf.Timestamp\0221\n\rresponse_time\030\003 \001(\0132\032.go"
+          + "ogle.protobuf.Timestamp\022+\n\017response_stat"
+          + "us\030\004 \001(\0132\022.google.rpc.StatusBn\n\036com.goog"
+          + "le.cloud.tasks.v2beta2B\tTaskProtoP\001Z?goo"
+          + "gle.golang.org/genproto/googleapis/cloud"
+          + "/tasks/v2beta2;tasksb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -91,7 +90,6 @@ public final class TaskProto {
               com.google.cloud.tasks.v2beta2.TargetProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_tasks_v2beta2_Task_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -136,7 +134,6 @@ public final class TaskProto {
     com.google.cloud.tasks.v2beta2.TargetProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

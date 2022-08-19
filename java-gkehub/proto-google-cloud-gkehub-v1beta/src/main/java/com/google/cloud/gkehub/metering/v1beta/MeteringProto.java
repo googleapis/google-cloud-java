@@ -43,24 +43,22 @@ public final class MeteringProto {
       "\n2google/cloud/gkehub/v1beta/metering/me"
           + "tering.proto\022#google.cloud.gkehub.meteri"
           + "ng.v1beta\032\037google/protobuf/timestamp.pro"
-          + "to\032\034google/api/annotations.proto\"\201\001\n\017Mem"
-          + "bershipState\0229\n\025last_measurement_time\030\001 "
-          + "\001(\0132\032.google.protobuf.Timestamp\0223\n+preci"
-          + "se_last_measured_cluster_vcpu_capacity\030\003"
-          + " \001(\002B\375\001\n\'com.google.cloud.gkehub.meterin"
-          + "g.v1betaB\rMeteringProtoP\001ZKgoogle.golang"
-          + ".org/genproto/googleapis/cloud/gkehub/me"
-          + "tering/v1beta;metering\252\002#Google.Cloud.Gk"
-          + "eHub.Metering.V1Beta\312\002#Google\\Cloud\\GkeH"
-          + "ub\\Metering\\V1beta\352\002\'Google::Cloud::GkeH"
-          + "ub::Metering::V1betab\006proto3"
+          + "to\"\201\001\n\017MembershipState\0229\n\025last_measureme"
+          + "nt_time\030\001 \001(\0132\032.google.protobuf.Timestam"
+          + "p\0223\n+precise_last_measured_cluster_vcpu_"
+          + "capacity\030\003 \001(\002B\375\001\n\'com.google.cloud.gkeh"
+          + "ub.metering.v1betaB\rMeteringProtoP\001ZKgoo"
+          + "gle.golang.org/genproto/googleapis/cloud"
+          + "/gkehub/metering/v1beta;metering\252\002#Googl"
+          + "e.Cloud.GkeHub.Metering.V1Beta\312\002#Google\\"
+          + "Cloud\\GkeHub\\Metering\\V1beta\352\002\'Google::C"
+          + "loud::GkeHub::Metering::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_gkehub_metering_v1beta_MembershipState_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -71,7 +69,6 @@ public final class MeteringProto {
               "LastMeasurementTime", "PreciseLastMeasuredClusterVcpuCapacity",
             });
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

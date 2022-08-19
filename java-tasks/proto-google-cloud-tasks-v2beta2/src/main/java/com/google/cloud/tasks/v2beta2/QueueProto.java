@@ -57,45 +57,44 @@ public final class QueueProto {
           + "/field_behavior.proto\032\031google/api/resour"
           + "ce.proto\032\'google/cloud/tasks/v2beta2/tar"
           + "get.proto\032\036google/protobuf/duration.prot"
-          + "o\032\037google/protobuf/timestamp.proto\032\034goog"
-          + "le/api/annotations.proto\"\332\005\n\005Queue\022\014\n\004na"
-          + "me\030\001 \001(\t\022Q\n\026app_engine_http_target\030\003 \001(\013"
-          + "2/.google.cloud.tasks.v2beta2.AppEngineH"
-          + "ttpTargetH\000\022=\n\013pull_target\030\004 \001(\0132&.googl"
-          + "e.cloud.tasks.v2beta2.PullTargetH\000\022;\n\013ra"
-          + "te_limits\030\005 \001(\0132&.google.cloud.tasks.v2b"
-          + "eta2.RateLimits\022=\n\014retry_config\030\006 \001(\0132\'."
-          + "google.cloud.tasks.v2beta2.RetryConfig\0226"
-          + "\n\005state\030\007 \001(\0162\'.google.cloud.tasks.v2bet"
-          + "a2.Queue.State\022.\n\npurge_time\030\010 \001(\0132\032.goo"
-          + "gle.protobuf.Timestamp\022+\n\010task_ttl\030\t \001(\013"
-          + "2\031.google.protobuf.Duration\0220\n\rtombstone"
-          + "_ttl\030\n \001(\0132\031.google.protobuf.Duration\022:\n"
-          + "\005stats\030\020 \001(\0132&.google.cloud.tasks.v2beta"
-          + "2.QueueStatsB\003\340A\003\"E\n\005State\022\025\n\021STATE_UNSP"
-          + "ECIFIED\020\000\022\013\n\007RUNNING\020\001\022\n\n\006PAUSED\020\002\022\014\n\010DI"
-          + "SABLED\020\003:\\\352AY\n\037cloudtasks.googleapis.com"
-          + "/Queue\0226projects/{project}/locations/{lo"
-          + "cation}/queues/{queue}B\r\n\013target_type\"k\n"
-          + "\nRateLimits\022\'\n\037max_tasks_dispatched_per_"
-          + "second\030\001 \001(\001\022\026\n\016max_burst_size\030\002 \001(\005\022\034\n\024"
-          + "max_concurrent_tasks\030\003 \001(\005\"\201\002\n\013RetryConf"
-          + "ig\022\026\n\014max_attempts\030\001 \001(\005H\000\022\034\n\022unlimited_"
-          + "attempts\030\002 \001(\010H\000\0225\n\022max_retry_duration\030\003"
-          + " \001(\0132\031.google.protobuf.Duration\022.\n\013min_b"
-          + "ackoff\030\004 \001(\0132\031.google.protobuf.Duration\022"
-          + ".\n\013max_backoff\030\005 \001(\0132\031.google.protobuf.D"
-          + "uration\022\025\n\rmax_doublings\030\006 \001(\005B\016\n\014num_at"
-          + "tempts\"\350\001\n\nQueueStats\022\030\n\013tasks_count\030\001 \001"
-          + "(\003B\003\340A\003\022F\n\035oldest_estimated_arrival_time"
-          + "\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022"
-          + "\'\n\032executed_last_minute_count\030\003 \001(\003B\003\340A\003"
-          + "\022(\n\033concurrent_dispatches_count\030\004 \001(\003B\003\340"
-          + "A\003\022%\n\030effective_execution_rate\030\005 \001(\001B\003\340A"
-          + "\003Bo\n\036com.google.cloud.tasks.v2beta2B\nQue"
-          + "ueProtoP\001Z?google.golang.org/genproto/go"
-          + "ogleapis/cloud/tasks/v2beta2;tasksb\006prot"
-          + "o3"
+          + "o\032\037google/protobuf/timestamp.proto\"\332\005\n\005Q"
+          + "ueue\022\014\n\004name\030\001 \001(\t\022Q\n\026app_engine_http_ta"
+          + "rget\030\003 \001(\0132/.google.cloud.tasks.v2beta2."
+          + "AppEngineHttpTargetH\000\022=\n\013pull_target\030\004 \001"
+          + "(\0132&.google.cloud.tasks.v2beta2.PullTarg"
+          + "etH\000\022;\n\013rate_limits\030\005 \001(\0132&.google.cloud"
+          + ".tasks.v2beta2.RateLimits\022=\n\014retry_confi"
+          + "g\030\006 \001(\0132\'.google.cloud.tasks.v2beta2.Ret"
+          + "ryConfig\0226\n\005state\030\007 \001(\0162\'.google.cloud.t"
+          + "asks.v2beta2.Queue.State\022.\n\npurge_time\030\010"
+          + " \001(\0132\032.google.protobuf.Timestamp\022+\n\010task"
+          + "_ttl\030\t \001(\0132\031.google.protobuf.Duration\0220\n"
+          + "\rtombstone_ttl\030\n \001(\0132\031.google.protobuf.D"
+          + "uration\022:\n\005stats\030\020 \001(\0132&.google.cloud.ta"
+          + "sks.v2beta2.QueueStatsB\003\340A\003\"E\n\005State\022\025\n\021"
+          + "STATE_UNSPECIFIED\020\000\022\013\n\007RUNNING\020\001\022\n\n\006PAUS"
+          + "ED\020\002\022\014\n\010DISABLED\020\003:\\\352AY\n\037cloudtasks.goog"
+          + "leapis.com/Queue\0226projects/{project}/loc"
+          + "ations/{location}/queues/{queue}B\r\n\013targ"
+          + "et_type\"k\n\nRateLimits\022\'\n\037max_tasks_dispa"
+          + "tched_per_second\030\001 \001(\001\022\026\n\016max_burst_size"
+          + "\030\002 \001(\005\022\034\n\024max_concurrent_tasks\030\003 \001(\005\"\201\002\n"
+          + "\013RetryConfig\022\026\n\014max_attempts\030\001 \001(\005H\000\022\034\n\022"
+          + "unlimited_attempts\030\002 \001(\010H\000\0225\n\022max_retry_"
+          + "duration\030\003 \001(\0132\031.google.protobuf.Duratio"
+          + "n\022.\n\013min_backoff\030\004 \001(\0132\031.google.protobuf"
+          + ".Duration\022.\n\013max_backoff\030\005 \001(\0132\031.google."
+          + "protobuf.Duration\022\025\n\rmax_doublings\030\006 \001(\005"
+          + "B\016\n\014num_attempts\"\350\001\n\nQueueStats\022\030\n\013tasks"
+          + "_count\030\001 \001(\003B\003\340A\003\022F\n\035oldest_estimated_ar"
+          + "rival_time\030\002 \001(\0132\032.google.protobuf.Times"
+          + "tampB\003\340A\003\022\'\n\032executed_last_minute_count\030"
+          + "\003 \001(\003B\003\340A\003\022(\n\033concurrent_dispatches_coun"
+          + "t\030\004 \001(\003B\003\340A\003\022%\n\030effective_execution_rate"
+          + "\030\005 \001(\001B\003\340A\003Bo\n\036com.google.cloud.tasks.v2"
+          + "beta2B\nQueueProtoP\001Z?google.golang.org/g"
+          + "enproto/googleapis/cloud/tasks/v2beta2;t"
+          + "asksb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -106,7 +105,6 @@ public final class QueueProto {
               com.google.cloud.tasks.v2beta2.TargetProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_tasks_v2beta2_Queue_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -171,7 +169,6 @@ public final class QueueProto {
     com.google.cloud.tasks.v2beta2.TargetProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

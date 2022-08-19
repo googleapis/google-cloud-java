@@ -16,10 +16,10 @@
 
 package com.google.cloud.servicedirectory.v1beta1.samples;
 
-// [START
-// servicedirectory_v1beta1_generated_registrationserviceclient_deleteendpoint_endpointname_sync]
+// [START servicedirectory_v1beta1_generated_registrationserviceclient_deleteendpoint_endpointname_sync]
 import com.google.cloud.servicedirectory.v1beta1.EndpointName;
 import com.google.cloud.servicedirectory.v1beta1.RegistrationServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteEndpointEndpointname {
 
@@ -37,5 +37,4 @@ public class SyncDeleteEndpointEndpointname {
     }
   }
 }
-// [END
-// servicedirectory_v1beta1_generated_registrationserviceclient_deleteendpoint_endpointname_sync]
+// [END servicedirectory_v1beta1_generated_registrationserviceclient_deleteendpoint_endpointname_sync]

@@ -43,27 +43,23 @@ public final class TextExtractionPredictionInstanceProto {
       "\nMgoogle/cloud/aiplatform/v1beta1/schema"
           + "/predict/instance/text_extraction.proto\022"
           + "7google.cloud.aiplatform.v1beta1.schema."
-          + "predict.instance\032\034google/api/annotations"
-          + ".proto\"S\n TextExtractionPredictionInstan"
-          + "ce\022\017\n\007content\030\001 \001(\t\022\021\n\tmime_type\030\002 \001(\t\022\013"
-          + "\n\003key\030\003 \001(\tB\373\002\n;com.google.cloud.aiplatf"
-          + "orm.v1beta1.schema.predict.instanceB%Tex"
-          + "tExtractionPredictionInstanceProtoP\001Z_go"
-          + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/aiplatform/v1beta1/schema/predict/inst"
-          + "ance;instance\252\0027Google.Cloud.AIPlatform."
-          + "V1Beta1.Schema.Predict.Instance\312\0027Google"
-          + "\\Cloud\\AIPlatform\\V1beta1\\Schema\\Predict"
-          + "\\Instance\352\002=Google::Cloud::AIPlatform::V"
-          + "1beta1::Schema::Predict::Instanceb\006proto"
-          + "3"
+          + "predict.instance\"S\n TextExtractionPredic"
+          + "tionInstance\022\017\n\007content\030\001 \001(\t\022\021\n\tmime_ty"
+          + "pe\030\002 \001(\t\022\013\n\003key\030\003 \001(\tB\373\002\n;com.google.clo"
+          + "ud.aiplatform.v1beta1.schema.predict.ins"
+          + "tanceB%TextExtractionPredictionInstanceP"
+          + "rotoP\001Z_google.golang.org/genproto/googl"
+          + "eapis/cloud/aiplatform/v1beta1/schema/pr"
+          + "edict/instance;instance\252\0027Google.Cloud.A"
+          + "IPlatform.V1Beta1.Schema.Predict.Instanc"
+          + "e\312\0027Google\\Cloud\\AIPlatform\\V1beta1\\Sche"
+          + "ma\\Predict\\Instance\352\002=Google::Cloud::AIP"
+          + "latform::V1beta1::Schema::Predict::Insta"
+          + "nceb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1beta1_schema_predict_instance_TextExtractionPredictionInstance_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1beta1_schema_predict_instance_TextExtractionPredictionInstance_fieldAccessorTable =
@@ -72,7 +68,6 @@ public final class TextExtractionPredictionInstanceProto {
             new java.lang.String[] {
               "Content", "MimeType", "Key",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

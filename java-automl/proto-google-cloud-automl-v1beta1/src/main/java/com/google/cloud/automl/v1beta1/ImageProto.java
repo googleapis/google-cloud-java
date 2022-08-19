@@ -61,43 +61,38 @@ public final class ImageProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\'google/cloud/automl/v1beta1/image.prot"
-          + "o\022\033google.cloud.automl.v1beta1\032\031google/a"
-          + "pi/resource.proto\0321google/cloud/automl/v"
-          + "1beta1/annotation_spec.proto\0320google/clo"
-          + "ud/automl/v1beta1/classification.proto\032\037"
-          + "google/protobuf/timestamp.proto\032\034google/"
-          + "api/annotations.proto\"r\n\"ImageClassifica"
-          + "tionDatasetMetadata\022L\n\023classification_ty"
-          + "pe\030\001 \001(\0162/.google.cloud.automl.v1beta1.C"
-          + "lassificationType\"%\n#ImageObjectDetectio"
-          + "nDatasetMetadata\"\262\001\n ImageClassification"
-          + "ModelMetadata\022\025\n\rbase_model_id\030\001 \001(\t\022\024\n\014"
-          + "train_budget\030\002 \001(\003\022\022\n\ntrain_cost\030\003 \001(\003\022\023"
-          + "\n\013stop_reason\030\005 \001(\t\022\022\n\nmodel_type\030\007 \001(\t\022"
-          + "\020\n\010node_qps\030\r \001(\001\022\022\n\nnode_count\030\016 \001(\003\"\276\001"
-          + "\n!ImageObjectDetectionModelMetadata\022\022\n\nm"
-          + "odel_type\030\001 \001(\t\022\022\n\nnode_count\030\003 \001(\003\022\020\n\010n"
-          + "ode_qps\030\004 \001(\001\022\023\n\013stop_reason\030\005 \001(\t\022%\n\035tr"
-          + "ain_budget_milli_node_hours\030\006 \001(\003\022#\n\033tra"
-          + "in_cost_milli_node_hours\030\007 \001(\003\"@\n*ImageC"
-          + "lassificationModelDeploymentMetadata\022\022\n\n"
-          + "node_count\030\001 \001(\003\"A\n+ImageObjectDetection"
-          + "ModelDeploymentMetadata\022\022\n\nnode_count\030\001 "
-          + "\001(\003B\261\001\n\037com.google.cloud.automl.v1beta1B"
-          + "\nImageProtoP\001ZAgoogle.golang.org/genprot"
-          + "o/googleapis/cloud/automl/v1beta1;automl"
-          + "\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Google:"
-          + ":Cloud::AutoML::V1beta1b\006proto3"
+          + "o\022\033google.cloud.automl.v1beta1\0321google/c"
+          + "loud/automl/v1beta1/annotation_spec.prot"
+          + "o\0320google/cloud/automl/v1beta1/classific"
+          + "ation.proto\"r\n\"ImageClassificationDatase"
+          + "tMetadata\022L\n\023classification_type\030\001 \001(\0162/"
+          + ".google.cloud.automl.v1beta1.Classificat"
+          + "ionType\"%\n#ImageObjectDetectionDatasetMe"
+          + "tadata\"\262\001\n ImageClassificationModelMetad"
+          + "ata\022\025\n\rbase_model_id\030\001 \001(\t\022\024\n\014train_budg"
+          + "et\030\002 \001(\003\022\022\n\ntrain_cost\030\003 \001(\003\022\023\n\013stop_rea"
+          + "son\030\005 \001(\t\022\022\n\nmodel_type\030\007 \001(\t\022\020\n\010node_qp"
+          + "s\030\r \001(\001\022\022\n\nnode_count\030\016 \001(\003\"\276\001\n!ImageObj"
+          + "ectDetectionModelMetadata\022\022\n\nmodel_type\030"
+          + "\001 \001(\t\022\022\n\nnode_count\030\003 \001(\003\022\020\n\010node_qps\030\004 "
+          + "\001(\001\022\023\n\013stop_reason\030\005 \001(\t\022%\n\035train_budget"
+          + "_milli_node_hours\030\006 \001(\003\022#\n\033train_cost_mi"
+          + "lli_node_hours\030\007 \001(\003\"@\n*ImageClassificat"
+          + "ionModelDeploymentMetadata\022\022\n\nnode_count"
+          + "\030\001 \001(\003\"A\n+ImageObjectDetectionModelDeplo"
+          + "ymentMetadata\022\022\n\nnode_count\030\001 \001(\003B\261\001\n\037co"
+          + "m.google.cloud.automl.v1beta1B\nImageProt"
+          + "oP\001ZAgoogle.golang.org/genproto/googleap"
+          + "is/cloud/automl/v1beta1;automl\312\002\033Google\\"
+          + "Cloud\\AutoMl\\V1beta1\352\002\036Google::Cloud::Au"
+          + "toML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.automl.v1beta1.AnnotationSpecOuterClass.getDescriptor(),
               com.google.cloud.automl.v1beta1.ClassificationProto.getDescriptor(),
-              com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_automl_v1beta1_ImageClassificationDatasetMetadata_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -156,11 +151,8 @@ public final class ImageProto {
             new java.lang.String[] {
               "NodeCount",
             });
-    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.automl.v1beta1.AnnotationSpecOuterClass.getDescriptor();
     com.google.cloud.automl.v1beta1.ClassificationProto.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

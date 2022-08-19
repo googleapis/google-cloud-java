@@ -16,8 +16,7 @@
 
 package com.google.cloud.servicedirectory.v1.samples;
 
-// [START
-// servicedirectory_v1_generated_registrationserviceclient_create_setcredentialsprovider1_sync]
+// [START servicedirectory_v1_generated_registrationserviceclient_create_setcredentialsprovider1_sync]
 import com.google.cloud.servicedirectory.v1.RegistrationServiceClient;
 import com.google.cloud.servicedirectory.v1.RegistrationServiceSettings;
 

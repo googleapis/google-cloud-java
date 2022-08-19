@@ -16,8 +16,7 @@
 
 package com.google.cloud.servicedirectory.v1beta1.samples;
 
-// [START
-// servicedirectory_v1beta1_generated_registrationserviceclient_create_setcredentialsprovider_sync]
+// [START servicedirectory_v1beta1_generated_registrationserviceclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.servicedirectory.v1beta1.RegistrationServiceClient;
 import com.google.cloud.servicedirectory.v1beta1.RegistrationServiceSettings;
@@ -40,5 +39,4 @@ public class SyncCreateSetCredentialsProvider {
         RegistrationServiceClient.create(registrationServiceSettings);
   }
 }
-// [END
-// servicedirectory_v1beta1_generated_registrationserviceclient_create_setcredentialsprovider_sync]
+// [END servicedirectory_v1beta1_generated_registrationserviceclient_create_setcredentialsprovider_sync]

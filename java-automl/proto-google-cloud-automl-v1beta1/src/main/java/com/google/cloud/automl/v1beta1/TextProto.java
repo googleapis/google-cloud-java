@@ -62,30 +62,28 @@ public final class TextProto {
     java.lang.String[] descriptorData = {
       "\n&google/cloud/automl/v1beta1/text.proto"
           + "\022\033google.cloud.automl.v1beta1\0320google/cl"
-          + "oud/automl/v1beta1/classification.proto\032"
-          + "\034google/api/annotations.proto\"q\n!TextCla"
-          + "ssificationDatasetMetadata\022L\n\023classifica"
-          + "tion_type\030\001 \001(\0162/.google.cloud.automl.v1"
-          + "beta1.ClassificationType\"o\n\037TextClassifi"
-          + "cationModelMetadata\022L\n\023classification_ty"
-          + "pe\030\003 \001(\0162/.google.cloud.automl.v1beta1.C"
-          + "lassificationType\"\037\n\035TextExtractionDatas"
-          + "etMetadata\"1\n\033TextExtractionModelMetadat"
-          + "a\022\022\n\nmodel_hint\030\003 \001(\t\"5\n\034TextSentimentDa"
-          + "tasetMetadata\022\025\n\rsentiment_max\030\001 \001(\005\"\034\n\032"
-          + "TextSentimentModelMetadataB\260\001\n\037com.googl"
-          + "e.cloud.automl.v1beta1B\tTextProtoP\001ZAgoo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/automl/v1beta1;automl\312\002\033Google\\Cloud\\Au"
-          + "toMl\\V1beta1\352\002\036Google::Cloud::AutoML::V1"
-          + "beta1b\006proto3"
+          + "oud/automl/v1beta1/classification.proto\""
+          + "q\n!TextClassificationDatasetMetadata\022L\n\023"
+          + "classification_type\030\001 \001(\0162/.google.cloud"
+          + ".automl.v1beta1.ClassificationType\"o\n\037Te"
+          + "xtClassificationModelMetadata\022L\n\023classif"
+          + "ication_type\030\003 \001(\0162/.google.cloud.automl"
+          + ".v1beta1.ClassificationType\"\037\n\035TextExtra"
+          + "ctionDatasetMetadata\"1\n\033TextExtractionMo"
+          + "delMetadata\022\022\n\nmodel_hint\030\003 \001(\t\"5\n\034TextS"
+          + "entimentDatasetMetadata\022\025\n\rsentiment_max"
+          + "\030\001 \001(\005\"\034\n\032TextSentimentModelMetadataB\260\001\n"
+          + "\037com.google.cloud.automl.v1beta1B\tTextPr"
+          + "otoP\001ZAgoogle.golang.org/genproto/google"
+          + "apis/cloud/automl/v1beta1;automl\312\002\033Googl"
+          + "e\\Cloud\\AutoMl\\V1beta1\352\002\036Google::Cloud::"
+          + "AutoML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.cloud.automl.v1beta1.ClassificationProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_automl_v1beta1_TextClassificationDatasetMetadata_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -132,7 +130,6 @@ public final class TextProto {
             internal_static_google_cloud_automl_v1beta1_TextSentimentModelMetadata_descriptor,
             new java.lang.String[] {});
     com.google.cloud.automl.v1beta1.ClassificationProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

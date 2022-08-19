@@ -42,31 +42,27 @@ public final class Search {
     java.lang.String[] descriptorData = {
       "\n-google/cloud/datacatalog/v1beta1/searc"
           + "h.proto\022 google.cloud.datacatalog.v1beta"
-          + "1\032\037google/api/field_behavior.proto\032-goog"
-          + "le/cloud/datacatalog/v1beta1/common.prot"
-          + "o\032\037google/protobuf/timestamp.proto\"\275\001\n\023S"
-          + "earchCatalogResult\022N\n\022search_result_type"
-          + "\030\001 \001(\01622.google.cloud.datacatalog.v1beta"
-          + "1.SearchResultType\022\035\n\025search_result_subt"
-          + "ype\030\002 \001(\t\022\036\n\026relative_resource_name\030\003 \001("
-          + "\t\022\027\n\017linked_resource\030\004 \001(\t*d\n\020SearchResu"
-          + "ltType\022\"\n\036SEARCH_RESULT_TYPE_UNSPECIFIED"
-          + "\020\000\022\t\n\005ENTRY\020\001\022\020\n\014TAG_TEMPLATE\020\002\022\017\n\013ENTRY"
-          + "_GROUP\020\003B\344\001\n$com.google.cloud.datacatalo"
-          + "g.v1beta1P\001ZKgoogle.golang.org/genproto/"
-          + "googleapis/cloud/datacatalog/v1beta1;dat"
-          + "acatalog\370\001\001\252\002 Google.Cloud.DataCatalog.V"
-          + "1Beta1\312\002 Google\\Cloud\\DataCatalog\\V1beta"
-          + "1\352\002#Google::Cloud::DataCatalog::V1beta1b"
-          + "\006proto3"
+          + "1\032-google/cloud/datacatalog/v1beta1/comm"
+          + "on.proto\"\275\001\n\023SearchCatalogResult\022N\n\022sear"
+          + "ch_result_type\030\001 \001(\01622.google.cloud.data"
+          + "catalog.v1beta1.SearchResultType\022\035\n\025sear"
+          + "ch_result_subtype\030\002 \001(\t\022\036\n\026relative_reso"
+          + "urce_name\030\003 \001(\t\022\027\n\017linked_resource\030\004 \001(\t"
+          + "*d\n\020SearchResultType\022\"\n\036SEARCH_RESULT_TY"
+          + "PE_UNSPECIFIED\020\000\022\t\n\005ENTRY\020\001\022\020\n\014TAG_TEMPL"
+          + "ATE\020\002\022\017\n\013ENTRY_GROUP\020\003B\344\001\n$com.google.cl"
+          + "oud.datacatalog.v1beta1P\001ZKgoogle.golang"
+          + ".org/genproto/googleapis/cloud/datacatal"
+          + "og/v1beta1;datacatalog\370\001\001\252\002 Google.Cloud"
+          + ".DataCatalog.V1Beta1\312\002 Google\\Cloud\\Data"
+          + "Catalog\\V1beta1\352\002#Google::Cloud::DataCat"
+          + "alog::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.cloud.datacatalog.v1beta1.Common.getDescriptor(),
-              com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_datacatalog_v1beta1_SearchCatalogResult_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -76,9 +72,7 @@ public final class Search {
             new java.lang.String[] {
               "SearchResultType", "SearchResultSubtype", "RelativeResourceName", "LinkedResource",
             });
-    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.cloud.datacatalog.v1beta1.Common.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -49,24 +49,23 @@ public final class CelebrityProto {
   static {
     java.lang.String[] descriptorData = {
       "\n(google/cloud/vision/v1p4beta1/face.pro"
-          + "to\022\035google.cloud.vision.v1p4beta1\032\034googl"
-          + "e/api/annotations.proto\032,google/cloud/vi"
-          + "sion/v1p4beta1/geometry.proto\".\n\025FaceRec"
-          + "ognitionParams\022\025\n\rcelebrity_set\030\001 \003(\t\"D\n"
-          + "\tCelebrity\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name"
-          + "\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\"h\n\025FaceRecog"
-          + "nitionResult\022;\n\tcelebrity\030\001 \001(\0132(.google"
-          + ".cloud.vision.v1p4beta1.Celebrity\022\022\n\ncon"
-          + "fidence\030\002 \001(\002B\204\001\n!com.google.cloud.visio"
-          + "n.v1p4beta1B\016CelebrityProtoP\001ZCgoogle.go"
-          + "lang.org/genproto/googleapis/cloud/visio"
-          + "n/v1p4beta1;vision\370\001\001\242\002\004GCVNb\006proto3"
+          + "to\022\035google.cloud.vision.v1p4beta1\032,googl"
+          + "e/cloud/vision/v1p4beta1/geometry.proto\""
+          + ".\n\025FaceRecognitionParams\022\025\n\rcelebrity_se"
+          + "t\030\001 \003(\t\"D\n\tCelebrity\022\014\n\004name\030\001 \001(\t\022\024\n\014di"
+          + "splay_name\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\"h\n"
+          + "\025FaceRecognitionResult\022;\n\tcelebrity\030\001 \001("
+          + "\0132(.google.cloud.vision.v1p4beta1.Celebr"
+          + "ity\022\022\n\nconfidence\030\002 \001(\002B\204\001\n!com.google.c"
+          + "loud.vision.v1p4beta1B\016CelebrityProtoP\001Z"
+          + "Cgoogle.golang.org/genproto/googleapis/c"
+          + "loud/vision/v1p4beta1;vision\370\001\001\242\002\004GCVNb\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.cloud.vision.v1p4beta1.GeometryProto.getDescriptor(),
             });
     internal_static_google_cloud_vision_v1p4beta1_FaceRecognitionParams_descriptor =
@@ -93,7 +92,6 @@ public final class CelebrityProto {
             new java.lang.String[] {
               "Celebrity", "Confidence",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.vision.v1p4beta1.GeometryProto.getDescriptor();
   }
 

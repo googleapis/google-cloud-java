@@ -16,8 +16,7 @@
 
 package com.google.cloud.servicedirectory.v1.samples;
 
-// [START
-// servicedirectory_v1_generated_registrationserviceclient_updateservice_servicefieldmask_sync]
+// [START servicedirectory_v1_generated_registrationserviceclient_updateservice_servicefieldmask_sync]
 import com.google.cloud.servicedirectory.v1.RegistrationServiceClient;
 import com.google.cloud.servicedirectory.v1.Service;
 import com.google.protobuf.FieldMask;

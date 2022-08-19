@@ -821,7 +821,7 @@ public final class TextSentimentProto {
      * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id is
-     *     deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
+     *     deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=77
      * @return A list containing the annotationSpecId.
      */
     @java.lang.Deprecated
@@ -837,7 +837,7 @@ public final class TextSentimentProto {
      * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id is
-     *     deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
+     *     deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=77
      * @return The count of annotationSpecId.
      */
     @java.lang.Deprecated
@@ -853,7 +853,7 @@ public final class TextSentimentProto {
      * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id is
-     *     deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
+     *     deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=77
      * @param index The index of the element to return.
      * @return The annotationSpecId at the given index.
      */
@@ -870,7 +870,7 @@ public final class TextSentimentProto {
      * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id is
-     *     deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
+     *     deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=77
      * @param index The index of the value to return.
      * @return The bytes of the annotationSpecId at the given index.
      */
@@ -1248,7 +1248,7 @@ public final class TextSentimentProto {
      * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id is
-     *     deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
+     *     deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=77
      * @return A list containing the annotationSpecId.
      */
     @java.lang.Deprecated
@@ -1266,7 +1266,7 @@ public final class TextSentimentProto {
      * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id is
-     *     deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
+     *     deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=77
      * @return The count of annotationSpecId.
      */
     @java.lang.Deprecated
@@ -1284,7 +1284,7 @@ public final class TextSentimentProto {
      * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id is
-     *     deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
+     *     deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=77
      * @param index The index of the element to return.
      * @return The annotationSpecId at the given index.
      */
@@ -1303,7 +1303,7 @@ public final class TextSentimentProto {
      * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id is
-     *     deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
+     *     deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=77
      * @param index The index of the value to return.
      * @return The bytes of the annotationSpecId at the given index.
      */
@@ -2467,7 +2467,7 @@ public final class TextSentimentProto {
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        *
        * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id
-       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
+       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=77
        * @return A list containing the annotationSpecId.
        */
       @java.lang.Deprecated
@@ -2485,7 +2485,7 @@ public final class TextSentimentProto {
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        *
        * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id
-       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
+       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=77
        * @return The count of annotationSpecId.
        */
       @java.lang.Deprecated
@@ -2503,7 +2503,7 @@ public final class TextSentimentProto {
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        *
        * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id
-       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
+       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=77
        * @param index The index of the element to return.
        * @return The annotationSpecId at the given index.
        */
@@ -2522,7 +2522,7 @@ public final class TextSentimentProto {
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        *
        * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id
-       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
+       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=77
        * @param index The index of the value to return.
        * @return The bytes of the annotationSpecId at the given index.
        */
@@ -2541,7 +2541,7 @@ public final class TextSentimentProto {
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        *
        * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id
-       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
+       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=77
        * @param index The index to set the value at.
        * @param value The annotationSpecId to set.
        * @return This builder for chaining.
@@ -2567,7 +2567,7 @@ public final class TextSentimentProto {
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        *
        * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id
-       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
+       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=77
        * @param value The annotationSpecId to add.
        * @return This builder for chaining.
        */
@@ -2592,7 +2592,7 @@ public final class TextSentimentProto {
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        *
        * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id
-       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
+       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=77
        * @param values The annotationSpecId to add.
        * @return This builder for chaining.
        */
@@ -2614,7 +2614,7 @@ public final class TextSentimentProto {
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        *
        * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id
-       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
+       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=77
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -2635,7 +2635,7 @@ public final class TextSentimentProto {
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        *
        * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id
-       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
+       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=77
        * @param value The bytes of the annotationSpecId to add.
        * @return This builder for chaining.
        */
@@ -2728,29 +2728,27 @@ public final class TextSentimentProto {
       "\n0google/cloud/automl/v1beta1/text_senti"
           + "ment.proto\022\033google.cloud.automl.v1beta1\032"
           + "0google/cloud/automl/v1beta1/classificat"
-          + "ion.proto\032\034google/api/annotations.proto\""
-          + ",\n\027TextSentimentAnnotation\022\021\n\tsentiment\030"
-          + "\001 \001(\005\"\305\002\n\036TextSentimentEvaluationMetrics"
-          + "\022\021\n\tprecision\030\001 \001(\002\022\016\n\006recall\030\002 \001(\002\022\020\n\010f"
-          + "1_score\030\003 \001(\002\022\033\n\023mean_absolute_error\030\004 \001"
-          + "(\002\022\032\n\022mean_squared_error\030\005 \001(\002\022\024\n\014linear"
-          + "_kappa\030\006 \001(\002\022\027\n\017quadratic_kappa\030\007 \001(\002\022f\n"
-          + "\020confusion_matrix\030\010 \001(\0132L.google.cloud.a"
-          + "utoml.v1beta1.ClassificationEvaluationMe"
-          + "trics.ConfusionMatrix\022\036\n\022annotation_spec"
-          + "_id\030\t \003(\tB\002\030\001B\267\001\n\037com.google.cloud.autom"
-          + "l.v1beta1B\022TextSentimentProtoZAgoogle.go"
-          + "lang.org/genproto/googleapis/cloud/autom"
-          + "l/v1beta1;automl\312\002\033Google\\Cloud\\AutoMl\\V"
-          + "1beta1\352\002\036Google::Cloud::AutoML::V1beta1b"
-          + "\006proto3"
+          + "ion.proto\",\n\027TextSentimentAnnotation\022\021\n\t"
+          + "sentiment\030\001 \001(\005\"\305\002\n\036TextSentimentEvaluat"
+          + "ionMetrics\022\021\n\tprecision\030\001 \001(\002\022\016\n\006recall\030"
+          + "\002 \001(\002\022\020\n\010f1_score\030\003 \001(\002\022\033\n\023mean_absolute"
+          + "_error\030\004 \001(\002\022\032\n\022mean_squared_error\030\005 \001(\002"
+          + "\022\024\n\014linear_kappa\030\006 \001(\002\022\027\n\017quadratic_kapp"
+          + "a\030\007 \001(\002\022f\n\020confusion_matrix\030\010 \001(\0132L.goog"
+          + "le.cloud.automl.v1beta1.ClassificationEv"
+          + "aluationMetrics.ConfusionMatrix\022\036\n\022annot"
+          + "ation_spec_id\030\t \003(\tB\002\030\001B\267\001\n\037com.google.c"
+          + "loud.automl.v1beta1B\022TextSentimentProtoZ"
+          + "Agoogle.golang.org/genproto/googleapis/c"
+          + "loud/automl/v1beta1;automl\312\002\033Google\\Clou"
+          + "d\\AutoMl\\V1beta1\352\002\036Google::Cloud::AutoML"
+          + "::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.cloud.automl.v1beta1.ClassificationProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_automl_v1beta1_TextSentimentAnnotation_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -2777,7 +2775,6 @@ public final class TextSentimentProto {
               "AnnotationSpecId",
             });
     com.google.cloud.automl.v1beta1.ClassificationProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

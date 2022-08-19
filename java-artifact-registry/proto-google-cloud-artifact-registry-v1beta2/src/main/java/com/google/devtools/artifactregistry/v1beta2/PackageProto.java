@@ -59,32 +59,30 @@ public final class PackageProto {
       "\n6google/devtools/artifactregistry/v1bet"
           + "a2/package.proto\022(google.devtools.artifa"
           + "ctregistry.v1beta2\032\037google/protobuf/time"
-          + "stamp.proto\032\034google/api/annotations.prot"
-          + "o\"\217\001\n\007Package\022\014\n\004name\030\001 \001(\t\022\024\n\014display_n"
-          + "ame\030\002 \001(\t\022/\n\013create_time\030\005 \001(\0132\032.google."
-          + "protobuf.Timestamp\022/\n\013update_time\030\006 \001(\0132"
-          + "\032.google.protobuf.Timestamp\"L\n\023ListPacka"
-          + "gesRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size\030"
-          + "\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"t\n\024ListPackage"
-          + "sResponse\022C\n\010packages\030\001 \003(\01321.google.dev"
-          + "tools.artifactregistry.v1beta2.Package\022\027"
-          + "\n\017next_page_token\030\002 \001(\t\"!\n\021GetPackageReq"
-          + "uest\022\014\n\004name\030\001 \001(\t\"$\n\024DeletePackageReque"
-          + "st\022\014\n\004name\030\001 \001(\tB\223\002\n,com.google.devtools"
-          + ".artifactregistry.v1beta2B\014PackageProtoP"
-          + "\001ZXgoogle.golang.org/genproto/googleapis"
-          + "/devtools/artifactregistry/v1beta2;artif"
-          + "actregistry\252\002%Google.Cloud.ArtifactRegis"
-          + "try.V1Beta2\312\002%Google\\Cloud\\ArtifactRegis"
-          + "try\\V1beta2\352\002(Google::Cloud::ArtifactReg"
-          + "istry::V1beta2b\006proto3"
+          + "stamp.proto\"\217\001\n\007Package\022\014\n\004name\030\001 \001(\t\022\024\n"
+          + "\014display_name\030\002 \001(\t\022/\n\013create_time\030\005 \001(\013"
+          + "2\032.google.protobuf.Timestamp\022/\n\013update_t"
+          + "ime\030\006 \001(\0132\032.google.protobuf.Timestamp\"L\n"
+          + "\023ListPackagesRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\t"
+          + "page_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"t\n\024L"
+          + "istPackagesResponse\022C\n\010packages\030\001 \003(\01321."
+          + "google.devtools.artifactregistry.v1beta2"
+          + ".Package\022\027\n\017next_page_token\030\002 \001(\t\"!\n\021Get"
+          + "PackageRequest\022\014\n\004name\030\001 \001(\t\"$\n\024DeletePa"
+          + "ckageRequest\022\014\n\004name\030\001 \001(\tB\223\002\n,com.googl"
+          + "e.devtools.artifactregistry.v1beta2B\014Pac"
+          + "kageProtoP\001ZXgoogle.golang.org/genproto/"
+          + "googleapis/devtools/artifactregistry/v1b"
+          + "eta2;artifactregistry\252\002%Google.Cloud.Art"
+          + "ifactRegistry.V1Beta2\312\002%Google\\Cloud\\Art"
+          + "ifactRegistry\\V1beta2\352\002(Google::Cloud::A"
+          + "rtifactRegistry::V1beta2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_devtools_artifactregistry_v1beta2_Package_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -127,7 +125,6 @@ public final class PackageProto {
               "Name",
             });
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

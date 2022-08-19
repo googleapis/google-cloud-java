@@ -44,28 +44,24 @@ public final class ExportEvaluatedDataItemsConfigProto {
       "\nagoogle/cloud/aiplatform/v1/schema/trai"
           + "ningjob/definition/export_evaluated_data"
           + "_items_config.proto\0228google.cloud.aiplat"
-          + "form.v1.schema.trainingjob.definition\032\034g"
-          + "oogle/api/annotations.proto\"c\n\036ExportEva"
-          + "luatedDataItemsConfig\022 \n\030destination_big"
-          + "query_uri\030\001 \001(\t\022\037\n\027override_existing_tab"
-          + "le\030\002 \001(\010B\200\003\n<com.google.cloud.aiplatform"
-          + ".v1.schema.trainingjob.definitionB#Expor"
-          + "tEvaluatedDataItemsConfigProtoP\001Zbgoogle"
-          + ".golang.org/genproto/googleapis/cloud/ai"
-          + "platform/v1/schema/trainingjob/definitio"
-          + "n;definition\252\0028Google.Cloud.AIPlatform.V"
-          + "1.Schema.TrainingJob.Definition\312\0028Google"
-          + "\\Cloud\\AIPlatform\\V1\\Schema\\TrainingJob\\"
-          + "Definition\352\002>Google::Cloud::AIPlatform::"
-          + "V1::Schema::TrainingJob::Definitionb\006pro"
-          + "to3"
+          + "form.v1.schema.trainingjob.definition\"c\n"
+          + "\036ExportEvaluatedDataItemsConfig\022 \n\030desti"
+          + "nation_bigquery_uri\030\001 \001(\t\022\037\n\027override_ex"
+          + "isting_table\030\002 \001(\010B\200\003\n<com.google.cloud."
+          + "aiplatform.v1.schema.trainingjob.definit"
+          + "ionB#ExportEvaluatedDataItemsConfigProto"
+          + "P\001Zbgoogle.golang.org/genproto/googleapi"
+          + "s/cloud/aiplatform/v1/schema/trainingjob"
+          + "/definition;definition\252\0028Google.Cloud.AI"
+          + "Platform.V1.Schema.TrainingJob.Definitio"
+          + "n\312\0028Google\\Cloud\\AIPlatform\\V1\\Schema\\Tr"
+          + "ainingJob\\Definition\352\002>Google::Cloud::AI"
+          + "Platform::V1::Schema::TrainingJob::Defin"
+          + "itionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_ExportEvaluatedDataItemsConfig_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_ExportEvaluatedDataItemsConfig_fieldAccessorTable =
@@ -74,7 +70,6 @@ public final class ExportEvaluatedDataItemsConfigProto {
             new java.lang.String[] {
               "DestinationBigqueryUri", "OverrideExistingTable",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -43,27 +43,23 @@ public final class VideoObjectTrackingPredictionInstanceProto {
       "\nNgoogle/cloud/aiplatform/v1/schema/pred"
           + "ict/instance/video_object_tracking.proto"
           + "\0222google.cloud.aiplatform.v1.schema.pred"
-          + "ict.instance\032\034google/api/annotations.pro"
-          + "to\"\201\001\n%VideoObjectTrackingPredictionInst"
-          + "ance\022\017\n\007content\030\001 \001(\t\022\021\n\tmime_type\030\002 \001(\t"
-          + "\022\032\n\022time_segment_start\030\003 \001(\t\022\030\n\020time_seg"
-          + "ment_end\030\004 \001(\tB\347\002\n6com.google.cloud.aipl"
-          + "atform.v1.schema.predict.instanceB*Video"
-          + "ObjectTrackingPredictionInstanceProtoP\001Z"
-          + "Zgoogle.golang.org/genproto/googleapis/c"
-          + "loud/aiplatform/v1/schema/predict/instan"
-          + "ce;instance\252\0022Google.Cloud.AIPlatform.V1"
-          + ".Schema.Predict.Instance\312\0022Google\\Cloud\\"
-          + "AIPlatform\\V1\\Schema\\Predict\\Instance\352\0028"
-          + "Google::Cloud::AIPlatform::V1::Schema::P"
-          + "redict::Instanceb\006proto3"
+          + "ict.instance\"\201\001\n%VideoObjectTrackingPred"
+          + "ictionInstance\022\017\n\007content\030\001 \001(\t\022\021\n\tmime_"
+          + "type\030\002 \001(\t\022\032\n\022time_segment_start\030\003 \001(\t\022\030"
+          + "\n\020time_segment_end\030\004 \001(\tB\347\002\n6com.google."
+          + "cloud.aiplatform.v1.schema.predict.insta"
+          + "nceB*VideoObjectTrackingPredictionInstan"
+          + "ceProtoP\001ZZgoogle.golang.org/genproto/go"
+          + "ogleapis/cloud/aiplatform/v1/schema/pred"
+          + "ict/instance;instance\252\0022Google.Cloud.AIP"
+          + "latform.V1.Schema.Predict.Instance\312\0022Goo"
+          + "gle\\Cloud\\AIPlatform\\V1\\Schema\\Predict\\I"
+          + "nstance\352\0028Google::Cloud::AIPlatform::V1:"
+          + ":Schema::Predict::Instanceb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1_schema_predict_instance_VideoObjectTrackingPredictionInstance_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1_schema_predict_instance_VideoObjectTrackingPredictionInstance_fieldAccessorTable =
@@ -72,7 +68,6 @@ public final class VideoObjectTrackingPredictionInstanceProto {
             new java.lang.String[] {
               "Content", "MimeType", "TimeSegmentStart", "TimeSegmentEnd",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

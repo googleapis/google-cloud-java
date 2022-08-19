@@ -62,39 +62,37 @@ public final class AssetProto {
     java.lang.String[] descriptorData = {
       "\n)google/cloud/asset/v1p1beta1/assets.pr"
           + "oto\022\034google.cloud.asset.v1p1beta1\032\032googl"
-          + "e/iam/v1/policy.proto\032\034google/api/annota"
-          + "tions.proto\"\302\002\n\030StandardResourceMetadata"
-          + "\022\014\n\004name\030\001 \001(\t\022\022\n\nasset_type\030\002 \001(\t\022\017\n\007pr"
-          + "oject\030\003 \001(\t\022\024\n\014display_name\030\004 \001(\t\022\023\n\013des"
-          + "cription\030\005 \001(\t\022\035\n\025additional_attributes\030"
-          + "\n \003(\t\022\020\n\010location\030\013 \001(\t\022R\n\006labels\030\014 \003(\0132"
-          + "B.google.cloud.asset.v1p1beta1.StandardR"
-          + "esourceMetadata.LabelsEntry\022\024\n\014network_t"
-          + "ags\030\r \003(\t\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001\"\243\003\n\025IamPolicySearchResu"
-          + "lt\022\020\n\010resource\030\001 \001(\t\022\017\n\007project\030\003 \001(\t\022%\n"
-          + "\006policy\030\004 \001(\0132\025.google.iam.v1.Policy\022T\n\013"
-          + "explanation\030\005 \001(\0132?.google.cloud.asset.v"
+          + "e/iam/v1/policy.proto\"\302\002\n\030StandardResour"
+          + "ceMetadata\022\014\n\004name\030\001 \001(\t\022\022\n\nasset_type\030\002"
+          + " \001(\t\022\017\n\007project\030\003 \001(\t\022\024\n\014display_name\030\004 "
+          + "\001(\t\022\023\n\013description\030\005 \001(\t\022\035\n\025additional_a"
+          + "ttributes\030\n \003(\t\022\020\n\010location\030\013 \001(\t\022R\n\006lab"
+          + "els\030\014 \003(\0132B.google.cloud.asset.v1p1beta1"
+          + ".StandardResourceMetadata.LabelsEntry\022\024\n"
+          + "\014network_tags\030\r \003(\t\032-\n\013LabelsEntry\022\013\n\003ke"
+          + "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\243\003\n\025IamPolicy"
+          + "SearchResult\022\020\n\010resource\030\001 \001(\t\022\017\n\007projec"
+          + "t\030\003 \001(\t\022%\n\006policy\030\004 \001(\0132\025.google.iam.v1."
+          + "Policy\022T\n\013explanation\030\005 \001(\0132?.google.clo"
+          + "ud.asset.v1p1beta1.IamPolicySearchResult"
+          + ".Explanation\032\351\001\n\013Explanation\022t\n\023matched_"
+          + "permissions\030\001 \003(\0132W.google.cloud.asset.v"
           + "1p1beta1.IamPolicySearchResult.Explanati"
-          + "on\032\351\001\n\013Explanation\022t\n\023matched_permission"
-          + "s\030\001 \003(\0132W.google.cloud.asset.v1p1beta1.I"
-          + "amPolicySearchResult.Explanation.Matched"
-          + "PermissionsEntry\032d\n\027MatchedPermissionsEn"
-          + "try\022\013\n\003key\030\001 \001(\t\0228\n\005value\030\002 \001(\0132).google"
-          + ".cloud.asset.v1p1beta1.Permissions:\0028\001\"\""
-          + "\n\013Permissions\022\023\n\013permissions\030\001 \003(\tB\264\001\n c"
-          + "om.google.cloud.asset.v1p1beta1B\nAssetPr"
-          + "otoP\001ZAgoogle.golang.org/genproto/google"
-          + "apis/cloud/asset/v1p1beta1;asset\370\001\001\252\002\034Go"
-          + "ogle.Cloud.Asset.V1P1Beta1\312\002\034Google\\Clou"
-          + "d\\Asset\\V1p1beta1b\006proto3"
+          + "on.MatchedPermissionsEntry\032d\n\027MatchedPer"
+          + "missionsEntry\022\013\n\003key\030\001 \001(\t\0228\n\005value\030\002 \001("
+          + "\0132).google.cloud.asset.v1p1beta1.Permiss"
+          + "ions:\0028\001\"\"\n\013Permissions\022\023\n\013permissions\030\001"
+          + " \003(\tB\264\001\n com.google.cloud.asset.v1p1beta"
+          + "1B\nAssetProtoP\001ZAgoogle.golang.org/genpr"
+          + "oto/googleapis/cloud/asset/v1p1beta1;ass"
+          + "et\370\001\001\252\002\034Google.Cloud.Asset.V1P1Beta1\312\002\034G"
+          + "oogle\\Cloud\\Asset\\V1p1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.iam.v1.PolicyProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_asset_v1p1beta1_StandardResourceMetadata_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -159,7 +157,6 @@ public final class AssetProto {
               "Permissions",
             });
     com.google.iam.v1.PolicyProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

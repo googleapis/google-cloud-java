@@ -60,35 +60,34 @@ public final class GmailAddOnManifestProto {
           + "don_manifest.proto\022\035google.apps.script.t"
           + "ype.gmail\032.google/apps/script/type/addon"
           + "_widget_set.proto\032-google/apps/script/ty"
-          + "pe/extension_point.proto\032\034google/protobu"
-          + "f/struct.proto\"\347\002\n\022GmailAddOnManifest\022I\n"
-          + "\020homepage_trigger\030\016 \001(\0132/.google.apps.sc"
-          + "ript.type.HomepageExtensionPoint\022M\n\023cont"
-          + "extual_triggers\030\003 \003(\01320.google.apps.scri"
-          + "pt.type.gmail.ContextualTrigger\022I\n\021unive"
-          + "rsal_actions\030\004 \003(\0132..google.apps.script."
-          + "type.gmail.UniversalAction\022F\n\017compose_tr"
-          + "igger\030\014 \001(\0132-.google.apps.script.type.gm"
-          + "ail.ComposeTrigger\022$\n\034authorization_chec"
-          + "k_function\030\007 \001(\t\"[\n\017UniversalAction\022\014\n\004t"
-          + "ext\030\001 \001(\t\022\023\n\topen_link\030\002 \001(\tH\000\022\026\n\014run_fu"
-          + "nction\030\003 \001(\tH\000B\r\n\013action_type\"\333\001\n\016Compos"
-          + "eTrigger\022@\n\007actions\030\005 \003(\0132/.google.apps."
-          + "script.type.MenuItemExtensionPoint\022O\n\014dr"
-          + "aft_access\030\004 \001(\01629.google.apps.script.ty"
-          + "pe.gmail.ComposeTrigger.DraftAccess\"6\n\013D"
-          + "raftAccess\022\017\n\013UNSPECIFIED\020\000\022\010\n\004NONE\020\001\022\014\n"
-          + "\010METADATA\020\002\"\211\001\n\021ContextualTrigger\022L\n\runc"
-          + "onditional\030\001 \001(\01323.google.apps.script.ty"
-          + "pe.gmail.UnconditionalTriggerH\000\022\033\n\023on_tr"
-          + "igger_function\030\004 \001(\tB\t\n\007trigger\"\026\n\024Uncon"
-          + "ditionalTriggerB\340\001\n!com.google.apps.scri"
-          + "pt.type.gmailB\027GmailAddOnManifestProtoP\001"
-          + "Z<google.golang.org/genproto/googleapis/"
-          + "apps/script/type/gmail\252\002\035Google.Apps.Scr"
-          + "ipt.Type.Gmail\312\002\035Google\\Apps\\Script\\Type"
-          + "\\Gmail\352\002!Google::Apps::Script::Type::Gma"
-          + "ilb\006proto3"
+          + "pe/extension_point.proto\"\347\002\n\022GmailAddOnM"
+          + "anifest\022I\n\020homepage_trigger\030\016 \001(\0132/.goog"
+          + "le.apps.script.type.HomepageExtensionPoi"
+          + "nt\022M\n\023contextual_triggers\030\003 \003(\01320.google"
+          + ".apps.script.type.gmail.ContextualTrigge"
+          + "r\022I\n\021universal_actions\030\004 \003(\0132..google.ap"
+          + "ps.script.type.gmail.UniversalAction\022F\n\017"
+          + "compose_trigger\030\014 \001(\0132-.google.apps.scri"
+          + "pt.type.gmail.ComposeTrigger\022$\n\034authoriz"
+          + "ation_check_function\030\007 \001(\t\"[\n\017UniversalA"
+          + "ction\022\014\n\004text\030\001 \001(\t\022\023\n\topen_link\030\002 \001(\tH\000"
+          + "\022\026\n\014run_function\030\003 \001(\tH\000B\r\n\013action_type\""
+          + "\333\001\n\016ComposeTrigger\022@\n\007actions\030\005 \003(\0132/.go"
+          + "ogle.apps.script.type.MenuItemExtensionP"
+          + "oint\022O\n\014draft_access\030\004 \001(\01629.google.apps"
+          + ".script.type.gmail.ComposeTrigger.DraftA"
+          + "ccess\"6\n\013DraftAccess\022\017\n\013UNSPECIFIED\020\000\022\010\n"
+          + "\004NONE\020\001\022\014\n\010METADATA\020\002\"\211\001\n\021ContextualTrig"
+          + "ger\022L\n\runconditional\030\001 \001(\01323.google.apps"
+          + ".script.type.gmail.UnconditionalTriggerH"
+          + "\000\022\033\n\023on_trigger_function\030\004 \001(\tB\t\n\007trigge"
+          + "r\"\026\n\024UnconditionalTriggerB\340\001\n!com.google"
+          + ".apps.script.type.gmailB\027GmailAddOnManif"
+          + "estProtoP\001Z<google.golang.org/genproto/g"
+          + "oogleapis/apps/script/type/gmail\252\002\035Googl"
+          + "e.Apps.Script.Type.Gmail\312\002\035Google\\Apps\\S"
+          + "cript\\Type\\Gmail\352\002!Google::Apps::Script:"
+          + ":Type::Gmailb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -96,7 +95,6 @@ public final class GmailAddOnManifestProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.apps.script.type.AddOnWidgetSetProto.getDescriptor(),
               com.google.apps.script.type.ExtensionPoint.getDescriptor(),
-              com.google.protobuf.StructProto.getDescriptor(),
             });
     internal_static_google_apps_script_type_gmail_GmailAddOnManifest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -142,7 +140,6 @@ public final class GmailAddOnManifestProto {
             new java.lang.String[] {});
     com.google.apps.script.type.AddOnWidgetSetProto.getDescriptor();
     com.google.apps.script.type.ExtensionPoint.getDescriptor();
-    com.google.protobuf.StructProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

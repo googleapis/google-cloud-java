@@ -44,24 +44,23 @@ public final class VideoClassificationPredictionResultProto {
           + "ict/prediction/video_classification.prot"
           + "o\0224google.cloud.aiplatform.v1.schema.pre"
           + "dict.prediction\032\036google/protobuf/duratio"
-          + "n.proto\032\036google/protobuf/wrappers.proto\032"
-          + "\034google/api/annotations.proto\"\362\001\n#VideoC"
-          + "lassificationPredictionResult\022\n\n\002id\030\001 \001("
-          + "\t\022\024\n\014display_name\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\0225\n"
-          + "\022time_segment_start\030\004 \001(\0132\031.google.proto"
-          + "buf.Duration\0223\n\020time_segment_end\030\005 \001(\0132\031"
-          + ".google.protobuf.Duration\022/\n\nconfidence\030"
-          + "\006 \001(\0132\033.google.protobuf.FloatValueB\361\002\n8c"
-          + "om.google.cloud.aiplatform.v1.schema.pre"
-          + "dict.predictionB(VideoClassificationPred"
-          + "ictionResultProtoP\001Z^google.golang.org/g"
-          + "enproto/googleapis/cloud/aiplatform/v1/s"
-          + "chema/predict/prediction;prediction\252\0024Go"
-          + "ogle.Cloud.AIPlatform.V1.Schema.Predict."
-          + "Prediction\312\0024Google\\Cloud\\AIPlatform\\V1\\"
-          + "Schema\\Predict\\Prediction\352\002:Google::Clou"
-          + "d::AIPlatform::V1::Schema::Predict::Pred"
-          + "ictionb\006proto3"
+          + "n.proto\032\036google/protobuf/wrappers.proto\""
+          + "\362\001\n#VideoClassificationPredictionResult\022"
+          + "\n\n\002id\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022\014\n\004typ"
+          + "e\030\003 \001(\t\0225\n\022time_segment_start\030\004 \001(\0132\031.go"
+          + "ogle.protobuf.Duration\0223\n\020time_segment_e"
+          + "nd\030\005 \001(\0132\031.google.protobuf.Duration\022/\n\nc"
+          + "onfidence\030\006 \001(\0132\033.google.protobuf.FloatV"
+          + "alueB\361\002\n8com.google.cloud.aiplatform.v1."
+          + "schema.predict.predictionB(VideoClassifi"
+          + "cationPredictionResultProtoP\001Z^google.go"
+          + "lang.org/genproto/googleapis/cloud/aipla"
+          + "tform/v1/schema/predict/prediction;predi"
+          + "ction\252\0024Google.Cloud.AIPlatform.V1.Schem"
+          + "a.Predict.Prediction\312\0024Google\\Cloud\\AIPl"
+          + "atform\\V1\\Schema\\Predict\\Prediction\352\002:Go"
+          + "ogle::Cloud::AIPlatform::V1::Schema::Pre"
+          + "dict::Predictionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -69,7 +68,6 @@ public final class VideoClassificationPredictionResultProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.WrappersProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_schema_predict_prediction_VideoClassificationPredictionResult_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -81,7 +79,6 @@ public final class VideoClassificationPredictionResultProto {
             });
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

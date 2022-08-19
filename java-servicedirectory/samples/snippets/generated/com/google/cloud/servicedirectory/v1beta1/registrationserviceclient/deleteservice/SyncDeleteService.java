@@ -20,6 +20,7 @@ package com.google.cloud.servicedirectory.v1beta1.samples;
 import com.google.cloud.servicedirectory.v1beta1.DeleteServiceRequest;
 import com.google.cloud.servicedirectory.v1beta1.RegistrationServiceClient;
 import com.google.cloud.servicedirectory.v1beta1.ServiceName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteService {
 

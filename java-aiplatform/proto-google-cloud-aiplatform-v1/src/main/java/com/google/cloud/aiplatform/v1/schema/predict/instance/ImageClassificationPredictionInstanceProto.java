@@ -43,26 +43,22 @@ public final class ImageClassificationPredictionInstanceProto {
       "\nMgoogle/cloud/aiplatform/v1/schema/pred"
           + "ict/instance/image_classification.proto\022"
           + "2google.cloud.aiplatform.v1.schema.predi"
-          + "ct.instance\032\034google/api/annotations.prot"
-          + "o\"K\n%ImageClassificationPredictionInstan"
-          + "ce\022\017\n\007content\030\001 \001(\t\022\021\n\tmime_type\030\002 \001(\tB\347"
-          + "\002\n6com.google.cloud.aiplatform.v1.schema"
-          + ".predict.instanceB*ImageClassificationPr"
-          + "edictionInstanceProtoP\001ZZgoogle.golang.o"
-          + "rg/genproto/googleapis/cloud/aiplatform/"
-          + "v1/schema/predict/instance;instance\252\0022Go"
-          + "ogle.Cloud.AIPlatform.V1.Schema.Predict."
-          + "Instance\312\0022Google\\Cloud\\AIPlatform\\V1\\Sc"
-          + "hema\\Predict\\Instance\352\0028Google::Cloud::A"
-          + "IPlatform::V1::Schema::Predict::Instance"
-          + "b\006proto3"
+          + "ct.instance\"K\n%ImageClassificationPredic"
+          + "tionInstance\022\017\n\007content\030\001 \001(\t\022\021\n\tmime_ty"
+          + "pe\030\002 \001(\tB\347\002\n6com.google.cloud.aiplatform"
+          + ".v1.schema.predict.instanceB*ImageClassi"
+          + "ficationPredictionInstanceProtoP\001ZZgoogl"
+          + "e.golang.org/genproto/googleapis/cloud/a"
+          + "iplatform/v1/schema/predict/instance;ins"
+          + "tance\252\0022Google.Cloud.AIPlatform.V1.Schem"
+          + "a.Predict.Instance\312\0022Google\\Cloud\\AIPlat"
+          + "form\\V1\\Schema\\Predict\\Instance\352\0028Google"
+          + "::Cloud::AIPlatform::V1::Schema::Predict"
+          + "::Instanceb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1_schema_predict_instance_ImageClassificationPredictionInstance_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1_schema_predict_instance_ImageClassificationPredictionInstance_fieldAccessorTable =
@@ -71,7 +67,6 @@ public final class ImageClassificationPredictionInstanceProto {
             new java.lang.String[] {
               "Content", "MimeType",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -43,27 +43,23 @@ public final class TabularRegressionPredictionResultProto {
       "\nRgoogle/cloud/aiplatform/v1beta1/schema"
           + "/predict/prediction/tabular_regression.p"
           + "roto\0229google.cloud.aiplatform.v1beta1.sc"
-          + "hema.predict.prediction\032\034google/api/anno"
-          + "tations.proto\"\\\n!TabularRegressionPredic"
-          + "tionResult\022\r\n\005value\030\001 \001(\002\022\023\n\013lower_bound"
-          + "\030\002 \001(\002\022\023\n\013upper_bound\030\003 \001(\002B\210\003\n=com.goog"
-          + "le.cloud.aiplatform.v1beta1.schema.predi"
-          + "ct.predictionB&TabularRegressionPredicti"
-          + "onResultProtoP\001Zcgoogle.golang.org/genpr"
-          + "oto/googleapis/cloud/aiplatform/v1beta1/"
-          + "schema/predict/prediction;prediction\252\0029G"
-          + "oogle.Cloud.AIPlatform.V1Beta1.Schema.Pr"
-          + "edict.Prediction\312\0029Google\\Cloud\\AIPlatfo"
-          + "rm\\V1beta1\\Schema\\Predict\\Prediction\352\002?G"
-          + "oogle::Cloud::AIPlatform::V1beta1::Schem"
-          + "a::Predict::Predictionb\006proto3"
+          + "hema.predict.prediction\"\\\n!TabularRegres"
+          + "sionPredictionResult\022\r\n\005value\030\001 \001(\002\022\023\n\013l"
+          + "ower_bound\030\002 \001(\002\022\023\n\013upper_bound\030\003 \001(\002B\210\003"
+          + "\n=com.google.cloud.aiplatform.v1beta1.sc"
+          + "hema.predict.predictionB&TabularRegressi"
+          + "onPredictionResultProtoP\001Zcgoogle.golang"
+          + ".org/genproto/googleapis/cloud/aiplatfor"
+          + "m/v1beta1/schema/predict/prediction;pred"
+          + "iction\252\0029Google.Cloud.AIPlatform.V1Beta1"
+          + ".Schema.Predict.Prediction\312\0029Google\\Clou"
+          + "d\\AIPlatform\\V1beta1\\Schema\\Predict\\Pred"
+          + "iction\352\002?Google::Cloud::AIPlatform::V1be"
+          + "ta1::Schema::Predict::Predictionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1beta1_schema_predict_prediction_TabularRegressionPredictionResult_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1beta1_schema_predict_prediction_TabularRegressionPredictionResult_fieldAccessorTable =
@@ -72,7 +68,6 @@ public final class TabularRegressionPredictionResultProto {
             new java.lang.String[] {
               "Value", "LowerBound", "UpperBound",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

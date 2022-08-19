@@ -16,8 +16,7 @@
 
 package com.google.cloud.servicedirectory.v1beta1.samples;
 
-// [START
-// servicedirectory_v1beta1_generated_registrationserviceclient_listendpoints_servicename_sync]
+// [START servicedirectory_v1beta1_generated_registrationserviceclient_listendpoints_servicename_sync]
 import com.google.cloud.servicedirectory.v1beta1.Endpoint;
 import com.google.cloud.servicedirectory.v1beta1.RegistrationServiceClient;
 import com.google.cloud.servicedirectory.v1beta1.ServiceName;

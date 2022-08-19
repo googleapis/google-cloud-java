@@ -49,37 +49,34 @@ public final class AutoMLVideoObjectTrackingProto {
           + "/trainingjob/definition/automl_video_obj"
           + "ect_tracking.proto\022=google.cloud.aiplatf"
           + "orm.v1beta1.schema.trainingjob.definitio"
-          + "n\032\034google/api/annotations.proto\"\213\001\n\031Auto"
-          + "MlVideoObjectTracking\022n\n\006inputs\030\001 \001(\0132^."
-          + "google.cloud.aiplatform.v1beta1.schema.t"
-          + "rainingjob.definition.AutoMlVideoObjectT"
-          + "rackingInputs\"\352\002\n\037AutoMlVideoObjectTrack"
-          + "ingInputs\022|\n\nmodel_type\030\001 \001(\0162h.google.c"
-          + "loud.aiplatform.v1beta1.schema.trainingj"
-          + "ob.definition.AutoMlVideoObjectTrackingI"
-          + "nputs.ModelType\"\310\001\n\tModelType\022\032\n\026MODEL_T"
-          + "YPE_UNSPECIFIED\020\000\022\t\n\005CLOUD\020\001\022\026\n\022MOBILE_V"
-          + "ERSATILE_1\020\002\022\034\n\030MOBILE_CORAL_VERSATILE_1"
-          + "\020\003\022\036\n\032MOBILE_CORAL_LOW_LATENCY_1\020\004\022\035\n\031MO"
-          + "BILE_JETSON_VERSATILE_1\020\005\022\037\n\033MOBILE_JETS"
-          + "ON_LOW_LATENCY_1\020\006B\224\003\nAcom.google.cloud."
-          + "aiplatform.v1beta1.schema.trainingjob.de"
-          + "finitionB\036AutoMLVideoObjectTrackingProto"
-          + "P\001Zggoogle.golang.org/genproto/googleapi"
-          + "s/cloud/aiplatform/v1beta1/schema/traini"
-          + "ngjob/definition;definition\252\002=Google.Clo"
-          + "ud.AIPlatform.V1Beta1.Schema.TrainingJob"
-          + ".Definition\312\002=Google\\Cloud\\AIPlatform\\V1"
-          + "beta1\\Schema\\TrainingJob\\Definition\352\002CGo"
-          + "ogle::Cloud::AIPlatform::V1beta1::Schema"
-          + "::TrainingJob::Definitionb\006proto3"
+          + "n\"\213\001\n\031AutoMlVideoObjectTracking\022n\n\006input"
+          + "s\030\001 \001(\0132^.google.cloud.aiplatform.v1beta"
+          + "1.schema.trainingjob.definition.AutoMlVi"
+          + "deoObjectTrackingInputs\"\352\002\n\037AutoMlVideoO"
+          + "bjectTrackingInputs\022|\n\nmodel_type\030\001 \001(\0162"
+          + "h.google.cloud.aiplatform.v1beta1.schema"
+          + ".trainingjob.definition.AutoMlVideoObjec"
+          + "tTrackingInputs.ModelType\"\310\001\n\tModelType\022"
+          + "\032\n\026MODEL_TYPE_UNSPECIFIED\020\000\022\t\n\005CLOUD\020\001\022\026"
+          + "\n\022MOBILE_VERSATILE_1\020\002\022\034\n\030MOBILE_CORAL_V"
+          + "ERSATILE_1\020\003\022\036\n\032MOBILE_CORAL_LOW_LATENCY"
+          + "_1\020\004\022\035\n\031MOBILE_JETSON_VERSATILE_1\020\005\022\037\n\033M"
+          + "OBILE_JETSON_LOW_LATENCY_1\020\006B\224\003\nAcom.goo"
+          + "gle.cloud.aiplatform.v1beta1.schema.trai"
+          + "ningjob.definitionB\036AutoMLVideoObjectTra"
+          + "ckingProtoP\001Zggoogle.golang.org/genproto"
+          + "/googleapis/cloud/aiplatform/v1beta1/sch"
+          + "ema/trainingjob/definition;definition\252\002="
+          + "Google.Cloud.AIPlatform.V1Beta1.Schema.T"
+          + "rainingJob.Definition\312\002=Google\\Cloud\\AIP"
+          + "latform\\V1beta1\\Schema\\TrainingJob\\Defin"
+          + "ition\352\002CGoogle::Cloud::AIPlatform::V1bet"
+          + "a1::Schema::TrainingJob::Definitionb\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1beta1_schema_trainingjob_definition_AutoMlVideoObjectTracking_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1beta1_schema_trainingjob_definition_AutoMlVideoObjectTracking_fieldAccessorTable =
@@ -96,7 +93,6 @@ public final class AutoMLVideoObjectTrackingProto {
             new java.lang.String[] {
               "ModelType",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

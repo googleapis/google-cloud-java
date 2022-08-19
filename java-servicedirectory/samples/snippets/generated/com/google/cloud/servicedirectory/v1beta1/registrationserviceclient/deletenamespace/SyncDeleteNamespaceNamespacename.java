@@ -16,10 +16,10 @@
 
 package com.google.cloud.servicedirectory.v1beta1.samples;
 
-// [START
-// servicedirectory_v1beta1_generated_registrationserviceclient_deletenamespace_namespacename_sync]
+// [START servicedirectory_v1beta1_generated_registrationserviceclient_deletenamespace_namespacename_sync]
 import com.google.cloud.servicedirectory.v1beta1.NamespaceName;
 import com.google.cloud.servicedirectory.v1beta1.RegistrationServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteNamespaceNamespacename {
 
@@ -36,5 +36,4 @@ public class SyncDeleteNamespaceNamespacename {
     }
   }
 }
-// [END
-// servicedirectory_v1beta1_generated_registrationserviceclient_deletenamespace_namespacename_sync]
+// [END servicedirectory_v1beta1_generated_registrationserviceclient_deletenamespace_namespacename_sync]

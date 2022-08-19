@@ -47,29 +47,25 @@ public final class AutoMLTextSentimentProto {
       "\nTgoogle/cloud/aiplatform/v1/schema/trai"
           + "ningjob/definition/automl_text_sentiment"
           + ".proto\0228google.cloud.aiplatform.v1.schem"
-          + "a.trainingjob.definition\032\034google/api/ann"
-          + "otations.proto\"z\n\023AutoMlTextSentiment\022c\n"
-          + "\006inputs\030\001 \001(\0132S.google.cloud.aiplatform."
-          + "v1.schema.trainingjob.definition.AutoMlT"
-          + "extSentimentInputs\"2\n\031AutoMlTextSentimen"
-          + "tInputs\022\025\n\rsentiment_max\030\001 \001(\005B\365\002\n<com.g"
-          + "oogle.cloud.aiplatform.v1.schema.trainin"
-          + "gjob.definitionB\030AutoMLTextSentimentProt"
-          + "oP\001Zbgoogle.golang.org/genproto/googleap"
-          + "is/cloud/aiplatform/v1/schema/trainingjo"
-          + "b/definition;definition\252\0028Google.Cloud.A"
-          + "IPlatform.V1.Schema.TrainingJob.Definiti"
-          + "on\312\0028Google\\Cloud\\AIPlatform\\V1\\Schema\\T"
-          + "rainingJob\\Definition\352\002>Google::Cloud::A"
-          + "IPlatform::V1::Schema::TrainingJob::Defi"
-          + "nitionb\006proto3"
+          + "a.trainingjob.definition\"z\n\023AutoMlTextSe"
+          + "ntiment\022c\n\006inputs\030\001 \001(\0132S.google.cloud.a"
+          + "iplatform.v1.schema.trainingjob.definiti"
+          + "on.AutoMlTextSentimentInputs\"2\n\031AutoMlTe"
+          + "xtSentimentInputs\022\025\n\rsentiment_max\030\001 \001(\005"
+          + "B\365\002\n<com.google.cloud.aiplatform.v1.sche"
+          + "ma.trainingjob.definitionB\030AutoMLTextSen"
+          + "timentProtoP\001Zbgoogle.golang.org/genprot"
+          + "o/googleapis/cloud/aiplatform/v1/schema/"
+          + "trainingjob/definition;definition\252\0028Goog"
+          + "le.Cloud.AIPlatform.V1.Schema.TrainingJo"
+          + "b.Definition\312\0028Google\\Cloud\\AIPlatform\\V"
+          + "1\\Schema\\TrainingJob\\Definition\352\002>Google"
+          + "::Cloud::AIPlatform::V1::Schema::Trainin"
+          + "gJob::Definitionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlTextSentiment_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlTextSentiment_fieldAccessorTable =
@@ -86,7 +82,6 @@ public final class AutoMLTextSentimentProto {
             new java.lang.String[] {
               "SentimentMax",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
