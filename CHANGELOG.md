@@ -1,5 +1,25 @@
 # Changelog
 
+## [3.10.3](https://github.com/googleapis/java-logging/compare/v3.10.2...v3.10.3) (2022-08-19)
+
+
+### Bug Fixes
+
+* Add explicit RunWith annotations on all tests ([#1004](https://github.com/googleapis/java-logging/issues/1004)) ([342157f](https://github.com/googleapis/java-logging/commit/342157fc0b5819e50a7c53ddb03f6016042272a3))
+* Apply fixes from Google error-prone ([#1010](https://github.com/googleapis/java-logging/issues/1010)) ([2d57d78](https://github.com/googleapis/java-logging/commit/2d57d7886f4281e779c8a1dd54aa056c5a8be46a))
+* Correct the JSON time field name ([#1020](https://github.com/googleapis/java-logging/issues/1020)) ([8c9a218](https://github.com/googleapis/java-logging/commit/8c9a2184bc5f5a697345d9dc1f2afc9b8fd759b7))
+* Fix flakiness in JSON test ([#1006](https://github.com/googleapis/java-logging/issues/1006)) ([cafafe4](https://github.com/googleapis/java-logging/commit/cafafe44531001254e014da07211cc6694df97cc))
+* Fix some typos ([#1008](https://github.com/googleapis/java-logging/issues/1008)) ([5666ee0](https://github.com/googleapis/java-logging/commit/5666ee0dea87bba9eda9d48afee8924a074db6dd))
+* Make LoggingHandler.logEntryFor extensible ([#1021](https://github.com/googleapis/java-logging/issues/1021)) ([79baac6](https://github.com/googleapis/java-logging/commit/79baac68a60cca699088723864bf2de23fca0580))
+* Replace Date with LocalDateTime ([#1012](https://github.com/googleapis/java-logging/issues/1012)) ([765dd89](https://github.com/googleapis/java-logging/commit/765dd895df201966e7dea5851e29638dde115ce2))
+* Supress unchecked conversion warnings ([#1014](https://github.com/googleapis/java-logging/issues/1014)) ([a93ee23](https://github.com/googleapis/java-logging/commit/a93ee233112b28f21d9cc1ed724638455ece4dc0))
+* Update the stub to avoid the deprecated *Map method ([#1002](https://github.com/googleapis/java-logging/issues/1002)) ([49bf5b4](https://github.com/googleapis/java-logging/commit/49bf5b41c354089ad213ff1ce5d3f42aa3d1d02e))
+
+
+### Dependencies
+
+* update dependency org.junit.vintage:junit-vintage-engine to v5.9.0 ([#1016](https://github.com/googleapis/java-logging/issues/1016)) ([e5f0b55](https://github.com/googleapis/java-logging/commit/e5f0b55acdcfb12e79a69eb213c60e237c9e630a))
+
 ## [3.10.2](https://github.com/googleapis/java-logging/compare/v3.10.1...v3.10.2) (2022-08-08)
 
 
