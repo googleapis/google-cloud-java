@@ -973,6 +973,26 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>NETWORK_SERVICE_DISCOVERY = 32;</code>
      */
     NETWORK_SERVICE_DISCOVERY(32),
+    /**
+     *
+     *
+     * <pre>
+     * T1134
+     * </pre>
+     *
+     * <code>ACCESS_TOKEN_MANIPULATION = 33;</code>
+     */
+    ACCESS_TOKEN_MANIPULATION(33),
+    /**
+     *
+     *
+     * <pre>
+     * T1548
+     * </pre>
+     *
+     * <code>ABUSE_ELEVATION_CONTROL_MECHANISM = 34;</code>
+     */
+    ABUSE_ELEVATION_CONTROL_MECHANISM(34),
     UNRECOGNIZED(-1),
     ;
 
@@ -1306,6 +1326,26 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>NETWORK_SERVICE_DISCOVERY = 32;</code>
      */
     public static final int NETWORK_SERVICE_DISCOVERY_VALUE = 32;
+    /**
+     *
+     *
+     * <pre>
+     * T1134
+     * </pre>
+     *
+     * <code>ACCESS_TOKEN_MANIPULATION = 33;</code>
+     */
+    public static final int ACCESS_TOKEN_MANIPULATION_VALUE = 33;
+    /**
+     *
+     *
+     * <pre>
+     * T1548
+     * </pre>
+     *
+     * <code>ABUSE_ELEVATION_CONTROL_MECHANISM = 34;</code>
+     */
+    public static final int ABUSE_ELEVATION_CONTROL_MECHANISM_VALUE = 34;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1397,6 +1437,10 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
           return IMPAIR_DEFENSES;
         case 32:
           return NETWORK_SERVICE_DISCOVERY;
+        case 33:
+          return ACCESS_TOKEN_MANIPULATION;
+        case 34:
+          return ABUSE_ELEVATION_CONTROL_MECHANISM;
         default:
           return null;
       }
