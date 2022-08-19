@@ -68,6 +68,7 @@ public abstract class Payload<T> implements Serializable {
       return new StringPayload(data);
     }
 
+    @SuppressWarnings("unchecked")
     static StringPayload fromPb(com.google.logging.v2.LogEntry entryPb) {
       return StringPayload.of(entryPb.getTextPayload());
     }
@@ -124,6 +125,7 @@ public abstract class Payload<T> implements Serializable {
       return new JsonPayload(data);
     }
 
+    @SuppressWarnings("unchecked")
     static JsonPayload fromPb(com.google.logging.v2.LogEntry entryPb) {
       return JsonPayload.of(entryPb.getJsonPayload());
     }
@@ -148,6 +150,7 @@ public abstract class Payload<T> implements Serializable {
       return new ProtoPayload(data);
     }
 
+    @SuppressWarnings("unchecked")
     static ProtoPayload fromPb(com.google.logging.v2.LogEntry entryPb) {
       return ProtoPayload.of(entryPb.getProtoPayload());
     }
