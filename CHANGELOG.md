@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.10.4](https://github.com/googleapis/java-logging/compare/v3.10.3...v3.10.4) (2022-08-19)
+
+
+### Dependencies
+
+* update dependency com.google.errorprone:error_prone_annotations to v2.15.0 ([#1037](https://github.com/googleapis/java-logging/issues/1037)) ([b2731c7](https://github.com/googleapis/java-logging/commit/b2731c70d1cdb3825e40fd80c771ea56777a1d27))
+
 ## [3.10.3](https://github.com/googleapis/java-logging/compare/v3.10.2...v3.10.3) (2022-08-19)
 
 
