@@ -725,7 +725,7 @@ public class LogEntry implements Serializable {
 
     formatter
         .appendField("severity", severity)
-        .appendField("timestamp", timestamp)
+        .appendField("time", timestamp)
         .appendField("httpRequest", httpRequest)
         .appendField("logging.googleapis.com/insertId", insertId)
         .appendField("logging.googleapis.com/labels", labels)

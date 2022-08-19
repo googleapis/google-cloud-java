@@ -380,7 +380,7 @@ public class LoggingHandlerTest {
   @Test
   public void testEnhancedLogEntryPrintToStdout() {
     final String ExpectedOutput =
-        "{\"severity\":\"INFO\",\"timestamp\":\"1970-01-02T10:17:36.789Z\",\"logging.googleapis.com/labels\":{\"enhanced\":\"true\"},\"logging.googleapis.com/trace_sampled\":false,\"message\":\"message\"}";
+        "{\"severity\":\"INFO\",\"time\":\"1970-01-02T10:17:36.789Z\",\"logging.googleapis.com/labels\":{\"enhanced\":\"true\"},\"logging.googleapis.com/trace_sampled\":false,\"message\":\"message\"}";
     replay(options, logging);
     ByteArrayOutputStream bout = new ByteArrayOutputStream();
     PrintStream out = new PrintStream(bout);
