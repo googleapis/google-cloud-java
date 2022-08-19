@@ -19,6 +19,7 @@ package com.google.cloud.scheduler.v1.samples;
 // [START scheduler_v1_generated_cloudschedulerclient_deletejob_string_sync]
 import com.google.cloud.scheduler.v1.CloudSchedulerClient;
 import com.google.cloud.scheduler.v1.JobName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteJobString {
 

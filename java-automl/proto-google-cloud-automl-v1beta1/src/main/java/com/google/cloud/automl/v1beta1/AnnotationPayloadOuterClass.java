@@ -49,31 +49,30 @@ public final class AnnotationPayloadOuterClass {
           + "l/v1beta1/text_extraction.proto\0320google/"
           + "cloud/automl/v1beta1/text_sentiment.prot"
           + "o\032-google/cloud/automl/v1beta1/translati"
-          + "on.proto\032\031google/protobuf/any.proto\032\034goo"
-          + "gle/api/annotations.proto\"\346\005\n\021Annotation"
-          + "Payload\022I\n\013translation\030\002 \001(\01322.google.cl"
-          + "oud.automl.v1beta1.TranslationAnnotation"
-          + "H\000\022O\n\016classification\030\003 \001(\01325.google.clou"
-          + "d.automl.v1beta1.ClassificationAnnotatio"
-          + "nH\000\022]\n\026image_object_detection\030\004 \001(\0132;.go"
-          + "ogle.cloud.automl.v1beta1.ImageObjectDet"
-          + "ectionAnnotationH\000\022Z\n\024video_classificati"
-          + "on\030\t \001(\0132:.google.cloud.automl.v1beta1.V"
-          + "ideoClassificationAnnotationH\000\022[\n\025video_"
-          + "object_tracking\030\010 \001(\0132:.google.cloud.aut"
-          + "oml.v1beta1.VideoObjectTrackingAnnotatio"
-          + "nH\000\022P\n\017text_extraction\030\006 \001(\01325.google.cl"
-          + "oud.automl.v1beta1.TextExtractionAnnotat"
-          + "ionH\000\022N\n\016text_sentiment\030\007 \001(\01324.google.c"
-          + "loud.automl.v1beta1.TextSentimentAnnotat"
-          + "ionH\000\022?\n\006tables\030\n \001(\0132-.google.cloud.aut"
-          + "oml.v1beta1.TablesAnnotationH\000\022\032\n\022annota"
-          + "tion_spec_id\030\001 \001(\t\022\024\n\014display_name\030\005 \001(\t"
-          + "B\010\n\006detailB\245\001\n\037com.google.cloud.automl.v"
-          + "1beta1P\001ZAgoogle.golang.org/genproto/goo"
-          + "gleapis/cloud/automl/v1beta1;automl\312\002\033Go"
-          + "ogle\\Cloud\\AutoMl\\V1beta1\352\002\036Google::Clou"
-          + "d::AutoML::V1beta1b\006proto3"
+          + "on.proto\"\346\005\n\021AnnotationPayload\022I\n\013transl"
+          + "ation\030\002 \001(\01322.google.cloud.automl.v1beta"
+          + "1.TranslationAnnotationH\000\022O\n\016classificat"
+          + "ion\030\003 \001(\01325.google.cloud.automl.v1beta1."
+          + "ClassificationAnnotationH\000\022]\n\026image_obje"
+          + "ct_detection\030\004 \001(\0132;.google.cloud.automl"
+          + ".v1beta1.ImageObjectDetectionAnnotationH"
+          + "\000\022Z\n\024video_classification\030\t \001(\0132:.google"
+          + ".cloud.automl.v1beta1.VideoClassificatio"
+          + "nAnnotationH\000\022[\n\025video_object_tracking\030\010"
+          + " \001(\0132:.google.cloud.automl.v1beta1.Video"
+          + "ObjectTrackingAnnotationH\000\022P\n\017text_extra"
+          + "ction\030\006 \001(\01325.google.cloud.automl.v1beta"
+          + "1.TextExtractionAnnotationH\000\022N\n\016text_sen"
+          + "timent\030\007 \001(\01324.google.cloud.automl.v1bet"
+          + "a1.TextSentimentAnnotationH\000\022?\n\006tables\030\n"
+          + " \001(\0132-.google.cloud.automl.v1beta1.Table"
+          + "sAnnotationH\000\022\032\n\022annotation_spec_id\030\001 \001("
+          + "\t\022\024\n\014display_name\030\005 \001(\tB\010\n\006detailB\245\001\n\037co"
+          + "m.google.cloud.automl.v1beta1P\001ZAgoogle."
+          + "golang.org/genproto/googleapis/cloud/aut"
+          + "oml/v1beta1;automl\312\002\033Google\\Cloud\\AutoMl"
+          + "\\V1beta1\352\002\036Google::Cloud::AutoML::V1beta"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -85,8 +84,6 @@ public final class AnnotationPayloadOuterClass {
               com.google.cloud.automl.v1beta1.TextExtraction.getDescriptor(),
               com.google.cloud.automl.v1beta1.TextSentimentProto.getDescriptor(),
               com.google.cloud.automl.v1beta1.TranslationProto.getDescriptor(),
-              com.google.protobuf.AnyProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_automl_v1beta1_AnnotationPayload_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -112,8 +109,6 @@ public final class AnnotationPayloadOuterClass {
     com.google.cloud.automl.v1beta1.TextExtraction.getDescriptor();
     com.google.cloud.automl.v1beta1.TextSentimentProto.getDescriptor();
     com.google.cloud.automl.v1beta1.TranslationProto.getDescriptor();
-    com.google.protobuf.AnyProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

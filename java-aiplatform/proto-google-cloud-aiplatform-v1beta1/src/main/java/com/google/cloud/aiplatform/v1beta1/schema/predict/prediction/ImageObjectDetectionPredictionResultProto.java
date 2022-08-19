@@ -44,28 +44,27 @@ public final class ImageObjectDetectionPredictionResultProto {
           + "/predict/prediction/image_object_detecti"
           + "on.proto\0229google.cloud.aiplatform.v1beta"
           + "1.schema.predict.prediction\032\034google/prot"
-          + "obuf/struct.proto\032\034google/api/annotation"
-          + "s.proto\"\213\001\n$ImageObjectDetectionPredicti"
-          + "onResult\022\013\n\003ids\030\001 \003(\003\022\025\n\rdisplay_names\030\002"
-          + " \003(\t\022\023\n\013confidences\030\003 \003(\002\022*\n\006bboxes\030\004 \003("
-          + "\0132\032.google.protobuf.ListValueB\213\003\n=com.go"
-          + "ogle.cloud.aiplatform.v1beta1.schema.pre"
-          + "dict.predictionB)ImageObjectDetectionPre"
-          + "dictionResultProtoP\001Zcgoogle.golang.org/"
-          + "genproto/googleapis/cloud/aiplatform/v1b"
-          + "eta1/schema/predict/prediction;predictio"
-          + "n\252\0029Google.Cloud.AIPlatform.V1Beta1.Sche"
-          + "ma.Predict.Prediction\312\0029Google\\Cloud\\AIP"
-          + "latform\\V1beta1\\Schema\\Predict\\Predictio"
-          + "n\352\002?Google::Cloud::AIPlatform::V1beta1::"
-          + "Schema::Predict::Predictionb\006proto3"
+          + "obuf/struct.proto\"\213\001\n$ImageObjectDetecti"
+          + "onPredictionResult\022\013\n\003ids\030\001 \003(\003\022\025\n\rdispl"
+          + "ay_names\030\002 \003(\t\022\023\n\013confidences\030\003 \003(\002\022*\n\006b"
+          + "boxes\030\004 \003(\0132\032.google.protobuf.ListValueB"
+          + "\213\003\n=com.google.cloud.aiplatform.v1beta1."
+          + "schema.predict.predictionB)ImageObjectDe"
+          + "tectionPredictionResultProtoP\001Zcgoogle.g"
+          + "olang.org/genproto/googleapis/cloud/aipl"
+          + "atform/v1beta1/schema/predict/prediction"
+          + ";prediction\252\0029Google.Cloud.AIPlatform.V1"
+          + "Beta1.Schema.Predict.Prediction\312\0029Google"
+          + "\\Cloud\\AIPlatform\\V1beta1\\Schema\\Predict"
+          + "\\Prediction\352\002?Google::Cloud::AIPlatform:"
+          + ":V1beta1::Schema::Predict::Predictionb\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.protobuf.StructProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_schema_predict_prediction_ImageObjectDetectionPredictionResult_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -76,7 +75,6 @@ public final class ImageObjectDetectionPredictionResultProto {
               "Ids", "DisplayNames", "Confidences", "Bboxes",
             });
     com.google.protobuf.StructProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

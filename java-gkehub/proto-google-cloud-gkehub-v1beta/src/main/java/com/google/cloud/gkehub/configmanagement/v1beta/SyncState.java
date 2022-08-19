@@ -611,7 +611,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
    * <code>string last_sync = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.gkehub.configmanagement.v1beta.SyncState.last_sync is deprecated. See
-   *     google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=318
+   *     google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=317
    * @return The lastSync.
    */
   @java.lang.Override
@@ -639,7 +639,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
    * <code>string last_sync = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.gkehub.configmanagement.v1beta.SyncState.last_sync is deprecated. See
-   *     google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=318
+   *     google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=317
    * @return The bytes for lastSync.
    */
   @java.lang.Override
@@ -1626,7 +1626,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      * <code>string last_sync = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.gkehub.configmanagement.v1beta.SyncState.last_sync is deprecated.
-     *     See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=318
+     *     See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=317
      * @return The lastSync.
      */
     @java.lang.Deprecated
@@ -1653,7 +1653,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      * <code>string last_sync = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.gkehub.configmanagement.v1beta.SyncState.last_sync is deprecated.
-     *     See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=318
+     *     See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=317
      * @return The bytes for lastSync.
      */
     @java.lang.Deprecated
@@ -1680,7 +1680,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      * <code>string last_sync = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.gkehub.configmanagement.v1beta.SyncState.last_sync is deprecated.
-     *     See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=318
+     *     See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=317
      * @param value The lastSync to set.
      * @return This builder for chaining.
      */
@@ -1706,7 +1706,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      * <code>string last_sync = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.gkehub.configmanagement.v1beta.SyncState.last_sync is deprecated.
-     *     See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=318
+     *     See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=317
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1728,7 +1728,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      * <code>string last_sync = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.gkehub.configmanagement.v1beta.SyncState.last_sync is deprecated.
-     *     See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=318
+     *     See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=317
      * @param value The bytes for lastSync to set.
      * @return This builder for chaining.
      */

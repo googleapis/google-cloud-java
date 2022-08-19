@@ -16,8 +16,7 @@
 
 package com.google.cloud.servicedirectory.v1.samples;
 
-// [START
-// servicedirectory_v1_generated_registrationserviceclient_createservice_stringservicestring_sync]
+// [START servicedirectory_v1_generated_registrationserviceclient_createservice_stringservicestring_sync]
 import com.google.cloud.servicedirectory.v1.NamespaceName;
 import com.google.cloud.servicedirectory.v1.RegistrationServiceClient;
 import com.google.cloud.servicedirectory.v1.Service;
@@ -39,5 +38,4 @@ public class SyncCreateServiceStringServiceString {
     }
   }
 }
-// [END
-// servicedirectory_v1_generated_registrationserviceclient_createservice_stringservicestring_sync]
+// [END servicedirectory_v1_generated_registrationserviceclient_createservice_stringservicestring_sync]

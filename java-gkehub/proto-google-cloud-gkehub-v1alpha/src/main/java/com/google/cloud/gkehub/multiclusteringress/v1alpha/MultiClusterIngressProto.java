@@ -43,28 +43,24 @@ public final class MultiClusterIngressProto {
       "\nIgoogle/cloud/gkehub/v1alpha/multiclust"
           + "eringress/multiclusteringress.proto\022/goo"
           + "gle.cloud.gkehub.multiclusteringress.v1a"
-          + "lpha\032\034google/api/annotations.proto\"s\n\013Fe"
-          + "atureSpec\022\031\n\021config_membership\030\001 \001(\t\022I\n\007"
-          + "billing\030\002 \001(\01628.google.cloud.gkehub.mult"
-          + "iclusteringress.v1alpha.Billing*I\n\007Billi"
-          + "ng\022\027\n\023BILLING_UNSPECIFIED\020\000\022\021\n\rPAY_AS_YO"
-          + "U_GO\020\001\022\022\n\016ANTHOS_LICENSE\020\002B\317\002\n3com.googl"
-          + "e.cloud.gkehub.multiclusteringress.v1alp"
-          + "haB\030MultiClusterIngressProtoP\001Zbgoogle.g"
-          + "olang.org/genproto/googleapis/cloud/gkeh"
-          + "ub/multiclusteringress/v1alpha;multiclus"
-          + "teringress\252\002/Google.Cloud.GkeHub.MultiCl"
-          + "usterIngress.V1Alpha\312\002/Google\\Cloud\\GkeH"
-          + "ub\\MultiClusterIngress\\V1alpha\352\0023Google:"
-          + ":Cloud::GkeHub::MultiClusterIngress::V1a"
-          + "lphab\006proto3"
+          + "lpha\"s\n\013FeatureSpec\022\031\n\021config_membership"
+          + "\030\001 \001(\t\022I\n\007billing\030\002 \001(\01628.google.cloud.g"
+          + "kehub.multiclusteringress.v1alpha.Billin"
+          + "g*I\n\007Billing\022\027\n\023BILLING_UNSPECIFIED\020\000\022\021\n"
+          + "\rPAY_AS_YOU_GO\020\001\022\022\n\016ANTHOS_LICENSE\020\002B\317\002\n"
+          + "3com.google.cloud.gkehub.multiclustering"
+          + "ress.v1alphaB\030MultiClusterIngressProtoP\001"
+          + "Zbgoogle.golang.org/genproto/googleapis/"
+          + "cloud/gkehub/multiclusteringress/v1alpha"
+          + ";multiclusteringress\252\002/Google.Cloud.GkeH"
+          + "ub.MultiClusterIngress.V1Alpha\312\002/Google\\"
+          + "Cloud\\GkeHub\\MultiClusterIngress\\V1alpha"
+          + "\352\0023Google::Cloud::GkeHub::MultiClusterIn"
+          + "gress::V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_gkehub_multiclusteringress_v1alpha_FeatureSpec_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_gkehub_multiclusteringress_v1alpha_FeatureSpec_fieldAccessorTable =
@@ -73,7 +69,6 @@ public final class MultiClusterIngressProto {
             new java.lang.String[] {
               "ConfigMembership", "Billing",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

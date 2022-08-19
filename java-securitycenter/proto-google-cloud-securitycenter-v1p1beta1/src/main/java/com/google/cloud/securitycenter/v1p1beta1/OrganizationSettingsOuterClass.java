@@ -47,35 +47,33 @@ public final class OrganizationSettingsOuterClass {
       "\nAgoogle/cloud/securitycenter/v1p1beta1/"
           + "organization_settings.proto\022%google.clou"
           + "d.securitycenter.v1p1beta1\032\031google/api/r"
-          + "esource.proto\032\034google/api/annotations.pr"
-          + "oto\"\254\004\n\024OrganizationSettings\022\014\n\004name\030\001 \001"
-          + "(\t\022\036\n\026enable_asset_discovery\030\002 \001(\010\022p\n\026as"
-          + "set_discovery_config\030\003 \001(\0132P.google.clou"
-          + "d.securitycenter.v1p1beta1.OrganizationS"
-          + "ettings.AssetDiscoveryConfig\032\207\002\n\024AssetDi"
-          + "scoveryConfig\022\023\n\013project_ids\030\001 \003(\t\022v\n\016in"
-          + "clusion_mode\030\002 \001(\0162^.google.cloud.securi"
-          + "tycenter.v1p1beta1.OrganizationSettings."
-          + "AssetDiscoveryConfig.InclusionMode\022\022\n\nfo"
-          + "lder_ids\030\003 \003(\t\"N\n\rInclusionMode\022\036\n\032INCLU"
-          + "SION_MODE_UNSPECIFIED\020\000\022\020\n\014INCLUDE_ONLY\020"
-          + "\001\022\013\n\007EXCLUDE\020\002:j\352Ag\n2securitycenter.goog"
-          + "leapis.com/OrganizationSettings\0221organiz"
-          + "ations/{organization}/organizationSettin"
-          + "gsB\375\001\n)com.google.cloud.securitycenter.v"
-          + "1p1beta1P\001ZSgoogle.golang.org/genproto/g"
-          + "oogleapis/cloud/securitycenter/v1p1beta1"
-          + ";securitycenter\252\002%Google.Cloud.SecurityC"
-          + "enter.V1P1Beta1\312\002%Google\\Cloud\\SecurityC"
-          + "enter\\V1p1beta1\352\002(Google::Cloud::Securit"
-          + "yCenter::V1p1beta1b\006proto3"
+          + "esource.proto\"\254\004\n\024OrganizationSettings\022\014"
+          + "\n\004name\030\001 \001(\t\022\036\n\026enable_asset_discovery\030\002"
+          + " \001(\010\022p\n\026asset_discovery_config\030\003 \001(\0132P.g"
+          + "oogle.cloud.securitycenter.v1p1beta1.Org"
+          + "anizationSettings.AssetDiscoveryConfig\032\207"
+          + "\002\n\024AssetDiscoveryConfig\022\023\n\013project_ids\030\001"
+          + " \003(\t\022v\n\016inclusion_mode\030\002 \001(\0162^.google.cl"
+          + "oud.securitycenter.v1p1beta1.Organizatio"
+          + "nSettings.AssetDiscoveryConfig.Inclusion"
+          + "Mode\022\022\n\nfolder_ids\030\003 \003(\t\"N\n\rInclusionMod"
+          + "e\022\036\n\032INCLUSION_MODE_UNSPECIFIED\020\000\022\020\n\014INC"
+          + "LUDE_ONLY\020\001\022\013\n\007EXCLUDE\020\002:j\352Ag\n2securityc"
+          + "enter.googleapis.com/OrganizationSetting"
+          + "s\0221organizations/{organization}/organiza"
+          + "tionSettingsB\375\001\n)com.google.cloud.securi"
+          + "tycenter.v1p1beta1P\001ZSgoogle.golang.org/"
+          + "genproto/googleapis/cloud/securitycenter"
+          + "/v1p1beta1;securitycenter\252\002%Google.Cloud"
+          + ".SecurityCenter.V1P1Beta1\312\002%Google\\Cloud"
+          + "\\SecurityCenter\\V1p1beta1\352\002(Google::Clou"
+          + "d::SecurityCenter::V1p1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.ResourceProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_securitycenter_v1p1beta1_OrganizationSettings_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -101,7 +99,6 @@ public final class OrganizationSettingsOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.ResourceProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

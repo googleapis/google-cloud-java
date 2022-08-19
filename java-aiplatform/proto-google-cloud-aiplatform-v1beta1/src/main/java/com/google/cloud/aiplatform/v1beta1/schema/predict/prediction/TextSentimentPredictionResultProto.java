@@ -43,26 +43,22 @@ public final class TextSentimentPredictionResultProto {
       "\nNgoogle/cloud/aiplatform/v1beta1/schema"
           + "/predict/prediction/text_sentiment.proto"
           + "\0229google.cloud.aiplatform.v1beta1.schema"
-          + ".predict.prediction\032\034google/api/annotati"
-          + "ons.proto\"2\n\035TextSentimentPredictionResu"
-          + "lt\022\021\n\tsentiment\030\001 \001(\005B\204\003\n=com.google.clo"
-          + "ud.aiplatform.v1beta1.schema.predict.pre"
-          + "dictionB\"TextSentimentPredictionResultPr"
-          + "otoP\001Zcgoogle.golang.org/genproto/google"
-          + "apis/cloud/aiplatform/v1beta1/schema/pre"
-          + "dict/prediction;prediction\252\0029Google.Clou"
-          + "d.AIPlatform.V1Beta1.Schema.Predict.Pred"
-          + "iction\312\0029Google\\Cloud\\AIPlatform\\V1beta1"
-          + "\\Schema\\Predict\\Prediction\352\002?Google::Clo"
-          + "ud::AIPlatform::V1beta1::Schema::Predict"
-          + "::Predictionb\006proto3"
+          + ".predict.prediction\"2\n\035TextSentimentPred"
+          + "ictionResult\022\021\n\tsentiment\030\001 \001(\005B\204\003\n=com."
+          + "google.cloud.aiplatform.v1beta1.schema.p"
+          + "redict.predictionB\"TextSentimentPredicti"
+          + "onResultProtoP\001Zcgoogle.golang.org/genpr"
+          + "oto/googleapis/cloud/aiplatform/v1beta1/"
+          + "schema/predict/prediction;prediction\252\0029G"
+          + "oogle.Cloud.AIPlatform.V1Beta1.Schema.Pr"
+          + "edict.Prediction\312\0029Google\\Cloud\\AIPlatfo"
+          + "rm\\V1beta1\\Schema\\Predict\\Prediction\352\002?G"
+          + "oogle::Cloud::AIPlatform::V1beta1::Schem"
+          + "a::Predict::Predictionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1beta1_schema_predict_prediction_TextSentimentPredictionResult_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1beta1_schema_predict_prediction_TextSentimentPredictionResult_fieldAccessorTable =
@@ -71,7 +67,6 @@ public final class TextSentimentPredictionResultProto {
             new java.lang.String[] {
               "Sentiment",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

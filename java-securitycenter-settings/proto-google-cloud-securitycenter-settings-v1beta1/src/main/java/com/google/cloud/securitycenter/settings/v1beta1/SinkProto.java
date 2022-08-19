@@ -42,24 +42,20 @@ public final class SinkProto {
     java.lang.String[] descriptorData = {
       "\n@google/cloud/securitycenter/settings/v"
           + "1beta1/sink_settings.proto\022,google.cloud"
-          + ".securitycenter.settings.v1beta1\032\034google"
-          + "/api/annotations.proto\",\n\014SinkSettings\022\034"
-          + "\n\024logging_sink_project\030\001 \001(\tB\251\002\n0com.goo"
-          + "gle.cloud.securitycenter.settings.v1beta"
-          + "1B\tSinkProtoP\001ZTgoogle.golang.org/genpro"
-          + "to/googleapis/cloud/securitycenter/setti"
-          + "ngs/v1beta1;settings\370\001\001\252\002,Google.Cloud.S"
-          + "ecurityCenter.Settings.V1Beta1\312\002,Google\\"
-          + "Cloud\\SecurityCenter\\Settings\\V1beta1\352\0020"
-          + "Google::Cloud::SecurityCenter::Settings:"
-          + ":V1beta1b\006proto3"
+          + ".securitycenter.settings.v1beta1\",\n\014Sink"
+          + "Settings\022\034\n\024logging_sink_project\030\001 \001(\tB\251"
+          + "\002\n0com.google.cloud.securitycenter.setti"
+          + "ngs.v1beta1B\tSinkProtoP\001ZTgoogle.golang."
+          + "org/genproto/googleapis/cloud/securityce"
+          + "nter/settings/v1beta1;settings\370\001\001\252\002,Goog"
+          + "le.Cloud.SecurityCenter.Settings.V1Beta1"
+          + "\312\002,Google\\Cloud\\SecurityCenter\\Settings\\"
+          + "V1beta1\352\0020Google::Cloud::SecurityCenter:"
+          + ":Settings::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_securitycenter_settings_v1beta1_SinkSettings_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_securitycenter_settings_v1beta1_SinkSettings_fieldAccessorTable =
@@ -68,7 +64,6 @@ public final class SinkProto {
             new java.lang.String[] {
               "LoggingSinkProject",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

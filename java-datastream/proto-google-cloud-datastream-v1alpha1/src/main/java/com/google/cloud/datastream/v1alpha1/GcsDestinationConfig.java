@@ -289,7 +289,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.datastream.v1alpha1.GcsDestinationConfig.gcs_file_format is
-   *     deprecated. See google/cloud/datastream/v1alpha1/datastream_resources.proto;l=477
+   *     deprecated. See google/cloud/datastream/v1alpha1/datastream_resources.proto;l=476
    * @return The enum numeric value on the wire for gcsFileFormat.
    */
   @java.lang.Override
@@ -309,7 +309,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.datastream.v1alpha1.GcsDestinationConfig.gcs_file_format is
-   *     deprecated. See google/cloud/datastream/v1alpha1/datastream_resources.proto;l=477
+   *     deprecated. See google/cloud/datastream/v1alpha1/datastream_resources.proto;l=476
    * @return The gcsFileFormat.
    */
   @java.lang.Override
@@ -1082,7 +1082,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.datastream.v1alpha1.GcsDestinationConfig.gcs_file_format is
-     *     deprecated. See google/cloud/datastream/v1alpha1/datastream_resources.proto;l=477
+     *     deprecated. See google/cloud/datastream/v1alpha1/datastream_resources.proto;l=476
      * @return The enum numeric value on the wire for gcsFileFormat.
      */
     @java.lang.Override
@@ -1103,7 +1103,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.datastream.v1alpha1.GcsDestinationConfig.gcs_file_format is
-     *     deprecated. See google/cloud/datastream/v1alpha1/datastream_resources.proto;l=477
+     *     deprecated. See google/cloud/datastream/v1alpha1/datastream_resources.proto;l=476
      * @param value The enum numeric value on the wire for gcsFileFormat to set.
      * @return This builder for chaining.
      */
@@ -1127,7 +1127,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.datastream.v1alpha1.GcsDestinationConfig.gcs_file_format is
-     *     deprecated. See google/cloud/datastream/v1alpha1/datastream_resources.proto;l=477
+     *     deprecated. See google/cloud/datastream/v1alpha1/datastream_resources.proto;l=476
      * @return The gcsFileFormat.
      */
     @java.lang.Override
@@ -1153,7 +1153,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.datastream.v1alpha1.GcsDestinationConfig.gcs_file_format is
-     *     deprecated. See google/cloud/datastream/v1alpha1/datastream_resources.proto;l=477
+     *     deprecated. See google/cloud/datastream/v1alpha1/datastream_resources.proto;l=476
      * @param value The gcsFileFormat to set.
      * @return This builder for chaining.
      */
@@ -1180,7 +1180,7 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.datastream.v1alpha1.GcsDestinationConfig.gcs_file_format is
-     *     deprecated. See google/cloud/datastream/v1alpha1/datastream_resources.proto;l=477
+     *     deprecated. See google/cloud/datastream/v1alpha1/datastream_resources.proto;l=476
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

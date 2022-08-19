@@ -62,41 +62,37 @@ public final class ExportConfigProto {
     java.lang.String[] descriptorData = {
       "\n.google/cloud/retail/v2beta/export_conf"
           + "ig.proto\022\032google.cloud.retail.v2beta\032\037go"
-          + "ogle/api/field_behavior.proto\032\031google/ap"
-          + "i/resource.proto\032\037google/protobuf/timest"
-          + "amp.proto\032\027google/rpc/status.proto\"9\n\022Ex"
-          + "portErrorsConfig\022\024\n\ngcs_prefix\030\001 \001(\tH\000B\r"
-          + "\n\013destination\"r\n\016ExportMetadata\022/\n\013creat"
-          + "e_time\030\001 \001(\0132\032.google.protobuf.Timestamp"
-          + "\022/\n\013update_time\030\002 \001(\0132\032.google.protobuf."
-          + "Timestamp\"\313\001\n\026ExportProductsResponse\022)\n\r"
-          + "error_samples\030\001 \003(\0132\022.google.rpc.Status\022"
-          + "E\n\rerrors_config\030\002 \001(\0132..google.cloud.re"
-          + "tail.v2beta.ExportErrorsConfig\022?\n\routput"
-          + "_result\030\003 \001(\0132(.google.cloud.retail.v2be"
-          + "ta.OutputResult\"\315\001\n\030ExportUserEventsResp"
-          + "onse\022)\n\rerror_samples\030\001 \003(\0132\022.google.rpc"
-          + ".Status\022E\n\rerrors_config\030\002 \001(\0132..google."
-          + "cloud.retail.v2beta.ExportErrorsConfig\022?"
-          + "\n\routput_result\030\003 \001(\0132(.google.cloud.ret"
-          + "ail.v2beta.OutputResult\"Y\n\014OutputResult\022"
-          + "I\n\017bigquery_result\030\001 \003(\01320.google.cloud."
-          + "retail.v2beta.BigQueryOutputResult\"<\n\024Bi"
-          + "gQueryOutputResult\022\022\n\ndataset_id\030\001 \001(\t\022\020"
-          + "\n\010table_id\030\002 \001(\tB\332\001\n\036com.google.cloud.re"
-          + "tail.v2betaB\021ExportConfigProtoP\001Z@google"
-          + ".golang.org/genproto/googleapis/cloud/re"
-          + "tail/v2beta;retail\242\002\006RETAIL\252\002\032Google.Clo"
-          + "ud.Retail.V2Beta\312\002\032Google\\Cloud\\Retail\\V"
-          + "2beta\352\002\035Google::Cloud::Retail::V2betab\006p"
-          + "roto3"
+          + "ogle/protobuf/timestamp.proto\032\027google/rp"
+          + "c/status.proto\"9\n\022ExportErrorsConfig\022\024\n\n"
+          + "gcs_prefix\030\001 \001(\tH\000B\r\n\013destination\"r\n\016Exp"
+          + "ortMetadata\022/\n\013create_time\030\001 \001(\0132\032.googl"
+          + "e.protobuf.Timestamp\022/\n\013update_time\030\002 \001("
+          + "\0132\032.google.protobuf.Timestamp\"\313\001\n\026Export"
+          + "ProductsResponse\022)\n\rerror_samples\030\001 \003(\0132"
+          + "\022.google.rpc.Status\022E\n\rerrors_config\030\002 \001"
+          + "(\0132..google.cloud.retail.v2beta.ExportEr"
+          + "rorsConfig\022?\n\routput_result\030\003 \001(\0132(.goog"
+          + "le.cloud.retail.v2beta.OutputResult\"\315\001\n\030"
+          + "ExportUserEventsResponse\022)\n\rerror_sample"
+          + "s\030\001 \003(\0132\022.google.rpc.Status\022E\n\rerrors_co"
+          + "nfig\030\002 \001(\0132..google.cloud.retail.v2beta."
+          + "ExportErrorsConfig\022?\n\routput_result\030\003 \001("
+          + "\0132(.google.cloud.retail.v2beta.OutputRes"
+          + "ult\"Y\n\014OutputResult\022I\n\017bigquery_result\030\001"
+          + " \003(\01320.google.cloud.retail.v2beta.BigQue"
+          + "ryOutputResult\"<\n\024BigQueryOutputResult\022\022"
+          + "\n\ndataset_id\030\001 \001(\t\022\020\n\010table_id\030\002 \001(\tB\332\001\n"
+          + "\036com.google.cloud.retail.v2betaB\021ExportC"
+          + "onfigProtoP\001Z@google.golang.org/genproto"
+          + "/googleapis/cloud/retail/v2beta;retail\242\002"
+          + "\006RETAIL\252\002\032Google.Cloud.Retail.V2Beta\312\002\032G"
+          + "oogle\\Cloud\\Retail\\V2beta\352\002\035Google::Clou"
+          + "d::Retail::V2betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.FieldBehaviorProto.getDescriptor(),
-              com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
             });
@@ -148,8 +144,6 @@ public final class ExportConfigProto {
             new java.lang.String[] {
               "DatasetId", "TableId",
             });
-    com.google.api.FieldBehaviorProto.getDescriptor();
-    com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
   }

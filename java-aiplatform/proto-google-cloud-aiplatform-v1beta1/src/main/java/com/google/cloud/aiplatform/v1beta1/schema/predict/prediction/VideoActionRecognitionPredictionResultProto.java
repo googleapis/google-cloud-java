@@ -45,24 +45,23 @@ public final class VideoActionRecognitionPredictionResultProto {
           + "tion.proto\0229google.cloud.aiplatform.v1be"
           + "ta1.schema.predict.prediction\032\036google/pr"
           + "otobuf/duration.proto\032\036google/protobuf/w"
-          + "rappers.proto\032\034google/api/annotations.pr"
-          + "oto\"\347\001\n&VideoActionRecognitionPrediction"
-          + "Result\022\n\n\002id\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t"
-          + "\0225\n\022time_segment_start\030\004 \001(\0132\031.google.pr"
-          + "otobuf.Duration\0223\n\020time_segment_end\030\005 \001("
-          + "\0132\031.google.protobuf.Duration\022/\n\nconfiden"
-          + "ce\030\006 \001(\0132\033.google.protobuf.FloatValueB\215\003"
-          + "\n=com.google.cloud.aiplatform.v1beta1.sc"
-          + "hema.predict.predictionB+VideoActionReco"
-          + "gnitionPredictionResultProtoP\001Zcgoogle.g"
-          + "olang.org/genproto/googleapis/cloud/aipl"
-          + "atform/v1beta1/schema/predict/prediction"
-          + ";prediction\252\0029Google.Cloud.AIPlatform.V1"
-          + "Beta1.Schema.Predict.Prediction\312\0029Google"
-          + "\\Cloud\\AIPlatform\\V1beta1\\Schema\\Predict"
-          + "\\Prediction\352\002?Google::Cloud::AIPlatform:"
-          + ":V1beta1::Schema::Predict::Predictionb\006p"
-          + "roto3"
+          + "rappers.proto\"\347\001\n&VideoActionRecognition"
+          + "PredictionResult\022\n\n\002id\030\001 \001(\t\022\024\n\014display_"
+          + "name\030\002 \001(\t\0225\n\022time_segment_start\030\004 \001(\0132\031"
+          + ".google.protobuf.Duration\0223\n\020time_segmen"
+          + "t_end\030\005 \001(\0132\031.google.protobuf.Duration\022/"
+          + "\n\nconfidence\030\006 \001(\0132\033.google.protobuf.Flo"
+          + "atValueB\215\003\n=com.google.cloud.aiplatform."
+          + "v1beta1.schema.predict.predictionB+Video"
+          + "ActionRecognitionPredictionResultProtoP\001"
+          + "Zcgoogle.golang.org/genproto/googleapis/"
+          + "cloud/aiplatform/v1beta1/schema/predict/"
+          + "prediction;prediction\252\0029Google.Cloud.AIP"
+          + "latform.V1Beta1.Schema.Predict.Predictio"
+          + "n\312\0029Google\\Cloud\\AIPlatform\\V1beta1\\Sche"
+          + "ma\\Predict\\Prediction\352\002?Google::Cloud::A"
+          + "IPlatform::V1beta1::Schema::Predict::Pre"
+          + "dictionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -70,7 +69,6 @@ public final class VideoActionRecognitionPredictionResultProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.WrappersProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_schema_predict_prediction_VideoActionRecognitionPredictionResult_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -82,7 +80,6 @@ public final class VideoActionRecognitionPredictionResultProto {
             });
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

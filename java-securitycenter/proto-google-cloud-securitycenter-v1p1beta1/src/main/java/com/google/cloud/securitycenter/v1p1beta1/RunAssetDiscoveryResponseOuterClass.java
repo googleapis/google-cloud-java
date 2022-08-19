@@ -43,27 +43,26 @@ public final class RunAssetDiscoveryResponseOuterClass {
       "\nHgoogle/cloud/securitycenter/v1p1beta1/"
           + "run_asset_discovery_response.proto\022%goog"
           + "le.cloud.securitycenter.v1p1beta1\032\036googl"
-          + "e/protobuf/duration.proto\032\034google/api/an"
-          + "notations.proto\"\356\001\n\031RunAssetDiscoveryRes"
-          + "ponse\022U\n\005state\030\001 \001(\0162F.google.cloud.secu"
-          + "ritycenter.v1p1beta1.RunAssetDiscoveryRe"
-          + "sponse.State\022+\n\010duration\030\002 \001(\0132\031.google."
-          + "protobuf.Duration\"M\n\005State\022\025\n\021STATE_UNSP"
-          + "ECIFIED\020\000\022\r\n\tCOMPLETED\020\001\022\016\n\nSUPERSEDED\020\002"
-          + "\022\016\n\nTERMINATED\020\003B\375\001\n)com.google.cloud.se"
-          + "curitycenter.v1p1beta1P\001ZSgoogle.golang."
-          + "org/genproto/googleapis/cloud/securityce"
-          + "nter/v1p1beta1;securitycenter\252\002%Google.C"
-          + "loud.SecurityCenter.V1P1Beta1\312\002%Google\\C"
-          + "loud\\SecurityCenter\\V1p1beta1\352\002(Google::"
-          + "Cloud::SecurityCenter::V1p1beta1b\006proto3"
+          + "e/protobuf/duration.proto\"\356\001\n\031RunAssetDi"
+          + "scoveryResponse\022U\n\005state\030\001 \001(\0162F.google."
+          + "cloud.securitycenter.v1p1beta1.RunAssetD"
+          + "iscoveryResponse.State\022+\n\010duration\030\002 \001(\013"
+          + "2\031.google.protobuf.Duration\"M\n\005State\022\025\n\021"
+          + "STATE_UNSPECIFIED\020\000\022\r\n\tCOMPLETED\020\001\022\016\n\nSU"
+          + "PERSEDED\020\002\022\016\n\nTERMINATED\020\003B\375\001\n)com.googl"
+          + "e.cloud.securitycenter.v1p1beta1P\001ZSgoog"
+          + "le.golang.org/genproto/googleapis/cloud/"
+          + "securitycenter/v1p1beta1;securitycenter\252"
+          + "\002%Google.Cloud.SecurityCenter.V1P1Beta1\312"
+          + "\002%Google\\Cloud\\SecurityCenter\\V1p1beta1\352"
+          + "\002(Google::Cloud::SecurityCenter::V1p1bet"
+          + "a1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.protobuf.DurationProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_securitycenter_v1p1beta1_RunAssetDiscoveryResponse_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -74,7 +73,6 @@ public final class RunAssetDiscoveryResponseOuterClass {
               "State", "Duration",
             });
     com.google.protobuf.DurationProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

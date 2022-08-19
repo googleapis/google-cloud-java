@@ -43,28 +43,24 @@ public final class VideoClassificationPredictionParamsProto {
       "\nKgoogle/cloud/aiplatform/v1/schema/pred"
           + "ict/params/video_classification.proto\0220g"
           + "oogle.cloud.aiplatform.v1.schema.predict"
-          + ".params\032\034google/api/annotations.proto\"\302\001"
-          + "\n#VideoClassificationPredictionParams\022\034\n"
-          + "\024confidence_threshold\030\001 \001(\002\022\027\n\017max_predi"
-          + "ctions\030\002 \001(\005\022\036\n\026segment_classification\030\003"
-          + " \001(\010\022\033\n\023shot_classification\030\004 \001(\010\022\'\n\037one"
-          + "_sec_interval_classification\030\005 \001(\010B\331\002\n4c"
-          + "om.google.cloud.aiplatform.v1.schema.pre"
-          + "dict.paramsB(VideoClassificationPredicti"
-          + "onParamsProtoP\001ZVgoogle.golang.org/genpr"
-          + "oto/googleapis/cloud/aiplatform/v1/schem"
-          + "a/predict/params;params\252\0020Google.Cloud.A"
-          + "IPlatform.V1.Schema.Predict.Params\312\0020Goo"
-          + "gle\\Cloud\\AIPlatform\\V1\\Schema\\Predict\\P"
-          + "arams\352\0026Google::Cloud::AIPlatform::V1::S"
-          + "chema::Predict::Paramsb\006proto3"
+          + ".params\"\302\001\n#VideoClassificationPredictio"
+          + "nParams\022\034\n\024confidence_threshold\030\001 \001(\002\022\027\n"
+          + "\017max_predictions\030\002 \001(\005\022\036\n\026segment_classi"
+          + "fication\030\003 \001(\010\022\033\n\023shot_classification\030\004 "
+          + "\001(\010\022\'\n\037one_sec_interval_classification\030\005"
+          + " \001(\010B\331\002\n4com.google.cloud.aiplatform.v1."
+          + "schema.predict.paramsB(VideoClassificati"
+          + "onPredictionParamsProtoP\001ZVgoogle.golang"
+          + ".org/genproto/googleapis/cloud/aiplatfor"
+          + "m/v1/schema/predict/params;params\252\0020Goog"
+          + "le.Cloud.AIPlatform.V1.Schema.Predict.Pa"
+          + "rams\312\0020Google\\Cloud\\AIPlatform\\V1\\Schema"
+          + "\\Predict\\Params\352\0026Google::Cloud::AIPlatf"
+          + "orm::V1::Schema::Predict::Paramsb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1_schema_predict_params_VideoClassificationPredictionParams_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1_schema_predict_params_VideoClassificationPredictionParams_fieldAccessorTable =
@@ -77,7 +73,6 @@ public final class VideoClassificationPredictionParamsProto {
               "ShotClassification",
               "OneSecIntervalClassification",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

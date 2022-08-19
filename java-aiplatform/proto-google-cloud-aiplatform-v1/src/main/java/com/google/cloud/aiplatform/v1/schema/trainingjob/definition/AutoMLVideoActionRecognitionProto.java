@@ -48,36 +48,32 @@ public final class AutoMLVideoActionRecognitionProto {
       "\n^google/cloud/aiplatform/v1/schema/trai"
           + "ningjob/definition/automl_video_action_r"
           + "ecognition.proto\0228google.cloud.aiplatfor"
-          + "m.v1.schema.trainingjob.definition\032\034goog"
-          + "le/api/annotations.proto\"\214\001\n\034AutoMlVideo"
-          + "ActionRecognition\022l\n\006inputs\030\001 \001(\0132\\.goog"
-          + "le.cloud.aiplatform.v1.schema.trainingjo"
-          + "b.definition.AutoMlVideoActionRecognitio"
-          + "nInputs\"\252\002\n\"AutoMlVideoActionRecognition"
-          + "Inputs\022z\n\nmodel_type\030\001 \001(\0162f.google.clou"
-          + "d.aiplatform.v1.schema.trainingjob.defin"
-          + "ition.AutoMlVideoActionRecognitionInputs"
-          + ".ModelType\"\207\001\n\tModelType\022\032\n\026MODEL_TYPE_U"
-          + "NSPECIFIED\020\000\022\t\n\005CLOUD\020\001\022\026\n\022MOBILE_VERSAT"
-          + "ILE_1\020\002\022\035\n\031MOBILE_JETSON_VERSATILE_1\020\003\022\034"
-          + "\n\030MOBILE_CORAL_VERSATILE_1\020\004B\376\002\n<com.goo"
-          + "gle.cloud.aiplatform.v1.schema.trainingj"
-          + "ob.definitionB!AutoMLVideoActionRecognit"
-          + "ionProtoP\001Zbgoogle.golang.org/genproto/g"
-          + "oogleapis/cloud/aiplatform/v1/schema/tra"
-          + "iningjob/definition;definition\252\0028Google."
-          + "Cloud.AIPlatform.V1.Schema.TrainingJob.D"
-          + "efinition\312\0028Google\\Cloud\\AIPlatform\\V1\\S"
-          + "chema\\TrainingJob\\Definition\352\002>Google::C"
-          + "loud::AIPlatform::V1::Schema::TrainingJo"
-          + "b::Definitionb\006proto3"
+          + "m.v1.schema.trainingjob.definition\"\214\001\n\034A"
+          + "utoMlVideoActionRecognition\022l\n\006inputs\030\001 "
+          + "\001(\0132\\.google.cloud.aiplatform.v1.schema."
+          + "trainingjob.definition.AutoMlVideoAction"
+          + "RecognitionInputs\"\252\002\n\"AutoMlVideoActionR"
+          + "ecognitionInputs\022z\n\nmodel_type\030\001 \001(\0162f.g"
+          + "oogle.cloud.aiplatform.v1.schema.trainin"
+          + "gjob.definition.AutoMlVideoActionRecogni"
+          + "tionInputs.ModelType\"\207\001\n\tModelType\022\032\n\026MO"
+          + "DEL_TYPE_UNSPECIFIED\020\000\022\t\n\005CLOUD\020\001\022\026\n\022MOB"
+          + "ILE_VERSATILE_1\020\002\022\035\n\031MOBILE_JETSON_VERSA"
+          + "TILE_1\020\003\022\034\n\030MOBILE_CORAL_VERSATILE_1\020\004B\376"
+          + "\002\n<com.google.cloud.aiplatform.v1.schema"
+          + ".trainingjob.definitionB!AutoMLVideoActi"
+          + "onRecognitionProtoP\001Zbgoogle.golang.org/"
+          + "genproto/googleapis/cloud/aiplatform/v1/"
+          + "schema/trainingjob/definition;definition"
+          + "\252\0028Google.Cloud.AIPlatform.V1.Schema.Tra"
+          + "iningJob.Definition\312\0028Google\\Cloud\\AIPla"
+          + "tform\\V1\\Schema\\TrainingJob\\Definition\352\002"
+          + ">Google::Cloud::AIPlatform::V1::Schema::"
+          + "TrainingJob::Definitionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlVideoActionRecognition_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlVideoActionRecognition_fieldAccessorTable =
@@ -94,7 +90,6 @@ public final class AutoMLVideoActionRecognitionProto {
             new java.lang.String[] {
               "ModelType",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

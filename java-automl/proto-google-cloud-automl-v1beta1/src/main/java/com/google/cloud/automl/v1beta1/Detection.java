@@ -63,39 +63,38 @@ public final class Detection {
       "\n+google/cloud/automl/v1beta1/detection."
           + "proto\022\033google.cloud.automl.v1beta1\032*goog"
           + "le/cloud/automl/v1beta1/geometry.proto\032\036"
-          + "google/protobuf/duration.proto\032\034google/a"
-          + "pi/annotations.proto\"p\n\036ImageObjectDetec"
-          + "tionAnnotation\022?\n\014bounding_box\030\001 \001(\0132).g"
-          + "oogle.cloud.automl.v1beta1.BoundingPoly\022"
-          + "\r\n\005score\030\002 \001(\002\"\264\001\n\035VideoObjectTrackingAn"
-          + "notation\022\023\n\013instance_id\030\001 \001(\t\022.\n\013time_of"
-          + "fset\030\002 \001(\0132\031.google.protobuf.Duration\022?\n"
-          + "\014bounding_box\030\003 \001(\0132).google.cloud.autom"
-          + "l.v1beta1.BoundingPoly\022\r\n\005score\030\004 \001(\002\"\256\002"
-          + "\n\027BoundingBoxMetricsEntry\022\025\n\riou_thresho"
-          + "ld\030\001 \001(\002\022\036\n\026mean_average_precision\030\002 \001(\002"
-          + "\022o\n\032confidence_metrics_entries\030\003 \003(\0132K.g"
-          + "oogle.cloud.automl.v1beta1.BoundingBoxMe"
-          + "tricsEntry.ConfidenceMetricsEntry\032k\n\026Con"
-          + "fidenceMetricsEntry\022\034\n\024confidence_thresh"
-          + "old\030\001 \001(\002\022\016\n\006recall\030\002 \001(\002\022\021\n\tprecision\030\003"
-          + " \001(\002\022\020\n\010f1_score\030\004 \001(\002\"\326\001\n%ImageObjectDe"
-          + "tectionEvaluationMetrics\022$\n\034evaluated_bo"
-          + "unding_box_count\030\001 \001(\005\022Z\n\034bounding_box_m"
-          + "etrics_entries\030\002 \003(\01324.google.cloud.auto"
-          + "ml.v1beta1.BoundingBoxMetricsEntry\022+\n#bo"
-          + "unding_box_mean_average_precision\030\003 \001(\002\""
-          + "\364\001\n$VideoObjectTrackingEvaluationMetrics"
-          + "\022\035\n\025evaluated_frame_count\030\001 \001(\005\022$\n\034evalu"
-          + "ated_bounding_box_count\030\002 \001(\005\022Z\n\034boundin"
-          + "g_box_metrics_entries\030\004 \003(\01324.google.clo"
-          + "ud.automl.v1beta1.BoundingBoxMetricsEntr"
-          + "y\022+\n#bounding_box_mean_average_precision"
-          + "\030\006 \001(\002B\245\001\n\037com.google.cloud.automl.v1bet"
-          + "a1P\001ZAgoogle.golang.org/genproto/googlea"
-          + "pis/cloud/automl/v1beta1;automl\312\002\033Google"
-          + "\\Cloud\\AutoMl\\V1beta1\352\002\036Google::Cloud::A"
-          + "utoML::V1beta1b\006proto3"
+          + "google/protobuf/duration.proto\"p\n\036ImageO"
+          + "bjectDetectionAnnotation\022?\n\014bounding_box"
+          + "\030\001 \001(\0132).google.cloud.automl.v1beta1.Bou"
+          + "ndingPoly\022\r\n\005score\030\002 \001(\002\"\264\001\n\035VideoObject"
+          + "TrackingAnnotation\022\023\n\013instance_id\030\001 \001(\t\022"
+          + ".\n\013time_offset\030\002 \001(\0132\031.google.protobuf.D"
+          + "uration\022?\n\014bounding_box\030\003 \001(\0132).google.c"
+          + "loud.automl.v1beta1.BoundingPoly\022\r\n\005scor"
+          + "e\030\004 \001(\002\"\256\002\n\027BoundingBoxMetricsEntry\022\025\n\ri"
+          + "ou_threshold\030\001 \001(\002\022\036\n\026mean_average_preci"
+          + "sion\030\002 \001(\002\022o\n\032confidence_metrics_entries"
+          + "\030\003 \003(\0132K.google.cloud.automl.v1beta1.Bou"
+          + "ndingBoxMetricsEntry.ConfidenceMetricsEn"
+          + "try\032k\n\026ConfidenceMetricsEntry\022\034\n\024confide"
+          + "nce_threshold\030\001 \001(\002\022\016\n\006recall\030\002 \001(\002\022\021\n\tp"
+          + "recision\030\003 \001(\002\022\020\n\010f1_score\030\004 \001(\002\"\326\001\n%Ima"
+          + "geObjectDetectionEvaluationMetrics\022$\n\034ev"
+          + "aluated_bounding_box_count\030\001 \001(\005\022Z\n\034boun"
+          + "ding_box_metrics_entries\030\002 \003(\01324.google."
+          + "cloud.automl.v1beta1.BoundingBoxMetricsE"
+          + "ntry\022+\n#bounding_box_mean_average_precis"
+          + "ion\030\003 \001(\002\"\364\001\n$VideoObjectTrackingEvaluat"
+          + "ionMetrics\022\035\n\025evaluated_frame_count\030\001 \001("
+          + "\005\022$\n\034evaluated_bounding_box_count\030\002 \001(\005\022"
+          + "Z\n\034bounding_box_metrics_entries\030\004 \003(\01324."
+          + "google.cloud.automl.v1beta1.BoundingBoxM"
+          + "etricsEntry\022+\n#bounding_box_mean_average"
+          + "_precision\030\006 \001(\002B\245\001\n\037com.google.cloud.au"
+          + "toml.v1beta1P\001ZAgoogle.golang.org/genpro"
+          + "to/googleapis/cloud/automl/v1beta1;autom"
+          + "l\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Google"
+          + "::Cloud::AutoML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -103,7 +102,6 @@ public final class Detection {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.cloud.automl.v1beta1.Geometry.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_automl_v1beta1_ImageObjectDetectionAnnotation_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -162,7 +160,6 @@ public final class Detection {
             });
     com.google.cloud.automl.v1beta1.Geometry.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

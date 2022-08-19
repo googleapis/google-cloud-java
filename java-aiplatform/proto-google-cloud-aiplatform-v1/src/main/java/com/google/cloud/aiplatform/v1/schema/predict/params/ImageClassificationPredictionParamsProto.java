@@ -43,26 +43,22 @@ public final class ImageClassificationPredictionParamsProto {
       "\nKgoogle/cloud/aiplatform/v1/schema/pred"
           + "ict/params/image_classification.proto\0220g"
           + "oogle.cloud.aiplatform.v1.schema.predict"
-          + ".params\032\034google/api/annotations.proto\"\\\n"
-          + "#ImageClassificationPredictionParams\022\034\n\024"
-          + "confidence_threshold\030\001 \001(\002\022\027\n\017max_predic"
-          + "tions\030\002 \001(\005B\331\002\n4com.google.cloud.aiplatf"
-          + "orm.v1.schema.predict.paramsB(ImageClass"
-          + "ificationPredictionParamsProtoP\001ZVgoogle"
-          + ".golang.org/genproto/googleapis/cloud/ai"
-          + "platform/v1/schema/predict/params;params"
-          + "\252\0020Google.Cloud.AIPlatform.V1.Schema.Pre"
-          + "dict.Params\312\0020Google\\Cloud\\AIPlatform\\V1"
-          + "\\Schema\\Predict\\Params\352\0026Google::Cloud::"
-          + "AIPlatform::V1::Schema::Predict::Paramsb"
-          + "\006proto3"
+          + ".params\"\\\n#ImageClassificationPrediction"
+          + "Params\022\034\n\024confidence_threshold\030\001 \001(\002\022\027\n\017"
+          + "max_predictions\030\002 \001(\005B\331\002\n4com.google.clo"
+          + "ud.aiplatform.v1.schema.predict.paramsB("
+          + "ImageClassificationPredictionParamsProto"
+          + "P\001ZVgoogle.golang.org/genproto/googleapi"
+          + "s/cloud/aiplatform/v1/schema/predict/par"
+          + "ams;params\252\0020Google.Cloud.AIPlatform.V1."
+          + "Schema.Predict.Params\312\0020Google\\Cloud\\AIP"
+          + "latform\\V1\\Schema\\Predict\\Params\352\0026Googl"
+          + "e::Cloud::AIPlatform::V1::Schema::Predic"
+          + "t::Paramsb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1_schema_predict_params_ImageClassificationPredictionParams_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1_schema_predict_params_ImageClassificationPredictionParams_fieldAccessorTable =
@@ -71,7 +67,6 @@ public final class ImageClassificationPredictionParamsProto {
             new java.lang.String[] {
               "ConfidenceThreshold", "MaxPredictions",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

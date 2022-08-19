@@ -43,26 +43,23 @@ public final class VideoObjectTrackingPredictionParamsProto {
       "\nLgoogle/cloud/aiplatform/v1/schema/pred"
           + "ict/params/video_object_tracking.proto\0220"
           + "google.cloud.aiplatform.v1.schema.predic"
-          + "t.params\032\034google/api/annotations.proto\"{"
-          + "\n#VideoObjectTrackingPredictionParams\022\034\n"
-          + "\024confidence_threshold\030\001 \001(\002\022\027\n\017max_predi"
-          + "ctions\030\002 \001(\005\022\035\n\025min_bounding_box_size\030\003 "
-          + "\001(\002B\331\002\n4com.google.cloud.aiplatform.v1.s"
-          + "chema.predict.paramsB(VideoObjectTrackin"
-          + "gPredictionParamsProtoP\001ZVgoogle.golang."
-          + "org/genproto/googleapis/cloud/aiplatform"
-          + "/v1/schema/predict/params;params\252\0020Googl"
-          + "e.Cloud.AIPlatform.V1.Schema.Predict.Par"
-          + "ams\312\0020Google\\Cloud\\AIPlatform\\V1\\Schema\\"
-          + "Predict\\Params\352\0026Google::Cloud::AIPlatfo"
-          + "rm::V1::Schema::Predict::Paramsb\006proto3"
+          + "t.params\"{\n#VideoObjectTrackingPredictio"
+          + "nParams\022\034\n\024confidence_threshold\030\001 \001(\002\022\027\n"
+          + "\017max_predictions\030\002 \001(\005\022\035\n\025min_bounding_b"
+          + "ox_size\030\003 \001(\002B\331\002\n4com.google.cloud.aipla"
+          + "tform.v1.schema.predict.paramsB(VideoObj"
+          + "ectTrackingPredictionParamsProtoP\001ZVgoog"
+          + "le.golang.org/genproto/googleapis/cloud/"
+          + "aiplatform/v1/schema/predict/params;para"
+          + "ms\252\0020Google.Cloud.AIPlatform.V1.Schema.P"
+          + "redict.Params\312\0020Google\\Cloud\\AIPlatform\\"
+          + "V1\\Schema\\Predict\\Params\352\0026Google::Cloud"
+          + "::AIPlatform::V1::Schema::Predict::Param"
+          + "sb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1_schema_predict_params_VideoObjectTrackingPredictionParams_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1_schema_predict_params_VideoObjectTrackingPredictionParams_fieldAccessorTable =
@@ -71,7 +68,6 @@ public final class VideoObjectTrackingPredictionParamsProto {
             new java.lang.String[] {
               "ConfidenceThreshold", "MaxPredictions", "MinBoundingBoxSize",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

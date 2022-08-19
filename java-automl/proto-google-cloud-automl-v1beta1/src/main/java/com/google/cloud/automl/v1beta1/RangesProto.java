@@ -41,21 +41,17 @@ public final class RangesProto {
   static {
     java.lang.String[] descriptorData = {
       "\n(google/cloud/automl/v1beta1/ranges.pro"
-          + "to\022\033google.cloud.automl.v1beta1\032\034google/"
-          + "api/annotations.proto\")\n\013DoubleRange\022\r\n\005"
-          + "start\030\001 \001(\001\022\013\n\003end\030\002 \001(\001B\262\001\n\037com.google."
-          + "cloud.automl.v1beta1B\013RangesProtoP\001ZAgoo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/automl/v1beta1;automl\312\002\033Google\\Cloud\\Au"
-          + "toMl\\V1beta1\352\002\036Google::Cloud::AutoML::V1"
-          + "beta1b\006proto3"
+          + "to\022\033google.cloud.automl.v1beta1\")\n\013Doubl"
+          + "eRange\022\r\n\005start\030\001 \001(\001\022\013\n\003end\030\002 \001(\001B\262\001\n\037c"
+          + "om.google.cloud.automl.v1beta1B\013RangesPr"
+          + "otoP\001ZAgoogle.golang.org/genproto/google"
+          + "apis/cloud/automl/v1beta1;automl\312\002\033Googl"
+          + "e\\Cloud\\AutoMl\\V1beta1\352\002\036Google::Cloud::"
+          + "AutoML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_automl_v1beta1_DoubleRange_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_automl_v1beta1_DoubleRange_fieldAccessorTable =
@@ -64,7 +60,6 @@ public final class RangesProto {
             new java.lang.String[] {
               "Start", "End",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

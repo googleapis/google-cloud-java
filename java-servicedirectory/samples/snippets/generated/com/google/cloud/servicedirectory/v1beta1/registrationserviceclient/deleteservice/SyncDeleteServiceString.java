@@ -19,6 +19,7 @@ package com.google.cloud.servicedirectory.v1beta1.samples;
 // [START servicedirectory_v1beta1_generated_registrationserviceclient_deleteservice_string_sync]
 import com.google.cloud.servicedirectory.v1beta1.RegistrationServiceClient;
 import com.google.cloud.servicedirectory.v1beta1.ServiceName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteServiceString {
 

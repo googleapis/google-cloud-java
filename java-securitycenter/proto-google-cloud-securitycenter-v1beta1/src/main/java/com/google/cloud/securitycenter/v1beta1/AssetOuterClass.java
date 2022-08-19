@@ -54,29 +54,29 @@ public final class AssetOuterClass {
           + "\031google/api/resource.proto\0328google/cloud"
           + "/securitycenter/v1beta1/security_marks.p"
           + "roto\032\034google/protobuf/struct.proto\032\037goog"
-          + "le/protobuf/timestamp.proto\032\034google/api/"
-          + "annotations.proto\"\323\005\n\005Asset\022\014\n\004name\030\001 \001("
-          + "\t\022g\n\032security_center_properties\030\002 \001(\0132C."
-          + "google.cloud.securitycenter.v1beta1.Asse"
-          + "t.SecurityCenterProperties\022_\n\023resource_p"
-          + "roperties\030\007 \003(\0132B.google.cloud.securityc"
-          + "enter.v1beta1.Asset.ResourcePropertiesEn"
-          + "try\022J\n\016security_marks\030\010 \001(\01322.google.clo"
-          + "ud.securitycenter.v1beta1.SecurityMarks\022"
-          + "/\n\013create_time\030\t \001(\0132\032.google.protobuf.T"
-          + "imestamp\022/\n\013update_time\030\n \001(\0132\032.google.p"
-          + "rotobuf.Timestamp\032\231\001\n\030SecurityCenterProp"
-          + "erties\022\032\n\rresource_name\030\001 \001(\tB\003\340A\005\022\025\n\rre"
-          + "source_type\030\002 \001(\t\022\027\n\017resource_parent\030\003 \001"
-          + "(\t\022\030\n\020resource_project\030\004 \001(\t\022\027\n\017resource"
-          + "_owners\030\005 \003(\t\032Q\n\027ResourcePropertiesEntry"
-          + "\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.google.pr"
-          + "otobuf.Value:\0028\001:U\352AR\n#securitycenter.go"
-          + "ogleapis.com/Asset\022+organizations/{organ"
-          + "ization}/assets/{asset}B~\n\'com.google.cl"
-          + "oud.securitycenter.v1beta1P\001ZQgoogle.gol"
-          + "ang.org/genproto/googleapis/cloud/securi"
-          + "tycenter/v1beta1;securitycenterb\006proto3"
+          + "le/protobuf/timestamp.proto\"\323\005\n\005Asset\022\014\n"
+          + "\004name\030\001 \001(\t\022g\n\032security_center_propertie"
+          + "s\030\002 \001(\0132C.google.cloud.securitycenter.v1"
+          + "beta1.Asset.SecurityCenterProperties\022_\n\023"
+          + "resource_properties\030\007 \003(\0132B.google.cloud"
+          + ".securitycenter.v1beta1.Asset.ResourcePr"
+          + "opertiesEntry\022J\n\016security_marks\030\010 \001(\01322."
+          + "google.cloud.securitycenter.v1beta1.Secu"
+          + "rityMarks\022/\n\013create_time\030\t \001(\0132\032.google."
+          + "protobuf.Timestamp\022/\n\013update_time\030\n \001(\0132"
+          + "\032.google.protobuf.Timestamp\032\231\001\n\030Security"
+          + "CenterProperties\022\032\n\rresource_name\030\001 \001(\tB"
+          + "\003\340A\005\022\025\n\rresource_type\030\002 \001(\t\022\027\n\017resource_"
+          + "parent\030\003 \001(\t\022\030\n\020resource_project\030\004 \001(\t\022\027"
+          + "\n\017resource_owners\030\005 \003(\t\032Q\n\027ResourcePrope"
+          + "rtiesEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026"
+          + ".google.protobuf.Value:\0028\001:U\352AR\n#securit"
+          + "ycenter.googleapis.com/Asset\022+organizati"
+          + "ons/{organization}/assets/{asset}B~\n\'com"
+          + ".google.cloud.securitycenter.v1beta1P\001ZQ"
+          + "google.golang.org/genproto/googleapis/cl"
+          + "oud/securitycenter/v1beta1;securitycente"
+          + "rb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -87,7 +87,6 @@ public final class AssetOuterClass {
               com.google.cloud.securitycenter.v1beta1.SecurityMarksOuterClass.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_securitycenter_v1beta1_Asset_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -133,7 +132,6 @@ public final class AssetOuterClass {
     com.google.cloud.securitycenter.v1beta1.SecurityMarksOuterClass.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

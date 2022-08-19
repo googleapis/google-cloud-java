@@ -43,27 +43,23 @@ public final class TabularClassificationPredictionResultProto {
       "\nVgoogle/cloud/aiplatform/v1beta1/schema"
           + "/predict/prediction/tabular_classificati"
           + "on.proto\0229google.cloud.aiplatform.v1beta"
-          + "1.schema.predict.prediction\032\034google/api/"
-          + "annotations.proto\"H\n%TabularClassificati"
-          + "onPredictionResult\022\017\n\007classes\030\001 \003(\t\022\016\n\006s"
-          + "cores\030\002 \003(\002B\214\003\n=com.google.cloud.aiplatf"
-          + "orm.v1beta1.schema.predict.predictionB*T"
-          + "abularClassificationPredictionResultProt"
-          + "oP\001Zcgoogle.golang.org/genproto/googleap"
-          + "is/cloud/aiplatform/v1beta1/schema/predi"
-          + "ct/prediction;prediction\252\0029Google.Cloud."
-          + "AIPlatform.V1Beta1.Schema.Predict.Predic"
-          + "tion\312\0029Google\\Cloud\\AIPlatform\\V1beta1\\S"
-          + "chema\\Predict\\Prediction\352\002?Google::Cloud"
-          + "::AIPlatform::V1beta1::Schema::Predict::"
-          + "Predictionb\006proto3"
+          + "1.schema.predict.prediction\"H\n%TabularCl"
+          + "assificationPredictionResult\022\017\n\007classes\030"
+          + "\001 \003(\t\022\016\n\006scores\030\002 \003(\002B\214\003\n=com.google.clo"
+          + "ud.aiplatform.v1beta1.schema.predict.pre"
+          + "dictionB*TabularClassificationPrediction"
+          + "ResultProtoP\001Zcgoogle.golang.org/genprot"
+          + "o/googleapis/cloud/aiplatform/v1beta1/sc"
+          + "hema/predict/prediction;prediction\252\0029Goo"
+          + "gle.Cloud.AIPlatform.V1Beta1.Schema.Pred"
+          + "ict.Prediction\312\0029Google\\Cloud\\AIPlatform"
+          + "\\V1beta1\\Schema\\Predict\\Prediction\352\002?Goo"
+          + "gle::Cloud::AIPlatform::V1beta1::Schema:"
+          + ":Predict::Predictionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1beta1_schema_predict_prediction_TabularClassificationPredictionResult_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1beta1_schema_predict_prediction_TabularClassificationPredictionResult_fieldAccessorTable =
@@ -72,7 +68,6 @@ public final class TabularClassificationPredictionResultProto {
             new java.lang.String[] {
               "Classes", "Scores",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

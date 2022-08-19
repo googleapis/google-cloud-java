@@ -49,32 +49,31 @@ public final class VideoObjectTrackingPredictionResultProto {
           + "g.proto\0229google.cloud.aiplatform.v1beta1"
           + ".schema.predict.prediction\032\036google/proto"
           + "buf/duration.proto\032\036google/protobuf/wrap"
-          + "pers.proto\032\034google/api/annotations.proto"
-          + "\"\304\004\n#VideoObjectTrackingPredictionResult"
-          + "\022\n\n\002id\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\0225\n\022ti"
-          + "me_segment_start\030\003 \001(\0132\031.google.protobuf"
-          + ".Duration\0223\n\020time_segment_end\030\004 \001(\0132\031.go"
-          + "ogle.protobuf.Duration\022/\n\nconfidence\030\005 \001"
-          + "(\0132\033.google.protobuf.FloatValue\022t\n\006frame"
-          + "s\030\006 \003(\0132d.google.cloud.aiplatform.v1beta"
-          + "1.schema.predict.prediction.VideoObjectT"
-          + "rackingPredictionResult.Frame\032\347\001\n\005Frame\022"
-          + ".\n\013time_offset\030\001 \001(\0132\031.google.protobuf.D"
-          + "uration\022*\n\005x_min\030\002 \001(\0132\033.google.protobuf"
-          + ".FloatValue\022*\n\005x_max\030\003 \001(\0132\033.google.prot"
-          + "obuf.FloatValue\022*\n\005y_min\030\004 \001(\0132\033.google."
-          + "protobuf.FloatValue\022*\n\005y_max\030\005 \001(\0132\033.goo"
-          + "gle.protobuf.FloatValueB\212\003\n=com.google.c"
-          + "loud.aiplatform.v1beta1.schema.predict.p"
-          + "redictionB(VideoObjectTrackingPrediction"
-          + "ResultProtoP\001Zcgoogle.golang.org/genprot"
-          + "o/googleapis/cloud/aiplatform/v1beta1/sc"
-          + "hema/predict/prediction;prediction\252\0029Goo"
-          + "gle.Cloud.AIPlatform.V1Beta1.Schema.Pred"
-          + "ict.Prediction\312\0029Google\\Cloud\\AIPlatform"
-          + "\\V1beta1\\Schema\\Predict\\Prediction\352\002?Goo"
-          + "gle::Cloud::AIPlatform::V1beta1::Schema:"
-          + ":Predict::Predictionb\006proto3"
+          + "pers.proto\"\304\004\n#VideoObjectTrackingPredic"
+          + "tionResult\022\n\n\002id\030\001 \001(\t\022\024\n\014display_name\030\002"
+          + " \001(\t\0225\n\022time_segment_start\030\003 \001(\0132\031.googl"
+          + "e.protobuf.Duration\0223\n\020time_segment_end\030"
+          + "\004 \001(\0132\031.google.protobuf.Duration\022/\n\nconf"
+          + "idence\030\005 \001(\0132\033.google.protobuf.FloatValu"
+          + "e\022t\n\006frames\030\006 \003(\0132d.google.cloud.aiplatf"
+          + "orm.v1beta1.schema.predict.prediction.Vi"
+          + "deoObjectTrackingPredictionResult.Frame\032"
+          + "\347\001\n\005Frame\022.\n\013time_offset\030\001 \001(\0132\031.google."
+          + "protobuf.Duration\022*\n\005x_min\030\002 \001(\0132\033.googl"
+          + "e.protobuf.FloatValue\022*\n\005x_max\030\003 \001(\0132\033.g"
+          + "oogle.protobuf.FloatValue\022*\n\005y_min\030\004 \001(\013"
+          + "2\033.google.protobuf.FloatValue\022*\n\005y_max\030\005"
+          + " \001(\0132\033.google.protobuf.FloatValueB\212\003\n=co"
+          + "m.google.cloud.aiplatform.v1beta1.schema"
+          + ".predict.predictionB(VideoObjectTracking"
+          + "PredictionResultProtoP\001Zcgoogle.golang.o"
+          + "rg/genproto/googleapis/cloud/aiplatform/"
+          + "v1beta1/schema/predict/prediction;predic"
+          + "tion\252\0029Google.Cloud.AIPlatform.V1Beta1.S"
+          + "chema.Predict.Prediction\312\0029Google\\Cloud\\"
+          + "AIPlatform\\V1beta1\\Schema\\Predict\\Predic"
+          + "tion\352\002?Google::Cloud::AIPlatform::V1beta"
+          + "1::Schema::Predict::Predictionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -82,7 +81,6 @@ public final class VideoObjectTrackingPredictionResultProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.WrappersProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_schema_predict_prediction_VideoObjectTrackingPredictionResult_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -104,7 +102,6 @@ public final class VideoObjectTrackingPredictionResultProto {
             });
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

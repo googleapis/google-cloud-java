@@ -16,8 +16,7 @@
 
 package com.google.cloud.servicedirectory.v1beta1.samples;
 
-// [START
-// servicedirectory_v1beta1_generated_lookupserviceclient_create_setcredentialsprovider1_sync]
+// [START servicedirectory_v1beta1_generated_lookupserviceclient_create_setcredentialsprovider1_sync]
 import com.google.cloud.servicedirectory.v1beta1.LookupServiceClient;
 import com.google.cloud.servicedirectory.v1beta1.LookupServiceSettings;
 

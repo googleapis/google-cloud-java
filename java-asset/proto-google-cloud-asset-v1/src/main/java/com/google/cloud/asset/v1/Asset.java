@@ -961,7 +961,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.Asset.related_assets is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=167
+   *     google/cloud/asset/v1/assets.proto;l=166
    * @return Whether the relatedAssets field is set.
    */
   @java.lang.Override
@@ -983,7 +983,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.Asset.related_assets is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=167
+   *     google/cloud/asset/v1/assets.proto;l=166
    * @return The relatedAssets.
    */
   @java.lang.Override
@@ -4034,7 +4034,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.Asset.related_assets is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=167
+     *     google/cloud/asset/v1/assets.proto;l=166
      * @return Whether the relatedAssets field is set.
      */
     @java.lang.Deprecated
@@ -4055,7 +4055,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.Asset.related_assets is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=167
+     *     google/cloud/asset/v1/assets.proto;l=166
      * @return The relatedAssets.
      */
     @java.lang.Deprecated

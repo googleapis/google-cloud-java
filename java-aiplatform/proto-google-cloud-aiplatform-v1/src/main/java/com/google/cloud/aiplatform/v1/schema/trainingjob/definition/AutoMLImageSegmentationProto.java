@@ -51,47 +51,43 @@ public final class AutoMLImageSegmentationProto {
       "\nXgoogle/cloud/aiplatform/v1/schema/trai"
           + "ningjob/definition/automl_image_segmenta"
           + "tion.proto\0228google.cloud.aiplatform.v1.s"
-          + "chema.trainingjob.definition\032\034google/api"
-          + "/annotations.proto\"\357\001\n\027AutoMlImageSegmen"
-          + "tation\022g\n\006inputs\030\001 \001(\0132W.google.cloud.ai"
+          + "chema.trainingjob.definition\"\357\001\n\027AutoMlI"
+          + "mageSegmentation\022g\n\006inputs\030\001 \001(\0132W.googl"
+          + "e.cloud.aiplatform.v1.schema.trainingjob"
+          + ".definition.AutoMlImageSegmentationInput"
+          + "s\022k\n\010metadata\030\002 \001(\0132Y.google.cloud.aipla"
+          + "tform.v1.schema.trainingjob.definition.A"
+          + "utoMlImageSegmentationMetadata\"\311\002\n\035AutoM"
+          + "lImageSegmentationInputs\022u\n\nmodel_type\030\001"
+          + " \001(\0162a.google.cloud.aiplatform.v1.schema"
+          + ".trainingjob.definition.AutoMlImageSegme"
+          + "ntationInputs.ModelType\022\037\n\027budget_milli_"
+          + "node_hours\030\002 \001(\003\022\025\n\rbase_model_id\030\003 \001(\t\""
+          + "y\n\tModelType\022\032\n\026MODEL_TYPE_UNSPECIFIED\020\000"
+          + "\022\031\n\025CLOUD_HIGH_ACCURACY_1\020\001\022\030\n\024CLOUD_LOW"
+          + "_ACCURACY_1\020\002\022\033\n\027MOBILE_TF_LOW_LATENCY_1"
+          + "\020\003\"\272\002\n\037AutoMlImageSegmentationMetadata\022\035"
+          + "\n\025cost_milli_node_hours\030\001 \001(\003\022\216\001\n\026succes"
+          + "sful_stop_reason\030\002 \001(\0162n.google.cloud.ai"
           + "platform.v1.schema.trainingjob.definitio"
-          + "n.AutoMlImageSegmentationInputs\022k\n\010metad"
-          + "ata\030\002 \001(\0132Y.google.cloud.aiplatform.v1.s"
-          + "chema.trainingjob.definition.AutoMlImage"
-          + "SegmentationMetadata\"\311\002\n\035AutoMlImageSegm"
-          + "entationInputs\022u\n\nmodel_type\030\001 \001(\0162a.goo"
-          + "gle.cloud.aiplatform.v1.schema.trainingj"
-          + "ob.definition.AutoMlImageSegmentationInp"
-          + "uts.ModelType\022\037\n\027budget_milli_node_hours"
-          + "\030\002 \001(\003\022\025\n\rbase_model_id\030\003 \001(\t\"y\n\tModelTy"
-          + "pe\022\032\n\026MODEL_TYPE_UNSPECIFIED\020\000\022\031\n\025CLOUD_"
-          + "HIGH_ACCURACY_1\020\001\022\030\n\024CLOUD_LOW_ACCURACY_"
-          + "1\020\002\022\033\n\027MOBILE_TF_LOW_LATENCY_1\020\003\"\272\002\n\037Aut"
-          + "oMlImageSegmentationMetadata\022\035\n\025cost_mil"
-          + "li_node_hours\030\001 \001(\003\022\216\001\n\026successful_stop_"
-          + "reason\030\002 \001(\0162n.google.cloud.aiplatform.v"
-          + "1.schema.trainingjob.definition.AutoMlIm"
-          + "ageSegmentationMetadata.SuccessfulStopRe"
-          + "ason\"g\n\024SuccessfulStopReason\022&\n\"SUCCESSF"
-          + "UL_STOP_REASON_UNSPECIFIED\020\000\022\022\n\016BUDGET_R"
-          + "EACHED\020\001\022\023\n\017MODEL_CONVERGED\020\002B\371\002\n<com.go"
-          + "ogle.cloud.aiplatform.v1.schema.training"
-          + "job.definitionB\034AutoMLImageSegmentationP"
-          + "rotoP\001Zbgoogle.golang.org/genproto/googl"
-          + "eapis/cloud/aiplatform/v1/schema/trainin"
-          + "gjob/definition;definition\252\0028Google.Clou"
-          + "d.AIPlatform.V1.Schema.TrainingJob.Defin"
-          + "ition\312\0028Google\\Cloud\\AIPlatform\\V1\\Schem"
-          + "a\\TrainingJob\\Definition\352\002>Google::Cloud"
-          + "::AIPlatform::V1::Schema::TrainingJob::D"
-          + "efinitionb\006proto3"
+          + "n.AutoMlImageSegmentationMetadata.Succes"
+          + "sfulStopReason\"g\n\024SuccessfulStopReason\022&"
+          + "\n\"SUCCESSFUL_STOP_REASON_UNSPECIFIED\020\000\022\022"
+          + "\n\016BUDGET_REACHED\020\001\022\023\n\017MODEL_CONVERGED\020\002B"
+          + "\371\002\n<com.google.cloud.aiplatform.v1.schem"
+          + "a.trainingjob.definitionB\034AutoMLImageSeg"
+          + "mentationProtoP\001Zbgoogle.golang.org/genp"
+          + "roto/googleapis/cloud/aiplatform/v1/sche"
+          + "ma/trainingjob/definition;definition\252\0028G"
+          + "oogle.Cloud.AIPlatform.V1.Schema.Trainin"
+          + "gJob.Definition\312\0028Google\\Cloud\\AIPlatfor"
+          + "m\\V1\\Schema\\TrainingJob\\Definition\352\002>Goo"
+          + "gle::Cloud::AIPlatform::V1::Schema::Trai"
+          + "ningJob::Definitionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlImageSegmentation_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlImageSegmentation_fieldAccessorTable =
@@ -116,7 +112,6 @@ public final class AutoMLImageSegmentationProto {
             new java.lang.String[] {
               "CostMilliNodeHours", "SuccessfulStopReason",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

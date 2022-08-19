@@ -20,6 +20,7 @@ package com.google.cloud.secretmanager.v1.samples;
 import com.google.cloud.secretmanager.v1.DeleteSecretRequest;
 import com.google.cloud.secretmanager.v1.SecretManagerServiceClient;
 import com.google.cloud.secretmanager.v1.SecretName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteSecret {
 

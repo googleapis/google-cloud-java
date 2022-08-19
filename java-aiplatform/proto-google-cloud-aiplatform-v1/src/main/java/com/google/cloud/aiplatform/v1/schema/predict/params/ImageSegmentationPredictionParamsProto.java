@@ -43,25 +43,21 @@ public final class ImageSegmentationPredictionParamsProto {
       "\nIgoogle/cloud/aiplatform/v1/schema/pred"
           + "ict/params/image_segmentation.proto\0220goo"
           + "gle.cloud.aiplatform.v1.schema.predict.p"
-          + "arams\032\034google/api/annotations.proto\"A\n!I"
-          + "mageSegmentationPredictionParams\022\034\n\024conf"
-          + "idence_threshold\030\001 \001(\002B\327\002\n4com.google.cl"
-          + "oud.aiplatform.v1.schema.predict.paramsB"
-          + "&ImageSegmentationPredictionParamsProtoP"
-          + "\001ZVgoogle.golang.org/genproto/googleapis"
-          + "/cloud/aiplatform/v1/schema/predict/para"
-          + "ms;params\252\0020Google.Cloud.AIPlatform.V1.S"
-          + "chema.Predict.Params\312\0020Google\\Cloud\\AIPl"
-          + "atform\\V1\\Schema\\Predict\\Params\352\0026Google"
-          + "::Cloud::AIPlatform::V1::Schema::Predict"
-          + "::Paramsb\006proto3"
+          + "arams\"A\n!ImageSegmentationPredictionPara"
+          + "ms\022\034\n\024confidence_threshold\030\001 \001(\002B\327\002\n4com"
+          + ".google.cloud.aiplatform.v1.schema.predi"
+          + "ct.paramsB&ImageSegmentationPredictionPa"
+          + "ramsProtoP\001ZVgoogle.golang.org/genproto/"
+          + "googleapis/cloud/aiplatform/v1/schema/pr"
+          + "edict/params;params\252\0020Google.Cloud.AIPla"
+          + "tform.V1.Schema.Predict.Params\312\0020Google\\"
+          + "Cloud\\AIPlatform\\V1\\Schema\\Predict\\Param"
+          + "s\352\0026Google::Cloud::AIPlatform::V1::Schem"
+          + "a::Predict::Paramsb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1_schema_predict_params_ImageSegmentationPredictionParams_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1_schema_predict_params_ImageSegmentationPredictionParams_fieldAccessorTable =
@@ -70,7 +66,6 @@ public final class ImageSegmentationPredictionParamsProto {
             new java.lang.String[] {
               "ConfidenceThreshold",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

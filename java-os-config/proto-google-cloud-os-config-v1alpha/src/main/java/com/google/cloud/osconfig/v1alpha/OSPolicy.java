@@ -31105,7 +31105,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.osconfig.v1alpha.OSPolicy.ResourceGroup.os_filter is deprecated. See
-     *     google/cloud/osconfig/v1alpha/os_policy.proto;l=512
+     *     google/cloud/osconfig/v1alpha/os_policy.proto;l=511
      * @return Whether the osFilter field is set.
      */
     @java.lang.Deprecated
@@ -31122,7 +31122,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.osconfig.v1alpha.OSPolicy.ResourceGroup.os_filter is deprecated. See
-     *     google/cloud/osconfig/v1alpha/os_policy.proto;l=512
+     *     google/cloud/osconfig/v1alpha/os_policy.proto;l=511
      * @return The osFilter.
      */
     @java.lang.Deprecated
@@ -31472,7 +31472,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.osconfig.v1alpha.OSPolicy.ResourceGroup.os_filter is deprecated. See
-     *     google/cloud/osconfig/v1alpha/os_policy.proto;l=512
+     *     google/cloud/osconfig/v1alpha/os_policy.proto;l=511
      * @return Whether the osFilter field is set.
      */
     @java.lang.Override
@@ -31492,7 +31492,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.osconfig.v1alpha.OSPolicy.ResourceGroup.os_filter is deprecated. See
-     *     google/cloud/osconfig/v1alpha/os_policy.proto;l=512
+     *     google/cloud/osconfig/v1alpha/os_policy.proto;l=511
      * @return The osFilter.
      */
     @java.lang.Override
@@ -32199,7 +32199,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.osconfig.v1alpha.OSPolicy.ResourceGroup.os_filter is deprecated.
-       *     See google/cloud/osconfig/v1alpha/os_policy.proto;l=512
+       *     See google/cloud/osconfig/v1alpha/os_policy.proto;l=511
        * @return Whether the osFilter field is set.
        */
       @java.lang.Deprecated
@@ -32218,7 +32218,7 @@ public final class OSPolicy extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.osconfig.v1alpha.OSPolicy.ResourceGroup.os_filter is deprecated.
-       *     See google/cloud/osconfig/v1alpha/os_policy.proto;l=512
+       *     See google/cloud/osconfig/v1alpha/os_policy.proto;l=511
        * @return The osFilter.
        */
       @java.lang.Deprecated

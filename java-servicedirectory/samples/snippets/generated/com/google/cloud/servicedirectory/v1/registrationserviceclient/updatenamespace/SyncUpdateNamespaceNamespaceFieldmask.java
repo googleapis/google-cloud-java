@@ -16,8 +16,7 @@
 
 package com.google.cloud.servicedirectory.v1.samples;
 
-// [START
-// servicedirectory_v1_generated_registrationserviceclient_updatenamespace_namespacefieldmask_sync]
+// [START servicedirectory_v1_generated_registrationserviceclient_updatenamespace_namespacefieldmask_sync]
 import com.google.cloud.servicedirectory.v1.Namespace;
 import com.google.cloud.servicedirectory.v1.RegistrationServiceClient;
 import com.google.protobuf.FieldMask;
@@ -38,5 +37,4 @@ public class SyncUpdateNamespaceNamespaceFieldmask {
     }
   }
 }
-// [END
-// servicedirectory_v1_generated_registrationserviceclient_updatenamespace_namespacefieldmask_sync]
+// [END servicedirectory_v1_generated_registrationserviceclient_updatenamespace_namespacefieldmask_sync]

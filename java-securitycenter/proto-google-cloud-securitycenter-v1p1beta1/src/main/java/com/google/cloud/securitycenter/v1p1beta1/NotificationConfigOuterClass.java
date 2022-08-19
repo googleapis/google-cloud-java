@@ -48,30 +48,29 @@ public final class NotificationConfigOuterClass {
           + "notification_config.proto\022%google.cloud."
           + "securitycenter.v1p1beta1\032\037google/api/fie"
           + "ld_behavior.proto\032\031google/api/resource.p"
-          + "roto\032\034google/api/annotations.proto\"\266\004\n\022N"
-          + "otificationConfig\022\014\n\004name\030\001 \001(\t\022\023\n\013descr"
-          + "iption\030\002 \001(\t\022W\n\nevent_type\030\003 \001(\0162C.googl"
-          + "e.cloud.securitycenter.v1p1beta1.Notific"
-          + "ationConfig.EventType\0226\n\014pubsub_topic\030\004 "
-          + "\001(\tB \372A\035\n\033pubsub.googleapis.com/Topic\022\034\n"
-          + "\017service_account\030\005 \001(\tB\003\340A\003\022e\n\020streaming"
-          + "_config\030\006 \001(\0132I.google.cloud.securitycen"
-          + "ter.v1p1beta1.NotificationConfig.Streami"
-          + "ngConfigH\000\032!\n\017StreamingConfig\022\016\n\006filter\030"
-          + "\001 \001(\t\"4\n\tEventType\022\032\n\026EVENT_TYPE_UNSPECI"
-          + "FIED\020\000\022\013\n\007FINDING\020\001:}\352Az\n0securitycenter"
-          + ".googleapis.com/NotificationConfig\022Forga"
-          + "nizations/{organization}/notificationCon"
-          + "figs/{notification_config}B\017\n\rnotify_con"
-          + "figB\300\002\n)com.google.cloud.securitycenter."
-          + "v1p1beta1P\001ZSgoogle.golang.org/genproto/"
-          + "googleapis/cloud/securitycenter/v1p1beta"
-          + "1;securitycenter\252\002%Google.Cloud.Security"
-          + "Center.V1P1Beta1\312\002%Google\\Cloud\\Security"
-          + "Center\\V1p1beta1\352\002(Google::Cloud::Securi"
-          + "tyCenter::V1p1beta1\352A@\n\033pubsub.googleapi"
-          + "s.com/Topic\022!projects/{project}/topics/{"
-          + "topic}b\006proto3"
+          + "roto\"\266\004\n\022NotificationConfig\022\014\n\004name\030\001 \001("
+          + "\t\022\023\n\013description\030\002 \001(\t\022W\n\nevent_type\030\003 \001"
+          + "(\0162C.google.cloud.securitycenter.v1p1bet"
+          + "a1.NotificationConfig.EventType\0226\n\014pubsu"
+          + "b_topic\030\004 \001(\tB \372A\035\n\033pubsub.googleapis.co"
+          + "m/Topic\022\034\n\017service_account\030\005 \001(\tB\003\340A\003\022e\n"
+          + "\020streaming_config\030\006 \001(\0132I.google.cloud.s"
+          + "ecuritycenter.v1p1beta1.NotificationConf"
+          + "ig.StreamingConfigH\000\032!\n\017StreamingConfig\022"
+          + "\016\n\006filter\030\001 \001(\t\"4\n\tEventType\022\032\n\026EVENT_TY"
+          + "PE_UNSPECIFIED\020\000\022\013\n\007FINDING\020\001:}\352Az\n0secu"
+          + "ritycenter.googleapis.com/NotificationCo"
+          + "nfig\022Forganizations/{organization}/notif"
+          + "icationConfigs/{notification_config}B\017\n\r"
+          + "notify_configB\300\002\n)com.google.cloud.secur"
+          + "itycenter.v1p1beta1P\001ZSgoogle.golang.org"
+          + "/genproto/googleapis/cloud/securitycente"
+          + "r/v1p1beta1;securitycenter\252\002%Google.Clou"
+          + "d.SecurityCenter.V1P1Beta1\312\002%Google\\Clou"
+          + "d\\SecurityCenter\\V1p1beta1\352\002(Google::Clo"
+          + "ud::SecurityCenter::V1p1beta1\352A@\n\033pubsub"
+          + ".googleapis.com/Topic\022!projects/{project"
+          + "}/topics/{topic}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -79,7 +78,6 @@ public final class NotificationConfigOuterClass {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_securitycenter_v1p1beta1_NotificationConfig_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -115,7 +113,6 @@ public final class NotificationConfigOuterClass {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

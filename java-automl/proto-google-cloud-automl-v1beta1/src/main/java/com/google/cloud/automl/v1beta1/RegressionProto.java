@@ -1043,25 +1043,21 @@ public final class RegressionProto {
   static {
     java.lang.String[] descriptorData = {
       "\n,google/cloud/automl/v1beta1/regression"
-          + ".proto\022\033google.cloud.automl.v1beta1\032\034goo"
-          + "gle/api/annotations.proto\"\273\001\n\033Regression"
-          + "EvaluationMetrics\022\037\n\027root_mean_squared_e"
-          + "rror\030\001 \001(\002\022\033\n\023mean_absolute_error\030\002 \001(\002\022"
-          + "&\n\036mean_absolute_percentage_error\030\003 \001(\002\022"
-          + "\021\n\tr_squared\030\004 \001(\002\022#\n\033root_mean_squared_"
-          + "log_error\030\005 \001(\002B\264\001\n\037com.google.cloud.aut"
-          + "oml.v1beta1B\017RegressionProtoZAgoogle.gol"
-          + "ang.org/genproto/googleapis/cloud/automl"
-          + "/v1beta1;automl\312\002\033Google\\Cloud\\AutoMl\\V1"
-          + "beta1\352\002\036Google::Cloud::AutoML::V1beta1b\006"
-          + "proto3"
+          + ".proto\022\033google.cloud.automl.v1beta1\"\273\001\n\033"
+          + "RegressionEvaluationMetrics\022\037\n\027root_mean"
+          + "_squared_error\030\001 \001(\002\022\033\n\023mean_absolute_er"
+          + "ror\030\002 \001(\002\022&\n\036mean_absolute_percentage_er"
+          + "ror\030\003 \001(\002\022\021\n\tr_squared\030\004 \001(\002\022#\n\033root_mea"
+          + "n_squared_log_error\030\005 \001(\002B\264\001\n\037com.google"
+          + ".cloud.automl.v1beta1B\017RegressionProtoZA"
+          + "google.golang.org/genproto/googleapis/cl"
+          + "oud/automl/v1beta1;automl\312\002\033Google\\Cloud"
+          + "\\AutoMl\\V1beta1\352\002\036Google::Cloud::AutoML:"
+          + ":V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_automl_v1beta1_RegressionEvaluationMetrics_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_automl_v1beta1_RegressionEvaluationMetrics_fieldAccessorTable =
@@ -1074,7 +1070,6 @@ public final class RegressionProto {
               "RSquared",
               "RootMeanSquaredLogError",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

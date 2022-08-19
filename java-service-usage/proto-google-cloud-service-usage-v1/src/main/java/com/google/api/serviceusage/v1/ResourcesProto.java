@@ -55,30 +55,29 @@ public final class ResourcesProto {
           + "le/api/monitored_resource.proto\032\033google/"
           + "api/monitoring.proto\032\026google/api/quota.p"
           + "roto\032\026google/api/usage.proto\032\031google/pro"
-          + "tobuf/api.proto\032\034google/api/annotations."
-          + "proto\"\224\001\n\007Service\022\014\n\004name\030\001 \001(\t\022\016\n\006paren"
-          + "t\030\005 \001(\t\0229\n\006config\030\002 \001(\0132).google.api.ser"
-          + "viceusage.v1.ServiceConfig\0220\n\005state\030\004 \001("
-          + "\0162!.google.api.serviceusage.v1.State\"\225\003\n"
-          + "\rServiceConfig\022\014\n\004name\030\001 \001(\t\022\r\n\005title\030\002 "
-          + "\001(\t\022\"\n\004apis\030\003 \003(\0132\024.google.protobuf.Api\022"
-          + "0\n\rdocumentation\030\006 \001(\0132\031.google.api.Docu"
-          + "mentation\022 \n\005quota\030\n \001(\0132\021.google.api.Qu"
-          + "ota\0222\n\016authentication\030\013 \001(\0132\032.google.api"
-          + ".Authentication\022 \n\005usage\030\017 \001(\0132\021.google."
-          + "api.Usage\022\'\n\tendpoints\030\022 \003(\0132\024.google.ap"
-          + "i.Endpoint\022D\n\023monitored_resources\030\031 \003(\0132"
-          + "\'.google.api.MonitoredResourceDescriptor"
-          + "\022*\n\nmonitoring\030\034 \001(\0132\026.google.api.Monito"
-          + "ring\"+\n\021OperationMetadata\022\026\n\016resource_na"
-          + "mes\030\002 \003(\t*9\n\005State\022\025\n\021STATE_UNSPECIFIED\020"
-          + "\000\022\014\n\010DISABLED\020\001\022\013\n\007ENABLED\020\002B\332\001\n\036com.goo"
-          + "gle.api.serviceusage.v1B\016ResourcesProtoP"
-          + "\001ZFgoogle.golang.org/genproto/googleapis"
-          + "/api/serviceusage/v1;serviceusage\252\002\034Goog"
-          + "le.Cloud.ServiceUsage.V1\312\002\034Google\\Cloud\\"
-          + "ServiceUsage\\V1\352\002\037Google::Cloud::Service"
-          + "Usage::V1b\006proto3"
+          + "tobuf/api.proto\"\224\001\n\007Service\022\014\n\004name\030\001 \001("
+          + "\t\022\016\n\006parent\030\005 \001(\t\0229\n\006config\030\002 \001(\0132).goog"
+          + "le.api.serviceusage.v1.ServiceConfig\0220\n\005"
+          + "state\030\004 \001(\0162!.google.api.serviceusage.v1"
+          + ".State\"\225\003\n\rServiceConfig\022\014\n\004name\030\001 \001(\t\022\r"
+          + "\n\005title\030\002 \001(\t\022\"\n\004apis\030\003 \003(\0132\024.google.pro"
+          + "tobuf.Api\0220\n\rdocumentation\030\006 \001(\0132\031.googl"
+          + "e.api.Documentation\022 \n\005quota\030\n \001(\0132\021.goo"
+          + "gle.api.Quota\0222\n\016authentication\030\013 \001(\0132\032."
+          + "google.api.Authentication\022 \n\005usage\030\017 \001(\013"
+          + "2\021.google.api.Usage\022\'\n\tendpoints\030\022 \003(\0132\024"
+          + ".google.api.Endpoint\022D\n\023monitored_resour"
+          + "ces\030\031 \003(\0132\'.google.api.MonitoredResource"
+          + "Descriptor\022*\n\nmonitoring\030\034 \001(\0132\026.google."
+          + "api.Monitoring\"+\n\021OperationMetadata\022\026\n\016r"
+          + "esource_names\030\002 \003(\t*9\n\005State\022\025\n\021STATE_UN"
+          + "SPECIFIED\020\000\022\014\n\010DISABLED\020\001\022\013\n\007ENABLED\020\002B\332"
+          + "\001\n\036com.google.api.serviceusage.v1B\016Resou"
+          + "rcesProtoP\001ZFgoogle.golang.org/genproto/"
+          + "googleapis/api/serviceusage/v1;serviceus"
+          + "age\252\002\034Google.Cloud.ServiceUsage.V1\312\002\034Goo"
+          + "gle\\Cloud\\ServiceUsage\\V1\352\002\037Google::Clou"
+          + "d::ServiceUsage::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -92,7 +91,6 @@ public final class ResourcesProto {
               com.google.api.QuotaProto.getDescriptor(),
               com.google.api.UsageProto.getDescriptor(),
               com.google.protobuf.ApiProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_api_serviceusage_v1_Service_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -135,7 +133,6 @@ public final class ResourcesProto {
     com.google.api.QuotaProto.getDescriptor();
     com.google.api.UsageProto.getDescriptor();
     com.google.protobuf.ApiProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

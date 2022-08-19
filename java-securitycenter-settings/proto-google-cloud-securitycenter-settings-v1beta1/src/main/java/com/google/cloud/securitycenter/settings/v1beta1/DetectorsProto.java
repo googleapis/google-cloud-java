@@ -45,20 +45,19 @@ public final class DetectorsProto {
           + "ritycenter.settings.v1beta1\032\037google/api/"
           + "field_behavior.proto\032Cgoogle/cloud/secur"
           + "itycenter/settings/v1beta1/billing_setti"
-          + "ngs.proto\032\034google/api/annotations.proto\""
-          + "\255\001\n\010Detector\022\025\n\010detector\030\001 \001(\tB\003\340A\003\022\026\n\tc"
-          + "omponent\030\002 \001(\tB\003\340A\003\022T\n\014billing_tier\030\003 \001("
-          + "\01629.google.cloud.securitycenter.settings"
-          + ".v1beta1.BillingTierB\003\340A\003\022\034\n\017detector_la"
-          + "bels\030\004 \003(\tB\003\340A\003B\256\002\n0com.google.cloud.sec"
-          + "uritycenter.settings.v1beta1B\016DetectorsP"
-          + "rotoP\001ZTgoogle.golang.org/genproto/googl"
-          + "eapis/cloud/securitycenter/settings/v1be"
-          + "ta1;settings\370\001\001\252\002,Google.Cloud.SecurityC"
-          + "enter.Settings.V1Beta1\312\002,Google\\Cloud\\Se"
-          + "curityCenter\\Settings\\V1beta1\352\0020Google::"
-          + "Cloud::SecurityCenter::Settings::V1beta1"
-          + "b\006proto3"
+          + "ngs.proto\"\255\001\n\010Detector\022\025\n\010detector\030\001 \001(\t"
+          + "B\003\340A\003\022\026\n\tcomponent\030\002 \001(\tB\003\340A\003\022T\n\014billing"
+          + "_tier\030\003 \001(\01629.google.cloud.securitycente"
+          + "r.settings.v1beta1.BillingTierB\003\340A\003\022\034\n\017d"
+          + "etector_labels\030\004 \003(\tB\003\340A\003B\256\002\n0com.google"
+          + ".cloud.securitycenter.settings.v1beta1B\016"
+          + "DetectorsProtoP\001ZTgoogle.golang.org/genp"
+          + "roto/googleapis/cloud/securitycenter/set"
+          + "tings/v1beta1;settings\370\001\001\252\002,Google.Cloud"
+          + ".SecurityCenter.Settings.V1Beta1\312\002,Googl"
+          + "e\\Cloud\\SecurityCenter\\Settings\\V1beta1\352"
+          + "\0020Google::Cloud::SecurityCenter::Setting"
+          + "s::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -66,7 +65,6 @@ public final class DetectorsProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.cloud.securitycenter.settings.v1beta1.BillingSettingsProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_securitycenter_settings_v1beta1_Detector_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -83,7 +81,6 @@ public final class DetectorsProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.cloud.securitycenter.settings.v1beta1.BillingSettingsProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

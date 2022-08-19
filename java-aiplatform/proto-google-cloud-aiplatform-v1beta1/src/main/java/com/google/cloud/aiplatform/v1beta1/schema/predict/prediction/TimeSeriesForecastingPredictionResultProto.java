@@ -43,27 +43,23 @@ public final class TimeSeriesForecastingPredictionResultProto {
       "\nWgoogle/cloud/aiplatform/v1beta1/schema"
           + "/predict/prediction/time_series_forecast"
           + "ing.proto\0229google.cloud.aiplatform.v1bet"
-          + "a1.schema.predict.prediction\032\034google/api"
-          + "/annotations.proto\"6\n%TimeSeriesForecast"
-          + "ingPredictionResult\022\r\n\005value\030\001 \001(\002B\214\003\n=c"
-          + "om.google.cloud.aiplatform.v1beta1.schem"
-          + "a.predict.predictionB*TimeSeriesForecast"
-          + "ingPredictionResultProtoP\001Zcgoogle.golan"
-          + "g.org/genproto/googleapis/cloud/aiplatfo"
-          + "rm/v1beta1/schema/predict/prediction;pre"
-          + "diction\252\0029Google.Cloud.AIPlatform.V1Beta"
-          + "1.Schema.Predict.Prediction\312\0029Google\\Clo"
-          + "ud\\AIPlatform\\V1beta1\\Schema\\Predict\\Pre"
-          + "diction\352\002?Google::Cloud::AIPlatform::V1b"
-          + "eta1::Schema::Predict::Predictionb\006proto"
-          + "3"
+          + "a1.schema.predict.prediction\"6\n%TimeSeri"
+          + "esForecastingPredictionResult\022\r\n\005value\030\001"
+          + " \001(\002B\214\003\n=com.google.cloud.aiplatform.v1b"
+          + "eta1.schema.predict.predictionB*TimeSeri"
+          + "esForecastingPredictionResultProtoP\001Zcgo"
+          + "ogle.golang.org/genproto/googleapis/clou"
+          + "d/aiplatform/v1beta1/schema/predict/pred"
+          + "iction;prediction\252\0029Google.Cloud.AIPlatf"
+          + "orm.V1Beta1.Schema.Predict.Prediction\312\0029"
+          + "Google\\Cloud\\AIPlatform\\V1beta1\\Schema\\P"
+          + "redict\\Prediction\352\002?Google::Cloud::AIPla"
+          + "tform::V1beta1::Schema::Predict::Predict"
+          + "ionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1beta1_schema_predict_prediction_TimeSeriesForecastingPredictionResult_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1beta1_schema_predict_prediction_TimeSeriesForecastingPredictionResult_fieldAccessorTable =
@@ -72,7 +68,6 @@ public final class TimeSeriesForecastingPredictionResultProto {
             new java.lang.String[] {
               "Value",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

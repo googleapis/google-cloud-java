@@ -67,45 +67,45 @@ public final class Tables {
           + "oml/v1beta1/regression.proto\032*google/clo"
           + "ud/automl/v1beta1/temporal.proto\032\034google"
           + "/protobuf/struct.proto\032\037google/protobuf/"
-          + "timestamp.proto\032\034google/api/annotations."
-          + "proto\"\260\003\n\025TablesDatasetMetadata\022\035\n\025prima"
-          + "ry_table_spec_id\030\001 \001(\t\022\035\n\025target_column_"
-          + "spec_id\030\002 \001(\t\022\035\n\025weight_column_spec_id\030\003"
-          + " \001(\t\022\035\n\025ml_use_column_spec_id\030\004 \001(\t\022t\n\032t"
-          + "arget_column_correlations\030\006 \003(\0132P.google"
-          + ".cloud.automl.v1beta1.TablesDatasetMetad"
-          + "ata.TargetColumnCorrelationsEntry\0225\n\021sta"
-          + "ts_update_time\030\007 \001(\0132\032.google.protobuf.T"
-          + "imestamp\032n\n\035TargetColumnCorrelationsEntr"
-          + "y\022\013\n\003key\030\001 \001(\t\022<\n\005value\030\002 \001(\0132-.google.c"
-          + "loud.automl.v1beta1.CorrelationStats:\0028\001"
-          + "\"\226\004\n\023TablesModelMetadata\022-\n#optimization"
-          + "_objective_recall_value\030\021 \001(\002H\000\0220\n&optim"
-          + "ization_objective_precision_value\030\022 \001(\002H"
-          + "\000\022C\n\022target_column_spec\030\002 \001(\0132\'.google.c"
-          + "loud.automl.v1beta1.ColumnSpec\022K\n\032input_"
-          + "feature_column_specs\030\003 \003(\0132\'.google.clou"
-          + "d.automl.v1beta1.ColumnSpec\022\036\n\026optimizat"
-          + "ion_objective\030\004 \001(\t\022T\n\030tables_model_colu"
-          + "mn_info\030\005 \003(\01322.google.cloud.automl.v1be"
-          + "ta1.TablesModelColumnInfo\022%\n\035train_budge"
-          + "t_milli_node_hours\030\006 \001(\003\022#\n\033train_cost_m"
-          + "illi_node_hours\030\007 \001(\003\022\036\n\026disable_early_s"
-          + "topping\030\014 \001(\010B*\n(additional_optimization"
-          + "_objective_config\"\375\001\n\020TablesAnnotation\022\r"
-          + "\n\005score\030\001 \001(\002\022E\n\023prediction_interval\030\004 \001"
-          + "(\0132(.google.cloud.automl.v1beta1.DoubleR"
-          + "ange\022%\n\005value\030\002 \001(\0132\026.google.protobuf.Va"
-          + "lue\022T\n\030tables_model_column_info\030\003 \003(\01322."
-          + "google.cloud.automl.v1beta1.TablesModelC"
-          + "olumnInfo\022\026\n\016baseline_score\030\005 \001(\002\"j\n\025Tab"
-          + "lesModelColumnInfo\022\030\n\020column_spec_name\030\001"
-          + " \001(\t\022\033\n\023column_display_name\030\002 \001(\t\022\032\n\022fea"
-          + "ture_importance\030\003 \001(\002B\245\001\n\037com.google.clo"
-          + "ud.automl.v1beta1P\001ZAgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/automl/v1beta1;"
-          + "automl\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036G"
-          + "oogle::Cloud::AutoML::V1beta1b\006proto3"
+          + "timestamp.proto\"\260\003\n\025TablesDatasetMetadat"
+          + "a\022\035\n\025primary_table_spec_id\030\001 \001(\t\022\035\n\025targ"
+          + "et_column_spec_id\030\002 \001(\t\022\035\n\025weight_column"
+          + "_spec_id\030\003 \001(\t\022\035\n\025ml_use_column_spec_id\030"
+          + "\004 \001(\t\022t\n\032target_column_correlations\030\006 \003("
+          + "\0132P.google.cloud.automl.v1beta1.TablesDa"
+          + "tasetMetadata.TargetColumnCorrelationsEn"
+          + "try\0225\n\021stats_update_time\030\007 \001(\0132\032.google."
+          + "protobuf.Timestamp\032n\n\035TargetColumnCorrel"
+          + "ationsEntry\022\013\n\003key\030\001 \001(\t\022<\n\005value\030\002 \001(\0132"
+          + "-.google.cloud.automl.v1beta1.Correlatio"
+          + "nStats:\0028\001\"\226\004\n\023TablesModelMetadata\022-\n#op"
+          + "timization_objective_recall_value\030\021 \001(\002H"
+          + "\000\0220\n&optimization_objective_precision_va"
+          + "lue\030\022 \001(\002H\000\022C\n\022target_column_spec\030\002 \001(\0132"
+          + "\'.google.cloud.automl.v1beta1.ColumnSpec"
+          + "\022K\n\032input_feature_column_specs\030\003 \003(\0132\'.g"
+          + "oogle.cloud.automl.v1beta1.ColumnSpec\022\036\n"
+          + "\026optimization_objective\030\004 \001(\t\022T\n\030tables_"
+          + "model_column_info\030\005 \003(\01322.google.cloud.a"
+          + "utoml.v1beta1.TablesModelColumnInfo\022%\n\035t"
+          + "rain_budget_milli_node_hours\030\006 \001(\003\022#\n\033tr"
+          + "ain_cost_milli_node_hours\030\007 \001(\003\022\036\n\026disab"
+          + "le_early_stopping\030\014 \001(\010B*\n(additional_op"
+          + "timization_objective_config\"\375\001\n\020TablesAn"
+          + "notation\022\r\n\005score\030\001 \001(\002\022E\n\023prediction_in"
+          + "terval\030\004 \001(\0132(.google.cloud.automl.v1bet"
+          + "a1.DoubleRange\022%\n\005value\030\002 \001(\0132\026.google.p"
+          + "rotobuf.Value\022T\n\030tables_model_column_inf"
+          + "o\030\003 \003(\01322.google.cloud.automl.v1beta1.Ta"
+          + "blesModelColumnInfo\022\026\n\016baseline_score\030\005 "
+          + "\001(\002\"j\n\025TablesModelColumnInfo\022\030\n\020column_s"
+          + "pec_name\030\001 \001(\t\022\033\n\023column_display_name\030\002 "
+          + "\001(\t\022\032\n\022feature_importance\030\003 \001(\002B\245\001\n\037com."
+          + "google.cloud.automl.v1beta1P\001ZAgoogle.go"
+          + "lang.org/genproto/googleapis/cloud/autom"
+          + "l/v1beta1;automl\312\002\033Google\\Cloud\\AutoMl\\V"
+          + "1beta1\352\002\036Google::Cloud::AutoML::V1beta1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -120,7 +120,6 @@ public final class Tables {
               com.google.cloud.automl.v1beta1.Temporal.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_automl_v1beta1_TablesDatasetMetadata_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -187,7 +186,6 @@ public final class Tables {
     com.google.cloud.automl.v1beta1.Temporal.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

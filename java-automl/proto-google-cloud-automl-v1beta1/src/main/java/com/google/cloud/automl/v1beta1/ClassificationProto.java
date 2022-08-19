@@ -2361,7 +2361,7 @@ public final class ClassificationProto {
      * <code>float base_au_prc = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.base_au_prc is
-     *     deprecated. See google/cloud/automl/v1beta1/classification.proto;l=189
+     *     deprecated. See google/cloud/automl/v1beta1/classification.proto;l=188
      * @return The baseAuPrc.
      */
     @java.lang.Deprecated
@@ -7816,7 +7816,7 @@ public final class ClassificationProto {
      * <code>float base_au_prc = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.base_au_prc is
-     *     deprecated. See google/cloud/automl/v1beta1/classification.proto;l=189
+     *     deprecated. See google/cloud/automl/v1beta1/classification.proto;l=188
      * @return The baseAuPrc.
      */
     @java.lang.Override
@@ -8719,7 +8719,7 @@ public final class ClassificationProto {
        * <code>float base_au_prc = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.base_au_prc is
-       *     deprecated. See google/cloud/automl/v1beta1/classification.proto;l=189
+       *     deprecated. See google/cloud/automl/v1beta1/classification.proto;l=188
        * @return The baseAuPrc.
        */
       @java.lang.Override
@@ -8739,7 +8739,7 @@ public final class ClassificationProto {
        * <code>float base_au_prc = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.base_au_prc is
-       *     deprecated. See google/cloud/automl/v1beta1/classification.proto;l=189
+       *     deprecated. See google/cloud/automl/v1beta1/classification.proto;l=188
        * @param value The baseAuPrc to set.
        * @return This builder for chaining.
        */
@@ -8762,7 +8762,7 @@ public final class ClassificationProto {
        * <code>float base_au_prc = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.base_au_prc is
-       *     deprecated. See google/cloud/automl/v1beta1/classification.proto;l=189
+       *     deprecated. See google/cloud/automl/v1beta1/classification.proto;l=188
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -9959,51 +9959,49 @@ public final class ClassificationProto {
       "\n0google/cloud/automl/v1beta1/classifica"
           + "tion.proto\022\033google.cloud.automl.v1beta1\032"
           + "*google/cloud/automl/v1beta1/temporal.pr"
-          + "oto\032\034google/api/annotations.proto\")\n\030Cla"
-          + "ssificationAnnotation\022\r\n\005score\030\001 \001(\002\"\307\001\n"
-          + "\035VideoClassificationAnnotation\022\014\n\004type\030\001"
-          + " \001(\t\022X\n\031classification_annotation\030\002 \001(\0132"
-          + "5.google.cloud.automl.v1beta1.Classifica"
-          + "tionAnnotation\022>\n\014time_segment\030\003 \001(\0132(.g"
-          + "oogle.cloud.automl.v1beta1.TimeSegment\"\251"
-          + "\007\n\037ClassificationEvaluationMetrics\022\016\n\006au"
-          + "_prc\030\001 \001(\002\022\027\n\013base_au_prc\030\002 \001(\002B\002\030\001\022\016\n\006a"
-          + "u_roc\030\006 \001(\002\022\020\n\010log_loss\030\007 \001(\002\022u\n\030confide"
-          + "nce_metrics_entry\030\003 \003(\0132S.google.cloud.a"
-          + "utoml.v1beta1.ClassificationEvaluationMe"
-          + "trics.ConfidenceMetricsEntry\022f\n\020confusio"
-          + "n_matrix\030\004 \001(\0132L.google.cloud.automl.v1b"
-          + "eta1.ClassificationEvaluationMetrics.Con"
-          + "fusionMatrix\022\032\n\022annotation_spec_id\030\005 \003(\t"
-          + "\032\374\002\n\026ConfidenceMetricsEntry\022\034\n\024confidenc"
-          + "e_threshold\030\001 \001(\002\022\032\n\022position_threshold\030"
-          + "\016 \001(\005\022\016\n\006recall\030\002 \001(\002\022\021\n\tprecision\030\003 \001(\002"
-          + "\022\033\n\023false_positive_rate\030\010 \001(\002\022\020\n\010f1_scor"
-          + "e\030\004 \001(\002\022\022\n\nrecall_at1\030\005 \001(\002\022\025\n\rprecision"
-          + "_at1\030\006 \001(\002\022\037\n\027false_positive_rate_at1\030\t "
-          + "\001(\002\022\024\n\014f1_score_at1\030\007 \001(\002\022\033\n\023true_positi"
-          + "ve_count\030\n \001(\003\022\034\n\024false_positive_count\030\013"
-          + " \001(\003\022\034\n\024false_negative_count\030\014 \001(\003\022\033\n\023tr"
-          + "ue_negative_count\030\r \001(\003\032\300\001\n\017ConfusionMat"
-          + "rix\022\032\n\022annotation_spec_id\030\001 \003(\t\022\024\n\014displ"
-          + "ay_name\030\003 \003(\t\022]\n\003row\030\002 \003(\0132P.google.clou"
-          + "d.automl.v1beta1.ClassificationEvaluatio"
-          + "nMetrics.ConfusionMatrix.Row\032\034\n\003Row\022\025\n\re"
-          + "xample_count\030\001 \003(\005*Y\n\022ClassificationType"
-          + "\022#\n\037CLASSIFICATION_TYPE_UNSPECIFIED\020\000\022\016\n"
-          + "\nMULTICLASS\020\001\022\016\n\nMULTILABEL\020\002B\270\001\n\037com.go"
-          + "ogle.cloud.automl.v1beta1B\023Classificatio"
-          + "nProtoZAgoogle.golang.org/genproto/googl"
-          + "eapis/cloud/automl/v1beta1;automl\312\002\033Goog"
-          + "le\\Cloud\\AutoMl\\V1beta1\352\002\036Google::Cloud:"
-          + ":AutoML::V1beta1b\006proto3"
+          + "oto\")\n\030ClassificationAnnotation\022\r\n\005score"
+          + "\030\001 \001(\002\"\307\001\n\035VideoClassificationAnnotation"
+          + "\022\014\n\004type\030\001 \001(\t\022X\n\031classification_annotat"
+          + "ion\030\002 \001(\01325.google.cloud.automl.v1beta1."
+          + "ClassificationAnnotation\022>\n\014time_segment"
+          + "\030\003 \001(\0132(.google.cloud.automl.v1beta1.Tim"
+          + "eSegment\"\251\007\n\037ClassificationEvaluationMet"
+          + "rics\022\016\n\006au_prc\030\001 \001(\002\022\027\n\013base_au_prc\030\002 \001("
+          + "\002B\002\030\001\022\016\n\006au_roc\030\006 \001(\002\022\020\n\010log_loss\030\007 \001(\002\022"
+          + "u\n\030confidence_metrics_entry\030\003 \003(\0132S.goog"
+          + "le.cloud.automl.v1beta1.ClassificationEv"
+          + "aluationMetrics.ConfidenceMetricsEntry\022f"
+          + "\n\020confusion_matrix\030\004 \001(\0132L.google.cloud."
+          + "automl.v1beta1.ClassificationEvaluationM"
+          + "etrics.ConfusionMatrix\022\032\n\022annotation_spe"
+          + "c_id\030\005 \003(\t\032\374\002\n\026ConfidenceMetricsEntry\022\034\n"
+          + "\024confidence_threshold\030\001 \001(\002\022\032\n\022position_"
+          + "threshold\030\016 \001(\005\022\016\n\006recall\030\002 \001(\002\022\021\n\tpreci"
+          + "sion\030\003 \001(\002\022\033\n\023false_positive_rate\030\010 \001(\002\022"
+          + "\020\n\010f1_score\030\004 \001(\002\022\022\n\nrecall_at1\030\005 \001(\002\022\025\n"
+          + "\rprecision_at1\030\006 \001(\002\022\037\n\027false_positive_r"
+          + "ate_at1\030\t \001(\002\022\024\n\014f1_score_at1\030\007 \001(\002\022\033\n\023t"
+          + "rue_positive_count\030\n \001(\003\022\034\n\024false_positi"
+          + "ve_count\030\013 \001(\003\022\034\n\024false_negative_count\030\014"
+          + " \001(\003\022\033\n\023true_negative_count\030\r \001(\003\032\300\001\n\017Co"
+          + "nfusionMatrix\022\032\n\022annotation_spec_id\030\001 \003("
+          + "\t\022\024\n\014display_name\030\003 \003(\t\022]\n\003row\030\002 \003(\0132P.g"
+          + "oogle.cloud.automl.v1beta1.Classificatio"
+          + "nEvaluationMetrics.ConfusionMatrix.Row\032\034"
+          + "\n\003Row\022\025\n\rexample_count\030\001 \003(\005*Y\n\022Classifi"
+          + "cationType\022#\n\037CLASSIFICATION_TYPE_UNSPEC"
+          + "IFIED\020\000\022\016\n\nMULTICLASS\020\001\022\016\n\nMULTILABEL\020\002B"
+          + "\270\001\n\037com.google.cloud.automl.v1beta1B\023Cla"
+          + "ssificationProtoZAgoogle.golang.org/genp"
+          + "roto/googleapis/cloud/automl/v1beta1;aut"
+          + "oml\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Goog"
+          + "le::Cloud::AutoML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.cloud.automl.v1beta1.Temporal.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -10079,7 +10077,6 @@ public final class ClassificationProto {
               "ExampleCount",
             });
     com.google.cloud.automl.v1beta1.Temporal.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

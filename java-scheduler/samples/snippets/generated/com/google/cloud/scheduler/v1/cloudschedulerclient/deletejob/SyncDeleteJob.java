@@ -20,6 +20,7 @@ package com.google.cloud.scheduler.v1.samples;
 import com.google.cloud.scheduler.v1.CloudSchedulerClient;
 import com.google.cloud.scheduler.v1.DeleteJobRequest;
 import com.google.cloud.scheduler.v1.JobName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteJob {
 

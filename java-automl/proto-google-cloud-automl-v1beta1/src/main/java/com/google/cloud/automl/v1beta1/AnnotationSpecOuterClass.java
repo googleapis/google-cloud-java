@@ -42,25 +42,23 @@ public final class AnnotationSpecOuterClass {
     java.lang.String[] descriptorData = {
       "\n1google/cloud/automl/v1beta1/annotation"
           + "_spec.proto\022\033google.cloud.automl.v1beta1"
-          + "\032\031google/api/resource.proto\032\034google/api/"
-          + "annotations.proto\"\326\001\n\016AnnotationSpec\022\014\n\004"
-          + "name\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022\025\n\rexam"
-          + "ple_count\030\t \001(\005:\210\001\352A\204\001\n$automl.googleapi"
-          + "s.com/AnnotationSpec\022\\projects/{project}"
-          + "/locations/{location}/datasets/{dataset}"
-          + "/annotationSpecs/{annotation_spec}B\245\001\n\037c"
-          + "om.google.cloud.automl.v1beta1P\001ZAgoogle"
-          + ".golang.org/genproto/googleapis/cloud/au"
-          + "toml/v1beta1;automl\312\002\033Google\\Cloud\\AutoM"
-          + "l\\V1beta1\352\002\036Google::Cloud::AutoML::V1bet"
-          + "a1b\006proto3"
+          + "\032\031google/api/resource.proto\"\326\001\n\016Annotati"
+          + "onSpec\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name\030\002 \001"
+          + "(\t\022\025\n\rexample_count\030\t \001(\005:\210\001\352A\204\001\n$automl"
+          + ".googleapis.com/AnnotationSpec\022\\projects"
+          + "/{project}/locations/{location}/datasets"
+          + "/{dataset}/annotationSpecs/{annotation_s"
+          + "pec}B\245\001\n\037com.google.cloud.automl.v1beta1"
+          + "P\001ZAgoogle.golang.org/genproto/googleapi"
+          + "s/cloud/automl/v1beta1;automl\312\002\033Google\\C"
+          + "loud\\AutoMl\\V1beta1\352\002\036Google::Cloud::Aut"
+          + "oML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.ResourceProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_automl_v1beta1_AnnotationSpec_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -76,7 +74,6 @@ public final class AnnotationSpecOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.ResourceProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

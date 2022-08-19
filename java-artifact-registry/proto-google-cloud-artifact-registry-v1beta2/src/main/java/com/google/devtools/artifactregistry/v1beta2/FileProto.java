@@ -58,40 +58,39 @@ public final class FileProto {
     java.lang.String[] descriptorData = {
       "\n3google/devtools/artifactregistry/v1bet"
           + "a2/file.proto\022(google.devtools.artifactr"
-          + "egistry.v1beta2\032\034google/api/annotations."
-          + "proto\032\031google/api/resource.proto\032\037google"
-          + "/protobuf/timestamp.proto\"\230\001\n\004Hash\022E\n\004ty"
-          + "pe\030\001 \001(\01627.google.devtools.artifactregis"
-          + "try.v1beta2.Hash.HashType\022\r\n\005value\030\002 \001(\014"
-          + "\":\n\010HashType\022\031\n\025HASH_TYPE_UNSPECIFIED\020\000\022"
-          + "\n\n\006SHA256\020\001\022\007\n\003MD5\020\002\"\324\002\n\004File\022\014\n\004name\030\001 "
-          + "\001(\t\022\022\n\nsize_bytes\030\003 \001(\003\022>\n\006hashes\030\004 \003(\0132"
-          + "..google.devtools.artifactregistry.v1bet"
-          + "a2.Hash\022/\n\013create_time\030\005 \001(\0132\032.google.pr"
-          + "otobuf.Timestamp\022/\n\013update_time\030\006 \001(\0132\032."
-          + "google.protobuf.Timestamp\022\r\n\005owner\030\007 \001(\t"
-          + ":y\352Av\n$artifactregistry.googleapis.com/F"
-          + "ile\022Nprojects/{project}/locations/{locat"
-          + "ion}/repositories/{repository}/files/{fi"
-          + "le}\"Y\n\020ListFilesRequest\022\016\n\006parent\030\001 \001(\t\022"
-          + "\016\n\006filter\030\004 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npa"
-          + "ge_token\030\003 \001(\t\"k\n\021ListFilesResponse\022=\n\005f"
-          + "iles\030\001 \003(\0132..google.devtools.artifactreg"
-          + "istry.v1beta2.File\022\027\n\017next_page_token\030\002 "
-          + "\001(\t\"\036\n\016GetFileRequest\022\014\n\004name\030\001 \001(\tB\220\002\n,"
-          + "com.google.devtools.artifactregistry.v1b"
-          + "eta2B\tFileProtoP\001ZXgoogle.golang.org/gen"
-          + "proto/googleapis/devtools/artifactregist"
-          + "ry/v1beta2;artifactregistry\252\002%Google.Clo"
-          + "ud.ArtifactRegistry.V1Beta2\312\002%Google\\Clo"
-          + "ud\\ArtifactRegistry\\V1beta2\352\002(Google::Cl"
-          + "oud::ArtifactRegistry::V1beta2b\006proto3"
+          + "egistry.v1beta2\032\031google/api/resource.pro"
+          + "to\032\037google/protobuf/timestamp.proto\"\230\001\n\004"
+          + "Hash\022E\n\004type\030\001 \001(\01627.google.devtools.art"
+          + "ifactregistry.v1beta2.Hash.HashType\022\r\n\005v"
+          + "alue\030\002 \001(\014\":\n\010HashType\022\031\n\025HASH_TYPE_UNSP"
+          + "ECIFIED\020\000\022\n\n\006SHA256\020\001\022\007\n\003MD5\020\002\"\324\002\n\004File\022"
+          + "\014\n\004name\030\001 \001(\t\022\022\n\nsize_bytes\030\003 \001(\003\022>\n\006has"
+          + "hes\030\004 \003(\0132..google.devtools.artifactregi"
+          + "stry.v1beta2.Hash\022/\n\013create_time\030\005 \001(\0132\032"
+          + ".google.protobuf.Timestamp\022/\n\013update_tim"
+          + "e\030\006 \001(\0132\032.google.protobuf.Timestamp\022\r\n\005o"
+          + "wner\030\007 \001(\t:y\352Av\n$artifactregistry.google"
+          + "apis.com/File\022Nprojects/{project}/locati"
+          + "ons/{location}/repositories/{repository}"
+          + "/files/{file}\"Y\n\020ListFilesRequest\022\016\n\006par"
+          + "ent\030\001 \001(\t\022\016\n\006filter\030\004 \001(\t\022\021\n\tpage_size\030\002"
+          + " \001(\005\022\022\n\npage_token\030\003 \001(\t\"k\n\021ListFilesRes"
+          + "ponse\022=\n\005files\030\001 \003(\0132..google.devtools.a"
+          + "rtifactregistry.v1beta2.File\022\027\n\017next_pag"
+          + "e_token\030\002 \001(\t\"\036\n\016GetFileRequest\022\014\n\004name\030"
+          + "\001 \001(\tB\220\002\n,com.google.devtools.artifactre"
+          + "gistry.v1beta2B\tFileProtoP\001ZXgoogle.gola"
+          + "ng.org/genproto/googleapis/devtools/arti"
+          + "factregistry/v1beta2;artifactregistry\252\002%"
+          + "Google.Cloud.ArtifactRegistry.V1Beta2\312\002%"
+          + "Google\\Cloud\\ArtifactRegistry\\V1beta2\352\002("
+          + "Google::Cloud::ArtifactRegistry::V1beta2"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -140,7 +139,6 @@ public final class FileProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

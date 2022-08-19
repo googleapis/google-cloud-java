@@ -45,24 +45,23 @@ public final class VideoClassificationPredictionResultProto {
           + ".proto\0229google.cloud.aiplatform.v1beta1."
           + "schema.predict.prediction\032\036google/protob"
           + "uf/duration.proto\032\036google/protobuf/wrapp"
-          + "ers.proto\032\034google/api/annotations.proto\""
-          + "\362\001\n#VideoClassificationPredictionResult\022"
-          + "\n\n\002id\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022\014\n\004typ"
-          + "e\030\003 \001(\t\0225\n\022time_segment_start\030\004 \001(\0132\031.go"
-          + "ogle.protobuf.Duration\0223\n\020time_segment_e"
-          + "nd\030\005 \001(\0132\031.google.protobuf.Duration\022/\n\nc"
-          + "onfidence\030\006 \001(\0132\033.google.protobuf.FloatV"
-          + "alueB\212\003\n=com.google.cloud.aiplatform.v1b"
-          + "eta1.schema.predict.predictionB(VideoCla"
-          + "ssificationPredictionResultProtoP\001Zcgoog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "aiplatform/v1beta1/schema/predict/predic"
-          + "tion;prediction\252\0029Google.Cloud.AIPlatfor"
-          + "m.V1Beta1.Schema.Predict.Prediction\312\0029Go"
-          + "ogle\\Cloud\\AIPlatform\\V1beta1\\Schema\\Pre"
-          + "dict\\Prediction\352\002?Google::Cloud::AIPlatf"
-          + "orm::V1beta1::Schema::Predict::Predictio"
-          + "nb\006proto3"
+          + "ers.proto\"\362\001\n#VideoClassificationPredict"
+          + "ionResult\022\n\n\002id\030\001 \001(\t\022\024\n\014display_name\030\002 "
+          + "\001(\t\022\014\n\004type\030\003 \001(\t\0225\n\022time_segment_start\030"
+          + "\004 \001(\0132\031.google.protobuf.Duration\0223\n\020time"
+          + "_segment_end\030\005 \001(\0132\031.google.protobuf.Dur"
+          + "ation\022/\n\nconfidence\030\006 \001(\0132\033.google.proto"
+          + "buf.FloatValueB\212\003\n=com.google.cloud.aipl"
+          + "atform.v1beta1.schema.predict.prediction"
+          + "B(VideoClassificationPredictionResultPro"
+          + "toP\001Zcgoogle.golang.org/genproto/googlea"
+          + "pis/cloud/aiplatform/v1beta1/schema/pred"
+          + "ict/prediction;prediction\252\0029Google.Cloud"
+          + ".AIPlatform.V1Beta1.Schema.Predict.Predi"
+          + "ction\312\0029Google\\Cloud\\AIPlatform\\V1beta1\\"
+          + "Schema\\Predict\\Prediction\352\002?Google::Clou"
+          + "d::AIPlatform::V1beta1::Schema::Predict:"
+          + ":Predictionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -70,7 +69,6 @@ public final class VideoClassificationPredictionResultProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.WrappersProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_schema_predict_prediction_VideoClassificationPredictionResult_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -82,7 +80,6 @@ public final class VideoClassificationPredictionResultProto {
             });
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

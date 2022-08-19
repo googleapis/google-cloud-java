@@ -48,29 +48,26 @@ public final class AutoMLTextExtractionProto {
       "\nZgoogle/cloud/aiplatform/v1beta1/schema"
           + "/trainingjob/definition/automl_text_extr"
           + "action.proto\022=google.cloud.aiplatform.v1"
-          + "beta1.schema.trainingjob.definition\032\034goo"
-          + "gle/api/annotations.proto\"\201\001\n\024AutoMlText"
-          + "Extraction\022i\n\006inputs\030\001 \001(\0132Y.google.clou"
-          + "d.aiplatform.v1beta1.schema.trainingjob."
-          + "definition.AutoMlTextExtractionInputs\"\034\n"
-          + "\032AutoMlTextExtractionInputsB\217\003\nAcom.goog"
-          + "le.cloud.aiplatform.v1beta1.schema.train"
-          + "ingjob.definitionB\031AutoMLTextExtractionP"
-          + "rotoP\001Zggoogle.golang.org/genproto/googl"
-          + "eapis/cloud/aiplatform/v1beta1/schema/tr"
-          + "ainingjob/definition;definition\252\002=Google"
-          + ".Cloud.AIPlatform.V1Beta1.Schema.Trainin"
-          + "gJob.Definition\312\002=Google\\Cloud\\AIPlatfor"
-          + "m\\V1beta1\\Schema\\TrainingJob\\Definition\352"
-          + "\002CGoogle::Cloud::AIPlatform::V1beta1::Sc"
-          + "hema::TrainingJob::Definitionb\006proto3"
+          + "beta1.schema.trainingjob.definition\"\201\001\n\024"
+          + "AutoMlTextExtraction\022i\n\006inputs\030\001 \001(\0132Y.g"
+          + "oogle.cloud.aiplatform.v1beta1.schema.tr"
+          + "ainingjob.definition.AutoMlTextExtractio"
+          + "nInputs\"\034\n\032AutoMlTextExtractionInputsB\217\003"
+          + "\nAcom.google.cloud.aiplatform.v1beta1.sc"
+          + "hema.trainingjob.definitionB\031AutoMLTextE"
+          + "xtractionProtoP\001Zggoogle.golang.org/genp"
+          + "roto/googleapis/cloud/aiplatform/v1beta1"
+          + "/schema/trainingjob/definition;definitio"
+          + "n\252\002=Google.Cloud.AIPlatform.V1Beta1.Sche"
+          + "ma.TrainingJob.Definition\312\002=Google\\Cloud"
+          + "\\AIPlatform\\V1beta1\\Schema\\TrainingJob\\D"
+          + "efinition\352\002CGoogle::Cloud::AIPlatform::V"
+          + "1beta1::Schema::TrainingJob::Definitionb"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1beta1_schema_trainingjob_definition_AutoMlTextExtraction_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1beta1_schema_trainingjob_definition_AutoMlTextExtraction_fieldAccessorTable =
@@ -85,7 +82,6 @@ public final class AutoMLTextExtractionProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_schema_trainingjob_definition_AutoMlTextExtractionInputs_descriptor,
             new java.lang.String[] {});
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
