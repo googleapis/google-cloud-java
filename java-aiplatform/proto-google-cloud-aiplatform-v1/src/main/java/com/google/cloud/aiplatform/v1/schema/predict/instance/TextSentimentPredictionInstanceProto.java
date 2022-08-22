@@ -43,25 +43,21 @@ public final class TextSentimentPredictionInstanceProto {
       "\nGgoogle/cloud/aiplatform/v1/schema/pred"
           + "ict/instance/text_sentiment.proto\0222googl"
           + "e.cloud.aiplatform.v1.schema.predict.ins"
-          + "tance\032\034google/api/annotations.proto\"E\n\037T"
-          + "extSentimentPredictionInstance\022\017\n\007conten"
-          + "t\030\001 \001(\t\022\021\n\tmime_type\030\002 \001(\tB\341\002\n6com.googl"
-          + "e.cloud.aiplatform.v1.schema.predict.ins"
-          + "tanceB$TextSentimentPredictionInstancePr"
-          + "otoP\001ZZgoogle.golang.org/genproto/google"
-          + "apis/cloud/aiplatform/v1/schema/predict/"
-          + "instance;instance\252\0022Google.Cloud.AIPlatf"
-          + "orm.V1.Schema.Predict.Instance\312\0022Google\\"
-          + "Cloud\\AIPlatform\\V1\\Schema\\Predict\\Insta"
-          + "nce\352\0028Google::Cloud::AIPlatform::V1::Sch"
-          + "ema::Predict::Instanceb\006proto3"
+          + "tance\"E\n\037TextSentimentPredictionInstance"
+          + "\022\017\n\007content\030\001 \001(\t\022\021\n\tmime_type\030\002 \001(\tB\341\002\n"
+          + "6com.google.cloud.aiplatform.v1.schema.p"
+          + "redict.instanceB$TextSentimentPrediction"
+          + "InstanceProtoP\001ZZgoogle.golang.org/genpr"
+          + "oto/googleapis/cloud/aiplatform/v1/schem"
+          + "a/predict/instance;instance\252\0022Google.Clo"
+          + "ud.AIPlatform.V1.Schema.Predict.Instance"
+          + "\312\0022Google\\Cloud\\AIPlatform\\V1\\Schema\\Pre"
+          + "dict\\Instance\352\0028Google::Cloud::AIPlatfor"
+          + "m::V1::Schema::Predict::Instanceb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1_schema_predict_instance_TextSentimentPredictionInstance_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1_schema_predict_instance_TextSentimentPredictionInstance_fieldAccessorTable =
@@ -70,7 +66,6 @@ public final class TextSentimentPredictionInstanceProto {
             new java.lang.String[] {
               "Content", "MimeType",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

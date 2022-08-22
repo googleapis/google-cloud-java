@@ -43,29 +43,25 @@ public final class TextExtractionPredictionResultProto {
       "\nOgoogle/cloud/aiplatform/v1beta1/schema"
           + "/predict/prediction/text_extraction.prot"
           + "o\0229google.cloud.aiplatform.v1beta1.schem"
-          + "a.predict.prediction\032\034google/api/annotat"
-          + "ions.proto\"\237\001\n\036TextExtractionPredictionR"
-          + "esult\022\013\n\003ids\030\001 \003(\003\022\025\n\rdisplay_names\030\002 \003("
-          + "\t\022\"\n\032text_segment_start_offsets\030\003 \003(\003\022 \n"
-          + "\030text_segment_end_offsets\030\004 \003(\003\022\023\n\013confi"
-          + "dences\030\005 \003(\002B\205\003\n=com.google.cloud.aiplat"
-          + "form.v1beta1.schema.predict.predictionB#"
-          + "TextExtractionPredictionResultProtoP\001Zcg"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/aiplatform/v1beta1/schema/predict/pre"
-          + "diction;prediction\252\0029Google.Cloud.AIPlat"
-          + "form.V1Beta1.Schema.Predict.Prediction\312\002"
-          + "9Google\\Cloud\\AIPlatform\\V1beta1\\Schema\\"
-          + "Predict\\Prediction\352\002?Google::Cloud::AIPl"
-          + "atform::V1beta1::Schema::Predict::Predic"
-          + "tionb\006proto3"
+          + "a.predict.prediction\"\237\001\n\036TextExtractionP"
+          + "redictionResult\022\013\n\003ids\030\001 \003(\003\022\025\n\rdisplay_"
+          + "names\030\002 \003(\t\022\"\n\032text_segment_start_offset"
+          + "s\030\003 \003(\003\022 \n\030text_segment_end_offsets\030\004 \003("
+          + "\003\022\023\n\013confidences\030\005 \003(\002B\205\003\n=com.google.cl"
+          + "oud.aiplatform.v1beta1.schema.predict.pr"
+          + "edictionB#TextExtractionPredictionResult"
+          + "ProtoP\001Zcgoogle.golang.org/genproto/goog"
+          + "leapis/cloud/aiplatform/v1beta1/schema/p"
+          + "redict/prediction;prediction\252\0029Google.Cl"
+          + "oud.AIPlatform.V1Beta1.Schema.Predict.Pr"
+          + "ediction\312\0029Google\\Cloud\\AIPlatform\\V1bet"
+          + "a1\\Schema\\Predict\\Prediction\352\002?Google::C"
+          + "loud::AIPlatform::V1beta1::Schema::Predi"
+          + "ct::Predictionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1beta1_schema_predict_prediction_TextExtractionPredictionResult_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1beta1_schema_predict_prediction_TextExtractionPredictionResult_fieldAccessorTable =
@@ -78,7 +74,6 @@ public final class TextExtractionPredictionResultProto {
               "TextSegmentEndOffsets",
               "Confidences",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -43,26 +43,22 @@ public final class VideoActionRecognitionPredictionParamsProto {
       "\nOgoogle/cloud/aiplatform/v1/schema/pred"
           + "ict/params/video_action_recognition.prot"
           + "o\0220google.cloud.aiplatform.v1.schema.pre"
-          + "dict.params\032\034google/api/annotations.prot"
-          + "o\"_\n&VideoActionRecognitionPredictionPar"
-          + "ams\022\034\n\024confidence_threshold\030\001 \001(\002\022\027\n\017max"
-          + "_predictions\030\002 \001(\005B\334\002\n4com.google.cloud."
-          + "aiplatform.v1.schema.predict.paramsB+Vid"
-          + "eoActionRecognitionPredictionParamsProto"
-          + "P\001ZVgoogle.golang.org/genproto/googleapi"
-          + "s/cloud/aiplatform/v1/schema/predict/par"
-          + "ams;params\252\0020Google.Cloud.AIPlatform.V1."
-          + "Schema.Predict.Params\312\0020Google\\Cloud\\AIP"
-          + "latform\\V1\\Schema\\Predict\\Params\352\0026Googl"
-          + "e::Cloud::AIPlatform::V1::Schema::Predic"
-          + "t::Paramsb\006proto3"
+          + "dict.params\"_\n&VideoActionRecognitionPre"
+          + "dictionParams\022\034\n\024confidence_threshold\030\001 "
+          + "\001(\002\022\027\n\017max_predictions\030\002 \001(\005B\334\002\n4com.goo"
+          + "gle.cloud.aiplatform.v1.schema.predict.p"
+          + "aramsB+VideoActionRecognitionPredictionP"
+          + "aramsProtoP\001ZVgoogle.golang.org/genproto"
+          + "/googleapis/cloud/aiplatform/v1/schema/p"
+          + "redict/params;params\252\0020Google.Cloud.AIPl"
+          + "atform.V1.Schema.Predict.Params\312\0020Google"
+          + "\\Cloud\\AIPlatform\\V1\\Schema\\Predict\\Para"
+          + "ms\352\0026Google::Cloud::AIPlatform::V1::Sche"
+          + "ma::Predict::Paramsb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1_schema_predict_params_VideoActionRecognitionPredictionParams_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1_schema_predict_params_VideoActionRecognitionPredictionParams_fieldAccessorTable =
@@ -71,7 +67,6 @@ public final class VideoActionRecognitionPredictionParamsProto {
             new java.lang.String[] {
               "ConfidenceThreshold", "MaxPredictions",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

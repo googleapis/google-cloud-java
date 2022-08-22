@@ -52,49 +52,46 @@ public final class AutoMLImageObjectDetectionProto {
       "\n\\google/cloud/aiplatform/v1/schema/trai"
           + "ningjob/definition/automl_image_object_d"
           + "etection.proto\0228google.cloud.aiplatform."
-          + "v1.schema.trainingjob.definition\032\034google"
-          + "/api/annotations.proto\"\370\001\n\032AutoMlImageOb"
-          + "jectDetection\022j\n\006inputs\030\001 \001(\0132Z.google.c"
+          + "v1.schema.trainingjob.definition\"\370\001\n\032Aut"
+          + "oMlImageObjectDetection\022j\n\006inputs\030\001 \001(\0132"
+          + "Z.google.cloud.aiplatform.v1.schema.trai"
+          + "ningjob.definition.AutoMlImageObjectDete"
+          + "ctionInputs\022n\n\010metadata\030\002 \001(\0132\\.google.c"
           + "loud.aiplatform.v1.schema.trainingjob.de"
-          + "finition.AutoMlImageObjectDetectionInput"
-          + "s\022n\n\010metadata\030\002 \001(\0132\\.google.cloud.aipla"
-          + "tform.v1.schema.trainingjob.definition.A"
-          + "utoMlImageObjectDetectionMetadata\"\222\003\n Au"
-          + "toMlImageObjectDetectionInputs\022x\n\nmodel_"
-          + "type\030\001 \001(\0162d.google.cloud.aiplatform.v1."
-          + "schema.trainingjob.definition.AutoMlImag"
-          + "eObjectDetectionInputs.ModelType\022\037\n\027budg"
-          + "et_milli_node_hours\030\002 \001(\003\022\036\n\026disable_ear"
-          + "ly_stopping\030\003 \001(\010\"\262\001\n\tModelType\022\032\n\026MODEL"
-          + "_TYPE_UNSPECIFIED\020\000\022\031\n\025CLOUD_HIGH_ACCURA"
-          + "CY_1\020\001\022\027\n\023CLOUD_LOW_LATENCY_1\020\002\022\033\n\027MOBIL"
-          + "E_TF_LOW_LATENCY_1\020\003\022\031\n\025MOBILE_TF_VERSAT"
-          + "ILE_1\020\004\022\035\n\031MOBILE_TF_HIGH_ACCURACY_1\020\005\"\300"
-          + "\002\n\"AutoMlImageObjectDetectionMetadata\022\035\n"
-          + "\025cost_milli_node_hours\030\001 \001(\003\022\221\001\n\026success"
-          + "ful_stop_reason\030\002 \001(\0162q.google.cloud.aip"
-          + "latform.v1.schema.trainingjob.definition"
-          + ".AutoMlImageObjectDetectionMetadata.Succ"
-          + "essfulStopReason\"g\n\024SuccessfulStopReason"
-          + "\022&\n\"SUCCESSFUL_STOP_REASON_UNSPECIFIED\020\000"
-          + "\022\022\n\016BUDGET_REACHED\020\001\022\023\n\017MODEL_CONVERGED\020"
-          + "\002B\374\002\n<com.google.cloud.aiplatform.v1.sch"
-          + "ema.trainingjob.definitionB\037AutoMLImageO"
-          + "bjectDetectionProtoP\001Zbgoogle.golang.org"
-          + "/genproto/googleapis/cloud/aiplatform/v1"
-          + "/schema/trainingjob/definition;definitio"
-          + "n\252\0028Google.Cloud.AIPlatform.V1.Schema.Tr"
-          + "ainingJob.Definition\312\0028Google\\Cloud\\AIPl"
-          + "atform\\V1\\Schema\\TrainingJob\\Definition\352"
-          + "\002>Google::Cloud::AIPlatform::V1::Schema:"
-          + ":TrainingJob::Definitionb\006proto3"
+          + "finition.AutoMlImageObjectDetectionMetad"
+          + "ata\"\222\003\n AutoMlImageObjectDetectionInputs"
+          + "\022x\n\nmodel_type\030\001 \001(\0162d.google.cloud.aipl"
+          + "atform.v1.schema.trainingjob.definition."
+          + "AutoMlImageObjectDetectionInputs.ModelTy"
+          + "pe\022\037\n\027budget_milli_node_hours\030\002 \001(\003\022\036\n\026d"
+          + "isable_early_stopping\030\003 \001(\010\"\262\001\n\tModelTyp"
+          + "e\022\032\n\026MODEL_TYPE_UNSPECIFIED\020\000\022\031\n\025CLOUD_H"
+          + "IGH_ACCURACY_1\020\001\022\027\n\023CLOUD_LOW_LATENCY_1\020"
+          + "\002\022\033\n\027MOBILE_TF_LOW_LATENCY_1\020\003\022\031\n\025MOBILE"
+          + "_TF_VERSATILE_1\020\004\022\035\n\031MOBILE_TF_HIGH_ACCU"
+          + "RACY_1\020\005\"\300\002\n\"AutoMlImageObjectDetectionM"
+          + "etadata\022\035\n\025cost_milli_node_hours\030\001 \001(\003\022\221"
+          + "\001\n\026successful_stop_reason\030\002 \001(\0162q.google"
+          + ".cloud.aiplatform.v1.schema.trainingjob."
+          + "definition.AutoMlImageObjectDetectionMet"
+          + "adata.SuccessfulStopReason\"g\n\024Successful"
+          + "StopReason\022&\n\"SUCCESSFUL_STOP_REASON_UNS"
+          + "PECIFIED\020\000\022\022\n\016BUDGET_REACHED\020\001\022\023\n\017MODEL_"
+          + "CONVERGED\020\002B\374\002\n<com.google.cloud.aiplatf"
+          + "orm.v1.schema.trainingjob.definitionB\037Au"
+          + "toMLImageObjectDetectionProtoP\001Zbgoogle."
+          + "golang.org/genproto/googleapis/cloud/aip"
+          + "latform/v1/schema/trainingjob/definition"
+          + ";definition\252\0028Google.Cloud.AIPlatform.V1"
+          + ".Schema.TrainingJob.Definition\312\0028Google\\"
+          + "Cloud\\AIPlatform\\V1\\Schema\\TrainingJob\\D"
+          + "efinition\352\002>Google::Cloud::AIPlatform::V"
+          + "1::Schema::TrainingJob::Definitionb\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlImageObjectDetection_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlImageObjectDetection_fieldAccessorTable =
@@ -119,7 +116,6 @@ public final class AutoMLImageObjectDetectionProto {
             new java.lang.String[] {
               "CostMilliNodeHours", "SuccessfulStopReason",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

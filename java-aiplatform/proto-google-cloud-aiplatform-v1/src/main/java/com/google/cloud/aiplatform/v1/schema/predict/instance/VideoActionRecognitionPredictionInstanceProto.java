@@ -43,27 +43,24 @@ public final class VideoActionRecognitionPredictionInstanceProto {
       "\nQgoogle/cloud/aiplatform/v1/schema/pred"
           + "ict/instance/video_action_recognition.pr"
           + "oto\0222google.cloud.aiplatform.v1.schema.p"
-          + "redict.instance\032\034google/api/annotations."
-          + "proto\"\204\001\n(VideoActionRecognitionPredicti"
-          + "onInstance\022\017\n\007content\030\001 \001(\t\022\021\n\tmime_type"
-          + "\030\002 \001(\t\022\032\n\022time_segment_start\030\003 \001(\t\022\030\n\020ti"
-          + "me_segment_end\030\004 \001(\tB\352\002\n6com.google.clou"
-          + "d.aiplatform.v1.schema.predict.instanceB"
-          + "-VideoActionRecognitionPredictionInstanc"
-          + "eProtoP\001ZZgoogle.golang.org/genproto/goo"
-          + "gleapis/cloud/aiplatform/v1/schema/predi"
-          + "ct/instance;instance\252\0022Google.Cloud.AIPl"
-          + "atform.V1.Schema.Predict.Instance\312\0022Goog"
-          + "le\\Cloud\\AIPlatform\\V1\\Schema\\Predict\\In"
-          + "stance\352\0028Google::Cloud::AIPlatform::V1::"
-          + "Schema::Predict::Instanceb\006proto3"
+          + "redict.instance\"\204\001\n(VideoActionRecogniti"
+          + "onPredictionInstance\022\017\n\007content\030\001 \001(\t\022\021\n"
+          + "\tmime_type\030\002 \001(\t\022\032\n\022time_segment_start\030\003"
+          + " \001(\t\022\030\n\020time_segment_end\030\004 \001(\tB\352\002\n6com.g"
+          + "oogle.cloud.aiplatform.v1.schema.predict"
+          + ".instanceB-VideoActionRecognitionPredict"
+          + "ionInstanceProtoP\001ZZgoogle.golang.org/ge"
+          + "nproto/googleapis/cloud/aiplatform/v1/sc"
+          + "hema/predict/instance;instance\252\0022Google."
+          + "Cloud.AIPlatform.V1.Schema.Predict.Insta"
+          + "nce\312\0022Google\\Cloud\\AIPlatform\\V1\\Schema\\"
+          + "Predict\\Instance\352\0028Google::Cloud::AIPlat"
+          + "form::V1::Schema::Predict::Instanceb\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1_schema_predict_instance_VideoActionRecognitionPredictionInstance_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1_schema_predict_instance_VideoActionRecognitionPredictionInstance_fieldAccessorTable =
@@ -72,7 +69,6 @@ public final class VideoActionRecognitionPredictionInstanceProto {
             new java.lang.String[] {
               "Content", "MimeType", "TimeSegmentStart", "TimeSegmentEnd",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -43,27 +43,23 @@ public final class ImageSegmentationPredictionResultProto {
       "\nRgoogle/cloud/aiplatform/v1beta1/schema"
           + "/predict/prediction/image_segmentation.p"
           + "roto\0229google.cloud.aiplatform.v1beta1.sc"
-          + "hema.predict.prediction\032\034google/api/anno"
-          + "tations.proto\"S\n!ImageSegmentationPredic"
-          + "tionResult\022\025\n\rcategory_mask\030\001 \001(\t\022\027\n\017con"
-          + "fidence_mask\030\002 \001(\tB\210\003\n=com.google.cloud."
-          + "aiplatform.v1beta1.schema.predict.predic"
-          + "tionB&ImageSegmentationPredictionResultP"
-          + "rotoP\001Zcgoogle.golang.org/genproto/googl"
-          + "eapis/cloud/aiplatform/v1beta1/schema/pr"
-          + "edict/prediction;prediction\252\0029Google.Clo"
-          + "ud.AIPlatform.V1Beta1.Schema.Predict.Pre"
-          + "diction\312\0029Google\\Cloud\\AIPlatform\\V1beta"
-          + "1\\Schema\\Predict\\Prediction\352\002?Google::Cl"
-          + "oud::AIPlatform::V1beta1::Schema::Predic"
-          + "t::Predictionb\006proto3"
+          + "hema.predict.prediction\"S\n!ImageSegmenta"
+          + "tionPredictionResult\022\025\n\rcategory_mask\030\001 "
+          + "\001(\t\022\027\n\017confidence_mask\030\002 \001(\tB\210\003\n=com.goo"
+          + "gle.cloud.aiplatform.v1beta1.schema.pred"
+          + "ict.predictionB&ImageSegmentationPredict"
+          + "ionResultProtoP\001Zcgoogle.golang.org/genp"
+          + "roto/googleapis/cloud/aiplatform/v1beta1"
+          + "/schema/predict/prediction;prediction\252\0029"
+          + "Google.Cloud.AIPlatform.V1Beta1.Schema.P"
+          + "redict.Prediction\312\0029Google\\Cloud\\AIPlatf"
+          + "orm\\V1beta1\\Schema\\Predict\\Prediction\352\002?"
+          + "Google::Cloud::AIPlatform::V1beta1::Sche"
+          + "ma::Predict::Predictionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1beta1_schema_predict_prediction_ImageSegmentationPredictionResult_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1beta1_schema_predict_prediction_ImageSegmentationPredictionResult_fieldAccessorTable =
@@ -72,7 +68,6 @@ public final class ImageSegmentationPredictionResultProto {
             new java.lang.String[] {
               "CategoryMask", "ConfidenceMask",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

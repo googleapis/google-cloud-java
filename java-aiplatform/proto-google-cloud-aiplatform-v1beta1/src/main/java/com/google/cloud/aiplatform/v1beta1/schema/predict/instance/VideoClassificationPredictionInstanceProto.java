@@ -43,28 +43,24 @@ public final class VideoClassificationPredictionInstanceProto {
       "\nRgoogle/cloud/aiplatform/v1beta1/schema"
           + "/predict/instance/video_classification.p"
           + "roto\0227google.cloud.aiplatform.v1beta1.sc"
-          + "hema.predict.instance\032\034google/api/annota"
-          + "tions.proto\"\201\001\n%VideoClassificationPredi"
-          + "ctionInstance\022\017\n\007content\030\001 \001(\t\022\021\n\tmime_t"
-          + "ype\030\002 \001(\t\022\032\n\022time_segment_start\030\003 \001(\t\022\030\n"
-          + "\020time_segment_end\030\004 \001(\tB\200\003\n;com.google.c"
-          + "loud.aiplatform.v1beta1.schema.predict.i"
-          + "nstanceB*VideoClassificationPredictionIn"
-          + "stanceProtoP\001Z_google.golang.org/genprot"
-          + "o/googleapis/cloud/aiplatform/v1beta1/sc"
-          + "hema/predict/instance;instance\252\0027Google."
-          + "Cloud.AIPlatform.V1Beta1.Schema.Predict."
-          + "Instance\312\0027Google\\Cloud\\AIPlatform\\V1bet"
-          + "a1\\Schema\\Predict\\Instance\352\002=Google::Clo"
-          + "ud::AIPlatform::V1beta1::Schema::Predict"
-          + "::Instanceb\006proto3"
+          + "hema.predict.instance\"\201\001\n%VideoClassific"
+          + "ationPredictionInstance\022\017\n\007content\030\001 \001(\t"
+          + "\022\021\n\tmime_type\030\002 \001(\t\022\032\n\022time_segment_star"
+          + "t\030\003 \001(\t\022\030\n\020time_segment_end\030\004 \001(\tB\200\003\n;co"
+          + "m.google.cloud.aiplatform.v1beta1.schema"
+          + ".predict.instanceB*VideoClassificationPr"
+          + "edictionInstanceProtoP\001Z_google.golang.o"
+          + "rg/genproto/googleapis/cloud/aiplatform/"
+          + "v1beta1/schema/predict/instance;instance"
+          + "\252\0027Google.Cloud.AIPlatform.V1Beta1.Schem"
+          + "a.Predict.Instance\312\0027Google\\Cloud\\AIPlat"
+          + "form\\V1beta1\\Schema\\Predict\\Instance\352\002=G"
+          + "oogle::Cloud::AIPlatform::V1beta1::Schem"
+          + "a::Predict::Instanceb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1beta1_schema_predict_instance_VideoClassificationPredictionInstance_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1beta1_schema_predict_instance_VideoClassificationPredictionInstance_fieldAccessorTable =
@@ -73,7 +69,6 @@ public final class VideoClassificationPredictionInstanceProto {
             new java.lang.String[] {
               "Content", "MimeType", "TimeSegmentStart", "TimeSegmentEnd",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

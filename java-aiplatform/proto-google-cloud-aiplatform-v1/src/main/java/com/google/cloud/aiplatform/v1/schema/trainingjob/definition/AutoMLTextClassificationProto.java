@@ -47,29 +47,26 @@ public final class AutoMLTextClassificationProto {
       "\nYgoogle/cloud/aiplatform/v1/schema/trai"
           + "ningjob/definition/automl_text_classific"
           + "ation.proto\0228google.cloud.aiplatform.v1."
-          + "schema.trainingjob.definition\032\034google/ap"
-          + "i/annotations.proto\"\204\001\n\030AutoMlTextClassi"
-          + "fication\022h\n\006inputs\030\001 \001(\0132X.google.cloud."
-          + "aiplatform.v1.schema.trainingjob.definit"
-          + "ion.AutoMlTextClassificationInputs\"5\n\036Au"
-          + "toMlTextClassificationInputs\022\023\n\013multi_la"
-          + "bel\030\001 \001(\010B\372\002\n<com.google.cloud.aiplatfor"
-          + "m.v1.schema.trainingjob.definitionB\035Auto"
-          + "MLTextClassificationProtoP\001Zbgoogle.gola"
-          + "ng.org/genproto/googleapis/cloud/aiplatf"
-          + "orm/v1/schema/trainingjob/definition;def"
-          + "inition\252\0028Google.Cloud.AIPlatform.V1.Sch"
-          + "ema.TrainingJob.Definition\312\0028Google\\Clou"
-          + "d\\AIPlatform\\V1\\Schema\\TrainingJob\\Defin"
-          + "ition\352\002>Google::Cloud::AIPlatform::V1::S"
-          + "chema::TrainingJob::Definitionb\006proto3"
+          + "schema.trainingjob.definition\"\204\001\n\030AutoMl"
+          + "TextClassification\022h\n\006inputs\030\001 \001(\0132X.goo"
+          + "gle.cloud.aiplatform.v1.schema.trainingj"
+          + "ob.definition.AutoMlTextClassificationIn"
+          + "puts\"5\n\036AutoMlTextClassificationInputs\022\023"
+          + "\n\013multi_label\030\001 \001(\010B\372\002\n<com.google.cloud"
+          + ".aiplatform.v1.schema.trainingjob.defini"
+          + "tionB\035AutoMLTextClassificationProtoP\001Zbg"
+          + "oogle.golang.org/genproto/googleapis/clo"
+          + "ud/aiplatform/v1/schema/trainingjob/defi"
+          + "nition;definition\252\0028Google.Cloud.AIPlatf"
+          + "orm.V1.Schema.TrainingJob.Definition\312\0028G"
+          + "oogle\\Cloud\\AIPlatform\\V1\\Schema\\Trainin"
+          + "gJob\\Definition\352\002>Google::Cloud::AIPlatf"
+          + "orm::V1::Schema::TrainingJob::Definition"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlTextClassification_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlTextClassification_fieldAccessorTable =
@@ -86,7 +83,6 @@ public final class AutoMLTextClassificationProto {
             new java.lang.String[] {
               "MultiLabel",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

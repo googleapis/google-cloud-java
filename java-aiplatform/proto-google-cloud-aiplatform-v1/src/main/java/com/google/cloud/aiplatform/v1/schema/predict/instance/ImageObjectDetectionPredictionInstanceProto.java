@@ -43,26 +43,22 @@ public final class ImageObjectDetectionPredictionInstanceProto {
       "\nOgoogle/cloud/aiplatform/v1/schema/pred"
           + "ict/instance/image_object_detection.prot"
           + "o\0222google.cloud.aiplatform.v1.schema.pre"
-          + "dict.instance\032\034google/api/annotations.pr"
-          + "oto\"L\n&ImageObjectDetectionPredictionIns"
-          + "tance\022\017\n\007content\030\001 \001(\t\022\021\n\tmime_type\030\002 \001("
-          + "\tB\350\002\n6com.google.cloud.aiplatform.v1.sch"
-          + "ema.predict.instanceB+ImageObjectDetecti"
-          + "onPredictionInstanceProtoP\001ZZgoogle.gola"
-          + "ng.org/genproto/googleapis/cloud/aiplatf"
-          + "orm/v1/schema/predict/instance;instance\252"
-          + "\0022Google.Cloud.AIPlatform.V1.Schema.Pred"
-          + "ict.Instance\312\0022Google\\Cloud\\AIPlatform\\V"
-          + "1\\Schema\\Predict\\Instance\352\0028Google::Clou"
-          + "d::AIPlatform::V1::Schema::Predict::Inst"
-          + "anceb\006proto3"
+          + "dict.instance\"L\n&ImageObjectDetectionPre"
+          + "dictionInstance\022\017\n\007content\030\001 \001(\t\022\021\n\tmime"
+          + "_type\030\002 \001(\tB\350\002\n6com.google.cloud.aiplatf"
+          + "orm.v1.schema.predict.instanceB+ImageObj"
+          + "ectDetectionPredictionInstanceProtoP\001ZZg"
+          + "oogle.golang.org/genproto/googleapis/clo"
+          + "ud/aiplatform/v1/schema/predict/instance"
+          + ";instance\252\0022Google.Cloud.AIPlatform.V1.S"
+          + "chema.Predict.Instance\312\0022Google\\Cloud\\AI"
+          + "Platform\\V1\\Schema\\Predict\\Instance\352\0028Go"
+          + "ogle::Cloud::AIPlatform::V1::Schema::Pre"
+          + "dict::Instanceb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1_schema_predict_instance_ImageObjectDetectionPredictionInstance_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1_schema_predict_instance_ImageObjectDetectionPredictionInstance_fieldAccessorTable =
@@ -71,7 +67,6 @@ public final class ImageObjectDetectionPredictionInstanceProto {
             new java.lang.String[] {
               "Content", "MimeType",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
