@@ -34,9 +34,11 @@ mvn clean deploy -B \
   -Dgpg.homedir=${GPG_HOMEDIR} \
   -P release
 
-if [[ -n "${AUTORELEASE_PR}" ]]
-then
-  mvn nexus-staging:release -B \
-    -DperformRelease=true \
-    --settings=settings.xml
-fi
+# During shadow-mode, do not release.
+#if [[ -n "${AUTORELEASE_PR}" ]]
+#then
+#  mvn nexus-staging:release -B \
+#    -DperformRelease=true \
+#    --settings=settings.xml
+#fi
+
