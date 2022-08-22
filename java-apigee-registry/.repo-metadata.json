@@ -1,0 +1,16 @@
+{
+  "api_shortname": "apigee-registry",
+  "name_pretty": "Registry API",
+  "product_documentation": "https://cloud.google.com/apigee/docs/api-hub/get-started-registry-api",
+  "api_description": "allows teams to upload and share machine-readable descriptions of APIs that are in use and in development.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-apigee-registry/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-apigee-registry",
+  "repo_short": "java-apigee-registry",
+  "distribution_name": "com.google.cloud:google-cloud-apigee-registry",
+  "api_id": "apigeeregistry.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
