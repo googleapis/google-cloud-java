@@ -42,22 +42,21 @@ public final class SourceOuterClass {
     java.lang.String[] descriptorData = {
       "\n0google/cloud/securitycenter/v1beta1/so"
           + "urce.proto\022#google.cloud.securitycenter."
-          + "v1beta1\032\031google/api/resource.proto\032\034goog"
-          + "le/api/annotations.proto\"\233\001\n\006Source\022\014\n\004n"
-          + "ame\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022\023\n\013descr"
-          + "iption\030\003 \001(\t:X\352AU\n$securitycenter.google"
-          + "apis.com/Source\022-organizations/{organiza"
-          + "tion}/sources/{source}B~\n\'com.google.clo"
-          + "ud.securitycenter.v1beta1P\001ZQgoogle.gola"
-          + "ng.org/genproto/googleapis/cloud/securit"
-          + "ycenter/v1beta1;securitycenterb\006proto3"
+          + "v1beta1\032\031google/api/resource.proto\"\233\001\n\006S"
+          + "ource\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name\030\002 \001("
+          + "\t\022\023\n\013description\030\003 \001(\t:X\352AU\n$securitycen"
+          + "ter.googleapis.com/Source\022-organizations"
+          + "/{organization}/sources/{source}B~\n\'com."
+          + "google.cloud.securitycenter.v1beta1P\001ZQg"
+          + "oogle.golang.org/genproto/googleapis/clo"
+          + "ud/securitycenter/v1beta1;securitycenter"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.ResourceProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_securitycenter_v1beta1_Source_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -73,7 +72,6 @@ public final class SourceOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.ResourceProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
