@@ -19,6 +19,7 @@ package com.google.cloud.servicedirectory.v1.samples;
 // [START servicedirectory_v1_generated_registrationserviceclient_deletenamespace_string_sync]
 import com.google.cloud.servicedirectory.v1.NamespaceName;
 import com.google.cloud.servicedirectory.v1.RegistrationServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteNamespaceString {
 

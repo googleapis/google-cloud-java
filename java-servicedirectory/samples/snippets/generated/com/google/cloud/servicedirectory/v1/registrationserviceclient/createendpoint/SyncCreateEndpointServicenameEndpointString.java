@@ -16,8 +16,7 @@
 
 package com.google.cloud.servicedirectory.v1.samples;
 
-// [START
-// servicedirectory_v1_generated_registrationserviceclient_createendpoint_servicenameendpointstring_sync]
+// [START servicedirectory_v1_generated_registrationserviceclient_createendpoint_servicenameendpointstring_sync]
 import com.google.cloud.servicedirectory.v1.Endpoint;
 import com.google.cloud.servicedirectory.v1.RegistrationServiceClient;
 import com.google.cloud.servicedirectory.v1.ServiceName;
@@ -39,5 +38,4 @@ public class SyncCreateEndpointServicenameEndpointString {
     }
   }
 }
-// [END
-// servicedirectory_v1_generated_registrationserviceclient_createendpoint_servicenameendpointstring_sync]
+// [END servicedirectory_v1_generated_registrationserviceclient_createendpoint_servicenameendpointstring_sync]
