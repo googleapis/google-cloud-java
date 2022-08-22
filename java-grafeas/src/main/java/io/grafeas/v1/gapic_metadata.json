@@ -1,0 +1,60 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "grafeas.v1",
+  "libraryPackage": "io.grafeas.v1",
+  "services": {
+    "Grafeas": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GrafeasClient",
+          "rpcs": {
+            "BatchCreateNotes": {
+              "methods": ["batchCreateNotes", "batchCreateNotes", "batchCreateNotes", "batchCreateNotesCallable"]
+            },
+            "BatchCreateOccurrences": {
+              "methods": ["batchCreateOccurrences", "batchCreateOccurrences", "batchCreateOccurrences", "batchCreateOccurrencesCallable"]
+            },
+            "CreateNote": {
+              "methods": ["createNote", "createNote", "createNote", "createNoteCallable"]
+            },
+            "CreateOccurrence": {
+              "methods": ["createOccurrence", "createOccurrence", "createOccurrence", "createOccurrenceCallable"]
+            },
+            "DeleteNote": {
+              "methods": ["deleteNote", "deleteNote", "deleteNote", "deleteNoteCallable"]
+            },
+            "DeleteOccurrence": {
+              "methods": ["deleteOccurrence", "deleteOccurrence", "deleteOccurrence", "deleteOccurrenceCallable"]
+            },
+            "GetNote": {
+              "methods": ["getNote", "getNote", "getNote", "getNoteCallable"]
+            },
+            "GetOccurrence": {
+              "methods": ["getOccurrence", "getOccurrence", "getOccurrence", "getOccurrenceCallable"]
+            },
+            "GetOccurrenceNote": {
+              "methods": ["getOccurrenceNote", "getOccurrenceNote", "getOccurrenceNote", "getOccurrenceNoteCallable"]
+            },
+            "ListNoteOccurrences": {
+              "methods": ["listNoteOccurrences", "listNoteOccurrences", "listNoteOccurrences", "listNoteOccurrencesPagedCallable", "listNoteOccurrencesCallable"]
+            },
+            "ListNotes": {
+              "methods": ["listNotes", "listNotes", "listNotes", "listNotesPagedCallable", "listNotesCallable"]
+            },
+            "ListOccurrences": {
+              "methods": ["listOccurrences", "listOccurrences", "listOccurrences", "listOccurrencesPagedCallable", "listOccurrencesCallable"]
+            },
+            "UpdateNote": {
+              "methods": ["updateNote", "updateNote", "updateNote", "updateNoteCallable"]
+            },
+            "UpdateOccurrence": {
+              "methods": ["updateOccurrence", "updateOccurrence", "updateOccurrence", "updateOccurrenceCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
