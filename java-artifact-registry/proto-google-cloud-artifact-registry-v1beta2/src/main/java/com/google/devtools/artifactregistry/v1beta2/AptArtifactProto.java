@@ -62,54 +62,50 @@ public final class AptArtifactProto {
     java.lang.String[] descriptorData = {
       "\n;google/devtools/artifactregistry/v1bet"
           + "a2/apt_artifact.proto\022(google.devtools.a"
-          + "rtifactregistry.v1beta2\032\034google/api/anno"
-          + "tations.proto\032\037google/api/field_behavior"
-          + ".proto\032\031google/api/resource.proto\032#googl"
-          + "e/longrunning/operations.proto\032\027google/r"
-          + "pc/status.proto\"\277\003\n\013AptArtifact\022\021\n\004name\030"
-          + "\001 \001(\tB\003\340A\003\022\031\n\014package_name\030\002 \001(\tB\003\340A\003\022\\\n"
-          + "\014package_type\030\003 \001(\0162A.google.devtools.ar"
-          + "tifactregistry.v1beta2.AptArtifact.Packa"
-          + "geTypeB\003\340A\003\022\031\n\014architecture\030\004 \001(\tB\003\340A\003\022\026"
-          + "\n\tcomponent\030\005 \001(\tB\003\340A\003\022\031\n\014control_file\030\006"
-          + " \001(\014B\003\340A\003\"C\n\013PackageType\022\034\n\030PACKAGE_TYPE"
-          + "_UNSPECIFIED\020\000\022\n\n\006BINARY\020\001\022\n\n\006SOURCE\020\002:\220"
-          + "\001\352A\214\001\n+artifactregistry.googleapis.com/A"
-          + "ptArtifact\022]projects/{project}/locations"
-          + "/{location}/repositories/{repository}/ap"
-          + "tArtifacts/{apt_artifact}\"B\n\033ImportAptAr"
-          + "tifactsGcsSource\022\014\n\004uris\030\001 \003(\t\022\025\n\ruse_wi"
-          + "ldcards\030\002 \001(\010\"\222\001\n\031ImportAptArtifactsRequ"
-          + "est\022[\n\ngcs_source\030\002 \001(\0132E.google.devtool"
-          + "s.artifactregistry.v1beta2.ImportAptArti"
-          + "factsGcsSourceH\000\022\016\n\006parent\030\001 \001(\tB\010\n\006sour"
-          + "ce\"\247\001\n\033ImportAptArtifactsErrorInfo\022[\n\ngc"
-          + "s_source\030\001 \001(\0132E.google.devtools.artifac"
-          + "tregistry.v1beta2.ImportAptArtifactsGcsS"
-          + "ourceH\000\022!\n\005error\030\002 \001(\0132\022.google.rpc.Stat"
-          + "usB\010\n\006source\"\301\001\n\032ImportAptArtifactsRespo"
-          + "nse\022L\n\rapt_artifacts\030\001 \003(\01325.google.devt"
-          + "ools.artifactregistry.v1beta2.AptArtifac"
-          + "t\022U\n\006errors\030\002 \003(\0132E.google.devtools.arti"
-          + "factregistry.v1beta2.ImportAptArtifactsE"
-          + "rrorInfo\"\034\n\032ImportAptArtifactsMetadataB\227"
-          + "\002\n,com.google.devtools.artifactregistry."
-          + "v1beta2B\020AptArtifactProtoP\001ZXgoogle.gola"
-          + "ng.org/genproto/googleapis/devtools/arti"
-          + "factregistry/v1beta2;artifactregistry\252\002%"
-          + "Google.Cloud.ArtifactRegistry.V1Beta2\312\002%"
-          + "Google\\Cloud\\ArtifactRegistry\\V1beta2\352\002("
-          + "Google::Cloud::ArtifactRegistry::V1beta2"
-          + "b\006proto3"
+          + "rtifactregistry.v1beta2\032\037google/api/fiel"
+          + "d_behavior.proto\032\031google/api/resource.pr"
+          + "oto\032\027google/rpc/status.proto\"\277\003\n\013AptArti"
+          + "fact\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\031\n\014package_name\030"
+          + "\002 \001(\tB\003\340A\003\022\\\n\014package_type\030\003 \001(\0162A.googl"
+          + "e.devtools.artifactregistry.v1beta2.AptA"
+          + "rtifact.PackageTypeB\003\340A\003\022\031\n\014architecture"
+          + "\030\004 \001(\tB\003\340A\003\022\026\n\tcomponent\030\005 \001(\tB\003\340A\003\022\031\n\014c"
+          + "ontrol_file\030\006 \001(\014B\003\340A\003\"C\n\013PackageType\022\034\n"
+          + "\030PACKAGE_TYPE_UNSPECIFIED\020\000\022\n\n\006BINARY\020\001\022"
+          + "\n\n\006SOURCE\020\002:\220\001\352A\214\001\n+artifactregistry.goo"
+          + "gleapis.com/AptArtifact\022]projects/{proje"
+          + "ct}/locations/{location}/repositories/{r"
+          + "epository}/aptArtifacts/{apt_artifact}\"B"
+          + "\n\033ImportAptArtifactsGcsSource\022\014\n\004uris\030\001 "
+          + "\003(\t\022\025\n\ruse_wildcards\030\002 \001(\010\"\222\001\n\031ImportApt"
+          + "ArtifactsRequest\022[\n\ngcs_source\030\002 \001(\0132E.g"
+          + "oogle.devtools.artifactregistry.v1beta2."
+          + "ImportAptArtifactsGcsSourceH\000\022\016\n\006parent\030"
+          + "\001 \001(\tB\010\n\006source\"\247\001\n\033ImportAptArtifactsEr"
+          + "rorInfo\022[\n\ngcs_source\030\001 \001(\0132E.google.dev"
+          + "tools.artifactregistry.v1beta2.ImportApt"
+          + "ArtifactsGcsSourceH\000\022!\n\005error\030\002 \001(\0132\022.go"
+          + "ogle.rpc.StatusB\010\n\006source\"\301\001\n\032ImportAptA"
+          + "rtifactsResponse\022L\n\rapt_artifacts\030\001 \003(\0132"
+          + "5.google.devtools.artifactregistry.v1bet"
+          + "a2.AptArtifact\022U\n\006errors\030\002 \003(\0132E.google."
+          + "devtools.artifactregistry.v1beta2.Import"
+          + "AptArtifactsErrorInfo\"\034\n\032ImportAptArtifa"
+          + "ctsMetadataB\227\002\n,com.google.devtools.arti"
+          + "factregistry.v1beta2B\020AptArtifactProtoP\001"
+          + "ZXgoogle.golang.org/genproto/googleapis/"
+          + "devtools/artifactregistry/v1beta2;artifa"
+          + "ctregistry\252\002%Google.Cloud.ArtifactRegist"
+          + "ry.V1Beta2\312\002%Google\\Cloud\\ArtifactRegist"
+          + "ry\\V1beta2\352\002(Google::Cloud::ArtifactRegi"
+          + "stry::V1beta2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
-              com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
             });
     internal_static_google_devtools_artifactregistry_v1beta2_AptArtifact_descriptor =
@@ -164,10 +160,8 @@ public final class AptArtifactProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
-    com.google.longrunning.OperationsProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
   }
 
