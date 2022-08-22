@@ -331,9 +331,9 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Name of the query record.
+   * The name of the answer record.
    * Format:
-   * projects/{project}/locations/{location}/queryRecords/{query_record}
+   * projects/{project}/locations/{location}/answerRecords/{answer_record}
    * </pre>
    *
    * <code>string query_record = 4;</code>
@@ -356,9 +356,9 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Name of the query record.
+   * The name of the answer record.
    * Format:
-   * projects/{project}/locations/{location}/queryRecords/{query_record}
+   * projects/{project}/locations/{location}/answerRecords/{answer_record}
    * </pre>
    *
    * <code>string query_record = 4;</code>
@@ -1119,9 +1119,9 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Name of the query record.
+     * The name of the answer record.
      * Format:
-     * projects/{project}/locations/{location}/queryRecords/{query_record}
+     * projects/{project}/locations/{location}/answerRecords/{answer_record}
      * </pre>
      *
      * <code>string query_record = 4;</code>
@@ -1143,9 +1143,9 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Name of the query record.
+     * The name of the answer record.
      * Format:
-     * projects/{project}/locations/{location}/queryRecords/{query_record}
+     * projects/{project}/locations/{location}/answerRecords/{answer_record}
      * </pre>
      *
      * <code>string query_record = 4;</code>
@@ -1167,9 +1167,9 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Name of the query record.
+     * The name of the answer record.
      * Format:
-     * projects/{project}/locations/{location}/queryRecords/{query_record}
+     * projects/{project}/locations/{location}/answerRecords/{answer_record}
      * </pre>
      *
      * <code>string query_record = 4;</code>
@@ -1190,9 +1190,9 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Name of the query record.
+     * The name of the answer record.
      * Format:
-     * projects/{project}/locations/{location}/queryRecords/{query_record}
+     * projects/{project}/locations/{location}/answerRecords/{answer_record}
      * </pre>
      *
      * <code>string query_record = 4;</code>
@@ -1209,9 +1209,9 @@ public final class SmartComposeSuggestionData extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Name of the query record.
+     * The name of the answer record.
      * Format:
-     * projects/{project}/locations/{location}/queryRecords/{query_record}
+     * projects/{project}/locations/{location}/answerRecords/{answer_record}
      * </pre>
      *
      * <code>string query_record = 4;</code>
