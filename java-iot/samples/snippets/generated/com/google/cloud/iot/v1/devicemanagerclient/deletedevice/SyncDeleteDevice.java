@@ -20,6 +20,7 @@ package com.google.cloud.iot.v1.samples;
 import com.google.cloud.iot.v1.DeleteDeviceRequest;
 import com.google.cloud.iot.v1.DeviceManagerClient;
 import com.google.cloud.iot.v1.DeviceName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteDevice {
 

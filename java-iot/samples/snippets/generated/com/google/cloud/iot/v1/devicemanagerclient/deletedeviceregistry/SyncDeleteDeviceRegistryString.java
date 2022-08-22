@@ -19,6 +19,7 @@ package com.google.cloud.iot.v1.samples;
 // [START iot_v1_generated_devicemanagerclient_deletedeviceregistry_string_sync]
 import com.google.cloud.iot.v1.DeviceManagerClient;
 import com.google.cloud.iot.v1.RegistryName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteDeviceRegistryString {
 
