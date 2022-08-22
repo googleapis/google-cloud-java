@@ -1,0 +1,120 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.datalabeling.v1beta1",
+  "libraryPackage": "com.google.cloud.datalabeling.v1beta1",
+  "services": {
+    "DataLabelingService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataLabelingServiceClient",
+          "rpcs": {
+            "CreateAnnotationSpecSet": {
+              "methods": ["createAnnotationSpecSet", "createAnnotationSpecSet", "createAnnotationSpecSet", "createAnnotationSpecSetCallable"]
+            },
+            "CreateDataset": {
+              "methods": ["createDataset", "createDataset", "createDataset", "createDatasetCallable"]
+            },
+            "CreateEvaluationJob": {
+              "methods": ["createEvaluationJob", "createEvaluationJob", "createEvaluationJob", "createEvaluationJobCallable"]
+            },
+            "CreateInstruction": {
+              "methods": ["createInstructionAsync", "createInstructionAsync", "createInstructionAsync", "createInstructionOperationCallable", "createInstructionCallable"]
+            },
+            "DeleteAnnotatedDataset": {
+              "methods": ["deleteAnnotatedDataset", "deleteAnnotatedDatasetCallable"]
+            },
+            "DeleteAnnotationSpecSet": {
+              "methods": ["deleteAnnotationSpecSet", "deleteAnnotationSpecSet", "deleteAnnotationSpecSet", "deleteAnnotationSpecSetCallable"]
+            },
+            "DeleteDataset": {
+              "methods": ["deleteDataset", "deleteDataset", "deleteDataset", "deleteDatasetCallable"]
+            },
+            "DeleteEvaluationJob": {
+              "methods": ["deleteEvaluationJob", "deleteEvaluationJob", "deleteEvaluationJob", "deleteEvaluationJobCallable"]
+            },
+            "DeleteInstruction": {
+              "methods": ["deleteInstruction", "deleteInstruction", "deleteInstruction", "deleteInstructionCallable"]
+            },
+            "ExportData": {
+              "methods": ["exportDataAsync", "exportDataAsync", "exportDataAsync", "exportDataAsync", "exportDataAsync", "exportDataOperationCallable", "exportDataCallable"]
+            },
+            "GetAnnotatedDataset": {
+              "methods": ["getAnnotatedDataset", "getAnnotatedDataset", "getAnnotatedDataset", "getAnnotatedDatasetCallable"]
+            },
+            "GetAnnotationSpecSet": {
+              "methods": ["getAnnotationSpecSet", "getAnnotationSpecSet", "getAnnotationSpecSet", "getAnnotationSpecSetCallable"]
+            },
+            "GetDataItem": {
+              "methods": ["getDataItem", "getDataItem", "getDataItem", "getDataItemCallable"]
+            },
+            "GetDataset": {
+              "methods": ["getDataset", "getDataset", "getDataset", "getDatasetCallable"]
+            },
+            "GetEvaluation": {
+              "methods": ["getEvaluation", "getEvaluation", "getEvaluation", "getEvaluationCallable"]
+            },
+            "GetEvaluationJob": {
+              "methods": ["getEvaluationJob", "getEvaluationJob", "getEvaluationJob", "getEvaluationJobCallable"]
+            },
+            "GetExample": {
+              "methods": ["getExample", "getExample", "getExample", "getExampleCallable"]
+            },
+            "GetInstruction": {
+              "methods": ["getInstruction", "getInstruction", "getInstruction", "getInstructionCallable"]
+            },
+            "ImportData": {
+              "methods": ["importDataAsync", "importDataAsync", "importDataAsync", "importDataOperationCallable", "importDataCallable"]
+            },
+            "LabelImage": {
+              "methods": ["labelImageAsync", "labelImageAsync", "labelImageAsync", "labelImageOperationCallable", "labelImageCallable"]
+            },
+            "LabelText": {
+              "methods": ["labelTextAsync", "labelTextAsync", "labelTextAsync", "labelTextOperationCallable", "labelTextCallable"]
+            },
+            "LabelVideo": {
+              "methods": ["labelVideoAsync", "labelVideoAsync", "labelVideoAsync", "labelVideoOperationCallable", "labelVideoCallable"]
+            },
+            "ListAnnotatedDatasets": {
+              "methods": ["listAnnotatedDatasets", "listAnnotatedDatasets", "listAnnotatedDatasets", "listAnnotatedDatasetsPagedCallable", "listAnnotatedDatasetsCallable"]
+            },
+            "ListAnnotationSpecSets": {
+              "methods": ["listAnnotationSpecSets", "listAnnotationSpecSets", "listAnnotationSpecSets", "listAnnotationSpecSetsPagedCallable", "listAnnotationSpecSetsCallable"]
+            },
+            "ListDataItems": {
+              "methods": ["listDataItems", "listDataItems", "listDataItems", "listDataItemsPagedCallable", "listDataItemsCallable"]
+            },
+            "ListDatasets": {
+              "methods": ["listDatasets", "listDatasets", "listDatasets", "listDatasetsPagedCallable", "listDatasetsCallable"]
+            },
+            "ListEvaluationJobs": {
+              "methods": ["listEvaluationJobs", "listEvaluationJobs", "listEvaluationJobs", "listEvaluationJobsPagedCallable", "listEvaluationJobsCallable"]
+            },
+            "ListExamples": {
+              "methods": ["listExamples", "listExamples", "listExamples", "listExamplesPagedCallable", "listExamplesCallable"]
+            },
+            "ListInstructions": {
+              "methods": ["listInstructions", "listInstructions", "listInstructions", "listInstructionsPagedCallable", "listInstructionsCallable"]
+            },
+            "PauseEvaluationJob": {
+              "methods": ["pauseEvaluationJob", "pauseEvaluationJob", "pauseEvaluationJob", "pauseEvaluationJobCallable"]
+            },
+            "ResumeEvaluationJob": {
+              "methods": ["resumeEvaluationJob", "resumeEvaluationJob", "resumeEvaluationJob", "resumeEvaluationJobCallable"]
+            },
+            "SearchEvaluations": {
+              "methods": ["searchEvaluations", "searchEvaluations", "searchEvaluations", "searchEvaluationsPagedCallable", "searchEvaluationsCallable"]
+            },
+            "SearchExampleComparisons": {
+              "methods": ["searchExampleComparisons", "searchExampleComparisons", "searchExampleComparisons", "searchExampleComparisonsPagedCallable", "searchExampleComparisonsCallable"]
+            },
+            "UpdateEvaluationJob": {
+              "methods": ["updateEvaluationJob", "updateEvaluationJob", "updateEvaluationJobCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
