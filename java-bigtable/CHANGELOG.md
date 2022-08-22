@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.11.0](https://github.com/googleapis/java-bigtable/compare/v2.10.3...v2.11.0) (2022-08-17)
+
+
+### Features
+
+* add stackdriver exporter ([#1247](https://github.com/googleapis/java-bigtable/issues/1247)) ([7ce915e](https://github.com/googleapis/java-bigtable/commit/7ce915e34c1ccce30bee78bda9e024a620cde737))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-monitoring-bom to v3.4.1 ([#1352](https://github.com/googleapis/java-bigtable/issues/1352)) ([f8d97e5](https://github.com/googleapis/java-bigtable/commit/f8d97e557318eab214f3d916c029bfa153cf7455))
+
 ## [2.10.3](https://github.com/googleapis/java-bigtable/compare/v2.10.2...v2.10.3) (2022-08-08)
 
 
