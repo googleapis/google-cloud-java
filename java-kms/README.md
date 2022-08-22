@@ -42,7 +42,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-kms</artifactId>
-  <version>2.6.3</version>
+  <version>2.6.4</version>
 </dependency>
 
 ```
