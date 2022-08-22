@@ -16,8 +16,7 @@
 
 package com.google.cloud.secretmanager.v1.samples;
 
-// [START
-// secretmanager_v1_generated_secretmanagerserviceclient_accesssecretversion_secretversionname_sync]
+// [START secretmanager_v1_generated_secretmanagerserviceclient_accesssecretversion_secretversionname_sync]
 import com.google.cloud.secretmanager.v1.AccessSecretVersionResponse;
 import com.google.cloud.secretmanager.v1.SecretManagerServiceClient;
 import com.google.cloud.secretmanager.v1.SecretVersionName;
@@ -38,5 +37,4 @@ public class SyncAccessSecretVersionSecretversionname {
     }
   }
 }
-// [END
-// secretmanager_v1_generated_secretmanagerserviceclient_accesssecretversion_secretversionname_sync]
+// [END secretmanager_v1_generated_secretmanagerserviceclient_accesssecretversion_secretversionname_sync]

@@ -19,6 +19,7 @@ package com.google.cloud.secretmanager.v1.samples;
 // [START secretmanager_v1_generated_secretmanagerserviceclient_deletesecret_string_sync]
 import com.google.cloud.secretmanager.v1.SecretManagerServiceClient;
 import com.google.cloud.secretmanager.v1.SecretName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteSecretString {
 
