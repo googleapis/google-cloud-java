@@ -24,7 +24,7 @@ import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.JsonFactory;
-import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.core.ApiClock;
 import com.google.api.gax.retrying.ResultRetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
@@ -70,7 +70,7 @@ import org.threeten.bp.Duration;
 @Deprecated
 public class HttpResourceManagerRpc implements ResourceManagerRpc {
 
-  private static final JsonFactory JSON_FACTORY = new JacksonFactory();
+  private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
 
   // See doc of create() for more details:
   // https://developers.google.com/resources/api-libraries/documentation/cloudresourcemanager/v1/java/latest/com/google/api/services/cloudresourcemanager/CloudResourceManager.Projects.html#create(com.google.api.services.cloudresourcemanager.model.Project)
@@ -137,7 +137,7 @@ public class HttpResourceManagerRpc implements ResourceManagerRpc {
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
     HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
     resourceManager =
-        new CloudResourceManager.Builder(transport, new JacksonFactory(), initializer)
+        new CloudResourceManager.Builder(transport, JSON_FACTORY, initializer)
             .setRootUrl(options.getHost())
             .setApplicationName(options.getApplicationName())
             .build();

@@ -21,6 +21,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import static java.net.HttpURLConnection.HTTP_OK;
 
 import com.google.api.client.json.JsonFactory;
+import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.services.cloudresourcemanager.model.Binding;
 import com.google.api.services.cloudresourcemanager.model.Operation;
 import com.google.api.services.cloudresourcemanager.model.Policy;
@@ -96,8 +97,7 @@ import org.threeten.bp.format.DateTimeFormatter;
 @SuppressWarnings("restriction")
 public class LocalResourceManagerHelper {
   private static final Logger log = Logger.getLogger(LocalResourceManagerHelper.class.getName());
-  private static final JsonFactory jsonFactory =
-      new com.google.api.client.json.jackson2.JacksonFactory();
+  private static final JsonFactory jsonFactory = GsonFactory.getDefaultInstance();
   private static final Random PROJECT_NUMBER_GENERATOR = new Random();
   private static final String VERSION = "v1";
   private static final String CONTEXT = "/" + VERSION + "/projects";
