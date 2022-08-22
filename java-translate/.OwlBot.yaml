@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker:
-  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
 - "/samples/snippets/generated"
@@ -25,12 +23,14 @@ deep-remove-regex:
 
 deep-copy-regex:
 - source: "/google/cloud/translate/(v.*)/.*-java/proto-google-.*/src/main/java/com/google/cloud/translate"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-translate-$1/src/main/java/com/google/cloud/translate"
+  dest: "/owl-bot-staging/java-translate/$1/proto-google-cloud-translate-$1/src/main/java/com/google/cloud/translate"
 - source: "/google/cloud/translate/(v.*)/.*-java/proto-google-.*/src/main/proto/google/cloud/translate"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-translate-$1/src/main/proto/google/cloud/translate"
+  dest: "/owl-bot-staging/java-translate/$1/proto-google-cloud-translate-$1/src/main/proto/google/cloud/translate"
 - source: "/google/cloud/translate/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-translate-$1/src"
+  dest: "/owl-bot-staging/java-translate/$1/grpc-google-cloud-translate-$1/src"
 - source: "/google/cloud/translate/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-translate/src"
+  dest: "/owl-bot-staging/java-translate/$1/google-cloud-translate/src"
 - source: "/google/cloud/translate/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/$1/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-translate/$1/samples/snippets/generated"
+
+api-name: translate
