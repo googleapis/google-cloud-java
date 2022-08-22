@@ -1,0 +1,17 @@
+{
+    "api_shortname": "dialogflow",
+    "name_pretty": "Dialogflow API",
+    "product_documentation": "https://cloud.google.com/dialogflow-enterprise/",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/history",
+    "issue_tracker": "https://issuetracker.google.com/savedsearches/5300385",
+    "release_level": "stable",
+    "language": "java",
+    "repo": "googleapis/java-dialogflow",
+    "repo_short": "java-dialogflow",
+    "distribution_name": "com.google.cloud:google-cloud-dialogflow",
+    "api_id": "dialogflow.googleapis.com",
+    "transport": "grpc",
+    "requires_billing": true,
+    "api_description": "is an end-to-end, build-once deploy-everywhere development suite for creating conversational interfaces for websites, mobile applications, popular messaging platforms, and IoT devices. You can use it to build interfaces (such as chatbots and conversational IVR) that enable natural and rich interactions between your users and your business. Dialogflow Enterprise Edition users have access to Google Cloud Support and a service level agreement (SLA) for production deployments.",
+    "library_type": "GAPIC_AUTO"
+}
