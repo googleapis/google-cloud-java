@@ -1369,7 +1369,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * <code>repeated string os_short_names = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.osconfig.v1alpha.OSPolicyAssignment.InstanceFilter.os_short_names is
-     *     deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=95
+     *     deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=94
      * @return A list containing the osShortNames.
      */
     @java.lang.Deprecated
@@ -1386,7 +1386,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * <code>repeated string os_short_names = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.osconfig.v1alpha.OSPolicyAssignment.InstanceFilter.os_short_names is
-     *     deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=95
+     *     deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=94
      * @return The count of osShortNames.
      */
     @java.lang.Deprecated
@@ -1403,7 +1403,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * <code>repeated string os_short_names = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.osconfig.v1alpha.OSPolicyAssignment.InstanceFilter.os_short_names is
-     *     deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=95
+     *     deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=94
      * @param index The index of the element to return.
      * @return The osShortNames at the given index.
      */
@@ -1421,7 +1421,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * <code>repeated string os_short_names = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.osconfig.v1alpha.OSPolicyAssignment.InstanceFilter.os_short_names is
-     *     deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=95
+     *     deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=94
      * @param index The index of the value to return.
      * @return The bytes of the osShortNames at the given index.
      */
@@ -2783,7 +2783,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * <code>repeated string os_short_names = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.osconfig.v1alpha.OSPolicyAssignment.InstanceFilter.os_short_names is
-     *     deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=95
+     *     deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=94
      * @return A list containing the osShortNames.
      */
     @java.lang.Deprecated
@@ -2802,7 +2802,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * <code>repeated string os_short_names = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.osconfig.v1alpha.OSPolicyAssignment.InstanceFilter.os_short_names is
-     *     deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=95
+     *     deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=94
      * @return The count of osShortNames.
      */
     @java.lang.Deprecated
@@ -2821,7 +2821,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * <code>repeated string os_short_names = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.osconfig.v1alpha.OSPolicyAssignment.InstanceFilter.os_short_names is
-     *     deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=95
+     *     deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=94
      * @param index The index of the element to return.
      * @return The osShortNames at the given index.
      */
@@ -2841,7 +2841,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
      * <code>repeated string os_short_names = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.osconfig.v1alpha.OSPolicyAssignment.InstanceFilter.os_short_names is
-     *     deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=95
+     *     deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=94
      * @param index The index of the value to return.
      * @return The bytes of the osShortNames at the given index.
      */
@@ -3745,7 +3745,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        * <code>repeated string os_short_names = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.osconfig.v1alpha.OSPolicyAssignment.InstanceFilter.os_short_names
-       *     is deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=95
+       *     is deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=94
        * @return A list containing the osShortNames.
        */
       @java.lang.Deprecated
@@ -3764,7 +3764,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        * <code>repeated string os_short_names = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.osconfig.v1alpha.OSPolicyAssignment.InstanceFilter.os_short_names
-       *     is deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=95
+       *     is deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=94
        * @return The count of osShortNames.
        */
       @java.lang.Deprecated
@@ -3783,7 +3783,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        * <code>repeated string os_short_names = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.osconfig.v1alpha.OSPolicyAssignment.InstanceFilter.os_short_names
-       *     is deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=95
+       *     is deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=94
        * @param index The index of the element to return.
        * @return The osShortNames at the given index.
        */
@@ -3803,7 +3803,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        * <code>repeated string os_short_names = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.osconfig.v1alpha.OSPolicyAssignment.InstanceFilter.os_short_names
-       *     is deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=95
+       *     is deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=94
        * @param index The index of the value to return.
        * @return The bytes of the osShortNames at the given index.
        */
@@ -3823,7 +3823,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        * <code>repeated string os_short_names = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.osconfig.v1alpha.OSPolicyAssignment.InstanceFilter.os_short_names
-       *     is deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=95
+       *     is deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=94
        * @param index The index to set the value at.
        * @param value The osShortNames to set.
        * @return This builder for chaining.
@@ -3850,7 +3850,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        * <code>repeated string os_short_names = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.osconfig.v1alpha.OSPolicyAssignment.InstanceFilter.os_short_names
-       *     is deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=95
+       *     is deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=94
        * @param value The osShortNames to add.
        * @return This builder for chaining.
        */
@@ -3876,7 +3876,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        * <code>repeated string os_short_names = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.osconfig.v1alpha.OSPolicyAssignment.InstanceFilter.os_short_names
-       *     is deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=95
+       *     is deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=94
        * @param values The osShortNames to add.
        * @return This builder for chaining.
        */
@@ -3899,7 +3899,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        * <code>repeated string os_short_names = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.osconfig.v1alpha.OSPolicyAssignment.InstanceFilter.os_short_names
-       *     is deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=95
+       *     is deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=94
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -3921,7 +3921,7 @@ public final class OSPolicyAssignment extends com.google.protobuf.GeneratedMessa
        * <code>repeated string os_short_names = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.osconfig.v1alpha.OSPolicyAssignment.InstanceFilter.os_short_names
-       *     is deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=95
+       *     is deprecated. See google/cloud/osconfig/v1alpha/os_policy_assignments.proto;l=94
        * @param value The bytes of the osShortNames to add.
        * @return This builder for chaining.
        */
