@@ -5,6 +5,7 @@ java-analytics-admin
 java-analytics-data
 java-api-gateway
 java-apigee-connect
+java-apigee-registry
 java-appengine-admin
 java-area120-tables
 java-artifact-registry
@@ -12,6 +13,7 @@ java-asset
 java-assured-workloads
 java-automl
 java-bare-metal-solution
+java-batch
 java-beyondcorp-appconnections
 java-beyondcorp-appconnectors
 java-beyondcorp-appgateways
@@ -36,6 +38,7 @@ java-containeranalysis
 java-data-fusion
 java-datacatalog
 java-dataflow
+java-dataform
 java-datalabeling
 java-dataplex
 java-dataproc
@@ -47,6 +50,7 @@ java-dialogflow
 java-dialogflow-cx
 java-dlp
 java-dms
+java-dns
 java-document-ai
 java-domains
 java-errorreporting
@@ -60,6 +64,7 @@ java-gke-backup
 java-gke-connect-gateway
 java-gke-multi-cloud
 java-gkehub
+java-grafeas
 java-gsuite-addons
 java-iam-admin
 java-iamcredentials
@@ -77,6 +82,7 @@ java-network-management
 java-network-security
 java-networkconnectivity
 java-notebooks
+java-notification
 java-optimization
 java-orchestration-airflow
 java-orgpolicy
@@ -111,6 +117,7 @@ java-tasks
 java-texttospeech
 java-tpu
 java-trace
+java-translate
 java-video-intelligence
 java-video-live-stream
 java-video-stitcher
