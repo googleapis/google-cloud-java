@@ -44,27 +44,27 @@ public final class BillingSettingsProto {
           + "1beta1/billing_settings.proto\022,google.cl"
           + "oud.securitycenter.settings.v1beta1\032\037goo"
           + "gle/api/field_behavior.proto\032\037google/pro"
-          + "tobuf/timestamp.proto\032\034google/api/annota"
-          + "tions.proto\"\250\002\n\017BillingSettings\022T\n\014billi"
-          + "ng_tier\030\001 \001(\01629.google.cloud.securitycen"
-          + "ter.settings.v1beta1.BillingTierB\003\340A\003\022T\n"
-          + "\014billing_type\030\002 \001(\01629.google.cloud.secur"
-          + "itycenter.settings.v1beta1.BillingTypeB\003"
-          + "\340A\003\0223\n\nstart_time\030\003 \001(\0132\032.google.protobu"
-          + "f.TimestampB\003\340A\003\0224\n\013expire_time\030\004 \001(\0132\032."
-          + "google.protobuf.TimestampB\003\340A\003*F\n\013Billin"
-          + "gTier\022\034\n\030BILLING_TIER_UNSPECIFIED\020\000\022\014\n\010S"
-          + "TANDARD\020\001\022\013\n\007PREMIUM\020\002*`\n\013BillingType\022\034\n"
-          + "\030BILLING_TYPE_UNSPECIFIED\020\000\022\020\n\014SUBSCRIPT"
-          + "ION\020\001\022\026\n\022TRIAL_SUBSCRIPTION\020\002\022\t\n\005ALPHA\020\003"
-          + "B\264\002\n0com.google.cloud.securitycenter.set"
-          + "tings.v1beta1B\024BillingSettingsProtoP\001ZTg"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/securitycenter/settings/v1beta1;setti"
-          + "ngs\370\001\001\252\002,Google.Cloud.SecurityCenter.Set"
-          + "tings.V1Beta1\312\002,Google\\Cloud\\SecurityCen"
-          + "ter\\Settings\\V1beta1\352\0020Google::Cloud::Se"
-          + "curityCenter::Settings::V1beta1b\006proto3"
+          + "tobuf/timestamp.proto\"\250\002\n\017BillingSetting"
+          + "s\022T\n\014billing_tier\030\001 \001(\01629.google.cloud.s"
+          + "ecuritycenter.settings.v1beta1.BillingTi"
+          + "erB\003\340A\003\022T\n\014billing_type\030\002 \001(\01629.google.c"
+          + "loud.securitycenter.settings.v1beta1.Bil"
+          + "lingTypeB\003\340A\003\0223\n\nstart_time\030\003 \001(\0132\032.goog"
+          + "le.protobuf.TimestampB\003\340A\003\0224\n\013expire_tim"
+          + "e\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003"
+          + "*F\n\013BillingTier\022\034\n\030BILLING_TIER_UNSPECIF"
+          + "IED\020\000\022\014\n\010STANDARD\020\001\022\013\n\007PREMIUM\020\002*`\n\013Bill"
+          + "ingType\022\034\n\030BILLING_TYPE_UNSPECIFIED\020\000\022\020\n"
+          + "\014SUBSCRIPTION\020\001\022\026\n\022TRIAL_SUBSCRIPTION\020\002\022"
+          + "\t\n\005ALPHA\020\003B\264\002\n0com.google.cloud.security"
+          + "center.settings.v1beta1B\024BillingSettings"
+          + "ProtoP\001ZTgoogle.golang.org/genproto/goog"
+          + "leapis/cloud/securitycenter/settings/v1b"
+          + "eta1;settings\370\001\001\252\002,Google.Cloud.Security"
+          + "Center.Settings.V1Beta1\312\002,Google\\Cloud\\S"
+          + "ecurityCenter\\Settings\\V1beta1\352\0020Google:"
+          + ":Cloud::SecurityCenter::Settings::V1beta"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -72,7 +72,6 @@ public final class BillingSettingsProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_securitycenter_settings_v1beta1_BillingSettings_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -89,7 +88,6 @@ public final class BillingSettingsProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
