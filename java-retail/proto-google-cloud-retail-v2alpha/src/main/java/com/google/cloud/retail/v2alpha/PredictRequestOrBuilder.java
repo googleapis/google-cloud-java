@@ -175,7 +175,7 @@ public interface PredictRequestOrBuilder
    * <code>string page_token = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2alpha.PredictRequest.page_token is deprecated. See
-   *     google/cloud/retail/v2alpha/prediction_service.proto;l=94
+   *     google/cloud/retail/v2alpha/prediction_service.proto;l=93
    * @return The pageToken.
    */
   @java.lang.Deprecated
@@ -190,7 +190,7 @@ public interface PredictRequestOrBuilder
    * <code>string page_token = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2alpha.PredictRequest.page_token is deprecated. See
-   *     google/cloud/retail/v2alpha/prediction_service.proto;l=94
+   *     google/cloud/retail/v2alpha/prediction_service.proto;l=93
    * @return The bytes for pageToken.
    */
   @java.lang.Deprecated
