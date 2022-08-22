@@ -64,6 +64,7 @@ java-gke-backup
 java-gke-connect-gateway
 java-gke-multi-cloud
 java-gkehub
+java-grafeas
 java-gsuite-addons
 java-iam-admin
 java-iamcredentials
