@@ -1,0 +1,42 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.scheduler.v1beta1",
+  "libraryPackage": "com.google.cloud.scheduler.v1beta1",
+  "services": {
+    "CloudScheduler": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CloudSchedulerClient",
+          "rpcs": {
+            "CreateJob": {
+              "methods": ["createJob", "createJob", "createJob", "createJobCallable"]
+            },
+            "DeleteJob": {
+              "methods": ["deleteJob", "deleteJob", "deleteJob", "deleteJobCallable"]
+            },
+            "GetJob": {
+              "methods": ["getJob", "getJob", "getJob", "getJobCallable"]
+            },
+            "ListJobs": {
+              "methods": ["listJobs", "listJobs", "listJobs", "listJobsPagedCallable", "listJobsCallable"]
+            },
+            "PauseJob": {
+              "methods": ["pauseJob", "pauseJob", "pauseJob", "pauseJobCallable"]
+            },
+            "ResumeJob": {
+              "methods": ["resumeJob", "resumeJob", "resumeJob", "resumeJobCallable"]
+            },
+            "RunJob": {
+              "methods": ["runJob", "runJob", "runJob", "runJobCallable"]
+            },
+            "UpdateJob": {
+              "methods": ["updateJob", "updateJob", "updateJobCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
