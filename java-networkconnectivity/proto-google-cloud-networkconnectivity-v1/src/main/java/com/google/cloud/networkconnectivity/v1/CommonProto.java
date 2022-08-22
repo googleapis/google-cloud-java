@@ -42,28 +42,27 @@ public final class CommonProto {
     java.lang.String[] descriptorData = {
       "\n0google/cloud/networkconnectivity/v1/co"
           + "mmon.proto\022#google.cloud.networkconnecti"
-          + "vity.v1\032\034google/api/annotations.proto\032\037g"
-          + "oogle/api/field_behavior.proto\032\037google/p"
-          + "rotobuf/timestamp.proto\"\200\002\n\021OperationMet"
-          + "adata\0224\n\013create_time\030\001 \001(\0132\032.google.prot"
-          + "obuf.TimestampB\003\340A\003\0221\n\010end_time\030\002 \001(\0132\032."
-          + "google.protobuf.TimestampB\003\340A\003\022\023\n\006target"
-          + "\030\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003\022\033\n\016status"
-          + "_message\030\005 \001(\tB\003\340A\003\022#\n\026requested_cancell"
-          + "ation\030\006 \001(\010B\003\340A\003\022\030\n\013api_version\030\007 \001(\tB\003\340"
-          + "A\003B\205\002\n\'com.google.cloud.networkconnectiv"
-          + "ity.v1B\013CommonProtoP\001ZVgoogle.golang.org"
-          + "/genproto/googleapis/cloud/networkconnec"
-          + "tivity/v1;networkconnectivity\252\002#Google.C"
-          + "loud.NetworkConnectivity.V1\312\002#Google\\Clo"
-          + "ud\\NetworkConnectivity\\V1\352\002&Google::Clou"
-          + "d::NetworkConnectivity::V1b\006proto3"
+          + "vity.v1\032\037google/api/field_behavior.proto"
+          + "\032\037google/protobuf/timestamp.proto\"\200\002\n\021Op"
+          + "erationMetadata\0224\n\013create_time\030\001 \001(\0132\032.g"
+          + "oogle.protobuf.TimestampB\003\340A\003\0221\n\010end_tim"
+          + "e\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003"
+          + "\022\023\n\006target\030\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003"
+          + "\022\033\n\016status_message\030\005 \001(\tB\003\340A\003\022#\n\026request"
+          + "ed_cancellation\030\006 \001(\010B\003\340A\003\022\030\n\013api_versio"
+          + "n\030\007 \001(\tB\003\340A\003B\205\002\n\'com.google.cloud.networ"
+          + "kconnectivity.v1B\013CommonProtoP\001ZVgoogle."
+          + "golang.org/genproto/googleapis/cloud/net"
+          + "workconnectivity/v1;networkconnectivity\252"
+          + "\002#Google.Cloud.NetworkConnectivity.V1\312\002#"
+          + "Google\\Cloud\\NetworkConnectivity\\V1\352\002&Go"
+          + "ogle::Cloud::NetworkConnectivity::V1b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -86,7 +85,6 @@ public final class CommonProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
