@@ -46,29 +46,28 @@ public final class AnnotationSpecSetOuterClass {
     java.lang.String[] descriptorData = {
       "\n;google/cloud/datalabeling/v1beta1/anno"
           + "tation_spec_set.proto\022!google.cloud.data"
-          + "labeling.v1beta1\032\034google/api/annotations"
-          + ".proto\032\031google/api/resource.proto\"\246\002\n\021An"
-          + "notationSpecSet\022\014\n\004name\030\001 \001(\t\022\024\n\014display"
-          + "_name\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022K\n\020anno"
-          + "tation_specs\030\004 \003(\01321.google.cloud.datala"
-          + "beling.v1beta1.AnnotationSpec\022\032\n\022blockin"
-          + "g_resources\030\005 \003(\t:o\352Al\n-datalabeling.goo"
-          + "gleapis.com/AnnotationSpecSet\022;projects/"
-          + "{project}/annotationSpecSets/{annotation"
-          + "_spec_set}\";\n\016AnnotationSpec\022\024\n\014display_"
-          + "name\030\001 \001(\t\022\023\n\013description\030\002 \001(\tB\347\001\n%com."
-          + "google.cloud.datalabeling.v1beta1P\001ZMgoo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/datalabeling/v1beta1;datalabeling\252\002!Goo"
-          + "gle.Cloud.DataLabeling.V1Beta1\312\002!Google\\"
-          + "Cloud\\DataLabeling\\V1beta1\352\002$Google::Clo"
-          + "ud::DataLabeling::V1beta1b\006proto3"
+          + "labeling.v1beta1\032\031google/api/resource.pr"
+          + "oto\"\246\002\n\021AnnotationSpecSet\022\014\n\004name\030\001 \001(\t\022"
+          + "\024\n\014display_name\030\002 \001(\t\022\023\n\013description\030\003 \001"
+          + "(\t\022K\n\020annotation_specs\030\004 \003(\01321.google.cl"
+          + "oud.datalabeling.v1beta1.AnnotationSpec\022"
+          + "\032\n\022blocking_resources\030\005 \003(\t:o\352Al\n-datala"
+          + "beling.googleapis.com/AnnotationSpecSet\022"
+          + ";projects/{project}/annotationSpecSets/{"
+          + "annotation_spec_set}\";\n\016AnnotationSpec\022\024"
+          + "\n\014display_name\030\001 \001(\t\022\023\n\013description\030\002 \001("
+          + "\tB\347\001\n%com.google.cloud.datalabeling.v1be"
+          + "ta1P\001ZMgoogle.golang.org/genproto/google"
+          + "apis/cloud/datalabeling/v1beta1;datalabe"
+          + "ling\252\002!Google.Cloud.DataLabeling.V1Beta1"
+          + "\312\002!Google\\Cloud\\DataLabeling\\V1beta1\352\002$G"
+          + "oogle::Cloud::DataLabeling::V1beta1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
             });
     internal_static_google_cloud_datalabeling_v1beta1_AnnotationSpecSet_descriptor =
@@ -92,7 +91,6 @@ public final class AnnotationSpecSetOuterClass {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
   }
 

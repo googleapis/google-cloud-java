@@ -50,37 +50,35 @@ public final class InstructionOuterClass {
     java.lang.String[] descriptorData = {
       "\n3google/cloud/datalabeling/v1beta1/inst"
           + "ruction.proto\022!google.cloud.datalabeling"
-          + ".v1beta1\032\034google/api/annotations.proto\032\031"
-          + "google/api/resource.proto\032/google/cloud/"
-          + "datalabeling/v1beta1/dataset.proto\032\037goog"
-          + "le/protobuf/timestamp.proto\"\375\003\n\013Instruct"
-          + "ion\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022"
-          + "\023\n\013description\030\003 \001(\t\022/\n\013create_time\030\004 \001("
-          + "\0132\032.google.protobuf.Timestamp\022/\n\013update_"
-          + "time\030\005 \001(\0132\032.google.protobuf.Timestamp\022>"
-          + "\n\tdata_type\030\006 \001(\0162+.google.cloud.datalab"
-          + "eling.v1beta1.DataType\022N\n\017csv_instructio"
-          + "n\030\007 \001(\01321.google.cloud.datalabeling.v1be"
-          + "ta1.CsvInstructionB\002\030\001\022J\n\017pdf_instructio"
-          + "n\030\t \001(\01321.google.cloud.datalabeling.v1be"
-          + "ta1.PdfInstruction\022\032\n\022blocking_resources"
-          + "\030\n \003(\t:[\352AX\n\'datalabeling.googleapis.com"
-          + "/Instruction\022-projects/{project}/instruc"
-          + "tions/{instruction}\"&\n\016CsvInstruction\022\024\n"
-          + "\014gcs_file_uri\030\001 \001(\t\"&\n\016PdfInstruction\022\024\n"
-          + "\014gcs_file_uri\030\001 \001(\tB\347\001\n%com.google.cloud"
-          + ".datalabeling.v1beta1P\001ZMgoogle.golang.o"
-          + "rg/genproto/googleapis/cloud/datalabelin"
-          + "g/v1beta1;datalabeling\252\002!Google.Cloud.Da"
-          + "taLabeling.V1Beta1\312\002!Google\\Cloud\\DataLa"
-          + "beling\\V1beta1\352\002$Google::Cloud::DataLabe"
-          + "ling::V1beta1b\006proto3"
+          + ".v1beta1\032\031google/api/resource.proto\032/goo"
+          + "gle/cloud/datalabeling/v1beta1/dataset.p"
+          + "roto\032\037google/protobuf/timestamp.proto\"\375\003"
+          + "\n\013Instruction\022\014\n\004name\030\001 \001(\t\022\024\n\014display_n"
+          + "ame\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022/\n\013create"
+          + "_time\030\004 \001(\0132\032.google.protobuf.Timestamp\022"
+          + "/\n\013update_time\030\005 \001(\0132\032.google.protobuf.T"
+          + "imestamp\022>\n\tdata_type\030\006 \001(\0162+.google.clo"
+          + "ud.datalabeling.v1beta1.DataType\022N\n\017csv_"
+          + "instruction\030\007 \001(\01321.google.cloud.datalab"
+          + "eling.v1beta1.CsvInstructionB\002\030\001\022J\n\017pdf_"
+          + "instruction\030\t \001(\01321.google.cloud.datalab"
+          + "eling.v1beta1.PdfInstruction\022\032\n\022blocking"
+          + "_resources\030\n \003(\t:[\352AX\n\'datalabeling.goog"
+          + "leapis.com/Instruction\022-projects/{projec"
+          + "t}/instructions/{instruction}\"&\n\016CsvInst"
+          + "ruction\022\024\n\014gcs_file_uri\030\001 \001(\t\"&\n\016PdfInst"
+          + "ruction\022\024\n\014gcs_file_uri\030\001 \001(\tB\347\001\n%com.go"
+          + "ogle.cloud.datalabeling.v1beta1P\001ZMgoogl"
+          + "e.golang.org/genproto/googleapis/cloud/d"
+          + "atalabeling/v1beta1;datalabeling\252\002!Googl"
+          + "e.Cloud.DataLabeling.V1Beta1\312\002!Google\\Cl"
+          + "oud\\DataLabeling\\V1beta1\352\002$Google::Cloud"
+          + "::DataLabeling::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.datalabeling.v1beta1.DatasetOuterClass.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -122,7 +120,6 @@ public final class InstructionOuterClass {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.datalabeling.v1beta1.DatasetOuterClass.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
