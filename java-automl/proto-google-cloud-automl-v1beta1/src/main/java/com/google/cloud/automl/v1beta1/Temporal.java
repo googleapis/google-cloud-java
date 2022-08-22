@@ -42,22 +42,21 @@ public final class Temporal {
     java.lang.String[] descriptorData = {
       "\n*google/cloud/automl/v1beta1/temporal.p"
           + "roto\022\033google.cloud.automl.v1beta1\032\036googl"
-          + "e/protobuf/duration.proto\032\034google/api/an"
-          + "notations.proto\"w\n\013TimeSegment\0224\n\021start_"
-          + "time_offset\030\001 \001(\0132\031.google.protobuf.Dura"
-          + "tion\0222\n\017end_time_offset\030\002 \001(\0132\031.google.p"
-          + "rotobuf.DurationB\245\001\n\037com.google.cloud.au"
-          + "toml.v1beta1P\001ZAgoogle.golang.org/genpro"
-          + "to/googleapis/cloud/automl/v1beta1;autom"
-          + "l\312\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Google"
-          + "::Cloud::AutoML::V1beta1b\006proto3"
+          + "e/protobuf/duration.proto\"w\n\013TimeSegment"
+          + "\0224\n\021start_time_offset\030\001 \001(\0132\031.google.pro"
+          + "tobuf.Duration\0222\n\017end_time_offset\030\002 \001(\0132"
+          + "\031.google.protobuf.DurationB\245\001\n\037com.googl"
+          + "e.cloud.automl.v1beta1P\001ZAgoogle.golang."
+          + "org/genproto/googleapis/cloud/automl/v1b"
+          + "eta1;automl\312\002\033Google\\Cloud\\AutoMl\\V1beta"
+          + "1\352\002\036Google::Cloud::AutoML::V1beta1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.protobuf.DurationProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_automl_v1beta1_TimeSegment_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -68,7 +67,6 @@ public final class Temporal {
               "StartTimeOffset", "EndTimeOffset",
             });
     com.google.protobuf.DurationProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

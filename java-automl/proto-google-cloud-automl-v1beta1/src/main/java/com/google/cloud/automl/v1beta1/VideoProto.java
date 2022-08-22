@@ -55,23 +55,21 @@ public final class VideoProto {
       "\n\'google/cloud/automl/v1beta1/video.prot"
           + "o\022\033google.cloud.automl.v1beta1\0320google/c"
           + "loud/automl/v1beta1/classification.proto"
-          + "\032\034google/api/annotations.proto\"$\n\"VideoC"
-          + "lassificationDatasetMetadata\"$\n\"VideoObj"
-          + "ectTrackingDatasetMetadata\"\"\n VideoClass"
-          + "ificationModelMetadata\"\"\n VideoObjectTra"
-          + "ckingModelMetadataB\261\001\n\037com.google.cloud."
-          + "automl.v1beta1B\nVideoProtoP\001ZAgoogle.gol"
-          + "ang.org/genproto/googleapis/cloud/automl"
-          + "/v1beta1;automl\312\002\033Google\\Cloud\\AutoMl\\V1"
-          + "beta1\352\002\036Google::Cloud::AutoML::V1beta1b\006"
-          + "proto3"
+          + "\"$\n\"VideoClassificationDatasetMetadata\"$"
+          + "\n\"VideoObjectTrackingDatasetMetadata\"\"\n "
+          + "VideoClassificationModelMetadata\"\"\n Vide"
+          + "oObjectTrackingModelMetadataB\261\001\n\037com.goo"
+          + "gle.cloud.automl.v1beta1B\nVideoProtoP\001ZA"
+          + "google.golang.org/genproto/googleapis/cl"
+          + "oud/automl/v1beta1;automl\312\002\033Google\\Cloud"
+          + "\\AutoMl\\V1beta1\352\002\036Google::Cloud::AutoML:"
+          + ":V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.cloud.automl.v1beta1.ClassificationProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_automl_v1beta1_VideoClassificationDatasetMetadata_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -98,7 +96,6 @@ public final class VideoProto {
             internal_static_google_cloud_automl_v1beta1_VideoObjectTrackingModelMetadata_descriptor,
             new java.lang.String[] {});
     com.google.cloud.automl.v1beta1.ClassificationProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -93,59 +93,55 @@ public final class Io {
   static {
     java.lang.String[] descriptorData = {
       "\n$google/cloud/automl/v1beta1/io.proto\022\033"
-          + "google.cloud.automl.v1beta1\032\034google/api/"
-          + "annotations.proto\"\222\002\n\013InputConfig\022<\n\ngcs"
-          + "_source\030\001 \001(\0132&.google.cloud.automl.v1be"
-          + "ta1.GcsSourceH\000\022F\n\017bigquery_source\030\003 \001(\013"
-          + "2+.google.cloud.automl.v1beta1.BigQueryS"
-          + "ourceH\000\022D\n\006params\030\002 \003(\01324.google.cloud.a"
-          + "utoml.v1beta1.InputConfig.ParamsEntry\032-\n"
-          + "\013ParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t"
-          + ":\0028\001B\010\n\006source\"\251\001\n\027BatchPredictInputConf"
-          + "ig\022<\n\ngcs_source\030\001 \001(\0132&.google.cloud.au"
-          + "toml.v1beta1.GcsSourceH\000\022F\n\017bigquery_sou"
-          + "rce\030\002 \001(\0132+.google.cloud.automl.v1beta1."
-          + "BigQuerySourceH\000B\010\n\006source\"Q\n\023DocumentIn"
-          + "putConfig\022:\n\ngcs_source\030\001 \001(\0132&.google.c"
-          + "loud.automl.v1beta1.GcsSource\"\267\001\n\014Output"
-          + "Config\022F\n\017gcs_destination\030\001 \001(\0132+.google"
-          + ".cloud.automl.v1beta1.GcsDestinationH\000\022P"
-          + "\n\024bigquery_destination\030\002 \001(\01320.google.cl"
-          + "oud.automl.v1beta1.BigQueryDestinationH\000"
-          + "B\r\n\013destination\"\303\001\n\030BatchPredictOutputCo"
-          + "nfig\022F\n\017gcs_destination\030\001 \001(\0132+.google.c"
-          + "loud.automl.v1beta1.GcsDestinationH\000\022P\n\024"
-          + "bigquery_destination\030\002 \001(\01320.google.clou"
-          + "d.automl.v1beta1.BigQueryDestinationH\000B\r"
-          + "\n\013destination\"\317\002\n\027ModelExportOutputConfi"
-          + "g\022F\n\017gcs_destination\030\001 \001(\0132+.google.clou"
-          + "d.automl.v1beta1.GcsDestinationH\000\022F\n\017gcr"
-          + "_destination\030\003 \001(\0132+.google.cloud.automl"
-          + ".v1beta1.GcrDestinationH\000\022\024\n\014model_forma"
-          + "t\030\004 \001(\t\022P\n\006params\030\002 \003(\0132@.google.cloud.a"
-          + "utoml.v1beta1.ModelExportOutputConfig.Pa"
-          + "ramsEntry\032-\n\013ParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001B\r\n\013destination\"\206\001\n#Expo"
-          + "rtEvaluatedExamplesOutputConfig\022P\n\024bigqu"
-          + "ery_destination\030\002 \001(\01320.google.cloud.aut"
-          + "oml.v1beta1.BigQueryDestinationH\000B\r\n\013des"
-          + "tination\"\037\n\tGcsSource\022\022\n\ninput_uris\030\001 \003("
-          + "\t\"#\n\016BigQuerySource\022\021\n\tinput_uri\030\001 \001(\t\"+"
-          + "\n\016GcsDestination\022\031\n\021output_uri_prefix\030\001 "
-          + "\001(\t\")\n\023BigQueryDestination\022\022\n\noutput_uri"
-          + "\030\001 \001(\t\"$\n\016GcrDestination\022\022\n\noutput_uri\030\001"
-          + " \001(\tB\245\001\n\037com.google.cloud.automl.v1beta1"
-          + "P\001ZAgoogle.golang.org/genproto/googleapi"
-          + "s/cloud/automl/v1beta1;automl\312\002\033Google\\C"
-          + "loud\\AutoMl\\V1beta1\352\002\036Google::Cloud::Aut"
-          + "oML::V1beta1b\006proto3"
+          + "google.cloud.automl.v1beta1\"\222\002\n\013InputCon"
+          + "fig\022<\n\ngcs_source\030\001 \001(\0132&.google.cloud.a"
+          + "utoml.v1beta1.GcsSourceH\000\022F\n\017bigquery_so"
+          + "urce\030\003 \001(\0132+.google.cloud.automl.v1beta1"
+          + ".BigQuerySourceH\000\022D\n\006params\030\002 \003(\01324.goog"
+          + "le.cloud.automl.v1beta1.InputConfig.Para"
+          + "msEntry\032-\n\013ParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v"
+          + "alue\030\002 \001(\t:\0028\001B\010\n\006source\"\251\001\n\027BatchPredic"
+          + "tInputConfig\022<\n\ngcs_source\030\001 \001(\0132&.googl"
+          + "e.cloud.automl.v1beta1.GcsSourceH\000\022F\n\017bi"
+          + "gquery_source\030\002 \001(\0132+.google.cloud.autom"
+          + "l.v1beta1.BigQuerySourceH\000B\010\n\006source\"Q\n\023"
+          + "DocumentInputConfig\022:\n\ngcs_source\030\001 \001(\0132"
+          + "&.google.cloud.automl.v1beta1.GcsSource\""
+          + "\267\001\n\014OutputConfig\022F\n\017gcs_destination\030\001 \001("
+          + "\0132+.google.cloud.automl.v1beta1.GcsDesti"
+          + "nationH\000\022P\n\024bigquery_destination\030\002 \001(\01320"
+          + ".google.cloud.automl.v1beta1.BigQueryDes"
+          + "tinationH\000B\r\n\013destination\"\303\001\n\030BatchPredi"
+          + "ctOutputConfig\022F\n\017gcs_destination\030\001 \001(\0132"
+          + "+.google.cloud.automl.v1beta1.GcsDestina"
+          + "tionH\000\022P\n\024bigquery_destination\030\002 \001(\01320.g"
+          + "oogle.cloud.automl.v1beta1.BigQueryDesti"
+          + "nationH\000B\r\n\013destination\"\317\002\n\027ModelExportO"
+          + "utputConfig\022F\n\017gcs_destination\030\001 \001(\0132+.g"
+          + "oogle.cloud.automl.v1beta1.GcsDestinatio"
+          + "nH\000\022F\n\017gcr_destination\030\003 \001(\0132+.google.cl"
+          + "oud.automl.v1beta1.GcrDestinationH\000\022\024\n\014m"
+          + "odel_format\030\004 \001(\t\022P\n\006params\030\002 \003(\0132@.goog"
+          + "le.cloud.automl.v1beta1.ModelExportOutpu"
+          + "tConfig.ParamsEntry\032-\n\013ParamsEntry\022\013\n\003ke"
+          + "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\r\n\013destinatio"
+          + "n\"\206\001\n#ExportEvaluatedExamplesOutputConfi"
+          + "g\022P\n\024bigquery_destination\030\002 \001(\01320.google"
+          + ".cloud.automl.v1beta1.BigQueryDestinatio"
+          + "nH\000B\r\n\013destination\"\037\n\tGcsSource\022\022\n\ninput"
+          + "_uris\030\001 \003(\t\"#\n\016BigQuerySource\022\021\n\tinput_u"
+          + "ri\030\001 \001(\t\"+\n\016GcsDestination\022\031\n\021output_uri"
+          + "_prefix\030\001 \001(\t\")\n\023BigQueryDestination\022\022\n\n"
+          + "output_uri\030\001 \001(\t\"$\n\016GcrDestination\022\022\n\nou"
+          + "tput_uri\030\001 \001(\tB\245\001\n\037com.google.cloud.auto"
+          + "ml.v1beta1P\001ZAgoogle.golang.org/genproto"
+          + "/googleapis/cloud/automl/v1beta1;automl\312"
+          + "\002\033Google\\Cloud\\AutoMl\\V1beta1\352\002\036Google::"
+          + "Cloud::AutoML::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_automl_v1beta1_InputConfig_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_automl_v1beta1_InputConfig_fieldAccessorTable =
@@ -260,7 +256,6 @@ public final class Io {
             new java.lang.String[] {
               "OutputUri",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
