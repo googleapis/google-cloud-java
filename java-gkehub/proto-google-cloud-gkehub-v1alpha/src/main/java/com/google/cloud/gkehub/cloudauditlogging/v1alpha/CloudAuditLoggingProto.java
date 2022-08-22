@@ -42,25 +42,21 @@ public final class CloudAuditLoggingProto {
     java.lang.String[] descriptorData = {
       "\nEgoogle/cloud/gkehub/v1alpha/cloudaudit"
           + "logging/cloudauditlogging.proto\022-google."
-          + "cloud.gkehub.cloudauditlogging.v1alpha\032\034"
-          + "google/api/annotations.proto\"3\n\013FeatureS"
-          + "pec\022$\n\034allowlisted_service_accounts\030\001 \003("
-          + "\tB\301\002\n1com.google.cloud.gkehub.cloudaudit"
-          + "logging.v1alphaB\026CloudAuditLoggingProtoP"
-          + "\001Z^google.golang.org/genproto/googleapis"
-          + "/cloud/gkehub/cloudauditlogging/v1alpha;"
-          + "cloudauditlogging\252\002-Google.Cloud.GkeHub."
-          + "CloudAuditLogging.V1Alpha\312\002-Google\\Cloud"
-          + "\\GkeHub\\CloudAuditLogging\\V1alpha\352\0021Goog"
-          + "le::Cloud::GkeHub::CloudAuditLogging::V1"
-          + "alphab\006proto3"
+          + "cloud.gkehub.cloudauditlogging.v1alpha\"3"
+          + "\n\013FeatureSpec\022$\n\034allowlisted_service_acc"
+          + "ounts\030\001 \003(\tB\301\002\n1com.google.cloud.gkehub."
+          + "cloudauditlogging.v1alphaB\026CloudAuditLog"
+          + "gingProtoP\001Z^google.golang.org/genproto/"
+          + "googleapis/cloud/gkehub/cloudauditloggin"
+          + "g/v1alpha;cloudauditlogging\252\002-Google.Clo"
+          + "ud.GkeHub.CloudAuditLogging.V1Alpha\312\002-Go"
+          + "ogle\\Cloud\\GkeHub\\CloudAuditLogging\\V1al"
+          + "pha\352\0021Google::Cloud::GkeHub::CloudAuditL"
+          + "ogging::V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_gkehub_cloudauditlogging_v1alpha_FeatureSpec_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_gkehub_cloudauditlogging_v1alpha_FeatureSpec_fieldAccessorTable =
@@ -69,7 +65,6 @@ public final class CloudAuditLoggingProto {
             new java.lang.String[] {
               "AllowlistedServiceAccounts",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
