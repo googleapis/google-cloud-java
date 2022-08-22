@@ -30,7 +30,7 @@ public interface DeleteApiDeploymentRevisionRequestOrBuilder
    * Required. The name of the deployment revision to be deleted,
    * with a revision ID explicitly included.
    * Example:
-   * projects/sample/locations/global/apis/petstore/deployments/prod&#64;c7cfa2a8
+   * `projects/sample/locations/global/apis/petstore/deployments/prod&#64;c7cfa2a8`
    * </pre>
    *
    * <code>
@@ -47,7 +47,7 @@ public interface DeleteApiDeploymentRevisionRequestOrBuilder
    * Required. The name of the deployment revision to be deleted,
    * with a revision ID explicitly included.
    * Example:
-   * projects/sample/locations/global/apis/petstore/deployments/prod&#64;c7cfa2a8
+   * `projects/sample/locations/global/apis/petstore/deployments/prod&#64;c7cfa2a8`
    * </pre>
    *
    * <code>

@@ -120,7 +120,7 @@ public final class GetArtifactContentsRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The name of the artifact whose contents should be retrieved.
-   * Format: {parent}/artifacts/&#42;
+   * Format: `{parent}/artifacts/&#42;`
    * </pre>
    *
    * <code>
@@ -146,7 +146,7 @@ public final class GetArtifactContentsRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The name of the artifact whose contents should be retrieved.
-   * Format: {parent}/artifacts/&#42;
+   * Format: `{parent}/artifacts/&#42;`
    * </pre>
    *
    * <code>
@@ -496,7 +496,7 @@ public final class GetArtifactContentsRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The name of the artifact whose contents should be retrieved.
-     * Format: {parent}/artifacts/&#42;
+     * Format: `{parent}/artifacts/&#42;`
      * </pre>
      *
      * <code>
@@ -521,7 +521,7 @@ public final class GetArtifactContentsRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The name of the artifact whose contents should be retrieved.
-     * Format: {parent}/artifacts/&#42;
+     * Format: `{parent}/artifacts/&#42;`
      * </pre>
      *
      * <code>
@@ -546,7 +546,7 @@ public final class GetArtifactContentsRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The name of the artifact whose contents should be retrieved.
-     * Format: {parent}/artifacts/&#42;
+     * Format: `{parent}/artifacts/&#42;`
      * </pre>
      *
      * <code>
@@ -570,7 +570,7 @@ public final class GetArtifactContentsRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The name of the artifact whose contents should be retrieved.
-     * Format: {parent}/artifacts/&#42;
+     * Format: `{parent}/artifacts/&#42;`
      * </pre>
      *
      * <code>
@@ -590,7 +590,7 @@ public final class GetArtifactContentsRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The name of the artifact whose contents should be retrieved.
-     * Format: {parent}/artifacts/&#42;
+     * Format: `{parent}/artifacts/&#42;`
      * </pre>
      *
      * <code>

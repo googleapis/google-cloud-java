@@ -1686,7 +1686,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListApis returns matching APIs.
+     * Returns matching APIs.
      * </pre>
      */
     public void listApis(
@@ -1700,7 +1700,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetApi returns a specified API.
+     * Returns a specified API.
      * </pre>
      */
     public void getApi(
@@ -1713,7 +1713,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * CreateApi creates a specified API.
+     * Creates a specified API.
      * </pre>
      */
     public void createApi(
@@ -1726,7 +1726,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * UpdateApi can be used to modify a specified API.
+     * Used to modify a specified API.
      * </pre>
      */
     public void updateApi(
@@ -1739,7 +1739,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteApi removes a specified API and all of the resources that it
+     * Removes a specified API and all of the resources that it
      * owns.
      * </pre>
      */
@@ -1753,7 +1753,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListApiVersions returns matching versions.
+     * Returns matching versions.
      * </pre>
      */
     public void listApiVersions(
@@ -1768,7 +1768,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetApiVersion returns a specified version.
+     * Returns a specified version.
      * </pre>
      */
     public void getApiVersion(
@@ -1783,7 +1783,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * CreateApiVersion creates a specified version.
+     * Creates a specified version.
      * </pre>
      */
     public void createApiVersion(
@@ -1798,7 +1798,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * UpdateApiVersion can be used to modify a specified version.
+     * Used to modify a specified version.
      * </pre>
      */
     public void updateApiVersion(
@@ -1813,7 +1813,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteApiVersion removes a specified version and all of the resources that
+     * Removes a specified version and all of the resources that
      * it owns.
      * </pre>
      */
@@ -1828,7 +1828,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListApiSpecs returns matching specs.
+     * Returns matching specs.
      * </pre>
      */
     public void listApiSpecs(
@@ -1843,7 +1843,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetApiSpec returns a specified spec.
+     * Returns a specified spec.
      * </pre>
      */
     public void getApiSpec(
@@ -1856,7 +1856,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetApiSpecContents returns the contents of a specified spec.
+     * Returns the contents of a specified spec.
      * If specs are stored with GZip compression, the default behavior
      * is to return the spec uncompressed (the mime_type response field
      * indicates the exact format returned).
@@ -1873,7 +1873,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * CreateApiSpec creates a specified spec.
+     * Creates a specified spec.
      * </pre>
      */
     public void createApiSpec(
@@ -1887,7 +1887,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * UpdateApiSpec can be used to modify a specified spec.
+     * Used to modify a specified spec.
      * </pre>
      */
     public void updateApiSpec(
@@ -1901,8 +1901,8 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteApiSpec removes a specified spec, all revisions, and all child
-     * resources (e.g. artifacts).
+     * Removes a specified spec, all revisions, and all child
+     * resources (e.g., artifacts).
      * </pre>
      */
     public void deleteApiSpec(
@@ -1916,7 +1916,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * TagApiSpecRevision adds a tag to a specified revision of a spec.
+     * Adds a tag to a specified revision of a spec.
      * </pre>
      */
     public void tagApiSpecRevision(
@@ -1930,7 +1930,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListApiSpecRevisions lists all revisions of a spec.
+     * Lists all revisions of a spec.
      * Revisions are returned in descending order of revision creation time.
      * </pre>
      */
@@ -1946,7 +1946,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * RollbackApiSpec sets the current revision to a specified prior revision.
+     * Sets the current revision to a specified prior revision.
      * Note that this creates a new revision with a new revision ID.
      * </pre>
      */
@@ -1961,7 +1961,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteApiSpecRevision deletes a revision of a spec.
+     * Deletes a revision of a spec.
      * </pre>
      */
     public void deleteApiSpecRevision(
@@ -1975,7 +1975,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListApiDeployments returns matching deployments.
+     * Returns matching deployments.
      * </pre>
      */
     public void listApiDeployments(
@@ -1990,7 +1990,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetApiDeployment returns a specified deployment.
+     * Returns a specified deployment.
      * </pre>
      */
     public void getApiDeployment(
@@ -2005,7 +2005,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * CreateApiDeployment creates a specified deployment.
+     * Creates a specified deployment.
      * </pre>
      */
     public void createApiDeployment(
@@ -2020,7 +2020,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * UpdateApiDeployment can be used to modify a specified deployment.
+     * Used to modify a specified deployment.
      * </pre>
      */
     public void updateApiDeployment(
@@ -2035,8 +2035,8 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteApiDeployment removes a specified deployment, all revisions, and all
-     * child resources (e.g. artifacts).
+     * Removes a specified deployment, all revisions, and all
+     * child resources (e.g., artifacts).
      * </pre>
      */
     public void deleteApiDeployment(
@@ -2050,7 +2050,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * TagApiDeploymentRevision adds a tag to a specified revision of a
+     * Adds a tag to a specified revision of a
      * deployment.
      * </pre>
      */
@@ -2066,7 +2066,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListApiDeploymentRevisions lists all revisions of a deployment.
+     * Lists all revisions of a deployment.
      * Revisions are returned in descending order of revision creation time.
      * </pre>
      */
@@ -2083,7 +2083,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * RollbackApiDeployment sets the current revision to a specified prior
+     * Sets the current revision to a specified prior
      * revision. Note that this creates a new revision with a new revision ID.
      * </pre>
      */
@@ -2099,7 +2099,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteApiDeploymentRevision deletes a revision of a deployment.
+     * Deletes a revision of a deployment.
      * </pre>
      */
     public void deleteApiDeploymentRevision(
@@ -2114,7 +2114,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListArtifacts returns matching artifacts.
+     * Returns matching artifacts.
      * </pre>
      */
     public void listArtifacts(
@@ -2129,7 +2129,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetArtifact returns a specified artifact.
+     * Returns a specified artifact.
      * </pre>
      */
     public void getArtifact(
@@ -2143,7 +2143,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetArtifactContents returns the contents of a specified artifact.
+     * Returns the contents of a specified artifact.
      * If artifacts are stored with GZip compression, the default behavior
      * is to return the artifact uncompressed (the mime_type response field
      * indicates the exact format returned).
@@ -2160,7 +2160,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * CreateArtifact creates a specified artifact.
+     * Creates a specified artifact.
      * </pre>
      */
     public void createArtifact(
@@ -2174,7 +2174,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ReplaceArtifact can be used to replace a specified artifact.
+     * Used to replace a specified artifact.
      * </pre>
      */
     public void replaceArtifact(
@@ -2188,7 +2188,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteArtifact removes a specified artifact.
+     * Removes a specified artifact.
      * </pre>
      */
     public void deleteArtifact(
@@ -2456,7 +2456,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListApis returns matching APIs.
+     * Returns matching APIs.
      * </pre>
      */
     public void listApis(
@@ -2471,7 +2471,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetApi returns a specified API.
+     * Returns a specified API.
      * </pre>
      */
     public void getApi(
@@ -2485,7 +2485,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * CreateApi creates a specified API.
+     * Creates a specified API.
      * </pre>
      */
     public void createApi(
@@ -2499,7 +2499,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * UpdateApi can be used to modify a specified API.
+     * Used to modify a specified API.
      * </pre>
      */
     public void updateApi(
@@ -2513,7 +2513,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteApi removes a specified API and all of the resources that it
+     * Removes a specified API and all of the resources that it
      * owns.
      * </pre>
      */
@@ -2528,7 +2528,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListApiVersions returns matching versions.
+     * Returns matching versions.
      * </pre>
      */
     public void listApiVersions(
@@ -2545,7 +2545,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetApiVersion returns a specified version.
+     * Returns a specified version.
      * </pre>
      */
     public void getApiVersion(
@@ -2562,7 +2562,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * CreateApiVersion creates a specified version.
+     * Creates a specified version.
      * </pre>
      */
     public void createApiVersion(
@@ -2579,7 +2579,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * UpdateApiVersion can be used to modify a specified version.
+     * Used to modify a specified version.
      * </pre>
      */
     public void updateApiVersion(
@@ -2596,7 +2596,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteApiVersion removes a specified version and all of the resources that
+     * Removes a specified version and all of the resources that
      * it owns.
      * </pre>
      */
@@ -2613,7 +2613,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListApiSpecs returns matching specs.
+     * Returns matching specs.
      * </pre>
      */
     public void listApiSpecs(
@@ -2630,7 +2630,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetApiSpec returns a specified spec.
+     * Returns a specified spec.
      * </pre>
      */
     public void getApiSpec(
@@ -2644,7 +2644,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetApiSpecContents returns the contents of a specified spec.
+     * Returns the contents of a specified spec.
      * If specs are stored with GZip compression, the default behavior
      * is to return the spec uncompressed (the mime_type response field
      * indicates the exact format returned).
@@ -2663,7 +2663,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * CreateApiSpec creates a specified spec.
+     * Creates a specified spec.
      * </pre>
      */
     public void createApiSpec(
@@ -2679,7 +2679,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * UpdateApiSpec can be used to modify a specified spec.
+     * Used to modify a specified spec.
      * </pre>
      */
     public void updateApiSpec(
@@ -2695,8 +2695,8 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteApiSpec removes a specified spec, all revisions, and all child
-     * resources (e.g. artifacts).
+     * Removes a specified spec, all revisions, and all child
+     * resources (e.g., artifacts).
      * </pre>
      */
     public void deleteApiSpec(
@@ -2712,7 +2712,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * TagApiSpecRevision adds a tag to a specified revision of a spec.
+     * Adds a tag to a specified revision of a spec.
      * </pre>
      */
     public void tagApiSpecRevision(
@@ -2728,7 +2728,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListApiSpecRevisions lists all revisions of a spec.
+     * Lists all revisions of a spec.
      * Revisions are returned in descending order of revision creation time.
      * </pre>
      */
@@ -2746,7 +2746,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * RollbackApiSpec sets the current revision to a specified prior revision.
+     * Sets the current revision to a specified prior revision.
      * Note that this creates a new revision with a new revision ID.
      * </pre>
      */
@@ -2763,7 +2763,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteApiSpecRevision deletes a revision of a spec.
+     * Deletes a revision of a spec.
      * </pre>
      */
     public void deleteApiSpecRevision(
@@ -2779,7 +2779,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListApiDeployments returns matching deployments.
+     * Returns matching deployments.
      * </pre>
      */
     public void listApiDeployments(
@@ -2796,7 +2796,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetApiDeployment returns a specified deployment.
+     * Returns a specified deployment.
      * </pre>
      */
     public void getApiDeployment(
@@ -2813,7 +2813,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * CreateApiDeployment creates a specified deployment.
+     * Creates a specified deployment.
      * </pre>
      */
     public void createApiDeployment(
@@ -2830,7 +2830,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * UpdateApiDeployment can be used to modify a specified deployment.
+     * Used to modify a specified deployment.
      * </pre>
      */
     public void updateApiDeployment(
@@ -2847,8 +2847,8 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteApiDeployment removes a specified deployment, all revisions, and all
-     * child resources (e.g. artifacts).
+     * Removes a specified deployment, all revisions, and all
+     * child resources (e.g., artifacts).
      * </pre>
      */
     public void deleteApiDeployment(
@@ -2864,7 +2864,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * TagApiDeploymentRevision adds a tag to a specified revision of a
+     * Adds a tag to a specified revision of a
      * deployment.
      * </pre>
      */
@@ -2882,7 +2882,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListApiDeploymentRevisions lists all revisions of a deployment.
+     * Lists all revisions of a deployment.
      * Revisions are returned in descending order of revision creation time.
      * </pre>
      */
@@ -2901,7 +2901,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * RollbackApiDeployment sets the current revision to a specified prior
+     * Sets the current revision to a specified prior
      * revision. Note that this creates a new revision with a new revision ID.
      * </pre>
      */
@@ -2919,7 +2919,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteApiDeploymentRevision deletes a revision of a deployment.
+     * Deletes a revision of a deployment.
      * </pre>
      */
     public void deleteApiDeploymentRevision(
@@ -2936,7 +2936,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListArtifacts returns matching artifacts.
+     * Returns matching artifacts.
      * </pre>
      */
     public void listArtifacts(
@@ -2953,7 +2953,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetArtifact returns a specified artifact.
+     * Returns a specified artifact.
      * </pre>
      */
     public void getArtifact(
@@ -2969,7 +2969,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetArtifactContents returns the contents of a specified artifact.
+     * Returns the contents of a specified artifact.
      * If artifacts are stored with GZip compression, the default behavior
      * is to return the artifact uncompressed (the mime_type response field
      * indicates the exact format returned).
@@ -2988,7 +2988,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * CreateArtifact creates a specified artifact.
+     * Creates a specified artifact.
      * </pre>
      */
     public void createArtifact(
@@ -3004,7 +3004,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ReplaceArtifact can be used to replace a specified artifact.
+     * Used to replace a specified artifact.
      * </pre>
      */
     public void replaceArtifact(
@@ -3020,7 +3020,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteArtifact removes a specified artifact.
+     * Removes a specified artifact.
      * </pre>
      */
     public void deleteArtifact(
@@ -3055,7 +3055,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListApis returns matching APIs.
+     * Returns matching APIs.
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ListApisResponse listApis(
@@ -3068,7 +3068,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetApi returns a specified API.
+     * Returns a specified API.
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.Api getApi(
@@ -3081,7 +3081,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * CreateApi creates a specified API.
+     * Creates a specified API.
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.Api createApi(
@@ -3094,7 +3094,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * UpdateApi can be used to modify a specified API.
+     * Used to modify a specified API.
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.Api updateApi(
@@ -3107,7 +3107,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteApi removes a specified API and all of the resources that it
+     * Removes a specified API and all of the resources that it
      * owns.
      * </pre>
      */
@@ -3121,7 +3121,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListApiVersions returns matching versions.
+     * Returns matching versions.
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ListApiVersionsResponse listApiVersions(
@@ -3134,7 +3134,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetApiVersion returns a specified version.
+     * Returns a specified version.
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiVersion getApiVersion(
@@ -3147,7 +3147,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * CreateApiVersion creates a specified version.
+     * Creates a specified version.
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiVersion createApiVersion(
@@ -3160,7 +3160,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * UpdateApiVersion can be used to modify a specified version.
+     * Used to modify a specified version.
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiVersion updateApiVersion(
@@ -3173,7 +3173,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteApiVersion removes a specified version and all of the resources that
+     * Removes a specified version and all of the resources that
      * it owns.
      * </pre>
      */
@@ -3187,7 +3187,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListApiSpecs returns matching specs.
+     * Returns matching specs.
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ListApiSpecsResponse listApiSpecs(
@@ -3200,7 +3200,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetApiSpec returns a specified spec.
+     * Returns a specified spec.
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiSpec getApiSpec(
@@ -3213,7 +3213,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetApiSpecContents returns the contents of a specified spec.
+     * Returns the contents of a specified spec.
      * If specs are stored with GZip compression, the default behavior
      * is to return the spec uncompressed (the mime_type response field
      * indicates the exact format returned).
@@ -3229,7 +3229,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * CreateApiSpec creates a specified spec.
+     * Creates a specified spec.
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiSpec createApiSpec(
@@ -3242,7 +3242,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * UpdateApiSpec can be used to modify a specified spec.
+     * Used to modify a specified spec.
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiSpec updateApiSpec(
@@ -3255,8 +3255,8 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteApiSpec removes a specified spec, all revisions, and all child
-     * resources (e.g. artifacts).
+     * Removes a specified spec, all revisions, and all child
+     * resources (e.g., artifacts).
      * </pre>
      */
     public com.google.protobuf.Empty deleteApiSpec(
@@ -3269,7 +3269,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * TagApiSpecRevision adds a tag to a specified revision of a spec.
+     * Adds a tag to a specified revision of a spec.
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiSpec tagApiSpecRevision(
@@ -3282,7 +3282,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListApiSpecRevisions lists all revisions of a spec.
+     * Lists all revisions of a spec.
      * Revisions are returned in descending order of revision creation time.
      * </pre>
      */
@@ -3296,7 +3296,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * RollbackApiSpec sets the current revision to a specified prior revision.
+     * Sets the current revision to a specified prior revision.
      * Note that this creates a new revision with a new revision ID.
      * </pre>
      */
@@ -3310,7 +3310,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteApiSpecRevision deletes a revision of a spec.
+     * Deletes a revision of a spec.
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiSpec deleteApiSpecRevision(
@@ -3323,7 +3323,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListApiDeployments returns matching deployments.
+     * Returns matching deployments.
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ListApiDeploymentsResponse listApiDeployments(
@@ -3336,7 +3336,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetApiDeployment returns a specified deployment.
+     * Returns a specified deployment.
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiDeployment getApiDeployment(
@@ -3349,7 +3349,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * CreateApiDeployment creates a specified deployment.
+     * Creates a specified deployment.
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiDeployment createApiDeployment(
@@ -3362,7 +3362,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * UpdateApiDeployment can be used to modify a specified deployment.
+     * Used to modify a specified deployment.
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiDeployment updateApiDeployment(
@@ -3375,8 +3375,8 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteApiDeployment removes a specified deployment, all revisions, and all
-     * child resources (e.g. artifacts).
+     * Removes a specified deployment, all revisions, and all
+     * child resources (e.g., artifacts).
      * </pre>
      */
     public com.google.protobuf.Empty deleteApiDeployment(
@@ -3389,7 +3389,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * TagApiDeploymentRevision adds a tag to a specified revision of a
+     * Adds a tag to a specified revision of a
      * deployment.
      * </pre>
      */
@@ -3403,7 +3403,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListApiDeploymentRevisions lists all revisions of a deployment.
+     * Lists all revisions of a deployment.
      * Revisions are returned in descending order of revision creation time.
      * </pre>
      */
@@ -3418,7 +3418,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * RollbackApiDeployment sets the current revision to a specified prior
+     * Sets the current revision to a specified prior
      * revision. Note that this creates a new revision with a new revision ID.
      * </pre>
      */
@@ -3432,7 +3432,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteApiDeploymentRevision deletes a revision of a deployment.
+     * Deletes a revision of a deployment.
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiDeployment deleteApiDeploymentRevision(
@@ -3445,7 +3445,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListArtifacts returns matching artifacts.
+     * Returns matching artifacts.
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ListArtifactsResponse listArtifacts(
@@ -3458,7 +3458,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetArtifact returns a specified artifact.
+     * Returns a specified artifact.
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.Artifact getArtifact(
@@ -3471,7 +3471,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetArtifactContents returns the contents of a specified artifact.
+     * Returns the contents of a specified artifact.
      * If artifacts are stored with GZip compression, the default behavior
      * is to return the artifact uncompressed (the mime_type response field
      * indicates the exact format returned).
@@ -3487,7 +3487,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * CreateArtifact creates a specified artifact.
+     * Creates a specified artifact.
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.Artifact createArtifact(
@@ -3500,7 +3500,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ReplaceArtifact can be used to replace a specified artifact.
+     * Used to replace a specified artifact.
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.Artifact replaceArtifact(
@@ -3513,7 +3513,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteArtifact removes a specified artifact.
+     * Removes a specified artifact.
      * </pre>
      */
     public com.google.protobuf.Empty deleteArtifact(
@@ -3545,7 +3545,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListApis returns matching APIs.
+     * Returns matching APIs.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3559,7 +3559,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetApi returns a specified API.
+     * Returns a specified API.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3573,7 +3573,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * CreateApi creates a specified API.
+     * Creates a specified API.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3587,7 +3587,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * UpdateApi can be used to modify a specified API.
+     * Used to modify a specified API.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3601,7 +3601,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteApi removes a specified API and all of the resources that it
+     * Removes a specified API and all of the resources that it
      * owns.
      * </pre>
      */
@@ -3615,7 +3615,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListApiVersions returns matching versions.
+     * Returns matching versions.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3629,7 +3629,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetApiVersion returns a specified version.
+     * Returns a specified version.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3643,7 +3643,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * CreateApiVersion creates a specified version.
+     * Creates a specified version.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3657,7 +3657,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * UpdateApiVersion can be used to modify a specified version.
+     * Used to modify a specified version.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3671,7 +3671,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteApiVersion removes a specified version and all of the resources that
+     * Removes a specified version and all of the resources that
      * it owns.
      * </pre>
      */
@@ -3685,7 +3685,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListApiSpecs returns matching specs.
+     * Returns matching specs.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3699,7 +3699,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetApiSpec returns a specified spec.
+     * Returns a specified spec.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3713,7 +3713,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetApiSpecContents returns the contents of a specified spec.
+     * Returns the contents of a specified spec.
      * If specs are stored with GZip compression, the default behavior
      * is to return the spec uncompressed (the mime_type response field
      * indicates the exact format returned).
@@ -3729,7 +3729,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * CreateApiSpec creates a specified spec.
+     * Creates a specified spec.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3743,7 +3743,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * UpdateApiSpec can be used to modify a specified spec.
+     * Used to modify a specified spec.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3757,8 +3757,8 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteApiSpec removes a specified spec, all revisions, and all child
-     * resources (e.g. artifacts).
+     * Removes a specified spec, all revisions, and all child
+     * resources (e.g., artifacts).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -3771,7 +3771,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * TagApiSpecRevision adds a tag to a specified revision of a spec.
+     * Adds a tag to a specified revision of a spec.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3785,7 +3785,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListApiSpecRevisions lists all revisions of a spec.
+     * Lists all revisions of a spec.
      * Revisions are returned in descending order of revision creation time.
      * </pre>
      */
@@ -3801,7 +3801,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * RollbackApiSpec sets the current revision to a specified prior revision.
+     * Sets the current revision to a specified prior revision.
      * Note that this creates a new revision with a new revision ID.
      * </pre>
      */
@@ -3816,7 +3816,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteApiSpecRevision deletes a revision of a spec.
+     * Deletes a revision of a spec.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3831,7 +3831,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListApiDeployments returns matching deployments.
+     * Returns matching deployments.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3845,7 +3845,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetApiDeployment returns a specified deployment.
+     * Returns a specified deployment.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3859,7 +3859,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * CreateApiDeployment creates a specified deployment.
+     * Creates a specified deployment.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3873,7 +3873,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * UpdateApiDeployment can be used to modify a specified deployment.
+     * Used to modify a specified deployment.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3887,8 +3887,8 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteApiDeployment removes a specified deployment, all revisions, and all
-     * child resources (e.g. artifacts).
+     * Removes a specified deployment, all revisions, and all
+     * child resources (e.g., artifacts).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -3901,7 +3901,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * TagApiDeploymentRevision adds a tag to a specified revision of a
+     * Adds a tag to a specified revision of a
      * deployment.
      * </pre>
      */
@@ -3917,7 +3917,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListApiDeploymentRevisions lists all revisions of a deployment.
+     * Lists all revisions of a deployment.
      * Revisions are returned in descending order of revision creation time.
      * </pre>
      */
@@ -3933,7 +3933,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * RollbackApiDeployment sets the current revision to a specified prior
+     * Sets the current revision to a specified prior
      * revision. Note that this creates a new revision with a new revision ID.
      * </pre>
      */
@@ -3949,7 +3949,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteApiDeploymentRevision deletes a revision of a deployment.
+     * Deletes a revision of a deployment.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3964,7 +3964,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ListArtifacts returns matching artifacts.
+     * Returns matching artifacts.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3978,7 +3978,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetArtifact returns a specified artifact.
+     * Returns a specified artifact.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3992,7 +3992,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * GetArtifactContents returns the contents of a specified artifact.
+     * Returns the contents of a specified artifact.
      * If artifacts are stored with GZip compression, the default behavior
      * is to return the artifact uncompressed (the mime_type response field
      * indicates the exact format returned).
@@ -4008,7 +4008,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * CreateArtifact creates a specified artifact.
+     * Creates a specified artifact.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -4022,7 +4022,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * ReplaceArtifact can be used to replace a specified artifact.
+     * Used to replace a specified artifact.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -4036,7 +4036,7 @@ public final class RegistryGrpc {
      *
      *
      * <pre>
-     * DeleteArtifact removes a specified artifact.
+     * Removes a specified artifact.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>

@@ -180,7 +180,7 @@ public interface ApiVersionOrBuilder
    * <pre>
    * A user-definable description of the lifecycle phase of this API version.
    * Format: free-form, but we expect single words that describe API maturity,
-   * e.g. "CONCEPT", "DESIGN", "DEVELOPMENT", "STAGING", "PRODUCTION",
+   * e.g., "CONCEPT", "DESIGN", "DEVELOPMENT", "STAGING", "PRODUCTION",
    * "DEPRECATED", "RETIRED".
    * </pre>
    *
@@ -195,7 +195,7 @@ public interface ApiVersionOrBuilder
    * <pre>
    * A user-definable description of the lifecycle phase of this API version.
    * Format: free-form, but we expect single words that describe API maturity,
-   * e.g. "CONCEPT", "DESIGN", "DEVELOPMENT", "STAGING", "PRODUCTION",
+   * e.g., "CONCEPT", "DESIGN", "DEVELOPMENT", "STAGING", "PRODUCTION",
    * "DEPRECATED", "RETIRED".
    * </pre>
    *
@@ -218,7 +218,7 @@ public interface ApiVersionOrBuilder
    * labels are excluded).
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with
-   * "apigeeregistry.googleapis.com/" and cannot be changed.
+   * `apigeeregistry.googleapis.com/` and cannot be changed.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
@@ -237,7 +237,7 @@ public interface ApiVersionOrBuilder
    * labels are excluded).
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with
-   * "apigeeregistry.googleapis.com/" and cannot be changed.
+   * `apigeeregistry.googleapis.com/` and cannot be changed.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
@@ -259,7 +259,7 @@ public interface ApiVersionOrBuilder
    * labels are excluded).
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with
-   * "apigeeregistry.googleapis.com/" and cannot be changed.
+   * `apigeeregistry.googleapis.com/` and cannot be changed.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
@@ -278,7 +278,7 @@ public interface ApiVersionOrBuilder
    * labels are excluded).
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with
-   * "apigeeregistry.googleapis.com/" and cannot be changed.
+   * `apigeeregistry.googleapis.com/` and cannot be changed.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
@@ -302,7 +302,7 @@ public interface ApiVersionOrBuilder
    * labels are excluded).
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with
-   * "apigeeregistry.googleapis.com/" and cannot be changed.
+   * `apigeeregistry.googleapis.com/` and cannot be changed.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>

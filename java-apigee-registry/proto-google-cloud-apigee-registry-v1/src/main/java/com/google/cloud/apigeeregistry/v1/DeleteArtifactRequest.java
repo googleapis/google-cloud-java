@@ -120,7 +120,7 @@ public final class DeleteArtifactRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The name of the artifact to delete.
-   * Format: {parent}/artifacts/&#42;
+   * Format: `{parent}/artifacts/&#42;`
    * </pre>
    *
    * <code>
@@ -146,7 +146,7 @@ public final class DeleteArtifactRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The name of the artifact to delete.
-   * Format: {parent}/artifacts/&#42;
+   * Format: `{parent}/artifacts/&#42;`
    * </pre>
    *
    * <code>
@@ -493,7 +493,7 @@ public final class DeleteArtifactRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The name of the artifact to delete.
-     * Format: {parent}/artifacts/&#42;
+     * Format: `{parent}/artifacts/&#42;`
      * </pre>
      *
      * <code>
@@ -518,7 +518,7 @@ public final class DeleteArtifactRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The name of the artifact to delete.
-     * Format: {parent}/artifacts/&#42;
+     * Format: `{parent}/artifacts/&#42;`
      * </pre>
      *
      * <code>
@@ -543,7 +543,7 @@ public final class DeleteArtifactRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The name of the artifact to delete.
-     * Format: {parent}/artifacts/&#42;
+     * Format: `{parent}/artifacts/&#42;`
      * </pre>
      *
      * <code>
@@ -567,7 +567,7 @@ public final class DeleteArtifactRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The name of the artifact to delete.
-     * Format: {parent}/artifacts/&#42;
+     * Format: `{parent}/artifacts/&#42;`
      * </pre>
      *
      * <code>
@@ -587,7 +587,7 @@ public final class DeleteArtifactRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The name of the artifact to delete.
-     * Format: {parent}/artifacts/&#42;
+     * Format: `{parent}/artifacts/&#42;`
      * </pre>
      *
      * <code>

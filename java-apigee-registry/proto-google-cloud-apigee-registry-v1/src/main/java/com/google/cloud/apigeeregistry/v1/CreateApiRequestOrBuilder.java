@@ -28,7 +28,7 @@ public interface CreateApiRequestOrBuilder
    *
    * <pre>
    * Required. The parent, which owns this collection of APIs.
-   * Format: projects/&#42;&#47;locations/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface CreateApiRequestOrBuilder
    *
    * <pre>
    * Required. The parent, which owns this collection of APIs.
-   * Format: projects/&#42;&#47;locations/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>
@@ -96,8 +96,8 @@ public interface CreateApiRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ID to use for the api, which will become the final component of
-   * the api's resource name.
+   * Required. The ID to use for the API, which will become the final component of
+   * the API's resource name.
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * Following AIP-162, IDs must not have the form of a UUID.
@@ -112,8 +112,8 @@ public interface CreateApiRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ID to use for the api, which will become the final component of
-   * the api's resource name.
+   * Required. The ID to use for the API, which will become the final component of
+   * the API's resource name.
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * Following AIP-162, IDs must not have the form of a UUID.

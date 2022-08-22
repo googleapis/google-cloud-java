@@ -28,7 +28,7 @@ public interface ListApiVersionsRequestOrBuilder
    *
    * <pre>
    * Required. The parent, which owns this collection of versions.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface ListApiVersionsRequestOrBuilder
    *
    * <pre>
    * Required. The parent, which owns this collection of versions.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;`
    * </pre>
    *
    * <code>

@@ -273,6 +273,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<DeleteApiRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "force", request.getForce());
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -453,6 +454,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteApiVersionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "force", request.getForce());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

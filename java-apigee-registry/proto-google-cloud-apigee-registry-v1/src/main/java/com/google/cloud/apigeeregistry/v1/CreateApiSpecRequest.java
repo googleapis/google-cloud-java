@@ -144,7 +144,7 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The parent, which owns this collection of specs.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
    * </pre>
    *
    * <code>
@@ -170,7 +170,7 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The parent, which owns this collection of specs.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
    * </pre>
    *
    * <code>
@@ -672,7 +672,7 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The parent, which owns this collection of specs.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>
@@ -697,7 +697,7 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The parent, which owns this collection of specs.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>
@@ -722,7 +722,7 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The parent, which owns this collection of specs.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>
@@ -746,7 +746,7 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The parent, which owns this collection of specs.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>
@@ -766,7 +766,7 @@ public final class CreateApiSpecRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The parent, which owns this collection of specs.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>

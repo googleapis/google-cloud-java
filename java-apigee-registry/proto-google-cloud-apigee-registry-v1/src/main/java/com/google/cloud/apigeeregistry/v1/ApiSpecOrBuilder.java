@@ -257,8 +257,8 @@ public interface ApiSpecOrBuilder
    * <pre>
    * A style (format) descriptor for this spec that is specified as a Media Type
    * (https://en.wikipedia.org/wiki/Media_type). Possible values include
-   * "application/vnd.apigee.proto", "application/vnd.apigee.openapi", and
-   * "application/vnd.apigee.graphql", with possible suffixes representing
+   * `application/vnd.apigee.proto`, `application/vnd.apigee.openapi`, and
+   * `application/vnd.apigee.graphql`, with possible suffixes representing
    * compression types. These hypothetical names are defined in the vendor tree
    * defined in RFC6838 (https://tools.ietf.org/html/rfc6838) and are not final.
    * Content types can specify compression. Currently only GZip compression is
@@ -276,8 +276,8 @@ public interface ApiSpecOrBuilder
    * <pre>
    * A style (format) descriptor for this spec that is specified as a Media Type
    * (https://en.wikipedia.org/wiki/Media_type). Possible values include
-   * "application/vnd.apigee.proto", "application/vnd.apigee.openapi", and
-   * "application/vnd.apigee.graphql", with possible suffixes representing
+   * `application/vnd.apigee.proto`, `application/vnd.apigee.openapi`, and
+   * `application/vnd.apigee.graphql`, with possible suffixes representing
    * compression types. These hypothetical names are defined in the vendor tree
    * defined in RFC6838 (https://tools.ietf.org/html/rfc6838) and are not final.
    * Content types can specify compression. Currently only GZip compression is
@@ -390,7 +390,7 @@ public interface ApiSpecOrBuilder
    * labels are excluded).
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with
-   * "apigeeregistry.googleapis.com/" and cannot be changed.
+   * `apigeeregistry.googleapis.com/` and cannot be changed.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 14;</code>
@@ -409,7 +409,7 @@ public interface ApiSpecOrBuilder
    * labels are excluded).
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with
-   * "apigeeregistry.googleapis.com/" and cannot be changed.
+   * `apigeeregistry.googleapis.com/` and cannot be changed.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 14;</code>
@@ -431,7 +431,7 @@ public interface ApiSpecOrBuilder
    * labels are excluded).
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with
-   * "apigeeregistry.googleapis.com/" and cannot be changed.
+   * `apigeeregistry.googleapis.com/` and cannot be changed.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 14;</code>
@@ -450,7 +450,7 @@ public interface ApiSpecOrBuilder
    * labels are excluded).
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with
-   * "apigeeregistry.googleapis.com/" and cannot be changed.
+   * `apigeeregistry.googleapis.com/` and cannot be changed.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 14;</code>
@@ -474,7 +474,7 @@ public interface ApiSpecOrBuilder
    * labels are excluded).
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with
-   * "apigeeregistry.googleapis.com/" and cannot be changed.
+   * `apigeeregistry.googleapis.com/` and cannot be changed.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 14;</code>

@@ -174,7 +174,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListApis returns matching APIs.
+   * Returns matching APIs.
    *
    * <p>Sample code:
    *
@@ -190,7 +190,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of APIs. Format:
-   *     projects/&#42;/locations/&#42;
+   *     `projects/&#42;/locations/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListApisPagedResponse listApis(LocationName parent) {
@@ -201,7 +201,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListApis returns matching APIs.
+   * Returns matching APIs.
    *
    * <p>Sample code:
    *
@@ -217,7 +217,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of APIs. Format:
-   *     projects/&#42;/locations/&#42;
+   *     `projects/&#42;/locations/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListApisPagedResponse listApis(String parent) {
@@ -227,7 +227,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListApis returns matching APIs.
+   * Returns matching APIs.
    *
    * <p>Sample code:
    *
@@ -257,7 +257,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListApis returns matching APIs.
+   * Returns matching APIs.
    *
    * <p>Sample code:
    *
@@ -286,7 +286,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListApis returns matching APIs.
+   * Returns matching APIs.
    *
    * <p>Sample code:
    *
@@ -322,7 +322,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetApi returns a specified API.
+   * Returns a specified API.
    *
    * <p>Sample code:
    *
@@ -336,7 +336,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the API to retrieve. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Api getApi(ApiName name) {
@@ -347,7 +347,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetApi returns a specified API.
+   * Returns a specified API.
    *
    * <p>Sample code:
    *
@@ -361,7 +361,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the API to retrieve. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Api getApi(String name) {
@@ -371,7 +371,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetApi returns a specified API.
+   * Returns a specified API.
    *
    * <p>Sample code:
    *
@@ -396,7 +396,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetApi returns a specified API.
+   * Returns a specified API.
    *
    * <p>Sample code:
    *
@@ -420,7 +420,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * CreateApi creates a specified API.
+   * Creates a specified API.
    *
    * <p>Sample code:
    *
@@ -436,10 +436,10 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of APIs. Format:
-   *     projects/&#42;/locations/&#42;
+   *     `projects/&#42;/locations/&#42;`
    * @param api Required. The API to create.
-   * @param apiId Required. The ID to use for the api, which will become the final component of the
-   *     api's resource name.
+   * @param apiId Required. The ID to use for the API, which will become the final component of the
+   *     API's resource name.
    *     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/.
    *     <p>Following AIP-162, IDs must not have the form of a UUID.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -456,7 +456,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * CreateApi creates a specified API.
+   * Creates a specified API.
    *
    * <p>Sample code:
    *
@@ -472,10 +472,10 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of APIs. Format:
-   *     projects/&#42;/locations/&#42;
+   *     `projects/&#42;/locations/&#42;`
    * @param api Required. The API to create.
-   * @param apiId Required. The ID to use for the api, which will become the final component of the
-   *     api's resource name.
+   * @param apiId Required. The ID to use for the API, which will become the final component of the
+   *     API's resource name.
    *     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/.
    *     <p>Following AIP-162, IDs must not have the form of a UUID.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -488,7 +488,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * CreateApi creates a specified API.
+   * Creates a specified API.
    *
    * <p>Sample code:
    *
@@ -515,7 +515,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * CreateApi creates a specified API.
+   * Creates a specified API.
    *
    * <p>Sample code:
    *
@@ -541,7 +541,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * UpdateApi can be used to modify a specified API.
+   * Used to modify a specified API.
    *
    * <p>Sample code:
    *
@@ -557,11 +557,11 @@ public class RegistryClient implements BackgroundResource {
    *
    * @param api Required. The API to update.
    *     <p>The `name` field is used to identify the API to update. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;`
    * @param updateMask The list of fields to be updated. If omitted, all fields are updated that are
-   *     set in the request message (fields set to default values are ignored). If a "&#42;" is
-   *     specified, all fields are updated, including fields that are unspecified/default in the
-   *     request.
+   *     set in the request message (fields set to default values are ignored). If an asterisk
+   *     "&#42;" is specified, all fields are updated, including fields that are unspecified/default
+   *     in the request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Api updateApi(Api api, FieldMask updateMask) {
@@ -572,7 +572,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * UpdateApi can be used to modify a specified API.
+   * Used to modify a specified API.
    *
    * <p>Sample code:
    *
@@ -599,7 +599,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * UpdateApi can be used to modify a specified API.
+   * Used to modify a specified API.
    *
    * <p>Sample code:
    *
@@ -625,7 +625,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteApi removes a specified API and all of the resources that it owns.
+   * Removes a specified API and all of the resources that it owns.
    *
    * <p>Sample code:
    *
@@ -639,7 +639,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the API to delete. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteApi(ApiName name) {
@@ -650,7 +650,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteApi removes a specified API and all of the resources that it owns.
+   * Removes a specified API and all of the resources that it owns.
    *
    * <p>Sample code:
    *
@@ -664,7 +664,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the API to delete. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteApi(String name) {
@@ -674,7 +674,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteApi removes a specified API and all of the resources that it owns.
+   * Removes a specified API and all of the resources that it owns.
    *
    * <p>Sample code:
    *
@@ -685,6 +685,7 @@ public class RegistryClient implements BackgroundResource {
    *   DeleteApiRequest request =
    *       DeleteApiRequest.newBuilder()
    *           .setName(ApiName.of("[PROJECT]", "[LOCATION]", "[API]").toString())
+   *           .setForce(true)
    *           .build();
    *   registryClient.deleteApi(request);
    * }
@@ -699,7 +700,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteApi removes a specified API and all of the resources that it owns.
+   * Removes a specified API and all of the resources that it owns.
    *
    * <p>Sample code:
    *
@@ -710,6 +711,7 @@ public class RegistryClient implements BackgroundResource {
    *   DeleteApiRequest request =
    *       DeleteApiRequest.newBuilder()
    *           .setName(ApiName.of("[PROJECT]", "[LOCATION]", "[API]").toString())
+   *           .setForce(true)
    *           .build();
    *   ApiFuture<Empty> future = registryClient.deleteApiCallable().futureCall(request);
    *   // Do something.
@@ -723,7 +725,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListApiVersions returns matching versions.
+   * Returns matching versions.
    *
    * <p>Sample code:
    *
@@ -739,7 +741,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of versions. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListApiVersionsPagedResponse listApiVersions(ApiName parent) {
@@ -752,7 +754,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListApiVersions returns matching versions.
+   * Returns matching versions.
    *
    * <p>Sample code:
    *
@@ -768,7 +770,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of versions. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListApiVersionsPagedResponse listApiVersions(String parent) {
@@ -778,7 +780,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListApiVersions returns matching versions.
+   * Returns matching versions.
    *
    * <p>Sample code:
    *
@@ -808,7 +810,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListApiVersions returns matching versions.
+   * Returns matching versions.
    *
    * <p>Sample code:
    *
@@ -839,7 +841,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListApiVersions returns matching versions.
+   * Returns matching versions.
    *
    * <p>Sample code:
    *
@@ -876,7 +878,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetApiVersion returns a specified version.
+   * Returns a specified version.
    *
    * <p>Sample code:
    *
@@ -890,7 +892,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the version to retrieve. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ApiVersion getApiVersion(ApiVersionName name) {
@@ -901,7 +903,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetApiVersion returns a specified version.
+   * Returns a specified version.
    *
    * <p>Sample code:
    *
@@ -915,7 +917,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the version to retrieve. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ApiVersion getApiVersion(String name) {
@@ -925,7 +927,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetApiVersion returns a specified version.
+   * Returns a specified version.
    *
    * <p>Sample code:
    *
@@ -951,7 +953,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetApiVersion returns a specified version.
+   * Returns a specified version.
    *
    * <p>Sample code:
    *
@@ -976,7 +978,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * CreateApiVersion creates a specified version.
+   * Creates a specified version.
    *
    * <p>Sample code:
    *
@@ -992,7 +994,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of versions. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;`
    * @param apiVersion Required. The version to create.
    * @param apiVersionId Required. The ID to use for the version, which will become the final
    *     component of the version's resource name.
@@ -1013,7 +1015,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * CreateApiVersion creates a specified version.
+   * Creates a specified version.
    *
    * <p>Sample code:
    *
@@ -1029,7 +1031,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of versions. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;`
    * @param apiVersion Required. The version to create.
    * @param apiVersionId Required. The ID to use for the version, which will become the final
    *     component of the version's resource name.
@@ -1050,7 +1052,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * CreateApiVersion creates a specified version.
+   * Creates a specified version.
    *
    * <p>Sample code:
    *
@@ -1077,7 +1079,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * CreateApiVersion creates a specified version.
+   * Creates a specified version.
    *
    * <p>Sample code:
    *
@@ -1103,7 +1105,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * UpdateApiVersion can be used to modify a specified version.
+   * Used to modify a specified version.
    *
    * <p>Sample code:
    *
@@ -1119,11 +1121,11 @@ public class RegistryClient implements BackgroundResource {
    *
    * @param apiVersion Required. The version to update.
    *     <p>The `name` field is used to identify the version to update. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;`
    * @param updateMask The list of fields to be updated. If omitted, all fields are updated that are
-   *     set in the request message (fields set to default values are ignored). If a "&#42;" is
-   *     specified, all fields are updated, including fields that are unspecified/default in the
-   *     request.
+   *     set in the request message (fields set to default values are ignored). If an asterisk
+   *     "&#42;" is specified, all fields are updated, including fields that are unspecified/default
+   *     in the request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ApiVersion updateApiVersion(ApiVersion apiVersion, FieldMask updateMask) {
@@ -1137,7 +1139,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * UpdateApiVersion can be used to modify a specified version.
+   * Used to modify a specified version.
    *
    * <p>Sample code:
    *
@@ -1164,7 +1166,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * UpdateApiVersion can be used to modify a specified version.
+   * Used to modify a specified version.
    *
    * <p>Sample code:
    *
@@ -1190,7 +1192,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteApiVersion removes a specified version and all of the resources that it owns.
+   * Removes a specified version and all of the resources that it owns.
    *
    * <p>Sample code:
    *
@@ -1204,7 +1206,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the version to delete. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteApiVersion(ApiVersionName name) {
@@ -1215,7 +1217,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteApiVersion removes a specified version and all of the resources that it owns.
+   * Removes a specified version and all of the resources that it owns.
    *
    * <p>Sample code:
    *
@@ -1229,7 +1231,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the version to delete. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteApiVersion(String name) {
@@ -1239,7 +1241,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteApiVersion removes a specified version and all of the resources that it owns.
+   * Removes a specified version and all of the resources that it owns.
    *
    * <p>Sample code:
    *
@@ -1251,6 +1253,7 @@ public class RegistryClient implements BackgroundResource {
    *       DeleteApiVersionRequest.newBuilder()
    *           .setName(
    *               ApiVersionName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]").toString())
+   *           .setForce(true)
    *           .build();
    *   registryClient.deleteApiVersion(request);
    * }
@@ -1265,7 +1268,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteApiVersion removes a specified version and all of the resources that it owns.
+   * Removes a specified version and all of the resources that it owns.
    *
    * <p>Sample code:
    *
@@ -1277,6 +1280,7 @@ public class RegistryClient implements BackgroundResource {
    *       DeleteApiVersionRequest.newBuilder()
    *           .setName(
    *               ApiVersionName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]").toString())
+   *           .setForce(true)
    *           .build();
    *   ApiFuture<Empty> future = registryClient.deleteApiVersionCallable().futureCall(request);
    *   // Do something.
@@ -1290,7 +1294,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListApiSpecs returns matching specs.
+   * Returns matching specs.
    *
    * <p>Sample code:
    *
@@ -1306,7 +1310,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of specs. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListApiSpecsPagedResponse listApiSpecs(ApiVersionName parent) {
@@ -1319,7 +1323,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListApiSpecs returns matching specs.
+   * Returns matching specs.
    *
    * <p>Sample code:
    *
@@ -1335,7 +1339,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of specs. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListApiSpecsPagedResponse listApiSpecs(String parent) {
@@ -1345,7 +1349,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListApiSpecs returns matching specs.
+   * Returns matching specs.
    *
    * <p>Sample code:
    *
@@ -1376,7 +1380,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListApiSpecs returns matching specs.
+   * Returns matching specs.
    *
    * <p>Sample code:
    *
@@ -1407,7 +1411,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListApiSpecs returns matching specs.
+   * Returns matching specs.
    *
    * <p>Sample code:
    *
@@ -1444,7 +1448,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetApiSpec returns a specified spec.
+   * Returns a specified spec.
    *
    * <p>Sample code:
    *
@@ -1458,7 +1462,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the spec to retrieve. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;/specs/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;/specs/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ApiSpec getApiSpec(ApiSpecName name) {
@@ -1469,7 +1473,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetApiSpec returns a specified spec.
+   * Returns a specified spec.
    *
    * <p>Sample code:
    *
@@ -1484,7 +1488,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the spec to retrieve. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;/specs/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;/specs/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ApiSpec getApiSpec(String name) {
@@ -1494,7 +1498,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetApiSpec returns a specified spec.
+   * Returns a specified spec.
    *
    * <p>Sample code:
    *
@@ -1521,7 +1525,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetApiSpec returns a specified spec.
+   * Returns a specified spec.
    *
    * <p>Sample code:
    *
@@ -1547,9 +1551,9 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetApiSpecContents returns the contents of a specified spec. If specs are stored with GZip
-   * compression, the default behavior is to return the spec uncompressed (the mime_type response
-   * field indicates the exact format returned).
+   * Returns the contents of a specified spec. If specs are stored with GZip compression, the
+   * default behavior is to return the spec uncompressed (the mime_type response field indicates the
+   * exact format returned).
    *
    * <p>Sample code:
    *
@@ -1563,7 +1567,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the spec whose contents should be retrieved. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;/specs/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;/specs/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final HttpBody getApiSpecContents(ApiSpecName name) {
@@ -1576,9 +1580,9 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetApiSpecContents returns the contents of a specified spec. If specs are stored with GZip
-   * compression, the default behavior is to return the spec uncompressed (the mime_type response
-   * field indicates the exact format returned).
+   * Returns the contents of a specified spec. If specs are stored with GZip compression, the
+   * default behavior is to return the spec uncompressed (the mime_type response field indicates the
+   * exact format returned).
    *
    * <p>Sample code:
    *
@@ -1593,7 +1597,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the spec whose contents should be retrieved. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;/specs/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;/specs/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final HttpBody getApiSpecContents(String name) {
@@ -1604,9 +1608,9 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetApiSpecContents returns the contents of a specified spec. If specs are stored with GZip
-   * compression, the default behavior is to return the spec uncompressed (the mime_type response
-   * field indicates the exact format returned).
+   * Returns the contents of a specified spec. If specs are stored with GZip compression, the
+   * default behavior is to return the spec uncompressed (the mime_type response field indicates the
+   * exact format returned).
    *
    * <p>Sample code:
    *
@@ -1633,9 +1637,9 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetApiSpecContents returns the contents of a specified spec. If specs are stored with GZip
-   * compression, the default behavior is to return the spec uncompressed (the mime_type response
-   * field indicates the exact format returned).
+   * Returns the contents of a specified spec. If specs are stored with GZip compression, the
+   * default behavior is to return the spec uncompressed (the mime_type response field indicates the
+   * exact format returned).
    *
    * <p>Sample code:
    *
@@ -1661,7 +1665,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * CreateApiSpec creates a specified spec.
+   * Creates a specified spec.
    *
    * <p>Sample code:
    *
@@ -1677,7 +1681,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of specs. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;`
    * @param apiSpec Required. The spec to create.
    * @param apiSpecId Required. The ID to use for the spec, which will become the final component of
    *     the spec's resource name.
@@ -1697,7 +1701,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * CreateApiSpec creates a specified spec.
+   * Creates a specified spec.
    *
    * <p>Sample code:
    *
@@ -1713,7 +1717,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of specs. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;`
    * @param apiSpec Required. The spec to create.
    * @param apiSpecId Required. The ID to use for the spec, which will become the final component of
    *     the spec's resource name.
@@ -1733,7 +1737,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * CreateApiSpec creates a specified spec.
+   * Creates a specified spec.
    *
    * <p>Sample code:
    *
@@ -1761,7 +1765,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * CreateApiSpec creates a specified spec.
+   * Creates a specified spec.
    *
    * <p>Sample code:
    *
@@ -1788,7 +1792,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * UpdateApiSpec can be used to modify a specified spec.
+   * Used to modify a specified spec.
    *
    * <p>Sample code:
    *
@@ -1804,11 +1808,11 @@ public class RegistryClient implements BackgroundResource {
    *
    * @param apiSpec Required. The spec to update.
    *     <p>The `name` field is used to identify the spec to update. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;/specs/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;/specs/&#42;`
    * @param updateMask The list of fields to be updated. If omitted, all fields are updated that are
-   *     set in the request message (fields set to default values are ignored). If a "&#42;" is
-   *     specified, all fields are updated, including fields that are unspecified/default in the
-   *     request.
+   *     set in the request message (fields set to default values are ignored). If an asterisk
+   *     "&#42;" is specified, all fields are updated, including fields that are unspecified/default
+   *     in the request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ApiSpec updateApiSpec(ApiSpec apiSpec, FieldMask updateMask) {
@@ -1819,7 +1823,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * UpdateApiSpec can be used to modify a specified spec.
+   * Used to modify a specified spec.
    *
    * <p>Sample code:
    *
@@ -1846,7 +1850,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * UpdateApiSpec can be used to modify a specified spec.
+   * Used to modify a specified spec.
    *
    * <p>Sample code:
    *
@@ -1872,8 +1876,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteApiSpec removes a specified spec, all revisions, and all child resources (e.g.
-   * artifacts).
+   * Removes a specified spec, all revisions, and all child resources (e.g., artifacts).
    *
    * <p>Sample code:
    *
@@ -1887,7 +1890,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the spec to delete. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;/specs/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;/specs/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteApiSpec(ApiSpecName name) {
@@ -1898,8 +1901,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteApiSpec removes a specified spec, all revisions, and all child resources (e.g.
-   * artifacts).
+   * Removes a specified spec, all revisions, and all child resources (e.g., artifacts).
    *
    * <p>Sample code:
    *
@@ -1914,7 +1916,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the spec to delete. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;/specs/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;/versions/&#42;/specs/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteApiSpec(String name) {
@@ -1924,8 +1926,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteApiSpec removes a specified spec, all revisions, and all child resources (e.g.
-   * artifacts).
+   * Removes a specified spec, all revisions, and all child resources (e.g., artifacts).
    *
    * <p>Sample code:
    *
@@ -1953,8 +1954,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteApiSpec removes a specified spec, all revisions, and all child resources (e.g.
-   * artifacts).
+   * Removes a specified spec, all revisions, and all child resources (e.g., artifacts).
    *
    * <p>Sample code:
    *
@@ -1981,7 +1981,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * TagApiSpecRevision adds a tag to a specified revision of a spec.
+   * Adds a tag to a specified revision of a spec.
    *
    * <p>Sample code:
    *
@@ -2009,7 +2009,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * TagApiSpecRevision adds a tag to a specified revision of a spec.
+   * Adds a tag to a specified revision of a spec.
    *
    * <p>Sample code:
    *
@@ -2036,8 +2036,8 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListApiSpecRevisions lists all revisions of a spec. Revisions are returned in descending order
-   * of revision creation time.
+   * Lists all revisions of a spec. Revisions are returned in descending order of revision creation
+   * time.
    *
    * <p>Sample code:
    *
@@ -2069,8 +2069,8 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListApiSpecRevisions lists all revisions of a spec. Revisions are returned in descending order
-   * of revision creation time.
+   * Lists all revisions of a spec. Revisions are returned in descending order of revision creation
+   * time.
    *
    * <p>Sample code:
    *
@@ -2102,8 +2102,8 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListApiSpecRevisions lists all revisions of a spec. Revisions are returned in descending order
-   * of revision creation time.
+   * Lists all revisions of a spec. Revisions are returned in descending order of revision creation
+   * time.
    *
    * <p>Sample code:
    *
@@ -2142,8 +2142,8 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * RollbackApiSpec sets the current revision to a specified prior revision. Note that this creates
-   * a new revision with a new revision ID.
+   * Sets the current revision to a specified prior revision. Note that this creates a new revision
+   * with a new revision ID.
    *
    * <p>Sample code:
    *
@@ -2171,8 +2171,8 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * RollbackApiSpec sets the current revision to a specified prior revision. Note that this creates
-   * a new revision with a new revision ID.
+   * Sets the current revision to a specified prior revision. Note that this creates a new revision
+   * with a new revision ID.
    *
    * <p>Sample code:
    *
@@ -2199,7 +2199,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteApiSpecRevision deletes a revision of a spec.
+   * Deletes a revision of a spec.
    *
    * <p>Sample code:
    *
@@ -2215,7 +2215,7 @@ public class RegistryClient implements BackgroundResource {
    * @param name Required. The name of the spec revision to be deleted, with a revision ID
    *     explicitly included.
    *     <p>Example:
-   *     projects/sample/locations/global/apis/petstore/versions/1.0.0/specs/openapi.yaml{@literal @}c7cfa2a8
+   *     `projects/sample/locations/global/apis/petstore/versions/1.0.0/specs/openapi.yaml{@literal @}c7cfa2a8`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ApiSpec deleteApiSpecRevision(ApiSpecName name) {
@@ -2228,7 +2228,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteApiSpecRevision deletes a revision of a spec.
+   * Deletes a revision of a spec.
    *
    * <p>Sample code:
    *
@@ -2245,7 +2245,7 @@ public class RegistryClient implements BackgroundResource {
    * @param name Required. The name of the spec revision to be deleted, with a revision ID
    *     explicitly included.
    *     <p>Example:
-   *     projects/sample/locations/global/apis/petstore/versions/1.0.0/specs/openapi.yaml{@literal @}c7cfa2a8
+   *     `projects/sample/locations/global/apis/petstore/versions/1.0.0/specs/openapi.yaml{@literal @}c7cfa2a8`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ApiSpec deleteApiSpecRevision(String name) {
@@ -2256,7 +2256,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteApiSpecRevision deletes a revision of a spec.
+   * Deletes a revision of a spec.
    *
    * <p>Sample code:
    *
@@ -2283,7 +2283,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteApiSpecRevision deletes a revision of a spec.
+   * Deletes a revision of a spec.
    *
    * <p>Sample code:
    *
@@ -2311,7 +2311,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListApiDeployments returns matching deployments.
+   * Returns matching deployments.
    *
    * <p>Sample code:
    *
@@ -2327,7 +2327,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of deployments. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListApiDeploymentsPagedResponse listApiDeployments(ApiName parent) {
@@ -2340,7 +2340,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListApiDeployments returns matching deployments.
+   * Returns matching deployments.
    *
    * <p>Sample code:
    *
@@ -2356,7 +2356,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of deployments. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListApiDeploymentsPagedResponse listApiDeployments(String parent) {
@@ -2367,7 +2367,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListApiDeployments returns matching deployments.
+   * Returns matching deployments.
    *
    * <p>Sample code:
    *
@@ -2398,7 +2398,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListApiDeployments returns matching deployments.
+   * Returns matching deployments.
    *
    * <p>Sample code:
    *
@@ -2429,7 +2429,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListApiDeployments returns matching deployments.
+   * Returns matching deployments.
    *
    * <p>Sample code:
    *
@@ -2467,7 +2467,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetApiDeployment returns a specified deployment.
+   * Returns a specified deployment.
    *
    * <p>Sample code:
    *
@@ -2482,7 +2482,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the deployment to retrieve. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;/deployments/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;/deployments/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ApiDeployment getApiDeployment(ApiDeploymentName name) {
@@ -2493,7 +2493,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetApiDeployment returns a specified deployment.
+   * Returns a specified deployment.
    *
    * <p>Sample code:
    *
@@ -2508,7 +2508,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the deployment to retrieve. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;/deployments/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;/deployments/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ApiDeployment getApiDeployment(String name) {
@@ -2518,7 +2518,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetApiDeployment returns a specified deployment.
+   * Returns a specified deployment.
    *
    * <p>Sample code:
    *
@@ -2545,7 +2545,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetApiDeployment returns a specified deployment.
+   * Returns a specified deployment.
    *
    * <p>Sample code:
    *
@@ -2572,7 +2572,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * CreateApiDeployment creates a specified deployment.
+   * Creates a specified deployment.
    *
    * <p>Sample code:
    *
@@ -2589,7 +2589,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of deployments. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;`
    * @param apiDeployment Required. The deployment to create.
    * @param apiDeploymentId Required. The ID to use for the deployment, which will become the final
    *     component of the deployment's resource name.
@@ -2610,7 +2610,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * CreateApiDeployment creates a specified deployment.
+   * Creates a specified deployment.
    *
    * <p>Sample code:
    *
@@ -2627,7 +2627,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of deployments. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;`
    * @param apiDeployment Required. The deployment to create.
    * @param apiDeploymentId Required. The ID to use for the deployment, which will become the final
    *     component of the deployment's resource name.
@@ -2648,7 +2648,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * CreateApiDeployment creates a specified deployment.
+   * Creates a specified deployment.
    *
    * <p>Sample code:
    *
@@ -2675,7 +2675,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * CreateApiDeployment creates a specified deployment.
+   * Creates a specified deployment.
    *
    * <p>Sample code:
    *
@@ -2703,7 +2703,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * UpdateApiDeployment can be used to modify a specified deployment.
+   * Used to modify a specified deployment.
    *
    * <p>Sample code:
    *
@@ -2719,11 +2719,11 @@ public class RegistryClient implements BackgroundResource {
    *
    * @param apiDeployment Required. The deployment to update.
    *     <p>The `name` field is used to identify the deployment to update. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;/deployments/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;/deployments/&#42;`
    * @param updateMask The list of fields to be updated. If omitted, all fields are updated that are
-   *     set in the request message (fields set to default values are ignored). If a "&#42;" is
-   *     specified, all fields are updated, including fields that are unspecified/default in the
-   *     request.
+   *     set in the request message (fields set to default values are ignored). If an asterisk
+   *     "&#42;" is specified, all fields are updated, including fields that are unspecified/default
+   *     in the request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ApiDeployment updateApiDeployment(
@@ -2738,7 +2738,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * UpdateApiDeployment can be used to modify a specified deployment.
+   * Used to modify a specified deployment.
    *
    * <p>Sample code:
    *
@@ -2765,7 +2765,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * UpdateApiDeployment can be used to modify a specified deployment.
+   * Used to modify a specified deployment.
    *
    * <p>Sample code:
    *
@@ -2793,8 +2793,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteApiDeployment removes a specified deployment, all revisions, and all child resources
-   * (e.g. artifacts).
+   * Removes a specified deployment, all revisions, and all child resources (e.g., artifacts).
    *
    * <p>Sample code:
    *
@@ -2809,7 +2808,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the deployment to delete. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;/deployments/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;/deployments/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteApiDeployment(ApiDeploymentName name) {
@@ -2822,8 +2821,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteApiDeployment removes a specified deployment, all revisions, and all child resources
-   * (e.g. artifacts).
+   * Removes a specified deployment, all revisions, and all child resources (e.g., artifacts).
    *
    * <p>Sample code:
    *
@@ -2838,7 +2836,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the deployment to delete. Format:
-   *     projects/&#42;/locations/&#42;/apis/&#42;/deployments/&#42;
+   *     `projects/&#42;/locations/&#42;/apis/&#42;/deployments/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteApiDeployment(String name) {
@@ -2849,8 +2847,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteApiDeployment removes a specified deployment, all revisions, and all child resources
-   * (e.g. artifacts).
+   * Removes a specified deployment, all revisions, and all child resources (e.g., artifacts).
    *
    * <p>Sample code:
    *
@@ -2878,8 +2875,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteApiDeployment removes a specified deployment, all revisions, and all child resources
-   * (e.g. artifacts).
+   * Removes a specified deployment, all revisions, and all child resources (e.g., artifacts).
    *
    * <p>Sample code:
    *
@@ -2906,7 +2902,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * TagApiDeploymentRevision adds a tag to a specified revision of a deployment.
+   * Adds a tag to a specified revision of a deployment.
    *
    * <p>Sample code:
    *
@@ -2934,7 +2930,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * TagApiDeploymentRevision adds a tag to a specified revision of a deployment.
+   * Adds a tag to a specified revision of a deployment.
    *
    * <p>Sample code:
    *
@@ -2963,8 +2959,8 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListApiDeploymentRevisions lists all revisions of a deployment. Revisions are returned in
-   * descending order of revision creation time.
+   * Lists all revisions of a deployment. Revisions are returned in descending order of revision
+   * creation time.
    *
    * <p>Sample code:
    *
@@ -2997,8 +2993,8 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListApiDeploymentRevisions lists all revisions of a deployment. Revisions are returned in
-   * descending order of revision creation time.
+   * Lists all revisions of a deployment. Revisions are returned in descending order of revision
+   * creation time.
    *
    * <p>Sample code:
    *
@@ -3031,8 +3027,8 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListApiDeploymentRevisions lists all revisions of a deployment. Revisions are returned in
-   * descending order of revision creation time.
+   * Lists all revisions of a deployment. Revisions are returned in descending order of revision
+   * creation time.
    *
    * <p>Sample code:
    *
@@ -3071,8 +3067,8 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * RollbackApiDeployment sets the current revision to a specified prior revision. Note that this
-   * creates a new revision with a new revision ID.
+   * Sets the current revision to a specified prior revision. Note that this creates a new revision
+   * with a new revision ID.
    *
    * <p>Sample code:
    *
@@ -3100,8 +3096,8 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * RollbackApiDeployment sets the current revision to a specified prior revision. Note that this
-   * creates a new revision with a new revision ID.
+   * Sets the current revision to a specified prior revision. Note that this creates a new revision
+   * with a new revision ID.
    *
    * <p>Sample code:
    *
@@ -3130,7 +3126,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteApiDeploymentRevision deletes a revision of a deployment.
+   * Deletes a revision of a deployment.
    *
    * <p>Sample code:
    *
@@ -3147,7 +3143,7 @@ public class RegistryClient implements BackgroundResource {
    * @param name Required. The name of the deployment revision to be deleted, with a revision ID
    *     explicitly included.
    *     <p>Example:
-   *     projects/sample/locations/global/apis/petstore/deployments/prod{@literal @}c7cfa2a8
+   *     `projects/sample/locations/global/apis/petstore/deployments/prod{@literal @}c7cfa2a8`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ApiDeployment deleteApiDeploymentRevision(ApiDeploymentName name) {
@@ -3160,7 +3156,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteApiDeploymentRevision deletes a revision of a deployment.
+   * Deletes a revision of a deployment.
    *
    * <p>Sample code:
    *
@@ -3177,7 +3173,7 @@ public class RegistryClient implements BackgroundResource {
    * @param name Required. The name of the deployment revision to be deleted, with a revision ID
    *     explicitly included.
    *     <p>Example:
-   *     projects/sample/locations/global/apis/petstore/deployments/prod{@literal @}c7cfa2a8
+   *     `projects/sample/locations/global/apis/petstore/deployments/prod{@literal @}c7cfa2a8`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ApiDeployment deleteApiDeploymentRevision(String name) {
@@ -3188,7 +3184,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteApiDeploymentRevision deletes a revision of a deployment.
+   * Deletes a revision of a deployment.
    *
    * <p>Sample code:
    *
@@ -3216,7 +3212,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteApiDeploymentRevision deletes a revision of a deployment.
+   * Deletes a revision of a deployment.
    *
    * <p>Sample code:
    *
@@ -3244,7 +3240,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListArtifacts returns matching artifacts.
+   * Returns matching artifacts.
    *
    * <p>Sample code:
    *
@@ -3260,7 +3256,7 @@ public class RegistryClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent, which owns this collection of artifacts. Format: {parent}
+   * @param parent Required. The parent, which owns this collection of artifacts. Format: `{parent}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListArtifactsPagedResponse listArtifacts(ApiDeploymentName parent) {
@@ -3273,7 +3269,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListArtifacts returns matching artifacts.
+   * Returns matching artifacts.
    *
    * <p>Sample code:
    *
@@ -3288,7 +3284,7 @@ public class RegistryClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent, which owns this collection of artifacts. Format: {parent}
+   * @param parent Required. The parent, which owns this collection of artifacts. Format: `{parent}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListArtifactsPagedResponse listArtifacts(ApiName parent) {
@@ -3301,7 +3297,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListArtifacts returns matching artifacts.
+   * Returns matching artifacts.
    *
    * <p>Sample code:
    *
@@ -3317,7 +3313,7 @@ public class RegistryClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent, which owns this collection of artifacts. Format: {parent}
+   * @param parent Required. The parent, which owns this collection of artifacts. Format: `{parent}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListArtifactsPagedResponse listArtifacts(ApiSpecName parent) {
@@ -3330,7 +3326,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListArtifacts returns matching artifacts.
+   * Returns matching artifacts.
    *
    * <p>Sample code:
    *
@@ -3345,7 +3341,7 @@ public class RegistryClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent, which owns this collection of artifacts. Format: {parent}
+   * @param parent Required. The parent, which owns this collection of artifacts. Format: `{parent}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListArtifactsPagedResponse listArtifacts(ApiVersionName parent) {
@@ -3358,7 +3354,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListArtifacts returns matching artifacts.
+   * Returns matching artifacts.
    *
    * <p>Sample code:
    *
@@ -3373,7 +3369,7 @@ public class RegistryClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent, which owns this collection of artifacts. Format: {parent}
+   * @param parent Required. The parent, which owns this collection of artifacts. Format: `{parent}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListArtifactsPagedResponse listArtifacts(LocationName parent) {
@@ -3386,7 +3382,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListArtifacts returns matching artifacts.
+   * Returns matching artifacts.
    *
    * <p>Sample code:
    *
@@ -3401,7 +3397,7 @@ public class RegistryClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent, which owns this collection of artifacts. Format: {parent}
+   * @param parent Required. The parent, which owns this collection of artifacts. Format: `{parent}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListArtifactsPagedResponse listArtifacts(String parent) {
@@ -3411,7 +3407,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListArtifacts returns matching artifacts.
+   * Returns matching artifacts.
    *
    * <p>Sample code:
    *
@@ -3441,7 +3437,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListArtifacts returns matching artifacts.
+   * Returns matching artifacts.
    *
    * <p>Sample code:
    *
@@ -3471,7 +3467,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ListArtifacts returns matching artifacts.
+   * Returns matching artifacts.
    *
    * <p>Sample code:
    *
@@ -3507,7 +3503,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetArtifact returns a specified artifact.
+   * Returns a specified artifact.
    *
    * <p>Sample code:
    *
@@ -3521,7 +3517,7 @@ public class RegistryClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the artifact to retrieve. Format: {parent}/artifacts/&#42;
+   * @param name Required. The name of the artifact to retrieve. Format: `{parent}/artifacts/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Artifact getArtifact(ArtifactName name) {
@@ -3532,7 +3528,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetArtifact returns a specified artifact.
+   * Returns a specified artifact.
    *
    * <p>Sample code:
    *
@@ -3547,7 +3543,7 @@ public class RegistryClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the artifact to retrieve. Format: {parent}/artifacts/&#42;
+   * @param name Required. The name of the artifact to retrieve. Format: `{parent}/artifacts/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Artifact getArtifact(String name) {
@@ -3557,7 +3553,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetArtifact returns a specified artifact.
+   * Returns a specified artifact.
    *
    * <p>Sample code:
    *
@@ -3585,7 +3581,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetArtifact returns a specified artifact.
+   * Returns a specified artifact.
    *
    * <p>Sample code:
    *
@@ -3612,9 +3608,9 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetArtifactContents returns the contents of a specified artifact. If artifacts are stored with
-   * GZip compression, the default behavior is to return the artifact uncompressed (the mime_type
-   * response field indicates the exact format returned).
+   * Returns the contents of a specified artifact. If artifacts are stored with GZip compression,
+   * the default behavior is to return the artifact uncompressed (the mime_type response field
+   * indicates the exact format returned).
    *
    * <p>Sample code:
    *
@@ -3629,7 +3625,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the artifact whose contents should be retrieved. Format:
-   *     {parent}/artifacts/&#42;
+   *     `{parent}/artifacts/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final HttpBody getArtifactContents(ArtifactName name) {
@@ -3642,9 +3638,9 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetArtifactContents returns the contents of a specified artifact. If artifacts are stored with
-   * GZip compression, the default behavior is to return the artifact uncompressed (the mime_type
-   * response field indicates the exact format returned).
+   * Returns the contents of a specified artifact. If artifacts are stored with GZip compression,
+   * the default behavior is to return the artifact uncompressed (the mime_type response field
+   * indicates the exact format returned).
    *
    * <p>Sample code:
    *
@@ -3660,7 +3656,7 @@ public class RegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the artifact whose contents should be retrieved. Format:
-   *     {parent}/artifacts/&#42;
+   *     `{parent}/artifacts/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final HttpBody getArtifactContents(String name) {
@@ -3671,9 +3667,9 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetArtifactContents returns the contents of a specified artifact. If artifacts are stored with
-   * GZip compression, the default behavior is to return the artifact uncompressed (the mime_type
-   * response field indicates the exact format returned).
+   * Returns the contents of a specified artifact. If artifacts are stored with GZip compression,
+   * the default behavior is to return the artifact uncompressed (the mime_type response field
+   * indicates the exact format returned).
    *
    * <p>Sample code:
    *
@@ -3701,9 +3697,9 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * GetArtifactContents returns the contents of a specified artifact. If artifacts are stored with
-   * GZip compression, the default behavior is to return the artifact uncompressed (the mime_type
-   * response field indicates the exact format returned).
+   * Returns the contents of a specified artifact. If artifacts are stored with GZip compression,
+   * the default behavior is to return the artifact uncompressed (the mime_type response field
+   * indicates the exact format returned).
    *
    * <p>Sample code:
    *
@@ -3730,7 +3726,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * CreateArtifact creates a specified artifact.
+   * Creates a specified artifact.
    *
    * <p>Sample code:
    *
@@ -3746,7 +3742,7 @@ public class RegistryClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent, which owns this collection of artifacts. Format: {parent}
+   * @param parent Required. The parent, which owns this collection of artifacts. Format: `{parent}`
    * @param artifact Required. The artifact to create.
    * @param artifactId Required. The ID to use for the artifact, which will become the final
    *     component of the artifact's resource name.
@@ -3767,7 +3763,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * CreateArtifact creates a specified artifact.
+   * Creates a specified artifact.
    *
    * <p>Sample code:
    *
@@ -3782,7 +3778,7 @@ public class RegistryClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent, which owns this collection of artifacts. Format: {parent}
+   * @param parent Required. The parent, which owns this collection of artifacts. Format: `{parent}`
    * @param artifact Required. The artifact to create.
    * @param artifactId Required. The ID to use for the artifact, which will become the final
    *     component of the artifact's resource name.
@@ -3802,7 +3798,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * CreateArtifact creates a specified artifact.
+   * Creates a specified artifact.
    *
    * <p>Sample code:
    *
@@ -3818,7 +3814,7 @@ public class RegistryClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent, which owns this collection of artifacts. Format: {parent}
+   * @param parent Required. The parent, which owns this collection of artifacts. Format: `{parent}`
    * @param artifact Required. The artifact to create.
    * @param artifactId Required. The ID to use for the artifact, which will become the final
    *     component of the artifact's resource name.
@@ -3838,7 +3834,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * CreateArtifact creates a specified artifact.
+   * Creates a specified artifact.
    *
    * <p>Sample code:
    *
@@ -3853,7 +3849,7 @@ public class RegistryClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent, which owns this collection of artifacts. Format: {parent}
+   * @param parent Required. The parent, which owns this collection of artifacts. Format: `{parent}`
    * @param artifact Required. The artifact to create.
    * @param artifactId Required. The ID to use for the artifact, which will become the final
    *     component of the artifact's resource name.
@@ -3874,7 +3870,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * CreateArtifact creates a specified artifact.
+   * Creates a specified artifact.
    *
    * <p>Sample code:
    *
@@ -3889,7 +3885,7 @@ public class RegistryClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent, which owns this collection of artifacts. Format: {parent}
+   * @param parent Required. The parent, which owns this collection of artifacts. Format: `{parent}`
    * @param artifact Required. The artifact to create.
    * @param artifactId Required. The ID to use for the artifact, which will become the final
    *     component of the artifact's resource name.
@@ -3909,7 +3905,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * CreateArtifact creates a specified artifact.
+   * Creates a specified artifact.
    *
    * <p>Sample code:
    *
@@ -3924,7 +3920,7 @@ public class RegistryClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent, which owns this collection of artifacts. Format: {parent}
+   * @param parent Required. The parent, which owns this collection of artifacts. Format: `{parent}`
    * @param artifact Required. The artifact to create.
    * @param artifactId Required. The ID to use for the artifact, which will become the final
    *     component of the artifact's resource name.
@@ -3944,7 +3940,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * CreateArtifact creates a specified artifact.
+   * Creates a specified artifact.
    *
    * <p>Sample code:
    *
@@ -3971,7 +3967,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * CreateArtifact creates a specified artifact.
+   * Creates a specified artifact.
    *
    * <p>Sample code:
    *
@@ -3997,7 +3993,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ReplaceArtifact can be used to replace a specified artifact.
+   * Used to replace a specified artifact.
    *
    * <p>Sample code:
    *
@@ -4012,7 +4008,7 @@ public class RegistryClient implements BackgroundResource {
    *
    * @param artifact Required. The artifact to replace.
    *     <p>The `name` field is used to identify the artifact to replace. Format:
-   *     {parent}/artifacts/&#42;
+   *     `{parent}/artifacts/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Artifact replaceArtifact(Artifact artifact) {
@@ -4023,7 +4019,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ReplaceArtifact can be used to replace a specified artifact.
+   * Used to replace a specified artifact.
    *
    * <p>Sample code:
    *
@@ -4046,7 +4042,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ReplaceArtifact can be used to replace a specified artifact.
+   * Used to replace a specified artifact.
    *
    * <p>Sample code:
    *
@@ -4068,7 +4064,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteArtifact removes a specified artifact.
+   * Removes a specified artifact.
    *
    * <p>Sample code:
    *
@@ -4082,7 +4078,7 @@ public class RegistryClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the artifact to delete. Format: {parent}/artifacts/&#42;
+   * @param name Required. The name of the artifact to delete. Format: `{parent}/artifacts/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteArtifact(ArtifactName name) {
@@ -4093,7 +4089,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteArtifact removes a specified artifact.
+   * Removes a specified artifact.
    *
    * <p>Sample code:
    *
@@ -4108,7 +4104,7 @@ public class RegistryClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the artifact to delete. Format: {parent}/artifacts/&#42;
+   * @param name Required. The name of the artifact to delete. Format: `{parent}/artifacts/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteArtifact(String name) {
@@ -4118,7 +4114,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteArtifact removes a specified artifact.
+   * Removes a specified artifact.
    *
    * <p>Sample code:
    *
@@ -4146,7 +4142,7 @@ public class RegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * DeleteArtifact removes a specified artifact.
+   * Removes a specified artifact.
    *
    * <p>Sample code:
    *

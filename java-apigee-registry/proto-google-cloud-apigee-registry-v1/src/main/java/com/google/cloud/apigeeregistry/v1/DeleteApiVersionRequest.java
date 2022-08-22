@@ -77,6 +77,11 @@ public final class DeleteApiVersionRequest extends com.google.protobuf.Generated
               name_ = s;
               break;
             }
+          case 16:
+            {
+              force_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -120,7 +125,7 @@ public final class DeleteApiVersionRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The name of the version to delete.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
    * </pre>
    *
    * <code>
@@ -146,7 +151,7 @@ public final class DeleteApiVersionRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The name of the version to delete.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
    * </pre>
    *
    * <code>
@@ -168,6 +173,25 @@ public final class DeleteApiVersionRequest extends com.google.protobuf.Generated
     }
   }
 
+  public static final int FORCE_FIELD_NUMBER = 2;
+  private boolean force_;
+  /**
+   *
+   *
+   * <pre>
+   * If set to true, any child resources will also be deleted.
+   * (Otherwise, the request will only work if there are no child resources.)
+   * </pre>
+   *
+   * <code>bool force = 2;</code>
+   *
+   * @return The force.
+   */
+  @java.lang.Override
+  public boolean getForce() {
+    return force_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -185,6 +209,9 @@ public final class DeleteApiVersionRequest extends com.google.protobuf.Generated
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (force_ != false) {
+      output.writeBool(2, force_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -196,6 +223,9 @@ public final class DeleteApiVersionRequest extends com.google.protobuf.Generated
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (force_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, force_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -214,6 +244,7 @@ public final class DeleteApiVersionRequest extends com.google.protobuf.Generated
         (com.google.cloud.apigeeregistry.v1.DeleteApiVersionRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (getForce() != other.getForce()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -227,6 +258,8 @@ public final class DeleteApiVersionRequest extends com.google.protobuf.Generated
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + FORCE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getForce());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -375,6 +408,8 @@ public final class DeleteApiVersionRequest extends com.google.protobuf.Generated
       super.clear();
       name_ = "";
 
+      force_ = false;
+
       return this;
     }
 
@@ -403,6 +438,7 @@ public final class DeleteApiVersionRequest extends com.google.protobuf.Generated
       com.google.cloud.apigeeregistry.v1.DeleteApiVersionRequest result =
           new com.google.cloud.apigeeregistry.v1.DeleteApiVersionRequest(this);
       result.name_ = name_;
+      result.force_ = force_;
       onBuilt();
       return result;
     }
@@ -457,6 +493,9 @@ public final class DeleteApiVersionRequest extends com.google.protobuf.Generated
         name_ = other.name_;
         onChanged();
       }
+      if (other.getForce() != false) {
+        setForce(other.getForce());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -493,7 +532,7 @@ public final class DeleteApiVersionRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The name of the version to delete.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>
@@ -518,7 +557,7 @@ public final class DeleteApiVersionRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The name of the version to delete.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>
@@ -543,7 +582,7 @@ public final class DeleteApiVersionRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The name of the version to delete.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>
@@ -567,7 +606,7 @@ public final class DeleteApiVersionRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The name of the version to delete.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>
@@ -587,7 +626,7 @@ public final class DeleteApiVersionRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The name of the version to delete.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>
@@ -604,6 +643,61 @@ public final class DeleteApiVersionRequest extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
 
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean force_;
+    /**
+     *
+     *
+     * <pre>
+     * If set to true, any child resources will also be deleted.
+     * (Otherwise, the request will only work if there are no child resources.)
+     * </pre>
+     *
+     * <code>bool force = 2;</code>
+     *
+     * @return The force.
+     */
+    @java.lang.Override
+    public boolean getForce() {
+      return force_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set to true, any child resources will also be deleted.
+     * (Otherwise, the request will only work if there are no child resources.)
+     * </pre>
+     *
+     * <code>bool force = 2;</code>
+     *
+     * @param value The force to set.
+     * @return This builder for chaining.
+     */
+    public Builder setForce(boolean value) {
+
+      force_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set to true, any child resources will also be deleted.
+     * (Otherwise, the request will only work if there are no child resources.)
+     * </pre>
+     *
+     * <code>bool force = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearForce() {
+
+      force_ = false;
       onChanged();
       return this;
     }

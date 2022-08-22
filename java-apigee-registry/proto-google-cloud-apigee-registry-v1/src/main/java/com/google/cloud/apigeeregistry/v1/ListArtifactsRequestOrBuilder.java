@@ -28,7 +28,7 @@ public interface ListArtifactsRequestOrBuilder
    *
    * <pre>
    * Required. The parent, which owns this collection of artifacts.
-   * Format: {parent}
+   * Format: `{parent}`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface ListArtifactsRequestOrBuilder
    *
    * <pre>
    * Required. The parent, which owns this collection of artifacts.
-   * Format: {parent}
+   * Format: `{parent}`
    * </pre>
    *
    * <code>

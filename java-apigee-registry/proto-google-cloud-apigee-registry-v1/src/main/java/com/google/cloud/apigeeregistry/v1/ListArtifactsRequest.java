@@ -141,7 +141,7 @@ public final class ListArtifactsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The parent, which owns this collection of artifacts.
-   * Format: {parent}
+   * Format: `{parent}`
    * </pre>
    *
    * <code>
@@ -167,7 +167,7 @@ public final class ListArtifactsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The parent, which owns this collection of artifacts.
-   * Format: {parent}
+   * Format: `{parent}`
    * </pre>
    *
    * <code>
@@ -688,7 +688,7 @@ public final class ListArtifactsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The parent, which owns this collection of artifacts.
-     * Format: {parent}
+     * Format: `{parent}`
      * </pre>
      *
      * <code>
@@ -713,7 +713,7 @@ public final class ListArtifactsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The parent, which owns this collection of artifacts.
-     * Format: {parent}
+     * Format: `{parent}`
      * </pre>
      *
      * <code>
@@ -738,7 +738,7 @@ public final class ListArtifactsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The parent, which owns this collection of artifacts.
-     * Format: {parent}
+     * Format: `{parent}`
      * </pre>
      *
      * <code>
@@ -762,7 +762,7 @@ public final class ListArtifactsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The parent, which owns this collection of artifacts.
-     * Format: {parent}
+     * Format: `{parent}`
      * </pre>
      *
      * <code>
@@ -782,7 +782,7 @@ public final class ListArtifactsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The parent, which owns this collection of artifacts.
-     * Format: {parent}
+     * Format: `{parent}`
      * </pre>
      *
      * <code>

@@ -26,8 +26,8 @@ package com.google.cloud.apigeeregistry.v1;
  * and are used to store metadata that is too large or numerous to be stored
  * directly on the resource. Since artifacts are stored separately from parent
  * resources, they should generally be used for metadata that is needed
- * infrequently, i.e. not for display in primary views of the resource but
- * perhaps displayed or downloaded upon request. The ListArtifacts method
+ * infrequently, i.e., not for display in primary views of the resource but
+ * perhaps displayed or downloaded upon request. The `ListArtifacts` method
  * allows artifacts to be quickly enumerated and checked for presence without
  * downloading their (potentially-large) contents.
  * </pre>
@@ -704,8 +704,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
    * and are used to store metadata that is too large or numerous to be stored
    * directly on the resource. Since artifacts are stored separately from parent
    * resources, they should generally be used for metadata that is needed
-   * infrequently, i.e. not for display in primary views of the resource but
-   * perhaps displayed or downloaded upon request. The ListArtifacts method
+   * infrequently, i.e., not for display in primary views of the resource but
+   * perhaps displayed or downloaded upon request. The `ListArtifacts` method
    * allows artifacts to be quickly enumerated and checked for presence without
    * downloading their (potentially-large) contents.
    * </pre>

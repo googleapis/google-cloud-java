@@ -148,7 +148,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. The version to update.
    * The `name` field is used to identify the version to update.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
    * </pre>
    *
    * <code>
@@ -167,7 +167,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. The version to update.
    * The `name` field is used to identify the version to update.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
    * </pre>
    *
    * <code>
@@ -188,7 +188,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. The version to update.
    * The `name` field is used to identify the version to update.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
    * </pre>
    *
    * <code>
@@ -208,8 +208,8 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
    * <pre>
    * The list of fields to be updated. If omitted, all fields are updated that
    * are set in the request message (fields set to default values are ignored).
-   * If a "*" is specified, all fields are updated, including fields that are
-   * unspecified/default in the request.
+   * If an asterisk "*" is specified, all fields are updated, including fields
+   * that are unspecified/default in the request.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -226,8 +226,8 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
    * <pre>
    * The list of fields to be updated. If omitted, all fields are updated that
    * are set in the request message (fields set to default values are ignored).
-   * If a "*" is specified, all fields are updated, including fields that are
-   * unspecified/default in the request.
+   * If an asterisk "*" is specified, all fields are updated, including fields
+   * that are unspecified/default in the request.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -244,8 +244,8 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
    * <pre>
    * The list of fields to be updated. If omitted, all fields are updated that
    * are set in the request message (fields set to default values are ignored).
-   * If a "*" is specified, all fields are updated, including fields that are
-   * unspecified/default in the request.
+   * If an asterisk "*" is specified, all fields are updated, including fields
+   * that are unspecified/default in the request.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -660,7 +660,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The version to update.
      * The `name` field is used to identify the version to update.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>
@@ -678,7 +678,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The version to update.
      * The `name` field is used to identify the version to update.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>
@@ -702,7 +702,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The version to update.
      * The `name` field is used to identify the version to update.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>
@@ -728,7 +728,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The version to update.
      * The `name` field is used to identify the version to update.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>
@@ -752,7 +752,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The version to update.
      * The `name` field is used to identify the version to update.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>
@@ -782,7 +782,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The version to update.
      * The `name` field is used to identify the version to update.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>
@@ -806,7 +806,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The version to update.
      * The `name` field is used to identify the version to update.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>
@@ -824,7 +824,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The version to update.
      * The `name` field is used to identify the version to update.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>
@@ -846,7 +846,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The version to update.
      * The `name` field is used to identify the version to update.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>
@@ -882,8 +882,8 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      * <pre>
      * The list of fields to be updated. If omitted, all fields are updated that
      * are set in the request message (fields set to default values are ignored).
-     * If a "*" is specified, all fields are updated, including fields that are
-     * unspecified/default in the request.
+     * If an asterisk "*" is specified, all fields are updated, including fields
+     * that are unspecified/default in the request.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -899,8 +899,8 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      * <pre>
      * The list of fields to be updated. If omitted, all fields are updated that
      * are set in the request message (fields set to default values are ignored).
-     * If a "*" is specified, all fields are updated, including fields that are
-     * unspecified/default in the request.
+     * If an asterisk "*" is specified, all fields are updated, including fields
+     * that are unspecified/default in the request.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -922,8 +922,8 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      * <pre>
      * The list of fields to be updated. If omitted, all fields are updated that
      * are set in the request message (fields set to default values are ignored).
-     * If a "*" is specified, all fields are updated, including fields that are
-     * unspecified/default in the request.
+     * If an asterisk "*" is specified, all fields are updated, including fields
+     * that are unspecified/default in the request.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -947,8 +947,8 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      * <pre>
      * The list of fields to be updated. If omitted, all fields are updated that
      * are set in the request message (fields set to default values are ignored).
-     * If a "*" is specified, all fields are updated, including fields that are
-     * unspecified/default in the request.
+     * If an asterisk "*" is specified, all fields are updated, including fields
+     * that are unspecified/default in the request.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -969,8 +969,8 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      * <pre>
      * The list of fields to be updated. If omitted, all fields are updated that
      * are set in the request message (fields set to default values are ignored).
-     * If a "*" is specified, all fields are updated, including fields that are
-     * unspecified/default in the request.
+     * If an asterisk "*" is specified, all fields are updated, including fields
+     * that are unspecified/default in the request.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -996,8 +996,8 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      * <pre>
      * The list of fields to be updated. If omitted, all fields are updated that
      * are set in the request message (fields set to default values are ignored).
-     * If a "*" is specified, all fields are updated, including fields that are
-     * unspecified/default in the request.
+     * If an asterisk "*" is specified, all fields are updated, including fields
+     * that are unspecified/default in the request.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1019,8 +1019,8 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      * <pre>
      * The list of fields to be updated. If omitted, all fields are updated that
      * are set in the request message (fields set to default values are ignored).
-     * If a "*" is specified, all fields are updated, including fields that are
-     * unspecified/default in the request.
+     * If an asterisk "*" is specified, all fields are updated, including fields
+     * that are unspecified/default in the request.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1036,8 +1036,8 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      * <pre>
      * The list of fields to be updated. If omitted, all fields are updated that
      * are set in the request message (fields set to default values are ignored).
-     * If a "*" is specified, all fields are updated, including fields that are
-     * unspecified/default in the request.
+     * If an asterisk "*" is specified, all fields are updated, including fields
+     * that are unspecified/default in the request.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1057,8 +1057,8 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      * <pre>
      * The list of fields to be updated. If omitted, all fields are updated that
      * are set in the request message (fields set to default values are ignored).
-     * If a "*" is specified, all fields are updated, including fields that are
-     * unspecified/default in the request.
+     * If an asterisk "*" is specified, all fields are updated, including fields
+     * that are unspecified/default in the request.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

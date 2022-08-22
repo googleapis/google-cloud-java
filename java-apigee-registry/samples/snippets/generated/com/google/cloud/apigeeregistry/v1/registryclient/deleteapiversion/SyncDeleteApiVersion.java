@@ -36,6 +36,7 @@ public class SyncDeleteApiVersion {
           DeleteApiVersionRequest.newBuilder()
               .setName(
                   ApiVersionName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]").toString())
+              .setForce(true)
               .build();
       registryClient.deleteApiVersion(request);
     }

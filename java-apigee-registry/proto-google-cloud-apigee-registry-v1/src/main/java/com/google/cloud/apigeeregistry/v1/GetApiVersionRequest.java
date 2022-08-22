@@ -120,7 +120,7 @@ public final class GetApiVersionRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The name of the version to retrieve.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
    * </pre>
    *
    * <code>
@@ -146,7 +146,7 @@ public final class GetApiVersionRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The name of the version to retrieve.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
    * </pre>
    *
    * <code>
@@ -493,7 +493,7 @@ public final class GetApiVersionRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The name of the version to retrieve.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>
@@ -518,7 +518,7 @@ public final class GetApiVersionRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The name of the version to retrieve.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>
@@ -543,7 +543,7 @@ public final class GetApiVersionRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The name of the version to retrieve.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>
@@ -567,7 +567,7 @@ public final class GetApiVersionRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The name of the version to retrieve.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>
@@ -587,7 +587,7 @@ public final class GetApiVersionRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The name of the version to retrieve.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>

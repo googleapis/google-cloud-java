@@ -35,6 +35,7 @@ public class SyncDeleteApi {
       DeleteApiRequest request =
           DeleteApiRequest.newBuilder()
               .setName(ApiName.of("[PROJECT]", "[LOCATION]", "[API]").toString())
+              .setForce(true)
               .build();
       registryClient.deleteApi(request);
     }

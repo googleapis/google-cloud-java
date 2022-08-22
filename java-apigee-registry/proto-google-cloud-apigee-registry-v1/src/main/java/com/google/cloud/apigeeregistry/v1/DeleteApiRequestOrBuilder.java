@@ -28,7 +28,7 @@ public interface DeleteApiRequestOrBuilder
    *
    * <pre>
    * Required. The name of the API to delete.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface DeleteApiRequestOrBuilder
    *
    * <pre>
    * Required. The name of the API to delete.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;`
    * </pre>
    *
    * <code>
@@ -53,4 +53,18 @@ public interface DeleteApiRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set to true, any child resources will also be deleted.
+   * (Otherwise, the request will only work if there are no child resources.)
+   * </pre>
+   *
+   * <code>bool force = 2;</code>
+   *
+   * @return The force.
+   */
+  boolean getForce();
 }

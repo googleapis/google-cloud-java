@@ -1314,7 +1314,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Format: `projects/&#42;&#47;locations/&#42;&#47;instance`.
-   * Currently only locations/global is supported.
+   * Currently only `locations/global` is supported.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1338,7 +1338,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Format: `projects/&#42;&#47;locations/&#42;&#47;instance`.
-   * Currently only locations/global is supported.
+   * Currently only `locations/global` is supported.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -2037,7 +2037,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Format: `projects/&#42;&#47;locations/&#42;&#47;instance`.
-     * Currently only locations/global is supported.
+     * Currently only `locations/global` is supported.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2060,7 +2060,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Format: `projects/&#42;&#47;locations/&#42;&#47;instance`.
-     * Currently only locations/global is supported.
+     * Currently only `locations/global` is supported.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2083,7 +2083,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Format: `projects/&#42;&#47;locations/&#42;&#47;instance`.
-     * Currently only locations/global is supported.
+     * Currently only `locations/global` is supported.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2105,7 +2105,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Format: `projects/&#42;&#47;locations/&#42;&#47;instance`.
-     * Currently only locations/global is supported.
+     * Currently only `locations/global` is supported.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2123,7 +2123,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Format: `projects/&#42;&#47;locations/&#42;&#47;instance`.
-     * Currently only locations/global is supported.
+     * Currently only `locations/global` is supported.
      * </pre>
      *
      * <code>string name = 1;</code>

@@ -28,7 +28,7 @@ public interface GetApiSpecContentsRequestOrBuilder
    *
    * <pre>
    * Required. The name of the spec whose contents should be retrieved.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;&#47;specs/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;&#47;specs/&#42;`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface GetApiSpecContentsRequestOrBuilder
    *
    * <pre>
    * Required. The name of the spec whose contents should be retrieved.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;&#47;specs/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;&#47;specs/&#42;`
    * </pre>
    *
    * <code>

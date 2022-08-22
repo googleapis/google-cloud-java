@@ -29,7 +29,7 @@ public interface UpdateApiRequestOrBuilder
    * <pre>
    * Required. The API to update.
    * The `name` field is used to identify the API to update.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;`
    * </pre>
    *
    * <code>.google.cloud.apigeeregistry.v1.Api api = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -44,7 +44,7 @@ public interface UpdateApiRequestOrBuilder
    * <pre>
    * Required. The API to update.
    * The `name` field is used to identify the API to update.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;`
    * </pre>
    *
    * <code>.google.cloud.apigeeregistry.v1.Api api = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -59,7 +59,7 @@ public interface UpdateApiRequestOrBuilder
    * <pre>
    * Required. The API to update.
    * The `name` field is used to identify the API to update.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;`
    * </pre>
    *
    * <code>.google.cloud.apigeeregistry.v1.Api api = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -73,8 +73,8 @@ public interface UpdateApiRequestOrBuilder
    * <pre>
    * The list of fields to be updated. If omitted, all fields are updated that
    * are set in the request message (fields set to default values are ignored).
-   * If a "*" is specified, all fields are updated, including fields that are
-   * unspecified/default in the request.
+   * If an asterisk "*" is specified, all fields are updated, including fields
+   * that are unspecified/default in the request.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -88,8 +88,8 @@ public interface UpdateApiRequestOrBuilder
    * <pre>
    * The list of fields to be updated. If omitted, all fields are updated that
    * are set in the request message (fields set to default values are ignored).
-   * If a "*" is specified, all fields are updated, including fields that are
-   * unspecified/default in the request.
+   * If an asterisk "*" is specified, all fields are updated, including fields
+   * that are unspecified/default in the request.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -103,8 +103,8 @@ public interface UpdateApiRequestOrBuilder
    * <pre>
    * The list of fields to be updated. If omitted, all fields are updated that
    * are set in the request message (fields set to default values are ignored).
-   * If a "*" is specified, all fields are updated, including fields that are
-   * unspecified/default in the request.
+   * If an asterisk "*" is specified, all fields are updated, including fields
+   * that are unspecified/default in the request.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -115,7 +115,7 @@ public interface UpdateApiRequestOrBuilder
    *
    *
    * <pre>
-   * If set to true, and the api is not found, a new api will be created.
+   * If set to true, and the API is not found, a new API will be created.
    * In this situation, `update_mask` is ignored.
    * </pre>
    *

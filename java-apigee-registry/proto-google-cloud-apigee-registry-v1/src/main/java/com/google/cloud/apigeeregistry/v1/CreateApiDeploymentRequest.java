@@ -144,7 +144,7 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The parent, which owns this collection of deployments.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;`
    * </pre>
    *
    * <code>
@@ -170,7 +170,7 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The parent, which owns this collection of deployments.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;`
    * </pre>
    *
    * <code>
@@ -675,7 +675,7 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The parent, which owns this collection of deployments.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;`
      * </pre>
      *
      * <code>
@@ -700,7 +700,7 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The parent, which owns this collection of deployments.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;`
      * </pre>
      *
      * <code>
@@ -725,7 +725,7 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The parent, which owns this collection of deployments.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;`
      * </pre>
      *
      * <code>
@@ -749,7 +749,7 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The parent, which owns this collection of deployments.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;`
      * </pre>
      *
      * <code>
@@ -769,7 +769,7 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The parent, which owns this collection of deployments.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;`
      * </pre>
      *
      * <code>

@@ -141,7 +141,7 @@ public final class ListApiSpecsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The parent, which owns this collection of specs.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
    * </pre>
    *
    * <code>
@@ -167,7 +167,7 @@ public final class ListApiSpecsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The parent, which owns this collection of specs.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
    * </pre>
    *
    * <code>
@@ -688,7 +688,7 @@ public final class ListApiSpecsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The parent, which owns this collection of specs.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>
@@ -713,7 +713,7 @@ public final class ListApiSpecsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The parent, which owns this collection of specs.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>
@@ -738,7 +738,7 @@ public final class ListApiSpecsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The parent, which owns this collection of specs.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>
@@ -762,7 +762,7 @@ public final class ListApiSpecsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The parent, which owns this collection of specs.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>
@@ -782,7 +782,7 @@ public final class ListApiSpecsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The parent, which owns this collection of specs.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
      *
      * <code>

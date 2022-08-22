@@ -37,6 +37,7 @@ public class AsyncDeleteApiVersion {
           DeleteApiVersionRequest.newBuilder()
               .setName(
                   ApiVersionName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]").toString())
+              .setForce(true)
               .build();
       ApiFuture<Empty> future = registryClient.deleteApiVersionCallable().futureCall(request);
       // Do something.

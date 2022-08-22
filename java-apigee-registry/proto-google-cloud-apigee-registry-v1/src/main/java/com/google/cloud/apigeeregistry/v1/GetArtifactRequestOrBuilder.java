@@ -28,7 +28,7 @@ public interface GetArtifactRequestOrBuilder
    *
    * <pre>
    * Required. The name of the artifact to retrieve.
-   * Format: {parent}/artifacts/&#42;
+   * Format: `{parent}/artifacts/&#42;`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface GetArtifactRequestOrBuilder
    *
    * <pre>
    * Required. The name of the artifact to retrieve.
-   * Format: {parent}/artifacts/&#42;
+   * Format: `{parent}/artifacts/&#42;`
    * </pre>
    *
    * <code>

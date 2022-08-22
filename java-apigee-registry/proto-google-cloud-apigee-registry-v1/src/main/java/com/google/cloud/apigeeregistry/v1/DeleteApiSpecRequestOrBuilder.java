@@ -28,7 +28,7 @@ public interface DeleteApiSpecRequestOrBuilder
    *
    * <pre>
    * Required. The name of the spec to delete.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;&#47;specs/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;&#47;specs/&#42;`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface DeleteApiSpecRequestOrBuilder
    *
    * <pre>
    * Required. The name of the spec to delete.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;&#47;specs/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;&#47;specs/&#42;`
    * </pre>
    *
    * <code>

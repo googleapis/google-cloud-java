@@ -36,6 +36,7 @@ public class AsyncDeleteApi {
       DeleteApiRequest request =
           DeleteApiRequest.newBuilder()
               .setName(ApiName.of("[PROJECT]", "[LOCATION]", "[API]").toString())
+              .setForce(true)
               .build();
       ApiFuture<Empty> future = registryClient.deleteApiCallable().futureCall(request);
       // Do something.

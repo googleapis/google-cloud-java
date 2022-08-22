@@ -255,9 +255,9 @@ public interface ApiDeploymentOrBuilder
    *
    *
    * <pre>
-   * The full resource name (including revision id) of the spec of the API being
+   * The full resource name (including revision ID) of the spec of the API being
    * served by the deployment. Changes to this value will update the revision.
-   * Format: apis/{api}/deployments/{deployment}
+   * Format: `apis/{api}/deployments/{deployment}`
    * </pre>
    *
    * <code>string api_spec_revision = 8 [(.google.api.resource_reference) = { ... }</code>
@@ -269,9 +269,9 @@ public interface ApiDeploymentOrBuilder
    *
    *
    * <pre>
-   * The full resource name (including revision id) of the spec of the API being
+   * The full resource name (including revision ID) of the spec of the API being
    * served by the deployment. Changes to this value will update the revision.
-   * Format: apis/{api}/deployments/{deployment}
+   * Format: `apis/{api}/deployments/{deployment}`
    * </pre>
    *
    * <code>string api_spec_revision = 8 [(.google.api.resource_reference) = { ... }</code>
@@ -311,7 +311,7 @@ public interface ApiDeploymentOrBuilder
    *
    *
    * <pre>
-   * The address of the external channel of the API (e.g. the Developer
+   * The address of the external channel of the API (e.g., the Developer
    * Portal). Changes to this value will not affect the revision.
    * </pre>
    *
@@ -324,7 +324,7 @@ public interface ApiDeploymentOrBuilder
    *
    *
    * <pre>
-   * The address of the external channel of the API (e.g. the Developer
+   * The address of the external channel of the API (e.g., the Developer
    * Portal). Changes to this value will not affect the revision.
    * </pre>
    *
@@ -401,7 +401,7 @@ public interface ApiDeploymentOrBuilder
    * labels are excluded).
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with
-   * "apigeeregistry.googleapis.com/" and cannot be changed.
+   * `apigeeregistry.googleapis.com/` and cannot be changed.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 14;</code>
@@ -420,7 +420,7 @@ public interface ApiDeploymentOrBuilder
    * labels are excluded).
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with
-   * "apigeeregistry.googleapis.com/" and cannot be changed.
+   * `apigeeregistry.googleapis.com/` and cannot be changed.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 14;</code>
@@ -442,7 +442,7 @@ public interface ApiDeploymentOrBuilder
    * labels are excluded).
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with
-   * "apigeeregistry.googleapis.com/" and cannot be changed.
+   * `apigeeregistry.googleapis.com/` and cannot be changed.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 14;</code>
@@ -461,7 +461,7 @@ public interface ApiDeploymentOrBuilder
    * labels are excluded).
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with
-   * "apigeeregistry.googleapis.com/" and cannot be changed.
+   * `apigeeregistry.googleapis.com/` and cannot be changed.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 14;</code>
@@ -485,7 +485,7 @@ public interface ApiDeploymentOrBuilder
    * labels are excluded).
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * System reserved label keys are prefixed with
-   * "apigeeregistry.googleapis.com/" and cannot be changed.
+   * `apigeeregistry.googleapis.com/` and cannot be changed.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 14;</code>

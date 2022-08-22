@@ -125,7 +125,7 @@ public final class DeleteApiDeploymentRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The name of the deployment to delete.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;`
    * </pre>
    *
    * <code>
@@ -151,7 +151,7 @@ public final class DeleteApiDeploymentRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The name of the deployment to delete.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;`
    * </pre>
    *
    * <code>
@@ -535,7 +535,7 @@ public final class DeleteApiDeploymentRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The name of the deployment to delete.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;`
      * </pre>
      *
      * <code>
@@ -560,7 +560,7 @@ public final class DeleteApiDeploymentRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The name of the deployment to delete.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;`
      * </pre>
      *
      * <code>
@@ -585,7 +585,7 @@ public final class DeleteApiDeploymentRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The name of the deployment to delete.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;`
      * </pre>
      *
      * <code>
@@ -609,7 +609,7 @@ public final class DeleteApiDeploymentRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The name of the deployment to delete.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;`
      * </pre>
      *
      * <code>
@@ -629,7 +629,7 @@ public final class DeleteApiDeploymentRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The name of the deployment to delete.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;`
      * </pre>
      *
      * <code>
