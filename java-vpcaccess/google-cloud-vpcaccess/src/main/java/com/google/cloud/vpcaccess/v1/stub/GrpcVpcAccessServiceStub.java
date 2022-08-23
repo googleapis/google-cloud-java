@@ -17,6 +17,7 @@
 package com.google.cloud.vpcaccess.v1.stub;
 
 import static com.google.cloud.vpcaccess.v1.VpcAccessServiceClient.ListConnectorsPagedResponse;
+import static com.google.cloud.vpcaccess.v1.VpcAccessServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -25,6 +26,8 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.vpcaccess.v1.Connector;
 import com.google.cloud.vpcaccess.v1.CreateConnectorRequest;
 import com.google.cloud.vpcaccess.v1.DeleteConnectorRequest;
@@ -90,6 +93,17 @@ public class GrpcVpcAccessServiceStub extends VpcAccessServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<CreateConnectorRequest, Operation> createConnectorCallable;
   private final OperationCallable<CreateConnectorRequest, Connector, OperationMetadata>
       createConnectorOperationCallable;
@@ -100,6 +114,9 @@ public class GrpcVpcAccessServiceStub extends VpcAccessServiceStub {
   private final UnaryCallable<DeleteConnectorRequest, Operation> deleteConnectorCallable;
   private final OperationCallable<DeleteConnectorRequest, Empty, OperationMetadata>
       deleteConnectorOperationCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -186,6 +203,16 @@ public class GrpcVpcAccessServiceStub extends VpcAccessServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
+        GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+            .setMethodDescriptor(listLocationsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
 
     this.createConnectorCallable =
         callableFactory.createUnaryCallable(
@@ -214,6 +241,12 @@ public class GrpcVpcAccessServiceStub extends VpcAccessServiceStub {
             settings.deleteConnectorOperationSettings(),
             clientContext,
             operationsStub);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -259,6 +292,17 @@ public class GrpcVpcAccessServiceStub extends VpcAccessServiceStub {
   public OperationCallable<DeleteConnectorRequest, Empty, OperationMetadata>
       deleteConnectorOperationCallable() {
     return deleteConnectorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
   }
 
   @Override

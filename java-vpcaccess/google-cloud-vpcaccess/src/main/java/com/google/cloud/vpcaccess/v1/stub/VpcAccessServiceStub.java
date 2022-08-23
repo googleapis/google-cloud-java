@@ -17,10 +17,13 @@
 package com.google.cloud.vpcaccess.v1.stub;
 
 import static com.google.cloud.vpcaccess.v1.VpcAccessServiceClient.ListConnectorsPagedResponse;
+import static com.google.cloud.vpcaccess.v1.VpcAccessServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.vpcaccess.v1.Connector;
 import com.google.cloud.vpcaccess.v1.CreateConnectorRequest;
 import com.google.cloud.vpcaccess.v1.DeleteConnectorRequest;
@@ -79,6 +82,15 @@ public abstract class VpcAccessServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteConnectorRequest, Operation> deleteConnectorCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteConnectorCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
   }
 
   @Override

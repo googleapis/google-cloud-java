@@ -17,6 +17,7 @@
 package com.google.cloud.vpcaccess.v1.stub;
 
 import static com.google.cloud.vpcaccess.v1.VpcAccessServiceClient.ListConnectorsPagedResponse;
+import static com.google.cloud.vpcaccess.v1.VpcAccessServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -47,6 +48,9 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.vpcaccess.v1.Connector;
 import com.google.cloud.vpcaccess.v1.CreateConnectorRequest;
 import com.google.cloud.vpcaccess.v1.DeleteConnectorRequest;
@@ -115,6 +119,9 @@ public class VpcAccessServiceStubSettings extends StubSettings<VpcAccessServiceS
   private final UnaryCallSettings<DeleteConnectorRequest, Operation> deleteConnectorSettings;
   private final OperationCallSettings<DeleteConnectorRequest, Empty, OperationMetadata>
       deleteConnectorOperationSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
 
   private static final PagedListDescriptor<ListConnectorsRequest, ListConnectorsResponse, Connector>
       LIST_CONNECTORS_PAGE_STR_DESC =
@@ -153,6 +160,42 @@ public class VpcAccessServiceStubSettings extends StubSettings<VpcAccessServiceS
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListConnectorsRequest, ListConnectorsResponse, ListConnectorsPagedResponse>
       LIST_CONNECTORS_PAGE_STR_FACT =
@@ -167,6 +210,23 @@ public class VpcAccessServiceStubSettings extends StubSettings<VpcAccessServiceS
               PageContext<ListConnectorsRequest, ListConnectorsResponse, Connector> pageContext =
                   PageContext.create(callable, LIST_CONNECTORS_PAGE_STR_DESC, request, context);
               return ListConnectorsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -202,6 +262,12 @@ public class VpcAccessServiceStubSettings extends StubSettings<VpcAccessServiceS
   public OperationCallSettings<DeleteConnectorRequest, Empty, OperationMetadata>
       deleteConnectorOperationSettings() {
     return deleteConnectorOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
   }
 
   public VpcAccessServiceStub createStub() throws IOException {
@@ -316,6 +382,7 @@ public class VpcAccessServiceStubSettings extends StubSettings<VpcAccessServiceS
     listConnectorsSettings = settingsBuilder.listConnectorsSettings().build();
     deleteConnectorSettings = settingsBuilder.deleteConnectorSettings().build();
     deleteConnectorOperationSettings = settingsBuilder.deleteConnectorOperationSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
   }
 
   /** Builder for VpcAccessServiceStubSettings. */
@@ -334,6 +401,9 @@ public class VpcAccessServiceStubSettings extends StubSettings<VpcAccessServiceS
         deleteConnectorSettings;
     private final OperationCallSettings.Builder<DeleteConnectorRequest, Empty, OperationMetadata>
         deleteConnectorOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -342,6 +412,11 @@ public class VpcAccessServiceStubSettings extends StubSettings<VpcAccessServiceS
           ImmutableMap.builder();
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_0_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.UNAVAILABLE, StatusCode.Code.UNKNOWN)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -358,6 +433,17 @@ public class VpcAccessServiceStubSettings extends StubSettings<VpcAccessServiceS
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
+              .build();
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -374,13 +460,15 @@ public class VpcAccessServiceStubSettings extends StubSettings<VpcAccessServiceS
       listConnectorsSettings = PagedCallSettings.newBuilder(LIST_CONNECTORS_PAGE_STR_FACT);
       deleteConnectorSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteConnectorOperationSettings = OperationCallSettings.newBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createConnectorSettings,
               getConnectorSettings,
               listConnectorsSettings,
-              deleteConnectorSettings);
+              deleteConnectorSettings,
+              listLocationsSettings);
       initDefaults(this);
     }
 
@@ -393,13 +481,15 @@ public class VpcAccessServiceStubSettings extends StubSettings<VpcAccessServiceS
       listConnectorsSettings = settings.listConnectorsSettings.toBuilder();
       deleteConnectorSettings = settings.deleteConnectorSettings.toBuilder();
       deleteConnectorOperationSettings = settings.deleteConnectorOperationSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createConnectorSettings,
               getConnectorSettings,
               listConnectorsSettings,
-              deleteConnectorSettings);
+              deleteConnectorSettings,
+              listLocationsSettings);
     }
 
     private static Builder createDefault() {
@@ -448,6 +538,11 @@ public class VpcAccessServiceStubSettings extends StubSettings<VpcAccessServiceS
           .deleteConnectorSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .createConnectorOperationSettings()
@@ -551,6 +646,13 @@ public class VpcAccessServiceStubSettings extends StubSettings<VpcAccessServiceS
     public OperationCallSettings.Builder<DeleteConnectorRequest, Empty, OperationMetadata>
         deleteConnectorOperationSettings() {
       return deleteConnectorOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
     }
 
     @Override

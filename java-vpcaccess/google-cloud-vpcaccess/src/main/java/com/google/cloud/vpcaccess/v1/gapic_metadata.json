@@ -21,6 +21,9 @@
             },
             "ListConnectors": {
               "methods": ["listConnectors", "listConnectors", "listConnectors", "listConnectorsPagedCallable", "listConnectorsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             }
           }
         }

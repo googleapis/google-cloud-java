@@ -146,7 +146,7 @@ public interface ConnectorOrBuilder
    *
    *
    * <pre>
-   * Maximum throughput of the connector in Mbps. Default is 200, max is 1000.
+   * Maximum throughput of the connector in Mbps. Default is 300, max is 1000.
    * </pre>
    *
    * <code>int32 max_throughput = 6;</code>
@@ -244,4 +244,55 @@ public interface ConnectorOrBuilder
    * <code>.google.cloud.vpcaccess.v1.Connector.Subnet subnet = 8;</code>
    */
   com.google.cloud.vpcaccess.v1.Connector.SubnetOrBuilder getSubnetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Machine type of VM Instance underlying connector. Default is e2-micro
+   * </pre>
+   *
+   * <code>string machine_type = 10;</code>
+   *
+   * @return The machineType.
+   */
+  java.lang.String getMachineType();
+  /**
+   *
+   *
+   * <pre>
+   * Machine type of VM Instance underlying connector. Default is e2-micro
+   * </pre>
+   *
+   * <code>string machine_type = 10;</code>
+   *
+   * @return The bytes for machineType.
+   */
+  com.google.protobuf.ByteString getMachineTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Minimum value of instances in autoscaling group underlying the connector.
+   * </pre>
+   *
+   * <code>int32 min_instances = 11;</code>
+   *
+   * @return The minInstances.
+   */
+  int getMinInstances();
+
+  /**
+   *
+   *
+   * <pre>
+   * Maximum value of instances in autoscaling group underlying the connector.
+   * </pre>
+   *
+   * <code>int32 max_instances = 12;</code>
+   *
+   * @return The maxInstances.
+   */
+  int getMaxInstances();
 }

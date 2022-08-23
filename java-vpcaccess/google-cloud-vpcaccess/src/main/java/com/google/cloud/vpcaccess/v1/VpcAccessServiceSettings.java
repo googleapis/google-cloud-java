@@ -17,6 +17,7 @@
 package com.google.cloud.vpcaccess.v1;
 
 import static com.google.cloud.vpcaccess.v1.VpcAccessServiceClient.ListConnectorsPagedResponse;
+import static com.google.cloud.vpcaccess.v1.VpcAccessServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -31,6 +32,8 @@ import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.vpcaccess.v1.stub.VpcAccessServiceStubSettings;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -107,6 +110,12 @@ public class VpcAccessServiceSettings extends ClientSettings<VpcAccessServiceSet
   public OperationCallSettings<DeleteConnectorRequest, Empty, OperationMetadata>
       deleteConnectorOperationSettings() {
     return ((VpcAccessServiceStubSettings) getStubSettings()).deleteConnectorOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((VpcAccessServiceStubSettings) getStubSettings()).listLocationsSettings();
   }
 
   public static final VpcAccessServiceSettings create(VpcAccessServiceStubSettings stub)
@@ -256,6 +265,13 @@ public class VpcAccessServiceSettings extends ClientSettings<VpcAccessServiceSet
     public OperationCallSettings.Builder<DeleteConnectorRequest, Empty, OperationMetadata>
         deleteConnectorOperationSettings() {
       return getStubSettingsBuilder().deleteConnectorOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
     }
 
     @Override
