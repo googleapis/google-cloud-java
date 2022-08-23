@@ -43,13 +43,22 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.retail.v2.AddCatalogAttributeRequest;
+import com.google.cloud.retail.v2.AttributesConfig;
 import com.google.cloud.retail.v2.Catalog;
+import com.google.cloud.retail.v2.CompletionConfig;
+import com.google.cloud.retail.v2.GetAttributesConfigRequest;
+import com.google.cloud.retail.v2.GetCompletionConfigRequest;
 import com.google.cloud.retail.v2.GetDefaultBranchRequest;
 import com.google.cloud.retail.v2.GetDefaultBranchResponse;
 import com.google.cloud.retail.v2.ListCatalogsRequest;
 import com.google.cloud.retail.v2.ListCatalogsResponse;
+import com.google.cloud.retail.v2.RemoveCatalogAttributeRequest;
+import com.google.cloud.retail.v2.ReplaceCatalogAttributeRequest;
 import com.google.cloud.retail.v2.SetDefaultBranchRequest;
+import com.google.cloud.retail.v2.UpdateAttributesConfigRequest;
 import com.google.cloud.retail.v2.UpdateCatalogRequest;
+import com.google.cloud.retail.v2.UpdateCompletionConfigRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -107,6 +116,20 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
   private final UnaryCallSettings<SetDefaultBranchRequest, Empty> setDefaultBranchSettings;
   private final UnaryCallSettings<GetDefaultBranchRequest, GetDefaultBranchResponse>
       getDefaultBranchSettings;
+  private final UnaryCallSettings<GetCompletionConfigRequest, CompletionConfig>
+      getCompletionConfigSettings;
+  private final UnaryCallSettings<UpdateCompletionConfigRequest, CompletionConfig>
+      updateCompletionConfigSettings;
+  private final UnaryCallSettings<GetAttributesConfigRequest, AttributesConfig>
+      getAttributesConfigSettings;
+  private final UnaryCallSettings<UpdateAttributesConfigRequest, AttributesConfig>
+      updateAttributesConfigSettings;
+  private final UnaryCallSettings<AddCatalogAttributeRequest, AttributesConfig>
+      addCatalogAttributeSettings;
+  private final UnaryCallSettings<RemoveCatalogAttributeRequest, AttributesConfig>
+      removeCatalogAttributeSettings;
+  private final UnaryCallSettings<ReplaceCatalogAttributeRequest, AttributesConfig>
+      replaceCatalogAttributeSettings;
 
   private static final PagedListDescriptor<ListCatalogsRequest, ListCatalogsResponse, Catalog>
       LIST_CATALOGS_PAGE_STR_DESC =
@@ -181,6 +204,48 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
   public UnaryCallSettings<GetDefaultBranchRequest, GetDefaultBranchResponse>
       getDefaultBranchSettings() {
     return getDefaultBranchSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getCompletionConfig. */
+  public UnaryCallSettings<GetCompletionConfigRequest, CompletionConfig>
+      getCompletionConfigSettings() {
+    return getCompletionConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateCompletionConfig. */
+  public UnaryCallSettings<UpdateCompletionConfigRequest, CompletionConfig>
+      updateCompletionConfigSettings() {
+    return updateCompletionConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAttributesConfig. */
+  public UnaryCallSettings<GetAttributesConfigRequest, AttributesConfig>
+      getAttributesConfigSettings() {
+    return getAttributesConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAttributesConfig. */
+  public UnaryCallSettings<UpdateAttributesConfigRequest, AttributesConfig>
+      updateAttributesConfigSettings() {
+    return updateAttributesConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to addCatalogAttribute. */
+  public UnaryCallSettings<AddCatalogAttributeRequest, AttributesConfig>
+      addCatalogAttributeSettings() {
+    return addCatalogAttributeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to removeCatalogAttribute. */
+  public UnaryCallSettings<RemoveCatalogAttributeRequest, AttributesConfig>
+      removeCatalogAttributeSettings() {
+    return removeCatalogAttributeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to replaceCatalogAttribute. */
+  public UnaryCallSettings<ReplaceCatalogAttributeRequest, AttributesConfig>
+      replaceCatalogAttributeSettings() {
+    return replaceCatalogAttributeSettings;
   }
 
   public CatalogServiceStub createStub() throws IOException {
@@ -293,6 +358,13 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
     updateCatalogSettings = settingsBuilder.updateCatalogSettings().build();
     setDefaultBranchSettings = settingsBuilder.setDefaultBranchSettings().build();
     getDefaultBranchSettings = settingsBuilder.getDefaultBranchSettings().build();
+    getCompletionConfigSettings = settingsBuilder.getCompletionConfigSettings().build();
+    updateCompletionConfigSettings = settingsBuilder.updateCompletionConfigSettings().build();
+    getAttributesConfigSettings = settingsBuilder.getAttributesConfigSettings().build();
+    updateAttributesConfigSettings = settingsBuilder.updateAttributesConfigSettings().build();
+    addCatalogAttributeSettings = settingsBuilder.addCatalogAttributeSettings().build();
+    removeCatalogAttributeSettings = settingsBuilder.removeCatalogAttributeSettings().build();
+    replaceCatalogAttributeSettings = settingsBuilder.replaceCatalogAttributeSettings().build();
   }
 
   /** Builder for CatalogServiceStubSettings. */
@@ -306,6 +378,20 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
         setDefaultBranchSettings;
     private final UnaryCallSettings.Builder<GetDefaultBranchRequest, GetDefaultBranchResponse>
         getDefaultBranchSettings;
+    private final UnaryCallSettings.Builder<GetCompletionConfigRequest, CompletionConfig>
+        getCompletionConfigSettings;
+    private final UnaryCallSettings.Builder<UpdateCompletionConfigRequest, CompletionConfig>
+        updateCompletionConfigSettings;
+    private final UnaryCallSettings.Builder<GetAttributesConfigRequest, AttributesConfig>
+        getAttributesConfigSettings;
+    private final UnaryCallSettings.Builder<UpdateAttributesConfigRequest, AttributesConfig>
+        updateAttributesConfigSettings;
+    private final UnaryCallSettings.Builder<AddCatalogAttributeRequest, AttributesConfig>
+        addCatalogAttributeSettings;
+    private final UnaryCallSettings.Builder<RemoveCatalogAttributeRequest, AttributesConfig>
+        removeCatalogAttributeSettings;
+    private final UnaryCallSettings.Builder<ReplaceCatalogAttributeRequest, AttributesConfig>
+        replaceCatalogAttributeSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -350,13 +436,27 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
       updateCatalogSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setDefaultBranchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getDefaultBranchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getCompletionConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateCompletionConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getAttributesConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAttributesConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      addCatalogAttributeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      removeCatalogAttributeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      replaceCatalogAttributeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listCatalogsSettings,
               updateCatalogSettings,
               setDefaultBranchSettings,
-              getDefaultBranchSettings);
+              getDefaultBranchSettings,
+              getCompletionConfigSettings,
+              updateCompletionConfigSettings,
+              getAttributesConfigSettings,
+              updateAttributesConfigSettings,
+              addCatalogAttributeSettings,
+              removeCatalogAttributeSettings,
+              replaceCatalogAttributeSettings);
       initDefaults(this);
     }
 
@@ -367,13 +467,27 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
       updateCatalogSettings = settings.updateCatalogSettings.toBuilder();
       setDefaultBranchSettings = settings.setDefaultBranchSettings.toBuilder();
       getDefaultBranchSettings = settings.getDefaultBranchSettings.toBuilder();
+      getCompletionConfigSettings = settings.getCompletionConfigSettings.toBuilder();
+      updateCompletionConfigSettings = settings.updateCompletionConfigSettings.toBuilder();
+      getAttributesConfigSettings = settings.getAttributesConfigSettings.toBuilder();
+      updateAttributesConfigSettings = settings.updateAttributesConfigSettings.toBuilder();
+      addCatalogAttributeSettings = settings.addCatalogAttributeSettings.toBuilder();
+      removeCatalogAttributeSettings = settings.removeCatalogAttributeSettings.toBuilder();
+      replaceCatalogAttributeSettings = settings.replaceCatalogAttributeSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listCatalogsSettings,
               updateCatalogSettings,
               setDefaultBranchSettings,
-              getDefaultBranchSettings);
+              getDefaultBranchSettings,
+              getCompletionConfigSettings,
+              updateCompletionConfigSettings,
+              getAttributesConfigSettings,
+              updateAttributesConfigSettings,
+              addCatalogAttributeSettings,
+              removeCatalogAttributeSettings,
+              replaceCatalogAttributeSettings);
     }
 
     private static Builder createDefault() {
@@ -423,6 +537,41 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
+      builder
+          .getCompletionConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateCompletionConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getAttributesConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateAttributesConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .addCatalogAttributeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .removeCatalogAttributeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .replaceCatalogAttributeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
       return builder;
     }
 
@@ -462,6 +611,48 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
     public UnaryCallSettings.Builder<GetDefaultBranchRequest, GetDefaultBranchResponse>
         getDefaultBranchSettings() {
       return getDefaultBranchSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getCompletionConfig. */
+    public UnaryCallSettings.Builder<GetCompletionConfigRequest, CompletionConfig>
+        getCompletionConfigSettings() {
+      return getCompletionConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateCompletionConfig. */
+    public UnaryCallSettings.Builder<UpdateCompletionConfigRequest, CompletionConfig>
+        updateCompletionConfigSettings() {
+      return updateCompletionConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAttributesConfig. */
+    public UnaryCallSettings.Builder<GetAttributesConfigRequest, AttributesConfig>
+        getAttributesConfigSettings() {
+      return getAttributesConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAttributesConfig. */
+    public UnaryCallSettings.Builder<UpdateAttributesConfigRequest, AttributesConfig>
+        updateAttributesConfigSettings() {
+      return updateAttributesConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to addCatalogAttribute. */
+    public UnaryCallSettings.Builder<AddCatalogAttributeRequest, AttributesConfig>
+        addCatalogAttributeSettings() {
+      return addCatalogAttributeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to removeCatalogAttribute. */
+    public UnaryCallSettings.Builder<RemoveCatalogAttributeRequest, AttributesConfig>
+        removeCatalogAttributeSettings() {
+      return removeCatalogAttributeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to replaceCatalogAttribute. */
+    public UnaryCallSettings.Builder<ReplaceCatalogAttributeRequest, AttributesConfig>
+        replaceCatalogAttributeSettings() {
+      return replaceCatalogAttributeSettings;
     }
 
     @Override

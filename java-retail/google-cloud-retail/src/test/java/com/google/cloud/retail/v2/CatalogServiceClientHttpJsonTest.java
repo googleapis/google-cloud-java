@@ -34,6 +34,7 @@ import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -402,6 +403,520 @@ public class CatalogServiceClientHttpJsonTest {
     try {
       String catalog = "projects/project-6372/locations/location-6372/catalogs/catalog-6372";
       client.getDefaultBranch(catalog);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCompletionConfigTest() throws Exception {
+    CompletionConfig expectedResponse =
+        CompletionConfig.newBuilder()
+            .setName(CompletionConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .setMatchingOrder("matchingOrder-1366761135")
+            .setMaxSuggestions(618824852)
+            .setMinPrefixLength(96853510)
+            .setAutoLearning(true)
+            .setSuggestionsInputConfig(CompletionDataInputConfig.newBuilder().build())
+            .setLastSuggestionsImportOperation("lastSuggestionsImportOperation-245829751")
+            .setDenylistInputConfig(CompletionDataInputConfig.newBuilder().build())
+            .setLastDenylistImportOperation("lastDenylistImportOperation1262341570")
+            .setAllowlistInputConfig(CompletionDataInputConfig.newBuilder().build())
+            .setLastAllowlistImportOperation("lastAllowlistImportOperation1624716689")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    CompletionConfigName name = CompletionConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+
+    CompletionConfig actualResponse = client.getCompletionConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getCompletionConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CompletionConfigName name = CompletionConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+      client.getCompletionConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCompletionConfigTest2() throws Exception {
+    CompletionConfig expectedResponse =
+        CompletionConfig.newBuilder()
+            .setName(CompletionConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .setMatchingOrder("matchingOrder-1366761135")
+            .setMaxSuggestions(618824852)
+            .setMinPrefixLength(96853510)
+            .setAutoLearning(true)
+            .setSuggestionsInputConfig(CompletionDataInputConfig.newBuilder().build())
+            .setLastSuggestionsImportOperation("lastSuggestionsImportOperation-245829751")
+            .setDenylistInputConfig(CompletionDataInputConfig.newBuilder().build())
+            .setLastDenylistImportOperation("lastDenylistImportOperation1262341570")
+            .setAllowlistInputConfig(CompletionDataInputConfig.newBuilder().build())
+            .setLastAllowlistImportOperation("lastAllowlistImportOperation1624716689")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-6627/locations/location-6627/catalogs/catalog-6627/completionConfig";
+
+    CompletionConfig actualResponse = client.getCompletionConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getCompletionConfigExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-6627/locations/location-6627/catalogs/catalog-6627/completionConfig";
+      client.getCompletionConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateCompletionConfigTest() throws Exception {
+    CompletionConfig expectedResponse =
+        CompletionConfig.newBuilder()
+            .setName(CompletionConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .setMatchingOrder("matchingOrder-1366761135")
+            .setMaxSuggestions(618824852)
+            .setMinPrefixLength(96853510)
+            .setAutoLearning(true)
+            .setSuggestionsInputConfig(CompletionDataInputConfig.newBuilder().build())
+            .setLastSuggestionsImportOperation("lastSuggestionsImportOperation-245829751")
+            .setDenylistInputConfig(CompletionDataInputConfig.newBuilder().build())
+            .setLastDenylistImportOperation("lastDenylistImportOperation1262341570")
+            .setAllowlistInputConfig(CompletionDataInputConfig.newBuilder().build())
+            .setLastAllowlistImportOperation("lastAllowlistImportOperation1624716689")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    CompletionConfig completionConfig =
+        CompletionConfig.newBuilder()
+            .setName(CompletionConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .setMatchingOrder("matchingOrder-1366761135")
+            .setMaxSuggestions(618824852)
+            .setMinPrefixLength(96853510)
+            .setAutoLearning(true)
+            .setSuggestionsInputConfig(CompletionDataInputConfig.newBuilder().build())
+            .setLastSuggestionsImportOperation("lastSuggestionsImportOperation-245829751")
+            .setDenylistInputConfig(CompletionDataInputConfig.newBuilder().build())
+            .setLastDenylistImportOperation("lastDenylistImportOperation1262341570")
+            .setAllowlistInputConfig(CompletionDataInputConfig.newBuilder().build())
+            .setLastAllowlistImportOperation("lastAllowlistImportOperation1624716689")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    CompletionConfig actualResponse = client.updateCompletionConfig(completionConfig, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateCompletionConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CompletionConfig completionConfig =
+          CompletionConfig.newBuilder()
+              .setName(CompletionConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+              .setMatchingOrder("matchingOrder-1366761135")
+              .setMaxSuggestions(618824852)
+              .setMinPrefixLength(96853510)
+              .setAutoLearning(true)
+              .setSuggestionsInputConfig(CompletionDataInputConfig.newBuilder().build())
+              .setLastSuggestionsImportOperation("lastSuggestionsImportOperation-245829751")
+              .setDenylistInputConfig(CompletionDataInputConfig.newBuilder().build())
+              .setLastDenylistImportOperation("lastDenylistImportOperation1262341570")
+              .setAllowlistInputConfig(CompletionDataInputConfig.newBuilder().build())
+              .setLastAllowlistImportOperation("lastAllowlistImportOperation1624716689")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateCompletionConfig(completionConfig, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAttributesConfigTest() throws Exception {
+    AttributesConfig expectedResponse =
+        AttributesConfig.newBuilder()
+            .setName(AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .putAllCatalogAttributes(new HashMap<String, CatalogAttribute>())
+            .setAttributeConfigLevel(AttributeConfigLevel.forNumber(0))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AttributesConfigName name = AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+
+    AttributesConfig actualResponse = client.getAttributesConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAttributesConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AttributesConfigName name = AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+      client.getAttributesConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAttributesConfigTest2() throws Exception {
+    AttributesConfig expectedResponse =
+        AttributesConfig.newBuilder()
+            .setName(AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .putAllCatalogAttributes(new HashMap<String, CatalogAttribute>())
+            .setAttributeConfigLevel(AttributeConfigLevel.forNumber(0))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-9790/locations/location-9790/catalogs/catalog-9790/attributesConfig";
+
+    AttributesConfig actualResponse = client.getAttributesConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAttributesConfigExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9790/locations/location-9790/catalogs/catalog-9790/attributesConfig";
+      client.getAttributesConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateAttributesConfigTest() throws Exception {
+    AttributesConfig expectedResponse =
+        AttributesConfig.newBuilder()
+            .setName(AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .putAllCatalogAttributes(new HashMap<String, CatalogAttribute>())
+            .setAttributeConfigLevel(AttributeConfigLevel.forNumber(0))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AttributesConfig attributesConfig =
+        AttributesConfig.newBuilder()
+            .setName(AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .putAllCatalogAttributes(new HashMap<String, CatalogAttribute>())
+            .setAttributeConfigLevel(AttributeConfigLevel.forNumber(0))
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    AttributesConfig actualResponse = client.updateAttributesConfig(attributesConfig, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateAttributesConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AttributesConfig attributesConfig =
+          AttributesConfig.newBuilder()
+              .setName(AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+              .putAllCatalogAttributes(new HashMap<String, CatalogAttribute>())
+              .setAttributeConfigLevel(AttributeConfigLevel.forNumber(0))
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAttributesConfig(attributesConfig, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void addCatalogAttributeTest() throws Exception {
+    AttributesConfig expectedResponse =
+        AttributesConfig.newBuilder()
+            .setName(AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .putAllCatalogAttributes(new HashMap<String, CatalogAttribute>())
+            .setAttributeConfigLevel(AttributeConfigLevel.forNumber(0))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AddCatalogAttributeRequest request =
+        AddCatalogAttributeRequest.newBuilder()
+            .setAttributesConfig(
+                AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .setCatalogAttribute(CatalogAttribute.newBuilder().build())
+            .build();
+
+    AttributesConfig actualResponse = client.addCatalogAttribute(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void addCatalogAttributeExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AddCatalogAttributeRequest request =
+          AddCatalogAttributeRequest.newBuilder()
+              .setAttributesConfig(
+                  AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+              .setCatalogAttribute(CatalogAttribute.newBuilder().build())
+              .build();
+      client.addCatalogAttribute(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void removeCatalogAttributeTest() throws Exception {
+    AttributesConfig expectedResponse =
+        AttributesConfig.newBuilder()
+            .setName(AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .putAllCatalogAttributes(new HashMap<String, CatalogAttribute>())
+            .setAttributeConfigLevel(AttributeConfigLevel.forNumber(0))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    RemoveCatalogAttributeRequest request =
+        RemoveCatalogAttributeRequest.newBuilder()
+            .setAttributesConfig(
+                AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .setKey("key106079")
+            .build();
+
+    AttributesConfig actualResponse = client.removeCatalogAttribute(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void removeCatalogAttributeExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RemoveCatalogAttributeRequest request =
+          RemoveCatalogAttributeRequest.newBuilder()
+              .setAttributesConfig(
+                  AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+              .setKey("key106079")
+              .build();
+      client.removeCatalogAttribute(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void replaceCatalogAttributeTest() throws Exception {
+    AttributesConfig expectedResponse =
+        AttributesConfig.newBuilder()
+            .setName(AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .putAllCatalogAttributes(new HashMap<String, CatalogAttribute>())
+            .setAttributeConfigLevel(AttributeConfigLevel.forNumber(0))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ReplaceCatalogAttributeRequest request =
+        ReplaceCatalogAttributeRequest.newBuilder()
+            .setAttributesConfig(
+                AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .setCatalogAttribute(CatalogAttribute.newBuilder().build())
+            .setUpdateMask(FieldMask.newBuilder().build())
+            .build();
+
+    AttributesConfig actualResponse = client.replaceCatalogAttribute(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void replaceCatalogAttributeExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ReplaceCatalogAttributeRequest request =
+          ReplaceCatalogAttributeRequest.newBuilder()
+              .setAttributesConfig(
+                  AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+              .setCatalogAttribute(CatalogAttribute.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .build();
+      client.replaceCatalogAttribute(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -341,7 +341,7 @@ public interface ProductOrBuilder
    * Non-existent product ids are allowed.
    * The [type][google.cloud.retail.v2.Product.type] of the members must be
    * either [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] or
-   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise and
+   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise an
    * INVALID_ARGUMENT error is thrown. Should not set it for other types. A
    * maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is
    * return.
@@ -362,7 +362,7 @@ public interface ProductOrBuilder
    * Non-existent product ids are allowed.
    * The [type][google.cloud.retail.v2.Product.type] of the members must be
    * either [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] or
-   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise and
+   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise an
    * INVALID_ARGUMENT error is thrown. Should not set it for other types. A
    * maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is
    * return.
@@ -383,7 +383,7 @@ public interface ProductOrBuilder
    * Non-existent product ids are allowed.
    * The [type][google.cloud.retail.v2.Product.type] of the members must be
    * either [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] or
-   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise and
+   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise an
    * INVALID_ARGUMENT error is thrown. Should not set it for other types. A
    * maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is
    * return.
@@ -405,7 +405,7 @@ public interface ProductOrBuilder
    * Non-existent product ids are allowed.
    * The [type][google.cloud.retail.v2.Product.type] of the members must be
    * either [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] or
-   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise and
+   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise an
    * INVALID_ARGUMENT error is thrown. Should not set it for other types. A
    * maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is
    * return.
@@ -2254,6 +2254,78 @@ public interface ProductOrBuilder
    * </code>
    */
   com.google.cloud.retail.v2.ProductOrBuilder getVariantsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of local inventories specific to different places.
+   * This is only available for users who have Retail Search enabled, and it can
+   * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.retail.v2.LocalInventory> getLocalInventoriesList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of local inventories specific to different places.
+   * This is only available for users who have Retail Search enabled, and it can
+   * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.retail.v2.LocalInventory getLocalInventories(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of local inventories specific to different places.
+   * This is only available for users who have Retail Search enabled, and it can
+   * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getLocalInventoriesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of local inventories specific to different places.
+   * This is only available for users who have Retail Search enabled, and it can
+   * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.retail.v2.LocalInventoryOrBuilder>
+      getLocalInventoriesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of local inventories specific to different places.
+   * This is only available for users who have Retail Search enabled, and it can
+   * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.retail.v2.LocalInventoryOrBuilder getLocalInventoriesOrBuilder(int index);
 
   public com.google.cloud.retail.v2.Product.ExpirationCase getExpirationCase();
 }

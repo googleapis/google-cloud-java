@@ -286,7 +286,8 @@ public interface CompleteQueryRequestOrBuilder
    *
    * <pre>
    * Completion max suggestions. If left unset or set to 0, then will fallback
-   * to the configured value [CompletionConfig.max_suggestions][].
+   * to the configured value
+   * [CompletionConfig.max_suggestions][google.cloud.retail.v2.CompletionConfig.max_suggestions].
    * The maximum allowed max suggestions is 20. If it is set higher, it will be
    * capped by 20.
    * </pre>

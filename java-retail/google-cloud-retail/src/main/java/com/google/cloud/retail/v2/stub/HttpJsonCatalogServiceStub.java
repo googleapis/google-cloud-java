@@ -30,13 +30,22 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.retail.v2.AddCatalogAttributeRequest;
+import com.google.cloud.retail.v2.AttributesConfig;
 import com.google.cloud.retail.v2.Catalog;
+import com.google.cloud.retail.v2.CompletionConfig;
+import com.google.cloud.retail.v2.GetAttributesConfigRequest;
+import com.google.cloud.retail.v2.GetCompletionConfigRequest;
 import com.google.cloud.retail.v2.GetDefaultBranchRequest;
 import com.google.cloud.retail.v2.GetDefaultBranchResponse;
 import com.google.cloud.retail.v2.ListCatalogsRequest;
 import com.google.cloud.retail.v2.ListCatalogsResponse;
+import com.google.cloud.retail.v2.RemoveCatalogAttributeRequest;
+import com.google.cloud.retail.v2.ReplaceCatalogAttributeRequest;
 import com.google.cloud.retail.v2.SetDefaultBranchRequest;
+import com.google.cloud.retail.v2.UpdateAttributesConfigRequest;
 import com.google.cloud.retail.v2.UpdateCatalogRequest;
+import com.google.cloud.retail.v2.UpdateCompletionConfigRequest;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -199,6 +208,263 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetCompletionConfigRequest, CompletionConfig>
+      getCompletionConfigMethodDescriptor =
+          ApiMethodDescriptor.<GetCompletionConfigRequest, CompletionConfig>newBuilder()
+              .setFullMethodName("google.cloud.retail.v2.CatalogService/GetCompletionConfig")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetCompletionConfigRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=projects/*/locations/*/catalogs/*/completionConfig}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetCompletionConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetCompletionConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CompletionConfig>newBuilder()
+                      .setDefaultInstance(CompletionConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateCompletionConfigRequest, CompletionConfig>
+      updateCompletionConfigMethodDescriptor =
+          ApiMethodDescriptor.<UpdateCompletionConfigRequest, CompletionConfig>newBuilder()
+              .setFullMethodName("google.cloud.retail.v2.CatalogService/UpdateCompletionConfig")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateCompletionConfigRequest>newBuilder()
+                      .setPath(
+                          "/v2/{completionConfig.name=projects/*/locations/*/catalogs/*/completionConfig}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCompletionConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "completionConfig.name",
+                                request.getCompletionConfig().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCompletionConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("completionConfig", request.getCompletionConfig()))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CompletionConfig>newBuilder()
+                      .setDefaultInstance(CompletionConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetAttributesConfigRequest, AttributesConfig>
+      getAttributesConfigMethodDescriptor =
+          ApiMethodDescriptor.<GetAttributesConfigRequest, AttributesConfig>newBuilder()
+              .setFullMethodName("google.cloud.retail.v2.CatalogService/GetAttributesConfig")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAttributesConfigRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=projects/*/locations/*/catalogs/*/attributesConfig}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAttributesConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAttributesConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AttributesConfig>newBuilder()
+                      .setDefaultInstance(AttributesConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateAttributesConfigRequest, AttributesConfig>
+      updateAttributesConfigMethodDescriptor =
+          ApiMethodDescriptor.<UpdateAttributesConfigRequest, AttributesConfig>newBuilder()
+              .setFullMethodName("google.cloud.retail.v2.CatalogService/UpdateAttributesConfig")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateAttributesConfigRequest>newBuilder()
+                      .setPath(
+                          "/v2/{attributesConfig.name=projects/*/locations/*/catalogs/*/attributesConfig}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAttributesConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "attributesConfig.name",
+                                request.getAttributesConfig().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAttributesConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("attributesConfig", request.getAttributesConfig()))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AttributesConfig>newBuilder()
+                      .setDefaultInstance(AttributesConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<AddCatalogAttributeRequest, AttributesConfig>
+      addCatalogAttributeMethodDescriptor =
+          ApiMethodDescriptor.<AddCatalogAttributeRequest, AttributesConfig>newBuilder()
+              .setFullMethodName("google.cloud.retail.v2.CatalogService/AddCatalogAttribute")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AddCatalogAttributeRequest>newBuilder()
+                      .setPath(
+                          "/v2/{attributesConfig=projects/*/locations/*/catalogs/*/attributesConfig}:addCatalogAttribute",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AddCatalogAttributeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "attributesConfig", request.getAttributesConfig());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AddCatalogAttributeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearAttributesConfig().build()))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AttributesConfig>newBuilder()
+                      .setDefaultInstance(AttributesConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<RemoveCatalogAttributeRequest, AttributesConfig>
+      removeCatalogAttributeMethodDescriptor =
+          ApiMethodDescriptor.<RemoveCatalogAttributeRequest, AttributesConfig>newBuilder()
+              .setFullMethodName("google.cloud.retail.v2.CatalogService/RemoveCatalogAttribute")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RemoveCatalogAttributeRequest>newBuilder()
+                      .setPath(
+                          "/v2/{attributesConfig=projects/*/locations/*/catalogs/*/attributesConfig}:removeCatalogAttribute",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RemoveCatalogAttributeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "attributesConfig", request.getAttributesConfig());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RemoveCatalogAttributeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearAttributesConfig().build()))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AttributesConfig>newBuilder()
+                      .setDefaultInstance(AttributesConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ReplaceCatalogAttributeRequest, AttributesConfig>
+      replaceCatalogAttributeMethodDescriptor =
+          ApiMethodDescriptor.<ReplaceCatalogAttributeRequest, AttributesConfig>newBuilder()
+              .setFullMethodName("google.cloud.retail.v2.CatalogService/ReplaceCatalogAttribute")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ReplaceCatalogAttributeRequest>newBuilder()
+                      .setPath(
+                          "/v2/{attributesConfig=projects/*/locations/*/catalogs/*/attributesConfig}:replaceCatalogAttribute",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ReplaceCatalogAttributeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "attributesConfig", request.getAttributesConfig());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ReplaceCatalogAttributeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearAttributesConfig().build()))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AttributesConfig>newBuilder()
+                      .setDefaultInstance(AttributesConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<ListCatalogsRequest, ListCatalogsResponse> listCatalogsCallable;
   private final UnaryCallable<ListCatalogsRequest, ListCatalogsPagedResponse>
       listCatalogsPagedCallable;
@@ -206,6 +472,20 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
   private final UnaryCallable<SetDefaultBranchRequest, Empty> setDefaultBranchCallable;
   private final UnaryCallable<GetDefaultBranchRequest, GetDefaultBranchResponse>
       getDefaultBranchCallable;
+  private final UnaryCallable<GetCompletionConfigRequest, CompletionConfig>
+      getCompletionConfigCallable;
+  private final UnaryCallable<UpdateCompletionConfigRequest, CompletionConfig>
+      updateCompletionConfigCallable;
+  private final UnaryCallable<GetAttributesConfigRequest, AttributesConfig>
+      getAttributesConfigCallable;
+  private final UnaryCallable<UpdateAttributesConfigRequest, AttributesConfig>
+      updateAttributesConfigCallable;
+  private final UnaryCallable<AddCatalogAttributeRequest, AttributesConfig>
+      addCatalogAttributeCallable;
+  private final UnaryCallable<RemoveCatalogAttributeRequest, AttributesConfig>
+      removeCatalogAttributeCallable;
+  private final UnaryCallable<ReplaceCatalogAttributeRequest, AttributesConfig>
+      replaceCatalogAttributeCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -270,6 +550,48 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                 .setMethodDescriptor(getDefaultBranchMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<GetCompletionConfigRequest, CompletionConfig>
+        getCompletionConfigTransportSettings =
+            HttpJsonCallSettings.<GetCompletionConfigRequest, CompletionConfig>newBuilder()
+                .setMethodDescriptor(getCompletionConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<UpdateCompletionConfigRequest, CompletionConfig>
+        updateCompletionConfigTransportSettings =
+            HttpJsonCallSettings.<UpdateCompletionConfigRequest, CompletionConfig>newBuilder()
+                .setMethodDescriptor(updateCompletionConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<GetAttributesConfigRequest, AttributesConfig>
+        getAttributesConfigTransportSettings =
+            HttpJsonCallSettings.<GetAttributesConfigRequest, AttributesConfig>newBuilder()
+                .setMethodDescriptor(getAttributesConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<UpdateAttributesConfigRequest, AttributesConfig>
+        updateAttributesConfigTransportSettings =
+            HttpJsonCallSettings.<UpdateAttributesConfigRequest, AttributesConfig>newBuilder()
+                .setMethodDescriptor(updateAttributesConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<AddCatalogAttributeRequest, AttributesConfig>
+        addCatalogAttributeTransportSettings =
+            HttpJsonCallSettings.<AddCatalogAttributeRequest, AttributesConfig>newBuilder()
+                .setMethodDescriptor(addCatalogAttributeMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<RemoveCatalogAttributeRequest, AttributesConfig>
+        removeCatalogAttributeTransportSettings =
+            HttpJsonCallSettings.<RemoveCatalogAttributeRequest, AttributesConfig>newBuilder()
+                .setMethodDescriptor(removeCatalogAttributeMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<ReplaceCatalogAttributeRequest, AttributesConfig>
+        replaceCatalogAttributeTransportSettings =
+            HttpJsonCallSettings.<ReplaceCatalogAttributeRequest, AttributesConfig>newBuilder()
+                .setMethodDescriptor(replaceCatalogAttributeMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
 
     this.listCatalogsCallable =
         callableFactory.createUnaryCallable(
@@ -286,6 +608,41 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
     this.getDefaultBranchCallable =
         callableFactory.createUnaryCallable(
             getDefaultBranchTransportSettings, settings.getDefaultBranchSettings(), clientContext);
+    this.getCompletionConfigCallable =
+        callableFactory.createUnaryCallable(
+            getCompletionConfigTransportSettings,
+            settings.getCompletionConfigSettings(),
+            clientContext);
+    this.updateCompletionConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateCompletionConfigTransportSettings,
+            settings.updateCompletionConfigSettings(),
+            clientContext);
+    this.getAttributesConfigCallable =
+        callableFactory.createUnaryCallable(
+            getAttributesConfigTransportSettings,
+            settings.getAttributesConfigSettings(),
+            clientContext);
+    this.updateAttributesConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateAttributesConfigTransportSettings,
+            settings.updateAttributesConfigSettings(),
+            clientContext);
+    this.addCatalogAttributeCallable =
+        callableFactory.createUnaryCallable(
+            addCatalogAttributeTransportSettings,
+            settings.addCatalogAttributeSettings(),
+            clientContext);
+    this.removeCatalogAttributeCallable =
+        callableFactory.createUnaryCallable(
+            removeCatalogAttributeTransportSettings,
+            settings.removeCatalogAttributeSettings(),
+            clientContext);
+    this.replaceCatalogAttributeCallable =
+        callableFactory.createUnaryCallable(
+            replaceCatalogAttributeTransportSettings,
+            settings.replaceCatalogAttributeSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -298,6 +655,13 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
     methodDescriptors.add(updateCatalogMethodDescriptor);
     methodDescriptors.add(setDefaultBranchMethodDescriptor);
     methodDescriptors.add(getDefaultBranchMethodDescriptor);
+    methodDescriptors.add(getCompletionConfigMethodDescriptor);
+    methodDescriptors.add(updateCompletionConfigMethodDescriptor);
+    methodDescriptors.add(getAttributesConfigMethodDescriptor);
+    methodDescriptors.add(updateAttributesConfigMethodDescriptor);
+    methodDescriptors.add(addCatalogAttributeMethodDescriptor);
+    methodDescriptors.add(removeCatalogAttributeMethodDescriptor);
+    methodDescriptors.add(replaceCatalogAttributeMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -325,6 +689,45 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
   public UnaryCallable<GetDefaultBranchRequest, GetDefaultBranchResponse>
       getDefaultBranchCallable() {
     return getDefaultBranchCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetCompletionConfigRequest, CompletionConfig> getCompletionConfigCallable() {
+    return getCompletionConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCompletionConfigRequest, CompletionConfig>
+      updateCompletionConfigCallable() {
+    return updateCompletionConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAttributesConfigRequest, AttributesConfig> getAttributesConfigCallable() {
+    return getAttributesConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAttributesConfigRequest, AttributesConfig>
+      updateAttributesConfigCallable() {
+    return updateAttributesConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<AddCatalogAttributeRequest, AttributesConfig> addCatalogAttributeCallable() {
+    return addCatalogAttributeCallable;
+  }
+
+  @Override
+  public UnaryCallable<RemoveCatalogAttributeRequest, AttributesConfig>
+      removeCatalogAttributeCallable() {
+    return removeCatalogAttributeCallable;
+  }
+
+  @Override
+  public UnaryCallable<ReplaceCatalogAttributeRequest, AttributesConfig>
+      replaceCatalogAttributeCallable() {
+    return replaceCatalogAttributeCallable;
   }
 
   @Override

@@ -990,6 +990,12 @@ public class ProductServiceClient implements BackgroundResource {
    * and
    * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
    *
+   * <p>The returned [Operation][]s will be obsolete after 1 day, and [GetOperation][] API will
+   * return NOT_FOUND afterwards.
+   *
+   * <p>If conflicting updates are issued, the [Operation][]s associated with the stale updates will
+   * not be marked as [done][Operation.done] until being obsolete.
+   *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
    *
@@ -1106,6 +1112,12 @@ public class ProductServiceClient implements BackgroundResource {
    * and
    * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
    *
+   * <p>The returned [Operation][]s will be obsolete after 1 day, and [GetOperation][] API will
+   * return NOT_FOUND afterwards.
+   *
+   * <p>If conflicting updates are issued, the [Operation][]s associated with the stale updates will
+   * not be marked as [done][Operation.done] until being obsolete.
+   *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
    *
@@ -1169,6 +1181,12 @@ public class ProductServiceClient implements BackgroundResource {
    * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces],
    * and
    * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   *
+   * <p>The returned [Operation][]s will be obsolete after 1 day, and [GetOperation][] API will
+   * return NOT_FOUND afterwards.
+   *
+   * <p>If conflicting updates are issued, the [Operation][]s associated with the stale updates will
+   * not be marked as [done][Operation.done] until being obsolete.
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1234,6 +1252,12 @@ public class ProductServiceClient implements BackgroundResource {
    * and
    * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
    *
+   * <p>The returned [Operation][]s will be obsolete after 1 day, and [GetOperation][] API will
+   * return NOT_FOUND afterwards.
+   *
+   * <p>If conflicting updates are issued, the [Operation][]s associated with the stale updates will
+   * not be marked as [done][Operation.done] until being obsolete.
+   *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
    *
@@ -1272,6 +1296,12 @@ public class ProductServiceClient implements BackgroundResource {
    * [Product][google.cloud.retail.v2.Product] queried by
    * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
    * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>The returned [Operation][]s will be obsolete after 1 day, and [GetOperation][] API will
+   * return NOT_FOUND afterwards.
+   *
+   * <p>If conflicting updates are issued, the [Operation][]s associated with the stale updates will
+   * not be marked as [done][Operation.done] until being obsolete.
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1319,6 +1349,12 @@ public class ProductServiceClient implements BackgroundResource {
    * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
    * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
+   * <p>The returned [Operation][]s will be obsolete after 1 day, and [GetOperation][] API will
+   * return NOT_FOUND afterwards.
+   *
+   * <p>If conflicting updates are issued, the [Operation][]s associated with the stale updates will
+   * not be marked as [done][Operation.done] until being obsolete.
+   *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
    *
@@ -1363,6 +1399,12 @@ public class ProductServiceClient implements BackgroundResource {
    * [Product][google.cloud.retail.v2.Product] queried by
    * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
    * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>The returned [Operation][]s will be obsolete after 1 day, and [GetOperation][] API will
+   * return NOT_FOUND afterwards.
+   *
+   * <p>If conflicting updates are issued, the [Operation][]s associated with the stale updates will
+   * not be marked as [done][Operation.done] until being obsolete.
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1409,6 +1451,12 @@ public class ProductServiceClient implements BackgroundResource {
    * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
    * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
+   * <p>The returned [Operation][]s will be obsolete after 1 day, and [GetOperation][] API will
+   * return NOT_FOUND afterwards.
+   *
+   * <p>If conflicting updates are issued, the [Operation][]s associated with the stale updates will
+   * not be marked as [done][Operation.done] until being obsolete.
+   *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
    *
@@ -1454,6 +1502,12 @@ public class ProductServiceClient implements BackgroundResource {
    * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
    * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
+   * <p>The returned [Operation][]s will be obsolete after 1 day, and [GetOperation][] API will
+   * return NOT_FOUND afterwards.
+   *
+   * <p>If conflicting updates are issued, the [Operation][]s associated with the stale updates will
+   * not be marked as [done][Operation.done] until being obsolete.
+   *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
    *
@@ -1497,6 +1551,12 @@ public class ProductServiceClient implements BackgroundResource {
    * [Product][google.cloud.retail.v2.Product] queried by
    * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
    * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>The returned [Operation][]s will be obsolete after 1 day, and [GetOperation][] API will
+   * return NOT_FOUND afterwards.
+   *
+   * <p>If conflicting updates are issued, the [Operation][]s associated with the stale updates will
+   * not be marked as [done][Operation.done] until being obsolete.
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1544,6 +1604,12 @@ public class ProductServiceClient implements BackgroundResource {
    * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
    * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
+   * <p>The returned [Operation][]s will be obsolete after 1 day, and [GetOperation][] API will
+   * return NOT_FOUND afterwards.
+   *
+   * <p>If conflicting updates are issued, the [Operation][]s associated with the stale updates will
+   * not be marked as [done][Operation.done] until being obsolete.
+   *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
    *
@@ -1589,6 +1655,12 @@ public class ProductServiceClient implements BackgroundResource {
    * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
    * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
+   * <p>The returned [Operation][]s will be obsolete after 1 day, and [GetOperation][] API will
+   * return NOT_FOUND afterwards.
+   *
+   * <p>If conflicting updates are issued, the [Operation][]s associated with the stale updates will
+   * not be marked as [done][Operation.done] until being obsolete.
+   *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
    *
@@ -1633,6 +1705,12 @@ public class ProductServiceClient implements BackgroundResource {
    * [Product][google.cloud.retail.v2.Product] queried by
    * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
    * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>The returned [Operation][]s will be obsolete after 1 day, and [GetOperation][] API will
+   * return NOT_FOUND afterwards.
+   *
+   * <p>If conflicting updates are issued, the [Operation][]s associated with the stale updates will
+   * not be marked as [done][Operation.done] until being obsolete.
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1680,6 +1758,12 @@ public class ProductServiceClient implements BackgroundResource {
    * [Product][google.cloud.retail.v2.Product] queried by
    * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
    * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>The returned [Operation][]s will be obsolete after 1 day, and [GetOperation][] API will
+   * return NOT_FOUND afterwards.
+   *
+   * <p>If conflicting updates are issued, the [Operation][]s associated with the stale updates will
+   * not be marked as [done][Operation.done] until being obsolete.
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1729,6 +1813,12 @@ public class ProductServiceClient implements BackgroundResource {
    * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
    * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no
    * effect on local inventories.
+   *
+   * <p>The returned [Operation][]s will be obsolete after 1 day, and [GetOperation][] API will
+   * return NOT_FOUND afterwards.
+   *
+   * <p>If conflicting updates are issued, the [Operation][]s associated with the stale updates will
+   * not be marked as [done][Operation.done] until being obsolete.
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1781,6 +1871,12 @@ public class ProductServiceClient implements BackgroundResource {
    * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no
    * effect on local inventories.
    *
+   * <p>The returned [Operation][]s will be obsolete after 1 day, and [GetOperation][] API will
+   * return NOT_FOUND afterwards.
+   *
+   * <p>If conflicting updates are issued, the [Operation][]s associated with the stale updates will
+   * not be marked as [done][Operation.done] until being obsolete.
+   *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
    *
@@ -1830,6 +1926,12 @@ public class ProductServiceClient implements BackgroundResource {
    * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
    * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no
    * effect on local inventories.
+   *
+   * <p>The returned [Operation][]s will be obsolete after 1 day, and [GetOperation][] API will
+   * return NOT_FOUND afterwards.
+   *
+   * <p>If conflicting updates are issued, the [Operation][]s associated with the stale updates will
+   * not be marked as [done][Operation.done] until being obsolete.
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1881,6 +1983,12 @@ public class ProductServiceClient implements BackgroundResource {
    * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no
    * effect on local inventories.
    *
+   * <p>The returned [Operation][]s will be obsolete after 1 day, and [GetOperation][] API will
+   * return NOT_FOUND afterwards.
+   *
+   * <p>If conflicting updates are issued, the [Operation][]s associated with the stale updates will
+   * not be marked as [done][Operation.done] until being obsolete.
+   *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
    *
@@ -1931,6 +2039,12 @@ public class ProductServiceClient implements BackgroundResource {
    * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no
    * effect on local inventories.
    *
+   * <p>The returned [Operation][]s will be obsolete after 1 day, and [GetOperation][] API will
+   * return NOT_FOUND afterwards.
+   *
+   * <p>If conflicting updates are issued, the [Operation][]s associated with the stale updates will
+   * not be marked as [done][Operation.done] until being obsolete.
+   *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
    *
@@ -1976,6 +2090,12 @@ public class ProductServiceClient implements BackgroundResource {
    * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
    * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no
    * effect on local inventories.
+   *
+   * <p>The returned [Operation][]s will be obsolete after 1 day, and [GetOperation][] API will
+   * return NOT_FOUND afterwards.
+   *
+   * <p>If conflicting updates are issued, the [Operation][]s associated with the stale updates will
+   * not be marked as [done][Operation.done] until being obsolete.
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -2026,6 +2146,12 @@ public class ProductServiceClient implements BackgroundResource {
    * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no
    * effect on local inventories.
    *
+   * <p>The returned [Operation][]s will be obsolete after 1 day, and [GetOperation][] API will
+   * return NOT_FOUND afterwards.
+   *
+   * <p>If conflicting updates are issued, the [Operation][]s associated with the stale updates will
+   * not be marked as [done][Operation.done] until being obsolete.
+   *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
    *
@@ -2074,6 +2200,12 @@ public class ProductServiceClient implements BackgroundResource {
    * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no
    * effect on local inventories.
    *
+   * <p>The returned [Operation][]s will be obsolete after 1 day, and [GetOperation][] API will
+   * return NOT_FOUND afterwards.
+   *
+   * <p>If conflicting updates are issued, the [Operation][]s associated with the stale updates will
+   * not be marked as [done][Operation.done] until being obsolete.
+   *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
    *
@@ -2120,6 +2252,12 @@ public class ProductServiceClient implements BackgroundResource {
    * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
    * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no
    * effect on local inventories.
+   *
+   * <p>The returned [Operation][]s will be obsolete after 1 day, and [GetOperation][] API will
+   * return NOT_FOUND afterwards.
+   *
+   * <p>If conflicting updates are issued, the [Operation][]s associated with the stale updates will
+   * not be marked as [done][Operation.done] until being obsolete.
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -2169,6 +2307,12 @@ public class ProductServiceClient implements BackgroundResource {
    * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
    * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no
    * effect on local inventories.
+   *
+   * <p>The returned [Operation][]s will be obsolete after 1 day, and [GetOperation][] API will
+   * return NOT_FOUND afterwards.
+   *
+   * <p>If conflicting updates are issued, the [Operation][]s associated with the stale updates will
+   * not be marked as [done][Operation.done] until being obsolete.
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.

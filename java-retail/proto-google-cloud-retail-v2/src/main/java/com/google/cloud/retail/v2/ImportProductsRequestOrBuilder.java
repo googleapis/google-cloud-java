@@ -68,7 +68,7 @@ public interface ImportProductsRequestOrBuilder
    * <code>string request_id = 6 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2.ImportProductsRequest.request_id is deprecated. See
-   *     google/cloud/retail/v2/import_config.proto;l=199
+   *     google/cloud/retail/v2/import_config.proto;l=189
    * @return The requestId.
    */
   @java.lang.Deprecated
@@ -83,7 +83,7 @@ public interface ImportProductsRequestOrBuilder
    * <code>string request_id = 6 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2.ImportProductsRequest.request_id is deprecated. See
-   *     google/cloud/retail/v2/import_config.proto;l=199
+   *     google/cloud/retail/v2/import_config.proto;l=189
    * @return The bytes for requestId.
    */
   @java.lang.Deprecated
@@ -169,8 +169,8 @@ public interface ImportProductsRequestOrBuilder
    *
    *
    * <pre>
-   * Indicates which fields in the provided imported 'products' to update. If
-   * not set, will by default update all fields.
+   * Indicates which fields in the provided imported `products` to update. If
+   * not set, all fields are updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 4;</code>
@@ -182,8 +182,8 @@ public interface ImportProductsRequestOrBuilder
    *
    *
    * <pre>
-   * Indicates which fields in the provided imported 'products' to update. If
-   * not set, will by default update all fields.
+   * Indicates which fields in the provided imported `products` to update. If
+   * not set, all fields are updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 4;</code>
@@ -195,8 +195,8 @@ public interface ImportProductsRequestOrBuilder
    *
    *
    * <pre>
-   * Indicates which fields in the provided imported 'products' to update. If
-   * not set, will by default update all fields.
+   * Indicates which fields in the provided imported `products` to update. If
+   * not set, all fields are updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 4;</code>
@@ -239,19 +239,15 @@ public interface ImportProductsRequestOrBuilder
    *
    * <pre>
    * Full Pub/Sub topic name for receiving notification. If this field is set,
-   * when the import is finished, a notification will be sent to
-   * specified Pub/Sub topic. The message data will be JSON string of a
+   * when the import is finished, a notification is sent to
+   * specified Pub/Sub topic. The message data is JSON string of a
    * [Operation][google.longrunning.Operation].
    * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`. It has
    * to be within the same project as
    * [ImportProductsRequest.parent][google.cloud.retail.v2.ImportProductsRequest.parent].
-   * Make sure that both
-   * `cloud-retail-customer-data-access&#64;system.gserviceaccount.com` and
-   * `service-&lt;project number&gt;&#64;gcp-sa-retail.iam.gserviceaccount.com`
-   * have the `pubsub.topics.publish` IAM permission on the topic.
-   * Only supported when
-   * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
-   * is set to `FULL`.
+   * Make sure that `service-&lt;project
+   * number&gt;&#64;gcp-sa-retail.iam.gserviceaccount.com` has the
+   * `pubsub.topics.publish` IAM permission on the topic.
    * </pre>
    *
    * <code>string notification_pubsub_topic = 7;</code>
@@ -264,19 +260,15 @@ public interface ImportProductsRequestOrBuilder
    *
    * <pre>
    * Full Pub/Sub topic name for receiving notification. If this field is set,
-   * when the import is finished, a notification will be sent to
-   * specified Pub/Sub topic. The message data will be JSON string of a
+   * when the import is finished, a notification is sent to
+   * specified Pub/Sub topic. The message data is JSON string of a
    * [Operation][google.longrunning.Operation].
    * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`. It has
    * to be within the same project as
    * [ImportProductsRequest.parent][google.cloud.retail.v2.ImportProductsRequest.parent].
-   * Make sure that both
-   * `cloud-retail-customer-data-access&#64;system.gserviceaccount.com` and
-   * `service-&lt;project number&gt;&#64;gcp-sa-retail.iam.gserviceaccount.com`
-   * have the `pubsub.topics.publish` IAM permission on the topic.
-   * Only supported when
-   * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
-   * is set to `FULL`.
+   * Make sure that `service-&lt;project
+   * number&gt;&#64;gcp-sa-retail.iam.gserviceaccount.com` has the
+   * `pubsub.topics.publish` IAM permission on the topic.
    * </pre>
    *
    * <code>string notification_pubsub_topic = 7;</code>

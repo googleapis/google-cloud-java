@@ -10,17 +10,38 @@
         "grpc": {
           "libraryClient": "CatalogServiceClient",
           "rpcs": {
+            "AddCatalogAttribute": {
+              "methods": ["addCatalogAttribute", "addCatalogAttributeCallable"]
+            },
+            "GetAttributesConfig": {
+              "methods": ["getAttributesConfig", "getAttributesConfig", "getAttributesConfig", "getAttributesConfigCallable"]
+            },
+            "GetCompletionConfig": {
+              "methods": ["getCompletionConfig", "getCompletionConfig", "getCompletionConfig", "getCompletionConfigCallable"]
+            },
             "GetDefaultBranch": {
               "methods": ["getDefaultBranch", "getDefaultBranch", "getDefaultBranch", "getDefaultBranchCallable"]
             },
             "ListCatalogs": {
               "methods": ["listCatalogs", "listCatalogs", "listCatalogs", "listCatalogsPagedCallable", "listCatalogsCallable"]
             },
+            "RemoveCatalogAttribute": {
+              "methods": ["removeCatalogAttribute", "removeCatalogAttributeCallable"]
+            },
+            "ReplaceCatalogAttribute": {
+              "methods": ["replaceCatalogAttribute", "replaceCatalogAttributeCallable"]
+            },
             "SetDefaultBranch": {
               "methods": ["setDefaultBranch", "setDefaultBranch", "setDefaultBranch", "setDefaultBranchCallable"]
             },
+            "UpdateAttributesConfig": {
+              "methods": ["updateAttributesConfig", "updateAttributesConfig", "updateAttributesConfigCallable"]
+            },
             "UpdateCatalog": {
               "methods": ["updateCatalog", "updateCatalog", "updateCatalogCallable"]
+            },
+            "UpdateCompletionConfig": {
+              "methods": ["updateCompletionConfig", "updateCompletionConfig", "updateCompletionConfigCallable"]
             }
           }
         }
@@ -36,6 +57,30 @@
             },
             "ImportCompletionData": {
               "methods": ["importCompletionDataAsync", "importCompletionDataOperationCallable", "importCompletionDataCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ControlService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ControlServiceClient",
+          "rpcs": {
+            "CreateControl": {
+              "methods": ["createControl", "createControl", "createControl", "createControlCallable"]
+            },
+            "DeleteControl": {
+              "methods": ["deleteControl", "deleteControl", "deleteControl", "deleteControlCallable"]
+            },
+            "GetControl": {
+              "methods": ["getControl", "getControl", "getControl", "getControlCallable"]
+            },
+            "ListControls": {
+              "methods": ["listControls", "listControls", "listControls", "listControlsPagedCallable", "listControlsCallable"]
+            },
+            "UpdateControl": {
+              "methods": ["updateControl", "updateControl", "updateControlCallable"]
             }
           }
         }
@@ -102,6 +147,36 @@
           "rpcs": {
             "Search": {
               "methods": ["search", "searchPagedCallable", "searchCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ServingConfigService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ServingConfigServiceClient",
+          "rpcs": {
+            "AddControl": {
+              "methods": ["addControl", "addControl", "addControl", "addControlCallable"]
+            },
+            "CreateServingConfig": {
+              "methods": ["createServingConfig", "createServingConfig", "createServingConfig", "createServingConfigCallable"]
+            },
+            "DeleteServingConfig": {
+              "methods": ["deleteServingConfig", "deleteServingConfig", "deleteServingConfig", "deleteServingConfigCallable"]
+            },
+            "GetServingConfig": {
+              "methods": ["getServingConfig", "getServingConfig", "getServingConfig", "getServingConfigCallable"]
+            },
+            "ListServingConfigs": {
+              "methods": ["listServingConfigs", "listServingConfigs", "listServingConfigs", "listServingConfigsPagedCallable", "listServingConfigsCallable"]
+            },
+            "RemoveControl": {
+              "methods": ["removeControl", "removeControl", "removeControl", "removeControlCallable"]
+            },
+            "UpdateServingConfig": {
+              "methods": ["updateServingConfig", "updateServingConfig", "updateServingConfigCallable"]
             }
           }
         }
