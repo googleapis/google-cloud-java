@@ -1,0 +1,27 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.devtools.cloudprofiler.v2",
+  "libraryPackage": "com.google.devtools.cloudprofiler.v2",
+  "services": {
+    "ProfilerService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ProfilerServiceClient",
+          "rpcs": {
+            "CreateOfflineProfile": {
+              "methods": ["createOfflineProfile", "createOfflineProfileCallable"]
+            },
+            "CreateProfile": {
+              "methods": ["createProfile", "createProfileCallable"]
+            },
+            "UpdateProfile": {
+              "methods": ["updateProfile", "updateProfileCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
