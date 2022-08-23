@@ -85,7 +85,7 @@ git add --all
 git add -f .gitignore
 git commit -m 'chore: add template files'
 
-sh generation/generate_gapic_bom.sh
+bash generation/generate_gapic_bom.sh
 
 # add the gapic bom module to root pom.xml
 sh generation/print_root_pom.sh > pom.xml
@@ -203,7 +203,7 @@ git commit -am 'feat: create release please configuration'
 # Need license-checks.xml to validate
 mvn -q -B -ntp validate
 
-sh generation/generate_coverage_aggregator.sh
+bash generation/generate_coverage_aggregator.sh
 
 git add --all
 git commit -am 'feat: create CoverageAggregator module'

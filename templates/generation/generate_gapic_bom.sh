@@ -5,7 +5,7 @@ set -e
 # generate BOM of the artifacts in this repository
 bom_lines=""
 for bom_directory in $(find . -name 'google-*-bom' | sort); do
-  if [[  "${bom_directory}" = *google-cloud-gapic-bom ]]; then
+  if [[ "${bom_directory}" = *google-cloud-gapic-bom ]]; then
     continue
   fi
   repo_metadata="${bom_directory}/../.repo-metadata.json"
