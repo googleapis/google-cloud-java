@@ -663,8 +663,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -676,8 +676,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -693,8 +693,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -707,8 +707,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -725,8 +725,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -950,9 +950,9 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Map containing the point of contacts for the given finding. The key
-   * represents the type of contact, while the value contains a list of all the
-   * contacts that pertain. Please refer to:
+   * Output only. Map containing the point of contacts for the given finding.
+   * The key represents the type of contact, while the value contains a list of
+   * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -977,9 +977,9 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Map containing the point of contacts for the given finding. The key
-   * represents the type of contact, while the value contains a list of all the
-   * contacts that pertain. Please refer to:
+   * Output only. Map containing the point of contacts for the given finding.
+   * The key represents the type of contact, while the value contains a list of
+   * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -1007,9 +1007,9 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Map containing the point of contacts for the given finding. The key
-   * represents the type of contact, while the value contains a list of all the
-   * contacts that pertain. Please refer to:
+   * Output only. Map containing the point of contacts for the given finding.
+   * The key represents the type of contact, while the value contains a list of
+   * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -1035,9 +1035,9 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Map containing the point of contacts for the given finding. The key
-   * represents the type of contact, while the value contains a list of all the
-   * contacts that pertain. Please refer to:
+   * Output only. Map containing the point of contacts for the given finding.
+   * The key represents the type of contact, while the value contains a list of
+   * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -1067,9 +1067,9 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Map containing the point of contacts for the given finding. The key
-   * represents the type of contact, while the value contains a list of all the
-   * contacts that pertain. Please refer to:
+   * Output only. Map containing the point of contacts for the given finding.
+   * The key represents the type of contact, while the value contains a list of
+   * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -1376,4 +1376,39 @@ public interface FindingOrBuilder
    * <code>.google.cloud.securitycenter.v1.Kubernetes kubernetes = 43;</code>
    */
   com.google.cloud.securitycenter.v1.KubernetesOrBuilder getKubernetesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Database associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Database database = 44;</code>
+   *
+   * @return Whether the database field is set.
+   */
+  boolean hasDatabase();
+  /**
+   *
+   *
+   * <pre>
+   * Database associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Database database = 44;</code>
+   *
+   * @return The database.
+   */
+  com.google.cloud.securitycenter.v1.Database getDatabase();
+  /**
+   *
+   *
+   * <pre>
+   * Database associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Database database = 44;</code>
+   */
+  com.google.cloud.securitycenter.v1.DatabaseOrBuilder getDatabaseOrBuilder();
 }

@@ -454,6 +454,22 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 354:
+            {
+              com.google.cloud.securitycenter.v1.Database.Builder subBuilder = null;
+              if (database_ != null) {
+                subBuilder = database_.toBuilder();
+              }
+              database_ =
+                  input.readMessage(
+                      com.google.cloud.securitycenter.v1.Database.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(database_);
+                database_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -2344,8 +2360,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -2370,8 +2386,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -2387,8 +2403,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -2409,8 +2425,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -2763,9 +2779,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Map containing the point of contacts for the given finding. The key
-   * represents the type of contact, while the value contains a list of all the
-   * contacts that pertain. Please refer to:
+   * Output only. Map containing the point of contacts for the given finding.
+   * The key represents the type of contact, while the value contains a list of
+   * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -2803,9 +2819,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Map containing the point of contacts for the given finding. The key
-   * represents the type of contact, while the value contains a list of all the
-   * contacts that pertain. Please refer to:
+   * Output only. Map containing the point of contacts for the given finding.
+   * The key represents the type of contact, while the value contains a list of
+   * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -2834,9 +2850,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Map containing the point of contacts for the given finding. The key
-   * represents the type of contact, while the value contains a list of all the
-   * contacts that pertain. Please refer to:
+   * Output only. Map containing the point of contacts for the given finding.
+   * The key represents the type of contact, while the value contains a list of
+   * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -2870,9 +2886,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Map containing the point of contacts for the given finding. The key
-   * represents the type of contact, while the value contains a list of all the
-   * contacts that pertain. Please refer to:
+   * Output only. Map containing the point of contacts for the given finding.
+   * The key represents the type of contact, while the value contains a list of
+   * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -3317,6 +3333,54 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     return getKubernetes();
   }
 
+  public static final int DATABASE_FIELD_NUMBER = 44;
+  private com.google.cloud.securitycenter.v1.Database database_;
+  /**
+   *
+   *
+   * <pre>
+   * Database associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Database database = 44;</code>
+   *
+   * @return Whether the database field is set.
+   */
+  @java.lang.Override
+  public boolean hasDatabase() {
+    return database_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Database associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Database database = 44;</code>
+   *
+   * @return The database.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.Database getDatabase() {
+    return database_ == null
+        ? com.google.cloud.securitycenter.v1.Database.getDefaultInstance()
+        : database_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Database associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Database database = 44;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.DatabaseOrBuilder getDatabaseOrBuilder() {
+    return getDatabase();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3423,6 +3487,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     if (kubernetes_ != null) {
       output.writeMessage(43, getKubernetes());
+    }
+    if (database_ != null) {
+      output.writeMessage(44, getDatabase());
     }
     unknownFields.writeTo(output);
   }
@@ -3554,6 +3621,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (kubernetes_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(43, getKubernetes());
     }
+    if (database_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(44, getDatabase());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3630,6 +3700,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (hasKubernetes() != other.hasKubernetes()) return false;
     if (hasKubernetes()) {
       if (!getKubernetes().equals(other.getKubernetes())) return false;
+    }
+    if (hasDatabase() != other.hasDatabase()) return false;
+    if (hasDatabase()) {
+      if (!getDatabase().equals(other.getDatabase())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -3739,6 +3813,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (hasKubernetes()) {
       hash = (37 * hash) + KUBERNETES_FIELD_NUMBER;
       hash = (53 * hash) + getKubernetes().hashCode();
+    }
+    if (hasDatabase()) {
+      hash = (37 * hash) + DATABASE_FIELD_NUMBER;
+      hash = (53 * hash) + getDatabase().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -4043,6 +4121,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         kubernetes_ = null;
         kubernetesBuilder_ = null;
       }
+      if (databaseBuilder_ == null) {
+        database_ = null;
+      } else {
+        database_ = null;
+        databaseBuilder_ = null;
+      }
       return this;
     }
 
@@ -4184,6 +4268,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         result.kubernetes_ = kubernetes_;
       } else {
         result.kubernetes_ = kubernetesBuilder_.build();
+      }
+      if (databaseBuilder_ == null) {
+        result.database_ = database_;
+      } else {
+        result.database_ = databaseBuilder_.build();
       }
       onBuilt();
       return result;
@@ -4449,6 +4538,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasKubernetes()) {
         mergeKubernetes(other.getKubernetes());
+      }
+      if (other.hasDatabase()) {
+        mergeDatabase(other.getDatabase());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -7098,8 +7190,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -7124,8 +7216,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -7141,8 +7233,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -7163,8 +7255,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -7193,8 +7285,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -7218,8 +7310,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -7242,8 +7334,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -8504,9 +8596,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map containing the point of contacts for the given finding. The key
-     * represents the type of contact, while the value contains a list of all the
-     * contacts that pertain. Please refer to:
+     * Output only. Map containing the point of contacts for the given finding.
+     * The key represents the type of contact, while the value contains a list of
+     * all the contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
      *     {
      *       "security": {
@@ -8544,9 +8636,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map containing the point of contacts for the given finding. The key
-     * represents the type of contact, while the value contains a list of all the
-     * contacts that pertain. Please refer to:
+     * Output only. Map containing the point of contacts for the given finding.
+     * The key represents the type of contact, while the value contains a list of
+     * all the contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
      *     {
      *       "security": {
@@ -8575,9 +8667,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map containing the point of contacts for the given finding. The key
-     * represents the type of contact, while the value contains a list of all the
-     * contacts that pertain. Please refer to:
+     * Output only. Map containing the point of contacts for the given finding.
+     * The key represents the type of contact, while the value contains a list of
+     * all the contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
      *     {
      *       "security": {
@@ -8611,9 +8703,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map containing the point of contacts for the given finding. The key
-     * represents the type of contact, while the value contains a list of all the
-     * contacts that pertain. Please refer to:
+     * Output only. Map containing the point of contacts for the given finding.
+     * The key represents the type of contact, while the value contains a list of
+     * all the contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
      *     {
      *       "security": {
@@ -8655,9 +8747,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map containing the point of contacts for the given finding. The key
-     * represents the type of contact, while the value contains a list of all the
-     * contacts that pertain. Please refer to:
+     * Output only. Map containing the point of contacts for the given finding.
+     * The key represents the type of contact, while the value contains a list of
+     * all the contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
      *     {
      *       "security": {
@@ -8694,9 +8786,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map containing the point of contacts for the given finding. The key
-     * represents the type of contact, while the value contains a list of all the
-     * contacts that pertain. Please refer to:
+     * Output only. Map containing the point of contacts for the given finding.
+     * The key represents the type of contact, while the value contains a list of
+     * all the contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
      *     {
      *       "security": {
@@ -8732,9 +8824,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map containing the point of contacts for the given finding. The key
-     * represents the type of contact, while the value contains a list of all the
-     * contacts that pertain. Please refer to:
+     * Output only. Map containing the point of contacts for the given finding.
+     * The key represents the type of contact, while the value contains a list of
+     * all the contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
      *     {
      *       "security": {
@@ -10433,6 +10525,192 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         kubernetes_ = null;
       }
       return kubernetesBuilder_;
+    }
+
+    private com.google.cloud.securitycenter.v1.Database database_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.Database,
+            com.google.cloud.securitycenter.v1.Database.Builder,
+            com.google.cloud.securitycenter.v1.DatabaseOrBuilder>
+        databaseBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Database associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Database database = 44;</code>
+     *
+     * @return Whether the database field is set.
+     */
+    public boolean hasDatabase() {
+      return databaseBuilder_ != null || database_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Database associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Database database = 44;</code>
+     *
+     * @return The database.
+     */
+    public com.google.cloud.securitycenter.v1.Database getDatabase() {
+      if (databaseBuilder_ == null) {
+        return database_ == null
+            ? com.google.cloud.securitycenter.v1.Database.getDefaultInstance()
+            : database_;
+      } else {
+        return databaseBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Database associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Database database = 44;</code>
+     */
+    public Builder setDatabase(com.google.cloud.securitycenter.v1.Database value) {
+      if (databaseBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        database_ = value;
+        onChanged();
+      } else {
+        databaseBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Database associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Database database = 44;</code>
+     */
+    public Builder setDatabase(
+        com.google.cloud.securitycenter.v1.Database.Builder builderForValue) {
+      if (databaseBuilder_ == null) {
+        database_ = builderForValue.build();
+        onChanged();
+      } else {
+        databaseBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Database associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Database database = 44;</code>
+     */
+    public Builder mergeDatabase(com.google.cloud.securitycenter.v1.Database value) {
+      if (databaseBuilder_ == null) {
+        if (database_ != null) {
+          database_ =
+              com.google.cloud.securitycenter.v1.Database.newBuilder(database_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          database_ = value;
+        }
+        onChanged();
+      } else {
+        databaseBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Database associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Database database = 44;</code>
+     */
+    public Builder clearDatabase() {
+      if (databaseBuilder_ == null) {
+        database_ = null;
+        onChanged();
+      } else {
+        database_ = null;
+        databaseBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Database associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Database database = 44;</code>
+     */
+    public com.google.cloud.securitycenter.v1.Database.Builder getDatabaseBuilder() {
+
+      onChanged();
+      return getDatabaseFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Database associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Database database = 44;</code>
+     */
+    public com.google.cloud.securitycenter.v1.DatabaseOrBuilder getDatabaseOrBuilder() {
+      if (databaseBuilder_ != null) {
+        return databaseBuilder_.getMessageOrBuilder();
+      } else {
+        return database_ == null
+            ? com.google.cloud.securitycenter.v1.Database.getDefaultInstance()
+            : database_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Database associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Database database = 44;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.Database,
+            com.google.cloud.securitycenter.v1.Database.Builder,
+            com.google.cloud.securitycenter.v1.DatabaseOrBuilder>
+        getDatabaseFieldBuilder() {
+      if (databaseBuilder_ == null) {
+        databaseBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.Database,
+                com.google.cloud.securitycenter.v1.Database.Builder,
+                com.google.cloud.securitycenter.v1.DatabaseOrBuilder>(
+                getDatabase(), getParentForChildren(), isClean());
+        database_ = null;
+      }
+      return databaseBuilder_;
     }
 
     @java.lang.Override
