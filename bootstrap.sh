@@ -121,18 +121,24 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
   version_file="${bom_directory}/../versions.txt"
 
   module_released_version=$(grep google- ${version_file} |head -1 |awk -F: '{print $2}')
-
   module_snapshot_version=$(grep google- ${version_file} |head -1 |awk -F: '{print $3}')
   pom_directory="${bom_directory}/../pom.xml"
-
   snapshot_version=""
+
+  if  [[ "${module_snapshot_version}" =~ .*SNAPSHOT ]]; then
+      # increment the third digit of the version and overwrite it.
+      snapshot_version=$(echo ${module_released_version} |  awk -F'.' '{print $1"."$2"."$3+1}' |  sed s/[.]$//)
+
+      mvn -f ${pom_directory} -U versions:set -DnewVersion=${snapshot_version}
+      mvn -f ${bom_directory} -U versions:set -DnewVersion=${snapshot_version}
+      #updating gapic bom pom.xml with the snapshot version
+      version_line="${version_line/${module_snapshot_version}/${snapshot_version}}"
+    fi
+
   if ! [[ "${module_snapshot_version}" =~ .*SNAPSHOT ]]; then
     # increment the third digit of the version and overwrite it.
     snapshot_version=$(echo ${module_released_version} |  awk -F'.' '{print $1"."$2"."$3+1}' |  sed s/[.]$//)
-    snapshot_version="${snapshot_version}-SNAPSHOT"
-    # updating versions.txt with current version as SNAPSHOT version.
-    sed -i.bak "s|${module_released_version}:${module_released_version}|${module_released_version}:${snapshot_version}|" ${version_file}
-    # update all the poms with new version
+
     mvn -f ${pom_directory} -U versions:set -DnewVersion=${snapshot_version}
     mvn -f ${bom_directory} -U versions:set -DnewVersion=${snapshot_version}
     #updating gapic bom pom.xml with the snapshot version
@@ -152,6 +158,17 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
          mvn -f ${artifact_directory} -U versions:set -DnewVersion=${new_version}
        fi
     done
+
+  cat ${version_file} | while read line
+      do
+         if [[ ${line} =~ [0-9] ]] && [[ ${line} == *"SNAPSHOT"* ]] ; then
+           artifact_name=$(echo "${line}" | awk -F':' '{print $1}')
+           old_version=$(echo "${line}" | awk -F':' '{print $2}')
+           new_version=$(echo ${old_version} |  awk -F'.' '{print $1"."$2"."$3+1}' |  sed s/[.]$//)
+           artifact_directory="${bom_directory}/../${artifact_name}"
+           mvn -f ${artifact_directory} -U versions:set -DnewVersion=${new_version}
+         fi
+      done
 
   #concatenating module name and module version
   rp_manifest_line=""\""${module}"\"": "\""${module_released_version}"\"""
