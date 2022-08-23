@@ -70,7 +70,7 @@ cd ..
 
 cd google-cloud-java
 
-sh print_root_pom.sh > pom.xml
+sh generation/print_root_pom.sh > pom.xml
 
 git add pom.xml
 git commit -am 'feat: create aggregator pom'
@@ -90,7 +90,7 @@ git commit -m 'chore: add template files'
 sh generation/generate_gapic_bom.sh
 
 # add the gapic bom module to root pom.xml
-sh print_root_pom.sh > pom.xml
+sh generation/print_root_pom.sh > pom.xml
 
 git add google-cloud-gapic-bom/pom.xml
 git commit -am 'feat: create google-cloud-gapic-bom'

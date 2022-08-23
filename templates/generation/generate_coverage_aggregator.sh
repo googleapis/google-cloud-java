@@ -5,7 +5,7 @@ set -e
 GENERATION_DIR=$(dirname -- "$0");
 
 # generate coverage report
-mkdir CoverageAggregator
+mkdir -p CoverageAggregator
 cp "${GENERATION_DIR}/coverage.pom.xml" CoverageAggregator/pom.xml
 
 # create aggregator project for jacoco
@@ -21,5 +21,4 @@ fi
 # insert processed modules into coverage aggregator pom.xml
 awk -v MODULES="`awk -v ORS='\\\\n' '1' /tmp/coverage-modules.txt`" '1;/<dependencies>/{print MODULES}' "${GENERATION_DIR}/coverage.pom.xml" > CoverageAggregator/pom.xml
 
-# add CoverageAggregator to root pom
-awk -v MODULE='    <module>CoverageAggregator</module>' '/<\/modules>/{print MODULE};1' pom.xml > pom.xml.tmp && mv pom.xml.tmp pom.xml
+sh "${GENERATION_DIR}/print_root_pom.sh" > pom.xml
