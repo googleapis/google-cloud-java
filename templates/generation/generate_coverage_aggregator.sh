@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 GENERATION_DIR=$(dirname -- "$0");
 
 # generate coverage report
