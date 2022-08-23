@@ -66,11 +66,9 @@ do
   rm -rf ../${service}
 done
 
-cd ..
-
-cd google-cloud-java
-
-sh generation/print_root_pom.sh > pom.xml
+# cwd: monorepo/google-cloud-java
+echo "Working directory: $(pwd)"
+sh ../../templates/generation/print_root_pom.sh > pom.xml
 
 git add pom.xml
 git commit -am 'feat: create aggregator pom'
