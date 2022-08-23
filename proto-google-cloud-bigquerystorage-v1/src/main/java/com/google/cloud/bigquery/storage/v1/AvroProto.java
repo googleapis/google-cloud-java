@@ -35,6 +35,10 @@ public final class AvroProto {
       internal_static_google_cloud_bigquery_storage_v1_AvroRows_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_storage_v1_AvroRows_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_storage_v1_AvroSerializationOptions_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_storage_v1_AvroSerializationOptions_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -48,12 +52,14 @@ public final class AvroProto {
           + "proto\022 google.cloud.bigquery.storage.v1\""
           + "\034\n\nAvroSchema\022\016\n\006schema\030\001 \001(\t\"A\n\010AvroRow"
           + "s\022\036\n\026serialized_binary_rows\030\001 \001(\014\022\025\n\trow"
-          + "_count\030\002 \001(\003B\002\030\001B\302\001\n$com.google.cloud.bi"
-          + "gquery.storage.v1B\tAvroProtoP\001ZGgoogle.g"
-          + "olang.org/genproto/googleapis/cloud/bigq"
-          + "uery/storage/v1;storage\252\002 Google.Cloud.B"
-          + "igQuery.Storage.V1\312\002 Google\\Cloud\\BigQue"
-          + "ry\\Storage\\V1b\006proto3"
+          + "_count\030\002 \001(\003B\002\030\001\"A\n\030AvroSerializationOpt"
+          + "ions\022%\n\035enable_display_name_attribute\030\001 "
+          + "\001(\010B\302\001\n$com.google.cloud.bigquery.storag"
+          + "e.v1B\tAvroProtoP\001ZGgoogle.golang.org/gen"
+          + "proto/googleapis/cloud/bigquery/storage/"
+          + "v1;storage\252\002 Google.Cloud.BigQuery.Stora"
+          + "ge.V1\312\002 Google\\Cloud\\BigQuery\\Storage\\V1"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -73,6 +79,14 @@ public final class AvroProto {
             internal_static_google_cloud_bigquery_storage_v1_AvroRows_descriptor,
             new java.lang.String[] {
               "SerializedBinaryRows", "RowCount",
+            });
+    internal_static_google_cloud_bigquery_storage_v1_AvroSerializationOptions_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_bigquery_storage_v1_AvroSerializationOptions_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_storage_v1_AvroSerializationOptions_descriptor,
+            new java.lang.String[] {
+              "EnableDisplayNameAttribute",
             });
   }
 

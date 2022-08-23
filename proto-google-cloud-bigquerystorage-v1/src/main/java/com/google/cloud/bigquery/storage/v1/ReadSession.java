@@ -1023,10 +1023,45 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Names of the fields in the table that should be read. If empty, all
-     * fields will be read. If the specified field is a nested field, all
-     * the sub-fields in the field will be selected. The output field order is
-     * unrelated to the order of fields in selected_fields.
+     * Optional. The names of the fields in the table to be returned. If no
+     * field names are specified, then all fields in the table are returned.
+     * Nested fields -- the child elements of a STRUCT field -- can be selected
+     * individually using their fully-qualified names, and will be returned as
+     * record fields containing only the selected nested fields. If a STRUCT
+     * field is specified in the selected fields list, all of the child elements
+     * will be returned.
+     * As an example, consider a table with the following schema:
+     *   {
+     *       "name": "struct_field",
+     *       "type": "RECORD",
+     *       "mode": "NULLABLE",
+     *       "fields": [
+     *           {
+     *               "name": "string_field1",
+     *               "type": "STRING",
+     * .              "mode": "NULLABLE"
+     *           },
+     *           {
+     *               "name": "string_field2",
+     *               "type": "STRING",
+     *               "mode": "NULLABLE"
+     *           }
+     *       ]
+     *   }
+     * Specifying "struct_field" in the selected fields list will result in a
+     * read session schema with the following logical structure:
+     *   struct_field {
+     *       string_field1
+     *       string_field2
+     *   }
+     * Specifying "struct_field.string_field1" in the selected fields list will
+     * result in a read session schema with the following logical structure:
+     *   struct_field {
+     *       string_field1
+     *   }
+     * The order of the fields in the read session schema is derived from the
+     * table schema and does not correspond to the order in which the fields are
+     * specified in this list.
      * </pre>
      *
      * <code>repeated string selected_fields = 1;</code>
@@ -1038,10 +1073,45 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Names of the fields in the table that should be read. If empty, all
-     * fields will be read. If the specified field is a nested field, all
-     * the sub-fields in the field will be selected. The output field order is
-     * unrelated to the order of fields in selected_fields.
+     * Optional. The names of the fields in the table to be returned. If no
+     * field names are specified, then all fields in the table are returned.
+     * Nested fields -- the child elements of a STRUCT field -- can be selected
+     * individually using their fully-qualified names, and will be returned as
+     * record fields containing only the selected nested fields. If a STRUCT
+     * field is specified in the selected fields list, all of the child elements
+     * will be returned.
+     * As an example, consider a table with the following schema:
+     *   {
+     *       "name": "struct_field",
+     *       "type": "RECORD",
+     *       "mode": "NULLABLE",
+     *       "fields": [
+     *           {
+     *               "name": "string_field1",
+     *               "type": "STRING",
+     * .              "mode": "NULLABLE"
+     *           },
+     *           {
+     *               "name": "string_field2",
+     *               "type": "STRING",
+     *               "mode": "NULLABLE"
+     *           }
+     *       ]
+     *   }
+     * Specifying "struct_field" in the selected fields list will result in a
+     * read session schema with the following logical structure:
+     *   struct_field {
+     *       string_field1
+     *       string_field2
+     *   }
+     * Specifying "struct_field.string_field1" in the selected fields list will
+     * result in a read session schema with the following logical structure:
+     *   struct_field {
+     *       string_field1
+     *   }
+     * The order of the fields in the read session schema is derived from the
+     * table schema and does not correspond to the order in which the fields are
+     * specified in this list.
      * </pre>
      *
      * <code>repeated string selected_fields = 1;</code>
@@ -1053,10 +1123,45 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Names of the fields in the table that should be read. If empty, all
-     * fields will be read. If the specified field is a nested field, all
-     * the sub-fields in the field will be selected. The output field order is
-     * unrelated to the order of fields in selected_fields.
+     * Optional. The names of the fields in the table to be returned. If no
+     * field names are specified, then all fields in the table are returned.
+     * Nested fields -- the child elements of a STRUCT field -- can be selected
+     * individually using their fully-qualified names, and will be returned as
+     * record fields containing only the selected nested fields. If a STRUCT
+     * field is specified in the selected fields list, all of the child elements
+     * will be returned.
+     * As an example, consider a table with the following schema:
+     *   {
+     *       "name": "struct_field",
+     *       "type": "RECORD",
+     *       "mode": "NULLABLE",
+     *       "fields": [
+     *           {
+     *               "name": "string_field1",
+     *               "type": "STRING",
+     * .              "mode": "NULLABLE"
+     *           },
+     *           {
+     *               "name": "string_field2",
+     *               "type": "STRING",
+     *               "mode": "NULLABLE"
+     *           }
+     *       ]
+     *   }
+     * Specifying "struct_field" in the selected fields list will result in a
+     * read session schema with the following logical structure:
+     *   struct_field {
+     *       string_field1
+     *       string_field2
+     *   }
+     * Specifying "struct_field.string_field1" in the selected fields list will
+     * result in a read session schema with the following logical structure:
+     *   struct_field {
+     *       string_field1
+     *   }
+     * The order of the fields in the read session schema is derived from the
+     * table schema and does not correspond to the order in which the fields are
+     * specified in this list.
      * </pre>
      *
      * <code>repeated string selected_fields = 1;</code>
@@ -1069,10 +1174,45 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Names of the fields in the table that should be read. If empty, all
-     * fields will be read. If the specified field is a nested field, all
-     * the sub-fields in the field will be selected. The output field order is
-     * unrelated to the order of fields in selected_fields.
+     * Optional. The names of the fields in the table to be returned. If no
+     * field names are specified, then all fields in the table are returned.
+     * Nested fields -- the child elements of a STRUCT field -- can be selected
+     * individually using their fully-qualified names, and will be returned as
+     * record fields containing only the selected nested fields. If a STRUCT
+     * field is specified in the selected fields list, all of the child elements
+     * will be returned.
+     * As an example, consider a table with the following schema:
+     *   {
+     *       "name": "struct_field",
+     *       "type": "RECORD",
+     *       "mode": "NULLABLE",
+     *       "fields": [
+     *           {
+     *               "name": "string_field1",
+     *               "type": "STRING",
+     * .              "mode": "NULLABLE"
+     *           },
+     *           {
+     *               "name": "string_field2",
+     *               "type": "STRING",
+     *               "mode": "NULLABLE"
+     *           }
+     *       ]
+     *   }
+     * Specifying "struct_field" in the selected fields list will result in a
+     * read session schema with the following logical structure:
+     *   struct_field {
+     *       string_field1
+     *       string_field2
+     *   }
+     * Specifying "struct_field.string_field1" in the selected fields list will
+     * result in a read session schema with the following logical structure:
+     *   struct_field {
+     *       string_field1
+     *   }
+     * The order of the fields in the read session schema is derived from the
+     * table schema and does not correspond to the order in which the fields are
+     * specified in this list.
      * </pre>
      *
      * <code>repeated string selected_fields = 1;</code>
@@ -1162,6 +1302,48 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.bigquery.storage.v1.ArrowSerializationOptionsOrBuilder
         getArrowSerializationOptionsOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options specific to the Apache Avro output format
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.AvroSerializationOptions avro_serialization_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the avroSerializationOptions field is set.
+     */
+    boolean hasAvroSerializationOptions();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options specific to the Apache Avro output format
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.AvroSerializationOptions avro_serialization_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The avroSerializationOptions.
+     */
+    com.google.cloud.bigquery.storage.v1.AvroSerializationOptions getAvroSerializationOptions();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options specific to the Apache Avro output format
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.AvroSerializationOptions avro_serialization_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.bigquery.storage.v1.AvroSerializationOptionsOrBuilder
+        getAvroSerializationOptionsOrBuilder();
 
     public com.google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions
             .OutputFormatSerializationOptionsCase
@@ -1261,6 +1443,29 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
                 outputFormatSerializationOptionsCase_ = 3;
                 break;
               }
+            case 34:
+              {
+                com.google.cloud.bigquery.storage.v1.AvroSerializationOptions.Builder subBuilder =
+                    null;
+                if (outputFormatSerializationOptionsCase_ == 4) {
+                  subBuilder =
+                      ((com.google.cloud.bigquery.storage.v1.AvroSerializationOptions)
+                              outputFormatSerializationOptions_)
+                          .toBuilder();
+                }
+                outputFormatSerializationOptions_ =
+                    input.readMessage(
+                        com.google.cloud.bigquery.storage.v1.AvroSerializationOptions.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(
+                      (com.google.cloud.bigquery.storage.v1.AvroSerializationOptions)
+                          outputFormatSerializationOptions_);
+                  outputFormatSerializationOptions_ = subBuilder.buildPartial();
+                }
+                outputFormatSerializationOptionsCase_ = 4;
+                break;
+              }
             default:
               {
                 if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1308,6 +1513,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       ARROW_SERIALIZATION_OPTIONS(3),
+      AVRO_SERIALIZATION_OPTIONS(4),
       OUTPUTFORMATSERIALIZATIONOPTIONS_NOT_SET(0);
       private final int value;
 
@@ -1328,6 +1534,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         switch (value) {
           case 3:
             return ARROW_SERIALIZATION_OPTIONS;
+          case 4:
+            return AVRO_SERIALIZATION_OPTIONS;
           case 0:
             return OUTPUTFORMATSERIALIZATIONOPTIONS_NOT_SET;
           default:
@@ -1350,10 +1558,45 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Names of the fields in the table that should be read. If empty, all
-     * fields will be read. If the specified field is a nested field, all
-     * the sub-fields in the field will be selected. The output field order is
-     * unrelated to the order of fields in selected_fields.
+     * Optional. The names of the fields in the table to be returned. If no
+     * field names are specified, then all fields in the table are returned.
+     * Nested fields -- the child elements of a STRUCT field -- can be selected
+     * individually using their fully-qualified names, and will be returned as
+     * record fields containing only the selected nested fields. If a STRUCT
+     * field is specified in the selected fields list, all of the child elements
+     * will be returned.
+     * As an example, consider a table with the following schema:
+     *   {
+     *       "name": "struct_field",
+     *       "type": "RECORD",
+     *       "mode": "NULLABLE",
+     *       "fields": [
+     *           {
+     *               "name": "string_field1",
+     *               "type": "STRING",
+     * .              "mode": "NULLABLE"
+     *           },
+     *           {
+     *               "name": "string_field2",
+     *               "type": "STRING",
+     *               "mode": "NULLABLE"
+     *           }
+     *       ]
+     *   }
+     * Specifying "struct_field" in the selected fields list will result in a
+     * read session schema with the following logical structure:
+     *   struct_field {
+     *       string_field1
+     *       string_field2
+     *   }
+     * Specifying "struct_field.string_field1" in the selected fields list will
+     * result in a read session schema with the following logical structure:
+     *   struct_field {
+     *       string_field1
+     *   }
+     * The order of the fields in the read session schema is derived from the
+     * table schema and does not correspond to the order in which the fields are
+     * specified in this list.
      * </pre>
      *
      * <code>repeated string selected_fields = 1;</code>
@@ -1367,10 +1610,45 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Names of the fields in the table that should be read. If empty, all
-     * fields will be read. If the specified field is a nested field, all
-     * the sub-fields in the field will be selected. The output field order is
-     * unrelated to the order of fields in selected_fields.
+     * Optional. The names of the fields in the table to be returned. If no
+     * field names are specified, then all fields in the table are returned.
+     * Nested fields -- the child elements of a STRUCT field -- can be selected
+     * individually using their fully-qualified names, and will be returned as
+     * record fields containing only the selected nested fields. If a STRUCT
+     * field is specified in the selected fields list, all of the child elements
+     * will be returned.
+     * As an example, consider a table with the following schema:
+     *   {
+     *       "name": "struct_field",
+     *       "type": "RECORD",
+     *       "mode": "NULLABLE",
+     *       "fields": [
+     *           {
+     *               "name": "string_field1",
+     *               "type": "STRING",
+     * .              "mode": "NULLABLE"
+     *           },
+     *           {
+     *               "name": "string_field2",
+     *               "type": "STRING",
+     *               "mode": "NULLABLE"
+     *           }
+     *       ]
+     *   }
+     * Specifying "struct_field" in the selected fields list will result in a
+     * read session schema with the following logical structure:
+     *   struct_field {
+     *       string_field1
+     *       string_field2
+     *   }
+     * Specifying "struct_field.string_field1" in the selected fields list will
+     * result in a read session schema with the following logical structure:
+     *   struct_field {
+     *       string_field1
+     *   }
+     * The order of the fields in the read session schema is derived from the
+     * table schema and does not correspond to the order in which the fields are
+     * specified in this list.
      * </pre>
      *
      * <code>repeated string selected_fields = 1;</code>
@@ -1384,10 +1662,45 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Names of the fields in the table that should be read. If empty, all
-     * fields will be read. If the specified field is a nested field, all
-     * the sub-fields in the field will be selected. The output field order is
-     * unrelated to the order of fields in selected_fields.
+     * Optional. The names of the fields in the table to be returned. If no
+     * field names are specified, then all fields in the table are returned.
+     * Nested fields -- the child elements of a STRUCT field -- can be selected
+     * individually using their fully-qualified names, and will be returned as
+     * record fields containing only the selected nested fields. If a STRUCT
+     * field is specified in the selected fields list, all of the child elements
+     * will be returned.
+     * As an example, consider a table with the following schema:
+     *   {
+     *       "name": "struct_field",
+     *       "type": "RECORD",
+     *       "mode": "NULLABLE",
+     *       "fields": [
+     *           {
+     *               "name": "string_field1",
+     *               "type": "STRING",
+     * .              "mode": "NULLABLE"
+     *           },
+     *           {
+     *               "name": "string_field2",
+     *               "type": "STRING",
+     *               "mode": "NULLABLE"
+     *           }
+     *       ]
+     *   }
+     * Specifying "struct_field" in the selected fields list will result in a
+     * read session schema with the following logical structure:
+     *   struct_field {
+     *       string_field1
+     *       string_field2
+     *   }
+     * Specifying "struct_field.string_field1" in the selected fields list will
+     * result in a read session schema with the following logical structure:
+     *   struct_field {
+     *       string_field1
+     *   }
+     * The order of the fields in the read session schema is derived from the
+     * table schema and does not correspond to the order in which the fields are
+     * specified in this list.
      * </pre>
      *
      * <code>repeated string selected_fields = 1;</code>
@@ -1402,10 +1715,45 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Names of the fields in the table that should be read. If empty, all
-     * fields will be read. If the specified field is a nested field, all
-     * the sub-fields in the field will be selected. The output field order is
-     * unrelated to the order of fields in selected_fields.
+     * Optional. The names of the fields in the table to be returned. If no
+     * field names are specified, then all fields in the table are returned.
+     * Nested fields -- the child elements of a STRUCT field -- can be selected
+     * individually using their fully-qualified names, and will be returned as
+     * record fields containing only the selected nested fields. If a STRUCT
+     * field is specified in the selected fields list, all of the child elements
+     * will be returned.
+     * As an example, consider a table with the following schema:
+     *   {
+     *       "name": "struct_field",
+     *       "type": "RECORD",
+     *       "mode": "NULLABLE",
+     *       "fields": [
+     *           {
+     *               "name": "string_field1",
+     *               "type": "STRING",
+     * .              "mode": "NULLABLE"
+     *           },
+     *           {
+     *               "name": "string_field2",
+     *               "type": "STRING",
+     *               "mode": "NULLABLE"
+     *           }
+     *       ]
+     *   }
+     * Specifying "struct_field" in the selected fields list will result in a
+     * read session schema with the following logical structure:
+     *   struct_field {
+     *       string_field1
+     *       string_field2
+     *   }
+     * Specifying "struct_field.string_field1" in the selected fields list will
+     * result in a read session schema with the following logical structure:
+     *   struct_field {
+     *       string_field1
+     *   }
+     * The order of the fields in the read session schema is derived from the
+     * table schema and does not correspond to the order in which the fields are
+     * specified in this list.
      * </pre>
      *
      * <code>repeated string selected_fields = 1;</code>
@@ -1541,6 +1889,67 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       return com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.getDefaultInstance();
     }
 
+    public static final int AVRO_SERIALIZATION_OPTIONS_FIELD_NUMBER = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options specific to the Apache Avro output format
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.AvroSerializationOptions avro_serialization_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the avroSerializationOptions field is set.
+     */
+    @java.lang.Override
+    public boolean hasAvroSerializationOptions() {
+      return outputFormatSerializationOptionsCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options specific to the Apache Avro output format
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.AvroSerializationOptions avro_serialization_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The avroSerializationOptions.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1.AvroSerializationOptions
+        getAvroSerializationOptions() {
+      if (outputFormatSerializationOptionsCase_ == 4) {
+        return (com.google.cloud.bigquery.storage.v1.AvroSerializationOptions)
+            outputFormatSerializationOptions_;
+      }
+      return com.google.cloud.bigquery.storage.v1.AvroSerializationOptions.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options specific to the Apache Avro output format
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.AvroSerializationOptions avro_serialization_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1.AvroSerializationOptionsOrBuilder
+        getAvroSerializationOptionsOrBuilder() {
+      if (outputFormatSerializationOptionsCase_ == 4) {
+        return (com.google.cloud.bigquery.storage.v1.AvroSerializationOptions)
+            outputFormatSerializationOptions_;
+      }
+      return com.google.cloud.bigquery.storage.v1.AvroSerializationOptions.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1565,6 +1974,12 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         output.writeMessage(
             3,
             (com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions)
+                outputFormatSerializationOptions_);
+      }
+      if (outputFormatSerializationOptionsCase_ == 4) {
+        output.writeMessage(
+            4,
+            (com.google.cloud.bigquery.storage.v1.AvroSerializationOptions)
                 outputFormatSerializationOptions_);
       }
       unknownFields.writeTo(output);
@@ -1594,6 +2009,13 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
                 (com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions)
                     outputFormatSerializationOptions_);
       }
+      if (outputFormatSerializationOptionsCase_ == 4) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                4,
+                (com.google.cloud.bigquery.storage.v1.AvroSerializationOptions)
+                    outputFormatSerializationOptions_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1617,6 +2039,10 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       switch (outputFormatSerializationOptionsCase_) {
         case 3:
           if (!getArrowSerializationOptions().equals(other.getArrowSerializationOptions()))
+            return false;
+          break;
+        case 4:
+          if (!getAvroSerializationOptions().equals(other.getAvroSerializationOptions()))
             return false;
           break;
         case 0:
@@ -1643,6 +2069,10 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         case 3:
           hash = (37 * hash) + ARROW_SERIALIZATION_OPTIONS_FIELD_NUMBER;
           hash = (53 * hash) + getArrowSerializationOptions().hashCode();
+          break;
+        case 4:
+          hash = (37 * hash) + AVRO_SERIALIZATION_OPTIONS_FIELD_NUMBER;
+          hash = (53 * hash) + getAvroSerializationOptions().hashCode();
           break;
         case 0:
         default:
@@ -1846,6 +2276,13 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
             result.outputFormatSerializationOptions_ = arrowSerializationOptionsBuilder_.build();
           }
         }
+        if (outputFormatSerializationOptionsCase_ == 4) {
+          if (avroSerializationOptionsBuilder_ == null) {
+            result.outputFormatSerializationOptions_ = outputFormatSerializationOptions_;
+          } else {
+            result.outputFormatSerializationOptions_ = avroSerializationOptionsBuilder_.build();
+          }
+        }
         result.outputFormatSerializationOptionsCase_ = outputFormatSerializationOptionsCase_;
         onBuilt();
         return result;
@@ -1922,6 +2359,11 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
               mergeArrowSerializationOptions(other.getArrowSerializationOptions());
               break;
             }
+          case AVRO_SERIALIZATION_OPTIONS:
+            {
+              mergeAvroSerializationOptions(other.getAvroSerializationOptions());
+              break;
+            }
           case OUTPUTFORMATSERIALIZATIONOPTIONS_NOT_SET:
             {
               break;
@@ -1988,10 +2430,45 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Names of the fields in the table that should be read. If empty, all
-       * fields will be read. If the specified field is a nested field, all
-       * the sub-fields in the field will be selected. The output field order is
-       * unrelated to the order of fields in selected_fields.
+       * Optional. The names of the fields in the table to be returned. If no
+       * field names are specified, then all fields in the table are returned.
+       * Nested fields -- the child elements of a STRUCT field -- can be selected
+       * individually using their fully-qualified names, and will be returned as
+       * record fields containing only the selected nested fields. If a STRUCT
+       * field is specified in the selected fields list, all of the child elements
+       * will be returned.
+       * As an example, consider a table with the following schema:
+       *   {
+       *       "name": "struct_field",
+       *       "type": "RECORD",
+       *       "mode": "NULLABLE",
+       *       "fields": [
+       *           {
+       *               "name": "string_field1",
+       *               "type": "STRING",
+       * .              "mode": "NULLABLE"
+       *           },
+       *           {
+       *               "name": "string_field2",
+       *               "type": "STRING",
+       *               "mode": "NULLABLE"
+       *           }
+       *       ]
+       *   }
+       * Specifying "struct_field" in the selected fields list will result in a
+       * read session schema with the following logical structure:
+       *   struct_field {
+       *       string_field1
+       *       string_field2
+       *   }
+       * Specifying "struct_field.string_field1" in the selected fields list will
+       * result in a read session schema with the following logical structure:
+       *   struct_field {
+       *       string_field1
+       *   }
+       * The order of the fields in the read session schema is derived from the
+       * table schema and does not correspond to the order in which the fields are
+       * specified in this list.
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
@@ -2005,10 +2482,45 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Names of the fields in the table that should be read. If empty, all
-       * fields will be read. If the specified field is a nested field, all
-       * the sub-fields in the field will be selected. The output field order is
-       * unrelated to the order of fields in selected_fields.
+       * Optional. The names of the fields in the table to be returned. If no
+       * field names are specified, then all fields in the table are returned.
+       * Nested fields -- the child elements of a STRUCT field -- can be selected
+       * individually using their fully-qualified names, and will be returned as
+       * record fields containing only the selected nested fields. If a STRUCT
+       * field is specified in the selected fields list, all of the child elements
+       * will be returned.
+       * As an example, consider a table with the following schema:
+       *   {
+       *       "name": "struct_field",
+       *       "type": "RECORD",
+       *       "mode": "NULLABLE",
+       *       "fields": [
+       *           {
+       *               "name": "string_field1",
+       *               "type": "STRING",
+       * .              "mode": "NULLABLE"
+       *           },
+       *           {
+       *               "name": "string_field2",
+       *               "type": "STRING",
+       *               "mode": "NULLABLE"
+       *           }
+       *       ]
+       *   }
+       * Specifying "struct_field" in the selected fields list will result in a
+       * read session schema with the following logical structure:
+       *   struct_field {
+       *       string_field1
+       *       string_field2
+       *   }
+       * Specifying "struct_field.string_field1" in the selected fields list will
+       * result in a read session schema with the following logical structure:
+       *   struct_field {
+       *       string_field1
+       *   }
+       * The order of the fields in the read session schema is derived from the
+       * table schema and does not correspond to the order in which the fields are
+       * specified in this list.
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
@@ -2022,10 +2534,45 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Names of the fields in the table that should be read. If empty, all
-       * fields will be read. If the specified field is a nested field, all
-       * the sub-fields in the field will be selected. The output field order is
-       * unrelated to the order of fields in selected_fields.
+       * Optional. The names of the fields in the table to be returned. If no
+       * field names are specified, then all fields in the table are returned.
+       * Nested fields -- the child elements of a STRUCT field -- can be selected
+       * individually using their fully-qualified names, and will be returned as
+       * record fields containing only the selected nested fields. If a STRUCT
+       * field is specified in the selected fields list, all of the child elements
+       * will be returned.
+       * As an example, consider a table with the following schema:
+       *   {
+       *       "name": "struct_field",
+       *       "type": "RECORD",
+       *       "mode": "NULLABLE",
+       *       "fields": [
+       *           {
+       *               "name": "string_field1",
+       *               "type": "STRING",
+       * .              "mode": "NULLABLE"
+       *           },
+       *           {
+       *               "name": "string_field2",
+       *               "type": "STRING",
+       *               "mode": "NULLABLE"
+       *           }
+       *       ]
+       *   }
+       * Specifying "struct_field" in the selected fields list will result in a
+       * read session schema with the following logical structure:
+       *   struct_field {
+       *       string_field1
+       *       string_field2
+       *   }
+       * Specifying "struct_field.string_field1" in the selected fields list will
+       * result in a read session schema with the following logical structure:
+       *   struct_field {
+       *       string_field1
+       *   }
+       * The order of the fields in the read session schema is derived from the
+       * table schema and does not correspond to the order in which the fields are
+       * specified in this list.
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
@@ -2040,10 +2587,45 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Names of the fields in the table that should be read. If empty, all
-       * fields will be read. If the specified field is a nested field, all
-       * the sub-fields in the field will be selected. The output field order is
-       * unrelated to the order of fields in selected_fields.
+       * Optional. The names of the fields in the table to be returned. If no
+       * field names are specified, then all fields in the table are returned.
+       * Nested fields -- the child elements of a STRUCT field -- can be selected
+       * individually using their fully-qualified names, and will be returned as
+       * record fields containing only the selected nested fields. If a STRUCT
+       * field is specified in the selected fields list, all of the child elements
+       * will be returned.
+       * As an example, consider a table with the following schema:
+       *   {
+       *       "name": "struct_field",
+       *       "type": "RECORD",
+       *       "mode": "NULLABLE",
+       *       "fields": [
+       *           {
+       *               "name": "string_field1",
+       *               "type": "STRING",
+       * .              "mode": "NULLABLE"
+       *           },
+       *           {
+       *               "name": "string_field2",
+       *               "type": "STRING",
+       *               "mode": "NULLABLE"
+       *           }
+       *       ]
+       *   }
+       * Specifying "struct_field" in the selected fields list will result in a
+       * read session schema with the following logical structure:
+       *   struct_field {
+       *       string_field1
+       *       string_field2
+       *   }
+       * Specifying "struct_field.string_field1" in the selected fields list will
+       * result in a read session schema with the following logical structure:
+       *   struct_field {
+       *       string_field1
+       *   }
+       * The order of the fields in the read session schema is derived from the
+       * table schema and does not correspond to the order in which the fields are
+       * specified in this list.
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
@@ -2058,10 +2640,45 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Names of the fields in the table that should be read. If empty, all
-       * fields will be read. If the specified field is a nested field, all
-       * the sub-fields in the field will be selected. The output field order is
-       * unrelated to the order of fields in selected_fields.
+       * Optional. The names of the fields in the table to be returned. If no
+       * field names are specified, then all fields in the table are returned.
+       * Nested fields -- the child elements of a STRUCT field -- can be selected
+       * individually using their fully-qualified names, and will be returned as
+       * record fields containing only the selected nested fields. If a STRUCT
+       * field is specified in the selected fields list, all of the child elements
+       * will be returned.
+       * As an example, consider a table with the following schema:
+       *   {
+       *       "name": "struct_field",
+       *       "type": "RECORD",
+       *       "mode": "NULLABLE",
+       *       "fields": [
+       *           {
+       *               "name": "string_field1",
+       *               "type": "STRING",
+       * .              "mode": "NULLABLE"
+       *           },
+       *           {
+       *               "name": "string_field2",
+       *               "type": "STRING",
+       *               "mode": "NULLABLE"
+       *           }
+       *       ]
+       *   }
+       * Specifying "struct_field" in the selected fields list will result in a
+       * read session schema with the following logical structure:
+       *   struct_field {
+       *       string_field1
+       *       string_field2
+       *   }
+       * Specifying "struct_field.string_field1" in the selected fields list will
+       * result in a read session schema with the following logical structure:
+       *   struct_field {
+       *       string_field1
+       *   }
+       * The order of the fields in the read session schema is derived from the
+       * table schema and does not correspond to the order in which the fields are
+       * specified in this list.
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
@@ -2083,10 +2700,45 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Names of the fields in the table that should be read. If empty, all
-       * fields will be read. If the specified field is a nested field, all
-       * the sub-fields in the field will be selected. The output field order is
-       * unrelated to the order of fields in selected_fields.
+       * Optional. The names of the fields in the table to be returned. If no
+       * field names are specified, then all fields in the table are returned.
+       * Nested fields -- the child elements of a STRUCT field -- can be selected
+       * individually using their fully-qualified names, and will be returned as
+       * record fields containing only the selected nested fields. If a STRUCT
+       * field is specified in the selected fields list, all of the child elements
+       * will be returned.
+       * As an example, consider a table with the following schema:
+       *   {
+       *       "name": "struct_field",
+       *       "type": "RECORD",
+       *       "mode": "NULLABLE",
+       *       "fields": [
+       *           {
+       *               "name": "string_field1",
+       *               "type": "STRING",
+       * .              "mode": "NULLABLE"
+       *           },
+       *           {
+       *               "name": "string_field2",
+       *               "type": "STRING",
+       *               "mode": "NULLABLE"
+       *           }
+       *       ]
+       *   }
+       * Specifying "struct_field" in the selected fields list will result in a
+       * read session schema with the following logical structure:
+       *   struct_field {
+       *       string_field1
+       *       string_field2
+       *   }
+       * Specifying "struct_field.string_field1" in the selected fields list will
+       * result in a read session schema with the following logical structure:
+       *   struct_field {
+       *       string_field1
+       *   }
+       * The order of the fields in the read session schema is derived from the
+       * table schema and does not correspond to the order in which the fields are
+       * specified in this list.
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
@@ -2107,10 +2759,45 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Names of the fields in the table that should be read. If empty, all
-       * fields will be read. If the specified field is a nested field, all
-       * the sub-fields in the field will be selected. The output field order is
-       * unrelated to the order of fields in selected_fields.
+       * Optional. The names of the fields in the table to be returned. If no
+       * field names are specified, then all fields in the table are returned.
+       * Nested fields -- the child elements of a STRUCT field -- can be selected
+       * individually using their fully-qualified names, and will be returned as
+       * record fields containing only the selected nested fields. If a STRUCT
+       * field is specified in the selected fields list, all of the child elements
+       * will be returned.
+       * As an example, consider a table with the following schema:
+       *   {
+       *       "name": "struct_field",
+       *       "type": "RECORD",
+       *       "mode": "NULLABLE",
+       *       "fields": [
+       *           {
+       *               "name": "string_field1",
+       *               "type": "STRING",
+       * .              "mode": "NULLABLE"
+       *           },
+       *           {
+       *               "name": "string_field2",
+       *               "type": "STRING",
+       *               "mode": "NULLABLE"
+       *           }
+       *       ]
+       *   }
+       * Specifying "struct_field" in the selected fields list will result in a
+       * read session schema with the following logical structure:
+       *   struct_field {
+       *       string_field1
+       *       string_field2
+       *   }
+       * Specifying "struct_field.string_field1" in the selected fields list will
+       * result in a read session schema with the following logical structure:
+       *   struct_field {
+       *       string_field1
+       *   }
+       * The order of the fields in the read session schema is derived from the
+       * table schema and does not correspond to the order in which the fields are
+       * specified in this list.
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
@@ -2128,10 +2815,45 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Names of the fields in the table that should be read. If empty, all
-       * fields will be read. If the specified field is a nested field, all
-       * the sub-fields in the field will be selected. The output field order is
-       * unrelated to the order of fields in selected_fields.
+       * Optional. The names of the fields in the table to be returned. If no
+       * field names are specified, then all fields in the table are returned.
+       * Nested fields -- the child elements of a STRUCT field -- can be selected
+       * individually using their fully-qualified names, and will be returned as
+       * record fields containing only the selected nested fields. If a STRUCT
+       * field is specified in the selected fields list, all of the child elements
+       * will be returned.
+       * As an example, consider a table with the following schema:
+       *   {
+       *       "name": "struct_field",
+       *       "type": "RECORD",
+       *       "mode": "NULLABLE",
+       *       "fields": [
+       *           {
+       *               "name": "string_field1",
+       *               "type": "STRING",
+       * .              "mode": "NULLABLE"
+       *           },
+       *           {
+       *               "name": "string_field2",
+       *               "type": "STRING",
+       *               "mode": "NULLABLE"
+       *           }
+       *       ]
+       *   }
+       * Specifying "struct_field" in the selected fields list will result in a
+       * read session schema with the following logical structure:
+       *   struct_field {
+       *       string_field1
+       *       string_field2
+       *   }
+       * Specifying "struct_field.string_field1" in the selected fields list will
+       * result in a read session schema with the following logical structure:
+       *   struct_field {
+       *       string_field1
+       *   }
+       * The order of the fields in the read session schema is derived from the
+       * table schema and does not correspond to the order in which the fields are
+       * specified in this list.
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
@@ -2148,10 +2870,45 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Names of the fields in the table that should be read. If empty, all
-       * fields will be read. If the specified field is a nested field, all
-       * the sub-fields in the field will be selected. The output field order is
-       * unrelated to the order of fields in selected_fields.
+       * Optional. The names of the fields in the table to be returned. If no
+       * field names are specified, then all fields in the table are returned.
+       * Nested fields -- the child elements of a STRUCT field -- can be selected
+       * individually using their fully-qualified names, and will be returned as
+       * record fields containing only the selected nested fields. If a STRUCT
+       * field is specified in the selected fields list, all of the child elements
+       * will be returned.
+       * As an example, consider a table with the following schema:
+       *   {
+       *       "name": "struct_field",
+       *       "type": "RECORD",
+       *       "mode": "NULLABLE",
+       *       "fields": [
+       *           {
+       *               "name": "string_field1",
+       *               "type": "STRING",
+       * .              "mode": "NULLABLE"
+       *           },
+       *           {
+       *               "name": "string_field2",
+       *               "type": "STRING",
+       *               "mode": "NULLABLE"
+       *           }
+       *       ]
+       *   }
+       * Specifying "struct_field" in the selected fields list will result in a
+       * read session schema with the following logical structure:
+       *   struct_field {
+       *       string_field1
+       *       string_field2
+       *   }
+       * Specifying "struct_field.string_field1" in the selected fields list will
+       * result in a read session schema with the following logical structure:
+       *   struct_field {
+       *       string_field1
+       *   }
+       * The order of the fields in the read session schema is derived from the
+       * table schema and does not correspond to the order in which the fields are
+       * specified in this list.
        * </pre>
        *
        * <code>repeated string selected_fields = 1;</code>
@@ -2553,6 +3310,247 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         ;
         return arrowSerializationOptionsBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.bigquery.storage.v1.AvroSerializationOptions,
+              com.google.cloud.bigquery.storage.v1.AvroSerializationOptions.Builder,
+              com.google.cloud.bigquery.storage.v1.AvroSerializationOptionsOrBuilder>
+          avroSerializationOptionsBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Options specific to the Apache Avro output format
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1.AvroSerializationOptions avro_serialization_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the avroSerializationOptions field is set.
+       */
+      @java.lang.Override
+      public boolean hasAvroSerializationOptions() {
+        return outputFormatSerializationOptionsCase_ == 4;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Options specific to the Apache Avro output format
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1.AvroSerializationOptions avro_serialization_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The avroSerializationOptions.
+       */
+      @java.lang.Override
+      public com.google.cloud.bigquery.storage.v1.AvroSerializationOptions
+          getAvroSerializationOptions() {
+        if (avroSerializationOptionsBuilder_ == null) {
+          if (outputFormatSerializationOptionsCase_ == 4) {
+            return (com.google.cloud.bigquery.storage.v1.AvroSerializationOptions)
+                outputFormatSerializationOptions_;
+          }
+          return com.google.cloud.bigquery.storage.v1.AvroSerializationOptions.getDefaultInstance();
+        } else {
+          if (outputFormatSerializationOptionsCase_ == 4) {
+            return avroSerializationOptionsBuilder_.getMessage();
+          }
+          return com.google.cloud.bigquery.storage.v1.AvroSerializationOptions.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Options specific to the Apache Avro output format
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1.AvroSerializationOptions avro_serialization_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setAvroSerializationOptions(
+          com.google.cloud.bigquery.storage.v1.AvroSerializationOptions value) {
+        if (avroSerializationOptionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          outputFormatSerializationOptions_ = value;
+          onChanged();
+        } else {
+          avroSerializationOptionsBuilder_.setMessage(value);
+        }
+        outputFormatSerializationOptionsCase_ = 4;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Options specific to the Apache Avro output format
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1.AvroSerializationOptions avro_serialization_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setAvroSerializationOptions(
+          com.google.cloud.bigquery.storage.v1.AvroSerializationOptions.Builder builderForValue) {
+        if (avroSerializationOptionsBuilder_ == null) {
+          outputFormatSerializationOptions_ = builderForValue.build();
+          onChanged();
+        } else {
+          avroSerializationOptionsBuilder_.setMessage(builderForValue.build());
+        }
+        outputFormatSerializationOptionsCase_ = 4;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Options specific to the Apache Avro output format
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1.AvroSerializationOptions avro_serialization_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeAvroSerializationOptions(
+          com.google.cloud.bigquery.storage.v1.AvroSerializationOptions value) {
+        if (avroSerializationOptionsBuilder_ == null) {
+          if (outputFormatSerializationOptionsCase_ == 4
+              && outputFormatSerializationOptions_
+                  != com.google.cloud.bigquery.storage.v1.AvroSerializationOptions
+                      .getDefaultInstance()) {
+            outputFormatSerializationOptions_ =
+                com.google.cloud.bigquery.storage.v1.AvroSerializationOptions.newBuilder(
+                        (com.google.cloud.bigquery.storage.v1.AvroSerializationOptions)
+                            outputFormatSerializationOptions_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            outputFormatSerializationOptions_ = value;
+          }
+          onChanged();
+        } else {
+          if (outputFormatSerializationOptionsCase_ == 4) {
+            avroSerializationOptionsBuilder_.mergeFrom(value);
+          } else {
+            avroSerializationOptionsBuilder_.setMessage(value);
+          }
+        }
+        outputFormatSerializationOptionsCase_ = 4;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Options specific to the Apache Avro output format
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1.AvroSerializationOptions avro_serialization_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearAvroSerializationOptions() {
+        if (avroSerializationOptionsBuilder_ == null) {
+          if (outputFormatSerializationOptionsCase_ == 4) {
+            outputFormatSerializationOptionsCase_ = 0;
+            outputFormatSerializationOptions_ = null;
+            onChanged();
+          }
+        } else {
+          if (outputFormatSerializationOptionsCase_ == 4) {
+            outputFormatSerializationOptionsCase_ = 0;
+            outputFormatSerializationOptions_ = null;
+          }
+          avroSerializationOptionsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Options specific to the Apache Avro output format
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1.AvroSerializationOptions avro_serialization_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.bigquery.storage.v1.AvroSerializationOptions.Builder
+          getAvroSerializationOptionsBuilder() {
+        return getAvroSerializationOptionsFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Options specific to the Apache Avro output format
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1.AvroSerializationOptions avro_serialization_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.bigquery.storage.v1.AvroSerializationOptionsOrBuilder
+          getAvroSerializationOptionsOrBuilder() {
+        if ((outputFormatSerializationOptionsCase_ == 4)
+            && (avroSerializationOptionsBuilder_ != null)) {
+          return avroSerializationOptionsBuilder_.getMessageOrBuilder();
+        } else {
+          if (outputFormatSerializationOptionsCase_ == 4) {
+            return (com.google.cloud.bigquery.storage.v1.AvroSerializationOptions)
+                outputFormatSerializationOptions_;
+          }
+          return com.google.cloud.bigquery.storage.v1.AvroSerializationOptions.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Options specific to the Apache Avro output format
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.storage.v1.AvroSerializationOptions avro_serialization_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.bigquery.storage.v1.AvroSerializationOptions,
+              com.google.cloud.bigquery.storage.v1.AvroSerializationOptions.Builder,
+              com.google.cloud.bigquery.storage.v1.AvroSerializationOptionsOrBuilder>
+          getAvroSerializationOptionsFieldBuilder() {
+        if (avroSerializationOptionsBuilder_ == null) {
+          if (!(outputFormatSerializationOptionsCase_ == 4)) {
+            outputFormatSerializationOptions_ =
+                com.google.cloud.bigquery.storage.v1.AvroSerializationOptions.getDefaultInstance();
+          }
+          avroSerializationOptionsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.bigquery.storage.v1.AvroSerializationOptions,
+                  com.google.cloud.bigquery.storage.v1.AvroSerializationOptions.Builder,
+                  com.google.cloud.bigquery.storage.v1.AvroSerializationOptionsOrBuilder>(
+                  (com.google.cloud.bigquery.storage.v1.AvroSerializationOptions)
+                      outputFormatSerializationOptions_,
+                  getParentForChildren(),
+                  isClean());
+          outputFormatSerializationOptions_ = null;
+        }
+        outputFormatSerializationOptionsCase_ = 4;
+        onChanged();
+        ;
+        return avroSerializationOptionsBuilder_;
       }
 
       @java.lang.Override
