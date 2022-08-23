@@ -159,4 +159,46 @@ public class MockIndexServiceImpl extends IndexServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void upsertDatapoints(
+      UpsertDatapointsRequest request, StreamObserver<UpsertDatapointsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof UpsertDatapointsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((UpsertDatapointsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpsertDatapoints, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  UpsertDatapointsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void removeDatapoints(
+      RemoveDatapointsRequest request, StreamObserver<RemoveDatapointsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RemoveDatapointsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RemoveDatapointsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RemoveDatapoints, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RemoveDatapointsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

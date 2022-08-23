@@ -157,4 +157,52 @@ public interface ModelMonitoringConfigOrBuilder
    * @return The bytes for analysisInstanceSchemaUri.
    */
   com.google.protobuf.ByteString getAnalysisInstanceSchemaUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * A Google Cloud Storage location for batch prediction model monitoring to
+   * dump statistics and anomalies.
+   * If not provided, a folder will be created in customer project to hold
+   * statistics and anomalies.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.GcsDestination stats_anomalies_base_directory = 5;
+   * </code>
+   *
+   * @return Whether the statsAnomaliesBaseDirectory field is set.
+   */
+  boolean hasStatsAnomaliesBaseDirectory();
+  /**
+   *
+   *
+   * <pre>
+   * A Google Cloud Storage location for batch prediction model monitoring to
+   * dump statistics and anomalies.
+   * If not provided, a folder will be created in customer project to hold
+   * statistics and anomalies.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.GcsDestination stats_anomalies_base_directory = 5;
+   * </code>
+   *
+   * @return The statsAnomaliesBaseDirectory.
+   */
+  com.google.cloud.aiplatform.v1beta1.GcsDestination getStatsAnomaliesBaseDirectory();
+  /**
+   *
+   *
+   * <pre>
+   * A Google Cloud Storage location for batch prediction model monitoring to
+   * dump statistics and anomalies.
+   * If not provided, a folder will be created in customer project to hold
+   * statistics and anomalies.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.GcsDestination stats_anomalies_base_directory = 5;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder
+      getStatsAnomaliesBaseDirectoryOrBuilder();
 }

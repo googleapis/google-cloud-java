@@ -31,8 +31,12 @@ import com.google.cloud.aiplatform.v1beta1.GetIndexRequest;
 import com.google.cloud.aiplatform.v1beta1.Index;
 import com.google.cloud.aiplatform.v1beta1.ListIndexesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListIndexesResponse;
+import com.google.cloud.aiplatform.v1beta1.RemoveDatapointsRequest;
+import com.google.cloud.aiplatform.v1beta1.RemoveDatapointsResponse;
 import com.google.cloud.aiplatform.v1beta1.UpdateIndexOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateIndexRequest;
+import com.google.cloud.aiplatform.v1beta1.UpsertDatapointsRequest;
+import com.google.cloud.aiplatform.v1beta1.UpsertDatapointsResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -98,6 +102,16 @@ public abstract class IndexServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteIndexRequest, Operation> deleteIndexCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteIndexCallable()");
+  }
+
+  public UnaryCallable<UpsertDatapointsRequest, UpsertDatapointsResponse>
+      upsertDatapointsCallable() {
+    throw new UnsupportedOperationException("Not implemented: upsertDatapointsCallable()");
+  }
+
+  public UnaryCallable<RemoveDatapointsRequest, RemoveDatapointsResponse>
+      removeDatapointsCallable() {
+    throw new UnsupportedOperationException("Not implemented: removeDatapointsCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

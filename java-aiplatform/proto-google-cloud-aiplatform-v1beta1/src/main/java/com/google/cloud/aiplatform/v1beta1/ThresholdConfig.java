@@ -23,7 +23,6 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  * <pre>
  * The config for feature monitoring threshold.
- * Next ID: 3
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ThresholdConfig}
@@ -387,7 +386,6 @@ public final class ThresholdConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The config for feature monitoring threshold.
-   * Next ID: 3
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ThresholdConfig}
