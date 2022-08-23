@@ -68,10 +68,9 @@ done
 
 cd ..
 
-# insert processed modules into aggregator pom.xml
-awk -v MODULES="`awk -v ORS='\\\\n' '1' repo-modules.txt`" '1;/<modules>/{print MODULES}' ../parent.pom.xml > google-cloud-java/pom.xml
-
 cd google-cloud-java
+
+sh print_root_pom.sh > pom.xml
 
 git add pom.xml
 git commit -am 'feat: create aggregator pom'
@@ -89,6 +88,9 @@ git add -f .gitignore
 git commit -m 'chore: add template files'
 
 sh generation/generate_gapic_bom.sh
+
+# add the gapic bom module to root pom.xml
+sh print_root_pom.sh > pom.xml
 
 git add google-cloud-gapic-bom/pom.xml
 git commit -am 'feat: create google-cloud-gapic-bom'
