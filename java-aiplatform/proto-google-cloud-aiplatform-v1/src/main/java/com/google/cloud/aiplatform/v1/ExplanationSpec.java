@@ -198,11 +198,11 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. Metadata describing the Model's input and output for explanation.
+   * Optional. Metadata describing the Model's input and output for explanation.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the metadata field is set.
@@ -215,11 +215,11 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. Metadata describing the Model's input and output for explanation.
+   * Optional. Metadata describing the Model's input and output for explanation.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The metadata.
@@ -234,11 +234,11 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. Metadata describing the Model's input and output for explanation.
+   * Optional. Metadata describing the Model's input and output for explanation.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -816,11 +816,11 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Metadata describing the Model's input and output for explanation.
+     * Optional. Metadata describing the Model's input and output for explanation.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the metadata field is set.
@@ -832,11 +832,11 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Metadata describing the Model's input and output for explanation.
+     * Optional. Metadata describing the Model's input and output for explanation.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The metadata.
@@ -854,11 +854,11 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Metadata describing the Model's input and output for explanation.
+     * Optional. Metadata describing the Model's input and output for explanation.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setMetadata(com.google.cloud.aiplatform.v1.ExplanationMetadata value) {
@@ -878,11 +878,11 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Metadata describing the Model's input and output for explanation.
+     * Optional. Metadata describing the Model's input and output for explanation.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setMetadata(
@@ -900,11 +900,11 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Metadata describing the Model's input and output for explanation.
+     * Optional. Metadata describing the Model's input and output for explanation.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeMetadata(com.google.cloud.aiplatform.v1.ExplanationMetadata value) {
@@ -928,11 +928,11 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Metadata describing the Model's input and output for explanation.
+     * Optional. Metadata describing the Model's input and output for explanation.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearMetadata() {
@@ -950,11 +950,11 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Metadata describing the Model's input and output for explanation.
+     * Optional. Metadata describing the Model's input and output for explanation.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.aiplatform.v1.ExplanationMetadata.Builder getMetadataBuilder() {
@@ -966,11 +966,11 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Metadata describing the Model's input and output for explanation.
+     * Optional. Metadata describing the Model's input and output for explanation.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.aiplatform.v1.ExplanationMetadataOrBuilder getMetadataOrBuilder() {
@@ -986,11 +986,11 @@ public final class ExplanationSpec extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Metadata describing the Model's input and output for explanation.
+     * Optional. Metadata describing the Model's input and output for explanation.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

@@ -187,7 +187,7 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The number of suggestions requested.
+   * Required. The number of suggestions requested. It must be positive.
    * </pre>
    *
    * <code>int32 suggestion_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -729,7 +729,7 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The number of suggestions requested.
+     * Required. The number of suggestions requested. It must be positive.
      * </pre>
      *
      * <code>int32 suggestion_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -744,7 +744,7 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The number of suggestions requested.
+     * Required. The number of suggestions requested. It must be positive.
      * </pre>
      *
      * <code>int32 suggestion_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -762,7 +762,7 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The number of suggestions requested.
+     * Required. The number of suggestions requested. It must be positive.
      * </pre>
      *
      * <code>int32 suggestion_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>

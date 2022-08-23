@@ -18,15 +18,7 @@
 
 package com.google.cloud.aiplatform.v1;
 
-/**
- *
- *
- * <pre>
- * Next ID: 3
- * </pre>
- *
- * Protobuf type {@code google.cloud.aiplatform.v1.ModelMonitoringAlertConfig}
- */
+/** Protobuf type {@code google.cloud.aiplatform.v1.ModelMonitoringAlertConfig} */
 public final class ModelMonitoringAlertConfig extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ModelMonitoringAlertConfig)
@@ -1252,15 +1244,7 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-  /**
-   *
-   *
-   * <pre>
-   * Next ID: 3
-   * </pre>
-   *
-   * Protobuf type {@code google.cloud.aiplatform.v1.ModelMonitoringAlertConfig}
-   */
+  /** Protobuf type {@code google.cloud.aiplatform.v1.ModelMonitoringAlertConfig} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.ModelMonitoringAlertConfig)

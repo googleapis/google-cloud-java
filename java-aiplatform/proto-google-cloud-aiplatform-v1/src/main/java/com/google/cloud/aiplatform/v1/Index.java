@@ -45,6 +45,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     metadataSchemaUri_ = "";
     deployedIndexes_ = java.util.Collections.emptyList();
     etag_ = "";
+    indexUpdateMethod_ = 0;
   }
 
   @java.lang.Override
@@ -181,6 +182,29 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 114:
+            {
+              com.google.cloud.aiplatform.v1.IndexStats.Builder subBuilder = null;
+              if (indexStats_ != null) {
+                subBuilder = indexStats_.toBuilder();
+              }
+              indexStats_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1.IndexStats.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(indexStats_);
+                indexStats_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 128:
+            {
+              int rawValue = input.readEnum();
+
+              indexUpdateMethod_ = rawValue;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -229,6 +253,172 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.aiplatform.v1.Index.class,
             com.google.cloud.aiplatform.v1.Index.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The update method of an Index.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.aiplatform.v1.Index.IndexUpdateMethod}
+   */
+  public enum IndexUpdateMethod implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Should not be used.
+     * </pre>
+     *
+     * <code>INDEX_UPDATE_METHOD_UNSPECIFIED = 0;</code>
+     */
+    INDEX_UPDATE_METHOD_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * BatchUpdate: user can call UpdateIndex with files on Cloud Storage of
+     * datapoints to update.
+     * </pre>
+     *
+     * <code>BATCH_UPDATE = 1;</code>
+     */
+    BATCH_UPDATE(1),
+    /**
+     *
+     *
+     * <pre>
+     * StreamUpdate: user can call UpsertDatapoints/DeleteDatapoints to update
+     * the Index and the updates will be applied in corresponding
+     * DeployedIndexes in nearly real-time.
+     * </pre>
+     *
+     * <code>STREAM_UPDATE = 2;</code>
+     */
+    STREAM_UPDATE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Should not be used.
+     * </pre>
+     *
+     * <code>INDEX_UPDATE_METHOD_UNSPECIFIED = 0;</code>
+     */
+    public static final int INDEX_UPDATE_METHOD_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * BatchUpdate: user can call UpdateIndex with files on Cloud Storage of
+     * datapoints to update.
+     * </pre>
+     *
+     * <code>BATCH_UPDATE = 1;</code>
+     */
+    public static final int BATCH_UPDATE_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * StreamUpdate: user can call UpsertDatapoints/DeleteDatapoints to update
+     * the Index and the updates will be applied in corresponding
+     * DeployedIndexes in nearly real-time.
+     * </pre>
+     *
+     * <code>STREAM_UPDATE = 2;</code>
+     */
+    public static final int STREAM_UPDATE_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static IndexUpdateMethod valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static IndexUpdateMethod forNumber(int value) {
+      switch (value) {
+        case 0:
+          return INDEX_UPDATE_METHOD_UNSPECIFIED;
+        case 1:
+          return BATCH_UPDATE;
+        case 2:
+          return STREAM_UPDATE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<IndexUpdateMethod>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<IndexUpdateMethod>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<IndexUpdateMethod>() {
+              public IndexUpdateMethod findValueByNumber(int number) {
+                return IndexUpdateMethod.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1.Index.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final IndexUpdateMethod[] VALUES = values();
+
+    public static IndexUpdateMethod valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private IndexUpdateMethod(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1.Index.IndexUpdateMethod)
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -868,6 +1058,104 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     return getUpdateTime();
   }
 
+  public static final int INDEX_STATS_FIELD_NUMBER = 14;
+  private com.google.cloud.aiplatform.v1.IndexStats indexStats_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Stats of the index resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.IndexStats index_stats = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the indexStats field is set.
+   */
+  @java.lang.Override
+  public boolean hasIndexStats() {
+    return indexStats_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Stats of the index resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.IndexStats index_stats = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The indexStats.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.IndexStats getIndexStats() {
+    return indexStats_ == null
+        ? com.google.cloud.aiplatform.v1.IndexStats.getDefaultInstance()
+        : indexStats_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Stats of the index resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.IndexStats index_stats = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.IndexStatsOrBuilder getIndexStatsOrBuilder() {
+    return getIndexStats();
+  }
+
+  public static final int INDEX_UPDATE_METHOD_FIELD_NUMBER = 16;
+  private int indexUpdateMethod_;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The update method to use with this Index. If not set, BATCH_UPDATE will be
+   * used by default.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Index.IndexUpdateMethod index_update_method = 16 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for indexUpdateMethod.
+   */
+  @java.lang.Override
+  public int getIndexUpdateMethodValue() {
+    return indexUpdateMethod_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The update method to use with this Index. If not set, BATCH_UPDATE will be
+   * used by default.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Index.IndexUpdateMethod index_update_method = 16 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The indexUpdateMethod.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.Index.IndexUpdateMethod getIndexUpdateMethod() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.aiplatform.v1.Index.IndexUpdateMethod result =
+        com.google.cloud.aiplatform.v1.Index.IndexUpdateMethod.valueOf(indexUpdateMethod_);
+    return result == null
+        ? com.google.cloud.aiplatform.v1.Index.IndexUpdateMethod.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -910,6 +1198,14 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     }
     if (updateTime_ != null) {
       output.writeMessage(11, getUpdateTime());
+    }
+    if (indexStats_ != null) {
+      output.writeMessage(14, getIndexStats());
+    }
+    if (indexUpdateMethod_
+        != com.google.cloud.aiplatform.v1.Index.IndexUpdateMethod.INDEX_UPDATE_METHOD_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(16, indexUpdateMethod_);
     }
     unknownFields.writeTo(output);
   }
@@ -957,6 +1253,14 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getUpdateTime());
     }
+    if (indexStats_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getIndexStats());
+    }
+    if (indexUpdateMethod_
+        != com.google.cloud.aiplatform.v1.Index.IndexUpdateMethod.INDEX_UPDATE_METHOD_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(16, indexUpdateMethod_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -991,6 +1295,11 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
+    if (hasIndexStats() != other.hasIndexStats()) return false;
+    if (hasIndexStats()) {
+      if (!getIndexStats().equals(other.getIndexStats())) return false;
+    }
+    if (indexUpdateMethod_ != other.indexUpdateMethod_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1032,6 +1341,12 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
     }
+    if (hasIndexStats()) {
+      hash = (37 * hash) + INDEX_STATS_FIELD_NUMBER;
+      hash = (53 * hash) + getIndexStats().hashCode();
+    }
+    hash = (37 * hash) + INDEX_UPDATE_METHOD_FIELD_NUMBER;
+    hash = (53 * hash) + indexUpdateMethod_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1234,6 +1549,14 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         updateTime_ = null;
         updateTimeBuilder_ = null;
       }
+      if (indexStatsBuilder_ == null) {
+        indexStats_ = null;
+      } else {
+        indexStats_ = null;
+        indexStatsBuilder_ = null;
+      }
+      indexUpdateMethod_ = 0;
+
       return this;
     }
 
@@ -1292,6 +1615,12 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.updateTime_ = updateTimeBuilder_.build();
       }
+      if (indexStatsBuilder_ == null) {
+        result.indexStats_ = indexStats_;
+      } else {
+        result.indexStats_ = indexStatsBuilder_.build();
+      }
+      result.indexUpdateMethod_ = indexUpdateMethod_;
       onBuilt();
       return result;
     }
@@ -1397,6 +1726,12 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
+      }
+      if (other.hasIndexStats()) {
+        mergeIndexStats(other.getIndexStats());
+      }
+      if (other.indexUpdateMethod_ != 0) {
+        setIndexUpdateMethodValue(other.getIndexUpdateMethodValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3279,6 +3614,319 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1.IndexStats indexStats_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.IndexStats,
+            com.google.cloud.aiplatform.v1.IndexStats.Builder,
+            com.google.cloud.aiplatform.v1.IndexStatsOrBuilder>
+        indexStatsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Stats of the index resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.IndexStats index_stats = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the indexStats field is set.
+     */
+    public boolean hasIndexStats() {
+      return indexStatsBuilder_ != null || indexStats_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Stats of the index resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.IndexStats index_stats = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The indexStats.
+     */
+    public com.google.cloud.aiplatform.v1.IndexStats getIndexStats() {
+      if (indexStatsBuilder_ == null) {
+        return indexStats_ == null
+            ? com.google.cloud.aiplatform.v1.IndexStats.getDefaultInstance()
+            : indexStats_;
+      } else {
+        return indexStatsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Stats of the index resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.IndexStats index_stats = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setIndexStats(com.google.cloud.aiplatform.v1.IndexStats value) {
+      if (indexStatsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        indexStats_ = value;
+        onChanged();
+      } else {
+        indexStatsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Stats of the index resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.IndexStats index_stats = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setIndexStats(
+        com.google.cloud.aiplatform.v1.IndexStats.Builder builderForValue) {
+      if (indexStatsBuilder_ == null) {
+        indexStats_ = builderForValue.build();
+        onChanged();
+      } else {
+        indexStatsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Stats of the index resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.IndexStats index_stats = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeIndexStats(com.google.cloud.aiplatform.v1.IndexStats value) {
+      if (indexStatsBuilder_ == null) {
+        if (indexStats_ != null) {
+          indexStats_ =
+              com.google.cloud.aiplatform.v1.IndexStats.newBuilder(indexStats_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          indexStats_ = value;
+        }
+        onChanged();
+      } else {
+        indexStatsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Stats of the index resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.IndexStats index_stats = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearIndexStats() {
+      if (indexStatsBuilder_ == null) {
+        indexStats_ = null;
+        onChanged();
+      } else {
+        indexStats_ = null;
+        indexStatsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Stats of the index resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.IndexStats index_stats = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.IndexStats.Builder getIndexStatsBuilder() {
+
+      onChanged();
+      return getIndexStatsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Stats of the index resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.IndexStats index_stats = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.IndexStatsOrBuilder getIndexStatsOrBuilder() {
+      if (indexStatsBuilder_ != null) {
+        return indexStatsBuilder_.getMessageOrBuilder();
+      } else {
+        return indexStats_ == null
+            ? com.google.cloud.aiplatform.v1.IndexStats.getDefaultInstance()
+            : indexStats_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Stats of the index resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.IndexStats index_stats = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.IndexStats,
+            com.google.cloud.aiplatform.v1.IndexStats.Builder,
+            com.google.cloud.aiplatform.v1.IndexStatsOrBuilder>
+        getIndexStatsFieldBuilder() {
+      if (indexStatsBuilder_ == null) {
+        indexStatsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.IndexStats,
+                com.google.cloud.aiplatform.v1.IndexStats.Builder,
+                com.google.cloud.aiplatform.v1.IndexStatsOrBuilder>(
+                getIndexStats(), getParentForChildren(), isClean());
+        indexStats_ = null;
+      }
+      return indexStatsBuilder_;
+    }
+
+    private int indexUpdateMethod_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The update method to use with this Index. If not set, BATCH_UPDATE will be
+     * used by default.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Index.IndexUpdateMethod index_update_method = 16 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for indexUpdateMethod.
+     */
+    @java.lang.Override
+    public int getIndexUpdateMethodValue() {
+      return indexUpdateMethod_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The update method to use with this Index. If not set, BATCH_UPDATE will be
+     * used by default.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Index.IndexUpdateMethod index_update_method = 16 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for indexUpdateMethod to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIndexUpdateMethodValue(int value) {
+
+      indexUpdateMethod_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The update method to use with this Index. If not set, BATCH_UPDATE will be
+     * used by default.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Index.IndexUpdateMethod index_update_method = 16 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The indexUpdateMethod.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.Index.IndexUpdateMethod getIndexUpdateMethod() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.aiplatform.v1.Index.IndexUpdateMethod result =
+          com.google.cloud.aiplatform.v1.Index.IndexUpdateMethod.valueOf(indexUpdateMethod_);
+      return result == null
+          ? com.google.cloud.aiplatform.v1.Index.IndexUpdateMethod.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The update method to use with this Index. If not set, BATCH_UPDATE will be
+     * used by default.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Index.IndexUpdateMethod index_update_method = 16 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The indexUpdateMethod to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIndexUpdateMethod(
+        com.google.cloud.aiplatform.v1.Index.IndexUpdateMethod value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      indexUpdateMethod_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The update method to use with this Index. If not set, BATCH_UPDATE will be
+     * used by default.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Index.IndexUpdateMethod index_update_method = 16 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIndexUpdateMethod() {
+
+      indexUpdateMethod_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

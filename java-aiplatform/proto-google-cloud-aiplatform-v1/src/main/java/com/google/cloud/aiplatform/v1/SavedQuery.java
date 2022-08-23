@@ -590,7 +590,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Used to perform consistent read-modify-write updates. If not set, a blind
+   * Used to perform a consistent read-modify-write update. If not set, a blind
    * "overwrite" update happens.
    * </pre>
    *
@@ -614,7 +614,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Used to perform consistent read-modify-write updates. If not set, a blind
+   * Used to perform a consistent read-modify-write update. If not set, a blind
    * "overwrite" update happens.
    * </pre>
    *
@@ -2276,7 +2276,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used to perform consistent read-modify-write updates. If not set, a blind
+     * Used to perform a consistent read-modify-write update. If not set, a blind
      * "overwrite" update happens.
      * </pre>
      *
@@ -2299,7 +2299,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used to perform consistent read-modify-write updates. If not set, a blind
+     * Used to perform a consistent read-modify-write update. If not set, a blind
      * "overwrite" update happens.
      * </pre>
      *
@@ -2322,7 +2322,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used to perform consistent read-modify-write updates. If not set, a blind
+     * Used to perform a consistent read-modify-write update. If not set, a blind
      * "overwrite" update happens.
      * </pre>
      *
@@ -2344,7 +2344,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used to perform consistent read-modify-write updates. If not set, a blind
+     * Used to perform a consistent read-modify-write update. If not set, a blind
      * "overwrite" update happens.
      * </pre>
      *
@@ -2362,7 +2362,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used to perform consistent read-modify-write updates. If not set, a blind
+     * Used to perform a consistent read-modify-write update. If not set, a blind
      * "overwrite" update happens.
      * </pre>
      *

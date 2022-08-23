@@ -295,6 +295,9 @@
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
+            "RemoveDatapoints": {
+              "methods": ["removeDatapoints", "removeDatapointsCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },
@@ -303,6 +306,9 @@
             },
             "UpdateIndex": {
               "methods": ["updateIndexAsync", "updateIndexAsync", "updateIndexOperationCallable", "updateIndexCallable"]
+            },
+            "UpsertDatapoints": {
+              "methods": ["upsertDatapoints", "upsertDatapointsCallable"]
             }
           }
         }
