@@ -697,7 +697,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
 
   @Override
   public GetQueryResultsResponse getQueryResultsWithRowLimit(
-      String projectId, String jobId, String location, Integer maxResultPerPage) {
+      String projectId, String jobId, String location, Integer maxResultPerPage, Long timeoutMs) {
     try {
       return bigquery
           .jobs()
@@ -705,6 +705,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
           .setPrettyPrint(false)
           .setLocation(location)
           .setMaxResults(Long.valueOf(maxResultPerPage))
+          .setTimeoutMs(timeoutMs)
           .execute();
     } catch (IOException ex) {
       throw translate(ex);

@@ -23,9 +23,11 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryError;
 import com.google.cloud.bigquery.BigQueryException;
+import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.BigQueryResult;
 import com.google.cloud.bigquery.BigQuerySQLException;
 import com.google.cloud.bigquery.Connection;
@@ -60,6 +62,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TimeZone;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -482,6 +485,65 @@ public class ITNightlyBigQueryTest {
     }
     connection.close();
     assertEquals(MULTI_LIMIT_RECS, cnt);
+  }
+
+  @Test
+  // This testcase reads rows in bulk for a public table to make sure we do not get
+  // table-not-found exception. Ref: b/241134681 . This exception has been seen while reading data
+  // in bulk
+  public void testForTableNotFound() throws SQLException {
+    int recordCnt = 50000000; // 5Mil
+    String query =
+        String.format(
+            "SELECT * FROM `bigquery-samples.wikipedia_benchmark.Wiki10B` LIMIT %s", recordCnt);
+
+    String dataSet = RemoteBigQueryHelper.generateDatasetName();
+    String table = "TAB_" + UUID.randomUUID();
+    createDataset(dataSet);
+    TableId targetTable =
+        TableId.of(
+            ServiceOptions.getDefaultProjectId(),
+            dataSet,
+            table); // table will be created implicitly
+
+    ConnectionSettings conSet =
+        ConnectionSettings.newBuilder()
+            .setUseReadAPI(true) // enable read api
+            .setDestinationTable(targetTable)
+            .setAllowLargeResults(true)
+            .build();
+
+    Connection connection =
+        BigQueryOptions.getDefaultInstance().getService().createConnection(conSet);
+    BigQueryResult bigQueryResultSet = connection.executeSelect(query);
+    assertNotNull(getResultHashWiki(bigQueryResultSet)); // this iterated through all the rows
+    assertTrue(
+        (recordCnt == bigQueryResultSet.getTotalRows())
+            || (-1
+                == bigQueryResultSet
+                    .getTotalRows())); // either job should return the actual count or -1 if the job
+    // is still running
+    try {
+      deleteTable(dataSet, table);
+      deleteDataset(dataSet);
+    } catch (Exception e) {
+      logger.log(
+          Level.WARNING,
+          String.format(
+              "Error [ %s ] while deleting dataset: %s , table: %s",
+              e.getMessage(), dataSet, table));
+    }
+  }
+
+  // this iterated through all the rows (just reads the title column)
+  private Long getResultHashWiki(BigQueryResult bigQueryResultSet) throws SQLException {
+    ResultSet rs = bigQueryResultSet.getResultSet();
+    long hash = 0L;
+    System.out.print("\n Running");
+    while (rs.next()) {
+      hash += rs.getString("title") == null ? 0 : rs.getString("title").hashCode();
+    }
+    return hash;
   }
 
   // asserts the value of each row

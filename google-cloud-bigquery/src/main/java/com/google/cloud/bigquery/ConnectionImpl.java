@@ -835,8 +835,8 @@ class ConnectionImpl implements Connection {
               .setMaxStreamCount(1) // Currently just one stream is allowed
           // DO a regex check using order by and use multiple streams
           ;
-
       ReadSession readSession = bqReadClient.createReadSession(builder.build());
+
       bufferRow = new LinkedBlockingDeque<>(getBufferSize());
       Map<String, Integer> arrowNameToIndex = new HashMap<>();
       // deserialize and populate the buffer async, so that the client isn't blocked
@@ -995,33 +995,57 @@ class ConnectionImpl implements Connection {
                 jobId.getLocation() == null && bigQueryOptions.getLocation() != null
                     ? bigQueryOptions.getLocation()
                     : jobId.getLocation());
-    try {
-      GetQueryResultsResponse results =
-          BigQueryRetryHelper.runWithRetries(
-              () ->
-                  bigQueryRpc.getQueryResultsWithRowLimit(
-                      completeJobId.getProject(),
-                      completeJobId.getJob(),
-                      completeJobId.getLocation(),
-                      connectionSettings.getMaxResultPerPage()),
-              bigQueryOptions.getRetrySettings(),
-              BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
-              bigQueryOptions.getClock(),
-              retryConfig);
 
-      if (results.getErrors() != null) {
-        List<BigQueryError> bigQueryErrors =
-            results.getErrors().stream()
-                .map(BigQueryError.FROM_PB_FUNCTION)
-                .collect(Collectors.toList());
-        // Throwing BigQueryException since there may be no JobId and we want to stay consistent
-        // with the case where there there is a HTTP error
-        throw new BigQueryException(bigQueryErrors);
+    // Implementing logic to poll the Job's status using getQueryResults as
+    // we do not get rows, rows count and schema unless the job is complete
+    // Ref: b/241134681
+    // This logic relies on backend for poll and wait.BigQuery guarantees that jobs make forward
+    // progress (a job won't get stuck in pending forever).
+    boolean jobComplete = false;
+    GetQueryResultsResponse results = null;
+    long timeoutMs =
+        60000; // defaulting to 60seconds. TODO(prashant): It should be made user configurable
+
+    while (!jobComplete) {
+      try {
+        results =
+            BigQueryRetryHelper.runWithRetries(
+                () ->
+                    bigQueryRpc.getQueryResultsWithRowLimit(
+                        completeJobId.getProject(),
+                        completeJobId.getJob(),
+                        completeJobId.getLocation(),
+                        connectionSettings.getMaxResultPerPage(),
+                        timeoutMs),
+                bigQueryOptions.getRetrySettings(),
+                BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
+                bigQueryOptions.getClock(),
+                retryConfig);
+
+        if (results.getErrors() != null) {
+          List<BigQueryError> bigQueryErrors =
+              results.getErrors().stream()
+                  .map(BigQueryError.FROM_PB_FUNCTION)
+                  .collect(Collectors.toList());
+          // Throwing BigQueryException since there may be no JobId, and we want to stay consistent
+          // with the case where there  is a HTTP error
+          throw new BigQueryException(bigQueryErrors);
+        }
+      } catch (BigQueryRetryHelper.BigQueryRetryHelperException e) {
+        throw BigQueryException.translateAndThrow(e);
       }
-      return results;
-    } catch (BigQueryRetryHelper.BigQueryRetryHelperException e) {
-      throw BigQueryException.translateAndThrow(e);
+      jobComplete = results.getJobComplete();
+
+      // This log msg at Level.FINE might indicate that the job is still running and not stuck for
+      // very long running jobs.
+      logger.log(
+          Level.FINE,
+          String.format(
+              "jobComplete: %s , Polling getQueryResults with timeoutMs: %s",
+              jobComplete, timeoutMs));
     }
+
+    return results;
   }
 
   @VisibleForTesting

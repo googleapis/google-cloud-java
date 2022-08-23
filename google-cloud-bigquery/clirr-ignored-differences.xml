@@ -2,14 +2,16 @@
 <!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
 <differences>
   <!-- TODO: REMOVE AFTER RELEASE -->
-<difference>
-    <differenceType>7012</differenceType>
-    <className>com/google/cloud/bigquery/LoadConfiguration</className>
-    <method>java.util.List getDecimalTargetTypes()</method>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/bigquery/spi/v2/BigQueryRpc</className>
+    <method>com.google.api.services.bigquery.model.GetQueryResultsResponse getQueryResultsWithRowLimit(java.lang.String, java.lang.String, java.lang.String, java.lang.Integer)</method>
+    <justification>getQueryResultsWithRowLimit is just used by ConnectionImpl at the moment so it should be fine to update the signature instead of writing an overloaded method</justification>
   </difference>
   <difference>
-    <differenceType>7012</differenceType>
-    <className>com/google/cloud/bigquery/LoadConfiguration$Builder</className>
-    <method>com.google.cloud.bigquery.LoadConfiguration$Builder setDecimalTargetTypes(java.util.List)</method>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/bigquery/spi/v2/HttpBigQueryRpc</className>
+    <method>com.google.api.services.bigquery.model.GetQueryResultsResponse getQueryResultsWithRowLimit(java.lang.String, java.lang.String, java.lang.String, java.lang.Integer)</method>
+    <justification>getQueryResultsWithRowLimit is just used by ConnectionImpl at the moment so it should be fine to update the signature instead of writing an overloaded method</justification>
   </difference>
 </differences>

@@ -315,14 +315,22 @@ public class ConnectionImplTest {
   @Test
   public void testGetQueryResultsFirstPage() {
     when(bigqueryRpcMock.getQueryResultsWithRowLimit(
-            any(String.class), any(String.class), any(String.class), any(Integer.class)))
+            any(String.class),
+            any(String.class),
+            any(String.class),
+            any(Integer.class),
+            any(Long.class)))
         .thenReturn(GET_QUERY_RESULTS_RESPONSE);
     GetQueryResultsResponse response = connection.getQueryResultsFirstPage(QUERY_JOB);
     assertNotNull(response);
     assertEquals(GET_QUERY_RESULTS_RESPONSE, response);
     verify(bigqueryRpcMock, times(1))
         .getQueryResultsWithRowLimit(
-            any(String.class), any(String.class), any(String.class), any(Integer.class));
+            any(String.class),
+            any(String.class),
+            any(String.class),
+            any(Integer.class),
+            any(Long.class));
   }
 
   // calls executeSelect with a nonFast query and exercises createQueryJob

@@ -315,7 +315,7 @@ public interface BigQueryRpc extends ServiceRpc {
    * @throws BigQueryException upon failure
    */
   GetQueryResultsResponse getQueryResultsWithRowLimit(
-      String projectId, String jobId, String location, Integer preFetchedRowLimit);
+      String projectId, String jobId, String location, Integer preFetchedRowLimit, Long timeoutMs);
 
   /**
    * Runs a BigQuery SQL query synchronously and returns query results if the query completes within
