@@ -1,0 +1,18 @@
+{
+    "api_shortname": "cloudtasks",
+    "name_pretty": "Cloud Tasks",
+    "product_documentation": "https://cloud.google.com/tasks/docs/",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-tasks/latest/history",
+    "issue_tracker": "https://issuetracker.google.com/savedsearches/5433985",
+    "release_level": "stable",
+    "language": "java",
+    "repo": "googleapis/java-tasks",
+    "repo_short": "java-tasks",
+    "distribution_name": "com.google.cloud:google-cloud-tasks",
+    "api_id": "cloudtasks.googleapis.com",
+    "transport": "grpc",
+    "requires_billing": true,
+    "api_description": "a fully managed service that allows you to manage the execution, dispatch and delivery of a large number of distributed tasks. You can asynchronously perform work outside of a user request. Your tasks can be executed on App Engine or any arbitrary HTTP endpoint.",
+    "library_type": "GAPIC_AUTO",
+    "codeowner_team": "@googleapis/aap-dpes"
+}
