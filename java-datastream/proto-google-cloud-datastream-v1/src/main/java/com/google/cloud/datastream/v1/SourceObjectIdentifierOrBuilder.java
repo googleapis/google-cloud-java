@@ -108,6 +108,49 @@ public interface SourceObjectIdentifierOrBuilder
   com.google.cloud.datastream.v1.SourceObjectIdentifier.MysqlObjectIdentifierOrBuilder
       getMysqlIdentifierOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * PostgreSQL data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier postgresql_identifier = 3;
+   * </code>
+   *
+   * @return Whether the postgresqlIdentifier field is set.
+   */
+  boolean hasPostgresqlIdentifier();
+  /**
+   *
+   *
+   * <pre>
+   * PostgreSQL data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier postgresql_identifier = 3;
+   * </code>
+   *
+   * @return The postgresqlIdentifier.
+   */
+  com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+      getPostgresqlIdentifier();
+  /**
+   *
+   *
+   * <pre>
+   * PostgreSQL data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier postgresql_identifier = 3;
+   * </code>
+   */
+  com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifierOrBuilder
+      getPostgresqlIdentifierOrBuilder();
+
   public com.google.cloud.datastream.v1.SourceObjectIdentifier.SourceIdentifierCase
       getSourceIdentifierCase();
 }

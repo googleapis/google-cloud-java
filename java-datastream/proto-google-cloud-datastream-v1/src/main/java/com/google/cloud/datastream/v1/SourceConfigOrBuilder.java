@@ -58,7 +58,7 @@ public interface SourceConfigOrBuilder
    *
    *
    * <pre>
-   * Oracle data source configuration
+   * Oracle data source configuration.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.OracleSourceConfig oracle_source_config = 100;</code>
@@ -70,7 +70,7 @@ public interface SourceConfigOrBuilder
    *
    *
    * <pre>
-   * Oracle data source configuration
+   * Oracle data source configuration.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.OracleSourceConfig oracle_source_config = 100;</code>
@@ -82,7 +82,7 @@ public interface SourceConfigOrBuilder
    *
    *
    * <pre>
-   * Oracle data source configuration
+   * Oracle data source configuration.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.OracleSourceConfig oracle_source_config = 100;</code>
@@ -93,7 +93,7 @@ public interface SourceConfigOrBuilder
    *
    *
    * <pre>
-   * MySQL data source configuration
+   * MySQL data source configuration.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MysqlSourceConfig mysql_source_config = 101;</code>
@@ -105,7 +105,7 @@ public interface SourceConfigOrBuilder
    *
    *
    * <pre>
-   * MySQL data source configuration
+   * MySQL data source configuration.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MysqlSourceConfig mysql_source_config = 101;</code>
@@ -117,12 +117,48 @@ public interface SourceConfigOrBuilder
    *
    *
    * <pre>
-   * MySQL data source configuration
+   * MySQL data source configuration.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MysqlSourceConfig mysql_source_config = 101;</code>
    */
   com.google.cloud.datastream.v1.MysqlSourceConfigOrBuilder getMysqlSourceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * PostgreSQL data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.PostgresqlSourceConfig postgresql_source_config = 102;</code>
+   *
+   * @return Whether the postgresqlSourceConfig field is set.
+   */
+  boolean hasPostgresqlSourceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * PostgreSQL data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.PostgresqlSourceConfig postgresql_source_config = 102;</code>
+   *
+   * @return The postgresqlSourceConfig.
+   */
+  com.google.cloud.datastream.v1.PostgresqlSourceConfig getPostgresqlSourceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * PostgreSQL data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.PostgresqlSourceConfig postgresql_source_config = 102;</code>
+   */
+  com.google.cloud.datastream.v1.PostgresqlSourceConfigOrBuilder
+      getPostgresqlSourceConfigOrBuilder();
 
   public com.google.cloud.datastream.v1.SourceConfig.SourceStreamConfigCase
       getSourceStreamConfigCase();

@@ -116,6 +116,33 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
               sourceIdentifierCase_ = 2;
               break;
             }
+          case 26:
+            {
+              com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+                      .Builder
+                  subBuilder = null;
+              if (sourceIdentifierCase_ == 3) {
+                subBuilder =
+                    ((com.google.cloud.datastream.v1.SourceObjectIdentifier
+                                .PostgresqlObjectIdentifier)
+                            sourceIdentifier_)
+                        .toBuilder();
+              }
+              sourceIdentifier_ =
+                  input.readMessage(
+                      com.google.cloud.datastream.v1.SourceObjectIdentifier
+                          .PostgresqlObjectIdentifier.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.datastream.v1.SourceObjectIdentifier
+                            .PostgresqlObjectIdentifier)
+                        sourceIdentifier_);
+                sourceIdentifier_ = subBuilder.buildPartial();
+              }
+              sourceIdentifierCase_ = 3;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1039,6 +1066,901 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     }
   }
 
+  public interface PostgresqlObjectIdentifierOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The schema name.
+     * </pre>
+     *
+     * <code>string schema = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The schema.
+     */
+    java.lang.String getSchema();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The schema name.
+     * </pre>
+     *
+     * <code>string schema = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for schema.
+     */
+    com.google.protobuf.ByteString getSchemaBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The table name.
+     * </pre>
+     *
+     * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The table.
+     */
+    java.lang.String getTable();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The table name.
+     * </pre>
+     *
+     * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for table.
+     */
+    com.google.protobuf.ByteString getTableBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * PostgreSQL data source object identifier.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier}
+   */
+  public static final class PostgresqlObjectIdentifier
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier)
+      PostgresqlObjectIdentifierOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PostgresqlObjectIdentifier.newBuilder() to construct.
+    private PostgresqlObjectIdentifier(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PostgresqlObjectIdentifier() {
+      schema_ = "";
+      table_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PostgresqlObjectIdentifier();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private PostgresqlObjectIdentifier(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                schema_ = s;
+                break;
+              }
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                table_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_PostgresqlObjectIdentifier_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_PostgresqlObjectIdentifier_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+                  .class,
+              com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+                  .Builder.class);
+    }
+
+    public static final int SCHEMA_FIELD_NUMBER = 1;
+    private volatile java.lang.Object schema_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The schema name.
+     * </pre>
+     *
+     * <code>string schema = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The schema.
+     */
+    @java.lang.Override
+    public java.lang.String getSchema() {
+      java.lang.Object ref = schema_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        schema_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The schema name.
+     * </pre>
+     *
+     * <code>string schema = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for schema.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSchemaBytes() {
+      java.lang.Object ref = schema_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        schema_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TABLE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object table_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The table name.
+     * </pre>
+     *
+     * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The table.
+     */
+    @java.lang.Override
+    public java.lang.String getTable() {
+      java.lang.Object ref = table_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        table_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The table name.
+     * </pre>
+     *
+     * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for table.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTableBytes() {
+      java.lang.Object ref = table_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        table_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schema_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, schema_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, table_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schema_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, schema_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, table_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier other =
+          (com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier) obj;
+
+      if (!getSchema().equals(other.getSchema())) return false;
+      if (!getTable().equals(other.getTable())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SCHEMA_FIELD_NUMBER;
+      hash = (53 * hash) + getSchema().hashCode();
+      hash = (37 * hash) + TABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getTable().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL data source object identifier.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier)
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifierOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_PostgresqlObjectIdentifier_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_PostgresqlObjectIdentifier_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+                    .class,
+                com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        schema_ = "";
+
+        table_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_PostgresqlObjectIdentifier_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+          getDefaultInstanceForType() {
+        return com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+          build() {
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+          buildPartial() {
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier result =
+            new com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier(
+                this);
+        result.schema_ = schema_;
+        result.table_ = table_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier) {
+          return mergeFrom(
+              (com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier other) {
+        if (other
+            == com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+                .getDefaultInstance()) return this;
+        if (!other.getSchema().isEmpty()) {
+          schema_ = other.schema_;
+          onChanged();
+        }
+        if (!other.getTable().isEmpty()) {
+          table_ = other.table_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+            parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object schema_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The schema name.
+       * </pre>
+       *
+       * <code>string schema = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The schema.
+       */
+      public java.lang.String getSchema() {
+        java.lang.Object ref = schema_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          schema_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The schema name.
+       * </pre>
+       *
+       * <code>string schema = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for schema.
+       */
+      public com.google.protobuf.ByteString getSchemaBytes() {
+        java.lang.Object ref = schema_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          schema_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The schema name.
+       * </pre>
+       *
+       * <code>string schema = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The schema to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSchema(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        schema_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The schema name.
+       * </pre>
+       *
+       * <code>string schema = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSchema() {
+
+        schema_ = getDefaultInstance().getSchema();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The schema name.
+       * </pre>
+       *
+       * <code>string schema = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for schema to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSchemaBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        schema_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object table_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The table name.
+       * </pre>
+       *
+       * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The table.
+       */
+      public java.lang.String getTable() {
+        java.lang.Object ref = table_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          table_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The table name.
+       * </pre>
+       *
+       * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for table.
+       */
+      public com.google.protobuf.ByteString getTableBytes() {
+        java.lang.Object ref = table_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          table_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The table name.
+       * </pre>
+       *
+       * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The table to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTable(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        table_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The table name.
+       * </pre>
+       *
+       * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTable() {
+
+        table_ = getDefaultInstance().getTable();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The table name.
+       * </pre>
+       *
+       * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for table to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTableBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        table_ = value;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier)
+    private static final com.google.cloud.datastream.v1.SourceObjectIdentifier
+            .PostgresqlObjectIdentifier
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier();
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PostgresqlObjectIdentifier> PARSER =
+        new com.google.protobuf.AbstractParser<PostgresqlObjectIdentifier>() {
+          @java.lang.Override
+          public PostgresqlObjectIdentifier parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new PostgresqlObjectIdentifier(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<PostgresqlObjectIdentifier> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PostgresqlObjectIdentifier> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface MysqlObjectIdentifierOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.SourceObjectIdentifier.MysqlObjectIdentifier)
@@ -1932,6 +2854,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     ORACLE_IDENTIFIER(1),
     MYSQL_IDENTIFIER(2),
+    POSTGRESQL_IDENTIFIER(3),
     SOURCEIDENTIFIER_NOT_SET(0);
     private final int value;
 
@@ -1954,6 +2877,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return ORACLE_IDENTIFIER;
         case 2:
           return MYSQL_IDENTIFIER;
+        case 3:
+          return POSTGRESQL_IDENTIFIER;
         case 0:
           return SOURCEIDENTIFIER_NOT_SET;
         default:
@@ -2096,6 +3021,69 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         .getDefaultInstance();
   }
 
+  public static final int POSTGRESQL_IDENTIFIER_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * PostgreSQL data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier postgresql_identifier = 3;
+   * </code>
+   *
+   * @return Whether the postgresqlIdentifier field is set.
+   */
+  @java.lang.Override
+  public boolean hasPostgresqlIdentifier() {
+    return sourceIdentifierCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * PostgreSQL data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier postgresql_identifier = 3;
+   * </code>
+   *
+   * @return The postgresqlIdentifier.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+      getPostgresqlIdentifier() {
+    if (sourceIdentifierCase_ == 3) {
+      return (com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier)
+          sourceIdentifier_;
+    }
+    return com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * PostgreSQL data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier postgresql_identifier = 3;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifierOrBuilder
+      getPostgresqlIdentifierOrBuilder() {
+    if (sourceIdentifierCase_ == 3) {
+      return (com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier)
+          sourceIdentifier_;
+    }
+    return com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+        .getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2122,6 +3110,12 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           (com.google.cloud.datastream.v1.SourceObjectIdentifier.MysqlObjectIdentifier)
               sourceIdentifier_);
     }
+    if (sourceIdentifierCase_ == 3) {
+      output.writeMessage(
+          3,
+          (com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier)
+              sourceIdentifier_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -2143,6 +3137,13 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2,
               (com.google.cloud.datastream.v1.SourceObjectIdentifier.MysqlObjectIdentifier)
+                  sourceIdentifier_);
+    }
+    if (sourceIdentifierCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3,
+              (com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier)
                   sourceIdentifier_);
     }
     size += unknownFields.getSerializedSize();
@@ -2169,6 +3170,9 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       case 2:
         if (!getMysqlIdentifier().equals(other.getMysqlIdentifier())) return false;
         break;
+      case 3:
+        if (!getPostgresqlIdentifier().equals(other.getPostgresqlIdentifier())) return false;
+        break;
       case 0:
       default:
     }
@@ -2191,6 +3195,10 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       case 2:
         hash = (37 * hash) + MYSQL_IDENTIFIER_FIELD_NUMBER;
         hash = (53 * hash) + getMysqlIdentifier().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + POSTGRESQL_IDENTIFIER_FIELD_NUMBER;
+        hash = (53 * hash) + getPostgresqlIdentifier().hashCode();
         break;
       case 0:
       default:
@@ -2384,6 +3392,13 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           result.sourceIdentifier_ = mysqlIdentifierBuilder_.build();
         }
       }
+      if (sourceIdentifierCase_ == 3) {
+        if (postgresqlIdentifierBuilder_ == null) {
+          result.sourceIdentifier_ = sourceIdentifier_;
+        } else {
+          result.sourceIdentifier_ = postgresqlIdentifierBuilder_.build();
+        }
+      }
       result.sourceIdentifierCase_ = sourceIdentifierCase_;
       onBuilt();
       return result;
@@ -2444,6 +3459,11 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         case MYSQL_IDENTIFIER:
           {
             mergeMysqlIdentifier(other.getMysqlIdentifier());
+            break;
+          }
+        case POSTGRESQL_IDENTIFIER:
+          {
+            mergePostgresqlIdentifier(other.getPostgresqlIdentifier());
             break;
           }
         case SOURCEIDENTIFIER_NOT_SET:
@@ -2988,6 +4008,259 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       onChanged();
       ;
       return mysqlIdentifierBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier,
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+                .Builder,
+            com.google.cloud.datastream.v1.SourceObjectIdentifier
+                .PostgresqlObjectIdentifierOrBuilder>
+        postgresqlIdentifierBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier postgresql_identifier = 3;
+     * </code>
+     *
+     * @return Whether the postgresqlIdentifier field is set.
+     */
+    @java.lang.Override
+    public boolean hasPostgresqlIdentifier() {
+      return sourceIdentifierCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier postgresql_identifier = 3;
+     * </code>
+     *
+     * @return The postgresqlIdentifier.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+        getPostgresqlIdentifier() {
+      if (postgresqlIdentifierBuilder_ == null) {
+        if (sourceIdentifierCase_ == 3) {
+          return (com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier)
+              sourceIdentifier_;
+        }
+        return com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+            .getDefaultInstance();
+      } else {
+        if (sourceIdentifierCase_ == 3) {
+          return postgresqlIdentifierBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier postgresql_identifier = 3;
+     * </code>
+     */
+    public Builder setPostgresqlIdentifier(
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier value) {
+      if (postgresqlIdentifierBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceIdentifier_ = value;
+        onChanged();
+      } else {
+        postgresqlIdentifierBuilder_.setMessage(value);
+      }
+      sourceIdentifierCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier postgresql_identifier = 3;
+     * </code>
+     */
+    public Builder setPostgresqlIdentifier(
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier.Builder
+            builderForValue) {
+      if (postgresqlIdentifierBuilder_ == null) {
+        sourceIdentifier_ = builderForValue.build();
+        onChanged();
+      } else {
+        postgresqlIdentifierBuilder_.setMessage(builderForValue.build());
+      }
+      sourceIdentifierCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier postgresql_identifier = 3;
+     * </code>
+     */
+    public Builder mergePostgresqlIdentifier(
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier value) {
+      if (postgresqlIdentifierBuilder_ == null) {
+        if (sourceIdentifierCase_ == 3
+            && sourceIdentifier_
+                != com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+                    .getDefaultInstance()) {
+          sourceIdentifier_ =
+              com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+                  .newBuilder(
+                      (com.google.cloud.datastream.v1.SourceObjectIdentifier
+                              .PostgresqlObjectIdentifier)
+                          sourceIdentifier_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sourceIdentifier_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceIdentifierCase_ == 3) {
+          postgresqlIdentifierBuilder_.mergeFrom(value);
+        } else {
+          postgresqlIdentifierBuilder_.setMessage(value);
+        }
+      }
+      sourceIdentifierCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier postgresql_identifier = 3;
+     * </code>
+     */
+    public Builder clearPostgresqlIdentifier() {
+      if (postgresqlIdentifierBuilder_ == null) {
+        if (sourceIdentifierCase_ == 3) {
+          sourceIdentifierCase_ = 0;
+          sourceIdentifier_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceIdentifierCase_ == 3) {
+          sourceIdentifierCase_ = 0;
+          sourceIdentifier_ = null;
+        }
+        postgresqlIdentifierBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier postgresql_identifier = 3;
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier.Builder
+        getPostgresqlIdentifierBuilder() {
+      return getPostgresqlIdentifierFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier postgresql_identifier = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifierOrBuilder
+        getPostgresqlIdentifierOrBuilder() {
+      if ((sourceIdentifierCase_ == 3) && (postgresqlIdentifierBuilder_ != null)) {
+        return postgresqlIdentifierBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceIdentifierCase_ == 3) {
+          return (com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier)
+              sourceIdentifier_;
+        }
+        return com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier postgresql_identifier = 3;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier,
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+                .Builder,
+            com.google.cloud.datastream.v1.SourceObjectIdentifier
+                .PostgresqlObjectIdentifierOrBuilder>
+        getPostgresqlIdentifierFieldBuilder() {
+      if (postgresqlIdentifierBuilder_ == null) {
+        if (!(sourceIdentifierCase_ == 3)) {
+          sourceIdentifier_ =
+              com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+                  .getDefaultInstance();
+        }
+        postgresqlIdentifierBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier,
+                com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
+                    .Builder,
+                com.google.cloud.datastream.v1.SourceObjectIdentifier
+                    .PostgresqlObjectIdentifierOrBuilder>(
+                (com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier)
+                    sourceIdentifier_,
+                getParentForChildren(),
+                isClean());
+        sourceIdentifier_ = null;
+      }
+      sourceIdentifierCase_ = 3;
+      onChanged();
+      ;
+      return postgresqlIdentifierBuilder_;
     }
 
     @java.lang.Override

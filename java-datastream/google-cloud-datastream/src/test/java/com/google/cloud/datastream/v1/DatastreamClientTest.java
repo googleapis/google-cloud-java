@@ -62,6 +62,7 @@ import org.junit.Test;
 @Generated("by gapic-generator-java")
 public class DatastreamClientTest {
   private static MockDatastream mockDatastream;
+  private static MockIAMPolicy mockIAMPolicy;
   private static MockLocations mockLocations;
   private static MockServiceHelper mockServiceHelper;
   private LocalChannelProvider channelProvider;
@@ -71,10 +72,11 @@ public class DatastreamClientTest {
   public static void startStaticServer() {
     mockDatastream = new MockDatastream();
     mockLocations = new MockLocations();
+    mockIAMPolicy = new MockIAMPolicy();
     mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(mockDatastream, mockLocations));
+            Arrays.<MockGrpcService>asList(mockDatastream, mockLocations, mockIAMPolicy));
     mockServiceHelper.start();
   }
 
@@ -574,6 +576,7 @@ public class DatastreamClientTest {
     Assert.assertEquals(request.getHierarchyDepth(), actualRequest.getHierarchyDepth());
     Assert.assertEquals(request.getOracleRdbms(), actualRequest.getOracleRdbms());
     Assert.assertEquals(request.getMysqlRdbms(), actualRequest.getMysqlRdbms());
+    Assert.assertEquals(request.getPostgresqlRdbms(), actualRequest.getPostgresqlRdbms());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),

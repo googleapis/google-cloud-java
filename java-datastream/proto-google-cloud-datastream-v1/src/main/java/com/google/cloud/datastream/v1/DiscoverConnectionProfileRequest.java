@@ -122,6 +122,23 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
               dataObjectCase_ = 101;
               break;
             }
+          case 818:
+            {
+              com.google.cloud.datastream.v1.PostgresqlRdbms.Builder subBuilder = null;
+              if (dataObjectCase_ == 102) {
+                subBuilder =
+                    ((com.google.cloud.datastream.v1.PostgresqlRdbms) dataObject_).toBuilder();
+              }
+              dataObject_ =
+                  input.readMessage(
+                      com.google.cloud.datastream.v1.PostgresqlRdbms.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.datastream.v1.PostgresqlRdbms) dataObject_);
+                dataObject_ = subBuilder.buildPartial();
+              }
+              dataObjectCase_ = 102;
+              break;
+            }
           case 1602:
             {
               com.google.cloud.datastream.v1.ConnectionProfile.Builder subBuilder = null;
@@ -285,6 +302,7 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     ORACLE_RDBMS(100),
     MYSQL_RDBMS(101),
+    POSTGRESQL_RDBMS(102),
     DATAOBJECT_NOT_SET(0);
     private final int value;
 
@@ -307,6 +325,8 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
           return ORACLE_RDBMS;
         case 101:
           return MYSQL_RDBMS;
+        case 102:
+          return POSTGRESQL_RDBMS;
         case 0:
           return DATAOBJECT_NOT_SET;
         default:
@@ -673,6 +693,57 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
     return com.google.cloud.datastream.v1.MysqlRdbms.getDefaultInstance();
   }
 
+  public static final int POSTGRESQL_RDBMS_FIELD_NUMBER = 102;
+  /**
+   *
+   *
+   * <pre>
+   * PostgreSQL RDBMS to enrich with child data objects and metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_rdbms = 102;</code>
+   *
+   * @return Whether the postgresqlRdbms field is set.
+   */
+  @java.lang.Override
+  public boolean hasPostgresqlRdbms() {
+    return dataObjectCase_ == 102;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * PostgreSQL RDBMS to enrich with child data objects and metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_rdbms = 102;</code>
+   *
+   * @return The postgresqlRdbms.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.PostgresqlRdbms getPostgresqlRdbms() {
+    if (dataObjectCase_ == 102) {
+      return (com.google.cloud.datastream.v1.PostgresqlRdbms) dataObject_;
+    }
+    return com.google.cloud.datastream.v1.PostgresqlRdbms.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * PostgreSQL RDBMS to enrich with child data objects and metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_rdbms = 102;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.PostgresqlRdbmsOrBuilder getPostgresqlRdbmsOrBuilder() {
+    if (dataObjectCase_ == 102) {
+      return (com.google.cloud.datastream.v1.PostgresqlRdbms) dataObject_;
+    }
+    return com.google.cloud.datastream.v1.PostgresqlRdbms.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -701,6 +772,9 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
     }
     if (dataObjectCase_ == 101) {
       output.writeMessage(101, (com.google.cloud.datastream.v1.MysqlRdbms) dataObject_);
+    }
+    if (dataObjectCase_ == 102) {
+      output.writeMessage(102, (com.google.cloud.datastream.v1.PostgresqlRdbms) dataObject_);
     }
     if (targetCase_ == 200) {
       output.writeMessage(200, (com.google.cloud.datastream.v1.ConnectionProfile) target_);
@@ -739,6 +813,11 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               101, (com.google.cloud.datastream.v1.MysqlRdbms) dataObject_);
+    }
+    if (dataObjectCase_ == 102) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              102, (com.google.cloud.datastream.v1.PostgresqlRdbms) dataObject_);
     }
     if (targetCase_ == 200) {
       size +=
@@ -795,6 +874,9 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       case 101:
         if (!getMysqlRdbms().equals(other.getMysqlRdbms())) return false;
         break;
+      case 102:
+        if (!getPostgresqlRdbms().equals(other.getPostgresqlRdbms())) return false;
+        break;
       case 0:
       default:
     }
@@ -843,6 +925,10 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       case 101:
         hash = (37 * hash) + MYSQL_RDBMS_FIELD_NUMBER;
         hash = (53 * hash) + getMysqlRdbms().hashCode();
+        break;
+      case 102:
+        hash = (37 * hash) + POSTGRESQL_RDBMS_FIELD_NUMBER;
+        hash = (53 * hash) + getPostgresqlRdbms().hashCode();
         break;
       case 0:
       default:
@@ -1060,6 +1146,13 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
           result.dataObject_ = mysqlRdbmsBuilder_.build();
         }
       }
+      if (dataObjectCase_ == 102) {
+        if (postgresqlRdbmsBuilder_ == null) {
+          result.dataObject_ = dataObject_;
+        } else {
+          result.dataObject_ = postgresqlRdbmsBuilder_.build();
+        }
+      }
       result.targetCase_ = targetCase_;
       result.hierarchyCase_ = hierarchyCase_;
       result.dataObjectCase_ = dataObjectCase_;
@@ -1162,6 +1255,11 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
         case MYSQL_RDBMS:
           {
             mergeMysqlRdbms(other.getMysqlRdbms());
+            break;
+          }
+        case POSTGRESQL_RDBMS:
+          {
+            mergePostgresqlRdbms(other.getPostgresqlRdbms());
             break;
           }
         case DATAOBJECT_NOT_SET:
@@ -2268,6 +2366,216 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       onChanged();
       ;
       return mysqlRdbmsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.PostgresqlRdbms,
+            com.google.cloud.datastream.v1.PostgresqlRdbms.Builder,
+            com.google.cloud.datastream.v1.PostgresqlRdbmsOrBuilder>
+        postgresqlRdbmsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL RDBMS to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_rdbms = 102;</code>
+     *
+     * @return Whether the postgresqlRdbms field is set.
+     */
+    @java.lang.Override
+    public boolean hasPostgresqlRdbms() {
+      return dataObjectCase_ == 102;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL RDBMS to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_rdbms = 102;</code>
+     *
+     * @return The postgresqlRdbms.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.PostgresqlRdbms getPostgresqlRdbms() {
+      if (postgresqlRdbmsBuilder_ == null) {
+        if (dataObjectCase_ == 102) {
+          return (com.google.cloud.datastream.v1.PostgresqlRdbms) dataObject_;
+        }
+        return com.google.cloud.datastream.v1.PostgresqlRdbms.getDefaultInstance();
+      } else {
+        if (dataObjectCase_ == 102) {
+          return postgresqlRdbmsBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.PostgresqlRdbms.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL RDBMS to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_rdbms = 102;</code>
+     */
+    public Builder setPostgresqlRdbms(com.google.cloud.datastream.v1.PostgresqlRdbms value) {
+      if (postgresqlRdbmsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataObject_ = value;
+        onChanged();
+      } else {
+        postgresqlRdbmsBuilder_.setMessage(value);
+      }
+      dataObjectCase_ = 102;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL RDBMS to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_rdbms = 102;</code>
+     */
+    public Builder setPostgresqlRdbms(
+        com.google.cloud.datastream.v1.PostgresqlRdbms.Builder builderForValue) {
+      if (postgresqlRdbmsBuilder_ == null) {
+        dataObject_ = builderForValue.build();
+        onChanged();
+      } else {
+        postgresqlRdbmsBuilder_.setMessage(builderForValue.build());
+      }
+      dataObjectCase_ = 102;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL RDBMS to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_rdbms = 102;</code>
+     */
+    public Builder mergePostgresqlRdbms(com.google.cloud.datastream.v1.PostgresqlRdbms value) {
+      if (postgresqlRdbmsBuilder_ == null) {
+        if (dataObjectCase_ == 102
+            && dataObject_ != com.google.cloud.datastream.v1.PostgresqlRdbms.getDefaultInstance()) {
+          dataObject_ =
+              com.google.cloud.datastream.v1.PostgresqlRdbms.newBuilder(
+                      (com.google.cloud.datastream.v1.PostgresqlRdbms) dataObject_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          dataObject_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataObjectCase_ == 102) {
+          postgresqlRdbmsBuilder_.mergeFrom(value);
+        } else {
+          postgresqlRdbmsBuilder_.setMessage(value);
+        }
+      }
+      dataObjectCase_ = 102;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL RDBMS to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_rdbms = 102;</code>
+     */
+    public Builder clearPostgresqlRdbms() {
+      if (postgresqlRdbmsBuilder_ == null) {
+        if (dataObjectCase_ == 102) {
+          dataObjectCase_ = 0;
+          dataObject_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataObjectCase_ == 102) {
+          dataObjectCase_ = 0;
+          dataObject_ = null;
+        }
+        postgresqlRdbmsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL RDBMS to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_rdbms = 102;</code>
+     */
+    public com.google.cloud.datastream.v1.PostgresqlRdbms.Builder getPostgresqlRdbmsBuilder() {
+      return getPostgresqlRdbmsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL RDBMS to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_rdbms = 102;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.PostgresqlRdbmsOrBuilder getPostgresqlRdbmsOrBuilder() {
+      if ((dataObjectCase_ == 102) && (postgresqlRdbmsBuilder_ != null)) {
+        return postgresqlRdbmsBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataObjectCase_ == 102) {
+          return (com.google.cloud.datastream.v1.PostgresqlRdbms) dataObject_;
+        }
+        return com.google.cloud.datastream.v1.PostgresqlRdbms.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL RDBMS to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_rdbms = 102;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.PostgresqlRdbms,
+            com.google.cloud.datastream.v1.PostgresqlRdbms.Builder,
+            com.google.cloud.datastream.v1.PostgresqlRdbmsOrBuilder>
+        getPostgresqlRdbmsFieldBuilder() {
+      if (postgresqlRdbmsBuilder_ == null) {
+        if (!(dataObjectCase_ == 102)) {
+          dataObject_ = com.google.cloud.datastream.v1.PostgresqlRdbms.getDefaultInstance();
+        }
+        postgresqlRdbmsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.PostgresqlRdbms,
+                com.google.cloud.datastream.v1.PostgresqlRdbms.Builder,
+                com.google.cloud.datastream.v1.PostgresqlRdbmsOrBuilder>(
+                (com.google.cloud.datastream.v1.PostgresqlRdbms) dataObject_,
+                getParentForChildren(),
+                isClean());
+        dataObject_ = null;
+      }
+      dataObjectCase_ = 102;
+      onChanged();
+      ;
+      return postgresqlRdbmsBuilder_;
     }
 
     @java.lang.Override

@@ -116,6 +116,26 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
               sourceStreamConfigCase_ = 101;
               break;
             }
+          case 818:
+            {
+              com.google.cloud.datastream.v1.PostgresqlSourceConfig.Builder subBuilder = null;
+              if (sourceStreamConfigCase_ == 102) {
+                subBuilder =
+                    ((com.google.cloud.datastream.v1.PostgresqlSourceConfig) sourceStreamConfig_)
+                        .toBuilder();
+              }
+              sourceStreamConfig_ =
+                  input.readMessage(
+                      com.google.cloud.datastream.v1.PostgresqlSourceConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.datastream.v1.PostgresqlSourceConfig) sourceStreamConfig_);
+                sourceStreamConfig_ = subBuilder.buildPartial();
+              }
+              sourceStreamConfigCase_ = 102;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -161,6 +181,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     ORACLE_SOURCE_CONFIG(100),
     MYSQL_SOURCE_CONFIG(101),
+    POSTGRESQL_SOURCE_CONFIG(102),
     SOURCESTREAMCONFIG_NOT_SET(0);
     private final int value;
 
@@ -183,6 +204,8 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
           return ORACLE_SOURCE_CONFIG;
         case 101:
           return MYSQL_SOURCE_CONFIG;
+        case 102:
+          return POSTGRESQL_SOURCE_CONFIG;
         case 0:
           return SOURCESTREAMCONFIG_NOT_SET;
         default:
@@ -259,7 +282,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Oracle data source configuration
+   * Oracle data source configuration.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.OracleSourceConfig oracle_source_config = 100;</code>
@@ -274,7 +297,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Oracle data source configuration
+   * Oracle data source configuration.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.OracleSourceConfig oracle_source_config = 100;</code>
@@ -292,7 +315,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Oracle data source configuration
+   * Oracle data source configuration.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.OracleSourceConfig oracle_source_config = 100;</code>
@@ -311,7 +334,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * MySQL data source configuration
+   * MySQL data source configuration.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MysqlSourceConfig mysql_source_config = 101;</code>
@@ -326,7 +349,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * MySQL data source configuration
+   * MySQL data source configuration.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MysqlSourceConfig mysql_source_config = 101;</code>
@@ -344,7 +367,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * MySQL data source configuration
+   * MySQL data source configuration.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MysqlSourceConfig mysql_source_config = 101;</code>
@@ -355,6 +378,58 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.datastream.v1.MysqlSourceConfig) sourceStreamConfig_;
     }
     return com.google.cloud.datastream.v1.MysqlSourceConfig.getDefaultInstance();
+  }
+
+  public static final int POSTGRESQL_SOURCE_CONFIG_FIELD_NUMBER = 102;
+  /**
+   *
+   *
+   * <pre>
+   * PostgreSQL data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.PostgresqlSourceConfig postgresql_source_config = 102;</code>
+   *
+   * @return Whether the postgresqlSourceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasPostgresqlSourceConfig() {
+    return sourceStreamConfigCase_ == 102;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * PostgreSQL data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.PostgresqlSourceConfig postgresql_source_config = 102;</code>
+   *
+   * @return The postgresqlSourceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.PostgresqlSourceConfig getPostgresqlSourceConfig() {
+    if (sourceStreamConfigCase_ == 102) {
+      return (com.google.cloud.datastream.v1.PostgresqlSourceConfig) sourceStreamConfig_;
+    }
+    return com.google.cloud.datastream.v1.PostgresqlSourceConfig.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * PostgreSQL data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.PostgresqlSourceConfig postgresql_source_config = 102;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.PostgresqlSourceConfigOrBuilder
+      getPostgresqlSourceConfigOrBuilder() {
+    if (sourceStreamConfigCase_ == 102) {
+      return (com.google.cloud.datastream.v1.PostgresqlSourceConfig) sourceStreamConfig_;
+    }
+    return com.google.cloud.datastream.v1.PostgresqlSourceConfig.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -382,6 +457,10 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           101, (com.google.cloud.datastream.v1.MysqlSourceConfig) sourceStreamConfig_);
     }
+    if (sourceStreamConfigCase_ == 102) {
+      output.writeMessage(
+          102, (com.google.cloud.datastream.v1.PostgresqlSourceConfig) sourceStreamConfig_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -403,6 +482,11 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               101, (com.google.cloud.datastream.v1.MysqlSourceConfig) sourceStreamConfig_);
+    }
+    if (sourceStreamConfigCase_ == 102) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              102, (com.google.cloud.datastream.v1.PostgresqlSourceConfig) sourceStreamConfig_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -429,6 +513,9 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       case 101:
         if (!getMysqlSourceConfig().equals(other.getMysqlSourceConfig())) return false;
         break;
+      case 102:
+        if (!getPostgresqlSourceConfig().equals(other.getPostgresqlSourceConfig())) return false;
+        break;
       case 0:
       default:
     }
@@ -453,6 +540,10 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       case 101:
         hash = (37 * hash) + MYSQL_SOURCE_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getMysqlSourceConfig().hashCode();
+        break;
+      case 102:
+        hash = (37 * hash) + POSTGRESQL_SOURCE_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getPostgresqlSourceConfig().hashCode();
         break;
       case 0:
       default:
@@ -648,6 +739,13 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
           result.sourceStreamConfig_ = mysqlSourceConfigBuilder_.build();
         }
       }
+      if (sourceStreamConfigCase_ == 102) {
+        if (postgresqlSourceConfigBuilder_ == null) {
+          result.sourceStreamConfig_ = sourceStreamConfig_;
+        } else {
+          result.sourceStreamConfig_ = postgresqlSourceConfigBuilder_.build();
+        }
+      }
       result.sourceStreamConfigCase_ = sourceStreamConfigCase_;
       onBuilt();
       return result;
@@ -711,6 +809,11 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
         case MYSQL_SOURCE_CONFIG:
           {
             mergeMysqlSourceConfig(other.getMysqlSourceConfig());
+            break;
+          }
+        case POSTGRESQL_SOURCE_CONFIG:
+          {
+            mergePostgresqlSourceConfig(other.getPostgresqlSourceConfig());
             break;
           }
         case SOURCESTREAMCONFIG_NOT_SET:
@@ -891,7 +994,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Oracle data source configuration
+     * Oracle data source configuration.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleSourceConfig oracle_source_config = 100;</code>
@@ -906,7 +1009,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Oracle data source configuration
+     * Oracle data source configuration.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleSourceConfig oracle_source_config = 100;</code>
@@ -931,7 +1034,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Oracle data source configuration
+     * Oracle data source configuration.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleSourceConfig oracle_source_config = 100;</code>
@@ -953,7 +1056,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Oracle data source configuration
+     * Oracle data source configuration.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleSourceConfig oracle_source_config = 100;</code>
@@ -973,7 +1076,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Oracle data source configuration
+     * Oracle data source configuration.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleSourceConfig oracle_source_config = 100;</code>
@@ -1007,7 +1110,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Oracle data source configuration
+     * Oracle data source configuration.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleSourceConfig oracle_source_config = 100;</code>
@@ -1032,7 +1135,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Oracle data source configuration
+     * Oracle data source configuration.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleSourceConfig oracle_source_config = 100;</code>
@@ -1045,7 +1148,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Oracle data source configuration
+     * Oracle data source configuration.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleSourceConfig oracle_source_config = 100;</code>
@@ -1066,7 +1169,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Oracle data source configuration
+     * Oracle data source configuration.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleSourceConfig oracle_source_config = 100;</code>
@@ -1106,7 +1209,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * MySQL data source configuration
+     * MySQL data source configuration.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlSourceConfig mysql_source_config = 101;</code>
@@ -1121,7 +1224,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * MySQL data source configuration
+     * MySQL data source configuration.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlSourceConfig mysql_source_config = 101;</code>
@@ -1146,7 +1249,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * MySQL data source configuration
+     * MySQL data source configuration.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlSourceConfig mysql_source_config = 101;</code>
@@ -1168,7 +1271,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * MySQL data source configuration
+     * MySQL data source configuration.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlSourceConfig mysql_source_config = 101;</code>
@@ -1188,7 +1291,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * MySQL data source configuration
+     * MySQL data source configuration.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlSourceConfig mysql_source_config = 101;</code>
@@ -1221,7 +1324,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * MySQL data source configuration
+     * MySQL data source configuration.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlSourceConfig mysql_source_config = 101;</code>
@@ -1246,7 +1349,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * MySQL data source configuration
+     * MySQL data source configuration.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlSourceConfig mysql_source_config = 101;</code>
@@ -1258,7 +1361,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * MySQL data source configuration
+     * MySQL data source configuration.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlSourceConfig mysql_source_config = 101;</code>
@@ -1279,7 +1382,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * MySQL data source configuration
+     * MySQL data source configuration.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlSourceConfig mysql_source_config = 101;</code>
@@ -1308,6 +1411,231 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return mysqlSourceConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.PostgresqlSourceConfig,
+            com.google.cloud.datastream.v1.PostgresqlSourceConfig.Builder,
+            com.google.cloud.datastream.v1.PostgresqlSourceConfigOrBuilder>
+        postgresqlSourceConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlSourceConfig postgresql_source_config = 102;
+     * </code>
+     *
+     * @return Whether the postgresqlSourceConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasPostgresqlSourceConfig() {
+      return sourceStreamConfigCase_ == 102;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlSourceConfig postgresql_source_config = 102;
+     * </code>
+     *
+     * @return The postgresqlSourceConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.PostgresqlSourceConfig getPostgresqlSourceConfig() {
+      if (postgresqlSourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 102) {
+          return (com.google.cloud.datastream.v1.PostgresqlSourceConfig) sourceStreamConfig_;
+        }
+        return com.google.cloud.datastream.v1.PostgresqlSourceConfig.getDefaultInstance();
+      } else {
+        if (sourceStreamConfigCase_ == 102) {
+          return postgresqlSourceConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.PostgresqlSourceConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlSourceConfig postgresql_source_config = 102;
+     * </code>
+     */
+    public Builder setPostgresqlSourceConfig(
+        com.google.cloud.datastream.v1.PostgresqlSourceConfig value) {
+      if (postgresqlSourceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceStreamConfig_ = value;
+        onChanged();
+      } else {
+        postgresqlSourceConfigBuilder_.setMessage(value);
+      }
+      sourceStreamConfigCase_ = 102;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlSourceConfig postgresql_source_config = 102;
+     * </code>
+     */
+    public Builder setPostgresqlSourceConfig(
+        com.google.cloud.datastream.v1.PostgresqlSourceConfig.Builder builderForValue) {
+      if (postgresqlSourceConfigBuilder_ == null) {
+        sourceStreamConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        postgresqlSourceConfigBuilder_.setMessage(builderForValue.build());
+      }
+      sourceStreamConfigCase_ = 102;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlSourceConfig postgresql_source_config = 102;
+     * </code>
+     */
+    public Builder mergePostgresqlSourceConfig(
+        com.google.cloud.datastream.v1.PostgresqlSourceConfig value) {
+      if (postgresqlSourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 102
+            && sourceStreamConfig_
+                != com.google.cloud.datastream.v1.PostgresqlSourceConfig.getDefaultInstance()) {
+          sourceStreamConfig_ =
+              com.google.cloud.datastream.v1.PostgresqlSourceConfig.newBuilder(
+                      (com.google.cloud.datastream.v1.PostgresqlSourceConfig) sourceStreamConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sourceStreamConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceStreamConfigCase_ == 102) {
+          postgresqlSourceConfigBuilder_.mergeFrom(value);
+        } else {
+          postgresqlSourceConfigBuilder_.setMessage(value);
+        }
+      }
+      sourceStreamConfigCase_ = 102;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlSourceConfig postgresql_source_config = 102;
+     * </code>
+     */
+    public Builder clearPostgresqlSourceConfig() {
+      if (postgresqlSourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 102) {
+          sourceStreamConfigCase_ = 0;
+          sourceStreamConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceStreamConfigCase_ == 102) {
+          sourceStreamConfigCase_ = 0;
+          sourceStreamConfig_ = null;
+        }
+        postgresqlSourceConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlSourceConfig postgresql_source_config = 102;
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.PostgresqlSourceConfig.Builder
+        getPostgresqlSourceConfigBuilder() {
+      return getPostgresqlSourceConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlSourceConfig postgresql_source_config = 102;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.PostgresqlSourceConfigOrBuilder
+        getPostgresqlSourceConfigOrBuilder() {
+      if ((sourceStreamConfigCase_ == 102) && (postgresqlSourceConfigBuilder_ != null)) {
+        return postgresqlSourceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceStreamConfigCase_ == 102) {
+          return (com.google.cloud.datastream.v1.PostgresqlSourceConfig) sourceStreamConfig_;
+        }
+        return com.google.cloud.datastream.v1.PostgresqlSourceConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlSourceConfig postgresql_source_config = 102;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.PostgresqlSourceConfig,
+            com.google.cloud.datastream.v1.PostgresqlSourceConfig.Builder,
+            com.google.cloud.datastream.v1.PostgresqlSourceConfigOrBuilder>
+        getPostgresqlSourceConfigFieldBuilder() {
+      if (postgresqlSourceConfigBuilder_ == null) {
+        if (!(sourceStreamConfigCase_ == 102)) {
+          sourceStreamConfig_ =
+              com.google.cloud.datastream.v1.PostgresqlSourceConfig.getDefaultInstance();
+        }
+        postgresqlSourceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.PostgresqlSourceConfig,
+                com.google.cloud.datastream.v1.PostgresqlSourceConfig.Builder,
+                com.google.cloud.datastream.v1.PostgresqlSourceConfigOrBuilder>(
+                (com.google.cloud.datastream.v1.PostgresqlSourceConfig) sourceStreamConfig_,
+                getParentForChildren(),
+                isClean());
+        sourceStreamConfig_ = null;
+      }
+      sourceStreamConfigCase_ = 102;
+      onChanged();
+      ;
+      return postgresqlSourceConfigBuilder_;
     }
 
     @java.lang.Override

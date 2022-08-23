@@ -782,8 +782,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. In case of error, the details of the error in a user-friendly
-   * format.
+   * Output only. In case of error, the details of the error in a user-friendly format.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.Error error = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -799,8 +798,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. In case of error, the details of the error in a user-friendly
-   * format.
+   * Output only. In case of error, the details of the error in a user-friendly format.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.Error error = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -816,8 +814,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. In case of error, the details of the error in a user-friendly
-   * format.
+   * Output only. In case of error, the details of the error in a user-friendly format.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.Error error = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2268,8 +2265,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. In case of error, the details of the error in a user-friendly
-     * format.
+     * Output only. In case of error, the details of the error in a user-friendly format.
      * </pre>
      *
      * <code>
@@ -2285,8 +2281,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. In case of error, the details of the error in a user-friendly
-     * format.
+     * Output only. In case of error, the details of the error in a user-friendly format.
      * </pre>
      *
      * <code>
@@ -2306,8 +2301,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. In case of error, the details of the error in a user-friendly
-     * format.
+     * Output only. In case of error, the details of the error in a user-friendly format.
      * </pre>
      *
      * <code>
@@ -2331,8 +2325,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. In case of error, the details of the error in a user-friendly
-     * format.
+     * Output only. In case of error, the details of the error in a user-friendly format.
      * </pre>
      *
      * <code>
@@ -2353,8 +2346,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. In case of error, the details of the error in a user-friendly
-     * format.
+     * Output only. In case of error, the details of the error in a user-friendly format.
      * </pre>
      *
      * <code>
@@ -2382,8 +2374,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. In case of error, the details of the error in a user-friendly
-     * format.
+     * Output only. In case of error, the details of the error in a user-friendly format.
      * </pre>
      *
      * <code>
@@ -2405,8 +2396,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. In case of error, the details of the error in a user-friendly
-     * format.
+     * Output only. In case of error, the details of the error in a user-friendly format.
      * </pre>
      *
      * <code>
@@ -2422,8 +2412,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. In case of error, the details of the error in a user-friendly
-     * format.
+     * Output only. In case of error, the details of the error in a user-friendly format.
      * </pre>
      *
      * <code>
@@ -2441,8 +2430,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. In case of error, the details of the error in a user-friendly
-     * format.
+     * Output only. In case of error, the details of the error in a user-friendly format.
      * </pre>
      *
      * <code>

@@ -97,6 +97,28 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
               destinationStreamConfigCase_ = 100;
               break;
             }
+          case 810:
+            {
+              com.google.cloud.datastream.v1.BigQueryDestinationConfig.Builder subBuilder = null;
+              if (destinationStreamConfigCase_ == 101) {
+                subBuilder =
+                    ((com.google.cloud.datastream.v1.BigQueryDestinationConfig)
+                            destinationStreamConfig_)
+                        .toBuilder();
+              }
+              destinationStreamConfig_ =
+                  input.readMessage(
+                      com.google.cloud.datastream.v1.BigQueryDestinationConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.datastream.v1.BigQueryDestinationConfig)
+                        destinationStreamConfig_);
+                destinationStreamConfig_ = subBuilder.buildPartial();
+              }
+              destinationStreamConfigCase_ = 101;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -141,6 +163,7 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GCS_DESTINATION_CONFIG(100),
+    BIGQUERY_DESTINATION_CONFIG(101),
     DESTINATIONSTREAMCONFIG_NOT_SET(0);
     private final int value;
 
@@ -161,6 +184,8 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       switch (value) {
         case 100:
           return GCS_DESTINATION_CONFIG;
+        case 101:
+          return BIGQUERY_DESTINATION_CONFIG;
         case 0:
           return DESTINATIONSTREAMCONFIG_NOT_SET;
         default:
@@ -284,6 +309,61 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
     return com.google.cloud.datastream.v1.GcsDestinationConfig.getDefaultInstance();
   }
 
+  public static final int BIGQUERY_DESTINATION_CONFIG_FIELD_NUMBER = 101;
+  /**
+   *
+   *
+   * <pre>
+   * BigQuery destination configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig bigquery_destination_config = 101;
+   * </code>
+   *
+   * @return Whether the bigqueryDestinationConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasBigqueryDestinationConfig() {
+    return destinationStreamConfigCase_ == 101;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * BigQuery destination configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig bigquery_destination_config = 101;
+   * </code>
+   *
+   * @return The bigqueryDestinationConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.BigQueryDestinationConfig getBigqueryDestinationConfig() {
+    if (destinationStreamConfigCase_ == 101) {
+      return (com.google.cloud.datastream.v1.BigQueryDestinationConfig) destinationStreamConfig_;
+    }
+    return com.google.cloud.datastream.v1.BigQueryDestinationConfig.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * BigQuery destination configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig bigquery_destination_config = 101;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.BigQueryDestinationConfigOrBuilder
+      getBigqueryDestinationConfigOrBuilder() {
+    if (destinationStreamConfigCase_ == 101) {
+      return (com.google.cloud.datastream.v1.BigQueryDestinationConfig) destinationStreamConfig_;
+    }
+    return com.google.cloud.datastream.v1.BigQueryDestinationConfig.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -305,6 +385,10 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       output.writeMessage(
           100, (com.google.cloud.datastream.v1.GcsDestinationConfig) destinationStreamConfig_);
     }
+    if (destinationStreamConfigCase_ == 101) {
+      output.writeMessage(
+          101, (com.google.cloud.datastream.v1.BigQueryDestinationConfig) destinationStreamConfig_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -323,6 +407,12 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               100, (com.google.cloud.datastream.v1.GcsDestinationConfig) destinationStreamConfig_);
+    }
+    if (destinationStreamConfigCase_ == 101) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              101,
+              (com.google.cloud.datastream.v1.BigQueryDestinationConfig) destinationStreamConfig_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -348,6 +438,10 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       case 100:
         if (!getGcsDestinationConfig().equals(other.getGcsDestinationConfig())) return false;
         break;
+      case 101:
+        if (!getBigqueryDestinationConfig().equals(other.getBigqueryDestinationConfig()))
+          return false;
+        break;
       case 0:
       default:
     }
@@ -368,6 +462,10 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       case 100:
         hash = (37 * hash) + GCS_DESTINATION_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getGcsDestinationConfig().hashCode();
+        break;
+      case 101:
+        hash = (37 * hash) + BIGQUERY_DESTINATION_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getBigqueryDestinationConfig().hashCode();
         break;
       case 0:
       default:
@@ -556,6 +654,13 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
           result.destinationStreamConfig_ = gcsDestinationConfigBuilder_.build();
         }
       }
+      if (destinationStreamConfigCase_ == 101) {
+        if (bigqueryDestinationConfigBuilder_ == null) {
+          result.destinationStreamConfig_ = destinationStreamConfig_;
+        } else {
+          result.destinationStreamConfig_ = bigqueryDestinationConfigBuilder_.build();
+        }
+      }
       result.destinationStreamConfigCase_ = destinationStreamConfigCase_;
       onBuilt();
       return result;
@@ -615,6 +720,11 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
         case GCS_DESTINATION_CONFIG:
           {
             mergeGcsDestinationConfig(other.getGcsDestinationConfig());
+            break;
+          }
+        case BIGQUERY_DESTINATION_CONFIG:
+          {
+            mergeBigqueryDestinationConfig(other.getBigqueryDestinationConfig());
             break;
           }
         case DESTINATIONSTREAMCONFIG_NOT_SET:
@@ -1001,6 +1111,243 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       ;
       return gcsDestinationConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.BigQueryDestinationConfig,
+            com.google.cloud.datastream.v1.BigQueryDestinationConfig.Builder,
+            com.google.cloud.datastream.v1.BigQueryDestinationConfigOrBuilder>
+        bigqueryDestinationConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery destination configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.BigQueryDestinationConfig bigquery_destination_config = 101;
+     * </code>
+     *
+     * @return Whether the bigqueryDestinationConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasBigqueryDestinationConfig() {
+      return destinationStreamConfigCase_ == 101;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery destination configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.BigQueryDestinationConfig bigquery_destination_config = 101;
+     * </code>
+     *
+     * @return The bigqueryDestinationConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.BigQueryDestinationConfig getBigqueryDestinationConfig() {
+      if (bigqueryDestinationConfigBuilder_ == null) {
+        if (destinationStreamConfigCase_ == 101) {
+          return (com.google.cloud.datastream.v1.BigQueryDestinationConfig)
+              destinationStreamConfig_;
+        }
+        return com.google.cloud.datastream.v1.BigQueryDestinationConfig.getDefaultInstance();
+      } else {
+        if (destinationStreamConfigCase_ == 101) {
+          return bigqueryDestinationConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.BigQueryDestinationConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery destination configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.BigQueryDestinationConfig bigquery_destination_config = 101;
+     * </code>
+     */
+    public Builder setBigqueryDestinationConfig(
+        com.google.cloud.datastream.v1.BigQueryDestinationConfig value) {
+      if (bigqueryDestinationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        destinationStreamConfig_ = value;
+        onChanged();
+      } else {
+        bigqueryDestinationConfigBuilder_.setMessage(value);
+      }
+      destinationStreamConfigCase_ = 101;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery destination configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.BigQueryDestinationConfig bigquery_destination_config = 101;
+     * </code>
+     */
+    public Builder setBigqueryDestinationConfig(
+        com.google.cloud.datastream.v1.BigQueryDestinationConfig.Builder builderForValue) {
+      if (bigqueryDestinationConfigBuilder_ == null) {
+        destinationStreamConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        bigqueryDestinationConfigBuilder_.setMessage(builderForValue.build());
+      }
+      destinationStreamConfigCase_ = 101;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery destination configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.BigQueryDestinationConfig bigquery_destination_config = 101;
+     * </code>
+     */
+    public Builder mergeBigqueryDestinationConfig(
+        com.google.cloud.datastream.v1.BigQueryDestinationConfig value) {
+      if (bigqueryDestinationConfigBuilder_ == null) {
+        if (destinationStreamConfigCase_ == 101
+            && destinationStreamConfig_
+                != com.google.cloud.datastream.v1.BigQueryDestinationConfig.getDefaultInstance()) {
+          destinationStreamConfig_ =
+              com.google.cloud.datastream.v1.BigQueryDestinationConfig.newBuilder(
+                      (com.google.cloud.datastream.v1.BigQueryDestinationConfig)
+                          destinationStreamConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          destinationStreamConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (destinationStreamConfigCase_ == 101) {
+          bigqueryDestinationConfigBuilder_.mergeFrom(value);
+        } else {
+          bigqueryDestinationConfigBuilder_.setMessage(value);
+        }
+      }
+      destinationStreamConfigCase_ = 101;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery destination configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.BigQueryDestinationConfig bigquery_destination_config = 101;
+     * </code>
+     */
+    public Builder clearBigqueryDestinationConfig() {
+      if (bigqueryDestinationConfigBuilder_ == null) {
+        if (destinationStreamConfigCase_ == 101) {
+          destinationStreamConfigCase_ = 0;
+          destinationStreamConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (destinationStreamConfigCase_ == 101) {
+          destinationStreamConfigCase_ = 0;
+          destinationStreamConfig_ = null;
+        }
+        bigqueryDestinationConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery destination configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.BigQueryDestinationConfig bigquery_destination_config = 101;
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.BigQueryDestinationConfig.Builder
+        getBigqueryDestinationConfigBuilder() {
+      return getBigqueryDestinationConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery destination configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.BigQueryDestinationConfig bigquery_destination_config = 101;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.BigQueryDestinationConfigOrBuilder
+        getBigqueryDestinationConfigOrBuilder() {
+      if ((destinationStreamConfigCase_ == 101) && (bigqueryDestinationConfigBuilder_ != null)) {
+        return bigqueryDestinationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (destinationStreamConfigCase_ == 101) {
+          return (com.google.cloud.datastream.v1.BigQueryDestinationConfig)
+              destinationStreamConfig_;
+        }
+        return com.google.cloud.datastream.v1.BigQueryDestinationConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery destination configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.BigQueryDestinationConfig bigquery_destination_config = 101;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.BigQueryDestinationConfig,
+            com.google.cloud.datastream.v1.BigQueryDestinationConfig.Builder,
+            com.google.cloud.datastream.v1.BigQueryDestinationConfigOrBuilder>
+        getBigqueryDestinationConfigFieldBuilder() {
+      if (bigqueryDestinationConfigBuilder_ == null) {
+        if (!(destinationStreamConfigCase_ == 101)) {
+          destinationStreamConfig_ =
+              com.google.cloud.datastream.v1.BigQueryDestinationConfig.getDefaultInstance();
+        }
+        bigqueryDestinationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.BigQueryDestinationConfig,
+                com.google.cloud.datastream.v1.BigQueryDestinationConfig.Builder,
+                com.google.cloud.datastream.v1.BigQueryDestinationConfigOrBuilder>(
+                (com.google.cloud.datastream.v1.BigQueryDestinationConfig) destinationStreamConfig_,
+                getParentForChildren(),
+                isClean());
+        destinationStreamConfig_ = null;
+      }
+      destinationStreamConfigCase_ = 101;
+      onChanged();
+      ;
+      return bigqueryDestinationConfigBuilder_;
     }
 
     @java.lang.Override

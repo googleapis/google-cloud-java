@@ -649,6 +649,41 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.datastream.v1.MysqlRdbmsOrBuilder getMysqlExcludedObjectsOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL data source objects to avoid backfilling.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_excluded_objects = 3;</code>
+     *
+     * @return Whether the postgresqlExcludedObjects field is set.
+     */
+    boolean hasPostgresqlExcludedObjects();
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL data source objects to avoid backfilling.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_excluded_objects = 3;</code>
+     *
+     * @return The postgresqlExcludedObjects.
+     */
+    com.google.cloud.datastream.v1.PostgresqlRdbms getPostgresqlExcludedObjects();
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL data source objects to avoid backfilling.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_excluded_objects = 3;</code>
+     */
+    com.google.cloud.datastream.v1.PostgresqlRdbmsOrBuilder getPostgresqlExcludedObjectsOrBuilder();
+
     public com.google.cloud.datastream.v1.Stream.BackfillAllStrategy.ExcludedObjectsCase
         getExcludedObjectsCase();
   }
@@ -739,6 +774,25 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
                 excludedObjectsCase_ = 2;
                 break;
               }
+            case 26:
+              {
+                com.google.cloud.datastream.v1.PostgresqlRdbms.Builder subBuilder = null;
+                if (excludedObjectsCase_ == 3) {
+                  subBuilder =
+                      ((com.google.cloud.datastream.v1.PostgresqlRdbms) excludedObjects_)
+                          .toBuilder();
+                }
+                excludedObjects_ =
+                    input.readMessage(
+                        com.google.cloud.datastream.v1.PostgresqlRdbms.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(
+                      (com.google.cloud.datastream.v1.PostgresqlRdbms) excludedObjects_);
+                  excludedObjects_ = subBuilder.buildPartial();
+                }
+                excludedObjectsCase_ = 3;
+                break;
+              }
             default:
               {
                 if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -784,6 +838,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       ORACLE_EXCLUDED_OBJECTS(1),
       MYSQL_EXCLUDED_OBJECTS(2),
+      POSTGRESQL_EXCLUDED_OBJECTS(3),
       EXCLUDEDOBJECTS_NOT_SET(0);
       private final int value;
 
@@ -806,6 +861,8 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
             return ORACLE_EXCLUDED_OBJECTS;
           case 2:
             return MYSQL_EXCLUDED_OBJECTS;
+          case 3:
+            return POSTGRESQL_EXCLUDED_OBJECTS;
           case 0:
             return EXCLUDEDOBJECTS_NOT_SET;
           default:
@@ -924,6 +981,58 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       return com.google.cloud.datastream.v1.MysqlRdbms.getDefaultInstance();
     }
 
+    public static final int POSTGRESQL_EXCLUDED_OBJECTS_FIELD_NUMBER = 3;
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL data source objects to avoid backfilling.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_excluded_objects = 3;</code>
+     *
+     * @return Whether the postgresqlExcludedObjects field is set.
+     */
+    @java.lang.Override
+    public boolean hasPostgresqlExcludedObjects() {
+      return excludedObjectsCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL data source objects to avoid backfilling.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_excluded_objects = 3;</code>
+     *
+     * @return The postgresqlExcludedObjects.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.PostgresqlRdbms getPostgresqlExcludedObjects() {
+      if (excludedObjectsCase_ == 3) {
+        return (com.google.cloud.datastream.v1.PostgresqlRdbms) excludedObjects_;
+      }
+      return com.google.cloud.datastream.v1.PostgresqlRdbms.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL data source objects to avoid backfilling.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_excluded_objects = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.PostgresqlRdbmsOrBuilder
+        getPostgresqlExcludedObjectsOrBuilder() {
+      if (excludedObjectsCase_ == 3) {
+        return (com.google.cloud.datastream.v1.PostgresqlRdbms) excludedObjects_;
+      }
+      return com.google.cloud.datastream.v1.PostgresqlRdbms.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -944,6 +1053,9 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       if (excludedObjectsCase_ == 2) {
         output.writeMessage(2, (com.google.cloud.datastream.v1.MysqlRdbms) excludedObjects_);
       }
+      if (excludedObjectsCase_ == 3) {
+        output.writeMessage(3, (com.google.cloud.datastream.v1.PostgresqlRdbms) excludedObjects_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -962,6 +1074,11 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 2, (com.google.cloud.datastream.v1.MysqlRdbms) excludedObjects_);
+      }
+      if (excludedObjectsCase_ == 3) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3, (com.google.cloud.datastream.v1.PostgresqlRdbms) excludedObjects_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -987,6 +1104,10 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         case 2:
           if (!getMysqlExcludedObjects().equals(other.getMysqlExcludedObjects())) return false;
           break;
+        case 3:
+          if (!getPostgresqlExcludedObjects().equals(other.getPostgresqlExcludedObjects()))
+            return false;
+          break;
         case 0:
         default:
       }
@@ -1009,6 +1130,10 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         case 2:
           hash = (37 * hash) + MYSQL_EXCLUDED_OBJECTS_FIELD_NUMBER;
           hash = (53 * hash) + getMysqlExcludedObjects().hashCode();
+          break;
+        case 3:
+          hash = (37 * hash) + POSTGRESQL_EXCLUDED_OBJECTS_FIELD_NUMBER;
+          hash = (53 * hash) + getPostgresqlExcludedObjects().hashCode();
           break;
         case 0:
         default:
@@ -1205,6 +1330,13 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
             result.excludedObjects_ = mysqlExcludedObjectsBuilder_.build();
           }
         }
+        if (excludedObjectsCase_ == 3) {
+          if (postgresqlExcludedObjectsBuilder_ == null) {
+            result.excludedObjects_ = excludedObjects_;
+          } else {
+            result.excludedObjects_ = postgresqlExcludedObjectsBuilder_.build();
+          }
+        }
         result.excludedObjectsCase_ = excludedObjectsCase_;
         onBuilt();
         return result;
@@ -1267,6 +1399,11 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
           case MYSQL_EXCLUDED_OBJECTS:
             {
               mergeMysqlExcludedObjects(other.getMysqlExcludedObjects());
+              break;
+            }
+          case POSTGRESQL_EXCLUDED_OBJECTS:
+            {
+              mergePostgresqlExcludedObjects(other.getPostgresqlExcludedObjects());
               break;
             }
           case EXCLUDEDOBJECTS_NOT_SET:
@@ -1739,6 +1876,221 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         ;
         return mysqlExcludedObjectsBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.datastream.v1.PostgresqlRdbms,
+              com.google.cloud.datastream.v1.PostgresqlRdbms.Builder,
+              com.google.cloud.datastream.v1.PostgresqlRdbmsOrBuilder>
+          postgresqlExcludedObjectsBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * PostgreSQL data source objects to avoid backfilling.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_excluded_objects = 3;</code>
+       *
+       * @return Whether the postgresqlExcludedObjects field is set.
+       */
+      @java.lang.Override
+      public boolean hasPostgresqlExcludedObjects() {
+        return excludedObjectsCase_ == 3;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * PostgreSQL data source objects to avoid backfilling.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_excluded_objects = 3;</code>
+       *
+       * @return The postgresqlExcludedObjects.
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.PostgresqlRdbms getPostgresqlExcludedObjects() {
+        if (postgresqlExcludedObjectsBuilder_ == null) {
+          if (excludedObjectsCase_ == 3) {
+            return (com.google.cloud.datastream.v1.PostgresqlRdbms) excludedObjects_;
+          }
+          return com.google.cloud.datastream.v1.PostgresqlRdbms.getDefaultInstance();
+        } else {
+          if (excludedObjectsCase_ == 3) {
+            return postgresqlExcludedObjectsBuilder_.getMessage();
+          }
+          return com.google.cloud.datastream.v1.PostgresqlRdbms.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * PostgreSQL data source objects to avoid backfilling.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_excluded_objects = 3;</code>
+       */
+      public Builder setPostgresqlExcludedObjects(
+          com.google.cloud.datastream.v1.PostgresqlRdbms value) {
+        if (postgresqlExcludedObjectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          excludedObjects_ = value;
+          onChanged();
+        } else {
+          postgresqlExcludedObjectsBuilder_.setMessage(value);
+        }
+        excludedObjectsCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * PostgreSQL data source objects to avoid backfilling.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_excluded_objects = 3;</code>
+       */
+      public Builder setPostgresqlExcludedObjects(
+          com.google.cloud.datastream.v1.PostgresqlRdbms.Builder builderForValue) {
+        if (postgresqlExcludedObjectsBuilder_ == null) {
+          excludedObjects_ = builderForValue.build();
+          onChanged();
+        } else {
+          postgresqlExcludedObjectsBuilder_.setMessage(builderForValue.build());
+        }
+        excludedObjectsCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * PostgreSQL data source objects to avoid backfilling.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_excluded_objects = 3;</code>
+       */
+      public Builder mergePostgresqlExcludedObjects(
+          com.google.cloud.datastream.v1.PostgresqlRdbms value) {
+        if (postgresqlExcludedObjectsBuilder_ == null) {
+          if (excludedObjectsCase_ == 3
+              && excludedObjects_
+                  != com.google.cloud.datastream.v1.PostgresqlRdbms.getDefaultInstance()) {
+            excludedObjects_ =
+                com.google.cloud.datastream.v1.PostgresqlRdbms.newBuilder(
+                        (com.google.cloud.datastream.v1.PostgresqlRdbms) excludedObjects_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            excludedObjects_ = value;
+          }
+          onChanged();
+        } else {
+          if (excludedObjectsCase_ == 3) {
+            postgresqlExcludedObjectsBuilder_.mergeFrom(value);
+          } else {
+            postgresqlExcludedObjectsBuilder_.setMessage(value);
+          }
+        }
+        excludedObjectsCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * PostgreSQL data source objects to avoid backfilling.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_excluded_objects = 3;</code>
+       */
+      public Builder clearPostgresqlExcludedObjects() {
+        if (postgresqlExcludedObjectsBuilder_ == null) {
+          if (excludedObjectsCase_ == 3) {
+            excludedObjectsCase_ = 0;
+            excludedObjects_ = null;
+            onChanged();
+          }
+        } else {
+          if (excludedObjectsCase_ == 3) {
+            excludedObjectsCase_ = 0;
+            excludedObjects_ = null;
+          }
+          postgresqlExcludedObjectsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * PostgreSQL data source objects to avoid backfilling.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_excluded_objects = 3;</code>
+       */
+      public com.google.cloud.datastream.v1.PostgresqlRdbms.Builder
+          getPostgresqlExcludedObjectsBuilder() {
+        return getPostgresqlExcludedObjectsFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * PostgreSQL data source objects to avoid backfilling.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_excluded_objects = 3;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.PostgresqlRdbmsOrBuilder
+          getPostgresqlExcludedObjectsOrBuilder() {
+        if ((excludedObjectsCase_ == 3) && (postgresqlExcludedObjectsBuilder_ != null)) {
+          return postgresqlExcludedObjectsBuilder_.getMessageOrBuilder();
+        } else {
+          if (excludedObjectsCase_ == 3) {
+            return (com.google.cloud.datastream.v1.PostgresqlRdbms) excludedObjects_;
+          }
+          return com.google.cloud.datastream.v1.PostgresqlRdbms.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * PostgreSQL data source objects to avoid backfilling.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_excluded_objects = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.datastream.v1.PostgresqlRdbms,
+              com.google.cloud.datastream.v1.PostgresqlRdbms.Builder,
+              com.google.cloud.datastream.v1.PostgresqlRdbmsOrBuilder>
+          getPostgresqlExcludedObjectsFieldBuilder() {
+        if (postgresqlExcludedObjectsBuilder_ == null) {
+          if (!(excludedObjectsCase_ == 3)) {
+            excludedObjects_ = com.google.cloud.datastream.v1.PostgresqlRdbms.getDefaultInstance();
+          }
+          postgresqlExcludedObjectsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.datastream.v1.PostgresqlRdbms,
+                  com.google.cloud.datastream.v1.PostgresqlRdbms.Builder,
+                  com.google.cloud.datastream.v1.PostgresqlRdbmsOrBuilder>(
+                  (com.google.cloud.datastream.v1.PostgresqlRdbms) excludedObjects_,
+                  getParentForChildren(),
+                  isClean());
+          excludedObjects_ = null;
+        }
+        excludedObjectsCase_ = 3;
+        onChanged();
+        ;
+        return postgresqlExcludedObjectsBuilder_;
       }
 
       @java.lang.Override

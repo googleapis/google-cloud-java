@@ -22,30 +22,30 @@ package com.google.cloud.datastream.v1;
  *
  *
  * <pre>
- * Oracle table.
+ * PostgreSQL table.
  * </pre>
  *
- * Protobuf type {@code google.cloud.datastream.v1.OracleTable}
+ * Protobuf type {@code google.cloud.datastream.v1.PostgresqlTable}
  */
-public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
+public final class PostgresqlTable extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.OracleTable)
-    OracleTableOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.PostgresqlTable)
+    PostgresqlTableOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use OracleTable.newBuilder() to construct.
-  private OracleTable(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use PostgresqlTable.newBuilder() to construct.
+  private PostgresqlTable(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private OracleTable() {
+  private PostgresqlTable() {
     table_ = "";
-    oracleColumns_ = java.util.Collections.emptyList();
+    postgresqlColumns_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new OracleTable();
+    return new PostgresqlTable();
   }
 
   @java.lang.Override
@@ -53,7 +53,7 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private OracleTable(
+  private PostgresqlTable(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -82,13 +82,13 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
           case 18:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                oracleColumns_ =
-                    new java.util.ArrayList<com.google.cloud.datastream.v1.OracleColumn>();
+                postgresqlColumns_ =
+                    new java.util.ArrayList<com.google.cloud.datastream.v1.PostgresqlColumn>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              oracleColumns_.add(
+              postgresqlColumns_.add(
                   input.readMessage(
-                      com.google.cloud.datastream.v1.OracleColumn.parser(), extensionRegistry));
+                      com.google.cloud.datastream.v1.PostgresqlColumn.parser(), extensionRegistry));
               break;
             }
           default:
@@ -108,7 +108,7 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        oracleColumns_ = java.util.Collections.unmodifiableList(oracleColumns_);
+        postgresqlColumns_ = java.util.Collections.unmodifiableList(postgresqlColumns_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -117,17 +117,17 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datastream.v1.DatastreamResourcesProto
-        .internal_static_google_cloud_datastream_v1_OracleTable_descriptor;
+        .internal_static_google_cloud_datastream_v1_PostgresqlTable_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.datastream.v1.DatastreamResourcesProto
-        .internal_static_google_cloud_datastream_v1_OracleTable_fieldAccessorTable
+        .internal_static_google_cloud_datastream_v1_PostgresqlTable_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.datastream.v1.OracleTable.class,
-            com.google.cloud.datastream.v1.OracleTable.Builder.class);
+            com.google.cloud.datastream.v1.PostgresqlTable.class,
+            com.google.cloud.datastream.v1.PostgresqlTable.Builder.class);
   }
 
   public static final int TABLE_FIELD_NUMBER = 1;
@@ -179,83 +179,85 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int ORACLE_COLUMNS_FIELD_NUMBER = 2;
-  private java.util.List<com.google.cloud.datastream.v1.OracleColumn> oracleColumns_;
+  public static final int POSTGRESQL_COLUMNS_FIELD_NUMBER = 2;
+  private java.util.List<com.google.cloud.datastream.v1.PostgresqlColumn> postgresqlColumns_;
   /**
    *
    *
    * <pre>
-   * Oracle columns in the schema.
-   * When unspecified as part of include/exclude objects, includes/excludes
-   * everything.
+   * PostgreSQL columns in the schema.
+   * When unspecified as part of include/exclude objects,
+   * includes/excludes everything.
    * </pre>
    *
-   * <code>repeated .google.cloud.datastream.v1.OracleColumn oracle_columns = 2;</code>
+   * <code>repeated .google.cloud.datastream.v1.PostgresqlColumn postgresql_columns = 2;</code>
    */
   @java.lang.Override
-  public java.util.List<com.google.cloud.datastream.v1.OracleColumn> getOracleColumnsList() {
-    return oracleColumns_;
+  public java.util.List<com.google.cloud.datastream.v1.PostgresqlColumn>
+      getPostgresqlColumnsList() {
+    return postgresqlColumns_;
   }
   /**
    *
    *
    * <pre>
-   * Oracle columns in the schema.
-   * When unspecified as part of include/exclude objects, includes/excludes
-   * everything.
+   * PostgreSQL columns in the schema.
+   * When unspecified as part of include/exclude objects,
+   * includes/excludes everything.
    * </pre>
    *
-   * <code>repeated .google.cloud.datastream.v1.OracleColumn oracle_columns = 2;</code>
+   * <code>repeated .google.cloud.datastream.v1.PostgresqlColumn postgresql_columns = 2;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends com.google.cloud.datastream.v1.OracleColumnOrBuilder>
-      getOracleColumnsOrBuilderList() {
-    return oracleColumns_;
+  public java.util.List<? extends com.google.cloud.datastream.v1.PostgresqlColumnOrBuilder>
+      getPostgresqlColumnsOrBuilderList() {
+    return postgresqlColumns_;
   }
   /**
    *
    *
    * <pre>
-   * Oracle columns in the schema.
-   * When unspecified as part of include/exclude objects, includes/excludes
-   * everything.
+   * PostgreSQL columns in the schema.
+   * When unspecified as part of include/exclude objects,
+   * includes/excludes everything.
    * </pre>
    *
-   * <code>repeated .google.cloud.datastream.v1.OracleColumn oracle_columns = 2;</code>
+   * <code>repeated .google.cloud.datastream.v1.PostgresqlColumn postgresql_columns = 2;</code>
    */
   @java.lang.Override
-  public int getOracleColumnsCount() {
-    return oracleColumns_.size();
+  public int getPostgresqlColumnsCount() {
+    return postgresqlColumns_.size();
   }
   /**
    *
    *
    * <pre>
-   * Oracle columns in the schema.
-   * When unspecified as part of include/exclude objects, includes/excludes
-   * everything.
+   * PostgreSQL columns in the schema.
+   * When unspecified as part of include/exclude objects,
+   * includes/excludes everything.
    * </pre>
    *
-   * <code>repeated .google.cloud.datastream.v1.OracleColumn oracle_columns = 2;</code>
+   * <code>repeated .google.cloud.datastream.v1.PostgresqlColumn postgresql_columns = 2;</code>
    */
   @java.lang.Override
-  public com.google.cloud.datastream.v1.OracleColumn getOracleColumns(int index) {
-    return oracleColumns_.get(index);
+  public com.google.cloud.datastream.v1.PostgresqlColumn getPostgresqlColumns(int index) {
+    return postgresqlColumns_.get(index);
   }
   /**
    *
    *
    * <pre>
-   * Oracle columns in the schema.
-   * When unspecified as part of include/exclude objects, includes/excludes
-   * everything.
+   * PostgreSQL columns in the schema.
+   * When unspecified as part of include/exclude objects,
+   * includes/excludes everything.
    * </pre>
    *
-   * <code>repeated .google.cloud.datastream.v1.OracleColumn oracle_columns = 2;</code>
+   * <code>repeated .google.cloud.datastream.v1.PostgresqlColumn postgresql_columns = 2;</code>
    */
   @java.lang.Override
-  public com.google.cloud.datastream.v1.OracleColumnOrBuilder getOracleColumnsOrBuilder(int index) {
-    return oracleColumns_.get(index);
+  public com.google.cloud.datastream.v1.PostgresqlColumnOrBuilder getPostgresqlColumnsOrBuilder(
+      int index) {
+    return postgresqlColumns_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -275,8 +277,8 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, table_);
     }
-    for (int i = 0; i < oracleColumns_.size(); i++) {
-      output.writeMessage(2, oracleColumns_.get(i));
+    for (int i = 0; i < postgresqlColumns_.size(); i++) {
+      output.writeMessage(2, postgresqlColumns_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -290,8 +292,9 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, table_);
     }
-    for (int i = 0; i < oracleColumns_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, oracleColumns_.get(i));
+    for (int i = 0; i < postgresqlColumns_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(2, postgresqlColumns_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -303,14 +306,14 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.datastream.v1.OracleTable)) {
+    if (!(obj instanceof com.google.cloud.datastream.v1.PostgresqlTable)) {
       return super.equals(obj);
     }
-    com.google.cloud.datastream.v1.OracleTable other =
-        (com.google.cloud.datastream.v1.OracleTable) obj;
+    com.google.cloud.datastream.v1.PostgresqlTable other =
+        (com.google.cloud.datastream.v1.PostgresqlTable) obj;
 
     if (!getTable().equals(other.getTable())) return false;
-    if (!getOracleColumnsList().equals(other.getOracleColumnsList())) return false;
+    if (!getPostgresqlColumnsList().equals(other.getPostgresqlColumnsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -324,80 +327,80 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + TABLE_FIELD_NUMBER;
     hash = (53 * hash) + getTable().hashCode();
-    if (getOracleColumnsCount() > 0) {
-      hash = (37 * hash) + ORACLE_COLUMNS_FIELD_NUMBER;
-      hash = (53 * hash) + getOracleColumnsList().hashCode();
+    if (getPostgresqlColumnsCount() > 0) {
+      hash = (37 * hash) + POSTGRESQL_COLUMNS_FIELD_NUMBER;
+      hash = (53 * hash) + getPostgresqlColumnsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.datastream.v1.OracleTable parseFrom(java.nio.ByteBuffer data)
+  public static com.google.cloud.datastream.v1.PostgresqlTable parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.datastream.v1.OracleTable parseFrom(
+  public static com.google.cloud.datastream.v1.PostgresqlTable parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.datastream.v1.OracleTable parseFrom(
+  public static com.google.cloud.datastream.v1.PostgresqlTable parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.datastream.v1.OracleTable parseFrom(
+  public static com.google.cloud.datastream.v1.PostgresqlTable parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.datastream.v1.OracleTable parseFrom(byte[] data)
+  public static com.google.cloud.datastream.v1.PostgresqlTable parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.datastream.v1.OracleTable parseFrom(
+  public static com.google.cloud.datastream.v1.PostgresqlTable parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.datastream.v1.OracleTable parseFrom(java.io.InputStream input)
+  public static com.google.cloud.datastream.v1.PostgresqlTable parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.datastream.v1.OracleTable parseFrom(
+  public static com.google.cloud.datastream.v1.PostgresqlTable parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.datastream.v1.OracleTable parseDelimitedFrom(
+  public static com.google.cloud.datastream.v1.PostgresqlTable parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.datastream.v1.OracleTable parseDelimitedFrom(
+  public static com.google.cloud.datastream.v1.PostgresqlTable parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.datastream.v1.OracleTable parseFrom(
+  public static com.google.cloud.datastream.v1.PostgresqlTable parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.datastream.v1.OracleTable parseFrom(
+  public static com.google.cloud.datastream.v1.PostgresqlTable parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -414,7 +417,7 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloud.datastream.v1.OracleTable prototype) {
+  public static Builder newBuilder(com.google.cloud.datastream.v1.PostgresqlTable prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -432,31 +435,31 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Oracle table.
+   * PostgreSQL table.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.datastream.v1.OracleTable}
+   * Protobuf type {@code google.cloud.datastream.v1.PostgresqlTable}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.datastream.v1.OracleTable)
-      com.google.cloud.datastream.v1.OracleTableOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.datastream.v1.PostgresqlTable)
+      com.google.cloud.datastream.v1.PostgresqlTableOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.datastream.v1.DatastreamResourcesProto
-          .internal_static_google_cloud_datastream_v1_OracleTable_descriptor;
+          .internal_static_google_cloud_datastream_v1_PostgresqlTable_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.datastream.v1.DatastreamResourcesProto
-          .internal_static_google_cloud_datastream_v1_OracleTable_fieldAccessorTable
+          .internal_static_google_cloud_datastream_v1_PostgresqlTable_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.datastream.v1.OracleTable.class,
-              com.google.cloud.datastream.v1.OracleTable.Builder.class);
+              com.google.cloud.datastream.v1.PostgresqlTable.class,
+              com.google.cloud.datastream.v1.PostgresqlTable.Builder.class);
     }
 
-    // Construct using com.google.cloud.datastream.v1.OracleTable.newBuilder()
+    // Construct using com.google.cloud.datastream.v1.PostgresqlTable.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -468,7 +471,7 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getOracleColumnsFieldBuilder();
+        getPostgresqlColumnsFieldBuilder();
       }
     }
 
@@ -477,11 +480,11 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       table_ = "";
 
-      if (oracleColumnsBuilder_ == null) {
-        oracleColumns_ = java.util.Collections.emptyList();
+      if (postgresqlColumnsBuilder_ == null) {
+        postgresqlColumns_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        oracleColumnsBuilder_.clear();
+        postgresqlColumnsBuilder_.clear();
       }
       return this;
     }
@@ -489,17 +492,17 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.datastream.v1.DatastreamResourcesProto
-          .internal_static_google_cloud_datastream_v1_OracleTable_descriptor;
+          .internal_static_google_cloud_datastream_v1_PostgresqlTable_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.datastream.v1.OracleTable getDefaultInstanceForType() {
-      return com.google.cloud.datastream.v1.OracleTable.getDefaultInstance();
+    public com.google.cloud.datastream.v1.PostgresqlTable getDefaultInstanceForType() {
+      return com.google.cloud.datastream.v1.PostgresqlTable.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.datastream.v1.OracleTable build() {
-      com.google.cloud.datastream.v1.OracleTable result = buildPartial();
+    public com.google.cloud.datastream.v1.PostgresqlTable build() {
+      com.google.cloud.datastream.v1.PostgresqlTable result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -507,19 +510,19 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.cloud.datastream.v1.OracleTable buildPartial() {
-      com.google.cloud.datastream.v1.OracleTable result =
-          new com.google.cloud.datastream.v1.OracleTable(this);
+    public com.google.cloud.datastream.v1.PostgresqlTable buildPartial() {
+      com.google.cloud.datastream.v1.PostgresqlTable result =
+          new com.google.cloud.datastream.v1.PostgresqlTable(this);
       int from_bitField0_ = bitField0_;
       result.table_ = table_;
-      if (oracleColumnsBuilder_ == null) {
+      if (postgresqlColumnsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          oracleColumns_ = java.util.Collections.unmodifiableList(oracleColumns_);
+          postgresqlColumns_ = java.util.Collections.unmodifiableList(postgresqlColumns_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.oracleColumns_ = oracleColumns_;
+        result.postgresqlColumns_ = postgresqlColumns_;
       } else {
-        result.oracleColumns_ = oracleColumnsBuilder_.build();
+        result.postgresqlColumns_ = postgresqlColumnsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -560,44 +563,44 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.datastream.v1.OracleTable) {
-        return mergeFrom((com.google.cloud.datastream.v1.OracleTable) other);
+      if (other instanceof com.google.cloud.datastream.v1.PostgresqlTable) {
+        return mergeFrom((com.google.cloud.datastream.v1.PostgresqlTable) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.datastream.v1.OracleTable other) {
-      if (other == com.google.cloud.datastream.v1.OracleTable.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.cloud.datastream.v1.PostgresqlTable other) {
+      if (other == com.google.cloud.datastream.v1.PostgresqlTable.getDefaultInstance()) return this;
       if (!other.getTable().isEmpty()) {
         table_ = other.table_;
         onChanged();
       }
-      if (oracleColumnsBuilder_ == null) {
-        if (!other.oracleColumns_.isEmpty()) {
-          if (oracleColumns_.isEmpty()) {
-            oracleColumns_ = other.oracleColumns_;
+      if (postgresqlColumnsBuilder_ == null) {
+        if (!other.postgresqlColumns_.isEmpty()) {
+          if (postgresqlColumns_.isEmpty()) {
+            postgresqlColumns_ = other.postgresqlColumns_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureOracleColumnsIsMutable();
-            oracleColumns_.addAll(other.oracleColumns_);
+            ensurePostgresqlColumnsIsMutable();
+            postgresqlColumns_.addAll(other.postgresqlColumns_);
           }
           onChanged();
         }
       } else {
-        if (!other.oracleColumns_.isEmpty()) {
-          if (oracleColumnsBuilder_.isEmpty()) {
-            oracleColumnsBuilder_.dispose();
-            oracleColumnsBuilder_ = null;
-            oracleColumns_ = other.oracleColumns_;
+        if (!other.postgresqlColumns_.isEmpty()) {
+          if (postgresqlColumnsBuilder_.isEmpty()) {
+            postgresqlColumnsBuilder_.dispose();
+            postgresqlColumnsBuilder_ = null;
+            postgresqlColumns_ = other.postgresqlColumns_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            oracleColumnsBuilder_ =
+            postgresqlColumnsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                    ? getOracleColumnsFieldBuilder()
+                    ? getPostgresqlColumnsFieldBuilder()
                     : null;
           } else {
-            oracleColumnsBuilder_.addAllMessages(other.oracleColumns_);
+            postgresqlColumnsBuilder_.addAllMessages(other.postgresqlColumns_);
           }
         }
       }
@@ -616,11 +619,11 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.datastream.v1.OracleTable parsedMessage = null;
+      com.google.cloud.datastream.v1.PostgresqlTable parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.datastream.v1.OracleTable) e.getUnfinishedMessage();
+        parsedMessage = (com.google.cloud.datastream.v1.PostgresqlTable) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -738,98 +741,101 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.util.List<com.google.cloud.datastream.v1.OracleColumn> oracleColumns_ =
+    private java.util.List<com.google.cloud.datastream.v1.PostgresqlColumn> postgresqlColumns_ =
         java.util.Collections.emptyList();
 
-    private void ensureOracleColumnsIsMutable() {
+    private void ensurePostgresqlColumnsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        oracleColumns_ =
-            new java.util.ArrayList<com.google.cloud.datastream.v1.OracleColumn>(oracleColumns_);
+        postgresqlColumns_ =
+            new java.util.ArrayList<com.google.cloud.datastream.v1.PostgresqlColumn>(
+                postgresqlColumns_);
         bitField0_ |= 0x00000001;
       }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.datastream.v1.OracleColumn,
-            com.google.cloud.datastream.v1.OracleColumn.Builder,
-            com.google.cloud.datastream.v1.OracleColumnOrBuilder>
-        oracleColumnsBuilder_;
+            com.google.cloud.datastream.v1.PostgresqlColumn,
+            com.google.cloud.datastream.v1.PostgresqlColumn.Builder,
+            com.google.cloud.datastream.v1.PostgresqlColumnOrBuilder>
+        postgresqlColumnsBuilder_;
 
     /**
      *
      *
      * <pre>
-     * Oracle columns in the schema.
-     * When unspecified as part of include/exclude objects, includes/excludes
-     * everything.
+     * PostgreSQL columns in the schema.
+     * When unspecified as part of include/exclude objects,
+     * includes/excludes everything.
      * </pre>
      *
-     * <code>repeated .google.cloud.datastream.v1.OracleColumn oracle_columns = 2;</code>
+     * <code>repeated .google.cloud.datastream.v1.PostgresqlColumn postgresql_columns = 2;</code>
      */
-    public java.util.List<com.google.cloud.datastream.v1.OracleColumn> getOracleColumnsList() {
-      if (oracleColumnsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(oracleColumns_);
+    public java.util.List<com.google.cloud.datastream.v1.PostgresqlColumn>
+        getPostgresqlColumnsList() {
+      if (postgresqlColumnsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(postgresqlColumns_);
       } else {
-        return oracleColumnsBuilder_.getMessageList();
+        return postgresqlColumnsBuilder_.getMessageList();
       }
     }
     /**
      *
      *
      * <pre>
-     * Oracle columns in the schema.
-     * When unspecified as part of include/exclude objects, includes/excludes
-     * everything.
+     * PostgreSQL columns in the schema.
+     * When unspecified as part of include/exclude objects,
+     * includes/excludes everything.
      * </pre>
      *
-     * <code>repeated .google.cloud.datastream.v1.OracleColumn oracle_columns = 2;</code>
+     * <code>repeated .google.cloud.datastream.v1.PostgresqlColumn postgresql_columns = 2;</code>
      */
-    public int getOracleColumnsCount() {
-      if (oracleColumnsBuilder_ == null) {
-        return oracleColumns_.size();
+    public int getPostgresqlColumnsCount() {
+      if (postgresqlColumnsBuilder_ == null) {
+        return postgresqlColumns_.size();
       } else {
-        return oracleColumnsBuilder_.getCount();
+        return postgresqlColumnsBuilder_.getCount();
       }
     }
     /**
      *
      *
      * <pre>
-     * Oracle columns in the schema.
-     * When unspecified as part of include/exclude objects, includes/excludes
-     * everything.
+     * PostgreSQL columns in the schema.
+     * When unspecified as part of include/exclude objects,
+     * includes/excludes everything.
      * </pre>
      *
-     * <code>repeated .google.cloud.datastream.v1.OracleColumn oracle_columns = 2;</code>
+     * <code>repeated .google.cloud.datastream.v1.PostgresqlColumn postgresql_columns = 2;</code>
      */
-    public com.google.cloud.datastream.v1.OracleColumn getOracleColumns(int index) {
-      if (oracleColumnsBuilder_ == null) {
-        return oracleColumns_.get(index);
+    public com.google.cloud.datastream.v1.PostgresqlColumn getPostgresqlColumns(int index) {
+      if (postgresqlColumnsBuilder_ == null) {
+        return postgresqlColumns_.get(index);
       } else {
-        return oracleColumnsBuilder_.getMessage(index);
+        return postgresqlColumnsBuilder_.getMessage(index);
       }
     }
     /**
      *
      *
      * <pre>
-     * Oracle columns in the schema.
-     * When unspecified as part of include/exclude objects, includes/excludes
-     * everything.
+     * PostgreSQL columns in the schema.
+     * When unspecified as part of include/exclude objects,
+     * includes/excludes everything.
      * </pre>
      *
-     * <code>repeated .google.cloud.datastream.v1.OracleColumn oracle_columns = 2;</code>
+     * <code>repeated .google.cloud.datastream.v1.PostgresqlColumn postgresql_columns = 2;</code>
      */
-    public Builder setOracleColumns(int index, com.google.cloud.datastream.v1.OracleColumn value) {
-      if (oracleColumnsBuilder_ == null) {
+    public Builder setPostgresqlColumns(
+        int index, com.google.cloud.datastream.v1.PostgresqlColumn value) {
+      if (postgresqlColumnsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureOracleColumnsIsMutable();
-        oracleColumns_.set(index, value);
+        ensurePostgresqlColumnsIsMutable();
+        postgresqlColumns_.set(index, value);
         onChanged();
       } else {
-        oracleColumnsBuilder_.setMessage(index, value);
+        postgresqlColumnsBuilder_.setMessage(index, value);
       }
       return this;
     }
@@ -837,21 +843,21 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Oracle columns in the schema.
-     * When unspecified as part of include/exclude objects, includes/excludes
-     * everything.
+     * PostgreSQL columns in the schema.
+     * When unspecified as part of include/exclude objects,
+     * includes/excludes everything.
      * </pre>
      *
-     * <code>repeated .google.cloud.datastream.v1.OracleColumn oracle_columns = 2;</code>
+     * <code>repeated .google.cloud.datastream.v1.PostgresqlColumn postgresql_columns = 2;</code>
      */
-    public Builder setOracleColumns(
-        int index, com.google.cloud.datastream.v1.OracleColumn.Builder builderForValue) {
-      if (oracleColumnsBuilder_ == null) {
-        ensureOracleColumnsIsMutable();
-        oracleColumns_.set(index, builderForValue.build());
+    public Builder setPostgresqlColumns(
+        int index, com.google.cloud.datastream.v1.PostgresqlColumn.Builder builderForValue) {
+      if (postgresqlColumnsBuilder_ == null) {
+        ensurePostgresqlColumnsIsMutable();
+        postgresqlColumns_.set(index, builderForValue.build());
         onChanged();
       } else {
-        oracleColumnsBuilder_.setMessage(index, builderForValue.build());
+        postgresqlColumnsBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -859,23 +865,23 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Oracle columns in the schema.
-     * When unspecified as part of include/exclude objects, includes/excludes
-     * everything.
+     * PostgreSQL columns in the schema.
+     * When unspecified as part of include/exclude objects,
+     * includes/excludes everything.
      * </pre>
      *
-     * <code>repeated .google.cloud.datastream.v1.OracleColumn oracle_columns = 2;</code>
+     * <code>repeated .google.cloud.datastream.v1.PostgresqlColumn postgresql_columns = 2;</code>
      */
-    public Builder addOracleColumns(com.google.cloud.datastream.v1.OracleColumn value) {
-      if (oracleColumnsBuilder_ == null) {
+    public Builder addPostgresqlColumns(com.google.cloud.datastream.v1.PostgresqlColumn value) {
+      if (postgresqlColumnsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureOracleColumnsIsMutable();
-        oracleColumns_.add(value);
+        ensurePostgresqlColumnsIsMutable();
+        postgresqlColumns_.add(value);
         onChanged();
       } else {
-        oracleColumnsBuilder_.addMessage(value);
+        postgresqlColumnsBuilder_.addMessage(value);
       }
       return this;
     }
@@ -883,23 +889,24 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Oracle columns in the schema.
-     * When unspecified as part of include/exclude objects, includes/excludes
-     * everything.
+     * PostgreSQL columns in the schema.
+     * When unspecified as part of include/exclude objects,
+     * includes/excludes everything.
      * </pre>
      *
-     * <code>repeated .google.cloud.datastream.v1.OracleColumn oracle_columns = 2;</code>
+     * <code>repeated .google.cloud.datastream.v1.PostgresqlColumn postgresql_columns = 2;</code>
      */
-    public Builder addOracleColumns(int index, com.google.cloud.datastream.v1.OracleColumn value) {
-      if (oracleColumnsBuilder_ == null) {
+    public Builder addPostgresqlColumns(
+        int index, com.google.cloud.datastream.v1.PostgresqlColumn value) {
+      if (postgresqlColumnsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureOracleColumnsIsMutable();
-        oracleColumns_.add(index, value);
+        ensurePostgresqlColumnsIsMutable();
+        postgresqlColumns_.add(index, value);
         onChanged();
       } else {
-        oracleColumnsBuilder_.addMessage(index, value);
+        postgresqlColumnsBuilder_.addMessage(index, value);
       }
       return this;
     }
@@ -907,21 +914,21 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Oracle columns in the schema.
-     * When unspecified as part of include/exclude objects, includes/excludes
-     * everything.
+     * PostgreSQL columns in the schema.
+     * When unspecified as part of include/exclude objects,
+     * includes/excludes everything.
      * </pre>
      *
-     * <code>repeated .google.cloud.datastream.v1.OracleColumn oracle_columns = 2;</code>
+     * <code>repeated .google.cloud.datastream.v1.PostgresqlColumn postgresql_columns = 2;</code>
      */
-    public Builder addOracleColumns(
-        com.google.cloud.datastream.v1.OracleColumn.Builder builderForValue) {
-      if (oracleColumnsBuilder_ == null) {
-        ensureOracleColumnsIsMutable();
-        oracleColumns_.add(builderForValue.build());
+    public Builder addPostgresqlColumns(
+        com.google.cloud.datastream.v1.PostgresqlColumn.Builder builderForValue) {
+      if (postgresqlColumnsBuilder_ == null) {
+        ensurePostgresqlColumnsIsMutable();
+        postgresqlColumns_.add(builderForValue.build());
         onChanged();
       } else {
-        oracleColumnsBuilder_.addMessage(builderForValue.build());
+        postgresqlColumnsBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
@@ -929,21 +936,21 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Oracle columns in the schema.
-     * When unspecified as part of include/exclude objects, includes/excludes
-     * everything.
+     * PostgreSQL columns in the schema.
+     * When unspecified as part of include/exclude objects,
+     * includes/excludes everything.
      * </pre>
      *
-     * <code>repeated .google.cloud.datastream.v1.OracleColumn oracle_columns = 2;</code>
+     * <code>repeated .google.cloud.datastream.v1.PostgresqlColumn postgresql_columns = 2;</code>
      */
-    public Builder addOracleColumns(
-        int index, com.google.cloud.datastream.v1.OracleColumn.Builder builderForValue) {
-      if (oracleColumnsBuilder_ == null) {
-        ensureOracleColumnsIsMutable();
-        oracleColumns_.add(index, builderForValue.build());
+    public Builder addPostgresqlColumns(
+        int index, com.google.cloud.datastream.v1.PostgresqlColumn.Builder builderForValue) {
+      if (postgresqlColumnsBuilder_ == null) {
+        ensurePostgresqlColumnsIsMutable();
+        postgresqlColumns_.add(index, builderForValue.build());
         onChanged();
       } else {
-        oracleColumnsBuilder_.addMessage(index, builderForValue.build());
+        postgresqlColumnsBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -951,21 +958,21 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Oracle columns in the schema.
-     * When unspecified as part of include/exclude objects, includes/excludes
-     * everything.
+     * PostgreSQL columns in the schema.
+     * When unspecified as part of include/exclude objects,
+     * includes/excludes everything.
      * </pre>
      *
-     * <code>repeated .google.cloud.datastream.v1.OracleColumn oracle_columns = 2;</code>
+     * <code>repeated .google.cloud.datastream.v1.PostgresqlColumn postgresql_columns = 2;</code>
      */
-    public Builder addAllOracleColumns(
-        java.lang.Iterable<? extends com.google.cloud.datastream.v1.OracleColumn> values) {
-      if (oracleColumnsBuilder_ == null) {
-        ensureOracleColumnsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, oracleColumns_);
+    public Builder addAllPostgresqlColumns(
+        java.lang.Iterable<? extends com.google.cloud.datastream.v1.PostgresqlColumn> values) {
+      if (postgresqlColumnsBuilder_ == null) {
+        ensurePostgresqlColumnsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, postgresqlColumns_);
         onChanged();
       } else {
-        oracleColumnsBuilder_.addAllMessages(values);
+        postgresqlColumnsBuilder_.addAllMessages(values);
       }
       return this;
     }
@@ -973,20 +980,20 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Oracle columns in the schema.
-     * When unspecified as part of include/exclude objects, includes/excludes
-     * everything.
+     * PostgreSQL columns in the schema.
+     * When unspecified as part of include/exclude objects,
+     * includes/excludes everything.
      * </pre>
      *
-     * <code>repeated .google.cloud.datastream.v1.OracleColumn oracle_columns = 2;</code>
+     * <code>repeated .google.cloud.datastream.v1.PostgresqlColumn postgresql_columns = 2;</code>
      */
-    public Builder clearOracleColumns() {
-      if (oracleColumnsBuilder_ == null) {
-        oracleColumns_ = java.util.Collections.emptyList();
+    public Builder clearPostgresqlColumns() {
+      if (postgresqlColumnsBuilder_ == null) {
+        postgresqlColumns_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        oracleColumnsBuilder_.clear();
+        postgresqlColumnsBuilder_.clear();
       }
       return this;
     }
@@ -994,20 +1001,20 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Oracle columns in the schema.
-     * When unspecified as part of include/exclude objects, includes/excludes
-     * everything.
+     * PostgreSQL columns in the schema.
+     * When unspecified as part of include/exclude objects,
+     * includes/excludes everything.
      * </pre>
      *
-     * <code>repeated .google.cloud.datastream.v1.OracleColumn oracle_columns = 2;</code>
+     * <code>repeated .google.cloud.datastream.v1.PostgresqlColumn postgresql_columns = 2;</code>
      */
-    public Builder removeOracleColumns(int index) {
-      if (oracleColumnsBuilder_ == null) {
-        ensureOracleColumnsIsMutable();
-        oracleColumns_.remove(index);
+    public Builder removePostgresqlColumns(int index) {
+      if (postgresqlColumnsBuilder_ == null) {
+        ensurePostgresqlColumnsIsMutable();
+        postgresqlColumns_.remove(index);
         onChanged();
       } else {
-        oracleColumnsBuilder_.remove(index);
+        postgresqlColumnsBuilder_.remove(index);
       }
       return this;
     }
@@ -1015,118 +1022,120 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Oracle columns in the schema.
-     * When unspecified as part of include/exclude objects, includes/excludes
-     * everything.
+     * PostgreSQL columns in the schema.
+     * When unspecified as part of include/exclude objects,
+     * includes/excludes everything.
      * </pre>
      *
-     * <code>repeated .google.cloud.datastream.v1.OracleColumn oracle_columns = 2;</code>
+     * <code>repeated .google.cloud.datastream.v1.PostgresqlColumn postgresql_columns = 2;</code>
      */
-    public com.google.cloud.datastream.v1.OracleColumn.Builder getOracleColumnsBuilder(int index) {
-      return getOracleColumnsFieldBuilder().getBuilder(index);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Oracle columns in the schema.
-     * When unspecified as part of include/exclude objects, includes/excludes
-     * everything.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.datastream.v1.OracleColumn oracle_columns = 2;</code>
-     */
-    public com.google.cloud.datastream.v1.OracleColumnOrBuilder getOracleColumnsOrBuilder(
+    public com.google.cloud.datastream.v1.PostgresqlColumn.Builder getPostgresqlColumnsBuilder(
         int index) {
-      if (oracleColumnsBuilder_ == null) {
-        return oracleColumns_.get(index);
+      return getPostgresqlColumnsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL columns in the schema.
+     * When unspecified as part of include/exclude objects,
+     * includes/excludes everything.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.datastream.v1.PostgresqlColumn postgresql_columns = 2;</code>
+     */
+    public com.google.cloud.datastream.v1.PostgresqlColumnOrBuilder getPostgresqlColumnsOrBuilder(
+        int index) {
+      if (postgresqlColumnsBuilder_ == null) {
+        return postgresqlColumns_.get(index);
       } else {
-        return oracleColumnsBuilder_.getMessageOrBuilder(index);
+        return postgresqlColumnsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
      *
      *
      * <pre>
-     * Oracle columns in the schema.
-     * When unspecified as part of include/exclude objects, includes/excludes
-     * everything.
+     * PostgreSQL columns in the schema.
+     * When unspecified as part of include/exclude objects,
+     * includes/excludes everything.
      * </pre>
      *
-     * <code>repeated .google.cloud.datastream.v1.OracleColumn oracle_columns = 2;</code>
+     * <code>repeated .google.cloud.datastream.v1.PostgresqlColumn postgresql_columns = 2;</code>
      */
-    public java.util.List<? extends com.google.cloud.datastream.v1.OracleColumnOrBuilder>
-        getOracleColumnsOrBuilderList() {
-      if (oracleColumnsBuilder_ != null) {
-        return oracleColumnsBuilder_.getMessageOrBuilderList();
+    public java.util.List<? extends com.google.cloud.datastream.v1.PostgresqlColumnOrBuilder>
+        getPostgresqlColumnsOrBuilderList() {
+      if (postgresqlColumnsBuilder_ != null) {
+        return postgresqlColumnsBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(oracleColumns_);
+        return java.util.Collections.unmodifiableList(postgresqlColumns_);
       }
     }
     /**
      *
      *
      * <pre>
-     * Oracle columns in the schema.
-     * When unspecified as part of include/exclude objects, includes/excludes
-     * everything.
+     * PostgreSQL columns in the schema.
+     * When unspecified as part of include/exclude objects,
+     * includes/excludes everything.
      * </pre>
      *
-     * <code>repeated .google.cloud.datastream.v1.OracleColumn oracle_columns = 2;</code>
+     * <code>repeated .google.cloud.datastream.v1.PostgresqlColumn postgresql_columns = 2;</code>
      */
-    public com.google.cloud.datastream.v1.OracleColumn.Builder addOracleColumnsBuilder() {
-      return getOracleColumnsFieldBuilder()
-          .addBuilder(com.google.cloud.datastream.v1.OracleColumn.getDefaultInstance());
+    public com.google.cloud.datastream.v1.PostgresqlColumn.Builder addPostgresqlColumnsBuilder() {
+      return getPostgresqlColumnsFieldBuilder()
+          .addBuilder(com.google.cloud.datastream.v1.PostgresqlColumn.getDefaultInstance());
     }
     /**
      *
      *
      * <pre>
-     * Oracle columns in the schema.
-     * When unspecified as part of include/exclude objects, includes/excludes
-     * everything.
+     * PostgreSQL columns in the schema.
+     * When unspecified as part of include/exclude objects,
+     * includes/excludes everything.
      * </pre>
      *
-     * <code>repeated .google.cloud.datastream.v1.OracleColumn oracle_columns = 2;</code>
+     * <code>repeated .google.cloud.datastream.v1.PostgresqlColumn postgresql_columns = 2;</code>
      */
-    public com.google.cloud.datastream.v1.OracleColumn.Builder addOracleColumnsBuilder(int index) {
-      return getOracleColumnsFieldBuilder()
-          .addBuilder(index, com.google.cloud.datastream.v1.OracleColumn.getDefaultInstance());
+    public com.google.cloud.datastream.v1.PostgresqlColumn.Builder addPostgresqlColumnsBuilder(
+        int index) {
+      return getPostgresqlColumnsFieldBuilder()
+          .addBuilder(index, com.google.cloud.datastream.v1.PostgresqlColumn.getDefaultInstance());
     }
     /**
      *
      *
      * <pre>
-     * Oracle columns in the schema.
-     * When unspecified as part of include/exclude objects, includes/excludes
-     * everything.
+     * PostgreSQL columns in the schema.
+     * When unspecified as part of include/exclude objects,
+     * includes/excludes everything.
      * </pre>
      *
-     * <code>repeated .google.cloud.datastream.v1.OracleColumn oracle_columns = 2;</code>
+     * <code>repeated .google.cloud.datastream.v1.PostgresqlColumn postgresql_columns = 2;</code>
      */
-    public java.util.List<com.google.cloud.datastream.v1.OracleColumn.Builder>
-        getOracleColumnsBuilderList() {
-      return getOracleColumnsFieldBuilder().getBuilderList();
+    public java.util.List<com.google.cloud.datastream.v1.PostgresqlColumn.Builder>
+        getPostgresqlColumnsBuilderList() {
+      return getPostgresqlColumnsFieldBuilder().getBuilderList();
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.datastream.v1.OracleColumn,
-            com.google.cloud.datastream.v1.OracleColumn.Builder,
-            com.google.cloud.datastream.v1.OracleColumnOrBuilder>
-        getOracleColumnsFieldBuilder() {
-      if (oracleColumnsBuilder_ == null) {
-        oracleColumnsBuilder_ =
+            com.google.cloud.datastream.v1.PostgresqlColumn,
+            com.google.cloud.datastream.v1.PostgresqlColumn.Builder,
+            com.google.cloud.datastream.v1.PostgresqlColumnOrBuilder>
+        getPostgresqlColumnsFieldBuilder() {
+      if (postgresqlColumnsBuilder_ == null) {
+        postgresqlColumnsBuilder_ =
             new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.cloud.datastream.v1.OracleColumn,
-                com.google.cloud.datastream.v1.OracleColumn.Builder,
-                com.google.cloud.datastream.v1.OracleColumnOrBuilder>(
-                oracleColumns_,
+                com.google.cloud.datastream.v1.PostgresqlColumn,
+                com.google.cloud.datastream.v1.PostgresqlColumn.Builder,
+                com.google.cloud.datastream.v1.PostgresqlColumnOrBuilder>(
+                postgresqlColumns_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        oracleColumns_ = null;
+        postgresqlColumns_ = null;
       }
-      return oracleColumnsBuilder_;
+      return postgresqlColumnsBuilder_;
     }
 
     @java.lang.Override
@@ -1140,42 +1149,42 @@ public final class OracleTable extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.OracleTable)
+    // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.PostgresqlTable)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.datastream.v1.OracleTable)
-  private static final com.google.cloud.datastream.v1.OracleTable DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.datastream.v1.PostgresqlTable)
+  private static final com.google.cloud.datastream.v1.PostgresqlTable DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.datastream.v1.OracleTable();
+    DEFAULT_INSTANCE = new com.google.cloud.datastream.v1.PostgresqlTable();
   }
 
-  public static com.google.cloud.datastream.v1.OracleTable getDefaultInstance() {
+  public static com.google.cloud.datastream.v1.PostgresqlTable getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<OracleTable> PARSER =
-      new com.google.protobuf.AbstractParser<OracleTable>() {
+  private static final com.google.protobuf.Parser<PostgresqlTable> PARSER =
+      new com.google.protobuf.AbstractParser<PostgresqlTable>() {
         @java.lang.Override
-        public OracleTable parsePartialFrom(
+        public PostgresqlTable parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new OracleTable(input, extensionRegistry);
+          return new PostgresqlTable(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<OracleTable> parser() {
+  public static com.google.protobuf.Parser<PostgresqlTable> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<OracleTable> getParserForType() {
+  public com.google.protobuf.Parser<PostgresqlTable> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.datastream.v1.OracleTable getDefaultInstanceForType() {
+  public com.google.cloud.datastream.v1.PostgresqlTable getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

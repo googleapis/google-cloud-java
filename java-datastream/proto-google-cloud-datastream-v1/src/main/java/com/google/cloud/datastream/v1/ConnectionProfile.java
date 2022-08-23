@@ -178,6 +178,40 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
               profileCase_ = 102;
               break;
             }
+          case 826:
+            {
+              com.google.cloud.datastream.v1.BigQueryProfile.Builder subBuilder = null;
+              if (profileCase_ == 103) {
+                subBuilder =
+                    ((com.google.cloud.datastream.v1.BigQueryProfile) profile_).toBuilder();
+              }
+              profile_ =
+                  input.readMessage(
+                      com.google.cloud.datastream.v1.BigQueryProfile.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.datastream.v1.BigQueryProfile) profile_);
+                profile_ = subBuilder.buildPartial();
+              }
+              profileCase_ = 103;
+              break;
+            }
+          case 834:
+            {
+              com.google.cloud.datastream.v1.PostgresqlProfile.Builder subBuilder = null;
+              if (profileCase_ == 104) {
+                subBuilder =
+                    ((com.google.cloud.datastream.v1.PostgresqlProfile) profile_).toBuilder();
+              }
+              profile_ =
+                  input.readMessage(
+                      com.google.cloud.datastream.v1.PostgresqlProfile.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.datastream.v1.PostgresqlProfile) profile_);
+                profile_ = subBuilder.buildPartial();
+              }
+              profileCase_ = 104;
+              break;
+            }
           case 1602:
             {
               com.google.cloud.datastream.v1.StaticServiceIpConnectivity.Builder subBuilder = null;
@@ -295,6 +329,8 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     ORACLE_PROFILE(100),
     GCS_PROFILE(101),
     MYSQL_PROFILE(102),
+    BIGQUERY_PROFILE(103),
+    POSTGRESQL_PROFILE(104),
     PROFILE_NOT_SET(0);
     private final int value;
 
@@ -319,6 +355,10 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
           return GCS_PROFILE;
         case 102:
           return MYSQL_PROFILE;
+        case 103:
+          return BIGQUERY_PROFILE;
+        case 104:
+          return POSTGRESQL_PROFILE;
         case 0:
           return PROFILE_NOT_SET;
         default:
@@ -832,6 +872,108 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     return com.google.cloud.datastream.v1.MysqlProfile.getDefaultInstance();
   }
 
+  public static final int BIGQUERY_PROFILE_FIELD_NUMBER = 103;
+  /**
+   *
+   *
+   * <pre>
+   * BigQuery Connection Profile configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
+   *
+   * @return Whether the bigqueryProfile field is set.
+   */
+  @java.lang.Override
+  public boolean hasBigqueryProfile() {
+    return profileCase_ == 103;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * BigQuery Connection Profile configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
+   *
+   * @return The bigqueryProfile.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.BigQueryProfile getBigqueryProfile() {
+    if (profileCase_ == 103) {
+      return (com.google.cloud.datastream.v1.BigQueryProfile) profile_;
+    }
+    return com.google.cloud.datastream.v1.BigQueryProfile.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * BigQuery Connection Profile configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.BigQueryProfileOrBuilder getBigqueryProfileOrBuilder() {
+    if (profileCase_ == 103) {
+      return (com.google.cloud.datastream.v1.BigQueryProfile) profile_;
+    }
+    return com.google.cloud.datastream.v1.BigQueryProfile.getDefaultInstance();
+  }
+
+  public static final int POSTGRESQL_PROFILE_FIELD_NUMBER = 104;
+  /**
+   *
+   *
+   * <pre>
+   * PostgreSQL Connection Profile configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
+   *
+   * @return Whether the postgresqlProfile field is set.
+   */
+  @java.lang.Override
+  public boolean hasPostgresqlProfile() {
+    return profileCase_ == 104;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * PostgreSQL Connection Profile configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
+   *
+   * @return The postgresqlProfile.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.PostgresqlProfile getPostgresqlProfile() {
+    if (profileCase_ == 104) {
+      return (com.google.cloud.datastream.v1.PostgresqlProfile) profile_;
+    }
+    return com.google.cloud.datastream.v1.PostgresqlProfile.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * PostgreSQL Connection Profile configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.PostgresqlProfileOrBuilder getPostgresqlProfileOrBuilder() {
+    if (profileCase_ == 104) {
+      return (com.google.cloud.datastream.v1.PostgresqlProfile) profile_;
+    }
+    return com.google.cloud.datastream.v1.PostgresqlProfile.getDefaultInstance();
+  }
+
   public static final int STATIC_SERVICE_IP_CONNECTIVITY_FIELD_NUMBER = 200;
   /**
    *
@@ -1035,6 +1177,12 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     if (profileCase_ == 102) {
       output.writeMessage(102, (com.google.cloud.datastream.v1.MysqlProfile) profile_);
     }
+    if (profileCase_ == 103) {
+      output.writeMessage(103, (com.google.cloud.datastream.v1.BigQueryProfile) profile_);
+    }
+    if (profileCase_ == 104) {
+      output.writeMessage(104, (com.google.cloud.datastream.v1.PostgresqlProfile) profile_);
+    }
     if (connectivityCase_ == 200) {
       output.writeMessage(
           200, (com.google.cloud.datastream.v1.StaticServiceIpConnectivity) connectivity_);
@@ -1092,6 +1240,16 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               102, (com.google.cloud.datastream.v1.MysqlProfile) profile_);
     }
+    if (profileCase_ == 103) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              103, (com.google.cloud.datastream.v1.BigQueryProfile) profile_);
+    }
+    if (profileCase_ == 104) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              104, (com.google.cloud.datastream.v1.PostgresqlProfile) profile_);
+    }
     if (connectivityCase_ == 200) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -1144,6 +1302,12 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         break;
       case 102:
         if (!getMysqlProfile().equals(other.getMysqlProfile())) return false;
+        break;
+      case 103:
+        if (!getBigqueryProfile().equals(other.getBigqueryProfile())) return false;
+        break;
+      case 104:
+        if (!getPostgresqlProfile().equals(other.getPostgresqlProfile())) return false;
         break;
       case 0:
       default:
@@ -1202,6 +1366,14 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       case 102:
         hash = (37 * hash) + MYSQL_PROFILE_FIELD_NUMBER;
         hash = (53 * hash) + getMysqlProfile().hashCode();
+        break;
+      case 103:
+        hash = (37 * hash) + BIGQUERY_PROFILE_FIELD_NUMBER;
+        hash = (53 * hash) + getBigqueryProfile().hashCode();
+        break;
+      case 104:
+        hash = (37 * hash) + POSTGRESQL_PROFILE_FIELD_NUMBER;
+        hash = (53 * hash) + getPostgresqlProfile().hashCode();
         break;
       case 0:
       default:
@@ -1472,6 +1644,20 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
           result.profile_ = mysqlProfileBuilder_.build();
         }
       }
+      if (profileCase_ == 103) {
+        if (bigqueryProfileBuilder_ == null) {
+          result.profile_ = profile_;
+        } else {
+          result.profile_ = bigqueryProfileBuilder_.build();
+        }
+      }
+      if (profileCase_ == 104) {
+        if (postgresqlProfileBuilder_ == null) {
+          result.profile_ = profile_;
+        } else {
+          result.profile_ = postgresqlProfileBuilder_.build();
+        }
+      }
       if (connectivityCase_ == 200) {
         if (staticServiceIpConnectivityBuilder_ == null) {
           result.connectivity_ = connectivity_;
@@ -1574,6 +1760,16 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         case MYSQL_PROFILE:
           {
             mergeMysqlProfile(other.getMysqlProfile());
+            break;
+          }
+        case BIGQUERY_PROFILE:
+          {
+            mergeBigqueryProfile(other.getBigqueryProfile());
+            break;
+          }
+        case POSTGRESQL_PROFILE:
+          {
+            mergePostgresqlProfile(other.getPostgresqlProfile());
             break;
           }
         case PROFILE_NOT_SET:
@@ -3061,6 +3257,427 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       onChanged();
       ;
       return mysqlProfileBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.BigQueryProfile,
+            com.google.cloud.datastream.v1.BigQueryProfile.Builder,
+            com.google.cloud.datastream.v1.BigQueryProfileOrBuilder>
+        bigqueryProfileBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
+     *
+     * @return Whether the bigqueryProfile field is set.
+     */
+    @java.lang.Override
+    public boolean hasBigqueryProfile() {
+      return profileCase_ == 103;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
+     *
+     * @return The bigqueryProfile.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.BigQueryProfile getBigqueryProfile() {
+      if (bigqueryProfileBuilder_ == null) {
+        if (profileCase_ == 103) {
+          return (com.google.cloud.datastream.v1.BigQueryProfile) profile_;
+        }
+        return com.google.cloud.datastream.v1.BigQueryProfile.getDefaultInstance();
+      } else {
+        if (profileCase_ == 103) {
+          return bigqueryProfileBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.BigQueryProfile.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
+     */
+    public Builder setBigqueryProfile(com.google.cloud.datastream.v1.BigQueryProfile value) {
+      if (bigqueryProfileBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        profile_ = value;
+        onChanged();
+      } else {
+        bigqueryProfileBuilder_.setMessage(value);
+      }
+      profileCase_ = 103;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
+     */
+    public Builder setBigqueryProfile(
+        com.google.cloud.datastream.v1.BigQueryProfile.Builder builderForValue) {
+      if (bigqueryProfileBuilder_ == null) {
+        profile_ = builderForValue.build();
+        onChanged();
+      } else {
+        bigqueryProfileBuilder_.setMessage(builderForValue.build());
+      }
+      profileCase_ = 103;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
+     */
+    public Builder mergeBigqueryProfile(com.google.cloud.datastream.v1.BigQueryProfile value) {
+      if (bigqueryProfileBuilder_ == null) {
+        if (profileCase_ == 103
+            && profile_ != com.google.cloud.datastream.v1.BigQueryProfile.getDefaultInstance()) {
+          profile_ =
+              com.google.cloud.datastream.v1.BigQueryProfile.newBuilder(
+                      (com.google.cloud.datastream.v1.BigQueryProfile) profile_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          profile_ = value;
+        }
+        onChanged();
+      } else {
+        if (profileCase_ == 103) {
+          bigqueryProfileBuilder_.mergeFrom(value);
+        } else {
+          bigqueryProfileBuilder_.setMessage(value);
+        }
+      }
+      profileCase_ = 103;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
+     */
+    public Builder clearBigqueryProfile() {
+      if (bigqueryProfileBuilder_ == null) {
+        if (profileCase_ == 103) {
+          profileCase_ = 0;
+          profile_ = null;
+          onChanged();
+        }
+      } else {
+        if (profileCase_ == 103) {
+          profileCase_ = 0;
+          profile_ = null;
+        }
+        bigqueryProfileBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
+     */
+    public com.google.cloud.datastream.v1.BigQueryProfile.Builder getBigqueryProfileBuilder() {
+      return getBigqueryProfileFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.BigQueryProfileOrBuilder getBigqueryProfileOrBuilder() {
+      if ((profileCase_ == 103) && (bigqueryProfileBuilder_ != null)) {
+        return bigqueryProfileBuilder_.getMessageOrBuilder();
+      } else {
+        if (profileCase_ == 103) {
+          return (com.google.cloud.datastream.v1.BigQueryProfile) profile_;
+        }
+        return com.google.cloud.datastream.v1.BigQueryProfile.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * BigQuery Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.BigQueryProfile,
+            com.google.cloud.datastream.v1.BigQueryProfile.Builder,
+            com.google.cloud.datastream.v1.BigQueryProfileOrBuilder>
+        getBigqueryProfileFieldBuilder() {
+      if (bigqueryProfileBuilder_ == null) {
+        if (!(profileCase_ == 103)) {
+          profile_ = com.google.cloud.datastream.v1.BigQueryProfile.getDefaultInstance();
+        }
+        bigqueryProfileBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.BigQueryProfile,
+                com.google.cloud.datastream.v1.BigQueryProfile.Builder,
+                com.google.cloud.datastream.v1.BigQueryProfileOrBuilder>(
+                (com.google.cloud.datastream.v1.BigQueryProfile) profile_,
+                getParentForChildren(),
+                isClean());
+        profile_ = null;
+      }
+      profileCase_ = 103;
+      onChanged();
+      ;
+      return bigqueryProfileBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.PostgresqlProfile,
+            com.google.cloud.datastream.v1.PostgresqlProfile.Builder,
+            com.google.cloud.datastream.v1.PostgresqlProfileOrBuilder>
+        postgresqlProfileBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
+     *
+     * @return Whether the postgresqlProfile field is set.
+     */
+    @java.lang.Override
+    public boolean hasPostgresqlProfile() {
+      return profileCase_ == 104;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
+     *
+     * @return The postgresqlProfile.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.PostgresqlProfile getPostgresqlProfile() {
+      if (postgresqlProfileBuilder_ == null) {
+        if (profileCase_ == 104) {
+          return (com.google.cloud.datastream.v1.PostgresqlProfile) profile_;
+        }
+        return com.google.cloud.datastream.v1.PostgresqlProfile.getDefaultInstance();
+      } else {
+        if (profileCase_ == 104) {
+          return postgresqlProfileBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.PostgresqlProfile.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
+     */
+    public Builder setPostgresqlProfile(com.google.cloud.datastream.v1.PostgresqlProfile value) {
+      if (postgresqlProfileBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        profile_ = value;
+        onChanged();
+      } else {
+        postgresqlProfileBuilder_.setMessage(value);
+      }
+      profileCase_ = 104;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
+     */
+    public Builder setPostgresqlProfile(
+        com.google.cloud.datastream.v1.PostgresqlProfile.Builder builderForValue) {
+      if (postgresqlProfileBuilder_ == null) {
+        profile_ = builderForValue.build();
+        onChanged();
+      } else {
+        postgresqlProfileBuilder_.setMessage(builderForValue.build());
+      }
+      profileCase_ = 104;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
+     */
+    public Builder mergePostgresqlProfile(com.google.cloud.datastream.v1.PostgresqlProfile value) {
+      if (postgresqlProfileBuilder_ == null) {
+        if (profileCase_ == 104
+            && profile_ != com.google.cloud.datastream.v1.PostgresqlProfile.getDefaultInstance()) {
+          profile_ =
+              com.google.cloud.datastream.v1.PostgresqlProfile.newBuilder(
+                      (com.google.cloud.datastream.v1.PostgresqlProfile) profile_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          profile_ = value;
+        }
+        onChanged();
+      } else {
+        if (profileCase_ == 104) {
+          postgresqlProfileBuilder_.mergeFrom(value);
+        } else {
+          postgresqlProfileBuilder_.setMessage(value);
+        }
+      }
+      profileCase_ = 104;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
+     */
+    public Builder clearPostgresqlProfile() {
+      if (postgresqlProfileBuilder_ == null) {
+        if (profileCase_ == 104) {
+          profileCase_ = 0;
+          profile_ = null;
+          onChanged();
+        }
+      } else {
+        if (profileCase_ == 104) {
+          profileCase_ = 0;
+          profile_ = null;
+        }
+        postgresqlProfileBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
+     */
+    public com.google.cloud.datastream.v1.PostgresqlProfile.Builder getPostgresqlProfileBuilder() {
+      return getPostgresqlProfileFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.PostgresqlProfileOrBuilder
+        getPostgresqlProfileOrBuilder() {
+      if ((profileCase_ == 104) && (postgresqlProfileBuilder_ != null)) {
+        return postgresqlProfileBuilder_.getMessageOrBuilder();
+      } else {
+        if (profileCase_ == 104) {
+          return (com.google.cloud.datastream.v1.PostgresqlProfile) profile_;
+        }
+        return com.google.cloud.datastream.v1.PostgresqlProfile.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.PostgresqlProfile,
+            com.google.cloud.datastream.v1.PostgresqlProfile.Builder,
+            com.google.cloud.datastream.v1.PostgresqlProfileOrBuilder>
+        getPostgresqlProfileFieldBuilder() {
+      if (postgresqlProfileBuilder_ == null) {
+        if (!(profileCase_ == 104)) {
+          profile_ = com.google.cloud.datastream.v1.PostgresqlProfile.getDefaultInstance();
+        }
+        postgresqlProfileBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.PostgresqlProfile,
+                com.google.cloud.datastream.v1.PostgresqlProfile.Builder,
+                com.google.cloud.datastream.v1.PostgresqlProfileOrBuilder>(
+                (com.google.cloud.datastream.v1.PostgresqlProfile) profile_,
+                getParentForChildren(),
+                isClean());
+        profile_ = null;
+      }
+      profileCase_ = 104;
+      onChanged();
+      ;
+      return postgresqlProfileBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

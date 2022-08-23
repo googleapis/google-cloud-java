@@ -100,6 +100,11 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
 
               break;
             }
+          case 24:
+            {
+              maxConcurrentCdcTasks_ = input.readInt32();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -232,6 +237,25 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
     return getExcludeObjects();
   }
 
+  public static final int MAX_CONCURRENT_CDC_TASKS_FIELD_NUMBER = 3;
+  private int maxConcurrentCdcTasks_;
+  /**
+   *
+   *
+   * <pre>
+   * Maximum number of concurrent CDC tasks. The number should be non negative.
+   * If not set (or set to 0), the system's default value will be used.
+   * </pre>
+   *
+   * <code>int32 max_concurrent_cdc_tasks = 3;</code>
+   *
+   * @return The maxConcurrentCdcTasks.
+   */
+  @java.lang.Override
+  public int getMaxConcurrentCdcTasks() {
+    return maxConcurrentCdcTasks_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -252,6 +276,9 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
     if (excludeObjects_ != null) {
       output.writeMessage(2, getExcludeObjects());
     }
+    if (maxConcurrentCdcTasks_ != 0) {
+      output.writeInt32(3, maxConcurrentCdcTasks_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -266,6 +293,9 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
     }
     if (excludeObjects_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getExcludeObjects());
+    }
+    if (maxConcurrentCdcTasks_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, maxConcurrentCdcTasks_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -291,6 +321,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
     if (hasExcludeObjects()) {
       if (!getExcludeObjects().equals(other.getExcludeObjects())) return false;
     }
+    if (getMaxConcurrentCdcTasks() != other.getMaxConcurrentCdcTasks()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -310,6 +341,8 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + EXCLUDE_OBJECTS_FIELD_NUMBER;
       hash = (53 * hash) + getExcludeObjects().hashCode();
     }
+    hash = (37 * hash) + MAX_CONCURRENT_CDC_TASKS_FIELD_NUMBER;
+    hash = (53 * hash) + getMaxConcurrentCdcTasks();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -467,6 +500,8 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
         excludeObjects_ = null;
         excludeObjectsBuilder_ = null;
       }
+      maxConcurrentCdcTasks_ = 0;
+
       return this;
     }
 
@@ -504,6 +539,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       } else {
         result.excludeObjects_ = excludeObjectsBuilder_.build();
       }
+      result.maxConcurrentCdcTasks_ = maxConcurrentCdcTasks_;
       onBuilt();
       return result;
     }
@@ -559,6 +595,9 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasExcludeObjects()) {
         mergeExcludeObjects(other.getExcludeObjects());
+      }
+      if (other.getMaxConcurrentCdcTasks() != 0) {
+        setMaxConcurrentCdcTasks(other.getMaxConcurrentCdcTasks());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -959,6 +998,61 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
         excludeObjects_ = null;
       }
       return excludeObjectsBuilder_;
+    }
+
+    private int maxConcurrentCdcTasks_;
+    /**
+     *
+     *
+     * <pre>
+     * Maximum number of concurrent CDC tasks. The number should be non negative.
+     * If not set (or set to 0), the system's default value will be used.
+     * </pre>
+     *
+     * <code>int32 max_concurrent_cdc_tasks = 3;</code>
+     *
+     * @return The maxConcurrentCdcTasks.
+     */
+    @java.lang.Override
+    public int getMaxConcurrentCdcTasks() {
+      return maxConcurrentCdcTasks_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maximum number of concurrent CDC tasks. The number should be non negative.
+     * If not set (or set to 0), the system's default value will be used.
+     * </pre>
+     *
+     * <code>int32 max_concurrent_cdc_tasks = 3;</code>
+     *
+     * @param value The maxConcurrentCdcTasks to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxConcurrentCdcTasks(int value) {
+
+      maxConcurrentCdcTasks_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maximum number of concurrent CDC tasks. The number should be non negative.
+     * If not set (or set to 0), the system's default value will be used.
+     * </pre>
+     *
+     * <code>int32 max_concurrent_cdc_tasks = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxConcurrentCdcTasks() {
+
+      maxConcurrentCdcTasks_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
