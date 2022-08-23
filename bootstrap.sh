@@ -98,10 +98,15 @@ num_modules="$(wc -l < ../../repos.txt)"
 echo "{" >> .release-please-manifest.json
 
 echo ""\""google-cloud-gapic-bom"\"": "\""0.0.0"\""," >> .release-please-manifest.json
+cp generation/gapic_bom_versions.txt google-cloud-gapic-bom/versions.txt
 
 # Generate Release Please configuration files
 rp_config_line=""
 for bom_directory in $(find . -name 'google-*-bom' | sort); do
+  if [[ "${bom_directory}" = *google-cloud-gapic-bom ]]; then
+    continue
+  fi
+
   pom_file="${bom_directory}/pom.xml"
   artifactId_line=$(grep --max-count=1 'artifactId' "${pom_file}")
 
@@ -129,8 +134,8 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
       # increment the third digit of the version and overwrite it.
       snapshot_version=$(echo ${module_released_version} |  awk -F'.' '{print $1"."$2"."$3+1}' |  sed s/[.]$//)
 
-      mvn -f ${pom_directory} -U versions:set -DnewVersion=${snapshot_version}
-      mvn -f ${bom_directory} -U versions:set -DnewVersion=${snapshot_version}
+      mvn -B -ntp -f ${pom_directory} -U versions:set -DnewVersion=${snapshot_version}
+      mvn -B -ntp -f ${bom_directory} -U versions:set -DnewVersion=${snapshot_version}
       #updating gapic bom pom.xml with the snapshot version
       version_line="${version_line/${module_snapshot_version}/${snapshot_version}}"
     fi
@@ -139,8 +144,8 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
     # increment the third digit of the version and overwrite it.
     snapshot_version=$(echo ${module_released_version} |  awk -F'.' '{print $1"."$2"."$3+1}' |  sed s/[.]$//)
 
-    mvn -f ${pom_directory} -U versions:set -DnewVersion=${snapshot_version}
-    mvn -f ${bom_directory} -U versions:set -DnewVersion=${snapshot_version}
+    mvn -B -ntp -f ${pom_directory} -U versions:set -DnewVersion=${snapshot_version}
+    mvn -B -ntp -f ${bom_directory} -U versions:set -DnewVersion=${snapshot_version}
     #updating gapic bom pom.xml with the snapshot version
     version_line="${version_line/${module_snapshot_version}/${snapshot_version}}"
   fi
@@ -155,7 +160,7 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
          new_version="${new_version}-SNAPSHOT"
          sed -i.bak "s|${artifact_name}:${old_version}:${old_version}|${artifact_name}:${old_version}:${new_version}|" ${version_file}
          artifact_directory="${bom_directory}/../${artifact_name}"
-         mvn -f ${artifact_directory} -U versions:set -DnewVersion=${new_version}
+         mvn -B -ntp -f ${artifact_directory} -U versions:set -DnewVersion=${new_version}
        fi
     done
 
@@ -166,7 +171,7 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
            old_version=$(echo "${line}" | awk -F':' '{print $2}')
            new_version=$(echo ${old_version} |  awk -F'.' '{print $1"."$2"."$3+1}' |  sed s/[.]$//)
            artifact_directory="${bom_directory}/../${artifact_name}"
-           mvn -f ${artifact_directory} -U versions:set -DnewVersion=${new_version}
+           mvn -B -ntp -f ${artifact_directory} -U versions:set -DnewVersion=${new_version}
          fi
       done
 
@@ -193,8 +198,6 @@ echo "}" >> .release-please-manifest.json
 
 awk -v "packagesList=$rp_config_line" '{gsub(/ALL_PACKAGES/,packagesList)}1' \
     ../../release_please_config_raw.json > release-please-config.json
-
-cp generation/gapic_bom_versions.txt google-cloud-gapic-bom/versions.txt
 
 git add --all
 git commit -am 'feat: create release please configuration'
