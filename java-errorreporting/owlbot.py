@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import os
 import synthtool as s
 from synthtool.languages import java
 
@@ -75,3 +76,25 @@ for library in s.get_staging_dirs():
 
 s.remove_staging_dirs()
 java.common_templates(excludes=['.github/auto-label.yaml'])
+
+# --------------------------------------------------------------------------
+# Modify test configs
+# --------------------------------------------------------------------------
+
+# add shared environment variables to test configs
+s.move(
+    ".kokoro/common_env_vars.cfg",
+    ".kokoro/common.cfg",
+    merge=lambda src, dst, _, : f"{dst}\n{src}",
+)
+tracked_subdirs = ["continuous", "presubmit", "release", "nightly"]
+for subdir in tracked_subdirs:
+    for path, subdirs, files in os.walk(f".kokoro/{subdir}"):
+        for name in files:
+            if name == "common.cfg":
+                file_path = os.path.join(path, name)
+                s.move(
+                    ".kokoro/common_env_vars.cfg",
+                    file_path,
+                    merge=lambda src, dst, _, : f"{dst}\n{src}",
+                )
