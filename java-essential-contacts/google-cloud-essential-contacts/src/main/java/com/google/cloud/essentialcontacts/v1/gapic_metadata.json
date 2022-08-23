@@ -1,0 +1,39 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.essentialcontacts.v1",
+  "libraryPackage": "com.google.cloud.essentialcontacts.v1",
+  "services": {
+    "EssentialContactsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EssentialContactsServiceClient",
+          "rpcs": {
+            "ComputeContacts": {
+              "methods": ["computeContacts", "computeContactsPagedCallable", "computeContactsCallable"]
+            },
+            "CreateContact": {
+              "methods": ["createContact", "createContact", "createContact", "createContact", "createContact", "createContactCallable"]
+            },
+            "DeleteContact": {
+              "methods": ["deleteContact", "deleteContact", "deleteContact", "deleteContactCallable"]
+            },
+            "GetContact": {
+              "methods": ["getContact", "getContact", "getContact", "getContactCallable"]
+            },
+            "ListContacts": {
+              "methods": ["listContacts", "listContacts", "listContacts", "listContacts", "listContacts", "listContactsPagedCallable", "listContactsCallable"]
+            },
+            "SendTestMessage": {
+              "methods": ["sendTestMessage", "sendTestMessageCallable"]
+            },
+            "UpdateContact": {
+              "methods": ["updateContact", "updateContact", "updateContactCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
