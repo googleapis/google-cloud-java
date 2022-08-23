@@ -1,0 +1,36 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.api.servicecontrol.v1",
+  "libraryPackage": "com.google.api.servicecontrol.v1",
+  "services": {
+    "QuotaController": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "QuotaControllerClient",
+          "rpcs": {
+            "AllocateQuota": {
+              "methods": ["allocateQuota", "allocateQuotaCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ServiceController": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ServiceControllerClient",
+          "rpcs": {
+            "Check": {
+              "methods": ["check", "checkCallable"]
+            },
+            "Report": {
+              "methods": ["report", "reportCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
