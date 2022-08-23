@@ -95,7 +95,7 @@ git commit -am 'feat: create google-cloud-gapic-bom'
 
 
 num_modules="$(wc -l < ../../repos.txt)"
-echo "{" >> .release-please-manifest.json
+echo "{" > .release-please-manifest.json
 
 echo ""\""google-cloud-gapic-bom"\"": "\""0.0.0"\""," >> .release-please-manifest.json
 cp generation/gapic_bom_versions.txt google-cloud-gapic-bom/versions.txt
