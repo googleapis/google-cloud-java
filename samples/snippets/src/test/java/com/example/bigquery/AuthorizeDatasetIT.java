@@ -80,6 +80,6 @@ public class AuthorizeDatasetIT {
   @Test
   public void testCreateDataset() {
     AuthorizeDataset.authorizeDataset(sourceDatasetId, userDatasetId);
-    assertThat(bout.toString()).contains(userDatasetId + " updated with the added authorization");
+    assertThat(bout.toString()).contains(sourceDatasetId + " updated with the added authorization");
   }
 }
