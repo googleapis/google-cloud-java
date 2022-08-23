@@ -127,6 +127,18 @@ public class IndexServiceSettings extends ClientSettings<IndexServiceSettings> {
     return ((IndexServiceStubSettings) getStubSettings()).deleteIndexOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to upsertDatapoints. */
+  public UnaryCallSettings<UpsertDatapointsRequest, UpsertDatapointsResponse>
+      upsertDatapointsSettings() {
+    return ((IndexServiceStubSettings) getStubSettings()).upsertDatapointsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to removeDatapoints. */
+  public UnaryCallSettings<RemoveDatapointsRequest, RemoveDatapointsResponse>
+      removeDatapointsSettings() {
+    return ((IndexServiceStubSettings) getStubSettings()).removeDatapointsSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -294,6 +306,18 @@ public class IndexServiceSettings extends ClientSettings<IndexServiceSettings> {
     public OperationCallSettings.Builder<DeleteIndexRequest, Empty, DeleteOperationMetadata>
         deleteIndexOperationSettings() {
       return getStubSettingsBuilder().deleteIndexOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to upsertDatapoints. */
+    public UnaryCallSettings.Builder<UpsertDatapointsRequest, UpsertDatapointsResponse>
+        upsertDatapointsSettings() {
+      return getStubSettingsBuilder().upsertDatapointsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeDatapoints. */
+    public UnaryCallSettings.Builder<RemoveDatapointsRequest, RemoveDatapointsResponse>
+        removeDatapointsSettings() {
+      return getStubSettingsBuilder().removeDatapointsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

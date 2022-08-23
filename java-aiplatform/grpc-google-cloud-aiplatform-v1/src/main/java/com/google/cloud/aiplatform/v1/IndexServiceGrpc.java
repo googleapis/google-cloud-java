@@ -248,6 +248,100 @@ public final class IndexServiceGrpc {
     return getDeleteIndexMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.UpsertDatapointsRequest,
+          com.google.cloud.aiplatform.v1.UpsertDatapointsResponse>
+      getUpsertDatapointsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpsertDatapoints",
+      requestType = com.google.cloud.aiplatform.v1.UpsertDatapointsRequest.class,
+      responseType = com.google.cloud.aiplatform.v1.UpsertDatapointsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.UpsertDatapointsRequest,
+          com.google.cloud.aiplatform.v1.UpsertDatapointsResponse>
+      getUpsertDatapointsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.UpsertDatapointsRequest,
+            com.google.cloud.aiplatform.v1.UpsertDatapointsResponse>
+        getUpsertDatapointsMethod;
+    if ((getUpsertDatapointsMethod = IndexServiceGrpc.getUpsertDatapointsMethod) == null) {
+      synchronized (IndexServiceGrpc.class) {
+        if ((getUpsertDatapointsMethod = IndexServiceGrpc.getUpsertDatapointsMethod) == null) {
+          IndexServiceGrpc.getUpsertDatapointsMethod =
+              getUpsertDatapointsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.UpsertDatapointsRequest,
+                          com.google.cloud.aiplatform.v1.UpsertDatapointsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpsertDatapoints"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.UpsertDatapointsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.UpsertDatapointsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new IndexServiceMethodDescriptorSupplier("UpsertDatapoints"))
+                      .build();
+        }
+      }
+    }
+    return getUpsertDatapointsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.RemoveDatapointsRequest,
+          com.google.cloud.aiplatform.v1.RemoveDatapointsResponse>
+      getRemoveDatapointsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RemoveDatapoints",
+      requestType = com.google.cloud.aiplatform.v1.RemoveDatapointsRequest.class,
+      responseType = com.google.cloud.aiplatform.v1.RemoveDatapointsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.RemoveDatapointsRequest,
+          com.google.cloud.aiplatform.v1.RemoveDatapointsResponse>
+      getRemoveDatapointsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.RemoveDatapointsRequest,
+            com.google.cloud.aiplatform.v1.RemoveDatapointsResponse>
+        getRemoveDatapointsMethod;
+    if ((getRemoveDatapointsMethod = IndexServiceGrpc.getRemoveDatapointsMethod) == null) {
+      synchronized (IndexServiceGrpc.class) {
+        if ((getRemoveDatapointsMethod = IndexServiceGrpc.getRemoveDatapointsMethod) == null) {
+          IndexServiceGrpc.getRemoveDatapointsMethod =
+              getRemoveDatapointsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.RemoveDatapointsRequest,
+                          com.google.cloud.aiplatform.v1.RemoveDatapointsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RemoveDatapoints"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.RemoveDatapointsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.RemoveDatapointsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new IndexServiceMethodDescriptorSupplier("RemoveDatapoints"))
+                      .build();
+        }
+      }
+    }
+    return getRemoveDatapointsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static IndexServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<IndexServiceStub> factory =
@@ -370,6 +464,36 @@ public final class IndexServiceGrpc {
           getDeleteIndexMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Add/update Datapoints into an Index.
+     * </pre>
+     */
+    public void upsertDatapoints(
+        com.google.cloud.aiplatform.v1.UpsertDatapointsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.UpsertDatapointsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpsertDatapointsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Remove Datapoints from an Index.
+     * </pre>
+     */
+    public void removeDatapoints(
+        com.google.cloud.aiplatform.v1.RemoveDatapointsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.RemoveDatapointsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRemoveDatapointsMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -404,6 +528,20 @@ public final class IndexServiceGrpc {
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1.DeleteIndexRequest,
                       com.google.longrunning.Operation>(this, METHODID_DELETE_INDEX)))
+          .addMethod(
+              getUpsertDatapointsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1.UpsertDatapointsRequest,
+                      com.google.cloud.aiplatform.v1.UpsertDatapointsResponse>(
+                      this, METHODID_UPSERT_DATAPOINTS)))
+          .addMethod(
+              getRemoveDatapointsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1.RemoveDatapointsRequest,
+                      com.google.cloud.aiplatform.v1.RemoveDatapointsResponse>(
+                      this, METHODID_REMOVE_DATAPOINTS)))
           .build();
     }
   }
@@ -506,6 +644,40 @@ public final class IndexServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Add/update Datapoints into an Index.
+     * </pre>
+     */
+    public void upsertDatapoints(
+        com.google.cloud.aiplatform.v1.UpsertDatapointsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.UpsertDatapointsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpsertDatapointsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Remove Datapoints from an Index.
+     * </pre>
+     */
+    public void removeDatapoints(
+        com.google.cloud.aiplatform.v1.RemoveDatapointsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.RemoveDatapointsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRemoveDatapointsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -592,6 +764,32 @@ public final class IndexServiceGrpc {
         com.google.cloud.aiplatform.v1.DeleteIndexRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteIndexMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Add/update Datapoints into an Index.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.UpsertDatapointsResponse upsertDatapoints(
+        com.google.cloud.aiplatform.v1.UpsertDatapointsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpsertDatapointsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Remove Datapoints from an Index.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.RemoveDatapointsResponse removeDatapoints(
+        com.google.cloud.aiplatform.v1.RemoveDatapointsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRemoveDatapointsMethod(), getCallOptions(), request);
     }
   }
 
@@ -681,6 +879,34 @@ public final class IndexServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteIndexMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Add/update Datapoints into an Index.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1.UpsertDatapointsResponse>
+        upsertDatapoints(com.google.cloud.aiplatform.v1.UpsertDatapointsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpsertDatapointsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Remove Datapoints from an Index.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1.RemoveDatapointsResponse>
+        removeDatapoints(com.google.cloud.aiplatform.v1.RemoveDatapointsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRemoveDatapointsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_INDEX = 0;
@@ -688,6 +914,8 @@ public final class IndexServiceGrpc {
   private static final int METHODID_LIST_INDEXES = 2;
   private static final int METHODID_UPDATE_INDEX = 3;
   private static final int METHODID_DELETE_INDEX = 4;
+  private static final int METHODID_UPSERT_DATAPOINTS = 5;
+  private static final int METHODID_REMOVE_DATAPOINTS = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -731,6 +959,18 @@ public final class IndexServiceGrpc {
           serviceImpl.deleteIndex(
               (com.google.cloud.aiplatform.v1.DeleteIndexRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPSERT_DATAPOINTS:
+          serviceImpl.upsertDatapoints(
+              (com.google.cloud.aiplatform.v1.UpsertDatapointsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.UpsertDatapointsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_REMOVE_DATAPOINTS:
+          serviceImpl.removeDatapoints(
+              (com.google.cloud.aiplatform.v1.RemoveDatapointsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.RemoveDatapointsResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -801,6 +1041,8 @@ public final class IndexServiceGrpc {
                       .addMethod(getListIndexesMethod())
                       .addMethod(getUpdateIndexMethod())
                       .addMethod(getDeleteIndexMethod())
+                      .addMethod(getUpsertDatapointsMethod())
+                      .addMethod(getRemoveDatapointsMethod())
                       .build();
         }
       }
