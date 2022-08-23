@@ -22,7 +22,7 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Next ID: 5
+ * The model monitoring configuration used for Batch Prediction Job.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ModelMonitoringConfig}
@@ -109,6 +109,23 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
               java.lang.String s = input.readStringRequireUtf8();
 
               analysisInstanceSchemaUri_ = s;
+              break;
+            }
+          case 42:
+            {
+              com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder subBuilder = null;
+              if (statsAnomaliesBaseDirectory_ != null) {
+                subBuilder = statsAnomaliesBaseDirectory_.toBuilder();
+              }
+              statsAnomaliesBaseDirectory_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1beta1.GcsDestination.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(statsAnomaliesBaseDirectory_);
+                statsAnomaliesBaseDirectory_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -342,6 +359,67 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public static final int STATS_ANOMALIES_BASE_DIRECTORY_FIELD_NUMBER = 5;
+  private com.google.cloud.aiplatform.v1beta1.GcsDestination statsAnomaliesBaseDirectory_;
+  /**
+   *
+   *
+   * <pre>
+   * A Google Cloud Storage location for batch prediction model monitoring to
+   * dump statistics and anomalies.
+   * If not provided, a folder will be created in customer project to hold
+   * statistics and anomalies.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.GcsDestination stats_anomalies_base_directory = 5;
+   * </code>
+   *
+   * @return Whether the statsAnomaliesBaseDirectory field is set.
+   */
+  @java.lang.Override
+  public boolean hasStatsAnomaliesBaseDirectory() {
+    return statsAnomaliesBaseDirectory_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A Google Cloud Storage location for batch prediction model monitoring to
+   * dump statistics and anomalies.
+   * If not provided, a folder will be created in customer project to hold
+   * statistics and anomalies.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.GcsDestination stats_anomalies_base_directory = 5;
+   * </code>
+   *
+   * @return The statsAnomaliesBaseDirectory.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GcsDestination getStatsAnomaliesBaseDirectory() {
+    return statsAnomaliesBaseDirectory_ == null
+        ? com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance()
+        : statsAnomaliesBaseDirectory_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A Google Cloud Storage location for batch prediction model monitoring to
+   * dump statistics and anomalies.
+   * If not provided, a folder will be created in customer project to hold
+   * statistics and anomalies.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.GcsDestination stats_anomalies_base_directory = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder
+      getStatsAnomaliesBaseDirectoryOrBuilder() {
+    return getStatsAnomaliesBaseDirectory();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -365,6 +443,9 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(analysisInstanceSchemaUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, analysisInstanceSchemaUri_);
     }
+    if (statsAnomaliesBaseDirectory_ != null) {
+      output.writeMessage(5, getStatsAnomaliesBaseDirectory());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -383,6 +464,11 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(analysisInstanceSchemaUri_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(4, analysisInstanceSchemaUri_);
+    }
+    if (statsAnomaliesBaseDirectory_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, getStatsAnomaliesBaseDirectory());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -406,6 +492,11 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       if (!getAlertConfig().equals(other.getAlertConfig())) return false;
     }
     if (!getAnalysisInstanceSchemaUri().equals(other.getAnalysisInstanceSchemaUri())) return false;
+    if (hasStatsAnomaliesBaseDirectory() != other.hasStatsAnomaliesBaseDirectory()) return false;
+    if (hasStatsAnomaliesBaseDirectory()) {
+      if (!getStatsAnomaliesBaseDirectory().equals(other.getStatsAnomaliesBaseDirectory()))
+        return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -427,6 +518,10 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
     }
     hash = (37 * hash) + ANALYSIS_INSTANCE_SCHEMA_URI_FIELD_NUMBER;
     hash = (53 * hash) + getAnalysisInstanceSchemaUri().hashCode();
+    if (hasStatsAnomaliesBaseDirectory()) {
+      hash = (37 * hash) + STATS_ANOMALIES_BASE_DIRECTORY_FIELD_NUMBER;
+      hash = (53 * hash) + getStatsAnomaliesBaseDirectory().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -532,7 +627,7 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Next ID: 5
+   * The model monitoring configuration used for Batch Prediction Job.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ModelMonitoringConfig}
@@ -589,6 +684,12 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       }
       analysisInstanceSchemaUri_ = "";
 
+      if (statsAnomaliesBaseDirectoryBuilder_ == null) {
+        statsAnomaliesBaseDirectory_ = null;
+      } else {
+        statsAnomaliesBaseDirectory_ = null;
+        statsAnomaliesBaseDirectoryBuilder_ = null;
+      }
       return this;
     }
 
@@ -632,6 +733,11 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
         result.alertConfig_ = alertConfigBuilder_.build();
       }
       result.analysisInstanceSchemaUri_ = analysisInstanceSchemaUri_;
+      if (statsAnomaliesBaseDirectoryBuilder_ == null) {
+        result.statsAnomaliesBaseDirectory_ = statsAnomaliesBaseDirectory_;
+      } else {
+        result.statsAnomaliesBaseDirectory_ = statsAnomaliesBaseDirectoryBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -715,6 +821,9 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       if (!other.getAnalysisInstanceSchemaUri().isEmpty()) {
         analysisInstanceSchemaUri_ = other.analysisInstanceSchemaUri_;
         onChanged();
+      }
+      if (other.hasStatsAnomaliesBaseDirectory()) {
+        mergeStatsAnomaliesBaseDirectory(other.getStatsAnomaliesBaseDirectory());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1483,6 +1592,233 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       analysisInstanceSchemaUri_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.GcsDestination statsAnomaliesBaseDirectory_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GcsDestination,
+            com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder,
+            com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder>
+        statsAnomaliesBaseDirectoryBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A Google Cloud Storage location for batch prediction model monitoring to
+     * dump statistics and anomalies.
+     * If not provided, a folder will be created in customer project to hold
+     * statistics and anomalies.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination stats_anomalies_base_directory = 5;
+     * </code>
+     *
+     * @return Whether the statsAnomaliesBaseDirectory field is set.
+     */
+    public boolean hasStatsAnomaliesBaseDirectory() {
+      return statsAnomaliesBaseDirectoryBuilder_ != null || statsAnomaliesBaseDirectory_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A Google Cloud Storage location for batch prediction model monitoring to
+     * dump statistics and anomalies.
+     * If not provided, a folder will be created in customer project to hold
+     * statistics and anomalies.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination stats_anomalies_base_directory = 5;
+     * </code>
+     *
+     * @return The statsAnomaliesBaseDirectory.
+     */
+    public com.google.cloud.aiplatform.v1beta1.GcsDestination getStatsAnomaliesBaseDirectory() {
+      if (statsAnomaliesBaseDirectoryBuilder_ == null) {
+        return statsAnomaliesBaseDirectory_ == null
+            ? com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance()
+            : statsAnomaliesBaseDirectory_;
+      } else {
+        return statsAnomaliesBaseDirectoryBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A Google Cloud Storage location for batch prediction model monitoring to
+     * dump statistics and anomalies.
+     * If not provided, a folder will be created in customer project to hold
+     * statistics and anomalies.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination stats_anomalies_base_directory = 5;
+     * </code>
+     */
+    public Builder setStatsAnomaliesBaseDirectory(
+        com.google.cloud.aiplatform.v1beta1.GcsDestination value) {
+      if (statsAnomaliesBaseDirectoryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        statsAnomaliesBaseDirectory_ = value;
+        onChanged();
+      } else {
+        statsAnomaliesBaseDirectoryBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A Google Cloud Storage location for batch prediction model monitoring to
+     * dump statistics and anomalies.
+     * If not provided, a folder will be created in customer project to hold
+     * statistics and anomalies.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination stats_anomalies_base_directory = 5;
+     * </code>
+     */
+    public Builder setStatsAnomaliesBaseDirectory(
+        com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder builderForValue) {
+      if (statsAnomaliesBaseDirectoryBuilder_ == null) {
+        statsAnomaliesBaseDirectory_ = builderForValue.build();
+        onChanged();
+      } else {
+        statsAnomaliesBaseDirectoryBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A Google Cloud Storage location for batch prediction model monitoring to
+     * dump statistics and anomalies.
+     * If not provided, a folder will be created in customer project to hold
+     * statistics and anomalies.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination stats_anomalies_base_directory = 5;
+     * </code>
+     */
+    public Builder mergeStatsAnomaliesBaseDirectory(
+        com.google.cloud.aiplatform.v1beta1.GcsDestination value) {
+      if (statsAnomaliesBaseDirectoryBuilder_ == null) {
+        if (statsAnomaliesBaseDirectory_ != null) {
+          statsAnomaliesBaseDirectory_ =
+              com.google.cloud.aiplatform.v1beta1.GcsDestination.newBuilder(
+                      statsAnomaliesBaseDirectory_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          statsAnomaliesBaseDirectory_ = value;
+        }
+        onChanged();
+      } else {
+        statsAnomaliesBaseDirectoryBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A Google Cloud Storage location for batch prediction model monitoring to
+     * dump statistics and anomalies.
+     * If not provided, a folder will be created in customer project to hold
+     * statistics and anomalies.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination stats_anomalies_base_directory = 5;
+     * </code>
+     */
+    public Builder clearStatsAnomaliesBaseDirectory() {
+      if (statsAnomaliesBaseDirectoryBuilder_ == null) {
+        statsAnomaliesBaseDirectory_ = null;
+        onChanged();
+      } else {
+        statsAnomaliesBaseDirectory_ = null;
+        statsAnomaliesBaseDirectoryBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A Google Cloud Storage location for batch prediction model monitoring to
+     * dump statistics and anomalies.
+     * If not provided, a folder will be created in customer project to hold
+     * statistics and anomalies.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination stats_anomalies_base_directory = 5;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder
+        getStatsAnomaliesBaseDirectoryBuilder() {
+
+      onChanged();
+      return getStatsAnomaliesBaseDirectoryFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A Google Cloud Storage location for batch prediction model monitoring to
+     * dump statistics and anomalies.
+     * If not provided, a folder will be created in customer project to hold
+     * statistics and anomalies.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination stats_anomalies_base_directory = 5;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder
+        getStatsAnomaliesBaseDirectoryOrBuilder() {
+      if (statsAnomaliesBaseDirectoryBuilder_ != null) {
+        return statsAnomaliesBaseDirectoryBuilder_.getMessageOrBuilder();
+      } else {
+        return statsAnomaliesBaseDirectory_ == null
+            ? com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance()
+            : statsAnomaliesBaseDirectory_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A Google Cloud Storage location for batch prediction model monitoring to
+     * dump statistics and anomalies.
+     * If not provided, a folder will be created in customer project to hold
+     * statistics and anomalies.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination stats_anomalies_base_directory = 5;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GcsDestination,
+            com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder,
+            com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder>
+        getStatsAnomaliesBaseDirectoryFieldBuilder() {
+      if (statsAnomaliesBaseDirectoryBuilder_ == null) {
+        statsAnomaliesBaseDirectoryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.GcsDestination,
+                com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder,
+                com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder>(
+                getStatsAnomaliesBaseDirectory(), getParentForChildren(), isClean());
+        statsAnomaliesBaseDirectory_ = null;
+      }
+      return statsAnomaliesBaseDirectoryBuilder_;
     }
 
     @java.lang.Override

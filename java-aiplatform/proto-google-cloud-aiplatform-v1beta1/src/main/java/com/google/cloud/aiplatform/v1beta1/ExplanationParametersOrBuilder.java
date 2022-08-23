@@ -242,7 +242,7 @@ public interface ExplanationParametersOrBuilder
    * must be an ndarray of integers, with the same shape of the output it's
    * explaining.
    * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
-   * If neither top_k nor output_indeices is populated, returns the argmax
+   * If neither top_k nor output_indices is populated, returns the argmax
    * index of the outputs.
    * Only applicable to Models that predict multiple outputs (e,g, multi-class
    * Models that predict multiple classes).
@@ -262,7 +262,7 @@ public interface ExplanationParametersOrBuilder
    * must be an ndarray of integers, with the same shape of the output it's
    * explaining.
    * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
-   * If neither top_k nor output_indeices is populated, returns the argmax
+   * If neither top_k nor output_indices is populated, returns the argmax
    * index of the outputs.
    * Only applicable to Models that predict multiple outputs (e,g, multi-class
    * Models that predict multiple classes).
@@ -282,7 +282,7 @@ public interface ExplanationParametersOrBuilder
    * must be an ndarray of integers, with the same shape of the output it's
    * explaining.
    * If not populated, returns attributions for [top_k][google.cloud.aiplatform.v1beta1.ExplanationParameters.top_k] indices of outputs.
-   * If neither top_k nor output_indeices is populated, returns the argmax
+   * If neither top_k nor output_indices is populated, returns the argmax
    * index of the outputs.
    * Only applicable to Models that predict multiple outputs (e,g, multi-class
    * Models that predict multiple classes).
