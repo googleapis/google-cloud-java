@@ -31,18 +31,16 @@ jobs:
           git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
           git push -f monorepo main:monorepo_script_output
 
-  build-5repos:
+  build-3repos:
     runs-on: ubuntu-latest
-    name: Running bootstrap.sh with only 5 selected repositories
+    name: Running bootstrap.sh with only 3 selected repositories
     steps:
     - uses: actions/checkout@v3
-    - name: Truncate repos.txt for 5 repositories
+    - name: Truncate repos.txt for 3 repositories
       run: |
         cat << EOL > repos.txt
         java-accessapproval
-        java-container
         java-dataform
-        java-filestore
         java-resourcemanager
         EOL
     - name: Monorepo
