@@ -30,3 +30,28 @@ jobs:
           cd monorepo/google-cloud-java
           git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
           git push -f monorepo main:monorepo_script_output
+
+  build-5repos:
+    runs-on: ubuntu-latest
+    name: Running bootstrap.sh with only 5 selected repositories
+    steps:
+    - uses: actions/checkout@v3
+    - name: Truncate repos.txt for 5 repositories
+      run: |
+        cat << EOL > repos.txt
+        java-accessapproval
+        java-container
+        java-dataform
+        java-filestore
+        java-resourcemanager
+        EOL
+    - name: Monorepo
+      run: ./bootstrap.sh
+      env:
+        USERNAME: ${{ github.actor }}
+    - name: Compile
+      working-directory: monorepo/google-cloud-java
+      run: mvn compile -T C1 -B
+    - name: Unit Tests
+      working-directory: monorepo/google-cloud-java
+      run: mvn test -T C1 -B
