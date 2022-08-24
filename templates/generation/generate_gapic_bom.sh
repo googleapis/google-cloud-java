@@ -2,8 +2,10 @@
 
 set -e
 
-# generate BOM of the artifacts in this repository
+# Generate BOM of the artifacts in this repository
+
 bom_lines=""
+# For modules that produce BOMs
 for bom_directory in $(find . -name 'google-*-bom' | sort); do
   if [[ "${bom_directory}" = *google-cloud-gapic-bom ]]; then
     continue
@@ -38,10 +40,15 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
       </dependency>\n"
 done
 
+# For originally-handwritten modules that do not produce a BOM
 for module in $(find . -mindepth 2 -maxdepth 2 -name pom.xml |sort | xargs dirname); do
   if ls ${module}/*-bom 1> /dev/null 2>&1; then
     continue
   fi
+  if [[ "${module}" = *google-cloud-gapic-bom ]]; then
+    continue
+  fi
+
   pom_file="${module}/pom.xml"
   groupId_line=$(grep --max-count=1 'groupId' "${pom_file}")
   artifactId_line=$(grep --max-count=1 'artifactId' "${pom_file}")
