@@ -121,6 +121,7 @@ public class IndexServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setIndexStats(IndexStats.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -179,6 +180,7 @@ public class IndexServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setIndexStats(IndexStats.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -237,6 +239,7 @@ public class IndexServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setIndexStats(IndexStats.newBuilder().build())
             .build();
     mockIndexService.addResponse(expectedResponse);
 
@@ -284,6 +287,7 @@ public class IndexServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setIndexStats(IndexStats.newBuilder().build())
             .build();
     mockIndexService.addResponse(expectedResponse);
 
@@ -419,6 +423,7 @@ public class IndexServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setIndexStats(IndexStats.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -544,6 +549,94 @@ public class IndexServiceClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void upsertDatapointsTest() throws Exception {
+    UpsertDatapointsResponse expectedResponse = UpsertDatapointsResponse.newBuilder().build();
+    mockIndexService.addResponse(expectedResponse);
+
+    UpsertDatapointsRequest request =
+        UpsertDatapointsRequest.newBuilder()
+            .setIndex(IndexName.of("[PROJECT]", "[LOCATION]", "[INDEX]").toString())
+            .addAllDatapoints(new ArrayList<IndexDatapoint>())
+            .build();
+
+    UpsertDatapointsResponse actualResponse = client.upsertDatapoints(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIndexService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpsertDatapointsRequest actualRequest = ((UpsertDatapointsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getIndex(), actualRequest.getIndex());
+    Assert.assertEquals(request.getDatapointsList(), actualRequest.getDatapointsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void upsertDatapointsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIndexService.addException(exception);
+
+    try {
+      UpsertDatapointsRequest request =
+          UpsertDatapointsRequest.newBuilder()
+              .setIndex(IndexName.of("[PROJECT]", "[LOCATION]", "[INDEX]").toString())
+              .addAllDatapoints(new ArrayList<IndexDatapoint>())
+              .build();
+      client.upsertDatapoints(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void removeDatapointsTest() throws Exception {
+    RemoveDatapointsResponse expectedResponse = RemoveDatapointsResponse.newBuilder().build();
+    mockIndexService.addResponse(expectedResponse);
+
+    RemoveDatapointsRequest request =
+        RemoveDatapointsRequest.newBuilder()
+            .setIndex(IndexName.of("[PROJECT]", "[LOCATION]", "[INDEX]").toString())
+            .addAllDatapointIds(new ArrayList<String>())
+            .build();
+
+    RemoveDatapointsResponse actualResponse = client.removeDatapoints(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIndexService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RemoveDatapointsRequest actualRequest = ((RemoveDatapointsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getIndex(), actualRequest.getIndex());
+    Assert.assertEquals(request.getDatapointIdsList(), actualRequest.getDatapointIdsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void removeDatapointsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIndexService.addException(exception);
+
+    try {
+      RemoveDatapointsRequest request =
+          RemoveDatapointsRequest.newBuilder()
+              .setIndex(IndexName.of("[PROJECT]", "[LOCATION]", "[INDEX]").toString())
+              .addAllDatapointIds(new ArrayList<String>())
+              .build();
+      client.removeDatapoints(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

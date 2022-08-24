@@ -145,7 +145,7 @@ public final class ExplanationProto {
           + "\01326.google.cloud.aiplatform.v1beta1.Expl"
           + "anationParametersB\003\340A\002\022K\n\010metadata\030\002 \001(\013"
           + "24.google.cloud.aiplatform.v1beta1.Expla"
-          + "nationMetadataB\003\340A\002\"\301\003\n\025ExplanationParam"
+          + "nationMetadataB\003\340A\001\"\301\003\n\025ExplanationParam"
           + "eters\022a\n\033sampled_shapley_attribution\030\001 \001"
           + "(\0132:.google.cloud.aiplatform.v1beta1.Sam"
           + "pledShapleyAttributionH\000\022k\n integrated_g"

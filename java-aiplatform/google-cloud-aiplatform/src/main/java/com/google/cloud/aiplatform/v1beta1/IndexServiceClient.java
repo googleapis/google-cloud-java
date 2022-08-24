@@ -804,6 +804,112 @@ public class IndexServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Add/update Datapoints into an Index.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (IndexServiceClient indexServiceClient = IndexServiceClient.create()) {
+   *   UpsertDatapointsRequest request =
+   *       UpsertDatapointsRequest.newBuilder()
+   *           .setIndex(IndexName.of("[PROJECT]", "[LOCATION]", "[INDEX]").toString())
+   *           .addAllDatapoints(new ArrayList<IndexDatapoint>())
+   *           .build();
+   *   UpsertDatapointsResponse response = indexServiceClient.upsertDatapoints(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UpsertDatapointsResponse upsertDatapoints(UpsertDatapointsRequest request) {
+    return upsertDatapointsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Add/update Datapoints into an Index.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (IndexServiceClient indexServiceClient = IndexServiceClient.create()) {
+   *   UpsertDatapointsRequest request =
+   *       UpsertDatapointsRequest.newBuilder()
+   *           .setIndex(IndexName.of("[PROJECT]", "[LOCATION]", "[INDEX]").toString())
+   *           .addAllDatapoints(new ArrayList<IndexDatapoint>())
+   *           .build();
+   *   ApiFuture<UpsertDatapointsResponse> future =
+   *       indexServiceClient.upsertDatapointsCallable().futureCall(request);
+   *   // Do something.
+   *   UpsertDatapointsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpsertDatapointsRequest, UpsertDatapointsResponse>
+      upsertDatapointsCallable() {
+    return stub.upsertDatapointsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Remove Datapoints from an Index.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (IndexServiceClient indexServiceClient = IndexServiceClient.create()) {
+   *   RemoveDatapointsRequest request =
+   *       RemoveDatapointsRequest.newBuilder()
+   *           .setIndex(IndexName.of("[PROJECT]", "[LOCATION]", "[INDEX]").toString())
+   *           .addAllDatapointIds(new ArrayList<String>())
+   *           .build();
+   *   RemoveDatapointsResponse response = indexServiceClient.removeDatapoints(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RemoveDatapointsResponse removeDatapoints(RemoveDatapointsRequest request) {
+    return removeDatapointsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Remove Datapoints from an Index.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (IndexServiceClient indexServiceClient = IndexServiceClient.create()) {
+   *   RemoveDatapointsRequest request =
+   *       RemoveDatapointsRequest.newBuilder()
+   *           .setIndex(IndexName.of("[PROJECT]", "[LOCATION]", "[INDEX]").toString())
+   *           .addAllDatapointIds(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<RemoveDatapointsResponse> future =
+   *       indexServiceClient.removeDatapointsCallable().futureCall(request);
+   *   // Do something.
+   *   RemoveDatapointsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RemoveDatapointsRequest, RemoveDatapointsResponse>
+      removeDatapointsCallable() {
+    return stub.removeDatapointsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:

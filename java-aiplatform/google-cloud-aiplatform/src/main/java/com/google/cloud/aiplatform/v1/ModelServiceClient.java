@@ -1151,9 +1151,9 @@ public class ModelServiceClient implements BackgroundResource {
    *     explicitly included.
    *     <p>Example: `projects/{project}/locations/{location}/models/{model}{@literal @}1234`
    * @param versionAliases Required. The set of version aliases to merge. The alias should be at
-   *     most 128 characters, and match `[a-z][a-z0-9-]{0,126}[a-z-0-9]`. Add the `-` prefix to an
-   *     alias means removing that alias from the version. `-` is NOT counted in the 128 characters.
-   *     Example: `-golden` means removing the `golden` alias from the version.
+   *     most 128 characters, and match `[a-z][a-zA-Z0-9-]{0,126}[a-z-0-9]`. Add the `-` prefix to
+   *     an alias means removing that alias from the version. `-` is NOT counted in the 128
+   *     characters. Example: `-golden` means removing the `golden` alias from the version.
    *     <p>There is NO ordering in aliases, which means 1) The aliases returned from GetModel API
    *     might not have the exactly same order from this MergeVersionAliases API. 2) Adding and
    *     deleting the same alias in the request is not recommended, and the 2 operations will be
@@ -1189,9 +1189,9 @@ public class ModelServiceClient implements BackgroundResource {
    *     explicitly included.
    *     <p>Example: `projects/{project}/locations/{location}/models/{model}{@literal @}1234`
    * @param versionAliases Required. The set of version aliases to merge. The alias should be at
-   *     most 128 characters, and match `[a-z][a-z0-9-]{0,126}[a-z-0-9]`. Add the `-` prefix to an
-   *     alias means removing that alias from the version. `-` is NOT counted in the 128 characters.
-   *     Example: `-golden` means removing the `golden` alias from the version.
+   *     most 128 characters, and match `[a-z][a-zA-Z0-9-]{0,126}[a-z-0-9]`. Add the `-` prefix to
+   *     an alias means removing that alias from the version. `-` is NOT counted in the 128
+   *     characters. Example: `-golden` means removing the `golden` alias from the version.
    *     <p>There is NO ordering in aliases, which means 1) The aliases returned from GetModel API
    *     might not have the exactly same order from this MergeVersionAliases API. 2) Adding and
    *     deleting the same alias in the request is not recommended, and the 2 operations will be

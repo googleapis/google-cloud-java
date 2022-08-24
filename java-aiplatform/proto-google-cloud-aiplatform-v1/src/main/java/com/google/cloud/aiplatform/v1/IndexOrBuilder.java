@@ -453,4 +453,76 @@ public interface IndexOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Stats of the index resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.IndexStats index_stats = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the indexStats field is set.
+   */
+  boolean hasIndexStats();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Stats of the index resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.IndexStats index_stats = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The indexStats.
+   */
+  com.google.cloud.aiplatform.v1.IndexStats getIndexStats();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Stats of the index resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.IndexStats index_stats = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.IndexStatsOrBuilder getIndexStatsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The update method to use with this Index. If not set, BATCH_UPDATE will be
+   * used by default.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Index.IndexUpdateMethod index_update_method = 16 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for indexUpdateMethod.
+   */
+  int getIndexUpdateMethodValue();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The update method to use with this Index. If not set, BATCH_UPDATE will be
+   * used by default.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Index.IndexUpdateMethod index_update_method = 16 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The indexUpdateMethod.
+   */
+  com.google.cloud.aiplatform.v1.Index.IndexUpdateMethod getIndexUpdateMethod();
 }

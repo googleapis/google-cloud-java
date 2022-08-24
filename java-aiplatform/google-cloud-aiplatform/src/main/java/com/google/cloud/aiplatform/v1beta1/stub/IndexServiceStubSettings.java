@@ -53,8 +53,12 @@ import com.google.cloud.aiplatform.v1beta1.GetIndexRequest;
 import com.google.cloud.aiplatform.v1beta1.Index;
 import com.google.cloud.aiplatform.v1beta1.ListIndexesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListIndexesResponse;
+import com.google.cloud.aiplatform.v1beta1.RemoveDatapointsRequest;
+import com.google.cloud.aiplatform.v1beta1.RemoveDatapointsResponse;
 import com.google.cloud.aiplatform.v1beta1.UpdateIndexOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateIndexRequest;
+import com.google.cloud.aiplatform.v1beta1.UpsertDatapointsRequest;
+import com.google.cloud.aiplatform.v1beta1.UpsertDatapointsResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -128,6 +132,10 @@ public class IndexServiceStubSettings extends StubSettings<IndexServiceStubSetti
   private final UnaryCallSettings<DeleteIndexRequest, Operation> deleteIndexSettings;
   private final OperationCallSettings<DeleteIndexRequest, Empty, DeleteOperationMetadata>
       deleteIndexOperationSettings;
+  private final UnaryCallSettings<UpsertDatapointsRequest, UpsertDatapointsResponse>
+      upsertDatapointsSettings;
+  private final UnaryCallSettings<RemoveDatapointsRequest, RemoveDatapointsResponse>
+      removeDatapointsSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -287,6 +295,18 @@ public class IndexServiceStubSettings extends StubSettings<IndexServiceStubSetti
     return deleteIndexOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to upsertDatapoints. */
+  public UnaryCallSettings<UpsertDatapointsRequest, UpsertDatapointsResponse>
+      upsertDatapointsSettings() {
+    return upsertDatapointsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to removeDatapoints. */
+  public UnaryCallSettings<RemoveDatapointsRequest, RemoveDatapointsResponse>
+      removeDatapointsSettings() {
+    return removeDatapointsSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -397,6 +417,8 @@ public class IndexServiceStubSettings extends StubSettings<IndexServiceStubSetti
     updateIndexOperationSettings = settingsBuilder.updateIndexOperationSettings().build();
     deleteIndexSettings = settingsBuilder.deleteIndexSettings().build();
     deleteIndexOperationSettings = settingsBuilder.deleteIndexOperationSettings().build();
+    upsertDatapointsSettings = settingsBuilder.upsertDatapointsSettings().build();
+    removeDatapointsSettings = settingsBuilder.removeDatapointsSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -422,6 +444,10 @@ public class IndexServiceStubSettings extends StubSettings<IndexServiceStubSetti
     private final UnaryCallSettings.Builder<DeleteIndexRequest, Operation> deleteIndexSettings;
     private final OperationCallSettings.Builder<DeleteIndexRequest, Empty, DeleteOperationMetadata>
         deleteIndexOperationSettings;
+    private final UnaryCallSettings.Builder<UpsertDatapointsRequest, UpsertDatapointsResponse>
+        upsertDatapointsSettings;
+    private final UnaryCallSettings.Builder<RemoveDatapointsRequest, RemoveDatapointsResponse>
+        removeDatapointsSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -475,6 +501,8 @@ public class IndexServiceStubSettings extends StubSettings<IndexServiceStubSetti
       updateIndexOperationSettings = OperationCallSettings.newBuilder();
       deleteIndexSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteIndexOperationSettings = OperationCallSettings.newBuilder();
+      upsertDatapointsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      removeDatapointsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -488,6 +516,8 @@ public class IndexServiceStubSettings extends StubSettings<IndexServiceStubSetti
               listIndexesSettings,
               updateIndexSettings,
               deleteIndexSettings,
+              upsertDatapointsSettings,
+              removeDatapointsSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -507,6 +537,8 @@ public class IndexServiceStubSettings extends StubSettings<IndexServiceStubSetti
       updateIndexOperationSettings = settings.updateIndexOperationSettings.toBuilder();
       deleteIndexSettings = settings.deleteIndexSettings.toBuilder();
       deleteIndexOperationSettings = settings.deleteIndexOperationSettings.toBuilder();
+      upsertDatapointsSettings = settings.upsertDatapointsSettings.toBuilder();
+      removeDatapointsSettings = settings.removeDatapointsSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -520,6 +552,8 @@ public class IndexServiceStubSettings extends StubSettings<IndexServiceStubSetti
               listIndexesSettings,
               updateIndexSettings,
               deleteIndexSettings,
+              upsertDatapointsSettings,
+              removeDatapointsSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -565,6 +599,16 @@ public class IndexServiceStubSettings extends StubSettings<IndexServiceStubSetti
           .deleteIndexSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .upsertDatapointsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .removeDatapointsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .listLocationsSettings()
@@ -729,6 +773,18 @@ public class IndexServiceStubSettings extends StubSettings<IndexServiceStubSetti
     public OperationCallSettings.Builder<DeleteIndexRequest, Empty, DeleteOperationMetadata>
         deleteIndexOperationSettings() {
       return deleteIndexOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to upsertDatapoints. */
+    public UnaryCallSettings.Builder<UpsertDatapointsRequest, UpsertDatapointsResponse>
+        upsertDatapointsSettings() {
+      return upsertDatapointsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to removeDatapoints. */
+    public UnaryCallSettings.Builder<RemoveDatapointsRequest, RemoveDatapointsResponse>
+        removeDatapointsSettings() {
+      return removeDatapointsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

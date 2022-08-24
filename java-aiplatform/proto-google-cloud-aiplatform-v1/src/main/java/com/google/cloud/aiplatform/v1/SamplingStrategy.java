@@ -24,7 +24,6 @@ package com.google.cloud.aiplatform.v1;
  * <pre>
  * Sampling Strategy for logging, can be for both training and prediction
  * dataset.
- * Next ID: 2
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.SamplingStrategy}
@@ -915,7 +914,6 @@ public final class SamplingStrategy extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Sampling Strategy for logging, can be for both training and prediction
    * dataset.
-   * Next ID: 2
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.SamplingStrategy}

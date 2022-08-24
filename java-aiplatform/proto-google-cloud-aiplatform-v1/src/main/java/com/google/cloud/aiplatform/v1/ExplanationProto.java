@@ -135,7 +135,7 @@ public final class ExplanationProto {
           + "ers\030\001 \001(\01321.google.cloud.aiplatform.v1.E"
           + "xplanationParametersB\003\340A\002\022F\n\010metadata\030\002 "
           + "\001(\0132/.google.cloud.aiplatform.v1.Explana"
-          + "tionMetadataB\003\340A\002\"\363\002\n\025ExplanationParamet"
+          + "tionMetadataB\003\340A\001\"\363\002\n\025ExplanationParamet"
           + "ers\022\\\n\033sampled_shapley_attribution\030\001 \001(\013"
           + "25.google.cloud.aiplatform.v1.SampledSha"
           + "pleyAttributionH\000\022f\n integrated_gradient"

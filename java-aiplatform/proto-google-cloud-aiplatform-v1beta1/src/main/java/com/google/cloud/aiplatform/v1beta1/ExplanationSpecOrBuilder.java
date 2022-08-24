@@ -68,11 +68,11 @@ public interface ExplanationSpecOrBuilder
    *
    *
    * <pre>
-   * Required. Metadata describing the Model's input and output for explanation.
+   * Optional. Metadata describing the Model's input and output for explanation.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.aiplatform.v1beta1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the metadata field is set.
@@ -82,11 +82,11 @@ public interface ExplanationSpecOrBuilder
    *
    *
    * <pre>
-   * Required. Metadata describing the Model's input and output for explanation.
+   * Optional. Metadata describing the Model's input and output for explanation.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.aiplatform.v1beta1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The metadata.
@@ -96,11 +96,11 @@ public interface ExplanationSpecOrBuilder
    *
    *
    * <pre>
-   * Required. Metadata describing the Model's input and output for explanation.
+   * Optional. Metadata describing the Model's input and output for explanation.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.aiplatform.v1beta1.ExplanationMetadata metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOrBuilder getMetadataOrBuilder();

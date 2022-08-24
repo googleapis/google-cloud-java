@@ -34,8 +34,12 @@ import com.google.cloud.aiplatform.v1.GetIndexRequest;
 import com.google.cloud.aiplatform.v1.Index;
 import com.google.cloud.aiplatform.v1.ListIndexesRequest;
 import com.google.cloud.aiplatform.v1.ListIndexesResponse;
+import com.google.cloud.aiplatform.v1.RemoveDatapointsRequest;
+import com.google.cloud.aiplatform.v1.RemoveDatapointsResponse;
 import com.google.cloud.aiplatform.v1.UpdateIndexOperationMetadata;
 import com.google.cloud.aiplatform.v1.UpdateIndexRequest;
+import com.google.cloud.aiplatform.v1.UpsertDatapointsRequest;
+import com.google.cloud.aiplatform.v1.UpsertDatapointsResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -105,6 +109,28 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<UpsertDatapointsRequest, UpsertDatapointsResponse>
+      upsertDatapointsMethodDescriptor =
+          MethodDescriptor.<UpsertDatapointsRequest, UpsertDatapointsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1.IndexService/UpsertDatapoints")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpsertDatapointsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(UpsertDatapointsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RemoveDatapointsRequest, RemoveDatapointsResponse>
+      removeDatapointsMethodDescriptor =
+          MethodDescriptor.<RemoveDatapointsRequest, RemoveDatapointsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1.IndexService/RemoveDatapoints")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RemoveDatapointsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RemoveDatapointsResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -164,6 +190,10 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
   private final UnaryCallable<DeleteIndexRequest, Operation> deleteIndexCallable;
   private final OperationCallable<DeleteIndexRequest, Empty, DeleteOperationMetadata>
       deleteIndexOperationCallable;
+  private final UnaryCallable<UpsertDatapointsRequest, UpsertDatapointsResponse>
+      upsertDatapointsCallable;
+  private final UnaryCallable<RemoveDatapointsRequest, RemoveDatapointsResponse>
+      removeDatapointsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -265,6 +295,28 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<UpsertDatapointsRequest, UpsertDatapointsResponse>
+        upsertDatapointsTransportSettings =
+            GrpcCallSettings.<UpsertDatapointsRequest, UpsertDatapointsResponse>newBuilder()
+                .setMethodDescriptor(upsertDatapointsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("index", String.valueOf(request.getIndex()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<RemoveDatapointsRequest, RemoveDatapointsResponse>
+        removeDatapointsTransportSettings =
+            GrpcCallSettings.<RemoveDatapointsRequest, RemoveDatapointsResponse>newBuilder()
+                .setMethodDescriptor(removeDatapointsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("index", String.valueOf(request.getIndex()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -353,6 +405,12 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
             settings.deleteIndexOperationSettings(),
             clientContext,
             operationsStub);
+    this.upsertDatapointsCallable =
+        callableFactory.createUnaryCallable(
+            upsertDatapointsTransportSettings, settings.upsertDatapointsSettings(), clientContext);
+    this.removeDatapointsCallable =
+        callableFactory.createUnaryCallable(
+            removeDatapointsTransportSettings, settings.removeDatapointsSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -428,6 +486,18 @@ public class GrpcIndexServiceStub extends IndexServiceStub {
   public OperationCallable<DeleteIndexRequest, Empty, DeleteOperationMetadata>
       deleteIndexOperationCallable() {
     return deleteIndexOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpsertDatapointsRequest, UpsertDatapointsResponse>
+      upsertDatapointsCallable() {
+    return upsertDatapointsCallable;
+  }
+
+  @Override
+  public UnaryCallable<RemoveDatapointsRequest, RemoveDatapointsResponse>
+      removeDatapointsCallable() {
+    return removeDatapointsCallable;
   }
 
   @Override
