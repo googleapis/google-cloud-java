@@ -162,7 +162,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
@@ -2009,9 +2008,6 @@ public class ITBigQueryTest {
     assertEquals(300_000L, totalRows);
   }
 
-  // BQML recently changed the validation behaviour of model update.
-  // Ignoring this test until a fix for the same is applied to BQ library.
-  @Ignore
   @Test
   public void testModelLifecycle() throws InterruptedException {
 
