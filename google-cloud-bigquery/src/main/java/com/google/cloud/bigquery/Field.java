@@ -62,6 +62,7 @@ public final class Field implements Serializable {
   private final Long maxLength;
   private final Long scale;
   private final Long precision;
+  private final String defaultValueExpression;
 
   /**
    * Mode for a BigQuery Table field. {@link Mode#NULLABLE} fields can be set to {@code null},
@@ -85,6 +86,7 @@ public final class Field implements Serializable {
     private Long maxLength;
     private Long scale;
     private Long precision;
+    private String defaultValueExpression;
 
     private Builder() {}
 
@@ -98,6 +100,7 @@ public final class Field implements Serializable {
       this.maxLength = field.maxLength;
       this.scale = field.scale;
       this.precision = field.precision;
+      this.defaultValueExpression = field.defaultValueExpression;
     }
 
     /**
@@ -245,6 +248,43 @@ public final class Field implements Serializable {
       return this;
     }
 
+    /**
+     * DefaultValueExpression is used to specify the default value of a field using a SQL
+     * expression. It can only be set for top level fields (columns).
+     *
+     * <p>You can use struct or array expression to specify default value for the entire struct or
+     * array. The valid SQL expressions are:
+     *
+     * <ul>
+     *   <ul>
+     *     <li>Literals for all data types, including STRUCT and ARRAY.
+     *   </ul>
+     *   <ul>
+     *     <li>The following functions:
+     *         <ul>
+     *           <li>CURRENT_TIMESTAMP
+     *           <li>CURRENT_TIME
+     *           <li>CURRENT_DATE
+     *           <li>CURRENT_DATETIME
+     *           <li>GENERATE_UUID
+     *           <li>RAND
+     *           <li>SESSION_USER
+     *           <li>ST_GEOGPOINT
+     *         </ul>
+     *   </ul>
+     *   <ul>
+     *     <li>Struct or array composed with the above allowed functions, for example:
+     *         <ul>
+     *           <li>"[CURRENT_DATE(), DATE '2020-01-01']"
+     *         </ul>
+     *   </ul>
+     * </ul>
+     */
+    public Builder setDefaultValueExpression(String defaultValueExpression) {
+      this.defaultValueExpression = defaultValueExpression;
+      return this;
+    }
+
     /** Creates a {@code Field} object. */
     public Field build() {
       return new Field(this);
@@ -261,6 +301,7 @@ public final class Field implements Serializable {
     this.maxLength = builder.maxLength;
     this.scale = builder.scale;
     this.precision = builder.precision;
+    this.defaultValueExpression = builder.defaultValueExpression;
   }
 
   /** Returns the field name. */
@@ -311,6 +352,11 @@ public final class Field implements Serializable {
     return precision;
   }
 
+  /** Return the default value of the field. */
+  public String getDefaultValueExpression() {
+    return defaultValueExpression;
+  }
+
   /**
    * Returns the list of sub-fields if {@link #getType()} is a {@link LegacySQLTypeName#RECORD}.
    * Returns {@code null} otherwise.
@@ -335,6 +381,7 @@ public final class Field implements Serializable {
         .add("maxLength", maxLength)
         .add("scale", scale)
         .add("precision", precision)
+        .add("defaultValueExpression", defaultValueExpression)
         .toString();
   }
 
@@ -414,6 +461,9 @@ public final class Field implements Serializable {
     if (precision != null) {
       fieldSchemaPb.setPrecision(precision);
     }
+    if (defaultValueExpression != null) {
+      fieldSchemaPb.setDefaultValueExpression(defaultValueExpression);
+    }
     if (getSubFields() != null) {
       List<TableFieldSchema> fieldsPb = Lists.transform(getSubFields(), TO_PB_FUNCTION);
       fieldSchemaPb.setFields(fieldsPb);
@@ -441,6 +491,9 @@ public final class Field implements Serializable {
     }
     if (fieldSchemaPb.getPrecision() != null) {
       fieldBuilder.setPrecision(fieldSchemaPb.getPrecision());
+    }
+    if (fieldSchemaPb.getDefaultValueExpression() != null) {
+      fieldBuilder.setDefaultValueExpression(fieldSchemaPb.getDefaultValueExpression());
     }
     FieldList subFields =
         fieldSchemaPb.getFields() != null

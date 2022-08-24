@@ -39,10 +39,13 @@ public class FieldTest {
   private static final String FIELD_DESCRIPTION1 = "FieldDescription1";
   private static final String FIELD_DESCRIPTION2 = "FieldDescription2";
   private static final String FIELD_DESCRIPTION3 = "FieldDescription3";
+  private static final String FIELD_DEFAULT_VALUE_EXPRESSION1 =
+      "This is default value for this field";
   private static final Field FIELD_SCHEMA1 =
       Field.newBuilder(FIELD_NAME1, FIELD_TYPE1)
           .setMode(FIELD_MODE1)
           .setDescription(FIELD_DESCRIPTION1)
+          .setDefaultValueExpression(FIELD_DEFAULT_VALUE_EXPRESSION1)
           .build();
   private static final Field FIELD_SCHEMA2 =
       Field.newBuilder(FIELD_NAME2, FIELD_TYPE2)
@@ -60,6 +63,7 @@ public class FieldTest {
       Field.newBuilder(FIELD_NAME1, StandardSQLTypeName.STRING)
           .setMode(FIELD_MODE1)
           .setDescription(FIELD_DESCRIPTION1)
+          .setDefaultValueExpression(FIELD_DEFAULT_VALUE_EXPRESSION1)
           .build();
   private static final Field STANDARD_FIELD_SCHEMA2 =
       Field.newBuilder(FIELD_NAME2, StandardSQLTypeName.INT64)
@@ -137,6 +141,7 @@ public class FieldTest {
     assertEquals(FIELD_TYPE1, FIELD_SCHEMA1.getType());
     assertEquals(FIELD_MODE1, FIELD_SCHEMA1.getMode());
     assertEquals(FIELD_DESCRIPTION1, FIELD_SCHEMA1.getDescription());
+    assertEquals(FIELD_DEFAULT_VALUE_EXPRESSION1, FIELD_SCHEMA1.getDefaultValueExpression());
     assertEquals(null, FIELD_SCHEMA1.getSubFields());
     assertEquals(FIELD_NAME3, FIELD_SCHEMA3.getName());
     assertEquals(FIELD_TYPE3, FIELD_SCHEMA3.getType());
@@ -151,6 +156,7 @@ public class FieldTest {
     assertEquals(FIELD_TYPE1, STANDARD_FIELD_SCHEMA1.getType());
     assertEquals(FIELD_MODE1, STANDARD_FIELD_SCHEMA1.getMode());
     assertEquals(FIELD_DESCRIPTION1, STANDARD_FIELD_SCHEMA1.getDescription());
+    assertEquals(FIELD_DEFAULT_VALUE_EXPRESSION1, FIELD_SCHEMA1.getDefaultValueExpression());
     assertEquals(null, STANDARD_FIELD_SCHEMA1.getSubFields());
     assertEquals(FIELD_NAME3, STANDARD_FIELD_SCHEMA3.getName());
     assertEquals(FIELD_TYPE3, STANDARD_FIELD_SCHEMA3.getType());
