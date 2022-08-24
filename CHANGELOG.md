@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.14.7](https://github.com/googleapis/java-bigquery/compare/v2.14.6...v2.14.7) (2022-08-23)
+
+
+### Bug Fixes
+
+* table-not-found issue with executeSelect while running long queries  ([#2222](https://github.com/googleapis/java-bigquery/issues/2222)) ([4876569](https://github.com/googleapis/java-bigquery/commit/487656973fe3e06d838c1b495ac024ab2c6810f6))
+
 ## [2.14.6](https://github.com/googleapis/java-bigquery/compare/v2.14.5...v2.14.6) (2022-08-12)
 
 
