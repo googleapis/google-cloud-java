@@ -322,6 +322,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setNextSteps("nextSteps1206138868")
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
+            .setDatabase(Database.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -399,6 +400,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setNextSteps("nextSteps1206138868")
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
+            .setDatabase(Database.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2789,6 +2791,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setNextSteps("nextSteps1206138868")
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
+            .setDatabase(Database.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2868,6 +2871,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setNextSteps("nextSteps1206138868")
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
+            .setDatabase(Database.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2945,6 +2949,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setNextSteps("nextSteps1206138868")
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
+            .setDatabase(Database.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3022,6 +3027,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setNextSteps("nextSteps1206138868")
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
+            .setDatabase(Database.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3349,6 +3355,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setNextSteps("nextSteps1206138868")
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
+            .setDatabase(Database.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3384,6 +3391,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setNextSteps("nextSteps1206138868")
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
+            .setDatabase(Database.newBuilder().build())
             .build();
 
     Finding actualResponse = client.updateFinding(finding);
@@ -3444,6 +3452,7 @@ public class SecurityCenterClientHttpJsonTest {
               .setNextSteps("nextSteps1206138868")
               .addAllContainers(new ArrayList<Container>())
               .setKubernetes(Kubernetes.newBuilder().build())
+              .setDatabase(Database.newBuilder().build())
               .build();
       client.updateFinding(finding);
       Assert.fail("No exception raised");
