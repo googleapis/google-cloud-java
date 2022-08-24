@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker:
-  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
 - "/samples/snippets/generated"
@@ -23,10 +21,12 @@ deep-remove-regex:
 
 deep-copy-regex:
 - source: "/google/cloud/channel/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-channel-$1/src"
+  dest: "/owl-bot-staging/java-channel/$1/proto-google-cloud-channel-$1/src"
 - source: "/google/cloud/channel/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-channel-$1/src"
+  dest: "/owl-bot-staging/java-channel/$1/grpc-google-cloud-channel-$1/src"
 - source: "/google/cloud/channel/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-channel/src"
+  dest: "/owl-bot-staging/java-channel/$1/google-cloud-channel/src"
 - source: "/google/cloud/channel/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/$1/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-channel/$1/samples/snippets/generated"
+
+api-name: cloudchannel
