@@ -36,7 +36,6 @@ import com.google.cloud.assuredworkloads.v1beta1.CreateWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1beta1.DeleteWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesRequest;
 import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesResponse;
-import com.google.cloud.assuredworkloads.v1beta1.UpdateWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1beta1.Workload;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -103,45 +102,6 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
               .setOperationSnapshotFactory(
                   (CreateWorkloadRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
-              .build();
-
-  private static final ApiMethodDescriptor<UpdateWorkloadRequest, Workload>
-      updateWorkloadMethodDescriptor =
-          ApiMethodDescriptor.<UpdateWorkloadRequest, Workload>newBuilder()
-              .setFullMethodName(
-                  "google.cloud.assuredworkloads.v1beta1.AssuredWorkloadsService/UpdateWorkload")
-              .setHttpMethod("PATCH")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<UpdateWorkloadRequest>newBuilder()
-                      .setPath(
-                          "/v1beta1/{workload.name=organizations/*/locations/*/workloads/*}",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<UpdateWorkloadRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(
-                                fields, "workload.name", request.getWorkload().getName());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<UpdateWorkloadRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("workload", request.getWorkload()))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<Workload>newBuilder()
-                      .setDefaultInstance(Workload.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
               .build();
 
   private static final ApiMethodDescriptor<
@@ -221,7 +181,6 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
   private final UnaryCallable<CreateWorkloadRequest, Operation> createWorkloadCallable;
   private final OperationCallable<CreateWorkloadRequest, Workload, CreateWorkloadOperationMetadata>
       createWorkloadOperationCallable;
-  private final UnaryCallable<UpdateWorkloadRequest, Workload> updateWorkloadCallable;
   private final UnaryCallable<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
       restrictAllowedResourcesCallable;
   private final UnaryCallable<DeleteWorkloadRequest, Empty> deleteWorkloadCallable;
@@ -279,11 +238,6 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
             .setMethodDescriptor(createWorkloadMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
-    HttpJsonCallSettings<UpdateWorkloadRequest, Workload> updateWorkloadTransportSettings =
-        HttpJsonCallSettings.<UpdateWorkloadRequest, Workload>newBuilder()
-            .setMethodDescriptor(updateWorkloadMethodDescriptor)
-            .setTypeRegistry(typeRegistry)
-            .build();
     HttpJsonCallSettings<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
         restrictAllowedResourcesTransportSettings =
             HttpJsonCallSettings
@@ -306,9 +260,6 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
             settings.createWorkloadOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
-    this.updateWorkloadCallable =
-        callableFactory.createUnaryCallable(
-            updateWorkloadTransportSettings, settings.updateWorkloadSettings(), clientContext);
     this.restrictAllowedResourcesCallable =
         callableFactory.createUnaryCallable(
             restrictAllowedResourcesTransportSettings,
@@ -326,7 +277,6 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(createWorkloadMethodDescriptor);
-    methodDescriptors.add(updateWorkloadMethodDescriptor);
     methodDescriptors.add(restrictAllowedResourcesMethodDescriptor);
     methodDescriptors.add(deleteWorkloadMethodDescriptor);
     return methodDescriptors;
@@ -345,11 +295,6 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
   public OperationCallable<CreateWorkloadRequest, Workload, CreateWorkloadOperationMetadata>
       createWorkloadOperationCallable() {
     return createWorkloadOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<UpdateWorkloadRequest, Workload> updateWorkloadCallable() {
-    return updateWorkloadCallable;
   }
 
   @Override

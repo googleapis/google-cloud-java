@@ -29,7 +29,6 @@ import com.google.cloud.assuredworkloads.v1beta1.stub.HttpJsonAssuredWorkloadsSe
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
-import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -204,93 +203,8 @@ public class AssuredWorkloadsServiceClientHttpJsonTest {
   }
 
   @Test
-  public void updateWorkloadTest() throws Exception {
-    Workload expectedResponse =
-        Workload.newBuilder()
-            .setName(WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]").toString())
-            .setDisplayName("displayName1714148973")
-            .addAllResources(new ArrayList<Workload.ResourceInfo>())
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setBillingAccount("billingAccount708726578")
-            .setEtag("etag3123477")
-            .putAllLabels(new HashMap<String, String>())
-            .setProvisionedResourcesParent("provisionedResourcesParent1733249115")
-            .setKmsSettings(Workload.KMSSettings.newBuilder().build())
-            .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
-            .setEnableSovereignControls(true)
-            .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    Workload workload =
-        Workload.newBuilder()
-            .setName(WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]").toString())
-            .setDisplayName("displayName1714148973")
-            .addAllResources(new ArrayList<Workload.ResourceInfo>())
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setBillingAccount("billingAccount708726578")
-            .setEtag("etag3123477")
-            .putAllLabels(new HashMap<String, String>())
-            .setProvisionedResourcesParent("provisionedResourcesParent1733249115")
-            .setKmsSettings(Workload.KMSSettings.newBuilder().build())
-            .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
-            .setEnableSovereignControls(true)
-            .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
-            .build();
-    FieldMask updateMask = FieldMask.newBuilder().build();
-
-    Workload actualResponse = client.updateWorkload(workload, updateMask);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void updateWorkloadExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      Workload workload =
-          Workload.newBuilder()
-              .setName(WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]").toString())
-              .setDisplayName("displayName1714148973")
-              .addAllResources(new ArrayList<Workload.ResourceInfo>())
-              .setCreateTime(Timestamp.newBuilder().build())
-              .setBillingAccount("billingAccount708726578")
-              .setEtag("etag3123477")
-              .putAllLabels(new HashMap<String, String>())
-              .setProvisionedResourcesParent("provisionedResourcesParent1733249115")
-              .setKmsSettings(Workload.KMSSettings.newBuilder().build())
-              .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
-              .setEnableSovereignControls(true)
-              .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
-              .build();
-      FieldMask updateMask = FieldMask.newBuilder().build();
-      client.updateWorkload(workload, updateMask);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void restrictAllowedServicesUnsupportedMethodTest() throws Exception {
-    // The restrictAllowedServices() method is not supported in REST transport.
+  public void updateWorkloadUnsupportedMethodTest() throws Exception {
+    // The updateWorkload() method is not supported in REST transport.
     // This empty test is generated for technical reasons.
   }
 

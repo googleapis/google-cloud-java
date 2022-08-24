@@ -240,7 +240,7 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Input only. The billing account used for the resources which are
+   * Output only. The billing account used for the resources which are
    * direct children of workload. This billing account is initially associated
    * with the resources created as part of Workload creation.
    * After the initial creation of these resources, the customer can change
@@ -250,7 +250,7 @@ public interface WorkloadOrBuilder
    * `billingAccounts/012345-567890-ABCDEF`.
    * </pre>
    *
-   * <code>string billing_account = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>string billing_account = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The billingAccount.
    */
@@ -259,7 +259,7 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Input only. The billing account used for the resources which are
+   * Output only. The billing account used for the resources which are
    * direct children of workload. This billing account is initially associated
    * with the resources created as part of Workload creation.
    * After the initial creation of these resources, the customer can change
@@ -269,7 +269,7 @@ public interface WorkloadOrBuilder
    * `billingAccounts/012345-567890-ABCDEF`.
    * </pre>
    *
-   * <code>string billing_account = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>string billing_account = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for billingAccount.
    */
@@ -287,7 +287,7 @@ public interface WorkloadOrBuilder
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.il4_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=498
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=468
    * @return Whether the il4Settings field is set.
    */
   @java.lang.Deprecated
@@ -304,7 +304,7 @@ public interface WorkloadOrBuilder
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.il4_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=498
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=468
    * @return The il4Settings.
    */
   @java.lang.Deprecated
@@ -335,7 +335,7 @@ public interface WorkloadOrBuilder
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.cjis_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=505
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=475
    * @return Whether the cjisSettings field is set.
    */
   @java.lang.Deprecated
@@ -352,7 +352,7 @@ public interface WorkloadOrBuilder
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.cjis_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=505
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=475
    * @return The cjisSettings.
    */
   @java.lang.Deprecated
@@ -384,7 +384,7 @@ public interface WorkloadOrBuilder
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_high_settings is deprecated.
-   *     See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=512
+   *     See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=482
    * @return Whether the fedrampHighSettings field is set.
    */
   @java.lang.Deprecated
@@ -401,7 +401,7 @@ public interface WorkloadOrBuilder
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_high_settings is deprecated.
-   *     See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=512
+   *     See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=482
    * @return The fedrampHighSettings.
    */
   @java.lang.Deprecated
@@ -433,7 +433,7 @@ public interface WorkloadOrBuilder
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_moderate_settings is
-   *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=519
+   *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=489
    * @return Whether the fedrampModerateSettings field is set.
    */
   @java.lang.Deprecated
@@ -450,7 +450,7 @@ public interface WorkloadOrBuilder
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_moderate_settings is
-   *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=519
+   *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=489
    * @return The fedrampModerateSettings.
    */
   @java.lang.Deprecated
@@ -610,7 +610,7 @@ public interface WorkloadOrBuilder
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.kms_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=546
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=516
    * @return Whether the kmsSettings field is set.
    */
   @java.lang.Deprecated
@@ -631,7 +631,7 @@ public interface WorkloadOrBuilder
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.kms_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=546
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=516
    * @return The kmsSettings.
    */
   @java.lang.Deprecated

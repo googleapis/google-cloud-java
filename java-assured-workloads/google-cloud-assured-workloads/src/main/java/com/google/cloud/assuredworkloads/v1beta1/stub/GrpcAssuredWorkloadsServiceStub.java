@@ -36,8 +36,6 @@ import com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsRequest;
 import com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsResponse;
 import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesRequest;
 import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesResponse;
-import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesRequest;
-import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesResponse;
 import com.google.cloud.assuredworkloads.v1beta1.UpdateWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1beta1.Workload;
 import com.google.common.collect.ImmutableMap;
@@ -79,20 +77,6 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateWorkloadRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Workload.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<
-          RestrictAllowedServicesRequest, RestrictAllowedServicesResponse>
-      restrictAllowedServicesMethodDescriptor =
-          MethodDescriptor
-              .<RestrictAllowedServicesRequest, RestrictAllowedServicesResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.assuredworkloads.v1beta1.AssuredWorkloadsService/RestrictAllowedServices")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(RestrictAllowedServicesRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(RestrictAllowedServicesResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<
@@ -157,8 +141,6 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
   private final OperationCallable<CreateWorkloadRequest, Workload, CreateWorkloadOperationMetadata>
       createWorkloadOperationCallable;
   private final UnaryCallable<UpdateWorkloadRequest, Workload> updateWorkloadCallable;
-  private final UnaryCallable<RestrictAllowedServicesRequest, RestrictAllowedServicesResponse>
-      restrictAllowedServicesCallable;
   private final UnaryCallable<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
       restrictAllowedResourcesCallable;
   private final UnaryCallable<DeleteWorkloadRequest, Empty> deleteWorkloadCallable;
@@ -227,19 +209,7 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
     GrpcCallSettings<UpdateWorkloadRequest, Workload> updateWorkloadTransportSettings =
         GrpcCallSettings.<UpdateWorkloadRequest, Workload>newBuilder()
             .setMethodDescriptor(updateWorkloadMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("workload.name", String.valueOf(request.getWorkload().getName()));
-                  return params.build();
-                })
             .build();
-    GrpcCallSettings<RestrictAllowedServicesRequest, RestrictAllowedServicesResponse>
-        restrictAllowedServicesTransportSettings =
-            GrpcCallSettings
-                .<RestrictAllowedServicesRequest, RestrictAllowedServicesResponse>newBuilder()
-                .setMethodDescriptor(restrictAllowedServicesMethodDescriptor)
-                .build();
     GrpcCallSettings<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
         restrictAllowedResourcesTransportSettings =
             GrpcCallSettings
@@ -288,11 +258,6 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
     this.updateWorkloadCallable =
         callableFactory.createUnaryCallable(
             updateWorkloadTransportSettings, settings.updateWorkloadSettings(), clientContext);
-    this.restrictAllowedServicesCallable =
-        callableFactory.createUnaryCallable(
-            restrictAllowedServicesTransportSettings,
-            settings.restrictAllowedServicesSettings(),
-            clientContext);
     this.restrictAllowedResourcesCallable =
         callableFactory.createUnaryCallable(
             restrictAllowedResourcesTransportSettings,
@@ -338,12 +303,6 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
   @Override
   public UnaryCallable<UpdateWorkloadRequest, Workload> updateWorkloadCallable() {
     return updateWorkloadCallable;
-  }
-
-  @Override
-  public UnaryCallable<RestrictAllowedServicesRequest, RestrictAllowedServicesResponse>
-      restrictAllowedServicesCallable() {
-    return restrictAllowedServicesCallable;
   }
 
   @Override

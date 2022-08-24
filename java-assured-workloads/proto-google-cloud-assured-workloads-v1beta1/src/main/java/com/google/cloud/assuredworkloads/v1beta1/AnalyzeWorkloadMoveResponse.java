@@ -22,8 +22,7 @@ package com.google.cloud.assuredworkloads.v1beta1;
  *
  *
  * <pre>
- * Response with the analysis if the source workload can be moved to the target
- * workload
+ * A response that includes the analysis of the hypothetical resource move.
  * </pre>
  *
  * Protobuf type {@code google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse}
@@ -127,8 +126,8 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * List of blockers that prevent moving the source workload to the target
-   * workload
+   * A list of blockers that should be addressed before moving the source
+   * project or project-based workload to the destination folder-based workload.
    * </pre>
    *
    * <code>repeated string blockers = 1;</code>
@@ -142,8 +141,8 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * List of blockers that prevent moving the source workload to the target
-   * workload
+   * A list of blockers that should be addressed before moving the source
+   * project or project-based workload to the destination folder-based workload.
    * </pre>
    *
    * <code>repeated string blockers = 1;</code>
@@ -157,8 +156,8 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * List of blockers that prevent moving the source workload to the target
-   * workload
+   * A list of blockers that should be addressed before moving the source
+   * project or project-based workload to the destination folder-based workload.
    * </pre>
    *
    * <code>repeated string blockers = 1;</code>
@@ -173,8 +172,8 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * List of blockers that prevent moving the source workload to the target
-   * workload
+   * A list of blockers that should be addressed before moving the source
+   * project or project-based workload to the destination folder-based workload.
    * </pre>
    *
    * <code>repeated string blockers = 1;</code>
@@ -358,8 +357,7 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Response with the analysis if the source workload can be moved to the target
-   * workload
+   * A response that includes the analysis of the hypothetical resource move.
    * </pre>
    *
    * Protobuf type {@code google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse}
@@ -547,8 +545,8 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * List of blockers that prevent moving the source workload to the target
-     * workload
+     * A list of blockers that should be addressed before moving the source
+     * project or project-based workload to the destination folder-based workload.
      * </pre>
      *
      * <code>repeated string blockers = 1;</code>
@@ -562,8 +560,8 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * List of blockers that prevent moving the source workload to the target
-     * workload
+     * A list of blockers that should be addressed before moving the source
+     * project or project-based workload to the destination folder-based workload.
      * </pre>
      *
      * <code>repeated string blockers = 1;</code>
@@ -577,8 +575,8 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * List of blockers that prevent moving the source workload to the target
-     * workload
+     * A list of blockers that should be addressed before moving the source
+     * project or project-based workload to the destination folder-based workload.
      * </pre>
      *
      * <code>repeated string blockers = 1;</code>
@@ -593,8 +591,8 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * List of blockers that prevent moving the source workload to the target
-     * workload
+     * A list of blockers that should be addressed before moving the source
+     * project or project-based workload to the destination folder-based workload.
      * </pre>
      *
      * <code>repeated string blockers = 1;</code>
@@ -609,8 +607,8 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * List of blockers that prevent moving the source workload to the target
-     * workload
+     * A list of blockers that should be addressed before moving the source
+     * project or project-based workload to the destination folder-based workload.
      * </pre>
      *
      * <code>repeated string blockers = 1;</code>
@@ -632,8 +630,8 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * List of blockers that prevent moving the source workload to the target
-     * workload
+     * A list of blockers that should be addressed before moving the source
+     * project or project-based workload to the destination folder-based workload.
      * </pre>
      *
      * <code>repeated string blockers = 1;</code>
@@ -654,8 +652,8 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * List of blockers that prevent moving the source workload to the target
-     * workload
+     * A list of blockers that should be addressed before moving the source
+     * project or project-based workload to the destination folder-based workload.
      * </pre>
      *
      * <code>repeated string blockers = 1;</code>
@@ -673,8 +671,8 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * List of blockers that prevent moving the source workload to the target
-     * workload
+     * A list of blockers that should be addressed before moving the source
+     * project or project-based workload to the destination folder-based workload.
      * </pre>
      *
      * <code>repeated string blockers = 1;</code>
@@ -691,8 +689,8 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * List of blockers that prevent moving the source workload to the target
-     * workload
+     * A list of blockers that should be addressed before moving the source
+     * project or project-based workload to the destination folder-based workload.
      * </pre>
      *
      * <code>repeated string blockers = 1;</code>
