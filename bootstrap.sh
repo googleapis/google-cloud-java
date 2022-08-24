@@ -61,7 +61,7 @@ do
   git remote add ${service} ../${service}
   git config --add secrets.allowed "dest.*src"
   git fetch ${service} #--tags
-  EDITOR=true git merge --allow-unrelated-histories ${service}/main
+  EDITOR=true git merge --quiet --allow-unrelated-histories ${service}/main
   git remote remove ${service}
   rm -rf ../${service}
 done
