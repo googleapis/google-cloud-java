@@ -45,7 +45,7 @@ for module in $(find . -mindepth 2 -maxdepth 2 -name pom.xml |sort | xargs dirna
   if ls ${module}/*-bom 1> /dev/null 2>&1; then
     continue
   fi
-  if [[ "${module}" = *google-cloud-gapic-bom ]]; then
+  if [[ "${module}" = *google-cloud-gapic-bom ]] || [[ "${module}" = *CoverageAggregator ]]; then
     continue
   fi
 
