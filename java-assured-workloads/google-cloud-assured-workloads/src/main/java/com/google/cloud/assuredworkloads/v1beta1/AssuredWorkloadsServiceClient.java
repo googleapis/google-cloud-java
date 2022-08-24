@@ -440,63 +440,6 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Restrict the list of services allowed in the Workload environment. The current list of allowed
-   * services can be found at https://cloud.google.com/assured-workloads/docs/supported-products In
-   * addition to assuredworkloads.workload.update permission, the user should also have
-   * orgpolicy.policy.set permission on the folder resource to use this functionality.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
-   *     AssuredWorkloadsServiceClient.create()) {
-   *   RestrictAllowedServicesRequest request =
-   *       RestrictAllowedServicesRequest.newBuilder().setName("name3373707").build();
-   *   RestrictAllowedServicesResponse response =
-   *       assuredWorkloadsServiceClient.restrictAllowedServices(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final RestrictAllowedServicesResponse restrictAllowedServices(
-      RestrictAllowedServicesRequest request) {
-    return restrictAllowedServicesCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Restrict the list of services allowed in the Workload environment. The current list of allowed
-   * services can be found at https://cloud.google.com/assured-workloads/docs/supported-products In
-   * addition to assuredworkloads.workload.update permission, the user should also have
-   * orgpolicy.policy.set permission on the folder resource to use this functionality.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
-   *     AssuredWorkloadsServiceClient.create()) {
-   *   RestrictAllowedServicesRequest request =
-   *       RestrictAllowedServicesRequest.newBuilder().setName("name3373707").build();
-   *   ApiFuture<RestrictAllowedServicesResponse> future =
-   *       assuredWorkloadsServiceClient.restrictAllowedServicesCallable().futureCall(request);
-   *   // Do something.
-   *   RestrictAllowedServicesResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<RestrictAllowedServicesRequest, RestrictAllowedServicesResponse>
-      restrictAllowedServicesCallable() {
-    return stub.restrictAllowedServicesCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
    * Restrict the list of resources allowed in the Workload environment. The current list of allowed
    * products can be found at https://cloud.google.com/assured-workloads/docs/supported-products In
    * addition to assuredworkloads.workload.update permission, the user should also have
@@ -778,7 +721,8 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Analyze if the source Assured Workloads can be moved to the target Assured Workload
+   * A request to analyze a hypothetical move of a source project or project-based workload to a
+   * target (destination) folder-based workload.
    *
    * <p>Sample code:
    *
@@ -794,15 +738,15 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param project The Source is a project based to be moved. This is the project's relative path
-   *     in the API, formatted as "cloudresourcemanager.googleapis.com/projects/{project_number}"
-   *     "projects/{project_number}" "cloudresourcemanager.googleapis.com/projects/{project_id}"
-   *     "projects/{project_id}" For example,
-   *     "organizations/123/locations/us-east1/workloads/assured-workload-1".
-   * @param target Required. The resource name of the Workload to fetch. This is the workloads's
-   *     relative path in the API, formatted as
-   *     "organizations/{organization_id}/locations/{location_id}/workloads/{workload_id}". For
-   *     example, "organizations/123/locations/us-east1/workloads/assured-workload-2".
+   * @param project The source type is a project. Specify the project's relative resource name,
+   *     formatted as either a project number or a project ID: "projects/{PROJECT_NUMBER}" or
+   *     "projects/{PROJECT_ID}" For example: "projects/951040570662" when specifying a project
+   *     number, or "projects/my-project-123" when specifying a project ID.
+   * @param target Required. The resource ID of the folder-based destination workload. This workload
+   *     is where the source project will hypothetically be moved to. Specify the workload's
+   *     relative resource name, formatted as:
+   *     "organizations/{ORGANIZATION_ID}/locations/{LOCATION_ID}/workloads/{WORKLOAD_ID}" For
+   *     example: "organizations/123/locations/us-east1/workloads/assured-workload-2"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnalyzeWorkloadMoveResponse analyzeWorkloadMove(String project, String target) {
@@ -813,7 +757,8 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Analyze if the source Assured Workloads can be moved to the target Assured Workload
+   * A request to analyze a hypothetical move of a source project or project-based workload to a
+   * target (destination) folder-based workload.
    *
    * <p>Sample code:
    *
@@ -838,7 +783,8 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Analyze if the source Assured Workloads can be moved to the target Assured Workload
+   * A request to analyze a hypothetical move of a source project or project-based workload to a
+   * target (destination) folder-based workload.
    *
    * <p>Sample code:
    *

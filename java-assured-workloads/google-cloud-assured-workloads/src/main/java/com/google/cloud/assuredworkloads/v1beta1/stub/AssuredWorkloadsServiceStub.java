@@ -32,8 +32,6 @@ import com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsRequest;
 import com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsResponse;
 import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesRequest;
 import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesResponse;
-import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesRequest;
-import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesResponse;
 import com.google.cloud.assuredworkloads.v1beta1.UpdateWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1beta1.Workload;
 import com.google.longrunning.Operation;
@@ -70,11 +68,6 @@ public abstract class AssuredWorkloadsServiceStub implements BackgroundResource 
 
   public UnaryCallable<UpdateWorkloadRequest, Workload> updateWorkloadCallable() {
     throw new UnsupportedOperationException("Not implemented: updateWorkloadCallable()");
-  }
-
-  public UnaryCallable<RestrictAllowedServicesRequest, RestrictAllowedServicesResponse>
-      restrictAllowedServicesCallable() {
-    throw new UnsupportedOperationException("Not implemented: restrictAllowedServicesCallable()");
   }
 
   public UnaryCallable<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>

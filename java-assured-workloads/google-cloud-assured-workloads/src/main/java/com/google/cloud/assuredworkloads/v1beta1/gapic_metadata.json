@@ -28,9 +28,6 @@
             "RestrictAllowedResources": {
               "methods": ["restrictAllowedResources", "restrictAllowedResourcesCallable"]
             },
-            "RestrictAllowedServices": {
-              "methods": ["restrictAllowedServices", "restrictAllowedServicesCallable"]
-            },
             "UpdateWorkload": {
               "methods": ["updateWorkload", "updateWorkload", "updateWorkloadCallable"]
             }

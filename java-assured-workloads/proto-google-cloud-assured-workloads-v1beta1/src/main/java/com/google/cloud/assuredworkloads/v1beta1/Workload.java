@@ -494,6 +494,16 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>ITAR = 10;</code>
      */
     ITAR(10),
+    /**
+     *
+     *
+     * <pre>
+     * Assured Workloads for Australia Regions and Support controls
+     * </pre>
+     *
+     * <code>AU_REGIONS_AND_US_SUPPORT = 11;</code>
+     */
+    AU_REGIONS_AND_US_SUPPORT(11),
     UNRECOGNIZED(-1),
     ;
 
@@ -607,6 +617,16 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>ITAR = 10;</code>
      */
     public static final int ITAR_VALUE = 10;
+    /**
+     *
+     *
+     * <pre>
+     * Assured Workloads for Australia Regions and Support controls
+     * </pre>
+     *
+     * <code>AU_REGIONS_AND_US_SUPPORT = 11;</code>
+     */
+    public static final int AU_REGIONS_AND_US_SUPPORT_VALUE = 11;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -654,6 +674,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           return CA_REGIONS_AND_SUPPORT;
         case 10:
           return ITAR;
+        case 11:
+          return AU_REGIONS_AND_US_SUPPORT;
         default:
           return null;
       }
@@ -9479,7 +9501,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The billing account used for the resources which are
+   * Output only. The billing account used for the resources which are
    * direct children of workload. This billing account is initially associated
    * with the resources created as part of Workload creation.
    * After the initial creation of these resources, the customer can change
@@ -9489,7 +9511,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * `billingAccounts/012345-567890-ABCDEF`.
    * </pre>
    *
-   * <code>string billing_account = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>string billing_account = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The billingAccount.
    */
@@ -9509,7 +9531,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The billing account used for the resources which are
+   * Output only. The billing account used for the resources which are
    * direct children of workload. This billing account is initially associated
    * with the resources created as part of Workload creation.
    * After the initial creation of these resources, the customer can change
@@ -9519,7 +9541,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * `billingAccounts/012345-567890-ABCDEF`.
    * </pre>
    *
-   * <code>string billing_account = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>string billing_account = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for billingAccount.
    */
@@ -9549,7 +9571,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.il4_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=498
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=468
    * @return Whether the il4Settings field is set.
    */
   @java.lang.Override
@@ -9569,7 +9591,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.il4_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=498
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=468
    * @return The il4Settings.
    */
   @java.lang.Override
@@ -9616,7 +9638,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.cjis_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=505
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=475
    * @return Whether the cjisSettings field is set.
    */
   @java.lang.Override
@@ -9636,7 +9658,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.cjis_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=505
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=475
    * @return The cjisSettings.
    */
   @java.lang.Override
@@ -9683,7 +9705,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_high_settings is deprecated.
-   *     See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=512
+   *     See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=482
    * @return Whether the fedrampHighSettings field is set.
    */
   @java.lang.Override
@@ -9703,7 +9725,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_high_settings is deprecated.
-   *     See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=512
+   *     See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=482
    * @return The fedrampHighSettings.
    */
   @java.lang.Override
@@ -9753,7 +9775,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_moderate_settings is
-   *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=519
+   *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=489
    * @return Whether the fedrampModerateSettings field is set.
    */
   @java.lang.Override
@@ -9773,7 +9795,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_moderate_settings is
-   *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=519
+   *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=489
    * @return The fedrampModerateSettings.
    */
   @java.lang.Override
@@ -10038,7 +10060,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.kms_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=546
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=516
    * @return Whether the kmsSettings field is set.
    */
   @java.lang.Override
@@ -10062,7 +10084,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.kms_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=546
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=516
    * @return The kmsSettings.
    */
   @java.lang.Override
@@ -12174,7 +12196,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The billing account used for the resources which are
+     * Output only. The billing account used for the resources which are
      * direct children of workload. This billing account is initially associated
      * with the resources created as part of Workload creation.
      * After the initial creation of these resources, the customer can change
@@ -12184,7 +12206,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * `billingAccounts/012345-567890-ABCDEF`.
      * </pre>
      *
-     * <code>string billing_account = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>string billing_account = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The billingAccount.
      */
@@ -12203,7 +12225,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The billing account used for the resources which are
+     * Output only. The billing account used for the resources which are
      * direct children of workload. This billing account is initially associated
      * with the resources created as part of Workload creation.
      * After the initial creation of these resources, the customer can change
@@ -12213,7 +12235,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * `billingAccounts/012345-567890-ABCDEF`.
      * </pre>
      *
-     * <code>string billing_account = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>string billing_account = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for billingAccount.
      */
@@ -12232,7 +12254,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The billing account used for the resources which are
+     * Output only. The billing account used for the resources which are
      * direct children of workload. This billing account is initially associated
      * with the resources created as part of Workload creation.
      * After the initial creation of these resources, the customer can change
@@ -12242,7 +12264,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * `billingAccounts/012345-567890-ABCDEF`.
      * </pre>
      *
-     * <code>string billing_account = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>string billing_account = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The billingAccount to set.
      * @return This builder for chaining.
@@ -12260,7 +12282,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The billing account used for the resources which are
+     * Output only. The billing account used for the resources which are
      * direct children of workload. This billing account is initially associated
      * with the resources created as part of Workload creation.
      * After the initial creation of these resources, the customer can change
@@ -12270,7 +12292,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * `billingAccounts/012345-567890-ABCDEF`.
      * </pre>
      *
-     * <code>string billing_account = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>string billing_account = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -12284,7 +12306,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The billing account used for the resources which are
+     * Output only. The billing account used for the resources which are
      * direct children of workload. This billing account is initially associated
      * with the resources created as part of Workload creation.
      * After the initial creation of these resources, the customer can change
@@ -12294,7 +12316,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * `billingAccounts/012345-567890-ABCDEF`.
      * </pre>
      *
-     * <code>string billing_account = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>string billing_account = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for billingAccount to set.
      * @return This builder for chaining.
@@ -12327,7 +12349,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.il4_settings is deprecated. See
-     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=498
+     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=468
      * @return Whether the il4Settings field is set.
      */
     @java.lang.Override
@@ -12347,7 +12369,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.il4_settings is deprecated. See
-     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=498
+     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=468
      * @return The il4Settings.
      */
     @java.lang.Override
@@ -12578,7 +12600,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.cjis_settings is deprecated. See
-     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=505
+     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=475
      * @return Whether the cjisSettings field is set.
      */
     @java.lang.Override
@@ -12598,7 +12620,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.cjis_settings is deprecated. See
-     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=505
+     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=475
      * @return The cjisSettings.
      */
     @java.lang.Override
@@ -12829,7 +12851,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_high_settings is
-     *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=512
+     *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=482
      * @return Whether the fedrampHighSettings field is set.
      */
     @java.lang.Override
@@ -12849,7 +12871,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_high_settings is
-     *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=512
+     *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=482
      * @return The fedrampHighSettings.
      */
     @java.lang.Override
@@ -13086,7 +13108,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_moderate_settings is
-     *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=519
+     *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=489
      * @return Whether the fedrampModerateSettings field is set.
      */
     @java.lang.Override
@@ -13106,7 +13128,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_moderate_settings is
-     *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=519
+     *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=489
      * @return The fedrampModerateSettings.
      */
     @java.lang.Override
@@ -13754,7 +13776,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.kms_settings is deprecated. See
-     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=546
+     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=516
      * @return Whether the kmsSettings field is set.
      */
     @java.lang.Deprecated
@@ -13777,7 +13799,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.kms_settings is deprecated. See
-     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=546
+     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=516
      * @return The kmsSettings.
      */
     @java.lang.Deprecated

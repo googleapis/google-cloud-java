@@ -96,13 +96,6 @@ public class AssuredWorkloadsServiceSettings
     return ((AssuredWorkloadsServiceStubSettings) getStubSettings()).updateWorkloadSettings();
   }
 
-  /** Returns the object with the settings used for calls to restrictAllowedServices. */
-  public UnaryCallSettings<RestrictAllowedServicesRequest, RestrictAllowedServicesResponse>
-      restrictAllowedServicesSettings() {
-    return ((AssuredWorkloadsServiceStubSettings) getStubSettings())
-        .restrictAllowedServicesSettings();
-  }
-
   /** Returns the object with the settings used for calls to restrictAllowedResources. */
   public UnaryCallSettings<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
       restrictAllowedResourcesSettings() {
@@ -263,13 +256,6 @@ public class AssuredWorkloadsServiceSettings
     /** Returns the builder for the settings used for calls to updateWorkload. */
     public UnaryCallSettings.Builder<UpdateWorkloadRequest, Workload> updateWorkloadSettings() {
       return getStubSettingsBuilder().updateWorkloadSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to restrictAllowedServices. */
-    public UnaryCallSettings.Builder<
-            RestrictAllowedServicesRequest, RestrictAllowedServicesResponse>
-        restrictAllowedServicesSettings() {
-      return getStubSettingsBuilder().restrictAllowedServicesSettings();
     }
 
     /** Returns the builder for the settings used for calls to restrictAllowedResources. */

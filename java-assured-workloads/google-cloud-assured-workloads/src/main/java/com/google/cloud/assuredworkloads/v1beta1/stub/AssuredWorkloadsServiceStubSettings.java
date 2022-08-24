@@ -57,8 +57,6 @@ import com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsRequest;
 import com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsResponse;
 import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesRequest;
 import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesResponse;
-import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesRequest;
-import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesResponse;
 import com.google.cloud.assuredworkloads.v1beta1.UpdateWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1beta1.Workload;
 import com.google.common.collect.ImmutableList;
@@ -121,8 +119,6 @@ public class AssuredWorkloadsServiceStubSettings
           CreateWorkloadRequest, Workload, CreateWorkloadOperationMetadata>
       createWorkloadOperationSettings;
   private final UnaryCallSettings<UpdateWorkloadRequest, Workload> updateWorkloadSettings;
-  private final UnaryCallSettings<RestrictAllowedServicesRequest, RestrictAllowedServicesResponse>
-      restrictAllowedServicesSettings;
   private final UnaryCallSettings<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
       restrictAllowedResourcesSettings;
   private final UnaryCallSettings<DeleteWorkloadRequest, Empty> deleteWorkloadSettings;
@@ -200,12 +196,6 @@ public class AssuredWorkloadsServiceStubSettings
   /** Returns the object with the settings used for calls to updateWorkload. */
   public UnaryCallSettings<UpdateWorkloadRequest, Workload> updateWorkloadSettings() {
     return updateWorkloadSettings;
-  }
-
-  /** Returns the object with the settings used for calls to restrictAllowedServices. */
-  public UnaryCallSettings<RestrictAllowedServicesRequest, RestrictAllowedServicesResponse>
-      restrictAllowedServicesSettings() {
-    return restrictAllowedServicesSettings;
   }
 
   /** Returns the object with the settings used for calls to restrictAllowedResources. */
@@ -345,7 +335,6 @@ public class AssuredWorkloadsServiceStubSettings
     createWorkloadSettings = settingsBuilder.createWorkloadSettings().build();
     createWorkloadOperationSettings = settingsBuilder.createWorkloadOperationSettings().build();
     updateWorkloadSettings = settingsBuilder.updateWorkloadSettings().build();
-    restrictAllowedServicesSettings = settingsBuilder.restrictAllowedServicesSettings().build();
     restrictAllowedResourcesSettings = settingsBuilder.restrictAllowedResourcesSettings().build();
     deleteWorkloadSettings = settingsBuilder.deleteWorkloadSettings().build();
     getWorkloadSettings = settingsBuilder.getWorkloadSettings().build();
@@ -363,9 +352,6 @@ public class AssuredWorkloadsServiceStubSettings
             CreateWorkloadRequest, Workload, CreateWorkloadOperationMetadata>
         createWorkloadOperationSettings;
     private final UnaryCallSettings.Builder<UpdateWorkloadRequest, Workload> updateWorkloadSettings;
-    private final UnaryCallSettings.Builder<
-            RestrictAllowedServicesRequest, RestrictAllowedServicesResponse>
-        restrictAllowedServicesSettings;
     private final UnaryCallSettings.Builder<
             RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
         restrictAllowedResourcesSettings;
@@ -430,7 +416,6 @@ public class AssuredWorkloadsServiceStubSettings
       createWorkloadSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createWorkloadOperationSettings = OperationCallSettings.newBuilder();
       updateWorkloadSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      restrictAllowedServicesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       restrictAllowedResourcesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteWorkloadSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getWorkloadSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -441,7 +426,6 @@ public class AssuredWorkloadsServiceStubSettings
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createWorkloadSettings,
               updateWorkloadSettings,
-              restrictAllowedServicesSettings,
               restrictAllowedResourcesSettings,
               deleteWorkloadSettings,
               getWorkloadSettings,
@@ -456,7 +440,6 @@ public class AssuredWorkloadsServiceStubSettings
       createWorkloadSettings = settings.createWorkloadSettings.toBuilder();
       createWorkloadOperationSettings = settings.createWorkloadOperationSettings.toBuilder();
       updateWorkloadSettings = settings.updateWorkloadSettings.toBuilder();
-      restrictAllowedServicesSettings = settings.restrictAllowedServicesSettings.toBuilder();
       restrictAllowedResourcesSettings = settings.restrictAllowedResourcesSettings.toBuilder();
       deleteWorkloadSettings = settings.deleteWorkloadSettings.toBuilder();
       getWorkloadSettings = settings.getWorkloadSettings.toBuilder();
@@ -467,7 +450,6 @@ public class AssuredWorkloadsServiceStubSettings
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createWorkloadSettings,
               updateWorkloadSettings,
-              restrictAllowedServicesSettings,
               restrictAllowedResourcesSettings,
               deleteWorkloadSettings,
               getWorkloadSettings,
@@ -511,11 +493,6 @@ public class AssuredWorkloadsServiceStubSettings
           .updateWorkloadSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
-
-      builder
-          .restrictAllowedServicesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .restrictAllowedResourcesSettings()
@@ -602,13 +579,6 @@ public class AssuredWorkloadsServiceStubSettings
     /** Returns the builder for the settings used for calls to updateWorkload. */
     public UnaryCallSettings.Builder<UpdateWorkloadRequest, Workload> updateWorkloadSettings() {
       return updateWorkloadSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to restrictAllowedServices. */
-    public UnaryCallSettings.Builder<
-            RestrictAllowedServicesRequest, RestrictAllowedServicesResponse>
-        restrictAllowedServicesSettings() {
-      return restrictAllowedServicesSettings;
     }
 
     /** Returns the builder for the settings used for calls to restrictAllowedResources. */

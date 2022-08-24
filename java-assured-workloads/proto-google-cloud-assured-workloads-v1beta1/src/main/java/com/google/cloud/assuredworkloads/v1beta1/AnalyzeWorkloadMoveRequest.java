@@ -22,7 +22,8 @@ package com.google.cloud.assuredworkloads.v1beta1;
  *
  *
  * <pre>
- * Request to check if source workload can be moved to target workload.
+ * A request to analyze a hypothetical move of a source project or project-based
+ * workload to a target (destination) folder-based workload.
  * </pre>
  *
  * Protobuf type {@code google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest}
@@ -179,11 +180,11 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The Source is project based Workload to be moved. This is the workloads's
-   * relative path in the API, formatted as
-   * "organizations/{organization_id}/locations/{location_id}/workloads/{workload_id}".
-   * For example,
-   * "organizations/123/locations/us-east1/workloads/assured-workload-1".
+   * The source type is a project-based workload. Specify the workloads's
+   * relative resource name, formatted as:
+   * "organizations/{ORGANIZATION_ID}/locations/{LOCATION_ID}/workloads/{WORKLOAD_ID}"
+   * For example:
+   * "organizations/123/locations/us-east1/workloads/assured-workload-1"
    * </pre>
    *
    * <code>string source = 1;</code>
@@ -197,11 +198,11 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The Source is project based Workload to be moved. This is the workloads's
-   * relative path in the API, formatted as
-   * "organizations/{organization_id}/locations/{location_id}/workloads/{workload_id}".
-   * For example,
-   * "organizations/123/locations/us-east1/workloads/assured-workload-1".
+   * The source type is a project-based workload. Specify the workloads's
+   * relative resource name, formatted as:
+   * "organizations/{ORGANIZATION_ID}/locations/{LOCATION_ID}/workloads/{WORKLOAD_ID}"
+   * For example:
+   * "organizations/123/locations/us-east1/workloads/assured-workload-1"
    * </pre>
    *
    * <code>string source = 1;</code>
@@ -228,11 +229,11 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The Source is project based Workload to be moved. This is the workloads's
-   * relative path in the API, formatted as
-   * "organizations/{organization_id}/locations/{location_id}/workloads/{workload_id}".
-   * For example,
-   * "organizations/123/locations/us-east1/workloads/assured-workload-1".
+   * The source type is a project-based workload. Specify the workloads's
+   * relative resource name, formatted as:
+   * "organizations/{ORGANIZATION_ID}/locations/{LOCATION_ID}/workloads/{WORKLOAD_ID}"
+   * For example:
+   * "organizations/123/locations/us-east1/workloads/assured-workload-1"
    * </pre>
    *
    * <code>string source = 1;</code>
@@ -261,14 +262,12 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The Source is a project based to be moved.
-   * This is the project's relative path in the API, formatted as
-   * "cloudresourcemanager.googleapis.com/projects/{project_number}"
-   * "projects/{project_number}"
-   * "cloudresourcemanager.googleapis.com/projects/{project_id}"
-   * "projects/{project_id}"
-   * For example,
-   * "organizations/123/locations/us-east1/workloads/assured-workload-1".
+   * The source type is a project. Specify the project's relative resource
+   * name, formatted as either a project number or a project ID:
+   * "projects/{PROJECT_NUMBER}" or "projects/{PROJECT_ID}"
+   * For example:
+   * "projects/951040570662" when specifying a project number, or
+   * "projects/my-project-123" when specifying a project ID.
    * </pre>
    *
    * <code>string project = 3;</code>
@@ -282,14 +281,12 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The Source is a project based to be moved.
-   * This is the project's relative path in the API, formatted as
-   * "cloudresourcemanager.googleapis.com/projects/{project_number}"
-   * "projects/{project_number}"
-   * "cloudresourcemanager.googleapis.com/projects/{project_id}"
-   * "projects/{project_id}"
-   * For example,
-   * "organizations/123/locations/us-east1/workloads/assured-workload-1".
+   * The source type is a project. Specify the project's relative resource
+   * name, formatted as either a project number or a project ID:
+   * "projects/{PROJECT_NUMBER}" or "projects/{PROJECT_ID}"
+   * For example:
+   * "projects/951040570662" when specifying a project number, or
+   * "projects/my-project-123" when specifying a project ID.
    * </pre>
    *
    * <code>string project = 3;</code>
@@ -316,14 +313,12 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The Source is a project based to be moved.
-   * This is the project's relative path in the API, formatted as
-   * "cloudresourcemanager.googleapis.com/projects/{project_number}"
-   * "projects/{project_number}"
-   * "cloudresourcemanager.googleapis.com/projects/{project_id}"
-   * "projects/{project_id}"
-   * For example,
-   * "organizations/123/locations/us-east1/workloads/assured-workload-1".
+   * The source type is a project. Specify the project's relative resource
+   * name, formatted as either a project number or a project ID:
+   * "projects/{PROJECT_NUMBER}" or "projects/{PROJECT_ID}"
+   * For example:
+   * "projects/951040570662" when specifying a project number, or
+   * "projects/my-project-123" when specifying a project ID.
    * </pre>
    *
    * <code>string project = 3;</code>
@@ -353,11 +348,12 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The resource name of the Workload to fetch. This is the workloads's
-   * relative path in the API, formatted as
-   * "organizations/{organization_id}/locations/{location_id}/workloads/{workload_id}".
-   * For example,
-   * "organizations/123/locations/us-east1/workloads/assured-workload-2".
+   * Required. The resource ID of the folder-based destination workload. This workload is
+   * where the source project will hypothetically be moved to. Specify the
+   * workload's relative resource name, formatted as:
+   * "organizations/{ORGANIZATION_ID}/locations/{LOCATION_ID}/workloads/{WORKLOAD_ID}"
+   * For example:
+   * "organizations/123/locations/us-east1/workloads/assured-workload-2"
    * </pre>
    *
    * <code>string target = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -380,11 +376,12 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The resource name of the Workload to fetch. This is the workloads's
-   * relative path in the API, formatted as
-   * "organizations/{organization_id}/locations/{location_id}/workloads/{workload_id}".
-   * For example,
-   * "organizations/123/locations/us-east1/workloads/assured-workload-2".
+   * Required. The resource ID of the folder-based destination workload. This workload is
+   * where the source project will hypothetically be moved to. Specify the
+   * workload's relative resource name, formatted as:
+   * "organizations/{ORGANIZATION_ID}/locations/{LOCATION_ID}/workloads/{WORKLOAD_ID}"
+   * For example:
+   * "organizations/123/locations/us-east1/workloads/assured-workload-2"
    * </pre>
    *
    * <code>string target = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -607,7 +604,8 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request to check if source workload can be moved to target workload.
+   * A request to analyze a hypothetical move of a source project or project-based
+   * workload to a target (destination) folder-based workload.
    * </pre>
    *
    * Protobuf type {@code google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest}
@@ -816,11 +814,11 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The Source is project based Workload to be moved. This is the workloads's
-     * relative path in the API, formatted as
-     * "organizations/{organization_id}/locations/{location_id}/workloads/{workload_id}".
-     * For example,
-     * "organizations/123/locations/us-east1/workloads/assured-workload-1".
+     * The source type is a project-based workload. Specify the workloads's
+     * relative resource name, formatted as:
+     * "organizations/{ORGANIZATION_ID}/locations/{LOCATION_ID}/workloads/{WORKLOAD_ID}"
+     * For example:
+     * "organizations/123/locations/us-east1/workloads/assured-workload-1"
      * </pre>
      *
      * <code>string source = 1;</code>
@@ -835,11 +833,11 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The Source is project based Workload to be moved. This is the workloads's
-     * relative path in the API, formatted as
-     * "organizations/{organization_id}/locations/{location_id}/workloads/{workload_id}".
-     * For example,
-     * "organizations/123/locations/us-east1/workloads/assured-workload-1".
+     * The source type is a project-based workload. Specify the workloads's
+     * relative resource name, formatted as:
+     * "organizations/{ORGANIZATION_ID}/locations/{LOCATION_ID}/workloads/{WORKLOAD_ID}"
+     * For example:
+     * "organizations/123/locations/us-east1/workloads/assured-workload-1"
      * </pre>
      *
      * <code>string source = 1;</code>
@@ -867,11 +865,11 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The Source is project based Workload to be moved. This is the workloads's
-     * relative path in the API, formatted as
-     * "organizations/{organization_id}/locations/{location_id}/workloads/{workload_id}".
-     * For example,
-     * "organizations/123/locations/us-east1/workloads/assured-workload-1".
+     * The source type is a project-based workload. Specify the workloads's
+     * relative resource name, formatted as:
+     * "organizations/{ORGANIZATION_ID}/locations/{LOCATION_ID}/workloads/{WORKLOAD_ID}"
+     * For example:
+     * "organizations/123/locations/us-east1/workloads/assured-workload-1"
      * </pre>
      *
      * <code>string source = 1;</code>
@@ -899,11 +897,11 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The Source is project based Workload to be moved. This is the workloads's
-     * relative path in the API, formatted as
-     * "organizations/{organization_id}/locations/{location_id}/workloads/{workload_id}".
-     * For example,
-     * "organizations/123/locations/us-east1/workloads/assured-workload-1".
+     * The source type is a project-based workload. Specify the workloads's
+     * relative resource name, formatted as:
+     * "organizations/{ORGANIZATION_ID}/locations/{LOCATION_ID}/workloads/{WORKLOAD_ID}"
+     * For example:
+     * "organizations/123/locations/us-east1/workloads/assured-workload-1"
      * </pre>
      *
      * <code>string source = 1;</code>
@@ -924,11 +922,11 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The Source is project based Workload to be moved. This is the workloads's
-     * relative path in the API, formatted as
-     * "organizations/{organization_id}/locations/{location_id}/workloads/{workload_id}".
-     * For example,
-     * "organizations/123/locations/us-east1/workloads/assured-workload-1".
+     * The source type is a project-based workload. Specify the workloads's
+     * relative resource name, formatted as:
+     * "organizations/{ORGANIZATION_ID}/locations/{LOCATION_ID}/workloads/{WORKLOAD_ID}"
+     * For example:
+     * "organizations/123/locations/us-east1/workloads/assured-workload-1"
      * </pre>
      *
      * <code>string source = 1;</code>
@@ -947,11 +945,11 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The Source is project based Workload to be moved. This is the workloads's
-     * relative path in the API, formatted as
-     * "organizations/{organization_id}/locations/{location_id}/workloads/{workload_id}".
-     * For example,
-     * "organizations/123/locations/us-east1/workloads/assured-workload-1".
+     * The source type is a project-based workload. Specify the workloads's
+     * relative resource name, formatted as:
+     * "organizations/{ORGANIZATION_ID}/locations/{LOCATION_ID}/workloads/{WORKLOAD_ID}"
+     * For example:
+     * "organizations/123/locations/us-east1/workloads/assured-workload-1"
      * </pre>
      *
      * <code>string source = 1;</code>
@@ -974,14 +972,12 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The Source is a project based to be moved.
-     * This is the project's relative path in the API, formatted as
-     * "cloudresourcemanager.googleapis.com/projects/{project_number}"
-     * "projects/{project_number}"
-     * "cloudresourcemanager.googleapis.com/projects/{project_id}"
-     * "projects/{project_id}"
-     * For example,
-     * "organizations/123/locations/us-east1/workloads/assured-workload-1".
+     * The source type is a project. Specify the project's relative resource
+     * name, formatted as either a project number or a project ID:
+     * "projects/{PROJECT_NUMBER}" or "projects/{PROJECT_ID}"
+     * For example:
+     * "projects/951040570662" when specifying a project number, or
+     * "projects/my-project-123" when specifying a project ID.
      * </pre>
      *
      * <code>string project = 3;</code>
@@ -996,14 +992,12 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The Source is a project based to be moved.
-     * This is the project's relative path in the API, formatted as
-     * "cloudresourcemanager.googleapis.com/projects/{project_number}"
-     * "projects/{project_number}"
-     * "cloudresourcemanager.googleapis.com/projects/{project_id}"
-     * "projects/{project_id}"
-     * For example,
-     * "organizations/123/locations/us-east1/workloads/assured-workload-1".
+     * The source type is a project. Specify the project's relative resource
+     * name, formatted as either a project number or a project ID:
+     * "projects/{PROJECT_NUMBER}" or "projects/{PROJECT_ID}"
+     * For example:
+     * "projects/951040570662" when specifying a project number, or
+     * "projects/my-project-123" when specifying a project ID.
      * </pre>
      *
      * <code>string project = 3;</code>
@@ -1031,14 +1025,12 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The Source is a project based to be moved.
-     * This is the project's relative path in the API, formatted as
-     * "cloudresourcemanager.googleapis.com/projects/{project_number}"
-     * "projects/{project_number}"
-     * "cloudresourcemanager.googleapis.com/projects/{project_id}"
-     * "projects/{project_id}"
-     * For example,
-     * "organizations/123/locations/us-east1/workloads/assured-workload-1".
+     * The source type is a project. Specify the project's relative resource
+     * name, formatted as either a project number or a project ID:
+     * "projects/{PROJECT_NUMBER}" or "projects/{PROJECT_ID}"
+     * For example:
+     * "projects/951040570662" when specifying a project number, or
+     * "projects/my-project-123" when specifying a project ID.
      * </pre>
      *
      * <code>string project = 3;</code>
@@ -1066,14 +1058,12 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The Source is a project based to be moved.
-     * This is the project's relative path in the API, formatted as
-     * "cloudresourcemanager.googleapis.com/projects/{project_number}"
-     * "projects/{project_number}"
-     * "cloudresourcemanager.googleapis.com/projects/{project_id}"
-     * "projects/{project_id}"
-     * For example,
-     * "organizations/123/locations/us-east1/workloads/assured-workload-1".
+     * The source type is a project. Specify the project's relative resource
+     * name, formatted as either a project number or a project ID:
+     * "projects/{PROJECT_NUMBER}" or "projects/{PROJECT_ID}"
+     * For example:
+     * "projects/951040570662" when specifying a project number, or
+     * "projects/my-project-123" when specifying a project ID.
      * </pre>
      *
      * <code>string project = 3;</code>
@@ -1094,14 +1084,12 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The Source is a project based to be moved.
-     * This is the project's relative path in the API, formatted as
-     * "cloudresourcemanager.googleapis.com/projects/{project_number}"
-     * "projects/{project_number}"
-     * "cloudresourcemanager.googleapis.com/projects/{project_id}"
-     * "projects/{project_id}"
-     * For example,
-     * "organizations/123/locations/us-east1/workloads/assured-workload-1".
+     * The source type is a project. Specify the project's relative resource
+     * name, formatted as either a project number or a project ID:
+     * "projects/{PROJECT_NUMBER}" or "projects/{PROJECT_ID}"
+     * For example:
+     * "projects/951040570662" when specifying a project number, or
+     * "projects/my-project-123" when specifying a project ID.
      * </pre>
      *
      * <code>string project = 3;</code>
@@ -1120,14 +1108,12 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The Source is a project based to be moved.
-     * This is the project's relative path in the API, formatted as
-     * "cloudresourcemanager.googleapis.com/projects/{project_number}"
-     * "projects/{project_number}"
-     * "cloudresourcemanager.googleapis.com/projects/{project_id}"
-     * "projects/{project_id}"
-     * For example,
-     * "organizations/123/locations/us-east1/workloads/assured-workload-1".
+     * The source type is a project. Specify the project's relative resource
+     * name, formatted as either a project number or a project ID:
+     * "projects/{PROJECT_NUMBER}" or "projects/{PROJECT_ID}"
+     * For example:
+     * "projects/951040570662" when specifying a project number, or
+     * "projects/my-project-123" when specifying a project ID.
      * </pre>
      *
      * <code>string project = 3;</code>
@@ -1151,11 +1137,12 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the Workload to fetch. This is the workloads's
-     * relative path in the API, formatted as
-     * "organizations/{organization_id}/locations/{location_id}/workloads/{workload_id}".
-     * For example,
-     * "organizations/123/locations/us-east1/workloads/assured-workload-2".
+     * Required. The resource ID of the folder-based destination workload. This workload is
+     * where the source project will hypothetically be moved to. Specify the
+     * workload's relative resource name, formatted as:
+     * "organizations/{ORGANIZATION_ID}/locations/{LOCATION_ID}/workloads/{WORKLOAD_ID}"
+     * For example:
+     * "organizations/123/locations/us-east1/workloads/assured-workload-2"
      * </pre>
      *
      * <code>string target = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1177,11 +1164,12 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the Workload to fetch. This is the workloads's
-     * relative path in the API, formatted as
-     * "organizations/{organization_id}/locations/{location_id}/workloads/{workload_id}".
-     * For example,
-     * "organizations/123/locations/us-east1/workloads/assured-workload-2".
+     * Required. The resource ID of the folder-based destination workload. This workload is
+     * where the source project will hypothetically be moved to. Specify the
+     * workload's relative resource name, formatted as:
+     * "organizations/{ORGANIZATION_ID}/locations/{LOCATION_ID}/workloads/{WORKLOAD_ID}"
+     * For example:
+     * "organizations/123/locations/us-east1/workloads/assured-workload-2"
      * </pre>
      *
      * <code>string target = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1203,11 +1191,12 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the Workload to fetch. This is the workloads's
-     * relative path in the API, formatted as
-     * "organizations/{organization_id}/locations/{location_id}/workloads/{workload_id}".
-     * For example,
-     * "organizations/123/locations/us-east1/workloads/assured-workload-2".
+     * Required. The resource ID of the folder-based destination workload. This workload is
+     * where the source project will hypothetically be moved to. Specify the
+     * workload's relative resource name, formatted as:
+     * "organizations/{ORGANIZATION_ID}/locations/{LOCATION_ID}/workloads/{WORKLOAD_ID}"
+     * For example:
+     * "organizations/123/locations/us-east1/workloads/assured-workload-2"
      * </pre>
      *
      * <code>string target = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1228,11 +1217,12 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the Workload to fetch. This is the workloads's
-     * relative path in the API, formatted as
-     * "organizations/{organization_id}/locations/{location_id}/workloads/{workload_id}".
-     * For example,
-     * "organizations/123/locations/us-east1/workloads/assured-workload-2".
+     * Required. The resource ID of the folder-based destination workload. This workload is
+     * where the source project will hypothetically be moved to. Specify the
+     * workload's relative resource name, formatted as:
+     * "organizations/{ORGANIZATION_ID}/locations/{LOCATION_ID}/workloads/{WORKLOAD_ID}"
+     * For example:
+     * "organizations/123/locations/us-east1/workloads/assured-workload-2"
      * </pre>
      *
      * <code>string target = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1249,11 +1239,12 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the Workload to fetch. This is the workloads's
-     * relative path in the API, formatted as
-     * "organizations/{organization_id}/locations/{location_id}/workloads/{workload_id}".
-     * For example,
-     * "organizations/123/locations/us-east1/workloads/assured-workload-2".
+     * Required. The resource ID of the folder-based destination workload. This workload is
+     * where the source project will hypothetically be moved to. Specify the
+     * workload's relative resource name, formatted as:
+     * "organizations/{ORGANIZATION_ID}/locations/{LOCATION_ID}/workloads/{WORKLOAD_ID}"
+     * For example:
+     * "organizations/123/locations/us-east1/workloads/assured-workload-2"
      * </pre>
      *
      * <code>string target = 2 [(.google.api.field_behavior) = REQUIRED];</code>

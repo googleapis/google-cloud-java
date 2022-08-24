@@ -261,46 +261,6 @@ public class AssuredWorkloadsServiceClientTest {
   }
 
   @Test
-  public void restrictAllowedServicesTest() throws Exception {
-    RestrictAllowedServicesResponse expectedResponse =
-        RestrictAllowedServicesResponse.newBuilder().build();
-    mockAssuredWorkloadsService.addResponse(expectedResponse);
-
-    RestrictAllowedServicesRequest request =
-        RestrictAllowedServicesRequest.newBuilder().setName("name3373707").build();
-
-    RestrictAllowedServicesResponse actualResponse = client.restrictAllowedServices(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockAssuredWorkloadsService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    RestrictAllowedServicesRequest actualRequest =
-        ((RestrictAllowedServicesRequest) actualRequests.get(0));
-
-    Assert.assertEquals(request.getName(), actualRequest.getName());
-    Assert.assertEquals(request.getRestrictionType(), actualRequest.getRestrictionType());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void restrictAllowedServicesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAssuredWorkloadsService.addException(exception);
-
-    try {
-      RestrictAllowedServicesRequest request =
-          RestrictAllowedServicesRequest.newBuilder().setName("name3373707").build();
-      client.restrictAllowedServices(request);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
   public void restrictAllowedResourcesTest() throws Exception {
     RestrictAllowedResourcesResponse expectedResponse =
         RestrictAllowedResourcesResponse.newBuilder().build();
