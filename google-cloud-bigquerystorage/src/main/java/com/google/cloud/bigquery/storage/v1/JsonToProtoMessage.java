@@ -502,6 +502,11 @@ public class JsonToProtoMessage {
     try {
       jsonArray = json.getJSONArray(exactJsonKeyName);
     } catch (JSONException e) {
+      java.lang.Object val = json.get(exactJsonKeyName);
+      // It is OK for repeated field to be null.
+      if (val == JSONObject.NULL) {
+        return;
+      }
       throw new IllegalArgumentException(
           "JSONObject does not have a array field at " + currentScope + ".");
     }

@@ -89,6 +89,7 @@ message RepeatedInt64 {
 
 message RepeatedInt32 {
   repeated int32 test_repeated = 1;
+  optional int32 test_non_repeated = 2;
 }
 
 message RepeatedDouble {

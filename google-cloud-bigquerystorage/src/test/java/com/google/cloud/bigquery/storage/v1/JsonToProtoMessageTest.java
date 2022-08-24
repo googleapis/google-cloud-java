@@ -1275,4 +1275,40 @@ public class JsonToProtoMessageTest {
       assertEquals(ex.getMessage(), "Text 'blah' could not be parsed at index 0");
     }
   }
+
+  @Test
+  public void testNullRepeatedField() throws Exception {
+    TableSchema ts =
+        TableSchema.newBuilder()
+            .addFields(
+                0,
+                TableFieldSchema.newBuilder()
+                    .setName("test_repeated")
+                    .setType(TableFieldSchema.Type.DATE)
+                    .setMode(TableFieldSchema.Mode.REPEATED)
+                    .build())
+            .addFields(
+                1,
+                TableFieldSchema.newBuilder()
+                    .setName("test_non_repeated")
+                    .setType(TableFieldSchema.Type.DATE)
+                    .setMode(TableFieldSchema.Mode.NULLABLE)
+                    .build())
+            .build();
+    JSONObject json = new JSONObject();
+    // Null repeated field.
+    json.put("test_repeated", JSONObject.NULL);
+
+    DynamicMessage protoMsg =
+        JsonToProtoMessage.convertJsonToProtoMessage(RepeatedInt32.getDescriptor(), ts, json);
+    assertTrue(protoMsg.getAllFields().isEmpty());
+
+    // Missing repeated field.
+    json = new JSONObject();
+    json.put("test_non_repeated", JSONObject.NULL);
+
+    protoMsg =
+        JsonToProtoMessage.convertJsonToProtoMessage(RepeatedInt32.getDescriptor(), ts, json);
+    assertTrue(protoMsg.getAllFields().isEmpty());
+  }
 }
