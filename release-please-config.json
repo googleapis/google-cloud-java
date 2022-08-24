@@ -519,7 +519,7 @@
     "java-workflows": {
         "component": "google-cloud-workflows",
         "skip-github-release": true
-       },
+       }
     
   },
   "plugins": [
