@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.8.10](https://github.com/googleapis/java-core/compare/v2.8.9...v2.8.10) (2022-08-24)
+
+
+### Dependencies
+
+* update dependency com.google.api:gax-bom to v2.19.0 ([#907](https://github.com/googleapis/java-core/issues/907)) ([51b824c](https://github.com/googleapis/java-core/commit/51b824c225fd7095138e1ec2b6d47af4e2a34352))
+* update dependency io.grpc:grpc-bom to v1.49.0 ([#908](https://github.com/googleapis/java-core/issues/908)) ([fbccd2d](https://github.com/googleapis/java-core/commit/fbccd2daceb0984c7cb95f84f89a116e54bf4ddc))
+
 ## [2.8.9](https://github.com/googleapis/java-core/compare/v2.8.8...v2.8.9) (2022-08-16)
 
 
