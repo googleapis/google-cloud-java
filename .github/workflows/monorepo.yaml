@@ -40,7 +40,7 @@ jobs:
       run: |
         cat << EOL > repos.txt
         java-accessapproval
-        java-dataform
+        java-dns
         java-resourcemanager
         EOL
     - name: Monorepo
