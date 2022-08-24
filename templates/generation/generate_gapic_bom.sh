@@ -42,6 +42,21 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
   popd
 done
 
+for module in find . -mindepth 2 -maxdepth 2 -name pom.xml |sort | xargs dirname; do
+  if ls ${module}/*-bom 1> /dev/null 2>&1; then
+    continue
+  fi
+  pom_file="${module}/pom.xml"
+  groupId_line=$(grep --max-count=1 'groupId' "${pom_file}")
+  artifactId_line=$(grep --max-count=1 'artifactId' "${pom_file}")
+  version_line=$(grep --max-count=1 'x-version-update' "${pom_file}")
+  bom_lines+="      <dependency>\n\
+      ${groupId_line}\n\
+      ${artifactId_line}\n\
+      ${version_line}\n\
+      </dependency>\n"
+done
+
 mkdir -p google-cloud-gapic-bom
 
 GENERATION_DIR=$(dirname -- "$0");
