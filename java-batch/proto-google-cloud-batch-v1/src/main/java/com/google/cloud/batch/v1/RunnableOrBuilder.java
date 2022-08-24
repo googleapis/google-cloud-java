@@ -176,5 +176,78 @@ public interface RunnableOrBuilder
    */
   boolean getAlwaysRun();
 
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables for this Runnable (overrides variables set for the
+   * whole Task or TaskGroup).
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.Environment environment = 7;</code>
+   *
+   * @return Whether the environment field is set.
+   */
+  boolean hasEnvironment();
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables for this Runnable (overrides variables set for the
+   * whole Task or TaskGroup).
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.Environment environment = 7;</code>
+   *
+   * @return The environment.
+   */
+  com.google.cloud.batch.v1.Environment getEnvironment();
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables for this Runnable (overrides variables set for the
+   * whole Task or TaskGroup).
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.Environment environment = 7;</code>
+   */
+  com.google.cloud.batch.v1.EnvironmentOrBuilder getEnvironmentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Timeout for this Runnable.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration timeout = 8;</code>
+   *
+   * @return Whether the timeout field is set.
+   */
+  boolean hasTimeout();
+  /**
+   *
+   *
+   * <pre>
+   * Timeout for this Runnable.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration timeout = 8;</code>
+   *
+   * @return The timeout.
+   */
+  com.google.protobuf.Duration getTimeout();
+  /**
+   *
+   *
+   * <pre>
+   * Timeout for this Runnable.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration timeout = 8;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder();
+
   public com.google.cloud.batch.v1.Runnable.ExecutableCase getExecutableCase();
 }

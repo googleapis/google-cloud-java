@@ -157,6 +157,22 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
                       com.google.cloud.batch.v1.LifecyclePolicy.parser(), extensionRegistry));
               break;
             }
+          case 82:
+            {
+              com.google.cloud.batch.v1.Environment.Builder subBuilder = null;
+              if (environment_ != null) {
+                subBuilder = environment_.toBuilder();
+              }
+              environment_ =
+                  input.readMessage(
+                      com.google.cloud.batch.v1.Environment.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(environment_);
+                environment_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -575,6 +591,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
     return environments_;
   }
 
+  @java.lang.Deprecated
   public int getEnvironmentsCount() {
     return internalGetEnvironments().getMap().size();
   }
@@ -586,8 +603,9 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
    * You can set up to 100 environments.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; environments = 6;</code>
+   * <code>map&lt;string, string&gt; environments = 6 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   @java.lang.Override
   public boolean containsEnvironments(java.lang.String key) {
     if (key == null) {
@@ -609,9 +627,10 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
    * You can set up to 100 environments.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; environments = 6;</code>
+   * <code>map&lt;string, string&gt; environments = 6 [deprecated = true];</code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getEnvironmentsMap() {
     return internalGetEnvironments().getMap();
   }
@@ -623,9 +642,10 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
    * You can set up to 100 environments.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; environments = 6;</code>
+   * <code>map&lt;string, string&gt; environments = 6 [deprecated = true];</code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getEnvironmentsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -642,9 +662,10 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
    * You can set up to 100 environments.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; environments = 6;</code>
+   * <code>map&lt;string, string&gt; environments = 6 [deprecated = true];</code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getEnvironmentsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new NullPointerException("map key");
@@ -725,6 +746,54 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
     return volumes_.get(index);
   }
 
+  public static final int ENVIRONMENT_FIELD_NUMBER = 10;
+  private com.google.cloud.batch.v1.Environment environment_;
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables to set before running the Task.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.Environment environment = 10;</code>
+   *
+   * @return Whether the environment field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnvironment() {
+    return environment_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables to set before running the Task.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.Environment environment = 10;</code>
+   *
+   * @return The environment.
+   */
+  @java.lang.Override
+  public com.google.cloud.batch.v1.Environment getEnvironment() {
+    return environment_ == null
+        ? com.google.cloud.batch.v1.Environment.getDefaultInstance()
+        : environment_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables to set before running the Task.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.Environment environment = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.batch.v1.EnvironmentOrBuilder getEnvironmentOrBuilder() {
+    return getEnvironment();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -758,6 +827,9 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < lifecyclePolicies_.size(); i++) {
       output.writeMessage(9, lifecyclePolicies_.get(i));
+    }
+    if (environment_ != null) {
+      output.writeMessage(10, getEnvironment());
     }
     unknownFields.writeTo(output);
   }
@@ -797,6 +869,9 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(9, lifecyclePolicies_.get(i));
     }
+    if (environment_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getEnvironment());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -825,6 +900,10 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
     if (!getLifecyclePoliciesList().equals(other.getLifecyclePoliciesList())) return false;
     if (!internalGetEnvironments().equals(other.internalGetEnvironments())) return false;
     if (!getVolumesList().equals(other.getVolumesList())) return false;
+    if (hasEnvironment() != other.hasEnvironment()) return false;
+    if (hasEnvironment()) {
+      if (!getEnvironment().equals(other.getEnvironment())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -861,6 +940,10 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
     if (getVolumesCount() > 0) {
       hash = (37 * hash) + VOLUMES_FIELD_NUMBER;
       hash = (53 * hash) + getVolumesList().hashCode();
+    }
+    if (hasEnvironment()) {
+      hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getEnvironment().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1063,6 +1146,12 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         volumesBuilder_.clear();
       }
+      if (environmentBuilder_ == null) {
+        environment_ = null;
+      } else {
+        environment_ = null;
+        environmentBuilder_ = null;
+      }
       return this;
     }
 
@@ -1129,6 +1218,11 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         result.volumes_ = volumes_;
       } else {
         result.volumes_ = volumesBuilder_.build();
+      }
+      if (environmentBuilder_ == null) {
+        result.environment_ = environment_;
+      } else {
+        result.environment_ = environmentBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1269,6 +1363,9 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
             volumesBuilder_.addAllMessages(other.volumes_);
           }
         }
+      }
+      if (other.hasEnvironment()) {
+        mergeEnvironment(other.getEnvironment());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2759,6 +2856,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       return environments_;
     }
 
+    @java.lang.Deprecated
     public int getEnvironmentsCount() {
       return internalGetEnvironments().getMap().size();
     }
@@ -2770,8 +2868,9 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      * You can set up to 100 environments.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; environments = 6;</code>
+     * <code>map&lt;string, string&gt; environments = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     @java.lang.Override
     public boolean containsEnvironments(java.lang.String key) {
       if (key == null) {
@@ -2793,9 +2892,10 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      * You can set up to 100 environments.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; environments = 6;</code>
+     * <code>map&lt;string, string&gt; environments = 6 [deprecated = true];</code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getEnvironmentsMap() {
       return internalGetEnvironments().getMap();
     }
@@ -2807,9 +2907,10 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      * You can set up to 100 environments.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; environments = 6;</code>
+     * <code>map&lt;string, string&gt; environments = 6 [deprecated = true];</code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public java.lang.String getEnvironmentsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -2826,9 +2927,10 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      * You can set up to 100 environments.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; environments = 6;</code>
+     * <code>map&lt;string, string&gt; environments = 6 [deprecated = true];</code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public java.lang.String getEnvironmentsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new NullPointerException("map key");
@@ -2840,6 +2942,7 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
       return map.get(key);
     }
 
+    @java.lang.Deprecated
     public Builder clearEnvironments() {
       internalGetMutableEnvironments().getMutableMap().clear();
       return this;
@@ -2852,8 +2955,9 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      * You can set up to 100 environments.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; environments = 6;</code>
+     * <code>map&lt;string, string&gt; environments = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder removeEnvironments(java.lang.String key) {
       if (key == null) {
         throw new NullPointerException("map key");
@@ -2874,8 +2978,9 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      * You can set up to 100 environments.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; environments = 6;</code>
+     * <code>map&lt;string, string&gt; environments = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder putEnvironments(java.lang.String key, java.lang.String value) {
       if (key == null) {
         throw new NullPointerException("map key");
@@ -2895,8 +3000,9 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
      * You can set up to 100 environments.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; environments = 6;</code>
+     * <code>map&lt;string, string&gt; environments = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder putAllEnvironments(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableEnvironments().getMutableMap().putAll(values);
       return this;
@@ -3246,6 +3352,191 @@ public final class TaskSpec extends com.google.protobuf.GeneratedMessageV3
         volumes_ = null;
       }
       return volumesBuilder_;
+    }
+
+    private com.google.cloud.batch.v1.Environment environment_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.batch.v1.Environment,
+            com.google.cloud.batch.v1.Environment.Builder,
+            com.google.cloud.batch.v1.EnvironmentOrBuilder>
+        environmentBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to set before running the Task.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.Environment environment = 10;</code>
+     *
+     * @return Whether the environment field is set.
+     */
+    public boolean hasEnvironment() {
+      return environmentBuilder_ != null || environment_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to set before running the Task.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.Environment environment = 10;</code>
+     *
+     * @return The environment.
+     */
+    public com.google.cloud.batch.v1.Environment getEnvironment() {
+      if (environmentBuilder_ == null) {
+        return environment_ == null
+            ? com.google.cloud.batch.v1.Environment.getDefaultInstance()
+            : environment_;
+      } else {
+        return environmentBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to set before running the Task.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.Environment environment = 10;</code>
+     */
+    public Builder setEnvironment(com.google.cloud.batch.v1.Environment value) {
+      if (environmentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        environment_ = value;
+        onChanged();
+      } else {
+        environmentBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to set before running the Task.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.Environment environment = 10;</code>
+     */
+    public Builder setEnvironment(com.google.cloud.batch.v1.Environment.Builder builderForValue) {
+      if (environmentBuilder_ == null) {
+        environment_ = builderForValue.build();
+        onChanged();
+      } else {
+        environmentBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to set before running the Task.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.Environment environment = 10;</code>
+     */
+    public Builder mergeEnvironment(com.google.cloud.batch.v1.Environment value) {
+      if (environmentBuilder_ == null) {
+        if (environment_ != null) {
+          environment_ =
+              com.google.cloud.batch.v1.Environment.newBuilder(environment_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          environment_ = value;
+        }
+        onChanged();
+      } else {
+        environmentBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to set before running the Task.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.Environment environment = 10;</code>
+     */
+    public Builder clearEnvironment() {
+      if (environmentBuilder_ == null) {
+        environment_ = null;
+        onChanged();
+      } else {
+        environment_ = null;
+        environmentBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to set before running the Task.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.Environment environment = 10;</code>
+     */
+    public com.google.cloud.batch.v1.Environment.Builder getEnvironmentBuilder() {
+
+      onChanged();
+      return getEnvironmentFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to set before running the Task.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.Environment environment = 10;</code>
+     */
+    public com.google.cloud.batch.v1.EnvironmentOrBuilder getEnvironmentOrBuilder() {
+      if (environmentBuilder_ != null) {
+        return environmentBuilder_.getMessageOrBuilder();
+      } else {
+        return environment_ == null
+            ? com.google.cloud.batch.v1.Environment.getDefaultInstance()
+            : environment_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to set before running the Task.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.Environment environment = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.batch.v1.Environment,
+            com.google.cloud.batch.v1.Environment.Builder,
+            com.google.cloud.batch.v1.EnvironmentOrBuilder>
+        getEnvironmentFieldBuilder() {
+      if (environmentBuilder_ == null) {
+        environmentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.batch.v1.Environment,
+                com.google.cloud.batch.v1.Environment.Builder,
+                com.google.cloud.batch.v1.EnvironmentOrBuilder>(
+                getEnvironment(), getParentForChildren(), isClean());
+        environment_ = null;
+      }
+      return environmentBuilder_;
     }
 
     @java.lang.Override
