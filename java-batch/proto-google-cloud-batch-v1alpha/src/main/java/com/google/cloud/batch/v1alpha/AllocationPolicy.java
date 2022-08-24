@@ -470,12 +470,18 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of allowed location names represented by internal URLs,
-     * First location in the list must be a region.
-     * for example,
-     * ["regions/us-central1"] allow VMs in region us-central1,
-     * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
-     * us-central1-a.
+     * A list of allowed location names represented by internal URLs.
+     * Each location can be a region or a zone.
+     * Only one region or multiple zones in one region is supported now.
+     * For example,
+     * ["regions/us-central1"] allow VMs in any zones in region us-central1.
+     * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
+     * in zones us-central1-a and us-central1-c.
+     * All locations end up in different regions would cause errors.
+     * For example,
+     * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
+     * "zones/us-west1-a"] contains 2 regions "us-central1" and
+     * "us-west1". An error is expected in this case.
      * </pre>
      *
      * <code>repeated string allowed_locations = 1;</code>
@@ -487,12 +493,18 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of allowed location names represented by internal URLs,
-     * First location in the list must be a region.
-     * for example,
-     * ["regions/us-central1"] allow VMs in region us-central1,
-     * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
-     * us-central1-a.
+     * A list of allowed location names represented by internal URLs.
+     * Each location can be a region or a zone.
+     * Only one region or multiple zones in one region is supported now.
+     * For example,
+     * ["regions/us-central1"] allow VMs in any zones in region us-central1.
+     * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
+     * in zones us-central1-a and us-central1-c.
+     * All locations end up in different regions would cause errors.
+     * For example,
+     * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
+     * "zones/us-west1-a"] contains 2 regions "us-central1" and
+     * "us-west1". An error is expected in this case.
      * </pre>
      *
      * <code>repeated string allowed_locations = 1;</code>
@@ -504,12 +516,18 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of allowed location names represented by internal URLs,
-     * First location in the list must be a region.
-     * for example,
-     * ["regions/us-central1"] allow VMs in region us-central1,
-     * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
-     * us-central1-a.
+     * A list of allowed location names represented by internal URLs.
+     * Each location can be a region or a zone.
+     * Only one region or multiple zones in one region is supported now.
+     * For example,
+     * ["regions/us-central1"] allow VMs in any zones in region us-central1.
+     * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
+     * in zones us-central1-a and us-central1-c.
+     * All locations end up in different regions would cause errors.
+     * For example,
+     * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
+     * "zones/us-west1-a"] contains 2 regions "us-central1" and
+     * "us-west1". An error is expected in this case.
      * </pre>
      *
      * <code>repeated string allowed_locations = 1;</code>
@@ -522,12 +540,18 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of allowed location names represented by internal URLs,
-     * First location in the list must be a region.
-     * for example,
-     * ["regions/us-central1"] allow VMs in region us-central1,
-     * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
-     * us-central1-a.
+     * A list of allowed location names represented by internal URLs.
+     * Each location can be a region or a zone.
+     * Only one region or multiple zones in one region is supported now.
+     * For example,
+     * ["regions/us-central1"] allow VMs in any zones in region us-central1.
+     * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
+     * in zones us-central1-a and us-central1-c.
+     * All locations end up in different regions would cause errors.
+     * For example,
+     * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
+     * "zones/us-west1-a"] contains 2 regions "us-central1" and
+     * "us-west1". An error is expected in this case.
      * </pre>
      *
      * <code>repeated string allowed_locations = 1;</code>
@@ -706,12 +730,18 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of allowed location names represented by internal URLs,
-     * First location in the list must be a region.
-     * for example,
-     * ["regions/us-central1"] allow VMs in region us-central1,
-     * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
-     * us-central1-a.
+     * A list of allowed location names represented by internal URLs.
+     * Each location can be a region or a zone.
+     * Only one region or multiple zones in one region is supported now.
+     * For example,
+     * ["regions/us-central1"] allow VMs in any zones in region us-central1.
+     * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
+     * in zones us-central1-a and us-central1-c.
+     * All locations end up in different regions would cause errors.
+     * For example,
+     * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
+     * "zones/us-west1-a"] contains 2 regions "us-central1" and
+     * "us-west1". An error is expected in this case.
      * </pre>
      *
      * <code>repeated string allowed_locations = 1;</code>
@@ -725,12 +755,18 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of allowed location names represented by internal URLs,
-     * First location in the list must be a region.
-     * for example,
-     * ["regions/us-central1"] allow VMs in region us-central1,
-     * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
-     * us-central1-a.
+     * A list of allowed location names represented by internal URLs.
+     * Each location can be a region or a zone.
+     * Only one region or multiple zones in one region is supported now.
+     * For example,
+     * ["regions/us-central1"] allow VMs in any zones in region us-central1.
+     * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
+     * in zones us-central1-a and us-central1-c.
+     * All locations end up in different regions would cause errors.
+     * For example,
+     * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
+     * "zones/us-west1-a"] contains 2 regions "us-central1" and
+     * "us-west1". An error is expected in this case.
      * </pre>
      *
      * <code>repeated string allowed_locations = 1;</code>
@@ -744,12 +780,18 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of allowed location names represented by internal URLs,
-     * First location in the list must be a region.
-     * for example,
-     * ["regions/us-central1"] allow VMs in region us-central1,
-     * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
-     * us-central1-a.
+     * A list of allowed location names represented by internal URLs.
+     * Each location can be a region or a zone.
+     * Only one region or multiple zones in one region is supported now.
+     * For example,
+     * ["regions/us-central1"] allow VMs in any zones in region us-central1.
+     * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
+     * in zones us-central1-a and us-central1-c.
+     * All locations end up in different regions would cause errors.
+     * For example,
+     * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
+     * "zones/us-west1-a"] contains 2 regions "us-central1" and
+     * "us-west1". An error is expected in this case.
      * </pre>
      *
      * <code>repeated string allowed_locations = 1;</code>
@@ -764,12 +806,18 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of allowed location names represented by internal URLs,
-     * First location in the list must be a region.
-     * for example,
-     * ["regions/us-central1"] allow VMs in region us-central1,
-     * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
-     * us-central1-a.
+     * A list of allowed location names represented by internal URLs.
+     * Each location can be a region or a zone.
+     * Only one region or multiple zones in one region is supported now.
+     * For example,
+     * ["regions/us-central1"] allow VMs in any zones in region us-central1.
+     * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
+     * in zones us-central1-a and us-central1-c.
+     * All locations end up in different regions would cause errors.
+     * For example,
+     * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
+     * "zones/us-west1-a"] contains 2 regions "us-central1" and
+     * "us-west1". An error is expected in this case.
      * </pre>
      *
      * <code>repeated string allowed_locations = 1;</code>
@@ -1231,12 +1279,18 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of allowed location names represented by internal URLs,
-       * First location in the list must be a region.
-       * for example,
-       * ["regions/us-central1"] allow VMs in region us-central1,
-       * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
-       * us-central1-a.
+       * A list of allowed location names represented by internal URLs.
+       * Each location can be a region or a zone.
+       * Only one region or multiple zones in one region is supported now.
+       * For example,
+       * ["regions/us-central1"] allow VMs in any zones in region us-central1.
+       * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
+       * in zones us-central1-a and us-central1-c.
+       * All locations end up in different regions would cause errors.
+       * For example,
+       * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
+       * "zones/us-west1-a"] contains 2 regions "us-central1" and
+       * "us-west1". An error is expected in this case.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>
@@ -1250,12 +1304,18 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of allowed location names represented by internal URLs,
-       * First location in the list must be a region.
-       * for example,
-       * ["regions/us-central1"] allow VMs in region us-central1,
-       * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
-       * us-central1-a.
+       * A list of allowed location names represented by internal URLs.
+       * Each location can be a region or a zone.
+       * Only one region or multiple zones in one region is supported now.
+       * For example,
+       * ["regions/us-central1"] allow VMs in any zones in region us-central1.
+       * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
+       * in zones us-central1-a and us-central1-c.
+       * All locations end up in different regions would cause errors.
+       * For example,
+       * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
+       * "zones/us-west1-a"] contains 2 regions "us-central1" and
+       * "us-west1". An error is expected in this case.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>
@@ -1269,12 +1329,18 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of allowed location names represented by internal URLs,
-       * First location in the list must be a region.
-       * for example,
-       * ["regions/us-central1"] allow VMs in region us-central1,
-       * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
-       * us-central1-a.
+       * A list of allowed location names represented by internal URLs.
+       * Each location can be a region or a zone.
+       * Only one region or multiple zones in one region is supported now.
+       * For example,
+       * ["regions/us-central1"] allow VMs in any zones in region us-central1.
+       * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
+       * in zones us-central1-a and us-central1-c.
+       * All locations end up in different regions would cause errors.
+       * For example,
+       * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
+       * "zones/us-west1-a"] contains 2 regions "us-central1" and
+       * "us-west1". An error is expected in this case.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>
@@ -1289,12 +1355,18 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of allowed location names represented by internal URLs,
-       * First location in the list must be a region.
-       * for example,
-       * ["regions/us-central1"] allow VMs in region us-central1,
-       * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
-       * us-central1-a.
+       * A list of allowed location names represented by internal URLs.
+       * Each location can be a region or a zone.
+       * Only one region or multiple zones in one region is supported now.
+       * For example,
+       * ["regions/us-central1"] allow VMs in any zones in region us-central1.
+       * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
+       * in zones us-central1-a and us-central1-c.
+       * All locations end up in different regions would cause errors.
+       * For example,
+       * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
+       * "zones/us-west1-a"] contains 2 regions "us-central1" and
+       * "us-west1". An error is expected in this case.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>
@@ -1309,12 +1381,18 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of allowed location names represented by internal URLs,
-       * First location in the list must be a region.
-       * for example,
-       * ["regions/us-central1"] allow VMs in region us-central1,
-       * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
-       * us-central1-a.
+       * A list of allowed location names represented by internal URLs.
+       * Each location can be a region or a zone.
+       * Only one region or multiple zones in one region is supported now.
+       * For example,
+       * ["regions/us-central1"] allow VMs in any zones in region us-central1.
+       * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
+       * in zones us-central1-a and us-central1-c.
+       * All locations end up in different regions would cause errors.
+       * For example,
+       * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
+       * "zones/us-west1-a"] contains 2 regions "us-central1" and
+       * "us-west1". An error is expected in this case.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>
@@ -1336,12 +1414,18 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of allowed location names represented by internal URLs,
-       * First location in the list must be a region.
-       * for example,
-       * ["regions/us-central1"] allow VMs in region us-central1,
-       * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
-       * us-central1-a.
+       * A list of allowed location names represented by internal URLs.
+       * Each location can be a region or a zone.
+       * Only one region or multiple zones in one region is supported now.
+       * For example,
+       * ["regions/us-central1"] allow VMs in any zones in region us-central1.
+       * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
+       * in zones us-central1-a and us-central1-c.
+       * All locations end up in different regions would cause errors.
+       * For example,
+       * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
+       * "zones/us-west1-a"] contains 2 regions "us-central1" and
+       * "us-west1". An error is expected in this case.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>
@@ -1362,12 +1446,18 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of allowed location names represented by internal URLs,
-       * First location in the list must be a region.
-       * for example,
-       * ["regions/us-central1"] allow VMs in region us-central1,
-       * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
-       * us-central1-a.
+       * A list of allowed location names represented by internal URLs.
+       * Each location can be a region or a zone.
+       * Only one region or multiple zones in one region is supported now.
+       * For example,
+       * ["regions/us-central1"] allow VMs in any zones in region us-central1.
+       * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
+       * in zones us-central1-a and us-central1-c.
+       * All locations end up in different regions would cause errors.
+       * For example,
+       * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
+       * "zones/us-west1-a"] contains 2 regions "us-central1" and
+       * "us-west1". An error is expected in this case.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>
@@ -1385,12 +1475,18 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of allowed location names represented by internal URLs,
-       * First location in the list must be a region.
-       * for example,
-       * ["regions/us-central1"] allow VMs in region us-central1,
-       * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
-       * us-central1-a.
+       * A list of allowed location names represented by internal URLs.
+       * Each location can be a region or a zone.
+       * Only one region or multiple zones in one region is supported now.
+       * For example,
+       * ["regions/us-central1"] allow VMs in any zones in region us-central1.
+       * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
+       * in zones us-central1-a and us-central1-c.
+       * All locations end up in different regions would cause errors.
+       * For example,
+       * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
+       * "zones/us-west1-a"] contains 2 regions "us-central1" and
+       * "us-west1". An error is expected in this case.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>
@@ -1407,12 +1503,18 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of allowed location names represented by internal URLs,
-       * First location in the list must be a region.
-       * for example,
-       * ["regions/us-central1"] allow VMs in region us-central1,
-       * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
-       * us-central1-a.
+       * A list of allowed location names represented by internal URLs.
+       * Each location can be a region or a zone.
+       * Only one region or multiple zones in one region is supported now.
+       * For example,
+       * ["regions/us-central1"] allow VMs in any zones in region us-central1.
+       * ["zones/us-central1-a", "zones/us-central1-c"] only allow VMs
+       * in zones us-central1-a and us-central1-c.
+       * All locations end up in different regions would cause errors.
+       * For example,
+       * ["regions/us-central1", "zones/us-central1-a", "zones/us-central1-b",
+       * "zones/us-west1-a"] contains 2 regions "us-central1" and
+       * "us-west1". An error is expected in this case.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>
@@ -1747,7 +1849,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Disk type as shown in `gcloud compute disk-types list`
-     * For example, "pd-ssd", "pd-standard", "pd-balanced".
+     * For example, "pd-ssd", "pd-standard", "pd-balanced", "local-ssd".
      * </pre>
      *
      * <code>string type = 1;</code>
@@ -1760,7 +1862,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Disk type as shown in `gcloud compute disk-types list`
-     * For example, "pd-ssd", "pd-standard", "pd-balanced".
+     * For example, "pd-ssd", "pd-standard", "pd-balanced", "local-ssd".
      * </pre>
      *
      * <code>string type = 1;</code>
@@ -1775,6 +1877,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Disk size in GB.
      * This field is ignored if `data_source` is `disk` or `image`.
+     * If `type` is `local-ssd`, size_gb should be a multiple of 375GB,
+     * otherwise, the final size will be the next greater multiple of 375 GB.
      * </pre>
      *
      * <code>int64 size_gb = 2;</code>
@@ -1783,13 +1887,45 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      */
     long getSizeGb();
 
+    /**
+     *
+     *
+     * <pre>
+     * Local SSDs are available through both "SCSI" and "NVMe" interfaces.
+     * If not indicated, "NVMe" will be the default one for local ssds.
+     * We only support "SCSI" for persistent disks now.
+     * </pre>
+     *
+     * <code>string disk_interface = 6;</code>
+     *
+     * @return The diskInterface.
+     */
+    java.lang.String getDiskInterface();
+    /**
+     *
+     *
+     * <pre>
+     * Local SSDs are available through both "SCSI" and "NVMe" interfaces.
+     * If not indicated, "NVMe" will be the default one for local ssds.
+     * We only support "SCSI" for persistent disks now.
+     * </pre>
+     *
+     * <code>string disk_interface = 6;</code>
+     *
+     * @return The bytes for diskInterface.
+     */
+    com.google.protobuf.ByteString getDiskInterfaceBytes();
+
     public com.google.cloud.batch.v1alpha.AllocationPolicy.Disk.DataSourceCase getDataSourceCase();
   }
   /**
    *
    *
    * <pre>
-   * A new persistent disk.
+   * A new persistent disk or a local ssd.
+   * A VM can only have one local SSD setting but multiple local SSD partitions.
+   * https://cloud.google.com/compute/docs/disks#pdspecs.
+   * https://cloud.google.com/compute/docs/disks#localssds.
    * </pre>
    *
    * Protobuf type {@code google.cloud.batch.v1alpha.AllocationPolicy.Disk}
@@ -1806,6 +1942,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
 
     private Disk() {
       type_ = "";
+      diskInterface_ = "";
     }
 
     @java.lang.Override
@@ -1861,6 +1998,13 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
                 java.lang.String s = input.readStringRequireUtf8();
                 dataSourceCase_ = 5;
                 dataSource_ = s;
+                break;
+              }
+            case 50:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                diskInterface_ = s;
                 break;
               }
             default:
@@ -2093,7 +2237,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Disk type as shown in `gcloud compute disk-types list`
-     * For example, "pd-ssd", "pd-standard", "pd-balanced".
+     * For example, "pd-ssd", "pd-standard", "pd-balanced", "local-ssd".
      * </pre>
      *
      * <code>string type = 1;</code>
@@ -2117,7 +2261,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Disk type as shown in `gcloud compute disk-types list`
-     * For example, "pd-ssd", "pd-standard", "pd-balanced".
+     * For example, "pd-ssd", "pd-standard", "pd-balanced", "local-ssd".
      * </pre>
      *
      * <code>string type = 1;</code>
@@ -2145,6 +2289,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Disk size in GB.
      * This field is ignored if `data_source` is `disk` or `image`.
+     * If `type` is `local-ssd`, size_gb should be a multiple of 375GB,
+     * otherwise, the final size will be the next greater multiple of 375 GB.
      * </pre>
      *
      * <code>int64 size_gb = 2;</code>
@@ -2154,6 +2300,59 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public long getSizeGb() {
       return sizeGb_;
+    }
+
+    public static final int DISK_INTERFACE_FIELD_NUMBER = 6;
+    private volatile java.lang.Object diskInterface_;
+    /**
+     *
+     *
+     * <pre>
+     * Local SSDs are available through both "SCSI" and "NVMe" interfaces.
+     * If not indicated, "NVMe" will be the default one for local ssds.
+     * We only support "SCSI" for persistent disks now.
+     * </pre>
+     *
+     * <code>string disk_interface = 6;</code>
+     *
+     * @return The diskInterface.
+     */
+    @java.lang.Override
+    public java.lang.String getDiskInterface() {
+      java.lang.Object ref = diskInterface_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        diskInterface_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Local SSDs are available through both "SCSI" and "NVMe" interfaces.
+     * If not indicated, "NVMe" will be the default one for local ssds.
+     * We only support "SCSI" for persistent disks now.
+     * </pre>
+     *
+     * <code>string disk_interface = 6;</code>
+     *
+     * @return The bytes for diskInterface.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDiskInterfaceBytes() {
+      java.lang.Object ref = diskInterface_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        diskInterface_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2182,6 +2381,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (dataSourceCase_ == 5) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, dataSource_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(diskInterface_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, diskInterface_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2203,6 +2405,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (dataSourceCase_ == 5) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, dataSource_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(diskInterface_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, diskInterface_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2221,6 +2426,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
 
       if (!getType().equals(other.getType())) return false;
       if (getSizeGb() != other.getSizeGb()) return false;
+      if (!getDiskInterface().equals(other.getDiskInterface())) return false;
       if (!getDataSourceCase().equals(other.getDataSourceCase())) return false;
       switch (dataSourceCase_) {
         case 4:
@@ -2247,6 +2453,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + getType().hashCode();
       hash = (37 * hash) + SIZE_GB_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSizeGb());
+      hash = (37 * hash) + DISK_INTERFACE_FIELD_NUMBER;
+      hash = (53 * hash) + getDiskInterface().hashCode();
       switch (dataSourceCase_) {
         case 4:
           hash = (37 * hash) + IMAGE_FIELD_NUMBER;
@@ -2365,7 +2573,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A new persistent disk.
+     * A new persistent disk or a local ssd.
+     * A VM can only have one local SSD setting but multiple local SSD partitions.
+     * https://cloud.google.com/compute/docs/disks#pdspecs.
+     * https://cloud.google.com/compute/docs/disks#localssds.
      * </pre>
      *
      * Protobuf type {@code google.cloud.batch.v1alpha.AllocationPolicy.Disk}
@@ -2411,6 +2622,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
 
         sizeGb_ = 0L;
 
+        diskInterface_ = "";
+
         dataSourceCase_ = 0;
         dataSource_ = null;
         return this;
@@ -2448,6 +2661,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         }
         result.type_ = type_;
         result.sizeGb_ = sizeGb_;
+        result.diskInterface_ = diskInterface_;
         result.dataSourceCase_ = dataSourceCase_;
         onBuilt();
         return result;
@@ -2507,6 +2721,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         }
         if (other.getSizeGb() != 0L) {
           setSizeGb(other.getSizeGb());
+        }
+        if (!other.getDiskInterface().isEmpty()) {
+          diskInterface_ = other.diskInterface_;
+          onChanged();
         }
         switch (other.getDataSourceCase()) {
           case IMAGE:
@@ -2846,7 +3064,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Disk type as shown in `gcloud compute disk-types list`
-       * For example, "pd-ssd", "pd-standard", "pd-balanced".
+       * For example, "pd-ssd", "pd-standard", "pd-balanced", "local-ssd".
        * </pre>
        *
        * <code>string type = 1;</code>
@@ -2869,7 +3087,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Disk type as shown in `gcloud compute disk-types list`
-       * For example, "pd-ssd", "pd-standard", "pd-balanced".
+       * For example, "pd-ssd", "pd-standard", "pd-balanced", "local-ssd".
        * </pre>
        *
        * <code>string type = 1;</code>
@@ -2892,7 +3110,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Disk type as shown in `gcloud compute disk-types list`
-       * For example, "pd-ssd", "pd-standard", "pd-balanced".
+       * For example, "pd-ssd", "pd-standard", "pd-balanced", "local-ssd".
        * </pre>
        *
        * <code>string type = 1;</code>
@@ -2914,7 +3132,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Disk type as shown in `gcloud compute disk-types list`
-       * For example, "pd-ssd", "pd-standard", "pd-balanced".
+       * For example, "pd-ssd", "pd-standard", "pd-balanced", "local-ssd".
        * </pre>
        *
        * <code>string type = 1;</code>
@@ -2932,7 +3150,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Disk type as shown in `gcloud compute disk-types list`
-       * For example, "pd-ssd", "pd-standard", "pd-balanced".
+       * For example, "pd-ssd", "pd-standard", "pd-balanced", "local-ssd".
        * </pre>
        *
        * <code>string type = 1;</code>
@@ -2958,6 +3176,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Disk size in GB.
        * This field is ignored if `data_source` is `disk` or `image`.
+       * If `type` is `local-ssd`, size_gb should be a multiple of 375GB,
+       * otherwise, the final size will be the next greater multiple of 375 GB.
        * </pre>
        *
        * <code>int64 size_gb = 2;</code>
@@ -2974,6 +3194,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Disk size in GB.
        * This field is ignored if `data_source` is `disk` or `image`.
+       * If `type` is `local-ssd`, size_gb should be a multiple of 375GB,
+       * otherwise, the final size will be the next greater multiple of 375 GB.
        * </pre>
        *
        * <code>int64 size_gb = 2;</code>
@@ -2993,6 +3215,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Disk size in GB.
        * This field is ignored if `data_source` is `disk` or `image`.
+       * If `type` is `local-ssd`, size_gb should be a multiple of 375GB,
+       * otherwise, the final size will be the next greater multiple of 375 GB.
        * </pre>
        *
        * <code>int64 size_gb = 2;</code>
@@ -3002,6 +3226,122 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       public Builder clearSizeGb() {
 
         sizeGb_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object diskInterface_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Local SSDs are available through both "SCSI" and "NVMe" interfaces.
+       * If not indicated, "NVMe" will be the default one for local ssds.
+       * We only support "SCSI" for persistent disks now.
+       * </pre>
+       *
+       * <code>string disk_interface = 6;</code>
+       *
+       * @return The diskInterface.
+       */
+      public java.lang.String getDiskInterface() {
+        java.lang.Object ref = diskInterface_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          diskInterface_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Local SSDs are available through both "SCSI" and "NVMe" interfaces.
+       * If not indicated, "NVMe" will be the default one for local ssds.
+       * We only support "SCSI" for persistent disks now.
+       * </pre>
+       *
+       * <code>string disk_interface = 6;</code>
+       *
+       * @return The bytes for diskInterface.
+       */
+      public com.google.protobuf.ByteString getDiskInterfaceBytes() {
+        java.lang.Object ref = diskInterface_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          diskInterface_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Local SSDs are available through both "SCSI" and "NVMe" interfaces.
+       * If not indicated, "NVMe" will be the default one for local ssds.
+       * We only support "SCSI" for persistent disks now.
+       * </pre>
+       *
+       * <code>string disk_interface = 6;</code>
+       *
+       * @param value The diskInterface to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDiskInterface(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        diskInterface_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Local SSDs are available through both "SCSI" and "NVMe" interfaces.
+       * If not indicated, "NVMe" will be the default one for local ssds.
+       * We only support "SCSI" for persistent disks now.
+       * </pre>
+       *
+       * <code>string disk_interface = 6;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDiskInterface() {
+
+        diskInterface_ = getDefaultInstance().getDiskInterface();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Local SSDs are available through both "SCSI" and "NVMe" interfaces.
+       * If not indicated, "NVMe" will be the default one for local ssds.
+       * We only support "SCSI" for persistent disks now.
+       * </pre>
+       *
+       * <code>string disk_interface = 6;</code>
+       *
+       * @param value The bytes for diskInterface to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDiskInterfaceBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        diskInterface_ = value;
         onChanged();
         return this;
       }
@@ -3149,7 +3489,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A new or an existing persistent disk attached to a VM instance.
+   * A new or an existing persistent disk or a local ssd attached to a VM
+   * instance.
    * </pre>
    *
    * Protobuf type {@code google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk}
@@ -3668,7 +4009,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A new or an existing persistent disk attached to a VM instance.
+     * A new or an existing persistent disk or a local ssd attached to a VM
+     * instance.
      * </pre>
      *
      * Protobuf type {@code google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk}
@@ -4361,6 +4703,23 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * @return The count.
      */
     long getCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * When true, Batch will install the GPU drivers.
+     * This field will be ignored if specified.
+     * </pre>
+     *
+     * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
+     *
+     * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.Accelerator.install_gpu_drivers is
+     *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=346
+     * @return The installGpuDrivers.
+     */
+    @java.lang.Deprecated
+    boolean getInstallGpuDrivers();
   }
   /**
    *
@@ -4424,6 +4783,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
             case 16:
               {
                 count_ = input.readInt64();
+                break;
+              }
+            case 24:
+              {
+                installGpuDrivers_ = input.readBool();
                 break;
               }
             default:
@@ -4531,6 +4895,28 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       return count_;
     }
 
+    public static final int INSTALL_GPU_DRIVERS_FIELD_NUMBER = 3;
+    private boolean installGpuDrivers_;
+    /**
+     *
+     *
+     * <pre>
+     * When true, Batch will install the GPU drivers.
+     * This field will be ignored if specified.
+     * </pre>
+     *
+     * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
+     *
+     * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.Accelerator.install_gpu_drivers is
+     *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=346
+     * @return The installGpuDrivers.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public boolean getInstallGpuDrivers() {
+      return installGpuDrivers_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -4551,6 +4937,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (count_ != 0L) {
         output.writeInt64(2, count_);
       }
+      if (installGpuDrivers_ != false) {
+        output.writeBool(3, installGpuDrivers_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4565,6 +4954,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       }
       if (count_ != 0L) {
         size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, count_);
+      }
+      if (installGpuDrivers_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, installGpuDrivers_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4584,6 +4976,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
 
       if (!getType().equals(other.getType())) return false;
       if (getCount() != other.getCount()) return false;
+      if (getInstallGpuDrivers() != other.getInstallGpuDrivers()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4599,6 +4992,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + getType().hashCode();
       hash = (37 * hash) + COUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCount());
+      hash = (37 * hash) + INSTALL_GPU_DRIVERS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getInstallGpuDrivers());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4751,6 +5146,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
 
         count_ = 0L;
 
+        installGpuDrivers_ = false;
+
         return this;
       }
 
@@ -4781,6 +5178,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
             new com.google.cloud.batch.v1alpha.AllocationPolicy.Accelerator(this);
         result.type_ = type_;
         result.count_ = count_;
+        result.installGpuDrivers_ = installGpuDrivers_;
         onBuilt();
         return result;
       }
@@ -4840,6 +5238,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         }
         if (other.getCount() != 0L) {
           setCount(other.getCount());
+        }
+        if (other.getInstallGpuDrivers() != false) {
+          setInstallGpuDrivers(other.getInstallGpuDrivers());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5035,6 +5436,70 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         return this;
       }
 
+      private boolean installGpuDrivers_;
+      /**
+       *
+       *
+       * <pre>
+       * When true, Batch will install the GPU drivers.
+       * This field will be ignored if specified.
+       * </pre>
+       *
+       * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
+       *
+       * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.Accelerator.install_gpu_drivers is
+       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=346
+       * @return The installGpuDrivers.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public boolean getInstallGpuDrivers() {
+        return installGpuDrivers_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * When true, Batch will install the GPU drivers.
+       * This field will be ignored if specified.
+       * </pre>
+       *
+       * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
+       *
+       * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.Accelerator.install_gpu_drivers is
+       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=346
+       * @param value The installGpuDrivers to set.
+       * @return This builder for chaining.
+       */
+      @java.lang.Deprecated
+      public Builder setInstallGpuDrivers(boolean value) {
+
+        installGpuDrivers_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * When true, Batch will install the GPU drivers.
+       * This field will be ignored if specified.
+       * </pre>
+       *
+       * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
+       *
+       * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.Accelerator.install_gpu_drivers is
+       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=346
+       * @return This builder for chaining.
+       */
+      @java.lang.Deprecated
+      public Builder clearInstallGpuDrivers() {
+
+        installGpuDrivers_ = false;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5097,7 +5562,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string allowed_machine_types = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types
-     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=331
+     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=352
      * @return A list containing the allowedMachineTypes.
      */
     @java.lang.Deprecated
@@ -5106,7 +5571,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string allowed_machine_types = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types
-     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=331
+     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=352
      * @return The count of allowedMachineTypes.
      */
     @java.lang.Deprecated
@@ -5115,7 +5580,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string allowed_machine_types = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types
-     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=331
+     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=352
      * @param index The index of the element to return.
      * @return The allowedMachineTypes at the given index.
      */
@@ -5125,7 +5590,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string allowed_machine_types = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types
-     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=331
+     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=352
      * @param index The index of the value to return.
      * @return The bytes of the allowedMachineTypes at the given index.
      */
@@ -5506,7 +5971,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string allowed_machine_types = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types
-     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=331
+     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=352
      * @return A list containing the allowedMachineTypes.
      */
     @java.lang.Deprecated
@@ -5517,7 +5982,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string allowed_machine_types = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types
-     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=331
+     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=352
      * @return The count of allowedMachineTypes.
      */
     @java.lang.Deprecated
@@ -5528,7 +5993,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string allowed_machine_types = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types
-     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=331
+     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=352
      * @param index The index of the element to return.
      * @return The allowedMachineTypes at the given index.
      */
@@ -5540,7 +6005,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string allowed_machine_types = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types
-     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=331
+     *     is deprecated. See google/cloud/batch/v1alpha/job.proto;l=352
      * @param index The index of the value to return.
      * @return The bytes of the allowedMachineTypes at the given index.
      */
@@ -6380,7 +6845,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * @deprecated
        *     google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types is
-       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=331
+       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=352
        * @return A list containing the allowedMachineTypes.
        */
       @java.lang.Deprecated
@@ -6392,7 +6857,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * @deprecated
        *     google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types is
-       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=331
+       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=352
        * @return The count of allowedMachineTypes.
        */
       @java.lang.Deprecated
@@ -6404,7 +6869,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * @deprecated
        *     google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types is
-       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=331
+       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=352
        * @param index The index of the element to return.
        * @return The allowedMachineTypes at the given index.
        */
@@ -6417,7 +6882,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * @deprecated
        *     google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types is
-       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=331
+       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=352
        * @param index The index of the value to return.
        * @return The bytes of the allowedMachineTypes at the given index.
        */
@@ -6430,7 +6895,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * @deprecated
        *     google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types is
-       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=331
+       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=352
        * @param index The index to set the value at.
        * @param value The allowedMachineTypes to set.
        * @return This builder for chaining.
@@ -6450,7 +6915,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * @deprecated
        *     google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types is
-       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=331
+       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=352
        * @param value The allowedMachineTypes to add.
        * @return This builder for chaining.
        */
@@ -6469,7 +6934,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * @deprecated
        *     google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types is
-       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=331
+       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=352
        * @param values The allowedMachineTypes to add.
        * @return This builder for chaining.
        */
@@ -6485,7 +6950,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * @deprecated
        *     google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types is
-       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=331
+       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=352
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -6500,7 +6965,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * @deprecated
        *     google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicy.allowed_machine_types is
-       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=331
+       *     deprecated. See google/cloud/batch/v1alpha/job.proto;l=352
        * @param value The bytes of the allowedMachineTypes to add.
        * @return This builder for chaining.
        */
@@ -7778,6 +8243,13 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      */
     com.google.protobuf.ByteString getInstanceTemplateBytes();
 
+    /**
+     * <code>bool install_gpu_drivers = 3;</code>
+     *
+     * @return The installGpuDrivers.
+     */
+    boolean getInstallGpuDrivers();
+
     public com.google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicyOrTemplate
             .PolicyTemplateCase
         getPolicyTemplateCase();
@@ -7860,6 +8332,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
                 java.lang.String s = input.readStringRequireUtf8();
                 policyTemplateCase_ = 2;
                 policyTemplate_ = s;
+                break;
+              }
+            case 24:
+              {
+                installGpuDrivers_ = input.readBool();
                 break;
               }
             default:
@@ -8074,6 +8551,18 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public static final int INSTALL_GPU_DRIVERS_FIELD_NUMBER = 3;
+    private boolean installGpuDrivers_;
+    /**
+     * <code>bool install_gpu_drivers = 3;</code>
+     *
+     * @return The installGpuDrivers.
+     */
+    @java.lang.Override
+    public boolean getInstallGpuDrivers() {
+      return installGpuDrivers_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -8095,6 +8584,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (policyTemplateCase_ == 2) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, policyTemplate_);
       }
+      if (installGpuDrivers_ != false) {
+        output.writeBool(3, installGpuDrivers_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -8113,6 +8605,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (policyTemplateCase_ == 2) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, policyTemplate_);
       }
+      if (installGpuDrivers_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, installGpuDrivers_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -8130,6 +8625,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       com.google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicyOrTemplate other =
           (com.google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicyOrTemplate) obj;
 
+      if (getInstallGpuDrivers() != other.getInstallGpuDrivers()) return false;
       if (!getPolicyTemplateCase().equals(other.getPolicyTemplateCase())) return false;
       switch (policyTemplateCase_) {
         case 1:
@@ -8152,6 +8648,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + INSTALL_GPU_DRIVERS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getInstallGpuDrivers());
       switch (policyTemplateCase_) {
         case 1:
           hash = (37 * hash) + POLICY_FIELD_NUMBER;
@@ -8320,6 +8818,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        installGpuDrivers_ = false;
+
         policyTemplateCase_ = 0;
         policyTemplate_ = null;
         return this;
@@ -8363,6 +8863,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         if (policyTemplateCase_ == 2) {
           result.policyTemplate_ = policyTemplate_;
         }
+        result.installGpuDrivers_ = installGpuDrivers_;
         result.policyTemplateCase_ = policyTemplateCase_;
         onBuilt();
         return result;
@@ -8420,6 +8921,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         if (other
             == com.google.cloud.batch.v1alpha.AllocationPolicy.InstancePolicyOrTemplate
                 .getDefaultInstance()) return this;
+        if (other.getInstallGpuDrivers() != false) {
+          setInstallGpuDrivers(other.getInstallGpuDrivers());
+        }
         switch (other.getPolicyTemplateCase()) {
           case POLICY:
             {
@@ -8847,6 +9351,40 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         checkByteStringIsUtf8(value);
         policyTemplateCase_ = 2;
         policyTemplate_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean installGpuDrivers_;
+      /**
+       * <code>bool install_gpu_drivers = 3;</code>
+       *
+       * @return The installGpuDrivers.
+       */
+      @java.lang.Override
+      public boolean getInstallGpuDrivers() {
+        return installGpuDrivers_;
+      }
+      /**
+       * <code>bool install_gpu_drivers = 3;</code>
+       *
+       * @param value The installGpuDrivers to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInstallGpuDrivers(boolean value) {
+
+        installGpuDrivers_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool install_gpu_drivers = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearInstallGpuDrivers() {
+
+        installGpuDrivers_ = false;
         onChanged();
         return this;
       }
@@ -11074,7 +11612,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=415
+   *     google/cloud/batch/v1alpha/job.proto;l=438
    * @return Whether the instance field is set.
    */
   @java.lang.Override
@@ -11094,7 +11632,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=415
+   *     google/cloud/batch/v1alpha/job.proto;l=438
    * @return The instance.
    */
   @java.lang.Override
@@ -11225,7 +11763,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=423
+   *     google/cloud/batch/v1alpha/job.proto;l=446
    * @return A list containing the instanceTemplates.
    */
   @java.lang.Deprecated
@@ -11243,7 +11781,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=423
+   *     google/cloud/batch/v1alpha/job.proto;l=446
    * @return The count of instanceTemplates.
    */
   @java.lang.Deprecated
@@ -11261,7 +11799,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=423
+   *     google/cloud/batch/v1alpha/job.proto;l=446
    * @param index The index of the element to return.
    * @return The instanceTemplates at the given index.
    */
@@ -11280,7 +11818,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=423
+   *     google/cloud/batch/v1alpha/job.proto;l=446
    * @param index The index of the value to return.
    * @return The bytes of the instanceTemplates at the given index.
    */
@@ -11322,7 +11860,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=430
+   *     google/cloud/batch/v1alpha/job.proto;l=453
    * @return A list containing the provisioningModels.
    */
   @java.lang.Override
@@ -11348,7 +11886,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=430
+   *     google/cloud/batch/v1alpha/job.proto;l=453
    * @return The count of provisioningModels.
    */
   @java.lang.Override
@@ -11371,7 +11909,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=430
+   *     google/cloud/batch/v1alpha/job.proto;l=453
    * @param index The index of the element to return.
    * @return The provisioningModels at the given index.
    */
@@ -11396,7 +11934,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=430
+   *     google/cloud/batch/v1alpha/job.proto;l=453
    * @return A list containing the enum numeric values on the wire for provisioningModels.
    */
   @java.lang.Override
@@ -11419,7 +11957,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=430
+   *     google/cloud/batch/v1alpha/job.proto;l=453
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of provisioningModels at the given index.
    */
@@ -12515,7 +13053,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=415
+     *     google/cloud/batch/v1alpha/job.proto;l=438
      * @return Whether the instance field is set.
      */
     @java.lang.Deprecated
@@ -12534,7 +13072,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=415
+     *     google/cloud/batch/v1alpha/job.proto;l=438
      * @return The instance.
      */
     @java.lang.Deprecated
@@ -13168,7 +13706,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=423
+     *     google/cloud/batch/v1alpha/job.proto;l=446
      * @return A list containing the instanceTemplates.
      */
     @java.lang.Deprecated
@@ -13186,7 +13724,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=423
+     *     google/cloud/batch/v1alpha/job.proto;l=446
      * @return The count of instanceTemplates.
      */
     @java.lang.Deprecated
@@ -13204,7 +13742,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=423
+     *     google/cloud/batch/v1alpha/job.proto;l=446
      * @param index The index of the element to return.
      * @return The instanceTemplates at the given index.
      */
@@ -13223,7 +13761,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=423
+     *     google/cloud/batch/v1alpha/job.proto;l=446
      * @param index The index of the value to return.
      * @return The bytes of the instanceTemplates at the given index.
      */
@@ -13242,7 +13780,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=423
+     *     google/cloud/batch/v1alpha/job.proto;l=446
      * @param index The index to set the value at.
      * @param value The instanceTemplates to set.
      * @return This builder for chaining.
@@ -13268,7 +13806,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=423
+     *     google/cloud/batch/v1alpha/job.proto;l=446
      * @param value The instanceTemplates to add.
      * @return This builder for chaining.
      */
@@ -13293,7 +13831,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=423
+     *     google/cloud/batch/v1alpha/job.proto;l=446
      * @param values The instanceTemplates to add.
      * @return This builder for chaining.
      */
@@ -13315,7 +13853,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=423
+     *     google/cloud/batch/v1alpha/job.proto;l=446
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -13336,7 +13874,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=423
+     *     google/cloud/batch/v1alpha/job.proto;l=446
      * @param value The bytes of the instanceTemplates to add.
      * @return This builder for chaining.
      */
@@ -13376,7 +13914,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=430
+     *     See google/cloud/batch/v1alpha/job.proto;l=453
      * @return A list containing the provisioningModels.
      */
     @java.lang.Deprecated
@@ -13401,7 +13939,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=430
+     *     See google/cloud/batch/v1alpha/job.proto;l=453
      * @return The count of provisioningModels.
      */
     @java.lang.Deprecated
@@ -13423,7 +13961,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=430
+     *     See google/cloud/batch/v1alpha/job.proto;l=453
      * @param index The index of the element to return.
      * @return The provisioningModels at the given index.
      */
@@ -13447,7 +13985,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=430
+     *     See google/cloud/batch/v1alpha/job.proto;l=453
      * @param index The index to set the value at.
      * @param value The provisioningModels to set.
      * @return This builder for chaining.
@@ -13478,7 +14016,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=430
+     *     See google/cloud/batch/v1alpha/job.proto;l=453
      * @param value The provisioningModels to add.
      * @return This builder for chaining.
      */
@@ -13508,7 +14046,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=430
+     *     See google/cloud/batch/v1alpha/job.proto;l=453
      * @param values The provisioningModels to add.
      * @return This builder for chaining.
      */
@@ -13539,7 +14077,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=430
+     *     See google/cloud/batch/v1alpha/job.proto;l=453
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -13564,7 +14102,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=430
+     *     See google/cloud/batch/v1alpha/job.proto;l=453
      * @return A list containing the enum numeric values on the wire for provisioningModels.
      */
     @java.lang.Deprecated
@@ -13586,7 +14124,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=430
+     *     See google/cloud/batch/v1alpha/job.proto;l=453
      * @param index The index of the value to return.
      * @return The enum numeric value on the wire of provisioningModels at the given index.
      */
@@ -13609,7 +14147,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=430
+     *     See google/cloud/batch/v1alpha/job.proto;l=453
      * @param index The index to set the value at.
      * @param value The enum numeric value on the wire for provisioningModels to set.
      * @return This builder for chaining.
@@ -13636,7 +14174,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=430
+     *     See google/cloud/batch/v1alpha/job.proto;l=453
      * @param value The enum numeric value on the wire for provisioningModels to add.
      * @return This builder for chaining.
      */
@@ -13662,7 +14200,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=430
+     *     See google/cloud/batch/v1alpha/job.proto;l=453
      * @param values The enum numeric values on the wire for provisioningModels to add.
      * @return This builder for chaining.
      */
