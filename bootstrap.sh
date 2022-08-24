@@ -61,33 +61,53 @@ do
   git remote add ${service} ../${service}
   git config --add secrets.allowed "dest.*src"
   git fetch ${service} #--tags
-  EDITOR=true git merge --allow-unrelated-histories ${service}/main
+  EDITOR=true git merge --quiet --allow-unrelated-histories ${service}/main
   git remote remove ${service}
   rm -rf ../${service}
 done
 
-cd ..
-
-# insert processed modules into aggregator pom.xml
-awk -v MODULES="`awk -v ORS='\\\\n' '1' repo-modules.txt`" '1;/<modules>/{print MODULES}' ../parent.pom.xml > google-cloud-java/pom.xml
-
-cd google-cloud-java
+# cwd: monorepo/google-cloud-java
+echo "Working directory: $(pwd)"
+sh ../../templates/generation/print_root_pom.sh > pom.xml
 
 git add pom.xml
 git commit -am 'feat: create aggregator pom'
 
+# Template files
+cp -rp ../../templates/. ./
+
+# Confirm everything is fine so far
+# Need license-checks.xml to validate
+mvn -q -B -ntp validate
+
+# Add all template files
+git add --all
+git add -f .gitignore
+git commit -m 'chore: add template files'
+
+bash generation/generate_gapic_bom.sh
+
+# add the gapic bom module to root pom.xml
+sh generation/print_root_pom.sh > pom.xml
+
+git add google-cloud-gapic-bom/pom.xml
+git commit -am 'feat: create google-cloud-gapic-bom'
+
+
 num_modules="$(wc -l < ../../repos.txt)"
-echo "{" >> .release-please-manifest.json
+echo "{" > .release-please-manifest.json
 
 echo ""\""google-cloud-gapic-bom"\"": "\""0.0.0"\""," >> .release-please-manifest.json
+cp generation/gapic_bom_versions.txt google-cloud-gapic-bom/versions.txt
 
-# generate BOM of the artifacts in this repository
-bom_lines=""
+# Generate Release Please configuration files
 rp_config_line=""
 for bom_directory in $(find . -name 'google-*-bom' | sort); do
-  repo_metadata="${bom_directory}/../.repo-metadata.json"
+  if [[ "${bom_directory}" = *google-cloud-gapic-bom ]]; then
+    continue
+  fi
+
   pom_file="${bom_directory}/pom.xml"
-  groupId_line=$(grep --max-count=1 'groupId' "${pom_file}")
   artifactId_line=$(grep --max-count=1 'artifactId' "${pom_file}")
 
   # extracting module name
@@ -114,8 +134,8 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
       # increment the third digit of the version and overwrite it.
       snapshot_version=$(echo ${module_released_version} |  awk -F'.' '{print $1"."$2"."$3+1}' |  sed s/[.]$//)
 
-      mvn -f ${pom_directory} -U versions:set -DnewVersion=${snapshot_version}
-      mvn -f ${bom_directory} -U versions:set -DnewVersion=${snapshot_version}
+      mvn -B -ntp -f ${pom_directory} -U versions:set -DnewVersion=${snapshot_version}
+      mvn -B -ntp -f ${bom_directory} -U versions:set -DnewVersion=${snapshot_version}
       #updating gapic bom pom.xml with the snapshot version
       version_line="${version_line/${module_snapshot_version}/${snapshot_version}}"
     fi
@@ -124,8 +144,8 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
     # increment the third digit of the version and overwrite it.
     snapshot_version=$(echo ${module_released_version} |  awk -F'.' '{print $1"."$2"."$3+1}' |  sed s/[.]$//)
 
-    mvn -f ${pom_directory} -U versions:set -DnewVersion=${snapshot_version}
-    mvn -f ${bom_directory} -U versions:set -DnewVersion=${snapshot_version}
+    mvn -B -ntp -f ${pom_directory} -U versions:set -DnewVersion=${snapshot_version}
+    mvn -B -ntp -f ${bom_directory} -U versions:set -DnewVersion=${snapshot_version}
     #updating gapic bom pom.xml with the snapshot version
     version_line="${version_line/${module_snapshot_version}/${snapshot_version}}"
   fi
@@ -140,7 +160,7 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
          new_version="${new_version}-SNAPSHOT"
          sed -i.bak "s|${artifact_name}:${old_version}:${old_version}|${artifact_name}:${old_version}:${new_version}|" ${version_file}
          artifact_directory="${bom_directory}/../${artifact_name}"
-         mvn -f ${artifact_directory} -U versions:set -DnewVersion=${new_version}
+         mvn -B -ntp -f ${artifact_directory} -U versions:set -DnewVersion=${new_version}
        fi
     done
 
@@ -151,7 +171,7 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
            old_version=$(echo "${line}" | awk -F':' '{print $2}')
            new_version=$(echo ${old_version} |  awk -F'.' '{print $1"."$2"."$3+1}' |  sed s/[.]$//)
            artifact_directory="${bom_directory}/../${artifact_name}"
-           mvn -f ${artifact_directory} -U versions:set -DnewVersion=${new_version}
+           mvn -B -ntp -f ${artifact_directory} -U versions:set -DnewVersion=${new_version}
          fi
       done
 
@@ -172,30 +192,6 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
 
   #adding the line to manifest config file
   echo "${rp_manifest_line}" >> .release-please-manifest.json
-
-  if ! grep --quiet '"release_level": "stable"' "${repo_metadata}"; then
-    # Not including non-GA libraries, except those that happened to be included
-    # already in google-cloud-bom.
-    if [[ $artifactId_line != *"google-cloud-datalabeling"* ]] \
-        && [[ $artifactId_line != *"google-cloud-errorreporting"* ]] \
-        && [[ $artifactId_line != *"google-cloud-logging-logback"* ]] \
-        && [[ $artifactId_line != *"google-cloud-mediatranslation"* ]] \
-        && [[ $artifactId_line != *"google-cloud-nio"* ]] \
-        && [[ $artifactId_line != *"google-cloud-notification"* ]] \
-        && [[ $artifactId_line != *"google-cloud-phishingprotection"* ]]; then
-      echo "Not adding ${pom_file} to the BOM because it's not stable."
-      continue
-    fi
-  fi
-
-  bom_lines+="      <dependency>\n\
-      ${groupId_line}\n\
-      ${artifactId_line}\n\
-      ${version_line}\n\
-        <type>pom</type>\n\
-        <scope>import</scope>\n\
-      </dependency>\n"
-
 done
 
 echo "}" >> .release-please-manifest.json
@@ -203,25 +199,12 @@ echo "}" >> .release-please-manifest.json
 awk -v "packagesList=$rp_config_line" '{gsub(/ALL_PACKAGES/,packagesList)}1' \
     ../../release_please_config_raw.json > release-please-config.json
 
-mkdir google-cloud-gapic-bom
-cp ../../gapic_bom_versions.txt google-cloud-gapic-bom/versions.txt
-awk -v "dependencyManagements=$bom_lines" '{gsub(/BOM_ARTIFACT_LIST/,dependencyManagements)}1' \
-    ../../bom.pom.xml > google-cloud-gapic-bom/pom.xml
-
-git add google-cloud-gapic-bom/pom.xml
-git commit -am 'feat: create bom module'
-
-# Template files
-cp -rp ../../templates/. ./
+git add --all
+git commit -am 'feat: create release please configuration'
 
 # Confirm everything is fine so far
 # Need license-checks.xml to validate
 mvn -q -B -ntp validate
-
-# Add all template files
-git add --all
-git add -f .gitignore
-git commit -m 'chore: add template files'
 
 bash generation/generate_coverage_aggregator.sh
 
