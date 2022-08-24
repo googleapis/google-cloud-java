@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-resourcemanager</artifactId>
-      <version>0.119.9-alpha</version>
+      <version>1.5.3</version>
     </dependency>
 
     <dependency>
