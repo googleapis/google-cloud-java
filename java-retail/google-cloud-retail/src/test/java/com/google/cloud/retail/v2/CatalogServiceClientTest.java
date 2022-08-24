@@ -33,6 +33,7 @@ import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import javax.annotation.Generated;
@@ -354,6 +355,436 @@ public class CatalogServiceClientTest {
     try {
       String catalog = "catalog555704345";
       client.getDefaultBranch(catalog);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCompletionConfigTest() throws Exception {
+    CompletionConfig expectedResponse =
+        CompletionConfig.newBuilder()
+            .setName(CompletionConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .setMatchingOrder("matchingOrder-1366761135")
+            .setMaxSuggestions(618824852)
+            .setMinPrefixLength(96853510)
+            .setAutoLearning(true)
+            .setSuggestionsInputConfig(CompletionDataInputConfig.newBuilder().build())
+            .setLastSuggestionsImportOperation("lastSuggestionsImportOperation-245829751")
+            .setDenylistInputConfig(CompletionDataInputConfig.newBuilder().build())
+            .setLastDenylistImportOperation("lastDenylistImportOperation1262341570")
+            .setAllowlistInputConfig(CompletionDataInputConfig.newBuilder().build())
+            .setLastAllowlistImportOperation("lastAllowlistImportOperation1624716689")
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    CompletionConfigName name = CompletionConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+
+    CompletionConfig actualResponse = client.getCompletionConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetCompletionConfigRequest actualRequest = ((GetCompletionConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getCompletionConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      CompletionConfigName name = CompletionConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+      client.getCompletionConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCompletionConfigTest2() throws Exception {
+    CompletionConfig expectedResponse =
+        CompletionConfig.newBuilder()
+            .setName(CompletionConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .setMatchingOrder("matchingOrder-1366761135")
+            .setMaxSuggestions(618824852)
+            .setMinPrefixLength(96853510)
+            .setAutoLearning(true)
+            .setSuggestionsInputConfig(CompletionDataInputConfig.newBuilder().build())
+            .setLastSuggestionsImportOperation("lastSuggestionsImportOperation-245829751")
+            .setDenylistInputConfig(CompletionDataInputConfig.newBuilder().build())
+            .setLastDenylistImportOperation("lastDenylistImportOperation1262341570")
+            .setAllowlistInputConfig(CompletionDataInputConfig.newBuilder().build())
+            .setLastAllowlistImportOperation("lastAllowlistImportOperation1624716689")
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    CompletionConfig actualResponse = client.getCompletionConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetCompletionConfigRequest actualRequest = ((GetCompletionConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getCompletionConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getCompletionConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateCompletionConfigTest() throws Exception {
+    CompletionConfig expectedResponse =
+        CompletionConfig.newBuilder()
+            .setName(CompletionConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .setMatchingOrder("matchingOrder-1366761135")
+            .setMaxSuggestions(618824852)
+            .setMinPrefixLength(96853510)
+            .setAutoLearning(true)
+            .setSuggestionsInputConfig(CompletionDataInputConfig.newBuilder().build())
+            .setLastSuggestionsImportOperation("lastSuggestionsImportOperation-245829751")
+            .setDenylistInputConfig(CompletionDataInputConfig.newBuilder().build())
+            .setLastDenylistImportOperation("lastDenylistImportOperation1262341570")
+            .setAllowlistInputConfig(CompletionDataInputConfig.newBuilder().build())
+            .setLastAllowlistImportOperation("lastAllowlistImportOperation1624716689")
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    CompletionConfig completionConfig = CompletionConfig.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    CompletionConfig actualResponse = client.updateCompletionConfig(completionConfig, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateCompletionConfigRequest actualRequest =
+        ((UpdateCompletionConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(completionConfig, actualRequest.getCompletionConfig());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateCompletionConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      CompletionConfig completionConfig = CompletionConfig.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateCompletionConfig(completionConfig, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAttributesConfigTest() throws Exception {
+    AttributesConfig expectedResponse =
+        AttributesConfig.newBuilder()
+            .setName(AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .putAllCatalogAttributes(new HashMap<String, CatalogAttribute>())
+            .setAttributeConfigLevel(AttributeConfigLevel.forNumber(0))
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    AttributesConfigName name = AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+
+    AttributesConfig actualResponse = client.getAttributesConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAttributesConfigRequest actualRequest = ((GetAttributesConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAttributesConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      AttributesConfigName name = AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+      client.getAttributesConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAttributesConfigTest2() throws Exception {
+    AttributesConfig expectedResponse =
+        AttributesConfig.newBuilder()
+            .setName(AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .putAllCatalogAttributes(new HashMap<String, CatalogAttribute>())
+            .setAttributeConfigLevel(AttributeConfigLevel.forNumber(0))
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    AttributesConfig actualResponse = client.getAttributesConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAttributesConfigRequest actualRequest = ((GetAttributesConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAttributesConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAttributesConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateAttributesConfigTest() throws Exception {
+    AttributesConfig expectedResponse =
+        AttributesConfig.newBuilder()
+            .setName(AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .putAllCatalogAttributes(new HashMap<String, CatalogAttribute>())
+            .setAttributeConfigLevel(AttributeConfigLevel.forNumber(0))
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    AttributesConfig attributesConfig = AttributesConfig.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    AttributesConfig actualResponse = client.updateAttributesConfig(attributesConfig, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateAttributesConfigRequest actualRequest =
+        ((UpdateAttributesConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(attributesConfig, actualRequest.getAttributesConfig());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateAttributesConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      AttributesConfig attributesConfig = AttributesConfig.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAttributesConfig(attributesConfig, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void addCatalogAttributeTest() throws Exception {
+    AttributesConfig expectedResponse =
+        AttributesConfig.newBuilder()
+            .setName(AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .putAllCatalogAttributes(new HashMap<String, CatalogAttribute>())
+            .setAttributeConfigLevel(AttributeConfigLevel.forNumber(0))
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    AddCatalogAttributeRequest request =
+        AddCatalogAttributeRequest.newBuilder()
+            .setAttributesConfig(
+                AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .setCatalogAttribute(CatalogAttribute.newBuilder().build())
+            .build();
+
+    AttributesConfig actualResponse = client.addCatalogAttribute(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AddCatalogAttributeRequest actualRequest = ((AddCatalogAttributeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getAttributesConfig(), actualRequest.getAttributesConfig());
+    Assert.assertEquals(request.getCatalogAttribute(), actualRequest.getCatalogAttribute());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void addCatalogAttributeExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      AddCatalogAttributeRequest request =
+          AddCatalogAttributeRequest.newBuilder()
+              .setAttributesConfig(
+                  AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+              .setCatalogAttribute(CatalogAttribute.newBuilder().build())
+              .build();
+      client.addCatalogAttribute(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void removeCatalogAttributeTest() throws Exception {
+    AttributesConfig expectedResponse =
+        AttributesConfig.newBuilder()
+            .setName(AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .putAllCatalogAttributes(new HashMap<String, CatalogAttribute>())
+            .setAttributeConfigLevel(AttributeConfigLevel.forNumber(0))
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    RemoveCatalogAttributeRequest request =
+        RemoveCatalogAttributeRequest.newBuilder()
+            .setAttributesConfig(
+                AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .setKey("key106079")
+            .build();
+
+    AttributesConfig actualResponse = client.removeCatalogAttribute(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RemoveCatalogAttributeRequest actualRequest =
+        ((RemoveCatalogAttributeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getAttributesConfig(), actualRequest.getAttributesConfig());
+    Assert.assertEquals(request.getKey(), actualRequest.getKey());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void removeCatalogAttributeExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      RemoveCatalogAttributeRequest request =
+          RemoveCatalogAttributeRequest.newBuilder()
+              .setAttributesConfig(
+                  AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+              .setKey("key106079")
+              .build();
+      client.removeCatalogAttribute(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void replaceCatalogAttributeTest() throws Exception {
+    AttributesConfig expectedResponse =
+        AttributesConfig.newBuilder()
+            .setName(AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .putAllCatalogAttributes(new HashMap<String, CatalogAttribute>())
+            .setAttributeConfigLevel(AttributeConfigLevel.forNumber(0))
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    ReplaceCatalogAttributeRequest request =
+        ReplaceCatalogAttributeRequest.newBuilder()
+            .setAttributesConfig(
+                AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .setCatalogAttribute(CatalogAttribute.newBuilder().build())
+            .setUpdateMask(FieldMask.newBuilder().build())
+            .build();
+
+    AttributesConfig actualResponse = client.replaceCatalogAttribute(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ReplaceCatalogAttributeRequest actualRequest =
+        ((ReplaceCatalogAttributeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getAttributesConfig(), actualRequest.getAttributesConfig());
+    Assert.assertEquals(request.getCatalogAttribute(), actualRequest.getCatalogAttribute());
+    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void replaceCatalogAttributeExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      ReplaceCatalogAttributeRequest request =
+          ReplaceCatalogAttributeRequest.newBuilder()
+              .setAttributesConfig(
+                  AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+              .setCatalogAttribute(CatalogAttribute.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .build();
+      client.replaceCatalogAttribute(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

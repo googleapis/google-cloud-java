@@ -10489,7 +10489,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Let CRS decide whether to use personalization.
+       * Let CRS decide whether to use personalization based on quality of user
+       * event data.
        * </pre>
        *
        * <code>AUTO = 1;</code>
@@ -10523,7 +10524,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Let CRS decide whether to use personalization.
+       * Let CRS decide whether to use personalization based on quality of user
+       * event data.
        * </pre>
        *
        * <code>AUTO = 1;</code>
@@ -12648,7 +12650,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2/search_service.proto;l=575
+   *     google/cloud/retail/v2/search_service.proto;l=576
    * @return Whether the dynamicFacetSpec field is set.
    */
   @java.lang.Override
@@ -12671,7 +12673,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2/search_service.proto;l=575
+   *     google/cloud/retail/v2/search_service.proto;l=576
    * @return The dynamicFacetSpec.
    */
   @java.lang.Override
@@ -12710,7 +12712,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Boost specification to boost certain products. See more details at this
    * [user guide](https://cloud.google.com/retail/docs/boosting).
-   * Notice that if both [ServingConfig.boost_control_ids][] and
+   * Notice that if both
+   * [ServingConfig.boost_control_ids][google.cloud.retail.v2.ServingConfig.boost_control_ids]
+   * and
    * [SearchRequest.boost_spec][google.cloud.retail.v2.SearchRequest.boost_spec]
    * are set, the boost conditions from both places are evaluated. If a search
    * request matches multiple boost conditions, the final boost score is equal
@@ -12731,7 +12735,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Boost specification to boost certain products. See more details at this
    * [user guide](https://cloud.google.com/retail/docs/boosting).
-   * Notice that if both [ServingConfig.boost_control_ids][] and
+   * Notice that if both
+   * [ServingConfig.boost_control_ids][google.cloud.retail.v2.ServingConfig.boost_control_ids]
+   * and
    * [SearchRequest.boost_spec][google.cloud.retail.v2.SearchRequest.boost_spec]
    * are set, the boost conditions from both places are evaluated. If a search
    * request matches multiple boost conditions, the final boost score is equal
@@ -12754,7 +12760,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Boost specification to boost certain products. See more details at this
    * [user guide](https://cloud.google.com/retail/docs/boosting).
-   * Notice that if both [ServingConfig.boost_control_ids][] and
+   * Notice that if both
+   * [ServingConfig.boost_control_ids][google.cloud.retail.v2.ServingConfig.boost_control_ids]
+   * and
    * [SearchRequest.boost_spec][google.cloud.retail.v2.SearchRequest.boost_spec]
    * are set, the boost conditions from both places are evaluated. If a search
    * request matches multiple boost conditions, the final boost score is equal
@@ -13291,6 +13299,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The specification for personalization.
+   * Notice that if both
+   * [ServingConfig.personalization_spec][google.cloud.retail.v2.ServingConfig.personalization_spec]
+   * and
+   * [SearchRequest.personalization_spec][google.cloud.retail.v2.SearchRequest.personalization_spec]
+   * are set.
+   * [SearchRequest.personalization_spec][google.cloud.retail.v2.SearchRequest.personalization_spec]
+   * will override
+   * [ServingConfig.personalization_spec][google.cloud.retail.v2.ServingConfig.personalization_spec].
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;
@@ -13307,6 +13323,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The specification for personalization.
+   * Notice that if both
+   * [ServingConfig.personalization_spec][google.cloud.retail.v2.ServingConfig.personalization_spec]
+   * and
+   * [SearchRequest.personalization_spec][google.cloud.retail.v2.SearchRequest.personalization_spec]
+   * are set.
+   * [SearchRequest.personalization_spec][google.cloud.retail.v2.SearchRequest.personalization_spec]
+   * will override
+   * [ServingConfig.personalization_spec][google.cloud.retail.v2.ServingConfig.personalization_spec].
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;
@@ -13325,6 +13349,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The specification for personalization.
+   * Notice that if both
+   * [ServingConfig.personalization_spec][google.cloud.retail.v2.ServingConfig.personalization_spec]
+   * and
+   * [SearchRequest.personalization_spec][google.cloud.retail.v2.SearchRequest.personalization_spec]
+   * are set.
+   * [SearchRequest.personalization_spec][google.cloud.retail.v2.SearchRequest.personalization_spec]
+   * will override
+   * [ServingConfig.personalization_spec][google.cloud.retail.v2.ServingConfig.personalization_spec].
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;
@@ -16169,7 +16201,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
-     *     google/cloud/retail/v2/search_service.proto;l=575
+     *     google/cloud/retail/v2/search_service.proto;l=576
      * @return Whether the dynamicFacetSpec field is set.
      */
     @java.lang.Deprecated
@@ -16191,7 +16223,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
-     *     google/cloud/retail/v2/search_service.proto;l=575
+     *     google/cloud/retail/v2/search_service.proto;l=576
      * @return The dynamicFacetSpec.
      */
     @java.lang.Deprecated
@@ -16408,7 +16440,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Boost specification to boost certain products. See more details at this
      * [user guide](https://cloud.google.com/retail/docs/boosting).
-     * Notice that if both [ServingConfig.boost_control_ids][] and
+     * Notice that if both
+     * [ServingConfig.boost_control_ids][google.cloud.retail.v2.ServingConfig.boost_control_ids]
+     * and
      * [SearchRequest.boost_spec][google.cloud.retail.v2.SearchRequest.boost_spec]
      * are set, the boost conditions from both places are evaluated. If a search
      * request matches multiple boost conditions, the final boost score is equal
@@ -16428,7 +16462,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Boost specification to boost certain products. See more details at this
      * [user guide](https://cloud.google.com/retail/docs/boosting).
-     * Notice that if both [ServingConfig.boost_control_ids][] and
+     * Notice that if both
+     * [ServingConfig.boost_control_ids][google.cloud.retail.v2.ServingConfig.boost_control_ids]
+     * and
      * [SearchRequest.boost_spec][google.cloud.retail.v2.SearchRequest.boost_spec]
      * are set, the boost conditions from both places are evaluated. If a search
      * request matches multiple boost conditions, the final boost score is equal
@@ -16454,7 +16490,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Boost specification to boost certain products. See more details at this
      * [user guide](https://cloud.google.com/retail/docs/boosting).
-     * Notice that if both [ServingConfig.boost_control_ids][] and
+     * Notice that if both
+     * [ServingConfig.boost_control_ids][google.cloud.retail.v2.ServingConfig.boost_control_ids]
+     * and
      * [SearchRequest.boost_spec][google.cloud.retail.v2.SearchRequest.boost_spec]
      * are set, the boost conditions from both places are evaluated. If a search
      * request matches multiple boost conditions, the final boost score is equal
@@ -16482,7 +16520,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Boost specification to boost certain products. See more details at this
      * [user guide](https://cloud.google.com/retail/docs/boosting).
-     * Notice that if both [ServingConfig.boost_control_ids][] and
+     * Notice that if both
+     * [ServingConfig.boost_control_ids][google.cloud.retail.v2.ServingConfig.boost_control_ids]
+     * and
      * [SearchRequest.boost_spec][google.cloud.retail.v2.SearchRequest.boost_spec]
      * are set, the boost conditions from both places are evaluated. If a search
      * request matches multiple boost conditions, the final boost score is equal
@@ -16508,7 +16548,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Boost specification to boost certain products. See more details at this
      * [user guide](https://cloud.google.com/retail/docs/boosting).
-     * Notice that if both [ServingConfig.boost_control_ids][] and
+     * Notice that if both
+     * [ServingConfig.boost_control_ids][google.cloud.retail.v2.ServingConfig.boost_control_ids]
+     * and
      * [SearchRequest.boost_spec][google.cloud.retail.v2.SearchRequest.boost_spec]
      * are set, the boost conditions from both places are evaluated. If a search
      * request matches multiple boost conditions, the final boost score is equal
@@ -16540,7 +16582,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Boost specification to boost certain products. See more details at this
      * [user guide](https://cloud.google.com/retail/docs/boosting).
-     * Notice that if both [ServingConfig.boost_control_ids][] and
+     * Notice that if both
+     * [ServingConfig.boost_control_ids][google.cloud.retail.v2.ServingConfig.boost_control_ids]
+     * and
      * [SearchRequest.boost_spec][google.cloud.retail.v2.SearchRequest.boost_spec]
      * are set, the boost conditions from both places are evaluated. If a search
      * request matches multiple boost conditions, the final boost score is equal
@@ -16566,7 +16610,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Boost specification to boost certain products. See more details at this
      * [user guide](https://cloud.google.com/retail/docs/boosting).
-     * Notice that if both [ServingConfig.boost_control_ids][] and
+     * Notice that if both
+     * [ServingConfig.boost_control_ids][google.cloud.retail.v2.ServingConfig.boost_control_ids]
+     * and
      * [SearchRequest.boost_spec][google.cloud.retail.v2.SearchRequest.boost_spec]
      * are set, the boost conditions from both places are evaluated. If a search
      * request matches multiple boost conditions, the final boost score is equal
@@ -16586,7 +16632,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Boost specification to boost certain products. See more details at this
      * [user guide](https://cloud.google.com/retail/docs/boosting).
-     * Notice that if both [ServingConfig.boost_control_ids][] and
+     * Notice that if both
+     * [ServingConfig.boost_control_ids][google.cloud.retail.v2.ServingConfig.boost_control_ids]
+     * and
      * [SearchRequest.boost_spec][google.cloud.retail.v2.SearchRequest.boost_spec]
      * are set, the boost conditions from both places are evaluated. If a search
      * request matches multiple boost conditions, the final boost score is equal
@@ -16610,7 +16658,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Boost specification to boost certain products. See more details at this
      * [user guide](https://cloud.google.com/retail/docs/boosting).
-     * Notice that if both [ServingConfig.boost_control_ids][] and
+     * Notice that if both
+     * [ServingConfig.boost_control_ids][google.cloud.retail.v2.ServingConfig.boost_control_ids]
+     * and
      * [SearchRequest.boost_spec][google.cloud.retail.v2.SearchRequest.boost_spec]
      * are set, the boost conditions from both places are evaluated. If a search
      * request matches multiple boost conditions, the final boost score is equal
@@ -17965,6 +18015,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization.
+     * Notice that if both
+     * [ServingConfig.personalization_spec][google.cloud.retail.v2.ServingConfig.personalization_spec]
+     * and
+     * [SearchRequest.personalization_spec][google.cloud.retail.v2.SearchRequest.personalization_spec]
+     * are set.
+     * [SearchRequest.personalization_spec][google.cloud.retail.v2.SearchRequest.personalization_spec]
+     * will override
+     * [ServingConfig.personalization_spec][google.cloud.retail.v2.ServingConfig.personalization_spec].
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;
@@ -17980,6 +18038,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization.
+     * Notice that if both
+     * [ServingConfig.personalization_spec][google.cloud.retail.v2.ServingConfig.personalization_spec]
+     * and
+     * [SearchRequest.personalization_spec][google.cloud.retail.v2.SearchRequest.personalization_spec]
+     * are set.
+     * [SearchRequest.personalization_spec][google.cloud.retail.v2.SearchRequest.personalization_spec]
+     * will override
+     * [ServingConfig.personalization_spec][google.cloud.retail.v2.ServingConfig.personalization_spec].
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;
@@ -18001,6 +18067,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization.
+     * Notice that if both
+     * [ServingConfig.personalization_spec][google.cloud.retail.v2.ServingConfig.personalization_spec]
+     * and
+     * [SearchRequest.personalization_spec][google.cloud.retail.v2.SearchRequest.personalization_spec]
+     * are set.
+     * [SearchRequest.personalization_spec][google.cloud.retail.v2.SearchRequest.personalization_spec]
+     * will override
+     * [ServingConfig.personalization_spec][google.cloud.retail.v2.ServingConfig.personalization_spec].
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;
@@ -18025,6 +18099,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization.
+     * Notice that if both
+     * [ServingConfig.personalization_spec][google.cloud.retail.v2.ServingConfig.personalization_spec]
+     * and
+     * [SearchRequest.personalization_spec][google.cloud.retail.v2.SearchRequest.personalization_spec]
+     * are set.
+     * [SearchRequest.personalization_spec][google.cloud.retail.v2.SearchRequest.personalization_spec]
+     * will override
+     * [ServingConfig.personalization_spec][google.cloud.retail.v2.ServingConfig.personalization_spec].
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;
@@ -18046,6 +18128,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization.
+     * Notice that if both
+     * [ServingConfig.personalization_spec][google.cloud.retail.v2.ServingConfig.personalization_spec]
+     * and
+     * [SearchRequest.personalization_spec][google.cloud.retail.v2.SearchRequest.personalization_spec]
+     * are set.
+     * [SearchRequest.personalization_spec][google.cloud.retail.v2.SearchRequest.personalization_spec]
+     * will override
+     * [ServingConfig.personalization_spec][google.cloud.retail.v2.ServingConfig.personalization_spec].
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;
@@ -18075,6 +18165,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization.
+     * Notice that if both
+     * [ServingConfig.personalization_spec][google.cloud.retail.v2.ServingConfig.personalization_spec]
+     * and
+     * [SearchRequest.personalization_spec][google.cloud.retail.v2.SearchRequest.personalization_spec]
+     * are set.
+     * [SearchRequest.personalization_spec][google.cloud.retail.v2.SearchRequest.personalization_spec]
+     * will override
+     * [ServingConfig.personalization_spec][google.cloud.retail.v2.ServingConfig.personalization_spec].
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;
@@ -18096,6 +18194,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization.
+     * Notice that if both
+     * [ServingConfig.personalization_spec][google.cloud.retail.v2.ServingConfig.personalization_spec]
+     * and
+     * [SearchRequest.personalization_spec][google.cloud.retail.v2.SearchRequest.personalization_spec]
+     * are set.
+     * [SearchRequest.personalization_spec][google.cloud.retail.v2.SearchRequest.personalization_spec]
+     * will override
+     * [ServingConfig.personalization_spec][google.cloud.retail.v2.ServingConfig.personalization_spec].
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;
@@ -18112,6 +18218,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization.
+     * Notice that if both
+     * [ServingConfig.personalization_spec][google.cloud.retail.v2.ServingConfig.personalization_spec]
+     * and
+     * [SearchRequest.personalization_spec][google.cloud.retail.v2.SearchRequest.personalization_spec]
+     * are set.
+     * [SearchRequest.personalization_spec][google.cloud.retail.v2.SearchRequest.personalization_spec]
+     * will override
+     * [ServingConfig.personalization_spec][google.cloud.retail.v2.ServingConfig.personalization_spec].
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;
@@ -18132,6 +18246,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization.
+     * Notice that if both
+     * [ServingConfig.personalization_spec][google.cloud.retail.v2.ServingConfig.personalization_spec]
+     * and
+     * [SearchRequest.personalization_spec][google.cloud.retail.v2.SearchRequest.personalization_spec]
+     * are set.
+     * [SearchRequest.personalization_spec][google.cloud.retail.v2.SearchRequest.personalization_spec]
+     * will override
+     * [ServingConfig.personalization_spec][google.cloud.retail.v2.ServingConfig.personalization_spec].
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;

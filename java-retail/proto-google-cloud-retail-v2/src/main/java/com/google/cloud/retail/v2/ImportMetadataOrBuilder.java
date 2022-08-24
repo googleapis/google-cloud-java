@@ -132,7 +132,7 @@ public interface ImportMetadataOrBuilder
    * <code>string request_id = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2.ImportMetadata.request_id is deprecated. See
-   *     google/cloud/retail/v2/import_config.proto;l=345
+   *     google/cloud/retail/v2/import_config.proto;l=330
    * @return The requestId.
    */
   @java.lang.Deprecated
@@ -147,7 +147,7 @@ public interface ImportMetadataOrBuilder
    * <code>string request_id = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2.ImportMetadata.request_id is deprecated. See
-   *     google/cloud/retail/v2/import_config.proto;l=345
+   *     google/cloud/retail/v2/import_config.proto;l=330
    * @return The bytes for requestId.
    */
   @java.lang.Deprecated
@@ -158,8 +158,8 @@ public interface ImportMetadataOrBuilder
    *
    * <pre>
    * Pub/Sub topic for receiving notification. If this field is set,
-   * when the import is finished, a notification will be sent to
-   * specified Pub/Sub topic. The message data will be JSON string of a
+   * when the import is finished, a notification is sent to
+   * specified Pub/Sub topic. The message data is JSON string of a
    * [Operation][google.longrunning.Operation].
    * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
    * </pre>
@@ -174,8 +174,8 @@ public interface ImportMetadataOrBuilder
    *
    * <pre>
    * Pub/Sub topic for receiving notification. If this field is set,
-   * when the import is finished, a notification will be sent to
-   * specified Pub/Sub topic. The message data will be JSON string of a
+   * when the import is finished, a notification is sent to
+   * specified Pub/Sub topic. The message data is JSON string of a
    * [Operation][google.longrunning.Operation].
    * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
    * </pre>

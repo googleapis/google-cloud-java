@@ -61,6 +61,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     conditions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     promotions_ = java.util.Collections.emptyList();
     variants_ = java.util.Collections.emptyList();
+    localInventories_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -457,6 +458,18 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
                       com.google.cloud.retail.v2.Promotion.parser(), extensionRegistry));
               break;
             }
+          case 282:
+            {
+              if (!((mutable_bitField0_ & 0x00002000) != 0)) {
+                localInventories_ =
+                    new java.util.ArrayList<com.google.cloud.retail.v2.LocalInventory>();
+                mutable_bitField0_ |= 0x00002000;
+              }
+              localInventories_.add(
+                  input.readMessage(
+                      com.google.cloud.retail.v2.LocalInventory.parser(), extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -508,6 +521,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       }
       if (((mutable_bitField0_ & 0x00000800) != 0)) {
         promotions_ = java.util.Collections.unmodifiableList(promotions_);
+      }
+      if (((mutable_bitField0_ & 0x00002000) != 0)) {
+        localInventories_ = java.util.Collections.unmodifiableList(localInventories_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -1443,7 +1459,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * Non-existent product ids are allowed.
    * The [type][google.cloud.retail.v2.Product.type] of the members must be
    * either [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] or
-   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise and
+   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise an
    * INVALID_ARGUMENT error is thrown. Should not set it for other types. A
    * maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is
    * return.
@@ -1466,7 +1482,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * Non-existent product ids are allowed.
    * The [type][google.cloud.retail.v2.Product.type] of the members must be
    * either [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] or
-   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise and
+   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise an
    * INVALID_ARGUMENT error is thrown. Should not set it for other types. A
    * maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is
    * return.
@@ -1489,7 +1505,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * Non-existent product ids are allowed.
    * The [type][google.cloud.retail.v2.Product.type] of the members must be
    * either [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] or
-   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise and
+   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise an
    * INVALID_ARGUMENT error is thrown. Should not set it for other types. A
    * maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is
    * return.
@@ -1513,7 +1529,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * Non-existent product ids are allowed.
    * The [type][google.cloud.retail.v2.Product.type] of the members must be
    * either [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] or
-   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise and
+   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise an
    * INVALID_ARGUMENT error is thrown. Should not set it for other types. A
    * maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is
    * return.
@@ -3761,6 +3777,96 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     return variants_.get(index);
   }
 
+  public static final int LOCAL_INVENTORIES_FIELD_NUMBER = 35;
+  private java.util.List<com.google.cloud.retail.v2.LocalInventory> localInventories_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of local inventories specific to different places.
+   * This is only available for users who have Retail Search enabled, and it can
+   * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.retail.v2.LocalInventory> getLocalInventoriesList() {
+    return localInventories_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of local inventories specific to different places.
+   * This is only available for users who have Retail Search enabled, and it can
+   * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.retail.v2.LocalInventoryOrBuilder>
+      getLocalInventoriesOrBuilderList() {
+    return localInventories_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of local inventories specific to different places.
+   * This is only available for users who have Retail Search enabled, and it can
+   * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getLocalInventoriesCount() {
+    return localInventories_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of local inventories specific to different places.
+   * This is only available for users who have Retail Search enabled, and it can
+   * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.LocalInventory getLocalInventories(int index) {
+    return localInventories_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of local inventories specific to different places.
+   * This is only available for users who have Retail Search enabled, and it can
+   * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.LocalInventoryOrBuilder getLocalInventoriesOrBuilder(
+      int index) {
+    return localInventories_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3873,6 +3979,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < promotions_.size(); i++) {
       output.writeMessage(34, promotions_.get(i));
+    }
+    for (int i = 0; i < localInventories_.size(); i++) {
+      output.writeMessage(35, localInventories_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -4035,6 +4144,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < promotions_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(34, promotions_.get(i));
     }
+    for (int i = 0; i < localInventories_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(35, localInventories_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4105,6 +4218,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       if (!getRetrievableFields().equals(other.getRetrievableFields())) return false;
     }
     if (!getVariantsList().equals(other.getVariantsList())) return false;
+    if (!getLocalInventoriesList().equals(other.getLocalInventoriesList())) return false;
     if (!getExpirationCase().equals(other.getExpirationCase())) return false;
     switch (expirationCase_) {
       case 16:
@@ -4230,6 +4344,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     if (getVariantsCount() > 0) {
       hash = (37 * hash) + VARIANTS_FIELD_NUMBER;
       hash = (53 * hash) + getVariantsList().hashCode();
+    }
+    if (getLocalInventoriesCount() > 0) {
+      hash = (37 * hash) + LOCAL_INVENTORIES_FIELD_NUMBER;
+      hash = (53 * hash) + getLocalInventoriesList().hashCode();
     }
     switch (expirationCase_) {
       case 16:
@@ -4407,6 +4525,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         getImagesFieldBuilder();
         getPromotionsFieldBuilder();
         getVariantsFieldBuilder();
+        getLocalInventoriesFieldBuilder();
       }
     }
 
@@ -4521,6 +4640,12 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00001000);
       } else {
         variantsBuilder_.clear();
+      }
+      if (localInventoriesBuilder_ == null) {
+        localInventories_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00002000);
+      } else {
+        localInventoriesBuilder_.clear();
       }
       expirationCase_ = 0;
       expiration_ = null;
@@ -4692,6 +4817,15 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         result.variants_ = variants_;
       } else {
         result.variants_ = variantsBuilder_.build();
+      }
+      if (localInventoriesBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)) {
+          localInventories_ = java.util.Collections.unmodifiableList(localInventories_);
+          bitField0_ = (bitField0_ & ~0x00002000);
+        }
+        result.localInventories_ = localInventories_;
+      } else {
+        result.localInventories_ = localInventoriesBuilder_.build();
       }
       result.expirationCase_ = expirationCase_;
       onBuilt();
@@ -4991,6 +5125,33 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
                     : null;
           } else {
             variantsBuilder_.addAllMessages(other.variants_);
+          }
+        }
+      }
+      if (localInventoriesBuilder_ == null) {
+        if (!other.localInventories_.isEmpty()) {
+          if (localInventories_.isEmpty()) {
+            localInventories_ = other.localInventories_;
+            bitField0_ = (bitField0_ & ~0x00002000);
+          } else {
+            ensureLocalInventoriesIsMutable();
+            localInventories_.addAll(other.localInventories_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.localInventories_.isEmpty()) {
+          if (localInventoriesBuilder_.isEmpty()) {
+            localInventoriesBuilder_.dispose();
+            localInventoriesBuilder_ = null;
+            localInventories_ = other.localInventories_;
+            bitField0_ = (bitField0_ & ~0x00002000);
+            localInventoriesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getLocalInventoriesFieldBuilder()
+                    : null;
+          } else {
+            localInventoriesBuilder_.addAllMessages(other.localInventories_);
           }
         }
       }
@@ -6287,7 +6448,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * Non-existent product ids are allowed.
      * The [type][google.cloud.retail.v2.Product.type] of the members must be
      * either [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] or
-     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise and
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise an
      * INVALID_ARGUMENT error is thrown. Should not set it for other types. A
      * maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is
      * return.
@@ -6310,7 +6471,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * Non-existent product ids are allowed.
      * The [type][google.cloud.retail.v2.Product.type] of the members must be
      * either [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] or
-     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise and
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise an
      * INVALID_ARGUMENT error is thrown. Should not set it for other types. A
      * maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is
      * return.
@@ -6333,7 +6494,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * Non-existent product ids are allowed.
      * The [type][google.cloud.retail.v2.Product.type] of the members must be
      * either [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] or
-     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise and
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise an
      * INVALID_ARGUMENT error is thrown. Should not set it for other types. A
      * maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is
      * return.
@@ -6357,7 +6518,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * Non-existent product ids are allowed.
      * The [type][google.cloud.retail.v2.Product.type] of the members must be
      * either [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] or
-     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise and
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise an
      * INVALID_ARGUMENT error is thrown. Should not set it for other types. A
      * maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is
      * return.
@@ -6381,7 +6542,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * Non-existent product ids are allowed.
      * The [type][google.cloud.retail.v2.Product.type] of the members must be
      * either [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] or
-     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise and
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise an
      * INVALID_ARGUMENT error is thrown. Should not set it for other types. A
      * maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is
      * return.
@@ -6412,7 +6573,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * Non-existent product ids are allowed.
      * The [type][google.cloud.retail.v2.Product.type] of the members must be
      * either [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] or
-     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise and
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise an
      * INVALID_ARGUMENT error is thrown. Should not set it for other types. A
      * maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is
      * return.
@@ -6442,7 +6603,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * Non-existent product ids are allowed.
      * The [type][google.cloud.retail.v2.Product.type] of the members must be
      * either [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] or
-     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise and
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise an
      * INVALID_ARGUMENT error is thrown. Should not set it for other types. A
      * maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is
      * return.
@@ -6469,7 +6630,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * Non-existent product ids are allowed.
      * The [type][google.cloud.retail.v2.Product.type] of the members must be
      * either [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] or
-     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise and
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise an
      * INVALID_ARGUMENT error is thrown. Should not set it for other types. A
      * maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is
      * return.
@@ -6495,7 +6656,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * Non-existent product ids are allowed.
      * The [type][google.cloud.retail.v2.Product.type] of the members must be
      * either [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] or
-     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise and
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise an
      * INVALID_ARGUMENT error is thrown. Should not set it for other types. A
      * maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is
      * return.
@@ -13319,6 +13480,433 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         variants_ = null;
       }
       return variantsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.retail.v2.LocalInventory> localInventories_ =
+        java.util.Collections.emptyList();
+
+    private void ensureLocalInventoriesIsMutable() {
+      if (!((bitField0_ & 0x00002000) != 0)) {
+        localInventories_ =
+            new java.util.ArrayList<com.google.cloud.retail.v2.LocalInventory>(localInventories_);
+        bitField0_ |= 0x00002000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.retail.v2.LocalInventory,
+            com.google.cloud.retail.v2.LocalInventory.Builder,
+            com.google.cloud.retail.v2.LocalInventoryOrBuilder>
+        localInventoriesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of local inventories specific to different places.
+     * This is only available for users who have Retail Search enabled, and it can
+     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.retail.v2.LocalInventory> getLocalInventoriesList() {
+      if (localInventoriesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(localInventories_);
+      } else {
+        return localInventoriesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of local inventories specific to different places.
+     * This is only available for users who have Retail Search enabled, and it can
+     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getLocalInventoriesCount() {
+      if (localInventoriesBuilder_ == null) {
+        return localInventories_.size();
+      } else {
+        return localInventoriesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of local inventories specific to different places.
+     * This is only available for users who have Retail Search enabled, and it can
+     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.retail.v2.LocalInventory getLocalInventories(int index) {
+      if (localInventoriesBuilder_ == null) {
+        return localInventories_.get(index);
+      } else {
+        return localInventoriesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of local inventories specific to different places.
+     * This is only available for users who have Retail Search enabled, and it can
+     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLocalInventories(int index, com.google.cloud.retail.v2.LocalInventory value) {
+      if (localInventoriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLocalInventoriesIsMutable();
+        localInventories_.set(index, value);
+        onChanged();
+      } else {
+        localInventoriesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of local inventories specific to different places.
+     * This is only available for users who have Retail Search enabled, and it can
+     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLocalInventories(
+        int index, com.google.cloud.retail.v2.LocalInventory.Builder builderForValue) {
+      if (localInventoriesBuilder_ == null) {
+        ensureLocalInventoriesIsMutable();
+        localInventories_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        localInventoriesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of local inventories specific to different places.
+     * This is only available for users who have Retail Search enabled, and it can
+     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addLocalInventories(com.google.cloud.retail.v2.LocalInventory value) {
+      if (localInventoriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLocalInventoriesIsMutable();
+        localInventories_.add(value);
+        onChanged();
+      } else {
+        localInventoriesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of local inventories specific to different places.
+     * This is only available for users who have Retail Search enabled, and it can
+     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addLocalInventories(int index, com.google.cloud.retail.v2.LocalInventory value) {
+      if (localInventoriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLocalInventoriesIsMutable();
+        localInventories_.add(index, value);
+        onChanged();
+      } else {
+        localInventoriesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of local inventories specific to different places.
+     * This is only available for users who have Retail Search enabled, and it can
+     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addLocalInventories(
+        com.google.cloud.retail.v2.LocalInventory.Builder builderForValue) {
+      if (localInventoriesBuilder_ == null) {
+        ensureLocalInventoriesIsMutable();
+        localInventories_.add(builderForValue.build());
+        onChanged();
+      } else {
+        localInventoriesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of local inventories specific to different places.
+     * This is only available for users who have Retail Search enabled, and it can
+     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addLocalInventories(
+        int index, com.google.cloud.retail.v2.LocalInventory.Builder builderForValue) {
+      if (localInventoriesBuilder_ == null) {
+        ensureLocalInventoriesIsMutable();
+        localInventories_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        localInventoriesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of local inventories specific to different places.
+     * This is only available for users who have Retail Search enabled, and it can
+     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllLocalInventories(
+        java.lang.Iterable<? extends com.google.cloud.retail.v2.LocalInventory> values) {
+      if (localInventoriesBuilder_ == null) {
+        ensureLocalInventoriesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, localInventories_);
+        onChanged();
+      } else {
+        localInventoriesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of local inventories specific to different places.
+     * This is only available for users who have Retail Search enabled, and it can
+     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearLocalInventories() {
+      if (localInventoriesBuilder_ == null) {
+        localInventories_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00002000);
+        onChanged();
+      } else {
+        localInventoriesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of local inventories specific to different places.
+     * This is only available for users who have Retail Search enabled, and it can
+     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeLocalInventories(int index) {
+      if (localInventoriesBuilder_ == null) {
+        ensureLocalInventoriesIsMutable();
+        localInventories_.remove(index);
+        onChanged();
+      } else {
+        localInventoriesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of local inventories specific to different places.
+     * This is only available for users who have Retail Search enabled, and it can
+     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.retail.v2.LocalInventory.Builder getLocalInventoriesBuilder(int index) {
+      return getLocalInventoriesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of local inventories specific to different places.
+     * This is only available for users who have Retail Search enabled, and it can
+     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.retail.v2.LocalInventoryOrBuilder getLocalInventoriesOrBuilder(
+        int index) {
+      if (localInventoriesBuilder_ == null) {
+        return localInventories_.get(index);
+      } else {
+        return localInventoriesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of local inventories specific to different places.
+     * This is only available for users who have Retail Search enabled, and it can
+     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.retail.v2.LocalInventoryOrBuilder>
+        getLocalInventoriesOrBuilderList() {
+      if (localInventoriesBuilder_ != null) {
+        return localInventoriesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(localInventories_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of local inventories specific to different places.
+     * This is only available for users who have Retail Search enabled, and it can
+     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.retail.v2.LocalInventory.Builder addLocalInventoriesBuilder() {
+      return getLocalInventoriesFieldBuilder()
+          .addBuilder(com.google.cloud.retail.v2.LocalInventory.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of local inventories specific to different places.
+     * This is only available for users who have Retail Search enabled, and it can
+     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.retail.v2.LocalInventory.Builder addLocalInventoriesBuilder(int index) {
+      return getLocalInventoriesFieldBuilder()
+          .addBuilder(index, com.google.cloud.retail.v2.LocalInventory.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A list of local inventories specific to different places.
+     * This is only available for users who have Retail Search enabled, and it can
+     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.retail.v2.LocalInventory.Builder>
+        getLocalInventoriesBuilderList() {
+      return getLocalInventoriesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.retail.v2.LocalInventory,
+            com.google.cloud.retail.v2.LocalInventory.Builder,
+            com.google.cloud.retail.v2.LocalInventoryOrBuilder>
+        getLocalInventoriesFieldBuilder() {
+      if (localInventoriesBuilder_ == null) {
+        localInventoriesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.retail.v2.LocalInventory,
+                com.google.cloud.retail.v2.LocalInventory.Builder,
+                com.google.cloud.retail.v2.LocalInventoryOrBuilder>(
+                localInventories_,
+                ((bitField0_ & 0x00002000) != 0),
+                getParentForChildren(),
+                isClean());
+        localInventories_ = null;
+      }
+      return localInventoriesBuilder_;
     }
 
     @java.lang.Override

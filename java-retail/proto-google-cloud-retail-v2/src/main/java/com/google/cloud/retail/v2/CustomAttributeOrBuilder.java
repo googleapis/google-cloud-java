@@ -153,8 +153,8 @@ public interface CustomAttributeOrBuilder
    *
    * <pre>
    * This field is normally ignored unless
-   * [AttributesConfig.attribute_config_level][] of the
-   * [Catalog][google.cloud.retail.v2.Catalog] is set to the deprecated
+   * [AttributesConfig.attribute_config_level][google.cloud.retail.v2.AttributesConfig.attribute_config_level]
+   * of the [Catalog][google.cloud.retail.v2.Catalog] is set to the deprecated
    * 'PRODUCT_LEVEL_ATTRIBUTE_CONFIG' mode. For information about product-level
    * attribute configuration, see [Configuration
    * modes](https://cloud.google.com/retail/docs/attribute-config#config-modes).
@@ -168,7 +168,7 @@ public interface CustomAttributeOrBuilder
    * <code>optional bool searchable = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2.CustomAttribute.searchable is deprecated. See
-   *     google/cloud/retail/v2/common.proto;l=130
+   *     google/cloud/retail/v2/common.proto;l=407
    * @return Whether the searchable field is set.
    */
   @java.lang.Deprecated
@@ -178,8 +178,8 @@ public interface CustomAttributeOrBuilder
    *
    * <pre>
    * This field is normally ignored unless
-   * [AttributesConfig.attribute_config_level][] of the
-   * [Catalog][google.cloud.retail.v2.Catalog] is set to the deprecated
+   * [AttributesConfig.attribute_config_level][google.cloud.retail.v2.AttributesConfig.attribute_config_level]
+   * of the [Catalog][google.cloud.retail.v2.Catalog] is set to the deprecated
    * 'PRODUCT_LEVEL_ATTRIBUTE_CONFIG' mode. For information about product-level
    * attribute configuration, see [Configuration
    * modes](https://cloud.google.com/retail/docs/attribute-config#config-modes).
@@ -193,7 +193,7 @@ public interface CustomAttributeOrBuilder
    * <code>optional bool searchable = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2.CustomAttribute.searchable is deprecated. See
-   *     google/cloud/retail/v2/common.proto;l=130
+   *     google/cloud/retail/v2/common.proto;l=407
    * @return The searchable.
    */
   @java.lang.Deprecated
@@ -204,8 +204,8 @@ public interface CustomAttributeOrBuilder
    *
    * <pre>
    * This field is normally ignored unless
-   * [AttributesConfig.attribute_config_level][] of the
-   * [Catalog][google.cloud.retail.v2.Catalog] is set to the deprecated
+   * [AttributesConfig.attribute_config_level][google.cloud.retail.v2.AttributesConfig.attribute_config_level]
+   * of the [Catalog][google.cloud.retail.v2.Catalog] is set to the deprecated
    * 'PRODUCT_LEVEL_ATTRIBUTE_CONFIG' mode. For information about product-level
    * attribute configuration, see [Configuration
    * modes](https://cloud.google.com/retail/docs/attribute-config#config-modes).
@@ -223,7 +223,7 @@ public interface CustomAttributeOrBuilder
    * <code>optional bool indexable = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2.CustomAttribute.indexable is deprecated. See
-   *     google/cloud/retail/v2/common.proto;l=149
+   *     google/cloud/retail/v2/common.proto;l=426
    * @return Whether the indexable field is set.
    */
   @java.lang.Deprecated
@@ -233,8 +233,8 @@ public interface CustomAttributeOrBuilder
    *
    * <pre>
    * This field is normally ignored unless
-   * [AttributesConfig.attribute_config_level][] of the
-   * [Catalog][google.cloud.retail.v2.Catalog] is set to the deprecated
+   * [AttributesConfig.attribute_config_level][google.cloud.retail.v2.AttributesConfig.attribute_config_level]
+   * of the [Catalog][google.cloud.retail.v2.Catalog] is set to the deprecated
    * 'PRODUCT_LEVEL_ATTRIBUTE_CONFIG' mode. For information about product-level
    * attribute configuration, see [Configuration
    * modes](https://cloud.google.com/retail/docs/attribute-config#config-modes).
@@ -252,7 +252,7 @@ public interface CustomAttributeOrBuilder
    * <code>optional bool indexable = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2.CustomAttribute.indexable is deprecated. See
-   *     google/cloud/retail/v2/common.proto;l=149
+   *     google/cloud/retail/v2/common.proto;l=426
    * @return The indexable.
    */
   @java.lang.Deprecated

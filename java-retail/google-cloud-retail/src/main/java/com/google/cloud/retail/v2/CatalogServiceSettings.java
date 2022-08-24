@@ -95,6 +95,48 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
     return ((CatalogServiceStubSettings) getStubSettings()).getDefaultBranchSettings();
   }
 
+  /** Returns the object with the settings used for calls to getCompletionConfig. */
+  public UnaryCallSettings<GetCompletionConfigRequest, CompletionConfig>
+      getCompletionConfigSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).getCompletionConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateCompletionConfig. */
+  public UnaryCallSettings<UpdateCompletionConfigRequest, CompletionConfig>
+      updateCompletionConfigSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).updateCompletionConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAttributesConfig. */
+  public UnaryCallSettings<GetAttributesConfigRequest, AttributesConfig>
+      getAttributesConfigSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).getAttributesConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAttributesConfig. */
+  public UnaryCallSettings<UpdateAttributesConfigRequest, AttributesConfig>
+      updateAttributesConfigSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).updateAttributesConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to addCatalogAttribute. */
+  public UnaryCallSettings<AddCatalogAttributeRequest, AttributesConfig>
+      addCatalogAttributeSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).addCatalogAttributeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to removeCatalogAttribute. */
+  public UnaryCallSettings<RemoveCatalogAttributeRequest, AttributesConfig>
+      removeCatalogAttributeSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).removeCatalogAttributeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to replaceCatalogAttribute. */
+  public UnaryCallSettings<ReplaceCatalogAttributeRequest, AttributesConfig>
+      replaceCatalogAttributeSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).replaceCatalogAttributeSettings();
+  }
+
   public static final CatalogServiceSettings create(CatalogServiceStubSettings stub)
       throws IOException {
     return new CatalogServiceSettings.Builder(stub.toBuilder()).build();
@@ -231,6 +273,48 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
     public UnaryCallSettings.Builder<GetDefaultBranchRequest, GetDefaultBranchResponse>
         getDefaultBranchSettings() {
       return getStubSettingsBuilder().getDefaultBranchSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getCompletionConfig. */
+    public UnaryCallSettings.Builder<GetCompletionConfigRequest, CompletionConfig>
+        getCompletionConfigSettings() {
+      return getStubSettingsBuilder().getCompletionConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateCompletionConfig. */
+    public UnaryCallSettings.Builder<UpdateCompletionConfigRequest, CompletionConfig>
+        updateCompletionConfigSettings() {
+      return getStubSettingsBuilder().updateCompletionConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAttributesConfig. */
+    public UnaryCallSettings.Builder<GetAttributesConfigRequest, AttributesConfig>
+        getAttributesConfigSettings() {
+      return getStubSettingsBuilder().getAttributesConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAttributesConfig. */
+    public UnaryCallSettings.Builder<UpdateAttributesConfigRequest, AttributesConfig>
+        updateAttributesConfigSettings() {
+      return getStubSettingsBuilder().updateAttributesConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to addCatalogAttribute. */
+    public UnaryCallSettings.Builder<AddCatalogAttributeRequest, AttributesConfig>
+        addCatalogAttributeSettings() {
+      return getStubSettingsBuilder().addCatalogAttributeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeCatalogAttribute. */
+    public UnaryCallSettings.Builder<RemoveCatalogAttributeRequest, AttributesConfig>
+        removeCatalogAttributeSettings() {
+      return getStubSettingsBuilder().removeCatalogAttributeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to replaceCatalogAttribute. */
+    public UnaryCallSettings.Builder<ReplaceCatalogAttributeRequest, AttributesConfig>
+        replaceCatalogAttributeSettings() {
+      return getStubSettingsBuilder().replaceCatalogAttributeSettings();
     }
 
     @Override

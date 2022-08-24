@@ -24,13 +24,22 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.retail.v2.AddCatalogAttributeRequest;
+import com.google.cloud.retail.v2.AttributesConfig;
 import com.google.cloud.retail.v2.Catalog;
+import com.google.cloud.retail.v2.CompletionConfig;
+import com.google.cloud.retail.v2.GetAttributesConfigRequest;
+import com.google.cloud.retail.v2.GetCompletionConfigRequest;
 import com.google.cloud.retail.v2.GetDefaultBranchRequest;
 import com.google.cloud.retail.v2.GetDefaultBranchResponse;
 import com.google.cloud.retail.v2.ListCatalogsRequest;
 import com.google.cloud.retail.v2.ListCatalogsResponse;
+import com.google.cloud.retail.v2.RemoveCatalogAttributeRequest;
+import com.google.cloud.retail.v2.ReplaceCatalogAttributeRequest;
 import com.google.cloud.retail.v2.SetDefaultBranchRequest;
+import com.google.cloud.retail.v2.UpdateAttributesConfigRequest;
 import com.google.cloud.retail.v2.UpdateCatalogRequest;
+import com.google.cloud.retail.v2.UpdateCompletionConfigRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -89,6 +98,76 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   ProtoUtils.marshaller(GetDefaultBranchResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetCompletionConfigRequest, CompletionConfig>
+      getCompletionConfigMethodDescriptor =
+          MethodDescriptor.<GetCompletionConfigRequest, CompletionConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.retail.v2.CatalogService/GetCompletionConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetCompletionConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CompletionConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateCompletionConfigRequest, CompletionConfig>
+      updateCompletionConfigMethodDescriptor =
+          MethodDescriptor.<UpdateCompletionConfigRequest, CompletionConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.retail.v2.CatalogService/UpdateCompletionConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateCompletionConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CompletionConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetAttributesConfigRequest, AttributesConfig>
+      getAttributesConfigMethodDescriptor =
+          MethodDescriptor.<GetAttributesConfigRequest, AttributesConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.retail.v2.CatalogService/GetAttributesConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAttributesConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AttributesConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateAttributesConfigRequest, AttributesConfig>
+      updateAttributesConfigMethodDescriptor =
+          MethodDescriptor.<UpdateAttributesConfigRequest, AttributesConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.retail.v2.CatalogService/UpdateAttributesConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateAttributesConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AttributesConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<AddCatalogAttributeRequest, AttributesConfig>
+      addCatalogAttributeMethodDescriptor =
+          MethodDescriptor.<AddCatalogAttributeRequest, AttributesConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.retail.v2.CatalogService/AddCatalogAttribute")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AddCatalogAttributeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AttributesConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RemoveCatalogAttributeRequest, AttributesConfig>
+      removeCatalogAttributeMethodDescriptor =
+          MethodDescriptor.<RemoveCatalogAttributeRequest, AttributesConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.retail.v2.CatalogService/RemoveCatalogAttribute")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RemoveCatalogAttributeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AttributesConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ReplaceCatalogAttributeRequest, AttributesConfig>
+      replaceCatalogAttributeMethodDescriptor =
+          MethodDescriptor.<ReplaceCatalogAttributeRequest, AttributesConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.retail.v2.CatalogService/ReplaceCatalogAttribute")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ReplaceCatalogAttributeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AttributesConfig.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListCatalogsRequest, ListCatalogsResponse> listCatalogsCallable;
   private final UnaryCallable<ListCatalogsRequest, ListCatalogsPagedResponse>
       listCatalogsPagedCallable;
@@ -96,6 +175,20 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
   private final UnaryCallable<SetDefaultBranchRequest, Empty> setDefaultBranchCallable;
   private final UnaryCallable<GetDefaultBranchRequest, GetDefaultBranchResponse>
       getDefaultBranchCallable;
+  private final UnaryCallable<GetCompletionConfigRequest, CompletionConfig>
+      getCompletionConfigCallable;
+  private final UnaryCallable<UpdateCompletionConfigRequest, CompletionConfig>
+      updateCompletionConfigCallable;
+  private final UnaryCallable<GetAttributesConfigRequest, AttributesConfig>
+      getAttributesConfigCallable;
+  private final UnaryCallable<UpdateAttributesConfigRequest, AttributesConfig>
+      updateAttributesConfigCallable;
+  private final UnaryCallable<AddCatalogAttributeRequest, AttributesConfig>
+      addCatalogAttributeCallable;
+  private final UnaryCallable<RemoveCatalogAttributeRequest, AttributesConfig>
+      removeCatalogAttributeCallable;
+  private final UnaryCallable<ReplaceCatalogAttributeRequest, AttributesConfig>
+      replaceCatalogAttributeCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -182,6 +275,90 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<GetCompletionConfigRequest, CompletionConfig>
+        getCompletionConfigTransportSettings =
+            GrpcCallSettings.<GetCompletionConfigRequest, CompletionConfig>newBuilder()
+                .setMethodDescriptor(getCompletionConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateCompletionConfigRequest, CompletionConfig>
+        updateCompletionConfigTransportSettings =
+            GrpcCallSettings.<UpdateCompletionConfigRequest, CompletionConfig>newBuilder()
+                .setMethodDescriptor(updateCompletionConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "completion_config.name",
+                          String.valueOf(request.getCompletionConfig().getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<GetAttributesConfigRequest, AttributesConfig>
+        getAttributesConfigTransportSettings =
+            GrpcCallSettings.<GetAttributesConfigRequest, AttributesConfig>newBuilder()
+                .setMethodDescriptor(getAttributesConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateAttributesConfigRequest, AttributesConfig>
+        updateAttributesConfigTransportSettings =
+            GrpcCallSettings.<UpdateAttributesConfigRequest, AttributesConfig>newBuilder()
+                .setMethodDescriptor(updateAttributesConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "attributes_config.name",
+                          String.valueOf(request.getAttributesConfig().getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<AddCatalogAttributeRequest, AttributesConfig>
+        addCatalogAttributeTransportSettings =
+            GrpcCallSettings.<AddCatalogAttributeRequest, AttributesConfig>newBuilder()
+                .setMethodDescriptor(addCatalogAttributeMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "attributes_config", String.valueOf(request.getAttributesConfig()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<RemoveCatalogAttributeRequest, AttributesConfig>
+        removeCatalogAttributeTransportSettings =
+            GrpcCallSettings.<RemoveCatalogAttributeRequest, AttributesConfig>newBuilder()
+                .setMethodDescriptor(removeCatalogAttributeMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "attributes_config", String.valueOf(request.getAttributesConfig()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<ReplaceCatalogAttributeRequest, AttributesConfig>
+        replaceCatalogAttributeTransportSettings =
+            GrpcCallSettings.<ReplaceCatalogAttributeRequest, AttributesConfig>newBuilder()
+                .setMethodDescriptor(replaceCatalogAttributeMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "attributes_config", String.valueOf(request.getAttributesConfig()));
+                      return params.build();
+                    })
+                .build();
 
     this.listCatalogsCallable =
         callableFactory.createUnaryCallable(
@@ -198,6 +375,41 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
     this.getDefaultBranchCallable =
         callableFactory.createUnaryCallable(
             getDefaultBranchTransportSettings, settings.getDefaultBranchSettings(), clientContext);
+    this.getCompletionConfigCallable =
+        callableFactory.createUnaryCallable(
+            getCompletionConfigTransportSettings,
+            settings.getCompletionConfigSettings(),
+            clientContext);
+    this.updateCompletionConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateCompletionConfigTransportSettings,
+            settings.updateCompletionConfigSettings(),
+            clientContext);
+    this.getAttributesConfigCallable =
+        callableFactory.createUnaryCallable(
+            getAttributesConfigTransportSettings,
+            settings.getAttributesConfigSettings(),
+            clientContext);
+    this.updateAttributesConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateAttributesConfigTransportSettings,
+            settings.updateAttributesConfigSettings(),
+            clientContext);
+    this.addCatalogAttributeCallable =
+        callableFactory.createUnaryCallable(
+            addCatalogAttributeTransportSettings,
+            settings.addCatalogAttributeSettings(),
+            clientContext);
+    this.removeCatalogAttributeCallable =
+        callableFactory.createUnaryCallable(
+            removeCatalogAttributeTransportSettings,
+            settings.removeCatalogAttributeSettings(),
+            clientContext);
+    this.replaceCatalogAttributeCallable =
+        callableFactory.createUnaryCallable(
+            replaceCatalogAttributeTransportSettings,
+            settings.replaceCatalogAttributeSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -231,6 +443,45 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
   public UnaryCallable<GetDefaultBranchRequest, GetDefaultBranchResponse>
       getDefaultBranchCallable() {
     return getDefaultBranchCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetCompletionConfigRequest, CompletionConfig> getCompletionConfigCallable() {
+    return getCompletionConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCompletionConfigRequest, CompletionConfig>
+      updateCompletionConfigCallable() {
+    return updateCompletionConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAttributesConfigRequest, AttributesConfig> getAttributesConfigCallable() {
+    return getAttributesConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAttributesConfigRequest, AttributesConfig>
+      updateAttributesConfigCallable() {
+    return updateAttributesConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<AddCatalogAttributeRequest, AttributesConfig> addCatalogAttributeCallable() {
+    return addCatalogAttributeCallable;
+  }
+
+  @Override
+  public UnaryCallable<RemoveCatalogAttributeRequest, AttributesConfig>
+      removeCatalogAttributeCallable() {
+    return removeCatalogAttributeCallable;
+  }
+
+  @Override
+  public UnaryCallable<ReplaceCatalogAttributeRequest, AttributesConfig>
+      replaceCatalogAttributeCallable() {
+    return replaceCatalogAttributeCallable;
   }
 
   @Override

@@ -354,9 +354,9 @@ public final class UserEventServiceGrpc {
      * Bulk import of User events. Request processing might be
      * synchronous. Events that already exist are skipped.
      * Use this method for backfilling historical user events.
-     * Operation.response is of type ImportResponse. Note that it is
+     * `Operation.response` is of type `ImportResponse`. Note that it is
      * possible for a subset of the items to be successfully inserted.
-     * Operation.metadata is of type ImportMetadata.
+     * `Operation.metadata` is of type `ImportMetadata`.
      * </pre>
      */
     public void importUserEvents(
@@ -503,9 +503,9 @@ public final class UserEventServiceGrpc {
      * Bulk import of User events. Request processing might be
      * synchronous. Events that already exist are skipped.
      * Use this method for backfilling historical user events.
-     * Operation.response is of type ImportResponse. Note that it is
+     * `Operation.response` is of type `ImportResponse`. Note that it is
      * possible for a subset of the items to be successfully inserted.
-     * Operation.metadata is of type ImportMetadata.
+     * `Operation.metadata` is of type `ImportMetadata`.
      * </pre>
      */
     public void importUserEvents(
@@ -612,9 +612,9 @@ public final class UserEventServiceGrpc {
      * Bulk import of User events. Request processing might be
      * synchronous. Events that already exist are skipped.
      * Use this method for backfilling historical user events.
-     * Operation.response is of type ImportResponse. Note that it is
+     * `Operation.response` is of type `ImportResponse`. Note that it is
      * possible for a subset of the items to be successfully inserted.
-     * Operation.metadata is of type ImportMetadata.
+     * `Operation.metadata` is of type `ImportMetadata`.
      * </pre>
      */
     public com.google.longrunning.Operation importUserEvents(
@@ -715,9 +715,9 @@ public final class UserEventServiceGrpc {
      * Bulk import of User events. Request processing might be
      * synchronous. Events that already exist are skipped.
      * Use this method for backfilling historical user events.
-     * Operation.response is of type ImportResponse. Note that it is
+     * `Operation.response` is of type `ImportResponse`. Note that it is
      * possible for a subset of the items to be successfully inserted.
-     * Operation.metadata is of type ImportMetadata.
+     * `Operation.metadata` is of type `ImportMetadata`.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

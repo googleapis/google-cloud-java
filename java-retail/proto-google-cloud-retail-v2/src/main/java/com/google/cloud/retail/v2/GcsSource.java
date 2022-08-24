@@ -23,7 +23,6 @@ package com.google.cloud.retail.v2;
  *
  * <pre>
  * Google Cloud Storage location for input content.
- * format.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2.GcsSource}
@@ -237,9 +236,11 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * * `user_event_ga360`: Using
    *   https://support.google.com/analytics/answer/3437719.
    * Supported values for control imports:
-   * * 'control' (default): One JSON [Control][] per line.
+   * * `control` (default): One JSON [Control][google.cloud.retail.v2.Control]
+   * per line.
    * Supported values for catalog attribute imports:
-   * * 'catalog_attribute' (default): One CSV [CatalogAttribute][] per line.
+   * * `catalog_attribute` (default): One CSV
+   * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] per line.
    * </pre>
    *
    * <code>string data_schema = 2;</code>
@@ -275,9 +276,11 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * * `user_event_ga360`: Using
    *   https://support.google.com/analytics/answer/3437719.
    * Supported values for control imports:
-   * * 'control' (default): One JSON [Control][] per line.
+   * * `control` (default): One JSON [Control][google.cloud.retail.v2.Control]
+   * per line.
    * Supported values for catalog attribute imports:
-   * * 'catalog_attribute' (default): One CSV [CatalogAttribute][] per line.
+   * * `catalog_attribute` (default): One CSV
+   * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] per line.
    * </pre>
    *
    * <code>string data_schema = 2;</code>
@@ -475,7 +478,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Google Cloud Storage location for input content.
-   * format.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2.GcsSource}
@@ -896,9 +898,11 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * * `user_event_ga360`: Using
      *   https://support.google.com/analytics/answer/3437719.
      * Supported values for control imports:
-     * * 'control' (default): One JSON [Control][] per line.
+     * * `control` (default): One JSON [Control][google.cloud.retail.v2.Control]
+     * per line.
      * Supported values for catalog attribute imports:
-     * * 'catalog_attribute' (default): One CSV [CatalogAttribute][] per line.
+     * * `catalog_attribute` (default): One CSV
+     * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] per line.
      * </pre>
      *
      * <code>string data_schema = 2;</code>
@@ -933,9 +937,11 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * * `user_event_ga360`: Using
      *   https://support.google.com/analytics/answer/3437719.
      * Supported values for control imports:
-     * * 'control' (default): One JSON [Control][] per line.
+     * * `control` (default): One JSON [Control][google.cloud.retail.v2.Control]
+     * per line.
      * Supported values for catalog attribute imports:
-     * * 'catalog_attribute' (default): One CSV [CatalogAttribute][] per line.
+     * * `catalog_attribute` (default): One CSV
+     * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] per line.
      * </pre>
      *
      * <code>string data_schema = 2;</code>
@@ -970,9 +976,11 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * * `user_event_ga360`: Using
      *   https://support.google.com/analytics/answer/3437719.
      * Supported values for control imports:
-     * * 'control' (default): One JSON [Control][] per line.
+     * * `control` (default): One JSON [Control][google.cloud.retail.v2.Control]
+     * per line.
      * Supported values for catalog attribute imports:
-     * * 'catalog_attribute' (default): One CSV [CatalogAttribute][] per line.
+     * * `catalog_attribute` (default): One CSV
+     * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] per line.
      * </pre>
      *
      * <code>string data_schema = 2;</code>
@@ -1006,9 +1014,11 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * * `user_event_ga360`: Using
      *   https://support.google.com/analytics/answer/3437719.
      * Supported values for control imports:
-     * * 'control' (default): One JSON [Control][] per line.
+     * * `control` (default): One JSON [Control][google.cloud.retail.v2.Control]
+     * per line.
      * Supported values for catalog attribute imports:
-     * * 'catalog_attribute' (default): One CSV [CatalogAttribute][] per line.
+     * * `catalog_attribute` (default): One CSV
+     * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] per line.
      * </pre>
      *
      * <code>string data_schema = 2;</code>
@@ -1038,9 +1048,11 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * * `user_event_ga360`: Using
      *   https://support.google.com/analytics/answer/3437719.
      * Supported values for control imports:
-     * * 'control' (default): One JSON [Control][] per line.
+     * * `control` (default): One JSON [Control][google.cloud.retail.v2.Control]
+     * per line.
      * Supported values for catalog attribute imports:
-     * * 'catalog_attribute' (default): One CSV [CatalogAttribute][] per line.
+     * * `catalog_attribute` (default): One CSV
+     * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] per line.
      * </pre>
      *
      * <code>string data_schema = 2;</code>

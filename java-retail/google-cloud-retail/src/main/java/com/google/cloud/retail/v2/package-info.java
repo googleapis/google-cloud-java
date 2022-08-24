@@ -62,6 +62,23 @@
  * }
  * }</pre>
  *
+ * <p>======================= ControlServiceClient =======================
+ *
+ * <p>Service Description: Service for modifying Control.
+ *
+ * <p>Sample for ControlServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * try (ControlServiceClient controlServiceClient = ControlServiceClient.create()) {
+ *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+ *   Control control = Control.newBuilder().build();
+ *   String controlId = "controlId-395080872";
+ *   Control response = controlServiceClient.createControl(parent, control, controlId);
+ * }
+ * }</pre>
+ *
  * <p>======================= PredictionServiceClient =======================
  *
  * <p>Service Description: Service for making recommendation prediction.
@@ -145,6 +162,25 @@
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);
  *   }
+ * }
+ * }</pre>
+ *
+ * <p>======================= ServingConfigServiceClient =======================
+ *
+ * <p>Service Description: Service for modifying ServingConfig.
+ *
+ * <p>Sample for ServingConfigServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * try (ServingConfigServiceClient servingConfigServiceClient =
+ *     ServingConfigServiceClient.create()) {
+ *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+ *   ServingConfig servingConfig = ServingConfig.newBuilder().build();
+ *   String servingConfigId = "servingConfigId-831052759";
+ *   ServingConfig response =
+ *       servingConfigServiceClient.createServingConfig(parent, servingConfig, servingConfigId);
  * }
  * }</pre>
  *

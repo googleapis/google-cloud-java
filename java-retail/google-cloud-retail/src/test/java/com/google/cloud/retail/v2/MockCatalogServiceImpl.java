@@ -142,4 +142,151 @@ public class MockCatalogServiceImpl extends CatalogServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void getCompletionConfig(
+      GetCompletionConfigRequest request, StreamObserver<CompletionConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CompletionConfig) {
+      requests.add(request);
+      responseObserver.onNext(((CompletionConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCompletionConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CompletionConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateCompletionConfig(
+      UpdateCompletionConfigRequest request, StreamObserver<CompletionConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CompletionConfig) {
+      requests.add(request);
+      responseObserver.onNext(((CompletionConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateCompletionConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CompletionConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAttributesConfig(
+      GetAttributesConfigRequest request, StreamObserver<AttributesConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AttributesConfig) {
+      requests.add(request);
+      responseObserver.onNext(((AttributesConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAttributesConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AttributesConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateAttributesConfig(
+      UpdateAttributesConfigRequest request, StreamObserver<AttributesConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AttributesConfig) {
+      requests.add(request);
+      responseObserver.onNext(((AttributesConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAttributesConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AttributesConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void addCatalogAttribute(
+      AddCatalogAttributeRequest request, StreamObserver<AttributesConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AttributesConfig) {
+      requests.add(request);
+      responseObserver.onNext(((AttributesConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AddCatalogAttribute, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AttributesConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void removeCatalogAttribute(
+      RemoveCatalogAttributeRequest request, StreamObserver<AttributesConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AttributesConfig) {
+      requests.add(request);
+      responseObserver.onNext(((AttributesConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RemoveCatalogAttribute, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AttributesConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void replaceCatalogAttribute(
+      ReplaceCatalogAttributeRequest request, StreamObserver<AttributesConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AttributesConfig) {
+      requests.add(request);
+      responseObserver.onNext(((AttributesConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ReplaceCatalogAttribute, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AttributesConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

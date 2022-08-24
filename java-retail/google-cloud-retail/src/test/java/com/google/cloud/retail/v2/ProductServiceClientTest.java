@@ -124,6 +124,7 @@ public class ProductServiceClientTest {
             .setPublishTime(Timestamp.newBuilder().build())
             .setRetrievableFields(FieldMask.newBuilder().build())
             .addAllVariants(new ArrayList<Product>())
+            .addAllLocalInventories(new ArrayList<LocalInventory>())
             .build();
     mockProductService.addResponse(expectedResponse);
 
@@ -198,6 +199,7 @@ public class ProductServiceClientTest {
             .setPublishTime(Timestamp.newBuilder().build())
             .setRetrievableFields(FieldMask.newBuilder().build())
             .addAllVariants(new ArrayList<Product>())
+            .addAllLocalInventories(new ArrayList<LocalInventory>())
             .build();
     mockProductService.addResponse(expectedResponse);
 
@@ -272,6 +274,7 @@ public class ProductServiceClientTest {
             .setPublishTime(Timestamp.newBuilder().build())
             .setRetrievableFields(FieldMask.newBuilder().build())
             .addAllVariants(new ArrayList<Product>())
+            .addAllLocalInventories(new ArrayList<LocalInventory>())
             .build();
     mockProductService.addResponse(expectedResponse);
 
@@ -342,6 +345,7 @@ public class ProductServiceClientTest {
             .setPublishTime(Timestamp.newBuilder().build())
             .setRetrievableFields(FieldMask.newBuilder().build())
             .addAllVariants(new ArrayList<Product>())
+            .addAllLocalInventories(new ArrayList<LocalInventory>())
             .build();
     mockProductService.addResponse(expectedResponse);
 
@@ -498,6 +502,7 @@ public class ProductServiceClientTest {
             .setPublishTime(Timestamp.newBuilder().build())
             .setRetrievableFields(FieldMask.newBuilder().build())
             .addAllVariants(new ArrayList<Product>())
+            .addAllLocalInventories(new ArrayList<LocalInventory>())
             .build();
     mockProductService.addResponse(expectedResponse);
 

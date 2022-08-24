@@ -700,6 +700,11 @@ public final class ProductServiceGrpc {
      * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces],
      * and
      * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+     * The returned [Operation][]s will be obsolete after 1 day, and
+     * [GetOperation][] API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the [Operation][]s associated with the
+     * stale updates will not be marked as [done][Operation.done] until being
+     * obsolete.
      * This feature is only available for users who have Retail Search enabled.
      * Please enable Retail Search on Cloud Console before using this feature.
      * </pre>
@@ -726,6 +731,11 @@ public final class ProductServiceGrpc {
      * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
      * or
      * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * The returned [Operation][]s will be obsolete after 1 day, and
+     * [GetOperation][] API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the [Operation][]s associated with the
+     * stale updates will not be marked as [done][Operation.done] until being
+     * obsolete.
      * This feature is only available for users who have Retail Search enabled.
      * Please enable Retail Search on Cloud Console before using this feature.
      * </pre>
@@ -752,6 +762,11 @@ public final class ProductServiceGrpc {
      * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
      * or
      * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * The returned [Operation][]s will be obsolete after 1 day, and
+     * [GetOperation][] API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the [Operation][]s associated with the
+     * stale updates will not be marked as [done][Operation.done] until being
+     * obsolete.
      * This feature is only available for users who have Retail Search enabled.
      * Please enable Retail Search on Cloud Console before using this feature.
      * </pre>
@@ -784,6 +799,11 @@ public final class ProductServiceGrpc {
      * and
      * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct]
      * has no effect on local inventories.
+     * The returned [Operation][]s will be obsolete after 1 day, and
+     * [GetOperation][] API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the [Operation][]s associated with the
+     * stale updates will not be marked as [done][Operation.done] until being
+     * obsolete.
      * This feature is only available for users who have Retail Search enabled.
      * Please enable Retail Search on Cloud Console before using this feature.
      * </pre>
@@ -814,6 +834,11 @@ public final class ProductServiceGrpc {
      * and
      * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct]
      * has no effect on local inventories.
+     * The returned [Operation][]s will be obsolete after 1 day, and
+     * [GetOperation][] API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the [Operation][]s associated with the
+     * stale updates will not be marked as [done][Operation.done] until being
+     * obsolete.
      * This feature is only available for users who have Retail Search enabled.
      * Please enable Retail Search on Cloud Console before using this feature.
      * </pre>
@@ -1056,6 +1081,11 @@ public final class ProductServiceGrpc {
      * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces],
      * and
      * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+     * The returned [Operation][]s will be obsolete after 1 day, and
+     * [GetOperation][] API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the [Operation][]s associated with the
+     * stale updates will not be marked as [done][Operation.done] until being
+     * obsolete.
      * This feature is only available for users who have Retail Search enabled.
      * Please enable Retail Search on Cloud Console before using this feature.
      * </pre>
@@ -1084,6 +1114,11 @@ public final class ProductServiceGrpc {
      * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
      * or
      * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * The returned [Operation][]s will be obsolete after 1 day, and
+     * [GetOperation][] API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the [Operation][]s associated with the
+     * stale updates will not be marked as [done][Operation.done] until being
+     * obsolete.
      * This feature is only available for users who have Retail Search enabled.
      * Please enable Retail Search on Cloud Console before using this feature.
      * </pre>
@@ -1112,6 +1147,11 @@ public final class ProductServiceGrpc {
      * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
      * or
      * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * The returned [Operation][]s will be obsolete after 1 day, and
+     * [GetOperation][] API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the [Operation][]s associated with the
+     * stale updates will not be marked as [done][Operation.done] until being
+     * obsolete.
      * This feature is only available for users who have Retail Search enabled.
      * Please enable Retail Search on Cloud Console before using this feature.
      * </pre>
@@ -1146,6 +1186,11 @@ public final class ProductServiceGrpc {
      * and
      * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct]
      * has no effect on local inventories.
+     * The returned [Operation][]s will be obsolete after 1 day, and
+     * [GetOperation][] API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the [Operation][]s associated with the
+     * stale updates will not be marked as [done][Operation.done] until being
+     * obsolete.
      * This feature is only available for users who have Retail Search enabled.
      * Please enable Retail Search on Cloud Console before using this feature.
      * </pre>
@@ -1178,6 +1223,11 @@ public final class ProductServiceGrpc {
      * and
      * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct]
      * has no effect on local inventories.
+     * The returned [Operation][]s will be obsolete after 1 day, and
+     * [GetOperation][] API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the [Operation][]s associated with the
+     * stale updates will not be marked as [done][Operation.done] until being
+     * obsolete.
      * This feature is only available for users who have Retail Search enabled.
      * Please enable Retail Search on Cloud Console before using this feature.
      * </pre>
@@ -1333,6 +1383,11 @@ public final class ProductServiceGrpc {
      * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces],
      * and
      * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+     * The returned [Operation][]s will be obsolete after 1 day, and
+     * [GetOperation][] API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the [Operation][]s associated with the
+     * stale updates will not be marked as [done][Operation.done] until being
+     * obsolete.
      * This feature is only available for users who have Retail Search enabled.
      * Please enable Retail Search on Cloud Console before using this feature.
      * </pre>
@@ -1358,6 +1413,11 @@ public final class ProductServiceGrpc {
      * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
      * or
      * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * The returned [Operation][]s will be obsolete after 1 day, and
+     * [GetOperation][] API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the [Operation][]s associated with the
+     * stale updates will not be marked as [done][Operation.done] until being
+     * obsolete.
      * This feature is only available for users who have Retail Search enabled.
      * Please enable Retail Search on Cloud Console before using this feature.
      * </pre>
@@ -1383,6 +1443,11 @@ public final class ProductServiceGrpc {
      * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
      * or
      * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * The returned [Operation][]s will be obsolete after 1 day, and
+     * [GetOperation][] API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the [Operation][]s associated with the
+     * stale updates will not be marked as [done][Operation.done] until being
+     * obsolete.
      * This feature is only available for users who have Retail Search enabled.
      * Please enable Retail Search on Cloud Console before using this feature.
      * </pre>
@@ -1414,6 +1479,11 @@ public final class ProductServiceGrpc {
      * and
      * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct]
      * has no effect on local inventories.
+     * The returned [Operation][]s will be obsolete after 1 day, and
+     * [GetOperation][] API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the [Operation][]s associated with the
+     * stale updates will not be marked as [done][Operation.done] until being
+     * obsolete.
      * This feature is only available for users who have Retail Search enabled.
      * Please enable Retail Search on Cloud Console before using this feature.
      * </pre>
@@ -1443,6 +1513,11 @@ public final class ProductServiceGrpc {
      * and
      * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct]
      * has no effect on local inventories.
+     * The returned [Operation][]s will be obsolete after 1 day, and
+     * [GetOperation][] API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the [Operation][]s associated with the
+     * stale updates will not be marked as [done][Operation.done] until being
+     * obsolete.
      * This feature is only available for users who have Retail Search enabled.
      * Please enable Retail Search on Cloud Console before using this feature.
      * </pre>
@@ -1596,6 +1671,11 @@ public final class ProductServiceGrpc {
      * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces],
      * and
      * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+     * The returned [Operation][]s will be obsolete after 1 day, and
+     * [GetOperation][] API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the [Operation][]s associated with the
+     * stale updates will not be marked as [done][Operation.done] until being
+     * obsolete.
      * This feature is only available for users who have Retail Search enabled.
      * Please enable Retail Search on Cloud Console before using this feature.
      * </pre>
@@ -1621,6 +1701,11 @@ public final class ProductServiceGrpc {
      * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
      * or
      * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * The returned [Operation][]s will be obsolete after 1 day, and
+     * [GetOperation][] API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the [Operation][]s associated with the
+     * stale updates will not be marked as [done][Operation.done] until being
+     * obsolete.
      * This feature is only available for users who have Retail Search enabled.
      * Please enable Retail Search on Cloud Console before using this feature.
      * </pre>
@@ -1646,6 +1731,11 @@ public final class ProductServiceGrpc {
      * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
      * or
      * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * The returned [Operation][]s will be obsolete after 1 day, and
+     * [GetOperation][] API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the [Operation][]s associated with the
+     * stale updates will not be marked as [done][Operation.done] until being
+     * obsolete.
      * This feature is only available for users who have Retail Search enabled.
      * Please enable Retail Search on Cloud Console before using this feature.
      * </pre>
@@ -1677,6 +1767,11 @@ public final class ProductServiceGrpc {
      * and
      * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct]
      * has no effect on local inventories.
+     * The returned [Operation][]s will be obsolete after 1 day, and
+     * [GetOperation][] API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the [Operation][]s associated with the
+     * stale updates will not be marked as [done][Operation.done] until being
+     * obsolete.
      * This feature is only available for users who have Retail Search enabled.
      * Please enable Retail Search on Cloud Console before using this feature.
      * </pre>
@@ -1706,6 +1801,11 @@ public final class ProductServiceGrpc {
      * and
      * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct]
      * has no effect on local inventories.
+     * The returned [Operation][]s will be obsolete after 1 day, and
+     * [GetOperation][] API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the [Operation][]s associated with the
+     * stale updates will not be marked as [done][Operation.done] until being
+     * obsolete.
      * This feature is only available for users who have Retail Search enabled.
      * Please enable Retail Search on Cloud Console before using this feature.
      * </pre>

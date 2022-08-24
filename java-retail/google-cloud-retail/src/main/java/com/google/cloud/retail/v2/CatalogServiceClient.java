@@ -738,6 +738,613 @@ public class CatalogServiceClient implements BackgroundResource {
     return stub.getDefaultBranchCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a [CompletionConfig][google.cloud.retail.v2.CompletionConfig].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   CompletionConfigName name = CompletionConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+   *   CompletionConfig response = catalogServiceClient.getCompletionConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Full CompletionConfig resource name. Format:
+   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/completionConfig
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CompletionConfig getCompletionConfig(CompletionConfigName name) {
+    GetCompletionConfigRequest request =
+        GetCompletionConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getCompletionConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a [CompletionConfig][google.cloud.retail.v2.CompletionConfig].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   String name = CompletionConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString();
+   *   CompletionConfig response = catalogServiceClient.getCompletionConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Full CompletionConfig resource name. Format:
+   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/completionConfig
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CompletionConfig getCompletionConfig(String name) {
+    GetCompletionConfigRequest request =
+        GetCompletionConfigRequest.newBuilder().setName(name).build();
+    return getCompletionConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a [CompletionConfig][google.cloud.retail.v2.CompletionConfig].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   GetCompletionConfigRequest request =
+   *       GetCompletionConfigRequest.newBuilder()
+   *           .setName(CompletionConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .build();
+   *   CompletionConfig response = catalogServiceClient.getCompletionConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CompletionConfig getCompletionConfig(GetCompletionConfigRequest request) {
+    return getCompletionConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a [CompletionConfig][google.cloud.retail.v2.CompletionConfig].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   GetCompletionConfigRequest request =
+   *       GetCompletionConfigRequest.newBuilder()
+   *           .setName(CompletionConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .build();
+   *   ApiFuture<CompletionConfig> future =
+   *       catalogServiceClient.getCompletionConfigCallable().futureCall(request);
+   *   // Do something.
+   *   CompletionConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetCompletionConfigRequest, CompletionConfig>
+      getCompletionConfigCallable() {
+    return stub.getCompletionConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the [CompletionConfig][google.cloud.retail.v2.CompletionConfig]s.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   CompletionConfig completionConfig = CompletionConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   CompletionConfig response =
+   *       catalogServiceClient.updateCompletionConfig(completionConfig, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param completionConfig Required. The
+   *     [CompletionConfig][google.cloud.retail.v2.CompletionConfig] to update.
+   *     <p>If the caller does not have permission to update the
+   *     [CompletionConfig][google.cloud.retail.v2.CompletionConfig], then a PERMISSION_DENIED error
+   *     is returned.
+   *     <p>If the [CompletionConfig][google.cloud.retail.v2.CompletionConfig] to update does not
+   *     exist, a NOT_FOUND error is returned.
+   * @param updateMask Indicates which fields in the provided
+   *     [CompletionConfig][google.cloud.retail.v2.CompletionConfig] to update. The following are
+   *     the only supported fields:
+   *     <ul>
+   *       <li>[CompletionConfig.matching_order][google.cloud.retail.v2.CompletionConfig.matching_order]
+   *       <li>[CompletionConfig.max_suggestions][google.cloud.retail.v2.CompletionConfig.max_suggestions]
+   *       <li>[CompletionConfig.min_prefix_length][google.cloud.retail.v2.CompletionConfig.min_prefix_length]
+   *       <li>[CompletionConfig.auto_learning][google.cloud.retail.v2.CompletionConfig.auto_learning]
+   *     </ul>
+   *     <p>If not set, all supported fields are updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CompletionConfig updateCompletionConfig(
+      CompletionConfig completionConfig, FieldMask updateMask) {
+    UpdateCompletionConfigRequest request =
+        UpdateCompletionConfigRequest.newBuilder()
+            .setCompletionConfig(completionConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateCompletionConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the [CompletionConfig][google.cloud.retail.v2.CompletionConfig]s.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   UpdateCompletionConfigRequest request =
+   *       UpdateCompletionConfigRequest.newBuilder()
+   *           .setCompletionConfig(CompletionConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   CompletionConfig response = catalogServiceClient.updateCompletionConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CompletionConfig updateCompletionConfig(UpdateCompletionConfigRequest request) {
+    return updateCompletionConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the [CompletionConfig][google.cloud.retail.v2.CompletionConfig]s.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   UpdateCompletionConfigRequest request =
+   *       UpdateCompletionConfigRequest.newBuilder()
+   *           .setCompletionConfig(CompletionConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<CompletionConfig> future =
+   *       catalogServiceClient.updateCompletionConfigCallable().futureCall(request);
+   *   // Do something.
+   *   CompletionConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateCompletionConfigRequest, CompletionConfig>
+      updateCompletionConfigCallable() {
+    return stub.updateCompletionConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an [AttributesConfig][google.cloud.retail.v2.AttributesConfig].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   AttributesConfigName name = AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+   *   AttributesConfig response = catalogServiceClient.getAttributesConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Full AttributesConfig resource name. Format:
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AttributesConfig getAttributesConfig(AttributesConfigName name) {
+    GetAttributesConfigRequest request =
+        GetAttributesConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getAttributesConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an [AttributesConfig][google.cloud.retail.v2.AttributesConfig].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   String name = AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString();
+   *   AttributesConfig response = catalogServiceClient.getAttributesConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Full AttributesConfig resource name. Format:
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AttributesConfig getAttributesConfig(String name) {
+    GetAttributesConfigRequest request =
+        GetAttributesConfigRequest.newBuilder().setName(name).build();
+    return getAttributesConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an [AttributesConfig][google.cloud.retail.v2.AttributesConfig].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   GetAttributesConfigRequest request =
+   *       GetAttributesConfigRequest.newBuilder()
+   *           .setName(AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .build();
+   *   AttributesConfig response = catalogServiceClient.getAttributesConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AttributesConfig getAttributesConfig(GetAttributesConfigRequest request) {
+    return getAttributesConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an [AttributesConfig][google.cloud.retail.v2.AttributesConfig].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   GetAttributesConfigRequest request =
+   *       GetAttributesConfigRequest.newBuilder()
+   *           .setName(AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .build();
+   *   ApiFuture<AttributesConfig> future =
+   *       catalogServiceClient.getAttributesConfigCallable().futureCall(request);
+   *   // Do something.
+   *   AttributesConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAttributesConfigRequest, AttributesConfig>
+      getAttributesConfigCallable() {
+    return stub.getAttributesConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the [AttributesConfig][google.cloud.retail.v2.AttributesConfig].
+   *
+   * <p>The catalog attributes in the request will be updated in the catalog, or inserted if they do
+   * not exist. Existing catalog attributes not included in the request will remain unchanged.
+   * Attributes that are assigned to products, but do not exist at the catalog level, are always
+   * included in the response. The product attribute is assigned default values for missing catalog
+   * attribute fields, e.g., searchable and dynamic facetable options.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   AttributesConfig attributesConfig = AttributesConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   AttributesConfig response =
+   *       catalogServiceClient.updateAttributesConfig(attributesConfig, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param attributesConfig Required. The
+   *     [AttributesConfig][google.cloud.retail.v2.AttributesConfig] to update.
+   * @param updateMask Indicates which fields in the provided
+   *     [AttributesConfig][google.cloud.retail.v2.AttributesConfig] to update. The following is the
+   *     only supported field:
+   *     <ul>
+   *       <li>[AttributesConfig.catalog_attributes][google.cloud.retail.v2.AttributesConfig.catalog_attributes]
+   *     </ul>
+   *     <p>If not set, all supported fields are updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AttributesConfig updateAttributesConfig(
+      AttributesConfig attributesConfig, FieldMask updateMask) {
+    UpdateAttributesConfigRequest request =
+        UpdateAttributesConfigRequest.newBuilder()
+            .setAttributesConfig(attributesConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateAttributesConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the [AttributesConfig][google.cloud.retail.v2.AttributesConfig].
+   *
+   * <p>The catalog attributes in the request will be updated in the catalog, or inserted if they do
+   * not exist. Existing catalog attributes not included in the request will remain unchanged.
+   * Attributes that are assigned to products, but do not exist at the catalog level, are always
+   * included in the response. The product attribute is assigned default values for missing catalog
+   * attribute fields, e.g., searchable and dynamic facetable options.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   UpdateAttributesConfigRequest request =
+   *       UpdateAttributesConfigRequest.newBuilder()
+   *           .setAttributesConfig(AttributesConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   AttributesConfig response = catalogServiceClient.updateAttributesConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AttributesConfig updateAttributesConfig(UpdateAttributesConfigRequest request) {
+    return updateAttributesConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the [AttributesConfig][google.cloud.retail.v2.AttributesConfig].
+   *
+   * <p>The catalog attributes in the request will be updated in the catalog, or inserted if they do
+   * not exist. Existing catalog attributes not included in the request will remain unchanged.
+   * Attributes that are assigned to products, but do not exist at the catalog level, are always
+   * included in the response. The product attribute is assigned default values for missing catalog
+   * attribute fields, e.g., searchable and dynamic facetable options.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   UpdateAttributesConfigRequest request =
+   *       UpdateAttributesConfigRequest.newBuilder()
+   *           .setAttributesConfig(AttributesConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<AttributesConfig> future =
+   *       catalogServiceClient.updateAttributesConfigCallable().futureCall(request);
+   *   // Do something.
+   *   AttributesConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateAttributesConfigRequest, AttributesConfig>
+      updateAttributesConfigCallable() {
+    return stub.updateAttributesConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds the specified [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] to the
+   * [AttributesConfig][google.cloud.retail.v2.AttributesConfig].
+   *
+   * <p>If the [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] to add already exists, an
+   * ALREADY_EXISTS error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   AddCatalogAttributeRequest request =
+   *       AddCatalogAttributeRequest.newBuilder()
+   *           .setAttributesConfig(
+   *               AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .setCatalogAttribute(CatalogAttribute.newBuilder().build())
+   *           .build();
+   *   AttributesConfig response = catalogServiceClient.addCatalogAttribute(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AttributesConfig addCatalogAttribute(AddCatalogAttributeRequest request) {
+    return addCatalogAttributeCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds the specified [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] to the
+   * [AttributesConfig][google.cloud.retail.v2.AttributesConfig].
+   *
+   * <p>If the [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] to add already exists, an
+   * ALREADY_EXISTS error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   AddCatalogAttributeRequest request =
+   *       AddCatalogAttributeRequest.newBuilder()
+   *           .setAttributesConfig(
+   *               AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .setCatalogAttribute(CatalogAttribute.newBuilder().build())
+   *           .build();
+   *   ApiFuture<AttributesConfig> future =
+   *       catalogServiceClient.addCatalogAttributeCallable().futureCall(request);
+   *   // Do something.
+   *   AttributesConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AddCatalogAttributeRequest, AttributesConfig>
+      addCatalogAttributeCallable() {
+    return stub.addCatalogAttributeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes the specified [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] from the
+   * [AttributesConfig][google.cloud.retail.v2.AttributesConfig].
+   *
+   * <p>If the [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] to remove does not exist,
+   * a NOT_FOUND error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   RemoveCatalogAttributeRequest request =
+   *       RemoveCatalogAttributeRequest.newBuilder()
+   *           .setAttributesConfig(
+   *               AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .setKey("key106079")
+   *           .build();
+   *   AttributesConfig response = catalogServiceClient.removeCatalogAttribute(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AttributesConfig removeCatalogAttribute(RemoveCatalogAttributeRequest request) {
+    return removeCatalogAttributeCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes the specified [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] from the
+   * [AttributesConfig][google.cloud.retail.v2.AttributesConfig].
+   *
+   * <p>If the [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] to remove does not exist,
+   * a NOT_FOUND error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   RemoveCatalogAttributeRequest request =
+   *       RemoveCatalogAttributeRequest.newBuilder()
+   *           .setAttributesConfig(
+   *               AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .setKey("key106079")
+   *           .build();
+   *   ApiFuture<AttributesConfig> future =
+   *       catalogServiceClient.removeCatalogAttributeCallable().futureCall(request);
+   *   // Do something.
+   *   AttributesConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RemoveCatalogAttributeRequest, AttributesConfig>
+      removeCatalogAttributeCallable() {
+    return stub.removeCatalogAttributeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Replaces the specified [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] in the
+   * [AttributesConfig][google.cloud.retail.v2.AttributesConfig] by updating the catalog attribute
+   * with the same [CatalogAttribute.key][google.cloud.retail.v2.CatalogAttribute.key].
+   *
+   * <p>If the [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] to replace does not
+   * exist, a NOT_FOUND error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   ReplaceCatalogAttributeRequest request =
+   *       ReplaceCatalogAttributeRequest.newBuilder()
+   *           .setAttributesConfig(
+   *               AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .setCatalogAttribute(CatalogAttribute.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   AttributesConfig response = catalogServiceClient.replaceCatalogAttribute(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AttributesConfig replaceCatalogAttribute(ReplaceCatalogAttributeRequest request) {
+    return replaceCatalogAttributeCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Replaces the specified [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] in the
+   * [AttributesConfig][google.cloud.retail.v2.AttributesConfig] by updating the catalog attribute
+   * with the same [CatalogAttribute.key][google.cloud.retail.v2.CatalogAttribute.key].
+   *
+   * <p>If the [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] to replace does not
+   * exist, a NOT_FOUND error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   ReplaceCatalogAttributeRequest request =
+   *       ReplaceCatalogAttributeRequest.newBuilder()
+   *           .setAttributesConfig(
+   *               AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .setCatalogAttribute(CatalogAttribute.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<AttributesConfig> future =
+   *       catalogServiceClient.replaceCatalogAttributeCallable().futureCall(request);
+   *   // Do something.
+   *   AttributesConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ReplaceCatalogAttributeRequest, AttributesConfig>
+      replaceCatalogAttributeCallable() {
+    return stub.replaceCatalogAttributeCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
