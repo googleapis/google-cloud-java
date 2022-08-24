@@ -36,10 +36,6 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
         <type>pom</type>\n\
         <scope>import</scope>\n\
       </dependency>\n"
-
-  pushd "${bom_directory}"
-  mvn -q -B -ntp install -Denforcer.skip -Dcheckstyle.skip -Danimal.sniffer.skip -Dclirr.skip
-  popd
 done
 
 for module in $(find . -mindepth 2 -maxdepth 2 -name pom.xml |sort | xargs dirname); do
