@@ -45,6 +45,7 @@ jobs:
         EOL
     - name: Monorepo
       run: ./bootstrap.sh
+      shell: bash
       env:
         USERNAME: ${{ github.actor }}
     - name: Compile
