@@ -38,11 +38,11 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
       </dependency>\n"
 
   pushd "${bom_directory}"
-  mvn install -Denforcer.skip -Dcheckstyle.skip -Danimal.sniffer.skip -Dclirr.skip
+  mvn -q -B -ntp install -Denforcer.skip -Dcheckstyle.skip -Danimal.sniffer.skip -Dclirr.skip
   popd
 done
 
-for module in find . -mindepth 2 -maxdepth 2 -name pom.xml |sort | xargs dirname; do
+for module in $(find . -mindepth 2 -maxdepth 2 -name pom.xml |sort | xargs dirname); do
   if ls ${module}/*-bom 1> /dev/null 2>&1; then
     continue
   fi
