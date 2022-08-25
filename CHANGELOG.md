@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.10.5](https://github.com/googleapis/java-logging/compare/v3.10.4...v3.10.5) (2022-08-25)
+
+
+### Bug Fixes
+
+* resource detection for 2nd gen of Cloud Functions works incorrectly ([#1045](https://github.com/googleapis/java-logging/issues/1045)) ([dda1d0a](https://github.com/googleapis/java-logging/commit/dda1d0a48c3db18b46b8306c3304a79054e9b49c))
+
 ## [3.10.4](https://github.com/googleapis/java-logging/compare/v3.10.3...v3.10.4) (2022-08-19)
 
 
