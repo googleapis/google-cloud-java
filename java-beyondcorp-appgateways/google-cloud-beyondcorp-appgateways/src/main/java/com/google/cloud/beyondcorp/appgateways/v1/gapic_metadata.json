@@ -1,0 +1,45 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.beyondcorp.appgateways.v1",
+  "libraryPackage": "com.google.cloud.beyondcorp.appgateways.v1",
+  "services": {
+    "AppGatewaysService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AppGatewaysServiceClient",
+          "rpcs": {
+            "CreateAppGateway": {
+              "methods": ["createAppGatewayAsync", "createAppGatewayAsync", "createAppGatewayAsync", "createAppGatewayOperationCallable", "createAppGatewayCallable"]
+            },
+            "DeleteAppGateway": {
+              "methods": ["deleteAppGatewayAsync", "deleteAppGatewayAsync", "deleteAppGatewayAsync", "deleteAppGatewayOperationCallable", "deleteAppGatewayCallable"]
+            },
+            "GetAppGateway": {
+              "methods": ["getAppGateway", "getAppGateway", "getAppGateway", "getAppGatewayCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListAppGateways": {
+              "methods": ["listAppGateways", "listAppGateways", "listAppGateways", "listAppGatewaysPagedCallable", "listAppGatewaysCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
