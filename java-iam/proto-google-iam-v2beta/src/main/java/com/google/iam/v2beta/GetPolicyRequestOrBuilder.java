@@ -36,9 +36,7 @@ public interface GetPolicyRequestOrBuilder
    * name. For projects, you can use the alphanumeric or the numeric ID.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The name.
    */
@@ -56,9 +54,7 @@ public interface GetPolicyRequestOrBuilder
    * name. For projects, you can use the alphanumeric or the numeric ID.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for name.
    */

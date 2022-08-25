@@ -79,64 +79,62 @@ public final class PolicyProto {
       "\n\036google/iam/v2beta/policy.proto\022\021google"
           + ".iam.v2beta\032\034google/api/annotations.prot"
           + "o\032\027google/api/client.proto\032\037google/api/f"
-          + "ield_behavior.proto\032\031google/api/resource"
-          + ".proto\032\034google/iam/v2beta/deny.proto\032#go"
-          + "ogle/longrunning/operations.proto\032\037googl"
-          + "e/protobuf/timestamp.proto\"\334\003\n\006Policy\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\005\022\020\n\003uid\030\002 \001(\tB\003\340A\005\022\021\n\004ki"
-          + "nd\030\003 \001(\tB\003\340A\003\022\024\n\014display_name\030\004 \001(\t\022?\n\013a"
-          + "nnotations\030\005 \003(\0132*.google.iam.v2beta.Pol"
-          + "icy.AnnotationsEntry\022\014\n\004etag\030\006 \001(\t\0224\n\013cr"
-          + "eate_time\030\007 \001(\0132\032.google.protobuf.Timest"
-          + "ampB\003\340A\003\0224\n\013update_time\030\010 \001(\0132\032.google.p"
-          + "rotobuf.TimestampB\003\340A\003\0224\n\013delete_time\030\t "
-          + "\001(\0132\032.google.protobuf.TimestampB\003\340A\003\022,\n\005"
-          + "rules\030\n \003(\0132\035.google.iam.v2beta.PolicyRu"
-          + "le\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v"
-          + "alue\030\002 \001(\t:\0028\001:1\352A.\n\031iam.googleapis.com/"
-          + "Policy\022\021policies/{policy}\"[\n\nPolicyRule\022"
-          + "0\n\tdeny_rule\030\002 \001(\0132\033.google.iam.v2beta.D"
-          + "enyRuleH\000\022\023\n\013description\030\001 \001(\tB\006\n\004kind\"Q"
-          + "\n\023ListPoliciesRequest\022\023\n\006parent\030\001 \001(\tB\003\340"
-          + "A\002\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001("
-          + "\t\"\\\n\024ListPoliciesResponse\022+\n\010policies\030\001 "
-          + "\003(\0132\031.google.iam.v2beta.Policy\022\027\n\017next_p"
-          + "age_token\030\002 \001(\t\"C\n\020GetPolicyRequest\022/\n\004n"
-          + "ame\030\001 \001(\tB!\340A\002\372A\033\n\031iam.googleapis.com/Po"
-          + "licy\"m\n\023CreatePolicyRequest\022\023\n\006parent\030\001 "
-          + "\001(\tB\003\340A\002\022.\n\006policy\030\002 \001(\0132\031.google.iam.v2"
-          + "beta.PolicyB\003\340A\002\022\021\n\tpolicy_id\030\003 \001(\t\"E\n\023U"
-          + "pdatePolicyRequest\022.\n\006policy\030\001 \001(\0132\031.goo"
-          + "gle.iam.v2beta.PolicyB\003\340A\002\"Y\n\023DeletePoli"
-          + "cyRequest\022/\n\004name\030\001 \001(\tB!\340A\002\372A\033\n\031iam.goo"
-          + "gleapis.com/Policy\022\021\n\004etag\030\002 \001(\tB\003\340A\001\"J\n"
-          + "\027PolicyOperationMetadata\022/\n\013create_time\030"
-          + "\001 \001(\0132\032.google.protobuf.Timestamp2\200\007\n\010Po"
-          + "licies\022\217\001\n\014ListPolicies\022&.google.iam.v2b"
-          + "eta.ListPoliciesRequest\032\'.google.iam.v2b"
-          + "eta.ListPoliciesResponse\".\202\323\344\223\002\037\022\035/v2bet"
-          + "a/{parent=policies/*/*}\332A\006parent\022y\n\tGetP"
-          + "olicy\022#.google.iam.v2beta.GetPolicyReque"
-          + "st\032\031.google.iam.v2beta.Policy\",\202\323\344\223\002\037\022\035/"
-          + "v2beta/{name=policies/*/*/*}\332A\004name\022\302\001\n\014"
-          + "CreatePolicy\022&.google.iam.v2beta.CreateP"
-          + "olicyRequest\032\035.google.longrunning.Operat"
-          + "ion\"k\202\323\344\223\002\'\"\035/v2beta/{parent=policies/*/"
-          + "*}:\006policy\332A\027parent,policy,policy_id\312A!\n"
-          + "\006Policy\022\027PolicyOperationMetadata\022\257\001\n\014Upd"
-          + "atePolicy\022&.google.iam.v2beta.UpdatePoli"
+          + "ield_behavior.proto\032\034google/iam/v2beta/d"
+          + "eny.proto\032#google/longrunning/operations"
+          + ".proto\032\037google/protobuf/timestamp.proto\""
+          + "\251\003\n\006Policy\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\020\n\003uid\030\002 \001"
+          + "(\tB\003\340A\005\022\021\n\004kind\030\003 \001(\tB\003\340A\003\022\024\n\014display_na"
+          + "me\030\004 \001(\t\022?\n\013annotations\030\005 \003(\0132*.google.i"
+          + "am.v2beta.Policy.AnnotationsEntry\022\014\n\004eta"
+          + "g\030\006 \001(\t\0224\n\013create_time\030\007 \001(\0132\032.google.pr"
+          + "otobuf.TimestampB\003\340A\003\0224\n\013update_time\030\010 \001"
+          + "(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013d"
+          + "elete_time\030\t \001(\0132\032.google.protobuf.Times"
+          + "tampB\003\340A\003\022,\n\005rules\030\n \003(\0132\035.google.iam.v2"
+          + "beta.PolicyRule\0322\n\020AnnotationsEntry\022\013\n\003k"
+          + "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"[\n\nPolicyRul"
+          + "e\0220\n\tdeny_rule\030\002 \001(\0132\033.google.iam.v2beta"
+          + ".DenyRuleH\000\022\023\n\013description\030\001 \001(\tB\006\n\004kind"
+          + "\"Q\n\023ListPoliciesRequest\022\023\n\006parent\030\001 \001(\tB"
+          + "\003\340A\002\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 "
+          + "\001(\t\"\\\n\024ListPoliciesResponse\022+\n\010policies\030"
+          + "\001 \003(\0132\031.google.iam.v2beta.Policy\022\027\n\017next"
+          + "_page_token\030\002 \001(\t\"%\n\020GetPolicyRequest\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\002\"m\n\023CreatePolicyRequest\022"
+          + "\023\n\006parent\030\001 \001(\tB\003\340A\002\022.\n\006policy\030\002 \001(\0132\031.g"
+          + "oogle.iam.v2beta.PolicyB\003\340A\002\022\021\n\tpolicy_i"
+          + "d\030\003 \001(\t\"E\n\023UpdatePolicyRequest\022.\n\006policy"
+          + "\030\001 \001(\0132\031.google.iam.v2beta.PolicyB\003\340A\002\";"
+          + "\n\023DeletePolicyRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002"
+          + "\022\021\n\004etag\030\002 \001(\tB\003\340A\001\"J\n\027PolicyOperationMe"
+          + "tadata\022/\n\013create_time\030\001 \001(\0132\032.google.pro"
+          + "tobuf.Timestamp2\200\007\n\010Policies\022\217\001\n\014ListPol"
+          + "icies\022&.google.iam.v2beta.ListPoliciesRe"
+          + "quest\032\'.google.iam.v2beta.ListPoliciesRe"
+          + "sponse\".\202\323\344\223\002\037\022\035/v2beta/{parent=policies"
+          + "/*/*}\332A\006parent\022y\n\tGetPolicy\022#.google.iam"
+          + ".v2beta.GetPolicyRequest\032\031.google.iam.v2"
+          + "beta.Policy\",\202\323\344\223\002\037\022\035/v2beta/{name=polic"
+          + "ies/*/*/*}\332A\004name\022\302\001\n\014CreatePolicy\022&.goo"
+          + "gle.iam.v2beta.CreatePolicyRequest\032\035.goo"
+          + "gle.longrunning.Operation\"k\202\323\344\223\002\'\"\035/v2be"
+          + "ta/{parent=policies/*/*}:\006policy\332A\027paren"
+          + "t,policy,policy_id\312A!\n\006Policy\022\027PolicyOpe"
+          + "rationMetadata\022\257\001\n\014UpdatePolicy\022&.google"
+          + ".iam.v2beta.UpdatePolicyRequest\032\035.google"
+          + ".longrunning.Operation\"X\202\323\344\223\002.\032$/v2beta/"
+          + "{policy.name=policies/*/*/*}:\006policy\312A!\n"
+          + "\006Policy\022\027PolicyOperationMetadata\022\247\001\n\014Del"
+          + "etePolicy\022&.google.iam.v2beta.DeletePoli"
           + "cyRequest\032\035.google.longrunning.Operation"
-          + "\"X\202\323\344\223\002.\032$/v2beta/{policy.name=policies/"
-          + "*/*/*}:\006policy\312A!\n\006Policy\022\027PolicyOperati"
-          + "onMetadata\022\247\001\n\014DeletePolicy\022&.google.iam"
-          + ".v2beta.DeletePolicyRequest\032\035.google.lon"
-          + "grunning.Operation\"P\202\323\344\223\002\037*\035/v2beta/{nam"
-          + "e=policies/*/*/*}\332A\004name\312A!\n\006Policy\022\027Pol"
-          + "icyOperationMetadata\032F\312A\022iam.googleapis."
-          + "com\322A.https://www.googleapis.com/auth/cl"
-          + "oud-platformB\\\n\025com.google.iam.v2betaB\013P"
-          + "olicyProtoP\001Z4google.golang.org/genproto"
-          + "/googleapis/iam/v2beta;iamb\006proto3"
+          + "\"P\202\323\344\223\002\037*\035/v2beta/{name=policies/*/*/*}\332"
+          + "A\004name\312A!\n\006Policy\022\027PolicyOperationMetada"
+          + "ta\032F\312A\022iam.googleapis.com\322A.https://www."
+          + "googleapis.com/auth/cloud-platformB\220\001\n\025c"
+          + "om.google.iam.v2betaB\013PolicyProtoP\001Z4goo"
+          + "gle.golang.org/genproto/googleapis/iam/v"
+          + "2beta;iam\252\002\027Google.Cloud.Iam.V2Beta\312\002\027Go"
+          + "ogle\\Cloud\\Iam\\V2betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -145,7 +143,6 @@ public final class PolicyProto {
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
-              com.google.api.ResourceProto.getDescriptor(),
               com.google.iam.v2beta.DenyRuleProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -245,15 +242,12 @@ public final class PolicyProto {
     registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
-    registry.add(com.google.api.ResourceProto.resource);
-    registry.add(com.google.api.ResourceProto.resourceReference);
     registry.add(com.google.longrunning.OperationsProto.operationInfo);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
-    com.google.api.ResourceProto.getDescriptor();
     com.google.iam.v2beta.DenyRuleProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

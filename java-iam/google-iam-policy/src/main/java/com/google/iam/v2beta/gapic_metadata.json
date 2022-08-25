@@ -14,10 +14,10 @@
               "methods": ["createPolicyAsync", "createPolicyAsync", "createPolicyOperationCallable", "createPolicyCallable"]
             },
             "DeletePolicy": {
-              "methods": ["deletePolicyAsync", "deletePolicyAsync", "deletePolicyAsync", "deletePolicyOperationCallable", "deletePolicyCallable"]
+              "methods": ["deletePolicyAsync", "deletePolicyAsync", "deletePolicyOperationCallable", "deletePolicyCallable"]
             },
             "GetPolicy": {
-              "methods": ["getPolicy", "getPolicy", "getPolicy", "getPolicyCallable"]
+              "methods": ["getPolicy", "getPolicy", "getPolicyCallable"]
             },
             "ListPolicies": {
               "methods": ["listPolicies", "listPolicies", "listPoliciesPagedCallable", "listPoliciesCallable"]

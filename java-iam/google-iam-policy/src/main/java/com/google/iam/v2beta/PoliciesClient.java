@@ -20,6 +20,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -31,7 +32,6 @@ import com.google.common.util.concurrent.MoreExecutors;
 import com.google.iam.v2beta.stub.PoliciesStub;
 import com.google.iam.v2beta.stub.PoliciesStubSettings;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -48,7 +48,7 @@ import javax.annotation.Generated;
  * // This snippet has been automatically generated for illustrative purposes only.
  * // It may require modifications to work in your environment.
  * try (PoliciesClient policiesClient = PoliciesClient.create()) {
- *   PolicyName name = PolicyName.of("[POLICY]");
+ *   String name = "name3373707";
  *   Policy response = policiesClient.getPolicy(name);
  * }
  * }</pre>
@@ -101,6 +101,20 @@ import javax.annotation.Generated;
  * PoliciesClient policiesClient = PoliciesClient.create(policiesSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * PoliciesSettings policiesSettings =
+ *     PoliciesSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             PoliciesSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * PoliciesClient policiesClient = PoliciesClient.create(policiesSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi
@@ -108,7 +122,8 @@ import javax.annotation.Generated;
 public class PoliciesClient implements BackgroundResource {
   private final PoliciesSettings settings;
   private final PoliciesStub stub;
-  private final OperationsClient operationsClient;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of PoliciesClient with default settings. */
   public static final PoliciesClient create() throws IOException {
@@ -138,13 +153,17 @@ public class PoliciesClient implements BackgroundResource {
   protected PoliciesClient(PoliciesSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((PoliciesStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   protected PoliciesClient(PoliciesStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final PoliciesSettings getSettings() {
@@ -159,8 +178,17 @@ public class PoliciesClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -305,37 +333,7 @@ public class PoliciesClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (PoliciesClient policiesClient = PoliciesClient.create()) {
-   *   PolicyName name = PolicyName.of("[POLICY]");
-   *   Policy response = policiesClient.getPolicy(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The resource name of the policy to retrieve. Format:
-   *     `policies/{attachment_point}/denypolicies/{policy_id}`
-   *     <p>Use the URL-encoded full resource name, which means that the forward-slash character,
-   *     `/`, must be written as `%2F`. For example,
-   *     `policies/cloudresourcemanager.googleapis.com%2Fprojects%2Fmy-project/denypolicies/my-policy`.
-   *     <p>For organizations and folders, use the numeric ID in the full resource name. For
-   *     projects, you can use the alphanumeric or the numeric ID.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Policy getPolicy(PolicyName name) {
-    GetPolicyRequest request =
-        GetPolicyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return getPolicy(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Gets a policy.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (PoliciesClient policiesClient = PoliciesClient.create()) {
-   *   String name = PolicyName.of("[POLICY]").toString();
+   *   String name = "name3373707";
    *   Policy response = policiesClient.getPolicy(name);
    * }
    * }</pre>
@@ -364,8 +362,7 @@ public class PoliciesClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (PoliciesClient policiesClient = PoliciesClient.create()) {
-   *   GetPolicyRequest request =
-   *       GetPolicyRequest.newBuilder().setName(PolicyName.of("[POLICY]").toString()).build();
+   *   GetPolicyRequest request = GetPolicyRequest.newBuilder().setName("name3373707").build();
    *   Policy response = policiesClient.getPolicy(request);
    * }
    * }</pre>
@@ -387,8 +384,7 @@ public class PoliciesClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (PoliciesClient policiesClient = PoliciesClient.create()) {
-   *   GetPolicyRequest request =
-   *       GetPolicyRequest.newBuilder().setName(PolicyName.of("[POLICY]").toString()).build();
+   *   GetPolicyRequest request = GetPolicyRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<Policy> future = policiesClient.getPolicyCallable().futureCall(request);
    *   // Do something.
    *   Policy response = future.get();
@@ -630,37 +626,7 @@ public class PoliciesClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (PoliciesClient policiesClient = PoliciesClient.create()) {
-   *   PolicyName name = PolicyName.of("[POLICY]");
-   *   Policy response = policiesClient.deletePolicyAsync(name).get();
-   * }
-   * }</pre>
-   *
-   * @param name Required. The resource name of the policy to delete. Format:
-   *     `policies/{attachment_point}/denypolicies/{policy_id}`
-   *     <p>Use the URL-encoded full resource name, which means that the forward-slash character,
-   *     `/`, must be written as `%2F`. For example,
-   *     `policies/cloudresourcemanager.googleapis.com%2Fprojects%2Fmy-project/denypolicies/my-policy`.
-   *     <p>For organizations and folders, use the numeric ID in the full resource name. For
-   *     projects, you can use the alphanumeric or the numeric ID.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<Policy, PolicyOperationMetadata> deletePolicyAsync(PolicyName name) {
-    DeletePolicyRequest request =
-        DeletePolicyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return deletePolicyAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a policy. This action is permanent.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (PoliciesClient policiesClient = PoliciesClient.create()) {
-   *   String name = PolicyName.of("[POLICY]").toString();
+   *   String name = "name3373707";
    *   Policy response = policiesClient.deletePolicyAsync(name).get();
    * }
    * }</pre>
@@ -690,10 +656,7 @@ public class PoliciesClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (PoliciesClient policiesClient = PoliciesClient.create()) {
    *   DeletePolicyRequest request =
-   *       DeletePolicyRequest.newBuilder()
-   *           .setName(PolicyName.of("[POLICY]").toString())
-   *           .setEtag("etag3123477")
-   *           .build();
+   *       DeletePolicyRequest.newBuilder().setName("name3373707").setEtag("etag3123477").build();
    *   Policy response = policiesClient.deletePolicyAsync(request).get();
    * }
    * }</pre>
@@ -717,10 +680,7 @@ public class PoliciesClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (PoliciesClient policiesClient = PoliciesClient.create()) {
    *   DeletePolicyRequest request =
-   *       DeletePolicyRequest.newBuilder()
-   *           .setName(PolicyName.of("[POLICY]").toString())
-   *           .setEtag("etag3123477")
-   *           .build();
+   *       DeletePolicyRequest.newBuilder().setName("name3373707").setEtag("etag3123477").build();
    *   OperationFuture<Policy, PolicyOperationMetadata> future =
    *       policiesClient.deletePolicyOperationCallable().futureCall(request);
    *   // Do something.
@@ -744,10 +704,7 @@ public class PoliciesClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (PoliciesClient policiesClient = PoliciesClient.create()) {
    *   DeletePolicyRequest request =
-   *       DeletePolicyRequest.newBuilder()
-   *           .setName(PolicyName.of("[POLICY]").toString())
-   *           .setEtag("etag3123477")
-   *           .build();
+   *       DeletePolicyRequest.newBuilder().setName("name3373707").setEtag("etag3123477").build();
    *   ApiFuture<Operation> future = policiesClient.deletePolicyCallable().futureCall(request);
    *   // Do something.
    *   Operation response = future.get();

@@ -19,25 +19,24 @@ package com.google.iam.v2beta;
 import static com.google.iam.v2beta.PoliciesClient.ListPoliciesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GaxGrpcProperties;
-import com.google.api.gax.grpc.testing.LocalChannelProvider;
-import com.google.api.gax.grpc.testing.MockGrpcService;
-import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.httpjson.GaxHttpJsonProperties;
+import com.google.api.gax.httpjson.testing.MockHttpService;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.common.collect.Lists;
+import com.google.iam.v2beta.stub.HttpJsonPoliciesStub;
 import com.google.longrunning.Operation;
-import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Timestamp;
-import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -48,41 +47,37 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 @Generated("by gapic-generator-java")
-public class PoliciesClientTest {
-  private static MockPolicies mockPolicies;
-  private static MockServiceHelper mockServiceHelper;
-  private LocalChannelProvider channelProvider;
-  private PoliciesClient client;
+public class PoliciesClientHttpJsonTest {
+  private static MockHttpService mockService;
+  private static PoliciesClient client;
 
   @BeforeClass
-  public static void startStaticServer() {
-    mockPolicies = new MockPolicies();
-    mockServiceHelper =
-        new MockServiceHelper(
-            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockPolicies));
-    mockServiceHelper.start();
-  }
-
-  @AfterClass
-  public static void stopServer() {
-    mockServiceHelper.stop();
-  }
-
-  @Before
-  public void setUp() throws IOException {
-    mockServiceHelper.reset();
-    channelProvider = mockServiceHelper.createChannelProvider();
+  public static void startStaticServer() throws IOException {
+    mockService =
+        new MockHttpService(
+            HttpJsonPoliciesStub.getMethodDescriptors(), PoliciesSettings.getDefaultEndpoint());
     PoliciesSettings settings =
-        PoliciesSettings.newBuilder()
-            .setTransportChannelProvider(channelProvider)
+        PoliciesSettings.newHttpJsonBuilder()
+            .setTransportChannelProvider(
+                PoliciesSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(mockService)
+                    .build())
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = PoliciesClient.create(settings);
   }
 
+  @AfterClass
+  public static void stopServer() {
+    client.close();
+  }
+
+  @Before
+  public void setUp() {}
+
   @After
   public void tearDown() throws Exception {
-    client.close();
+    mockService.reset();
   }
 
   @Test
@@ -93,9 +88,9 @@ public class PoliciesClientTest {
             .setNextPageToken("")
             .addAllPolicies(Arrays.asList(responsesElement))
             .build();
-    mockPolicies.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent = "policies/policie-1456/policie-1456";
 
     ListPoliciesPagedResponse pagedListResponse = client.listPolicies(parent);
 
@@ -104,24 +99,30 @@ public class PoliciesClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getPoliciesList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockPolicies.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListPoliciesRequest actualRequest = ((ListPoliciesRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listPoliciesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockPolicies.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "policies/policie-1456/policie-1456";
       client.listPolicies(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -144,31 +145,37 @@ public class PoliciesClientTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .addAllRules(new ArrayList<PolicyRule>())
             .build();
-    mockPolicies.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "policies/policie-3260/policie-3260/policie-3260";
 
     Policy actualResponse = client.getPolicy(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockPolicies.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetPolicyRequest actualRequest = ((GetPolicyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getPolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockPolicies.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "policies/policie-3260/policie-3260/policie-3260";
       client.getPolicy(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -197,43 +204,44 @@ public class PoliciesClientTest {
             .setDone(true)
             .setResponse(Any.pack(expectedResponse))
             .build();
-    mockPolicies.addResponse(resultOperation);
+    mockService.addResponse(resultOperation);
 
-    String parent = "parent-995424086";
+    String parent = "policies/policie-1456/policie-1456";
     Policy policy = Policy.newBuilder().build();
     String policyId = "policyId546908653";
 
     Policy actualResponse = client.createPolicyAsync(parent, policy, policyId).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockPolicies.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreatePolicyRequest actualRequest = ((CreatePolicyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(policy, actualRequest.getPolicy());
-    Assert.assertEquals(policyId, actualRequest.getPolicyId());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createPolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockPolicies.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "policies/policie-1456/policie-1456";
       Policy policy = Policy.newBuilder().build();
       String policyId = "policyId546908653";
       client.createPolicyAsync(parent, policy, policyId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -258,39 +266,70 @@ public class PoliciesClientTest {
             .setDone(true)
             .setResponse(Any.pack(expectedResponse))
             .build();
-    mockPolicies.addResponse(resultOperation);
+    mockService.addResponse(resultOperation);
 
     UpdatePolicyRequest request =
-        UpdatePolicyRequest.newBuilder().setPolicy(Policy.newBuilder().build()).build();
+        UpdatePolicyRequest.newBuilder()
+            .setPolicy(
+                Policy.newBuilder()
+                    .setName("policies/policie-3260/policie-3260/policie-3260")
+                    .setUid("uid115792")
+                    .setKind("kind3292052")
+                    .setDisplayName("displayName1714148973")
+                    .putAllAnnotations(new HashMap<String, String>())
+                    .setEtag("etag3123477")
+                    .setCreateTime(Timestamp.newBuilder().build())
+                    .setUpdateTime(Timestamp.newBuilder().build())
+                    .setDeleteTime(Timestamp.newBuilder().build())
+                    .addAllRules(new ArrayList<PolicyRule>())
+                    .build())
+            .build();
 
     Policy actualResponse = client.updatePolicyAsync(request).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockPolicies.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    UpdatePolicyRequest actualRequest = ((UpdatePolicyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getPolicy(), actualRequest.getPolicy());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void updatePolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockPolicies.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       UpdatePolicyRequest request =
-          UpdatePolicyRequest.newBuilder().setPolicy(Policy.newBuilder().build()).build();
+          UpdatePolicyRequest.newBuilder()
+              .setPolicy(
+                  Policy.newBuilder()
+                      .setName("policies/policie-3260/policie-3260/policie-3260")
+                      .setUid("uid115792")
+                      .setKind("kind3292052")
+                      .setDisplayName("displayName1714148973")
+                      .putAllAnnotations(new HashMap<String, String>())
+                      .setEtag("etag3123477")
+                      .setCreateTime(Timestamp.newBuilder().build())
+                      .setUpdateTime(Timestamp.newBuilder().build())
+                      .setDeleteTime(Timestamp.newBuilder().build())
+                      .addAllRules(new ArrayList<PolicyRule>())
+                      .build())
+              .build();
       client.updatePolicyAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -315,37 +354,40 @@ public class PoliciesClientTest {
             .setDone(true)
             .setResponse(Any.pack(expectedResponse))
             .build();
-    mockPolicies.addResponse(resultOperation);
+    mockService.addResponse(resultOperation);
 
-    String name = "name3373707";
+    String name = "policies/policie-3260/policie-3260/policie-3260";
 
     Policy actualResponse = client.deletePolicyAsync(name).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockPolicies.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeletePolicyRequest actualRequest = ((DeletePolicyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deletePolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockPolicies.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "policies/policie-3260/policie-3260/policie-3260";
       client.deletePolicyAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 }

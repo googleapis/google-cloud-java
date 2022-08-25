@@ -29,7 +29,7 @@
  * // This snippet has been automatically generated for illustrative purposes only.
  * // It may require modifications to work in your environment.
  * try (PoliciesClient policiesClient = PoliciesClient.create()) {
- *   PolicyName name = PolicyName.of("[POLICY]");
+ *   String name = "name3373707";
  *   Policy response = policiesClient.getPolicy(name);
  * }
  * }</pre>
