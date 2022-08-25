@@ -32,11 +32,11 @@ do
   git filter-repo --to-subdirectory-filter ${service}
 
   # Search for <parent> tag in module pom and replace the next three lines -- groupId, artifcatId, and version
-  sed -i.bak -e '/<parent>/{N;s/com.google.cloud/com.google.api/;N;s/google-cloud-shared-config/google-cloud-java/;N;s/<version>.*<\/version>/<version>0.0.1-SNAPSHOT<\/version>/}' ${service}/pom.xml && rm ${service}/pom.xml.bak
+  sed -i.bak -e '/<parent>/{N;s/com.google.cloud/com.google.api/;N;s/google-cloud-shared-config/google-cloud-java/;N;s/<version>.*<\/version>/<version>0.0.1<\/version>/}' ${service}/pom.xml && rm ${service}/pom.xml.bak
 
   NAME=$(jq -r '.distribution_name' ${service}/.repo-metadata.json | cut -d ':' -f 2)
   # Search for <parent> tag in module bom and replace the next three lines -- groupId, artifcatId, and version
-  sed -i.bak -e '/<parent>/{N;s/com.google.cloud/com.google.api/;N;s/google-cloud-shared-config/google-cloud-java/;N;s/<version>.*<\/version>/<version>0.0.1-SNAPSHOT<\/version>\n    <relativePath>..\/..\/pom.xml<\/relativePath>/}' ${service}/${NAME}-bom/pom.xml && rm ${service}/${NAME}-bom/pom.xml.bak
+  sed -i.bak -e '/<parent>/{N;s/com.google.cloud/com.google.api/;N;s/google-cloud-shared-config/google-cloud-java/;N;s/<version>.*<\/version>/<version>0.0.1<\/version>\n    <relativePath>..\/..\/pom.xml<\/relativePath>/}' ${service}/${NAME}-bom/pom.xml && rm ${service}/${NAME}-bom/pom.xml.bak
 
   # setup owlbot files correctly to match monorepo configuration
   cp ${service}/.github/.OwlBot.yaml ${service}/.OwlBot.yaml
