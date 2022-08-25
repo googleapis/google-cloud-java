@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.20.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.20.0...v2.20.1) (2022-08-24)
+
+
+### Bug Fixes
+
+* Add unit test for closing disconnected streamwriter. Also reduce wait from 5->3 minutes ([#1751](https://github.com/googleapis/java-bigquerystorage/issues/1751)) ([095d7d5](https://github.com/googleapis/java-bigquerystorage/commit/095d7d59b47becf72a5e9cd3ced383fa45b04b50))
+* allow repeated field to have a null or missing json array ([#1760](https://github.com/googleapis/java-bigquerystorage/issues/1760)) ([ef24825](https://github.com/googleapis/java-bigquerystorage/commit/ef24825ca40e6156f6f3ce38c3c6051673a5f6cc))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.14.7 ([#1759](https://github.com/googleapis/java-bigquerystorage/issues/1759)) ([ac3f0b8](https://github.com/googleapis/java-bigquerystorage/commit/ac3f0b871a1db4bcbd5ce8fa019ae8e1559ed3ec))
+
 ## [2.20.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.19.1...v2.20.0) (2022-08-17)
 
 
