@@ -1,7 +1,17 @@
 
 set -e
 
+echo "{" > .release-please-manifest.json
+
+echo ""\""google-cloud-gapic-bom"\"": "\""0.0.0"\""," >> .release-please-manifest.json
+
+GENERATION_DIR=$(dirname -- "$0");
+
+num_modules="$(wc -l < ../../repos.txt)"
+
 rp_config_line=""
+rp_manifest_line=""
+
 for bom_directory in $(find . -name 'google-*-bom' | sort); do
   if [[ "${bom_directory}" = *google-cloud-gapic-bom ]]; then
     continue
@@ -84,7 +94,7 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
        }"
 
   #adding " , " where it's necessary
-  if [[ $num_modules -gt 1 ]]; then
+  if [[ ${num_modules} -gt 1 ]]; then
     rp_manifest_line+=","
     rp_config_line+=",\n    "
     num_modules=$((num_modules-1))
@@ -94,9 +104,67 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
   echo "${rp_manifest_line}" >> .release-please-manifest.json
 done
 
-echo "}" >> .release-please-manifest.json
+for module in $(find . -mindepth 2 -maxdepth 2 -name pom.xml |sort | xargs dirname); do
+  if ls ${module}/*-bom 1> /dev/null 2>&1; then
+    continue
+  fi
+  if [[ "${module}" = *google-cloud-gapic-bom ]] || [[ "${module}" = *CoverageAggregator ]]; then
+    continue
+  fi
 
-GENERATION_DIR=$(dirname -- "$0");
+  pom_file="${module}/pom.xml"
+  groupId_line=$(grep --max-count=1 'groupId' "${pom_file}")
+  artifactId_line=$(grep --max-count=1 'artifactId' "${pom_file}")
+  version_line=$(grep --max-count=1 'x-version-update' "${pom_file}")
+
+  # extracting module name
+  prefix="  <artifactId>"
+  suffix="</artifactId>"
+  artifactName=${artifactId_line#"$prefix"}
+  artifactName=${artifactName%"$suffix"}
+  artifactName_config=${artifactName};
+  prefix="./"
+  suffix="/${artifactName}"
+  module_name=${module#"$prefix"}
+  module_name=${module_name%"$suffix"}
+
+  version_file="${module}/versions.txt"
+
+  module_released_version=$(grep google- ${version_file} |head -1 |awk -F: '{print $2}')
+  module_snapshot_version=$(grep google- ${version_file} |head -1 |awk -F: '{print $3}')
+
+  if [[ ${module_name} == "java-grafeas" ]]; then
+    module_released_version=$(grep grafeas ${version_file} |head -1 |awk -F: '{print $2}')
+  fi
+
+  #concatenating module name and module version
+  rp_manifest_line=""\""${module_name}"\"": "\""${module_released_version}"\"""
+
+  rp_config_line+=""\""${module_name}"\"": {\n\
+          "\""component"\"": ""\""${artifactName_config}"\"","\n\
+          "\""skip-github-release"\"": "true"\n\
+         }"
+
+  #adding " , " where it's necessary
+  if [[ ${num_modules} -gt 1 ]]; then
+    rp_manifest_line+=","
+    rp_config_line+=",\n    "
+    num_modules=$((num_modules-1))
+  fi
+
+  #adding the line to manifest config file
+  echo "${rp_manifest_line}" >> .release-please-manifest.json
+
+  new_version=$(echo ${module_released_version} |  awk -F'.' '{print $1"."$2"."$3+1}' |  sed s/[.]$//)
+  mvn -B -ntp -f ${module} -U versions:set -DnewVersion=${new_version}
+
+  if [[ ${module_name} == "java-notification" ]]; then
+    mvn -B -ntp -f ${module} -U versions:set -DnewVersion="${new_version}-beta"
+  fi
+
+done
+
+echo "}" >> .release-please-manifest.json
 
 awk -v "packagesList=$rp_config_line" '{gsub(/ALL_PACKAGES/,packagesList)}1' \
     ${GENERATION_DIR}/release_please_config_raw.json > release-please-config.json
