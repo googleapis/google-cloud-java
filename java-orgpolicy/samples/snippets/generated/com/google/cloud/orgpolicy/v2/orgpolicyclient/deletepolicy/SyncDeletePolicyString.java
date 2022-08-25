@@ -19,6 +19,7 @@ package com.google.cloud.orgpolicy.v2.samples;
 // [START orgpolicy_v2_generated_orgpolicyclient_deletepolicy_string_sync]
 import com.google.cloud.orgpolicy.v2.OrgPolicyClient;
 import com.google.cloud.orgpolicy.v2.PolicyName;
+import com.google.protobuf.Empty;
 
 public class SyncDeletePolicyString {
 

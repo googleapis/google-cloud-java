@@ -53,39 +53,36 @@ public final class OrgPolicyProto {
   static {
     java.lang.String[] descriptorData = {
       "\n)google/cloud/orgpolicy/v1/orgpolicy.pr"
-          + "oto\022\031google.cloud.orgpolicy.v1\032\033google/p"
-          + "rotobuf/empty.proto\032\037google/protobuf/tim"
-          + "estamp.proto\032\034google/api/annotations.pro"
-          + "to\"\213\005\n\006Policy\022\017\n\007version\030\001 \001(\005\022\022\n\nconstr"
-          + "aint\030\002 \001(\t\022\014\n\004etag\030\003 \001(\014\022/\n\013update_time\030"
-          + "\004 \001(\0132\032.google.protobuf.Timestamp\022C\n\013lis"
-          + "t_policy\030\005 \001(\0132,.google.cloud.orgpolicy."
-          + "v1.Policy.ListPolicyH\000\022I\n\016boolean_policy"
-          + "\030\006 \001(\0132/.google.cloud.orgpolicy.v1.Polic"
-          + "y.BooleanPolicyH\000\022K\n\017restore_default\030\007 \001"
-          + "(\01320.google.cloud.orgpolicy.v1.Policy.Re"
-          + "storeDefaultH\000\032\373\001\n\nListPolicy\022\026\n\016allowed"
-          + "_values\030\001 \003(\t\022\025\n\rdenied_values\030\002 \003(\t\022J\n\n"
-          + "all_values\030\003 \001(\01626.google.cloud.orgpolic"
-          + "y.v1.Policy.ListPolicy.AllValues\022\027\n\017sugg"
-          + "ested_value\030\004 \001(\t\022\033\n\023inherit_from_parent"
-          + "\030\005 \001(\010\"<\n\tAllValues\022\032\n\026ALL_VALUES_UNSPEC"
-          + "IFIED\020\000\022\t\n\005ALLOW\020\001\022\010\n\004DENY\020\002\032!\n\rBooleanP"
-          + "olicy\022\020\n\010enforced\030\001 \001(\010\032\020\n\016RestoreDefaul"
-          + "tB\r\n\013policy_typeB\314\001\n\035com.google.cloud.or"
-          + "gpolicy.v1B\016OrgPolicyProtoP\001ZBgoogle.gol"
-          + "ang.org/genproto/googleapis/cloud/orgpol"
-          + "icy/v1;orgpolicy\252\002\031Google.Cloud.OrgPolic"
-          + "y.V1\312\002\031Google\\Cloud\\OrgPolicy\\V1\352\002\034Googl"
-          + "e::Cloud::OrgPolicy::V1b\006proto3"
+          + "oto\022\031google.cloud.orgpolicy.v1\032\037google/p"
+          + "rotobuf/timestamp.proto\"\213\005\n\006Policy\022\017\n\007ve"
+          + "rsion\030\001 \001(\005\022\022\n\nconstraint\030\002 \001(\t\022\014\n\004etag\030"
+          + "\003 \001(\014\022/\n\013update_time\030\004 \001(\0132\032.google.prot"
+          + "obuf.Timestamp\022C\n\013list_policy\030\005 \001(\0132,.go"
+          + "ogle.cloud.orgpolicy.v1.Policy.ListPolic"
+          + "yH\000\022I\n\016boolean_policy\030\006 \001(\0132/.google.clo"
+          + "ud.orgpolicy.v1.Policy.BooleanPolicyH\000\022K"
+          + "\n\017restore_default\030\007 \001(\01320.google.cloud.o"
+          + "rgpolicy.v1.Policy.RestoreDefaultH\000\032\373\001\n\n"
+          + "ListPolicy\022\026\n\016allowed_values\030\001 \003(\t\022\025\n\rde"
+          + "nied_values\030\002 \003(\t\022J\n\nall_values\030\003 \001(\01626."
+          + "google.cloud.orgpolicy.v1.Policy.ListPol"
+          + "icy.AllValues\022\027\n\017suggested_value\030\004 \001(\t\022\033"
+          + "\n\023inherit_from_parent\030\005 \001(\010\"<\n\tAllValues"
+          + "\022\032\n\026ALL_VALUES_UNSPECIFIED\020\000\022\t\n\005ALLOW\020\001\022"
+          + "\010\n\004DENY\020\002\032!\n\rBooleanPolicy\022\020\n\010enforced\030\001"
+          + " \001(\010\032\020\n\016RestoreDefaultB\r\n\013policy_typeB\314\001"
+          + "\n\035com.google.cloud.orgpolicy.v1B\016OrgPoli"
+          + "cyProtoP\001ZBgoogle.golang.org/genproto/go"
+          + "ogleapis/cloud/orgpolicy/v1;orgpolicy\252\002\031"
+          + "Google.Cloud.OrgPolicy.V1\312\002\031Google\\Cloud"
+          + "\\OrgPolicy\\V1\352\002\034Google::Cloud::OrgPolicy"
+          + "::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_orgpolicy_v1_Policy_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -124,9 +121,7 @@ public final class OrgPolicyProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_orgpolicy_v1_Policy_RestoreDefault_descriptor,
             new java.lang.String[] {});
-    com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

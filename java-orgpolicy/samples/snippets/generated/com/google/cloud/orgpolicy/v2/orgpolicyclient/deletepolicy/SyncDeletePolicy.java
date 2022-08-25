@@ -20,6 +20,7 @@ package com.google.cloud.orgpolicy.v2.samples;
 import com.google.cloud.orgpolicy.v2.DeletePolicyRequest;
 import com.google.cloud.orgpolicy.v2.OrgPolicyClient;
 import com.google.cloud.orgpolicy.v2.PolicyName;
+import com.google.protobuf.Empty;
 
 public class SyncDeletePolicy {
 
