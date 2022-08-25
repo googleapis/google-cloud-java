@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.batch.v1;
+package com.google.cloud.batch.v1alpha;
 
 import com.google.api.core.BetaApi;
 import com.google.cloud.location.GetLocationRequest;

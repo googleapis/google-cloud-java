@@ -133,6 +133,37 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
               executableCase_ = 6;
               break;
             }
+          case 58:
+            {
+              com.google.cloud.batch.v1.Environment.Builder subBuilder = null;
+              if (environment_ != null) {
+                subBuilder = environment_.toBuilder();
+              }
+              environment_ =
+                  input.readMessage(
+                      com.google.cloud.batch.v1.Environment.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(environment_);
+                environment_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 66:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (timeout_ != null) {
+                subBuilder = timeout_.toBuilder();
+              }
+              timeout_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(timeout_);
+                timeout_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -4518,6 +4549,103 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     return alwaysRun_;
   }
 
+  public static final int ENVIRONMENT_FIELD_NUMBER = 7;
+  private com.google.cloud.batch.v1.Environment environment_;
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables for this Runnable (overrides variables set for the
+   * whole Task or TaskGroup).
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.Environment environment = 7;</code>
+   *
+   * @return Whether the environment field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnvironment() {
+    return environment_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables for this Runnable (overrides variables set for the
+   * whole Task or TaskGroup).
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.Environment environment = 7;</code>
+   *
+   * @return The environment.
+   */
+  @java.lang.Override
+  public com.google.cloud.batch.v1.Environment getEnvironment() {
+    return environment_ == null
+        ? com.google.cloud.batch.v1.Environment.getDefaultInstance()
+        : environment_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables for this Runnable (overrides variables set for the
+   * whole Task or TaskGroup).
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.Environment environment = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.batch.v1.EnvironmentOrBuilder getEnvironmentOrBuilder() {
+    return getEnvironment();
+  }
+
+  public static final int TIMEOUT_FIELD_NUMBER = 8;
+  private com.google.protobuf.Duration timeout_;
+  /**
+   *
+   *
+   * <pre>
+   * Timeout for this Runnable.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration timeout = 8;</code>
+   *
+   * @return Whether the timeout field is set.
+   */
+  @java.lang.Override
+  public boolean hasTimeout() {
+    return timeout_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Timeout for this Runnable.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration timeout = 8;</code>
+   *
+   * @return The timeout.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getTimeout() {
+    return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Timeout for this Runnable.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration timeout = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder() {
+    return getTimeout();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4549,6 +4677,12 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     }
     if (executableCase_ == 6) {
       output.writeMessage(6, (com.google.cloud.batch.v1.Runnable.Barrier) executable_);
+    }
+    if (environment_ != null) {
+      output.writeMessage(7, getEnvironment());
+    }
+    if (timeout_ != null) {
+      output.writeMessage(8, getTimeout());
     }
     unknownFields.writeTo(output);
   }
@@ -4583,6 +4717,12 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, (com.google.cloud.batch.v1.Runnable.Barrier) executable_);
     }
+    if (environment_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getEnvironment());
+    }
+    if (timeout_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getTimeout());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4601,6 +4741,14 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     if (getIgnoreExitStatus() != other.getIgnoreExitStatus()) return false;
     if (getBackground() != other.getBackground()) return false;
     if (getAlwaysRun() != other.getAlwaysRun()) return false;
+    if (hasEnvironment() != other.hasEnvironment()) return false;
+    if (hasEnvironment()) {
+      if (!getEnvironment().equals(other.getEnvironment())) return false;
+    }
+    if (hasTimeout() != other.hasTimeout()) return false;
+    if (hasTimeout()) {
+      if (!getTimeout().equals(other.getTimeout())) return false;
+    }
     if (!getExecutableCase().equals(other.getExecutableCase())) return false;
     switch (executableCase_) {
       case 1:
@@ -4632,6 +4780,14 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getBackground());
     hash = (37 * hash) + ALWAYS_RUN_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAlwaysRun());
+    if (hasEnvironment()) {
+      hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getEnvironment().hashCode();
+    }
+    if (hasTimeout()) {
+      hash = (37 * hash) + TIMEOUT_FIELD_NUMBER;
+      hash = (53 * hash) + getTimeout().hashCode();
+    }
     switch (executableCase_) {
       case 1:
         hash = (37 * hash) + CONTAINER_FIELD_NUMBER;
@@ -4799,6 +4955,18 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
 
       alwaysRun_ = false;
 
+      if (environmentBuilder_ == null) {
+        environment_ = null;
+      } else {
+        environment_ = null;
+        environmentBuilder_ = null;
+      }
+      if (timeoutBuilder_ == null) {
+        timeout_ = null;
+      } else {
+        timeout_ = null;
+        timeoutBuilder_ = null;
+      }
       executableCase_ = 0;
       executable_ = null;
       return this;
@@ -4851,6 +5019,16 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       result.ignoreExitStatus_ = ignoreExitStatus_;
       result.background_ = background_;
       result.alwaysRun_ = alwaysRun_;
+      if (environmentBuilder_ == null) {
+        result.environment_ = environment_;
+      } else {
+        result.environment_ = environmentBuilder_.build();
+      }
+      if (timeoutBuilder_ == null) {
+        result.timeout_ = timeout_;
+      } else {
+        result.timeout_ = timeoutBuilder_.build();
+      }
       result.executableCase_ = executableCase_;
       onBuilt();
       return result;
@@ -4909,6 +5087,12 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getAlwaysRun() != false) {
         setAlwaysRun(other.getAlwaysRun());
+      }
+      if (other.hasEnvironment()) {
+        mergeEnvironment(other.getEnvironment());
+      }
+      if (other.hasTimeout()) {
+        mergeTimeout(other.getTimeout());
       }
       switch (other.getExecutableCase()) {
         case CONTAINER:
@@ -5783,6 +5967,379 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       alwaysRun_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.batch.v1.Environment environment_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.batch.v1.Environment,
+            com.google.cloud.batch.v1.Environment.Builder,
+            com.google.cloud.batch.v1.EnvironmentOrBuilder>
+        environmentBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables for this Runnable (overrides variables set for the
+     * whole Task or TaskGroup).
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.Environment environment = 7;</code>
+     *
+     * @return Whether the environment field is set.
+     */
+    public boolean hasEnvironment() {
+      return environmentBuilder_ != null || environment_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables for this Runnable (overrides variables set for the
+     * whole Task or TaskGroup).
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.Environment environment = 7;</code>
+     *
+     * @return The environment.
+     */
+    public com.google.cloud.batch.v1.Environment getEnvironment() {
+      if (environmentBuilder_ == null) {
+        return environment_ == null
+            ? com.google.cloud.batch.v1.Environment.getDefaultInstance()
+            : environment_;
+      } else {
+        return environmentBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables for this Runnable (overrides variables set for the
+     * whole Task or TaskGroup).
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.Environment environment = 7;</code>
+     */
+    public Builder setEnvironment(com.google.cloud.batch.v1.Environment value) {
+      if (environmentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        environment_ = value;
+        onChanged();
+      } else {
+        environmentBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables for this Runnable (overrides variables set for the
+     * whole Task or TaskGroup).
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.Environment environment = 7;</code>
+     */
+    public Builder setEnvironment(com.google.cloud.batch.v1.Environment.Builder builderForValue) {
+      if (environmentBuilder_ == null) {
+        environment_ = builderForValue.build();
+        onChanged();
+      } else {
+        environmentBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables for this Runnable (overrides variables set for the
+     * whole Task or TaskGroup).
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.Environment environment = 7;</code>
+     */
+    public Builder mergeEnvironment(com.google.cloud.batch.v1.Environment value) {
+      if (environmentBuilder_ == null) {
+        if (environment_ != null) {
+          environment_ =
+              com.google.cloud.batch.v1.Environment.newBuilder(environment_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          environment_ = value;
+        }
+        onChanged();
+      } else {
+        environmentBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables for this Runnable (overrides variables set for the
+     * whole Task or TaskGroup).
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.Environment environment = 7;</code>
+     */
+    public Builder clearEnvironment() {
+      if (environmentBuilder_ == null) {
+        environment_ = null;
+        onChanged();
+      } else {
+        environment_ = null;
+        environmentBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables for this Runnable (overrides variables set for the
+     * whole Task or TaskGroup).
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.Environment environment = 7;</code>
+     */
+    public com.google.cloud.batch.v1.Environment.Builder getEnvironmentBuilder() {
+
+      onChanged();
+      return getEnvironmentFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables for this Runnable (overrides variables set for the
+     * whole Task or TaskGroup).
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.Environment environment = 7;</code>
+     */
+    public com.google.cloud.batch.v1.EnvironmentOrBuilder getEnvironmentOrBuilder() {
+      if (environmentBuilder_ != null) {
+        return environmentBuilder_.getMessageOrBuilder();
+      } else {
+        return environment_ == null
+            ? com.google.cloud.batch.v1.Environment.getDefaultInstance()
+            : environment_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables for this Runnable (overrides variables set for the
+     * whole Task or TaskGroup).
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.Environment environment = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.batch.v1.Environment,
+            com.google.cloud.batch.v1.Environment.Builder,
+            com.google.cloud.batch.v1.EnvironmentOrBuilder>
+        getEnvironmentFieldBuilder() {
+      if (environmentBuilder_ == null) {
+        environmentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.batch.v1.Environment,
+                com.google.cloud.batch.v1.Environment.Builder,
+                com.google.cloud.batch.v1.EnvironmentOrBuilder>(
+                getEnvironment(), getParentForChildren(), isClean());
+        environment_ = null;
+      }
+      return environmentBuilder_;
+    }
+
+    private com.google.protobuf.Duration timeout_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        timeoutBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Timeout for this Runnable.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 8;</code>
+     *
+     * @return Whether the timeout field is set.
+     */
+    public boolean hasTimeout() {
+      return timeoutBuilder_ != null || timeout_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timeout for this Runnable.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 8;</code>
+     *
+     * @return The timeout.
+     */
+    public com.google.protobuf.Duration getTimeout() {
+      if (timeoutBuilder_ == null) {
+        return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
+      } else {
+        return timeoutBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timeout for this Runnable.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 8;</code>
+     */
+    public Builder setTimeout(com.google.protobuf.Duration value) {
+      if (timeoutBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        timeout_ = value;
+        onChanged();
+      } else {
+        timeoutBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timeout for this Runnable.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 8;</code>
+     */
+    public Builder setTimeout(com.google.protobuf.Duration.Builder builderForValue) {
+      if (timeoutBuilder_ == null) {
+        timeout_ = builderForValue.build();
+        onChanged();
+      } else {
+        timeoutBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timeout for this Runnable.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 8;</code>
+     */
+    public Builder mergeTimeout(com.google.protobuf.Duration value) {
+      if (timeoutBuilder_ == null) {
+        if (timeout_ != null) {
+          timeout_ =
+              com.google.protobuf.Duration.newBuilder(timeout_).mergeFrom(value).buildPartial();
+        } else {
+          timeout_ = value;
+        }
+        onChanged();
+      } else {
+        timeoutBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timeout for this Runnable.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 8;</code>
+     */
+    public Builder clearTimeout() {
+      if (timeoutBuilder_ == null) {
+        timeout_ = null;
+        onChanged();
+      } else {
+        timeout_ = null;
+        timeoutBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timeout for this Runnable.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 8;</code>
+     */
+    public com.google.protobuf.Duration.Builder getTimeoutBuilder() {
+
+      onChanged();
+      return getTimeoutFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timeout for this Runnable.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 8;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder() {
+      if (timeoutBuilder_ != null) {
+        return timeoutBuilder_.getMessageOrBuilder();
+      } else {
+        return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timeout for this Runnable.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getTimeoutFieldBuilder() {
+      if (timeoutBuilder_ == null) {
+        timeoutBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getTimeout(), getParentForChildren(), isClean());
+        timeout_ = null;
+      }
+      return timeoutBuilder_;
     }
 
     @java.lang.Override

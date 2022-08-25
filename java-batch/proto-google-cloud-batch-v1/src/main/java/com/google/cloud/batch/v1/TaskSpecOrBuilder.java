@@ -302,8 +302,9 @@ public interface TaskSpecOrBuilder
    * You can set up to 100 environments.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; environments = 6;</code>
+   * <code>map&lt;string, string&gt; environments = 6 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   int getEnvironmentsCount();
   /**
    *
@@ -313,8 +314,9 @@ public interface TaskSpecOrBuilder
    * You can set up to 100 environments.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; environments = 6;</code>
+   * <code>map&lt;string, string&gt; environments = 6 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   boolean containsEnvironments(java.lang.String key);
   /** Use {@link #getEnvironmentsMap()} instead. */
   @java.lang.Deprecated
@@ -327,8 +329,9 @@ public interface TaskSpecOrBuilder
    * You can set up to 100 environments.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; environments = 6;</code>
+   * <code>map&lt;string, string&gt; environments = 6 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getEnvironmentsMap();
   /**
    *
@@ -338,9 +341,9 @@ public interface TaskSpecOrBuilder
    * You can set up to 100 environments.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; environments = 6;</code>
+   * <code>map&lt;string, string&gt; environments = 6 [deprecated = true];</code>
    */
-
+  @java.lang.Deprecated
   /* nullable */
   java.lang.String getEnvironmentsOrDefault(
       java.lang.String key,
@@ -354,8 +357,9 @@ public interface TaskSpecOrBuilder
    * You can set up to 100 environments.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; environments = 6;</code>
+   * <code>map&lt;string, string&gt; environments = 6 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.lang.String getEnvironmentsOrThrow(java.lang.String key);
 
   /**
@@ -408,4 +412,39 @@ public interface TaskSpecOrBuilder
    * <code>repeated .google.cloud.batch.v1.Volume volumes = 7;</code>
    */
   com.google.cloud.batch.v1.VolumeOrBuilder getVolumesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables to set before running the Task.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.Environment environment = 10;</code>
+   *
+   * @return Whether the environment field is set.
+   */
+  boolean hasEnvironment();
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables to set before running the Task.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.Environment environment = 10;</code>
+   *
+   * @return The environment.
+   */
+  com.google.cloud.batch.v1.Environment getEnvironment();
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables to set before running the Task.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.Environment environment = 10;</code>
+   */
+  com.google.cloud.batch.v1.EnvironmentOrBuilder getEnvironmentOrBuilder();
 }

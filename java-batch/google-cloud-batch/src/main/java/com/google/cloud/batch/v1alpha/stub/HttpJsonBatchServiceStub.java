@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.cloud.batch.v1.stub;
+package com.google.cloud.batch.v1alpha.stub;
 
-import static com.google.cloud.batch.v1.BatchServiceClient.ListJobsPagedResponse;
-import static com.google.cloud.batch.v1.BatchServiceClient.ListLocationsPagedResponse;
-import static com.google.cloud.batch.v1.BatchServiceClient.ListTasksPagedResponse;
+import static com.google.cloud.batch.v1alpha.BatchServiceClient.ListJobsPagedResponse;
+import static com.google.cloud.batch.v1alpha.BatchServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.batch.v1alpha.BatchServiceClient.ListTasksPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
@@ -35,17 +35,17 @@ import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.batch.v1.CreateJobRequest;
-import com.google.cloud.batch.v1.DeleteJobRequest;
-import com.google.cloud.batch.v1.GetJobRequest;
-import com.google.cloud.batch.v1.GetTaskRequest;
-import com.google.cloud.batch.v1.Job;
-import com.google.cloud.batch.v1.ListJobsRequest;
-import com.google.cloud.batch.v1.ListJobsResponse;
-import com.google.cloud.batch.v1.ListTasksRequest;
-import com.google.cloud.batch.v1.ListTasksResponse;
-import com.google.cloud.batch.v1.OperationMetadata;
-import com.google.cloud.batch.v1.Task;
+import com.google.cloud.batch.v1alpha.CreateJobRequest;
+import com.google.cloud.batch.v1alpha.DeleteJobRequest;
+import com.google.cloud.batch.v1alpha.GetJobRequest;
+import com.google.cloud.batch.v1alpha.GetTaskRequest;
+import com.google.cloud.batch.v1alpha.Job;
+import com.google.cloud.batch.v1alpha.ListJobsRequest;
+import com.google.cloud.batch.v1alpha.ListJobsResponse;
+import com.google.cloud.batch.v1alpha.ListTasksRequest;
+import com.google.cloud.batch.v1alpha.ListTasksResponse;
+import com.google.cloud.batch.v1alpha.OperationMetadata;
+import com.google.cloud.batch.v1alpha.Task;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -72,8 +72,8 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator-java")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class HttpJsonBatchServiceStub extends BatchServiceStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
@@ -83,13 +83,13 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
 
   private static final ApiMethodDescriptor<CreateJobRequest, Job> createJobMethodDescriptor =
       ApiMethodDescriptor.<CreateJobRequest, Job>newBuilder()
-          .setFullMethodName("google.cloud.batch.v1.BatchService/CreateJob")
+          .setFullMethodName("google.cloud.batch.v1alpha.BatchService/CreateJob")
           .setHttpMethod("POST")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<CreateJobRequest>newBuilder()
                   .setPath(
-                      "/v1/{parent=projects/*/locations/*}/jobs",
+                      "/v1alpha/{parent=projects/*/locations/*}/jobs",
                       request -> {
                         Map<String, String> fields = new HashMap<>();
                         ProtoRestSerializer<CreateJobRequest> serializer =
@@ -118,13 +118,13 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
 
   private static final ApiMethodDescriptor<GetJobRequest, Job> getJobMethodDescriptor =
       ApiMethodDescriptor.<GetJobRequest, Job>newBuilder()
-          .setFullMethodName("google.cloud.batch.v1.BatchService/GetJob")
+          .setFullMethodName("google.cloud.batch.v1alpha.BatchService/GetJob")
           .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetJobRequest>newBuilder()
                   .setPath(
-                      "/v1/{name=projects/*/locations/*/jobs/*}",
+                      "/v1alpha/{name=projects/*/locations/*/jobs/*}",
                       request -> {
                         Map<String, String> fields = new HashMap<>();
                         ProtoRestSerializer<GetJobRequest> serializer =
@@ -150,13 +150,13 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
 
   private static final ApiMethodDescriptor<DeleteJobRequest, Operation> deleteJobMethodDescriptor =
       ApiMethodDescriptor.<DeleteJobRequest, Operation>newBuilder()
-          .setFullMethodName("google.cloud.batch.v1.BatchService/DeleteJob")
+          .setFullMethodName("google.cloud.batch.v1alpha.BatchService/DeleteJob")
           .setHttpMethod("DELETE")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<DeleteJobRequest>newBuilder()
                   .setPath(
-                      "/v1/{name=projects/*/locations/*/jobs/*}",
+                      "/v1alpha/{name=projects/*/locations/*/jobs/*}",
                       request -> {
                         Map<String, String> fields = new HashMap<>();
                         ProtoRestSerializer<DeleteJobRequest> serializer =
@@ -188,13 +188,13 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
   private static final ApiMethodDescriptor<ListJobsRequest, ListJobsResponse>
       listJobsMethodDescriptor =
           ApiMethodDescriptor.<ListJobsRequest, ListJobsResponse>newBuilder()
-              .setFullMethodName("google.cloud.batch.v1.BatchService/ListJobs")
+              .setFullMethodName("google.cloud.batch.v1alpha.BatchService/ListJobs")
               .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListJobsRequest>newBuilder()
                       .setPath(
-                          "/v1/{parent=projects/*/locations/*}/jobs",
+                          "/v1alpha/{parent=projects/*/locations/*}/jobs",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<ListJobsRequest> serializer =
@@ -223,13 +223,13 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
 
   private static final ApiMethodDescriptor<GetTaskRequest, Task> getTaskMethodDescriptor =
       ApiMethodDescriptor.<GetTaskRequest, Task>newBuilder()
-          .setFullMethodName("google.cloud.batch.v1.BatchService/GetTask")
+          .setFullMethodName("google.cloud.batch.v1alpha.BatchService/GetTask")
           .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetTaskRequest>newBuilder()
                   .setPath(
-                      "/v1/{name=projects/*/locations/*/jobs/*/taskGroups/*/tasks/*}",
+                      "/v1alpha/{name=projects/*/locations/*/jobs/*/taskGroups/*/tasks/*}",
                       request -> {
                         Map<String, String> fields = new HashMap<>();
                         ProtoRestSerializer<GetTaskRequest> serializer =
@@ -256,13 +256,13 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
   private static final ApiMethodDescriptor<ListTasksRequest, ListTasksResponse>
       listTasksMethodDescriptor =
           ApiMethodDescriptor.<ListTasksRequest, ListTasksResponse>newBuilder()
-              .setFullMethodName("google.cloud.batch.v1.BatchService/ListTasks")
+              .setFullMethodName("google.cloud.batch.v1alpha.BatchService/ListTasks")
               .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListTasksRequest>newBuilder()
                       .setPath(
-                          "/v1/{parent=projects/*/locations/*/jobs/*/taskGroups/*}/tasks",
+                          "/v1alpha/{parent=projects/*/locations/*/jobs/*/taskGroups/*}/tasks",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<ListTasksRequest> serializer =
@@ -298,7 +298,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListLocationsRequest>newBuilder()
                       .setPath(
-                          "/v1/{name=projects/*}/locations",
+                          "/v1alpha/{name=projects/*}/locations",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
@@ -331,7 +331,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetLocationRequest>newBuilder()
                       .setPath(
-                          "/v1/{name=projects/*/locations/*}",
+                          "/v1alpha/{name=projects/*/locations/*}",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
@@ -364,7 +364,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyRequest>newBuilder()
                       .setPath(
-                          "/v1/{resource=projects/*/locations/*/jobs/*}:setIamPolicy",
+                          "/v1alpha/{resource=projects/*/locations/*/jobs/*}:setIamPolicy",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<SetIamPolicyRequest> serializer =
@@ -373,8 +373,8 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1/{resource=projects/*/locations/*/tasks/*}:setIamPolicy",
-                          "/v1/{resource=projects/*/locations/*/nodes/*}:setIamPolicy")
+                          "/v1alpha/{resource=projects/*/locations/*/tasks/*}:setIamPolicy",
+                          "/v1alpha/{resource=projects/*/locations/*/nodes/*}:setIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -403,7 +403,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyRequest>newBuilder()
                       .setPath(
-                          "/v1/{resource=projects/*/locations/*/jobs/*}:getIamPolicy",
+                          "/v1alpha/{resource=projects/*/locations/*/jobs/*}:getIamPolicy",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<GetIamPolicyRequest> serializer =
@@ -412,8 +412,8 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1/{resource=projects/*/locations/*/tasks/*}:getIamPolicy",
-                          "/v1/{resource=projects/*/locations/*/nodes/*}:getIamPolicy")
+                          "/v1alpha/{resource=projects/*/locations/*/tasks/*}:getIamPolicy",
+                          "/v1alpha/{resource=projects/*/locations/*/nodes/*}:getIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -439,7 +439,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsRequest>newBuilder()
                       .setPath(
-                          "/v1/{resource=projects/*/locations/*/jobs/*}:testIamPermissions",
+                          "/v1alpha/{resource=projects/*/locations/*/jobs/*}:testIamPermissions",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<TestIamPermissionsRequest> serializer =
@@ -448,8 +448,8 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1/{resource=projects/*/locations/*/tasks/*}:testIamPermissions",
-                          "/v1/{resource=projects/*/locations/*/nodes/*}:testIamPermissions")
+                          "/v1alpha/{resource=projects/*/locations/*/tasks/*}:testIamPermissions",
+                          "/v1alpha/{resource=projects/*/locations/*/nodes/*}:testIamPermissions")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

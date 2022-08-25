@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.cloud.batch.v1;
+package com.google.cloud.batch.v1alpha;
 
-import static com.google.cloud.batch.v1.BatchServiceClient.ListJobsPagedResponse;
-import static com.google.cloud.batch.v1.BatchServiceClient.ListLocationsPagedResponse;
-import static com.google.cloud.batch.v1.BatchServiceClient.ListTasksPagedResponse;
+import static com.google.cloud.batch.v1alpha.BatchServiceClient.ListJobsPagedResponse;
+import static com.google.cloud.batch.v1alpha.BatchServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.batch.v1alpha.BatchServiceClient.ListTasksPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -29,7 +29,7 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
-import com.google.cloud.batch.v1.stub.HttpJsonBatchServiceStub;
+import com.google.cloud.batch.v1alpha.stub.HttpJsonBatchServiceStub;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -106,9 +106,11 @@ public class BatchServiceClientHttpJsonTest {
             .setUid("uid115792")
             .setPriority(-1165461084)
             .addAllTaskGroups(new ArrayList<TaskGroup>())
+            .addAllDependencies(new ArrayList<JobDependency>())
             .setAllocationPolicy(AllocationPolicy.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setStatus(JobStatus.newBuilder().build())
+            .setNotification(JobNotification.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setLogsPolicy(LogsPolicy.newBuilder().build())
@@ -164,9 +166,11 @@ public class BatchServiceClientHttpJsonTest {
             .setUid("uid115792")
             .setPriority(-1165461084)
             .addAllTaskGroups(new ArrayList<TaskGroup>())
+            .addAllDependencies(new ArrayList<JobDependency>())
             .setAllocationPolicy(AllocationPolicy.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setStatus(JobStatus.newBuilder().build())
+            .setNotification(JobNotification.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setLogsPolicy(LogsPolicy.newBuilder().build())
@@ -222,9 +226,11 @@ public class BatchServiceClientHttpJsonTest {
             .setUid("uid115792")
             .setPriority(-1165461084)
             .addAllTaskGroups(new ArrayList<TaskGroup>())
+            .addAllDependencies(new ArrayList<JobDependency>())
             .setAllocationPolicy(AllocationPolicy.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setStatus(JobStatus.newBuilder().build())
+            .setNotification(JobNotification.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setLogsPolicy(LogsPolicy.newBuilder().build())
@@ -276,9 +282,11 @@ public class BatchServiceClientHttpJsonTest {
             .setUid("uid115792")
             .setPriority(-1165461084)
             .addAllTaskGroups(new ArrayList<TaskGroup>())
+            .addAllDependencies(new ArrayList<JobDependency>())
             .setAllocationPolicy(AllocationPolicy.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setStatus(JobStatus.newBuilder().build())
+            .setNotification(JobNotification.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setLogsPolicy(LogsPolicy.newBuilder().build())

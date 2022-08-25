@@ -14,14 +14,15 @@
  * limitations under the License.
  */
 
-package com.google.cloud.batch.v1;
+package com.google.cloud.batch.v1alpha;
 
 import com.google.api.core.BetaApi;
-import com.google.cloud.location.GetLocationRequest;
-import com.google.cloud.location.ListLocationsRequest;
-import com.google.cloud.location.ListLocationsResponse;
-import com.google.cloud.location.Location;
-import com.google.cloud.location.LocationsGrpc.LocationsImplBase;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.IAMPolicyGrpc.IAMPolicyImplBase;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.AbstractMessage;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
@@ -32,11 +33,11 @@ import javax.annotation.Generated;
 
 @BetaApi
 @Generated("by gapic-generator-java")
-public class MockLocationsImpl extends LocationsImplBase {
+public class MockIAMPolicyImpl extends IAMPolicyImplBase {
   private List<AbstractMessage> requests;
   private Queue<Object> responses;
 
-  public MockLocationsImpl() {
+  public MockIAMPolicyImpl() {
     requests = new ArrayList<>();
     responses = new LinkedList<>();
   }
@@ -63,12 +64,13 @@ public class MockLocationsImpl extends LocationsImplBase {
   }
 
   @Override
-  public void listLocations(
-      ListLocationsRequest request, StreamObserver<ListLocationsResponse> responseObserver) {
+  public void testIamPermissions(
+      TestIamPermissionsRequest request,
+      StreamObserver<TestIamPermissionsResponse> responseObserver) {
     Object response = responses.poll();
-    if (response instanceof ListLocationsResponse) {
+    if (response instanceof TestIamPermissionsResponse) {
       requests.add(request);
-      responseObserver.onNext(((ListLocationsResponse) response));
+      responseObserver.onNext(((TestIamPermissionsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
@@ -76,19 +78,19 @@ public class MockLocationsImpl extends LocationsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListLocations, expected %s or %s",
+                  "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
-                  ListLocationsResponse.class.getName(),
+                  TestIamPermissionsResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
 
   @Override
-  public void getLocation(GetLocationRequest request, StreamObserver<Location> responseObserver) {
+  public void setIamPolicy(SetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
     Object response = responses.poll();
-    if (response instanceof Location) {
+    if (response instanceof Policy) {
       requests.add(request);
-      responseObserver.onNext(((Location) response));
+      responseObserver.onNext(((Policy) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
@@ -96,9 +98,29 @@ public class MockLocationsImpl extends LocationsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetLocation, expected %s or %s",
+                  "Unrecognized response type %s for method SetIamPolicy, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
-                  Location.class.getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getIamPolicy(GetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Policy) {
+      requests.add(request);
+      responseObserver.onNext(((Policy) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetIamPolicy, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Policy.class.getName(),
                   Exception.class.getName())));
     }
   }
