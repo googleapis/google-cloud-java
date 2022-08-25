@@ -208,7 +208,7 @@ public final class JobProto {
           + "tus.State\022D\n\016new_task_state\030\003 \001(\0162,.goog"
           + "le.cloud.batch.v1alpha.TaskStatus.State\""
           + "K\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\025\n\021JOB_STA"
-          + "TE_CHANGED\020\001\022\026\n\022TASK_STATE_CHANGED\020\002\"\270\016\n"
+          + "TE_CHANGED\020\001\022\026\n\022TASK_STATE_CHANGED\020\002\"\216\017\n"
           + "\020AllocationPolicy\022M\n\010location\030\001 \001(\0132;.go"
           + "ogle.cloud.batch.v1alpha.AllocationPolic"
           + "y.LocationPolicy\022Q\n\010instance\030\002 \001(\0132;.goo"
@@ -227,60 +227,62 @@ public final class JobProto {
           + "loud.batch.v1alpha.AllocationPolicy.Netw"
           + "orkPolicy\032E\n\016LocationPolicy\022\031\n\021allowed_l"
           + "ocations\030\001 \003(\t\022\030\n\020denied_locations\030\002 \003(\t"
-          + "\032Y\n\004Disk\022\017\n\005image\030\004 \001(\tH\000\022\022\n\010snapshot\030\005 "
-          + "\001(\tH\000\022\014\n\004type\030\001 \001(\t\022\017\n\007size_gb\030\002 \001(\003B\r\n\013"
-          + "data_source\032\217\001\n\014AttachedDisk\022E\n\010new_disk"
-          + "\030\001 \001(\01321.google.cloud.batch.v1alpha.Allo"
-          + "cationPolicy.DiskH\000\022\027\n\rexisting_disk\030\002 \001"
-          + "(\tH\000\022\023\n\013device_name\030\003 \001(\tB\n\n\010attached\032*\n"
-          + "\013Accelerator\022\014\n\004type\030\001 \001(\t\022\r\n\005count\030\002 \001("
-          + "\003\032\331\002\n\016InstancePolicy\022!\n\025allowed_machine_"
-          + "types\030\001 \003(\tB\002\030\001\022\024\n\014machine_type\030\002 \001(\t\022\030\n"
-          + "\020min_cpu_platform\030\003 \001(\t\022Z\n\022provisioning_"
-          + "model\030\004 \001(\0162>.google.cloud.batch.v1alpha"
-          + ".AllocationPolicy.ProvisioningModel\022N\n\014a"
-          + "ccelerators\030\005 \003(\01328.google.cloud.batch.v"
-          + "1alpha.AllocationPolicy.Accelerator\022H\n\005d"
-          + "isks\030\006 \003(\01329.google.cloud.batch.v1alpha."
-          + "AllocationPolicy.AttachedDisk\032\231\001\n\030Instan"
-          + "cePolicyOrTemplate\022M\n\006policy\030\001 \001(\0132;.goo"
+          + "\032q\n\004Disk\022\017\n\005image\030\004 \001(\tH\000\022\022\n\010snapshot\030\005 "
+          + "\001(\tH\000\022\014\n\004type\030\001 \001(\t\022\017\n\007size_gb\030\002 \001(\003\022\026\n\016"
+          + "disk_interface\030\006 \001(\tB\r\n\013data_source\032\217\001\n\014"
+          + "AttachedDisk\022E\n\010new_disk\030\001 \001(\01321.google."
+          + "cloud.batch.v1alpha.AllocationPolicy.Dis"
+          + "kH\000\022\027\n\rexisting_disk\030\002 \001(\tH\000\022\023\n\013device_n"
+          + "ame\030\003 \001(\tB\n\n\010attached\032K\n\013Accelerator\022\014\n\004"
+          + "type\030\001 \001(\t\022\r\n\005count\030\002 \001(\003\022\037\n\023install_gpu"
+          + "_drivers\030\003 \001(\010B\002\030\001\032\331\002\n\016InstancePolicy\022!\n"
+          + "\025allowed_machine_types\030\001 \003(\tB\002\030\001\022\024\n\014mach"
+          + "ine_type\030\002 \001(\t\022\030\n\020min_cpu_platform\030\003 \001(\t"
+          + "\022Z\n\022provisioning_model\030\004 \001(\0162>.google.cl"
+          + "oud.batch.v1alpha.AllocationPolicy.Provi"
+          + "sioningModel\022N\n\014accelerators\030\005 \003(\01328.goo"
           + "gle.cloud.batch.v1alpha.AllocationPolicy"
-          + ".InstancePolicyH\000\022\033\n\021instance_template\030\002"
-          + " \001(\tH\000B\021\n\017policy_template\032W\n\020NetworkInte"
-          + "rface\022\017\n\007network\030\001 \001(\t\022\022\n\nsubnetwork\030\002 \001"
-          + "(\t\022\036\n\026no_external_ip_address\030\003 \001(\010\032j\n\rNe"
-          + "tworkPolicy\022Y\n\022network_interfaces\030\001 \003(\0132"
-          + "=.google.cloud.batch.v1alpha.AllocationP"
-          + "olicy.NetworkInterface\032-\n\013LabelsEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"`\n\021Provisi"
-          + "oningModel\022\"\n\036PROVISIONING_MODEL_UNSPECI"
-          + "FIED\020\000\022\014\n\010STANDARD\020\001\022\010\n\004SPOT\020\002\022\017\n\013PREEMP"
-          + "TIBLE\020\003\"\351\005\n\tTaskGroup\022\021\n\004name\030\001 \001(\tB\003\340A\003"
-          + "\022<\n\ttask_spec\030\003 \001(\0132$.google.cloud.batch"
-          + ".v1alpha.TaskSpecB\003\340A\002\022\022\n\ntask_count\030\004 \001"
-          + "(\003\022\023\n\013parallelism\030\005 \001(\003\022Q\n\021scheduling_po"
-          + "licy\030\006 \001(\01626.google.cloud.batch.v1alpha."
-          + "TaskGroup.SchedulingPolicy\022G\n\021allocation"
-          + "_policy\030\007 \001(\0132,.google.cloud.batch.v1alp"
-          + "ha.AllocationPolicy\022A\n\006labels\030\010 \003(\01321.go"
-          + "ogle.cloud.batch.v1alpha.TaskGroup.Label"
-          + "sEntry\022B\n\021task_environments\030\t \003(\0132\'.goog"
-          + "le.cloud.batch.v1alpha.Environment\022\033\n\023ta"
-          + "sk_count_per_node\030\n \001(\003\022\032\n\022require_hosts"
-          + "_file\030\013 \001(\010\022\026\n\016permissive_ssh\030\014 \001(\010\032-\n\013L"
-          + "abelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002"
-          + "8\001\"N\n\020SchedulingPolicy\022!\n\035SCHEDULING_POL"
-          + "ICY_UNSPECIFIED\020\000\022\027\n\023AS_SOON_AS_POSSIBLE"
-          + "\020\001:o\352Al\n\036batch.googleapis.com/TaskGroup\022"
-          + "Jprojects/{project}/locations/{location}"
-          + "/jobs/{job}/taskGroups/{task_group}\"/\n\016S"
-          + "erviceAccount\022\r\n\005email\030\001 \001(\t\022\016\n\006scopes\030\002"
-          + " \003(\tB\315\001\n\036com.google.cloud.batch.v1alphaB"
-          + "\010JobProtoP\001Z?google.golang.org/genproto/"
-          + "googleapis/cloud/batch/v1alpha;batch\242\002\003G"
-          + "CB\252\002\032Google.Cloud.Batch.V1Alpha\312\002\032Google"
-          + "\\Cloud\\Batch\\V1alpha\352\002\035Google::Cloud::Ba"
-          + "tch::V1alphab\006proto3"
+          + ".Accelerator\022H\n\005disks\030\006 \003(\01329.google.clo"
+          + "ud.batch.v1alpha.AllocationPolicy.Attach"
+          + "edDisk\032\266\001\n\030InstancePolicyOrTemplate\022M\n\006p"
+          + "olicy\030\001 \001(\0132;.google.cloud.batch.v1alpha"
+          + ".AllocationPolicy.InstancePolicyH\000\022\033\n\021in"
+          + "stance_template\030\002 \001(\tH\000\022\033\n\023install_gpu_d"
+          + "rivers\030\003 \001(\010B\021\n\017policy_template\032W\n\020Netwo"
+          + "rkInterface\022\017\n\007network\030\001 \001(\t\022\022\n\nsubnetwo"
+          + "rk\030\002 \001(\t\022\036\n\026no_external_ip_address\030\003 \001(\010"
+          + "\032j\n\rNetworkPolicy\022Y\n\022network_interfaces\030"
+          + "\001 \003(\0132=.google.cloud.batch.v1alpha.Alloc"
+          + "ationPolicy.NetworkInterface\032-\n\013LabelsEn"
+          + "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"`\n\021P"
+          + "rovisioningModel\022\"\n\036PROVISIONING_MODEL_U"
+          + "NSPECIFIED\020\000\022\014\n\010STANDARD\020\001\022\010\n\004SPOT\020\002\022\017\n\013"
+          + "PREEMPTIBLE\020\003\"\351\005\n\tTaskGroup\022\021\n\004name\030\001 \001("
+          + "\tB\003\340A\003\022<\n\ttask_spec\030\003 \001(\0132$.google.cloud"
+          + ".batch.v1alpha.TaskSpecB\003\340A\002\022\022\n\ntask_cou"
+          + "nt\030\004 \001(\003\022\023\n\013parallelism\030\005 \001(\003\022Q\n\021schedul"
+          + "ing_policy\030\006 \001(\01626.google.cloud.batch.v1"
+          + "alpha.TaskGroup.SchedulingPolicy\022G\n\021allo"
+          + "cation_policy\030\007 \001(\0132,.google.cloud.batch"
+          + ".v1alpha.AllocationPolicy\022A\n\006labels\030\010 \003("
+          + "\01321.google.cloud.batch.v1alpha.TaskGroup"
+          + ".LabelsEntry\022B\n\021task_environments\030\t \003(\0132"
+          + "\'.google.cloud.batch.v1alpha.Environment"
+          + "\022\033\n\023task_count_per_node\030\n \001(\003\022\032\n\022require"
+          + "_hosts_file\030\013 \001(\010\022\026\n\016permissive_ssh\030\014 \001("
+          + "\010\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002"
+          + " \001(\t:\0028\001\"N\n\020SchedulingPolicy\022!\n\035SCHEDULI"
+          + "NG_POLICY_UNSPECIFIED\020\000\022\027\n\023AS_SOON_AS_PO"
+          + "SSIBLE\020\001:o\352Al\n\036batch.googleapis.com/Task"
+          + "Group\022Jprojects/{project}/locations/{loc"
+          + "ation}/jobs/{job}/taskGroups/{task_group"
+          + "}\"/\n\016ServiceAccount\022\r\n\005email\030\001 \001(\t\022\016\n\006sc"
+          + "opes\030\002 \003(\tB\315\001\n\036com.google.cloud.batch.v1"
+          + "alphaB\010JobProtoP\001Z?google.golang.org/gen"
+          + "proto/googleapis/cloud/batch/v1alpha;bat"
+          + "ch\242\002\003GCB\252\002\032Google.Cloud.Batch.V1Alpha\312\002\032"
+          + "Google\\Cloud\\Batch\\V1alpha\352\002\035Google::Clo"
+          + "ud::Batch::V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -439,7 +441,7 @@ public final class JobProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_batch_v1alpha_AllocationPolicy_Disk_descriptor,
             new java.lang.String[] {
-              "Image", "Snapshot", "Type", "SizeGb", "DataSource",
+              "Image", "Snapshot", "Type", "SizeGb", "DiskInterface", "DataSource",
             });
     internal_static_google_cloud_batch_v1alpha_AllocationPolicy_AttachedDisk_descriptor =
         internal_static_google_cloud_batch_v1alpha_AllocationPolicy_descriptor
@@ -459,7 +461,7 @@ public final class JobProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_batch_v1alpha_AllocationPolicy_Accelerator_descriptor,
             new java.lang.String[] {
-              "Type", "Count",
+              "Type", "Count", "InstallGpuDrivers",
             });
     internal_static_google_cloud_batch_v1alpha_AllocationPolicy_InstancePolicy_descriptor =
         internal_static_google_cloud_batch_v1alpha_AllocationPolicy_descriptor
@@ -484,7 +486,7 @@ public final class JobProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_batch_v1alpha_AllocationPolicy_InstancePolicyOrTemplate_descriptor,
             new java.lang.String[] {
-              "Policy", "InstanceTemplate", "PolicyTemplate",
+              "Policy", "InstanceTemplate", "InstallGpuDrivers", "PolicyTemplate",
             });
     internal_static_google_cloud_batch_v1alpha_AllocationPolicy_NetworkInterface_descriptor =
         internal_static_google_cloud_batch_v1alpha_AllocationPolicy_descriptor
