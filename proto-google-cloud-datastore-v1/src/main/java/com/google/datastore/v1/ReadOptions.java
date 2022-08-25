@@ -347,7 +347,6 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The non-transactional read consistency to use.
-   * Cannot be set to `STRONG` for global queries.
    * </pre>
    *
    * <code>.google.datastore.v1.ReadOptions.ReadConsistency read_consistency = 1;</code>
@@ -362,7 +361,6 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The non-transactional read consistency to use.
-   * Cannot be set to `STRONG` for global queries.
    * </pre>
    *
    * <code>.google.datastore.v1.ReadOptions.ReadConsistency read_consistency = 1;</code>
@@ -380,7 +378,6 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The non-transactional read consistency to use.
-   * Cannot be set to `STRONG` for global queries.
    * </pre>
    *
    * <code>.google.datastore.v1.ReadOptions.ReadConsistency read_consistency = 1;</code>
@@ -903,7 +900,6 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The non-transactional read consistency to use.
-     * Cannot be set to `STRONG` for global queries.
      * </pre>
      *
      * <code>.google.datastore.v1.ReadOptions.ReadConsistency read_consistency = 1;</code>
@@ -919,7 +915,6 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The non-transactional read consistency to use.
-     * Cannot be set to `STRONG` for global queries.
      * </pre>
      *
      * <code>.google.datastore.v1.ReadOptions.ReadConsistency read_consistency = 1;</code>
@@ -938,7 +933,6 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The non-transactional read consistency to use.
-     * Cannot be set to `STRONG` for global queries.
      * </pre>
      *
      * <code>.google.datastore.v1.ReadOptions.ReadConsistency read_consistency = 1;</code>
@@ -957,7 +951,6 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The non-transactional read consistency to use.
-     * Cannot be set to `STRONG` for global queries.
      * </pre>
      *
      * <code>.google.datastore.v1.ReadOptions.ReadConsistency read_consistency = 1;</code>
@@ -982,7 +975,6 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The non-transactional read consistency to use.
-     * Cannot be set to `STRONG` for global queries.
      * </pre>
      *
      * <code>.google.datastore.v1.ReadOptions.ReadConsistency read_consistency = 1;</code>
@@ -1004,7 +996,6 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The non-transactional read consistency to use.
-     * Cannot be set to `STRONG` for global queries.
      * </pre>
      *
      * <code>.google.datastore.v1.ReadOptions.ReadConsistency read_consistency = 1;</code>
