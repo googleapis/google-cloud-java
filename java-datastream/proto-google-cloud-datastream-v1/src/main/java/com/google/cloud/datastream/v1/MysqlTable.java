@@ -186,7 +186,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * MySQL columns in the database.
-   * When unspecified as part of include/exclude lists, includes/excludes
+   * When unspecified as part of include/exclude objects, includes/excludes
    * everything.
    * </pre>
    *
@@ -201,7 +201,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * MySQL columns in the database.
-   * When unspecified as part of include/exclude lists, includes/excludes
+   * When unspecified as part of include/exclude objects, includes/excludes
    * everything.
    * </pre>
    *
@@ -217,7 +217,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * MySQL columns in the database.
-   * When unspecified as part of include/exclude lists, includes/excludes
+   * When unspecified as part of include/exclude objects, includes/excludes
    * everything.
    * </pre>
    *
@@ -232,7 +232,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * MySQL columns in the database.
-   * When unspecified as part of include/exclude lists, includes/excludes
+   * When unspecified as part of include/exclude objects, includes/excludes
    * everything.
    * </pre>
    *
@@ -247,7 +247,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * MySQL columns in the database.
-   * When unspecified as part of include/exclude lists, includes/excludes
+   * When unspecified as part of include/exclude objects, includes/excludes
    * everything.
    * </pre>
    *
@@ -760,7 +760,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * MySQL columns in the database.
-     * When unspecified as part of include/exclude lists, includes/excludes
+     * When unspecified as part of include/exclude objects, includes/excludes
      * everything.
      * </pre>
      *
@@ -778,7 +778,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * MySQL columns in the database.
-     * When unspecified as part of include/exclude lists, includes/excludes
+     * When unspecified as part of include/exclude objects, includes/excludes
      * everything.
      * </pre>
      *
@@ -796,7 +796,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * MySQL columns in the database.
-     * When unspecified as part of include/exclude lists, includes/excludes
+     * When unspecified as part of include/exclude objects, includes/excludes
      * everything.
      * </pre>
      *
@@ -814,7 +814,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * MySQL columns in the database.
-     * When unspecified as part of include/exclude lists, includes/excludes
+     * When unspecified as part of include/exclude objects, includes/excludes
      * everything.
      * </pre>
      *
@@ -838,7 +838,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * MySQL columns in the database.
-     * When unspecified as part of include/exclude lists, includes/excludes
+     * When unspecified as part of include/exclude objects, includes/excludes
      * everything.
      * </pre>
      *
@@ -860,7 +860,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * MySQL columns in the database.
-     * When unspecified as part of include/exclude lists, includes/excludes
+     * When unspecified as part of include/exclude objects, includes/excludes
      * everything.
      * </pre>
      *
@@ -884,7 +884,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * MySQL columns in the database.
-     * When unspecified as part of include/exclude lists, includes/excludes
+     * When unspecified as part of include/exclude objects, includes/excludes
      * everything.
      * </pre>
      *
@@ -908,7 +908,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * MySQL columns in the database.
-     * When unspecified as part of include/exclude lists, includes/excludes
+     * When unspecified as part of include/exclude objects, includes/excludes
      * everything.
      * </pre>
      *
@@ -930,7 +930,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * MySQL columns in the database.
-     * When unspecified as part of include/exclude lists, includes/excludes
+     * When unspecified as part of include/exclude objects, includes/excludes
      * everything.
      * </pre>
      *
@@ -952,7 +952,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * MySQL columns in the database.
-     * When unspecified as part of include/exclude lists, includes/excludes
+     * When unspecified as part of include/exclude objects, includes/excludes
      * everything.
      * </pre>
      *
@@ -974,7 +974,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * MySQL columns in the database.
-     * When unspecified as part of include/exclude lists, includes/excludes
+     * When unspecified as part of include/exclude objects, includes/excludes
      * everything.
      * </pre>
      *
@@ -995,7 +995,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * MySQL columns in the database.
-     * When unspecified as part of include/exclude lists, includes/excludes
+     * When unspecified as part of include/exclude objects, includes/excludes
      * everything.
      * </pre>
      *
@@ -1016,7 +1016,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * MySQL columns in the database.
-     * When unspecified as part of include/exclude lists, includes/excludes
+     * When unspecified as part of include/exclude objects, includes/excludes
      * everything.
      * </pre>
      *
@@ -1030,7 +1030,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * MySQL columns in the database.
-     * When unspecified as part of include/exclude lists, includes/excludes
+     * When unspecified as part of include/exclude objects, includes/excludes
      * everything.
      * </pre>
      *
@@ -1048,7 +1048,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * MySQL columns in the database.
-     * When unspecified as part of include/exclude lists, includes/excludes
+     * When unspecified as part of include/exclude objects, includes/excludes
      * everything.
      * </pre>
      *
@@ -1067,7 +1067,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * MySQL columns in the database.
-     * When unspecified as part of include/exclude lists, includes/excludes
+     * When unspecified as part of include/exclude objects, includes/excludes
      * everything.
      * </pre>
      *
@@ -1082,7 +1082,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * MySQL columns in the database.
-     * When unspecified as part of include/exclude lists, includes/excludes
+     * When unspecified as part of include/exclude objects, includes/excludes
      * everything.
      * </pre>
      *
@@ -1097,7 +1097,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * MySQL columns in the database.
-     * When unspecified as part of include/exclude lists, includes/excludes
+     * When unspecified as part of include/exclude objects, includes/excludes
      * everything.
      * </pre>
      *

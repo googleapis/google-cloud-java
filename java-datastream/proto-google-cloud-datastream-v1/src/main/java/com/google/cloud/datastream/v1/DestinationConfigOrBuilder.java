@@ -89,6 +89,45 @@ public interface DestinationConfigOrBuilder
    */
   com.google.cloud.datastream.v1.GcsDestinationConfigOrBuilder getGcsDestinationConfigOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * BigQuery destination configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig bigquery_destination_config = 101;
+   * </code>
+   *
+   * @return Whether the bigqueryDestinationConfig field is set.
+   */
+  boolean hasBigqueryDestinationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * BigQuery destination configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig bigquery_destination_config = 101;
+   * </code>
+   *
+   * @return The bigqueryDestinationConfig.
+   */
+  com.google.cloud.datastream.v1.BigQueryDestinationConfig getBigqueryDestinationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * BigQuery destination configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig bigquery_destination_config = 101;
+   * </code>
+   */
+  com.google.cloud.datastream.v1.BigQueryDestinationConfigOrBuilder
+      getBigqueryDestinationConfigOrBuilder();
+
   public com.google.cloud.datastream.v1.DestinationConfig.DestinationStreamConfigCase
       getDestinationStreamConfigCase();
 }

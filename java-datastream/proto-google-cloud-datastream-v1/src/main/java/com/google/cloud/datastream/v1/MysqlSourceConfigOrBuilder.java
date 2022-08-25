@@ -92,4 +92,18 @@ public interface MysqlSourceConfigOrBuilder
    * <code>.google.cloud.datastream.v1.MysqlRdbms exclude_objects = 2;</code>
    */
   com.google.cloud.datastream.v1.MysqlRdbmsOrBuilder getExcludeObjectsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Maximum number of concurrent CDC tasks. The number should be non negative.
+   * If not set (or set to 0), the system's default value will be used.
+   * </pre>
+   *
+   * <code>int32 max_concurrent_cdc_tasks = 3;</code>
+   *
+   * @return The maxConcurrentCdcTasks.
+   */
+  int getMaxConcurrentCdcTasks();
 }
