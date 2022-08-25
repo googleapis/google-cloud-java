@@ -43,6 +43,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     ipCidrRange_ = "";
     state_ = 0;
     connectedProjects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    machineType_ = "";
   }
 
   @java.lang.Override
@@ -137,6 +138,23 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
                 subnet_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 82:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              machineType_ = s;
+              break;
+            }
+          case 88:
+            {
+              minInstances_ = input.readInt32();
+              break;
+            }
+          case 96:
+            {
+              maxInstances_ = input.readInt32();
               break;
             }
           default:
@@ -1516,7 +1534,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Maximum throughput of the connector in Mbps. Default is 200, max is 1000.
+   * Maximum throughput of the connector in Mbps. Default is 300, max is 1000.
    * </pre>
    *
    * <code>int32 max_throughput = 6;</code>
@@ -1641,6 +1659,91 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     return getSubnet();
   }
 
+  public static final int MACHINE_TYPE_FIELD_NUMBER = 10;
+  private volatile java.lang.Object machineType_;
+  /**
+   *
+   *
+   * <pre>
+   * Machine type of VM Instance underlying connector. Default is e2-micro
+   * </pre>
+   *
+   * <code>string machine_type = 10;</code>
+   *
+   * @return The machineType.
+   */
+  @java.lang.Override
+  public java.lang.String getMachineType() {
+    java.lang.Object ref = machineType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      machineType_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Machine type of VM Instance underlying connector. Default is e2-micro
+   * </pre>
+   *
+   * <code>string machine_type = 10;</code>
+   *
+   * @return The bytes for machineType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMachineTypeBytes() {
+    java.lang.Object ref = machineType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      machineType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MIN_INSTANCES_FIELD_NUMBER = 11;
+  private int minInstances_;
+  /**
+   *
+   *
+   * <pre>
+   * Minimum value of instances in autoscaling group underlying the connector.
+   * </pre>
+   *
+   * <code>int32 min_instances = 11;</code>
+   *
+   * @return The minInstances.
+   */
+  @java.lang.Override
+  public int getMinInstances() {
+    return minInstances_;
+  }
+
+  public static final int MAX_INSTANCES_FIELD_NUMBER = 12;
+  private int maxInstances_;
+  /**
+   *
+   *
+   * <pre>
+   * Maximum value of instances in autoscaling group underlying the connector.
+   * </pre>
+   *
+   * <code>int32 max_instances = 12;</code>
+   *
+   * @return The maxInstances.
+   */
+  @java.lang.Override
+  public int getMaxInstances() {
+    return maxInstances_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1678,6 +1781,15 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     }
     if (subnet_ != null) {
       output.writeMessage(8, getSubnet());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(machineType_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, machineType_);
+    }
+    if (minInstances_ != 0) {
+      output.writeInt32(11, minInstances_);
+    }
+    if (maxInstances_ != 0) {
+      output.writeInt32(12, maxInstances_);
     }
     unknownFields.writeTo(output);
   }
@@ -1717,6 +1829,15 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     if (subnet_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getSubnet());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(machineType_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, machineType_);
+    }
+    if (minInstances_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(11, minInstances_);
+    }
+    if (maxInstances_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(12, maxInstances_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1743,6 +1864,9 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     if (hasSubnet()) {
       if (!getSubnet().equals(other.getSubnet())) return false;
     }
+    if (!getMachineType().equals(other.getMachineType())) return false;
+    if (getMinInstances() != other.getMinInstances()) return false;
+    if (getMaxInstances() != other.getMaxInstances()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1774,6 +1898,12 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SUBNET_FIELD_NUMBER;
       hash = (53 * hash) + getSubnet().hashCode();
     }
+    hash = (37 * hash) + MACHINE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getMachineType().hashCode();
+    hash = (37 * hash) + MIN_INSTANCES_FIELD_NUMBER;
+    hash = (53 * hash) + getMinInstances();
+    hash = (37 * hash) + MAX_INSTANCES_FIELD_NUMBER;
+    hash = (53 * hash) + getMaxInstances();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1939,6 +2069,12 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
         subnet_ = null;
         subnetBuilder_ = null;
       }
+      machineType_ = "";
+
+      minInstances_ = 0;
+
+      maxInstances_ = 0;
+
       return this;
     }
 
@@ -1983,6 +2119,9 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.subnet_ = subnetBuilder_.build();
       }
+      result.machineType_ = machineType_;
+      result.minInstances_ = minInstances_;
+      result.maxInstances_ = maxInstances_;
       onBuilt();
       return result;
     }
@@ -2065,6 +2204,16 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSubnet()) {
         mergeSubnet(other.getSubnet());
+      }
+      if (!other.getMachineType().isEmpty()) {
+        machineType_ = other.machineType_;
+        onChanged();
+      }
+      if (other.getMinInstances() != 0) {
+        setMinInstances(other.getMinInstances());
+      }
+      if (other.getMaxInstances() != 0) {
+        setMaxInstances(other.getMaxInstances());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2578,7 +2727,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum throughput of the connector in Mbps. Default is 200, max is 1000.
+     * Maximum throughput of the connector in Mbps. Default is 300, max is 1000.
      * </pre>
      *
      * <code>int32 max_throughput = 6;</code>
@@ -2593,7 +2742,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum throughput of the connector in Mbps. Default is 200, max is 1000.
+     * Maximum throughput of the connector in Mbps. Default is 300, max is 1000.
      * </pre>
      *
      * <code>int32 max_throughput = 6;</code>
@@ -2611,7 +2760,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum throughput of the connector in Mbps. Default is 200, max is 1000.
+     * Maximum throughput of the connector in Mbps. Default is 300, max is 1000.
      * </pre>
      *
      * <code>int32 max_throughput = 6;</code>
@@ -2986,6 +3135,216 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
         subnet_ = null;
       }
       return subnetBuilder_;
+    }
+
+    private java.lang.Object machineType_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Machine type of VM Instance underlying connector. Default is e2-micro
+     * </pre>
+     *
+     * <code>string machine_type = 10;</code>
+     *
+     * @return The machineType.
+     */
+    public java.lang.String getMachineType() {
+      java.lang.Object ref = machineType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        machineType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Machine type of VM Instance underlying connector. Default is e2-micro
+     * </pre>
+     *
+     * <code>string machine_type = 10;</code>
+     *
+     * @return The bytes for machineType.
+     */
+    public com.google.protobuf.ByteString getMachineTypeBytes() {
+      java.lang.Object ref = machineType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        machineType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Machine type of VM Instance underlying connector. Default is e2-micro
+     * </pre>
+     *
+     * <code>string machine_type = 10;</code>
+     *
+     * @param value The machineType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMachineType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      machineType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Machine type of VM Instance underlying connector. Default is e2-micro
+     * </pre>
+     *
+     * <code>string machine_type = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMachineType() {
+
+      machineType_ = getDefaultInstance().getMachineType();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Machine type of VM Instance underlying connector. Default is e2-micro
+     * </pre>
+     *
+     * <code>string machine_type = 10;</code>
+     *
+     * @param value The bytes for machineType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMachineTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      machineType_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int minInstances_;
+    /**
+     *
+     *
+     * <pre>
+     * Minimum value of instances in autoscaling group underlying the connector.
+     * </pre>
+     *
+     * <code>int32 min_instances = 11;</code>
+     *
+     * @return The minInstances.
+     */
+    @java.lang.Override
+    public int getMinInstances() {
+      return minInstances_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum value of instances in autoscaling group underlying the connector.
+     * </pre>
+     *
+     * <code>int32 min_instances = 11;</code>
+     *
+     * @param value The minInstances to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMinInstances(int value) {
+
+      minInstances_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum value of instances in autoscaling group underlying the connector.
+     * </pre>
+     *
+     * <code>int32 min_instances = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMinInstances() {
+
+      minInstances_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int maxInstances_;
+    /**
+     *
+     *
+     * <pre>
+     * Maximum value of instances in autoscaling group underlying the connector.
+     * </pre>
+     *
+     * <code>int32 max_instances = 12;</code>
+     *
+     * @return The maxInstances.
+     */
+    @java.lang.Override
+    public int getMaxInstances() {
+      return maxInstances_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maximum value of instances in autoscaling group underlying the connector.
+     * </pre>
+     *
+     * <code>int32 max_instances = 12;</code>
+     *
+     * @param value The maxInstances to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxInstances(int value) {
+
+      maxInstances_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maximum value of instances in autoscaling group underlying the connector.
+     * </pre>
+     *
+     * <code>int32 max_instances = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxInstances() {
+
+      maxInstances_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

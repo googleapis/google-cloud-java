@@ -17,6 +17,7 @@
 package com.google.cloud.vpcaccess.v1.stub;
 
 import static com.google.cloud.vpcaccess.v1.VpcAccessServiceClient.ListConnectorsPagedResponse;
+import static com.google.cloud.vpcaccess.v1.VpcAccessServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
@@ -33,6 +34,8 @@ import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.vpcaccess.v1.Connector;
 import com.google.cloud.vpcaccess.v1.CreateConnectorRequest;
 import com.google.cloud.vpcaccess.v1.DeleteConnectorRequest;
@@ -212,6 +215,39 @@ public class HttpJsonVpcAccessServiceStub extends VpcAccessServiceStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListLocationsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*}/locations",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListLocationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListLocationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListLocationsResponse>newBuilder()
+                      .setDefaultInstance(ListLocationsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<CreateConnectorRequest, Operation> createConnectorCallable;
   private final OperationCallable<CreateConnectorRequest, Connector, OperationMetadata>
       createConnectorOperationCallable;
@@ -222,6 +258,9 @@ public class HttpJsonVpcAccessServiceStub extends VpcAccessServiceStub {
   private final UnaryCallable<DeleteConnectorRequest, Operation> deleteConnectorCallable;
   private final OperationCallable<DeleteConnectorRequest, Empty, OperationMetadata>
       deleteConnectorOperationCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -289,6 +328,12 @@ public class HttpJsonVpcAccessServiceStub extends VpcAccessServiceStub {
             .setMethodDescriptor(deleteConnectorMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
+        listLocationsTransportSettings =
+            HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+                .setMethodDescriptor(listLocationsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
 
     this.createConnectorCallable =
         callableFactory.createUnaryCallable(
@@ -317,6 +362,12 @@ public class HttpJsonVpcAccessServiceStub extends VpcAccessServiceStub {
             settings.deleteConnectorOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -329,6 +380,7 @@ public class HttpJsonVpcAccessServiceStub extends VpcAccessServiceStub {
     methodDescriptors.add(getConnectorMethodDescriptor);
     methodDescriptors.add(listConnectorsMethodDescriptor);
     methodDescriptors.add(deleteConnectorMethodDescriptor);
+    methodDescriptors.add(listLocationsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -372,6 +424,17 @@ public class HttpJsonVpcAccessServiceStub extends VpcAccessServiceStub {
   public OperationCallable<DeleteConnectorRequest, Empty, OperationMetadata>
       deleteConnectorOperationCallable() {
     return deleteConnectorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
   }
 
   @Override

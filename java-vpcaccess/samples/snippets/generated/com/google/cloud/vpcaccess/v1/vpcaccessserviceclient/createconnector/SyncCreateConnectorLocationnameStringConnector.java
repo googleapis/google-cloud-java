@@ -16,8 +16,7 @@
 
 package com.google.cloud.vpcaccess.v1.samples;
 
-// [START
-// vpcaccess_v1_generated_vpcaccessserviceclient_createconnector_locationnamestringconnector_sync]
+// [START vpcaccess_v1_generated_vpcaccessserviceclient_createconnector_locationnamestringconnector_sync]
 import com.google.cloud.vpcaccess.v1.Connector;
 import com.google.cloud.vpcaccess.v1.LocationName;
 import com.google.cloud.vpcaccess.v1.VpcAccessServiceClient;
@@ -40,5 +39,4 @@ public class SyncCreateConnectorLocationnameStringConnector {
     }
   }
 }
-// [END
-// vpcaccess_v1_generated_vpcaccessserviceclient_createconnector_locationnamestringconnector_sync]
+// [END vpcaccess_v1_generated_vpcaccessserviceclient_createconnector_locationnamestringconnector_sync]

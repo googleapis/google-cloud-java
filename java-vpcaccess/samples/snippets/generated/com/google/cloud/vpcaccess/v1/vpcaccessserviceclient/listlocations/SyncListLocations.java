@@ -16,28 +16,32 @@
 
 package com.google.cloud.vpcaccess.v1.samples;
 
-// [START vpcaccess_v1_generated_vpcaccessserviceclient_deleteconnector_sync]
-import com.google.cloud.vpcaccess.v1.ConnectorName;
-import com.google.cloud.vpcaccess.v1.DeleteConnectorRequest;
+// [START vpcaccess_v1_generated_vpcaccessserviceclient_listlocations_sync]
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.Location;
 import com.google.cloud.vpcaccess.v1.VpcAccessServiceClient;
-import com.google.protobuf.Empty;
 
-public class SyncDeleteConnector {
+public class SyncListLocations {
 
   public static void main(String[] args) throws Exception {
-    syncDeleteConnector();
+    syncListLocations();
   }
 
-  public static void syncDeleteConnector() throws Exception {
+  public static void syncListLocations() throws Exception {
     // This snippet has been automatically generated for illustrative purposes only.
     // It may require modifications to work in your environment.
     try (VpcAccessServiceClient vpcAccessServiceClient = VpcAccessServiceClient.create()) {
-      DeleteConnectorRequest request =
-          DeleteConnectorRequest.newBuilder()
-              .setName(ConnectorName.of("[PROJECT]", "[LOCATION]", "[CONNECTOR]").toString())
+      ListLocationsRequest request =
+          ListLocationsRequest.newBuilder()
+              .setName("name3373707")
+              .setFilter("filter-1274492040")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
               .build();
-      vpcAccessServiceClient.deleteConnectorAsync(request).get();
+      for (Location element : vpcAccessServiceClient.listLocations(request).iterateAll()) {
+        // doThingsWith(element);
+      }
     }
   }
 }
-// [END vpcaccess_v1_generated_vpcaccessserviceclient_deleteconnector_sync]
+// [END vpcaccess_v1_generated_vpcaccessserviceclient_listlocations_sync]

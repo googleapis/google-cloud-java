@@ -19,6 +19,7 @@ package com.google.cloud.vpcaccess.v1.samples;
 // [START vpcaccess_v1_generated_vpcaccessserviceclient_deleteconnector_string_sync]
 import com.google.cloud.vpcaccess.v1.ConnectorName;
 import com.google.cloud.vpcaccess.v1.VpcAccessServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteConnectorString {
 
