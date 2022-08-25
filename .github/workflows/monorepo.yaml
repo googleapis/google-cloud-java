@@ -40,11 +40,12 @@ jobs:
       run: |
         cat << EOL > repos.txt
         java-accessapproval
-        java-dataform
+        java-dns
         java-resourcemanager
         EOL
     - name: Monorepo
       run: ./bootstrap.sh
+      shell: bash
       env:
         USERNAME: ${{ github.actor }}
     - name: Compile

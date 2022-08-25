@@ -68,7 +68,7 @@ done
 
 # cwd: monorepo/google-cloud-java
 echo "Working directory: $(pwd)"
-sh ../../templates/generation/print_root_pom.sh > pom.xml
+../../templates/generation/print_root_pom.sh > pom.xml
 
 git add pom.xml
 git commit -am 'feat: create aggregator pom'
@@ -85,10 +85,10 @@ git add --all
 git add -f .gitignore
 git commit -m 'chore: add template files'
 
-bash generation/generate_gapic_bom.sh
+./generation/generate_gapic_bom.sh
 
 # add the gapic bom module to root pom.xml
-sh generation/print_root_pom.sh > pom.xml
+generation/print_root_pom.sh > pom.xml
 
 git add google-cloud-gapic-bom/pom.xml
 git commit -am 'feat: create google-cloud-gapic-bom'
@@ -206,7 +206,7 @@ git commit -am 'feat: create release please configuration'
 # Need license-checks.xml to validate
 mvn -q -B -ntp validate
 
-bash generation/generate_coverage_aggregator.sh
+./generation/generate_coverage_aggregator.sh
 
 git add --all
 git commit -am 'feat: create CoverageAggregator module'
