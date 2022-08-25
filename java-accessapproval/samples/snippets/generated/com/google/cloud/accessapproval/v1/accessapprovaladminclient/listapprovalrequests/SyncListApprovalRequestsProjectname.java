@@ -16,8 +16,7 @@
 
 package com.google.cloud.accessapproval.v1.samples;
 
-// [START
-// accessapproval_v1_generated_accessapprovaladminclient_listapprovalrequests_projectname_sync]
+// [START accessapproval_v1_generated_accessapprovaladminclient_listapprovalrequests_projectname_sync]
 import com.google.cloud.accessapproval.v1.AccessApprovalAdminClient;
 import com.google.cloud.accessapproval.v1.ApprovalRequest;
 import com.google.cloud.accessapproval.v1.ProjectName;

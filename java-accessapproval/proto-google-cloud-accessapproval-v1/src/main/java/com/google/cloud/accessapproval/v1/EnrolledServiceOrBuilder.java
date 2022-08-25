@@ -37,6 +37,7 @@ public interface EnrolledServiceOrBuilder
    *   * Cloud Key Management Service
    *   * Compute Engine
    *   * Cloud Dataflow
+   *   * Cloud Dataproc
    *   * Cloud DLP
    *   * Cloud EKM
    *   * Cloud HSM
@@ -50,6 +51,7 @@ public interface EnrolledServiceOrBuilder
    *   * Organization Policy Serivice
    *   * Persistent Disk
    *   * Resource Manager
+   *   * Secret Manager
    *   * Speaker ID
    * Note: These values are supported as input for legacy purposes, but will not
    * be returned from the API.
@@ -64,12 +66,14 @@ public interface EnrolledServiceOrBuilder
    *   * cloudsql.googleapis.com
    *   * compute.googleapis.com
    *   * dataflow.googleapis.com
+   *   * dataproc.googleapis.com
    *   * dlp.googleapis.com
    *   * iam.googleapis.com
    *   * logging.googleapis.com
    *   * orgpolicy.googleapis.com
    *   * pubsub.googleapis.com
    *   * spanner.googleapis.com
+   *   * secretmanager.googleapis.com
    *   * speakerid.googleapis.com
    *   * storage.googleapis.com
    * Calls to UpdateAccessApprovalSettings using 'all' or any of the
@@ -100,6 +104,7 @@ public interface EnrolledServiceOrBuilder
    *   * Cloud Key Management Service
    *   * Compute Engine
    *   * Cloud Dataflow
+   *   * Cloud Dataproc
    *   * Cloud DLP
    *   * Cloud EKM
    *   * Cloud HSM
@@ -113,6 +118,7 @@ public interface EnrolledServiceOrBuilder
    *   * Organization Policy Serivice
    *   * Persistent Disk
    *   * Resource Manager
+   *   * Secret Manager
    *   * Speaker ID
    * Note: These values are supported as input for legacy purposes, but will not
    * be returned from the API.
@@ -127,12 +133,14 @@ public interface EnrolledServiceOrBuilder
    *   * cloudsql.googleapis.com
    *   * compute.googleapis.com
    *   * dataflow.googleapis.com
+   *   * dataproc.googleapis.com
    *   * dlp.googleapis.com
    *   * iam.googleapis.com
    *   * logging.googleapis.com
    *   * orgpolicy.googleapis.com
    *   * pubsub.googleapis.com
    *   * spanner.googleapis.com
+   *   * secretmanager.googleapis.com
    *   * speakerid.googleapis.com
    *   * storage.googleapis.com
    * Calls to UpdateAccessApprovalSettings using 'all' or any of the

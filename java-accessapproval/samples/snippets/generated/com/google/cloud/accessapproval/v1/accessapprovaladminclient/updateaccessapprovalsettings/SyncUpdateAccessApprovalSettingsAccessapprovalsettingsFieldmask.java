@@ -16,8 +16,7 @@
 
 package com.google.cloud.accessapproval.v1.samples;
 
-// [START
-// accessapproval_v1_generated_accessapprovaladminclient_updateaccessapprovalsettings_accessapprovalsettingsfieldmask_sync]
+// [START accessapproval_v1_generated_accessapprovaladminclient_updateaccessapprovalsettings_accessapprovalsettingsfieldmask_sync]
 import com.google.cloud.accessapproval.v1.AccessApprovalAdminClient;
 import com.google.cloud.accessapproval.v1.AccessApprovalSettings;
 import com.google.protobuf.FieldMask;
@@ -40,5 +39,4 @@ public class SyncUpdateAccessApprovalSettingsAccessapprovalsettingsFieldmask {
     }
   }
 }
-// [END
-// accessapproval_v1_generated_accessapprovaladminclient_updateaccessapprovalsettings_accessapprovalsettingsfieldmask_sync]
+// [END accessapproval_v1_generated_accessapprovaladminclient_updateaccessapprovalsettings_accessapprovalsettingsfieldmask_sync]
