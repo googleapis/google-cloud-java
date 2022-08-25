@@ -243,6 +243,10 @@ public class MonitoredResourceUtilTest {
     expect(getterMock.getEnv("FUNCTION_SIGNATURE_TYPE")).andReturn(MOCKED_NON_EMPTY).once();
     expect(getterMock.getEnv("FUNCTION_TARGET")).andReturn(MOCKED_NON_EMPTY).once();
     expect(getterMock.getEnv("K_SERVICE")).andReturn(MockedFunctionName).anyTimes();
+    expect(getterMock.getEnv("K_REVISION")).andReturn(MockedFunctionName + ".1").anyTimes();
+    expect(getterMock.getEnv("K_CONFIGURATION"))
+        .andReturn(MockedFunctionName + "-config")
+        .anyTimes();
     expect(getterMock.getEnv(anyString())).andReturn(null).anyTimes();
     replay(getterMock);
     // exercise

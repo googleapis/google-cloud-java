@@ -169,6 +169,10 @@ public class MonitoredResourceUtil {
       return Resource.Global;
     }
 
+    if (getter.getEnv("FUNCTION_SIGNATURE_TYPE") != null
+        && getter.getEnv("FUNCTION_TARGET") != null) {
+      return Resource.CloudFunction;
+    }
     if (getter.getEnv("K_SERVICE") != null
         && getter.getEnv("K_REVISION") != null
         && getter.getEnv("K_CONFIGURATION") != null) {
@@ -178,10 +182,6 @@ public class MonitoredResourceUtil {
         && getter.getEnv("GAE_SERVICE") != null
         && getter.getEnv("GAE_VERSION") != null) {
       return Resource.AppEngine;
-    }
-    if (getter.getEnv("FUNCTION_SIGNATURE_TYPE") != null
-        && getter.getEnv("FUNCTION_TARGET") != null) {
-      return Resource.CloudFunction;
     }
     if (getter.getAttribute("instance/attributes/cluster-name") != null) {
       return Resource.K8sContainer;
