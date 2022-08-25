@@ -8,6 +8,7 @@
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-shared-config</artifactId>
     <version>1.5.1</version>
+    <relativePath/>
   </parent>
 
   <groupId>com.google.cloud</groupId>

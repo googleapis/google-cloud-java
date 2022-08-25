@@ -15,6 +15,7 @@
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-config</artifactId>
         <version>1.5.3</version>
+        <relativePath/>
     </parent>
 
     <developers>
@@ -339,6 +340,22 @@
                 </plugins>
             </build>
         </profile>
+
+        <profile>
+            <!-- Shading workaround for IDEs: This project relocates some of its internal dependencies. Since IDEs can't
+             resolve the relocated symbols on their own, a workaround is added: first mvn install the shaded module,
+             then disable the with-shaded profile to force IDEs to resolve the relocated dependencies from the local
+             repository -->
+            <id>with-shaded</id>
+            <activation>
+                <property>
+                    <name>!skip-shaded</name>
+                </property>
+            </activation>
+            <modules>
+                <module>google-cloud-bigtable-stats</module>
+            </modules>
+        </profile>
     </profiles>
 
     <modules>
@@ -347,7 +364,6 @@
     <module>grpc-google-cloud-bigtable-v2</module>
     <module>proto-google-cloud-bigtable-admin-v2</module>
     <module>proto-google-cloud-bigtable-v2</module>
-    <module>google-cloud-bigtable-stats</module>
     <module>google-cloud-bigtable-emulator-core</module>
     <module>google-cloud-bigtable-emulator</module>
     <module>google-cloud-bigtable-bom</module>

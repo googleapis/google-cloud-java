@@ -54,17 +54,25 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-monitoring-bom</artifactId>
+        <version>3.4.1</version> <!-- needs to be in sync with google-cloud-bigtable-stats -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
   <dependencies>
     <!-- NOTE: Dependencies are organized into two groups, production and test.
          Within a group, dependencies are sorted by (groupId, artifactId) -->
-
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigtable-stats</artifactId>
-      <!-- Exclude all the shaded transitive dependencies -->
+      <!-- Exclude all dependencies that have been shaded. This is to workaround maven's immutable project structure:
+           after shading, the maven-shade-plugin tries to remove shaded dependencies, but it can't since the project
+           structure is immutable. So we have to manually exclude the shaded transitive dependencies manually. -->
       <exclusions>
         <exclusion>
           <groupId>io.opencensus</groupId>
@@ -253,6 +261,24 @@
           <artifactId>*</artifactId>
         </exclusion>
       </exclusions>
+    </dependency>
+    <!-- cloud-monitoring client depends on grpc-xds, which has transitive dependency on opencensus-proto. We need to
+    use cloud-monitoring as a test dependency, which also marks the opencensus-proto as a test dependency. Promote
+    grpc-xds to a runtime dependency so that opencensus-proto will still be a runtime dependency in the flattened pom. -->
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-xds</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-monitoring</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-monitoring-v3</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.truth</groupId>

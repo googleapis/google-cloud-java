@@ -59,7 +59,7 @@
         <dependency>
             <groupId>com.google.cloud</groupId>
             <artifactId>google-cloud-monitoring</artifactId>
-            <!-- Excluding http dependencies since they're not used and are causing conflict in google-cloud-bigtable -->
+            <!-- Excluding unused transitive dependencies to avoid conflict in google-cloud-bigtable -->
             <exclusions>
                 <exclusion>
                     <groupId>com.google.http-client</groupId>
