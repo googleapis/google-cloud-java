@@ -1,0 +1,78 @@
+custom_content: |
+  ### Example Application
+
+  [`TranslateExample`](https://github.com/googleapis/google-cloud-java/blob/master/google-cloud-examples/src/main/java/com/google/cloud/examples/translate/TranslateExample.java)
+  is a simple command line interface that provides some of Google Translation's functionality.
+
+  #### Creating an authorized service object
+  To make authenticated requests to Google Translation, you must create a service object with
+  credentials or use an API key. The simplest way to authenticate is to use
+  [Application Default Credentials](https://developers.google.com/identity/protocols/application-default-credentials).
+  These credentials are automatically inferred from your environment, so you only need the following
+  code to create your service object:
+
+  ```java
+  import com.google.cloud.translate.Translate;
+  import com.google.cloud.translate.TranslateOptions;
+
+  Translate translate = TranslateOptions.getDefaultInstance().getService();
+  ```
+
+  Notice that this code can be also used with an API key. By default, an API key is looked for in the
+  `GOOGLE_API_KEY` environment variable. Once the API key is set, you can make API calls by invoking
+  methods on the Translation service created via `TranslateOptions.getDefaultInstance().getService()`.
+
+  You can also explicitly set the API key as follows:
+  ```java
+  Translate translate = TranslateOptions.newBuilder().setApiKey("myKey").build().getService();
+  ```
+
+  #### Detecting language
+  With Google Translation you can detect the language of some text. The service will provide you with
+  the code of the detected language and a level of confidence.
+
+  Add the following import at the top of your file:
+
+  ```java
+  import com.google.cloud.translate.Detection;
+  ```
+
+  Then pick a text sample:
+
+  ```java
+  final String mysteriousText = "Hola Mundo";
+  ```
+
+  Then add the following code to detect the text's language:
+
+  ```java
+  Detection detection = translate.detect(mysteriousText);
+  String detectedLanguage = detection.getLanguage();
+  ```
+  #### Translating text
+
+  Google translation allows you to translate some text. When translating one or more texts you can
+  either provide the source language or let the service detect it for you.
+
+  Add the following imports at the top of your file:
+
+  ```java
+  import com.google.cloud.translate.Translate.TranslateOption;
+  import com.google.cloud.translate.Translation;
+  ```
+
+  Then add the following code to translate the text, specifying the previously detected language (`detectedLanguage`) as its source language and English as the target language (providing the source language is optional, if it is not specified the service will try to detect it automatically):
+
+  ```java
+  Translation translation = translate.translate(
+      mysteriousText,
+      TranslateOption.sourceLanguage(detectedLanguage),
+      TranslateOption.targetLanguage("en"));
+  ```
+
+  #### Complete source code
+
+  In
+  [DetectLanguageAndTranslate.java](https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/translate/snippets/DetectLanguageAndTranslate.java)
+  we put together all the code shown above into one program. The program assumes that either Application
+  Default Credentials or a valid API key are available.
