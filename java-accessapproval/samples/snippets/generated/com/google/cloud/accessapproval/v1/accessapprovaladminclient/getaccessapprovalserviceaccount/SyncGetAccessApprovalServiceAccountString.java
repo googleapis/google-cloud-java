@@ -16,8 +16,7 @@
 
 package com.google.cloud.accessapproval.v1.samples;
 
-// [START
-// accessapproval_v1_generated_accessapprovaladminclient_getaccessapprovalserviceaccount_string_sync]
+// [START accessapproval_v1_generated_accessapprovaladminclient_getaccessapprovalserviceaccount_string_sync]
 import com.google.cloud.accessapproval.v1.AccessApprovalAdminClient;
 import com.google.cloud.accessapproval.v1.AccessApprovalServiceAccount;
 
@@ -37,5 +36,4 @@ public class SyncGetAccessApprovalServiceAccountString {
     }
   }
 }
-// [END
-// accessapproval_v1_generated_accessapprovaladminclient_getaccessapprovalserviceaccount_string_sync]
+// [END accessapproval_v1_generated_accessapprovaladminclient_getaccessapprovalserviceaccount_string_sync]

@@ -16,8 +16,7 @@
 
 package com.google.cloud.accessapproval.v1.samples;
 
-// [START
-// accessapproval_v1_generated_accessapprovaladminclient_listapprovalrequests_organizationname_sync]
+// [START accessapproval_v1_generated_accessapprovaladminclient_listapprovalrequests_organizationname_sync]
 import com.google.cloud.accessapproval.v1.AccessApprovalAdminClient;
 import com.google.cloud.accessapproval.v1.ApprovalRequest;
 import com.google.cloud.accessapproval.v1.OrganizationName;
@@ -40,5 +39,4 @@ public class SyncListApprovalRequestsOrganizationname {
     }
   }
 }
-// [END
-// accessapproval_v1_generated_accessapprovaladminclient_listapprovalrequests_organizationname_sync]
+// [END accessapproval_v1_generated_accessapprovaladminclient_listapprovalrequests_organizationname_sync]

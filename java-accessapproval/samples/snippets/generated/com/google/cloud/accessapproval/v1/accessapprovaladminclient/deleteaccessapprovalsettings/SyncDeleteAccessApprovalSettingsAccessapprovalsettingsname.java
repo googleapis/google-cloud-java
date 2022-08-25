@@ -16,10 +16,10 @@
 
 package com.google.cloud.accessapproval.v1.samples;
 
-// [START
-// accessapproval_v1_generated_accessapprovaladminclient_deleteaccessapprovalsettings_accessapprovalsettingsname_sync]
+// [START accessapproval_v1_generated_accessapprovaladminclient_deleteaccessapprovalsettings_accessapprovalsettingsname_sync]
 import com.google.cloud.accessapproval.v1.AccessApprovalAdminClient;
 import com.google.cloud.accessapproval.v1.AccessApprovalSettingsName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteAccessApprovalSettingsAccessapprovalsettingsname {
 
@@ -36,5 +36,4 @@ public class SyncDeleteAccessApprovalSettingsAccessapprovalsettingsname {
     }
   }
 }
-// [END
-// accessapproval_v1_generated_accessapprovaladminclient_deleteaccessapprovalsettings_accessapprovalsettingsname_sync]
+// [END accessapproval_v1_generated_accessapprovaladminclient_deleteaccessapprovalsettings_accessapprovalsettingsname_sync]

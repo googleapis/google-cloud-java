@@ -16,8 +16,7 @@
 
 package com.google.cloud.accessapproval.v1.samples;
 
-// [START
-// accessapproval_v1_generated_accessapprovaladminclient_getaccessapprovalserviceaccount_async]
+// [START accessapproval_v1_generated_accessapprovaladminclient_getaccessapprovalserviceaccount_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.accessapproval.v1.AccessApprovalAdminClient;
 import com.google.cloud.accessapproval.v1.AccessApprovalServiceAccount;
