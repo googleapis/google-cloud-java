@@ -43,6 +43,9 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     userAgentFamily_ = "";
     serviceName_ = "";
     methodName_ = "";
+    principalSubject_ = "";
+    serviceAccountKeyName_ = "";
+    serviceAccountDelegationInfo_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -64,6 +67,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -125,6 +129,34 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
               methodName_ = s;
               break;
             }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              principalSubject_ = s;
+              break;
+            }
+          case 66:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              serviceAccountKeyName_ = s;
+              break;
+            }
+          case 74:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                serviceAccountDelegationInfo_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              serviceAccountDelegationInfo_.add(
+                  input.readMessage(
+                      com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo.parser(),
+                      extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -141,6 +173,10 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        serviceAccountDelegationInfo_ =
+            java.util.Collections.unmodifiableList(serviceAccountDelegationInfo_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -168,6 +204,12 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Associated email, such as "foo&#64;google.com".
+   * The email address of the authenticated user (or service account on behalf
+   * of third party principal) making the request. For third party identity
+   * callers, the `principal_subject` field is populated instead of this field.
+   * For privacy reasons, the principal email address is sometimes redacted.
+   * For more information, see [Caller identities in audit
+   * logs](https://cloud.google.com/logging/docs/audit#user-id).
    * </pre>
    *
    * <code>string principal_email = 1;</code>
@@ -191,6 +233,12 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Associated email, such as "foo&#64;google.com".
+   * The email address of the authenticated user (or service account on behalf
+   * of third party principal) making the request. For third party identity
+   * callers, the `principal_subject` field is populated instead of this field.
+   * For privacy reasons, the principal email address is sometimes redacted.
+   * For more information, see [Caller identities in audit
+   * logs](https://cloud.google.com/logging/docs/audit#user-id).
    * </pre>
    *
    * <code>string principal_email = 1;</code>
@@ -458,6 +506,226 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PRINCIPAL_SUBJECT_FIELD_NUMBER = 7;
+  private volatile java.lang.Object principalSubject_;
+  /**
+   *
+   *
+   * <pre>
+   * A string representing the principal_subject associated with the identity.
+   * As compared to `principal_email`, supports principals that aren't
+   * associated with email addresses, such as third party principals. For most
+   * identities, the format will be `principal://iam.googleapis.com/{identity
+   * pool name}/subjects/{subject}` except for some GKE identities
+   * (GKE_WORKLOAD, FREEFORM, GKE_HUB_WORKLOAD) that are still in the legacy
+   * format `serviceAccount:{identity pool name}[{subject}]`
+   * </pre>
+   *
+   * <code>string principal_subject = 7;</code>
+   *
+   * @return The principalSubject.
+   */
+  @java.lang.Override
+  public java.lang.String getPrincipalSubject() {
+    java.lang.Object ref = principalSubject_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      principalSubject_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A string representing the principal_subject associated with the identity.
+   * As compared to `principal_email`, supports principals that aren't
+   * associated with email addresses, such as third party principals. For most
+   * identities, the format will be `principal://iam.googleapis.com/{identity
+   * pool name}/subjects/{subject}` except for some GKE identities
+   * (GKE_WORKLOAD, FREEFORM, GKE_HUB_WORKLOAD) that are still in the legacy
+   * format `serviceAccount:{identity pool name}[{subject}]`
+   * </pre>
+   *
+   * <code>string principal_subject = 7;</code>
+   *
+   * @return The bytes for principalSubject.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPrincipalSubjectBytes() {
+    java.lang.Object ref = principalSubject_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      principalSubject_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SERVICE_ACCOUNT_KEY_NAME_FIELD_NUMBER = 8;
+  private volatile java.lang.Object serviceAccountKeyName_;
+  /**
+   *
+   *
+   * <pre>
+   * The name of the service account key used to create or exchange
+   * credentials for authenticating the service account making the request.
+   * This is a scheme-less URI full resource name. For example:
+   * "//iam.googleapis.com/projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}"
+   * </pre>
+   *
+   * <code>string service_account_key_name = 8;</code>
+   *
+   * @return The serviceAccountKeyName.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceAccountKeyName() {
+    java.lang.Object ref = serviceAccountKeyName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceAccountKeyName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The name of the service account key used to create or exchange
+   * credentials for authenticating the service account making the request.
+   * This is a scheme-less URI full resource name. For example:
+   * "//iam.googleapis.com/projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}"
+   * </pre>
+   *
+   * <code>string service_account_key_name = 8;</code>
+   *
+   * @return The bytes for serviceAccountKeyName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceAccountKeyNameBytes() {
+    java.lang.Object ref = serviceAccountKeyName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceAccountKeyName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SERVICE_ACCOUNT_DELEGATION_INFO_FIELD_NUMBER = 9;
+  private java.util.List<com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo>
+      serviceAccountDelegationInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Identity delegation history of an authenticated service account that makes
+   * the request. It contains information on the real authorities that try to
+   * access GCP resources by delegating on a service account. When multiple
+   * authorities are present, they are guaranteed to be sorted based on the
+   * original ordering of the identity delegation events.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.securitycenter.v1.ServiceAccountDelegationInfo service_account_delegation_info = 9;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo>
+      getServiceAccountDelegationInfoList() {
+    return serviceAccountDelegationInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Identity delegation history of an authenticated service account that makes
+   * the request. It contains information on the real authorities that try to
+   * access GCP resources by delegating on a service account. When multiple
+   * authorities are present, they are guaranteed to be sorted based on the
+   * original ordering of the identity delegation events.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.securitycenter.v1.ServiceAccountDelegationInfo service_account_delegation_info = 9;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfoOrBuilder>
+      getServiceAccountDelegationInfoOrBuilderList() {
+    return serviceAccountDelegationInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Identity delegation history of an authenticated service account that makes
+   * the request. It contains information on the real authorities that try to
+   * access GCP resources by delegating on a service account. When multiple
+   * authorities are present, they are guaranteed to be sorted based on the
+   * original ordering of the identity delegation events.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.securitycenter.v1.ServiceAccountDelegationInfo service_account_delegation_info = 9;
+   * </code>
+   */
+  @java.lang.Override
+  public int getServiceAccountDelegationInfoCount() {
+    return serviceAccountDelegationInfo_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Identity delegation history of an authenticated service account that makes
+   * the request. It contains information on the real authorities that try to
+   * access GCP resources by delegating on a service account. When multiple
+   * authorities are present, they are guaranteed to be sorted based on the
+   * original ordering of the identity delegation events.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.securitycenter.v1.ServiceAccountDelegationInfo service_account_delegation_info = 9;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo
+      getServiceAccountDelegationInfo(int index) {
+    return serviceAccountDelegationInfo_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Identity delegation history of an authenticated service account that makes
+   * the request. It contains information on the real authorities that try to
+   * access GCP resources by delegating on a service account. When multiple
+   * authorities are present, they are guaranteed to be sorted based on the
+   * original ordering of the identity delegation events.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.securitycenter.v1.ServiceAccountDelegationInfo service_account_delegation_info = 9;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfoOrBuilder
+      getServiceAccountDelegationInfoOrBuilder(int index) {
+    return serviceAccountDelegationInfo_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -490,6 +758,15 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(methodName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, methodName_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(principalSubject_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, principalSubject_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountKeyName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, serviceAccountKeyName_);
+    }
+    for (int i = 0; i < serviceAccountDelegationInfo_.size(); i++) {
+      output.writeMessage(9, serviceAccountDelegationInfo_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -517,6 +794,17 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(methodName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, methodName_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(principalSubject_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, principalSubject_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountKeyName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, serviceAccountKeyName_);
+    }
+    for (int i = 0; i < serviceAccountDelegationInfo_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, serviceAccountDelegationInfo_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -542,6 +830,10 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     if (!getUserAgentFamily().equals(other.getUserAgentFamily())) return false;
     if (!getServiceName().equals(other.getServiceName())) return false;
     if (!getMethodName().equals(other.getMethodName())) return false;
+    if (!getPrincipalSubject().equals(other.getPrincipalSubject())) return false;
+    if (!getServiceAccountKeyName().equals(other.getServiceAccountKeyName())) return false;
+    if (!getServiceAccountDelegationInfoList().equals(other.getServiceAccountDelegationInfoList()))
+      return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -567,6 +859,14 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getServiceName().hashCode();
     hash = (37 * hash) + METHOD_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getMethodName().hashCode();
+    hash = (37 * hash) + PRINCIPAL_SUBJECT_FIELD_NUMBER;
+    hash = (53 * hash) + getPrincipalSubject().hashCode();
+    hash = (37 * hash) + SERVICE_ACCOUNT_KEY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getServiceAccountKeyName().hashCode();
+    if (getServiceAccountDelegationInfoCount() > 0) {
+      hash = (37 * hash) + SERVICE_ACCOUNT_DELEGATION_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceAccountDelegationInfoList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -706,7 +1006,9 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getServiceAccountDelegationInfoFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -728,6 +1030,16 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
 
       methodName_ = "";
 
+      principalSubject_ = "";
+
+      serviceAccountKeyName_ = "";
+
+      if (serviceAccountDelegationInfoBuilder_ == null) {
+        serviceAccountDelegationInfo_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        serviceAccountDelegationInfoBuilder_.clear();
+      }
       return this;
     }
 
@@ -755,6 +1067,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v1.Access buildPartial() {
       com.google.cloud.securitycenter.v1.Access result =
           new com.google.cloud.securitycenter.v1.Access(this);
+      int from_bitField0_ = bitField0_;
       result.principalEmail_ = principalEmail_;
       result.callerIp_ = callerIp_;
       if (callerIpGeoBuilder_ == null) {
@@ -765,6 +1078,18 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       result.userAgentFamily_ = userAgentFamily_;
       result.serviceName_ = serviceName_;
       result.methodName_ = methodName_;
+      result.principalSubject_ = principalSubject_;
+      result.serviceAccountKeyName_ = serviceAccountKeyName_;
+      if (serviceAccountDelegationInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          serviceAccountDelegationInfo_ =
+              java.util.Collections.unmodifiableList(serviceAccountDelegationInfo_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.serviceAccountDelegationInfo_ = serviceAccountDelegationInfo_;
+      } else {
+        result.serviceAccountDelegationInfo_ = serviceAccountDelegationInfoBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -837,6 +1162,42 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         methodName_ = other.methodName_;
         onChanged();
       }
+      if (!other.getPrincipalSubject().isEmpty()) {
+        principalSubject_ = other.principalSubject_;
+        onChanged();
+      }
+      if (!other.getServiceAccountKeyName().isEmpty()) {
+        serviceAccountKeyName_ = other.serviceAccountKeyName_;
+        onChanged();
+      }
+      if (serviceAccountDelegationInfoBuilder_ == null) {
+        if (!other.serviceAccountDelegationInfo_.isEmpty()) {
+          if (serviceAccountDelegationInfo_.isEmpty()) {
+            serviceAccountDelegationInfo_ = other.serviceAccountDelegationInfo_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureServiceAccountDelegationInfoIsMutable();
+            serviceAccountDelegationInfo_.addAll(other.serviceAccountDelegationInfo_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.serviceAccountDelegationInfo_.isEmpty()) {
+          if (serviceAccountDelegationInfoBuilder_.isEmpty()) {
+            serviceAccountDelegationInfoBuilder_.dispose();
+            serviceAccountDelegationInfoBuilder_ = null;
+            serviceAccountDelegationInfo_ = other.serviceAccountDelegationInfo_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            serviceAccountDelegationInfoBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getServiceAccountDelegationInfoFieldBuilder()
+                    : null;
+          } else {
+            serviceAccountDelegationInfoBuilder_.addAllMessages(
+                other.serviceAccountDelegationInfo_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -866,12 +1227,20 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object principalEmail_ = "";
     /**
      *
      *
      * <pre>
      * Associated email, such as "foo&#64;google.com".
+     * The email address of the authenticated user (or service account on behalf
+     * of third party principal) making the request. For third party identity
+     * callers, the `principal_subject` field is populated instead of this field.
+     * For privacy reasons, the principal email address is sometimes redacted.
+     * For more information, see [Caller identities in audit
+     * logs](https://cloud.google.com/logging/docs/audit#user-id).
      * </pre>
      *
      * <code>string principal_email = 1;</code>
@@ -894,6 +1263,12 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Associated email, such as "foo&#64;google.com".
+     * The email address of the authenticated user (or service account on behalf
+     * of third party principal) making the request. For third party identity
+     * callers, the `principal_subject` field is populated instead of this field.
+     * For privacy reasons, the principal email address is sometimes redacted.
+     * For more information, see [Caller identities in audit
+     * logs](https://cloud.google.com/logging/docs/audit#user-id).
      * </pre>
      *
      * <code>string principal_email = 1;</code>
@@ -916,6 +1291,12 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Associated email, such as "foo&#64;google.com".
+     * The email address of the authenticated user (or service account on behalf
+     * of third party principal) making the request. For third party identity
+     * callers, the `principal_subject` field is populated instead of this field.
+     * For privacy reasons, the principal email address is sometimes redacted.
+     * For more information, see [Caller identities in audit
+     * logs](https://cloud.google.com/logging/docs/audit#user-id).
      * </pre>
      *
      * <code>string principal_email = 1;</code>
@@ -937,6 +1318,12 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Associated email, such as "foo&#64;google.com".
+     * The email address of the authenticated user (or service account on behalf
+     * of third party principal) making the request. For third party identity
+     * callers, the `principal_subject` field is populated instead of this field.
+     * For privacy reasons, the principal email address is sometimes redacted.
+     * For more information, see [Caller identities in audit
+     * logs](https://cloud.google.com/logging/docs/audit#user-id).
      * </pre>
      *
      * <code>string principal_email = 1;</code>
@@ -954,6 +1341,12 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Associated email, such as "foo&#64;google.com".
+     * The email address of the authenticated user (or service account on behalf
+     * of third party principal) making the request. For third party identity
+     * callers, the `principal_subject` field is populated instead of this field.
+     * For privacy reasons, the principal email address is sometimes redacted.
+     * For more information, see [Caller identities in audit
+     * logs](https://cloud.google.com/logging/docs/audit#user-id).
      * </pre>
      *
      * <code>string principal_email = 1;</code>
@@ -1590,6 +1983,745 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       methodName_ = value;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object principalSubject_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A string representing the principal_subject associated with the identity.
+     * As compared to `principal_email`, supports principals that aren't
+     * associated with email addresses, such as third party principals. For most
+     * identities, the format will be `principal://iam.googleapis.com/{identity
+     * pool name}/subjects/{subject}` except for some GKE identities
+     * (GKE_WORKLOAD, FREEFORM, GKE_HUB_WORKLOAD) that are still in the legacy
+     * format `serviceAccount:{identity pool name}[{subject}]`
+     * </pre>
+     *
+     * <code>string principal_subject = 7;</code>
+     *
+     * @return The principalSubject.
+     */
+    public java.lang.String getPrincipalSubject() {
+      java.lang.Object ref = principalSubject_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        principalSubject_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A string representing the principal_subject associated with the identity.
+     * As compared to `principal_email`, supports principals that aren't
+     * associated with email addresses, such as third party principals. For most
+     * identities, the format will be `principal://iam.googleapis.com/{identity
+     * pool name}/subjects/{subject}` except for some GKE identities
+     * (GKE_WORKLOAD, FREEFORM, GKE_HUB_WORKLOAD) that are still in the legacy
+     * format `serviceAccount:{identity pool name}[{subject}]`
+     * </pre>
+     *
+     * <code>string principal_subject = 7;</code>
+     *
+     * @return The bytes for principalSubject.
+     */
+    public com.google.protobuf.ByteString getPrincipalSubjectBytes() {
+      java.lang.Object ref = principalSubject_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        principalSubject_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A string representing the principal_subject associated with the identity.
+     * As compared to `principal_email`, supports principals that aren't
+     * associated with email addresses, such as third party principals. For most
+     * identities, the format will be `principal://iam.googleapis.com/{identity
+     * pool name}/subjects/{subject}` except for some GKE identities
+     * (GKE_WORKLOAD, FREEFORM, GKE_HUB_WORKLOAD) that are still in the legacy
+     * format `serviceAccount:{identity pool name}[{subject}]`
+     * </pre>
+     *
+     * <code>string principal_subject = 7;</code>
+     *
+     * @param value The principalSubject to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrincipalSubject(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      principalSubject_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A string representing the principal_subject associated with the identity.
+     * As compared to `principal_email`, supports principals that aren't
+     * associated with email addresses, such as third party principals. For most
+     * identities, the format will be `principal://iam.googleapis.com/{identity
+     * pool name}/subjects/{subject}` except for some GKE identities
+     * (GKE_WORKLOAD, FREEFORM, GKE_HUB_WORKLOAD) that are still in the legacy
+     * format `serviceAccount:{identity pool name}[{subject}]`
+     * </pre>
+     *
+     * <code>string principal_subject = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPrincipalSubject() {
+
+      principalSubject_ = getDefaultInstance().getPrincipalSubject();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A string representing the principal_subject associated with the identity.
+     * As compared to `principal_email`, supports principals that aren't
+     * associated with email addresses, such as third party principals. For most
+     * identities, the format will be `principal://iam.googleapis.com/{identity
+     * pool name}/subjects/{subject}` except for some GKE identities
+     * (GKE_WORKLOAD, FREEFORM, GKE_HUB_WORKLOAD) that are still in the legacy
+     * format `serviceAccount:{identity pool name}[{subject}]`
+     * </pre>
+     *
+     * <code>string principal_subject = 7;</code>
+     *
+     * @param value The bytes for principalSubject to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrincipalSubjectBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      principalSubject_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object serviceAccountKeyName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name of the service account key used to create or exchange
+     * credentials for authenticating the service account making the request.
+     * This is a scheme-less URI full resource name. For example:
+     * "//iam.googleapis.com/projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}"
+     * </pre>
+     *
+     * <code>string service_account_key_name = 8;</code>
+     *
+     * @return The serviceAccountKeyName.
+     */
+    public java.lang.String getServiceAccountKeyName() {
+      java.lang.Object ref = serviceAccountKeyName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccountKeyName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the service account key used to create or exchange
+     * credentials for authenticating the service account making the request.
+     * This is a scheme-less URI full resource name. For example:
+     * "//iam.googleapis.com/projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}"
+     * </pre>
+     *
+     * <code>string service_account_key_name = 8;</code>
+     *
+     * @return The bytes for serviceAccountKeyName.
+     */
+    public com.google.protobuf.ByteString getServiceAccountKeyNameBytes() {
+      java.lang.Object ref = serviceAccountKeyName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAccountKeyName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the service account key used to create or exchange
+     * credentials for authenticating the service account making the request.
+     * This is a scheme-less URI full resource name. For example:
+     * "//iam.googleapis.com/projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}"
+     * </pre>
+     *
+     * <code>string service_account_key_name = 8;</code>
+     *
+     * @param value The serviceAccountKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccountKeyName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      serviceAccountKeyName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the service account key used to create or exchange
+     * credentials for authenticating the service account making the request.
+     * This is a scheme-less URI full resource name. For example:
+     * "//iam.googleapis.com/projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}"
+     * </pre>
+     *
+     * <code>string service_account_key_name = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceAccountKeyName() {
+
+      serviceAccountKeyName_ = getDefaultInstance().getServiceAccountKeyName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the service account key used to create or exchange
+     * credentials for authenticating the service account making the request.
+     * This is a scheme-less URI full resource name. For example:
+     * "//iam.googleapis.com/projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}"
+     * </pre>
+     *
+     * <code>string service_account_key_name = 8;</code>
+     *
+     * @param value The bytes for serviceAccountKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccountKeyNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      serviceAccountKeyName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo>
+        serviceAccountDelegationInfo_ = java.util.Collections.emptyList();
+
+    private void ensureServiceAccountDelegationInfoIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        serviceAccountDelegationInfo_ =
+            new java.util.ArrayList<
+                com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo>(
+                serviceAccountDelegationInfo_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo,
+            com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo.Builder,
+            com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfoOrBuilder>
+        serviceAccountDelegationInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Identity delegation history of an authenticated service account that makes
+     * the request. It contains information on the real authorities that try to
+     * access GCP resources by delegating on a service account. When multiple
+     * authorities are present, they are guaranteed to be sorted based on the
+     * original ordering of the identity delegation events.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v1.ServiceAccountDelegationInfo service_account_delegation_info = 9;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo>
+        getServiceAccountDelegationInfoList() {
+      if (serviceAccountDelegationInfoBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(serviceAccountDelegationInfo_);
+      } else {
+        return serviceAccountDelegationInfoBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identity delegation history of an authenticated service account that makes
+     * the request. It contains information on the real authorities that try to
+     * access GCP resources by delegating on a service account. When multiple
+     * authorities are present, they are guaranteed to be sorted based on the
+     * original ordering of the identity delegation events.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v1.ServiceAccountDelegationInfo service_account_delegation_info = 9;
+     * </code>
+     */
+    public int getServiceAccountDelegationInfoCount() {
+      if (serviceAccountDelegationInfoBuilder_ == null) {
+        return serviceAccountDelegationInfo_.size();
+      } else {
+        return serviceAccountDelegationInfoBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identity delegation history of an authenticated service account that makes
+     * the request. It contains information on the real authorities that try to
+     * access GCP resources by delegating on a service account. When multiple
+     * authorities are present, they are guaranteed to be sorted based on the
+     * original ordering of the identity delegation events.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v1.ServiceAccountDelegationInfo service_account_delegation_info = 9;
+     * </code>
+     */
+    public com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo
+        getServiceAccountDelegationInfo(int index) {
+      if (serviceAccountDelegationInfoBuilder_ == null) {
+        return serviceAccountDelegationInfo_.get(index);
+      } else {
+        return serviceAccountDelegationInfoBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identity delegation history of an authenticated service account that makes
+     * the request. It contains information on the real authorities that try to
+     * access GCP resources by delegating on a service account. When multiple
+     * authorities are present, they are guaranteed to be sorted based on the
+     * original ordering of the identity delegation events.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v1.ServiceAccountDelegationInfo service_account_delegation_info = 9;
+     * </code>
+     */
+    public Builder setServiceAccountDelegationInfo(
+        int index, com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo value) {
+      if (serviceAccountDelegationInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureServiceAccountDelegationInfoIsMutable();
+        serviceAccountDelegationInfo_.set(index, value);
+        onChanged();
+      } else {
+        serviceAccountDelegationInfoBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identity delegation history of an authenticated service account that makes
+     * the request. It contains information on the real authorities that try to
+     * access GCP resources by delegating on a service account. When multiple
+     * authorities are present, they are guaranteed to be sorted based on the
+     * original ordering of the identity delegation events.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v1.ServiceAccountDelegationInfo service_account_delegation_info = 9;
+     * </code>
+     */
+    public Builder setServiceAccountDelegationInfo(
+        int index,
+        com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo.Builder builderForValue) {
+      if (serviceAccountDelegationInfoBuilder_ == null) {
+        ensureServiceAccountDelegationInfoIsMutable();
+        serviceAccountDelegationInfo_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        serviceAccountDelegationInfoBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identity delegation history of an authenticated service account that makes
+     * the request. It contains information on the real authorities that try to
+     * access GCP resources by delegating on a service account. When multiple
+     * authorities are present, they are guaranteed to be sorted based on the
+     * original ordering of the identity delegation events.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v1.ServiceAccountDelegationInfo service_account_delegation_info = 9;
+     * </code>
+     */
+    public Builder addServiceAccountDelegationInfo(
+        com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo value) {
+      if (serviceAccountDelegationInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureServiceAccountDelegationInfoIsMutable();
+        serviceAccountDelegationInfo_.add(value);
+        onChanged();
+      } else {
+        serviceAccountDelegationInfoBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identity delegation history of an authenticated service account that makes
+     * the request. It contains information on the real authorities that try to
+     * access GCP resources by delegating on a service account. When multiple
+     * authorities are present, they are guaranteed to be sorted based on the
+     * original ordering of the identity delegation events.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v1.ServiceAccountDelegationInfo service_account_delegation_info = 9;
+     * </code>
+     */
+    public Builder addServiceAccountDelegationInfo(
+        int index, com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo value) {
+      if (serviceAccountDelegationInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureServiceAccountDelegationInfoIsMutable();
+        serviceAccountDelegationInfo_.add(index, value);
+        onChanged();
+      } else {
+        serviceAccountDelegationInfoBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identity delegation history of an authenticated service account that makes
+     * the request. It contains information on the real authorities that try to
+     * access GCP resources by delegating on a service account. When multiple
+     * authorities are present, they are guaranteed to be sorted based on the
+     * original ordering of the identity delegation events.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v1.ServiceAccountDelegationInfo service_account_delegation_info = 9;
+     * </code>
+     */
+    public Builder addServiceAccountDelegationInfo(
+        com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo.Builder builderForValue) {
+      if (serviceAccountDelegationInfoBuilder_ == null) {
+        ensureServiceAccountDelegationInfoIsMutable();
+        serviceAccountDelegationInfo_.add(builderForValue.build());
+        onChanged();
+      } else {
+        serviceAccountDelegationInfoBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identity delegation history of an authenticated service account that makes
+     * the request. It contains information on the real authorities that try to
+     * access GCP resources by delegating on a service account. When multiple
+     * authorities are present, they are guaranteed to be sorted based on the
+     * original ordering of the identity delegation events.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v1.ServiceAccountDelegationInfo service_account_delegation_info = 9;
+     * </code>
+     */
+    public Builder addServiceAccountDelegationInfo(
+        int index,
+        com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo.Builder builderForValue) {
+      if (serviceAccountDelegationInfoBuilder_ == null) {
+        ensureServiceAccountDelegationInfoIsMutable();
+        serviceAccountDelegationInfo_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        serviceAccountDelegationInfoBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identity delegation history of an authenticated service account that makes
+     * the request. It contains information on the real authorities that try to
+     * access GCP resources by delegating on a service account. When multiple
+     * authorities are present, they are guaranteed to be sorted based on the
+     * original ordering of the identity delegation events.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v1.ServiceAccountDelegationInfo service_account_delegation_info = 9;
+     * </code>
+     */
+    public Builder addAllServiceAccountDelegationInfo(
+        java.lang.Iterable<
+                ? extends com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo>
+            values) {
+      if (serviceAccountDelegationInfoBuilder_ == null) {
+        ensureServiceAccountDelegationInfoIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, serviceAccountDelegationInfo_);
+        onChanged();
+      } else {
+        serviceAccountDelegationInfoBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identity delegation history of an authenticated service account that makes
+     * the request. It contains information on the real authorities that try to
+     * access GCP resources by delegating on a service account. When multiple
+     * authorities are present, they are guaranteed to be sorted based on the
+     * original ordering of the identity delegation events.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v1.ServiceAccountDelegationInfo service_account_delegation_info = 9;
+     * </code>
+     */
+    public Builder clearServiceAccountDelegationInfo() {
+      if (serviceAccountDelegationInfoBuilder_ == null) {
+        serviceAccountDelegationInfo_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        serviceAccountDelegationInfoBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identity delegation history of an authenticated service account that makes
+     * the request. It contains information on the real authorities that try to
+     * access GCP resources by delegating on a service account. When multiple
+     * authorities are present, they are guaranteed to be sorted based on the
+     * original ordering of the identity delegation events.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v1.ServiceAccountDelegationInfo service_account_delegation_info = 9;
+     * </code>
+     */
+    public Builder removeServiceAccountDelegationInfo(int index) {
+      if (serviceAccountDelegationInfoBuilder_ == null) {
+        ensureServiceAccountDelegationInfoIsMutable();
+        serviceAccountDelegationInfo_.remove(index);
+        onChanged();
+      } else {
+        serviceAccountDelegationInfoBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identity delegation history of an authenticated service account that makes
+     * the request. It contains information on the real authorities that try to
+     * access GCP resources by delegating on a service account. When multiple
+     * authorities are present, they are guaranteed to be sorted based on the
+     * original ordering of the identity delegation events.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v1.ServiceAccountDelegationInfo service_account_delegation_info = 9;
+     * </code>
+     */
+    public com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo.Builder
+        getServiceAccountDelegationInfoBuilder(int index) {
+      return getServiceAccountDelegationInfoFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identity delegation history of an authenticated service account that makes
+     * the request. It contains information on the real authorities that try to
+     * access GCP resources by delegating on a service account. When multiple
+     * authorities are present, they are guaranteed to be sorted based on the
+     * original ordering of the identity delegation events.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v1.ServiceAccountDelegationInfo service_account_delegation_info = 9;
+     * </code>
+     */
+    public com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfoOrBuilder
+        getServiceAccountDelegationInfoOrBuilder(int index) {
+      if (serviceAccountDelegationInfoBuilder_ == null) {
+        return serviceAccountDelegationInfo_.get(index);
+      } else {
+        return serviceAccountDelegationInfoBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identity delegation history of an authenticated service account that makes
+     * the request. It contains information on the real authorities that try to
+     * access GCP resources by delegating on a service account. When multiple
+     * authorities are present, they are guaranteed to be sorted based on the
+     * original ordering of the identity delegation events.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v1.ServiceAccountDelegationInfo service_account_delegation_info = 9;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfoOrBuilder>
+        getServiceAccountDelegationInfoOrBuilderList() {
+      if (serviceAccountDelegationInfoBuilder_ != null) {
+        return serviceAccountDelegationInfoBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(serviceAccountDelegationInfo_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identity delegation history of an authenticated service account that makes
+     * the request. It contains information on the real authorities that try to
+     * access GCP resources by delegating on a service account. When multiple
+     * authorities are present, they are guaranteed to be sorted based on the
+     * original ordering of the identity delegation events.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v1.ServiceAccountDelegationInfo service_account_delegation_info = 9;
+     * </code>
+     */
+    public com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo.Builder
+        addServiceAccountDelegationInfoBuilder() {
+      return getServiceAccountDelegationInfoFieldBuilder()
+          .addBuilder(
+              com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identity delegation history of an authenticated service account that makes
+     * the request. It contains information on the real authorities that try to
+     * access GCP resources by delegating on a service account. When multiple
+     * authorities are present, they are guaranteed to be sorted based on the
+     * original ordering of the identity delegation events.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v1.ServiceAccountDelegationInfo service_account_delegation_info = 9;
+     * </code>
+     */
+    public com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo.Builder
+        addServiceAccountDelegationInfoBuilder(int index) {
+      return getServiceAccountDelegationInfoFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Identity delegation history of an authenticated service account that makes
+     * the request. It contains information on the real authorities that try to
+     * access GCP resources by delegating on a service account. When multiple
+     * authorities are present, they are guaranteed to be sorted based on the
+     * original ordering of the identity delegation events.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.securitycenter.v1.ServiceAccountDelegationInfo service_account_delegation_info = 9;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo.Builder>
+        getServiceAccountDelegationInfoBuilderList() {
+      return getServiceAccountDelegationInfoFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo,
+            com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo.Builder,
+            com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfoOrBuilder>
+        getServiceAccountDelegationInfoFieldBuilder() {
+      if (serviceAccountDelegationInfoBuilder_ == null) {
+        serviceAccountDelegationInfoBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo,
+                com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo.Builder,
+                com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfoOrBuilder>(
+                serviceAccountDelegationInfo_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        serviceAccountDelegationInfo_ = null;
+      }
+      return serviceAccountDelegationInfoBuilder_;
     }
 
     @java.lang.Override
