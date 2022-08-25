@@ -20,6 +20,7 @@ package com.google.cloud.accessapproval.v1.samples;
 import com.google.cloud.accessapproval.v1.AccessApprovalAdminClient;
 import com.google.cloud.accessapproval.v1.AccessApprovalSettingsName;
 import com.google.cloud.accessapproval.v1.DeleteAccessApprovalSettingsMessage;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteAccessApprovalSettings {
 
