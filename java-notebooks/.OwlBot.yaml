@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker:
-  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
 - "/samples/snippets/generated"
@@ -26,21 +24,23 @@ deep-preserve-regex:
 
 deep-copy-regex:
 - source: "/google/cloud/notebooks/v1/.*-java/proto-google-cloud-notebooks-v1-java/src/main/java/com/google/cloud/notebooks/v1/"
-  dest: "/owl-bot-staging/v1/proto-google-cloud-notebooks-v1/src/main/java/com/google/cloud/notebooks/v1/"
+  dest: "/owl-bot-staging/java-notebooks/v1/proto-google-cloud-notebooks-v1/src/main/java/com/google/cloud/notebooks/v1/"
 
 - source: "/google/cloud/notebooks/v1/.*-java/proto-google-cloud-notebooks-v1-java/src/main/proto/google/cloud/notebooks/v1/"
-  dest: "/owl-bot-staging/v1/proto-google-cloud-notebooks-v1/src/main/proto/google/cloud/notebooks/v1/"
+  dest: "/owl-bot-staging/java-notebooks/v1/proto-google-cloud-notebooks-v1/src/main/proto/google/cloud/notebooks/v1/"
 
 - source: "/google/cloud/notebooks/v1beta1/.*-java/proto-google-cloud-notebooks-v1beta1-java/src"
-  dest: "/owl-bot-staging/v1beta1/proto-google-cloud-notebooks-v1beta1/src"
+  dest: "/owl-bot-staging/java-notebooks/v1beta1/proto-google-cloud-notebooks-v1beta1/src"
 
 - source: "/google/cloud/notebooks/v1/.*-java/grpc-google-cloud-notebooks-v1-java/src/main/java/com/google/cloud/notebooks/v1/"
-  dest: "/owl-bot-staging/v1/grpc-google-cloud-notebooks-v1/src/main/java/com/google/cloud/notebooks/v1/"
+  dest: "/owl-bot-staging/java-notebooks/v1/grpc-google-cloud-notebooks-v1/src/main/java/com/google/cloud/notebooks/v1/"
 
 - source: "/google/cloud/notebooks/v1beta1/.*-java/grpc-google-cloud-notebooks-v1beta1-java/src"
-  dest: "/owl-bot-staging/v1beta1/grpc-google-cloud-notebooks-v1beta1/src"
+  dest: "/owl-bot-staging/java-notebooks/v1beta1/grpc-google-cloud-notebooks-v1beta1/src"
 
 - source: "/google/cloud/notebooks/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-notebooks/src"
+  dest: "/owl-bot-staging/java-notebooks/$1/google-cloud-notebooks/src"
 - source: "/google/cloud/notebooks/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/$1/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-notebooks/$1/samples/snippets/generated"
+
+api-name: notebooks
