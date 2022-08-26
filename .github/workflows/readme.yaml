@@ -29,7 +29,7 @@ jobs:
         architecture: 'x64'
     - run: python3 -m pip install requests
     - run: python3 generate-readme.py
-    - uses: googleapis/code-suggester@v3
+    - uses: googleapis/code-suggester@v4
       env:
         ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
