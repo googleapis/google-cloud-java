@@ -16,8 +16,7 @@
 on:
   push:
     branches:
-    # TODO: Update to main
-    - monorepo_script_output
+    - main
   pull_request:
 name: ci
 jobs:
