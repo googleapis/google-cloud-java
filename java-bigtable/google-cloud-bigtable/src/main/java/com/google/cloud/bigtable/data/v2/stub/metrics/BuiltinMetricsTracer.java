@@ -242,7 +242,7 @@ class BuiltinMetricsTracer extends BigtableTracer {
       recorder.putFirstResponseLatencies(firstResponsePerOpTimer.elapsed(TimeUnit.MILLISECONDS));
     }
 
-    recorder.record(Util.extractStatus(status), tableId, zone, cluster);
+    recorder.recordOperation(Util.extractStatus(status), tableId, zone, cluster);
   }
 
   private void recordAttemptCompletion(@Nullable Throwable status) {
@@ -257,6 +257,6 @@ class BuiltinMetricsTracer extends BigtableTracer {
       }
     }
     recorder.putAttemptLatencies(attemptTimer.elapsed(TimeUnit.MILLISECONDS));
-    recorder.record(Util.extractStatus(status), tableId, zone, cluster);
+    recorder.recordAttempt(Util.extractStatus(status), tableId, zone, cluster);
   }
 }

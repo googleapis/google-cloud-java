@@ -331,18 +331,16 @@ public class BuiltinMetricsTracerTest {
     stub.mutateRowCallable()
         .call(RowMutation.create(TABLE_ID, "random-row").setCell("cf", "q", "value"));
 
-    // record() will get called 4 times, 3 times for attempts and 1 for recording operation level
-    // metrics. Also set a timeout to reduce flakiness of this test. BasicRetryingFuture will set
+    // Set a timeout to reduce flakiness of this test. BasicRetryingFuture will set
     // attempt succeeded and set the response which will call complete() in AbstractFuture which
     // calls releaseWaiters(). onOperationComplete() is called in TracerFinisher which will be
     // called after the mutateRow call is returned. So there's a race between when the call returns
     // and when the record() is called in onOperationCompletion().
-    verify(statsRecorderWrapper, timeout(50).times(fakeService.getAttemptCounter().get() + 1))
-        .record(status.capture(), tableId.capture(), zone.capture(), cluster.capture());
-    assertThat(zone.getAllValues()).containsExactly("global", "global", ZONE, ZONE);
-    assertThat(cluster.getAllValues())
-        .containsExactly("unspecified", "unspecified", CLUSTER, CLUSTER);
-    assertThat(status.getAllValues()).containsExactly("UNAVAILABLE", "UNAVAILABLE", "OK", "OK");
+    verify(statsRecorderWrapper, timeout(50).times(fakeService.getAttemptCounter().get()))
+        .recordAttempt(status.capture(), tableId.capture(), zone.capture(), cluster.capture());
+    assertThat(zone.getAllValues()).containsExactly("global", "global", ZONE);
+    assertThat(cluster.getAllValues()).containsExactly("unspecified", "unspecified", CLUSTER);
+    assertThat(status.getAllValues()).containsExactly("UNAVAILABLE", "UNAVAILABLE", "OK");
   }
 
   private static class FakeService extends BigtableGrpc.BigtableImplBase {

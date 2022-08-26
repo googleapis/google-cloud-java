@@ -93,7 +93,8 @@ public class StatsRecorderWrapperTest {
     recorderWrapper.putFirstResponseLatencies(firstResponseLatency);
     recorderWrapper.putBatchRequestThrottled(throttlingLatency);
 
-    recorderWrapper.record("OK", TABLE_ID, ZONE, CLUSTER);
+    recorderWrapper.recordOperation("OK", TABLE_ID, ZONE, CLUSTER);
+    recorderWrapper.recordAttempt("OK", TABLE_ID, ZONE, CLUSTER);
 
     Thread.sleep(100);
 
@@ -291,7 +292,8 @@ public class StatsRecorderWrapperTest {
     recorderWrapper.putFirstResponseLatencies(firstResponseLatency);
     recorderWrapper.putBatchRequestThrottled(throttlingLatency);
 
-    recorderWrapper.record("UNAVAILABLE", TABLE_ID, ZONE, CLUSTER);
+    recorderWrapper.recordOperation("UNAVAILABLE", TABLE_ID, ZONE, CLUSTER);
+    recorderWrapper.recordAttempt("UNAVAILABLE", TABLE_ID, ZONE, CLUSTER);
 
     Thread.sleep(100);
 

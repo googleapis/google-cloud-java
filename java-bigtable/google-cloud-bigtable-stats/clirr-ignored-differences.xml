@@ -7,4 +7,10 @@
         <method>*StatsRecorderWrapper*</method>
         <to>*StatsRecorder*</to>
     </difference>
+    <!-- Internal API is updated -->
+    <difference>
+        <differenceType>7002</differenceType>
+        <className>com/google/cloud/bigtable/stats/StatsRecorderWrapper</className>
+        <method>void record(java.lang.String, java.lang.String, java.lang.String, java.lang.String)</method>
+    </difference>
 </differences>

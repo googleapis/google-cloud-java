@@ -40,7 +40,8 @@ public class StatsRecorderWrapper {
   private final SpanName spanName;
   private final Map<String, String> statsAttributes;
 
-  private MeasureMap measureMap;
+  private MeasureMap attemptMeasureMap;
+  private MeasureMap operationMeasureMap;
 
   public StatsRecorderWrapper(
       OperationType operationType,
@@ -54,10 +55,11 @@ public class StatsRecorderWrapper {
     this.parentContext = tagger.getCurrentTagContext();
     this.statsAttributes = statsAttributes;
 
-    this.measureMap = statsRecorder.newMeasureMap();
+    this.attemptMeasureMap = statsRecorder.newMeasureMap();
+    this.operationMeasureMap = statsRecorder.newMeasureMap();
   }
 
-  public void record(String status, String tableId, String zone, String cluster) {
+  public void recordOperation(String status, String tableId, String zone, String cluster) {
     TagContextBuilder tagCtx =
         newTagContextBuilder(tableId, zone, cluster)
             .putLocal(BuiltinMeasureConstants.STATUS, TagValue.create(status));
@@ -66,39 +68,55 @@ public class StatsRecorderWrapper {
     tagCtx.putLocal(
         BuiltinMeasureConstants.STREAMING, TagValue.create(Boolean.toString(isStreaming)));
 
-    measureMap.record(tagCtx.build());
+    operationMeasureMap.record(tagCtx.build());
+    // Reinitialize a new map
+    operationMeasureMap = statsRecorder.newMeasureMap();
+  }
+
+  public void recordAttempt(String status, String tableId, String zone, String cluster) {
+    TagContextBuilder tagCtx =
+        newTagContextBuilder(tableId, zone, cluster)
+            .putLocal(BuiltinMeasureConstants.STATUS, TagValue.create(status));
+
+    boolean isStreaming = operationType == OperationType.ServerStreaming;
+    tagCtx.putLocal(
+        BuiltinMeasureConstants.STREAMING, TagValue.create(Boolean.toString(isStreaming)));
+
+    attemptMeasureMap.record(tagCtx.build());
+    // Reinitialize a new map
+    attemptMeasureMap = statsRecorder.newMeasureMap();
   }
 
   public void putOperationLatencies(long operationLatency) {
-    measureMap.put(BuiltinMeasureConstants.OPERATION_LATENCIES, operationLatency);
+    operationMeasureMap.put(BuiltinMeasureConstants.OPERATION_LATENCIES, operationLatency);
   }
 
   public void putAttemptLatencies(long attemptLatency) {
-    measureMap.put(BuiltinMeasureConstants.ATTEMPT_LATENCIES, attemptLatency);
+    attemptMeasureMap.put(BuiltinMeasureConstants.ATTEMPT_LATENCIES, attemptLatency);
   }
 
   public void putRetryCount(int attemptCount) {
-    measureMap.put(BuiltinMeasureConstants.RETRY_COUNT, attemptCount);
+    operationMeasureMap.put(BuiltinMeasureConstants.RETRY_COUNT, attemptCount);
   }
 
   public void putApplicationLatencies(long applicationLatency) {
-    measureMap.put(BuiltinMeasureConstants.APPLICATION_LATENCIES, applicationLatency);
+    operationMeasureMap.put(BuiltinMeasureConstants.APPLICATION_LATENCIES, applicationLatency);
   }
 
   public void putFirstResponseLatencies(long firstResponseLatency) {
-    measureMap.put(BuiltinMeasureConstants.FIRST_RESPONSE_LATENCIES, firstResponseLatency);
+    operationMeasureMap.put(BuiltinMeasureConstants.FIRST_RESPONSE_LATENCIES, firstResponseLatency);
   }
 
   public void putGfeLatencies(long serverLatency) {
-    measureMap.put(BuiltinMeasureConstants.SERVER_LATENCIES, serverLatency);
+    attemptMeasureMap.put(BuiltinMeasureConstants.SERVER_LATENCIES, serverLatency);
   }
 
   public void putGfeMissingHeaders(long connectivityErrors) {
-    measureMap.put(BuiltinMeasureConstants.CONNECTIVITY_ERROR_COUNT, connectivityErrors);
+    attemptMeasureMap.put(BuiltinMeasureConstants.CONNECTIVITY_ERROR_COUNT, connectivityErrors);
   }
 
   public void putBatchRequestThrottled(long throttledTimeMs) {
-    measureMap.put(BuiltinMeasureConstants.THROTTLING_LATENCIES, throttledTimeMs);
+    operationMeasureMap.put(BuiltinMeasureConstants.THROTTLING_LATENCIES, throttledTimeMs);
   }
 
   private TagContextBuilder newTagContextBuilder(String tableId, String zone, String cluster) {
