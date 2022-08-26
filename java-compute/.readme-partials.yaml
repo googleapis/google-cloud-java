@@ -1,0 +1,63 @@
+custom_content: |
+  ### Compute alpha to beta migration
+  
+  Java compute library is GA from version 1.7.0 and backwards incompatible with 0.x.x. Also it is incompatible with 1.5.x-alpha and prior in a following way: 
+  - Everything except polling methods which used to return `Operation` now returns `OperationFuture`. 
+  - Library automatically polls Operation status.
+  - `Operation op = client.myMethod(args)` should be replaced with `OperationFuture<Operation, Operation> opFuture = client.myMethodAsync(args);` 
+  - Polling is now done automatically, manual polling is no longer required. Calling `opFuture.get()` will wait for automatic polling to complete. It will return the result of the long running operation once the operation is completed on the server side or throw an exception if an error occurs during polling. 
+  - To check for intermediate status on the future use either `opFuture.peekMetadata()` (non-blocking) or `opFuture.getMetadata()` (blocking) 
+  - If you wish to stop automatic polling call `opFuture.cancel()` - it will cancel the future on the client side but it will not affect the execution of the operation on the server side in any way (server will keep working on the operation). 
+  - The calls still may be done without relying on automatic polling and/or OperationFuture. To do so, use `client.myMethodCallable(MyMethodRequest).call()` semantics instead. Note this semantics does not have flattened method declarations and the request message must be instantiated explicitly by the users code.
+  
+  ### Example
+  The following example creates a GCE address, then lists all the available addresses in the region and in the whole project and eventually deletes the newly created address.
+
+  ```java
+  import com.google.cloud.compute.v1.Address;
+  import com.google.cloud.compute.v1.AddressesClient;
+  import com.google.cloud.compute.v1.AddressesScopedList;
+  import com.google.cloud.compute.v1.Operation;
+  import com.google.protobuf.util.JsonFormat;
+  import java.io.IOException;
+  import java.util.Map;
+
+  public class ComputeExample {
+
+    public static void main(String[] args) throws IOException, InterruptedException {
+      final String project = "PROJECT_NAME";
+      final String region = "REGION";
+      final String address = "test-address-21";
+
+      AddressesClient addressesClient = AddressesClient.create();
+
+      // AddressClient#insert()
+      System.out.println("\n===============\nAddressClient#insert()\n===============");
+      OperationFuture<Operation,Operation> insertResponse =
+          addressesClient.insertAsync(project, region, Address.newBuilder().setName(address).build());
+      Operation insertResponseOperation = insertResponse.get();
+      System.out.println(JsonFormat.printer().print(insertResponse) + "\n");
+
+      // AddressClient#list()
+      System.out.println("\n===============\nAddressClient#list()\n===============");
+      for (Address addr : addressesClient.list(project, region).iterateAll()) {
+        System.out.println(JsonFormat.printer().print(addr));
+      }
+
+      // AddressClient#aggregatedList()
+      System.out.println("\n===============\nAddressClient#aggregatedList()\n===============");
+      for (Map.Entry<String, AddressesScopedList> addr :
+          addressesClient.aggregatedList(project).iterateAll()) {
+        System.out.println("KEY: " + addr.getKey());
+        System.out.println(JsonFormat.printer().print(addr.getValue()));
+      }
+
+      // AddressClient#delete()
+      System.out.println("\n===============\nAddressClient#delete()\n===============");
+      OperationFuture<Operation,Operation> deleteResponse = addressesClient.deleteAsync(project, region, address);
+      Operation deleteResponseOperation = deleteResponse.get();
+      System.out.println(JsonFormat.printer().print(deleteResponse) + "\n");
+    }
+  }
+
+  ```
