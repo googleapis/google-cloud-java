@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-optimization-v1.1.7...google-cloud-optimization-v1.2.0) (2022-08-26)
+
+
+### Features
+
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+
 ## [1.1.7](https://github.com/googleapis/java-optimization/compare/v1.1.6...v1.1.7) (2022-08-06)
 
 

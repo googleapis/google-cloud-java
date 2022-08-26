@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.5](https://github.com/googleapis/google-cloud-java/compare/google-cloud-kms-v2.6.4...google-cloud-kms-v2.6.5) (2022-08-26)
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java-util to v3.21.5 ([#834](https://github.com/googleapis/google-cloud-java/issues/834)) ([94c60ab](https://github.com/googleapis/google-cloud-java/commit/94c60abf0a8e926fe11639ed552bc37fec285feb))
+
 ## [2.6.4](https://github.com/googleapis/java-kms/compare/v2.6.3...v2.6.4) (2022-08-18)
 
 
