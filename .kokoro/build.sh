@@ -241,11 +241,13 @@ case ${JOB_TYPE} in
 esac
 
 if [ "${REPORT_COVERAGE}" == "true" ]; then
-  bash ${KOKORO_GFILE_DIR}/codecov.sh
+  bash -x ${KOKORO_GFILE_DIR}/codecov.sh
 fi
 
 # fix output location of logs
-bash .kokoro/coerce_logs.sh
+if [ ! -z "${KOKORO_JOB_NAME}" ]; then
+  bash -x .kokoro/coerce_logs.sh
+fi
 
 if [[ "${ENABLE_FLAKYBOT}" == "true" ]]; then
   chmod +x ${KOKORO_GFILE_DIR}/linux_amd64/flakybot
