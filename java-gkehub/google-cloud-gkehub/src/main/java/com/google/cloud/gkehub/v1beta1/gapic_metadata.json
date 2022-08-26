@@ -1,0 +1,57 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.gkehub.v1beta1",
+  "libraryPackage": "com.google.cloud.gkehub.v1beta1",
+  "services": {
+    "GkeHubMembershipService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GkeHubMembershipServiceClient",
+          "rpcs": {
+            "CreateMembership": {
+              "methods": ["createMembershipAsync", "createMembershipAsync", "createMembershipAsync", "createMembershipOperationCallable", "createMembershipCallable"]
+            },
+            "DeleteMembership": {
+              "methods": ["deleteMembershipAsync", "deleteMembershipAsync", "deleteMembershipAsync", "deleteMembershipOperationCallable", "deleteMembershipCallable"]
+            },
+            "GenerateConnectManifest": {
+              "methods": ["generateConnectManifest", "generateConnectManifestCallable"]
+            },
+            "GenerateExclusivityManifest": {
+              "methods": ["generateExclusivityManifest", "generateExclusivityManifestCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetMembership": {
+              "methods": ["getMembership", "getMembership", "getMembership", "getMembershipCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListMemberships": {
+              "methods": ["listMemberships", "listMemberships", "listMemberships", "listMembershipsPagedCallable", "listMembershipsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateMembership": {
+              "methods": ["updateMembershipAsync", "updateMembershipAsync", "updateMembershipAsync", "updateMembershipOperationCallable", "updateMembershipCallable"]
+            },
+            "ValidateExclusivity": {
+              "methods": ["validateExclusivity", "validateExclusivityCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
