@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.4.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-contact-center-insights-v2.3.8...google-cloud-contact-center-insights-v2.4.0) (2022-08-26)
+
+
+### Features
+
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+
+
+### Documentation
+
+* Updating comments ([#345](https://github.com/googleapis/google-cloud-java/issues/345)) ([ebadaa5](https://github.com/googleapis/google-cloud-java/commit/ebadaa5e44ded908d5517d12f52e193b70be2dda))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.14.6 ([#341](https://github.com/googleapis/google-cloud-java/issues/341)) ([4456bd4](https://github.com/googleapis/google-cloud-java/commit/4456bd42500b1da5d427702c187f8e71140acd94))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.14.7 ([#346](https://github.com/googleapis/google-cloud-java/issues/346)) ([5e0de9e](https://github.com/googleapis/google-cloud-java/commit/5e0de9ec21b8eb55a4622ec2f018cd4bfd79b304))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.120.12 ([#339](https://github.com/googleapis/google-cloud-java/issues/339)) ([4e329c4](https://github.com/googleapis/google-cloud-java/commit/4e329c4ee1d5072fcd2c48958a6d48576813bcdd))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.120.13 ([#347](https://github.com/googleapis/google-cloud-java/issues/347)) ([45b3540](https://github.com/googleapis/google-cloud-java/commit/45b35403b2997ef8421e9573f050537812c61cea))
+
 ## [2.3.8](https://github.com/googleapis/java-contact-center-insights/compare/v2.3.7...v2.3.8) (2022-08-09)
 
 

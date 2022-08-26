@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-dataplex-v1.1.0...google-cloud-dataplex-v1.2.0) (2022-08-26)
+
+
+### Features
+
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+
 ## [1.1.0](https://github.com/googleapis/java-dataplex/compare/v1.0.2...v1.1.0) (2022-08-09)
 
 
