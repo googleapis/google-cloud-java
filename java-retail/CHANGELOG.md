@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.5.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-retail-v2.4.0...google-cloud-retail-v2.5.0) (2022-08-26)
+
+
+### Features
+
+* add local inventories info to the Product resource ([32a384d](https://github.com/googleapis/google-cloud-java/commit/32a384dd97e448bd9d2656f9c7645095d6a70220))
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+* release AttributesConfig APIs to v2 version ([32a384d](https://github.com/googleapis/google-cloud-java/commit/32a384dd97e448bd9d2656f9c7645095d6a70220))
+* release CompletionConfig APIs to v2 version ([32a384d](https://github.com/googleapis/google-cloud-java/commit/32a384dd97e448bd9d2656f9c7645095d6a70220))
+* release Control and ServingConfig serivces to v2 version ([#522](https://github.com/googleapis/google-cloud-java/issues/522)) ([32a384d](https://github.com/googleapis/google-cloud-java/commit/32a384dd97e448bd9d2656f9c7645095d6a70220))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.14.6 ([#519](https://github.com/googleapis/google-cloud-java/issues/519)) ([dc52906](https://github.com/googleapis/google-cloud-java/commit/dc52906d3f18e9d322320c8c275e32580293a5fc))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.14.7 ([#523](https://github.com/googleapis/google-cloud-java/issues/523)) ([3ad9ecf](https://github.com/googleapis/google-cloud-java/commit/3ad9ecf4a9f8097ea986dcb73a13650a2021251e))
+
+
+### Documentation
+
+* Improved documentation for Fullfillment and Inventory API in ProductService ([32a384d](https://github.com/googleapis/google-cloud-java/commit/32a384dd97e448bd9d2656f9c7645095d6a70220))
+* minor documentation format and typo fixes ([32a384d](https://github.com/googleapis/google-cloud-java/commit/32a384dd97e448bd9d2656f9c7645095d6a70220))
+
 ## [2.4.0](https://github.com/googleapis/java-retail/compare/v2.3.0...v2.4.0) (2022-08-09)
 
 

@@ -1,5 +1,20 @@
 # Changelog
 
+## [3.1.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-recaptchaenterprise-v3.0.5...google-cloud-recaptchaenterprise-v3.1.0) (2022-08-26)
+
+
+### Features
+
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+
+
+### Dependencies
+
+* update dependency io.github.bonigarcia:webdrivermanager to v5.3.0 ([#876](https://github.com/googleapis/google-cloud-java/issues/876)) ([72ccb72](https://github.com/googleapis/google-cloud-java/commit/72ccb724306cd994b20091118692b6629c437ad6))
+* update dependency org.springframework.boot:spring-boot-starter-test to v2.7.3 ([#873](https://github.com/googleapis/google-cloud-java/issues/873)) ([26e81cd](https://github.com/googleapis/google-cloud-java/commit/26e81cd500aaaa689462c4ce3c5faf6c33637e7f))
+* update dependency org.springframework.boot:spring-boot-starter-thymeleaf to v2.7.3 ([#874](https://github.com/googleapis/google-cloud-java/issues/874)) ([97d048a](https://github.com/googleapis/google-cloud-java/commit/97d048a39b7d836f2d8bc0e58171b8bc74ba1ecd))
+* update dependency org.springframework.boot:spring-boot-starter-web to v2.7.3 ([#875](https://github.com/googleapis/google-cloud-java/issues/875)) ([282d00e](https://github.com/googleapis/google-cloud-java/commit/282d00eb1b0129ec5b8eb081c990bb7dd4ce211a))
+
 ## [3.0.5](https://github.com/googleapis/java-recaptchaenterprise/compare/v3.0.4...v3.0.5) (2022-08-04)
 
 

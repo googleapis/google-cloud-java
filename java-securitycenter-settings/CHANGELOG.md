@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-securitycenter-settings-v0.6.2...google-cloud-securitycenter-settings-v0.7.0) (2022-08-26)
+
+
+### Features
+
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+
 ## [0.6.2](https://github.com/googleapis/java-securitycenter-settings/compare/v0.6.1...v0.6.2) (2022-07-27)
 
 

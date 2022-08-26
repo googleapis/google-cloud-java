@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.10.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-securitycenter-v2.9.0...google-cloud-securitycenter-v2.10.0) (2022-08-26)
+
+
+### Features
+
+* Adding database access information, such as queries field to a finding. A database may be a sub-resource of an instance (as in the case of CloudSQL instances or Cloud Spanner instances), or the database instance itself ([#902](https://github.com/googleapis/google-cloud-java/issues/902)) ([f8ab964](https://github.com/googleapis/google-cloud-java/commit/f8ab9640a758df639859a42a75d89e53d88c078e))
+* Adding uris to indicator of compromise (IOC) field ([#900](https://github.com/googleapis/google-cloud-java/issues/900)) ([b2c7dfd](https://github.com/googleapis/google-cloud-java/commit/b2c7dfd3ec361088bf71bd5da068032dda20fc78))
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+* serviceAccountKeyName, serviceAccountDelegationInfo, and principalSubject attributes added to the existing access attribute. These new attributes provide additional context about the principals that are associated with the finding ([#905](https://github.com/googleapis/google-cloud-java/issues/905)) ([de80cec](https://github.com/googleapis/google-cloud-java/commit/de80cecfc45cdb7e5fb85c62f333d79db6c08277))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.14.7 ([#903](https://github.com/googleapis/google-cloud-java/issues/903)) ([6566bd8](https://github.com/googleapis/google-cloud-java/commit/6566bd8505ec60056ba198f4f4db08e0e11eac09))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.120.11 ([#890](https://github.com/googleapis/google-cloud-java/issues/890)) ([6cf0475](https://github.com/googleapis/google-cloud-java/commit/6cf04751c9a4f09752a1868c190df58882965291))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.120.12 ([#899](https://github.com/googleapis/google-cloud-java/issues/899)) ([9a2a51d](https://github.com/googleapis/google-cloud-java/commit/9a2a51d2b9838ec3ac67a750ace3a8d687cccc2f))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.120.13 ([#904](https://github.com/googleapis/google-cloud-java/issues/904)) ([3ef7b23](https://github.com/googleapis/google-cloud-java/commit/3ef7b23549cc770529879791f1692040f41533cd))
+
 ## [2.9.0](https://github.com/googleapis/java-securitycenter/compare/v2.8.0...v2.9.0) (2022-08-06)
 
 

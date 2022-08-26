@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.3.6](https://github.com/googleapis/google-cloud-java/compare/google-cloud-scheduler-v2.3.5...google-cloud-scheduler-v2.3.6) (2022-08-26)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.120.11 ([#798](https://github.com/googleapis/google-cloud-java/issues/798)) ([e3759a9](https://github.com/googleapis/google-cloud-java/commit/e3759a96b2d7d10eb57ec810bf4425d7bc2726a6))
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.120.12 ([#804](https://github.com/googleapis/google-cloud-java/issues/804)) ([43edff1](https://github.com/googleapis/google-cloud-java/commit/43edff1d1fecffc9dcdb689a43be189532d0e0e2))
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.120.13 ([#809](https://github.com/googleapis/google-cloud-java/issues/809)) ([1576754](https://github.com/googleapis/google-cloud-java/commit/15767547ed92f685706606b87d31f171d8229575))
+
 ## [2.3.5](https://github.com/googleapis/java-scheduler/compare/v2.3.4...v2.3.5) (2022-08-24)
 
 
