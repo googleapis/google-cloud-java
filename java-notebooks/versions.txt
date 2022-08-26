@@ -1,0 +1,8 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-notebooks:1.1.2:1.1.2
+grpc-google-cloud-notebooks-v1beta1:0.8.2:0.8.2
+grpc-google-cloud-notebooks-v1:1.1.2:1.1.2
+proto-google-cloud-notebooks-v1beta1:0.8.2:0.8.2
+proto-google-cloud-notebooks-v1:1.1.2:1.1.2
