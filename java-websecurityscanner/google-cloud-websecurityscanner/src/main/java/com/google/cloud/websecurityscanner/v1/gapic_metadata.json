@@ -1,0 +1,57 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.websecurityscanner.v1",
+  "libraryPackage": "com.google.cloud.websecurityscanner.v1",
+  "services": {
+    "WebSecurityScanner": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "WebSecurityScannerClient",
+          "rpcs": {
+            "CreateScanConfig": {
+              "methods": ["createScanConfig", "createScanConfigCallable"]
+            },
+            "DeleteScanConfig": {
+              "methods": ["deleteScanConfig", "deleteScanConfigCallable"]
+            },
+            "GetFinding": {
+              "methods": ["getFinding", "getFindingCallable"]
+            },
+            "GetScanConfig": {
+              "methods": ["getScanConfig", "getScanConfigCallable"]
+            },
+            "GetScanRun": {
+              "methods": ["getScanRun", "getScanRunCallable"]
+            },
+            "ListCrawledUrls": {
+              "methods": ["listCrawledUrls", "listCrawledUrlsPagedCallable", "listCrawledUrlsCallable"]
+            },
+            "ListFindingTypeStats": {
+              "methods": ["listFindingTypeStats", "listFindingTypeStatsCallable"]
+            },
+            "ListFindings": {
+              "methods": ["listFindings", "listFindingsPagedCallable", "listFindingsCallable"]
+            },
+            "ListScanConfigs": {
+              "methods": ["listScanConfigs", "listScanConfigsPagedCallable", "listScanConfigsCallable"]
+            },
+            "ListScanRuns": {
+              "methods": ["listScanRuns", "listScanRunsPagedCallable", "listScanRunsCallable"]
+            },
+            "StartScanRun": {
+              "methods": ["startScanRun", "startScanRunCallable"]
+            },
+            "StopScanRun": {
+              "methods": ["stopScanRun", "stopScanRunCallable"]
+            },
+            "UpdateScanConfig": {
+              "methods": ["updateScanConfig", "updateScanConfigCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
