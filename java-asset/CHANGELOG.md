@@ -1,5 +1,21 @@
 # Changelog
 
+## [3.5.1](https://github.com/googleapis/google-cloud-java/compare/google-cloud-asset-v3.5.0...google-cloud-asset-v3.5.1) (2022-08-26)
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-cloud-pubsub-v1 to v1.102.11 ([#1297](https://github.com/googleapis/google-cloud-java/issues/1297)) ([d56eedd](https://github.com/googleapis/google-cloud-java/commit/d56eeddcdc6f904bc68829138d1c2ad2da911e36))
+* update dependency com.google.api.grpc:proto-google-cloud-pubsub-v1 to v1.102.12 ([#1316](https://github.com/googleapis/google-cloud-java/issues/1316)) ([a3713fd](https://github.com/googleapis/google-cloud-java/commit/a3713fd9bb9fef5fc5d20e9efb46d569fa62e658))
+* update dependency com.google.api.grpc:proto-google-cloud-pubsub-v1 to v1.102.13 ([#1321](https://github.com/googleapis/google-cloud-java/issues/1321)) ([883b7b8](https://github.com/googleapis/google-cloud-java/commit/883b7b8a9eb10cc8cba04f75b4e2040970bf9aff))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.14.7 ([#1320](https://github.com/googleapis/google-cloud-java/issues/1320)) ([06d1a16](https://github.com/googleapis/google-cloud-java/commit/06d1a1668711dde0f5599452287f0532abf0f362))
+* update dependency com.google.cloud:google-cloud-core to v2.8.10 ([#1323](https://github.com/googleapis/google-cloud-java/issues/1323)) ([09e03b8](https://github.com/googleapis/google-cloud-java/commit/09e03b8edd47cb3369d4fa9f6017e8ed6e880b50))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.120.11 ([#1298](https://github.com/googleapis/google-cloud-java/issues/1298)) ([172b34b](https://github.com/googleapis/google-cloud-java/commit/172b34b970a415cebb7f79b7ba187222e9e7d01f))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.120.12 ([#1317](https://github.com/googleapis/google-cloud-java/issues/1317)) ([1ea636f](https://github.com/googleapis/google-cloud-java/commit/1ea636ff854f722f929267fbd72ff07b8424d110))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.120.13 ([#1322](https://github.com/googleapis/google-cloud-java/issues/1322)) ([b7522b9](https://github.com/googleapis/google-cloud-java/commit/b7522b9ee98cd7d152ce9a7a9cc34f8a4d0ef574))
+* update dependency com.google.cloud:google-cloud-resourcemanager to v1.5.3 ([#1318](https://github.com/googleapis/google-cloud-java/issues/1318)) ([aa3a1bb](https://github.com/googleapis/google-cloud-java/commit/aa3a1bbacbe383a34355dcb2ce1a73225ce5c6be))
+* update dependency com.google.cloud:google-cloud-storage to v2.11.3 ([#1299](https://github.com/googleapis/google-cloud-java/issues/1299)) ([d59e6c6](https://github.com/googleapis/google-cloud-java/commit/d59e6c6da4a158a754726788c61b34fa89e99e53))
+
 ## [3.5.0](https://github.com/googleapis/java-asset/compare/v3.4.2...v3.5.0) (2022-08-09)
 
 

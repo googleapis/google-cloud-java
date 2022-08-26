@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-batch-v0.2.2...google-cloud-batch-v0.3.0) (2022-08-26)
+
+
+### Features
+
+* environment variables, disk interfaces ([e2fd744](https://github.com/googleapis/google-cloud-java/commit/e2fd744d0b5dcdce2694076366c7267c1d7a870e))
+* environment variables, disk interfaces ([e2fd744](https://github.com/googleapis/google-cloud-java/commit/e2fd744d0b5dcdce2694076366c7267c1d7a870e))
+
 ## [0.2.2](https://github.com/googleapis/java-batch/compare/v0.2.1...v0.2.2) (2022-08-09)
 
 

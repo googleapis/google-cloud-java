@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-apigee-registry-v0.2.2...google-cloud-apigee-registry-v0.3.0) (2022-08-26)
+
+
+### Features
+
+* added support for `force` field for API and API version deletion ([#35](https://github.com/googleapis/google-cloud-java/issues/35)) ([3371ba4](https://github.com/googleapis/google-cloud-java/commit/3371ba468e0205fcc456f7ce746e8f67e02024b6))
+
 ## [0.2.2](https://github.com/googleapis/java-apigee-registry/compare/v0.2.1...v0.2.2) (2022-08-09)
 
 

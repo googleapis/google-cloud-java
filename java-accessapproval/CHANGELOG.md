@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.4.5](https://github.com/googleapis/google-cloud-java/compare/google-cloud-accessapproval-v2.4.4...google-cloud-accessapproval-v2.4.5) (2022-08-26)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.8.10 ([#797](https://github.com/googleapis/google-cloud-java/issues/797)) ([f0a3c53](https://github.com/googleapis/google-cloud-java/commit/f0a3c533364f270c628b60f2837a14e897b7ed7c))
+
+
+### Documentation
+
+* added Cloud Dataproc and Secret Manager to the list of supported services ([#799](https://github.com/googleapis/google-cloud-java/issues/799)) ([1914043](https://github.com/googleapis/google-cloud-java/commit/1914043598c732089093267a59f74d93ef49e28d))
+
 ## [2.4.4](https://github.com/googleapis/java-accessapproval/compare/v2.4.3...v2.4.4) (2022-08-18)
 
 

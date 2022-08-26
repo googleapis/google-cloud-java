@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-assured-workloads-v2.1.0...google-cloud-assured-workloads-v2.2.0) (2022-08-26)
+
+
+### Features
+
+* Updated v1beta1 analyzeWorkloadMove documentation ([#473](https://github.com/googleapis/google-cloud-java/issues/473)) ([903257b](https://github.com/googleapis/google-cloud-java/commit/903257b703b2cb059001c97e20bed9647c2383b3))
+
 ## [2.1.0](https://github.com/googleapis/java-assured-workloads/compare/v2.0.1...v2.1.0) (2022-08-09)
 
 
