@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-websecurityscanner-v2.2.3...google-cloud-websecurityscanner-v2.3.0) (2022-08-26)
+
+
+### Features
+
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+
+
+### Dependencies
+
+* update dependency joda-time:joda-time to v2.11.1 ([#738](https://github.com/googleapis/google-cloud-java/issues/738)) ([367d773](https://github.com/googleapis/google-cloud-java/commit/367d7734fc7187034c48fe2d93db27c07cb6a302))
+
 ## [2.2.3](https://github.com/googleapis/java-websecurityscanner/compare/v2.2.2...v2.2.3) (2022-08-16)
 
 

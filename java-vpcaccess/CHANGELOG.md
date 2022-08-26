@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-vpcaccess-v2.3.2...google-cloud-vpcaccess-v2.4.0) (2022-08-26)
+
+
+### Features
+
+* Adds support for configuring scaling settings ([#232](https://github.com/googleapis/google-cloud-java/issues/232)) ([953c975](https://github.com/googleapis/google-cloud-java/commit/953c97582367b0b28007f0020a47caf8bc4b9094))
+
 ## [2.3.2](https://github.com/googleapis/java-vpcaccess/compare/v2.3.1...v2.3.2) (2022-08-09)
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-vision-v3.1.0...google-cloud-vision-v3.2.0) (2022-08-26)
+
+
+### Features
+
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+
 ## [3.1.0](https://github.com/googleapis/java-vision/compare/v3.0.2...v3.1.0) (2022-08-09)
 
 
