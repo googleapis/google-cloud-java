@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.6.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-speech-v2.5.4...google-cloud-speech-v2.6.0) (2022-08-26)
+
+
+### Features
+
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-storage to v2.11.3 ([#934](https://github.com/googleapis/google-cloud-java/issues/934)) ([2f49415](https://github.com/googleapis/google-cloud-java/commit/2f494153b432359949de69cdd48a5a9cb04c19f4))
+
 ## [2.5.4](https://github.com/googleapis/java-speech/compare/v2.5.3...v2.5.4) (2022-08-09)
 
 
