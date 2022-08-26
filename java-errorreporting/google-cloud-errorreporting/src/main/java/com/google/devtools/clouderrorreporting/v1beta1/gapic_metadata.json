@@ -1,0 +1,54 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.devtools.clouderrorreporting.v1beta1",
+  "libraryPackage": "com.google.devtools.clouderrorreporting.v1beta1",
+  "services": {
+    "ErrorGroupService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ErrorGroupServiceClient",
+          "rpcs": {
+            "GetGroup": {
+              "methods": ["getGroup", "getGroup", "getGroup", "getGroupCallable"]
+            },
+            "UpdateGroup": {
+              "methods": ["updateGroup", "updateGroup", "updateGroupCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ErrorStatsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ErrorStatsServiceClient",
+          "rpcs": {
+            "DeleteEvents": {
+              "methods": ["deleteEvents", "deleteEvents", "deleteEvents", "deleteEventsCallable"]
+            },
+            "ListEvents": {
+              "methods": ["listEvents", "listEvents", "listEvents", "listEventsPagedCallable", "listEventsCallable"]
+            },
+            "ListGroupStats": {
+              "methods": ["listGroupStats", "listGroupStats", "listGroupStats", "listGroupStatsPagedCallable", "listGroupStatsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ReportErrorsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ReportErrorsServiceClient",
+          "rpcs": {
+            "ReportErrorEvent": {
+              "methods": ["reportErrorEvent", "reportErrorEvent", "reportErrorEvent", "reportErrorEventCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
