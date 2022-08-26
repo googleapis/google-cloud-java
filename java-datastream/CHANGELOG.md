@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-datastream-v1.1.1...google-cloud-datastream-v1.2.0) (2022-08-26)
+
+
+### Features
+
+* added support for BigQuery destination and PostgreSQL source types ([#198](https://github.com/googleapis/google-cloud-java/issues/198)) ([3cdb8d1](https://github.com/googleapis/google-cloud-java/commit/3cdb8d1f0e253996d0ccba495eeeaac937e6c9bd))
+
 ## [1.1.1](https://github.com/googleapis/java-datastream/compare/v1.1.0...v1.1.1) (2022-07-19)
 
 

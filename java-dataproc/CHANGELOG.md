@@ -1,5 +1,17 @@
 # Changelog
 
+## [4.1.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-dataproc-v4.0.2...google-cloud-dataproc-v4.1.0) (2022-08-26)
+
+
+### Features
+
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-storage to v2.11.3 ([#898](https://github.com/googleapis/google-cloud-java/issues/898)) ([60883f3](https://github.com/googleapis/google-cloud-java/commit/60883f3584089ea6a55980f1addccb9e5d4b4ebf))
+
 ## [4.0.2](https://github.com/googleapis/java-dataproc/compare/v4.0.1...v4.0.2) (2022-08-09)
 
 

@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.15.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-dialogflow-cx-v0.14.3...google-cloud-dialogflow-cx-v0.15.0) (2022-08-26)
+
+
+### Features
+
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+
+
+### Dependencies
+
+* update dependency com.google.cloud.functions:function-maven-plugin to v0.10.1 ([#537](https://github.com/googleapis/google-cloud-java/issues/537)) ([58cfa76](https://github.com/googleapis/google-cloud-java/commit/58cfa76e9e8538f6dee98a115770ae0c36303b6a))
+
 ## [0.14.3](https://github.com/googleapis/java-dialogflow-cx/compare/v0.14.2...v0.14.3) (2022-07-26)
 
 

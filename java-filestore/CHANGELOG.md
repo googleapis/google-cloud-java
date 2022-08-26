@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.3](https://github.com/googleapis/google-cloud-java/compare/google-cloud-filestore-v1.4.2...google-cloud-filestore-v1.4.3) (2022-08-26)
+
+
+### Bug Fixes
+
+* set longer polling timeouts for filestore RestoreInstance ([#214](https://github.com/googleapis/google-cloud-java/issues/214)) ([7788227](https://github.com/googleapis/google-cloud-java/commit/7788227c9634beebfd17439e6cb44066721b1159))
+* set longer polling timeouts for filestore UpdateInstance ([7788227](https://github.com/googleapis/google-cloud-java/commit/7788227c9634beebfd17439e6cb44066721b1159))
+
 ## [1.4.2](https://github.com/googleapis/java-filestore/compare/v1.4.1...v1.4.2) (2022-08-09)
 
 
