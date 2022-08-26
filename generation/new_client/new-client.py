@@ -29,6 +29,28 @@ from repo_splitter.java import module, pom, templates
 def main(ctx):
     pass
 
+def add_module_to_root_pom(pom_path: Path, new_module: str):
+    with open(pom_path, "r") as fp:
+        content = fp.read()
+
+    matches = re.findall(r'<module>([\w\-]+?)</module>', content)
+    matches.append(new_module)
+
+    # Make normal modules first and BOM and CoverageAggregator at the end
+    matches.sort(key=lambda m: f"0{m}" if m.startswith('java-') else m)
+    modules_lines = []
+    for match in matches:
+        modules_lines.append(f"<module>{match}</module>")
+
+    modules_line = "\n    ".join(modules_lines)
+    ordered_content = re.sub(r"<modules>.+</modules>",
+                             f"<modules>\n    {modules_line}\n  </modules>",
+                             content,
+                             flags=re.MULTILINE | re.DOTALL)
+
+    with open(pom_path, "w") as fp:
+        fp.truncate(0)
+        fp.write(ordered_content)
 
 @main.command()
 @click.option("--api_shortname", required=True, type=str, prompt="Service name? (e.g. automl)")
@@ -61,7 +83,7 @@ def main(ctx):
     prompt=True,
     default="grpc",
 )
-@click.option("--language", required=True, type=str, prompt=True, default="java")
+@click.option("--language", required=True, type=str, default="java")
 @click.option("--distribution-name", type=str)
 @click.option("--api-id", type=str)
 @click.option("--requires-billing", type=bool, default=True)
@@ -73,6 +95,7 @@ def main(ctx):
     "--owlbot-image", type=str, default="gcr.io/cloud-devrel-public-resources/owlbot-java"
 )
 @click.option("--library-type", type=str)
+@click.option("--monorepo-url", type=str, default=None)
 def generate(
     api_shortname,
     name_pretty,
@@ -90,6 +113,7 @@ def generate(
     group_id,
     owlbot_image,
     library_type,
+    monorepo_url,
 ):
     cloud_prefix = "cloud-" if cloud_api else ""
 
@@ -133,13 +157,29 @@ def generate(
     if requires_billing:
         repo_metadata["requires_billing"] = True
 
+    # Initialize workdir
+    if monorepo_url:
+        print("Creating a new module in monorepo " + monorepo_url)
+        subprocess.check_call(["rm", "-fr", "monorepo"], cwd="workspace")
+        subprocess.check_call(["git", "clone", monorepo_url, "monorepo"],
+                              cwd="workspace")
+        workdir = Path(f"workspace/monorepo/java-{output_name}")
+        os.makedirs(workdir, exist_ok=True)
+        subprocess.check_call(["git", "checkout", "-b",
+                               f"new_module_java-{output_name}"],
+                              cwd=workdir)
+        add_module_to_root_pom(workdir / ".." / "pom.xml",
+                               f"java-{output_name}")
+        subprocess.check_call(["git", "add", "."], cwd=workdir / "..")
+    else:
+        print("Creating a new split repo")
+        workdir = Path(f"workspace/java-{output_name}")
+        os.makedirs(workdir, exist_ok=True)
+        subprocess.check_call(["git", "init", "-b", "main"], cwd=workdir)
+
     # write .repo-metadata.json file
-    workdir = Path(f"workspace/java-{output_name}")
-    os.makedirs(workdir, exist_ok=True)
     with open(workdir / ".repo-metadata.json", "w") as fp:
         json.dump(repo_metadata, fp, indent=2)
-
-    subprocess.check_call(["git", "init", "-b", "main"], cwd=workdir)
 
     # create owlbot.py
     templates.render(
@@ -149,12 +189,17 @@ def generate(
         template_excludes=[],
     )
 
+    # In monorepo, .OwlBot.yaml needs to be in the directory of the module.
+    owlbot_yaml_location_from_module = ".OwlBot.yaml" if monorepo_url else \
+        ".github/.OwlBot.yaml"
     # create owlbot config
     templates.render(
-        template_name="new-client/owlbot.yaml.j2",
-        output_name=str(workdir / ".github" / ".OwlBot.yaml"),
+        template_name="new-client/owlbot.yaml.monorepo.j2" if monorepo_url else
+                      "new-client/owlbot.yaml.j2",
+        output_name=str(workdir / owlbot_yaml_location_from_module),
         artifact_name=distribution_name_short,
         proto_path=proto_path,
+        module_name=f"java-{output_name}"
     )
 
     # get the sha256 digets for the owlbot image
@@ -168,20 +213,21 @@ def generate(
             .split("@")[-1]
     )
 
-    # create owlbot lock
-    templates.render(
-        template_name="new-client/owlbot.lock.yaml.j2",
-        output_name=str(workdir / ".github" / ".OwlBot.lock.yaml"),
-        owlbot_image_digest=owlbot_image_digest,
-        owlbot_image=owlbot_image,
-    )
+    # create owlbot lock. Monorepo does not need this file.
+    if not monorepo_url:
+        templates.render(
+            template_name="new-client/owlbot.lock.yaml.j2",
+            output_name=str(workdir / ".github" / ".OwlBot.lock.yaml"),
+            owlbot_image_digest=owlbot_image_digest,
+            owlbot_image=owlbot_image,
+        )
 
     user = subprocess.check_output(["id", "-u"], encoding="utf8").strip()
     group = subprocess.check_output(["id", "-g"], encoding="utf8").strip()
 
     # run owlbot copy
     print("Cloning googleapis-gen...")
-    subprocess.check_call(["git", "clone", "git@github.com:googleapis/googleapis-gen.git", "./gen/googleapis-gen"], cwd=workdir)
+    subprocess.check_call(["git", "clone", "https://github.com/googleapis/googleapis-gen.git", "./gen/googleapis-gen"], cwd=workdir)
     subprocess.check_call(["docker", "pull", "gcr.io/cloud-devrel-public-resources/owlbot-cli:latest"])
     print("Running copy-code...")
     subprocess.check_call(
@@ -200,8 +246,8 @@ def generate(
             "--env", "HOME=/tmp",
             "gcr.io/cloud-devrel-public-resources/owlbot-cli:latest",
             "copy-code",
-            "--source-repo=/googleapis-gen"
-
+            "--source-repo=/googleapis-gen",
+            f"--config-file={owlbot_yaml_location_from_module}"
         ],
         cwd=workdir,
     )
@@ -210,24 +256,46 @@ def generate(
     # run post processor owl-bot image
     subprocess.check_call(["git", "add", "."], cwd=workdir)
     subprocess.check_call(
-        ["git", "commit", "-m", "feat: initial generation"], cwd=workdir
+        ["git", "commit", "-m", f"feat: initial generation of {api_shortname}"], cwd=workdir
     )
+
+    # Bringing owl-bot-staging from the new module's directory to the root
+    # directory so that owlbot-java can process them.
+    if monorepo_url:
+        subprocess.check_call(
+            [
+                "mv",
+                "owl-bot-staging",
+                "../"
+            ],
+            cwd=workdir,
+        )
     print("Running the post-processor...")
+    workdir_parent=(workdir / '..').resolve()
     subprocess.check_call(
         [
             "docker",
             "run",
             "--rm",
             "-v",
-            f"{workdir.resolve()}:/workspace",
+            f"{workdir_parent}:/workspace" if monorepo_url else f"{workdir.resolve()}:/workspace",
             "--user",
             f"{user}:{group}",
             owlbot_image,
         ],
-        cwd=workdir,
+        cwd=workdir_parent if monorepo_url else workdir,
     )
+    if monorepo_url:
+        # In monorpeo, .github and .kokoro under the module is unused
+        subprocess.check_call(["rm", "-fr", ".github"],
+                              cwd=workdir)
+        subprocess.check_call(["rm", "-fr", ".kokoro"],
+                              cwd=workdir)
+
     subprocess.check_call(["git", "add", "."], cwd=workdir)
     subprocess.check_call(["git", "commit", "--amend", "--no-edit"], cwd=workdir)
+    print(f"Prepared new library in {workdir}")
 
 if __name__ == "__main__":
     main()
+
