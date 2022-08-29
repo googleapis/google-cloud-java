@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.15.0](https://github.com/googleapis/java-bigquery/compare/v2.14.7...v2.15.0) (2022-08-25)
+
+
+### Features
+
+* add preview support for default values ([#2244](https://github.com/googleapis/java-bigquery/issues/2244)) ([fd3d3c5](https://github.com/googleapis/java-bigquery/commit/fd3d3c57afed84b4d00aab438d79472a6afa001b))
+
 ## [2.14.7](https://github.com/googleapis/java-bigquery/compare/v2.14.6...v2.14.7) (2022-08-23)
 
 
