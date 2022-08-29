@@ -30,6 +30,8 @@ public class CsvOptionsTest {
   private static final String FIELD_DELIMITER = ",";
   private static final String QUOTE = "\"";
   private static final long SKIP_LEADING_ROWS = 42L;
+
+  private static final boolean PRESERVE_ASCII_CONTROL_CHARACTERS = true;
   private static final CsvOptions CSV_OPTIONS =
       CsvOptions.newBuilder()
           .setAllowJaggedRows(ALLOW_JAGGED_ROWS)
@@ -38,6 +40,7 @@ public class CsvOptionsTest {
           .setFieldDelimiter(FIELD_DELIMITER)
           .setQuote(QUOTE)
           .setSkipLeadingRows(SKIP_LEADING_ROWS)
+          .setPreserveAsciiControlCharacters(PRESERVE_ASCII_CONTROL_CHARACTERS)
           .build();
 
   @Test
@@ -64,6 +67,8 @@ public class CsvOptionsTest {
     assertEquals(FIELD_DELIMITER, CSV_OPTIONS.getFieldDelimiter());
     assertEquals(QUOTE, CSV_OPTIONS.getQuote());
     assertEquals(SKIP_LEADING_ROWS, (long) CSV_OPTIONS.getSkipLeadingRows());
+    assertEquals(
+        PRESERVE_ASCII_CONTROL_CHARACTERS, CSV_OPTIONS.getPreserveAsciiControlCharacters());
   }
 
   @Test

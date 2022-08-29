@@ -34,6 +34,7 @@ public final class CsvOptions extends FormatOptions {
   private final String fieldDelimiter;
   private final String quote;
   private final Long skipLeadingRows;
+  private final Boolean preserveAsciiControlCharacters;
 
   public static final class Builder {
 
@@ -43,6 +44,7 @@ public final class CsvOptions extends FormatOptions {
     private String fieldDelimiter;
     private String quote;
     private Long skipLeadingRows;
+    private Boolean preserveAsciiControlCharacters;
 
     private Builder() {}
 
@@ -53,6 +55,7 @@ public final class CsvOptions extends FormatOptions {
       this.fieldDelimiter = csvOptions.fieldDelimiter;
       this.quote = csvOptions.quote;
       this.skipLeadingRows = csvOptions.skipLeadingRows;
+      this.preserveAsciiControlCharacters = csvOptions.preserveAsciiControlCharacters;
     }
 
     /**
@@ -130,6 +133,15 @@ public final class CsvOptions extends FormatOptions {
       return this;
     }
 
+    /**
+     * Sets whether BigQuery should allow ascii control characters in a CSV file. By default ascii
+     * control characters are not allowed.
+     */
+    public Builder setPreserveAsciiControlCharacters(boolean preserveAsciiControlCharacters) {
+      this.preserveAsciiControlCharacters = preserveAsciiControlCharacters;
+      return this;
+    }
+
     /** Creates a {@code CsvOptions} object. */
     public CsvOptions build() {
       return new CsvOptions(this);
@@ -144,6 +156,7 @@ public final class CsvOptions extends FormatOptions {
     this.fieldDelimiter = builder.fieldDelimiter;
     this.quote = builder.quote;
     this.skipLeadingRows = builder.skipLeadingRows;
+    this.preserveAsciiControlCharacters = builder.preserveAsciiControlCharacters;
   }
 
   /**
@@ -192,6 +205,14 @@ public final class CsvOptions extends FormatOptions {
     return skipLeadingRows;
   }
 
+  /**
+   * Returns whether BigQuery should allow ascii control characters in a CSV file. By default ascii
+   * control characters are not allowed.
+   */
+  public Boolean getPreserveAsciiControlCharacters() {
+    return preserveAsciiControlCharacters;
+  }
+
   /** Returns a builder for the {@code CsvOptions} object. */
   public Builder toBuilder() {
     return new Builder(this);
@@ -207,6 +228,7 @@ public final class CsvOptions extends FormatOptions {
         .add("fieldDelimiter", fieldDelimiter)
         .add("quote", quote)
         .add("skipLeadingRows", skipLeadingRows)
+        .add("preserveAsciiControlCharacters", preserveAsciiControlCharacters)
         .toString();
   }
 
@@ -219,7 +241,8 @@ public final class CsvOptions extends FormatOptions {
         encoding,
         fieldDelimiter,
         quote,
-        skipLeadingRows);
+        skipLeadingRows,
+        preserveAsciiControlCharacters);
   }
 
   @Override

@@ -475,7 +475,8 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
           .setAllowJaggedRows(csvOptions.allowJaggedRows())
           .setAllowQuotedNewlines(csvOptions.allowQuotedNewLines())
           .setEncoding(csvOptions.getEncoding())
-          .setQuote(csvOptions.getQuote());
+          .setQuote(csvOptions.getQuote())
+          .setPreserveAsciiControlCharacters(csvOptions.getPreserveAsciiControlCharacters());
       if (csvOptions.getSkipLeadingRows() != null) {
         // todo(mziccard) remove checked cast or comment when #1044 is closed
         loadConfigurationPb.setSkipLeadingRows(Ints.checkedCast(csvOptions.getSkipLeadingRows()));
