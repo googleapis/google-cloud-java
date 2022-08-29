@@ -134,7 +134,7 @@ public final class CsvOptions extends FormatOptions {
     }
 
     /**
-     * Sets whether BigQuery should allow ascii control characters in a CSV file. By default ascii
+     * Sets whether BigQuery should allow ASCII control characters in a CSV file. By default ASCII
      * control characters are not allowed.
      */
     public Builder setPreserveAsciiControlCharacters(boolean preserveAsciiControlCharacters) {
@@ -260,6 +260,7 @@ public final class CsvOptions extends FormatOptions {
     csvOptions.setFieldDelimiter(fieldDelimiter);
     csvOptions.setQuote(quote);
     csvOptions.setSkipLeadingRows(skipLeadingRows);
+    csvOptions.setPreserveAsciiControlCharacters(preserveAsciiControlCharacters);
     return csvOptions;
   }
 
@@ -287,6 +288,9 @@ public final class CsvOptions extends FormatOptions {
     }
     if (csvOptions.getSkipLeadingRows() != null) {
       builder.setSkipLeadingRows(csvOptions.getSkipLeadingRows());
+    }
+    if (csvOptions.getPreserveAsciiControlCharacters() != null) {
+      builder.setPreserveAsciiControlCharacters(csvOptions.getPreserveAsciiControlCharacters());
     }
     return builder.build();
   }
