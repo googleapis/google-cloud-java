@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.10.6](https://github.com/googleapis/java-logging/compare/v3.10.5...v3.10.6) (2022-08-29)
+
+
+### Dependencies
+
+* use error_prone_annotation via shared deps ([#1049](https://github.com/googleapis/java-logging/issues/1049)) ([0998b9b](https://github.com/googleapis/java-logging/commit/0998b9b83bc20a867dc22a68e103e4d3cac0f403))
+
 ## [3.10.5](https://github.com/googleapis/java-logging/compare/v3.10.4...v3.10.5) (2022-08-25)
 
 
