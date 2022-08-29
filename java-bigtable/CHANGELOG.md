@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.11.1](https://github.com/googleapis/java-bigtable/compare/v2.11.0...v2.11.1) (2022-08-26)
+
+
+### Bug Fixes
+
+* reset a measure map everytime the stats are recorded ([#1364](https://github.com/googleapis/java-bigtable/issues/1364)) ([1683365](https://github.com/googleapis/java-bigtable/commit/1683365938178bb61b1e9c871f1971449ee942c2))
+
 ## [2.11.0](https://github.com/googleapis/java-bigtable/compare/v2.10.3...v2.11.0) (2022-08-17)
 
 
