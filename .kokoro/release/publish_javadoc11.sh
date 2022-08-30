@@ -56,8 +56,10 @@ do
 
     # cloud RAD generation
     mvn clean javadoc:aggregate -B -P docFX -DdocletPath=${KOKORO_GFILE_DIR}/${doclet_name}
-    # include CHANGELOG
-    cp CHANGELOG.md target/docfx-yml/history.md
+    # include CHANGELOG if exists
+    if [ -e CHANGELOG.md ]; then
+      cp CHANGELOG.md target/docfx-yml/history.md
+    fi
 
     pushd target/docfx-yml
 
