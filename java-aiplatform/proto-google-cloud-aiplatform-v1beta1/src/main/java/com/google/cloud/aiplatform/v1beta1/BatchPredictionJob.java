@@ -48,6 +48,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     serviceAccount_ = "";
     state_ = 0;
     partialFailures_ = java.util.Collections.emptyList();
+    modelMonitoringStatsAnomalies_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -430,6 +431,35 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
               modelVersionId_ = s;
               break;
             }
+          case 250:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                modelMonitoringStatsAnomalies_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              modelMonitoringStatsAnomalies_.add(
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies.parser(),
+                      extensionRegistry));
+              break;
+            }
+          case 258:
+            {
+              com.google.rpc.Status.Builder subBuilder = null;
+              if (modelMonitoringStatus_ != null) {
+                subBuilder = modelMonitoringStatus_.toBuilder();
+              }
+              modelMonitoringStatus_ =
+                  input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(modelMonitoringStatus_);
+                modelMonitoringStatus_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -448,6 +478,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         partialFailures_ = java.util.Collections.unmodifiableList(partialFailures_);
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        modelMonitoringStatsAnomalies_ =
+            java.util.Collections.unmodifiableList(modelMonitoringStatsAnomalies_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -6894,6 +6928,144 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     return getModelMonitoringConfig();
   }
 
+  public static final int MODEL_MONITORING_STATS_ANOMALIES_FIELD_NUMBER = 31;
+  private java.util.List<com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies>
+      modelMonitoringStatsAnomalies_;
+  /**
+   *
+   *
+   * <pre>
+   * Get batch prediction job monitoring statistics.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies>
+      getModelMonitoringStatsAnomaliesList() {
+    return modelMonitoringStatsAnomalies_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Get batch prediction job monitoring statistics.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomaliesOrBuilder>
+      getModelMonitoringStatsAnomaliesOrBuilderList() {
+    return modelMonitoringStatsAnomalies_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Get batch prediction job monitoring statistics.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+   * </code>
+   */
+  @java.lang.Override
+  public int getModelMonitoringStatsAnomaliesCount() {
+    return modelMonitoringStatsAnomalies_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Get batch prediction job monitoring statistics.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies
+      getModelMonitoringStatsAnomalies(int index) {
+    return modelMonitoringStatsAnomalies_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Get batch prediction job monitoring statistics.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomaliesOrBuilder
+      getModelMonitoringStatsAnomaliesOrBuilder(int index) {
+    return modelMonitoringStatsAnomalies_.get(index);
+  }
+
+  public static final int MODEL_MONITORING_STATUS_FIELD_NUMBER = 32;
+  private com.google.rpc.Status modelMonitoringStatus_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The running status of the model monitoring pipeline.
+   * </pre>
+   *
+   * <code>
+   * .google.rpc.Status model_monitoring_status = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the modelMonitoringStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasModelMonitoringStatus() {
+    return modelMonitoringStatus_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The running status of the model monitoring pipeline.
+   * </pre>
+   *
+   * <code>
+   * .google.rpc.Status model_monitoring_status = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The modelMonitoringStatus.
+   */
+  @java.lang.Override
+  public com.google.rpc.Status getModelMonitoringStatus() {
+    return modelMonitoringStatus_ == null
+        ? com.google.rpc.Status.getDefaultInstance()
+        : modelMonitoringStatus_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The running status of the model monitoring pipeline.
+   * </pre>
+   *
+   * <code>
+   * .google.rpc.Status model_monitoring_status = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.rpc.StatusOrBuilder getModelMonitoringStatusOrBuilder() {
+    return getModelMonitoringStatus();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -6984,6 +7156,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30, modelVersionId_);
+    }
+    for (int i = 0; i < modelMonitoringStatsAnomalies_.size(); i++) {
+      output.writeMessage(31, modelMonitoringStatsAnomalies_.get(i));
+    }
+    if (modelMonitoringStatus_ != null) {
+      output.writeMessage(32, getModelMonitoringStatus());
     }
     unknownFields.writeTo(output);
   }
@@ -7084,6 +7262,15 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(30, modelVersionId_);
     }
+    for (int i = 0; i < modelMonitoringStatsAnomalies_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              31, modelMonitoringStatsAnomalies_.get(i));
+    }
+    if (modelMonitoringStatus_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(32, getModelMonitoringStatus());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -7177,6 +7364,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     if (hasModelMonitoringConfig() != other.hasModelMonitoringConfig()) return false;
     if (hasModelMonitoringConfig()) {
       if (!getModelMonitoringConfig().equals(other.getModelMonitoringConfig())) return false;
+    }
+    if (!getModelMonitoringStatsAnomaliesList()
+        .equals(other.getModelMonitoringStatsAnomaliesList())) return false;
+    if (hasModelMonitoringStatus() != other.hasModelMonitoringStatus()) return false;
+    if (hasModelMonitoringStatus()) {
+      if (!getModelMonitoringStatus().equals(other.getModelMonitoringStatus())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -7278,6 +7471,14 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     if (hasModelMonitoringConfig()) {
       hash = (37 * hash) + MODEL_MONITORING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getModelMonitoringConfig().hashCode();
+    }
+    if (getModelMonitoringStatsAnomaliesCount() > 0) {
+      hash = (37 * hash) + MODEL_MONITORING_STATS_ANOMALIES_FIELD_NUMBER;
+      hash = (53 * hash) + getModelMonitoringStatsAnomaliesList().hashCode();
+    }
+    if (hasModelMonitoringStatus()) {
+      hash = (37 * hash) + MODEL_MONITORING_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getModelMonitoringStatus().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -7444,6 +7645,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getPartialFailuresFieldBuilder();
+        getModelMonitoringStatsAnomaliesFieldBuilder();
       }
     }
 
@@ -7572,6 +7774,18 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       } else {
         modelMonitoringConfig_ = null;
         modelMonitoringConfigBuilder_ = null;
+      }
+      if (modelMonitoringStatsAnomaliesBuilder_ == null) {
+        modelMonitoringStatsAnomalies_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      } else {
+        modelMonitoringStatsAnomaliesBuilder_.clear();
+      }
+      if (modelMonitoringStatusBuilder_ == null) {
+        modelMonitoringStatus_ = null;
+      } else {
+        modelMonitoringStatus_ = null;
+        modelMonitoringStatusBuilder_ = null;
       }
       return this;
     }
@@ -7703,6 +7917,21 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         result.modelMonitoringConfig_ = modelMonitoringConfig_;
       } else {
         result.modelMonitoringConfig_ = modelMonitoringConfigBuilder_.build();
+      }
+      if (modelMonitoringStatsAnomaliesBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          modelMonitoringStatsAnomalies_ =
+              java.util.Collections.unmodifiableList(modelMonitoringStatsAnomalies_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.modelMonitoringStatsAnomalies_ = modelMonitoringStatsAnomalies_;
+      } else {
+        result.modelMonitoringStatsAnomalies_ = modelMonitoringStatsAnomaliesBuilder_.build();
+      }
+      if (modelMonitoringStatusBuilder_ == null) {
+        result.modelMonitoringStatus_ = modelMonitoringStatus_;
+      } else {
+        result.modelMonitoringStatus_ = modelMonitoringStatusBuilder_.build();
       }
       onBuilt();
       return result;
@@ -7858,6 +8087,37 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       if (other.hasModelMonitoringConfig()) {
         mergeModelMonitoringConfig(other.getModelMonitoringConfig());
+      }
+      if (modelMonitoringStatsAnomaliesBuilder_ == null) {
+        if (!other.modelMonitoringStatsAnomalies_.isEmpty()) {
+          if (modelMonitoringStatsAnomalies_.isEmpty()) {
+            modelMonitoringStatsAnomalies_ = other.modelMonitoringStatsAnomalies_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureModelMonitoringStatsAnomaliesIsMutable();
+            modelMonitoringStatsAnomalies_.addAll(other.modelMonitoringStatsAnomalies_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.modelMonitoringStatsAnomalies_.isEmpty()) {
+          if (modelMonitoringStatsAnomaliesBuilder_.isEmpty()) {
+            modelMonitoringStatsAnomaliesBuilder_.dispose();
+            modelMonitoringStatsAnomaliesBuilder_ = null;
+            modelMonitoringStatsAnomalies_ = other.modelMonitoringStatsAnomalies_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            modelMonitoringStatsAnomaliesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getModelMonitoringStatsAnomaliesFieldBuilder()
+                    : null;
+          } else {
+            modelMonitoringStatsAnomaliesBuilder_.addAllMessages(
+                other.modelMonitoringStatsAnomalies_);
+          }
+        }
+      }
+      if (other.hasModelMonitoringStatus()) {
+        mergeModelMonitoringStatus(other.getModelMonitoringStatus());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -13009,6 +13269,617 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         modelMonitoringConfig_ = null;
       }
       return modelMonitoringConfigBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies>
+        modelMonitoringStatsAnomalies_ = java.util.Collections.emptyList();
+
+    private void ensureModelMonitoringStatsAnomaliesIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        modelMonitoringStatsAnomalies_ =
+            new java.util.ArrayList<
+                com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies>(
+                modelMonitoringStatsAnomalies_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies,
+            com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies.Builder,
+            com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomaliesOrBuilder>
+        modelMonitoringStatsAnomaliesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Get batch prediction job monitoring statistics.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies>
+        getModelMonitoringStatsAnomaliesList() {
+      if (modelMonitoringStatsAnomaliesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(modelMonitoringStatsAnomalies_);
+      } else {
+        return modelMonitoringStatsAnomaliesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Get batch prediction job monitoring statistics.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+     * </code>
+     */
+    public int getModelMonitoringStatsAnomaliesCount() {
+      if (modelMonitoringStatsAnomaliesBuilder_ == null) {
+        return modelMonitoringStatsAnomalies_.size();
+      } else {
+        return modelMonitoringStatsAnomaliesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Get batch prediction job monitoring statistics.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies
+        getModelMonitoringStatsAnomalies(int index) {
+      if (modelMonitoringStatsAnomaliesBuilder_ == null) {
+        return modelMonitoringStatsAnomalies_.get(index);
+      } else {
+        return modelMonitoringStatsAnomaliesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Get batch prediction job monitoring statistics.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+     * </code>
+     */
+    public Builder setModelMonitoringStatsAnomalies(
+        int index, com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies value) {
+      if (modelMonitoringStatsAnomaliesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureModelMonitoringStatsAnomaliesIsMutable();
+        modelMonitoringStatsAnomalies_.set(index, value);
+        onChanged();
+      } else {
+        modelMonitoringStatsAnomaliesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Get batch prediction job monitoring statistics.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+     * </code>
+     */
+    public Builder setModelMonitoringStatsAnomalies(
+        int index,
+        com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies.Builder builderForValue) {
+      if (modelMonitoringStatsAnomaliesBuilder_ == null) {
+        ensureModelMonitoringStatsAnomaliesIsMutable();
+        modelMonitoringStatsAnomalies_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        modelMonitoringStatsAnomaliesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Get batch prediction job monitoring statistics.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+     * </code>
+     */
+    public Builder addModelMonitoringStatsAnomalies(
+        com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies value) {
+      if (modelMonitoringStatsAnomaliesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureModelMonitoringStatsAnomaliesIsMutable();
+        modelMonitoringStatsAnomalies_.add(value);
+        onChanged();
+      } else {
+        modelMonitoringStatsAnomaliesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Get batch prediction job monitoring statistics.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+     * </code>
+     */
+    public Builder addModelMonitoringStatsAnomalies(
+        int index, com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies value) {
+      if (modelMonitoringStatsAnomaliesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureModelMonitoringStatsAnomaliesIsMutable();
+        modelMonitoringStatsAnomalies_.add(index, value);
+        onChanged();
+      } else {
+        modelMonitoringStatsAnomaliesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Get batch prediction job monitoring statistics.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+     * </code>
+     */
+    public Builder addModelMonitoringStatsAnomalies(
+        com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies.Builder builderForValue) {
+      if (modelMonitoringStatsAnomaliesBuilder_ == null) {
+        ensureModelMonitoringStatsAnomaliesIsMutable();
+        modelMonitoringStatsAnomalies_.add(builderForValue.build());
+        onChanged();
+      } else {
+        modelMonitoringStatsAnomaliesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Get batch prediction job monitoring statistics.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+     * </code>
+     */
+    public Builder addModelMonitoringStatsAnomalies(
+        int index,
+        com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies.Builder builderForValue) {
+      if (modelMonitoringStatsAnomaliesBuilder_ == null) {
+        ensureModelMonitoringStatsAnomaliesIsMutable();
+        modelMonitoringStatsAnomalies_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        modelMonitoringStatsAnomaliesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Get batch prediction job monitoring statistics.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+     * </code>
+     */
+    public Builder addAllModelMonitoringStatsAnomalies(
+        java.lang.Iterable<
+                ? extends com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies>
+            values) {
+      if (modelMonitoringStatsAnomaliesBuilder_ == null) {
+        ensureModelMonitoringStatsAnomaliesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, modelMonitoringStatsAnomalies_);
+        onChanged();
+      } else {
+        modelMonitoringStatsAnomaliesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Get batch prediction job monitoring statistics.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+     * </code>
+     */
+    public Builder clearModelMonitoringStatsAnomalies() {
+      if (modelMonitoringStatsAnomaliesBuilder_ == null) {
+        modelMonitoringStatsAnomalies_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        modelMonitoringStatsAnomaliesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Get batch prediction job monitoring statistics.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+     * </code>
+     */
+    public Builder removeModelMonitoringStatsAnomalies(int index) {
+      if (modelMonitoringStatsAnomaliesBuilder_ == null) {
+        ensureModelMonitoringStatsAnomaliesIsMutable();
+        modelMonitoringStatsAnomalies_.remove(index);
+        onChanged();
+      } else {
+        modelMonitoringStatsAnomaliesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Get batch prediction job monitoring statistics.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies.Builder
+        getModelMonitoringStatsAnomaliesBuilder(int index) {
+      return getModelMonitoringStatsAnomaliesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Get batch prediction job monitoring statistics.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomaliesOrBuilder
+        getModelMonitoringStatsAnomaliesOrBuilder(int index) {
+      if (modelMonitoringStatsAnomaliesBuilder_ == null) {
+        return modelMonitoringStatsAnomalies_.get(index);
+      } else {
+        return modelMonitoringStatsAnomaliesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Get batch prediction job monitoring statistics.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomaliesOrBuilder>
+        getModelMonitoringStatsAnomaliesOrBuilderList() {
+      if (modelMonitoringStatsAnomaliesBuilder_ != null) {
+        return modelMonitoringStatsAnomaliesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(modelMonitoringStatsAnomalies_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Get batch prediction job monitoring statistics.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies.Builder
+        addModelMonitoringStatsAnomaliesBuilder() {
+      return getModelMonitoringStatsAnomaliesFieldBuilder()
+          .addBuilder(
+              com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Get batch prediction job monitoring statistics.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies.Builder
+        addModelMonitoringStatsAnomaliesBuilder(int index) {
+      return getModelMonitoringStatsAnomaliesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Get batch prediction job monitoring statistics.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies.Builder>
+        getModelMonitoringStatsAnomaliesBuilderList() {
+      return getModelMonitoringStatsAnomaliesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies,
+            com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies.Builder,
+            com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomaliesOrBuilder>
+        getModelMonitoringStatsAnomaliesFieldBuilder() {
+      if (modelMonitoringStatsAnomaliesBuilder_ == null) {
+        modelMonitoringStatsAnomaliesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies,
+                com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies.Builder,
+                com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomaliesOrBuilder>(
+                modelMonitoringStatsAnomalies_,
+                ((bitField0_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        modelMonitoringStatsAnomalies_ = null;
+      }
+      return modelMonitoringStatsAnomaliesBuilder_;
+    }
+
+    private com.google.rpc.Status modelMonitoringStatus_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        modelMonitoringStatusBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The running status of the model monitoring pipeline.
+     * </pre>
+     *
+     * <code>
+     * .google.rpc.Status model_monitoring_status = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the modelMonitoringStatus field is set.
+     */
+    public boolean hasModelMonitoringStatus() {
+      return modelMonitoringStatusBuilder_ != null || modelMonitoringStatus_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The running status of the model monitoring pipeline.
+     * </pre>
+     *
+     * <code>
+     * .google.rpc.Status model_monitoring_status = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The modelMonitoringStatus.
+     */
+    public com.google.rpc.Status getModelMonitoringStatus() {
+      if (modelMonitoringStatusBuilder_ == null) {
+        return modelMonitoringStatus_ == null
+            ? com.google.rpc.Status.getDefaultInstance()
+            : modelMonitoringStatus_;
+      } else {
+        return modelMonitoringStatusBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The running status of the model monitoring pipeline.
+     * </pre>
+     *
+     * <code>
+     * .google.rpc.Status model_monitoring_status = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setModelMonitoringStatus(com.google.rpc.Status value) {
+      if (modelMonitoringStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelMonitoringStatus_ = value;
+        onChanged();
+      } else {
+        modelMonitoringStatusBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The running status of the model monitoring pipeline.
+     * </pre>
+     *
+     * <code>
+     * .google.rpc.Status model_monitoring_status = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setModelMonitoringStatus(com.google.rpc.Status.Builder builderForValue) {
+      if (modelMonitoringStatusBuilder_ == null) {
+        modelMonitoringStatus_ = builderForValue.build();
+        onChanged();
+      } else {
+        modelMonitoringStatusBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The running status of the model monitoring pipeline.
+     * </pre>
+     *
+     * <code>
+     * .google.rpc.Status model_monitoring_status = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeModelMonitoringStatus(com.google.rpc.Status value) {
+      if (modelMonitoringStatusBuilder_ == null) {
+        if (modelMonitoringStatus_ != null) {
+          modelMonitoringStatus_ =
+              com.google.rpc.Status.newBuilder(modelMonitoringStatus_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          modelMonitoringStatus_ = value;
+        }
+        onChanged();
+      } else {
+        modelMonitoringStatusBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The running status of the model monitoring pipeline.
+     * </pre>
+     *
+     * <code>
+     * .google.rpc.Status model_monitoring_status = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearModelMonitoringStatus() {
+      if (modelMonitoringStatusBuilder_ == null) {
+        modelMonitoringStatus_ = null;
+        onChanged();
+      } else {
+        modelMonitoringStatus_ = null;
+        modelMonitoringStatusBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The running status of the model monitoring pipeline.
+     * </pre>
+     *
+     * <code>
+     * .google.rpc.Status model_monitoring_status = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.rpc.Status.Builder getModelMonitoringStatusBuilder() {
+
+      onChanged();
+      return getModelMonitoringStatusFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The running status of the model monitoring pipeline.
+     * </pre>
+     *
+     * <code>
+     * .google.rpc.Status model_monitoring_status = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.rpc.StatusOrBuilder getModelMonitoringStatusOrBuilder() {
+      if (modelMonitoringStatusBuilder_ != null) {
+        return modelMonitoringStatusBuilder_.getMessageOrBuilder();
+      } else {
+        return modelMonitoringStatus_ == null
+            ? com.google.rpc.Status.getDefaultInstance()
+            : modelMonitoringStatus_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The running status of the model monitoring pipeline.
+     * </pre>
+     *
+     * <code>
+     * .google.rpc.Status model_monitoring_status = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        getModelMonitoringStatusFieldBuilder() {
+      if (modelMonitoringStatusBuilder_ == null) {
+        modelMonitoringStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>(
+                getModelMonitoringStatus(), getParentForChildren(), isClean());
+        modelMonitoringStatus_ = null;
+      }
+      return modelMonitoringStatusBuilder_;
     }
 
     @java.lang.Override
