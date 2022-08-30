@@ -112,7 +112,7 @@ case ${JOB_TYPE} in
       printf "Module List:\n%s\n" "${module_list}"
     fi
 
-    if [ ${TEST_ALL} ]; then
+    if [ "${TEST_ALL}" = true ]; then
       mvn -B ${INTEGRATION_TEST_ARGS} \
           -ntp \
           -Penable-integration-tests \
