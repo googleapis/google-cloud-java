@@ -1567,6 +1567,8 @@ public class JobServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setModelMonitoringConfig(ModelMonitoringConfig.newBuilder().build())
+            .addAllModelMonitoringStatsAnomalies(new ArrayList<ModelMonitoringStatsAnomalies>())
+            .setModelMonitoringStatus(Status.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -1636,6 +1638,8 @@ public class JobServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setModelMonitoringConfig(ModelMonitoringConfig.newBuilder().build())
+            .addAllModelMonitoringStatsAnomalies(new ArrayList<ModelMonitoringStatsAnomalies>())
+            .setModelMonitoringStatus(Status.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -1705,6 +1709,8 @@ public class JobServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setModelMonitoringConfig(ModelMonitoringConfig.newBuilder().build())
+            .addAllModelMonitoringStatsAnomalies(new ArrayList<ModelMonitoringStatsAnomalies>())
+            .setModelMonitoringStatus(Status.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -1773,6 +1779,8 @@ public class JobServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setModelMonitoringConfig(ModelMonitoringConfig.newBuilder().build())
+            .addAllModelMonitoringStatsAnomalies(new ArrayList<ModelMonitoringStatsAnomalies>())
+            .setModelMonitoringStatus(Status.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
 

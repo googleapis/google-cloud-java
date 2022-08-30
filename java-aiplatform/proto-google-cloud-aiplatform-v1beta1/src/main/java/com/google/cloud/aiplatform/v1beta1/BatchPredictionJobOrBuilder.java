@@ -1147,4 +1147,111 @@ public interface BatchPredictionJobOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfigOrBuilder
       getModelMonitoringConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Get batch prediction job monitoring statistics.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies>
+      getModelMonitoringStatsAnomaliesList();
+  /**
+   *
+   *
+   * <pre>
+   * Get batch prediction job monitoring statistics.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies
+      getModelMonitoringStatsAnomalies(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Get batch prediction job monitoring statistics.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+   * </code>
+   */
+  int getModelMonitoringStatsAnomaliesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Get batch prediction job monitoring statistics.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomaliesOrBuilder>
+      getModelMonitoringStatsAnomaliesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Get batch prediction job monitoring statistics.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies model_monitoring_stats_anomalies = 31;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomaliesOrBuilder
+      getModelMonitoringStatsAnomaliesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The running status of the model monitoring pipeline.
+   * </pre>
+   *
+   * <code>
+   * .google.rpc.Status model_monitoring_status = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the modelMonitoringStatus field is set.
+   */
+  boolean hasModelMonitoringStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The running status of the model monitoring pipeline.
+   * </pre>
+   *
+   * <code>
+   * .google.rpc.Status model_monitoring_status = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The modelMonitoringStatus.
+   */
+  com.google.rpc.Status getModelMonitoringStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The running status of the model monitoring pipeline.
+   * </pre>
+   *
+   * <code>
+   * .google.rpc.Status model_monitoring_status = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.rpc.StatusOrBuilder getModelMonitoringStatusOrBuilder();
 }
