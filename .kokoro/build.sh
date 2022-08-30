@@ -61,18 +61,18 @@ function generate_modified_modules_list() {
 
 function assign_modules_to_job() {
   modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
-  module_list=()
+  maven_module_list=()
   num=0
   for module in $modules
   do
     # Add 1 as JOB_NUMBER is 1-indexed instead of 0-indexed
     mod_num=$((num % NUM_JOBS + 1))
     if [[ ! "${excluded_modules[*]}" =~ $module ]] && [[ $mod_num -eq $JOB_NUMBER ]]; then
-      module_list+=($module)
+      maven_module_list+=($module)
     fi
     num=$((num + 1))
   done
-  module_list=$(IFS=, ; echo "${module_list[*]}")
+  module_list=$(IFS=, ; echo "${maven_module_list[*]}")
   module_list="${module_list},${excluded_modules_string}"
 }
 
@@ -85,6 +85,7 @@ function generate_excluded_module_string() {
   excluded_modules_string=$(IFS=, ; echo "${excluded_modules_list[*]}")
 }
 
+# Generate excluded_modules_string
 generate_excluded_module_string
 
 mvn -B -pl ${excluded_modules_string} \
