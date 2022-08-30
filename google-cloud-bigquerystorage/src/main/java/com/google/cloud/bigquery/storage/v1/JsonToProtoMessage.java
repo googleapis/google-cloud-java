@@ -313,7 +313,7 @@ public class JsonToProtoMessage {
               protoMsg.setField(
                   fieldDescriptor,
                   BigDecimalByteStringEncoder.encodeToNumericByteString(
-                      new BigDecimal(((Number) val).doubleValue())));
+                      new BigDecimal(String.valueOf(val))));
               return;
             }
           } else if (fieldSchema.getType() == TableFieldSchema.Type.BIGNUMERIC) {
@@ -333,7 +333,7 @@ public class JsonToProtoMessage {
               protoMsg.setField(
                   fieldDescriptor,
                   BigDecimalByteStringEncoder.encodeToBigNumericByteString(
-                      new BigDecimal(((Number) val).doubleValue())));
+                      new BigDecimal(String.valueOf(val))));
               return;
             }
           }
@@ -547,7 +547,7 @@ public class JsonToProtoMessage {
               protoMsg.addRepeatedField(
                   fieldDescriptor,
                   BigDecimalByteStringEncoder.encodeToNumericByteString(
-                      new BigDecimal(((Number) val).doubleValue())));
+                      new BigDecimal(String.valueOf(val))));
               added = true;
             }
           } else if (fieldSchema != null
@@ -568,7 +568,7 @@ public class JsonToProtoMessage {
               protoMsg.addRepeatedField(
                   fieldDescriptor,
                   BigDecimalByteStringEncoder.encodeToBigNumericByteString(
-                      new BigDecimal(((Number) val).doubleValue())));
+                      new BigDecimal(String.valueOf(val))));
               added = true;
             }
           }

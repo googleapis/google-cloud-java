@@ -27,6 +27,7 @@ import com.google.protobuf.DynamicMessage;
 import com.google.protobuf.Message;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Map;
 import java.util.logging.Logger;
 import org.json.JSONArray;
@@ -1310,5 +1311,59 @@ public class JsonToProtoMessageTest {
     protoMsg =
         JsonToProtoMessage.convertJsonToProtoMessage(RepeatedInt32.getDescriptor(), ts, json);
     assertTrue(protoMsg.getAllFields().isEmpty());
+  }
+
+  @Test
+  public void testDoubleAndFloatToNumericConversion() {
+    TableSchema ts =
+        TableSchema.newBuilder()
+            .addFields(
+                0,
+                TableFieldSchema.newBuilder()
+                    .setName("numeric")
+                    .setType(TableFieldSchema.Type.NUMERIC)
+                    .build())
+            .build();
+    TestNumeric expectedProto =
+        TestNumeric.newBuilder()
+            .setNumeric(
+                BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("24.678")))
+            .build();
+    JSONObject json = new JSONObject();
+    json.put("numeric", new Double(24.678));
+    DynamicMessage protoMsg =
+        JsonToProtoMessage.convertJsonToProtoMessage(TestNumeric.getDescriptor(), ts, json);
+    assertEquals(expectedProto, protoMsg);
+    json.put("numeric", new Float(24.678));
+    protoMsg = JsonToProtoMessage.convertJsonToProtoMessage(TestNumeric.getDescriptor(), ts, json);
+    assertEquals(expectedProto, protoMsg);
+  }
+
+  @Test
+  public void testDoubleAndFloatToRepeatedBigNumericConversion() {
+    TableSchema ts =
+        TableSchema.newBuilder()
+            .addFields(
+                0,
+                TableFieldSchema.newBuilder()
+                    .setName("bignumeric")
+                    .setType(TableFieldSchema.Type.BIGNUMERIC)
+                    .setMode(TableFieldSchema.Mode.REPEATED)
+                    .build())
+            .build();
+    TestBignumeric expectedProto =
+        TestBignumeric.newBuilder()
+            .addBignumeric(
+                BigDecimalByteStringEncoder.encodeToBigNumericByteString(new BigDecimal("24.678")))
+            .build();
+    JSONObject json = new JSONObject();
+    json.put("bignumeric", Collections.singletonList(new Double(24.678)));
+    DynamicMessage protoMsg =
+        JsonToProtoMessage.convertJsonToProtoMessage(TestBignumeric.getDescriptor(), ts, json);
+    assertEquals(expectedProto, protoMsg);
+    json.put("bignumeric", Collections.singletonList(new Float(24.678)));
+    protoMsg =
+        JsonToProtoMessage.convertJsonToProtoMessage(TestBignumeric.getDescriptor(), ts, json);
+    assertEquals(expectedProto, protoMsg);
   }
 }
