@@ -10,15 +10,21 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
 public class Util {
+
   // Cleans existing test resources if any.
   private static final int DELETION_THRESHOLD_TIME_HOURS = 24;
 
-  /** tear down any clusters that are older than 24 hours **/
-  public static void cleanUpNotebookInstances(NotebookServiceClient client){
-    ListInstancesPagedResponse listInstancesPagedResponse = client.listInstances(ListInstancesRequest.getDefaultInstance());
+  /**
+   * Bring down any instances that are older than 24 hours
+   **/
+  public static void cleanUpNotebookInstances(NotebookServiceClient client, String parent) {
+    ListInstancesPagedResponse listInstancesPagedResponse = client.listInstances(
+        ListInstancesRequest.newBuilder().setParent(parent).build());
     for (Instance instance : listInstancesPagedResponse.iterateAll()) {
-      if (isCreatedBeforeThresholdTime(Instant.ofEpochMilli(Timestamps.toMillis(instance.getCreateTime())))) {
-        client.deleteInstanceAsync(DeleteInstanceRequest.newBuilder().setName(instance.getName()).build());
+      if (isCreatedBeforeThresholdTime(
+          Instant.ofEpochMilli(Timestamps.toMillis(instance.getCreateTime())))) {
+        client.deleteInstanceAsync(
+            DeleteInstanceRequest.newBuilder().setName(instance.getName()).build());
       }
     }
   }

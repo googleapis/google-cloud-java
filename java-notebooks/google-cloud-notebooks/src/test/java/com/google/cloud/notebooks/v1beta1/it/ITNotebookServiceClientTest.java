@@ -66,7 +66,7 @@ public class ITNotebookServiceClientTest {
   public static void setUp() throws IOException, ExecutionException, InterruptedException {
     // Create Test Notebook Instance
     client = NotebookServiceClient.create();
-    Util.cleanUpNotebookInstances(client);
+    Util.cleanUpNotebookInstances(client, PARENT);
 
     ContainerImage containerImage =
         ContainerImage.newBuilder().setRepository(FieldBehavior.OPTIONAL.name()).build();
