@@ -26,6 +26,7 @@ import com.google.container.v1.ListNodePoolsResponse;
 import com.google.container.v1.ListOperationsResponse;
 import com.google.container.v1.NodePool;
 import com.google.container.v1.Operation;
+import com.google.container.v1.Operation.Status;
 import com.google.container.v1.ServerConfig;
 import java.util.List;
 import java.util.UUID;
@@ -90,7 +91,14 @@ public class ITSystemTest {
 
   @AfterClass
   public static void afterClass() throws Exception {
-    Thread.sleep(TimeUnit.MINUTES.toMillis(5));
+    Operation response = client.getOperation(PROJECT_ID, ZONE, operation.getName());
+    // Sleep for one minute until Cluster CREATE operation is complete
+    while (response.getStatus() != Status.DONE) {
+      LOG.info(String.format("Cluster CREATE Operation Status: %s", response.getStatus()));
+      Thread.sleep(TimeUnit.MINUTES.toMillis(1));
+      response = client.getOperation(PROJECT_ID, ZONE, operation.getName());
+    }
+    // Thread.sleep(TimeUnit.MINUTES.toMillis(5));
     client.deleteCluster(PROJECT_ID, ZONE, CLUSTER_NAME);
     LOG.info(String.format("%s cluster deleted successfully.", CLUSTER_NAME));
     client.close();
