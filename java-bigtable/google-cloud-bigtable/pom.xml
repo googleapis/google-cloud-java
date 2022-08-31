@@ -262,23 +262,15 @@
         </exclusion>
       </exclusions>
     </dependency>
-    <!-- cloud-monitoring client depends on grpc-xds, which has transitive dependency on opencensus-proto. We need to
-    use cloud-monitoring as a test dependency, which also marks the opencensus-proto as a test dependency. Promote
-    grpc-xds to a runtime dependency so that opencensus-proto will still be a runtime dependency in the flattened pom. -->
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-xds</artifactId>
-      <scope>runtime</scope>
-    </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-monitoring</artifactId>
-      <scope>test</scope>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-monitoring-v3</artifactId>
-      <scope>test</scope>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>com.google.truth</groupId>
