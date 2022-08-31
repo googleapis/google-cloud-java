@@ -27,7 +27,7 @@ public interface PublisherOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the listing Publisher.
+   * Optional. Name of the listing publisher.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -39,7 +39,7 @@ public interface PublisherOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the listing Publisher.
+   * Optional. Name of the listing publisher.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -52,7 +52,7 @@ public interface PublisherOrBuilder
    *
    *
    * <pre>
-   * Optional. Email or URL of the listing Publisher.
+   * Optional. Email or URL of the listing publisher.
    * Max Length: 1000 bytes.
    * </pre>
    *
@@ -65,7 +65,7 @@ public interface PublisherOrBuilder
    *
    *
    * <pre>
-   * Optional. Email or URL of the listing Publisher.
+   * Optional. Email or URL of the listing publisher.
    * Max Length: 1000 bytes.
    * </pre>
    *

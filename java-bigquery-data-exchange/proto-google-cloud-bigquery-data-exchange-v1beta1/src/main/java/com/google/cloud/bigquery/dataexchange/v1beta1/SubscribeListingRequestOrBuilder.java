@@ -27,37 +27,6 @@ public interface SubscribeListingRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the listing to subscribe to.
-   * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`.
-   * </pre>
-   *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
-   *
-   * @return The name.
-   */
-  java.lang.String getName();
-  /**
-   *
-   *
-   * <pre>
-   * Required. Resource name of the listing to subscribe to.
-   * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`.
-   * </pre>
-   *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
-   *
-   * @return The bytes for name.
-   */
-  com.google.protobuf.ByteString getNameBytes();
-
-  /**
-   *
-   *
-   * <pre>
    * BigQuery destination dataset to create for the subscriber.
    * </pre>
    *
@@ -92,6 +61,37 @@ public interface SubscribeListingRequestOrBuilder
    */
   com.google.cloud.bigquery.dataexchange.v1beta1.DestinationDatasetOrBuilder
       getDestinationDatasetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Resource name of the listing that you want to subscribe to.
+   * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`.
+   * </pre>
+   *
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Resource name of the listing that you want to subscribe to.
+   * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`.
+   * </pre>
+   *
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString getNameBytes();
 
   public com.google.cloud.bigquery.dataexchange.v1beta1.SubscribeListingRequest.DestinationCase
       getDestinationCase();
