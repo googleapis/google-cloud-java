@@ -24,7 +24,7 @@
 <dependency><groupId>com.google.analytics</groupId><artifactId>google-analytics-data</artifactId><version>0.14.4-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-api-gateway</artifactId><version>2.3.3-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-apigee-connect</artifactId><version>2.3.3-SNAPSHOT</version></dependency>
-<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-apigee-registry</artifactId><version>0.2.3-SNAPSHOT</version></dependency>
+<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-apigee-registry</artifactId><version>0.3.0</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-appengine-admin</artifactId><version>2.3.5-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.area120</groupId><artifactId>google-area120-tables</artifactId><version>0.7.3-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-artifact-registry</artifactId><version>1.2.6-SNAPSHOT</version></dependency>
@@ -168,7 +168,7 @@
 <dependency><groupId>com.google.analytics</groupId><artifactId>google-analytics-data</artifactId><version>0.14.4-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-api-gateway</artifactId><version>2.3.3-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-apigee-connect</artifactId><version>2.3.3-SNAPSHOT</version></dependency>
-<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-apigee-registry</artifactId><version>0.2.3-SNAPSHOT</version></dependency>
+<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-apigee-registry</artifactId><version>0.3.0</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-appengine-admin</artifactId><version>2.3.5-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.area120</groupId><artifactId>google-area120-tables</artifactId><version>0.7.3-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-artifact-registry</artifactId><version>1.2.6-SNAPSHOT</version></dependency>
