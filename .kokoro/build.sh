@@ -27,25 +27,66 @@ source ${scriptDir}/common.sh
 mkdir -p ${HOME}/.m2
 cp settings.xml ${HOME}/.m2
 
+excluded_modules=('CoverageAggregator' 'google-cloud-gapic-bom')
+
+function generate_modified_modules_list() {
+  # Find the files changed from when the PR branched to the last commit
+  # Filter for java modules and get all the unique elements
+  # grep returns 1 (error code) and exits the pipeline if there is no match
+  # If there is no match, it will return true so the rest of the commands can run
+  modified_files=$(git diff --name-only $KOKORO_GITHUB_PULL_REQUEST_COMMIT $KOKORO_GITHUB_PULL_REQUEST_TARGET_BRANCH)
+  printf "Modified files:\n%s\n" "${modified_files}"
+
+  # If root pom.xml is touched, run ITs on all the modules
+  root_pom_modified=$(echo "${modified_files}" | grep -e '^pom.xml$' || true)
+  if [[ -n $root_pom_modified ]]; then
+    module_list=$excluded_modules_string
+    echo "Testing the entire monorepo"
+  else
+    directories=$(echo "${modified_files}" | grep -e 'java-.*' || true)
+    printf "Files in java modules:\n%s\n" "${directories}"
+    if [[ -n $directories ]]; then
+      directories=$(echo "${directories}" | cut -d '/' -f1 | sort -u)
+      for directory in $directories
+      do
+        dir_list+=($directory)
+      done
+      # Combine each entry with a comma
+      module_list=$(IFS=, ; echo "${dir_list[*]}")
+      printf "Module List:\n%s\n" "${module_list}"
+    fi
+  fi
+}
+
 function assign_modules_to_job() {
   modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
-  module_list=()
+  maven_module_list=()
   num=0
   for module in $modules
   do
     # Add 1 as JOB_NUMBER is 1-indexed instead of 0-indexed
     mod_num=$((num % NUM_JOBS + 1))
     if [[ ! "${excluded_modules[*]}" =~ $module ]] && [[ $mod_num -eq $JOB_NUMBER ]]; then
-      module_list+=($module)
+      maven_module_list+=($module)
     fi
     num=$((num + 1))
   done
-  module_list=$(IFS=, ; echo "${module_list[*]}")
+  module_list=$(IFS=, ; echo "${maven_module_list[*]}")
 }
 
-excluded_modules=('CoverageAggregator' 'google-cloud-gapic-bom')
+function generate_excluded_module_string() {
+  excluded_modules_list=()
+  for excluded_module in "${excluded_modules[@]}"
+  do
+    excluded_modules_list+=("!${excluded_module}")
+  done
+  excluded_modules_string=$(IFS=, ; echo "${excluded_modules_list[*]}")
+}
 
-mvn -B -pl "!google-cloud-gapic-bom,!CoverageAggregator" \
+# Generate excluded_modules_string
+generate_excluded_module_string
+
+mvn -B -pl "${excluded_modules_string}" \
     -ntp \
     -DtrimStackTrace=false \
     -Dclirr.skip=true \
@@ -70,65 +111,9 @@ fi
 RETURN_CODE=0
 
 case ${JOB_TYPE} in
-  test)
-    mvn test -B -ntp -Dclirr.skip=true -Denforcer.skip=true
-    RETURN_CODE=$?
-    ;;
-  lint)
-    mvn com.coveo:fmt-maven-plugin:check -B -ntp
-    RETURN_CODE=$?
-    ;;
-  javadoc)
-    mvn javadoc:javadoc javadoc:test-javadoc -B -ntp
-    RETURN_CODE=$?
-    ;;
   integration)
-    TEST_ALL=false
-    # Find the files changed from when the PR branched to the last commit
-    # Filter for java modules and get all the unique elements
-    # grep returns 1 (error code) and exits the pipeline if there is no match
-    # If there is no match, it will return true so the rest of the commands can run
-    modified_files=$(git diff --name-only $KOKORO_GITHUB_PULL_REQUEST_COMMIT $KOKORO_GITHUB_PULL_REQUEST_TARGET_BRANCH)
-    printf "Modified files:\n%s\n" "${modified_files}"
-
-    # If root pom.xml is touched, run ITs on all the modules
-    root_pom_modified=$(echo "${modified_files}" | grep -e '^pom.xml$' || true)
-    if [[ -n $root_pom_modified ]]; then
-      TEST_ALL=true
-      echo "Testing the entire monorepo"
-    else
-      directories=$(echo "${modified_files}" | grep -e 'java-.*' || true)
-      printf "Files in java modules:\n%s\n" "${directories}"
-      if [[ -n $directories ]]; then
-        directories=$(echo "${directories}" | cut -d '/' -f1 | sort -u)
-        dir_list=()
-        for directory in $directories
-        do
-          dir_list+=($directory)
-        done
-        # Combine each entry with a comma
-        module_list=$(IFS=, ; echo "${dir_list[*]}")
-      fi
-      printf "Module List:\n%s\n" "${module_list}"
-    fi
-
-    if [ ${TEST_ALL} ]; then
-      mvn -B ${INTEGRATION_TEST_ARGS} \
-          -ntp \
-          -Penable-integration-tests \
-          -DtrimStackTrace=false \
-          -Dclirr.skip=true \
-          -Denforcer.skip=true \
-          -Dcheckstyle.skip=true \
-          -Dflatten.skip=true \
-          -Danimal.sniffer.skip=true \
-          -Djacoco.skip=true \
-          -DskipUnitTests=true \
-          -fae \
-          -T 1C \
-          verify
-      RETURN_CODE=$?
-    elif [[ -n $module_list ]]; then
+    generate_modified_modules_list
+    if [[ -n $module_list ]]; then
       printf "Running Integration Tests for:\n%s\n" "${module_list}"
       mvn -B ${INTEGRATION_TEST_ARGS} \
           -pl "${module_list}" \
@@ -231,10 +216,6 @@ case ${JOB_TYPE} in
     else
         echo "no sample pom.xml found - skipping sample tests"
     fi
-    ;;
-  clirr)
-    mvn -B -ntp -Denforcer.skip=true clirr:check
-    RETURN_CODE=$?
     ;;
   *)
     ;;

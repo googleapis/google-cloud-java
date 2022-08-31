@@ -473,7 +473,7 @@ public class ITSystemTest {
   }
 
   @Test
-  public void detectWebEntitiesGcsTest() throws IOException {
+  public void detectWebEntitiesGcsTest() {
     ImageSource imgSource =
         ImageSource.newBuilder().setGcsImageUri(SAMPLE_BUCKET + "landmark/pofa.jpg").build();
     Image img = Image.newBuilder().setSource(imgSource).build();
@@ -492,7 +492,7 @@ public class ITSystemTest {
         actual.add(entity.getDescription());
       }
     }
-    assertThat(actual).contains("The Palace Of Fine Arts");
+    assertThat(actual).contains("Palace of Fine Arts");
   }
 
   @Test
@@ -547,14 +547,12 @@ public class ITSystemTest {
         imageAnnotatorClient.batchAnnotateImages(ImmutableList.of(request));
     List<AnnotateImageResponse> responses = response.getResponsesList();
     List<String> actual = new ArrayList<>();
-    System.out.println("WebEntitiesGeo SIZE");
-    System.out.println(actual.size());
     for (AnnotateImageResponse imgResponse : responses) {
       for (WebDetection.WebEntity entity : imgResponse.getWebDetection().getWebEntitiesList()) {
         actual.add(entity.getDescription());
       }
     }
-    assertThat(actual).contains("The Palace Of Fine Arts");
+    assertThat(actual).contains("Palace of Fine Arts");
   }
 
   @Test
