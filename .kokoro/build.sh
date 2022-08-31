@@ -88,7 +88,7 @@ function generate_excluded_module_string() {
 # Generate excluded_modules_string
 generate_excluded_module_string
 
-mvn -B -pl ${excluded_modules_string} \
+mvn -B \
     -ntp \
     -DtrimStackTrace=false \
     -Dclirr.skip=true \
