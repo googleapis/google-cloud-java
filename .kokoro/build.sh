@@ -53,7 +53,6 @@ function generate_modified_modules_list() {
       done
       # Combine each entry with a comma
       module_list=$(IFS=, ; echo "${dir_list[*]}")
-      module_list="${module_list},${excluded_modules_string}"
       printf "Module List:\n%s\n" "${module_list}"
     fi
   fi
@@ -73,7 +72,6 @@ function assign_modules_to_job() {
     num=$((num + 1))
   done
   module_list=$(IFS=, ; echo "${maven_module_list[*]}")
-  module_list="${module_list},${excluded_modules_string}"
 }
 
 function generate_excluded_module_string() {
@@ -88,7 +86,7 @@ function generate_excluded_module_string() {
 # Generate excluded_modules_string
 generate_excluded_module_string
 
-mvn -B \
+mvn -B -pl "${excluded_modules_string}" \
     -ntp \
     -DtrimStackTrace=false \
     -Dclirr.skip=true \
@@ -118,7 +116,7 @@ case ${JOB_TYPE} in
     if [[ -n $module_list ]]; then
       printf "Running Integration Tests for:\n%s\n" "${module_list}"
       mvn -B ${INTEGRATION_TEST_ARGS} \
-          -pl ${module_list} \
+          -pl "${module_list}" \
           -amd \
           -ntp \
           -Penable-integration-tests \
@@ -146,7 +144,7 @@ case ${JOB_TYPE} in
     # Run Unit and Integration Tests with Native Image
     if [[ -n $module_list ]]; then
       mvn -B ${INTEGRATION_TEST_ARGS} \
-          -pl ${module_list} \
+          -pl "${module_list}" \
           -amd \
           -ntp \
           -DtrimStackTrace=false \
@@ -172,7 +170,7 @@ case ${JOB_TYPE} in
     # Run Unit and Integration Tests with Native Image
     if [[ -n $module_list ]]; then
       mvn -B ${INTEGRATION_TEST_ARGS} \
-          -pl ${module_list} \
+          -pl "${module_list}" \
           -amd \
           -ntp \
           -DtrimStackTrace=false \
