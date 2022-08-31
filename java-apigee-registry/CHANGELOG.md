@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/googleapis/java-apigee-registry/compare/v0.2.2...v0.3.0) (2022-08-22)
+
+
+### Features
+
+* added support for `force` field for API and API version deletion ([#35](https://github.com/googleapis/java-apigee-registry/issues/35)) ([01d3a88](https://github.com/googleapis/java-apigee-registry/commit/01d3a88d30ba74ca090b823d1003e21d192baef2))
+
 ## [0.2.2](https://github.com/googleapis/java-apigee-registry/compare/v0.2.1...v0.2.2) (2022-08-09)
 
 
