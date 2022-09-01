@@ -6,6 +6,7 @@ import com.google.cloud.compute.v1.InstancesClient;
 import com.google.cloud.compute.v1.InstancesClient.ListPagedResponse;
 import com.google.protobuf.util.Timestamps;
 import java.time.Instant;
+import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 
 public class Util {
@@ -20,7 +21,7 @@ public class Util {
     ListPagedResponse listPagedResponse = instancesClient.list(project, zone);
     for (Instance instance : listPagedResponse.iterateAll()) {
       System.out.println(instance.getCreationTimestamp());
-      if (isCreatedBeforeThresholdTime(Instant.parse(instance.getCreationTimestamp()))) {
+      if (isCreatedBeforeThresholdTime(ZonedDateTime.parse(instance.getCreationTimestamp()).toInstant())) {
         instancesClient.deleteAsync(DeleteInstanceRequest.newBuilder().setInstance(instance.getName()).build());
       }
     }
