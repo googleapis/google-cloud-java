@@ -1,37 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
 <differences>
-  <!-- These should be removed after the next major release 1.117.x -->
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/pubsub/v1/Subscriber$Builder</className>
-    <method>com.google.cloud.pubsub.v1.Subscriber$Builder setExactlyOnceDeliveryEnabled(boolean)</method>
-  </difference>
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/pubsub/v1/StreamingSubscriberConnection$Builder</className>
-    <method>com.google.cloud.pubsub.v1.StreamingSubscriberConnection$Builder setExactlyOnceDeliveryEnabled(boolean)</method>
-  </difference>
-  <difference>
-    <differenceType>7002</differenceType>
-    <className>com/google/cloud/pubsub/v1/MessageDispatcher$Builder</className>
-    <method>com.google.cloud.pubsub.v1.MessageDispatcher$Builder setEnableExactlyOnceDelivery(boolean)</method>
-  </difference>
-
-  <difference>
-    <!-- This should be removed after the next release 1.121.x -->
-    <differenceType>7006</differenceType>
-    <className>com/google/cloud/pubsub/v1/AckReplyConsumerWithResponse</className>
-    <method>*ack()</method>
-    <to>com.google.api.core.ApiFuture</to>
-    <justification>Updating return types to be consistent with Publish</justification>
-  </difference>
-  <difference>
-    <!-- This should be removed after the next release 1.121.x -->
-    <differenceType>7006</differenceType>
-    <className>com/google/cloud/pubsub/v1/AckReplyConsumerWithResponseImpl</className>
-    <method>*ack()</method>
-    <to>com.google.api.core.ApiFuture</to>
-    <justification>Updating return types to be consistent with Publish</justification>
-  </difference>
 </differences>
