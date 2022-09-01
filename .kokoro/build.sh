@@ -155,7 +155,7 @@ case ${JOB_TYPE} in
           -Danimal.sniffer.skip=true \
           -Pnative \
           -fae \
-          verify
+          test
       RETURN_CODE=$?
       printf "Finished Unit and Integration Tests for GraalVM Native:\n%s\n" "${module_list}"
     else
@@ -180,7 +180,7 @@ case ${JOB_TYPE} in
           -Danimal.sniffer.skip=true \
           -Pnative \
           -fae \
-          verify
+          test
       RETURN_CODE=$?
       printf "Finished Unit and Integration Tests for GraalVM Native 17:\n%s\n" "${module_list}"
     else
