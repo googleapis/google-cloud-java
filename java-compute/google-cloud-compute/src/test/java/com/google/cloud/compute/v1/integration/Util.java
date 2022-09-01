@@ -4,7 +4,6 @@ import com.google.cloud.compute.v1.DeleteInstanceRequest;
 import com.google.cloud.compute.v1.Instance;
 import com.google.cloud.compute.v1.InstancesClient;
 import com.google.cloud.compute.v1.InstancesClient.ListPagedResponse;
-import com.google.protobuf.util.Timestamps;
 import java.time.Instant;
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
@@ -17,12 +16,17 @@ public class Util {
   /**
    * Bring down any instances that are older than 24 hours
    **/
-  public static void cleanUpComputeInstances(InstancesClient instancesClient, String project, String zone) {
+  public static void cleanUpComputeInstances(InstancesClient instancesClient, String project,
+      String zone) {
     ListPagedResponse listPagedResponse = instancesClient.list(project, zone);
     for (Instance instance : listPagedResponse.iterateAll()) {
-      System.out.println(instance.getCreationTimestamp());
-      if (isCreatedBeforeThresholdTime(ZonedDateTime.parse(instance.getCreationTimestamp()).toInstant())) {
-        instancesClient.deleteAsync(DeleteInstanceRequest.newBuilder().setInstance(instance.getName()).build());
+      if (isCreatedBeforeThresholdTime(
+          ZonedDateTime.parse(instance.getCreationTimestamp()).toInstant())) {
+        instancesClient.deleteAsync(DeleteInstanceRequest.newBuilder()
+            .setInstance(instance.getName())
+            .setProject(project)
+            .setZone(zone)
+            .build());
       }
     }
   }
