@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [0.126.6](https://github.com/googleapis/java-logging-logback/compare/v0.126.5...v0.126.6) (2022-08-31)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-logging to v3.10.6 ([#829](https://github.com/googleapis/java-logging-logback/issues/829)) ([66cd295](https://github.com/googleapis/java-logging-logback/commit/66cd29574ba3b30955fb6dedef62bbe2a3e327b7))
+
 ## [0.126.5](https://github.com/googleapis/java-logging-logback/compare/v0.126.4...v0.126.5) (2022-08-19)
 
 
