@@ -98,7 +98,6 @@ public class ITSystemTest {
       Thread.sleep(TimeUnit.MINUTES.toMillis(1));
       response = client.getOperation(PROJECT_ID, ZONE, operation.getName());
     }
-    // Thread.sleep(TimeUnit.MINUTES.toMillis(5));
     client.deleteCluster(PROJECT_ID, ZONE, CLUSTER_NAME);
     LOG.info(String.format("%s cluster deleted successfully.", CLUSTER_NAME));
     client.close();
