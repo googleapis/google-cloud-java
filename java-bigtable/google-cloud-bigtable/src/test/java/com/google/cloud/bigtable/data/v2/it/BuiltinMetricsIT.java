@@ -37,11 +37,14 @@ import java.util.ArrayList;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+// TODO: re-enable this test
 @RunWith(JUnit4.class)
+@Ignore
 public class BuiltinMetricsIT {
   @ClassRule public static TestEnvRule testEnvRule = new TestEnvRule();
   public static MetricServiceClient metricClient;
