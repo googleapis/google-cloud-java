@@ -4256,17 +4256,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     long getCount();
 
     /**
-     *
-     *
-     * <pre>
-     * When true, Batch will install the GPU drivers.
-     * This field will be ignored if specified.
-     * </pre>
-     *
      * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-     *     deprecated. See google/cloud/batch/v1/job.proto;l=291
+     *     deprecated. See google/cloud/batch/v1/job.proto;l=289
      * @return The installGpuDrivers.
      */
     @java.lang.Deprecated
@@ -4449,17 +4442,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     public static final int INSTALL_GPU_DRIVERS_FIELD_NUMBER = 3;
     private boolean installGpuDrivers_;
     /**
-     *
-     *
-     * <pre>
-     * When true, Batch will install the GPU drivers.
-     * This field will be ignored if specified.
-     * </pre>
-     *
      * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-     *     deprecated. See google/cloud/batch/v1/job.proto;l=291
+     *     deprecated. See google/cloud/batch/v1/job.proto;l=289
      * @return The installGpuDrivers.
      */
     @java.lang.Override
@@ -4986,17 +4972,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
 
       private boolean installGpuDrivers_;
       /**
-       *
-       *
-       * <pre>
-       * When true, Batch will install the GPU drivers.
-       * This field will be ignored if specified.
-       * </pre>
-       *
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1/job.proto;l=291
+       *     deprecated. See google/cloud/batch/v1/job.proto;l=289
        * @return The installGpuDrivers.
        */
       @java.lang.Override
@@ -5005,17 +4984,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         return installGpuDrivers_;
       }
       /**
-       *
-       *
-       * <pre>
-       * When true, Batch will install the GPU drivers.
-       * This field will be ignored if specified.
-       * </pre>
-       *
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1/job.proto;l=291
+       *     deprecated. See google/cloud/batch/v1/job.proto;l=289
        * @param value The installGpuDrivers to set.
        * @return This builder for chaining.
        */
@@ -5027,17 +4999,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         return this;
       }
       /**
-       *
-       *
-       * <pre>
-       * When true, Batch will install the GPU drivers.
-       * This field will be ignored if specified.
-       * </pre>
-       *
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1/job.proto;l=291
+       *     deprecated. See google/cloud/batch/v1/job.proto;l=289
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
