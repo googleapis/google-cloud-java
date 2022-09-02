@@ -822,6 +822,77 @@ public interface WorkloadOrBuilder
   com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponseOrBuilder
       getSaaEnrollmentResponseOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Urls for services which are compliant for this Assured Workload, but which
+   * are currently disallowed by the ResourceUsageRestriction org policy.
+   * Invoke RestrictAllowedResources endpoint to allow your project developers
+   * to use these services in their environment."
+   * </pre>
+   *
+   * <code>
+   * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the compliantButDisallowedServices.
+   */
+  java.util.List<java.lang.String> getCompliantButDisallowedServicesList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Urls for services which are compliant for this Assured Workload, but which
+   * are currently disallowed by the ResourceUsageRestriction org policy.
+   * Invoke RestrictAllowedResources endpoint to allow your project developers
+   * to use these services in their environment."
+   * </pre>
+   *
+   * <code>
+   * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of compliantButDisallowedServices.
+   */
+  int getCompliantButDisallowedServicesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Urls for services which are compliant for this Assured Workload, but which
+   * are currently disallowed by the ResourceUsageRestriction org policy.
+   * Invoke RestrictAllowedResources endpoint to allow your project developers
+   * to use these services in their environment."
+   * </pre>
+   *
+   * <code>
+   * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The compliantButDisallowedServices at the given index.
+   */
+  java.lang.String getCompliantButDisallowedServices(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Urls for services which are compliant for this Assured Workload, but which
+   * are currently disallowed by the ResourceUsageRestriction org policy.
+   * Invoke RestrictAllowedResources endpoint to allow your project developers
+   * to use these services in their environment."
+   * </pre>
+   *
+   * <code>
+   * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the compliantButDisallowedServices at the given index.
+   */
+  com.google.protobuf.ByteString getCompliantButDisallowedServicesBytes(int index);
+
   public com.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegimeSettingsCase
       getComplianceRegimeSettingsCase();
 }

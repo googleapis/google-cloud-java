@@ -721,8 +721,7 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * A request to analyze a hypothetical move of a source project or project-based workload to a
-   * target (destination) folder-based workload.
+   * Analyze if the source Assured Workloads can be moved to the target Assured Workload
    *
    * <p>Sample code:
    *
@@ -757,8 +756,7 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * A request to analyze a hypothetical move of a source project or project-based workload to a
-   * target (destination) folder-based workload.
+   * Analyze if the source Assured Workloads can be moved to the target Assured Workload
    *
    * <p>Sample code:
    *
@@ -783,8 +781,7 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * A request to analyze a hypothetical move of a source project or project-based workload to a
-   * target (destination) folder-based workload.
+   * Analyze if the source Assured Workloads can be moved to the target Assured Workload
    *
    * <p>Sample code:
    *

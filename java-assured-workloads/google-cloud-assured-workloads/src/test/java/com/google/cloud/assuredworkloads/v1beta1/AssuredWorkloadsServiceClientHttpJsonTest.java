@@ -94,6 +94,7 @@ public class AssuredWorkloadsServiceClientHttpJsonTest {
             .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
             .setEnableSovereignControls(true)
             .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
+            .addAllCompliantButDisallowedServices(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -156,6 +157,7 @@ public class AssuredWorkloadsServiceClientHttpJsonTest {
             .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
             .setEnableSovereignControls(true)
             .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
+            .addAllCompliantButDisallowedServices(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
