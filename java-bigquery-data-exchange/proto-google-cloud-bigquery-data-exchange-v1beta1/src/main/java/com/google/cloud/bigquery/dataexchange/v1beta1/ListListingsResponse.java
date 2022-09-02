@@ -22,7 +22,7 @@ package com.google.cloud.bigquery.dataexchange.v1beta1;
  *
  *
  * <pre>
- * Message for response to listing Listings.
+ * Message for response to the list of Listings.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.ListListingsResponse}
@@ -427,7 +427,7 @@ public final class ListListingsResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Message for response to listing Listings.
+   * Message for response to the list of Listings.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.ListListingsResponse}

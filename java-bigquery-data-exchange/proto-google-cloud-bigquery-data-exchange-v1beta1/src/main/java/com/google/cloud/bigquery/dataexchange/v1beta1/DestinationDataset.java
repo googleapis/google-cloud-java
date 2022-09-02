@@ -22,7 +22,7 @@ package com.google.cloud.bigquery.dataexchange.v1beta1;
  *
  *
  * <pre>
- * Defines the Destination BigQuery Dataset.
+ * Defines the destination bigquery dataset.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.DestinationDataset}
@@ -738,7 +738,7 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Defines the Destination BigQuery Dataset.
+   * Defines the destination bigquery dataset.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.DestinationDataset}

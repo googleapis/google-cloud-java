@@ -22,7 +22,7 @@ package com.google.cloud.bigquery.dataexchange.v1beta1;
  *
  *
  * <pre>
- * Message for getting a Listing.
+ * Message for getting a listing.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.GetListingRequest}
@@ -332,7 +332,7 @@ public final class GetListingRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Message for getting a Listing.
+   * Message for getting a listing.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.GetListingRequest}

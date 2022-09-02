@@ -22,7 +22,7 @@ package com.google.cloud.bigquery.dataexchange.v1beta1;
  *
  *
  * <pre>
- * Message for requesting list of Listings.
+ * Message for requesting the list of listings.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.ListListingsRequest}
@@ -434,7 +434,7 @@ public final class ListListingsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Message for requesting list of Listings.
+   * Message for requesting the list of listings.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.ListListingsRequest}

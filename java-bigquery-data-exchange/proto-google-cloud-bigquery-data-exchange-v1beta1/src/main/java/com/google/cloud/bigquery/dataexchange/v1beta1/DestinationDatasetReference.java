@@ -22,7 +22,7 @@ package com.google.cloud.bigquery.dataexchange.v1beta1;
  *
  *
  * <pre>
- * Defines the Destination BigQuery Dataset Reference.
+ * Contains the reference that identifies a destination bigquery dataset.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.DestinationDatasetReference}
@@ -404,7 +404,7 @@ public final class DestinationDatasetReference extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Defines the Destination BigQuery Dataset Reference.
+   * Contains the reference that identifies a destination bigquery dataset.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.DestinationDatasetReference}

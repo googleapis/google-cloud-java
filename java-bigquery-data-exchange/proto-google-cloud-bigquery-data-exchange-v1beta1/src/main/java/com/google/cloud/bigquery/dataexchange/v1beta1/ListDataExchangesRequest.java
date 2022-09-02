@@ -22,7 +22,7 @@ package com.google.cloud.bigquery.dataexchange.v1beta1;
  *
  *
  * <pre>
- * Message for requesting list of DataExchanges.
+ * Message for requesting the list of data exchanges.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.ListDataExchangesRequest}
@@ -132,7 +132,7 @@ public final class ListDataExchangesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The parent resource path of the DataExchanges.
+   * Required. The parent resource path of the data exchanges.
    * e.g. `projects/myproject/locations/US`.
    * </pre>
    *
@@ -158,7 +158,7 @@ public final class ListDataExchangesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The parent resource path of the DataExchanges.
+   * Required. The parent resource path of the data exchanges.
    * e.g. `projects/myproject/locations/US`.
    * </pre>
    *
@@ -434,7 +434,7 @@ public final class ListDataExchangesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Message for requesting list of DataExchanges.
+   * Message for requesting the list of data exchanges.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.ListDataExchangesRequest}
@@ -617,7 +617,7 @@ public final class ListDataExchangesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The parent resource path of the DataExchanges.
+     * Required. The parent resource path of the data exchanges.
      * e.g. `projects/myproject/locations/US`.
      * </pre>
      *
@@ -642,7 +642,7 @@ public final class ListDataExchangesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The parent resource path of the DataExchanges.
+     * Required. The parent resource path of the data exchanges.
      * e.g. `projects/myproject/locations/US`.
      * </pre>
      *
@@ -667,7 +667,7 @@ public final class ListDataExchangesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The parent resource path of the DataExchanges.
+     * Required. The parent resource path of the data exchanges.
      * e.g. `projects/myproject/locations/US`.
      * </pre>
      *
@@ -691,7 +691,7 @@ public final class ListDataExchangesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The parent resource path of the DataExchanges.
+     * Required. The parent resource path of the data exchanges.
      * e.g. `projects/myproject/locations/US`.
      * </pre>
      *
@@ -711,7 +711,7 @@ public final class ListDataExchangesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The parent resource path of the DataExchanges.
+     * Required. The parent resource path of the data exchanges.
      * e.g. `projects/myproject/locations/US`.
      * </pre>
      *
