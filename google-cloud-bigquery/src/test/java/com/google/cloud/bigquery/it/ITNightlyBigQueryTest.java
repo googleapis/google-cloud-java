@@ -496,7 +496,7 @@ public class ITNightlyBigQueryTest {
     String query =
         String.format(
             "SELECT * FROM `bigquery-samples.wikipedia_benchmark.Wiki10B` LIMIT %s", recordCnt);
-
+    logger.log(Level.INFO, "Query used: {0}", query);
     String dataSet = RemoteBigQueryHelper.generateDatasetName();
     String table = "TAB_" + UUID.randomUUID();
     createDataset(dataSet);

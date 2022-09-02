@@ -190,11 +190,13 @@ class ConnectionImpl implements Connection {
     try {
       // use jobs.query if all the properties of connectionSettings are supported
       if (isFastQuerySupported()) {
+        logger.log(Level.INFO, "\n Using Fast Query Path");
         String projectId = bigQueryOptions.getProjectId();
         QueryRequest queryRequest = createQueryRequest(connectionSettings, sql, null, null);
         return queryRpc(projectId, queryRequest, sql, false);
       }
       // use jobs.insert otherwise
+      logger.log(Level.INFO, "\n Not Using Fast Query Path, using jobs.insert");
       com.google.api.services.bigquery.model.Job queryJob =
           createQueryJob(sql, connectionSettings, null, null);
       JobId jobId = JobId.fromPb(queryJob.getJobReference());
@@ -233,12 +235,14 @@ class ConnectionImpl implements Connection {
     try {
       // use jobs.query if possible
       if (isFastQuerySupported()) {
+        logger.log(Level.INFO, "\n Using Fast Query Path");
         final String projectId = bigQueryOptions.getProjectId();
         final QueryRequest queryRequest =
             createQueryRequest(connectionSettings, sql, parameters, labelMap);
         return queryRpc(projectId, queryRequest, sql, parameters != null);
       }
       // use jobs.insert otherwise
+      logger.log(Level.INFO, "\n Not Using Fast Query Path, using jobs.insert");
       com.google.api.services.bigquery.model.Job queryJob =
           createQueryJob(sql, connectionSettings, parameters, labelMap);
       JobId jobId = JobId.fromPb(queryJob.getJobReference());
@@ -1003,8 +1007,7 @@ class ConnectionImpl implements Connection {
     // progress (a job won't get stuck in pending forever).
     boolean jobComplete = false;
     GetQueryResultsResponse results = null;
-    long timeoutMs =
-        60000; // defaulting to 60seconds. TODO(prashant): It should be made user configurable
+    long timeoutMs = 10000; // defaulting to 10seconds.
 
     while (!jobComplete) {
       try {
@@ -1032,6 +1035,7 @@ class ConnectionImpl implements Connection {
           throw new BigQueryException(bigQueryErrors);
         }
       } catch (BigQueryRetryHelper.BigQueryRetryHelperException e) {
+        logger.log(Level.WARNING, "\n Error occurred while calling getQueryResultsWithRowLimit", e);
         throw BigQueryException.translateAndThrow(e);
       }
       jobComplete = results.getJobComplete();
@@ -1285,8 +1289,10 @@ class ConnectionImpl implements Connection {
               bigQueryOptions.getClock(),
               retryConfig);
     } catch (BigQueryRetryHelper.BigQueryRetryHelperException e) {
+      logger.log(Level.WARNING, "\n Error occurred while calling createJobForQuery", e);
       throw BigQueryException.translateAndThrow(e);
     }
+    logger.log(Level.INFO, "\n Query job created");
     return queryJob;
   }
 
