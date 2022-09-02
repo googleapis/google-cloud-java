@@ -57,7 +57,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-monitoring-bom</artifactId>
-        <version>3.4.1</version> <!-- needs to be in sync with google-cloud-bigtable-stats -->
+        <version>3.4.2</version> <!-- needs to be in sync with google-cloud-bigtable-stats -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
