@@ -153,6 +153,7 @@ case ${JOB_TYPE} in
           -Dcheckstyle.skip=true \
           -Dflatten.skip=true \
           -Danimal.sniffer.skip=true \
+          -Penable-integration-tests \
           -Pnative \
           -fae \
           test
@@ -178,6 +179,7 @@ case ${JOB_TYPE} in
           -Dcheckstyle.skip=true \
           -Dflatten.skip=true \
           -Danimal.sniffer.skip=true \
+          -Penable-integration-tests \
           -Pnative \
           -fae \
           test
