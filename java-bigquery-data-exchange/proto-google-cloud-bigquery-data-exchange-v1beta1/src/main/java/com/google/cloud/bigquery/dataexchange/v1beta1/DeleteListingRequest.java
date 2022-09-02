@@ -22,7 +22,7 @@ package com.google.cloud.bigquery.dataexchange.v1beta1;
  *
  *
  * <pre>
- * Message for deleting a Listing.
+ * Message for deleting a listing.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.DeleteListingRequest}
@@ -333,7 +333,7 @@ public final class DeleteListingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Message for deleting a Listing.
+   * Message for deleting a listing.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.DeleteListingRequest}

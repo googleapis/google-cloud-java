@@ -21,11 +21,12 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * The AnalyticsHubService API facilitates data sharing within and across
- * organizations. It allows data providers to publish Listings --- a
- * discoverable and searchable SKU representing a dataset. Data consumers can
- * subscribe to Listings. Upon subscription, AnalyticsHub provisions a "Linked
- * Datasets" surfacing the data in the consumer's project.
+ * The `AnalyticsHubService` API facilitates data sharing within and across
+ * organizations. It allows data providers to publish listings that reference
+ * shared datasets. With Analytics Hub, users can discover and search for
+ * listings that they have access to. Subscribers can view and subscribe to
+ * listings. When you subscribe to a listing, Analytics Hub creates a linked
+ * dataset in your project.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -784,11 +785,12 @@ public final class AnalyticsHubServiceGrpc {
    *
    *
    * <pre>
-   * The AnalyticsHubService API facilitates data sharing within and across
-   * organizations. It allows data providers to publish Listings --- a
-   * discoverable and searchable SKU representing a dataset. Data consumers can
-   * subscribe to Listings. Upon subscription, AnalyticsHub provisions a "Linked
-   * Datasets" surfacing the data in the consumer's project.
+   * The `AnalyticsHubService` API facilitates data sharing within and across
+   * organizations. It allows data providers to publish listings that reference
+   * shared datasets. With Analytics Hub, users can discover and search for
+   * listings that they have access to. Subscribers can view and subscribe to
+   * listings. When you subscribe to a listing, Analytics Hub creates a linked
+   * dataset in your project.
    * </pre>
    */
   public abstract static class AnalyticsHubServiceImplBase implements io.grpc.BindableService {
@@ -797,7 +799,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Lists DataExchanges in a given project and location.
+     * Lists all data exchanges in a given project and location.
      * </pre>
      */
     public void listDataExchanges(
@@ -813,7 +815,8 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Lists DataExchanges from projects in a given organization and location.
+     * Lists all data exchanges from projects in a given organization and
+     * location.
      * </pre>
      */
     public void listOrgDataExchanges(
@@ -829,7 +832,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Gets details of a single DataExchange.
+     * Gets the details of a data exchange.
      * </pre>
      */
     public void getDataExchange(
@@ -844,7 +847,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new DataExchange in a given project and location.
+     * Creates a new data exchange.
      * </pre>
      */
     public void createDataExchange(
@@ -859,7 +862,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Updates the parameters of a single DataExchange.
+     * Updates an existing data exchange.
      * </pre>
      */
     public void updateDataExchange(
@@ -874,7 +877,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a single DataExchange.
+     * Deletes an existing data exchange.
      * </pre>
      */
     public void deleteDataExchange(
@@ -888,7 +891,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Lists Listings in a given project and location.
+     * Lists all listings in a given project and location.
      * </pre>
      */
     public void listListings(
@@ -904,7 +907,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Gets details of a single Listing.
+     * Gets the details of a listing.
      * </pre>
      */
     public void getListing(
@@ -918,7 +921,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new Listing in a given project and location.
+     * Creates a new listing.
      * </pre>
      */
     public void createListing(
@@ -933,7 +936,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Updates the parameters of a single Listing.
+     * Updates an existing listing.
      * </pre>
      */
     public void updateListing(
@@ -948,8 +951,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a single Listing, as long as there are no subscriptions
-     * associated with the source of this Listing.
+     * Deletes a listing.
      * </pre>
      */
     public void deleteListing(
@@ -963,9 +965,10 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Subscribes to a single Listing.
-     * Data Exchange currently supports one type of Listing: a BigQuery dataset.
-     * Upon subscription to a Listing for a BigQuery dataset, Data Exchange
+     * Subscribes to a listing.
+     * Currently, with Analytics Hub, you can create listings that
+     * reference only BigQuery datasets.
+     * Upon subscription to a listing for a BigQuery dataset, Analytics Hub
      * creates a linked dataset in the subscriber's project.
      * </pre>
      */
@@ -982,7 +985,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Gets the IAM policy for a dataExchange or a listing.
+     * Gets the IAM policy.
      * </pre>
      */
     public void getIamPolicy(
@@ -996,7 +999,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Sets the IAM policy for a dataExchange or a listing.
+     * Sets the IAM policy.
      * </pre>
      */
     public void setIamPolicy(
@@ -1010,8 +1013,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Returns the permissions that a caller has on a specified dataExchange or
-     * listing.
+     * Returns the permissions that a caller has.
      * </pre>
      */
     public void testIamPermissions(
@@ -1134,11 +1136,12 @@ public final class AnalyticsHubServiceGrpc {
    *
    *
    * <pre>
-   * The AnalyticsHubService API facilitates data sharing within and across
-   * organizations. It allows data providers to publish Listings --- a
-   * discoverable and searchable SKU representing a dataset. Data consumers can
-   * subscribe to Listings. Upon subscription, AnalyticsHub provisions a "Linked
-   * Datasets" surfacing the data in the consumer's project.
+   * The `AnalyticsHubService` API facilitates data sharing within and across
+   * organizations. It allows data providers to publish listings that reference
+   * shared datasets. With Analytics Hub, users can discover and search for
+   * listings that they have access to. Subscribers can view and subscribe to
+   * listings. When you subscribe to a listing, Analytics Hub creates a linked
+   * dataset in your project.
    * </pre>
    */
   public static final class AnalyticsHubServiceStub
@@ -1157,7 +1160,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Lists DataExchanges in a given project and location.
+     * Lists all data exchanges in a given project and location.
      * </pre>
      */
     public void listDataExchanges(
@@ -1175,7 +1178,8 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Lists DataExchanges from projects in a given organization and location.
+     * Lists all data exchanges from projects in a given organization and
+     * location.
      * </pre>
      */
     public void listOrgDataExchanges(
@@ -1193,7 +1197,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Gets details of a single DataExchange.
+     * Gets the details of a data exchange.
      * </pre>
      */
     public void getDataExchange(
@@ -1210,7 +1214,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new DataExchange in a given project and location.
+     * Creates a new data exchange.
      * </pre>
      */
     public void createDataExchange(
@@ -1227,7 +1231,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Updates the parameters of a single DataExchange.
+     * Updates an existing data exchange.
      * </pre>
      */
     public void updateDataExchange(
@@ -1244,7 +1248,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a single DataExchange.
+     * Deletes an existing data exchange.
      * </pre>
      */
     public void deleteDataExchange(
@@ -1260,7 +1264,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Lists Listings in a given project and location.
+     * Lists all listings in a given project and location.
      * </pre>
      */
     public void listListings(
@@ -1278,7 +1282,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Gets details of a single Listing.
+     * Gets the details of a listing.
      * </pre>
      */
     public void getListing(
@@ -1293,7 +1297,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new Listing in a given project and location.
+     * Creates a new listing.
      * </pre>
      */
     public void createListing(
@@ -1310,7 +1314,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Updates the parameters of a single Listing.
+     * Updates an existing listing.
      * </pre>
      */
     public void updateListing(
@@ -1327,8 +1331,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a single Listing, as long as there are no subscriptions
-     * associated with the source of this Listing.
+     * Deletes a listing.
      * </pre>
      */
     public void deleteListing(
@@ -1344,9 +1347,10 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Subscribes to a single Listing.
-     * Data Exchange currently supports one type of Listing: a BigQuery dataset.
-     * Upon subscription to a Listing for a BigQuery dataset, Data Exchange
+     * Subscribes to a listing.
+     * Currently, with Analytics Hub, you can create listings that
+     * reference only BigQuery datasets.
+     * Upon subscription to a listing for a BigQuery dataset, Analytics Hub
      * creates a linked dataset in the subscriber's project.
      * </pre>
      */
@@ -1365,7 +1369,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Gets the IAM policy for a dataExchange or a listing.
+     * Gets the IAM policy.
      * </pre>
      */
     public void getIamPolicy(
@@ -1381,7 +1385,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Sets the IAM policy for a dataExchange or a listing.
+     * Sets the IAM policy.
      * </pre>
      */
     public void setIamPolicy(
@@ -1397,8 +1401,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Returns the permissions that a caller has on a specified dataExchange or
-     * listing.
+     * Returns the permissions that a caller has.
      * </pre>
      */
     public void testIamPermissions(
@@ -1416,11 +1419,12 @@ public final class AnalyticsHubServiceGrpc {
    *
    *
    * <pre>
-   * The AnalyticsHubService API facilitates data sharing within and across
-   * organizations. It allows data providers to publish Listings --- a
-   * discoverable and searchable SKU representing a dataset. Data consumers can
-   * subscribe to Listings. Upon subscription, AnalyticsHub provisions a "Linked
-   * Datasets" surfacing the data in the consumer's project.
+   * The `AnalyticsHubService` API facilitates data sharing within and across
+   * organizations. It allows data providers to publish listings that reference
+   * shared datasets. With Analytics Hub, users can discover and search for
+   * listings that they have access to. Subscribers can view and subscribe to
+   * listings. When you subscribe to a listing, Analytics Hub creates a linked
+   * dataset in your project.
    * </pre>
    */
   public static final class AnalyticsHubServiceBlockingStub
@@ -1440,7 +1444,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Lists DataExchanges in a given project and location.
+     * Lists all data exchanges in a given project and location.
      * </pre>
      */
     public com.google.cloud.bigquery.dataexchange.v1beta1.ListDataExchangesResponse
@@ -1454,7 +1458,8 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Lists DataExchanges from projects in a given organization and location.
+     * Lists all data exchanges from projects in a given organization and
+     * location.
      * </pre>
      */
     public com.google.cloud.bigquery.dataexchange.v1beta1.ListOrgDataExchangesResponse
@@ -1468,7 +1473,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Gets details of a single DataExchange.
+     * Gets the details of a data exchange.
      * </pre>
      */
     public com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange getDataExchange(
@@ -1481,7 +1486,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new DataExchange in a given project and location.
+     * Creates a new data exchange.
      * </pre>
      */
     public com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange createDataExchange(
@@ -1494,7 +1499,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Updates the parameters of a single DataExchange.
+     * Updates an existing data exchange.
      * </pre>
      */
     public com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange updateDataExchange(
@@ -1507,7 +1512,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a single DataExchange.
+     * Deletes an existing data exchange.
      * </pre>
      */
     public com.google.protobuf.Empty deleteDataExchange(
@@ -1520,7 +1525,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Lists Listings in a given project and location.
+     * Lists all listings in a given project and location.
      * </pre>
      */
     public com.google.cloud.bigquery.dataexchange.v1beta1.ListListingsResponse listListings(
@@ -1533,7 +1538,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Gets details of a single Listing.
+     * Gets the details of a listing.
      * </pre>
      */
     public com.google.cloud.bigquery.dataexchange.v1beta1.Listing getListing(
@@ -1546,7 +1551,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new Listing in a given project and location.
+     * Creates a new listing.
      * </pre>
      */
     public com.google.cloud.bigquery.dataexchange.v1beta1.Listing createListing(
@@ -1559,7 +1564,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Updates the parameters of a single Listing.
+     * Updates an existing listing.
      * </pre>
      */
     public com.google.cloud.bigquery.dataexchange.v1beta1.Listing updateListing(
@@ -1572,8 +1577,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a single Listing, as long as there are no subscriptions
-     * associated with the source of this Listing.
+     * Deletes a listing.
      * </pre>
      */
     public com.google.protobuf.Empty deleteListing(
@@ -1586,9 +1590,10 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Subscribes to a single Listing.
-     * Data Exchange currently supports one type of Listing: a BigQuery dataset.
-     * Upon subscription to a Listing for a BigQuery dataset, Data Exchange
+     * Subscribes to a listing.
+     * Currently, with Analytics Hub, you can create listings that
+     * reference only BigQuery datasets.
+     * Upon subscription to a listing for a BigQuery dataset, Analytics Hub
      * creates a linked dataset in the subscriber's project.
      * </pre>
      */
@@ -1602,7 +1607,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Gets the IAM policy for a dataExchange or a listing.
+     * Gets the IAM policy.
      * </pre>
      */
     public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
@@ -1614,7 +1619,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Sets the IAM policy for a dataExchange or a listing.
+     * Sets the IAM policy.
      * </pre>
      */
     public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
@@ -1626,8 +1631,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Returns the permissions that a caller has on a specified dataExchange or
-     * listing.
+     * Returns the permissions that a caller has.
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
@@ -1641,11 +1645,12 @@ public final class AnalyticsHubServiceGrpc {
    *
    *
    * <pre>
-   * The AnalyticsHubService API facilitates data sharing within and across
-   * organizations. It allows data providers to publish Listings --- a
-   * discoverable and searchable SKU representing a dataset. Data consumers can
-   * subscribe to Listings. Upon subscription, AnalyticsHub provisions a "Linked
-   * Datasets" surfacing the data in the consumer's project.
+   * The `AnalyticsHubService` API facilitates data sharing within and across
+   * organizations. It allows data providers to publish listings that reference
+   * shared datasets. With Analytics Hub, users can discover and search for
+   * listings that they have access to. Subscribers can view and subscribe to
+   * listings. When you subscribe to a listing, Analytics Hub creates a linked
+   * dataset in your project.
    * </pre>
    */
   public static final class AnalyticsHubServiceFutureStub
@@ -1665,7 +1670,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Lists DataExchanges in a given project and location.
+     * Lists all data exchanges in a given project and location.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1680,7 +1685,8 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Lists DataExchanges from projects in a given organization and location.
+     * Lists all data exchanges from projects in a given organization and
+     * location.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1695,7 +1701,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Gets details of a single DataExchange.
+     * Gets the details of a data exchange.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1710,7 +1716,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new DataExchange in a given project and location.
+     * Creates a new data exchange.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1725,7 +1731,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Updates the parameters of a single DataExchange.
+     * Updates an existing data exchange.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1740,7 +1746,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a single DataExchange.
+     * Deletes an existing data exchange.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -1754,7 +1760,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Lists Listings in a given project and location.
+     * Lists all listings in a given project and location.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1768,7 +1774,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Gets details of a single Listing.
+     * Gets the details of a listing.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1782,7 +1788,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new Listing in a given project and location.
+     * Creates a new listing.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1796,7 +1802,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Updates the parameters of a single Listing.
+     * Updates an existing listing.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1810,8 +1816,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Deletes a single Listing, as long as there are no subscriptions
-     * associated with the source of this Listing.
+     * Deletes a listing.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -1824,9 +1829,10 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Subscribes to a single Listing.
-     * Data Exchange currently supports one type of Listing: a BigQuery dataset.
-     * Upon subscription to a Listing for a BigQuery dataset, Data Exchange
+     * Subscribes to a listing.
+     * Currently, with Analytics Hub, you can create listings that
+     * reference only BigQuery datasets.
+     * Upon subscription to a listing for a BigQuery dataset, Analytics Hub
      * creates a linked dataset in the subscriber's project.
      * </pre>
      */
@@ -1842,7 +1848,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Gets the IAM policy for a dataExchange or a listing.
+     * Gets the IAM policy.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
@@ -1855,7 +1861,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Sets the IAM policy for a dataExchange or a listing.
+     * Sets the IAM policy.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
@@ -1868,8 +1874,7 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Returns the permissions that a caller has on a specified dataExchange or
-     * listing.
+     * Returns the permissions that a caller has.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

@@ -31,11 +31,17 @@
             "GetListing": {
               "methods": ["getListing", "getListing", "getListing", "getListingCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "ListDataExchanges": {
               "methods": ["listDataExchanges", "listDataExchanges", "listDataExchanges", "listDataExchangesPagedCallable", "listDataExchangesCallable"]
             },
             "ListListings": {
               "methods": ["listListings", "listListings", "listListings", "listListingsPagedCallable", "listListingsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListOrgDataExchanges": {
               "methods": ["listOrgDataExchanges", "listOrgDataExchanges", "listOrgDataExchangesPagedCallable", "listOrgDataExchangesCallable"]

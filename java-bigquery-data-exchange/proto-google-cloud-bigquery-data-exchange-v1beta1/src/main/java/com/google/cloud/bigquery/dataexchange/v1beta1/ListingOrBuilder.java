@@ -27,6 +27,48 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
+   * Required. Shared dataset i.e. BigQuery dataset source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the bigqueryDataset field is set.
+   */
+  boolean hasBigqueryDataset();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Shared dataset i.e. BigQuery dataset source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bigqueryDataset.
+   */
+  com.google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource getBigqueryDataset();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Shared dataset i.e. BigQuery dataset source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  com.google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSourceOrBuilder
+      getBigqueryDatasetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The resource name of the listing.
    * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`
    * </pre>
@@ -56,7 +98,7 @@ public interface ListingOrBuilder
    * <pre>
    * Required. Human-readable display name of the listing. The display name must contain
    * only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces
-   * ( ), and can't start or end with spaces.
+   * ( ), ampersands (&amp;) and can't start or end with spaces.
    * Default value is an empty string.
    * Max length: 63 bytes.
    * </pre>
@@ -72,7 +114,7 @@ public interface ListingOrBuilder
    * <pre>
    * Required. Human-readable display name of the listing. The display name must contain
    * only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces
-   * ( ), and can't start or end with spaces.
+   * ( ), ampersands (&amp;) and can't start or end with spaces.
    * Default value is an empty string.
    * Max length: 63 bytes.
    * </pre>
@@ -87,10 +129,9 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
-   * Optional. Short description of the listing that can consist of sentences or
-   * paragraphs. The description must not contain Unicode non-characters as
-   * well as C0 and C1 control codes except tabs (HT), new lines (LF), carriage
-   * returns (CR), and page breaks (FF).
+   * Optional. Short description of the listing. The description must not contain
+   * Unicode non-characters and C0 and C1 control codes except tabs (HT),
+   * new lines (LF), carriage returns (CR), and page breaks (FF).
    * Default value is an empty string.
    * Max length: 2000 bytes.
    * </pre>
@@ -104,10 +145,9 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
-   * Optional. Short description of the listing that can consist of sentences or
-   * paragraphs. The description must not contain Unicode non-characters as
-   * well as C0 and C1 control codes except tabs (HT), new lines (LF), carriage
-   * returns (CR), and page breaks (FF).
+   * Optional. Short description of the listing. The description must not contain
+   * Unicode non-characters and C0 and C1 control codes except tabs (HT),
+   * new lines (LF), carriage returns (CR), and page breaks (FF).
    * Default value is an empty string.
    * Max length: 2000 bytes.
    * </pre>
@@ -174,49 +214,7 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
-   * Required. Shared dataset i.e. BigQuery dataset source.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
-   *
-   * @return Whether the bigqueryDataset field is set.
-   */
-  boolean hasBigqueryDataset();
-  /**
-   *
-   *
-   * <pre>
-   * Required. Shared dataset i.e. BigQuery dataset source.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
-   *
-   * @return The bigqueryDataset.
-   */
-  com.google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource getBigqueryDataset();
-  /**
-   *
-   *
-   * <pre>
-   * Required. Shared dataset i.e. BigQuery dataset source.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
-   */
-  com.google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSourceOrBuilder
-      getBigqueryDatasetOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Current state of the Listing.
+   * Output only. Current state of the listing.
    * </pre>
    *
    * <code>
@@ -230,7 +228,7 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
-   * Output only. Current state of the Listing.
+   * Output only. Current state of the listing.
    * </pre>
    *
    * <code>
@@ -262,7 +260,7 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
-   * Optional. The details of the Data Provider who owns the source data.
+   * Optional. Details of the data provider who owns the source data.
    * </pre>
    *
    * <code>
@@ -276,7 +274,7 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
-   * Optional. The details of the Data Provider who owns the source data.
+   * Optional. Details of the data provider who owns the source data.
    * </pre>
    *
    * <code>
@@ -290,7 +288,7 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
-   * Optional. The details of the Data Provider who owns the source data.
+   * Optional. Details of the data provider who owns the source data.
    * </pre>
    *
    * <code>
@@ -303,25 +301,26 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
-   * Optional. Categories of the Listing. Up to two categories are allowed.
+   * Optional. Categories of the listing. Up to two categories are allowed.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.bigquery.dataexchange.common.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.cloud.bigquery.dataexchange.v1beta1.Listing.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return A list containing the categories.
    */
-  java.util.List<com.google.cloud.bigquery.dataexchange.common.Category> getCategoriesList();
+  java.util.List<com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Category>
+      getCategoriesList();
   /**
    *
    *
    * <pre>
-   * Optional. Categories of the Listing. Up to two categories are allowed.
+   * Optional. Categories of the listing. Up to two categories are allowed.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.bigquery.dataexchange.common.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.cloud.bigquery.dataexchange.v1beta1.Listing.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The count of categories.
@@ -331,26 +330,26 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
-   * Optional. Categories of the Listing. Up to two categories are allowed.
+   * Optional. Categories of the listing. Up to two categories are allowed.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.bigquery.dataexchange.common.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.cloud.bigquery.dataexchange.v1beta1.Listing.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @param index The index of the element to return.
    * @return The categories at the given index.
    */
-  com.google.cloud.bigquery.dataexchange.common.Category getCategories(int index);
+  com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Category getCategories(int index);
   /**
    *
    *
    * <pre>
-   * Optional. Categories of the Listing. Up to two categories are allowed.
+   * Optional. Categories of the listing. Up to two categories are allowed.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.bigquery.dataexchange.common.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.cloud.bigquery.dataexchange.v1beta1.Listing.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return A list containing the enum numeric values on the wire for categories.
@@ -360,11 +359,11 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
-   * Optional. Categories of the Listing. Up to two categories are allowed.
+   * Optional. Categories of the listing. Up to two categories are allowed.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.bigquery.dataexchange.common.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.cloud.bigquery.dataexchange.v1beta1.Listing.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @param index The index of the value to return.
@@ -376,7 +375,7 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
-   * Optional. The details of the Publisher who owns the listing and has rights to share
+   * Optional. Details of the publisher who owns the listing and who can share
    * the source data.
    * </pre>
    *
@@ -391,7 +390,7 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
-   * Optional. The details of the Publisher who owns the listing and has rights to share
+   * Optional. Details of the publisher who owns the listing and who can share
    * the source data.
    * </pre>
    *
@@ -406,7 +405,7 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
-   * Optional. The details of the Publisher who owns the listing and has rights to share
+   * Optional. Details of the publisher who owns the listing and who can share
    * the source data.
    * </pre>
    *

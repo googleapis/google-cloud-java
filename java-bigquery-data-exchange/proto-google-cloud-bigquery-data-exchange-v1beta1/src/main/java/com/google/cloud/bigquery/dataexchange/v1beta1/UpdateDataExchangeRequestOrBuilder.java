@@ -27,10 +27,9 @@ public interface UpdateDataExchangeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Field mask is used to specify the fields to be overwritten in the
-   * DataExchange resource by the update.
-   * The fields specified in the update_mask are relative to the resource, not
-   * the full request.
+   * Required. Field mask specifies the fields to update in the data exchange
+   * resource. The fields specified in the
+   * `updateMask` are relative to the resource and are not a full request.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -43,10 +42,9 @@ public interface UpdateDataExchangeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Field mask is used to specify the fields to be overwritten in the
-   * DataExchange resource by the update.
-   * The fields specified in the update_mask are relative to the resource, not
-   * the full request.
+   * Required. Field mask specifies the fields to update in the data exchange
+   * resource. The fields specified in the
+   * `updateMask` are relative to the resource and are not a full request.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -59,10 +57,9 @@ public interface UpdateDataExchangeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Field mask is used to specify the fields to be overwritten in the
-   * DataExchange resource by the update.
-   * The fields specified in the update_mask are relative to the resource, not
-   * the full request.
+   * Required. Field mask specifies the fields to update in the data exchange
+   * resource. The fields specified in the
+   * `updateMask` are relative to the resource and are not a full request.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -74,7 +71,7 @@ public interface UpdateDataExchangeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The DataExchange to update.
+   * Required. The data exchange to update.
    * </pre>
    *
    * <code>
@@ -88,7 +85,7 @@ public interface UpdateDataExchangeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The DataExchange to update.
+   * Required. The data exchange to update.
    * </pre>
    *
    * <code>
@@ -102,7 +99,7 @@ public interface UpdateDataExchangeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The DataExchange to update.
+   * Required. The data exchange to update.
    * </pre>
    *
    * <code>

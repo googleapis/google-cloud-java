@@ -22,7 +22,7 @@ package com.google.cloud.bigquery.dataexchange.v1beta1;
  *
  *
  * <pre>
- * Message for subscribing a Listing.
+ * Message for subscribing to a listing.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.SubscribeListingRequest}
@@ -180,61 +180,6 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
     return DestinationCase.forNumber(destinationCase_);
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
-  /**
-   *
-   *
-   * <pre>
-   * Required. Resource name of the listing to subscribe to.
-   * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`.
-   * </pre>
-   *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
-   *
-   * @return The name.
-   */
-  @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      name_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Required. Resource name of the listing to subscribe to.
-   * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`.
-   * </pre>
-   *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
-   *
-   * @return The bytes for name.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      name_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int DESTINATION_DATASET_FIELD_NUMBER = 3;
   /**
    *
@@ -288,6 +233,61 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
       return (com.google.cloud.bigquery.dataexchange.v1beta1.DestinationDataset) destination_;
     }
     return com.google.cloud.bigquery.dataexchange.v1beta1.DestinationDataset.getDefaultInstance();
+  }
+
+  public static final int NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * Required. Resource name of the listing that you want to subscribe to.
+   * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`.
+   * </pre>
+   *
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The name.
+   */
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. Resource name of the listing that you want to subscribe to.
+   * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`.
+   * </pre>
+   *
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -480,7 +480,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Message for subscribing a Listing.
+   * Message for subscribing to a listing.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.SubscribeListingRequest}
@@ -556,7 +556,6 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
     public com.google.cloud.bigquery.dataexchange.v1beta1.SubscribeListingRequest buildPartial() {
       com.google.cloud.bigquery.dataexchange.v1beta1.SubscribeListingRequest result =
           new com.google.cloud.bigquery.dataexchange.v1beta1.SubscribeListingRequest(this);
-      result.name_ = name_;
       if (destinationCase_ == 3) {
         if (destinationDatasetBuilder_ == null) {
           result.destination_ = destination_;
@@ -564,6 +563,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
           result.destination_ = destinationDatasetBuilder_.build();
         }
       }
+      result.name_ = name_;
       result.destinationCase_ = destinationCase_;
       onBuilt();
       return result;
@@ -674,127 +674,6 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
     public Builder clearDestination() {
       destinationCase_ = 0;
       destination_ = null;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object name_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Required. Resource name of the listing to subscribe to.
-     * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`.
-     * </pre>
-     *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @return The name.
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Resource name of the listing to subscribe to.
-     * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`.
-     * </pre>
-     *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @return The bytes for name.
-     */
-    public com.google.protobuf.ByteString getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Resource name of the listing to subscribe to.
-     * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`.
-     * </pre>
-     *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @param value The name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setName(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      name_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Resource name of the listing to subscribe to.
-     * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`.
-     * </pre>
-     *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearName() {
-
-      name_ = getDefaultInstance().getName();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Resource name of the listing to subscribe to.
-     * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`.
-     * </pre>
-     *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @param value The bytes for name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNameBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      name_ = value;
       onChanged();
       return this;
     }
@@ -1029,6 +908,127 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
       onChanged();
       ;
       return destinationDatasetBuilder_;
+    }
+
+    private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. Resource name of the listing that you want to subscribe to.
+     * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`.
+     * </pre>
+     *
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Resource name of the listing that you want to subscribe to.
+     * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`.
+     * </pre>
+     *
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Resource name of the listing that you want to subscribe to.
+     * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`.
+     * </pre>
+     *
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Resource name of the listing that you want to subscribe to.
+     * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`.
+     * </pre>
+     *
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Resource name of the listing that you want to subscribe to.
+     * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`.
+     * </pre>
+     *
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      name_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

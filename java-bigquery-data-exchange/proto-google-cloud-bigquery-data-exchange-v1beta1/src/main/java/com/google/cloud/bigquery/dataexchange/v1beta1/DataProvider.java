@@ -22,7 +22,7 @@ package com.google.cloud.bigquery.dataexchange.v1beta1;
  *
  *
  * <pre>
- * Contains details of the Data Provider.
+ * Contains details of the data provider.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.DataProvider}
@@ -127,7 +127,7 @@ public final class DataProvider extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Name of the Data Provider.
+   * Optional. Name of the data provider.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -150,7 +150,7 @@ public final class DataProvider extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Name of the Data Provider.
+   * Optional. Name of the data provider.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -176,7 +176,7 @@ public final class DataProvider extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Email or URL of the Data Provider.
+   * Optional. Email or URL of the data provider.
    * Max Length: 1000 bytes.
    * </pre>
    *
@@ -200,7 +200,7 @@ public final class DataProvider extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Email or URL of the Data Provider.
+   * Optional. Email or URL of the data provider.
    * Max Length: 1000 bytes.
    * </pre>
    *
@@ -394,7 +394,7 @@ public final class DataProvider extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Contains details of the Data Provider.
+   * Contains details of the data provider.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.DataProvider}
@@ -561,7 +561,7 @@ public final class DataProvider extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the Data Provider.
+     * Optional. Name of the data provider.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -583,7 +583,7 @@ public final class DataProvider extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the Data Provider.
+     * Optional. Name of the data provider.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -605,7 +605,7 @@ public final class DataProvider extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the Data Provider.
+     * Optional. Name of the data provider.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -626,7 +626,7 @@ public final class DataProvider extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the Data Provider.
+     * Optional. Name of the data provider.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -643,7 +643,7 @@ public final class DataProvider extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the Data Provider.
+     * Optional. Name of the data provider.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -667,7 +667,7 @@ public final class DataProvider extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Email or URL of the Data Provider.
+     * Optional. Email or URL of the data provider.
      * Max Length: 1000 bytes.
      * </pre>
      *
@@ -690,7 +690,7 @@ public final class DataProvider extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Email or URL of the Data Provider.
+     * Optional. Email or URL of the data provider.
      * Max Length: 1000 bytes.
      * </pre>
      *
@@ -713,7 +713,7 @@ public final class DataProvider extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Email or URL of the Data Provider.
+     * Optional. Email or URL of the data provider.
      * Max Length: 1000 bytes.
      * </pre>
      *
@@ -735,7 +735,7 @@ public final class DataProvider extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Email or URL of the Data Provider.
+     * Optional. Email or URL of the data provider.
      * Max Length: 1000 bytes.
      * </pre>
      *
@@ -753,7 +753,7 @@ public final class DataProvider extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Email or URL of the Data Provider.
+     * Optional. Email or URL of the data provider.
      * Max Length: 1000 bytes.
      * </pre>
      *

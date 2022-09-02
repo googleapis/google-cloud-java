@@ -22,7 +22,7 @@ package com.google.cloud.bigquery.dataexchange.v1beta1;
  *
  *
  * <pre>
- * Message for creating a Listing.
+ * Message for creating a listing.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.CreateListingRequest}
@@ -199,7 +199,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The ID of the Listing to create.
+   * Required. The ID of the listing to create.
    * Must contain only Unicode letters, numbers (0-9), underscores (_).
    * Should not use characters that require URL-escaping, or characters
    * outside of ASCII, spaces.
@@ -226,7 +226,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The ID of the Listing to create.
+   * Required. The ID of the listing to create.
    * Must contain only Unicode letters, numbers (0-9), underscores (_).
    * Should not use characters that require URL-escaping, or characters
    * outside of ASCII, spaces.
@@ -492,7 +492,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Message for creating a Listing.
+   * Message for creating a listing.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.CreateListingRequest}
@@ -801,7 +801,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The ID of the Listing to create.
+     * Required. The ID of the listing to create.
      * Must contain only Unicode letters, numbers (0-9), underscores (_).
      * Should not use characters that require URL-escaping, or characters
      * outside of ASCII, spaces.
@@ -827,7 +827,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The ID of the Listing to create.
+     * Required. The ID of the listing to create.
      * Must contain only Unicode letters, numbers (0-9), underscores (_).
      * Should not use characters that require URL-escaping, or characters
      * outside of ASCII, spaces.
@@ -853,7 +853,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The ID of the Listing to create.
+     * Required. The ID of the listing to create.
      * Must contain only Unicode letters, numbers (0-9), underscores (_).
      * Should not use characters that require URL-escaping, or characters
      * outside of ASCII, spaces.
@@ -878,7 +878,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The ID of the Listing to create.
+     * Required. The ID of the listing to create.
      * Must contain only Unicode letters, numbers (0-9), underscores (_).
      * Should not use characters that require URL-escaping, or characters
      * outside of ASCII, spaces.
@@ -899,7 +899,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The ID of the Listing to create.
+     * Required. The ID of the listing to create.
      * Must contain only Unicode letters, numbers (0-9), underscores (_).
      * Should not use characters that require URL-escaping, or characters
      * outside of ASCII, spaces.

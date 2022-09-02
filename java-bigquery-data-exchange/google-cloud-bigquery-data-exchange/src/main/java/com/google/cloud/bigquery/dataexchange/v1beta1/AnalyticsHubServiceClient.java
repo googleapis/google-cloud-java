@@ -27,6 +27,10 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigquery.dataexchange.v1beta1.stub.AnalyticsHubServiceStub;
 import com.google.cloud.bigquery.dataexchange.v1beta1.stub.AnalyticsHubServiceStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -42,10 +46,11 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: The AnalyticsHubService API facilitates data sharing within and across
- * organizations. It allows data providers to publish Listings --- a discoverable and searchable SKU
- * representing a dataset. Data consumers can subscribe to Listings. Upon subscription, AnalyticsHub
- * provisions a "Linked Datasets" surfacing the data in the consumer's project.
+ * Service Description: The `AnalyticsHubService` API facilitates data sharing within and across
+ * organizations. It allows data providers to publish listings that reference shared datasets. With
+ * Analytics Hub, users can discover and search for listings that they have access to. Subscribers
+ * can view and subscribe to listings. When you subscribe to a listing, Analytics Hub creates a
+ * linked dataset in your project.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -180,7 +185,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists DataExchanges in a given project and location.
+   * Lists all data exchanges in a given project and location.
    *
    * <p>Sample code:
    *
@@ -196,7 +201,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource path of the DataExchanges. e.g.
+   * @param parent Required. The parent resource path of the data exchanges. e.g.
    *     `projects/myproject/locations/US`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -210,7 +215,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists DataExchanges in a given project and location.
+   * Lists all data exchanges in a given project and location.
    *
    * <p>Sample code:
    *
@@ -226,7 +231,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource path of the DataExchanges. e.g.
+   * @param parent Required. The parent resource path of the data exchanges. e.g.
    *     `projects/myproject/locations/US`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -238,7 +243,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists DataExchanges in a given project and location.
+   * Lists all data exchanges in a given project and location.
    *
    * <p>Sample code:
    *
@@ -268,7 +273,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists DataExchanges in a given project and location.
+   * Lists all data exchanges in a given project and location.
    *
    * <p>Sample code:
    *
@@ -298,7 +303,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists DataExchanges in a given project and location.
+   * Lists all data exchanges in a given project and location.
    *
    * <p>Sample code:
    *
@@ -335,7 +340,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists DataExchanges from projects in a given organization and location.
+   * Lists all data exchanges from projects in a given organization and location.
    *
    * <p>Sample code:
    *
@@ -363,7 +368,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists DataExchanges from projects in a given organization and location.
+   * Lists all data exchanges from projects in a given organization and location.
    *
    * <p>Sample code:
    *
@@ -394,7 +399,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists DataExchanges from projects in a given organization and location.
+   * Lists all data exchanges from projects in a given organization and location.
    *
    * <p>Sample code:
    *
@@ -424,7 +429,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists DataExchanges from projects in a given organization and location.
+   * Lists all data exchanges from projects in a given organization and location.
    *
    * <p>Sample code:
    *
@@ -461,7 +466,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single DataExchange.
+   * Gets the details of a data exchange.
    *
    * <p>Sample code:
    *
@@ -474,7 +479,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the DataExchange. e.g.
+   * @param name Required. The resource name of the data exchange. e.g.
    *     `projects/myproject/locations/US/dataExchanges/123`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -486,7 +491,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single DataExchange.
+   * Gets the details of a data exchange.
    *
    * <p>Sample code:
    *
@@ -499,7 +504,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the DataExchange. e.g.
+   * @param name Required. The resource name of the data exchange. e.g.
    *     `projects/myproject/locations/US/dataExchanges/123`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -510,7 +515,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single DataExchange.
+   * Gets the details of a data exchange.
    *
    * <p>Sample code:
    *
@@ -535,7 +540,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single DataExchange.
+   * Gets the details of a data exchange.
    *
    * <p>Sample code:
    *
@@ -560,7 +565,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new DataExchange in a given project and location.
+   * Creates a new data exchange.
    *
    * <p>Sample code:
    *
@@ -574,9 +579,9 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource path of the DataExchange. e.g.
+   * @param parent Required. The parent resource path of the data exchange. e.g.
    *     `projects/myproject/locations/US`.
-   * @param dataExchange Required. The DataExchange to create.
+   * @param dataExchange Required. The data exchange to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataExchange createDataExchange(LocationName parent, DataExchange dataExchange) {
@@ -590,7 +595,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new DataExchange in a given project and location.
+   * Creates a new data exchange.
    *
    * <p>Sample code:
    *
@@ -604,9 +609,9 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource path of the DataExchange. e.g.
+   * @param parent Required. The parent resource path of the data exchange. e.g.
    *     `projects/myproject/locations/US`.
-   * @param dataExchange Required. The DataExchange to create.
+   * @param dataExchange Required. The data exchange to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataExchange createDataExchange(String parent, DataExchange dataExchange) {
@@ -620,7 +625,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new DataExchange in a given project and location.
+   * Creates a new data exchange.
    *
    * <p>Sample code:
    *
@@ -647,7 +652,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new DataExchange in a given project and location.
+   * Creates a new data exchange.
    *
    * <p>Sample code:
    *
@@ -674,7 +679,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the parameters of a single DataExchange.
+   * Updates an existing data exchange.
    *
    * <p>Sample code:
    *
@@ -689,10 +694,10 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param dataExchange Required. The DataExchange to update.
-   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
-   *     DataExchange resource by the update. The fields specified in the update_mask are relative
-   *     to the resource, not the full request.
+   * @param dataExchange Required. The data exchange to update.
+   * @param updateMask Required. Field mask specifies the fields to update in the data exchange
+   *     resource. The fields specified in the `updateMask` are relative to the resource and are not
+   *     a full request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataExchange updateDataExchange(DataExchange dataExchange, FieldMask updateMask) {
@@ -706,7 +711,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the parameters of a single DataExchange.
+   * Updates an existing data exchange.
    *
    * <p>Sample code:
    *
@@ -732,7 +737,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the parameters of a single DataExchange.
+   * Updates an existing data exchange.
    *
    * <p>Sample code:
    *
@@ -758,7 +763,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single DataExchange.
+   * Deletes an existing data exchange.
    *
    * <p>Sample code:
    *
@@ -771,8 +776,8 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name of the DataExchange to delete. e.g.
-   *     `projects/myproject/locations/US/dataExchanges/123`.
+   * @param name Required. The full name of the data exchange resource that you want to delete. For
+   *     example, `projects/myproject/locations/US/dataExchanges/123`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteDataExchange(DataExchangeName name) {
@@ -785,7 +790,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single DataExchange.
+   * Deletes an existing data exchange.
    *
    * <p>Sample code:
    *
@@ -798,8 +803,8 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name of the DataExchange to delete. e.g.
-   *     `projects/myproject/locations/US/dataExchanges/123`.
+   * @param name Required. The full name of the data exchange resource that you want to delete. For
+   *     example, `projects/myproject/locations/US/dataExchanges/123`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteDataExchange(String name) {
@@ -810,7 +815,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single DataExchange.
+   * Deletes an existing data exchange.
    *
    * <p>Sample code:
    *
@@ -835,7 +840,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single DataExchange.
+   * Deletes an existing data exchange.
    *
    * <p>Sample code:
    *
@@ -860,7 +865,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Listings in a given project and location.
+   * Lists all listings in a given project and location.
    *
    * <p>Sample code:
    *
@@ -889,7 +894,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Listings in a given project and location.
+   * Lists all listings in a given project and location.
    *
    * <p>Sample code:
    *
@@ -915,7 +920,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Listings in a given project and location.
+   * Lists all listings in a given project and location.
    *
    * <p>Sample code:
    *
@@ -945,7 +950,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Listings in a given project and location.
+   * Lists all listings in a given project and location.
    *
    * <p>Sample code:
    *
@@ -976,7 +981,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Listings in a given project and location.
+   * Lists all listings in a given project and location.
    *
    * <p>Sample code:
    *
@@ -1013,7 +1018,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Listing.
+   * Gets the details of a listing.
    *
    * <p>Sample code:
    *
@@ -1038,7 +1043,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Listing.
+   * Gets the details of a listing.
    *
    * <p>Sample code:
    *
@@ -1063,7 +1068,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Listing.
+   * Gets the details of a listing.
    *
    * <p>Sample code:
    *
@@ -1090,7 +1095,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Listing.
+   * Gets the details of a listing.
    *
    * <p>Sample code:
    *
@@ -1117,7 +1122,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Listing in a given project and location.
+   * Creates a new listing.
    *
    * <p>Sample code:
    *
@@ -1147,7 +1152,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Listing in a given project and location.
+   * Creates a new listing.
    *
    * <p>Sample code:
    *
@@ -1174,7 +1179,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Listing in a given project and location.
+   * Creates a new listing.
    *
    * <p>Sample code:
    *
@@ -1202,7 +1207,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Listing in a given project and location.
+   * Creates a new listing.
    *
    * <p>Sample code:
    *
@@ -1230,7 +1235,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the parameters of a single Listing.
+   * Updates an existing listing.
    *
    * <p>Sample code:
    *
@@ -1245,9 +1250,9 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param listing Required. The listing to update.
-   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
-   *     Listing resource by the update. The fields specified in the update_mask are relative to the
-   *     resource, not the full request.
+   * @param updateMask Required. Field mask specifies the fields to update in the listing resource.
+   *     The fields specified in the `updateMask` are relative to the resource and are not a full
+   *     request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Listing updateListing(Listing listing, FieldMask updateMask) {
@@ -1258,7 +1263,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the parameters of a single Listing.
+   * Updates an existing listing.
    *
    * <p>Sample code:
    *
@@ -1284,7 +1289,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the parameters of a single Listing.
+   * Updates an existing listing.
    *
    * <p>Sample code:
    *
@@ -1310,8 +1315,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Listing, as long as there are no subscriptions associated with the source of
-   * this Listing.
+   * Deletes a listing.
    *
    * <p>Sample code:
    *
@@ -1336,8 +1340,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Listing, as long as there are no subscriptions associated with the source of
-   * this Listing.
+   * Deletes a listing.
    *
    * <p>Sample code:
    *
@@ -1362,8 +1365,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Listing, as long as there are no subscriptions associated with the source of
-   * this Listing.
+   * Deletes a listing.
    *
    * <p>Sample code:
    *
@@ -1390,8 +1392,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Listing, as long as there are no subscriptions associated with the source of
-   * this Listing.
+   * Deletes a listing.
    *
    * <p>Sample code:
    *
@@ -1418,11 +1419,11 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Subscribes to a single Listing.
+   * Subscribes to a listing.
    *
-   * <p>Data Exchange currently supports one type of Listing: a BigQuery dataset. Upon subscription
-   * to a Listing for a BigQuery dataset, Data Exchange creates a linked dataset in the subscriber's
-   * project.
+   * <p>Currently, with Analytics Hub, you can create listings that reference only BigQuery
+   * datasets. Upon subscription to a listing for a BigQuery dataset, Analytics Hub creates a linked
+   * dataset in the subscriber's project.
    *
    * <p>Sample code:
    *
@@ -1435,7 +1436,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name of the listing to subscribe to. e.g.
+   * @param name Required. Resource name of the listing that you want to subscribe to. e.g.
    *     `projects/myproject/locations/US/dataExchanges/123/listings/456`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1447,11 +1448,11 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Subscribes to a single Listing.
+   * Subscribes to a listing.
    *
-   * <p>Data Exchange currently supports one type of Listing: a BigQuery dataset. Upon subscription
-   * to a Listing for a BigQuery dataset, Data Exchange creates a linked dataset in the subscriber's
-   * project.
+   * <p>Currently, with Analytics Hub, you can create listings that reference only BigQuery
+   * datasets. Upon subscription to a listing for a BigQuery dataset, Analytics Hub creates a linked
+   * dataset in the subscriber's project.
    *
    * <p>Sample code:
    *
@@ -1465,7 +1466,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name of the listing to subscribe to. e.g.
+   * @param name Required. Resource name of the listing that you want to subscribe to. e.g.
    *     `projects/myproject/locations/US/dataExchanges/123/listings/456`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1476,11 +1477,11 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Subscribes to a single Listing.
+   * Subscribes to a listing.
    *
-   * <p>Data Exchange currently supports one type of Listing: a BigQuery dataset. Upon subscription
-   * to a Listing for a BigQuery dataset, Data Exchange creates a linked dataset in the subscriber's
-   * project.
+   * <p>Currently, with Analytics Hub, you can create listings that reference only BigQuery
+   * datasets. Upon subscription to a listing for a BigQuery dataset, Analytics Hub creates a linked
+   * dataset in the subscriber's project.
    *
    * <p>Sample code:
    *
@@ -1507,11 +1508,11 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Subscribes to a single Listing.
+   * Subscribes to a listing.
    *
-   * <p>Data Exchange currently supports one type of Listing: a BigQuery dataset. Upon subscription
-   * to a Listing for a BigQuery dataset, Data Exchange creates a linked dataset in the subscriber's
-   * project.
+   * <p>Currently, with Analytics Hub, you can create listings that reference only BigQuery
+   * datasets. Upon subscription to a listing for a BigQuery dataset, Analytics Hub creates a linked
+   * dataset in the subscriber's project.
    *
    * <p>Sample code:
    *
@@ -1539,7 +1540,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the IAM policy for a dataExchange or a listing.
+   * Gets the IAM policy.
    *
    * <p>Sample code:
    *
@@ -1566,7 +1567,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the IAM policy for a dataExchange or a listing.
+   * Gets the IAM policy.
    *
    * <p>Sample code:
    *
@@ -1593,7 +1594,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the IAM policy for a dataExchange or a listing.
+   * Sets the IAM policy.
    *
    * <p>Sample code:
    *
@@ -1621,7 +1622,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the IAM policy for a dataExchange or a listing.
+   * Sets the IAM policy.
    *
    * <p>Sample code:
    *
@@ -1649,7 +1650,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the permissions that a caller has on a specified dataExchange or listing.
+   * Returns the permissions that a caller has.
    *
    * <p>Sample code:
    *
@@ -1676,7 +1677,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the permissions that a caller has on a specified dataExchange or listing.
+   * Returns the permissions that a caller has.
    *
    * <p>Sample code:
    *
@@ -1700,6 +1701,148 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return stub.testIamPermissionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Location element : analyticsHubServiceClient.listLocations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLocationsPagedResponse listLocations(ListLocationsRequest request) {
+    return listLocationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Location> future =
+   *       analyticsHubServiceClient.listLocationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Location element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return stub.listLocationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListLocationsResponse response =
+   *         analyticsHubServiceClient.listLocationsCallable().call(request);
+   *     for (Location element : response.getLocationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return stub.listLocationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   Location response = analyticsHubServiceClient.getLocation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Location getLocation(GetLocationRequest request) {
+    return getLocationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Location> future =
+   *       analyticsHubServiceClient.getLocationCallable().futureCall(request);
+   *   // Do something.
+   *   Location response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return stub.getLocationCallable();
   }
 
   @Override
@@ -1968,6 +2111,82 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
     protected ListListingsFixedSizeCollection createCollection(
         List<ListListingsPage> pages, int collectionSize) {
       return new ListListingsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListLocationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    public static ApiFuture<ListLocationsPagedResponse> createAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      ApiFuture<ListLocationsPage> futurePage =
+          ListLocationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListLocationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListLocationsPagedResponse(ListLocationsPage page) {
+      super(page, ListLocationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListLocationsPage
+      extends AbstractPage<
+          ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
+
+    private ListLocationsPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListLocationsPage createEmptyPage() {
+      return new ListLocationsPage(null, null);
+    }
+
+    @Override
+    protected ListLocationsPage createPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      return new ListLocationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListLocationsPage> createPageAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListLocationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListLocationsFixedSizeCollection createEmptyCollection() {
+      return new ListLocationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListLocationsFixedSizeCollection createCollection(
+        List<ListLocationsPage> pages, int collectionSize) {
+      return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

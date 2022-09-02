@@ -27,10 +27,9 @@ public interface UpdateListingRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Field mask is used to specify the fields to be overwritten in the
-   * Listing resource by the update.
-   * The fields specified in the update_mask are relative to the resource, not
-   * the full request.
+   * Required. Field mask specifies the fields to update in the listing resource. The
+   * fields specified in the `updateMask` are relative to the resource and are
+   * not a full request.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -43,10 +42,9 @@ public interface UpdateListingRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Field mask is used to specify the fields to be overwritten in the
-   * Listing resource by the update.
-   * The fields specified in the update_mask are relative to the resource, not
-   * the full request.
+   * Required. Field mask specifies the fields to update in the listing resource. The
+   * fields specified in the `updateMask` are relative to the resource and are
+   * not a full request.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -59,10 +57,9 @@ public interface UpdateListingRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Field mask is used to specify the fields to be overwritten in the
-   * Listing resource by the update.
-   * The fields specified in the update_mask are relative to the resource, not
-   * the full request.
+   * Required. Field mask specifies the fields to update in the listing resource. The
+   * fields specified in the `updateMask` are relative to the resource and are
+   * not a full request.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
