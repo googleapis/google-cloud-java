@@ -103,6 +103,7 @@ public class ServingConfigServiceClientTest {
             .addAllIgnoreControlIds(new ArrayList<String>())
             .setDiversityLevel("diversityLevel578206123")
             .setEnableCategoryFilterLevel("enableCategoryFilterLevel-1232535413")
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .build();
     mockServingConfigService.addResponse(expectedResponse);
@@ -166,6 +167,7 @@ public class ServingConfigServiceClientTest {
             .addAllIgnoreControlIds(new ArrayList<String>())
             .setDiversityLevel("diversityLevel578206123")
             .setEnableCategoryFilterLevel("enableCategoryFilterLevel-1232535413")
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .build();
     mockServingConfigService.addResponse(expectedResponse);
@@ -299,6 +301,7 @@ public class ServingConfigServiceClientTest {
             .addAllIgnoreControlIds(new ArrayList<String>())
             .setDiversityLevel("diversityLevel578206123")
             .setEnableCategoryFilterLevel("enableCategoryFilterLevel-1232535413")
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .build();
     mockServingConfigService.addResponse(expectedResponse);
@@ -358,6 +361,7 @@ public class ServingConfigServiceClientTest {
             .addAllIgnoreControlIds(new ArrayList<String>())
             .setDiversityLevel("diversityLevel578206123")
             .setEnableCategoryFilterLevel("enableCategoryFilterLevel-1232535413")
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .build();
     mockServingConfigService.addResponse(expectedResponse);
@@ -416,6 +420,7 @@ public class ServingConfigServiceClientTest {
             .addAllIgnoreControlIds(new ArrayList<String>())
             .setDiversityLevel("diversityLevel578206123")
             .setEnableCategoryFilterLevel("enableCategoryFilterLevel-1232535413")
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .build();
     mockServingConfigService.addResponse(expectedResponse);
@@ -560,6 +565,7 @@ public class ServingConfigServiceClientTest {
             .addAllIgnoreControlIds(new ArrayList<String>())
             .setDiversityLevel("diversityLevel578206123")
             .setEnableCategoryFilterLevel("enableCategoryFilterLevel-1232535413")
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .build();
     mockServingConfigService.addResponse(expectedResponse);
@@ -618,6 +624,7 @@ public class ServingConfigServiceClientTest {
             .addAllIgnoreControlIds(new ArrayList<String>())
             .setDiversityLevel("diversityLevel578206123")
             .setEnableCategoryFilterLevel("enableCategoryFilterLevel-1232535413")
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .build();
     mockServingConfigService.addResponse(expectedResponse);
@@ -674,6 +681,7 @@ public class ServingConfigServiceClientTest {
             .addAllIgnoreControlIds(new ArrayList<String>())
             .setDiversityLevel("diversityLevel578206123")
             .setEnableCategoryFilterLevel("enableCategoryFilterLevel-1232535413")
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .build();
     mockServingConfigService.addResponse(expectedResponse);
@@ -732,6 +740,7 @@ public class ServingConfigServiceClientTest {
             .addAllIgnoreControlIds(new ArrayList<String>())
             .setDiversityLevel("diversityLevel578206123")
             .setEnableCategoryFilterLevel("enableCategoryFilterLevel-1232535413")
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .build();
     mockServingConfigService.addResponse(expectedResponse);

@@ -235,8 +235,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * String representing the destination to import for, all if left empty.
-   * List of possible values can be found here.
-   * [https://support.google.com/merchants/answer/7501026]
+   * List of possible values is given in [Included
+   * destination](https://support.google.com/merchants/answer/7501026).
    * List of allowed string values:
    * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
    * _ads", "Free_listings", "Free_local_listings"
@@ -255,8 +255,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * String representing the destination to import for, all if left empty.
-   * List of possible values can be found here.
-   * [https://support.google.com/merchants/answer/7501026]
+   * List of possible values is given in [Included
+   * destination](https://support.google.com/merchants/answer/7501026).
    * List of allowed string values:
    * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
    * _ads", "Free_listings", "Free_local_listings"
@@ -275,8 +275,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * String representing the destination to import for, all if left empty.
-   * List of possible values can be found here.
-   * [https://support.google.com/merchants/answer/7501026]
+   * List of possible values is given in [Included
+   * destination](https://support.google.com/merchants/answer/7501026).
    * List of allowed string values:
    * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
    * _ads", "Free_listings", "Free_local_listings"
@@ -296,8 +296,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * String representing the destination to import for, all if left empty.
-   * List of possible values can be found here.
-   * [https://support.google.com/merchants/answer/7501026]
+   * List of possible values is given in [Included
+   * destination](https://support.google.com/merchants/answer/7501026).
    * List of allowed string values:
    * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
    * _ads", "Free_listings", "Free_local_listings"
@@ -1032,8 +1032,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * String representing the destination to import for, all if left empty.
-     * List of possible values can be found here.
-     * [https://support.google.com/merchants/answer/7501026]
+     * List of possible values is given in [Included
+     * destination](https://support.google.com/merchants/answer/7501026).
      * List of allowed string values:
      * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
      * _ads", "Free_listings", "Free_local_listings"
@@ -1052,8 +1052,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * String representing the destination to import for, all if left empty.
-     * List of possible values can be found here.
-     * [https://support.google.com/merchants/answer/7501026]
+     * List of possible values is given in [Included
+     * destination](https://support.google.com/merchants/answer/7501026).
      * List of allowed string values:
      * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
      * _ads", "Free_listings", "Free_local_listings"
@@ -1072,8 +1072,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * String representing the destination to import for, all if left empty.
-     * List of possible values can be found here.
-     * [https://support.google.com/merchants/answer/7501026]
+     * List of possible values is given in [Included
+     * destination](https://support.google.com/merchants/answer/7501026).
      * List of allowed string values:
      * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
      * _ads", "Free_listings", "Free_local_listings"
@@ -1093,8 +1093,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * String representing the destination to import for, all if left empty.
-     * List of possible values can be found here.
-     * [https://support.google.com/merchants/answer/7501026]
+     * List of possible values is given in [Included
+     * destination](https://support.google.com/merchants/answer/7501026).
      * List of allowed string values:
      * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
      * _ads", "Free_listings", "Free_local_listings"
@@ -1114,8 +1114,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * String representing the destination to import for, all if left empty.
-     * List of possible values can be found here.
-     * [https://support.google.com/merchants/answer/7501026]
+     * List of possible values is given in [Included
+     * destination](https://support.google.com/merchants/answer/7501026).
      * List of allowed string values:
      * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
      * _ads", "Free_listings", "Free_local_listings"
@@ -1142,8 +1142,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * String representing the destination to import for, all if left empty.
-     * List of possible values can be found here.
-     * [https://support.google.com/merchants/answer/7501026]
+     * List of possible values is given in [Included
+     * destination](https://support.google.com/merchants/answer/7501026).
      * List of allowed string values:
      * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
      * _ads", "Free_listings", "Free_local_listings"
@@ -1169,8 +1169,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * String representing the destination to import for, all if left empty.
-     * List of possible values can be found here.
-     * [https://support.google.com/merchants/answer/7501026]
+     * List of possible values is given in [Included
+     * destination](https://support.google.com/merchants/answer/7501026).
      * List of allowed string values:
      * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
      * _ads", "Free_listings", "Free_local_listings"
@@ -1193,8 +1193,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * String representing the destination to import for, all if left empty.
-     * List of possible values can be found here.
-     * [https://support.google.com/merchants/answer/7501026]
+     * List of possible values is given in [Included
+     * destination](https://support.google.com/merchants/answer/7501026).
      * List of allowed string values:
      * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
      * _ads", "Free_listings", "Free_local_listings"
@@ -1216,8 +1216,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * String representing the destination to import for, all if left empty.
-     * List of possible values can be found here.
-     * [https://support.google.com/merchants/answer/7501026]
+     * List of possible values is given in [Included
+     * destination](https://support.google.com/merchants/answer/7501026).
      * List of allowed string values:
      * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
      * _ads", "Free_listings", "Free_local_listings"
