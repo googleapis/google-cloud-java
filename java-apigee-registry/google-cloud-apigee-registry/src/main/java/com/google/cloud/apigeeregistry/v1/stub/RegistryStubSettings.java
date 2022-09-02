@@ -1148,7 +1148,12 @@ public class RegistryStubSettings extends StubSettings<RegistryStubSettings> {
           ImmutableMap.builder();
       definitions.put(
           "retry_policy_0_codes",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.ABORTED,
+                  StatusCode.Code.CANCELLED,
+                  StatusCode.Code.DEADLINE_EXCEEDED,
+                  StatusCode.Code.UNAVAILABLE)));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
@@ -1162,7 +1167,7 @@ public class RegistryStubSettings extends StubSettings<RegistryStubSettings> {
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelay(Duration.ofMillis(200L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
               .setInitialRpcTimeout(Duration.ofMillis(60000L))
