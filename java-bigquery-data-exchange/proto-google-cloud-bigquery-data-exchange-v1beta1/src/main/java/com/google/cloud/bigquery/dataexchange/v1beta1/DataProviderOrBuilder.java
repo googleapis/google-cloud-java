@@ -27,7 +27,7 @@ public interface DataProviderOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the Data Provider.
+   * Optional. Name of the data provider.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -39,7 +39,7 @@ public interface DataProviderOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the Data Provider.
+   * Optional. Name of the data provider.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -52,7 +52,7 @@ public interface DataProviderOrBuilder
    *
    *
    * <pre>
-   * Optional. Email or URL of the Data Provider.
+   * Optional. Email or URL of the data provider.
    * Max Length: 1000 bytes.
    * </pre>
    *
@@ -65,7 +65,7 @@ public interface DataProviderOrBuilder
    *
    *
    * <pre>
-   * Optional. Email or URL of the Data Provider.
+   * Optional. Email or URL of the data provider.
    * Max Length: 1000 bytes.
    * </pre>
    *

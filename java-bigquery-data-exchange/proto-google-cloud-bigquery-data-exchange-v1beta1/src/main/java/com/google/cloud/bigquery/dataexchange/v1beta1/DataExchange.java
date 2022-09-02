@@ -22,9 +22,9 @@ package com.google.cloud.bigquery.dataexchange.v1beta1;
  *
  *
  * <pre>
- * A data exchange is a container that enables data sharing.
- * It contains a set of listings of the data sources along with descriptive
- * information of the data exchange.
+ * A data exchange is a container that lets you share data. Along with the
+ * descriptive information about the data exchange, it contains listings that
+ * reference shared datasets.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.DataExchange}
@@ -217,7 +217,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Human-readable display name of the data exchange. The display name must
    * contain only Unicode letters, numbers (0-9), underscores (_), dashes (-),
-   * spaces ( ), and can't start or end with spaces.
+   * spaces ( ), ampersands (&amp;) and must not start or end with spaces.
    * Default value is an empty string.
    * Max length: 63 bytes.
    * </pre>
@@ -244,7 +244,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Human-readable display name of the data exchange. The display name must
    * contain only Unicode letters, numbers (0-9), underscores (_), dashes (-),
-   * spaces ( ), and can't start or end with spaces.
+   * spaces ( ), ampersands (&amp;) and must not start or end with spaces.
    * Default value is an empty string.
    * Max length: 63 bytes.
    * </pre>
@@ -272,10 +272,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Short description of the data exchange that can consist of sentences
-   * or paragraphs. The description must not contain Unicode non-characters as
-   * well as C0 and C1 control codes except tabs (HT), new lines (LF), carriage
-   * returns (CR), and page breaks (FF).
+   * Optional. Description of the data exchange. The description must not contain Unicode
+   * non-characters as well as C0 and C1 control codes except tabs (HT),
+   * new lines (LF), carriage returns (CR), and page breaks (FF).
    * Default value is an empty string.
    * Max length: 2000 bytes.
    * </pre>
@@ -300,10 +299,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Short description of the data exchange that can consist of sentences
-   * or paragraphs. The description must not contain Unicode non-characters as
-   * well as C0 and C1 control codes except tabs (HT), new lines (LF), carriage
-   * returns (CR), and page breaks (FF).
+   * Optional. Description of the data exchange. The description must not contain Unicode
+   * non-characters as well as C0 and C1 control codes except tabs (HT),
+   * new lines (LF), carriage returns (CR), and page breaks (FF).
    * Default value is an empty string.
    * Max length: 2000 bytes.
    * </pre>
@@ -331,8 +329,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Email, URL or other reference of the primary point of contact of the data
-   * exchange
+   * Optional. Email or URL of the primary point of contact of the data exchange.
    * Max Length: 1000 bytes.
    * </pre>
    *
@@ -356,8 +353,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Email, URL or other reference of the primary point of contact of the data
-   * exchange
+   * Optional. Email or URL of the primary point of contact of the data exchange.
    * Max Length: 1000 bytes.
    * </pre>
    *
@@ -454,7 +450,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
    * Optional. Base64 encoded image representing the data exchange. Max Size: 3.0MiB
    * Expected image dimensions are 512x512 pixels, however the API only
    * performs validation on size of the encoded data.
-   * Note: For byte fields, the contents of the field are base64-encoded (which
+   * Note: For byte fields, the content of the fields are base64-encoded (which
    * increases the size of the data by 33-36%) when using JSON on the wire.
    * </pre>
    *
@@ -685,9 +681,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A data exchange is a container that enables data sharing.
-   * It contains a set of listings of the data sources along with descriptive
-   * information of the data exchange.
+   * A data exchange is a container that lets you share data. Along with the
+   * descriptive information about the data exchange, it contains listings that
+   * reference shared datasets.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.DataExchange}
@@ -1000,7 +996,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Human-readable display name of the data exchange. The display name must
      * contain only Unicode letters, numbers (0-9), underscores (_), dashes (-),
-     * spaces ( ), and can't start or end with spaces.
+     * spaces ( ), ampersands (&amp;) and must not start or end with spaces.
      * Default value is an empty string.
      * Max length: 63 bytes.
      * </pre>
@@ -1026,7 +1022,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Human-readable display name of the data exchange. The display name must
      * contain only Unicode letters, numbers (0-9), underscores (_), dashes (-),
-     * spaces ( ), and can't start or end with spaces.
+     * spaces ( ), ampersands (&amp;) and must not start or end with spaces.
      * Default value is an empty string.
      * Max length: 63 bytes.
      * </pre>
@@ -1052,7 +1048,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Human-readable display name of the data exchange. The display name must
      * contain only Unicode letters, numbers (0-9), underscores (_), dashes (-),
-     * spaces ( ), and can't start or end with spaces.
+     * spaces ( ), ampersands (&amp;) and must not start or end with spaces.
      * Default value is an empty string.
      * Max length: 63 bytes.
      * </pre>
@@ -1077,7 +1073,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Human-readable display name of the data exchange. The display name must
      * contain only Unicode letters, numbers (0-9), underscores (_), dashes (-),
-     * spaces ( ), and can't start or end with spaces.
+     * spaces ( ), ampersands (&amp;) and must not start or end with spaces.
      * Default value is an empty string.
      * Max length: 63 bytes.
      * </pre>
@@ -1098,7 +1094,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Human-readable display name of the data exchange. The display name must
      * contain only Unicode letters, numbers (0-9), underscores (_), dashes (-),
-     * spaces ( ), and can't start or end with spaces.
+     * spaces ( ), ampersands (&amp;) and must not start or end with spaces.
      * Default value is an empty string.
      * Max length: 63 bytes.
      * </pre>
@@ -1124,10 +1120,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Short description of the data exchange that can consist of sentences
-     * or paragraphs. The description must not contain Unicode non-characters as
-     * well as C0 and C1 control codes except tabs (HT), new lines (LF), carriage
-     * returns (CR), and page breaks (FF).
+     * Optional. Description of the data exchange. The description must not contain Unicode
+     * non-characters as well as C0 and C1 control codes except tabs (HT),
+     * new lines (LF), carriage returns (CR), and page breaks (FF).
      * Default value is an empty string.
      * Max length: 2000 bytes.
      * </pre>
@@ -1151,10 +1146,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Short description of the data exchange that can consist of sentences
-     * or paragraphs. The description must not contain Unicode non-characters as
-     * well as C0 and C1 control codes except tabs (HT), new lines (LF), carriage
-     * returns (CR), and page breaks (FF).
+     * Optional. Description of the data exchange. The description must not contain Unicode
+     * non-characters as well as C0 and C1 control codes except tabs (HT),
+     * new lines (LF), carriage returns (CR), and page breaks (FF).
      * Default value is an empty string.
      * Max length: 2000 bytes.
      * </pre>
@@ -1178,10 +1172,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Short description of the data exchange that can consist of sentences
-     * or paragraphs. The description must not contain Unicode non-characters as
-     * well as C0 and C1 control codes except tabs (HT), new lines (LF), carriage
-     * returns (CR), and page breaks (FF).
+     * Optional. Description of the data exchange. The description must not contain Unicode
+     * non-characters as well as C0 and C1 control codes except tabs (HT),
+     * new lines (LF), carriage returns (CR), and page breaks (FF).
      * Default value is an empty string.
      * Max length: 2000 bytes.
      * </pre>
@@ -1204,10 +1197,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Short description of the data exchange that can consist of sentences
-     * or paragraphs. The description must not contain Unicode non-characters as
-     * well as C0 and C1 control codes except tabs (HT), new lines (LF), carriage
-     * returns (CR), and page breaks (FF).
+     * Optional. Description of the data exchange. The description must not contain Unicode
+     * non-characters as well as C0 and C1 control codes except tabs (HT),
+     * new lines (LF), carriage returns (CR), and page breaks (FF).
      * Default value is an empty string.
      * Max length: 2000 bytes.
      * </pre>
@@ -1226,10 +1218,9 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Short description of the data exchange that can consist of sentences
-     * or paragraphs. The description must not contain Unicode non-characters as
-     * well as C0 and C1 control codes except tabs (HT), new lines (LF), carriage
-     * returns (CR), and page breaks (FF).
+     * Optional. Description of the data exchange. The description must not contain Unicode
+     * non-characters as well as C0 and C1 control codes except tabs (HT),
+     * new lines (LF), carriage returns (CR), and page breaks (FF).
      * Default value is an empty string.
      * Max length: 2000 bytes.
      * </pre>
@@ -1255,8 +1246,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Email, URL or other reference of the primary point of contact of the data
-     * exchange
+     * Optional. Email or URL of the primary point of contact of the data exchange.
      * Max Length: 1000 bytes.
      * </pre>
      *
@@ -1279,8 +1269,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Email, URL or other reference of the primary point of contact of the data
-     * exchange
+     * Optional. Email or URL of the primary point of contact of the data exchange.
      * Max Length: 1000 bytes.
      * </pre>
      *
@@ -1303,8 +1292,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Email, URL or other reference of the primary point of contact of the data
-     * exchange
+     * Optional. Email or URL of the primary point of contact of the data exchange.
      * Max Length: 1000 bytes.
      * </pre>
      *
@@ -1326,8 +1314,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Email, URL or other reference of the primary point of contact of the data
-     * exchange
+     * Optional. Email or URL of the primary point of contact of the data exchange.
      * Max Length: 1000 bytes.
      * </pre>
      *
@@ -1345,8 +1332,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Email, URL or other reference of the primary point of contact of the data
-     * exchange
+     * Optional. Email or URL of the primary point of contact of the data exchange.
      * Max Length: 1000 bytes.
      * </pre>
      *
@@ -1532,7 +1518,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      * Optional. Base64 encoded image representing the data exchange. Max Size: 3.0MiB
      * Expected image dimensions are 512x512 pixels, however the API only
      * performs validation on size of the encoded data.
-     * Note: For byte fields, the contents of the field are base64-encoded (which
+     * Note: For byte fields, the content of the fields are base64-encoded (which
      * increases the size of the data by 33-36%) when using JSON on the wire.
      * </pre>
      *
@@ -1551,7 +1537,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      * Optional. Base64 encoded image representing the data exchange. Max Size: 3.0MiB
      * Expected image dimensions are 512x512 pixels, however the API only
      * performs validation on size of the encoded data.
-     * Note: For byte fields, the contents of the field are base64-encoded (which
+     * Note: For byte fields, the content of the fields are base64-encoded (which
      * increases the size of the data by 33-36%) when using JSON on the wire.
      * </pre>
      *
@@ -1576,7 +1562,7 @@ public final class DataExchange extends com.google.protobuf.GeneratedMessageV3
      * Optional. Base64 encoded image representing the data exchange. Max Size: 3.0MiB
      * Expected image dimensions are 512x512 pixels, however the API only
      * performs validation on size of the encoded data.
-     * Note: For byte fields, the contents of the field are base64-encoded (which
+     * Note: For byte fields, the content of the fields are base64-encoded (which
      * increases the size of the data by 33-36%) when using JSON on the wire.
      * </pre>
      *

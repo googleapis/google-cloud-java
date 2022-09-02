@@ -22,7 +22,7 @@ package com.google.cloud.bigquery.dataexchange.v1beta1;
  *
  *
  * <pre>
- * Message for deleting a DataExchange.
+ * Message for deleting a data exchange.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.DeleteDataExchangeRequest}
@@ -119,8 +119,8 @@ public final class DeleteDataExchangeRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. Resource name of the DataExchange to delete.
-   * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+   * Required. The full name of the data exchange resource that you want to delete.
+   * For example, `projects/myproject/locations/US/dataExchanges/123`.
    * </pre>
    *
    * <code>
@@ -145,8 +145,8 @@ public final class DeleteDataExchangeRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. Resource name of the DataExchange to delete.
-   * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+   * Required. The full name of the data exchange resource that you want to delete.
+   * For example, `projects/myproject/locations/US/dataExchanges/123`.
    * </pre>
    *
    * <code>
@@ -334,7 +334,7 @@ public final class DeleteDataExchangeRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Message for deleting a DataExchange.
+   * Message for deleting a data exchange.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.DeleteDataExchangeRequest}
@@ -504,8 +504,8 @@ public final class DeleteDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Resource name of the DataExchange to delete.
-     * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+     * Required. The full name of the data exchange resource that you want to delete.
+     * For example, `projects/myproject/locations/US/dataExchanges/123`.
      * </pre>
      *
      * <code>
@@ -529,8 +529,8 @@ public final class DeleteDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Resource name of the DataExchange to delete.
-     * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+     * Required. The full name of the data exchange resource that you want to delete.
+     * For example, `projects/myproject/locations/US/dataExchanges/123`.
      * </pre>
      *
      * <code>
@@ -554,8 +554,8 @@ public final class DeleteDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Resource name of the DataExchange to delete.
-     * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+     * Required. The full name of the data exchange resource that you want to delete.
+     * For example, `projects/myproject/locations/US/dataExchanges/123`.
      * </pre>
      *
      * <code>
@@ -578,8 +578,8 @@ public final class DeleteDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Resource name of the DataExchange to delete.
-     * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+     * Required. The full name of the data exchange resource that you want to delete.
+     * For example, `projects/myproject/locations/US/dataExchanges/123`.
      * </pre>
      *
      * <code>
@@ -598,8 +598,8 @@ public final class DeleteDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Resource name of the DataExchange to delete.
-     * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+     * Required. The full name of the data exchange resource that you want to delete.
+     * For example, `projects/myproject/locations/US/dataExchanges/123`.
      * </pre>
      *
      * <code>

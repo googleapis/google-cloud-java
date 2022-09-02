@@ -22,7 +22,7 @@ package com.google.cloud.bigquery.dataexchange.v1beta1;
  *
  *
  * <pre>
- * Message for creating a DataExchange.
+ * Message for creating a data exchange.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.CreateDataExchangeRequest}
@@ -144,7 +144,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The parent resource path of the DataExchange.
+   * Required. The parent resource path of the data exchange.
    * e.g. `projects/myproject/locations/US`.
    * </pre>
    *
@@ -170,7 +170,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The parent resource path of the DataExchange.
+   * Required. The parent resource path of the data exchange.
    * e.g. `projects/myproject/locations/US`.
    * </pre>
    *
@@ -199,7 +199,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The ID of the DataExchange to create.
+   * Required. The ID of the data exchange.
    * Must contain only Unicode letters, numbers (0-9), underscores (_).
    * Should not use characters that require URL-escaping, or characters
    * outside of ASCII, spaces.
@@ -226,7 +226,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The ID of the DataExchange to create.
+   * Required. The ID of the data exchange.
    * Must contain only Unicode letters, numbers (0-9), underscores (_).
    * Should not use characters that require URL-escaping, or characters
    * outside of ASCII, spaces.
@@ -256,7 +256,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The DataExchange to create.
+   * Required. The data exchange to create.
    * </pre>
    *
    * <code>
@@ -273,7 +273,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The DataExchange to create.
+   * Required. The data exchange to create.
    * </pre>
    *
    * <code>
@@ -292,7 +292,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The DataExchange to create.
+   * Required. The data exchange to create.
    * </pre>
    *
    * <code>
@@ -494,7 +494,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Message for creating a DataExchange.
+   * Message for creating a data exchange.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.CreateDataExchangeRequest}
@@ -685,7 +685,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The parent resource path of the DataExchange.
+     * Required. The parent resource path of the data exchange.
      * e.g. `projects/myproject/locations/US`.
      * </pre>
      *
@@ -710,7 +710,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The parent resource path of the DataExchange.
+     * Required. The parent resource path of the data exchange.
      * e.g. `projects/myproject/locations/US`.
      * </pre>
      *
@@ -735,7 +735,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The parent resource path of the DataExchange.
+     * Required. The parent resource path of the data exchange.
      * e.g. `projects/myproject/locations/US`.
      * </pre>
      *
@@ -759,7 +759,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The parent resource path of the DataExchange.
+     * Required. The parent resource path of the data exchange.
      * e.g. `projects/myproject/locations/US`.
      * </pre>
      *
@@ -779,7 +779,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The parent resource path of the DataExchange.
+     * Required. The parent resource path of the data exchange.
      * e.g. `projects/myproject/locations/US`.
      * </pre>
      *
@@ -806,7 +806,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The ID of the DataExchange to create.
+     * Required. The ID of the data exchange.
      * Must contain only Unicode letters, numbers (0-9), underscores (_).
      * Should not use characters that require URL-escaping, or characters
      * outside of ASCII, spaces.
@@ -832,7 +832,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The ID of the DataExchange to create.
+     * Required. The ID of the data exchange.
      * Must contain only Unicode letters, numbers (0-9), underscores (_).
      * Should not use characters that require URL-escaping, or characters
      * outside of ASCII, spaces.
@@ -858,7 +858,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The ID of the DataExchange to create.
+     * Required. The ID of the data exchange.
      * Must contain only Unicode letters, numbers (0-9), underscores (_).
      * Should not use characters that require URL-escaping, or characters
      * outside of ASCII, spaces.
@@ -883,7 +883,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The ID of the DataExchange to create.
+     * Required. The ID of the data exchange.
      * Must contain only Unicode letters, numbers (0-9), underscores (_).
      * Should not use characters that require URL-escaping, or characters
      * outside of ASCII, spaces.
@@ -904,7 +904,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The ID of the DataExchange to create.
+     * Required. The ID of the data exchange.
      * Must contain only Unicode letters, numbers (0-9), underscores (_).
      * Should not use characters that require URL-escaping, or characters
      * outside of ASCII, spaces.
@@ -937,7 +937,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The DataExchange to create.
+     * Required. The data exchange to create.
      * </pre>
      *
      * <code>
@@ -953,7 +953,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The DataExchange to create.
+     * Required. The data exchange to create.
      * </pre>
      *
      * <code>
@@ -975,7 +975,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The DataExchange to create.
+     * Required. The data exchange to create.
      * </pre>
      *
      * <code>
@@ -1000,7 +1000,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The DataExchange to create.
+     * Required. The data exchange to create.
      * </pre>
      *
      * <code>
@@ -1022,7 +1022,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The DataExchange to create.
+     * Required. The data exchange to create.
      * </pre>
      *
      * <code>
@@ -1051,7 +1051,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The DataExchange to create.
+     * Required. The data exchange to create.
      * </pre>
      *
      * <code>
@@ -1073,7 +1073,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The DataExchange to create.
+     * Required. The data exchange to create.
      * </pre>
      *
      * <code>
@@ -1090,7 +1090,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The DataExchange to create.
+     * Required. The data exchange to create.
      * </pre>
      *
      * <code>
@@ -1111,7 +1111,7 @@ public final class CreateDataExchangeRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The DataExchange to create.
+     * Required. The data exchange to create.
      * </pre>
      *
      * <code>

@@ -22,8 +22,7 @@ package com.google.cloud.bigquery.dataexchange.v1beta1;
  *
  *
  * <pre>
- * Message for response to subscribing a Listing.
- * Empty for now.
+ * Message for response when you subscribe to a listing.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.SubscribeListingResponse}
@@ -261,8 +260,7 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Message for response to subscribing a Listing.
-   * Empty for now.
+   * Message for response when you subscribe to a listing.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.SubscribeListingResponse}
