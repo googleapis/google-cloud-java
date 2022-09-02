@@ -17,7 +17,7 @@
     <description>Experimental project to shade OpenCensus dependencies.</description>
 
     <properties>
-        <cloud.monitoring.version>3.4.1</cloud.monitoring.version>
+        <cloud.monitoring.version>3.4.2</cloud.monitoring.version>
     </properties>
 
     <dependencyManagement>
