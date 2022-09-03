@@ -27,7 +27,7 @@ public interface ScheduleOrBuilder
    *
    *
    * <pre>
-   * With this option a job is started a regular periodic basis. For
+   * With this option a job is started on a regular periodic basis. For
    * example: every day (86400 seconds).
    * A scheduled start time will be skipped if the previous
    * execution has not ended when its scheduled time occurs.
@@ -44,7 +44,7 @@ public interface ScheduleOrBuilder
    *
    *
    * <pre>
-   * With this option a job is started a regular periodic basis. For
+   * With this option a job is started on a regular periodic basis. For
    * example: every day (86400 seconds).
    * A scheduled start time will be skipped if the previous
    * execution has not ended when its scheduled time occurs.
@@ -61,7 +61,7 @@ public interface ScheduleOrBuilder
    *
    *
    * <pre>
-   * With this option a job is started a regular periodic basis. For
+   * With this option a job is started on a regular periodic basis. For
    * example: every day (86400 seconds).
    * A scheduled start time will be skipped if the previous
    * execution has not ended when its scheduled time occurs.

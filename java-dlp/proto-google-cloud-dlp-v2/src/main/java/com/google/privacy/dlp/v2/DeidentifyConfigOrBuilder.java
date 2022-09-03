@@ -106,6 +106,41 @@ public interface DeidentifyConfigOrBuilder
    *
    *
    * <pre>
+   * Treat the dataset as an image and redact.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ImageTransformations image_transformations = 4;</code>
+   *
+   * @return Whether the imageTransformations field is set.
+   */
+  boolean hasImageTransformations();
+  /**
+   *
+   *
+   * <pre>
+   * Treat the dataset as an image and redact.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ImageTransformations image_transformations = 4;</code>
+   *
+   * @return The imageTransformations.
+   */
+  com.google.privacy.dlp.v2.ImageTransformations getImageTransformations();
+  /**
+   *
+   *
+   * <pre>
+   * Treat the dataset as an image and redact.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ImageTransformations image_transformations = 4;</code>
+   */
+  com.google.privacy.dlp.v2.ImageTransformationsOrBuilder getImageTransformationsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Mode for handling transformation errors. If left unspecified, the default
    * mode is `TransformationErrorHandling.ThrowError`.
    * </pre>

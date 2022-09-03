@@ -2513,7 +2513,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * An expression, consisting or an operator and conditions.
+   * An expression, consisting of an operator and conditions.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.RecordCondition.Expressions}
@@ -3099,7 +3099,7 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * An expression, consisting or an operator and conditions.
+     * An expression, consisting of an operator and conditions.
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.RecordCondition.Expressions}

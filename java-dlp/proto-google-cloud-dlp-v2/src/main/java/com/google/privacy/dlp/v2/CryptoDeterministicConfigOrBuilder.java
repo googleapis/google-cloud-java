@@ -191,7 +191,7 @@ public interface CryptoDeterministicConfigOrBuilder
    * 2. the field is not present when transforming a given value,
    * plaintext would be used as is for encryption.
    * Note that case (1) is expected when an `InfoTypeTransformation` is
-   * applied to both structured and non-structured `ContentItem`s.
+   * applied to both structured and unstructured `ContentItem`s.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
@@ -216,7 +216,7 @@ public interface CryptoDeterministicConfigOrBuilder
    * 2. the field is not present when transforming a given value,
    * plaintext would be used as is for encryption.
    * Note that case (1) is expected when an `InfoTypeTransformation` is
-   * applied to both structured and non-structured `ContentItem`s.
+   * applied to both structured and unstructured `ContentItem`s.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
@@ -241,7 +241,7 @@ public interface CryptoDeterministicConfigOrBuilder
    * 2. the field is not present when transforming a given value,
    * plaintext would be used as is for encryption.
    * Note that case (1) is expected when an `InfoTypeTransformation` is
-   * applied to both structured and non-structured `ContentItem`s.
+   * applied to both structured and unstructured `ContentItem`s.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>

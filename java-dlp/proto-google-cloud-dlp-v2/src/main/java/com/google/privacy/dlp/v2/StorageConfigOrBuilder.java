@@ -62,7 +62,7 @@ public interface StorageConfigOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Storage options.
+   * Cloud Storage options.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
@@ -74,7 +74,7 @@ public interface StorageConfigOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Storage options.
+   * Cloud Storage options.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
@@ -86,7 +86,7 @@ public interface StorageConfigOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Storage options.
+   * Cloud Storage options.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>

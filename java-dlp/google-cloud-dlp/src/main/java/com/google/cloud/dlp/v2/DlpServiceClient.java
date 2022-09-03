@@ -528,7 +528,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of the sensitive information types that the DLP API supports. See
+   * Returns a list of the sensitive information types that DLP API supports. See
    * https://cloud.google.com/dlp/docs/infotypes-reference to learn more.
    *
    * <p>Sample code:
@@ -554,7 +554,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of the sensitive information types that the DLP API supports. See
+   * Returns a list of the sensitive information types that DLP API supports. See
    * https://cloud.google.com/dlp/docs/infotypes-reference to learn more.
    *
    * <p>Sample code:
@@ -583,7 +583,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of the sensitive information types that the DLP API supports. See
+   * Returns a list of the sensitive information types that DLP API supports. See
    * https://cloud.google.com/dlp/docs/infotypes-reference to learn more.
    *
    * <p>Sample code:
@@ -612,7 +612,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an InspectTemplate for re-using frequently used configuration for inspecting content,
+   * Creates an InspectTemplate for reusing frequently used configuration for inspecting content,
    * images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
    *
    * <p>Sample code:
@@ -657,7 +657,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an InspectTemplate for re-using frequently used configuration for inspecting content,
+   * Creates an InspectTemplate for reusing frequently used configuration for inspecting content,
    * images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
    *
    * <p>Sample code:
@@ -702,7 +702,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an InspectTemplate for re-using frequently used configuration for inspecting content,
+   * Creates an InspectTemplate for reusing frequently used configuration for inspecting content,
    * images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
    *
    * <p>Sample code:
@@ -747,7 +747,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an InspectTemplate for re-using frequently used configuration for inspecting content,
+   * Creates an InspectTemplate for reusing frequently used configuration for inspecting content,
    * images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
    *
    * <p>Sample code:
@@ -792,7 +792,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an InspectTemplate for re-using frequently used configuration for inspecting content,
+   * Creates an InspectTemplate for reusing frequently used configuration for inspecting content,
    * images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
    *
    * <p>Sample code:
@@ -837,7 +837,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an InspectTemplate for re-using frequently used configuration for inspecting content,
+   * Creates an InspectTemplate for reusing frequently used configuration for inspecting content,
    * images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
    *
    * <p>Sample code:
@@ -866,7 +866,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an InspectTemplate for re-using frequently used configuration for inspecting content,
+   * Creates an InspectTemplate for reusing frequently used configuration for inspecting content,
    * images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
    *
    * <p>Sample code:
@@ -1589,7 +1589,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying
+   * Creates a DeidentifyTemplate for reusing frequently used configuration for de-identifying
    * content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to
    * learn more.
    *
@@ -1636,7 +1636,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying
+   * Creates a DeidentifyTemplate for reusing frequently used configuration for de-identifying
    * content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to
    * learn more.
    *
@@ -1683,7 +1683,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying
+   * Creates a DeidentifyTemplate for reusing frequently used configuration for de-identifying
    * content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to
    * learn more.
    *
@@ -1730,7 +1730,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying
+   * Creates a DeidentifyTemplate for reusing frequently used configuration for de-identifying
    * content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to
    * learn more.
    *
@@ -1777,7 +1777,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying
+   * Creates a DeidentifyTemplate for reusing frequently used configuration for de-identifying
    * content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to
    * learn more.
    *
@@ -1824,7 +1824,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying
+   * Creates a DeidentifyTemplate for reusing frequently used configuration for de-identifying
    * content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to
    * learn more.
    *
@@ -1855,7 +1855,7 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying
+   * Creates a DeidentifyTemplate for reusing frequently used configuration for de-identifying
    * content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to
    * learn more.
    *
@@ -4142,7 +4142,7 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a long-running DlpJob. This method indicates that the client is no longer interested in
-   * the DlpJob result. The job will be cancelled if possible. See
+   * the DlpJob result. The job will be canceled if possible. See
    * https://cloud.google.com/dlp/docs/inspecting-storage and
    * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
    *
@@ -4169,7 +4169,7 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a long-running DlpJob. This method indicates that the client is no longer interested in
-   * the DlpJob result. The job will be cancelled if possible. See
+   * the DlpJob result. The job will be canceled if possible. See
    * https://cloud.google.com/dlp/docs/inspecting-storage and
    * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
    *
@@ -4195,7 +4195,7 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a long-running DlpJob. This method indicates that the client is no longer interested in
-   * the DlpJob result. The job will be cancelled if possible. See
+   * the DlpJob result. The job will be canceled if possible. See
    * https://cloud.google.com/dlp/docs/inspecting-storage and
    * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
    *
@@ -4223,7 +4223,7 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a long-running DlpJob. This method indicates that the client is no longer interested in
-   * the DlpJob result. The job will be cancelled if possible. See
+   * the DlpJob result. The job will be canceled if possible. See
    * https://cloud.google.com/dlp/docs/inspecting-storage and
    * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
    *
@@ -4871,11 +4871,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -4914,11 +4910,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -4958,11 +4950,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -5001,11 +4989,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3
@@ -5044,11 +5028,7 @@ public class DlpServiceClient implements BackgroundResource {
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt; + Organizations scope, location
-   *     specified:&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   *     + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *     `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
    *     <p>The following example `parent` string specifies a parent project with the identifier
    *     `example-project`, and specifies the `europe-west3` location for processing data:
    *     <p>parent=projects/example-project/locations/europe-west3

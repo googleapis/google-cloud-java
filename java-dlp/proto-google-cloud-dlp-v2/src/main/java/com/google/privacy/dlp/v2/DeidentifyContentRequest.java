@@ -22,7 +22,7 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * Request to de-identify a list of items.
+ * Request to de-identify a ContentItem.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.DeidentifyContentRequest}
@@ -805,7 +805,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Request to de-identify a list of items.
+   * Request to de-identify a ContentItem.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.DeidentifyContentRequest}

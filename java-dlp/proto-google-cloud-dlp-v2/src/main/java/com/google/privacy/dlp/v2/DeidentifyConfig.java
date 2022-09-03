@@ -123,6 +123,24 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
 
               break;
             }
+          case 34:
+            {
+              com.google.privacy.dlp.v2.ImageTransformations.Builder subBuilder = null;
+              if (transformationCase_ == 4) {
+                subBuilder =
+                    ((com.google.privacy.dlp.v2.ImageTransformations) transformation_).toBuilder();
+              }
+              transformation_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.ImageTransformations.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.privacy.dlp.v2.ImageTransformations) transformation_);
+                transformation_ = subBuilder.buildPartial();
+              }
+              transformationCase_ = 4;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -168,6 +186,7 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     INFO_TYPE_TRANSFORMATIONS(1),
     RECORD_TRANSFORMATIONS(2),
+    IMAGE_TRANSFORMATIONS(4),
     TRANSFORMATION_NOT_SET(0);
     private final int value;
 
@@ -190,6 +209,8 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
           return INFO_TYPE_TRANSFORMATIONS;
         case 2:
           return RECORD_TRANSFORMATIONS;
+        case 4:
+          return IMAGE_TRANSFORMATIONS;
         case 0:
           return TRANSFORMATION_NOT_SET;
         default:
@@ -319,6 +340,58 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
     return com.google.privacy.dlp.v2.RecordTransformations.getDefaultInstance();
   }
 
+  public static final int IMAGE_TRANSFORMATIONS_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Treat the dataset as an image and redact.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ImageTransformations image_transformations = 4;</code>
+   *
+   * @return Whether the imageTransformations field is set.
+   */
+  @java.lang.Override
+  public boolean hasImageTransformations() {
+    return transformationCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Treat the dataset as an image and redact.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ImageTransformations image_transformations = 4;</code>
+   *
+   * @return The imageTransformations.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.ImageTransformations getImageTransformations() {
+    if (transformationCase_ == 4) {
+      return (com.google.privacy.dlp.v2.ImageTransformations) transformation_;
+    }
+    return com.google.privacy.dlp.v2.ImageTransformations.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Treat the dataset as an image and redact.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ImageTransformations image_transformations = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.ImageTransformationsOrBuilder
+      getImageTransformationsOrBuilder() {
+    if (transformationCase_ == 4) {
+      return (com.google.privacy.dlp.v2.ImageTransformations) transformation_;
+    }
+    return com.google.privacy.dlp.v2.ImageTransformations.getDefaultInstance();
+  }
+
   public static final int TRANSFORMATION_ERROR_HANDLING_FIELD_NUMBER = 3;
   private com.google.privacy.dlp.v2.TransformationErrorHandling transformationErrorHandling_;
   /**
@@ -397,6 +470,9 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
     if (transformationErrorHandling_ != null) {
       output.writeMessage(3, getTransformationErrorHandling());
     }
+    if (transformationCase_ == 4) {
+      output.writeMessage(4, (com.google.privacy.dlp.v2.ImageTransformations) transformation_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -420,6 +496,11 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, getTransformationErrorHandling());
+    }
+    if (transformationCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.privacy.dlp.v2.ImageTransformations) transformation_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -450,6 +531,9 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       case 2:
         if (!getRecordTransformations().equals(other.getRecordTransformations())) return false;
         break;
+      case 4:
+        if (!getImageTransformations().equals(other.getImageTransformations())) return false;
+        break;
       case 0:
       default:
     }
@@ -476,6 +560,10 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       case 2:
         hash = (37 * hash) + RECORD_TRANSFORMATIONS_FIELD_NUMBER;
         hash = (53 * hash) + getRecordTransformations().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + IMAGE_TRANSFORMATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getImageTransformations().hashCode();
         break;
       case 0:
       default:
@@ -674,6 +762,13 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
           result.transformation_ = recordTransformationsBuilder_.build();
         }
       }
+      if (transformationCase_ == 4) {
+        if (imageTransformationsBuilder_ == null) {
+          result.transformation_ = transformation_;
+        } else {
+          result.transformation_ = imageTransformationsBuilder_.build();
+        }
+      }
       if (transformationErrorHandlingBuilder_ == null) {
         result.transformationErrorHandling_ = transformationErrorHandling_;
       } else {
@@ -741,6 +836,11 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
         case RECORD_TRANSFORMATIONS:
           {
             mergeRecordTransformations(other.getRecordTransformations());
+            break;
+          }
+        case IMAGE_TRANSFORMATIONS:
+          {
+            mergeImageTransformations(other.getImageTransformations());
             break;
           }
         case TRANSFORMATION_NOT_SET:
@@ -1245,6 +1345,218 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       ;
       return recordTransformationsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.ImageTransformations,
+            com.google.privacy.dlp.v2.ImageTransformations.Builder,
+            com.google.privacy.dlp.v2.ImageTransformationsOrBuilder>
+        imageTransformationsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Treat the dataset as an image and redact.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ImageTransformations image_transformations = 4;</code>
+     *
+     * @return Whether the imageTransformations field is set.
+     */
+    @java.lang.Override
+    public boolean hasImageTransformations() {
+      return transformationCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Treat the dataset as an image and redact.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ImageTransformations image_transformations = 4;</code>
+     *
+     * @return The imageTransformations.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.ImageTransformations getImageTransformations() {
+      if (imageTransformationsBuilder_ == null) {
+        if (transformationCase_ == 4) {
+          return (com.google.privacy.dlp.v2.ImageTransformations) transformation_;
+        }
+        return com.google.privacy.dlp.v2.ImageTransformations.getDefaultInstance();
+      } else {
+        if (transformationCase_ == 4) {
+          return imageTransformationsBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.ImageTransformations.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Treat the dataset as an image and redact.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ImageTransformations image_transformations = 4;</code>
+     */
+    public Builder setImageTransformations(com.google.privacy.dlp.v2.ImageTransformations value) {
+      if (imageTransformationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        transformation_ = value;
+        onChanged();
+      } else {
+        imageTransformationsBuilder_.setMessage(value);
+      }
+      transformationCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Treat the dataset as an image and redact.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ImageTransformations image_transformations = 4;</code>
+     */
+    public Builder setImageTransformations(
+        com.google.privacy.dlp.v2.ImageTransformations.Builder builderForValue) {
+      if (imageTransformationsBuilder_ == null) {
+        transformation_ = builderForValue.build();
+        onChanged();
+      } else {
+        imageTransformationsBuilder_.setMessage(builderForValue.build());
+      }
+      transformationCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Treat the dataset as an image and redact.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ImageTransformations image_transformations = 4;</code>
+     */
+    public Builder mergeImageTransformations(com.google.privacy.dlp.v2.ImageTransformations value) {
+      if (imageTransformationsBuilder_ == null) {
+        if (transformationCase_ == 4
+            && transformation_
+                != com.google.privacy.dlp.v2.ImageTransformations.getDefaultInstance()) {
+          transformation_ =
+              com.google.privacy.dlp.v2.ImageTransformations.newBuilder(
+                      (com.google.privacy.dlp.v2.ImageTransformations) transformation_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          transformation_ = value;
+        }
+        onChanged();
+      } else {
+        if (transformationCase_ == 4) {
+          imageTransformationsBuilder_.mergeFrom(value);
+        } else {
+          imageTransformationsBuilder_.setMessage(value);
+        }
+      }
+      transformationCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Treat the dataset as an image and redact.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ImageTransformations image_transformations = 4;</code>
+     */
+    public Builder clearImageTransformations() {
+      if (imageTransformationsBuilder_ == null) {
+        if (transformationCase_ == 4) {
+          transformationCase_ = 0;
+          transformation_ = null;
+          onChanged();
+        }
+      } else {
+        if (transformationCase_ == 4) {
+          transformationCase_ = 0;
+          transformation_ = null;
+        }
+        imageTransformationsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Treat the dataset as an image and redact.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ImageTransformations image_transformations = 4;</code>
+     */
+    public com.google.privacy.dlp.v2.ImageTransformations.Builder getImageTransformationsBuilder() {
+      return getImageTransformationsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Treat the dataset as an image and redact.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ImageTransformations image_transformations = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.ImageTransformationsOrBuilder
+        getImageTransformationsOrBuilder() {
+      if ((transformationCase_ == 4) && (imageTransformationsBuilder_ != null)) {
+        return imageTransformationsBuilder_.getMessageOrBuilder();
+      } else {
+        if (transformationCase_ == 4) {
+          return (com.google.privacy.dlp.v2.ImageTransformations) transformation_;
+        }
+        return com.google.privacy.dlp.v2.ImageTransformations.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Treat the dataset as an image and redact.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ImageTransformations image_transformations = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.ImageTransformations,
+            com.google.privacy.dlp.v2.ImageTransformations.Builder,
+            com.google.privacy.dlp.v2.ImageTransformationsOrBuilder>
+        getImageTransformationsFieldBuilder() {
+      if (imageTransformationsBuilder_ == null) {
+        if (!(transformationCase_ == 4)) {
+          transformation_ = com.google.privacy.dlp.v2.ImageTransformations.getDefaultInstance();
+        }
+        imageTransformationsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.ImageTransformations,
+                com.google.privacy.dlp.v2.ImageTransformations.Builder,
+                com.google.privacy.dlp.v2.ImageTransformationsOrBuilder>(
+                (com.google.privacy.dlp.v2.ImageTransformations) transformation_,
+                getParentForChildren(),
+                isClean());
+        transformation_ = null;
+      }
+      transformationCase_ = 4;
+      onChanged();
+      ;
+      return imageTransformationsBuilder_;
     }
 
     private com.google.privacy.dlp.v2.TransformationErrorHandling transformationErrorHandling_;
