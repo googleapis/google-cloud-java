@@ -22,7 +22,7 @@ package com.google.cloud.bigquery.dataexchange.v1beta1;
  *
  *
  * <pre>
- * Message for response to listing DataExchanges in an organization and
+ * Message for response to listing data exchanges in an organization and
  * location.
  * </pre>
  *
@@ -141,7 +141,7 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The list of DataExchange.
+   * The list of data exchanges.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;
@@ -156,7 +156,7 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The list of DataExchange.
+   * The list of data exchanges.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;
@@ -172,7 +172,7 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The list of DataExchange.
+   * The list of data exchanges.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;
@@ -186,7 +186,7 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The list of DataExchange.
+   * The list of data exchanges.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;
@@ -200,7 +200,7 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The list of DataExchange.
+   * The list of data exchanges.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;
@@ -443,7 +443,7 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Message for response to listing DataExchanges in an organization and
+   * Message for response to listing data exchanges in an organization and
    * location.
    * </pre>
    *
@@ -680,7 +680,7 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The list of DataExchange.
+     * The list of data exchanges.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;
@@ -698,7 +698,7 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The list of DataExchange.
+     * The list of data exchanges.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;
@@ -715,7 +715,7 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The list of DataExchange.
+     * The list of data exchanges.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;
@@ -732,7 +732,7 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The list of DataExchange.
+     * The list of data exchanges.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;
@@ -756,7 +756,7 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The list of DataExchange.
+     * The list of data exchanges.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;
@@ -778,7 +778,7 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The list of DataExchange.
+     * The list of data exchanges.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;
@@ -802,7 +802,7 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The list of DataExchange.
+     * The list of data exchanges.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;
@@ -826,7 +826,7 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The list of DataExchange.
+     * The list of data exchanges.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;
@@ -847,7 +847,7 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The list of DataExchange.
+     * The list of data exchanges.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;
@@ -869,7 +869,7 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The list of DataExchange.
+     * The list of data exchanges.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;
@@ -891,7 +891,7 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The list of DataExchange.
+     * The list of data exchanges.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;
@@ -911,7 +911,7 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The list of DataExchange.
+     * The list of data exchanges.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;
@@ -931,7 +931,7 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The list of DataExchange.
+     * The list of data exchanges.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;
@@ -945,7 +945,7 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The list of DataExchange.
+     * The list of data exchanges.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;
@@ -963,7 +963,7 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The list of DataExchange.
+     * The list of data exchanges.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;
@@ -982,7 +982,7 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The list of DataExchange.
+     * The list of data exchanges.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;
@@ -998,7 +998,7 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The list of DataExchange.
+     * The list of data exchanges.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;
@@ -1015,7 +1015,7 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * The list of DataExchange.
+     * The list of data exchanges.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;

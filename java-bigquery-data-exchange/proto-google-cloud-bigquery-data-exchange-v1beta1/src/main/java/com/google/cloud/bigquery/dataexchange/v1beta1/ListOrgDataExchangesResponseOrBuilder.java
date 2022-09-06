@@ -27,7 +27,7 @@ public interface ListOrgDataExchangesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of DataExchange.
+   * The list of data exchanges.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;
@@ -39,7 +39,7 @@ public interface ListOrgDataExchangesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of DataExchange.
+   * The list of data exchanges.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;
@@ -50,7 +50,7 @@ public interface ListOrgDataExchangesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of DataExchange.
+   * The list of data exchanges.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;
@@ -61,7 +61,7 @@ public interface ListOrgDataExchangesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of DataExchange.
+   * The list of data exchanges.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;
@@ -73,7 +73,7 @@ public interface ListOrgDataExchangesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of DataExchange.
+   * The list of data exchanges.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.dataexchange.v1beta1.DataExchange data_exchanges = 1;

@@ -21,10 +21,11 @@
  *
  * <p>======================= AnalyticsHubServiceClient =======================
  *
- * <p>Service Description: The AnalyticsHubService API facilitates data sharing within and across
- * organizations. It allows data providers to publish Listings --- a discoverable and searchable SKU
- * representing a dataset. Data consumers can subscribe to Listings. Upon subscription, AnalyticsHub
- * provisions a "Linked Datasets" surfacing the data in the consumer's project.
+ * <p>Service Description: The `AnalyticsHubService` API facilitates data sharing within and across
+ * organizations. It allows data providers to publish listings that reference shared datasets. With
+ * Analytics Hub, users can discover and search for listings that they have access to. Subscribers
+ * can view and subscribe to listings. When you subscribe to a listing, Analytics Hub creates a
+ * linked dataset in your project.
  *
  * <p>Sample for AnalyticsHubServiceClient:
  *

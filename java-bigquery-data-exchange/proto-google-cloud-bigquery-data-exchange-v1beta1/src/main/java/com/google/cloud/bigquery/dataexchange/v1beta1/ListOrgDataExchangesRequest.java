@@ -22,8 +22,8 @@ package com.google.cloud.bigquery.dataexchange.v1beta1;
  *
  *
  * <pre>
- * Message for requesting list of DataExchanges from projects in an organization
- * and location.
+ * Message for requesting the list of data exchanges from projects in an
+ * organization and location.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.ListOrgDataExchangesRequest}
@@ -438,8 +438,8 @@ public final class ListOrgDataExchangesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Message for requesting list of DataExchanges from projects in an organization
-   * and location.
+   * Message for requesting the list of data exchanges from projects in an
+   * organization and location.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.ListOrgDataExchangesRequest}

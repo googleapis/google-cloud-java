@@ -22,7 +22,7 @@ package com.google.cloud.bigquery.dataexchange.v1beta1;
  *
  *
  * <pre>
- * Contains details of the Publisher.
+ * Contains details of the listing publisher.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.Publisher}
@@ -127,7 +127,7 @@ public final class Publisher extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Name of the listing Publisher.
+   * Optional. Name of the listing publisher.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -150,7 +150,7 @@ public final class Publisher extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Name of the listing Publisher.
+   * Optional. Name of the listing publisher.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -176,7 +176,7 @@ public final class Publisher extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Email or URL of the listing Publisher.
+   * Optional. Email or URL of the listing publisher.
    * Max Length: 1000 bytes.
    * </pre>
    *
@@ -200,7 +200,7 @@ public final class Publisher extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Email or URL of the listing Publisher.
+   * Optional. Email or URL of the listing publisher.
    * Max Length: 1000 bytes.
    * </pre>
    *
@@ -394,7 +394,7 @@ public final class Publisher extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Contains details of the Publisher.
+   * Contains details of the listing publisher.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.Publisher}
@@ -561,7 +561,7 @@ public final class Publisher extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the listing Publisher.
+     * Optional. Name of the listing publisher.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -583,7 +583,7 @@ public final class Publisher extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the listing Publisher.
+     * Optional. Name of the listing publisher.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -605,7 +605,7 @@ public final class Publisher extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the listing Publisher.
+     * Optional. Name of the listing publisher.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -626,7 +626,7 @@ public final class Publisher extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the listing Publisher.
+     * Optional. Name of the listing publisher.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -643,7 +643,7 @@ public final class Publisher extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the listing Publisher.
+     * Optional. Name of the listing publisher.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -667,7 +667,7 @@ public final class Publisher extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Email or URL of the listing Publisher.
+     * Optional. Email or URL of the listing publisher.
      * Max Length: 1000 bytes.
      * </pre>
      *
@@ -690,7 +690,7 @@ public final class Publisher extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Email or URL of the listing Publisher.
+     * Optional. Email or URL of the listing publisher.
      * Max Length: 1000 bytes.
      * </pre>
      *
@@ -713,7 +713,7 @@ public final class Publisher extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Email or URL of the listing Publisher.
+     * Optional. Email or URL of the listing publisher.
      * Max Length: 1000 bytes.
      * </pre>
      *
@@ -735,7 +735,7 @@ public final class Publisher extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Email or URL of the listing Publisher.
+     * Optional. Email or URL of the listing publisher.
      * Max Length: 1000 bytes.
      * </pre>
      *
@@ -753,7 +753,7 @@ public final class Publisher extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Email or URL of the listing Publisher.
+     * Optional. Email or URL of the listing publisher.
      * Max Length: 1000 bytes.
      * </pre>
      *

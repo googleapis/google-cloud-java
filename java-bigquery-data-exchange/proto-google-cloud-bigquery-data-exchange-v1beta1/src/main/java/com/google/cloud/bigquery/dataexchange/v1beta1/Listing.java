@@ -262,7 +262,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * State of the Listing
+   * State of the listing.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.bigquery.dataexchange.v1beta1.Listing.State}
@@ -283,7 +283,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Subscribable state. Users with dataexchange.listings.subscribe permission
-     * can subscribe to this Listing.
+     * can subscribe to this listing.
      * </pre>
      *
      * <code>ACTIVE = 1;</code>
@@ -307,7 +307,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Subscribable state. Users with dataexchange.listings.subscribe permission
-     * can subscribe to this Listing.
+     * can subscribe to this listing.
      * </pre>
      *
      * <code>ACTIVE = 1;</code>
@@ -397,6 +397,219 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.bigquery.dataexchange.v1beta1.Listing.State)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Listing categories.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.bigquery.dataexchange.v1beta1.Listing.Category}
+   */
+  public enum Category implements com.google.protobuf.ProtocolMessageEnum {
+    /** <code>CATEGORY_UNSPECIFIED = 0;</code> */
+    CATEGORY_UNSPECIFIED(0),
+    /** <code>CATEGORY_OTHERS = 1;</code> */
+    CATEGORY_OTHERS(1),
+    /** <code>CATEGORY_ADVERTISING_AND_MARKETING = 2;</code> */
+    CATEGORY_ADVERTISING_AND_MARKETING(2),
+    /** <code>CATEGORY_COMMERCE = 3;</code> */
+    CATEGORY_COMMERCE(3),
+    /** <code>CATEGORY_CLIMATE_AND_ENVIRONMENT = 4;</code> */
+    CATEGORY_CLIMATE_AND_ENVIRONMENT(4),
+    /** <code>CATEGORY_DEMOGRAPHICS = 5;</code> */
+    CATEGORY_DEMOGRAPHICS(5),
+    /** <code>CATEGORY_ECONOMICS = 6;</code> */
+    CATEGORY_ECONOMICS(6),
+    /** <code>CATEGORY_EDUCATION = 7;</code> */
+    CATEGORY_EDUCATION(7),
+    /** <code>CATEGORY_ENERGY = 8;</code> */
+    CATEGORY_ENERGY(8),
+    /** <code>CATEGORY_FINANCIAL = 9;</code> */
+    CATEGORY_FINANCIAL(9),
+    /** <code>CATEGORY_GAMING = 10;</code> */
+    CATEGORY_GAMING(10),
+    /** <code>CATEGORY_GEOSPATIAL = 11;</code> */
+    CATEGORY_GEOSPATIAL(11),
+    /** <code>CATEGORY_HEALTHCARE_AND_LIFE_SCIENCE = 12;</code> */
+    CATEGORY_HEALTHCARE_AND_LIFE_SCIENCE(12),
+    /** <code>CATEGORY_MEDIA = 13;</code> */
+    CATEGORY_MEDIA(13),
+    /** <code>CATEGORY_PUBLIC_SECTOR = 14;</code> */
+    CATEGORY_PUBLIC_SECTOR(14),
+    /** <code>CATEGORY_RETAIL = 15;</code> */
+    CATEGORY_RETAIL(15),
+    /** <code>CATEGORY_SPORTS = 16;</code> */
+    CATEGORY_SPORTS(16),
+    /** <code>CATEGORY_SCIENCE_AND_RESEARCH = 17;</code> */
+    CATEGORY_SCIENCE_AND_RESEARCH(17),
+    /** <code>CATEGORY_TRANSPORTATION_AND_LOGISTICS = 18;</code> */
+    CATEGORY_TRANSPORTATION_AND_LOGISTICS(18),
+    /** <code>CATEGORY_TRAVEL_AND_TOURISM = 19;</code> */
+    CATEGORY_TRAVEL_AND_TOURISM(19),
+    UNRECOGNIZED(-1),
+    ;
+
+    /** <code>CATEGORY_UNSPECIFIED = 0;</code> */
+    public static final int CATEGORY_UNSPECIFIED_VALUE = 0;
+    /** <code>CATEGORY_OTHERS = 1;</code> */
+    public static final int CATEGORY_OTHERS_VALUE = 1;
+    /** <code>CATEGORY_ADVERTISING_AND_MARKETING = 2;</code> */
+    public static final int CATEGORY_ADVERTISING_AND_MARKETING_VALUE = 2;
+    /** <code>CATEGORY_COMMERCE = 3;</code> */
+    public static final int CATEGORY_COMMERCE_VALUE = 3;
+    /** <code>CATEGORY_CLIMATE_AND_ENVIRONMENT = 4;</code> */
+    public static final int CATEGORY_CLIMATE_AND_ENVIRONMENT_VALUE = 4;
+    /** <code>CATEGORY_DEMOGRAPHICS = 5;</code> */
+    public static final int CATEGORY_DEMOGRAPHICS_VALUE = 5;
+    /** <code>CATEGORY_ECONOMICS = 6;</code> */
+    public static final int CATEGORY_ECONOMICS_VALUE = 6;
+    /** <code>CATEGORY_EDUCATION = 7;</code> */
+    public static final int CATEGORY_EDUCATION_VALUE = 7;
+    /** <code>CATEGORY_ENERGY = 8;</code> */
+    public static final int CATEGORY_ENERGY_VALUE = 8;
+    /** <code>CATEGORY_FINANCIAL = 9;</code> */
+    public static final int CATEGORY_FINANCIAL_VALUE = 9;
+    /** <code>CATEGORY_GAMING = 10;</code> */
+    public static final int CATEGORY_GAMING_VALUE = 10;
+    /** <code>CATEGORY_GEOSPATIAL = 11;</code> */
+    public static final int CATEGORY_GEOSPATIAL_VALUE = 11;
+    /** <code>CATEGORY_HEALTHCARE_AND_LIFE_SCIENCE = 12;</code> */
+    public static final int CATEGORY_HEALTHCARE_AND_LIFE_SCIENCE_VALUE = 12;
+    /** <code>CATEGORY_MEDIA = 13;</code> */
+    public static final int CATEGORY_MEDIA_VALUE = 13;
+    /** <code>CATEGORY_PUBLIC_SECTOR = 14;</code> */
+    public static final int CATEGORY_PUBLIC_SECTOR_VALUE = 14;
+    /** <code>CATEGORY_RETAIL = 15;</code> */
+    public static final int CATEGORY_RETAIL_VALUE = 15;
+    /** <code>CATEGORY_SPORTS = 16;</code> */
+    public static final int CATEGORY_SPORTS_VALUE = 16;
+    /** <code>CATEGORY_SCIENCE_AND_RESEARCH = 17;</code> */
+    public static final int CATEGORY_SCIENCE_AND_RESEARCH_VALUE = 17;
+    /** <code>CATEGORY_TRANSPORTATION_AND_LOGISTICS = 18;</code> */
+    public static final int CATEGORY_TRANSPORTATION_AND_LOGISTICS_VALUE = 18;
+    /** <code>CATEGORY_TRAVEL_AND_TOURISM = 19;</code> */
+    public static final int CATEGORY_TRAVEL_AND_TOURISM_VALUE = 19;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Category valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Category forNumber(int value) {
+      switch (value) {
+        case 0:
+          return CATEGORY_UNSPECIFIED;
+        case 1:
+          return CATEGORY_OTHERS;
+        case 2:
+          return CATEGORY_ADVERTISING_AND_MARKETING;
+        case 3:
+          return CATEGORY_COMMERCE;
+        case 4:
+          return CATEGORY_CLIMATE_AND_ENVIRONMENT;
+        case 5:
+          return CATEGORY_DEMOGRAPHICS;
+        case 6:
+          return CATEGORY_ECONOMICS;
+        case 7:
+          return CATEGORY_EDUCATION;
+        case 8:
+          return CATEGORY_ENERGY;
+        case 9:
+          return CATEGORY_FINANCIAL;
+        case 10:
+          return CATEGORY_GAMING;
+        case 11:
+          return CATEGORY_GEOSPATIAL;
+        case 12:
+          return CATEGORY_HEALTHCARE_AND_LIFE_SCIENCE;
+        case 13:
+          return CATEGORY_MEDIA;
+        case 14:
+          return CATEGORY_PUBLIC_SECTOR;
+        case 15:
+          return CATEGORY_RETAIL;
+        case 16:
+          return CATEGORY_SPORTS;
+        case 17:
+          return CATEGORY_SCIENCE_AND_RESEARCH;
+        case 18:
+          return CATEGORY_TRANSPORTATION_AND_LOGISTICS;
+        case 19:
+          return CATEGORY_TRAVEL_AND_TOURISM;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Category> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Category> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Category>() {
+          public Category findValueByNumber(int number) {
+            return Category.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.bigquery.dataexchange.v1beta1.Listing.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final Category[] VALUES = values();
+
+    public static Category valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Category(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.bigquery.dataexchange.v1beta1.Listing.Category)
+  }
+
   public interface BigQueryDatasetSourceOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource)
@@ -433,12 +646,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A reference to a Shared dataset. It's an existing BigQuery dataset with a
-   * collection of objects, such as tables and views, that you want to share
+   * A reference to a shared dataset. It is an existing BigQuery dataset with a
+   * collection of objects such as tables and views that you want to share
    * with subscribers.
-   * Upon subscription to a Listing, Data Exchange creates a Linked dataset in
+   * When subscriber's subscribe to a listing, Analytics Hub creates a linked
+   * dataset in
    * the subscriber's project. A Linked dataset is an opaque, read-only BigQuery
-   * dataset that serves as a "symbolic link" to a shared dataset.
+   * dataset that serves as a _symbolic link_ to a shared dataset.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource}
@@ -754,12 +968,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A reference to a Shared dataset. It's an existing BigQuery dataset with a
-     * collection of objects, such as tables and views, that you want to share
+     * A reference to a shared dataset. It is an existing BigQuery dataset with a
+     * collection of objects such as tables and views that you want to share
      * with subscribers.
-     * Upon subscription to a Listing, Data Exchange creates a Linked dataset in
+     * When subscriber's subscribe to a listing, Analytics Hub creates a linked
+     * dataset in
      * the subscriber's project. A Linked dataset is an opaque, read-only BigQuery
-     * dataset that serves as a "symbolic link" to a shared dataset.
+     * dataset that serves as a _symbolic link_ to a shared dataset.
      * </pre>
      *
      * Protobuf type {@code
@@ -1143,6 +1358,67 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     return SourceCase.forNumber(sourceCase_);
   }
 
+  public static final int BIGQUERY_DATASET_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * Required. Shared dataset i.e. BigQuery dataset source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the bigqueryDataset field is set.
+   */
+  @java.lang.Override
+  public boolean hasBigqueryDataset() {
+    return sourceCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. Shared dataset i.e. BigQuery dataset source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The bigqueryDataset.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource
+      getBigqueryDataset() {
+    if (sourceCase_ == 6) {
+      return (com.google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource) source_;
+    }
+    return com.google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. Shared dataset i.e. BigQuery dataset source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSourceOrBuilder
+      getBigqueryDatasetOrBuilder() {
+    if (sourceCase_ == 6) {
+      return (com.google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource) source_;
+    }
+    return com.google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource
+        .getDefaultInstance();
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -1202,7 +1478,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Human-readable display name of the listing. The display name must contain
    * only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces
-   * ( ), and can't start or end with spaces.
+   * ( ), ampersands (&amp;) and can't start or end with spaces.
    * Default value is an empty string.
    * Max length: 63 bytes.
    * </pre>
@@ -1229,7 +1505,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Human-readable display name of the listing. The display name must contain
    * only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces
-   * ( ), and can't start or end with spaces.
+   * ( ), ampersands (&amp;) and can't start or end with spaces.
    * Default value is an empty string.
    * Max length: 63 bytes.
    * </pre>
@@ -1257,10 +1533,9 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Short description of the listing that can consist of sentences or
-   * paragraphs. The description must not contain Unicode non-characters as
-   * well as C0 and C1 control codes except tabs (HT), new lines (LF), carriage
-   * returns (CR), and page breaks (FF).
+   * Optional. Short description of the listing. The description must not contain
+   * Unicode non-characters and C0 and C1 control codes except tabs (HT),
+   * new lines (LF), carriage returns (CR), and page breaks (FF).
    * Default value is an empty string.
    * Max length: 2000 bytes.
    * </pre>
@@ -1285,10 +1560,9 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Short description of the listing that can consist of sentences or
-   * paragraphs. The description must not contain Unicode non-characters as
-   * well as C0 and C1 control codes except tabs (HT), new lines (LF), carriage
-   * returns (CR), and page breaks (FF).
+   * Optional. Short description of the listing. The description must not contain
+   * Unicode non-characters and C0 and C1 control codes except tabs (HT),
+   * new lines (LF), carriage returns (CR), and page breaks (FF).
    * Default value is an empty string.
    * Max length: 2000 bytes.
    * </pre>
@@ -1410,74 +1684,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int BIGQUERY_DATASET_FIELD_NUMBER = 6;
-  /**
-   *
-   *
-   * <pre>
-   * Required. Shared dataset i.e. BigQuery dataset source.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
-   *
-   * @return Whether the bigqueryDataset field is set.
-   */
-  @java.lang.Override
-  public boolean hasBigqueryDataset() {
-    return sourceCase_ == 6;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Required. Shared dataset i.e. BigQuery dataset source.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
-   *
-   * @return The bigqueryDataset.
-   */
-  @java.lang.Override
-  public com.google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource
-      getBigqueryDataset() {
-    if (sourceCase_ == 6) {
-      return (com.google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource) source_;
-    }
-    return com.google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource
-        .getDefaultInstance();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Required. Shared dataset i.e. BigQuery dataset source.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource bigquery_dataset = 6 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSourceOrBuilder
-      getBigqueryDatasetOrBuilder() {
-    if (sourceCase_ == 6) {
-      return (com.google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource) source_;
-    }
-    return com.google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource
-        .getDefaultInstance();
-  }
-
   public static final int STATE_FIELD_NUMBER = 7;
   private int state_;
   /**
    *
    *
    * <pre>
-   * Output only. Current state of the Listing.
+   * Output only. Current state of the listing.
    * </pre>
    *
    * <code>
@@ -1494,7 +1707,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Current state of the Listing.
+   * Output only. Current state of the listing.
    * </pre>
    *
    * <code>
@@ -1541,7 +1754,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The details of the Data Provider who owns the source data.
+   * Optional. Details of the data provider who owns the source data.
    * </pre>
    *
    * <code>
@@ -1558,7 +1771,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The details of the Data Provider who owns the source data.
+   * Optional. Details of the data provider who owns the source data.
    * </pre>
    *
    * <code>
@@ -1577,7 +1790,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The details of the Data Provider who owns the source data.
+   * Optional. Details of the data provider who owns the source data.
    * </pre>
    *
    * <code>
@@ -1593,17 +1806,18 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
   public static final int CATEGORIES_FIELD_NUMBER = 10;
   private java.util.List<java.lang.Integer> categories_;
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
-          java.lang.Integer, com.google.cloud.bigquery.dataexchange.common.Category>
+          java.lang.Integer, com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Category>
       categories_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
-              java.lang.Integer, com.google.cloud.bigquery.dataexchange.common.Category>() {
-            public com.google.cloud.bigquery.dataexchange.common.Category convert(
+              java.lang.Integer,
+              com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Category>() {
+            public com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Category convert(
                 java.lang.Integer from) {
               @SuppressWarnings("deprecation")
-              com.google.cloud.bigquery.dataexchange.common.Category result =
-                  com.google.cloud.bigquery.dataexchange.common.Category.valueOf(from);
+              com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Category result =
+                  com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Category.valueOf(from);
               return result == null
-                  ? com.google.cloud.bigquery.dataexchange.common.Category.UNRECOGNIZED
+                  ? com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Category.UNRECOGNIZED
                   : result;
             }
           };
@@ -1611,31 +1825,31 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Categories of the Listing. Up to two categories are allowed.
+   * Optional. Categories of the listing. Up to two categories are allowed.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.bigquery.dataexchange.common.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.cloud.bigquery.dataexchange.v1beta1.Listing.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return A list containing the categories.
    */
   @java.lang.Override
-  public java.util.List<com.google.cloud.bigquery.dataexchange.common.Category>
+  public java.util.List<com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Category>
       getCategoriesList() {
     return new com.google.protobuf.Internal.ListAdapter<
-        java.lang.Integer, com.google.cloud.bigquery.dataexchange.common.Category>(
+        java.lang.Integer, com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Category>(
         categories_, categories_converter_);
   }
   /**
    *
    *
    * <pre>
-   * Optional. Categories of the Listing. Up to two categories are allowed.
+   * Optional. Categories of the listing. Up to two categories are allowed.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.bigquery.dataexchange.common.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.cloud.bigquery.dataexchange.v1beta1.Listing.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The count of categories.
@@ -1648,29 +1862,29 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Categories of the Listing. Up to two categories are allowed.
+   * Optional. Categories of the listing. Up to two categories are allowed.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.bigquery.dataexchange.common.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.cloud.bigquery.dataexchange.v1beta1.Listing.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @param index The index of the element to return.
    * @return The categories at the given index.
    */
   @java.lang.Override
-  public com.google.cloud.bigquery.dataexchange.common.Category getCategories(int index) {
+  public com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Category getCategories(int index) {
     return categories_converter_.convert(categories_.get(index));
   }
   /**
    *
    *
    * <pre>
-   * Optional. Categories of the Listing. Up to two categories are allowed.
+   * Optional. Categories of the listing. Up to two categories are allowed.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.bigquery.dataexchange.common.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.cloud.bigquery.dataexchange.v1beta1.Listing.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return A list containing the enum numeric values on the wire for categories.
@@ -1683,11 +1897,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Categories of the Listing. Up to two categories are allowed.
+   * Optional. Categories of the listing. Up to two categories are allowed.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.bigquery.dataexchange.common.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.cloud.bigquery.dataexchange.v1beta1.Listing.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @param index The index of the value to return.
@@ -1706,7 +1920,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The details of the Publisher who owns the listing and has rights to share
+   * Optional. Details of the publisher who owns the listing and who can share
    * the source data.
    * </pre>
    *
@@ -1724,7 +1938,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The details of the Publisher who owns the listing and has rights to share
+   * Optional. Details of the publisher who owns the listing and who can share
    * the source data.
    * </pre>
    *
@@ -1744,7 +1958,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The details of the Publisher who owns the listing and has rights to share
+   * Optional. Details of the publisher who owns the listing and who can share
    * the source data.
    * </pre>
    *
@@ -2226,11 +2440,6 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.bigquery.dataexchange.v1beta1.Listing result =
           new com.google.cloud.bigquery.dataexchange.v1beta1.Listing(this);
       int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
-      result.primaryContact_ = primaryContact_;
-      result.documentation_ = documentation_;
       if (sourceCase_ == 6) {
         if (bigqueryDatasetBuilder_ == null) {
           result.source_ = source_;
@@ -2238,6 +2447,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           result.source_ = bigqueryDatasetBuilder_.build();
         }
       }
+      result.name_ = name_;
+      result.displayName_ = displayName_;
+      result.description_ = description_;
+      result.primaryContact_ = primaryContact_;
+      result.documentation_ = documentation_;
       result.state_ = state_;
       result.icon_ = icon_;
       if (dataProviderBuilder_ == null) {
@@ -2409,591 +2623,6 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitField0_;
-
-    private java.lang.Object name_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The resource name of the listing.
-     * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`
-     * </pre>
-     *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return The name.
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The resource name of the listing.
-     * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`
-     * </pre>
-     *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return The bytes for name.
-     */
-    public com.google.protobuf.ByteString getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The resource name of the listing.
-     * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`
-     * </pre>
-     *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @param value The name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setName(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      name_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The resource name of the listing.
-     * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`
-     * </pre>
-     *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearName() {
-
-      name_ = getDefaultInstance().getName();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The resource name of the listing.
-     * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`
-     * </pre>
-     *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @param value The bytes for name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNameBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      name_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object displayName_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Required. Human-readable display name of the listing. The display name must contain
-     * only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces
-     * ( ), and can't start or end with spaces.
-     * Default value is an empty string.
-     * Max length: 63 bytes.
-     * </pre>
-     *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The displayName.
-     */
-    public java.lang.String getDisplayName() {
-      java.lang.Object ref = displayName_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        displayName_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Human-readable display name of the listing. The display name must contain
-     * only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces
-     * ( ), and can't start or end with spaces.
-     * Default value is an empty string.
-     * Max length: 63 bytes.
-     * </pre>
-     *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The bytes for displayName.
-     */
-    public com.google.protobuf.ByteString getDisplayNameBytes() {
-      java.lang.Object ref = displayName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        displayName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Human-readable display name of the listing. The display name must contain
-     * only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces
-     * ( ), and can't start or end with spaces.
-     * Default value is an empty string.
-     * Max length: 63 bytes.
-     * </pre>
-     *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @param value The displayName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDisplayName(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      displayName_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Human-readable display name of the listing. The display name must contain
-     * only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces
-     * ( ), and can't start or end with spaces.
-     * Default value is an empty string.
-     * Max length: 63 bytes.
-     * </pre>
-     *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearDisplayName() {
-
-      displayName_ = getDefaultInstance().getDisplayName();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Human-readable display name of the listing. The display name must contain
-     * only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces
-     * ( ), and can't start or end with spaces.
-     * Default value is an empty string.
-     * Max length: 63 bytes.
-     * </pre>
-     *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @param value The bytes for displayName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      displayName_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object description_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Short description of the listing that can consist of sentences or
-     * paragraphs. The description must not contain Unicode non-characters as
-     * well as C0 and C1 control codes except tabs (HT), new lines (LF), carriage
-     * returns (CR), and page breaks (FF).
-     * Default value is an empty string.
-     * Max length: 2000 bytes.
-     * </pre>
-     *
-     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The description.
-     */
-    public java.lang.String getDescription() {
-      java.lang.Object ref = description_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        description_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Short description of the listing that can consist of sentences or
-     * paragraphs. The description must not contain Unicode non-characters as
-     * well as C0 and C1 control codes except tabs (HT), new lines (LF), carriage
-     * returns (CR), and page breaks (FF).
-     * Default value is an empty string.
-     * Max length: 2000 bytes.
-     * </pre>
-     *
-     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for description.
-     */
-    public com.google.protobuf.ByteString getDescriptionBytes() {
-      java.lang.Object ref = description_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        description_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Short description of the listing that can consist of sentences or
-     * paragraphs. The description must not contain Unicode non-characters as
-     * well as C0 and C1 control codes except tabs (HT), new lines (LF), carriage
-     * returns (CR), and page breaks (FF).
-     * Default value is an empty string.
-     * Max length: 2000 bytes.
-     * </pre>
-     *
-     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The description to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDescription(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      description_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Short description of the listing that can consist of sentences or
-     * paragraphs. The description must not contain Unicode non-characters as
-     * well as C0 and C1 control codes except tabs (HT), new lines (LF), carriage
-     * returns (CR), and page breaks (FF).
-     * Default value is an empty string.
-     * Max length: 2000 bytes.
-     * </pre>
-     *
-     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearDescription() {
-
-      description_ = getDefaultInstance().getDescription();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Short description of the listing that can consist of sentences or
-     * paragraphs. The description must not contain Unicode non-characters as
-     * well as C0 and C1 control codes except tabs (HT), new lines (LF), carriage
-     * returns (CR), and page breaks (FF).
-     * Default value is an empty string.
-     * Max length: 2000 bytes.
-     * </pre>
-     *
-     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The bytes for description to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      description_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object primaryContact_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Email or URL of the primary point of contact of the listing.
-     * Max Length: 1000 bytes.
-     * </pre>
-     *
-     * <code>string primary_contact = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The primaryContact.
-     */
-    public java.lang.String getPrimaryContact() {
-      java.lang.Object ref = primaryContact_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        primaryContact_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Email or URL of the primary point of contact of the listing.
-     * Max Length: 1000 bytes.
-     * </pre>
-     *
-     * <code>string primary_contact = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for primaryContact.
-     */
-    public com.google.protobuf.ByteString getPrimaryContactBytes() {
-      java.lang.Object ref = primaryContact_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        primaryContact_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Email or URL of the primary point of contact of the listing.
-     * Max Length: 1000 bytes.
-     * </pre>
-     *
-     * <code>string primary_contact = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The primaryContact to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPrimaryContact(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      primaryContact_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Email or URL of the primary point of contact of the listing.
-     * Max Length: 1000 bytes.
-     * </pre>
-     *
-     * <code>string primary_contact = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearPrimaryContact() {
-
-      primaryContact_ = getDefaultInstance().getPrimaryContact();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Email or URL of the primary point of contact of the listing.
-     * Max Length: 1000 bytes.
-     * </pre>
-     *
-     * <code>string primary_contact = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The bytes for primaryContact to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPrimaryContactBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      primaryContact_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object documentation_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Documentation describing the listing.
-     * </pre>
-     *
-     * <code>string documentation = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The documentation.
-     */
-    public java.lang.String getDocumentation() {
-      java.lang.Object ref = documentation_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        documentation_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Documentation describing the listing.
-     * </pre>
-     *
-     * <code>string documentation = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for documentation.
-     */
-    public com.google.protobuf.ByteString getDocumentationBytes() {
-      java.lang.Object ref = documentation_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        documentation_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Documentation describing the listing.
-     * </pre>
-     *
-     * <code>string documentation = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The documentation to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDocumentation(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      documentation_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Documentation describing the listing.
-     * </pre>
-     *
-     * <code>string documentation = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearDocumentation() {
-
-      documentation_ = getDefaultInstance().getDocumentation();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Documentation describing the listing.
-     * </pre>
-     *
-     * <code>string documentation = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The bytes for documentation to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDocumentationBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      documentation_ = value;
-      onChanged();
-      return this;
-    }
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.bigquery.dataexchange.v1beta1.Listing.BigQueryDatasetSource,
@@ -3243,12 +2872,592 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       return bigqueryDatasetBuilder_;
     }
 
+    private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the listing.
+     * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the listing.
+     * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the listing.
+     * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the listing.
+     * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the listing.
+     * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object displayName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. Human-readable display name of the listing. The display name must contain
+     * only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces
+     * ( ), ampersands (&amp;) and can't start or end with spaces.
+     * Default value is an empty string.
+     * Max length: 63 bytes.
+     * </pre>
+     *
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The displayName.
+     */
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Human-readable display name of the listing. The display name must contain
+     * only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces
+     * ( ), ampersands (&amp;) and can't start or end with spaces.
+     * Default value is an empty string.
+     * Max length: 63 bytes.
+     * </pre>
+     *
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for displayName.
+     */
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Human-readable display name of the listing. The display name must contain
+     * only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces
+     * ( ), ampersands (&amp;) and can't start or end with spaces.
+     * Default value is an empty string.
+     * Max length: 63 bytes.
+     * </pre>
+     *
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      displayName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Human-readable display name of the listing. The display name must contain
+     * only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces
+     * ( ), ampersands (&amp;) and can't start or end with spaces.
+     * Default value is an empty string.
+     * Max length: 63 bytes.
+     * </pre>
+     *
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisplayName() {
+
+      displayName_ = getDefaultInstance().getDisplayName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Human-readable display name of the listing. The display name must contain
+     * only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces
+     * ( ), ampersands (&amp;) and can't start or end with spaces.
+     * Default value is an empty string.
+     * Max length: 63 bytes.
+     * </pre>
+     *
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      displayName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object description_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Short description of the listing. The description must not contain
+     * Unicode non-characters and C0 and C1 control codes except tabs (HT),
+     * new lines (LF), carriage returns (CR), and page breaks (FF).
+     * Default value is an empty string.
+     * Max length: 2000 bytes.
+     * </pre>
+     *
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Short description of the listing. The description must not contain
+     * Unicode non-characters and C0 and C1 control codes except tabs (HT),
+     * new lines (LF), carriage returns (CR), and page breaks (FF).
+     * Default value is an empty string.
+     * Max length: 2000 bytes.
+     * </pre>
+     *
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Short description of the listing. The description must not contain
+     * Unicode non-characters and C0 and C1 control codes except tabs (HT),
+     * new lines (LF), carriage returns (CR), and page breaks (FF).
+     * Default value is an empty string.
+     * Max length: 2000 bytes.
+     * </pre>
+     *
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      description_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Short description of the listing. The description must not contain
+     * Unicode non-characters and C0 and C1 control codes except tabs (HT),
+     * new lines (LF), carriage returns (CR), and page breaks (FF).
+     * Default value is an empty string.
+     * Max length: 2000 bytes.
+     * </pre>
+     *
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+
+      description_ = getDefaultInstance().getDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Short description of the listing. The description must not contain
+     * Unicode non-characters and C0 and C1 control codes except tabs (HT),
+     * new lines (LF), carriage returns (CR), and page breaks (FF).
+     * Default value is an empty string.
+     * Max length: 2000 bytes.
+     * </pre>
+     *
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      description_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object primaryContact_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Email or URL of the primary point of contact of the listing.
+     * Max Length: 1000 bytes.
+     * </pre>
+     *
+     * <code>string primary_contact = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The primaryContact.
+     */
+    public java.lang.String getPrimaryContact() {
+      java.lang.Object ref = primaryContact_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        primaryContact_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Email or URL of the primary point of contact of the listing.
+     * Max Length: 1000 bytes.
+     * </pre>
+     *
+     * <code>string primary_contact = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for primaryContact.
+     */
+    public com.google.protobuf.ByteString getPrimaryContactBytes() {
+      java.lang.Object ref = primaryContact_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        primaryContact_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Email or URL of the primary point of contact of the listing.
+     * Max Length: 1000 bytes.
+     * </pre>
+     *
+     * <code>string primary_contact = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The primaryContact to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrimaryContact(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      primaryContact_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Email or URL of the primary point of contact of the listing.
+     * Max Length: 1000 bytes.
+     * </pre>
+     *
+     * <code>string primary_contact = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPrimaryContact() {
+
+      primaryContact_ = getDefaultInstance().getPrimaryContact();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Email or URL of the primary point of contact of the listing.
+     * Max Length: 1000 bytes.
+     * </pre>
+     *
+     * <code>string primary_contact = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for primaryContact to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrimaryContactBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      primaryContact_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object documentation_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Documentation describing the listing.
+     * </pre>
+     *
+     * <code>string documentation = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The documentation.
+     */
+    public java.lang.String getDocumentation() {
+      java.lang.Object ref = documentation_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        documentation_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Documentation describing the listing.
+     * </pre>
+     *
+     * <code>string documentation = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for documentation.
+     */
+    public com.google.protobuf.ByteString getDocumentationBytes() {
+      java.lang.Object ref = documentation_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        documentation_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Documentation describing the listing.
+     * </pre>
+     *
+     * <code>string documentation = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The documentation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDocumentation(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      documentation_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Documentation describing the listing.
+     * </pre>
+     *
+     * <code>string documentation = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDocumentation() {
+
+      documentation_ = getDefaultInstance().getDocumentation();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Documentation describing the listing.
+     * </pre>
+     *
+     * <code>string documentation = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for documentation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDocumentationBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      documentation_ = value;
+      onChanged();
+      return this;
+    }
+
     private int state_ = 0;
     /**
      *
      *
      * <pre>
-     * Output only. Current state of the Listing.
+     * Output only. Current state of the listing.
      * </pre>
      *
      * <code>
@@ -3265,7 +3474,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Current state of the Listing.
+     * Output only. Current state of the listing.
      * </pre>
      *
      * <code>
@@ -3285,7 +3494,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Current state of the Listing.
+     * Output only. Current state of the listing.
      * </pre>
      *
      * <code>
@@ -3307,7 +3516,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Current state of the Listing.
+     * Output only. Current state of the listing.
      * </pre>
      *
      * <code>
@@ -3330,7 +3539,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Current state of the Listing.
+     * Output only. Current state of the listing.
      * </pre>
      *
      * <code>
@@ -3423,7 +3632,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the Data Provider who owns the source data.
+     * Optional. Details of the data provider who owns the source data.
      * </pre>
      *
      * <code>
@@ -3439,7 +3648,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the Data Provider who owns the source data.
+     * Optional. Details of the data provider who owns the source data.
      * </pre>
      *
      * <code>
@@ -3461,7 +3670,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the Data Provider who owns the source data.
+     * Optional. Details of the data provider who owns the source data.
      * </pre>
      *
      * <code>
@@ -3486,7 +3695,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the Data Provider who owns the source data.
+     * Optional. Details of the data provider who owns the source data.
      * </pre>
      *
      * <code>
@@ -3508,7 +3717,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the Data Provider who owns the source data.
+     * Optional. Details of the data provider who owns the source data.
      * </pre>
      *
      * <code>
@@ -3537,7 +3746,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the Data Provider who owns the source data.
+     * Optional. Details of the data provider who owns the source data.
      * </pre>
      *
      * <code>
@@ -3559,7 +3768,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the Data Provider who owns the source data.
+     * Optional. Details of the data provider who owns the source data.
      * </pre>
      *
      * <code>
@@ -3576,7 +3785,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the Data Provider who owns the source data.
+     * Optional. Details of the data provider who owns the source data.
      * </pre>
      *
      * <code>
@@ -3597,7 +3806,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the Data Provider who owns the source data.
+     * Optional. Details of the data provider who owns the source data.
      * </pre>
      *
      * <code>
@@ -3633,30 +3842,30 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Categories of the Listing. Up to two categories are allowed.
+     * Optional. Categories of the listing. Up to two categories are allowed.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.bigquery.dataexchange.common.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.bigquery.dataexchange.v1beta1.Listing.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return A list containing the categories.
      */
-    public java.util.List<com.google.cloud.bigquery.dataexchange.common.Category>
+    public java.util.List<com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Category>
         getCategoriesList() {
       return new com.google.protobuf.Internal.ListAdapter<
-          java.lang.Integer, com.google.cloud.bigquery.dataexchange.common.Category>(
+          java.lang.Integer, com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Category>(
           categories_, categories_converter_);
     }
     /**
      *
      *
      * <pre>
-     * Optional. Categories of the Listing. Up to two categories are allowed.
+     * Optional. Categories of the listing. Up to two categories are allowed.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.bigquery.dataexchange.common.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.bigquery.dataexchange.v1beta1.Listing.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The count of categories.
@@ -3668,28 +3877,29 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Categories of the Listing. Up to two categories are allowed.
+     * Optional. Categories of the listing. Up to two categories are allowed.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.bigquery.dataexchange.common.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.bigquery.dataexchange.v1beta1.Listing.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param index The index of the element to return.
      * @return The categories at the given index.
      */
-    public com.google.cloud.bigquery.dataexchange.common.Category getCategories(int index) {
+    public com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Category getCategories(
+        int index) {
       return categories_converter_.convert(categories_.get(index));
     }
     /**
      *
      *
      * <pre>
-     * Optional. Categories of the Listing. Up to two categories are allowed.
+     * Optional. Categories of the listing. Up to two categories are allowed.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.bigquery.dataexchange.common.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.bigquery.dataexchange.v1beta1.Listing.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param index The index to set the value at.
@@ -3697,7 +3907,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCategories(
-        int index, com.google.cloud.bigquery.dataexchange.common.Category value) {
+        int index, com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Category value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -3710,17 +3920,18 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Categories of the Listing. Up to two categories are allowed.
+     * Optional. Categories of the listing. Up to two categories are allowed.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.bigquery.dataexchange.common.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.bigquery.dataexchange.v1beta1.Listing.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The categories to add.
      * @return This builder for chaining.
      */
-    public Builder addCategories(com.google.cloud.bigquery.dataexchange.common.Category value) {
+    public Builder addCategories(
+        com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Category value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -3733,21 +3944,22 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Categories of the Listing. Up to two categories are allowed.
+     * Optional. Categories of the listing. Up to two categories are allowed.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.bigquery.dataexchange.common.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.bigquery.dataexchange.v1beta1.Listing.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param values The categories to add.
      * @return This builder for chaining.
      */
     public Builder addAllCategories(
-        java.lang.Iterable<? extends com.google.cloud.bigquery.dataexchange.common.Category>
+        java.lang.Iterable<
+                ? extends com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Category>
             values) {
       ensureCategoriesIsMutable();
-      for (com.google.cloud.bigquery.dataexchange.common.Category value : values) {
+      for (com.google.cloud.bigquery.dataexchange.v1beta1.Listing.Category value : values) {
         categories_.add(value.getNumber());
       }
       onChanged();
@@ -3757,11 +3969,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Categories of the Listing. Up to two categories are allowed.
+     * Optional. Categories of the listing. Up to two categories are allowed.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.bigquery.dataexchange.common.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.bigquery.dataexchange.v1beta1.Listing.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -3776,11 +3988,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Categories of the Listing. Up to two categories are allowed.
+     * Optional. Categories of the listing. Up to two categories are allowed.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.bigquery.dataexchange.common.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.bigquery.dataexchange.v1beta1.Listing.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return A list containing the enum numeric values on the wire for categories.
@@ -3792,11 +4004,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Categories of the Listing. Up to two categories are allowed.
+     * Optional. Categories of the listing. Up to two categories are allowed.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.bigquery.dataexchange.common.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.bigquery.dataexchange.v1beta1.Listing.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param index The index of the value to return.
@@ -3809,11 +4021,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Categories of the Listing. Up to two categories are allowed.
+     * Optional. Categories of the listing. Up to two categories are allowed.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.bigquery.dataexchange.common.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.bigquery.dataexchange.v1beta1.Listing.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param index The index to set the value at.
@@ -3830,11 +4042,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Categories of the Listing. Up to two categories are allowed.
+     * Optional. Categories of the listing. Up to two categories are allowed.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.bigquery.dataexchange.common.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.bigquery.dataexchange.v1beta1.Listing.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for categories to add.
@@ -3850,11 +4062,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Categories of the Listing. Up to two categories are allowed.
+     * Optional. Categories of the listing. Up to two categories are allowed.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.bigquery.dataexchange.common.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.bigquery.dataexchange.v1beta1.Listing.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param values The enum numeric values on the wire for categories to add.
@@ -3879,7 +4091,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the Publisher who owns the listing and has rights to share
+     * Optional. Details of the publisher who owns the listing and who can share
      * the source data.
      * </pre>
      *
@@ -3896,7 +4108,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the Publisher who owns the listing and has rights to share
+     * Optional. Details of the publisher who owns the listing and who can share
      * the source data.
      * </pre>
      *
@@ -3919,7 +4131,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the Publisher who owns the listing and has rights to share
+     * Optional. Details of the publisher who owns the listing and who can share
      * the source data.
      * </pre>
      *
@@ -3944,7 +4156,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the Publisher who owns the listing and has rights to share
+     * Optional. Details of the publisher who owns the listing and who can share
      * the source data.
      * </pre>
      *
@@ -3967,7 +4179,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the Publisher who owns the listing and has rights to share
+     * Optional. Details of the publisher who owns the listing and who can share
      * the source data.
      * </pre>
      *
@@ -3996,7 +4208,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the Publisher who owns the listing and has rights to share
+     * Optional. Details of the publisher who owns the listing and who can share
      * the source data.
      * </pre>
      *
@@ -4019,7 +4231,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the Publisher who owns the listing and has rights to share
+     * Optional. Details of the publisher who owns the listing and who can share
      * the source data.
      * </pre>
      *
@@ -4036,7 +4248,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the Publisher who owns the listing and has rights to share
+     * Optional. Details of the publisher who owns the listing and who can share
      * the source data.
      * </pre>
      *
@@ -4058,7 +4270,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The details of the Publisher who owns the listing and has rights to share
+     * Optional. Details of the publisher who owns the listing and who can share
      * the source data.
      * </pre>
      *
