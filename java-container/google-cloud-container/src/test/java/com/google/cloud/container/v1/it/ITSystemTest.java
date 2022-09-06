@@ -85,19 +85,20 @@ public class ITSystemTest {
             .setNetwork(NETWORK)
             .build();
     operation = client.createCluster(PROJECT_ID, ZONE, cluster);
+
+    // Busy Wait for one minute at a time until Cluster CREATE operation is complete
+    Operation response = client.getOperation(PROJECT_ID, ZONE, operation.getName());
+    while (response.getStatus() != Status.DONE) {
+      LOG.info(String.format("Cluster CREATE Operation Status: %s", response.getStatus()));
+      Thread.sleep(TimeUnit.MINUTES.toMillis(1));
+      response = client.getOperation(PROJECT_ID, ZONE, operation.getName());
+    }
     LOG.info(String.format("%s cluster created successfully.", CLUSTER_NAME));
     LOG.info(String.format("%s node pool created successfully.", NODE_POOL_NAME));
   }
 
   @AfterClass
   public static void afterClass() throws Exception {
-    Operation response = client.getOperation(PROJECT_ID, ZONE, operation.getName());
-    // Sleep for one minute until Cluster CREATE operation is complete
-    while (response.getStatus() != Status.DONE) {
-      LOG.info(String.format("Cluster CREATE Operation Status: %s", response.getStatus()));
-      Thread.sleep(TimeUnit.MINUTES.toMillis(1));
-      response = client.getOperation(PROJECT_ID, ZONE, operation.getName());
-    }
     client.deleteCluster(PROJECT_ID, ZONE, CLUSTER_NAME);
     LOG.info(String.format("%s cluster deleted successfully.", CLUSTER_NAME));
     client.close();
