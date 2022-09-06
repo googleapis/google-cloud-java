@@ -355,7 +355,7 @@ public interface ProductOrBuilder
    * The [type][google.cloud.retail.v2beta.Product.type] of the members must be
    * either [Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY] or
    * [Type.VARIANT][google.cloud.retail.v2beta.Product.Type.VARIANT] otherwise
-   * and INVALID_ARGUMENT error is thrown. Should not set it for other types. A
+   * an INVALID_ARGUMENT error is thrown. Should not set it for other types. A
    * maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is
    * return.
    * </pre>
@@ -376,7 +376,7 @@ public interface ProductOrBuilder
    * The [type][google.cloud.retail.v2beta.Product.type] of the members must be
    * either [Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY] or
    * [Type.VARIANT][google.cloud.retail.v2beta.Product.Type.VARIANT] otherwise
-   * and INVALID_ARGUMENT error is thrown. Should not set it for other types. A
+   * an INVALID_ARGUMENT error is thrown. Should not set it for other types. A
    * maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is
    * return.
    * </pre>
@@ -397,7 +397,7 @@ public interface ProductOrBuilder
    * The [type][google.cloud.retail.v2beta.Product.type] of the members must be
    * either [Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY] or
    * [Type.VARIANT][google.cloud.retail.v2beta.Product.Type.VARIANT] otherwise
-   * and INVALID_ARGUMENT error is thrown. Should not set it for other types. A
+   * an INVALID_ARGUMENT error is thrown. Should not set it for other types. A
    * maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is
    * return.
    * </pre>
@@ -419,7 +419,7 @@ public interface ProductOrBuilder
    * The [type][google.cloud.retail.v2beta.Product.type] of the members must be
    * either [Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY] or
    * [Type.VARIANT][google.cloud.retail.v2beta.Product.Type.VARIANT] otherwise
-   * and INVALID_ARGUMENT error is thrown. Should not set it for other types. A
+   * an INVALID_ARGUMENT error is thrown. Should not set it for other types. A
    * maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is
    * return.
    * </pre>
@@ -490,7 +490,7 @@ public interface ProductOrBuilder
    * belonging to several parallel categories. Strongly recommended using the
    * full path for better search / recommendation quality.
    * To represent full path of category, use '&gt;' sign to separate different
-   * hierarchies. If '&gt;' is part of the category name, please replace it with
+   * hierarchies. If '&gt;' is part of the category name, replace it with
    * other character(s).
    * For example, if a shoes product belongs to both
    * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
@@ -528,7 +528,7 @@ public interface ProductOrBuilder
    * belonging to several parallel categories. Strongly recommended using the
    * full path for better search / recommendation quality.
    * To represent full path of category, use '&gt;' sign to separate different
-   * hierarchies. If '&gt;' is part of the category name, please replace it with
+   * hierarchies. If '&gt;' is part of the category name, replace it with
    * other character(s).
    * For example, if a shoes product belongs to both
    * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
@@ -566,7 +566,7 @@ public interface ProductOrBuilder
    * belonging to several parallel categories. Strongly recommended using the
    * full path for better search / recommendation quality.
    * To represent full path of category, use '&gt;' sign to separate different
-   * hierarchies. If '&gt;' is part of the category name, please replace it with
+   * hierarchies. If '&gt;' is part of the category name, replace it with
    * other character(s).
    * For example, if a shoes product belongs to both
    * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
@@ -605,7 +605,7 @@ public interface ProductOrBuilder
    * belonging to several parallel categories. Strongly recommended using the
    * full path for better search / recommendation quality.
    * To represent full path of category, use '&gt;' sign to separate different
-   * hierarchies. If '&gt;' is part of the category name, please replace it with
+   * hierarchies. If '&gt;' is part of the category name, replace it with
    * other character(s).
    * For example, if a shoes product belongs to both
    * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
@@ -2281,6 +2281,98 @@ public interface ProductOrBuilder
    * </code>
    */
   com.google.cloud.retail.v2beta.ProductOrBuilder getVariantsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of local inventories specific to different places.
+   * This is only available for users who have Retail Search enabled, and it can
+   * be managed by
+   * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
+   * and
+   * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
+   * APIs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2beta.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.retail.v2beta.LocalInventory> getLocalInventoriesList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of local inventories specific to different places.
+   * This is only available for users who have Retail Search enabled, and it can
+   * be managed by
+   * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
+   * and
+   * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
+   * APIs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2beta.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.retail.v2beta.LocalInventory getLocalInventories(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of local inventories specific to different places.
+   * This is only available for users who have Retail Search enabled, and it can
+   * be managed by
+   * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
+   * and
+   * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
+   * APIs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2beta.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getLocalInventoriesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of local inventories specific to different places.
+   * This is only available for users who have Retail Search enabled, and it can
+   * be managed by
+   * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
+   * and
+   * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
+   * APIs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2beta.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.retail.v2beta.LocalInventoryOrBuilder>
+      getLocalInventoriesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A list of local inventories specific to different places.
+   * This is only available for users who have Retail Search enabled, and it can
+   * be managed by
+   * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
+   * and
+   * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
+   * APIs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2beta.LocalInventory local_inventories = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.retail.v2beta.LocalInventoryOrBuilder getLocalInventoriesOrBuilder(int index);
 
   public com.google.cloud.retail.v2beta.Product.ExpirationCase getExpirationCase();
 }

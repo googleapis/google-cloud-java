@@ -76,6 +76,14 @@ public final class CatalogServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2beta_RemoveCatalogAttributeRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2beta_BatchRemoveCatalogAttributesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2beta_BatchRemoveCatalogAttributesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2beta_BatchRemoveCatalogAttributesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2beta_BatchRemoveCatalogAttributesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_retail_v2beta_ReplaceCatalogAttributeRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2beta_ReplaceCatalogAttributeRequest_fieldAccessorTable;
@@ -135,83 +143,97 @@ public final class CatalogServiceProto {
           + "\340A\002\"|\n\035RemoveCatalogAttributeRequest\022I\n\021"
           + "attributes_config\030\001 \001(\tB.\340A\002\372A(\n&retail."
           + "googleapis.com/AttributesConfig\022\020\n\003key\030\002"
-          + " \001(\tB\003\340A\002\"\352\001\n\036ReplaceCatalogAttributeReq"
-          + "uest\022I\n\021attributes_config\030\001 \001(\tB.\340A\002\372A(\n"
-          + "&retail.googleapis.com/AttributesConfig\022"
-          + "L\n\021catalog_attribute\030\002 \001(\0132,.google.clou"
-          + "d.retail.v2beta.CatalogAttributeB\003\340A\002\022/\n"
-          + "\013update_mask\030\003 \001(\0132\032.google.protobuf.Fie"
-          + "ldMask2\227\024\n\016CatalogService\022\264\001\n\014ListCatalo"
-          + "gs\022/.google.cloud.retail.v2beta.ListCata"
-          + "logsRequest\0320.google.cloud.retail.v2beta"
-          + ".ListCatalogsResponse\"A\202\323\344\223\0022\0220/v2beta/{"
-          + "parent=projects/*/locations/*}/catalogs\332"
-          + "A\006parent\022\307\001\n\rUpdateCatalog\0220.google.clou"
-          + "d.retail.v2beta.UpdateCatalogRequest\032#.g"
-          + "oogle.cloud.retail.v2beta.Catalog\"_\202\323\344\223\002"
-          + "C28/v2beta/{catalog.name=projects/*/loca"
-          + "tions/*/catalogs/*}:\007catalog\332A\023catalog,u"
-          + "pdate_mask\022\272\001\n\020SetDefaultBranch\0223.google"
-          + ".cloud.retail.v2beta.SetDefaultBranchReq"
-          + "uest\032\026.google.protobuf.Empty\"Y\202\323\344\223\002I\"D/v"
-          + "2beta/{catalog=projects/*/locations/*/ca"
-          + "talogs/*}:setDefaultBranch:\001*\332A\007catalog\022"
-          + "\325\001\n\020GetDefaultBranch\0223.google.cloud.reta"
-          + "il.v2beta.GetDefaultBranchRequest\0324.goog"
-          + "le.cloud.retail.v2beta.GetDefaultBranchR"
-          + "esponse\"V\202\323\344\223\002F\022D/v2beta/{catalog=projec"
-          + "ts/*/locations/*/catalogs/*}:getDefaultB"
-          + "ranch\332A\007catalog\022\315\001\n\023GetCompletionConfig\022"
-          + "6.google.cloud.retail.v2beta.GetCompleti"
-          + "onConfigRequest\032,.google.cloud.retail.v2"
-          + "beta.CompletionConfig\"P\202\323\344\223\002C\022A/v2beta/{"
-          + "name=projects/*/locations/*/catalogs/*/c"
-          + "ompletionConfig}\332A\004name\022\222\002\n\026UpdateComple"
-          + "tionConfig\0229.google.cloud.retail.v2beta."
-          + "UpdateCompletionConfigRequest\032,.google.c"
-          + "loud.retail.v2beta.CompletionConfig\"\216\001\202\323"
-          + "\344\223\002h2S/v2beta/{completion_config.name=pr"
-          + "ojects/*/locations/*/catalogs/*/completi"
-          + "onConfig}:\021completion_config\332A\035completio"
-          + "n_config,update_mask\022\315\001\n\023GetAttributesCo"
-          + "nfig\0226.google.cloud.retail.v2beta.GetAtt"
-          + "ributesConfigRequest\032,.google.cloud.reta"
-          + "il.v2beta.AttributesConfig\"P\202\323\344\223\002C\022A/v2b"
-          + "eta/{name=projects/*/locations/*/catalog"
-          + "s/*/attributesConfig}\332A\004name\022\222\002\n\026UpdateA"
-          + "ttributesConfig\0229.google.cloud.retail.v2"
-          + "beta.UpdateAttributesConfigRequest\032,.goo"
+          + " \001(\tB\003\340A\002\"\215\001\n#BatchRemoveCatalogAttribut"
+          + "esRequest\022I\n\021attributes_config\030\001 \001(\tB.\340A"
+          + "\002\372A(\n&retail.googleapis.com/AttributesCo"
+          + "nfig\022\033\n\016attribute_keys\030\002 \003(\tB\003\340A\002\"l\n$Bat"
+          + "chRemoveCatalogAttributesResponse\022\"\n\032del"
+          + "eted_catalog_attributes\030\001 \003(\t\022 \n\030reset_c"
+          + "atalog_attributes\030\002 \003(\t\"\352\001\n\036ReplaceCatal"
+          + "ogAttributeRequest\022I\n\021attributes_config\030"
+          + "\001 \001(\tB.\340A\002\372A(\n&retail.googleapis.com/Att"
+          + "ributesConfig\022L\n\021catalog_attribute\030\002 \001(\013"
+          + "2,.google.cloud.retail.v2beta.CatalogAtt"
+          + "ributeB\003\340A\002\022/\n\013update_mask\030\003 \001(\0132\032.googl"
+          + "e.protobuf.FieldMask2\263\026\n\016CatalogService\022"
+          + "\264\001\n\014ListCatalogs\022/.google.cloud.retail.v"
+          + "2beta.ListCatalogsRequest\0320.google.cloud"
+          + ".retail.v2beta.ListCatalogsResponse\"A\202\323\344"
+          + "\223\0022\0220/v2beta/{parent=projects/*/location"
+          + "s/*}/catalogs\332A\006parent\022\307\001\n\rUpdateCatalog"
+          + "\0220.google.cloud.retail.v2beta.UpdateCata"
+          + "logRequest\032#.google.cloud.retail.v2beta."
+          + "Catalog\"_\202\323\344\223\002C28/v2beta/{catalog.name=p"
+          + "rojects/*/locations/*/catalogs/*}:\007catal"
+          + "og\332A\023catalog,update_mask\022\272\001\n\020SetDefaultB"
+          + "ranch\0223.google.cloud.retail.v2beta.SetDe"
+          + "faultBranchRequest\032\026.google.protobuf.Emp"
+          + "ty\"Y\202\323\344\223\002I\"D/v2beta/{catalog=projects/*/"
+          + "locations/*/catalogs/*}:setDefaultBranch"
+          + ":\001*\332A\007catalog\022\325\001\n\020GetDefaultBranch\0223.goo"
+          + "gle.cloud.retail.v2beta.GetDefaultBranch"
+          + "Request\0324.google.cloud.retail.v2beta.Get"
+          + "DefaultBranchResponse\"V\202\323\344\223\002F\022D/v2beta/{"
+          + "catalog=projects/*/locations/*/catalogs/"
+          + "*}:getDefaultBranch\332A\007catalog\022\315\001\n\023GetCom"
+          + "pletionConfig\0226.google.cloud.retail.v2be"
+          + "ta.GetCompletionConfigRequest\032,.google.c"
+          + "loud.retail.v2beta.CompletionConfig\"P\202\323\344"
+          + "\223\002C\022A/v2beta/{name=projects/*/locations/"
+          + "*/catalogs/*/completionConfig}\332A\004name\022\222\002"
+          + "\n\026UpdateCompletionConfig\0229.google.cloud."
+          + "retail.v2beta.UpdateCompletionConfigRequ"
+          + "est\032,.google.cloud.retail.v2beta.Complet"
+          + "ionConfig\"\216\001\202\323\344\223\002h2S/v2beta/{completion_"
+          + "config.name=projects/*/locations/*/catal"
+          + "ogs/*/completionConfig}:\021completion_conf"
+          + "ig\332A\035completion_config,update_mask\022\315\001\n\023G"
+          + "etAttributesConfig\0226.google.cloud.retail"
+          + ".v2beta.GetAttributesConfigRequest\032,.goo"
           + "gle.cloud.retail.v2beta.AttributesConfig"
-          + "\"\216\001\202\323\344\223\002h2S/v2beta/{attributes_config.na"
-          + "me=projects/*/locations/*/catalogs/*/att"
-          + "ributesConfig}:\021attributes_config\332A\035attr"
-          + "ibutes_config,update_mask\022\352\001\n\023AddCatalog"
-          + "Attribute\0226.google.cloud.retail.v2beta.A"
-          + "ddCatalogAttributeRequest\032,.google.cloud"
-          + ".retail.v2beta.AttributesConfig\"m\202\323\344\223\002g\""
-          + "b/v2beta/{attributes_config=projects/*/l"
-          + "ocations/*/catalogs/*/attributesConfig}:"
-          + "addCatalogAttribute:\001*\022\363\001\n\026RemoveCatalog"
-          + "Attribute\0229.google.cloud.retail.v2beta.R"
-          + "emoveCatalogAttributeRequest\032,.google.cl"
-          + "oud.retail.v2beta.AttributesConfig\"p\202\323\344\223"
-          + "\002j\"e/v2beta/{attributes_config=projects/"
-          + "*/locations/*/catalogs/*/attributesConfi"
-          + "g}:removeCatalogAttribute:\001*\022\366\001\n\027Replace"
-          + "CatalogAttribute\022:.google.cloud.retail.v"
-          + "2beta.ReplaceCatalogAttributeRequest\032,.g"
-          + "oogle.cloud.retail.v2beta.AttributesConf"
-          + "ig\"q\202\323\344\223\002k\"f/v2beta/{attributes_config=p"
-          + "rojects/*/locations/*/catalogs/*/attribu"
-          + "tesConfig}:replaceCatalogAttribute:\001*\032I\312"
-          + "A\025retail.googleapis.com\322A.https://www.go"
-          + "ogleapis.com/auth/cloud-platformB\334\001\n\036com"
-          + ".google.cloud.retail.v2betaB\023CatalogServ"
-          + "iceProtoP\001Z@google.golang.org/genproto/g"
-          + "oogleapis/cloud/retail/v2beta;retail\242\002\006R"
-          + "ETAIL\252\002\032Google.Cloud.Retail.V2Beta\312\002\032Goo"
-          + "gle\\Cloud\\Retail\\V2beta\352\002\035Google::Cloud:"
-          + ":Retail::V2betab\006proto3"
+          + "\"P\202\323\344\223\002C\022A/v2beta/{name=projects/*/locat"
+          + "ions/*/catalogs/*/attributesConfig}\332A\004na"
+          + "me\022\222\002\n\026UpdateAttributesConfig\0229.google.c"
+          + "loud.retail.v2beta.UpdateAttributesConfi"
+          + "gRequest\032,.google.cloud.retail.v2beta.At"
+          + "tributesConfig\"\216\001\202\323\344\223\002h2S/v2beta/{attrib"
+          + "utes_config.name=projects/*/locations/*/"
+          + "catalogs/*/attributesConfig}:\021attributes"
+          + "_config\332A\035attributes_config,update_mask\022"
+          + "\352\001\n\023AddCatalogAttribute\0226.google.cloud.r"
+          + "etail.v2beta.AddCatalogAttributeRequest\032"
+          + ",.google.cloud.retail.v2beta.AttributesC"
+          + "onfig\"m\202\323\344\223\002g\"b/v2beta/{attributes_confi"
+          + "g=projects/*/locations/*/catalogs/*/attr"
+          + "ibutesConfig}:addCatalogAttribute:\001*\022\363\001\n"
+          + "\026RemoveCatalogAttribute\0229.google.cloud.r"
+          + "etail.v2beta.RemoveCatalogAttributeReque"
+          + "st\032,.google.cloud.retail.v2beta.Attribut"
+          + "esConfig\"p\202\323\344\223\002j\"e/v2beta/{attributes_co"
+          + "nfig=projects/*/locations/*/catalogs/*/a"
+          + "ttributesConfig}:removeCatalogAttribute:"
+          + "\001*\022\231\002\n\034BatchRemoveCatalogAttributes\022?.go"
+          + "ogle.cloud.retail.v2beta.BatchRemoveCata"
+          + "logAttributesRequest\032@.google.cloud.reta"
+          + "il.v2beta.BatchRemoveCatalogAttributesRe"
+          + "sponse\"v\202\323\344\223\002p\"k/v2beta/{attributes_conf"
+          + "ig=projects/*/locations/*/catalogs/*/att"
+          + "ributesConfig}:batchRemoveCatalogAttribu"
+          + "tes:\001*\022\366\001\n\027ReplaceCatalogAttribute\022:.goo"
+          + "gle.cloud.retail.v2beta.ReplaceCatalogAt"
+          + "tributeRequest\032,.google.cloud.retail.v2b"
+          + "eta.AttributesConfig\"q\202\323\344\223\002k\"f/v2beta/{a"
+          + "ttributes_config=projects/*/locations/*/"
+          + "catalogs/*/attributesConfig}:replaceCata"
+          + "logAttribute:\001*\032I\312A\025retail.googleapis.co"
+          + "m\322A.https://www.googleapis.com/auth/clou"
+          + "d-platformB\334\001\n\036com.google.cloud.retail.v"
+          + "2betaB\023CatalogServiceProtoP\001Z@google.gol"
+          + "ang.org/genproto/googleapis/cloud/retail"
+          + "/v2beta;retail\242\002\006RETAIL\252\002\032Google.Cloud.R"
+          + "etail.V2Beta\312\002\032Google\\Cloud\\Retail\\V2bet"
+          + "a\352\002\035Google::Cloud::Retail::V2betab\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -322,8 +344,24 @@ public final class CatalogServiceProto {
             new java.lang.String[] {
               "AttributesConfig", "Key",
             });
-    internal_static_google_cloud_retail_v2beta_ReplaceCatalogAttributeRequest_descriptor =
+    internal_static_google_cloud_retail_v2beta_BatchRemoveCatalogAttributesRequest_descriptor =
         getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_retail_v2beta_BatchRemoveCatalogAttributesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2beta_BatchRemoveCatalogAttributesRequest_descriptor,
+            new java.lang.String[] {
+              "AttributesConfig", "AttributeKeys",
+            });
+    internal_static_google_cloud_retail_v2beta_BatchRemoveCatalogAttributesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_retail_v2beta_BatchRemoveCatalogAttributesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2beta_BatchRemoveCatalogAttributesResponse_descriptor,
+            new java.lang.String[] {
+              "DeletedCatalogAttributes", "ResetCatalogAttributes",
+            });
+    internal_static_google_cloud_retail_v2beta_ReplaceCatalogAttributeRequest_descriptor =
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_retail_v2beta_ReplaceCatalogAttributeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_retail_v2beta_ReplaceCatalogAttributeRequest_descriptor,

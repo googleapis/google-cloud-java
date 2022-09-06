@@ -22,8 +22,9 @@ package com.google.cloud.retail.v2beta;
  *
  *
  * <pre>
- * Configures dynamic serving time metadata that is used to pre and post
- * process search/recommendation model results.
+ * Configures dynamic metadata that can be linked to a
+ * [ServingConfig][google.cloud.retail.v2beta.ServingConfig] and affect search
+ * or recommendation results at serving time.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2beta.Control}
@@ -43,6 +44,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     displayName_ = "";
     associatedServingConfigIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     solutionTypes_ = java.util.Collections.emptyList();
+    searchSolutionUseCase_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -159,6 +161,31 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
               input.popLimit(oldLimit);
               break;
             }
+          case 56:
+            {
+              int rawValue = input.readEnum();
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                searchSolutionUseCase_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              searchSolutionUseCase_.add(rawValue);
+              break;
+            }
+          case 58:
+            {
+              int length = input.readRawVarint32();
+              int oldLimit = input.pushLimit(length);
+              while (input.getBytesUntilLimit() > 0) {
+                int rawValue = input.readEnum();
+                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                  searchSolutionUseCase_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000004;
+                }
+                searchSolutionUseCase_.add(rawValue);
+              }
+              input.popLimit(oldLimit);
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -180,6 +207,9 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         solutionTypes_ = java.util.Collections.unmodifiableList(solutionTypes_);
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        searchSolutionUseCase_ = java.util.Collections.unmodifiableList(searchSolutionUseCase_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -208,6 +238,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    @java.lang.Deprecated
     FACET_SPEC(3),
     RULE(4),
     CONTROL_NOT_SET(0);
@@ -254,13 +285,19 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A facet specification to perform faceted search.
+   * Note that this field is deprecated and will throw NOT_IMPLEMENTED if
+   * used for creating a control.
    * </pre>
    *
-   * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3;</code>
+   * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.retail.v2beta.Control.facet_spec is deprecated. See
+   *     google/cloud/retail/v2beta/control.proto;l=51
    * @return Whether the facetSpec field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasFacetSpec() {
     return controlCase_ == 3;
   }
@@ -269,13 +306,19 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A facet specification to perform faceted search.
+   * Note that this field is deprecated and will throw NOT_IMPLEMENTED if
+   * used for creating a control.
    * </pre>
    *
-   * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3;</code>
+   * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.retail.v2beta.Control.facet_spec is deprecated. See
+   *     google/cloud/retail/v2beta/control.proto;l=51
    * @return The facetSpec.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.retail.v2beta.SearchRequest.FacetSpec getFacetSpec() {
     if (controlCase_ == 3) {
       return (com.google.cloud.retail.v2beta.SearchRequest.FacetSpec) control_;
@@ -287,11 +330,15 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A facet specification to perform faceted search.
+   * Note that this field is deprecated and will throw NOT_IMPLEMENTED if
+   * used for creating a control.
    * </pre>
    *
-   * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3;</code>
+   * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.retail.v2beta.SearchRequest.FacetSpecOrBuilder getFacetSpecOrBuilder() {
     if (controlCase_ == 3) {
       return (com.google.cloud.retail.v2beta.SearchRequest.FacetSpec) control_;
@@ -466,10 +513,13 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. List of serving configuration ids that that are associated
-   * with this control. Note the association is managed via the ServingConfig,
-   * this is an output only denormalizeed  view. Assumed to be in the same
-   * catalog.
+   * Output only. List of [serving
+   * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
+   * associated with this control in the same
+   * [Catalog][google.cloud.retail.v2beta.Catalog].
+   * Note the association is managed via the
+   * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
+   * output only denormalized view.
    * </pre>
    *
    * <code>
@@ -485,10 +535,13 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. List of serving configuration ids that that are associated
-   * with this control. Note the association is managed via the ServingConfig,
-   * this is an output only denormalizeed  view. Assumed to be in the same
-   * catalog.
+   * Output only. List of [serving
+   * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
+   * associated with this control in the same
+   * [Catalog][google.cloud.retail.v2beta.Catalog].
+   * Note the association is managed via the
+   * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
+   * output only denormalized view.
    * </pre>
    *
    * <code>
@@ -504,10 +557,13 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. List of serving configuration ids that that are associated
-   * with this control. Note the association is managed via the ServingConfig,
-   * this is an output only denormalizeed  view. Assumed to be in the same
-   * catalog.
+   * Output only. List of [serving
+   * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
+   * associated with this control in the same
+   * [Catalog][google.cloud.retail.v2beta.Catalog].
+   * Note the association is managed via the
+   * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
+   * output only denormalized view.
    * </pre>
    *
    * <code>
@@ -524,10 +580,13 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. List of serving configuration ids that that are associated
-   * with this control. Note the association is managed via the ServingConfig,
-   * this is an output only denormalizeed  view. Assumed to be in the same
-   * catalog.
+   * Output only. List of [serving
+   * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
+   * associated with this control in the same
+   * [Catalog][google.cloud.retail.v2beta.Catalog].
+   * Note the association is managed via the
+   * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
+   * output only denormalized view.
    * </pre>
    *
    * <code>
@@ -561,12 +620,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The solution types that the serving config is used
-   * for. Currently we support setting only one type of solution at creation
-   * time.
+   * Required. Immutable. The solution types that the control is used for.
+   * Currently we support setting only one type of solution at creation time.
    * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
    * If no solution type is provided at creation time, will default to
-   * SOLUTION_TYPE_SEARCH.
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>
@@ -585,12 +643,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The solution types that the serving config is used
-   * for. Currently we support setting only one type of solution at creation
-   * time.
+   * Required. Immutable. The solution types that the control is used for.
+   * Currently we support setting only one type of solution at creation time.
    * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
    * If no solution type is provided at creation time, will default to
-   * SOLUTION_TYPE_SEARCH.
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>
@@ -607,12 +664,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The solution types that the serving config is used
-   * for. Currently we support setting only one type of solution at creation
-   * time.
+   * Required. Immutable. The solution types that the control is used for.
+   * Currently we support setting only one type of solution at creation time.
    * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
    * If no solution type is provided at creation time, will default to
-   * SOLUTION_TYPE_SEARCH.
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>
@@ -630,12 +686,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The solution types that the serving config is used
-   * for. Currently we support setting only one type of solution at creation
-   * time.
+   * Required. Immutable. The solution types that the control is used for.
+   * Currently we support setting only one type of solution at creation time.
    * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
    * If no solution type is provided at creation time, will default to
-   * SOLUTION_TYPE_SEARCH.
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>
@@ -652,12 +707,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The solution types that the serving config is used
-   * for. Currently we support setting only one type of solution at creation
-   * time.
+   * Required. Immutable. The solution types that the control is used for.
+   * Currently we support setting only one type of solution at creation time.
    * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
    * If no solution type is provided at creation time, will default to
-   * SOLUTION_TYPE_SEARCH.
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * <code>
@@ -673,6 +727,141 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int solutionTypesMemoizedSerializedSize;
+
+  public static final int SEARCH_SOLUTION_USE_CASE_FIELD_NUMBER = 7;
+  private java.util.List<java.lang.Integer> searchSolutionUseCase_;
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+          java.lang.Integer, com.google.cloud.retail.v2beta.SearchSolutionUseCase>
+      searchSolutionUseCase_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer, com.google.cloud.retail.v2beta.SearchSolutionUseCase>() {
+            public com.google.cloud.retail.v2beta.SearchSolutionUseCase convert(
+                java.lang.Integer from) {
+              @SuppressWarnings("deprecation")
+              com.google.cloud.retail.v2beta.SearchSolutionUseCase result =
+                  com.google.cloud.retail.v2beta.SearchSolutionUseCase.valueOf(from);
+              return result == null
+                  ? com.google.cloud.retail.v2beta.SearchSolutionUseCase.UNRECOGNIZED
+                  : result;
+            }
+          };
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the use case for the control.
+   * Affects what condition fields can be set.
+   * Only settable by search controls.
+   * Will default to
+   * [SEARCH_SOLUTION_USE_CASE_SEARCH][google.cloud.retail.v2beta.SearchSolutionUseCase.SEARCH_SOLUTION_USE_CASE_SEARCH]
+   * if not specified. Currently only allow one search_solution_use_case per
+   * control.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2beta.SearchSolutionUseCase search_solution_use_case = 7;
+   * </code>
+   *
+   * @return A list containing the searchSolutionUseCase.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.retail.v2beta.SearchSolutionUseCase>
+      getSearchSolutionUseCaseList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer, com.google.cloud.retail.v2beta.SearchSolutionUseCase>(
+        searchSolutionUseCase_, searchSolutionUseCase_converter_);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the use case for the control.
+   * Affects what condition fields can be set.
+   * Only settable by search controls.
+   * Will default to
+   * [SEARCH_SOLUTION_USE_CASE_SEARCH][google.cloud.retail.v2beta.SearchSolutionUseCase.SEARCH_SOLUTION_USE_CASE_SEARCH]
+   * if not specified. Currently only allow one search_solution_use_case per
+   * control.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2beta.SearchSolutionUseCase search_solution_use_case = 7;
+   * </code>
+   *
+   * @return The count of searchSolutionUseCase.
+   */
+  @java.lang.Override
+  public int getSearchSolutionUseCaseCount() {
+    return searchSolutionUseCase_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the use case for the control.
+   * Affects what condition fields can be set.
+   * Only settable by search controls.
+   * Will default to
+   * [SEARCH_SOLUTION_USE_CASE_SEARCH][google.cloud.retail.v2beta.SearchSolutionUseCase.SEARCH_SOLUTION_USE_CASE_SEARCH]
+   * if not specified. Currently only allow one search_solution_use_case per
+   * control.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2beta.SearchSolutionUseCase search_solution_use_case = 7;
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The searchSolutionUseCase at the given index.
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2beta.SearchSolutionUseCase getSearchSolutionUseCase(int index) {
+    return searchSolutionUseCase_converter_.convert(searchSolutionUseCase_.get(index));
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the use case for the control.
+   * Affects what condition fields can be set.
+   * Only settable by search controls.
+   * Will default to
+   * [SEARCH_SOLUTION_USE_CASE_SEARCH][google.cloud.retail.v2beta.SearchSolutionUseCase.SEARCH_SOLUTION_USE_CASE_SEARCH]
+   * if not specified. Currently only allow one search_solution_use_case per
+   * control.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2beta.SearchSolutionUseCase search_solution_use_case = 7;
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for searchSolutionUseCase.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getSearchSolutionUseCaseValueList() {
+    return searchSolutionUseCase_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the use case for the control.
+   * Affects what condition fields can be set.
+   * Only settable by search controls.
+   * Will default to
+   * [SEARCH_SOLUTION_USE_CASE_SEARCH][google.cloud.retail.v2beta.SearchSolutionUseCase.SEARCH_SOLUTION_USE_CASE_SEARCH]
+   * if not specified. Currently only allow one search_solution_use_case per
+   * control.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2beta.SearchSolutionUseCase search_solution_use_case = 7;
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of searchSolutionUseCase at the given index.
+   */
+  @java.lang.Override
+  public int getSearchSolutionUseCaseValue(int index) {
+    return searchSolutionUseCase_.get(index);
+  }
+
+  private int searchSolutionUseCaseMemoizedSerializedSize;
 
   private byte memoizedIsInitialized = -1;
 
@@ -711,6 +900,13 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < solutionTypes_.size(); i++) {
       output.writeEnumNoTag(solutionTypes_.get(i));
+    }
+    if (getSearchSolutionUseCaseList().size() > 0) {
+      output.writeUInt32NoTag(58);
+      output.writeUInt32NoTag(searchSolutionUseCaseMemoizedSerializedSize);
+    }
+    for (int i = 0; i < searchSolutionUseCase_.size(); i++) {
+      output.writeEnumNoTag(searchSolutionUseCase_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -758,6 +954,20 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       solutionTypesMemoizedSerializedSize = dataSize;
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < searchSolutionUseCase_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(
+                searchSolutionUseCase_.get(i));
+      }
+      size += dataSize;
+      if (!getSearchSolutionUseCaseList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      searchSolutionUseCaseMemoizedSerializedSize = dataSize;
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -778,6 +988,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     if (!getAssociatedServingConfigIdsList().equals(other.getAssociatedServingConfigIdsList()))
       return false;
     if (!solutionTypes_.equals(other.solutionTypes_)) return false;
+    if (!searchSolutionUseCase_.equals(other.searchSolutionUseCase_)) return false;
     if (!getControlCase().equals(other.getControlCase())) return false;
     switch (controlCase_) {
       case 3:
@@ -811,6 +1022,10 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     if (getSolutionTypesCount() > 0) {
       hash = (37 * hash) + SOLUTION_TYPES_FIELD_NUMBER;
       hash = (53 * hash) + solutionTypes_.hashCode();
+    }
+    if (getSearchSolutionUseCaseCount() > 0) {
+      hash = (37 * hash) + SEARCH_SOLUTION_USE_CASE_FIELD_NUMBER;
+      hash = (53 * hash) + searchSolutionUseCase_.hashCode();
     }
     switch (controlCase_) {
       case 3:
@@ -928,8 +1143,9 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configures dynamic serving time metadata that is used to pre and post
-   * process search/recommendation model results.
+   * Configures dynamic metadata that can be linked to a
+   * [ServingConfig][google.cloud.retail.v2beta.ServingConfig] and affect search
+   * or recommendation results at serving time.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2beta.Control}
@@ -978,6 +1194,8 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000001);
       solutionTypes_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      searchSolutionUseCase_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);
       controlCase_ = 0;
       control_ = null;
       return this;
@@ -1034,6 +1252,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.solutionTypes_ = solutionTypes_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        searchSolutionUseCase_ = java.util.Collections.unmodifiableList(searchSolutionUseCase_);
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.searchSolutionUseCase_ = searchSolutionUseCase_;
       result.controlCase_ = controlCase_;
       onBuilt();
       return result;
@@ -1112,6 +1335,16 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (!other.searchSolutionUseCase_.isEmpty()) {
+        if (searchSolutionUseCase_.isEmpty()) {
+          searchSolutionUseCase_ = other.searchSolutionUseCase_;
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          ensureSearchSolutionUseCaseIsMutable();
+          searchSolutionUseCase_.addAll(other.searchSolutionUseCase_);
+        }
+        onChanged();
+      }
       switch (other.getControlCase()) {
         case FACET_SPEC:
           {
@@ -1183,13 +1416,19 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A facet specification to perform faceted search.
+     * Note that this field is deprecated and will throw NOT_IMPLEMENTED if
+     * used for creating a control.
      * </pre>
      *
-     * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3;</code>
+     * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.retail.v2beta.Control.facet_spec is deprecated. See
+     *     google/cloud/retail/v2beta/control.proto;l=51
      * @return Whether the facetSpec field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasFacetSpec() {
       return controlCase_ == 3;
     }
@@ -1198,13 +1437,19 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A facet specification to perform faceted search.
+     * Note that this field is deprecated and will throw NOT_IMPLEMENTED if
+     * used for creating a control.
      * </pre>
      *
-     * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3;</code>
+     * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.retail.v2beta.Control.facet_spec is deprecated. See
+     *     google/cloud/retail/v2beta/control.proto;l=51
      * @return The facetSpec.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.retail.v2beta.SearchRequest.FacetSpec getFacetSpec() {
       if (facetSpecBuilder_ == null) {
         if (controlCase_ == 3) {
@@ -1223,10 +1468,14 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A facet specification to perform faceted search.
+     * Note that this field is deprecated and will throw NOT_IMPLEMENTED if
+     * used for creating a control.
      * </pre>
      *
-     * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3;</code>
+     * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setFacetSpec(com.google.cloud.retail.v2beta.SearchRequest.FacetSpec value) {
       if (facetSpecBuilder_ == null) {
         if (value == null) {
@@ -1245,10 +1494,14 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A facet specification to perform faceted search.
+     * Note that this field is deprecated and will throw NOT_IMPLEMENTED if
+     * used for creating a control.
      * </pre>
      *
-     * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3;</code>
+     * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setFacetSpec(
         com.google.cloud.retail.v2beta.SearchRequest.FacetSpec.Builder builderForValue) {
       if (facetSpecBuilder_ == null) {
@@ -1265,10 +1518,14 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A facet specification to perform faceted search.
+     * Note that this field is deprecated and will throw NOT_IMPLEMENTED if
+     * used for creating a control.
      * </pre>
      *
-     * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3;</code>
+     * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeFacetSpec(com.google.cloud.retail.v2beta.SearchRequest.FacetSpec value) {
       if (facetSpecBuilder_ == null) {
         if (controlCase_ == 3
@@ -1298,10 +1555,14 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A facet specification to perform faceted search.
+     * Note that this field is deprecated and will throw NOT_IMPLEMENTED if
+     * used for creating a control.
      * </pre>
      *
-     * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3;</code>
+     * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder clearFacetSpec() {
       if (facetSpecBuilder_ == null) {
         if (controlCase_ == 3) {
@@ -1323,10 +1584,14 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A facet specification to perform faceted search.
+     * Note that this field is deprecated and will throw NOT_IMPLEMENTED if
+     * used for creating a control.
      * </pre>
      *
-     * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3;</code>
+     * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.retail.v2beta.SearchRequest.FacetSpec.Builder getFacetSpecBuilder() {
       return getFacetSpecFieldBuilder().getBuilder();
     }
@@ -1335,11 +1600,15 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A facet specification to perform faceted search.
+     * Note that this field is deprecated and will throw NOT_IMPLEMENTED if
+     * used for creating a control.
      * </pre>
      *
-     * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3;</code>
+     * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3 [deprecated = true];
+     * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.retail.v2beta.SearchRequest.FacetSpecOrBuilder getFacetSpecOrBuilder() {
       if ((controlCase_ == 3) && (facetSpecBuilder_ != null)) {
         return facetSpecBuilder_.getMessageOrBuilder();
@@ -1355,9 +1624,12 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A facet specification to perform faceted search.
+     * Note that this field is deprecated and will throw NOT_IMPLEMENTED if
+     * used for creating a control.
      * </pre>
      *
-     * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3;</code>
+     * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3 [deprecated = true];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.retail.v2beta.SearchRequest.FacetSpec,
@@ -1850,10 +2122,13 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of serving configuration ids that that are associated
-     * with this control. Note the association is managed via the ServingConfig,
-     * this is an output only denormalizeed  view. Assumed to be in the same
-     * catalog.
+     * Output only. List of [serving
+     * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
+     * associated with this control in the same
+     * [Catalog][google.cloud.retail.v2beta.Catalog].
+     * Note the association is managed via the
+     * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
+     * output only denormalized view.
      * </pre>
      *
      * <code>
@@ -1869,10 +2144,13 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of serving configuration ids that that are associated
-     * with this control. Note the association is managed via the ServingConfig,
-     * this is an output only denormalizeed  view. Assumed to be in the same
-     * catalog.
+     * Output only. List of [serving
+     * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
+     * associated with this control in the same
+     * [Catalog][google.cloud.retail.v2beta.Catalog].
+     * Note the association is managed via the
+     * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
+     * output only denormalized view.
      * </pre>
      *
      * <code>
@@ -1888,10 +2166,13 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of serving configuration ids that that are associated
-     * with this control. Note the association is managed via the ServingConfig,
-     * this is an output only denormalizeed  view. Assumed to be in the same
-     * catalog.
+     * Output only. List of [serving
+     * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
+     * associated with this control in the same
+     * [Catalog][google.cloud.retail.v2beta.Catalog].
+     * Note the association is managed via the
+     * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
+     * output only denormalized view.
      * </pre>
      *
      * <code>
@@ -1908,10 +2189,13 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of serving configuration ids that that are associated
-     * with this control. Note the association is managed via the ServingConfig,
-     * this is an output only denormalizeed  view. Assumed to be in the same
-     * catalog.
+     * Output only. List of [serving
+     * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
+     * associated with this control in the same
+     * [Catalog][google.cloud.retail.v2beta.Catalog].
+     * Note the association is managed via the
+     * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
+     * output only denormalized view.
      * </pre>
      *
      * <code>
@@ -1928,10 +2212,13 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of serving configuration ids that that are associated
-     * with this control. Note the association is managed via the ServingConfig,
-     * this is an output only denormalizeed  view. Assumed to be in the same
-     * catalog.
+     * Output only. List of [serving
+     * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
+     * associated with this control in the same
+     * [Catalog][google.cloud.retail.v2beta.Catalog].
+     * Note the association is managed via the
+     * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
+     * output only denormalized view.
      * </pre>
      *
      * <code>
@@ -1955,10 +2242,13 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of serving configuration ids that that are associated
-     * with this control. Note the association is managed via the ServingConfig,
-     * this is an output only denormalizeed  view. Assumed to be in the same
-     * catalog.
+     * Output only. List of [serving
+     * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
+     * associated with this control in the same
+     * [Catalog][google.cloud.retail.v2beta.Catalog].
+     * Note the association is managed via the
+     * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
+     * output only denormalized view.
      * </pre>
      *
      * <code>
@@ -1981,10 +2271,13 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of serving configuration ids that that are associated
-     * with this control. Note the association is managed via the ServingConfig,
-     * this is an output only denormalizeed  view. Assumed to be in the same
-     * catalog.
+     * Output only. List of [serving
+     * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
+     * associated with this control in the same
+     * [Catalog][google.cloud.retail.v2beta.Catalog].
+     * Note the association is managed via the
+     * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
+     * output only denormalized view.
      * </pre>
      *
      * <code>
@@ -2004,10 +2297,13 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of serving configuration ids that that are associated
-     * with this control. Note the association is managed via the ServingConfig,
-     * this is an output only denormalizeed  view. Assumed to be in the same
-     * catalog.
+     * Output only. List of [serving
+     * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
+     * associated with this control in the same
+     * [Catalog][google.cloud.retail.v2beta.Catalog].
+     * Note the association is managed via the
+     * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
+     * output only denormalized view.
      * </pre>
      *
      * <code>
@@ -2026,10 +2322,13 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. List of serving configuration ids that that are associated
-     * with this control. Note the association is managed via the ServingConfig,
-     * this is an output only denormalizeed  view. Assumed to be in the same
-     * catalog.
+     * Output only. List of [serving
+     * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
+     * associated with this control in the same
+     * [Catalog][google.cloud.retail.v2beta.Catalog].
+     * Note the association is managed via the
+     * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
+     * output only denormalized view.
      * </pre>
      *
      * <code>
@@ -2062,12 +2361,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The solution types that the serving config is used
-     * for. Currently we support setting only one type of solution at creation
-     * time.
+     * Required. Immutable. The solution types that the control is used for.
+     * Currently we support setting only one type of solution at creation time.
      * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
      * If no solution type is provided at creation time, will default to
-     * SOLUTION_TYPE_SEARCH.
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>
@@ -2085,12 +2383,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The solution types that the serving config is used
-     * for. Currently we support setting only one type of solution at creation
-     * time.
+     * Required. Immutable. The solution types that the control is used for.
+     * Currently we support setting only one type of solution at creation time.
      * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
      * If no solution type is provided at creation time, will default to
-     * SOLUTION_TYPE_SEARCH.
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>
@@ -2106,12 +2403,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The solution types that the serving config is used
-     * for. Currently we support setting only one type of solution at creation
-     * time.
+     * Required. Immutable. The solution types that the control is used for.
+     * Currently we support setting only one type of solution at creation time.
      * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
      * If no solution type is provided at creation time, will default to
-     * SOLUTION_TYPE_SEARCH.
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>
@@ -2128,12 +2424,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The solution types that the serving config is used
-     * for. Currently we support setting only one type of solution at creation
-     * time.
+     * Required. Immutable. The solution types that the control is used for.
+     * Currently we support setting only one type of solution at creation time.
      * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
      * If no solution type is provided at creation time, will default to
-     * SOLUTION_TYPE_SEARCH.
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>
@@ -2157,12 +2452,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The solution types that the serving config is used
-     * for. Currently we support setting only one type of solution at creation
-     * time.
+     * Required. Immutable. The solution types that the control is used for.
+     * Currently we support setting only one type of solution at creation time.
      * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
      * If no solution type is provided at creation time, will default to
-     * SOLUTION_TYPE_SEARCH.
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>
@@ -2185,12 +2479,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The solution types that the serving config is used
-     * for. Currently we support setting only one type of solution at creation
-     * time.
+     * Required. Immutable. The solution types that the control is used for.
+     * Currently we support setting only one type of solution at creation time.
      * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
      * If no solution type is provided at creation time, will default to
-     * SOLUTION_TYPE_SEARCH.
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>
@@ -2213,12 +2506,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The solution types that the serving config is used
-     * for. Currently we support setting only one type of solution at creation
-     * time.
+     * Required. Immutable. The solution types that the control is used for.
+     * Currently we support setting only one type of solution at creation time.
      * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
      * If no solution type is provided at creation time, will default to
-     * SOLUTION_TYPE_SEARCH.
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>
@@ -2237,12 +2529,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The solution types that the serving config is used
-     * for. Currently we support setting only one type of solution at creation
-     * time.
+     * Required. Immutable. The solution types that the control is used for.
+     * Currently we support setting only one type of solution at creation time.
      * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
      * If no solution type is provided at creation time, will default to
-     * SOLUTION_TYPE_SEARCH.
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>
@@ -2258,12 +2549,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The solution types that the serving config is used
-     * for. Currently we support setting only one type of solution at creation
-     * time.
+     * Required. Immutable. The solution types that the control is used for.
+     * Currently we support setting only one type of solution at creation time.
      * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
      * If no solution type is provided at creation time, will default to
-     * SOLUTION_TYPE_SEARCH.
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>
@@ -2280,12 +2570,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The solution types that the serving config is used
-     * for. Currently we support setting only one type of solution at creation
-     * time.
+     * Required. Immutable. The solution types that the control is used for.
+     * Currently we support setting only one type of solution at creation time.
      * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
      * If no solution type is provided at creation time, will default to
-     * SOLUTION_TYPE_SEARCH.
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>
@@ -2306,12 +2595,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The solution types that the serving config is used
-     * for. Currently we support setting only one type of solution at creation
-     * time.
+     * Required. Immutable. The solution types that the control is used for.
+     * Currently we support setting only one type of solution at creation time.
      * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
      * If no solution type is provided at creation time, will default to
-     * SOLUTION_TYPE_SEARCH.
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>
@@ -2331,12 +2619,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The solution types that the serving config is used
-     * for. Currently we support setting only one type of solution at creation
-     * time.
+     * Required. Immutable. The solution types that the control is used for.
+     * Currently we support setting only one type of solution at creation time.
      * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
      * If no solution type is provided at creation time, will default to
-     * SOLUTION_TYPE_SEARCH.
+     * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
      * </pre>
      *
      * <code>
@@ -2350,6 +2637,328 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       ensureSolutionTypesIsMutable();
       for (int value : values) {
         solutionTypes_.add(value);
+      }
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<java.lang.Integer> searchSolutionUseCase_ =
+        java.util.Collections.emptyList();
+
+    private void ensureSearchSolutionUseCaseIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        searchSolutionUseCase_ = new java.util.ArrayList<java.lang.Integer>(searchSolutionUseCase_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the use case for the control.
+     * Affects what condition fields can be set.
+     * Only settable by search controls.
+     * Will default to
+     * [SEARCH_SOLUTION_USE_CASE_SEARCH][google.cloud.retail.v2beta.SearchSolutionUseCase.SEARCH_SOLUTION_USE_CASE_SEARCH]
+     * if not specified. Currently only allow one search_solution_use_case per
+     * control.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2beta.SearchSolutionUseCase search_solution_use_case = 7;
+     * </code>
+     *
+     * @return A list containing the searchSolutionUseCase.
+     */
+    public java.util.List<com.google.cloud.retail.v2beta.SearchSolutionUseCase>
+        getSearchSolutionUseCaseList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.google.cloud.retail.v2beta.SearchSolutionUseCase>(
+          searchSolutionUseCase_, searchSolutionUseCase_converter_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the use case for the control.
+     * Affects what condition fields can be set.
+     * Only settable by search controls.
+     * Will default to
+     * [SEARCH_SOLUTION_USE_CASE_SEARCH][google.cloud.retail.v2beta.SearchSolutionUseCase.SEARCH_SOLUTION_USE_CASE_SEARCH]
+     * if not specified. Currently only allow one search_solution_use_case per
+     * control.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2beta.SearchSolutionUseCase search_solution_use_case = 7;
+     * </code>
+     *
+     * @return The count of searchSolutionUseCase.
+     */
+    public int getSearchSolutionUseCaseCount() {
+      return searchSolutionUseCase_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the use case for the control.
+     * Affects what condition fields can be set.
+     * Only settable by search controls.
+     * Will default to
+     * [SEARCH_SOLUTION_USE_CASE_SEARCH][google.cloud.retail.v2beta.SearchSolutionUseCase.SEARCH_SOLUTION_USE_CASE_SEARCH]
+     * if not specified. Currently only allow one search_solution_use_case per
+     * control.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2beta.SearchSolutionUseCase search_solution_use_case = 7;
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The searchSolutionUseCase at the given index.
+     */
+    public com.google.cloud.retail.v2beta.SearchSolutionUseCase getSearchSolutionUseCase(
+        int index) {
+      return searchSolutionUseCase_converter_.convert(searchSolutionUseCase_.get(index));
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the use case for the control.
+     * Affects what condition fields can be set.
+     * Only settable by search controls.
+     * Will default to
+     * [SEARCH_SOLUTION_USE_CASE_SEARCH][google.cloud.retail.v2beta.SearchSolutionUseCase.SEARCH_SOLUTION_USE_CASE_SEARCH]
+     * if not specified. Currently only allow one search_solution_use_case per
+     * control.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2beta.SearchSolutionUseCase search_solution_use_case = 7;
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The searchSolutionUseCase to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSearchSolutionUseCase(
+        int index, com.google.cloud.retail.v2beta.SearchSolutionUseCase value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSearchSolutionUseCaseIsMutable();
+      searchSolutionUseCase_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the use case for the control.
+     * Affects what condition fields can be set.
+     * Only settable by search controls.
+     * Will default to
+     * [SEARCH_SOLUTION_USE_CASE_SEARCH][google.cloud.retail.v2beta.SearchSolutionUseCase.SEARCH_SOLUTION_USE_CASE_SEARCH]
+     * if not specified. Currently only allow one search_solution_use_case per
+     * control.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2beta.SearchSolutionUseCase search_solution_use_case = 7;
+     * </code>
+     *
+     * @param value The searchSolutionUseCase to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSearchSolutionUseCase(
+        com.google.cloud.retail.v2beta.SearchSolutionUseCase value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSearchSolutionUseCaseIsMutable();
+      searchSolutionUseCase_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the use case for the control.
+     * Affects what condition fields can be set.
+     * Only settable by search controls.
+     * Will default to
+     * [SEARCH_SOLUTION_USE_CASE_SEARCH][google.cloud.retail.v2beta.SearchSolutionUseCase.SEARCH_SOLUTION_USE_CASE_SEARCH]
+     * if not specified. Currently only allow one search_solution_use_case per
+     * control.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2beta.SearchSolutionUseCase search_solution_use_case = 7;
+     * </code>
+     *
+     * @param values The searchSolutionUseCase to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSearchSolutionUseCase(
+        java.lang.Iterable<? extends com.google.cloud.retail.v2beta.SearchSolutionUseCase> values) {
+      ensureSearchSolutionUseCaseIsMutable();
+      for (com.google.cloud.retail.v2beta.SearchSolutionUseCase value : values) {
+        searchSolutionUseCase_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the use case for the control.
+     * Affects what condition fields can be set.
+     * Only settable by search controls.
+     * Will default to
+     * [SEARCH_SOLUTION_USE_CASE_SEARCH][google.cloud.retail.v2beta.SearchSolutionUseCase.SEARCH_SOLUTION_USE_CASE_SEARCH]
+     * if not specified. Currently only allow one search_solution_use_case per
+     * control.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2beta.SearchSolutionUseCase search_solution_use_case = 7;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSearchSolutionUseCase() {
+      searchSolutionUseCase_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the use case for the control.
+     * Affects what condition fields can be set.
+     * Only settable by search controls.
+     * Will default to
+     * [SEARCH_SOLUTION_USE_CASE_SEARCH][google.cloud.retail.v2beta.SearchSolutionUseCase.SEARCH_SOLUTION_USE_CASE_SEARCH]
+     * if not specified. Currently only allow one search_solution_use_case per
+     * control.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2beta.SearchSolutionUseCase search_solution_use_case = 7;
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for searchSolutionUseCase.
+     */
+    public java.util.List<java.lang.Integer> getSearchSolutionUseCaseValueList() {
+      return java.util.Collections.unmodifiableList(searchSolutionUseCase_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the use case for the control.
+     * Affects what condition fields can be set.
+     * Only settable by search controls.
+     * Will default to
+     * [SEARCH_SOLUTION_USE_CASE_SEARCH][google.cloud.retail.v2beta.SearchSolutionUseCase.SEARCH_SOLUTION_USE_CASE_SEARCH]
+     * if not specified. Currently only allow one search_solution_use_case per
+     * control.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2beta.SearchSolutionUseCase search_solution_use_case = 7;
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of searchSolutionUseCase at the given index.
+     */
+    public int getSearchSolutionUseCaseValue(int index) {
+      return searchSolutionUseCase_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the use case for the control.
+     * Affects what condition fields can be set.
+     * Only settable by search controls.
+     * Will default to
+     * [SEARCH_SOLUTION_USE_CASE_SEARCH][google.cloud.retail.v2beta.SearchSolutionUseCase.SEARCH_SOLUTION_USE_CASE_SEARCH]
+     * if not specified. Currently only allow one search_solution_use_case per
+     * control.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2beta.SearchSolutionUseCase search_solution_use_case = 7;
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for searchSolutionUseCase to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSearchSolutionUseCaseValue(int index, int value) {
+      ensureSearchSolutionUseCaseIsMutable();
+      searchSolutionUseCase_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the use case for the control.
+     * Affects what condition fields can be set.
+     * Only settable by search controls.
+     * Will default to
+     * [SEARCH_SOLUTION_USE_CASE_SEARCH][google.cloud.retail.v2beta.SearchSolutionUseCase.SEARCH_SOLUTION_USE_CASE_SEARCH]
+     * if not specified. Currently only allow one search_solution_use_case per
+     * control.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2beta.SearchSolutionUseCase search_solution_use_case = 7;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for searchSolutionUseCase to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSearchSolutionUseCaseValue(int value) {
+      ensureSearchSolutionUseCaseIsMutable();
+      searchSolutionUseCase_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the use case for the control.
+     * Affects what condition fields can be set.
+     * Only settable by search controls.
+     * Will default to
+     * [SEARCH_SOLUTION_USE_CASE_SEARCH][google.cloud.retail.v2beta.SearchSolutionUseCase.SEARCH_SOLUTION_USE_CASE_SEARCH]
+     * if not specified. Currently only allow one search_solution_use_case per
+     * control.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2beta.SearchSolutionUseCase search_solution_use_case = 7;
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for searchSolutionUseCase to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSearchSolutionUseCaseValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureSearchSolutionUseCaseIsMutable();
+      for (int value : values) {
+        searchSolutionUseCase_.add(value);
       }
       onChanged();
       return this;

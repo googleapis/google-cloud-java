@@ -25,8 +25,9 @@ package com.google.cloud.retail.v2beta;
  * A rule is a condition-action pair
  * * A condition defines when a rule is to be triggered.
  * * An action specifies what occurs on that trigger.
- * Currently only boost rules are supported.
- * Currently only supported by the search endpoint.
+ * Currently rules only work for [controls][google.cloud.retail.v2beta.Control]
+ * with
+ * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2beta.Rule}
@@ -9344,8 +9345,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    * A rule is a condition-action pair
    * * A condition defines when a rule is to be triggered.
    * * An action specifies what occurs on that trigger.
-   * Currently only boost rules are supported.
-   * Currently only supported by the search endpoint.
+   * Currently rules only work for [controls][google.cloud.retail.v2beta.Control]
+   * with
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2beta.Rule}

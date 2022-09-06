@@ -39,8 +39,8 @@
  *
  * <p>Service Description: Auto-completion service for retail.
  *
- * <p>This feature is only available for users who have Retail Search enabled. Please enable Retail
- * Search on Cloud Console before using this feature.
+ * <p>This feature is only available for users who have Retail Search enabled. Enable Retail Search
+ * on Cloud Console before using this feature.
  *
  * <p>Sample for CompletionServiceClient:
  *
@@ -76,6 +76,33 @@
  *   Control control = Control.newBuilder().build();
  *   String controlId = "controlId-395080872";
  *   Control response = controlServiceClient.createControl(parent, control, controlId);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ModelServiceClient =======================
+ *
+ * <p>Service Description: Service for performing CRUD operations on models. Recommendation models
+ * contain all the metadata necessary to generate a set of models for the `Predict()` API. A model
+ * is queried indirectly via a ServingConfig, which associates a model with a given Placement (e.g.
+ * Frequently Bought Together on Home Page).
+ *
+ * <p>This service allows you to do the following:
+ *
+ * <ul>
+ *   <li>Initiate training of a model.
+ *   <li>Pause training of an existing model.
+ *   <li>List all the available models along with their metadata.
+ *   <li>Control their tuning schedule.
+ * </ul>
+ *
+ * <p>Sample for ModelServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+ *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[MODEL]");
+ *   Model response = modelServiceClient.pauseModel(name);
  * }
  * }</pre>
  *
@@ -126,8 +153,8 @@
  *
  * <p>Service Description: Service for search.
  *
- * <p>This feature is only available for users who have Retail Search enabled. Please enable Retail
- * Search on Cloud Console before using this feature.
+ * <p>This feature is only available for users who have Retail Search enabled. Enable Retail Search
+ * on Cloud Console before using this feature.
  *
  * <p>Sample for SearchServiceClient:
  *
