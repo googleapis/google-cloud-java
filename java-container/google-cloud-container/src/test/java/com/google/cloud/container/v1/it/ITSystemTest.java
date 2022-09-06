@@ -38,6 +38,8 @@ import org.junit.Test;
 
 public class ITSystemTest {
 
+  protected static final String CONTAINER_PREFIX = "it-test-container";
+
   private static ClusterManagerClient client;
   private static Operation operation;
 
@@ -45,9 +47,9 @@ public class ITSystemTest {
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   private static final String ZONE = "us-central1-a";
   private static final String CLUSTER_NAME =
-      "test-cluster-" + UUID.randomUUID().toString().substring(0, 8);
+      CONTAINER_PREFIX + "-cluster-" + UUID.randomUUID().toString().substring(0, 8);
   private static final String NODE_POOL_NAME =
-      "test-node-pool-" + UUID.randomUUID().toString().substring(0, 8);
+      CONTAINER_PREFIX + "-node-pool-" + UUID.randomUUID().toString().substring(0, 8);
   private static final String DETAIL = "test-detail";
   private static final String STATUS_MESSAGE = "test-status-message";
   private static final String SELF_LINK =
@@ -64,7 +66,7 @@ public class ITSystemTest {
     client = ClusterManagerClient.create();
     Util.cleanUpExistingInstanceCluster(PROJECT_ID, ZONE, client);
 
-    /** create node pool* */
+    /* create node pool* */
     NodePool nodePool =
         NodePool.newBuilder()
             .setInitialNodeCount(INITIAL_NODE_COUNT)
@@ -73,7 +75,7 @@ public class ITSystemTest {
             .setStatusMessage(STATUS_MESSAGE)
             .build();
 
-    /** create cluster */
+    /* create cluster */
     Cluster cluster =
         Cluster.newBuilder()
             .setName(CLUSTER_NAME)

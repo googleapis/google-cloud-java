@@ -21,7 +21,8 @@ public class Util {
     ListPagedResponse listPagedResponse = instancesClient.list(project, zone);
     for (Instance instance : listPagedResponse.iterateAll()) {
       if (isCreatedBeforeThresholdTime(
-          ZonedDateTime.parse(instance.getCreationTimestamp()).toInstant())) {
+          ZonedDateTime.parse(instance.getCreationTimestamp()).toInstant()) &&
+          instance.getName().startsWith(BaseTest.COMPUTE_PREFIX)) {
         instancesClient.deleteAsync(DeleteInstanceRequest.newBuilder()
             .setInstance(instance.getName())
             .setProject(project)
