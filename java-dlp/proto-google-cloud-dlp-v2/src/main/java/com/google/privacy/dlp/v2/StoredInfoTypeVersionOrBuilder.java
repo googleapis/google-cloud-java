@@ -132,7 +132,7 @@ public interface StoredInfoTypeVersionOrBuilder
    * the five most recent errors will be displayed, with the most recent error
    * appearing first.
    * For example, some of the data for stored custom dictionaries is put in
-   * the user's Google Cloud Storage bucket, and if this data is modified or
+   * the user's Cloud Storage bucket, and if this data is modified or
    * deleted by the user or another system, the dictionary becomes invalid.
    * If any errors occur, fix the problem indicated by the error message and
    * use the UpdateStoredInfoType API method to create another version of the
@@ -152,7 +152,7 @@ public interface StoredInfoTypeVersionOrBuilder
    * the five most recent errors will be displayed, with the most recent error
    * appearing first.
    * For example, some of the data for stored custom dictionaries is put in
-   * the user's Google Cloud Storage bucket, and if this data is modified or
+   * the user's Cloud Storage bucket, and if this data is modified or
    * deleted by the user or another system, the dictionary becomes invalid.
    * If any errors occur, fix the problem indicated by the error message and
    * use the UpdateStoredInfoType API method to create another version of the
@@ -172,7 +172,7 @@ public interface StoredInfoTypeVersionOrBuilder
    * the five most recent errors will be displayed, with the most recent error
    * appearing first.
    * For example, some of the data for stored custom dictionaries is put in
-   * the user's Google Cloud Storage bucket, and if this data is modified or
+   * the user's Cloud Storage bucket, and if this data is modified or
    * deleted by the user or another system, the dictionary becomes invalid.
    * If any errors occur, fix the problem indicated by the error message and
    * use the UpdateStoredInfoType API method to create another version of the
@@ -192,7 +192,7 @@ public interface StoredInfoTypeVersionOrBuilder
    * the five most recent errors will be displayed, with the most recent error
    * appearing first.
    * For example, some of the data for stored custom dictionaries is put in
-   * the user's Google Cloud Storage bucket, and if this data is modified or
+   * the user's Cloud Storage bucket, and if this data is modified or
    * deleted by the user or another system, the dictionary becomes invalid.
    * If any errors occur, fix the problem indicated by the error message and
    * use the UpdateStoredInfoType API method to create another version of the
@@ -212,7 +212,7 @@ public interface StoredInfoTypeVersionOrBuilder
    * the five most recent errors will be displayed, with the most recent error
    * appearing first.
    * For example, some of the data for stored custom dictionaries is put in
-   * the user's Google Cloud Storage bucket, and if this data is modified or
+   * the user's Cloud Storage bucket, and if this data is modified or
    * deleted by the user or another system, the dictionary becomes invalid.
    * If any errors occur, fix the problem indicated by the error message and
    * use the UpdateStoredInfoType API method to create another version of the

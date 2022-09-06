@@ -267,7 +267,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    * * Cloud Storage files: `gs://{bucket}/{path}`
    * * Datastore namespace: {namespace}
    * Nested names could be absent if the embedded object has no string
-   * identifier (for an example an image contained within a document).
+   * identifier (for example, an image contained within a document).
    * </pre>
    *
    * <code>string container_name = 1;</code>
@@ -297,7 +297,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    * * Cloud Storage files: `gs://{bucket}/{path}`
    * * Datastore namespace: {namespace}
    * Nested names could be absent if the embedded object has no string
-   * identifier (for an example an image contained within a document).
+   * identifier (for example, an image contained within a document).
    * </pre>
    *
    * <code>string container_name = 1;</code>
@@ -527,10 +527,10 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Findings container modification timestamp, if applicable.
-   * For Google Cloud Storage contains last file modification timestamp.
-   * For BigQuery table contains last_modified_time property.
-   * For Datastore - not populated.
+   * Finding container modification timestamp, if applicable. For Cloud Storage,
+   * this field contains the last file modification timestamp. For a BigQuery
+   * table, this field contains the last_modified_time property. For Datastore,
+   * this field isn't populated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
@@ -545,10 +545,10 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Findings container modification timestamp, if applicable.
-   * For Google Cloud Storage contains last file modification timestamp.
-   * For BigQuery table contains last_modified_time property.
-   * For Datastore - not populated.
+   * Finding container modification timestamp, if applicable. For Cloud Storage,
+   * this field contains the last file modification timestamp. For a BigQuery
+   * table, this field contains the last_modified_time property. For Datastore,
+   * this field isn't populated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
@@ -565,10 +565,10 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Findings container modification timestamp, if applicable.
-   * For Google Cloud Storage contains last file modification timestamp.
-   * For BigQuery table contains last_modified_time property.
-   * For Datastore - not populated.
+   * Finding container modification timestamp, if applicable. For Cloud Storage,
+   * this field contains the last file modification timestamp. For a BigQuery
+   * table, this field contains the last_modified_time property. For Datastore,
+   * this field isn't populated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
@@ -584,8 +584,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Findings container version, if available
-   * ("generation" for Google Cloud Storage).
+   * Finding container version, if available
+   * ("generation" for Cloud Storage).
    * </pre>
    *
    * <code>string container_version = 7;</code>
@@ -608,8 +608,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Findings container version, if available
-   * ("generation" for Google Cloud Storage).
+   * Finding container version, if available
+   * ("generation" for Cloud Storage).
    * </pre>
    *
    * <code>string container_version = 7;</code>
@@ -1142,7 +1142,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * * Cloud Storage files: `gs://{bucket}/{path}`
      * * Datastore namespace: {namespace}
      * Nested names could be absent if the embedded object has no string
-     * identifier (for an example an image contained within a document).
+     * identifier (for example, an image contained within a document).
      * </pre>
      *
      * <code>string container_name = 1;</code>
@@ -1171,7 +1171,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * * Cloud Storage files: `gs://{bucket}/{path}`
      * * Datastore namespace: {namespace}
      * Nested names could be absent if the embedded object has no string
-     * identifier (for an example an image contained within a document).
+     * identifier (for example, an image contained within a document).
      * </pre>
      *
      * <code>string container_name = 1;</code>
@@ -1200,7 +1200,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * * Cloud Storage files: `gs://{bucket}/{path}`
      * * Datastore namespace: {namespace}
      * Nested names could be absent if the embedded object has no string
-     * identifier (for an example an image contained within a document).
+     * identifier (for example, an image contained within a document).
      * </pre>
      *
      * <code>string container_name = 1;</code>
@@ -1228,7 +1228,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * * Cloud Storage files: `gs://{bucket}/{path}`
      * * Datastore namespace: {namespace}
      * Nested names could be absent if the embedded object has no string
-     * identifier (for an example an image contained within a document).
+     * identifier (for example, an image contained within a document).
      * </pre>
      *
      * <code>string container_name = 1;</code>
@@ -1252,7 +1252,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      * * Cloud Storage files: `gs://{bucket}/{path}`
      * * Datastore namespace: {namespace}
      * Nested names could be absent if the embedded object has no string
-     * identifier (for an example an image contained within a document).
+     * identifier (for example, an image contained within a document).
      * </pre>
      *
      * <code>string container_name = 1;</code>
@@ -2121,10 +2121,10 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Findings container modification timestamp, if applicable.
-     * For Google Cloud Storage contains last file modification timestamp.
-     * For BigQuery table contains last_modified_time property.
-     * For Datastore - not populated.
+     * Finding container modification timestamp, if applicable. For Cloud Storage,
+     * this field contains the last file modification timestamp. For a BigQuery
+     * table, this field contains the last_modified_time property. For Datastore,
+     * this field isn't populated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
@@ -2138,10 +2138,10 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Findings container modification timestamp, if applicable.
-     * For Google Cloud Storage contains last file modification timestamp.
-     * For BigQuery table contains last_modified_time property.
-     * For Datastore - not populated.
+     * Finding container modification timestamp, if applicable. For Cloud Storage,
+     * this field contains the last file modification timestamp. For a BigQuery
+     * table, this field contains the last_modified_time property. For Datastore,
+     * this field isn't populated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
@@ -2161,10 +2161,10 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Findings container modification timestamp, if applicable.
-     * For Google Cloud Storage contains last file modification timestamp.
-     * For BigQuery table contains last_modified_time property.
-     * For Datastore - not populated.
+     * Finding container modification timestamp, if applicable. For Cloud Storage,
+     * this field contains the last file modification timestamp. For a BigQuery
+     * table, this field contains the last_modified_time property. For Datastore,
+     * this field isn't populated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
@@ -2186,10 +2186,10 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Findings container modification timestamp, if applicable.
-     * For Google Cloud Storage contains last file modification timestamp.
-     * For BigQuery table contains last_modified_time property.
-     * For Datastore - not populated.
+     * Finding container modification timestamp, if applicable. For Cloud Storage,
+     * this field contains the last file modification timestamp. For a BigQuery
+     * table, this field contains the last_modified_time property. For Datastore,
+     * this field isn't populated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
@@ -2208,10 +2208,10 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Findings container modification timestamp, if applicable.
-     * For Google Cloud Storage contains last file modification timestamp.
-     * For BigQuery table contains last_modified_time property.
-     * For Datastore - not populated.
+     * Finding container modification timestamp, if applicable. For Cloud Storage,
+     * this field contains the last file modification timestamp. For a BigQuery
+     * table, this field contains the last_modified_time property. For Datastore,
+     * this field isn't populated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
@@ -2237,10 +2237,10 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Findings container modification timestamp, if applicable.
-     * For Google Cloud Storage contains last file modification timestamp.
-     * For BigQuery table contains last_modified_time property.
-     * For Datastore - not populated.
+     * Finding container modification timestamp, if applicable. For Cloud Storage,
+     * this field contains the last file modification timestamp. For a BigQuery
+     * table, this field contains the last_modified_time property. For Datastore,
+     * this field isn't populated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
@@ -2260,10 +2260,10 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Findings container modification timestamp, if applicable.
-     * For Google Cloud Storage contains last file modification timestamp.
-     * For BigQuery table contains last_modified_time property.
-     * For Datastore - not populated.
+     * Finding container modification timestamp, if applicable. For Cloud Storage,
+     * this field contains the last file modification timestamp. For a BigQuery
+     * table, this field contains the last_modified_time property. For Datastore,
+     * this field isn't populated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
@@ -2277,10 +2277,10 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Findings container modification timestamp, if applicable.
-     * For Google Cloud Storage contains last file modification timestamp.
-     * For BigQuery table contains last_modified_time property.
-     * For Datastore - not populated.
+     * Finding container modification timestamp, if applicable. For Cloud Storage,
+     * this field contains the last file modification timestamp. For a BigQuery
+     * table, this field contains the last_modified_time property. For Datastore,
+     * this field isn't populated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
@@ -2298,10 +2298,10 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Findings container modification timestamp, if applicable.
-     * For Google Cloud Storage contains last file modification timestamp.
-     * For BigQuery table contains last_modified_time property.
-     * For Datastore - not populated.
+     * Finding container modification timestamp, if applicable. For Cloud Storage,
+     * this field contains the last file modification timestamp. For a BigQuery
+     * table, this field contains the last_modified_time property. For Datastore,
+     * this field isn't populated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
@@ -2328,8 +2328,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Findings container version, if available
-     * ("generation" for Google Cloud Storage).
+     * Finding container version, if available
+     * ("generation" for Cloud Storage).
      * </pre>
      *
      * <code>string container_version = 7;</code>
@@ -2351,8 +2351,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Findings container version, if available
-     * ("generation" for Google Cloud Storage).
+     * Finding container version, if available
+     * ("generation" for Cloud Storage).
      * </pre>
      *
      * <code>string container_version = 7;</code>
@@ -2374,8 +2374,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Findings container version, if available
-     * ("generation" for Google Cloud Storage).
+     * Finding container version, if available
+     * ("generation" for Cloud Storage).
      * </pre>
      *
      * <code>string container_version = 7;</code>
@@ -2396,8 +2396,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Findings container version, if available
-     * ("generation" for Google Cloud Storage).
+     * Finding container version, if available
+     * ("generation" for Cloud Storage).
      * </pre>
      *
      * <code>string container_version = 7;</code>
@@ -2414,8 +2414,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Findings container version, if available
-     * ("generation" for Google Cloud Storage).
+     * Finding container version, if available
+     * ("generation" for Cloud Storage).
      * </pre>
      *
      * <code>string container_version = 7;</code>

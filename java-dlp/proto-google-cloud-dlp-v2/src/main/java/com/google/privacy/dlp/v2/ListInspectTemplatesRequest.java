@@ -282,7 +282,7 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Size of the page, can be limited by server. If zero server returns
+   * Size of the page, can be limited by the server. If zero server returns
    * a page of max size 100.
    * </pre>
    *
@@ -307,10 +307,10 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
    * insignificant.
    * Example: `name asc,update_time, create_time desc`
    * Supported fields are:
-   * - `create_time`: corresponds to time the template was created.
-   * - `update_time`: corresponds to time the template was last updated.
-   * - `name`: corresponds to template's name.
-   * - `display_name`: corresponds to template's display name.
+   * - `create_time`: corresponds to the time the template was created.
+   * - `update_time`: corresponds to the time the template was last updated.
+   * - `name`: corresponds to the template's name.
+   * - `display_name`: corresponds to the template's display name.
    * </pre>
    *
    * <code>string order_by = 4;</code>
@@ -339,10 +339,10 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
    * insignificant.
    * Example: `name asc,update_time, create_time desc`
    * Supported fields are:
-   * - `create_time`: corresponds to time the template was created.
-   * - `update_time`: corresponds to time the template was last updated.
-   * - `name`: corresponds to template's name.
-   * - `display_name`: corresponds to template's display name.
+   * - `create_time`: corresponds to the time the template was created.
+   * - `update_time`: corresponds to the time the template was last updated.
+   * - `name`: corresponds to the template's name.
+   * - `display_name`: corresponds to the template's display name.
    * </pre>
    *
    * <code>string order_by = 4;</code>
@@ -1100,7 +1100,7 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Size of the page, can be limited by server. If zero server returns
+     * Size of the page, can be limited by the server. If zero server returns
      * a page of max size 100.
      * </pre>
      *
@@ -1116,7 +1116,7 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Size of the page, can be limited by server. If zero server returns
+     * Size of the page, can be limited by the server. If zero server returns
      * a page of max size 100.
      * </pre>
      *
@@ -1135,7 +1135,7 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Size of the page, can be limited by server. If zero server returns
+     * Size of the page, can be limited by the server. If zero server returns
      * a page of max size 100.
      * </pre>
      *
@@ -1161,10 +1161,10 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
      * insignificant.
      * Example: `name asc,update_time, create_time desc`
      * Supported fields are:
-     * - `create_time`: corresponds to time the template was created.
-     * - `update_time`: corresponds to time the template was last updated.
-     * - `name`: corresponds to template's name.
-     * - `display_name`: corresponds to template's display name.
+     * - `create_time`: corresponds to the time the template was created.
+     * - `update_time`: corresponds to the time the template was last updated.
+     * - `name`: corresponds to the template's name.
+     * - `display_name`: corresponds to the template's display name.
      * </pre>
      *
      * <code>string order_by = 4;</code>
@@ -1192,10 +1192,10 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
      * insignificant.
      * Example: `name asc,update_time, create_time desc`
      * Supported fields are:
-     * - `create_time`: corresponds to time the template was created.
-     * - `update_time`: corresponds to time the template was last updated.
-     * - `name`: corresponds to template's name.
-     * - `display_name`: corresponds to template's display name.
+     * - `create_time`: corresponds to the time the template was created.
+     * - `update_time`: corresponds to the time the template was last updated.
+     * - `name`: corresponds to the template's name.
+     * - `display_name`: corresponds to the template's display name.
      * </pre>
      *
      * <code>string order_by = 4;</code>
@@ -1223,10 +1223,10 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
      * insignificant.
      * Example: `name asc,update_time, create_time desc`
      * Supported fields are:
-     * - `create_time`: corresponds to time the template was created.
-     * - `update_time`: corresponds to time the template was last updated.
-     * - `name`: corresponds to template's name.
-     * - `display_name`: corresponds to template's display name.
+     * - `create_time`: corresponds to the time the template was created.
+     * - `update_time`: corresponds to the time the template was last updated.
+     * - `name`: corresponds to the template's name.
+     * - `display_name`: corresponds to the template's display name.
      * </pre>
      *
      * <code>string order_by = 4;</code>
@@ -1253,10 +1253,10 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
      * insignificant.
      * Example: `name asc,update_time, create_time desc`
      * Supported fields are:
-     * - `create_time`: corresponds to time the template was created.
-     * - `update_time`: corresponds to time the template was last updated.
-     * - `name`: corresponds to template's name.
-     * - `display_name`: corresponds to template's display name.
+     * - `create_time`: corresponds to the time the template was created.
+     * - `update_time`: corresponds to the time the template was last updated.
+     * - `name`: corresponds to the template's name.
+     * - `display_name`: corresponds to the template's display name.
      * </pre>
      *
      * <code>string order_by = 4;</code>
@@ -1279,10 +1279,10 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
      * insignificant.
      * Example: `name asc,update_time, create_time desc`
      * Supported fields are:
-     * - `create_time`: corresponds to time the template was created.
-     * - `update_time`: corresponds to time the template was last updated.
-     * - `name`: corresponds to template's name.
-     * - `display_name`: corresponds to template's display name.
+     * - `create_time`: corresponds to the time the template was created.
+     * - `update_time`: corresponds to the time the template was last updated.
+     * - `name`: corresponds to the template's name.
+     * - `display_name`: corresponds to the template's display name.
      * </pre>
      *
      * <code>string order_by = 4;</code>

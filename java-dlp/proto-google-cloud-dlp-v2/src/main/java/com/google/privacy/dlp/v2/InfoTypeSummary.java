@@ -83,6 +83,11 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
 
               break;
             }
+          case 16:
+            {
+              estimatedPrevalence_ = input.readInt32();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -165,6 +170,25 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
     return getInfoType();
   }
 
+  public static final int ESTIMATED_PREVALENCE_FIELD_NUMBER = 2;
+  private int estimatedPrevalence_;
+  /**
+   *
+   *
+   * <pre>
+   * Approximate percentage of non-null rows that contained data detected by
+   * this infotype.
+   * </pre>
+   *
+   * <code>int32 estimated_prevalence = 2;</code>
+   *
+   * @return The estimatedPrevalence.
+   */
+  @java.lang.Override
+  public int getEstimatedPrevalence() {
+    return estimatedPrevalence_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -182,6 +206,9 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
     if (infoType_ != null) {
       output.writeMessage(1, getInfoType());
     }
+    if (estimatedPrevalence_ != 0) {
+      output.writeInt32(2, estimatedPrevalence_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -193,6 +220,9 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
     size = 0;
     if (infoType_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getInfoType());
+    }
+    if (estimatedPrevalence_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, estimatedPrevalence_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -214,6 +244,7 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
     if (hasInfoType()) {
       if (!getInfoType().equals(other.getInfoType())) return false;
     }
+    if (getEstimatedPrevalence() != other.getEstimatedPrevalence()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -229,6 +260,8 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + INFO_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getInfoType().hashCode();
     }
+    hash = (37 * hash) + ESTIMATED_PREVALENCE_FIELD_NUMBER;
+    hash = (53 * hash) + getEstimatedPrevalence();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -380,6 +413,8 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
         infoType_ = null;
         infoTypeBuilder_ = null;
       }
+      estimatedPrevalence_ = 0;
+
       return this;
     }
 
@@ -412,6 +447,7 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
       } else {
         result.infoType_ = infoTypeBuilder_.build();
       }
+      result.estimatedPrevalence_ = estimatedPrevalence_;
       onBuilt();
       return result;
     }
@@ -463,6 +499,9 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.privacy.dlp.v2.InfoTypeSummary.getDefaultInstance()) return this;
       if (other.hasInfoType()) {
         mergeInfoType(other.getInfoType());
+      }
+      if (other.getEstimatedPrevalence() != 0) {
+        setEstimatedPrevalence(other.getEstimatedPrevalence());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -676,6 +715,61 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
         infoType_ = null;
       }
       return infoTypeBuilder_;
+    }
+
+    private int estimatedPrevalence_;
+    /**
+     *
+     *
+     * <pre>
+     * Approximate percentage of non-null rows that contained data detected by
+     * this infotype.
+     * </pre>
+     *
+     * <code>int32 estimated_prevalence = 2;</code>
+     *
+     * @return The estimatedPrevalence.
+     */
+    @java.lang.Override
+    public int getEstimatedPrevalence() {
+      return estimatedPrevalence_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Approximate percentage of non-null rows that contained data detected by
+     * this infotype.
+     * </pre>
+     *
+     * <code>int32 estimated_prevalence = 2;</code>
+     *
+     * @param value The estimatedPrevalence to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEstimatedPrevalence(int value) {
+
+      estimatedPrevalence_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Approximate percentage of non-null rows that contained data detected by
+     * this infotype.
+     * </pre>
+     *
+     * <code>int32 estimated_prevalence = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEstimatedPrevalence() {
+
+      estimatedPrevalence_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

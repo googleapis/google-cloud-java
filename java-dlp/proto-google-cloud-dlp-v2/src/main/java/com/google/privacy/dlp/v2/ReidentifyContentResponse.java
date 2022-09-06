@@ -22,7 +22,7 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * Results of re-identifying a item.
+ * Results of re-identifying an item.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.ReidentifyContentResponse}
@@ -412,7 +412,7 @@ public final class ReidentifyContentResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Results of re-identifying a item.
+   * Results of re-identifying an item.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.ReidentifyContentResponse}

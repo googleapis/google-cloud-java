@@ -23,7 +23,7 @@ package com.google.privacy.dlp.v2;
  *
  * <pre>
  * Score is a summary of all elements in the data profile.
- * A higher number means more risky.
+ * A higher number means more risk.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.DataRiskLevel}
@@ -151,8 +151,8 @@ public final class DataRiskLevel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Medium risk - Sensitive data may be present but additional access or fine
-     * grain access restrictions appears to be present.  Consider limiting
-     * access even further or transforming data to mask.
+     * grain access restrictions appear to be present.  Consider limiting
+     * access even further or transform data to mask.
      * </pre>
      *
      * <code>RISK_MODERATE = 20;</code>
@@ -200,8 +200,8 @@ public final class DataRiskLevel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Medium risk - Sensitive data may be present but additional access or fine
-     * grain access restrictions appears to be present.  Consider limiting
-     * access even further or transforming data to mask.
+     * grain access restrictions appear to be present.  Consider limiting
+     * access even further or transform data to mask.
      * </pre>
      *
      * <code>RISK_MODERATE = 20;</code>
@@ -513,7 +513,7 @@ public final class DataRiskLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Score is a summary of all elements in the data profile.
-   * A higher number means more risky.
+   * A higher number means more risk.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.DataRiskLevel}

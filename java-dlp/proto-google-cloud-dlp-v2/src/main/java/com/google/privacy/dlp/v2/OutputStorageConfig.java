@@ -165,7 +165,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Schema tailored to findings from scanning Google Cloud Storage.
+     * Schema tailored to findings from scanning Cloud Storage.
      * </pre>
      *
      * <code>GCS_COLUMNS = 2;</code>
@@ -229,7 +229,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Schema tailored to findings from scanning Google Cloud Storage.
+     * Schema tailored to findings from scanning Cloud Storage.
      * </pre>
      *
      * <code>GCS_COLUMNS = 2;</code>
@@ -407,8 +407,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
    * Store findings in an existing table or a new table in an existing
    * dataset. If table_id is not set a new one will be generated
    * for you with the following format:
-   * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific timezone will be used for
-   * generating the date details.
+   * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific time zone will be used
+   * for generating the date details.
    * For Inspect, each column in an existing output table must have the same
    * name, type, and mode of a field in the `Finding` object.
    * For Risk, an existing output table should be the output of a previous
@@ -433,8 +433,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
    * Store findings in an existing table or a new table in an existing
    * dataset. If table_id is not set a new one will be generated
    * for you with the following format:
-   * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific timezone will be used for
-   * generating the date details.
+   * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific time zone will be used
+   * for generating the date details.
    * For Inspect, each column in an existing output table must have the same
    * name, type, and mode of a field in the `Finding` object.
    * For Risk, an existing output table should be the output of a previous
@@ -462,8 +462,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
    * Store findings in an existing table or a new table in an existing
    * dataset. If table_id is not set a new one will be generated
    * for you with the following format:
-   * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific timezone will be used for
-   * generating the date details.
+   * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific time zone will be used
+   * for generating the date details.
    * For Inspect, each column in an existing output table must have the same
    * name, type, and mode of a field in the `Finding` object.
    * For Risk, an existing output table should be the output of a previous
@@ -927,8 +927,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * Store findings in an existing table or a new table in an existing
      * dataset. If table_id is not set a new one will be generated
      * for you with the following format:
-     * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific timezone will be used for
-     * generating the date details.
+     * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific time zone will be used
+     * for generating the date details.
      * For Inspect, each column in an existing output table must have the same
      * name, type, and mode of a field in the `Finding` object.
      * For Risk, an existing output table should be the output of a previous
@@ -953,8 +953,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * Store findings in an existing table or a new table in an existing
      * dataset. If table_id is not set a new one will be generated
      * for you with the following format:
-     * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific timezone will be used for
-     * generating the date details.
+     * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific time zone will be used
+     * for generating the date details.
      * For Inspect, each column in an existing output table must have the same
      * name, type, and mode of a field in the `Finding` object.
      * For Risk, an existing output table should be the output of a previous
@@ -989,8 +989,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * Store findings in an existing table or a new table in an existing
      * dataset. If table_id is not set a new one will be generated
      * for you with the following format:
-     * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific timezone will be used for
-     * generating the date details.
+     * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific time zone will be used
+     * for generating the date details.
      * For Inspect, each column in an existing output table must have the same
      * name, type, and mode of a field in the `Finding` object.
      * For Risk, an existing output table should be the output of a previous
@@ -1022,8 +1022,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * Store findings in an existing table or a new table in an existing
      * dataset. If table_id is not set a new one will be generated
      * for you with the following format:
-     * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific timezone will be used for
-     * generating the date details.
+     * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific time zone will be used
+     * for generating the date details.
      * For Inspect, each column in an existing output table must have the same
      * name, type, and mode of a field in the `Finding` object.
      * For Risk, an existing output table should be the output of a previous
@@ -1052,8 +1052,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * Store findings in an existing table or a new table in an existing
      * dataset. If table_id is not set a new one will be generated
      * for you with the following format:
-     * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific timezone will be used for
-     * generating the date details.
+     * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific time zone will be used
+     * for generating the date details.
      * For Inspect, each column in an existing output table must have the same
      * name, type, and mode of a field in the `Finding` object.
      * For Risk, an existing output table should be the output of a previous
@@ -1095,8 +1095,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * Store findings in an existing table or a new table in an existing
      * dataset. If table_id is not set a new one will be generated
      * for you with the following format:
-     * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific timezone will be used for
-     * generating the date details.
+     * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific time zone will be used
+     * for generating the date details.
      * For Inspect, each column in an existing output table must have the same
      * name, type, and mode of a field in the `Finding` object.
      * For Risk, an existing output table should be the output of a previous
@@ -1131,8 +1131,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * Store findings in an existing table or a new table in an existing
      * dataset. If table_id is not set a new one will be generated
      * for you with the following format:
-     * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific timezone will be used for
-     * generating the date details.
+     * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific time zone will be used
+     * for generating the date details.
      * For Inspect, each column in an existing output table must have the same
      * name, type, and mode of a field in the `Finding` object.
      * For Risk, an existing output table should be the output of a previous
@@ -1154,8 +1154,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * Store findings in an existing table or a new table in an existing
      * dataset. If table_id is not set a new one will be generated
      * for you with the following format:
-     * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific timezone will be used for
-     * generating the date details.
+     * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific time zone will be used
+     * for generating the date details.
      * For Inspect, each column in an existing output table must have the same
      * name, type, and mode of a field in the `Finding` object.
      * For Risk, an existing output table should be the output of a previous
@@ -1185,8 +1185,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * Store findings in an existing table or a new table in an existing
      * dataset. If table_id is not set a new one will be generated
      * for you with the following format:
-     * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific timezone will be used for
-     * generating the date details.
+     * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific time zone will be used
+     * for generating the date details.
      * For Inspect, each column in an existing output table must have the same
      * name, type, and mode of a field in the `Finding` object.
      * For Risk, an existing output table should be the output of a previous
