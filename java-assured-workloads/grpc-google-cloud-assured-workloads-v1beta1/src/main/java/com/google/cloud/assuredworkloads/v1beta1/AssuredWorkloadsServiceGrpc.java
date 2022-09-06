@@ -520,8 +520,8 @@ public final class AssuredWorkloadsServiceGrpc {
      *
      *
      * <pre>
-     * A request to analyze a hypothetical move of a source project or
-     * project-based workload to a target (destination) folder-based workload.
+     * Analyze if the source Assured Workloads can be moved to the target Assured
+     * Workload
      * </pre>
      */
     public void analyzeWorkloadMove(
@@ -722,8 +722,8 @@ public final class AssuredWorkloadsServiceGrpc {
      *
      *
      * <pre>
-     * A request to analyze a hypothetical move of a source project or
-     * project-based workload to a target (destination) folder-based workload.
+     * Analyze if the source Assured Workloads can be moved to the target Assured
+     * Workload
      * </pre>
      */
     public void analyzeWorkloadMove(
@@ -858,8 +858,8 @@ public final class AssuredWorkloadsServiceGrpc {
      *
      *
      * <pre>
-     * A request to analyze a hypothetical move of a source project or
-     * project-based workload to a target (destination) folder-based workload.
+     * Analyze if the source Assured Workloads can be moved to the target Assured
+     * Workload
      * </pre>
      */
     public com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse
@@ -989,8 +989,8 @@ public final class AssuredWorkloadsServiceGrpc {
      *
      *
      * <pre>
-     * A request to analyze a hypothetical move of a source project or
-     * project-based workload to a target (destination) folder-based workload.
+     * Analyze if the source Assured Workloads can be moved to the target Assured
+     * Workload
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
