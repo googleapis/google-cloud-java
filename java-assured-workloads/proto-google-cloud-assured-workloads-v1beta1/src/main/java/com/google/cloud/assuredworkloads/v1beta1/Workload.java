@@ -48,6 +48,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     provisionedResourcesParent_ = "";
     resourceSettings_ = java.util.Collections.emptyList();
     kajEnrollmentState_ = 0;
+    compliantButDisallowedServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -321,6 +322,16 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 194:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                compliantButDisallowedServices_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              compliantButDisallowedServices_.add(s);
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -342,6 +353,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
         resourceSettings_ = java.util.Collections.unmodifiableList(resourceSettings_);
+      }
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        compliantButDisallowedServices_ = compliantButDisallowedServices_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -10337,6 +10351,87 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     return getSaaEnrollmentResponse();
   }
 
+  public static final int COMPLIANT_BUT_DISALLOWED_SERVICES_FIELD_NUMBER = 24;
+  private com.google.protobuf.LazyStringList compliantButDisallowedServices_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Urls for services which are compliant for this Assured Workload, but which
+   * are currently disallowed by the ResourceUsageRestriction org policy.
+   * Invoke RestrictAllowedResources endpoint to allow your project developers
+   * to use these services in their environment."
+   * </pre>
+   *
+   * <code>
+   * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the compliantButDisallowedServices.
+   */
+  public com.google.protobuf.ProtocolStringList getCompliantButDisallowedServicesList() {
+    return compliantButDisallowedServices_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Urls for services which are compliant for this Assured Workload, but which
+   * are currently disallowed by the ResourceUsageRestriction org policy.
+   * Invoke RestrictAllowedResources endpoint to allow your project developers
+   * to use these services in their environment."
+   * </pre>
+   *
+   * <code>
+   * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of compliantButDisallowedServices.
+   */
+  public int getCompliantButDisallowedServicesCount() {
+    return compliantButDisallowedServices_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Urls for services which are compliant for this Assured Workload, but which
+   * are currently disallowed by the ResourceUsageRestriction org policy.
+   * Invoke RestrictAllowedResources endpoint to allow your project developers
+   * to use these services in their environment."
+   * </pre>
+   *
+   * <code>
+   * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The compliantButDisallowedServices at the given index.
+   */
+  public java.lang.String getCompliantButDisallowedServices(int index) {
+    return compliantButDisallowedServices_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Urls for services which are compliant for this Assured Workload, but which
+   * are currently disallowed by the ResourceUsageRestriction org policy.
+   * Invoke RestrictAllowedResources endpoint to allow your project developers
+   * to use these services in their environment."
+   * </pre>
+   *
+   * <code>
+   * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the compliantButDisallowedServices at the given index.
+   */
+  public com.google.protobuf.ByteString getCompliantButDisallowedServicesBytes(int index) {
+    return compliantButDisallowedServices_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -10421,6 +10516,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
     if (saaEnrollmentResponse_ != null) {
       output.writeMessage(20, getSaaEnrollmentResponse());
+    }
+    for (int i = 0; i < compliantButDisallowedServices_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 24, compliantButDisallowedServices_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -10517,6 +10616,14 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(20, getSaaEnrollmentResponse());
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < compliantButDisallowedServices_.size(); i++) {
+        dataSize += computeStringSizeNoTag(compliantButDisallowedServices_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getCompliantButDisallowedServicesList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -10557,6 +10664,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     if (hasSaaEnrollmentResponse()) {
       if (!getSaaEnrollmentResponse().equals(other.getSaaEnrollmentResponse())) return false;
     }
+    if (!getCompliantButDisallowedServicesList()
+        .equals(other.getCompliantButDisallowedServicesList())) return false;
     if (!getComplianceRegimeSettingsCase().equals(other.getComplianceRegimeSettingsCase()))
       return false;
     switch (complianceRegimeSettingsCase_) {
@@ -10625,6 +10734,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     if (hasSaaEnrollmentResponse()) {
       hash = (37 * hash) + SAA_ENROLLMENT_RESPONSE_FIELD_NUMBER;
       hash = (53 * hash) + getSaaEnrollmentResponse().hashCode();
+    }
+    if (getCompliantButDisallowedServicesCount() > 0) {
+      hash = (37 * hash) + COMPLIANT_BUT_DISALLOWED_SERVICES_FIELD_NUMBER;
+      hash = (53 * hash) + getCompliantButDisallowedServicesList().hashCode();
     }
     switch (complianceRegimeSettingsCase_) {
       case 7:
@@ -10862,6 +10975,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         saaEnrollmentResponse_ = null;
         saaEnrollmentResponseBuilder_ = null;
       }
+      compliantButDisallowedServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
       complianceRegimeSettingsCase_ = 0;
       complianceRegimeSettings_ = null;
       return this;
@@ -10963,6 +11078,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.saaEnrollmentResponse_ = saaEnrollmentResponseBuilder_.build();
       }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        compliantButDisallowedServices_ = compliantButDisallowedServices_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.compliantButDisallowedServices_ = compliantButDisallowedServices_;
       result.complianceRegimeSettingsCase_ = complianceRegimeSettingsCase_;
       onBuilt();
       return result;
@@ -11106,6 +11226,16 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSaaEnrollmentResponse()) {
         mergeSaaEnrollmentResponse(other.getSaaEnrollmentResponse());
+      }
+      if (!other.compliantButDisallowedServices_.isEmpty()) {
+        if (compliantButDisallowedServices_.isEmpty()) {
+          compliantButDisallowedServices_ = other.compliantButDisallowedServices_;
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          ensureCompliantButDisallowedServicesIsMutable();
+          compliantButDisallowedServices_.addAll(other.compliantButDisallowedServices_);
+        }
+        onChanged();
       }
       switch (other.getComplianceRegimeSettingsCase()) {
         case IL4_SETTINGS:
@@ -14853,6 +14983,222 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         saaEnrollmentResponse_ = null;
       }
       return saaEnrollmentResponseBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringList compliantButDisallowedServices_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureCompliantButDisallowedServicesIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        compliantButDisallowedServices_ =
+            new com.google.protobuf.LazyStringArrayList(compliantButDisallowedServices_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Urls for services which are compliant for this Assured Workload, but which
+     * are currently disallowed by the ResourceUsageRestriction org policy.
+     * Invoke RestrictAllowedResources endpoint to allow your project developers
+     * to use these services in their environment."
+     * </pre>
+     *
+     * <code>
+     * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the compliantButDisallowedServices.
+     */
+    public com.google.protobuf.ProtocolStringList getCompliantButDisallowedServicesList() {
+      return compliantButDisallowedServices_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Urls for services which are compliant for this Assured Workload, but which
+     * are currently disallowed by the ResourceUsageRestriction org policy.
+     * Invoke RestrictAllowedResources endpoint to allow your project developers
+     * to use these services in their environment."
+     * </pre>
+     *
+     * <code>
+     * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of compliantButDisallowedServices.
+     */
+    public int getCompliantButDisallowedServicesCount() {
+      return compliantButDisallowedServices_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Urls for services which are compliant for this Assured Workload, but which
+     * are currently disallowed by the ResourceUsageRestriction org policy.
+     * Invoke RestrictAllowedResources endpoint to allow your project developers
+     * to use these services in their environment."
+     * </pre>
+     *
+     * <code>
+     * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The compliantButDisallowedServices at the given index.
+     */
+    public java.lang.String getCompliantButDisallowedServices(int index) {
+      return compliantButDisallowedServices_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Urls for services which are compliant for this Assured Workload, but which
+     * are currently disallowed by the ResourceUsageRestriction org policy.
+     * Invoke RestrictAllowedResources endpoint to allow your project developers
+     * to use these services in their environment."
+     * </pre>
+     *
+     * <code>
+     * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the compliantButDisallowedServices at the given index.
+     */
+    public com.google.protobuf.ByteString getCompliantButDisallowedServicesBytes(int index) {
+      return compliantButDisallowedServices_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Urls for services which are compliant for this Assured Workload, but which
+     * are currently disallowed by the ResourceUsageRestriction org policy.
+     * Invoke RestrictAllowedResources endpoint to allow your project developers
+     * to use these services in their environment."
+     * </pre>
+     *
+     * <code>
+     * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The compliantButDisallowedServices to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCompliantButDisallowedServices(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCompliantButDisallowedServicesIsMutable();
+      compliantButDisallowedServices_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Urls for services which are compliant for this Assured Workload, but which
+     * are currently disallowed by the ResourceUsageRestriction org policy.
+     * Invoke RestrictAllowedResources endpoint to allow your project developers
+     * to use these services in their environment."
+     * </pre>
+     *
+     * <code>
+     * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The compliantButDisallowedServices to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCompliantButDisallowedServices(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCompliantButDisallowedServicesIsMutable();
+      compliantButDisallowedServices_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Urls for services which are compliant for this Assured Workload, but which
+     * are currently disallowed by the ResourceUsageRestriction org policy.
+     * Invoke RestrictAllowedResources endpoint to allow your project developers
+     * to use these services in their environment."
+     * </pre>
+     *
+     * <code>
+     * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The compliantButDisallowedServices to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllCompliantButDisallowedServices(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureCompliantButDisallowedServicesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, compliantButDisallowedServices_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Urls for services which are compliant for this Assured Workload, but which
+     * are currently disallowed by the ResourceUsageRestriction org policy.
+     * Invoke RestrictAllowedResources endpoint to allow your project developers
+     * to use these services in their environment."
+     * </pre>
+     *
+     * <code>
+     * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCompliantButDisallowedServices() {
+      compliantButDisallowedServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Urls for services which are compliant for this Assured Workload, but which
+     * are currently disallowed by the ResourceUsageRestriction org policy.
+     * Invoke RestrictAllowedResources endpoint to allow your project developers
+     * to use these services in their environment."
+     * </pre>
+     *
+     * <code>
+     * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes of the compliantButDisallowedServices to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCompliantButDisallowedServicesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureCompliantButDisallowedServicesIsMutable();
+      compliantButDisallowedServices_.add(value);
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
