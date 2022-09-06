@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.5](https://github.com/googleapis/java-speech/compare/v2.5.4...v2.5.5) (2022-09-06)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud ([16e6b56](https://github.com/googleapis/java-speech/commit/16e6b56194cb50ff1934e8000316088347bbdeaa))
+
 ## [2.5.4](https://github.com/googleapis/java-speech/compare/v2.5.3...v2.5.4) (2022-08-09)
 
 
