@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.0.6](https://github.com/googleapis/java-recaptchaenterprise/compare/v3.0.5...v3.0.6) (2022-09-06)
+
+
+### Dependencies
+
+* Update dependency io.github.bonigarcia ([8138fb8](https://github.com/googleapis/java-recaptchaenterprise/commit/8138fb8c785d125d7dd2d17ca217e82cd5ea2f2a))
+* Update dependency org.seleniumhq.selenium ([708764b](https://github.com/googleapis/java-recaptchaenterprise/commit/708764b51a135b93eeaa6de976a889b47a5c7135))
+* Update dependency org.seleniumhq.selenium ([bdee535](https://github.com/googleapis/java-recaptchaenterprise/commit/bdee53591b316d4e6167f7416a0eb045db40968e))
+* Update dependency org.springframework.boot ([f25f66c](https://github.com/googleapis/java-recaptchaenterprise/commit/f25f66c3d4de4c8a63dbfbcf3ad58cce7d52184d))
+* Update dependency org.springframework.boot ([31da78f](https://github.com/googleapis/java-recaptchaenterprise/commit/31da78feac855fab7c7dd80adfd1225bcffdf0de))
+* Update dependency org.springframework.boot ([2b89486](https://github.com/googleapis/java-recaptchaenterprise/commit/2b894862ab0e0b206f25b6675b960d9543cbe186))
+
 ## [3.0.5](https://github.com/googleapis/java-recaptchaenterprise/compare/v3.0.4...v3.0.5) (2022-08-04)
 
 
