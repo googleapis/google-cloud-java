@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.8](https://github.com/googleapis/java-optimization/compare/v1.1.7...v1.1.8) (2022-09-06)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud ([4282317](https://github.com/googleapis/java-optimization/commit/4282317cd31b35a0ebc725b79d3b9266ae3baa9f))
+
 ## [1.1.7](https://github.com/googleapis/java-optimization/compare/v1.1.6...v1.1.7) (2022-08-06)
 
 
