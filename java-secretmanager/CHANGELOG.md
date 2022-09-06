@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.2](https://github.com/googleapis/java-secretmanager/compare/v2.3.1...v2.3.2) (2022-09-06)
+
+
+### Dependencies
+
+* Update dependency com.google.protobuf ([6bf4745](https://github.com/googleapis/java-secretmanager/commit/6bf474519e658e56d015c661574c84c501c2c9b8))
+
 ## [2.3.1](https://github.com/googleapis/java-secretmanager/compare/v2.3.0...v2.3.1) (2022-08-03)
 
 
