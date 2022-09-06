@@ -153,10 +153,10 @@ public interface PredictRequestOrBuilder
    *
    *
    * <pre>
-   * Maximum number of results to return per page. Set this property
-   * to the number of prediction results needed. If zero, the service will
-   * choose a reasonable default. The maximum allowed value is 100. Values
-   * above 100 will be coerced to 100.
+   * Maximum number of results to return. Set this property to the number of
+   * prediction results needed. If zero, the service will choose a reasonable
+   * default. The maximum allowed value is 100. Values above 100 will be coerced
+   * to 100.
    * </pre>
    *
    * <code>int32 page_size = 3;</code>
@@ -169,25 +169,31 @@ public interface PredictRequestOrBuilder
    *
    *
    * <pre>
-   * This field is not used for now; leave it unset.
+   * This field is not used; leave it unset.
    * </pre>
    *
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 4 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.retail.v2beta.PredictRequest.page_token is deprecated. See
+   *     google/cloud/retail/v2beta/prediction_service.proto;l=94
    * @return The pageToken.
    */
+  @java.lang.Deprecated
   java.lang.String getPageToken();
   /**
    *
    *
    * <pre>
-   * This field is not used for now; leave it unset.
+   * This field is not used; leave it unset.
    * </pre>
    *
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 4 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.retail.v2beta.PredictRequest.page_token is deprecated. See
+   *     google/cloud/retail/v2beta/prediction_service.proto;l=94
    * @return The bytes for pageToken.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getPageTokenBytes();
 
   /**
