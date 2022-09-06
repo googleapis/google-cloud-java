@@ -149,6 +149,11 @@ public interface InspectConfigOrBuilder
    * <pre>
    * Configuration to control the number of findings returned.
    * This is not used for data profiling.
+   * When redacting sensitive data from images, finding limits don't apply. They
+   * can cause unexpected or inconsistent results, where only some data is
+   * redacted. Don't include finding limits in
+   * [RedactImage][google.privacy.dlp.v2.DlpService.RedactImage]
+   * requests. Otherwise, Cloud DLP returns an error.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -162,6 +167,11 @@ public interface InspectConfigOrBuilder
    * <pre>
    * Configuration to control the number of findings returned.
    * This is not used for data profiling.
+   * When redacting sensitive data from images, finding limits don't apply. They
+   * can cause unexpected or inconsistent results, where only some data is
+   * redacted. Don't include finding limits in
+   * [RedactImage][google.privacy.dlp.v2.DlpService.RedactImage]
+   * requests. Otherwise, Cloud DLP returns an error.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -175,6 +185,11 @@ public interface InspectConfigOrBuilder
    * <pre>
    * Configuration to control the number of findings returned.
    * This is not used for data profiling.
+   * When redacting sensitive data from images, finding limits don't apply. They
+   * can cause unexpected or inconsistent results, where only some data is
+   * redacted. Don't include finding limits in
+   * [RedactImage][google.privacy.dlp.v2.DlpService.RedactImage]
+   * requests. Otherwise, Cloud DLP returns an error.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>

@@ -62,7 +62,7 @@ public interface ActionOrBuilder
    *
    *
    * <pre>
-   * Publish a notification to a pubsub topic.
+   * Publish a notification to a Pub/Sub topic.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
@@ -74,7 +74,7 @@ public interface ActionOrBuilder
    *
    *
    * <pre>
-   * Publish a notification to a pubsub topic.
+   * Publish a notification to a Pub/Sub topic.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
@@ -86,7 +86,7 @@ public interface ActionOrBuilder
    *
    *
    * <pre>
-   * Publish a notification to a pubsub topic.
+   * Publish a notification to a Pub/Sub topic.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
@@ -170,6 +170,41 @@ public interface ActionOrBuilder
    */
   com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalogOrBuilder
       getPublishFindingsToCloudDataCatalogOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Create a de-identified copy of the input data.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Action.Deidentify deidentify = 7;</code>
+   *
+   * @return Whether the deidentify field is set.
+   */
+  boolean hasDeidentify();
+  /**
+   *
+   *
+   * <pre>
+   * Create a de-identified copy of the input data.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Action.Deidentify deidentify = 7;</code>
+   *
+   * @return The deidentify.
+   */
+  com.google.privacy.dlp.v2.Action.Deidentify getDeidentify();
+  /**
+   *
+   *
+   * <pre>
+   * Create a de-identified copy of the input data.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Action.Deidentify deidentify = 7;</code>
+   */
+  com.google.privacy.dlp.v2.Action.DeidentifyOrBuilder getDeidentifyOrBuilder();
 
   /**
    *

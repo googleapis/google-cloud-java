@@ -57,4 +57,18 @@ public interface InfoTypeSummaryOrBuilder
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
    */
   com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Approximate percentage of non-null rows that contained data detected by
+   * this infotype.
+   * </pre>
+   *
+   * <code>int32 estimated_prevalence = 2;</code>
+   *
+   * @return The estimatedPrevalence.
+   */
+  int getEstimatedPrevalence();
 }
