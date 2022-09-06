@@ -35,10 +35,6 @@ public interface ListStoredInfoTypesRequestOrBuilder
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
-   * + Organizations scope, location specified:&lt;br/&gt;
-   *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   * + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
    * The following example `parent` string specifies a parent project with the
    * identifier `example-project`, and specifies the `europe-west3` location
    * for processing data:
@@ -64,10 +60,6 @@ public interface ListStoredInfoTypesRequestOrBuilder
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
-   * + Organizations scope, location specified:&lt;br/&gt;
-   *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
-   * + Organizations scope, no location specified (defaults to global):&lt;br/&gt;
-   *   `organizations/`&lt;var&gt;ORG_ID&lt;/var&gt;
    * The following example `parent` string specifies a parent project with the
    * identifier `example-project`, and specifies the `europe-west3` location
    * for processing data:
@@ -113,7 +105,7 @@ public interface ListStoredInfoTypesRequestOrBuilder
    *
    *
    * <pre>
-   * Size of the page, can be limited by server. If zero server returns
+   * Size of the page, can be limited by the server. If zero server returns
    * a page of max size 100.
    * </pre>
    *
@@ -133,7 +125,7 @@ public interface ListStoredInfoTypesRequestOrBuilder
    * insignificant.
    * Example: `name asc, display_name, create_time desc`
    * Supported fields are:
-   * - `create_time`: corresponds to time the most recent version of the
+   * - `create_time`: corresponds to the time the most recent version of the
    * resource was created.
    * - `state`: corresponds to the state of the resource.
    * - `name`: corresponds to resource name.
@@ -155,7 +147,7 @@ public interface ListStoredInfoTypesRequestOrBuilder
    * insignificant.
    * Example: `name asc, display_name, create_time desc`
    * Supported fields are:
-   * - `create_time`: corresponds to time the most recent version of the
+   * - `create_time`: corresponds to the time the most recent version of the
    * resource was created.
    * - `state`: corresponds to the state of the resource.
    * - `name`: corresponds to resource name.

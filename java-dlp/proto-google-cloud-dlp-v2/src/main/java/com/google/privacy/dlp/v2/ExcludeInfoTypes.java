@@ -22,7 +22,7 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * List of exclude infoTypes.
+ * List of excluded infoTypes.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.ExcludeInfoTypes}
@@ -390,7 +390,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * List of exclude infoTypes.
+   * List of excluded infoTypes.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.ExcludeInfoTypes}

@@ -288,7 +288,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The job was canceled before it could complete.
+     * The job was canceled before it could be completed.
      * </pre>
      *
      * <code>CANCELED = 4;</code>
@@ -310,7 +310,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The job is currently accepting findings via hybridInspect.
      * A hybrid job in ACTIVE state may continue to have findings added to it
-     * through calling of hybridInspect. After the job has finished no more
+     * through the calling of hybridInspect. After the job has finished no more
      * calls to hybridInspect may be made. ACTIVE jobs can transition to DONE.
      * </pre>
      *
@@ -365,7 +365,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The job was canceled before it could complete.
+     * The job was canceled before it could be completed.
      * </pre>
      *
      * <code>CANCELED = 4;</code>
@@ -387,7 +387,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The job is currently accepting findings via hybridInspect.
      * A hybrid job in ACTIVE state may continue to have findings added to it
-     * through calling of hybridInspect. After the job has finished no more
+     * through the calling of hybridInspect. After the job has finished no more
      * calls to hybridInspect may be made. ACTIVE jobs can transition to DONE.
      * </pre>
      *
