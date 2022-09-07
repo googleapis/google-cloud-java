@@ -25,6 +25,6 @@ public class BaseTest {
   protected static final String COMPUTE_PREFIX = "it-test-compute";
 
   public static String generateRandomName(String placeholder) {
-    return COMPUTE_PREFIX + "-" + placeholder + UUID.randomUUID().toString().substring(0, 8);
+    return COMPUTE_PREFIX + "-" + placeholder + "-" + UUID.randomUUID().toString().substring(0, 8);
   }
 }

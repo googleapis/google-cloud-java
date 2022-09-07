@@ -88,8 +88,8 @@ public class ITSystemTest {
             .build();
     operation = client.createCluster(PROJECT_ID, ZONE, cluster);
 
-    // Busy Wait for one minute at a time until Cluster CREATE operation is complete
     Operation response = client.getOperation(PROJECT_ID, ZONE, operation.getName());
+    // Busy Wait for one minute at a time until Cluster CREATE operation is complete
     while (response.getStatus() != Status.DONE) {
       LOG.info(String.format("Cluster CREATE Operation Status: %s", response.getStatus()));
       Thread.sleep(TimeUnit.MINUTES.toMillis(1));
@@ -100,7 +100,7 @@ public class ITSystemTest {
   }
 
   @AfterClass
-  public static void afterClass() throws Exception {
+  public static void afterClass() {
     client.deleteCluster(PROJECT_ID, ZONE, CLUSTER_NAME);
     LOG.info(String.format("%s cluster deleted successfully.", CLUSTER_NAME));
     client.close();
