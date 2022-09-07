@@ -37,10 +37,10 @@ public class Util {
     List<Cluster> clusters = clustersResponse.getClustersList();
 
     for (Cluster cluster : clusters) {
-      if (isCreatedBeforeThresholdTime(cluster.getCreateTime())
-          && cluster.getName().startsWith(ITSystemTest.CONTAINER_PREFIX)) {
-        client.deleteCluster(projectId, zone, cluster.getName());
-      }
+      // if (isCreatedBeforeThresholdTime(cluster.getCreateTime())
+      //     && cluster.getName().startsWith(ITSystemTest.CONTAINER_PREFIX)) {
+      client.deleteCluster(projectId, zone, cluster.getName());
+      // }
     }
   }
 

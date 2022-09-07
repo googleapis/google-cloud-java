@@ -19,12 +19,12 @@ public class Util {
     ListInstancesPagedResponse listInstancesPagedResponse =
         client.listInstances(ListInstancesRequest.newBuilder().setParent(parent).build());
     for (Instance instance : listInstancesPagedResponse.iterateAll()) {
-      if (isCreatedBeforeThresholdTime(
-              Instant.ofEpochMilli(Timestamps.toMillis(instance.getCreateTime())))
-          && instance.getName().startsWith(ITNotebookServiceClientTest.NOTEBOOK_PREFIX)) {
-        client.deleteInstanceAsync(
-            DeleteInstanceRequest.newBuilder().setName(instance.getName()).build());
-      }
+      // if (isCreatedBeforeThresholdTime(
+      //         Instant.ofEpochMilli(Timestamps.toMillis(instance.getCreateTime())))
+      //     && instance.getName().startsWith(ITNotebookServiceClientTest.NOTEBOOK_PREFIX)) {
+      client.deleteInstanceAsync(
+          DeleteInstanceRequest.newBuilder().setName(instance.getName()).build());
+      // }
     }
   }
 
