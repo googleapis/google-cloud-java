@@ -5,7 +5,6 @@ import com.google.cloud.notebooks.v1beta1.Instance;
 import com.google.cloud.notebooks.v1beta1.ListInstancesRequest;
 import com.google.cloud.notebooks.v1beta1.NotebookServiceClient;
 import com.google.cloud.notebooks.v1beta1.NotebookServiceClient.ListInstancesPagedResponse;
-import com.google.protobuf.util.Timestamps;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
