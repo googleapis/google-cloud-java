@@ -45,7 +45,7 @@ public final class FindingProto {
           + "ner.v1\032\037google/api/field_behavior.proto\032"
           + "\031google/api/resource.proto\0326google/cloud"
           + "/websecurityscanner/v1/finding_addon.pro"
-          + "to\"\261\007\n\007Finding\022\014\n\004name\030\001 \001(\t\022\024\n\014finding_"
+          + "to\"\354\007\n\007Finding\022\014\n\004name\030\001 \001(\t\022\024\n\014finding_"
           + "type\030\002 \001(\t\022K\n\010severity\030\021 \001(\01624.google.cl"
           + "oud.websecurityscanner.v1.Finding.Severi"
           + "tyB\003\340A\003\022\023\n\013http_method\030\003 \001(\t\022\022\n\nfuzzed_u"
@@ -63,19 +63,20 @@ public final class FindingProto {
           + "ble_parameters\030\r \001(\01328.google.cloud.webs"
           + "ecurityscanner.v1.VulnerableParameters\0224"
           + "\n\003xss\030\016 \001(\0132\'.google.cloud.websecuritysc"
-          + "anner.v1.Xss\"Q\n\010Severity\022\030\n\024SEVERITY_UNS"
-          + "PECIFIED\020\000\022\014\n\010CRITICAL\020\001\022\010\n\004HIGH\020\002\022\n\n\006ME"
-          + "DIUM\020\003\022\007\n\003LOW\020\004:\204\001\352A\200\001\n)websecurityscann"
-          + "er.googleapis.com/Finding\022Sprojects/{pro"
-          + "ject}/scanConfigs/{scan_config}/scanRuns"
-          + "/{scan_run}/findings/{finding}B\200\002\n&com.g"
-          + "oogle.cloud.websecurityscanner.v1B\014Findi"
-          + "ngProtoP\001ZTgoogle.golang.org/genproto/go"
-          + "ogleapis/cloud/websecurityscanner/v1;web"
-          + "securityscanner\252\002\"Google.Cloud.WebSecuri"
-          + "tyScanner.V1\312\002\"Google\\Cloud\\WebSecurityS"
-          + "canner\\V1\352\002%Google::Cloud::WebSecuritySc"
-          + "anner::V1b\006proto3"
+          + "anner.v1.Xss\0229\n\003xxe\030\022 \001(\0132\'.google.cloud"
+          + ".websecurityscanner.v1.XxeB\003\340A\003\"Q\n\010Sever"
+          + "ity\022\030\n\024SEVERITY_UNSPECIFIED\020\000\022\014\n\010CRITICA"
+          + "L\020\001\022\010\n\004HIGH\020\002\022\n\n\006MEDIUM\020\003\022\007\n\003LOW\020\004:\204\001\352A\200"
+          + "\001\n)websecurityscanner.googleapis.com/Fin"
+          + "ding\022Sprojects/{project}/scanConfigs/{sc"
+          + "an_config}/scanRuns/{scan_run}/findings/"
+          + "{finding}B\200\002\n&com.google.cloud.websecuri"
+          + "tyscanner.v1B\014FindingProtoP\001ZTgoogle.gol"
+          + "ang.org/genproto/googleapis/cloud/websec"
+          + "urityscanner/v1;websecurityscanner\252\002\"Goo"
+          + "gle.Cloud.WebSecurityScanner.V1\312\002\"Google"
+          + "\\Cloud\\WebSecurityScanner\\V1\352\002%Google::C"
+          + "loud::WebSecurityScanner::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -108,6 +109,7 @@ public final class FindingProto {
               "VulnerableHeaders",
               "VulnerableParameters",
               "Xss",
+              "Xxe",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

@@ -43,8 +43,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
  *   CreateScanConfigRequest request =
  *       CreateScanConfigRequest.newBuilder()
@@ -85,8 +88,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * WebSecurityScannerSettings webSecurityScannerSettings =
  *     WebSecurityScannerSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -98,8 +104,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * WebSecurityScannerSettings webSecurityScannerSettings =
  *     WebSecurityScannerSettings.newBuilder().setEndpoint(myEndpoint).build();
  * WebSecurityScannerClient webSecurityScannerClient =
@@ -110,8 +119,11 @@ import javax.annotation.Generated;
  * the wire:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * WebSecurityScannerSettings webSecurityScannerSettings =
  *     WebSecurityScannerSettings.newBuilder()
  *         .setTransportChannelProvider(
@@ -180,8 +192,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   CreateScanConfigRequest request =
    *       CreateScanConfigRequest.newBuilder()
@@ -206,8 +221,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   CreateScanConfigRequest request =
    *       CreateScanConfigRequest.newBuilder()
@@ -232,8 +250,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   DeleteScanConfigRequest request =
    *       DeleteScanConfigRequest.newBuilder().setName("name3373707").build();
@@ -255,8 +276,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   DeleteScanConfigRequest request =
    *       DeleteScanConfigRequest.newBuilder().setName("name3373707").build();
@@ -278,8 +302,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   GetScanConfigRequest request =
    *       GetScanConfigRequest.newBuilder().setName("name3373707").build();
@@ -301,8 +328,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   GetScanConfigRequest request =
    *       GetScanConfigRequest.newBuilder().setName("name3373707").build();
@@ -324,8 +354,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListScanConfigsRequest request =
    *       ListScanConfigsRequest.newBuilder()
@@ -353,8 +386,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListScanConfigsRequest request =
    *       ListScanConfigsRequest.newBuilder()
@@ -383,8 +419,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListScanConfigsRequest request =
    *       ListScanConfigsRequest.newBuilder()
@@ -420,8 +459,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   UpdateScanConfigRequest request =
    *       UpdateScanConfigRequest.newBuilder()
@@ -446,8 +488,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   UpdateScanConfigRequest request =
    *       UpdateScanConfigRequest.newBuilder()
@@ -472,8 +517,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   StartScanRunRequest request = StartScanRunRequest.newBuilder().setName("name3373707").build();
    *   ScanRun response = webSecurityScannerClient.startScanRun(request);
@@ -494,8 +542,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   StartScanRunRequest request = StartScanRunRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<ScanRun> future =
@@ -516,8 +567,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   GetScanRunRequest request = GetScanRunRequest.newBuilder().setName("name3373707").build();
    *   ScanRun response = webSecurityScannerClient.getScanRun(request);
@@ -538,8 +592,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   GetScanRunRequest request = GetScanRunRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<ScanRun> future = webSecurityScannerClient.getScanRunCallable().futureCall(request);
@@ -559,8 +616,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListScanRunsRequest request =
    *       ListScanRunsRequest.newBuilder()
@@ -588,8 +648,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListScanRunsRequest request =
    *       ListScanRunsRequest.newBuilder()
@@ -618,8 +681,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListScanRunsRequest request =
    *       ListScanRunsRequest.newBuilder()
@@ -654,8 +720,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   StopScanRunRequest request = StopScanRunRequest.newBuilder().setName("name3373707").build();
    *   ScanRun response = webSecurityScannerClient.stopScanRun(request);
@@ -676,8 +745,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   StopScanRunRequest request = StopScanRunRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<ScanRun> future =
@@ -698,8 +770,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListCrawledUrlsRequest request =
    *       ListCrawledUrlsRequest.newBuilder()
@@ -727,8 +802,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListCrawledUrlsRequest request =
    *       ListCrawledUrlsRequest.newBuilder()
@@ -757,8 +835,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListCrawledUrlsRequest request =
    *       ListCrawledUrlsRequest.newBuilder()
@@ -794,8 +875,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   GetFindingRequest request = GetFindingRequest.newBuilder().setName("name3373707").build();
    *   Finding response = webSecurityScannerClient.getFinding(request);
@@ -816,8 +900,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   GetFindingRequest request = GetFindingRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<Finding> future = webSecurityScannerClient.getFindingCallable().futureCall(request);
@@ -837,8 +924,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListFindingsRequest request =
    *       ListFindingsRequest.newBuilder()
@@ -867,8 +957,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListFindingsRequest request =
    *       ListFindingsRequest.newBuilder()
@@ -898,8 +991,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListFindingsRequest request =
    *       ListFindingsRequest.newBuilder()
@@ -935,8 +1031,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListFindingTypeStatsRequest request =
    *       ListFindingTypeStatsRequest.newBuilder().setParent("parent-995424086").build();
@@ -960,8 +1059,11 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListFindingTypeStatsRequest request =
    *       ListFindingTypeStatsRequest.newBuilder().setParent("parent-995424086").build();
