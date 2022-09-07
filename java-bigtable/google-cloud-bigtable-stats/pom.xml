@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigtable-parent</artifactId>
-        <version>2.11.2</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+        <version>2.11.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -13,7 +13,7 @@
         through Stackdriver. Built-in metrics will be implemented with shaded OpenCensus so it won't interfere with
         customer's application metrics. -->
     <artifactId>google-cloud-bigtable-stats</artifactId>
-    <version>2.11.2</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+    <version>2.11.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
     <description>Experimental project to shade OpenCensus dependencies.</description>
 
     <properties>
@@ -25,7 +25,7 @@
             <dependency>
                 <groupId>com.google.cloud</groupId>
                 <artifactId>google-cloud-bigtable-deps-bom</artifactId>
-                <version>2.11.2</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+                <version>2.11.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
