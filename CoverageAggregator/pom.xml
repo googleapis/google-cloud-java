@@ -120,7 +120,7 @@
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-retail</artifactId><version>2.4.1-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-run</artifactId><version>0.3.2-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-scheduler</artifactId><version>2.3.6-SNAPSHOT</version></dependency>
-<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-secretmanager</artifactId><version>2.3.2-SNAPSHOT</version></dependency>
+<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-secretmanager</artifactId><version>2.3.2</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-security-private-ca</artifactId><version>2.5.2-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-securitycenter-settings</artifactId><version>0.6.3-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-securitycenter</artifactId><version>2.9.1-SNAPSHOT</version></dependency>
@@ -264,7 +264,7 @@
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-retail</artifactId><version>2.4.1-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-run</artifactId><version>0.3.2-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-scheduler</artifactId><version>2.3.6-SNAPSHOT</version></dependency>
-<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-secretmanager</artifactId><version>2.3.2-SNAPSHOT</version></dependency>
+<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-secretmanager</artifactId><version>2.3.2</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-security-private-ca</artifactId><version>2.5.2-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-securitycenter-settings</artifactId><version>0.6.3-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-securitycenter</artifactId><version>2.9.1-SNAPSHOT</version></dependency>
