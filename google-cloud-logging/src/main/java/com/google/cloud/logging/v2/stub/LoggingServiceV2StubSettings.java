@@ -93,17 +93,17 @@ import org.threeten.bp.Duration;
  * <p>For example, to set the total timeout of deleteLog to 30 seconds:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * LoggingServiceV2StubSettings.Builder loggingSettingsBuilder =
  *     LoggingServiceV2StubSettings.newBuilder();
  * loggingSettingsBuilder
  *     .deleteLogSettings()
  *     .setRetrySettings(
- *         loggingSettingsBuilder
- *             .deleteLogSettings()
- *             .getRetrySettings()
- *             .toBuilder()
+ *         loggingSettingsBuilder.deleteLogSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * LoggingServiceV2StubSettings loggingSettings = loggingSettingsBuilder.build();
@@ -331,7 +331,7 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
             @Override
             public PartitionKey getBatchPartitionKey(WriteLogEntriesRequest request) {
               return new PartitionKey(
-                  request.getLogName(), request.getResource(), request.getLabelsMap());
+                  request.getLogName(), request.getResource(), request.getLabels());
             }
 
             @Override
