@@ -1,0 +1,51 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.redis.v1",
+  "libraryPackage": "com.google.cloud.redis.v1",
+  "services": {
+    "CloudRedis": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CloudRedisClient",
+          "rpcs": {
+            "CreateInstance": {
+              "methods": ["createInstanceAsync", "createInstanceAsync", "createInstanceAsync", "createInstanceOperationCallable", "createInstanceCallable"]
+            },
+            "DeleteInstance": {
+              "methods": ["deleteInstanceAsync", "deleteInstanceAsync", "deleteInstanceAsync", "deleteInstanceOperationCallable", "deleteInstanceCallable"]
+            },
+            "ExportInstance": {
+              "methods": ["exportInstanceAsync", "exportInstanceAsync", "exportInstanceOperationCallable", "exportInstanceCallable"]
+            },
+            "FailoverInstance": {
+              "methods": ["failoverInstanceAsync", "failoverInstanceAsync", "failoverInstanceAsync", "failoverInstanceOperationCallable", "failoverInstanceCallable"]
+            },
+            "GetInstance": {
+              "methods": ["getInstance", "getInstance", "getInstance", "getInstanceCallable"]
+            },
+            "GetInstanceAuthString": {
+              "methods": ["getInstanceAuthString", "getInstanceAuthString", "getInstanceAuthString", "getInstanceAuthStringCallable"]
+            },
+            "ImportInstance": {
+              "methods": ["importInstanceAsync", "importInstanceAsync", "importInstanceOperationCallable", "importInstanceCallable"]
+            },
+            "ListInstances": {
+              "methods": ["listInstances", "listInstances", "listInstances", "listInstancesPagedCallable", "listInstancesCallable"]
+            },
+            "RescheduleMaintenance": {
+              "methods": ["rescheduleMaintenanceAsync", "rescheduleMaintenanceAsync", "rescheduleMaintenanceAsync", "rescheduleMaintenanceOperationCallable", "rescheduleMaintenanceCallable"]
+            },
+            "UpdateInstance": {
+              "methods": ["updateInstanceAsync", "updateInstanceAsync", "updateInstanceOperationCallable", "updateInstanceCallable"]
+            },
+            "UpgradeInstance": {
+              "methods": ["upgradeInstanceAsync", "upgradeInstanceAsync", "upgradeInstanceAsync", "upgradeInstanceOperationCallable", "upgradeInstanceCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
