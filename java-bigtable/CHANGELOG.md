@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.11.2](https://github.com/googleapis/java-bigtable/compare/v2.11.1...v2.11.2) (2022-09-07)
+
+
+### Bug Fixes
+
+* Make cloud-monitoring a runtime dependency ([#1371](https://github.com/googleapis/java-bigtable/issues/1371)) ([930d043](https://github.com/googleapis/java-bigtable/commit/930d0439086d2b43735f9583175adf0626952c9b))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-monitoring-bom to v3.4.2 ([#1373](https://github.com/googleapis/java-bigtable/issues/1373)) ([43b8052](https://github.com/googleapis/java-bigtable/commit/43b80523cc00932a414702ad96cfd86984c0f649))
+* Update dependency com.google.cloud:google-cloud-monitoring-bom to v3.4.2 ([#1374](https://github.com/googleapis/java-bigtable/issues/1374)) ([4174f0d](https://github.com/googleapis/java-bigtable/commit/4174f0dc1b61f954ccd1c2fcf88066179a4d430b))
+
 ## [2.11.1](https://github.com/googleapis/java-bigtable/compare/v2.11.0...v2.11.1) (2022-08-26)
 
 
