@@ -16,12 +16,13 @@
 
 package com.google.cloud.logging;
 
+import static java.util.Arrays.stream;
+
 import com.google.api.client.util.Strings;
 import com.google.common.base.MoreObjects;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import com.google.logging.v2.LogEntrySourceLocation;
 import java.io.Serializable;
-import java.util.Arrays;
 import java.util.Objects;
 import org.jspecify.nullness.Nullable;
 
@@ -174,7 +175,7 @@ public final class SourceLocation implements Serializable {
    *     number information.
    */
   static @Nullable SourceLocation fromCurrentContext(String... exclusionClassPaths) {
-    StackTraceElement[] stackTrace = (new Exception()).getStackTrace();
+    StackTraceElement[] stackTrace = new Exception().getStackTrace();
 
     for (int level = 1; level < stackTrace.length; level++) {
       StackTraceElement ste = stackTrace[level];
@@ -182,7 +183,7 @@ public final class SourceLocation implements Serializable {
 
       if (exclusionClassPaths != null) {
         if (Strings.isNullOrEmpty(className)
-            || Arrays.stream(exclusionClassPaths)
+            || stream(exclusionClassPaths)
                 .anyMatch(prefix -> prefix != null && className.startsWith(prefix))) {
           continue;
         }

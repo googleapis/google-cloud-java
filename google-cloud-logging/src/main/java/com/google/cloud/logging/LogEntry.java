@@ -19,7 +19,6 @@ package com.google.cloud.logging;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.MonitoredResource;
-import com.google.cloud.logging.Payload.Type;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableMap;
@@ -55,11 +54,8 @@ public class LogEntry implements Serializable {
 
   private static final long serialVersionUID = -944788159728228219L;
   static final Function<com.google.logging.v2.LogEntry, LogEntry> FROM_PB_FUNCTION =
-      new Function<com.google.logging.v2.LogEntry, LogEntry>() {
-        @Override
-        public LogEntry apply(com.google.logging.v2.LogEntry pb) {
-          return fromPb(pb);
-        }
+      (com.google.logging.v2.LogEntry pb) -> {
+        return fromPb(pb);
       };
 
   private final String logName;
@@ -69,7 +65,7 @@ public class LogEntry implements Serializable {
   private final Severity severity;
   private final String insertId;
   private final HttpRequest httpRequest;
-  private final Map<String, String> labels;
+  private final ImmutableMap<String, String> labels;
   private final Operation operation;
   private final String trace;
   private final String spanId;
@@ -148,7 +144,7 @@ public class LogEntry implements Serializable {
      * omitted, the Logging service will use the time at which the log entry is received.
      *
      * @deprecated This method is no longer recommended to setup the entry timestamp.
-     *     <p>Use {@link setTimeStamp(Instant)} instead.
+     *     <p>Use {@link #setTimestamp(Instant)} instead.
      */
     @CanIgnoreReturnValue
     @Deprecated
@@ -444,13 +440,13 @@ public class LogEntry implements Serializable {
    */
   public @Nullable String getTrace() {
     // For backwards compatibility return null when trace not set instead of "null".
-    return trace == null ? null : String.valueOf(trace);
+    return trace == null ? null : trace;
   }
 
   /** Returns the ID of the trace span associated with the log entry, if any. */
   public @Nullable String getSpanId() {
     // For backwards compatibility return null when spanId not set instead of "null".
-    return spanId == null ? null : String.valueOf(spanId);
+    return spanId == null ? null : spanId;
   }
 
   /**
@@ -716,7 +712,7 @@ public class LogEntry implements Serializable {
    * the logging agents that run on Google Cloud resources.
    */
   public String toStructuredJsonString() {
-    if (payload.getType() == Type.PROTO) {
+    if (payload.getType() == Payload.Type.PROTO) {
       throw new UnsupportedOperationException("LogEntry with protobuf payload cannot be converted");
     }
 
@@ -734,9 +730,9 @@ public class LogEntry implements Serializable {
         .appendField("logging.googleapis.com/spanId", spanId)
         .appendField("logging.googleapis.com/trace", trace)
         .appendField("logging.googleapis.com/trace_sampled", traceSampled);
-    if (payload.getType() == Type.STRING) {
+    if (payload.getType() == Payload.Type.STRING) {
       formatter.appendField("message", payload.getData(), false);
-    } else if (payload.getType() == Type.JSON) {
+    } else if (payload.getType() == Payload.Type.JSON) {
       Payload.JsonPayload jsonPayload = (Payload.JsonPayload) payload;
       formatter.appendDict(jsonPayload.getDataAsMap(), false);
     }
@@ -766,7 +762,7 @@ public class LogEntry implements Serializable {
     Builder builder = newBuilder(Payload.fromPb(entryPb));
     builder.setLabels(entryPb.getLabelsMap());
     builder.setSeverity(Severity.fromPb(entryPb.getSeverity()));
-    if (!entryPb.getLogName().equals("")) {
+    if (!entryPb.getLogName().isEmpty()) {
       LogName name = LogName.parse(entryPb.getLogName());
       builder.setLogName(name.getLog());
       LogDestinationName resource = LogDestinationName.fromLogName(name);
@@ -783,7 +779,7 @@ public class LogEntry implements Serializable {
     if (entryPb.hasReceiveTimestamp()) {
       builder.setReceiveTimestamp(JavaTimeConversions.toJavaInstant(entryPb.getReceiveTimestamp()));
     }
-    if (!entryPb.getInsertId().equals("")) {
+    if (!entryPb.getInsertId().isEmpty()) {
       builder.setInsertId(entryPb.getInsertId());
     }
     if (!entryPb
@@ -794,10 +790,10 @@ public class LogEntry implements Serializable {
     if (!entryPb.getOperation().equals(LogEntryOperation.getDefaultInstance())) {
       builder.setOperation(Operation.fromPb(entryPb.getOperation()));
     }
-    if (!entryPb.getTrace().equals("")) {
+    if (!entryPb.getTrace().isEmpty()) {
       builder.setTrace(entryPb.getTrace());
     }
-    if (!entryPb.getSpanId().equals("")) {
+    if (!entryPb.getSpanId().isEmpty()) {
       builder.setSpanId(entryPb.getSpanId());
     }
     builder.setTraceSampled(entryPb.getTraceSampled());
@@ -808,11 +804,8 @@ public class LogEntry implements Serializable {
   }
 
   static Function<LogEntry, com.google.logging.v2.LogEntry> toPbFunction(final String projectId) {
-    return new Function<LogEntry, com.google.logging.v2.LogEntry>() {
-      @Override
-      public com.google.logging.v2.LogEntry apply(LogEntry entry) {
-        return entry.toPb(projectId);
-      }
+    return (LogEntry entry) -> {
+      return entry.toPb(projectId);
     };
   }
 }

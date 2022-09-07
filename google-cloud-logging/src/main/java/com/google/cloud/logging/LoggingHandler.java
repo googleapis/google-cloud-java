@@ -17,6 +17,7 @@
 package com.google.cloud.logging;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
+import static java.util.Arrays.stream;
 
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
@@ -25,9 +26,6 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 import java.util.logging.ErrorManager;
@@ -156,7 +154,7 @@ public class LoggingHandler extends Handler {
   private volatile Boolean autoPopulateMetadata;
   private volatile Boolean redirectToStdout;
 
-  private WriteOption[] defaultWriteOptions;
+  private final WriteOption[] defaultWriteOptions;
 
   /** Creates an handler that publishes messages to Cloud Logging. */
   public LoggingHandler() {
@@ -250,7 +248,7 @@ public class LoggingHandler extends Handler {
       MonitoredResource resource =
           firstNonNull(
               monitoredResource, config.getMonitoredResource(loggingOptions.getProjectId()));
-      List<WriteOption> writeOptions = new ArrayList<WriteOption>();
+      List<WriteOption> writeOptions = new ArrayList<>();
       writeOptions.add(WriteOption.logName(logName));
       if (resource != null) {
         writeOptions.add(WriteOption.resource(resource));
@@ -271,12 +269,10 @@ public class LoggingHandler extends Handler {
       logging.setFlushSeverity(severityFor(flushLevel));
       logging.setWriteSynchronicity(config.getSynchronicity());
 
-      this.enhancers = new LinkedList<>();
+      this.enhancers = new ArrayList<>();
 
       List<LoggingEnhancer> enhancersParam =
-          firstNonNull(
-              enhancers,
-              firstNonNull(config.getEnhancers(), Collections.<LoggingEnhancer>emptyList()));
+          firstNonNull(enhancers, firstNonNull(config.getEnhancers(), ImmutableList.of()));
 
       this.enhancers.addAll(enhancersParam);
 
@@ -284,7 +280,7 @@ public class LoggingHandler extends Handler {
       // attribute)
       List<LoggingEnhancer> loggingEnhancers = MonitoredResourceUtil.getResourceEnhancers();
       this.enhancers.addAll(loggingEnhancers);
-    } catch (Exception ex) {
+    } catch (RuntimeException ex) {
       reportError(null, ex, ErrorManager.OPEN_FAILURE);
       throw ex;
     }
@@ -307,7 +303,7 @@ public class LoggingHandler extends Handler {
     LogEntry logEntry;
     try {
       logEntry = logEntryFor(record).build();
-    } catch (Exception ex) {
+    } catch (RuntimeException ex) {
       getErrorManager().error(null, ex, ErrorManager.FORMAT_FAILURE);
       return;
     }
@@ -327,7 +323,7 @@ public class LoggingHandler extends Handler {
         } else {
           logging.write(logEntries, defaultWriteOptions);
         }
-      } catch (Exception ex) {
+      } catch (RuntimeException ex) {
         getErrorManager().error(null, ex, ErrorManager.WRITE_FAILURE);
       }
     }
@@ -335,7 +331,7 @@ public class LoggingHandler extends Handler {
 
   private @Nullable MonitoredResource getMonitoredResource() {
     Optional<WriteOption> resourceOption =
-        Arrays.stream(defaultWriteOptions)
+        stream(defaultWriteOptions)
             .filter(o -> o.getOptionType() == WriteOption.OptionType.RESOURCE)
             .findFirst();
     if (resourceOption.isPresent()) {
@@ -344,7 +340,7 @@ public class LoggingHandler extends Handler {
     return null;
   }
 
-  protected LogEntry.Builder logEntryFor(LogRecord record) throws Exception {
+  protected LogEntry.Builder logEntryFor(LogRecord record) {
     String payload = getFormatter().format(record);
     Level level = record.getLevel();
     LogEntry.Builder builder =
@@ -368,14 +364,14 @@ public class LoggingHandler extends Handler {
   public void flush() {
     try {
       logging.flush();
-    } catch (Exception ex) {
+    } catch (RuntimeException ex) {
       getErrorManager().error(null, ex, ErrorManager.FLUSH_FAILURE);
     }
   }
 
   /** Closes the handler and the associated {@link Logging} object. */
   @Override
-  public synchronized void close() throws SecurityException {
+  public synchronized void close() {
     if (logging != null) {
       try {
         logging.close();
@@ -454,18 +450,15 @@ public class LoggingHandler extends Handler {
 
     switch (level.intValue()) {
         // FINEST
-      case 300:
-        return Severity.DEBUG;
         // FINER
-      case 400:
-        return Severity.DEBUG;
         // FINE
+      case 300:
+      case 400:
       case 500:
         return Severity.DEBUG;
         // CONFIG
-      case 700:
-        return Severity.INFO;
         // INFO
+      case 700:
       case 800:
         return Severity.INFO;
         // WARNING
@@ -480,6 +473,6 @@ public class LoggingHandler extends Handler {
   }
 
   private static boolean isTrueOrNull(Boolean b) {
-    return b == null || b == Boolean.TRUE;
+    return b == null || b.equals(Boolean.TRUE);
   }
 }

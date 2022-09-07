@@ -16,6 +16,7 @@
 
 package com.google.cloud.logging;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.fail;
@@ -125,7 +126,9 @@ public class SinkInfoTest {
       Destination.fromPb("wrongDestination");
       fail();
     } catch (IllegalArgumentException expected) {
-      assertEquals("wrongDestination is not a valid sink destination", expected.getMessage());
+      assertThat(expected)
+          .hasMessageThat()
+          .isEqualTo("wrongDestination is not a valid sink destination");
     }
   }
 

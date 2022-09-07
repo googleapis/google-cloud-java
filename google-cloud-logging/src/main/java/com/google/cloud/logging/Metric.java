@@ -25,7 +25,6 @@ import com.google.logging.v2.LogMetric;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Objects;
-import org.jspecify.nullness.Nullable;
 
 /**
  * Cloud Logging metrics describe logs-based metric. The value of the metric is the number of log
@@ -104,7 +103,7 @@ public class Metric extends MetricInfo {
     if (obj == this) {
       return true;
     }
-    if (obj == null || !obj.getClass().equals(Metric.class)) {
+    if (!(obj instanceof Metric)) {
       return false;
     }
     Metric other = (Metric) obj;
@@ -254,11 +253,8 @@ public class Metric extends MetricInfo {
   }
 
   static Function<LogMetric, Metric> fromPbFunction(final Logging logging) {
-    return new Function<LogMetric, Metric>() {
-      @Override
-      public @Nullable Metric apply(LogMetric metricPb) {
-        return metricPb != null ? fromPb(logging, metricPb) : null;
-      }
+    return (LogMetric metricPb) -> {
+      return metricPb != null ? fromPb(logging, metricPb) : null;
     };
   }
 }

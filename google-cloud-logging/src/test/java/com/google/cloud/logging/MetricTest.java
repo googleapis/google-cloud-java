@@ -55,11 +55,11 @@ public class MetricTest {
     expect(serviceMockReturnsOptions.getOptions()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
     logging = createStrictMock(Logging.class);
-    expectedMetric = new Metric(serviceMockReturnsOptions, new Metric.BuilderImpl(METRIC_INFO));
+    expectedMetric = new Metric(serviceMockReturnsOptions, new MetricInfo.BuilderImpl(METRIC_INFO));
   }
 
   private void initializeMetric() {
-    metric = new Metric(logging, new Metric.BuilderImpl(METRIC_INFO));
+    metric = new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO));
   }
 
   @After

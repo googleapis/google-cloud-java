@@ -20,7 +20,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -92,8 +91,8 @@ public class ContextTest {
 
     assertNotEquals(TEST_CONTEXT, context1);
     assertFalse(TEST_CONTEXT.hashCode() == context1.hashCode());
-    assertTrue(TEST_CONTEXT.equals(context2));
-    assertTrue(TEST_CONTEXT.hashCode() == context2.hashCode());
+    assertEquals(context2, TEST_CONTEXT);
+    assertEquals(context2.hashCode(), TEST_CONTEXT.hashCode());
   }
 
   @Test

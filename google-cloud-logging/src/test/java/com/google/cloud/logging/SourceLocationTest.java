@@ -64,7 +64,7 @@ public class SourceLocationTest {
 
   @Test
   public void testFromCurrentContext() {
-    StackTraceElement expectedData = (new Exception()).getStackTrace()[0];
+    StackTraceElement expectedData = new Exception().getStackTrace()[0];
     SourceLocation data = SourceLocation.fromCurrentContext();
     assertEquals(expectedData.getFileName(), data.getFile());
     assertEquals(expectedData.getMethodName(), data.getFunction());
@@ -77,7 +77,7 @@ public class SourceLocationTest {
 
   @Test
   public void testFromCurrentContextWithExclusionList() {
-    StackTraceElement expectedData = (new Exception()).getStackTrace()[0];
+    StackTraceElement expectedData = new Exception().getStackTrace()[0];
     SourceLocation data = SourceLocation.fromCurrentContext(LoggingImpl.class.getName());
     assertEquals(expectedData.getFileName(), data.getFile());
     assertEquals(expectedData.getMethodName(), data.getFunction());

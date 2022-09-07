@@ -16,8 +16,10 @@
 
 package com.google.cloud.logging;
 
+import static org.junit.Assert.assertThrows;
+
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -26,7 +28,7 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(Parameterized.class)
 public class InvalidContextTest {
   @Parameters
-  public static Collection<String> data() {
+  public static List<String> data() {
     final String[] INVALID_W3C_TRACE_CONTEXTS = {
       "",
       "abc/efg",
@@ -49,9 +51,10 @@ public class InvalidContextTest {
     this.traceContext = traceContext;
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testAssertionInvalidContext() {
     Context.Builder builder = Context.newBuilder();
-    builder.loadW3CTraceParentContext(traceContext);
+    assertThrows(
+        IllegalArgumentException.class, () -> builder.loadW3CTraceParentContext(traceContext));
   }
 }

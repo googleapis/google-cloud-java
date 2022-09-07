@@ -21,13 +21,14 @@ import com.google.common.collect.Lists;
 import com.google.logging.v2.TailLogEntriesRequest;
 import com.google.logging.v2.TailLogEntriesResponse;
 import java.util.Iterator;
+import java.util.List;
 
 /**
- * The class implements {@Iterable} interface over {@see LogEntry}. It wraps around {@BidiStream}
- * bi-directional gRPC stream to support iterating through ingested responses. The class uses {@see
- * LogEntryIterator} to iterate through the processed responses. The stream should be explicitly
- * canceled by calling {@see LogEntryServerStream#cancel()} method. The class does not provide
- * recovery or resuming functionality over the stream.
+ * The class implements {@link Iterable} interface over {@see LogEntry}. It wraps around {@link
+ * BidiStream} bi-directional gRPC stream to support iterating through ingested responses. The class
+ * uses {@see LogEntryIterator} to iterate through the processed responses. The stream should be
+ * explicitly canceled by calling {@see LogEntryServerStream#cancel()} method. The class does not
+ * provide recovery or resuming functionality over the stream.
  *
  * <p>To iterate run:
  *
@@ -59,7 +60,7 @@ public class LogEntryServerStream implements Iterable<LogEntry> {
     return serverStream;
   }
 
-  public java.util.List<LogEntry> convert(TailLogEntriesResponse resp) {
+  public List<LogEntry> convert(TailLogEntriesResponse resp) {
     return Lists.transform(resp.getEntriesList(), LogEntry.FROM_PB_FUNCTION);
   }
 

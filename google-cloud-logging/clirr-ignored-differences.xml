@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<differences>
+  <difference>
+    <differenceType>3003</differenceType>
+    <className>com/google/cloud/logging/Instrumentation</className>
+  </difference>
+  <difference>
+    <differenceType>7009</differenceType>
+    <className>com/google/cloud/logging/Instrumentation</className>
+    <method>Instrumentation()</method>
+  </difference>
+</differences>

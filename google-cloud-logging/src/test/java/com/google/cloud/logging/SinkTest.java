@@ -63,11 +63,11 @@ public class SinkTest {
     expect(serviceMockReturnsOptions.getOptions()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
     logging = createStrictMock(Logging.class);
-    expectedSink = new Sink(serviceMockReturnsOptions, new Sink.BuilderImpl(SINK_INFO));
+    expectedSink = new Sink(serviceMockReturnsOptions, new SinkInfo.BuilderImpl(SINK_INFO));
   }
 
   private void initializeSink() {
-    sink = new Sink(logging, new Sink.BuilderImpl(SINK_INFO));
+    sink = new Sink(logging, new SinkInfo.BuilderImpl(SINK_INFO));
   }
 
   @After

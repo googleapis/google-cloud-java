@@ -19,7 +19,6 @@ package com.google.cloud.logging;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.client.util.Types;
-import com.google.common.base.Function;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
@@ -41,21 +40,6 @@ import org.jspecify.nullness.Nullable;
  */
 final class Structs {
 
-  private static final Function<Value, Object> VALUE_TO_OBJECT =
-      new Function<Value, Object>() {
-        @Override
-        public Object apply(Value value) {
-          return valueToObject(value);
-        }
-      };
-  private static final Function<Object, Value> OBJECT_TO_VALUE =
-      new Function<Object, Value>() {
-        @Override
-        public Value apply(Object obj) {
-          return objectToValue(obj);
-        }
-      };
-
   private Structs() {}
 
   /**
@@ -72,15 +56,10 @@ final class Structs {
 
     private static final class StructSet extends AbstractSet<Entry<String, Object>> {
 
-      private static final Function<Map.Entry<String, Value>, Map.Entry<String, Object>>
-          VALUE_TO_OBJECT =
-              new Function<Map.Entry<String, Value>, Map.Entry<String, Object>>() {
-                @Override
-                public Map.Entry<String, Object> apply(Map.Entry<String, Value> entry) {
-                  return new AbstractMap.SimpleEntry<>(
-                      entry.getKey(), valueToObject(entry.getValue()));
-                }
-              };
+      private static Entry<String, Object> valueToObject(Entry<String, Value> entry) {
+        return new AbstractMap.SimpleEntry<>(
+            entry.getKey(), Structs.valueToObject(entry.getValue()));
+      }
 
       private final Struct struct;
 
@@ -90,7 +69,8 @@ final class Structs {
 
       @Override
       public Iterator<Entry<String, Object>> iterator() {
-        return Iterators.transform(struct.getFieldsMap().entrySet().iterator(), VALUE_TO_OBJECT);
+        return Iterators.transform(
+            struct.getFieldsMap().entrySet().iterator(), StructSet::valueToObject);
       }
 
       @Override
@@ -117,7 +97,7 @@ final class Structs {
    * are serialized as strings.
    */
   static Struct newStruct(Map<String, ?> map) {
-    Map<String, Value> valueMap = Maps.transformValues(checkNotNull(map), OBJECT_TO_VALUE);
+    Map<String, Value> valueMap = Maps.transformValues(checkNotNull(map), Structs::objectToValue);
     return Struct.newBuilder().putAllFields(valueMap).build();
   }
 
@@ -134,7 +114,7 @@ final class Structs {
       case STRUCT_VALUE:
         return new StructMap(value.getStructValue());
       case LIST_VALUE:
-        return Lists.transform(value.getListValue().getValuesList(), VALUE_TO_OBJECT);
+        return Lists.transform(value.getListValue().getValuesList(), Structs::valueToObject);
       default:
         throw new IllegalArgumentException(String.format("Unsupported protobuf value %s", value));
     }
@@ -157,7 +137,7 @@ final class Structs {
     } else if (obj instanceof Iterable<?> || objClass.isArray()) {
       builder.setListValue(
           ListValue.newBuilder()
-              .addAllValues(Iterables.transform(Types.iterableOf(obj), OBJECT_TO_VALUE)));
+              .addAllValues(Iterables.transform(Types.iterableOf(obj), Structs::objectToValue)));
     } else if (objClass.isEnum()) {
       builder.setStringValue(((Enum<?>) obj).name());
     } else if (obj instanceof Map) {

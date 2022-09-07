@@ -23,6 +23,7 @@ import com.google.api.gax.paging.Page;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.MonitoredResourceDescriptor;
 import com.google.cloud.Service;
+import com.google.common.base.Ascii;
 import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 
@@ -46,18 +47,18 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
       }
     }
 
-    private ListOption(OptionType option, Object value) {
+    private ListOption(ListOption.OptionType option, Object value) {
       super(option, value);
     }
 
     /** Returns an option to specify the maximum number of resources returned per page. */
     public static ListOption pageSize(int pageSize) {
-      return new ListOption(OptionType.PAGE_SIZE, pageSize);
+      return new ListOption(ListOption.OptionType.PAGE_SIZE, pageSize);
     }
 
     /** Returns an option to specify the page token from which to start listing resources. */
     public static ListOption pageToken(String pageToken) {
-      return new ListOption(OptionType.PAGE_TOKEN, pageToken);
+      return new ListOption(ListOption.OptionType.PAGE_TOKEN, pageToken);
     }
   }
 
@@ -80,7 +81,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
       }
     }
 
-    private WriteOption(OptionType option, Object value) {
+    private WriteOption(WriteOption.OptionType option, Object value) {
       super(option, value);
     }
 
@@ -89,7 +90,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
      * log entries that do not specify their own log name. Example: {@code syslog}.
      */
     public static WriteOption logName(String logName) {
-      return new WriteOption(OptionType.LOG_NAME, logName);
+      return new WriteOption(WriteOption.OptionType.LOG_NAME, logName);
     }
 
     /**
@@ -97,7 +98,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
      * LogEntry#getResource()}) for those log entries that do not specify their own resource.
      */
     public static WriteOption resource(MonitoredResource resource) {
-      return new WriteOption(OptionType.RESOURCE, resource);
+      return new WriteOption(WriteOption.OptionType.RESOURCE, resource);
     }
 
     /**
@@ -106,7 +107,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
      * associated to the same key.
      */
     public static WriteOption labels(Map<String, String> labels) {
-      return new WriteOption(OptionType.LABELS, ImmutableMap.copyOf(labels));
+      return new WriteOption(WriteOption.OptionType.LABELS, ImmutableMap.copyOf(labels));
     }
 
     /**
@@ -114,7 +115,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
      * for details)
      */
     public static WriteOption destination(LogDestinationName destination) {
-      return new WriteOption(OptionType.LOG_DESTINATION, destination);
+      return new WriteOption(WriteOption.OptionType.LOG_DESTINATION, destination);
     }
 
     /**
@@ -122,16 +123,16 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
      * set.
      */
     public static WriteOption autoPopulateMetadata(boolean autoPopulateMetadata) {
-      return new WriteOption(OptionType.AUTO_POPULATE_METADATA, autoPopulateMetadata);
+      return new WriteOption(WriteOption.OptionType.AUTO_POPULATE_METADATA, autoPopulateMetadata);
     }
 
     /**
-     * Returns an option to set partialSuccess flag. See {@link
-     * https://cloud.google.com/logging/docs/reference/v2/rest/v2/entries/write#body.request_body.FIELDS.partial_success}
-     * for more details.
+     * Returns an option to set partialSuccess flag. See <a
+     * href="https://cloud.google.com/logging/docs/reference/v2/rest/v2/entries/write#body.request_body.FIELDS.partial_success">the
+     * API documentation</a> for more details.
      */
     public static WriteOption partialSuccess(boolean partialSuccess) {
-      return new WriteOption(OptionType.PARTIAL_SUCCESS, partialSuccess);
+      return new WriteOption(WriteOption.OptionType.PARTIAL_SUCCESS, partialSuccess);
     }
   }
 
@@ -140,7 +141,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
     TIMESTAMP;
 
     String selector() {
-      return name().toLowerCase();
+      return Ascii.toLowerCase(name());
     }
   }
 
@@ -197,7 +198,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
      * (most-recent last) order with respect to the {@link LogEntry#getTimestamp()} value.
      */
     public static EntryListOption sortOrder(SortingField field, SortingOrder order) {
-      return new EntryListOption(OptionType.ORDER_BY, field.selector() + ' ' + order.selector());
+      return new EntryListOption(
+          EntryListOption.OptionType.ORDER_BY, field.selector() + ' ' + order.selector());
     }
 
     /**
@@ -207,22 +209,22 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
      *     Filters</a>
      */
     public static EntryListOption filter(String filter) {
-      return new EntryListOption(OptionType.FILTER, filter);
+      return new EntryListOption(EntryListOption.OptionType.FILTER, filter);
     }
 
     /** Returns an option to specify an organization for the log entries to be listed. */
     public static EntryListOption organization(String organization) {
-      return new EntryListOption(OptionType.ORGANIZATION, organization);
+      return new EntryListOption(EntryListOption.OptionType.ORGANIZATION, organization);
     }
 
     /** Returns an option to specify a billingAccount for the log entries to be listed. */
     public static EntryListOption billingAccount(String billingAccount) {
-      return new EntryListOption(OptionType.BILLINGACCOUNT, billingAccount);
+      return new EntryListOption(EntryListOption.OptionType.BILLINGACCOUNT, billingAccount);
     }
 
     /** Returns an option to specify a folder for the log entries to be listed. */
     public static EntryListOption folder(String folder) {
-      return new EntryListOption(OptionType.FOLDER, folder);
+      return new EntryListOption(EntryListOption.OptionType.FOLDER, folder);
     }
   }
 
@@ -256,7 +258,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
      *     Filters</a>
      */
     public static TailOption filter(String filter) {
-      return new TailOption(OptionType.FILTER, filter);
+      return new TailOption(TailOption.OptionType.FILTER, filter);
     }
 
     /**
@@ -269,39 +271,34 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
      *     format</a>
      */
     public static TailOption bufferWindow(String duration) {
-      return new TailOption(OptionType.BUFFERWINDOW, duration);
+      return new TailOption(TailOption.OptionType.BUFFERWINDOW, duration);
     }
 
     /** Returns an option to specify an organization for the log entries to be tailed. */
     public static TailOption organization(String organization) {
-      return new TailOption(OptionType.ORGANIZATION, organization);
+      return new TailOption(TailOption.OptionType.ORGANIZATION, organization);
     }
 
     /** Returns an option to specify a billingAccount for the log entries to be tailed. */
     public static TailOption billingAccount(String billingAccount) {
-      return new TailOption(OptionType.BILLINGACCOUNT, billingAccount);
+      return new TailOption(TailOption.OptionType.BILLINGACCOUNT, billingAccount);
     }
 
     /** Returns an option to specify a folder for the log entries to be tailed. */
     public static TailOption folder(String folder) {
-      return new TailOption(OptionType.FOLDER, folder);
+      return new TailOption(TailOption.OptionType.FOLDER, folder);
     }
 
     /** Returns an option to specify a project for the log entries to be tailed. */
     public static TailOption project(String project) {
-      return new TailOption(OptionType.PROJECT, project);
+      return new TailOption(TailOption.OptionType.PROJECT, project);
     }
   }
 
-  /*
-   * Sets synchronicity {@link Synchronicity} of logging writes, defaults to
-   * asynchronous.
-   */
+  /** Sets synchronicity {@link Synchronicity} of logging writes, defaults to asynchronous. */
   void setWriteSynchronicity(Synchronicity synchronicity);
 
-  /*
-   * Retrieves current set synchronicity {@link Synchronicity} of logging writes.
-   */
+  /** Retrieves current set synchronicity {@link Synchronicity} of logging writes. */
   Synchronicity getWriteSynchronicity();
 
   /**
@@ -479,19 +476,16 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of asynchronously listing sinks, specifying the page size.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   ApiFuture<AsyncPage<Sink>> future = logging.listSinksAsync(ListOption.pageSize(100));
-   *   // ...
-   *   AsyncPage<Sink> sinks = future.get();
-   *   Iterator<Sink> sinkIterator = sinks.iterateAll().iterator();
-   *   while (sinkIterator.hasNext()) {
-   *     Sink sink = sinkIterator.next();
-   *     // do something with the sink
-   *   }
+   * <pre>{@code
+   * ApiFuture<AsyncPage<Sink>> future = logging.listSinksAsync(ListOption.pageSize(100));
+   * // ...
+   * AsyncPage<Sink> sinks = future.get();
+   * Iterator<Sink> sinkIterator = sinks.iterateAll().iterator();
+   * while (sinkIterator.hasNext()) {
+   *   Sink sink = sinkIterator.next();
+   *   // do something with the sink
    * }
-   * </pre>
+   * }</pre>
    */
   ApiFuture<AsyncPage<Sink>> listSinksAsync(ListOption... options);
 
@@ -575,19 +569,16 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of asynchronously listing log names, specifying the page size.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   ApiFuture<AsyncPage<Log>> future = logging.listLogsAsync(ListOption.pageSize(100));
-   *   // ...
-   *   AsyncPage<Sink> logNames = future.get();
-   *   Iterator<Sink> logIterator = logNames.iterateAll().iterator();
-   *   while (logIterator.hasNext()) {
-   *     String logName = logIterator.next();
-   *     // do something with the log name
-   *   }
+   * <pre>{@code
+   * ApiFuture<AsyncPage<Log>> future = logging.listLogsAsync(ListOption.pageSize(100));
+   * // ...
+   * AsyncPage<Sink> logNames = future.get();
+   * Iterator<Sink> logIterator = logNames.iterateAll().iterator();
+   * while (logIterator.hasNext()) {
+   *   String logName = logIterator.next();
+   *   // do something with the log name
    * }
-   * </pre>
+   * }</pre>
    */
   default ApiFuture<AsyncPage<String>> listLogsAsync(ListOption... options) {
     throw new UnsupportedOperationException(
@@ -730,20 +721,17 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of asynchronously listing monitored resource descriptors, specifying the page size.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   ApiFuture<AsyncPage<MonitoredResourceDescriptor>> future = logging
-   *       .listMonitoredResourceDescriptorsAsync(ListOption.pageSize(100));
-   *   // ...
-   *   AsyncPage<MonitoredResourceDescriptor> descriptors = future.get();
-   *   Iterator<MonitoredResourceDescriptor> descriptorIterator = descriptors.iterateAll().iterator();
-   *   while (descriptorIterator.hasNext()) {
-   *     MonitoredResourceDescriptor descriptor = descriptorIterator.next();
-   *     // do something with the descriptor
-   *   }
+   * <pre>{@code
+   * ApiFuture<AsyncPage<MonitoredResourceDescriptor>> future = logging
+   *     .listMonitoredResourceDescriptorsAsync(ListOption.pageSize(100));
+   * // ...
+   * AsyncPage<MonitoredResourceDescriptor> descriptors = future.get();
+   * Iterator<MonitoredResourceDescriptor> descriptorIterator = descriptors.iterateAll().iterator();
+   * while (descriptorIterator.hasNext()) {
+   *   MonitoredResourceDescriptor descriptor = descriptorIterator.next();
+   *   // do something with the descriptor
    * }
-   * </pre>
+   * }</pre>
    */
   ApiFuture<AsyncPage<MonitoredResourceDescriptor>> listMonitoredResourceDescriptorsAsync(
       ListOption... options);
@@ -901,19 +889,16 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of asynchronously listing metrics, specifying the page size.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   ApiFuture<AsyncPage<Metric>> future = logging.listMetricsAsync(ListOption.pageSize(100));
-   *   // ...
-   *   AsyncPage<Metric> metrics = future.get();
-   *   Iterator<Metric> metricIterator = metrics.iterateAll().iterator();
-   *   while (metricIterator.hasNext()) {
-   *     Metric metric = metricIterator.next();
-   *     // do something with the metric
-   *   }
+   * <pre>{@code
+   * ApiFuture<AsyncPage<Metric>> future = logging.listMetricsAsync(ListOption.pageSize(100));
+   * // ...
+   * AsyncPage<Metric> metrics = future.get();
+   * Iterator<Metric> metricIterator = metrics.iterateAll().iterator();
+   * while (metricIterator.hasNext()) {
+   *   Metric metric = metricIterator.next();
+   *   // do something with the metric
    * }
-   * </pre>
+   * }</pre>
    */
   ApiFuture<AsyncPage<Metric>> listMetricsAsync(ListOption... options);
 
@@ -1168,19 +1153,16 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of asynchronously listing exclusions, specifying the page size:
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   ApiFuture<AsyncPage<Exclusion>> future = logging.listExclusionsAsync(ListOption.pageSize(100));
-   *   // ...
-   *   AsyncPage<Exclusion> exclusions = future.get();
-   *   Iterator<Exclusion> exclusionIterator = exclusions.iterateAll().iterator();
-   *   while (exclusionIterator.hasNext()) {
-   *     Exclusion exclusion = exclusionIterator.next();
-   *     // do something with the exclusion
-   *   }
+   * <pre>{@code
+   * ApiFuture<AsyncPage<Exclusion>> future = logging.listExclusionsAsync(ListOption.pageSize(100));
+   * // ...
+   * AsyncPage<Exclusion> exclusions = future.get();
+   * Iterator<Exclusion> exclusionIterator = exclusions.iterateAll().iterator();
+   * while (exclusionIterator.hasNext()) {
+   *   Exclusion exclusion = exclusionIterator.next();
+   *   // do something with the exclusion
    * }
-   * </pre>
+   * }</pre>
    */
   ApiFuture<AsyncPage<Exclusion>> listExclusionsAsync(ListOption... options);
 
@@ -1202,19 +1184,16 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of writing log entries and providing a default log name and monitored resource.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String logName = "my_log_name";
-   *   List<LogEntry> entries = new ArrayList<>();
-   *   entries.add(LogEntry.of(StringPayload.of("Entry payload")));
-   *   Map<String, Object> jsonMap = new HashMap<>();
-   *   jsonMap.put("key", "value");
-   *   entries.add(LogEntry.of(JsonPayload.of(jsonMap)));
-   *   logging.write(entries, WriteOption.logName(logName),
-   *       WriteOption.resource(MonitoredResource.newBuilder("global").build()));
-   * }
-   * </pre>
+   * <pre>{@code
+   * String logName = "my_log_name";
+   * List<LogEntry> entries = new ArrayList<>();
+   * entries.add(LogEntry.of(StringPayload.of("Entry payload")));
+   * Map<String, Object> jsonMap = new HashMap<>();
+   * jsonMap.put("key", "value");
+   * entries.add(LogEntry.of(JsonPayload.of(jsonMap)));
+   * logging.write(entries, WriteOption.logName(logName),
+   *     WriteOption.resource(MonitoredResource.newBuilder("global").build()));
+   * }</pre>
    */
   void write(Iterable<LogEntry> logEntries, WriteOption... options);
 
@@ -1256,20 +1235,17 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *
    * <p>Example of asynchronously listing log entries for a specific log.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String filter = "logName=projects/my_project_id/logs/my_log_name";
-   *   ApiFuture<AsyncPage<LogEntry>> future = logging.listLogEntriesAsync(EntryListOption.filter(filter));
-   *   // ...
-   *   AsyncPage<LogEntry> entries = future.get();
-   *   Iterator<LogEntry> entryIterator = entries.iterateAll().iterator();
-   *   while (entryIterator.hasNext()) {
-   *     LogEntry entry = entryIterator.next();
-   *     // do something with the entry
-   *   }
+   * <pre>{@code
+   * String filter = "logName=projects/my_project_id/logs/my_log_name";
+   * ApiFuture<AsyncPage<LogEntry>> future = logging.listLogEntriesAsync(EntryListOption.filter(filter));
+   * // ...
+   * AsyncPage<LogEntry> entries = future.get();
+   * Iterator<LogEntry> entryIterator = entries.iterateAll().iterator();
+   * while (entryIterator.hasNext()) {
+   *   LogEntry entry = entryIterator.next();
+   *   // do something with the entry
    * }
-   * </pre>
+   * }</pre>
    *
    * @throws LoggingException upon failure
    */

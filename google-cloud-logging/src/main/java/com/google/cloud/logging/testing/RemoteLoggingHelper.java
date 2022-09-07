@@ -58,8 +58,7 @@ public class RemoteLoggingHelper {
    * @throws com.google.cloud.logging.testing.RemoteLoggingHelper.LoggingHelperException if {@code
    *     keyStream} is not a valid JSON key stream
    */
-  public static RemoteLoggingHelper create(String projectId, InputStream keyStream)
-      throws LoggingHelperException {
+  public static RemoteLoggingHelper create(String projectId, InputStream keyStream) {
     try {
       GrpcTransportOptions transportOptions = LoggingOptions.getDefaultGrpcTransportOptions();
       LoggingOptions storageOptions =
@@ -82,7 +81,7 @@ public class RemoteLoggingHelper {
    * Creates a {@code RemoteLoggingHelper} object using default project id and authentication
    * credentials.
    */
-  public static RemoteLoggingHelper create() throws LoggingHelperException {
+  public static RemoteLoggingHelper create() {
     GrpcTransportOptions transportOptions = LoggingOptions.getDefaultGrpcTransportOptions();
     LoggingOptions loggingOptions =
         LoggingOptions.newBuilder()
@@ -97,7 +96,7 @@ public class RemoteLoggingHelper {
    * name.
    */
   public static String formatForTest(String name) {
-    return name + "-" + UUID.randomUUID().toString();
+    return name + "-" + UUID.randomUUID();
   }
 
   private static RetrySettings retrySettings() {

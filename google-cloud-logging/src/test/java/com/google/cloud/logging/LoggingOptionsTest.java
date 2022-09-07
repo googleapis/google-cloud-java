@@ -18,6 +18,7 @@ package com.google.cloud.logging;
 
 import static org.easymock.EasyMock.createMock;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 import com.google.cloud.TransportOptions;
 import org.junit.Test;
@@ -29,10 +30,12 @@ public class LoggingOptionsTest {
   private static final Boolean DONT_AUTO_POPULATE_METADATA = false;
   private static final String PROJECT_ID = "fake-project-id";
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testNonGrpcTransportOptions() {
     TransportOptions invalidTransport = createMock(TransportOptions.class);
-    LoggingOptions.newBuilder().setTransportOptions(invalidTransport);
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> LoggingOptions.newBuilder().setTransportOptions(invalidTransport));
   }
 
   @Test

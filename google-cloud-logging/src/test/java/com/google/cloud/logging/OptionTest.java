@@ -17,11 +17,11 @@
 package com.google.cloud.logging;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNull;
 
 import com.google.cloud.logging.Logging.ListOption;
 import com.google.cloud.logging.Option.OptionType;
+import com.google.common.testing.EqualsTester;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -41,14 +41,11 @@ public class OptionTest {
 
   @Test
   public void testEquals() {
-    assertEquals(OPTION, OPTION_EQUALS);
-    assertNotEquals(OPTION, OPTION_NOT_EQUALS1);
-    assertNotEquals(OPTION, OPTION_NOT_EQUALS2);
-  }
-
-  @Test
-  public void testHashCode() {
-    assertEquals(OPTION.hashCode(), OPTION_EQUALS.hashCode());
+    new EqualsTester()
+        .addEqualityGroup(OPTION, OPTION_EQUALS)
+        .addEqualityGroup(OPTION_NOT_EQUALS1)
+        .addEqualityGroup(OPTION_NOT_EQUALS2)
+        .testEquals();
   }
 
   @Test

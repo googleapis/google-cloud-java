@@ -48,7 +48,7 @@ public class TraceLoggingEnhancer implements LoggingEnhancer {
   }
 
   @Override
-  public void enhanceLogEntry(com.google.cloud.logging.LogEntry.Builder builder) {
+  public void enhanceLogEntry(LogEntry.Builder builder) {
     String traceId = getCurrentTraceId();
     if (traceId != null) {
       builder.setTrace(traceId);

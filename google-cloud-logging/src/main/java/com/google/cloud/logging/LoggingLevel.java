@@ -38,6 +38,7 @@ import java.util.logging.Level;
  * {@link java.util.logging.Level#WARNING}. {@code DEBUG} instead is lower than {@link
  * java.util.logging.Level#FINEST} but higher than {@link java.util.logging.Level#ALL}.
  */
+@SuppressWarnings("ShouldNotSubclass")
 public final class LoggingLevel extends Level {
 
   private static final long serialVersionUID = -6455416241709366337L;

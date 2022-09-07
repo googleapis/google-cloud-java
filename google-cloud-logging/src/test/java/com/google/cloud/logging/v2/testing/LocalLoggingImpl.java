@@ -35,7 +35,7 @@ import java.util.Map;
 
 public class LocalLoggingImpl extends LoggingServiceV2Grpc.LoggingServiceV2ImplBase {
 
-  private Map<String, List<LogEntry>> logs = new HashMap<>();
+  private final Map<String, List<LogEntry>> logs = new HashMap<>();
 
   @Override
   public void deleteLog(DeleteLogRequest request, StreamObserver<Empty> responseObserver) {
@@ -47,14 +47,11 @@ public class LocalLoggingImpl extends LoggingServiceV2Grpc.LoggingServiceV2ImplB
   @Override
   public void writeLogEntries(
       WriteLogEntriesRequest request, StreamObserver<WriteLogEntriesResponse> responseObserver) {
-    List<LogEntry> entries = logs.get(request.getLogName());
-    if (entries == null) {
-      entries = new ArrayList<LogEntry>();
-      logs.put(request.getLogName(), entries);
-    }
+    List<LogEntry> entries =
+        logs.computeIfAbsent(request.getLogName(), (String k) -> new ArrayList<LogEntry>());
     entries.addAll(request.getEntriesList());
     // Response is empty
-    responseObserver.onNext(WriteLogEntriesResponse.newBuilder().build());
+    responseObserver.onNext(WriteLogEntriesResponse.getDefaultInstance());
     responseObserver.onCompleted();
   }
 

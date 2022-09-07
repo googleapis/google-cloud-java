@@ -21,18 +21,17 @@ import com.google.api.gax.core.GaxProperties;
 import com.google.cloud.Tuple;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.cloud.logging.Payload.JsonPayload;
-import com.google.cloud.logging.Payload.Type;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.protobuf.ListValue;
 import com.google.protobuf.Struct;
 import com.google.protobuf.Value;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import org.jspecify.nullness.Nullable;
 
-public class Instrumentation {
+public final class Instrumentation {
   public static final String DIAGNOSTIC_INFO_KEY = "logging.googleapis.com/diagnostic";
   public static final String INSTRUMENTATION_SOURCE_KEY = "instrumentation_source";
   public static final String INSTRUMENTATION_NAME_KEY = "name";
@@ -43,14 +42,14 @@ public class Instrumentation {
   public static final int MAX_DIAGNOSTIC_VALUE_LENGTH = 14;
   public static final int MAX_DIAGNOSTIC_ENTIES = 3;
   private static boolean instrumentationAdded = false;
-  private static Object instrumentationLock = new Object();
+  private static final Object instrumentationLock = new Object();
 
   /**
    * Populates entries with instrumentation info which is added in separate log entry
    *
-   * @param logEntries {Iterable<LogEntry>} The list of entries to be populated
-   * @return {Tuple<Boolean, Iterable<LogEntry>>} containing a flag if instrumentation info was
-   *     added or not and a modified list of log entries
+   * @param logEntries {@code Iterable<LogEntry>} The list of entries to be populated
+   * @return {@code Tuple<Boolean, Iterable<LogEntry>>} containing a flag if instrumentation info
+   *     was added or not and a modified list of log entries
    */
   public static Tuple<Boolean, Iterable<LogEntry>> populateInstrumentationInfo(
       Iterable<LogEntry> logEntries) {
@@ -61,7 +60,7 @@ public class Instrumentation {
     for (LogEntry logEntry : logEntries) {
       // Check if LogEntry has a proper payload and also contains a diagnostic entry
       if (!isWritten
-          && logEntry.getPayload().getType() == Type.JSON
+          && logEntry.getPayload().getType() == Payload.Type.JSON
           && logEntry
               .<Payload.JsonPayload>getPayload()
               .getData()
@@ -77,7 +76,7 @@ public class Instrumentation {
                   .getListValue();
           entries.add(createDiagnosticEntry(null, null, infoList));
           isWritten = true;
-        } catch (Exception ex) {
+        } catch (RuntimeException ex) {
           System.err.println("ERROR: unexpected exception in populateInstrumentationInfo: " + ex);
         }
       } else {
@@ -99,8 +98,8 @@ public class Instrumentation {
    */
   public static WriteOption @Nullable [] addPartialSuccessOption(WriteOption[] options) {
     if (options == null) return options;
-    List<WriteOption> writeOptions = new ArrayList<WriteOption>();
-    writeOptions.addAll(Arrays.asList(options));
+    List<WriteOption> writeOptions = new ArrayList<>();
+    Collections.addAll(writeOptions, options);
     // Make sure we remove all partial success flags if any exist
     writeOptions.removeIf(
         option -> option.getOptionType() == WriteOption.OptionType.PARTIAL_SUCCESS);
@@ -133,18 +132,16 @@ public class Instrumentation {
                             generateLibrariesList(libraryName, libraryVersion, existingLibraryList))
                         .build()))
             .build();
-    LogEntry entry =
-        LogEntry.newBuilder(
-                JsonPayload.of(
-                    Struct.newBuilder()
-                        .putAllFields(
-                            ImmutableMap.of(
-                                DIAGNOSTIC_INFO_KEY,
-                                Value.newBuilder().setStructValue(instrumentation).build()))
-                        .build()))
-            .setLogName(INSTRUMENTATION_LOG_NAME)
-            .build();
-    return entry;
+    return LogEntry.newBuilder(
+            JsonPayload.of(
+                Struct.newBuilder()
+                    .putAllFields(
+                        ImmutableMap.of(
+                            DIAGNOSTIC_INFO_KEY,
+                            Value.newBuilder().setStructValue(instrumentation).build()))
+                    .build()))
+        .setLogName(INSTRUMENTATION_LOG_NAME)
+        .build();
   }
 
   private static ListValue generateLibrariesList(
@@ -171,7 +168,7 @@ public class Instrumentation {
             libraryList.addValues(
                 Value.newBuilder().setStructValue(createInfoStruct(name, version)).build());
             if (libraryList.getValuesCount() == MAX_DIAGNOSTIC_ENTIES) break;
-          } catch (Exception ex) {
+          } catch (RuntimeException ex) {
           }
         }
       }
@@ -222,4 +219,6 @@ public class Instrumentation {
     if (Strings.isNullOrEmpty(value) || value.length() < MAX_DIAGNOSTIC_VALUE_LENGTH) return value;
     return value.substring(0, MAX_DIAGNOSTIC_VALUE_LENGTH) + "*";
   }
+
+  private Instrumentation() {}
 }

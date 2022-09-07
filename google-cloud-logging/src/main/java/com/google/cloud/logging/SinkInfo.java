@@ -440,7 +440,7 @@ public class SinkInfo implements Serializable {
     }
 
     final int baseHashCode() {
-      return Objects.hash(type);
+      return Objects.hashCode(type);
     }
 
     abstract String toPb(String projectId);
@@ -468,7 +468,7 @@ public class SinkInfo implements Serializable {
     V1(LogSink.VersionFormat.V1),
     V2(LogSink.VersionFormat.V2);
 
-    private LogSink.VersionFormat versionPb;
+    private final LogSink.VersionFormat versionPb;
 
     VersionFormat(LogSink.VersionFormat versionPb) {
       this.versionPb = versionPb;
@@ -486,9 +486,10 @@ public class SinkInfo implements Serializable {
           return VersionFormat.V2;
         case VERSION_FORMAT_UNSPECIFIED:
           return null;
-        default:
-          throw new IllegalArgumentException(versionPb + " is not a valid version");
+        case UNRECOGNIZED:
+          break;
       }
+      throw new IllegalArgumentException(versionPb + " is not a valid version");
     }
   }
 
@@ -665,7 +666,7 @@ public class SinkInfo implements Serializable {
     if (obj == this) {
       return true;
     }
-    if (obj == null || !(obj.getClass().equals(SinkInfo.class))) {
+    if (!(obj instanceof SinkInfo)) {
       return false;
     }
     return baseEquals((SinkInfo) obj);
@@ -706,7 +707,7 @@ public class SinkInfo implements Serializable {
     Builder builder =
         newBuilder(sinkPb.getName(), Destination.fromPb(sinkPb.getDestination()))
             .setVersionFormat(VersionFormat.fromPb(LogSink.VersionFormat.V2));
-    if (!sinkPb.getFilter().equals("")) {
+    if (!sinkPb.getFilter().isEmpty()) {
       builder.setFilter(sinkPb.getFilter());
     }
     return builder.build();

@@ -23,7 +23,6 @@ import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import com.google.logging.v2.LogExclusion;
 import com.google.protobuf.Timestamp;
 import java.util.Objects;
-import org.jspecify.nullness.Nullable;
 
 /**
  * Specifies a set of log entries that are not to be stored in Logging. If your GCP resource
@@ -35,27 +34,21 @@ import org.jspecify.nullness.Nullable;
 public class Exclusion {
 
   static final Function<LogExclusion, Exclusion> FROM_PROTOBUF_FUNCTION =
-      new Function<LogExclusion, Exclusion>() {
-        @Override
-        public @Nullable Exclusion apply(LogExclusion exclusionPb) {
-          return exclusionPb != null ? Exclusion.fromProtobuf(exclusionPb) : null;
-        }
+      (LogExclusion exclusionPb) -> {
+        return exclusionPb != null ? Exclusion.fromProtobuf(exclusionPb) : null;
       };
 
   static final Function<Exclusion, LogExclusion> TO_PROTOBUF_FUNCTION =
-      new Function<Exclusion, LogExclusion>() {
-        @Override
-        public @Nullable LogExclusion apply(Exclusion exclusion) {
-          return exclusion != null ? exclusion.toProtobuf() : null;
-        }
+      (Exclusion exclusion) -> {
+        return exclusion != null ? exclusion.toProtobuf() : null;
       };
 
-  private String name;
-  private String description;
-  private String filter;
-  private boolean disabled;
-  private Timestamp createTime;
-  private Timestamp updateTime;
+  private final String name;
+  private final String description;
+  private final String filter;
+  private final boolean disabled;
+  private final Timestamp createTime;
+  private final Timestamp updateTime;
 
   /** A builder for {@code Exclusion} objects. */
   public static class Builder {
@@ -165,7 +158,7 @@ public class Exclusion {
     if (this == o) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (!(o instanceof Exclusion)) {
       return false;
     }
     Exclusion exclusion = (Exclusion) o;
@@ -253,7 +246,7 @@ public class Exclusion {
   static Exclusion fromProtobuf(LogExclusion exclusionPb) {
     Exclusion.Builder builder = newBuilder(exclusionPb.getName(), exclusionPb.getFilter());
     builder.setDisabled(exclusionPb.getDisabled());
-    if (!exclusionPb.getDescription().equals("")) {
+    if (!exclusionPb.getDescription().isEmpty()) {
       builder.setDescription(exclusionPb.getDescription());
     }
     if (exclusionPb.hasCreateTime()) {

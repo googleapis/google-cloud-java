@@ -16,11 +16,12 @@
 
 package com.google.cloud.logging;
 
+import static org.junit.Assert.assertSame;
+
 import com.google.api.client.util.Lists;
 import com.google.cloud.Tuple;
 import com.google.cloud.logging.Payload.JsonPayload;
 import com.google.cloud.logging.Payload.StringPayload;
-import com.google.cloud.logging.Payload.Type;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ListValue;
 import com.google.protobuf.Value;
@@ -28,7 +29,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import org.junit.Assert;
 import org.junit.Test;
@@ -62,7 +62,7 @@ public class InstrumentationTest {
     ArrayList<LogEntry> entries = Lists.newArrayList(pair.y());
     Assert.assertFalse(pair.x());
     Assert.assertEquals(1, entries.size());
-    Assert.assertTrue(entries.get(0).getPayload().getType() == Type.STRING);
+    assertSame(Payload.Type.STRING, entries.get(0).getPayload().getType());
   }
 
   @Test
@@ -102,7 +102,7 @@ public class InstrumentationTest {
     Map<String, Object> info = new HashMap<>();
     info.put(Instrumentation.INSTRUMENTATION_NAME_KEY, libraryName);
     info.put(Instrumentation.INSTRUMENTATION_VERSION_KEY, libraryVersion);
-    List<Object> list = ImmutableList.<Object>of(info);
+    ImmutableList<Object> list = ImmutableList.<Object>of(info);
     instrumentation_data.put(Instrumentation.INSTRUMENTATION_SOURCE_KEY, list);
     json_data.put(Instrumentation.DIAGNOSTIC_INFO_KEY, instrumentation_data);
     return JsonPayload.of(json_data);
@@ -117,7 +117,7 @@ public class InstrumentationTest {
     ArrayList<LogEntry> entries = Lists.newArrayList(pair.y());
     Assert.assertTrue(pair.x());
     Assert.assertEquals(expected, entries.size());
-    Assert.assertTrue(entries.get(index).getPayload().getType() == Type.JSON);
+    assertSame(Payload.Type.JSON, entries.get(index).getPayload().getType());
     ListValue infoList =
         entries
             .get(index)

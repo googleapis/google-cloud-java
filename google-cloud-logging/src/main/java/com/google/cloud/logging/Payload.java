@@ -179,7 +179,7 @@ public abstract class Payload<T> implements Serializable {
     if (obj == this) {
       return true;
     }
-    if (obj == null || !(obj instanceof Payload)) {
+    if (!(obj instanceof Payload)) {
       return false;
     }
     Payload<?> other = (Payload<?>) obj;
@@ -209,9 +209,8 @@ public abstract class Payload<T> implements Serializable {
         return (T) ProtoPayload.fromPb(entryPb);
       case PAYLOAD_NOT_SET:
         return null;
-      default:
-        // should never occur
-        throw new IllegalArgumentException("Unrecognized log entry payload");
     }
+    // should never occur
+    throw new IllegalArgumentException("Unrecognized log entry payload");
   }
 }

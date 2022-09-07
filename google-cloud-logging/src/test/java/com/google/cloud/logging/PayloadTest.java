@@ -16,13 +16,12 @@
 
 package com.google.cloud.logging;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.logging.Payload.JsonPayload;
 import com.google.cloud.logging.Payload.ProtoPayload;
 import com.google.cloud.logging.Payload.StringPayload;
-import com.google.cloud.logging.Payload.Type;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.Any;
@@ -31,7 +30,6 @@ import com.google.protobuf.NullValue;
 import com.google.protobuf.Struct;
 import com.google.protobuf.Value;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -49,7 +47,8 @@ public class PayloadTest {
   private static final Value STRING_VALUE = Value.newBuilder().setStringValue(STRING).build();
   private static final Boolean BOOLEAN = true;
   private static final Value BOOLEAN_VALUE = Value.newBuilder().setBoolValue(BOOLEAN).build();
-  private static final List<Object> LIST = ImmutableList.<Object>of(NUMBER, STRING, BOOLEAN);
+  private static final ImmutableList<Object> LIST =
+      ImmutableList.<Object>of(NUMBER, STRING, BOOLEAN);
   private static final Value VALUE_LIST =
       Value.newBuilder()
           .setListValue(
@@ -81,7 +80,7 @@ public class PayloadTest {
                   .put("boolean", BOOLEAN_VALUE)
                   .put("list", VALUE_LIST)
                   .put("struct", Value.newBuilder().setStructValue(INNER_STRUCT).build())
-                  .build())
+                  .buildOrThrow())
           .build();
 
   static {
@@ -105,15 +104,15 @@ public class PayloadTest {
 
   @Test
   public void testOf() {
-    assertEquals(Type.STRING, STRING_PAYLOAD.getType());
+    assertEquals(Payload.Type.STRING, STRING_PAYLOAD.getType());
     assertEquals(STRING_DATA, STRING_PAYLOAD.getData());
-    assertEquals(Type.JSON, JSON_PAYLOAD.getType());
+    assertEquals(Payload.Type.JSON, JSON_PAYLOAD.getType());
     assertEquals(STRUCT_DATA, JSON_PAYLOAD.getData());
     assertEquals(JSON_DATA, JSON_PAYLOAD.getDataAsMap());
-    assertEquals(Type.PROTO, PROTO_PAYLOAD.getType());
+    assertEquals(Payload.Type.PROTO, PROTO_PAYLOAD.getType());
     assertEquals(PROTO_DATA, PROTO_PAYLOAD.getData());
     JsonPayload jsonPayload = JsonPayload.of(STRUCT_DATA);
-    assertEquals(Type.JSON, jsonPayload.getType());
+    assertEquals(Payload.Type.JSON, jsonPayload.getType());
     assertEquals(STRUCT_DATA, jsonPayload.getData());
     assertEquals(JSON_DATA, jsonPayload.getDataAsMap());
   }
@@ -121,13 +120,13 @@ public class PayloadTest {
   @Test
   public void testToAndFromPb() {
     Payload<?> payload = Payload.fromPb(STRING_PAYLOAD.toPb().build());
-    assertTrue(payload instanceof StringPayload);
+    assertThat(payload).isInstanceOf(StringPayload.class);
     comparePayload(STRING_PAYLOAD, payload);
     payload = Payload.fromPb(JSON_PAYLOAD.toPb().build());
-    assertTrue(payload instanceof JsonPayload);
+    assertThat(payload).isInstanceOf(JsonPayload.class);
     comparePayload(JSON_PAYLOAD, payload);
     payload = ProtoPayload.fromPb(PROTO_PAYLOAD.toPb().build());
-    assertTrue(payload instanceof ProtoPayload);
+    assertThat(payload).isInstanceOf(ProtoPayload.class);
     comparePayload(PROTO_PAYLOAD, payload);
   }
 

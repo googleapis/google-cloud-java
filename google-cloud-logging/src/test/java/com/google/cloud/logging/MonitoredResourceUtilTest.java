@@ -22,11 +22,9 @@ import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.MonitoredResource;
 import com.google.common.collect.ImmutableMap;
-import java.util.Map;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -61,7 +59,7 @@ public class MonitoredResourceUtilTest {
 
   @Test
   public void testResourceTypeGlobal() {
-    final Map<String, String> ExpectedLabels =
+    final ImmutableMap<String, String> ExpectedLabels =
         ImmutableMap.of("project_id", MonitoredResourceUtilTest.MOCKED_PROJECT_ID);
 
     // setup
@@ -72,14 +70,14 @@ public class MonitoredResourceUtilTest {
     MonitoredResource response = MonitoredResourceUtil.getResource("", "");
     // verify
     assertEquals("global", response.getType());
-    assertTrue(response.getLabels().equals(ExpectedLabels));
+    assertEquals(ExpectedLabels, response.getLabels());
   }
 
   @Test
   public void testGetResourceWithParameters() {
     final String MyProjectId = "my-project-id";
     final String MyResourceType = "my-resource-type";
-    final Map<String, String> ExpectedLabels = ImmutableMap.of("project_id", MyProjectId);
+    final ImmutableMap<String, String> ExpectedLabels = ImmutableMap.of("project_id", MyProjectId);
 
     // setup
     replay(getterMock);
@@ -90,13 +88,13 @@ public class MonitoredResourceUtilTest {
     getterMock.getAttribute("");
     // verify
     assertEquals("my-resource-type", response.getType());
-    assertTrue(response.getLabels().equals(ExpectedLabels));
+    assertEquals(ExpectedLabels, response.getLabels());
   }
 
   @Test
   public void testResourceTypeGCEInstance() {
     final String MockedInstanceId = "1234567890abcdefg";
-    final Map<String, String> ExpectedLabels =
+    final ImmutableMap<String, String> ExpectedLabels =
         ImmutableMap.of(
             "project_id",
             MonitoredResourceUtilTest.MOCKED_PROJECT_ID,
@@ -117,7 +115,7 @@ public class MonitoredResourceUtilTest {
     MonitoredResource response = MonitoredResourceUtil.getResource("", "");
     // verify
     assertEquals("gce_instance", response.getType());
-    assertTrue(response.getLabels().equals(ExpectedLabels));
+    assertEquals(ExpectedLabels, response.getLabels());
   }
 
   /**
@@ -131,7 +129,7 @@ public class MonitoredResourceUtilTest {
     final String MockedNamespaceName = "default";
     final String MockedPodName = "mocked-pod";
     final String MockedContainerName = "mocked-container";
-    final Map<String, String> ExpectedLabels =
+    final ImmutableMap<String, String> ExpectedLabels =
         ImmutableMap.<String, String>builder()
             .put("project_id", MonitoredResourceUtilTest.MOCKED_PROJECT_ID)
             .put("cluster_name", MockedClusterName)
@@ -139,7 +137,7 @@ public class MonitoredResourceUtilTest {
             .put("namespace_name", MockedNamespaceName)
             .put("pod_name", MockedPodName)
             .put("container_name", MockedContainerName)
-            .build();
+            .buildOrThrow();
 
     // setup
     expect(getterMock.getAttribute("instance/attributes/cluster-name"))
@@ -156,7 +154,7 @@ public class MonitoredResourceUtilTest {
     MonitoredResource response = MonitoredResourceUtil.getResource("", "");
     // verify
     assertEquals("k8s_container", response.getType());
-    assertTrue(response.getLabels().equals(ExpectedLabels));
+    assertEquals(ExpectedLabels, response.getLabels());
   }
 
   private void setupCommonGAEMocks(String mockedModuleId, String mockedVersionId) {
@@ -171,7 +169,7 @@ public class MonitoredResourceUtilTest {
   public void testResourceTypeGAEStandardEnvironment() {
     final String MockedModuleId = "mocked-module-id";
     final String MockedVersionId = "mocked-version-id";
-    final Map<String, String> ExpectedLabels =
+    final ImmutableMap<String, String> ExpectedLabels =
         ImmutableMap.of(
             "project_id",
             MonitoredResourceUtilTest.MOCKED_PROJECT_ID,
@@ -192,14 +190,14 @@ public class MonitoredResourceUtilTest {
     MonitoredResource response = MonitoredResourceUtil.getResource("", "");
     // verify
     assertEquals("gae_app", response.getType());
-    assertTrue(response.getLabels().equals(ExpectedLabels));
+    assertEquals(ExpectedLabels, response.getLabels());
   }
 
   @Test
   public void testResourceTypeGAEFlexibleEnvironment() {
     final String MockedModuleId = "mocked-module-id";
     final String MockedVersionId = "mocked-version-id";
-    final Map<String, String> ExpectedLabels =
+    final ImmutableMap<String, String> ExpectedLabels =
         ImmutableMap.of(
             "project_id",
             MonitoredResourceUtilTest.MOCKED_PROJECT_ID,
@@ -222,13 +220,13 @@ public class MonitoredResourceUtilTest {
     MonitoredResource response = MonitoredResourceUtil.getResource("", "");
     // verify
     assertEquals("gae_app", response.getType());
-    assertTrue(response.getLabels().equals(ExpectedLabels));
+    assertEquals(ExpectedLabels, response.getLabels());
   }
 
   @Test
   public void testResourceTypeCloudFunction() {
     final String MockedFunctionName = "mocked-function-name";
-    final Map<String, String> ExpectedLabels =
+    final ImmutableMap<String, String> ExpectedLabels =
         ImmutableMap.of(
             "project_id",
             MonitoredResourceUtilTest.MOCKED_PROJECT_ID,
@@ -253,7 +251,7 @@ public class MonitoredResourceUtilTest {
     MonitoredResource response = MonitoredResourceUtil.getResource("", "");
     // verify
     assertEquals("cloud_function", response.getType());
-    assertTrue(response.getLabels().equals(ExpectedLabels));
+    assertEquals(ExpectedLabels, response.getLabels());
   }
 
   @Test
@@ -261,7 +259,7 @@ public class MonitoredResourceUtilTest {
     final String MockedRevisionName = "mocked-revision-name";
     final String MockedServiceName = "mocked-service-name";
     final String MockedConfigurationName = "mocked-config-name";
-    final Map<String, String> ExpectedLabels =
+    final ImmutableMap<String, String> ExpectedLabels =
         ImmutableMap.of(
             "project_id",
             MonitoredResourceUtilTest.MOCKED_PROJECT_ID,
@@ -286,6 +284,6 @@ public class MonitoredResourceUtilTest {
     MonitoredResource response = MonitoredResourceUtil.getResource("", "");
     // verify
     assertEquals("cloud_run_revision", response.getType());
-    assertTrue(response.getLabels().equals(ExpectedLabels));
+    assertEquals(ExpectedLabels, response.getLabels());
   }
 }

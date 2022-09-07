@@ -25,7 +25,6 @@ import com.google.logging.v2.LogSink;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Objects;
-import org.jspecify.nullness.Nullable;
 
 /**
  * Cloud Logging sinks can be used to control the export of your logs. Each sink specifies the
@@ -117,7 +116,7 @@ public class Sink extends SinkInfo {
     if (obj == this) {
       return true;
     }
-    if (obj == null || !obj.getClass().equals(Sink.class)) {
+    if (!(obj instanceof Sink)) {
       return false;
     }
     Sink other = (Sink) obj;
@@ -267,11 +266,8 @@ public class Sink extends SinkInfo {
   }
 
   static Function<LogSink, Sink> fromPbFunction(final Logging logging) {
-    return new Function<LogSink, Sink>() {
-      @Override
-      public @Nullable Sink apply(LogSink sinkPb) {
-        return sinkPb != null ? fromPb(logging, sinkPb) : null;
-      }
+    return (LogSink sinkPb) -> {
+      return sinkPb != null ? fromPb(logging, sinkPb) : null;
     };
   }
 }

@@ -18,8 +18,8 @@ package com.google.cloud.logging;
 
 import com.google.common.collect.Lists;
 import com.google.logging.v2.TailLogEntriesResponse;
+import java.util.ArrayDeque;
 import java.util.Iterator;
-import java.util.LinkedList;
 
 /**
  * The class implements {@see Iterator} interface over {@see LogEntry} by iterating through {@see
@@ -30,7 +30,7 @@ public class LogEntryIterator implements Iterator<LogEntry> {
   // TODO: consider converting this to use generics instead of
   // fixed TailLogEntriesResponse
   private final Iterator<TailLogEntriesResponse> streamIterator;
-  private final LinkedList<LogEntry> buffer = new LinkedList<>();
+  private final ArrayDeque<LogEntry> buffer = new ArrayDeque<>();
 
   LogEntryIterator(Iterator<TailLogEntriesResponse> streamIterator) {
     this.streamIterator = streamIterator;

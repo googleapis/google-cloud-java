@@ -17,11 +17,10 @@
 package com.google.cloud.logging;
 
 import com.google.cloud.MonitoredResource;
-import com.google.cloud.logging.LogEntry.Builder;
 import com.google.common.base.Strings;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMultimap;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -209,10 +208,9 @@ public class MonitoredResourceUtil {
     List<LoggingEnhancer> enhancers = new ArrayList<>(2);
     if (resourceType == Resource.AppEngine) {
       enhancers.add(new TraceLoggingEnhancer(APPENGINE_LABEL_PREFIX));
-      if (metadataLoader.getValue(Label.Env) == MetadataLoader.ENV_FLEXIBLE) {
+      if (MetadataLoader.ENV_FLEXIBLE.equals(metadataLoader.getValue(Label.Env))) {
         enhancers.add(
-            new LabelLoggingEnhancer(
-                APPENGINE_LABEL_PREFIX, Collections.singletonList(Label.InstanceName)));
+            new LabelLoggingEnhancer(APPENGINE_LABEL_PREFIX, ImmutableList.of(Label.InstanceName)));
       }
     }
     return enhancers;
@@ -244,7 +242,7 @@ public class MonitoredResourceUtil {
     }
 
     @Override
-    public void enhanceLogEntry(Builder logEntry) {
+    public void enhanceLogEntry(LogEntry.Builder logEntry) {
       for (Map.Entry<String, String> label : labels.entrySet()) {
         logEntry.addLabel(label.getKey(), label.getValue());
       }

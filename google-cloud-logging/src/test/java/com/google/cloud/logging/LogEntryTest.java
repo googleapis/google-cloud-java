@@ -19,17 +19,18 @@ package com.google.cloud.logging;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertThrows;
 
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Payload.JsonPayload;
 import com.google.cloud.logging.Payload.ProtoPayload;
 import com.google.cloud.logging.Payload.StringPayload;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.testing.EqualsTester;
 import com.google.gson.JsonParser;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import java.time.Instant;
-import java.util.Map;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -53,7 +54,7 @@ public class LogEntryTest {
           .setRequestMethod(HttpRequest.RequestMethod.GET)
           .setStatus(404)
           .build();
-  private static final Map<String, String> LABELS =
+  private static final ImmutableMap<String, String> LABELS =
       ImmutableMap.of("key1", "value1", "key2", "value2");
   private static final Operation OPERATION = Operation.of("id", "producer");
   private static final String TRACE = "trace";
@@ -341,17 +342,18 @@ public class LogEntryTest {
     compareLogEntry(logEntry, LogEntry.fromPb(logEntry.toPb(PROJECT)), true);
   }
 
-  @Test(expected = AssertionError.class)
+  @Test
   public void testToAndFromPbWithExpectedFailure() {
     LogEntry logEntry =
         LogEntry.newBuilder(STRING_PAYLOAD).setLogName(LOG_NAME).setResource(RESOURCE).build();
-    compareLogEntry(logEntry, LogEntry.fromPb(logEntry.toPb(PROJECT)), true);
+    assertThrows(
+        AssertionError.class,
+        () -> compareLogEntry(logEntry, LogEntry.fromPb(logEntry.toPb(PROJECT)), true));
   }
 
-  private void compareLogEntry(LogEntry expected, LogEntry value, Boolean extraValidations) {
+  private void compareLogEntry(LogEntry expected, LogEntry value, boolean extraValidations) {
     if (extraValidations) {
-      assertEquals(expected.hashCode(), value.hashCode());
-      assertEquals(expected, value);
+      new EqualsTester().addEqualityGroup(expected, value).testEquals();
     }
     assertEquals(expected.getLogName(), value.getLogName());
     assertEquals(expected.getResource(), value.getResource());
@@ -388,8 +390,8 @@ public class LogEntryTest {
     }
   }
 
-  @Test(expected = UnsupportedOperationException.class)
+  @Test
   public void testStructureLogPresentationWithProtobufPayload() {
-    PROTO_ENTRY.toStructuredJsonString();
+    assertThrows(UnsupportedOperationException.class, () -> PROTO_ENTRY.toStructuredJsonString());
   }
 }

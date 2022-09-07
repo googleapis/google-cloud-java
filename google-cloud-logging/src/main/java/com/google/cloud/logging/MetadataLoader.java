@@ -16,10 +16,11 @@
 
 package com.google.cloud.logging;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import com.google.cloud.logging.MonitoredResourceUtil.Label;
 import com.google.common.collect.ImmutableMap;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.function.Supplier;
@@ -29,36 +30,36 @@ public final class MetadataLoader {
   public static final String ENV_FLEXIBLE = "flex";
   public static final String ENV_STANDARD = "standard";
 
-  private ResourceTypeEnvironmentGetter getter;
+  private final ResourceTypeEnvironmentGetter getter;
 
   private final ImmutableMap<Label, Supplier<String>> labelResolvers =
       ImmutableMap.<Label, Supplier<String>>builder()
-          .put(Label.ClusterName, () -> getClusterName())
-          .put(Label.ConfigurationName, () -> getConfigName())
-          .put(Label.ContainerName, () -> getContainerName())
-          .put(Label.Env, () -> getEnv())
-          .put(Label.FunctionName, () -> getFunctionName())
-          .put(Label.InstanceId, () -> getInstanceId())
-          .put(Label.InstanceName, () -> getInstanceName())
-          .put(Label.CloudRunLocation, () -> getCloudRunLocation())
-          .put(Label.GKELocation, () -> getGKELocation())
-          .put(Label.ModuleId, () -> getModuleId())
-          .put(Label.NamespaceName, () -> getNamespaceName())
-          .put(Label.PodName, () -> getPodName())
-          .put(Label.ProjectId, () -> getProjectId())
-          .put(Label.Region, () -> getRegion())
-          .put(Label.RevisionName, () -> getRevisionName())
-          .put(Label.ServiceName, () -> getServiceName())
-          .put(Label.VersionId, () -> getVersionId())
-          .put(Label.Zone, () -> getZone())
-          .build();
+          .put(Label.ClusterName, this::getClusterName)
+          .put(Label.ConfigurationName, this::getConfigName)
+          .put(Label.ContainerName, this::getContainerName)
+          .put(Label.Env, this::getEnv)
+          .put(Label.FunctionName, this::getFunctionName)
+          .put(Label.InstanceId, this::getInstanceId)
+          .put(Label.InstanceName, this::getInstanceName)
+          .put(Label.CloudRunLocation, this::getCloudRunLocation)
+          .put(Label.GKELocation, this::getGKELocation)
+          .put(Label.ModuleId, this::getModuleId)
+          .put(Label.NamespaceName, this::getNamespaceName)
+          .put(Label.PodName, this::getPodName)
+          .put(Label.ProjectId, this::getProjectId)
+          .put(Label.Region, this::getRegion)
+          .put(Label.RevisionName, this::getRevisionName)
+          .put(Label.ServiceName, this::getServiceName)
+          .put(Label.VersionId, this::getVersionId)
+          .put(Label.Zone, this::getZone)
+          .buildOrThrow();
 
   public MetadataLoader(ResourceTypeEnvironmentGetter getter) {
     this.getter = getter;
   }
 
   /**
-   * Loads metadata value for the {@link label} argument.
+   * Loads metadata value for the {@code label} argument.
    *
    * @param label A resource metadata label of type {@see MonitoredResourceUtil.Label}
    * @return A string with metadata value or {@code null} if the label is not supported.
@@ -96,7 +97,7 @@ public final class MetadataLoader {
    */
   private String getEnv() {
     String value = getter.getAttribute("instance/attributes/startup-script");
-    if (value == "/var/lib/flex/startup_script.sh") {
+    if ("/var/lib/flex/startup_script.sh".equals(value)) {
       return ENV_FLEXIBLE;
     }
     return ENV_STANDARD;
@@ -147,7 +148,7 @@ public final class MetadataLoader {
           new String(
               Files.readAllBytes(
                   Paths.get("/var/run/secrets/kubernetes.io/serviceaccount/namespace")),
-              StandardCharsets.UTF_8);
+              UTF_8);
     } catch (IOException e) {
       // if SA token is not shared the info about namespace is unavailable
       // allow users to define the namespace name explicitly

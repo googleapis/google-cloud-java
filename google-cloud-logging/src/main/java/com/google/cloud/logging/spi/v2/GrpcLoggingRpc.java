@@ -32,7 +32,6 @@ import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.TransportChannel;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.api.gax.rpc.UnaryCallSettings.Builder;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.grpc.GrpcTransportOptions;
@@ -45,6 +44,7 @@ import com.google.cloud.logging.v2.LoggingClient;
 import com.google.cloud.logging.v2.LoggingSettings;
 import com.google.cloud.logging.v2.MetricsClient;
 import com.google.cloud.logging.v2.MetricsSettings;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateLogMetricRequest;
@@ -148,7 +148,7 @@ public class GrpcLoggingRpc implements LoggingRpc {
         clientContext = ClientContext.create(settingsBuilder.build());
       }
       ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> retrySettingsSetter =
-          new ApiFunction<Builder<?, ?>, Void>() {
+          new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
             @Override
             public Void apply(UnaryCallSettings.Builder<?, ?> builder) {
               builder.setRetrySettings(options.getRetrySettings());
@@ -193,7 +193,7 @@ public class GrpcLoggingRpc implements LoggingRpc {
     if (returnNullOn.length > 0) {
       returnNullOnSet = EnumSet.of(returnNullOn[0], returnNullOn);
     } else {
-      returnNullOnSet = Collections.emptySet();
+      returnNullOnSet = ImmutableSet.of();
     }
     return ApiFutures.catching(
         from,

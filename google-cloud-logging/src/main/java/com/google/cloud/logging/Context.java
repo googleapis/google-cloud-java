@@ -17,8 +17,12 @@
 package com.google.cloud.logging;
 
 import com.google.cloud.logging.HttpRequest.RequestMethod;
+import com.google.common.base.Ascii;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Splitter;
+import com.google.common.collect.Iterables;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
+import java.util.List;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -125,7 +129,7 @@ public class Context {
     @CanIgnoreReturnValue
     public Builder loadCloudTraceContext(String cloudTrace) {
       if (cloudTrace != null) {
-        cloudTrace = cloudTrace.split(";")[0];
+        cloudTrace = Iterables.get(Splitter.on(';').split(cloudTrace), 0);
         int split = cloudTrace.indexOf('/');
         if (split >= 0) {
           String traceId = cloudTrace.substring(0, split);
@@ -157,16 +161,16 @@ public class Context {
      *     the format version is not supported.
      */
     @CanIgnoreReturnValue
-    public Builder loadW3CTraceParentContext(String traceParent) throws IllegalArgumentException {
+    public Builder loadW3CTraceParentContext(String traceParent) {
       if (traceParent != null) {
-        Matcher validator = W3C_TRACE_CONTEXT_FORMAT.matcher(traceParent.toLowerCase());
+        Matcher validator = W3C_TRACE_CONTEXT_FORMAT.matcher(Ascii.toLowerCase(traceParent));
         if (!validator.matches()) {
           throw new IllegalArgumentException(
               "Invalid format of the header value. The value does not match W3C Trace Context version \"00\"");
         }
-        String[] fields = traceParent.split("-");
-        setTraceId(fields[1]);
-        setSpanId(fields[2]);
+        List<String> fields = Splitter.on('-').splitToList(traceParent);
+        setTraceId(fields.get(1));
+        setSpanId(fields.get(2));
         // fields[3] contains flag(s)
       }
       return this;

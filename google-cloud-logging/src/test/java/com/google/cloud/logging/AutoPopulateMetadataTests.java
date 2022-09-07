@@ -63,7 +63,7 @@ public class AutoPopulateMetadataTests {
           .setDestination(LogDestinationName.project(LOGGING_PROJECT_ID))
           .build();
   private static final WriteLogEntriesResponse EMPTY_WRITE_RESPONSE =
-      WriteLogEntriesResponse.newBuilder().build();
+      WriteLogEntriesResponse.getDefaultInstance();
   private static final HttpRequest HTTP_REQUEST =
       HttpRequest.newBuilder()
           .setRequestMethod(RequestMethod.GET)
@@ -78,7 +78,7 @@ public class AutoPopulateMetadataTests {
   private LoggingRpcFactory mockedRpcFactory;
   private LoggingRpc mockedRpc;
   private Logging logging;
-  private Capture<WriteLogEntriesRequest> rpcWriteArgument = newCapture();
+  private final Capture<WriteLogEntriesRequest> rpcWriteArgument = newCapture();
   private ResourceTypeEnvironmentGetter mockedEnvGetter;
 
   @Before
@@ -108,13 +108,13 @@ public class AutoPopulateMetadataTests {
 
   @After
   public void teardown() {
-    (new ContextHandler()).removeCurrentContext();
+    new ContextHandler().removeCurrentContext();
   }
 
   private void mockCurrentContext(HttpRequest request, String traceId, String spanId) {
     Context mockedContext =
         Context.newBuilder().setRequest(request).setTraceId(traceId).setSpanId(spanId).build();
-    (new ContextHandler()).setCurrentContext(mockedContext);
+    new ContextHandler().setCurrentContext(mockedContext);
   }
 
   @Test
@@ -169,7 +169,7 @@ public class AutoPopulateMetadataTests {
     assertEquals(expected.getFile(), actual.getSourceLocation().getFile());
     assertEquals(expected.getClass(), actual.getSourceLocation().getClass());
     assertEquals(expected.getFunction(), actual.getSourceLocation().getFunction());
-    assertEquals(new Long(expected.getLine() + 1), actual.getSourceLocation().getLine());
+    assertEquals(Long.valueOf(expected.getLine() + 1), actual.getSourceLocation().getLine());
   }
 
   @Test

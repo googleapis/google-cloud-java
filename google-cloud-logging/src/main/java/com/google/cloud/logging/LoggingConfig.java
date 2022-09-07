@@ -19,6 +19,7 @@ package com.google.cloud.logging;
 import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.cloud.MonitoredResource;
+import com.google.common.base.Splitter;
 import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.List;
@@ -68,7 +69,7 @@ class LoggingConfig {
     String synchronicityStr = getProperty(SYNCHRONICITY_TAG);
     try {
       return Synchronicity.valueOf(synchronicityStr);
-    } catch (Exception ex) {
+    } catch (RuntimeException ex) {
       // If we cannot create the Synchronicity we fall back to default value
     }
     return Synchronicity.ASYNC;
@@ -96,7 +97,7 @@ class LoggingConfig {
     try {
       List<LoggingEnhancer> enhancers = new ArrayList<>();
       if (list != null) {
-        String[] items = list.split(",");
+        Iterable<String> items = Splitter.on(',').split(list);
         for (String e_name : items) {
           Class<? extends LoggingEnhancer> clazz =
               ClassLoader.getSystemClassLoader()

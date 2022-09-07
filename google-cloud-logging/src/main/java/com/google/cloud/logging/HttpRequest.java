@@ -20,7 +20,6 @@ import com.google.api.core.ApiFunction;
 import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
 import com.google.common.base.MoreObjects;
-import com.google.common.base.Strings;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.Serializable;
 import java.util.Objects;
@@ -71,7 +70,7 @@ public final class HttpRequest implements Serializable {
         };
 
     private static final StringEnumType<RequestMethod> type =
-        new StringEnumType<RequestMethod>(RequestMethod.class, CONSTRUCTOR);
+        new StringEnumType<>(RequestMethod.class, CONSTRUCTOR);
 
     public static final RequestMethod GET = type.createAndRegister("GET");
     public static final RequestMethod HEAD = type.createAndRegister("HEAD");
@@ -527,10 +526,10 @@ public final class HttpRequest implements Serializable {
 
   static HttpRequest fromPb(com.google.logging.type.HttpRequest requestPb) {
     Builder builder = newBuilder();
-    if (!Strings.isNullOrEmpty(requestPb.getRequestMethod())) {
+    if (!requestPb.getRequestMethod().isEmpty()) {
       builder.setRequestMethod(RequestMethod.valueOf(requestPb.getRequestMethod()));
     }
-    if (!Strings.isNullOrEmpty(requestPb.getRequestUrl())) {
+    if (!requestPb.getRequestUrl().isEmpty()) {
       builder.setRequestUrl(requestPb.getRequestUrl());
     }
     if (requestPb.getRequestSize() != 0L) {
@@ -542,16 +541,16 @@ public final class HttpRequest implements Serializable {
     if (requestPb.getResponseSize() != 0L) {
       builder.setResponseSize(requestPb.getResponseSize());
     }
-    if (!Strings.isNullOrEmpty(requestPb.getUserAgent())) {
+    if (!requestPb.getUserAgent().isEmpty()) {
       builder.setUserAgent(requestPb.getUserAgent());
     }
-    if (!Strings.isNullOrEmpty(requestPb.getServerIp())) {
+    if (!requestPb.getServerIp().isEmpty()) {
       builder.setServerIp(requestPb.getServerIp());
     }
-    if (!Strings.isNullOrEmpty(requestPb.getRemoteIp())) {
+    if (!requestPb.getRemoteIp().isEmpty()) {
       builder.setRemoteIp(requestPb.getRemoteIp());
     }
-    if (!Strings.isNullOrEmpty(requestPb.getReferer())) {
+    if (!requestPb.getReferer().isEmpty()) {
       builder.setReferer(requestPb.getReferer());
     }
     builder.setCacheLookup(requestPb.getCacheLookup());

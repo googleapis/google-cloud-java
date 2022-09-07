@@ -83,8 +83,9 @@ public enum Severity {
         return ALERT;
       case EMERGENCY:
         return EMERGENCY;
-      default:
-        throw new IllegalArgumentException(severityPb + " is not a valid severity");
+      case UNRECOGNIZED:
+        break;
     }
+    throw new IllegalArgumentException(severityPb + " is not a valid severity");
   }
 }

@@ -16,8 +16,8 @@
 
 package com.google.cloud.logging;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import java.util.logging.Level;
 import org.junit.Test;
@@ -32,8 +32,8 @@ public class LoggingLevelTest {
     LoggingLevel debug = LoggingLevel.DEBUG;
     assertEquals(Severity.DEBUG, debug.getSeverity());
     assertEquals("DEBUG", debug.getName());
-    assertTrue(debug.intValue() < Level.FINEST.intValue());
-    assertTrue(debug.intValue() > Level.ALL.intValue());
+    assertThat(debug.intValue()).isLessThan(Level.FINEST.intValue());
+    assertThat(debug.intValue()).isGreaterThan(Level.ALL.intValue());
   }
 
   @Test
@@ -41,8 +41,8 @@ public class LoggingLevelTest {
     LoggingLevel notice = LoggingLevel.NOTICE;
     assertEquals(Severity.NOTICE, notice.getSeverity());
     assertEquals("NOTICE", notice.getName());
-    assertTrue(notice.intValue() > Level.INFO.intValue());
-    assertTrue(notice.intValue() < Level.WARNING.intValue());
+    assertThat(notice.intValue()).isGreaterThan(Level.INFO.intValue());
+    assertThat(notice.intValue()).isLessThan(Level.WARNING.intValue());
   }
 
   @Test
@@ -50,8 +50,8 @@ public class LoggingLevelTest {
     LoggingLevel error = LoggingLevel.ERROR;
     assertEquals(Severity.ERROR, error.getSeverity());
     assertEquals("ERROR", error.getName());
-    assertTrue(error.intValue() > Level.WARNING.intValue());
-    assertTrue(error.intValue() < Level.SEVERE.intValue());
+    assertThat(error.intValue()).isGreaterThan(Level.WARNING.intValue());
+    assertThat(error.intValue()).isLessThan(Level.SEVERE.intValue());
   }
 
   @Test
@@ -59,8 +59,8 @@ public class LoggingLevelTest {
     LoggingLevel critical = LoggingLevel.CRITICAL;
     assertEquals(Severity.CRITICAL, critical.getSeverity());
     assertEquals("CRITICAL", critical.getName());
-    assertTrue(critical.intValue() > LoggingLevel.SEVERE.intValue());
-    assertTrue(critical.intValue() < Level.OFF.intValue());
+    assertThat(critical.intValue()).isGreaterThan(LoggingLevel.SEVERE.intValue());
+    assertThat(critical.intValue()).isLessThan(Level.OFF.intValue());
   }
 
   @Test
@@ -68,8 +68,8 @@ public class LoggingLevelTest {
     LoggingLevel alert = LoggingLevel.ALERT;
     assertEquals(Severity.ALERT, alert.getSeverity());
     assertEquals("ALERT", alert.getName());
-    assertTrue(alert.intValue() > LoggingLevel.CRITICAL.intValue());
-    assertTrue(alert.intValue() < Level.OFF.intValue());
+    assertThat(alert.intValue()).isGreaterThan(LoggingLevel.CRITICAL.intValue());
+    assertThat(alert.intValue()).isLessThan(Level.OFF.intValue());
   }
 
   @Test
@@ -77,7 +77,7 @@ public class LoggingLevelTest {
     LoggingLevel emergency = LoggingLevel.EMERGENCY;
     assertEquals(Severity.EMERGENCY, emergency.getSeverity());
     assertEquals("EMERGENCY", emergency.getName());
-    assertTrue(emergency.intValue() > LoggingLevel.ALERT.intValue());
-    assertTrue(emergency.intValue() < Level.OFF.intValue());
+    assertThat(emergency.intValue()).isGreaterThan(LoggingLevel.ALERT.intValue());
+    assertThat(emergency.intValue()).isLessThan(Level.OFF.intValue());
   }
 }

@@ -22,19 +22,17 @@ import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.reset;
 import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.client.util.Strings;
 import com.google.cloud.MonitoredResource;
-import com.google.cloud.logging.LogEntry.Builder;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.cloud.logging.Payload.StringPayload;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.Collections;
 import java.util.logging.ErrorManager;
 import java.util.logging.Filter;
 import java.util.logging.Formatter;
@@ -233,7 +231,7 @@ public class LoggingHandlerTest {
     String oldProject = System.getProperty(PROJECT_ENV_NAME);
     System.setProperty(PROJECT_ENV_NAME, PROJECT);
     replay(options, logging);
-    assertNotNull(new LoggingHandler());
+    LoggingHandler unused = new LoggingHandler();
     if (oldProject != null) {
       System.setProperty(PROJECT_ENV_NAME, oldProject);
     } else {
@@ -365,13 +363,12 @@ public class LoggingHandlerTest {
     LoggingEnhancer enhancer =
         new LoggingEnhancer() {
           @Override
-          public void enhanceLogEntry(Builder builder) {
+          public void enhanceLogEntry(LogEntry.Builder builder) {
             builder.addLabel("enhanced", "true");
           }
         };
     Handler handler =
-        new LoggingHandler(
-            LOG_NAME, options, DEFAULT_RESOURCE, Collections.singletonList(enhancer));
+        new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE, ImmutableList.of(enhancer));
     handler.setLevel(Level.ALL);
     handler.setFormatter(new TestFormatter());
     handler.publish(newLogRecord(Level.FINEST, MESSAGE));
@@ -389,13 +386,12 @@ public class LoggingHandlerTest {
     LoggingEnhancer enhancer =
         new LoggingEnhancer() {
           @Override
-          public void enhanceLogEntry(Builder builder) {
+          public void enhanceLogEntry(LogEntry.Builder builder) {
             builder.addLabel("enhanced", "true");
           }
         };
     LoggingHandler handler =
-        new LoggingHandler(
-            LOG_NAME, options, DEFAULT_RESOURCE, Collections.singletonList(enhancer));
+        new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE, ImmutableList.of(enhancer));
     handler.setLevel(Level.ALL);
     handler.setFormatter(new TestFormatter());
     handler.setRedirectToStdout(true);
@@ -413,8 +409,7 @@ public class LoggingHandlerTest {
     LoggingEnhancer enhancer = new TraceLoggingEnhancer();
     TraceLoggingEnhancer.setCurrentTraceId("projects/projectId/traces/traceId");
     Handler handler =
-        new LoggingHandler(
-            LOG_NAME, options, DEFAULT_RESOURCE, Collections.singletonList(enhancer));
+        new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE, ImmutableList.of(enhancer));
     handler.setLevel(Level.ALL);
     handler.setFormatter(new TestFormatter());
     handler.publish(newLogRecord(Level.FINEST, MESSAGE));
@@ -617,7 +612,7 @@ public class LoggingHandlerTest {
     handler.setRedirectToStdout(true);
     handler.publish(newLogRecord(Level.INFO, MESSAGE));
 
-    assertTrue(null, !Strings.isNullOrEmpty(bout.toString()));
+    assertFalse(null, Strings.isNullOrEmpty(bout.toString()));
     System.setOut(null);
   }
 

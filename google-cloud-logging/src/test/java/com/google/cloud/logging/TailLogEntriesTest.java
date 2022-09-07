@@ -27,6 +27,7 @@ import com.google.cloud.logging.spi.v2.LoggingRpc;
 import com.google.logging.v2.TailLogEntriesRequest;
 import com.google.logging.v2.TailLogEntriesResponse;
 import com.google.protobuf.Duration;
+import com.google.protobuf.util.Durations;
 import org.easymock.EasyMock;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -35,7 +36,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class TailLogEntriesTest {
   private static final String WINDOW = "20s";
-  private static final Duration WINDOW_DURATION = Duration.newBuilder().setSeconds(20).build();
+  private static final Duration WINDOW_DURATION = Durations.fromSeconds(20);
   private static final String FILTER = "severity<INFO";
   private static final String PROJECT_ID = "test-project-id";
   private static final String DEFAULT_PROJECT_ID = "test-default-project-id";
@@ -70,8 +71,8 @@ public class TailLogEntriesTest {
   public void testEmptyTailOptions() {
     TailLogEntriesRequest request =
         LoggingImpl.buildTailLogEntriesRequest(LoggingImpl.optionMap(), DEFAULT_PROJECT_ID);
-    assertThat(request.getFilter()).isEqualTo("");
-    assertThat(request.getBufferWindow()).isEqualTo(Duration.newBuilder().build());
+    assertThat(request.getFilter()).isEmpty();
+    assertThat(request.getBufferWindow()).isEqualTo(Duration.getDefaultInstance());
     assertThat(request.getResourceNamesList()).containsExactly("projects/" + DEFAULT_PROJECT_ID);
   }
 
@@ -84,14 +85,9 @@ public class TailLogEntriesTest {
         EasyMock.createStrictMock(BidiStream.class);
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(LoggingOptions.class)))
         .andReturn(loggingRpcMock);
-    EasyMock.expect(loggingRpcMock.getTailLogEntriesStream())
-        .andReturn((BidiStream<TailLogEntriesRequest, TailLogEntriesResponse>) bidiStreamMock);
+    EasyMock.expect(loggingRpcMock.getTailLogEntriesStream()).andReturn(bidiStreamMock);
     bidiStreamMock.send(EasyMock.anyObject(TailLogEntriesRequest.class));
-    EasyMock.expectLastCall()
-        .andAnswer(
-            () -> {
-              return null;
-            });
+    EasyMock.expectLastCall().andAnswer(() -> null);
     EasyMock.replay(rpcFactoryMock, loggingRpcMock, bidiStreamMock);
 
     // execute

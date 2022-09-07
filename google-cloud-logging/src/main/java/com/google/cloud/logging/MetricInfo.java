@@ -167,7 +167,7 @@ public class MetricInfo implements Serializable {
     if (obj == this) {
       return true;
     }
-    if (obj == null || !(obj.getClass().equals(MetricInfo.class))) {
+    if (!(obj instanceof MetricInfo)) {
       return false;
     }
     return baseEquals((MetricInfo) obj);
@@ -205,7 +205,7 @@ public class MetricInfo implements Serializable {
 
   static MetricInfo fromPb(LogMetric metricPb) {
     Builder builder = newBuilder(metricPb.getName(), metricPb.getFilter());
-    if (!metricPb.getDescription().equals("")) {
+    if (!metricPb.getDescription().isEmpty()) {
       builder.setDescription(metricPb.getDescription());
     }
     return builder.build();

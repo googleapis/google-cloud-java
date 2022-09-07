@@ -27,7 +27,6 @@ import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.ListOption;
 import com.google.common.collect.ImmutableMap;
 import com.google.logging.v2.ListLogEntriesRequest;
-import java.util.Map;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -38,7 +37,7 @@ public class LoggingTest {
   private static final int PAGE_SIZE = 42;
   private static final String PAGE_TOKEN = "page token";
   private static final String FILTER = "filter";
-  private static final Map<String, String> LABELS = ImmutableMap.of("key", "value");
+  private static final ImmutableMap<String, String> LABELS = ImmutableMap.of("key", "value");
   private static final String LOG_NAME = "logName";
   private static final MonitoredResource RESOURCE =
       MonitoredResource.of("global", ImmutableMap.of("project_id", "p"));

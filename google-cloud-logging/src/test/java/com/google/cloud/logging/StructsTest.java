@@ -16,8 +16,8 @@
 
 package com.google.cloud.logging;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.common.collect.ImmutableList;
@@ -26,9 +26,7 @@ import com.google.protobuf.ListValue;
 import com.google.protobuf.NullValue;
 import com.google.protobuf.Struct;
 import com.google.protobuf.Value;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -41,7 +39,8 @@ public class StructsTest {
   private static final Double NUMBER = 42.0;
   private static final String STRING = "string";
   private static final Boolean BOOLEAN = true;
-  private static final List<Object> LIST = ImmutableList.<Object>of(NUMBER, STRING, BOOLEAN);
+  private static final ImmutableList<Object> LIST =
+      ImmutableList.<Object>of(NUMBER, STRING, BOOLEAN);
   private static final Map<String, Object> INNER_MAP = new HashMap<>();
   private static final Map<String, Object> MAP = new HashMap<>();
   private static final Value NULL_VALUE =
@@ -65,7 +64,7 @@ public class StructsTest {
                   "list", LIST_VALUE))
           .build();
   private static final Value STRUCT_VALUE = Value.newBuilder().setStructValue(INNER_STRUCT).build();
-  private static final Map<String, Value> VALUE_MAP =
+  private static final ImmutableMap<String, Value> VALUE_MAP =
       ImmutableMap.<String, Value>builder()
           .put("null", NULL_VALUE)
           .put("number", NUMBER_VALUE)
@@ -73,9 +72,9 @@ public class StructsTest {
           .put("boolean", BOOLEAN_VALUE)
           .put("list", LIST_VALUE)
           .put("struct", STRUCT_VALUE)
-          .build();
+          .buildOrThrow();
   private static final Struct STRUCT = Struct.newBuilder().putAllFields(VALUE_MAP).build();
-  private static final Map<String, Object> EMPTY_MAP = Collections.emptyMap();
+  private static final ImmutableMap<String, Object> EMPTY_MAP = ImmutableMap.of();
 
   @BeforeClass
   public static void beforeClass() {
@@ -93,8 +92,8 @@ public class StructsTest {
   }
 
   private <T> void checkMapField(Map<String, T> map, String key, T expected) {
-    assertTrue(map.containsKey(key));
-    assertEquals(expected, map.get(key));
+    assertThat(map).containsKey(key);
+    assertThat(map).containsEntry(key, expected);
   }
 
   private void checkStructField(Struct struct, String key, Value expected) {
@@ -139,7 +138,7 @@ public class StructsTest {
   @Test
   public void testAsMapEmpty() {
     Map<String, Object> map = Structs.asMap(Struct.getDefaultInstance());
-    assertTrue(map.isEmpty());
+    assertThat(map).isEmpty();
     assertEquals(EMPTY_MAP, map);
   }
 
@@ -167,7 +166,7 @@ public class StructsTest {
   @Test
   public void testNewStructEmpty() {
     Struct struct = Structs.newStruct(EMPTY_MAP);
-    assertTrue(struct.getFieldsMap().isEmpty());
+    assertThat(struct.getFieldsMap()).isEmpty();
   }
 
   @Test
@@ -185,7 +184,7 @@ public class StructsTest {
     long longNumber = Long.MAX_VALUE;
     float floatNumber = Float.MIN_VALUE;
     double doubleNumber = Double.MAX_VALUE;
-    Map<String, Object> map =
+    ImmutableMap<String, Object> map =
         ImmutableMap.<String, Object>of(
             "int", intNumber, "long", longNumber, "float", floatNumber, "double", doubleNumber);
     Struct struct = Structs.newStruct(map);
@@ -195,10 +194,10 @@ public class StructsTest {
     checkStructField(struct, "float", Value.newBuilder().setNumberValue(floatNumber).build());
     checkStructField(struct, "double", Value.newBuilder().setNumberValue(doubleNumber).build());
     Map<String, Object> convertedMap = Structs.asMap(struct);
-    assertTrue(convertedMap.get("int") instanceof Double);
-    assertTrue(convertedMap.get("long") instanceof Double);
-    assertTrue(convertedMap.get("float") instanceof Double);
-    assertTrue(convertedMap.get("double") instanceof Double);
+    assertThat(convertedMap.get("int")).isInstanceOf(Double.class);
+    assertThat(convertedMap.get("long")).isInstanceOf(Double.class);
+    assertThat(convertedMap.get("float")).isInstanceOf(Double.class);
+    assertThat(convertedMap.get("double")).isInstanceOf(Double.class);
     int convertedInteger = ((Double) convertedMap.get("int")).intValue();
     long convertedLong = ((Double) convertedMap.get("long")).longValue();
     float convertedFloat = ((Double) convertedMap.get("float")).floatValue();

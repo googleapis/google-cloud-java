@@ -43,8 +43,10 @@ import com.google.cloud.PageImpl;
 import com.google.cloud.Tuple;
 import com.google.cloud.logging.spi.v2.LoggingRpc;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Ascii;
 import com.google.common.base.Function;
 import com.google.common.base.Throwables;
+import com.google.common.base.VerifyException;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -87,7 +89,9 @@ import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
 import com.google.protobuf.util.Durations;
+import java.text.ParseException;
 import java.util.*;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -104,13 +108,10 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   private volatile Severity flushSeverity = null;
   private boolean closed;
 
-  private static final Function<Empty, Boolean> EMPTY_TO_BOOLEAN_FUNCTION =
-      new Function<Empty, Boolean>() {
-        @Override
-        public Boolean apply(Empty input) {
-          return input != null;
-        }
-      };
+  private static Boolean emptyToBooleanFunction(Empty input) {
+    return input != null;
+  }
+
   private static final Function<WriteLogEntriesResponse, Void> WRITE_RESPONSE_TO_VOID_FUNCTION =
       new Function<WriteLogEntriesResponse, Void>() {
         @Override
@@ -128,18 +129,22 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     rpc = options.getLoggingRpcV2();
   }
 
+  @Override
   public void setWriteSynchronicity(Synchronicity writeSynchronicity) {
     this.writeSynchronicity = writeSynchronicity;
   }
 
+  @Override
   public void setFlushSeverity(Severity flushSeverity) {
     this.flushSeverity = flushSeverity;
   }
 
+  @Override
   public Synchronicity getWriteSynchronicity() {
     return writeSynchronicity;
   }
 
+  @Override
   public Severity getFlushSeverity() {
     return flushSeverity;
   }
@@ -149,7 +154,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
       return Uninterruptibles.getUninterruptibly(future);
     } catch (ExecutionException ex) {
       Throwables.throwIfUnchecked(ex.getCause());
-      throw new RuntimeException(ex);
+      throw new VerifyException(ex);
     }
   }
 
@@ -355,7 +360,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
                         listSinksResponse.getSinksList(),
                         Sink.fromPbFunction(serviceOptions.getService()));
             String cursor =
-                listSinksResponse.getNextPageToken().equals("")
+                listSinksResponse.getNextPageToken().isEmpty()
                     ? null
                     : listSinksResponse.getNextPageToken();
             return new AsyncPageImpl<>(
@@ -386,7 +391,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
             .setSinkName(
                 LogSinkName.ofProjectSinkName(getOptions().getProjectId(), sink).toString())
             .build();
-    return transform(rpc.delete(request), EMPTY_TO_BOOLEAN_FUNCTION);
+    return transform(rpc.delete(request), LoggingImpl::emptyToBooleanFunction);
   }
 
   /**
@@ -427,7 +432,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
                     ? ImmutableList.<String>of()
                     : listLogsResponse.getLogNamesList();
             String cursor =
-                listLogsResponse.getNextPageToken().equals("")
+                listLogsResponse.getNextPageToken().isEmpty()
                     ? null
                     : listLogsResponse.getNextPageToken();
             return new AsyncPageImpl<>(
@@ -446,6 +451,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     return listLogsAsync(getOptions(), optionMap(options));
   }
 
+  @Override
   public boolean deleteLog(String log) {
     return get(deleteLogAsync(log, null));
   }
@@ -455,6 +461,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     return get(deleteLogAsync(log, destination));
   }
 
+  @Override
   public ApiFuture<Boolean> deleteLogAsync(String log) {
     return deleteLogAsync(log, null);
   }
@@ -468,7 +475,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     }
     LogName name = getLogName(projectId, log, destination);
     DeleteLogRequest request = DeleteLogRequest.newBuilder().setLogName(name.toString()).build();
-    return transform(rpc.delete(request), EMPTY_TO_BOOLEAN_FUNCTION);
+    return transform(rpc.delete(request), LoggingImpl::emptyToBooleanFunction);
   }
 
   private static ListMonitoredResourceDescriptorsRequest listMonitoredResourceDescriptorsRequest(
@@ -505,19 +512,13 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
                     ? ImmutableList.<MonitoredResourceDescriptor>of()
                     : Lists.transform(
                         listDescriptorsResponse.getResourceDescriptorsList(),
-                        new Function<
-                            com.google.api.MonitoredResourceDescriptor,
-                            MonitoredResourceDescriptor>() {
-                          @Override
-                          public MonitoredResourceDescriptor apply(
-                              com.google.api.MonitoredResourceDescriptor
-                                  monitoredResourceDescriptor) {
-                            return MonitoredResourceDescriptor.FROM_PB_FUNCTION.apply(
-                                monitoredResourceDescriptor);
-                          }
+                        (com.google.api.MonitoredResourceDescriptor
+                                monitoredResourceDescriptor) -> {
+                          return MonitoredResourceDescriptor.FROM_PB_FUNCTION.apply(
+                              monitoredResourceDescriptor);
                         });
             String cursor =
-                listDescriptorsResponse.getNextPageToken().equals("")
+                listDescriptorsResponse.getNextPageToken().isEmpty()
                     ? null
                     : listDescriptorsResponse.getNextPageToken();
             return new AsyncPageImpl<>(
@@ -528,10 +529,12 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
         });
   }
 
+  @Override
   public Page<MonitoredResourceDescriptor> listMonitoredResourceDescriptors(ListOption... options) {
     return get(listMonitoredResourceDescriptorsAsync(options));
   }
 
+  @Override
   public ApiFuture<AsyncPage<MonitoredResourceDescriptor>> listMonitoredResourceDescriptorsAsync(
       ListOption... options) {
     return listMonitoredResourceDescriptorsAsync(getOptions(), optionMap(options));
@@ -613,7 +616,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
                         listMetricsResponse.getMetricsList(),
                         Metric.fromPbFunction(serviceOptions.getService()));
             String cursor =
-                listMetricsResponse.getNextPageToken().equals("")
+                listMetricsResponse.getNextPageToken().isEmpty()
                     ? null
                     : listMetricsResponse.getNextPageToken();
             return new AsyncPageImpl<>(
@@ -643,7 +646,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
         DeleteLogMetricRequest.newBuilder()
             .setMetricName(LogMetricName.of(getOptions().getProjectId(), metric).toString())
             .build();
-    return transform(rpc.delete(request), EMPTY_TO_BOOLEAN_FUNCTION);
+    return transform(rpc.delete(request), LoggingImpl::emptyToBooleanFunction);
   }
 
   @Override
@@ -702,7 +705,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
         DeleteExclusionRequest.newBuilder()
             .setName(LogExclusionName.of(getOptions().getProjectId(), exclusion).toString())
             .build();
-    return transform(rpc.delete(request), EMPTY_TO_BOOLEAN_FUNCTION);
+    return transform(rpc.delete(request), LoggingImpl::emptyToBooleanFunction);
   }
 
   @Override
@@ -746,7 +749,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
                         listExclusionsResponse.getExclusionsList(),
                         Exclusion.FROM_PROTOBUF_FUNCTION);
             String cursor =
-                listExclusionsResponse.getNextPageToken().equals("")
+                listExclusionsResponse.getNextPageToken().isEmpty()
                     ? null
                     : listExclusionsResponse.getNextPageToken();
             return new AsyncPageImpl<>(
@@ -795,12 +798,13 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     return destination.toLogName(logName);
   }
 
+  @Override
   public Iterable<LogEntry> populateMetadata(
       Iterable<LogEntry> logEntries,
       MonitoredResource customResource,
       String... exclusionClassPaths) {
     checkNotNull(logEntries);
-    final Boolean needDebugInfo =
+    final boolean needDebugInfo =
         Iterables.any(
             logEntries,
             log -> log.getSeverity() == Severity.DEBUG && log.getSourceLocation() == null);
@@ -812,7 +816,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
         customResource == null
             ? MonitoredResourceUtil.getResource(getOptions().getProjectId(), null)
             : customResource;
-    final Context context = (new ContextHandler()).getCurrentContext();
+    final Context context = new ContextHandler().getCurrentContext();
     final ArrayList<LogEntry> populatedLogEntries = Lists.newArrayList();
 
     // populate empty metadata fields of log entries before calling write API
@@ -843,6 +847,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     return populatedLogEntries;
   }
 
+  @Override
   public void write(Iterable<LogEntry> logEntries, WriteOption... options) {
     if (inWriteCall.get() != null) {
       return;
@@ -852,14 +857,15 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     try {
       final Map<Option.OptionType, ?> writeOptions = optionMap(options);
       final Boolean loggingOptionsPopulateFlag = getOptions().getAutoPopulateMetadata();
-      final Boolean writeOptionPopulateFlga =
+      final Boolean writeOptionPopulateFlag =
           WriteOption.OptionType.AUTO_POPULATE_METADATA.get(writeOptions);
       Tuple<Boolean, Iterable<LogEntry>> pair =
           Instrumentation.populateInstrumentationInfo(logEntries);
       logEntries = pair.y();
 
-      if (writeOptionPopulateFlga == Boolean.TRUE
-          || (writeOptionPopulateFlga == null && loggingOptionsPopulateFlag == Boolean.TRUE)) {
+      if (Objects.equals(writeOptionPopulateFlag, Boolean.TRUE)
+          || (writeOptionPopulateFlag == null
+              && Objects.equals(loggingOptionsPopulateFlag, Boolean.TRUE))) {
         final MonitoredResource sharedResourceMetadata = RESOURCE.get(writeOptions);
         logEntries =
             populateMetadata(logEntries, sharedResourceMetadata, this.getClass().getName());
@@ -881,6 +887,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     }
   }
 
+  @Override
   public void flush() {
     // BUG(1795): We should force batcher to issue RPC call for buffered messages,
     // so the code below doesn't wait uselessly.
@@ -889,7 +896,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     try {
       ApiFutures.allAsList(writesToFlush).get(FLUSH_WAIT_TIMEOUT_SECONDS, TimeUnit.SECONDS);
     } catch (InterruptedException | ExecutionException | TimeoutException e) {
-      throw new RuntimeException(e);
+      throw new VerifyException(e);
     }
   }
 
@@ -927,7 +934,6 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
         break;
 
       case ASYNC:
-      default:
         final ApiFuture<Void> writeFuture = writeAsync(logEntries, writeOptions);
         final Object pendingKey = new Object();
         pendingWrites.put(pendingKey, writeFuture);
@@ -997,7 +1003,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     // time filter
     // of 24 hours back to be inline with gcloud behavior for the same API
     if (filter != null) {
-      if (!filter.toLowerCase().contains("timestamp")) {
+      if (!Ascii.toLowerCase(filter).contains("timestamp")) {
         filter =
             String.format(
                 "%s AND %s", filter, defaultTimestampFilterCreator.createDefaultTimestampFilter());
@@ -1029,7 +1035,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
                     : Lists.transform(
                         listLogEntriesResponse.getEntriesList(), LogEntry.FROM_PB_FUNCTION);
             String cursor =
-                listLogEntriesResponse.getNextPageToken().equals("")
+                listLogEntriesResponse.getNextPageToken().isEmpty()
                     ? null
                     : listLogEntriesResponse.getNextPageToken();
             return new AsyncPageImpl<>(
@@ -1078,7 +1084,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     if (bufferWindow != null) {
       try {
         builder.setBufferWindow(Durations.parse(bufferWindow));
-      } catch (java.text.ParseException err) {
+      } catch (ParseException err) {
         System.err.println("ERROR: invalid duration format: " + bufferWindow);
       }
     }

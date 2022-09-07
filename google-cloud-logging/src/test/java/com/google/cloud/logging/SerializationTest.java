@@ -63,13 +63,13 @@ public class SerializationTest extends BaseSerializationTest {
   private static final LogEntry ENTRY = LogEntry.of(STRING_PAYLOAD);
   private static final MetricInfo METRIC_INFO =
       MetricInfo.of("metric", "logName=projects/my-projectid/logs/syslog");
-  private static final Metric METRIC = new Metric(LOGGING, new Metric.BuilderImpl(METRIC_INFO));
+  private static final Metric METRIC = new Metric(LOGGING, new MetricInfo.BuilderImpl(METRIC_INFO));
   private static final BucketDestination BUCKET_DESTINATION = BucketDestination.of("bucket");
   private static final DatasetDestination DATASET_DESTINATION =
       DatasetDestination.of("project", "dataset");
   private static final TopicDestination TOPIC_DESTINATION = TopicDestination.of("project", "topic");
   private static final SinkInfo SINK_INFO = SinkInfo.of("sink", BUCKET_DESTINATION);
-  private static final Sink SINK = new Sink(LOGGING, new Sink.BuilderImpl(SINK_INFO));
+  private static final Sink SINK = new Sink(LOGGING, new SinkInfo.BuilderImpl(SINK_INFO));
   private static final ListOption PAGE_TOKEN_OPTION = ListOption.pageToken("token");
   private static final ListOption PAGE_SIZE_OPTION = ListOption.pageSize(42);
   private static final WriteOption LABELS_OPTION =
