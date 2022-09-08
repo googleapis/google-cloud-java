@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-video-intelligence-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.2.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
+  <version>2.3.0</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
   <name>Google Cloud Video Intelligence Parent</name>
   <url>https://github.com/googleapis/java-video-intelligence</url>
   <description>

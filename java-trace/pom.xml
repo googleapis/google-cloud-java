@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-trace-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.3.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-trace:current} -->
+  <version>2.4.0</version><!-- {x-version-update:google-cloud-trace:current} -->
   <name>Google Cloud Trace Parent</name>
   <url>https://github.com/googleapis/java-core</url>
   <description>

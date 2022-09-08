@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.7](https://github.com/googleapis/google-cloud-java/compare/google-cloud-tasks-v2.3.6...google-cloud-tasks-v2.3.7) (2022-09-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+
 ## [2.3.6](https://github.com/googleapis/java-tasks/compare/v2.3.5...v2.3.6) (2022-08-05)
 
 
