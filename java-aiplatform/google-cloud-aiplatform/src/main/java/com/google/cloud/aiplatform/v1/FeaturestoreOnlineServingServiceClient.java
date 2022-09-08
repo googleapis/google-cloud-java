@@ -50,8 +50,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (FeaturestoreOnlineServingServiceClient featurestoreOnlineServingServiceClient =
  *     FeaturestoreOnlineServingServiceClient.create()) {
  *   EntityTypeName entityType =
@@ -91,8 +94,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * FeaturestoreOnlineServingServiceSettings featurestoreOnlineServingServiceSettings =
  *     FeaturestoreOnlineServingServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -104,8 +110,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * FeaturestoreOnlineServingServiceSettings featurestoreOnlineServingServiceSettings =
  *     FeaturestoreOnlineServingServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * FeaturestoreOnlineServingServiceClient featurestoreOnlineServingServiceClient =
@@ -177,8 +186,11 @@ public class FeaturestoreOnlineServingServiceClient implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FeaturestoreOnlineServingServiceClient featurestoreOnlineServingServiceClient =
    *     FeaturestoreOnlineServingServiceClient.create()) {
    *   EntityTypeName entityType =
@@ -211,8 +223,11 @@ public class FeaturestoreOnlineServingServiceClient implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FeaturestoreOnlineServingServiceClient featurestoreOnlineServingServiceClient =
    *     FeaturestoreOnlineServingServiceClient.create()) {
    *   String entityType =
@@ -244,8 +259,11 @@ public class FeaturestoreOnlineServingServiceClient implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FeaturestoreOnlineServingServiceClient featurestoreOnlineServingServiceClient =
    *     FeaturestoreOnlineServingServiceClient.create()) {
    *   ReadFeatureValuesRequest request =
@@ -276,8 +294,11 @@ public class FeaturestoreOnlineServingServiceClient implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FeaturestoreOnlineServingServiceClient featurestoreOnlineServingServiceClient =
    *     FeaturestoreOnlineServingServiceClient.create()) {
    *   ReadFeatureValuesRequest request =
@@ -308,8 +329,11 @@ public class FeaturestoreOnlineServingServiceClient implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FeaturestoreOnlineServingServiceClient featurestoreOnlineServingServiceClient =
    *     FeaturestoreOnlineServingServiceClient.create()) {
    *   StreamingReadFeatureValuesRequest request =
@@ -340,8 +364,11 @@ public class FeaturestoreOnlineServingServiceClient implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FeaturestoreOnlineServingServiceClient featurestoreOnlineServingServiceClient =
    *     FeaturestoreOnlineServingServiceClient.create()) {
    *   ListLocationsRequest request =
@@ -372,8 +399,11 @@ public class FeaturestoreOnlineServingServiceClient implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FeaturestoreOnlineServingServiceClient featurestoreOnlineServingServiceClient =
    *     FeaturestoreOnlineServingServiceClient.create()) {
    *   ListLocationsRequest request =
@@ -404,8 +434,11 @@ public class FeaturestoreOnlineServingServiceClient implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FeaturestoreOnlineServingServiceClient featurestoreOnlineServingServiceClient =
    *     FeaturestoreOnlineServingServiceClient.create()) {
    *   ListLocationsRequest request =
@@ -442,8 +475,11 @@ public class FeaturestoreOnlineServingServiceClient implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FeaturestoreOnlineServingServiceClient featurestoreOnlineServingServiceClient =
    *     FeaturestoreOnlineServingServiceClient.create()) {
    *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
@@ -465,8 +501,11 @@ public class FeaturestoreOnlineServingServiceClient implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FeaturestoreOnlineServingServiceClient featurestoreOnlineServingServiceClient =
    *     FeaturestoreOnlineServingServiceClient.create()) {
    *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
@@ -490,8 +529,11 @@ public class FeaturestoreOnlineServingServiceClient implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FeaturestoreOnlineServingServiceClient featurestoreOnlineServingServiceClient =
    *     FeaturestoreOnlineServingServiceClient.create()) {
    *   SetIamPolicyRequest request =
@@ -522,8 +564,11 @@ public class FeaturestoreOnlineServingServiceClient implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FeaturestoreOnlineServingServiceClient featurestoreOnlineServingServiceClient =
    *     FeaturestoreOnlineServingServiceClient.create()) {
    *   SetIamPolicyRequest request =
@@ -553,8 +598,11 @@ public class FeaturestoreOnlineServingServiceClient implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FeaturestoreOnlineServingServiceClient featurestoreOnlineServingServiceClient =
    *     FeaturestoreOnlineServingServiceClient.create()) {
    *   GetIamPolicyRequest request =
@@ -583,8 +631,11 @@ public class FeaturestoreOnlineServingServiceClient implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FeaturestoreOnlineServingServiceClient featurestoreOnlineServingServiceClient =
    *     FeaturestoreOnlineServingServiceClient.create()) {
    *   GetIamPolicyRequest request =
@@ -617,8 +668,11 @@ public class FeaturestoreOnlineServingServiceClient implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FeaturestoreOnlineServingServiceClient featurestoreOnlineServingServiceClient =
    *     FeaturestoreOnlineServingServiceClient.create()) {
    *   TestIamPermissionsRequest request =
@@ -652,8 +706,11 @@ public class FeaturestoreOnlineServingServiceClient implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FeaturestoreOnlineServingServiceClient featurestoreOnlineServingServiceClient =
    *     FeaturestoreOnlineServingServiceClient.create()) {
    *   TestIamPermissionsRequest request =
