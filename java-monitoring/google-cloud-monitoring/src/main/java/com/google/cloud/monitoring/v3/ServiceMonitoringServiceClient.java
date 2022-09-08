@@ -62,8 +62,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
  *     ServiceMonitoringServiceClient.create()) {
  *   ResourceName parent = ResourceName.of("[FOLDER]");
@@ -102,8 +105,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * ServiceMonitoringServiceSettings serviceMonitoringServiceSettings =
  *     ServiceMonitoringServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -115,8 +121,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * ServiceMonitoringServiceSettings serviceMonitoringServiceSettings =
  *     ServiceMonitoringServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ServiceMonitoringServiceClient serviceMonitoringServiceClient =
@@ -184,8 +193,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   ResourceName parent = ResourceName.of("[FOLDER]");
@@ -217,8 +229,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
@@ -250,8 +265,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
@@ -283,8 +301,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
@@ -313,8 +334,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   CreateServiceRequest request =
@@ -341,8 +365,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   CreateServiceRequest request =
@@ -369,8 +396,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
@@ -395,8 +425,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   String name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString();
@@ -420,8 +453,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   GetServiceRequest request =
@@ -446,8 +482,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   GetServiceRequest request =
@@ -472,8 +511,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   ResourceName parent = ResourceName.of("[FOLDER]");
@@ -504,8 +546,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
@@ -536,8 +581,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
@@ -568,8 +616,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
@@ -597,8 +648,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   ListServicesRequest request =
@@ -628,8 +682,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   ListServicesRequest request =
@@ -660,8 +717,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   ListServicesRequest request =
@@ -698,8 +758,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   Service service = Service.newBuilder().build();
@@ -723,8 +786,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   UpdateServiceRequest request =
@@ -750,8 +816,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   UpdateServiceRequest request =
@@ -777,8 +846,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
@@ -803,8 +875,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   String name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString();
@@ -828,8 +903,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   DeleteServiceRequest request =
@@ -854,8 +932,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   DeleteServiceRequest request =
@@ -880,8 +961,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   ServiceName parent = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
@@ -914,8 +998,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   String parent = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString();
@@ -948,8 +1035,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   CreateServiceLevelObjectiveRequest request =
@@ -978,8 +1068,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   CreateServiceLevelObjectiveRequest request =
@@ -1007,8 +1100,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   ServiceLevelObjectiveName name =
@@ -1038,8 +1134,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   String name =
@@ -1068,8 +1167,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   GetServiceLevelObjectiveRequest request =
@@ -1099,8 +1201,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   GetServiceLevelObjectiveRequest request =
@@ -1129,8 +1234,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   ServiceName parent = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
@@ -1163,8 +1271,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   String parent = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString();
@@ -1194,8 +1305,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   ListServiceLevelObjectivesRequest request =
@@ -1227,8 +1341,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   ListServiceLevelObjectivesRequest request =
@@ -1262,8 +1379,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   ListServiceLevelObjectivesRequest request =
@@ -1301,8 +1421,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   ServiceLevelObjective serviceLevelObjective = ServiceLevelObjective.newBuilder().build();
@@ -1331,8 +1454,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   UpdateServiceLevelObjectiveRequest request =
@@ -1360,8 +1486,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   UpdateServiceLevelObjectiveRequest request =
@@ -1388,8 +1517,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   ServiceLevelObjectiveName name =
@@ -1418,8 +1550,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   String name =
@@ -1447,8 +1582,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   DeleteServiceLevelObjectiveRequest request =
@@ -1476,8 +1614,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
    *     ServiceMonitoringServiceClient.create()) {
    *   DeleteServiceLevelObjectiveRequest request =
