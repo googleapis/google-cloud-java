@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.7](https://github.com/googleapis/java-recaptchaenterprise/compare/v3.0.6...v3.0.7) (2022-09-08)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#882](https://github.com/googleapis/java-recaptchaenterprise/issues/882)) ([1f04e9a](https://github.com/googleapis/java-recaptchaenterprise/commit/1f04e9a95f066d42621ab7475ef43eebaa01a737))
+
 ## [3.0.6](https://github.com/googleapis/java-recaptchaenterprise/compare/v3.0.5...v3.0.6) (2022-09-06)
 
 
