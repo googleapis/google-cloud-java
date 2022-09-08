@@ -1,5 +1,15 @@
 # Changelog
 
+## [3.4.2](https://github.com/googleapis/google-cloud-java/compare/google-cloud-monitoring-v3.4.1...google-cloud-monitoring-v3.4.2) (2022-09-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.api.grpc:grpc-google-cloud-monitoring-v3 to v3.4.2 ([#8276](https://github.com/googleapis/google-cloud-java/issues/8276)) ([85e8ae0](https://github.com/googleapis/google-cloud-java/commit/85e8ae089cba883dee8f5639046690977ef39186))
+* **deps:** update dependency com.google.api.grpc:proto-google-cloud-monitoring-v3 to v3.4.2 ([#8285](https://github.com/googleapis/google-cloud-java/issues/8285)) ([2832653](https://github.com/googleapis/google-cloud-java/commit/2832653660ec01b6daf37fa53659cbf7a86a597a))
+* **deps:** update dependency com.google.cloud:google-cloud-monitoring-parent to v3.4.2 ([#8291](https://github.com/googleapis/google-cloud-java/issues/8291)) ([1c6a84a](https://github.com/googleapis/google-cloud-java/commit/1c6a84a8f98f3d84741bdc3916e1f926bc07ac65))
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+
 ## [3.4.1](https://github.com/googleapis/java-monitoring/compare/v3.4.0...v3.4.1) (2022-08-11)
 
 
