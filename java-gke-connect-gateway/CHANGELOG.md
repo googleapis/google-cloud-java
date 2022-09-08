@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.4](https://github.com/googleapis/java-gke-connect-gateway/compare/v0.4.3...v0.4.4) (2022-09-08)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#207](https://github.com/googleapis/java-gke-connect-gateway/issues/207)) ([665d39e](https://github.com/googleapis/java-gke-connect-gateway/commit/665d39e3ce67897e37582e849f96f45d46a6594e))
+
 ## [0.4.3](https://github.com/googleapis/java-gke-connect-gateway/compare/v0.4.2...v0.4.3) (2022-08-09)
 
 
