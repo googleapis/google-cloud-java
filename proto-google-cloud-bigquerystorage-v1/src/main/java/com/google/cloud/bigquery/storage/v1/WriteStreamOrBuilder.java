@@ -245,4 +245,33 @@ public interface WriteStreamOrBuilder
    * @return The writeMode.
    */
   com.google.cloud.bigquery.storage.v1.WriteStream.WriteMode getWriteMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The geographic location where the stream's dataset resides. See
+   * https://cloud.google.com/bigquery/docs/locations for supported
+   * locations.
+   * </pre>
+   *
+   * <code>string location = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The location.
+   */
+  java.lang.String getLocation();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The geographic location where the stream's dataset resides. See
+   * https://cloud.google.com/bigquery/docs/locations for supported
+   * locations.
+   * </pre>
+   *
+   * <code>string location = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The bytes for location.
+   */
+  com.google.protobuf.ByteString getLocationBytes();
 }

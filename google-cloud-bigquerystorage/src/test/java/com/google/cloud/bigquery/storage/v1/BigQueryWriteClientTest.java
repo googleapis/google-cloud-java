@@ -91,6 +91,7 @@ public class BigQueryWriteClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setCommitTime(Timestamp.newBuilder().build())
             .setTableSchema(TableSchema.newBuilder().build())
+            .setLocation("location1901043637")
             .build();
     mockBigQueryWrite.addResponse(expectedResponse);
 
@@ -135,6 +136,7 @@ public class BigQueryWriteClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setCommitTime(Timestamp.newBuilder().build())
             .setTableSchema(TableSchema.newBuilder().build())
+            .setLocation("location1901043637")
             .build();
     mockBigQueryWrite.addResponse(expectedResponse);
 
@@ -242,6 +244,7 @@ public class BigQueryWriteClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setCommitTime(Timestamp.newBuilder().build())
             .setTableSchema(TableSchema.newBuilder().build())
+            .setLocation("location1901043637")
             .build();
     mockBigQueryWrite.addResponse(expectedResponse);
 
@@ -283,6 +286,7 @@ public class BigQueryWriteClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setCommitTime(Timestamp.newBuilder().build())
             .setTableSchema(TableSchema.newBuilder().build())
+            .setLocation("location1901043637")
             .build();
     mockBigQueryWrite.addResponse(expectedResponse);
 

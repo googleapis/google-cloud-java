@@ -41,6 +41,7 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     type_ = 0;
     writeMode_ = 0;
+    location_ = "";
   }
 
   @java.lang.Override
@@ -137,6 +138,13 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
               int rawValue = input.readEnum();
 
               writeMode_ = rawValue;
+              break;
+            }
+          case 66:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              location_ = s;
               break;
             }
           default:
@@ -801,6 +809,59 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int LOCATION_FIELD_NUMBER = 8;
+  private volatile java.lang.Object location_;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The geographic location where the stream's dataset resides. See
+   * https://cloud.google.com/bigquery/docs/locations for supported
+   * locations.
+   * </pre>
+   *
+   * <code>string location = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The location.
+   */
+  @java.lang.Override
+  public java.lang.String getLocation() {
+    java.lang.Object ref = location_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      location_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The geographic location where the stream's dataset resides. See
+   * https://cloud.google.com/bigquery/docs/locations for supported
+   * locations.
+   * </pre>
+   *
+   * <code>string location = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The bytes for location.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLocationBytes() {
+    java.lang.Object ref = location_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      location_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -836,6 +897,9 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(7, writeMode_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, location_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -865,6 +929,9 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.bigquery.storage.v1.WriteStream.WriteMode.WRITE_MODE_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, writeMode_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, location_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -897,6 +964,7 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
       if (!getTableSchema().equals(other.getTableSchema())) return false;
     }
     if (writeMode_ != other.writeMode_) return false;
+    if (!getLocation().equals(other.getLocation())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -926,6 +994,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + WRITE_MODE_FIELD_NUMBER;
     hash = (53 * hash) + writeMode_;
+    hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+    hash = (53 * hash) + getLocation().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1095,6 +1165,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
       }
       writeMode_ = 0;
 
+      location_ = "";
+
       return this;
     }
 
@@ -1140,6 +1212,7 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
         result.tableSchema_ = tableSchemaBuilder_.build();
       }
       result.writeMode_ = writeMode_;
+      result.location_ = location_;
       onBuilt();
       return result;
     }
@@ -1208,6 +1281,10 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.writeMode_ != 0) {
         setWriteModeValue(other.getWriteModeValue());
+      }
+      if (!other.getLocation().isEmpty()) {
+        location_ = other.location_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2220,6 +2297,122 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
     public Builder clearWriteMode() {
 
       writeMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object location_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The geographic location where the stream's dataset resides. See
+     * https://cloud.google.com/bigquery/docs/locations for supported
+     * locations.
+     * </pre>
+     *
+     * <code>string location = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The location.
+     */
+    public java.lang.String getLocation() {
+      java.lang.Object ref = location_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        location_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The geographic location where the stream's dataset resides. See
+     * https://cloud.google.com/bigquery/docs/locations for supported
+     * locations.
+     * </pre>
+     *
+     * <code>string location = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The bytes for location.
+     */
+    public com.google.protobuf.ByteString getLocationBytes() {
+      java.lang.Object ref = location_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        location_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The geographic location where the stream's dataset resides. See
+     * https://cloud.google.com/bigquery/docs/locations for supported
+     * locations.
+     * </pre>
+     *
+     * <code>string location = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @param value The location to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocation(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      location_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The geographic location where the stream's dataset resides. See
+     * https://cloud.google.com/bigquery/docs/locations for supported
+     * locations.
+     * </pre>
+     *
+     * <code>string location = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLocation() {
+
+      location_ = getDefaultInstance().getLocation();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The geographic location where the stream's dataset resides. See
+     * https://cloud.google.com/bigquery/docs/locations for supported
+     * locations.
+     * </pre>
+     *
+     * <code>string location = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @param value The bytes for location to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocationBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      location_ = value;
       onChanged();
       return this;
     }

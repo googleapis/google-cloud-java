@@ -38,8 +38,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
  *   TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
  *   WriteStream writeStream = WriteStream.newBuilder().build();
@@ -76,8 +79,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * BigQueryWriteSettings bigQueryWriteSettings =
  *     BigQueryWriteSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -88,8 +94,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * BigQueryWriteSettings bigQueryWriteSettings =
  *     BigQueryWriteSettings.newBuilder().setEndpoint(myEndpoint).build();
  * BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create(bigQueryWriteSettings);
@@ -157,8 +166,11 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
    *   WriteStream writeStream = WriteStream.newBuilder().build();
@@ -190,8 +202,11 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   String parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString();
    *   WriteStream writeStream = WriteStream.newBuilder().build();
@@ -220,8 +235,11 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   CreateWriteStreamRequest request =
    *       CreateWriteStreamRequest.newBuilder()
@@ -249,8 +267,11 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   CreateWriteStreamRequest request =
    *       CreateWriteStreamRequest.newBuilder()
@@ -313,8 +334,11 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   BidiStream<AppendRowsRequest, AppendRowsResponse> bidiStream =
    *       bigQueryWriteClient.appendRowsCallable().call();
@@ -343,8 +367,11 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   WriteStreamName name = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
    *   WriteStream response = bigQueryWriteClient.getWriteStream(name);
@@ -368,8 +395,11 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   String name = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]").toString();
    *   WriteStream response = bigQueryWriteClient.getWriteStream(name);
@@ -392,13 +422,17 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   GetWriteStreamRequest request =
    *       GetWriteStreamRequest.newBuilder()
    *           .setName(
    *               WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]").toString())
+   *           .setView(WriteStreamView.forNumber(0))
    *           .build();
    *   WriteStream response = bigQueryWriteClient.getWriteStream(request);
    * }
@@ -418,13 +452,17 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   GetWriteStreamRequest request =
    *       GetWriteStreamRequest.newBuilder()
    *           .setName(
    *               WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]").toString())
+   *           .setView(WriteStreamView.forNumber(0))
    *           .build();
    *   ApiFuture<WriteStream> future =
    *       bigQueryWriteClient.getWriteStreamCallable().futureCall(request);
@@ -445,8 +483,11 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   WriteStreamName name = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
    *   FinalizeWriteStreamResponse response = bigQueryWriteClient.finalizeWriteStream(name);
@@ -473,8 +514,11 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   String name = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]").toString();
    *   FinalizeWriteStreamResponse response = bigQueryWriteClient.finalizeWriteStream(name);
@@ -499,8 +543,11 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   FinalizeWriteStreamRequest request =
    *       FinalizeWriteStreamRequest.newBuilder()
@@ -526,8 +573,11 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   FinalizeWriteStreamRequest request =
    *       FinalizeWriteStreamRequest.newBuilder()
@@ -556,8 +606,11 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
    *   BatchCommitWriteStreamsResponse response =
@@ -587,8 +640,11 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   String parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString();
    *   BatchCommitWriteStreamsResponse response =
@@ -616,8 +672,11 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   BatchCommitWriteStreamsRequest request =
    *       BatchCommitWriteStreamsRequest.newBuilder()
@@ -647,8 +706,11 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   BatchCommitWriteStreamsRequest request =
    *       BatchCommitWriteStreamsRequest.newBuilder()
@@ -680,8 +742,11 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   WriteStreamName writeStream =
    *       WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
@@ -713,8 +778,11 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   String writeStream =
    *       WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]").toString();
@@ -743,8 +811,11 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   FlushRowsRequest request =
    *       FlushRowsRequest.newBuilder()
@@ -776,8 +847,11 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   FlushRowsRequest request =
    *       FlushRowsRequest.newBuilder()
