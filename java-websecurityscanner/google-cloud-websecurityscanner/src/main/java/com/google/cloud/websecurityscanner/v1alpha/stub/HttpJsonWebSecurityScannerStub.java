@@ -103,7 +103,7 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("scanConfig", request.getScanConfig()))
+                                  .toBody("scanConfig", request.getScanConfig(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ScanConfig>newBuilder()
@@ -246,7 +246,7 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("scanConfig", request.getScanConfig()))
+                                  .toBody("scanConfig", request.getScanConfig(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ScanConfig>newBuilder()
@@ -283,7 +283,7 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ScanRun>newBuilder()
@@ -389,7 +389,7 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ScanRun>newBuilder()
