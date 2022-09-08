@@ -160,6 +160,7 @@ def generate(
     # Initialize workdir
     if monorepo_url:
         print("Creating a new module in monorepo " + monorepo_url)
+        subprocess.check_call(["mkdir", "-p", "workspace"])
         subprocess.check_call(["rm", "-fr", "monorepo"], cwd="workspace")
         subprocess.check_call(["git", "clone", monorepo_url, "monorepo"],
                               cwd="workspace")

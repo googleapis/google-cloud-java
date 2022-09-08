@@ -65,12 +65,18 @@ $ python3.9 -m pip install -r generation/new_client/requirements.txt
 
 ## Run client generation script
 
+You will run new-client.py script with the following parameters
+
+### API short name
+
 For convenience of the subsequent commands, define a variable for API short name.
 Get the value from the DevRel Services page (Example: `apikeys`):
 
 ```
 $ API_SHORT_NAME=apikeys
 ```
+
+### proto path
 
 The script takes "proto path" parameter. This is path from google3's root to the
 directory that contains versions (e.g., "v1" or "v2"). For example, if we
@@ -80,11 +86,57 @@ have
 
 then the "proto path" value we supply to the command is "google/api/apikeys".
 
+### Name pretty
+
+Pick name from the display name in the DevRel Services site.
+For example, "API Keys API" in
+https://devrel.corp.google.com/admin/products/479.
+
+### Product Docs
+
+Find product document URL in the DevRel Services site.
+For example, "https://cloud.google.com/api-keys/" in
+https://devrel.corp.google.com/admin/products/479.
+
+### API description
+
+Find the short description of the API. Usually the first sentence in the product
+document above.
+
+### Release level
+
+The first client generation is always "preview".
+
+### Transport
+
+Transport layer. Use "grpc".
+
+
+### Language
+
+Use "java"
+
+### Monorepo URL
+
+Use "https://github.com/googleapis/google-cloud-java"
+
+
+### The command example
+
+The script is in generation/new_client.
 
 ```
-python3.9 new-client.py generate \
+$ cd generation/new_client
+$ python3.9 new-client.py generate \
   --api_shortname=${API_SHORT_NAME} \
-  --proto-path=google/api/apikeys
+  --proto-path=google/api/apikeys \
+  --name-pretty="API Keys API" \
+  --product-docs="https://cloud.google.com/api-keys/" \
+  --api-description="API Keys lets you create and manage your API keys for your projects." \
+  --release-level=preview \
+  --transport=grpc \
+  --language=java \
+  --monorepo-url="https://github.com/googleapis/google-cloud-java"
 ```
 
 
