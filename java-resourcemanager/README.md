@@ -41,7 +41,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-resourcemanager</artifactId>
-  <version>0.119.9-alpha</version>
+  <version>1.5.4</version>
 </dependency>
 
 ```
@@ -56,13 +56,13 @@ implementation 'com.google.cloud:google-cloud-resourcemanager'
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-resourcemanager:1.5.3'
+implementation 'com.google.cloud:google-cloud-resourcemanager:1.5.4'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-resourcemanager" % "1.5.3"
+libraryDependencies += "com.google.cloud" % "google-cloud-resourcemanager" % "1.5.4"
 ```
 
 ## Authentication
