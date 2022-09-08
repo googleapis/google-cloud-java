@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.3](https://github.com/googleapis/java-monitoring-dashboards/compare/v2.5.2...v2.5.3) (2022-09-08)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#638](https://github.com/googleapis/java-monitoring-dashboards/issues/638)) ([67a618c](https://github.com/googleapis/java-monitoring-dashboards/commit/67a618c362015a763f784a389d4d678083474850))
+
 ## [2.5.2](https://github.com/googleapis/java-monitoring-dashboards/compare/v2.5.1...v2.5.2) (2022-08-09)
 
 
