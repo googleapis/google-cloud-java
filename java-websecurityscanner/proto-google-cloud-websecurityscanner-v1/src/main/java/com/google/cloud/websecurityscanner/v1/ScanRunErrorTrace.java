@@ -142,7 +142,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Output only.
    * Defines an error reason code.
-   * Next id: 7
+   * Next id: 8
    * </pre>
    *
    * Protobuf enum {@code google.cloud.websecurityscanner.v1.ScanRunErrorTrace.Code}
