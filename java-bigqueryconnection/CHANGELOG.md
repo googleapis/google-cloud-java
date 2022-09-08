@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.6.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-bigqueryconnection-v2.5.0...google-cloud-bigqueryconnection-v2.6.0) (2022-09-08)
+
+
+### Features
+
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.api.grpc:grpc-google-cloud-bigqueryconnection-v1 to v2.5.1 ([#8304](https://github.com/googleapis/google-cloud-java/issues/8304)) ([155d2d5](https://github.com/googleapis/google-cloud-java/commit/155d2d5fb5e5654d6b687ee50a0970e30db7c332))
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+
 ## [2.5.0](https://github.com/googleapis/java-bigqueryconnection/compare/v2.4.1...v2.5.0) (2022-08-09)
 
 

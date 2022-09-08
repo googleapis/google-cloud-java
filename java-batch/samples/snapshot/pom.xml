@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-batch</artifactId>
-      <version>0.2.3-SNAPSHOT</version>
+      <version>0.3.0</version>
     </dependency>
     <!-- {x-version-update-end} -->
 

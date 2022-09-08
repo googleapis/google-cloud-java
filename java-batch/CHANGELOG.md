@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.3.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-batch-v0.2.2...google-cloud-batch-v0.3.0) (2022-09-08)
+
+
+### Features
+
+* environment variables, disk interfaces ([e2fd744](https://github.com/googleapis/google-cloud-java/commit/e2fd744d0b5dcdce2694076366c7267c1d7a870e))
+* environment variables, disk interfaces ([e2fd744](https://github.com/googleapis/google-cloud-java/commit/e2fd744d0b5dcdce2694076366c7267c1d7a870e))
+
+
+### Bug Fixes
+
+* [batch] mark service_account_email as deprecated ([#8273](https://github.com/googleapis/google-cloud-java/issues/8273)) ([96705cb](https://github.com/googleapis/google-cloud-java/commit/96705cbee07049a75ffadcc601484f914b39f309))
+
+
+### Documentation
+
+* removing comment from a deprecated field ([96705cb](https://github.com/googleapis/google-cloud-java/commit/96705cbee07049a75ffadcc601484f914b39f309))
+
 ## [0.2.2](https://github.com/googleapis/java-batch/compare/v0.2.1...v0.2.2) (2022-08-09)
 
 
