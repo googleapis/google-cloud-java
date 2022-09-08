@@ -1,0 +1,24 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.devtools.cloudtrace.v2",
+  "libraryPackage": "com.google.cloud.trace.v2",
+  "services": {
+    "TraceService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TraceServiceClient",
+          "rpcs": {
+            "BatchWriteSpans": {
+              "methods": ["batchWriteSpans", "batchWriteSpans", "batchWriteSpans", "batchWriteSpansCallable"]
+            },
+            "CreateSpan": {
+              "methods": ["createSpan", "createSpanCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
