@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-video-intelligence-v2.2.3...google-cloud-video-intelligence-v2.3.0) (2022-09-08)
+
+
+### Features
+
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.8.10 ([#965](https://github.com/googleapis/google-cloud-java/issues/965)) ([0e509bb](https://github.com/googleapis/google-cloud-java/commit/0e509bbe9cebae2545aaebdd65f05001d8886206))
+
 ## [2.2.3](https://github.com/googleapis/java-video-intelligence/compare/v2.2.2...v2.2.3) (2022-08-09)
 
 

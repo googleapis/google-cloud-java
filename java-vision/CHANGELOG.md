@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.2.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-vision-v3.1.0...google-cloud-vision-v3.2.0) (2022-09-08)
+
+
+### Features
+
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+* Update Java-Vision IT test cases ([#8248](https://github.com/googleapis/google-cloud-java/issues/8248)) ([4adb9f7](https://github.com/googleapis/google-cloud-java/commit/4adb9f7215baec46b444f53b1d6730e3dc2f32cc))
+
 ## [3.1.0](https://github.com/googleapis/java-vision/compare/v3.0.2...v3.1.0) (2022-08-09)
 
 
