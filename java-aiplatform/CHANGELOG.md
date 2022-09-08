@@ -1,5 +1,27 @@
 # Changelog
 
+## [3.3.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-aiplatform-v3.2.0...google-cloud-aiplatform-v3.3.0) (2022-09-08)
+
+
+### Features
+
+* [aiplatform] add model_monitoring_stats_anomalies,model_monitoring_status to BatchPredictionJob in aiplatform v1beta1 batch_prediction_job.proto ([#8242](https://github.com/googleapis/google-cloud-java/issues/8242)) ([148fcb1](https://github.com/googleapis/google-cloud-java/commit/148fcb1e3767634ce527f0b4000699770a33f382))
+* add input_artifacts to PipelineJob.runtime_config in aiplatform v1 pipeline_job ([ff7a4ab](https://github.com/googleapis/google-cloud-java/commit/ff7a4ab0d7a31758628b36415cb34107ec5a68fc))
+* add read_mask to ListPipelineJobsRequest in aiplatform v1 pipeline_service ([#1032](https://github.com/googleapis/google-cloud-java/issues/1032)) ([ff7a4ab](https://github.com/googleapis/google-cloud-java/commit/ff7a4ab0d7a31758628b36415cb34107ec5a68fc))
+* add UpsertDatapoints and RemoveDatapoints rpcs to IndexService in aiplatform v1 index_service.proto ([#1030](https://github.com/googleapis/google-cloud-java/issues/1030)) ([4114021](https://github.com/googleapis/google-cloud-java/commit/4114021936dff902a63359b95cfed9a79a284239))
+* add UpsertDatapoints and RemoveDatapoints rpcs to IndexService in aiplatform v1beta1 index_service.proto ([4114021](https://github.com/googleapis/google-cloud-java/commit/4114021936dff902a63359b95cfed9a79a284239))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:google-cloud-bigquery to v2.15.0 ([#8231](https://github.com/googleapis/google-cloud-java/issues/8231)) ([2c0b9ad](https://github.com/googleapis/google-cloud-java/commit/2c0b9ad05b4ff658ac7a08bde6637653825d2802))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.14.7 ([#1031](https://github.com/googleapis/google-cloud-java/issues/1031)) ([5adefd4](https://github.com/googleapis/google-cloud-java/commit/5adefd44bfc50418a1e6e24273c4a96ae38fd124))
+* update dependency com.google.cloud:google-cloud-storage to v2.11.3 ([#1015](https://github.com/googleapis/google-cloud-java/issues/1015)) ([7a2fcb0](https://github.com/googleapis/google-cloud-java/commit/7a2fcb09fcb002f485c8c18cb4a14d1583210e49))
+
 ## [3.2.0](https://github.com/googleapis/java-aiplatform/compare/v3.1.0...v3.2.0) (2022-08-09)
 
 

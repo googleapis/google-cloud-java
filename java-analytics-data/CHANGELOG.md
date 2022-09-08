@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.14.4](https://github.com/googleapis/google-cloud-java/compare/google-analytics-data-v0.14.3...google-analytics-data-v0.14.4) (2022-09-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.analytics:google-analytics-data-parent to v0.14.4 ([#8267](https://github.com/googleapis/google-cloud-java/issues/8267)) ([76f459f](https://github.com/googleapis/google-cloud-java/commit/76f459fde8a606abed28b6c1dfd084e4bc584fdc))
+* **deps:** update dependency com.google.api.grpc:grpc-google-analytics-data-v1alpha to v0.14.4 ([#8268](https://github.com/googleapis/google-cloud-java/issues/8268)) ([013c75d](https://github.com/googleapis/google-cloud-java/commit/013c75d1adfc5380af531527760c3fe03c93bb1a))
+* **deps:** update dependency com.google.api.grpc:grpc-google-analytics-data-v1beta to v0.14.4 ([#8269](https://github.com/googleapis/google-cloud-java/issues/8269)) ([c5b4236](https://github.com/googleapis/google-cloud-java/commit/c5b4236b4c047540994eb5bf115e90403e6d3e1a))
+* **deps:** update dependency com.google.api.grpc:proto-google-analytics-data-v1alpha to v0.14.4 ([#8278](https://github.com/googleapis/google-cloud-java/issues/8278)) ([c46135a](https://github.com/googleapis/google-cloud-java/commit/c46135a64382ba304c38c30329a1f1b9d15af143))
+* **deps:** update dependency com.google.api.grpc:proto-google-analytics-data-v1beta to v0.14.4 ([#8279](https://github.com/googleapis/google-cloud-java/issues/8279)) ([97841fa](https://github.com/googleapis/google-cloud-java/commit/97841fa661aa6395a831e6089a52a52a69e93137))
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+
 ## [0.14.3](https://github.com/googleapis/java-analytics-data/compare/v0.14.2...v0.14.3) (2022-08-09)
 
 

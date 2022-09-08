@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.3.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-apigee-registry-v0.2.2...google-cloud-apigee-registry-v0.3.0) (2022-09-08)
+
+
+### Features
+
+* added support for `force` field for API and API version deletion ([#35](https://github.com/googleapis/google-cloud-java/issues/35)) ([3371ba4](https://github.com/googleapis/google-cloud-java/commit/3371ba468e0205fcc456f7ce746e8f67e02024b6))
+
+
+### Bug Fixes
+
+* [apigee-registry] additional error codes added to service configuration for retry ([#8272](https://github.com/googleapis/google-cloud-java/issues/8272)) ([a048a4e](https://github.com/googleapis/google-cloud-java/commit/a048a4e953bde5559b86fd2bff247423f34893f3))
+* **deps:** update dependency com.google.api.grpc:grpc-google-cloud-apigee-registry-v1 to v0.3.0 ([#8259](https://github.com/googleapis/google-cloud-java/issues/8259)) ([ee8eba8](https://github.com/googleapis/google-cloud-java/commit/ee8eba80d5080b95b9ad8c8870004c75e1a8d3c7))
+* **deps:** update dependency com.google.api.grpc:proto-google-cloud-apigee-registry-v1 to v0.3.0 ([#8261](https://github.com/googleapis/google-cloud-java/issues/8261)) ([bab91a7](https://github.com/googleapis/google-cloud-java/commit/bab91a7aca2c308fd3c20570ecea12b66ec3c0d9))
+* **deps:** update dependency com.google.cloud:google-cloud-apigee-registry-parent to v0.3.0 ([#8262](https://github.com/googleapis/google-cloud-java/issues/8262)) ([e05d63e](https://github.com/googleapis/google-cloud-java/commit/e05d63e7754fe88d54ba4692394cd77f316b9218))
+
 ## [0.2.2](https://github.com/googleapis/java-apigee-registry/compare/v0.2.1...v0.2.2) (2022-08-09)
 
 
