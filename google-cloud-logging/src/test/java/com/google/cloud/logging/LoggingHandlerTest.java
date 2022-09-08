@@ -16,21 +16,20 @@
 
 package com.google.cloud.logging;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.expectLastCall;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.reset;
 import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
-import com.google.api.client.util.Strings;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.cloud.logging.Payload.StringPayload;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.gson.JsonParser;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.logging.ErrorManager;
@@ -44,11 +43,13 @@ import org.easymock.EasyMock;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExternalResource;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-@RunWith(JUnit4.class)
+@RunWith(JUnit4.class) // We're testing our own deprecated Builder methods.
 @SuppressWarnings("deprecation")
 public class LoggingHandlerTest {
 
@@ -165,6 +166,13 @@ public class LoggingHandlerTest {
           .setTrace("projects/projectId/traces/traceId")
           .setTimestamp(123456789L)
           .build();
+  private static final LogEntry DIAGNOSTIC_ENTRY =
+      LogEntry.newBuilder(
+              InstrumentationTest.generateInstrumentationPayload(
+                  Instrumentation.JAVA_LIBRARY_NAME_PREFIX,
+                  Instrumentation.getLibraryVersion(Instrumentation.class)))
+          .setLogName(Instrumentation.INSTRUMENTATION_LOG_NAME)
+          .build();
 
   private static final ImmutableMap<String, String> BASE_SEVERITY_MAP =
       ImmutableMap.of(
@@ -200,6 +208,28 @@ public class LoggingHandlerTest {
       builder.addLabel("enhanced", "true");
     }
   }
+
+  static class OutputStreamPatcher extends ExternalResource {
+    ByteArrayOutputStream out = new ByteArrayOutputStream();
+    ByteArrayOutputStream err = new ByteArrayOutputStream();
+    PrintStream oldOut = System.out;
+    PrintStream oldErr = System.err;
+
+    // Note that we don't apply the patch in the before() method, because we don't need every test
+    // in this class to run with a patched System.out and System.err.
+    void patch() {
+      System.setOut(new PrintStream(out));
+      System.setErr(new PrintStream(err));
+    }
+
+    @Override
+    protected void after() {
+      System.setOut(oldOut);
+      System.setErr(oldErr);
+    }
+  }
+
+  @Rule public final OutputStreamPatcher outputStreamPatcher = new OutputStreamPatcher();
 
   @Before
   public void setUp() {
@@ -360,45 +390,52 @@ public class LoggingHandlerTest {
     logging.write(ImmutableList.of(FINEST_ENHANCED_ENTRY), DEFAULT_OPTIONS);
     expectLastCall().once();
     replay(options, logging);
-    LoggingEnhancer enhancer =
-        new LoggingEnhancer() {
-          @Override
-          public void enhanceLogEntry(LogEntry.Builder builder) {
-            builder.addLabel("enhanced", "true");
-          }
-        };
     Handler handler =
-        new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE, ImmutableList.of(enhancer));
+        new LoggingHandler(
+            LOG_NAME, options, DEFAULT_RESOURCE, ImmutableList.of(new TestLoggingEnhancer()));
     handler.setLevel(Level.ALL);
     handler.setFormatter(new TestFormatter());
     handler.publish(newLogRecord(Level.FINEST, MESSAGE));
   }
 
+  void validateJsonOutput(ByteArrayOutputStream bout) {
+    final String expectedOutput =
+        "{\"severity\":\"INFO\",\"time\":\"1970-01-02T10:17:36.789Z\",\"logging.googleapis.com/labels\":{\"enhanced\":\"true\"},\"logging.googleapis.com/trace_sampled\":false,\"message\":\"message\"}";
+    assertEquals(JsonParser.parseString(expectedOutput), JsonParser.parseString(bout.toString()));
+  }
+
   @Test
   public void testEnhancedLogEntryPrintToStdout() {
-    final String ExpectedOutput =
-        "{\"severity\":\"INFO\",\"time\":\"1970-01-02T10:17:36.789Z\",\"logging.googleapis.com/labels\":{\"enhanced\":\"true\"},\"logging.googleapis.com/trace_sampled\":false,\"message\":\"message\"}";
-    replay(options, logging);
-    ByteArrayOutputStream bout = new ByteArrayOutputStream();
-    PrintStream out = new PrintStream(bout);
-    System.setOut(out);
+    outputStreamPatcher.patch();
 
-    LoggingEnhancer enhancer =
-        new LoggingEnhancer() {
-          @Override
-          public void enhanceLogEntry(LogEntry.Builder builder) {
-            builder.addLabel("enhanced", "true");
-          }
-        };
+    replay(options, logging);
+
     LoggingHandler handler =
-        new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE, ImmutableList.of(enhancer));
+        new LoggingHandler(
+            LOG_NAME, options, DEFAULT_RESOURCE, ImmutableList.of(new TestLoggingEnhancer()));
     handler.setLevel(Level.ALL);
     handler.setFormatter(new TestFormatter());
-    handler.setRedirectToStdout(true);
+    handler.setLogTarget(LoggingHandler.LogTarget.STDOUT);
     handler.publish(newLogRecord(Level.INFO, MESSAGE));
 
-    assertEquals(ExpectedOutput, bout.toString().trim()); // ignore trailing newline!
-    System.setOut(null);
+    validateJsonOutput(outputStreamPatcher.out);
+  }
+
+  @Test
+  public void testEnhancedLogEntryPrintToStderr() {
+    outputStreamPatcher.patch();
+
+    replay(options, logging);
+
+    LoggingHandler handler =
+        new LoggingHandler(
+            LOG_NAME, options, DEFAULT_RESOURCE, ImmutableList.of(new TestLoggingEnhancer()));
+    handler.setLevel(Level.ALL);
+    handler.setFormatter(new TestFormatter());
+    handler.setLogTarget(LoggingHandler.LogTarget.STDERR);
+    handler.publish(newLogRecord(Level.INFO, MESSAGE));
+
+    validateJsonOutput(outputStreamPatcher.err);
   }
 
   @Test
@@ -557,76 +594,98 @@ public class LoggingHandlerTest {
     handler.close();
   }
 
-  private void setupOptionsToEnableAutoPopulation() {
+  private void setupOptionsToEnableAutoPopulation(boolean expectDiagnostic) {
+    // Reset the one-time instrumentation status population flag so it happens again on this test:
+    Instrumentation.setInstrumentationStatus(false);
+
     reset(options);
     options = EasyMock.createMock(LoggingOptions.class);
     expect(options.getProjectId()).andStubReturn(PROJECT);
     expect(options.getService()).andStubReturn(logging);
     expect(options.getAutoPopulateMetadata()).andStubReturn(Boolean.TRUE);
-  }
 
-  @Test
-  public void testAutoPopulationEnabled() {
-    setupOptionsToEnableAutoPopulation();
     // due to the EasyMock bug https://github.com/easymock/easymock/issues/130
     // it is impossible to define expectation for varargs using anyObject() matcher
     // the following mock uses the known fact that the method pass two exclusion prefixes
     // the following mocks should be replaced with anyObject() matchers when the bug is fixed
     expect(
             logging.populateMetadata(
-                EasyMock.eq(ImmutableList.of(INFO_ENTRY)),
+                EasyMock.eq(
+                    expectDiagnostic
+                        ? ImmutableList.of(INFO_ENTRY, DIAGNOSTIC_ENTRY)
+                        : ImmutableList.of(INFO_ENTRY)),
                 EasyMock.eq(DEFAULT_RESOURCE),
                 EasyMock.anyString(),
                 EasyMock.anyString()))
         .andReturn(ImmutableList.of(INFO_ENTRY))
         .once();
+  }
+
+  @Test
+  public void testAutoPopulationEnabled() {
+    setupOptionsToEnableAutoPopulation(/* expectDiagnostic= */ false);
     logging.write(ImmutableList.of(INFO_ENTRY), DEFAULT_OPTIONS);
     expectLastCall().once();
     replay(options, logging);
+    outputStreamPatcher.patch();
 
     Handler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE);
     handler.setLevel(Level.ALL);
     handler.setFormatter(new TestFormatter());
     handler.publish(newLogRecord(Level.INFO, MESSAGE));
+
+    // Validate that nothing is printed to STDOUT or STDERR since we don't ask for it.
+    assertThat(outputStreamPatcher.out.size()).isEqualTo(0);
+    assertThat(outputStreamPatcher.err.size()).isEqualTo(0);
+  }
+
+  // Test the deprecated get/setRedirectToStdout methods.
+  @SuppressWarnings("deprecation")
+  @Test
+  public void testSetRedirectToStdoutImpliesLogTarget() {
+    replay(options, logging);
+    LoggingHandler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE);
+
+    assertThat(handler.getLogTarget()).isEqualTo(LoggingHandler.LogTarget.CLOUD_LOGGING);
+    assertThat(handler.getRedirectToStdout()).isFalse();
+
+    handler.setRedirectToStdout(true);
+    assertThat(handler.getLogTarget()).isEqualTo(LoggingHandler.LogTarget.STDOUT);
+    assertThat(handler.getRedirectToStdout()).isTrue();
   }
 
   @Test
-  public void testRedirectToStdoutEnabled() {
-    setupOptionsToEnableAutoPopulation();
-    expect(
-            logging.populateMetadata(
-                EasyMock.eq(ImmutableList.of(INFO_ENTRY)),
-                EasyMock.eq(DEFAULT_RESOURCE),
-                EasyMock.anyString(),
-                EasyMock.anyString()))
-        .andReturn(ImmutableList.of(INFO_ENTRY))
-        .once();
+  public void testRedirectToStdout() {
+    setupOptionsToEnableAutoPopulation(/* expectDiagnostic= */ true);
     replay(options, logging);
-    ByteArrayOutputStream bout = new ByteArrayOutputStream();
-    PrintStream out = new PrintStream(bout);
-    System.setOut(out);
+    outputStreamPatcher.patch();
 
     LoggingHandler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE);
     handler.setLevel(Level.ALL);
     handler.setFormatter(new TestFormatter());
-    handler.setRedirectToStdout(true);
+    handler.setLogTarget(LoggingHandler.LogTarget.STDOUT);
+
     handler.publish(newLogRecord(Level.INFO, MESSAGE));
 
-    assertFalse(null, Strings.isNullOrEmpty(bout.toString()));
-    System.setOut(null);
+    assertThat(outputStreamPatcher.out.size()).isGreaterThan(0);
+    assertThat(outputStreamPatcher.err.size()).isEqualTo(0);
   }
 
   @Test
-  /** Validate that nothing is printed to STDOUT */
-  public void testRedirectToStdoutDisabled() {
-    ByteArrayOutputStream bout = new ByteArrayOutputStream();
-    PrintStream out = new PrintStream(bout);
-    System.setOut(out);
+  public void testRedirectToStderr() {
+    setupOptionsToEnableAutoPopulation(/* expectDiagnostic= */ true);
+    replay(options, logging);
+    outputStreamPatcher.patch();
 
-    testAutoPopulationEnabled();
+    LoggingHandler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE);
+    handler.setLevel(Level.ALL);
+    handler.setFormatter(new TestFormatter());
+    handler.setLogTarget(LoggingHandler.LogTarget.STDERR);
 
-    assertTrue(null, Strings.isNullOrEmpty(bout.toString()));
-    System.setOut(null);
+    handler.publish(newLogRecord(Level.INFO, MESSAGE));
+
+    assertThat(outputStreamPatcher.out.size()).isEqualTo(0);
+    assertThat(outputStreamPatcher.err.size()).isGreaterThan(0);
   }
 
   private void testPublishCustomResourceWithDestination(

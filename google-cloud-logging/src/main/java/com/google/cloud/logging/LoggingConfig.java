@@ -23,6 +23,7 @@ import com.google.common.base.Splitter;
 import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.logging.Filter;
 import java.util.logging.Formatter;
 import java.util.logging.Level;
@@ -44,6 +45,7 @@ class LoggingConfig {
   private static final String USE_INHERITED_CONTEXT = "useInheritedContext";
   private static final String AUTO_POPULATE_METADATA = "autoPopulateMetadata";
   private static final String REDIRECT_TO_STDOUT = "redirectToStdout";
+  private static final String LOG_TARGET = "logTarget";
 
   public LoggingConfig(String className) {
     this.className = className;
@@ -85,6 +87,10 @@ class LoggingConfig {
 
   Boolean getRedirectToStdout() {
     return getBooleanProperty(REDIRECT_TO_STDOUT, null);
+  }
+
+  Optional<LoggingHandler.LogTarget> getLogTarget() {
+    return Optional.ofNullable(getProperty(LOG_TARGET)).map(LoggingHandler.LogTarget::valueOf);
   }
 
   MonitoredResource getMonitoredResource(String projectId) {

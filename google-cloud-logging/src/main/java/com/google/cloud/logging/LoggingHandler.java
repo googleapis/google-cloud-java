@@ -115,10 +115,15 @@ import org.jspecify.nullness.Nullable;
  *       Logging (defaults to {@code true}).
  *   <li>{@code com.google.cloud.logging.LoggingHandler.redirectToStdout} is a boolean flag that
  *       opts-in redirecting the output of the handler to STDOUT instead of ingesting logs to Cloud
- *       Logging using Logging API (defaults to {@code true}). Redirecting logs can be used in
+ *       Logging using Logging API (defaults to {@code false}). Redirecting logs can be used in
  *       Google Cloud environments with installed logging agent to delegate log ingestions to the
  *       agent. Redirected logs are formatted as one line Json string following the structured
- *       logging guidelines.
+ *       logging guidelines. This flag is deprecated; use {@code
+ *       com.google.cloud.logging.LoggingHandler.logTarget} instead.
+ *   <li>{@code com.google.cloud.logging.LoggingHandler.logTarget} is an enumeration controlling log
+ *       routing (defaults to {@code CLOUD_LOGGING}). If set to STDOUT or STDERR, logs will be
+ *       printed to the corresponding stream in the Json format that can be parsed by the logging
+ *       agent. If set to CLOUD_LOGGING, logs will be sent directly to the Google Cloud Logging API.
  * </ul>
  *
  * <p>To add a {@code LoggingHandler} to an existing {@link Logger} and be sure to avoid infinite
@@ -136,6 +141,16 @@ public class LoggingHandler extends Handler {
   private static final String LEVEL_NAME_KEY = "levelName";
   private static final String LEVEL_VALUE_KEY = "levelValue";
 
+  /** Where to send logs. */
+  public enum LogTarget {
+    /** Sends logs to the Cloud Logging API. */
+    CLOUD_LOGGING,
+    /** Sends JSON-formatted logs to stdout, for use with the Google Cloud logging agent. */
+    STDOUT,
+    /** Sends JSON-formatted logs to stderr, for use with the Google Cloud logging agent. */
+    STDERR
+  }
+
   private final List<LoggingEnhancer> enhancers;
   private final LoggingOptions loggingOptions;
 
@@ -152,7 +167,7 @@ public class LoggingHandler extends Handler {
   private volatile Level flushLevel;
 
   private volatile Boolean autoPopulateMetadata;
-  private volatile Boolean redirectToStdout;
+  private volatile LogTarget logTarget;
 
   private final WriteOption[] defaultWriteOptions;
 
@@ -243,7 +258,13 @@ public class LoggingHandler extends Handler {
       Boolean f1 = loggingOptions.getAutoPopulateMetadata();
       Boolean f2 = config.getAutoPopulateMetadata();
       autoPopulateMetadata = isTrueOrNull(f1) && isTrueOrNull(f2);
-      redirectToStdout = firstNonNull(config.getRedirectToStdout(), Boolean.FALSE);
+      logTarget =
+          config
+              .getLogTarget()
+              .orElse(
+                  firstNonNull(config.getRedirectToStdout(), Boolean.FALSE)
+                      ? LogTarget.STDOUT
+                      : LogTarget.CLOUD_LOGGING);
       String logName = log != null ? log : config.getLogName();
       MonitoredResource resource =
           firstNonNull(
@@ -310,18 +331,24 @@ public class LoggingHandler extends Handler {
     if (logEntry != null) {
       try {
         Iterable<LogEntry> logEntries =
-            redirectToStdout
-                ? Instrumentation.populateInstrumentationInfo(ImmutableList.of(logEntry)).y()
-                : ImmutableList.of(logEntry);
+            logTarget == LogTarget.CLOUD_LOGGING
+                ? ImmutableList.of(logEntry)
+                : Instrumentation.populateInstrumentationInfo(ImmutableList.of(logEntry)).y();
         if (autoPopulateMetadata) {
           logEntries =
               logging.populateMetadata(
                   logEntries, getMonitoredResource(), "com.google.cloud.logging", "java");
         }
-        if (redirectToStdout) {
-          logEntries.forEach(log -> System.out.println(log.toStructuredJsonString()));
-        } else {
-          logging.write(logEntries, defaultWriteOptions);
+        switch (logTarget) {
+          case STDOUT:
+            logEntries.forEach(log -> System.out.println(log.toStructuredJsonString()));
+            break;
+          case STDERR:
+            logEntries.forEach(log -> System.err.println(log.toStructuredJsonString()));
+            break;
+          case CLOUD_LOGGING:
+            logging.write(logEntries, defaultWriteOptions);
+            break;
         }
       } catch (RuntimeException ex) {
         getErrorManager().error(null, ex, ErrorManager.WRITE_FAILURE);
@@ -425,13 +452,37 @@ public class LoggingHandler extends Handler {
    * Enable/disable redirection to STDOUT. If set to {@code true}, logs will be printed to STDOUT in
    * the Json format that can be parsed by the logging agent. If set to {@code false}, logs will be
    * ingested to Cloud Logging by calling Logging API.
+   *
+   * <p>This method is mutually exclusive with {@link #setLogTarget()}.
+   *
+   * @deprecated Use {@link #setLogTarget()}.
    */
+  @Deprecated
   public void setRedirectToStdout(boolean value) {
-    this.redirectToStdout = value;
+    this.logTarget = value ? LogTarget.STDOUT : LogTarget.CLOUD_LOGGING;
   }
 
+  /*
+   * @deprecated Use {@link #getLogTarget()}.
+   */
+  @Deprecated
   public Boolean getRedirectToStdout() {
-    return redirectToStdout;
+    return this.logTarget == LogTarget.STDOUT;
+  }
+
+  /**
+   * Configure the destination for ingested logs. If set to STDOUT or STDERR, logs will be printed
+   * to the corresponding stream in the Json format that can be parsed by the logging agent. If set
+   * to CLOUD_LOGGING, logs will be sent directly to the Google Cloud Logging API.
+   *
+   * <p>This method is mutually exclusive with {@link #setRedirectToStdout()}.
+   */
+  public void setLogTarget(LogTarget value) {
+    this.logTarget = value;
+  }
+
+  public LogTarget getLogTarget() {
+    return logTarget;
   }
 
   /**
