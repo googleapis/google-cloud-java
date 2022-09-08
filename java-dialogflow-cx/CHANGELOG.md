@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.15.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-dialogflow-cx-v0.14.3...google-cloud-dialogflow-cx-v0.15.0) (2022-09-08)
+
+
+### Features
+
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+
 ## [0.14.3](https://github.com/googleapis/java-dialogflow-cx/compare/v0.14.2...v0.14.3) (2022-07-26)
 
 

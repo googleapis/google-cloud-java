@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.5](https://github.com/googleapis/google-cloud-java/compare/google-cloud-dns-v2.1.4...google-cloud-dns-v2.1.5) (2022-09-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+
 ## [2.1.4](https://github.com/googleapis/java-dns/compare/v2.1.3...v2.1.4) (2022-08-18)
 
 

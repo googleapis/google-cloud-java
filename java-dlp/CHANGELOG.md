@@ -1,5 +1,24 @@
 # Changelog
 
+## [3.7.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-dlp-v3.6.7...google-cloud-dlp-v3.7.0) (2022-09-08)
+
+
+### Features
+
+* [dlp] add Deidentify action ([#8287](https://github.com/googleapis/google-cloud-java/issues/8287)) ([b718ffa](https://github.com/googleapis/google-cloud-java/commit/b718ffa90f4d0e4c20627e6598ec287bd971a99a))
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub to v1.120.12 ([#969](https://github.com/googleapis/google-cloud-java/issues/969)) ([586795f](https://github.com/googleapis/google-cloud-java/commit/586795f5a00262c79c0d8e3a6faa2d1a8906bb32))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.120.13 ([#974](https://github.com/googleapis/google-cloud-java/issues/974)) ([b37407b](https://github.com/googleapis/google-cloud-java/commit/b37407bd176fd1a4fa2eab6696f9da550d123af6))
+
 ## [3.6.7](https://github.com/googleapis/java-dlp/compare/v3.6.6...v3.6.7) (2022-08-05)
 
 
