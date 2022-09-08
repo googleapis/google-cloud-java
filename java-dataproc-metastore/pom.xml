@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dataproc-metastore-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.4.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc-metastore:current} -->
+  <version>2.5.0</version><!-- {x-version-update:google-cloud-dataproc-metastore:current} -->
   <name>Google Dataproc Metastore Parent</name>
   <url>https://github.com/googleapis/java-dataproc-metastore</url>
   <description>

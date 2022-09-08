@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.5.3](https://github.com/googleapis/google-cloud-java/compare/google-cloud-build-v3.5.2...google-cloud-build-v3.5.3) (2022-09-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+
 ## [3.5.2](https://github.com/googleapis/java-cloudbuild/compare/v3.5.1...v3.5.2) (2022-08-02)
 
 
