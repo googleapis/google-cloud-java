@@ -37,7 +37,9 @@ public class CreateDataset {
       // once, and can be reused for multiple requests.
       BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
 
-      DatasetInfo datasetInfo = DatasetInfo.newBuilder(datasetName).build();
+      String location = "US";
+
+      DatasetInfo datasetInfo = DatasetInfo.newBuilder(datasetName).setLocation(location).build();
 
       Dataset newDataset = bigquery.create(datasetInfo);
       String newDatasetName = newDataset.getDatasetId().getDataset();
