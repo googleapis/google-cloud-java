@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.8.11](https://github.com/googleapis/java-core/compare/v2.8.10...v2.8.11) (2022-09-08)
+
+
+### Dependencies
+
+* Update dependency com.google.auth:google-auth-library-bom to v1.11.0 ([#911](https://github.com/googleapis/java-core/issues/911)) ([4656905](https://github.com/googleapis/java-core/commit/4656905956504e4bc4fe224d1f8cd70bbab614d8))
+
 ## [2.8.10](https://github.com/googleapis/java-core/compare/v2.8.9...v2.8.10) (2022-08-24)
 
 
