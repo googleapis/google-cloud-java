@@ -56,13 +56,13 @@ implementation 'com.google.cloud:google-cloud-bigtable'
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-bigtable:2.11.1'
+implementation 'com.google.cloud:google-cloud-bigtable:2.11.2'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "2.11.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "2.11.2"
 ```
 
 ## Authentication
