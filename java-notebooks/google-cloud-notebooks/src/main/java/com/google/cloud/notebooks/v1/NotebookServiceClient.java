@@ -45,8 +45,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
  *   String name = "name3373707";
  *   Instance response = notebookServiceClient.getInstance(name);
@@ -83,8 +86,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * NotebookServiceSettings notebookServiceSettings =
  *     NotebookServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -96,8 +102,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * NotebookServiceSettings notebookServiceSettings =
  *     NotebookServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * NotebookServiceClient notebookServiceClient =
@@ -174,8 +183,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   String parent = "parent-995424086";
    *   for (Instance element : notebookServiceClient.listInstances(parent).iterateAll()) {
@@ -199,8 +211,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ListInstancesRequest request =
    *       ListInstancesRequest.newBuilder()
@@ -228,8 +243,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ListInstancesRequest request =
    *       ListInstancesRequest.newBuilder()
@@ -258,8 +276,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ListInstancesRequest request =
    *       ListInstancesRequest.newBuilder()
@@ -294,8 +315,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   String name = "name3373707";
    *   Instance response = notebookServiceClient.getInstance(name);
@@ -318,8 +342,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   GetInstanceRequest request = GetInstanceRequest.newBuilder().setName("name3373707").build();
    *   Instance response = notebookServiceClient.getInstance(request);
@@ -340,8 +367,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   GetInstanceRequest request = GetInstanceRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<Instance> future = notebookServiceClient.getInstanceCallable().futureCall(request);
@@ -361,8 +391,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   String parent = "parent-995424086";
    *   Instance instance = Instance.newBuilder().build();
@@ -395,8 +428,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   CreateInstanceRequest request =
    *       CreateInstanceRequest.newBuilder()
@@ -423,8 +459,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   CreateInstanceRequest request =
    *       CreateInstanceRequest.newBuilder()
@@ -451,8 +490,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   CreateInstanceRequest request =
    *       CreateInstanceRequest.newBuilder()
@@ -480,8 +522,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   RegisterInstanceRequest request =
    *       RegisterInstanceRequest.newBuilder()
@@ -509,8 +554,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   RegisterInstanceRequest request =
    *       RegisterInstanceRequest.newBuilder()
@@ -538,8 +586,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   RegisterInstanceRequest request =
    *       RegisterInstanceRequest.newBuilder()
@@ -564,8 +615,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   SetInstanceAcceleratorRequest request =
    *       SetInstanceAcceleratorRequest.newBuilder()
@@ -591,8 +645,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   SetInstanceAcceleratorRequest request =
    *       SetInstanceAcceleratorRequest.newBuilder()
@@ -618,8 +675,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   SetInstanceAcceleratorRequest request =
    *       SetInstanceAcceleratorRequest.newBuilder()
@@ -645,8 +705,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   SetInstanceMachineTypeRequest request =
    *       SetInstanceMachineTypeRequest.newBuilder()
@@ -672,8 +735,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   SetInstanceMachineTypeRequest request =
    *       SetInstanceMachineTypeRequest.newBuilder()
@@ -699,8 +765,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   SetInstanceMachineTypeRequest request =
    *       SetInstanceMachineTypeRequest.newBuilder()
@@ -726,8 +795,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   UpdateInstanceConfigRequest request =
    *       UpdateInstanceConfigRequest.newBuilder()
@@ -753,8 +825,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   UpdateInstanceConfigRequest request =
    *       UpdateInstanceConfigRequest.newBuilder()
@@ -780,8 +855,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   UpdateInstanceConfigRequest request =
    *       UpdateInstanceConfigRequest.newBuilder()
@@ -807,8 +885,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   UpdateShieldedInstanceConfigRequest request =
    *       UpdateShieldedInstanceConfigRequest.newBuilder()
@@ -834,8 +915,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   UpdateShieldedInstanceConfigRequest request =
    *       UpdateShieldedInstanceConfigRequest.newBuilder()
@@ -861,8 +945,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   UpdateShieldedInstanceConfigRequest request =
    *       UpdateShieldedInstanceConfigRequest.newBuilder()
@@ -888,8 +975,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   SetInstanceLabelsRequest request =
    *       SetInstanceLabelsRequest.newBuilder()
@@ -915,8 +1005,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   SetInstanceLabelsRequest request =
    *       SetInstanceLabelsRequest.newBuilder()
@@ -942,8 +1035,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   SetInstanceLabelsRequest request =
    *       SetInstanceLabelsRequest.newBuilder()
@@ -968,8 +1064,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   UpdateInstanceMetadataItemsRequest request =
    *       UpdateInstanceMetadataItemsRequest.newBuilder()
@@ -996,8 +1095,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   UpdateInstanceMetadataItemsRequest request =
    *       UpdateInstanceMetadataItemsRequest.newBuilder()
@@ -1024,8 +1126,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   String name = "name3373707";
    *   notebookServiceClient.deleteInstanceAsync(name).get();
@@ -1048,8 +1153,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   DeleteInstanceRequest request =
    *       DeleteInstanceRequest.newBuilder().setName("name3373707").build();
@@ -1072,8 +1180,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   DeleteInstanceRequest request =
    *       DeleteInstanceRequest.newBuilder().setName("name3373707").build();
@@ -1096,8 +1207,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   DeleteInstanceRequest request =
    *       DeleteInstanceRequest.newBuilder().setName("name3373707").build();
@@ -1119,8 +1233,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   StartInstanceRequest request =
    *       StartInstanceRequest.newBuilder().setName("name3373707").build();
@@ -1143,8 +1260,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   StartInstanceRequest request =
    *       StartInstanceRequest.newBuilder().setName("name3373707").build();
@@ -1167,8 +1287,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   StartInstanceRequest request =
    *       StartInstanceRequest.newBuilder().setName("name3373707").build();
@@ -1190,8 +1313,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   StopInstanceRequest request = StopInstanceRequest.newBuilder().setName("name3373707").build();
    *   Instance response = notebookServiceClient.stopInstanceAsync(request).get();
@@ -1213,8 +1339,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   StopInstanceRequest request = StopInstanceRequest.newBuilder().setName("name3373707").build();
    *   OperationFuture<Instance, OperationMetadata> future =
@@ -1236,8 +1365,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   StopInstanceRequest request = StopInstanceRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<Operation> future =
@@ -1258,8 +1390,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ResetInstanceRequest request =
    *       ResetInstanceRequest.newBuilder().setName("name3373707").build();
@@ -1282,8 +1417,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ResetInstanceRequest request =
    *       ResetInstanceRequest.newBuilder().setName("name3373707").build();
@@ -1306,8 +1444,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ResetInstanceRequest request =
    *       ResetInstanceRequest.newBuilder().setName("name3373707").build();
@@ -1331,8 +1472,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ReportInstanceInfoRequest request =
    *       ReportInstanceInfoRequest.newBuilder()
@@ -1361,8 +1505,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ReportInstanceInfoRequest request =
    *       ReportInstanceInfoRequest.newBuilder()
@@ -1391,8 +1538,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ReportInstanceInfoRequest request =
    *       ReportInstanceInfoRequest.newBuilder()
@@ -1418,8 +1568,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   IsInstanceUpgradeableRequest request =
    *       IsInstanceUpgradeableRequest.newBuilder()
@@ -1445,8 +1598,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   IsInstanceUpgradeableRequest request =
    *       IsInstanceUpgradeableRequest.newBuilder()
@@ -1472,8 +1628,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
    *   GetInstanceHealthResponse response = notebookServiceClient.getInstanceHealth(name);
@@ -1499,8 +1658,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   String name = InstanceName.of("[PROJECT]", "[INSTANCE]").toString();
    *   GetInstanceHealthResponse response = notebookServiceClient.getInstanceHealth(name);
@@ -1523,8 +1685,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   GetInstanceHealthRequest request =
    *       GetInstanceHealthRequest.newBuilder()
@@ -1548,8 +1713,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   GetInstanceHealthRequest request =
    *       GetInstanceHealthRequest.newBuilder()
@@ -1574,8 +1742,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   UpgradeInstanceRequest request =
    *       UpgradeInstanceRequest.newBuilder()
@@ -1601,8 +1772,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   UpgradeInstanceRequest request =
    *       UpgradeInstanceRequest.newBuilder()
@@ -1628,8 +1802,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   UpgradeInstanceRequest request =
    *       UpgradeInstanceRequest.newBuilder()
@@ -1654,8 +1831,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   RollbackInstanceRequest request =
    *       RollbackInstanceRequest.newBuilder()
@@ -1681,8 +1861,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   RollbackInstanceRequest request =
    *       RollbackInstanceRequest.newBuilder()
@@ -1708,8 +1891,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   RollbackInstanceRequest request =
    *       RollbackInstanceRequest.newBuilder()
@@ -1735,8 +1921,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   UpgradeInstanceInternalRequest request =
    *       UpgradeInstanceInternalRequest.newBuilder()
@@ -1764,8 +1953,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   UpgradeInstanceInternalRequest request =
    *       UpgradeInstanceInternalRequest.newBuilder()
@@ -1793,8 +1985,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   UpgradeInstanceInternalRequest request =
    *       UpgradeInstanceInternalRequest.newBuilder()
@@ -1821,8 +2016,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   String parent = "parent-995424086";
    *   for (Environment element : notebookServiceClient.listEnvironments(parent).iterateAll()) {
@@ -1847,8 +2045,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ListEnvironmentsRequest request =
    *       ListEnvironmentsRequest.newBuilder()
@@ -1876,8 +2077,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ListEnvironmentsRequest request =
    *       ListEnvironmentsRequest.newBuilder()
@@ -1906,8 +2110,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ListEnvironmentsRequest request =
    *       ListEnvironmentsRequest.newBuilder()
@@ -1943,8 +2150,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   String name = "name3373707";
    *   Environment response = notebookServiceClient.getEnvironment(name);
@@ -1967,8 +2177,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   GetEnvironmentRequest request =
    *       GetEnvironmentRequest.newBuilder().setName("name3373707").build();
@@ -1990,8 +2203,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   GetEnvironmentRequest request =
    *       GetEnvironmentRequest.newBuilder().setName("name3373707").build();
@@ -2013,8 +2229,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   String parent = "parent-995424086";
    *   Environment environment = Environment.newBuilder().build();
@@ -2050,8 +2269,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   CreateEnvironmentRequest request =
    *       CreateEnvironmentRequest.newBuilder()
@@ -2078,8 +2300,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   CreateEnvironmentRequest request =
    *       CreateEnvironmentRequest.newBuilder()
@@ -2106,8 +2331,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   CreateEnvironmentRequest request =
    *       CreateEnvironmentRequest.newBuilder()
@@ -2133,8 +2361,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   String name = "name3373707";
    *   notebookServiceClient.deleteEnvironmentAsync(name).get();
@@ -2157,8 +2388,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   DeleteEnvironmentRequest request =
    *       DeleteEnvironmentRequest.newBuilder().setName("name3373707").build();
@@ -2181,8 +2415,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   DeleteEnvironmentRequest request =
    *       DeleteEnvironmentRequest.newBuilder().setName("name3373707").build();
@@ -2205,8 +2442,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   DeleteEnvironmentRequest request =
    *       DeleteEnvironmentRequest.newBuilder().setName("name3373707").build();
@@ -2228,8 +2468,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ScheduleName parent = ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]");
    *   for (Schedule element : notebookServiceClient.listSchedules(parent).iterateAll()) {
@@ -2256,8 +2499,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   String parent = ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString();
    *   for (Schedule element : notebookServiceClient.listSchedules(parent).iterateAll()) {
@@ -2281,8 +2527,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ListSchedulesRequest request =
    *       ListSchedulesRequest.newBuilder()
@@ -2312,8 +2561,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ListSchedulesRequest request =
    *       ListSchedulesRequest.newBuilder()
@@ -2344,8 +2596,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ListSchedulesRequest request =
    *       ListSchedulesRequest.newBuilder()
@@ -2382,8 +2637,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ScheduleName name = ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]");
    *   Schedule response = notebookServiceClient.getSchedule(name);
@@ -2407,8 +2665,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   String name = ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString();
    *   Schedule response = notebookServiceClient.getSchedule(name);
@@ -2431,8 +2692,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   GetScheduleRequest request =
    *       GetScheduleRequest.newBuilder()
@@ -2456,8 +2720,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   GetScheduleRequest request =
    *       GetScheduleRequest.newBuilder()
@@ -2480,8 +2747,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ScheduleName name = ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]");
    *   notebookServiceClient.deleteScheduleAsync(name).get();
@@ -2505,8 +2775,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   String name = ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString();
    *   notebookServiceClient.deleteScheduleAsync(name).get();
@@ -2529,8 +2802,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   DeleteScheduleRequest request =
    *       DeleteScheduleRequest.newBuilder()
@@ -2555,8 +2831,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   DeleteScheduleRequest request =
    *       DeleteScheduleRequest.newBuilder()
@@ -2581,8 +2860,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   DeleteScheduleRequest request =
    *       DeleteScheduleRequest.newBuilder()
@@ -2606,8 +2888,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ScheduleName parent = ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]");
    *   Schedule schedule = Schedule.newBuilder().build();
@@ -2640,8 +2925,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   String parent = ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString();
    *   Schedule schedule = Schedule.newBuilder().build();
@@ -2674,8 +2962,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   CreateScheduleRequest request =
    *       CreateScheduleRequest.newBuilder()
@@ -2702,8 +2993,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   CreateScheduleRequest request =
    *       CreateScheduleRequest.newBuilder()
@@ -2730,8 +3024,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   CreateScheduleRequest request =
    *       CreateScheduleRequest.newBuilder()
@@ -2757,8 +3054,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   TriggerScheduleRequest request =
    *       TriggerScheduleRequest.newBuilder()
@@ -2783,8 +3083,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   TriggerScheduleRequest request =
    *       TriggerScheduleRequest.newBuilder()
@@ -2809,8 +3112,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   TriggerScheduleRequest request =
    *       TriggerScheduleRequest.newBuilder()
@@ -2834,8 +3140,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ExecutionName parent = ExecutionName.of("[PROJECT]", "[LOCATION]", "[EXECUTION]");
    *   for (Execution element : notebookServiceClient.listExecutions(parent).iterateAll()) {
@@ -2862,8 +3171,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   String parent = ExecutionName.of("[PROJECT]", "[LOCATION]", "[EXECUTION]").toString();
    *   for (Execution element : notebookServiceClient.listExecutions(parent).iterateAll()) {
@@ -2887,8 +3199,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ListExecutionsRequest request =
    *       ListExecutionsRequest.newBuilder()
@@ -2918,8 +3233,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ListExecutionsRequest request =
    *       ListExecutionsRequest.newBuilder()
@@ -2950,8 +3268,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ListExecutionsRequest request =
    *       ListExecutionsRequest.newBuilder()
@@ -2989,8 +3310,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ExecutionName name = ExecutionName.of("[PROJECT]", "[LOCATION]", "[EXECUTION]");
    *   Execution response = notebookServiceClient.getExecution(name);
@@ -3014,8 +3338,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   String name = ExecutionName.of("[PROJECT]", "[LOCATION]", "[EXECUTION]").toString();
    *   Execution response = notebookServiceClient.getExecution(name);
@@ -3038,8 +3365,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   GetExecutionRequest request =
    *       GetExecutionRequest.newBuilder()
@@ -3063,8 +3393,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   GetExecutionRequest request =
    *       GetExecutionRequest.newBuilder()
@@ -3088,8 +3421,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ExecutionName name = ExecutionName.of("[PROJECT]", "[LOCATION]", "[EXECUTION]");
    *   notebookServiceClient.deleteExecutionAsync(name).get();
@@ -3113,8 +3449,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   String name = ExecutionName.of("[PROJECT]", "[LOCATION]", "[EXECUTION]").toString();
    *   notebookServiceClient.deleteExecutionAsync(name).get();
@@ -3137,8 +3476,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   DeleteExecutionRequest request =
    *       DeleteExecutionRequest.newBuilder()
@@ -3163,8 +3505,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   DeleteExecutionRequest request =
    *       DeleteExecutionRequest.newBuilder()
@@ -3189,8 +3534,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   DeleteExecutionRequest request =
    *       DeleteExecutionRequest.newBuilder()
@@ -3214,8 +3562,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   ExecutionName parent = ExecutionName.of("[PROJECT]", "[LOCATION]", "[EXECUTION]");
    *   Execution execution = Execution.newBuilder().build();
@@ -3248,8 +3599,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   String parent = ExecutionName.of("[PROJECT]", "[LOCATION]", "[EXECUTION]").toString();
    *   Execution execution = Execution.newBuilder().build();
@@ -3282,8 +3636,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   CreateExecutionRequest request =
    *       CreateExecutionRequest.newBuilder()
@@ -3310,8 +3667,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   CreateExecutionRequest request =
    *       CreateExecutionRequest.newBuilder()
@@ -3338,8 +3698,11 @@ public class NotebookServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   CreateExecutionRequest request =
    *       CreateExecutionRequest.newBuilder()
