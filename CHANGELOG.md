@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.10.7](https://github.com/googleapis/java-logging/compare/v3.10.6...v3.10.7) (2022-09-07)
+
+
+### Bug Fixes
+
+* Apply Google Java Code Clarity suggestions ([#1044](https://github.com/googleapis/java-logging/issues/1044)) ([79e9d8d](https://github.com/googleapis/java-logging/commit/79e9d8d00b0b9be10a12d6bb37f387f6f8b356f2))
+
 ## [3.10.6](https://github.com/googleapis/java-logging/compare/v3.10.5...v3.10.6) (2022-08-29)
 
 
