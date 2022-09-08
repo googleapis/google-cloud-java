@@ -90,17 +90,17 @@ import org.threeten.bp.Duration;
  * <p>For example, to set the total timeout of getAppGateway to 30 seconds:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * AppGatewaysServiceStubSettings.Builder appGatewaysServiceSettingsBuilder =
  *     AppGatewaysServiceStubSettings.newBuilder();
  * appGatewaysServiceSettingsBuilder
  *     .getAppGatewaySettings()
  *     .setRetrySettings(
- *         appGatewaysServiceSettingsBuilder
- *             .getAppGatewaySettings()
- *             .getRetrySettings()
- *             .toBuilder()
+ *         appGatewaysServiceSettingsBuilder.getAppGatewaySettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AppGatewaysServiceStubSettings appGatewaysServiceSettings =
