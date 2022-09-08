@@ -1,5 +1,43 @@
 # Changelog
 
+## [2.5.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-retail-v2.4.0...google-cloud-retail-v2.5.0) (2022-09-08)
+
+
+### Features
+
+* [retail] release Model Services to v2beta version ([#8284](https://github.com/googleapis/google-cloud-java/issues/8284)) ([5f742f9](https://github.com/googleapis/google-cloud-java/commit/5f742f913f48c47c8ba3eeeb3e08adc162b288db))
+* add local inventories info to the Product resource ([5f742f9](https://github.com/googleapis/google-cloud-java/commit/5f742f913f48c47c8ba3eeeb3e08adc162b288db))
+* add local inventories info to the Product resource ([32a384d](https://github.com/googleapis/google-cloud-java/commit/32a384dd97e448bd9d2656f9c7645095d6a70220))
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+* deprecate unused facet_spec field of Control in v2beta version ([5f742f9](https://github.com/googleapis/google-cloud-java/commit/5f742f913f48c47c8ba3eeeb3e08adc162b288db))
+* deprecate unused page_token field of PredictionRequest in v2beta version ([5f742f9](https://github.com/googleapis/google-cloud-java/commit/5f742f913f48c47c8ba3eeeb3e08adc162b288db))
+* release AttributesConfig APIs to v2 version ([32a384d](https://github.com/googleapis/google-cloud-java/commit/32a384dd97e448bd9d2656f9c7645095d6a70220))
+* release BatchRemoveCatalogAttributes API to v2beta version ([5f742f9](https://github.com/googleapis/google-cloud-java/commit/5f742f913f48c47c8ba3eeeb3e08adc162b288db))
+* release CompletionConfig APIs to v2 version ([32a384d](https://github.com/googleapis/google-cloud-java/commit/32a384dd97e448bd9d2656f9c7645095d6a70220))
+* release Control and ServingConfig serivces to v2 version ([#522](https://github.com/googleapis/google-cloud-java/issues/522)) ([32a384d](https://github.com/googleapis/google-cloud-java/commit/32a384dd97e448bd9d2656f9c7645095d6a70220))
+* release diversity_type for ServingConfig in v2beta version ([5f742f9](https://github.com/googleapis/google-cloud-java/commit/5f742f913f48c47c8ba3eeeb3e08adc162b288db))
+* release ExactSearchableOption for attribute config to v2beta version ([5f742f9](https://github.com/googleapis/google-cloud-java/commit/5f742f913f48c47c8ba3eeeb3e08adc162b288db))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:google-cloud-bigquery to v2.15.0 ([#8231](https://github.com/googleapis/google-cloud-java/issues/8231)) ([2c0b9ad](https://github.com/googleapis/google-cloud-java/commit/2c0b9ad05b4ff658ac7a08bde6637653825d2802))
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.14.7 ([#523](https://github.com/googleapis/google-cloud-java/issues/523)) ([3ad9ecf](https://github.com/googleapis/google-cloud-java/commit/3ad9ecf4a9f8097ea986dcb73a13650a2021251e))
+
+
+### Documentation
+
+* improve documentation for Fullfillment and Inventory API in ProductService ([5f742f9](https://github.com/googleapis/google-cloud-java/commit/5f742f913f48c47c8ba3eeeb3e08adc162b288db))
+* improve documentation of SearchRequest for Search Personalization ([5f742f9](https://github.com/googleapis/google-cloud-java/commit/5f742f913f48c47c8ba3eeeb3e08adc162b288db))
+* Improved documentation for Fullfillment and Inventory API in ProductService ([32a384d](https://github.com/googleapis/google-cloud-java/commit/32a384dd97e448bd9d2656f9c7645095d6a70220))
+* minor documentation fixes and improvements ([5f742f9](https://github.com/googleapis/google-cloud-java/commit/5f742f913f48c47c8ba3eeeb3e08adc162b288db))
+* minor documentation format and typo fixes ([32a384d](https://github.com/googleapis/google-cloud-java/commit/32a384dd97e448bd9d2656f9c7645095d6a70220))
+
 ## [2.4.0](https://github.com/googleapis/java-retail/compare/v2.3.0...v2.4.0) (2022-08-09)
 
 

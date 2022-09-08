@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.10.3](https://github.com/googleapis/google-cloud-java/compare/google-cloud-recommendations-ai-v0.10.2...google-cloud-recommendations-ai-v0.10.3) (2022-09-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+
 ## [0.10.2](https://github.com/googleapis/java-recommendations-ai/compare/v0.10.1...v0.10.2) (2022-08-12)
 
 

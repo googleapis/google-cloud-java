@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.3](https://github.com/googleapis/google-cloud-java/compare/google-cloud-redis-v2.6.2...google-cloud-redis-v2.6.3) (2022-09-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+
 ## [2.6.2](https://github.com/googleapis/java-redis/compare/v2.6.1...v2.6.2) (2022-08-03)
 
 
