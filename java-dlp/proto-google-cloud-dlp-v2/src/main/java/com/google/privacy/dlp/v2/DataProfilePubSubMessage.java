@@ -22,10 +22,9 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * The message that will be published to a Pub/Sub topic.
+ * Pub/Sub topic message for a DataProfileAction.PubSubNotification event.
  * To receive a message of protocol buffer schema type, convert the message data
  * to an object of this proto class.
- * https://cloud.google.com/pubsub/docs/samples/pubsub-subscribe-proto-messages
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.DataProfilePubSubMessage}
@@ -405,10 +404,9 @@ public final class DataProfilePubSubMessage extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The message that will be published to a Pub/Sub topic.
+   * Pub/Sub topic message for a DataProfileAction.PubSubNotification event.
    * To receive a message of protocol buffer schema type, convert the message data
    * to an object of this proto class.
-   * https://cloud.google.com/pubsub/docs/samples/pubsub-subscribe-proto-messages
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.DataProfilePubSubMessage}

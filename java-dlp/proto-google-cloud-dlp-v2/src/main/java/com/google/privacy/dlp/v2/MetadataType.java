@@ -129,7 +129,7 @@ public enum MetadataType implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(3);
+    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(6);
   }
 
   private static final MetadataType[] VALUES = values();

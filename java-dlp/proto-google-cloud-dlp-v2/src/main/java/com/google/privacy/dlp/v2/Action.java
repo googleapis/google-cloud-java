@@ -142,6 +142,22 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
               actionCase_ = 5;
               break;
             }
+          case 58:
+            {
+              com.google.privacy.dlp.v2.Action.Deidentify.Builder subBuilder = null;
+              if (actionCase_ == 7) {
+                subBuilder = ((com.google.privacy.dlp.v2.Action.Deidentify) action_).toBuilder();
+              }
+              action_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.Action.Deidentify.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.privacy.dlp.v2.Action.Deidentify) action_);
+                action_ = subBuilder.buildPartial();
+              }
+              actionCase_ = 7;
+              break;
+            }
           case 66:
             {
               com.google.privacy.dlp.v2.Action.JobNotificationEmails.Builder subBuilder = null;
@@ -1022,7 +1038,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Publish a message into given Pub/Sub topic when DlpJob has completed. The
+   * Publish a message into a given Pub/Sub topic when DlpJob has completed. The
    * message contains a single field, `DlpJobName`, which is equal to the
    * finished job's
    * [`DlpJob.name`](https://cloud.google.com/dlp/docs/reference/rest/v2/projects.dlpJobs#DlpJob).
@@ -1336,7 +1352,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Publish a message into given Pub/Sub topic when DlpJob has completed. The
+     * Publish a message into a given Pub/Sub topic when DlpJob has completed. The
      * message contains a single field, `DlpJobName`, which is equal to the
      * finished job's
      * [`DlpJob.name`](https://cloud.google.com/dlp/docs/reference/rest/v2/projects.dlpJobs#DlpJob).
@@ -1684,11 +1700,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * This action is only available for projects which are parts of
    * an organization and whitelisted for the alpha Cloud Security Command
    * Center.
-   * The action will publish count of finding instances and their info types.
-   * The summary of findings will be persisted in CSCC and are governed by CSCC
-   * service-specific policy, see https://cloud.google.com/terms/service-terms
-   * Only a single instance of this action can be specified.
-   * Compatible with: Inspect
+   * The action will publish the count of finding instances and their info
+   * types. The summary of findings will be persisted in CSCC and are governed
+   * by CSCC service-specific policy, see
+   * https://cloud.google.com/terms/service-terms Only a single instance of this
+   * action can be specified. Compatible with: Inspect
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.Action.PublishSummaryToCscc}
@@ -1931,11 +1947,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * This action is only available for projects which are parts of
      * an organization and whitelisted for the alpha Cloud Security Command
      * Center.
-     * The action will publish count of finding instances and their info types.
-     * The summary of findings will be persisted in CSCC and are governed by CSCC
-     * service-specific policy, see https://cloud.google.com/terms/service-terms
-     * Only a single instance of this action can be specified.
-     * Compatible with: Inspect
+     * The action will publish the count of finding instances and their info
+     * types. The summary of findings will be persisted in CSCC and are governed
+     * by CSCC service-specific policy, see
+     * https://cloud.google.com/terms/service-terms Only a single instance of this
+     * action can be specified. Compatible with: Inspect
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.Action.PublishSummaryToCscc}
@@ -2146,15 +2162,21 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Publish findings of a DlpJob to Data Catalog. Labels summarizing the
-   * results of the DlpJob will be applied to the entry for the resource scanned
-   * in Data Catalog. Any labels previously written by another DlpJob will
-   * be deleted. InfoType naming patterns are strictly enforced when using this
-   * feature. Note that the findings will be persisted in Data Catalog
-   * storage and are governed by Data Catalog service-specific policy, see
-   * https://cloud.google.com/terms/service-terms
-   * Only a single instance of this action can be specified and only allowed if
-   * all resources being scanned are BigQuery tables.
+   * Publish findings of a DlpJob to Data Catalog. In Data Catalog, tag
+   * templates are applied to the resource that Cloud DLP scanned. Data
+   * Catalog tag templates are stored in the same project and region where the
+   * BigQuery table exists. For Cloud DLP to create and apply the tag template,
+   * the Cloud DLP service agent must have the
+   * `roles/datacatalog.tagTemplateOwner` permission on the project. The tag
+   * template contains fields summarizing the results of the DlpJob. Any field
+   * values previously written by another DlpJob are deleted. [InfoType naming
+   * patterns][google.privacy.dlp.v2.InfoType] are strictly enforced when using
+   * this feature.
+   * Findings are persisted in Data Catalog storage and are governed by
+   * service-specific policies for Data Catalog. For more information, see
+   * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
+   * Only a single instance of this action can be specified. This action is
+   * allowed only if all resources being scanned are BigQuery tables.
    * Compatible with: Inspect
    * </pre>
    *
@@ -2396,15 +2418,21 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Publish findings of a DlpJob to Data Catalog. Labels summarizing the
-     * results of the DlpJob will be applied to the entry for the resource scanned
-     * in Data Catalog. Any labels previously written by another DlpJob will
-     * be deleted. InfoType naming patterns are strictly enforced when using this
-     * feature. Note that the findings will be persisted in Data Catalog
-     * storage and are governed by Data Catalog service-specific policy, see
-     * https://cloud.google.com/terms/service-terms
-     * Only a single instance of this action can be specified and only allowed if
-     * all resources being scanned are BigQuery tables.
+     * Publish findings of a DlpJob to Data Catalog. In Data Catalog, tag
+     * templates are applied to the resource that Cloud DLP scanned. Data
+     * Catalog tag templates are stored in the same project and region where the
+     * BigQuery table exists. For Cloud DLP to create and apply the tag template,
+     * the Cloud DLP service agent must have the
+     * `roles/datacatalog.tagTemplateOwner` permission on the project. The tag
+     * template contains fields summarizing the results of the DlpJob. Any field
+     * values previously written by another DlpJob are deleted. [InfoType naming
+     * patterns][google.privacy.dlp.v2.InfoType] are strictly enforced when using
+     * this feature.
+     * Findings are persisted in Data Catalog storage and are governed by
+     * service-specific policies for Data Catalog. For more information, see
+     * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
+     * Only a single instance of this action can be specified. This action is
+     * allowed only if all resources being scanned are BigQuery tables.
      * Compatible with: Inspect
      * </pre>
      *
@@ -2618,6 +2646,2247 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface DeidentifyOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.Action.Deidentify)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * User specified deidentify templates and configs for structured,
+     * unstructured, and image files.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TransformationConfig transformation_config = 7;</code>
+     *
+     * @return Whether the transformationConfig field is set.
+     */
+    boolean hasTransformationConfig();
+    /**
+     *
+     *
+     * <pre>
+     * User specified deidentify templates and configs for structured,
+     * unstructured, and image files.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TransformationConfig transformation_config = 7;</code>
+     *
+     * @return The transformationConfig.
+     */
+    com.google.privacy.dlp.v2.TransformationConfig getTransformationConfig();
+    /**
+     *
+     *
+     * <pre>
+     * User specified deidentify templates and configs for structured,
+     * unstructured, and image files.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TransformationConfig transformation_config = 7;</code>
+     */
+    com.google.privacy.dlp.v2.TransformationConfigOrBuilder getTransformationConfigOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Config for storing transformation details. This is separate from the
+     * de-identified content, and contains metadata about the successful
+     * transformations and/or failures that occurred while de-identifying. This
+     * needs to be set in order for users to access information about the status
+     * of each transformation (see
+     * [TransformationDetails][google.privacy.dlp.v2.TransformationDetails]
+     * message for more information about what is noted).
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.TransformationDetailsStorageConfig transformation_details_storage_config = 3;
+     * </code>
+     *
+     * @return Whether the transformationDetailsStorageConfig field is set.
+     */
+    boolean hasTransformationDetailsStorageConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Config for storing transformation details. This is separate from the
+     * de-identified content, and contains metadata about the successful
+     * transformations and/or failures that occurred while de-identifying. This
+     * needs to be set in order for users to access information about the status
+     * of each transformation (see
+     * [TransformationDetails][google.privacy.dlp.v2.TransformationDetails]
+     * message for more information about what is noted).
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.TransformationDetailsStorageConfig transformation_details_storage_config = 3;
+     * </code>
+     *
+     * @return The transformationDetailsStorageConfig.
+     */
+    com.google.privacy.dlp.v2.TransformationDetailsStorageConfig
+        getTransformationDetailsStorageConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Config for storing transformation details. This is separate from the
+     * de-identified content, and contains metadata about the successful
+     * transformations and/or failures that occurred while de-identifying. This
+     * needs to be set in order for users to access information about the status
+     * of each transformation (see
+     * [TransformationDetails][google.privacy.dlp.v2.TransformationDetails]
+     * message for more information about what is noted).
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.TransformationDetailsStorageConfig transformation_details_storage_config = 3;
+     * </code>
+     */
+    com.google.privacy.dlp.v2.TransformationDetailsStorageConfigOrBuilder
+        getTransformationDetailsStorageConfigOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. User settable Cloud Storage bucket and folders to store de-identified
+     * files. This field must be set for cloud storage deidentification. The
+     * output Cloud Storage bucket must be different from the input bucket.
+     * De-identified files will overwrite files in the output path.
+     * Form of: gs://bucket/folder/ or gs://bucket
+     * </pre>
+     *
+     * <code>string cloud_storage_output = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the cloudStorageOutput field is set.
+     */
+    boolean hasCloudStorageOutput();
+    /**
+     *
+     *
+     * <pre>
+     * Required. User settable Cloud Storage bucket and folders to store de-identified
+     * files. This field must be set for cloud storage deidentification. The
+     * output Cloud Storage bucket must be different from the input bucket.
+     * De-identified files will overwrite files in the output path.
+     * Form of: gs://bucket/folder/ or gs://bucket
+     * </pre>
+     *
+     * <code>string cloud_storage_output = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The cloudStorageOutput.
+     */
+    java.lang.String getCloudStorageOutput();
+    /**
+     *
+     *
+     * <pre>
+     * Required. User settable Cloud Storage bucket and folders to store de-identified
+     * files. This field must be set for cloud storage deidentification. The
+     * output Cloud Storage bucket must be different from the input bucket.
+     * De-identified files will overwrite files in the output path.
+     * Form of: gs://bucket/folder/ or gs://bucket
+     * </pre>
+     *
+     * <code>string cloud_storage_output = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for cloudStorageOutput.
+     */
+    com.google.protobuf.ByteString getCloudStorageOutputBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * List of user-specified file type groups to transform. If specified, only
+     * the files with these filetypes will be transformed. If empty, all
+     * supported files will be transformed. Supported types may be automatically
+     * added over time. If a file type is set in this field that isn't supported
+     * by the Deidentify action then the job will fail and will not be
+     * successfully created/started. Currently the only filetypes supported are:
+     * IMAGES, TEXT_FILES, CSV, TSV.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
+     *
+     * @return A list containing the fileTypesToTransform.
+     */
+    java.util.List<com.google.privacy.dlp.v2.FileType> getFileTypesToTransformList();
+    /**
+     *
+     *
+     * <pre>
+     * List of user-specified file type groups to transform. If specified, only
+     * the files with these filetypes will be transformed. If empty, all
+     * supported files will be transformed. Supported types may be automatically
+     * added over time. If a file type is set in this field that isn't supported
+     * by the Deidentify action then the job will fail and will not be
+     * successfully created/started. Currently the only filetypes supported are:
+     * IMAGES, TEXT_FILES, CSV, TSV.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
+     *
+     * @return The count of fileTypesToTransform.
+     */
+    int getFileTypesToTransformCount();
+    /**
+     *
+     *
+     * <pre>
+     * List of user-specified file type groups to transform. If specified, only
+     * the files with these filetypes will be transformed. If empty, all
+     * supported files will be transformed. Supported types may be automatically
+     * added over time. If a file type is set in this field that isn't supported
+     * by the Deidentify action then the job will fail and will not be
+     * successfully created/started. Currently the only filetypes supported are:
+     * IMAGES, TEXT_FILES, CSV, TSV.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The fileTypesToTransform at the given index.
+     */
+    com.google.privacy.dlp.v2.FileType getFileTypesToTransform(int index);
+    /**
+     *
+     *
+     * <pre>
+     * List of user-specified file type groups to transform. If specified, only
+     * the files with these filetypes will be transformed. If empty, all
+     * supported files will be transformed. Supported types may be automatically
+     * added over time. If a file type is set in this field that isn't supported
+     * by the Deidentify action then the job will fail and will not be
+     * successfully created/started. Currently the only filetypes supported are:
+     * IMAGES, TEXT_FILES, CSV, TSV.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
+     *
+     * @return A list containing the enum numeric values on the wire for fileTypesToTransform.
+     */
+    java.util.List<java.lang.Integer> getFileTypesToTransformValueList();
+    /**
+     *
+     *
+     * <pre>
+     * List of user-specified file type groups to transform. If specified, only
+     * the files with these filetypes will be transformed. If empty, all
+     * supported files will be transformed. Supported types may be automatically
+     * added over time. If a file type is set in this field that isn't supported
+     * by the Deidentify action then the job will fail and will not be
+     * successfully created/started. Currently the only filetypes supported are:
+     * IMAGES, TEXT_FILES, CSV, TSV.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of fileTypesToTransform at the given index.
+     */
+    int getFileTypesToTransformValue(int index);
+
+    public com.google.privacy.dlp.v2.Action.Deidentify.OutputCase getOutputCase();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Create a de-identified copy of the requested table or files.
+   * A TransformationDetail will be created for each transformation.
+   * If any rows in BigQuery are skipped during de-identification
+   * (transformation errors or row size exceeds BigQuery insert API limits) they
+   * are placed in the failure output table. If the original row exceeds
+   * the BigQuery insert API limit it will be truncated when written to the
+   * failure output table. The failure output table can be set in the
+   * action.deidentify.output.big_query_output.deidentified_failure_output_table
+   * field, if no table is set, a table will be automatically created in the
+   * same project and dataset as the original table.
+   * Compatible with: Inspect
+   * </pre>
+   *
+   * Protobuf type {@code google.privacy.dlp.v2.Action.Deidentify}
+   */
+  public static final class Deidentify extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.Action.Deidentify)
+      DeidentifyOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Deidentify.newBuilder() to construct.
+    private Deidentify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Deidentify() {
+      fileTypesToTransform_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Deidentify();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private Deidentify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26:
+              {
+                com.google.privacy.dlp.v2.TransformationDetailsStorageConfig.Builder subBuilder =
+                    null;
+                if (transformationDetailsStorageConfig_ != null) {
+                  subBuilder = transformationDetailsStorageConfig_.toBuilder();
+                }
+                transformationDetailsStorageConfig_ =
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.TransformationDetailsStorageConfig.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(transformationDetailsStorageConfig_);
+                  transformationDetailsStorageConfig_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            case 58:
+              {
+                com.google.privacy.dlp.v2.TransformationConfig.Builder subBuilder = null;
+                if (transformationConfig_ != null) {
+                  subBuilder = transformationConfig_.toBuilder();
+                }
+                transformationConfig_ =
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.TransformationConfig.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(transformationConfig_);
+                  transformationConfig_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            case 64:
+              {
+                int rawValue = input.readEnum();
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  fileTypesToTransform_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                fileTypesToTransform_.add(rawValue);
+                break;
+              }
+            case 66:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int rawValue = input.readEnum();
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                    fileTypesToTransform_ = new java.util.ArrayList<java.lang.Integer>();
+                    mutable_bitField0_ |= 0x00000001;
+                  }
+                  fileTypesToTransform_.add(rawValue);
+                }
+                input.popLimit(oldLimit);
+                break;
+              }
+            case 74:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                outputCase_ = 9;
+                output_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          fileTypesToTransform_ = java.util.Collections.unmodifiableList(fileTypesToTransform_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_Action_Deidentify_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_Action_Deidentify_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.privacy.dlp.v2.Action.Deidentify.class,
+              com.google.privacy.dlp.v2.Action.Deidentify.Builder.class);
+    }
+
+    private int outputCase_ = 0;
+    private java.lang.Object output_;
+
+    public enum OutputCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      CLOUD_STORAGE_OUTPUT(9),
+      OUTPUT_NOT_SET(0);
+      private final int value;
+
+      private OutputCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static OutputCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static OutputCase forNumber(int value) {
+        switch (value) {
+          case 9:
+            return CLOUD_STORAGE_OUTPUT;
+          case 0:
+            return OUTPUT_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public OutputCase getOutputCase() {
+      return OutputCase.forNumber(outputCase_);
+    }
+
+    public static final int TRANSFORMATION_CONFIG_FIELD_NUMBER = 7;
+    private com.google.privacy.dlp.v2.TransformationConfig transformationConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * User specified deidentify templates and configs for structured,
+     * unstructured, and image files.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TransformationConfig transformation_config = 7;</code>
+     *
+     * @return Whether the transformationConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasTransformationConfig() {
+      return transformationConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User specified deidentify templates and configs for structured,
+     * unstructured, and image files.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TransformationConfig transformation_config = 7;</code>
+     *
+     * @return The transformationConfig.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.TransformationConfig getTransformationConfig() {
+      return transformationConfig_ == null
+          ? com.google.privacy.dlp.v2.TransformationConfig.getDefaultInstance()
+          : transformationConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User specified deidentify templates and configs for structured,
+     * unstructured, and image files.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.TransformationConfig transformation_config = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.TransformationConfigOrBuilder
+        getTransformationConfigOrBuilder() {
+      return getTransformationConfig();
+    }
+
+    public static final int TRANSFORMATION_DETAILS_STORAGE_CONFIG_FIELD_NUMBER = 3;
+    private com.google.privacy.dlp.v2.TransformationDetailsStorageConfig
+        transformationDetailsStorageConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * Config for storing transformation details. This is separate from the
+     * de-identified content, and contains metadata about the successful
+     * transformations and/or failures that occurred while de-identifying. This
+     * needs to be set in order for users to access information about the status
+     * of each transformation (see
+     * [TransformationDetails][google.privacy.dlp.v2.TransformationDetails]
+     * message for more information about what is noted).
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.TransformationDetailsStorageConfig transformation_details_storage_config = 3;
+     * </code>
+     *
+     * @return Whether the transformationDetailsStorageConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasTransformationDetailsStorageConfig() {
+      return transformationDetailsStorageConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for storing transformation details. This is separate from the
+     * de-identified content, and contains metadata about the successful
+     * transformations and/or failures that occurred while de-identifying. This
+     * needs to be set in order for users to access information about the status
+     * of each transformation (see
+     * [TransformationDetails][google.privacy.dlp.v2.TransformationDetails]
+     * message for more information about what is noted).
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.TransformationDetailsStorageConfig transformation_details_storage_config = 3;
+     * </code>
+     *
+     * @return The transformationDetailsStorageConfig.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.TransformationDetailsStorageConfig
+        getTransformationDetailsStorageConfig() {
+      return transformationDetailsStorageConfig_ == null
+          ? com.google.privacy.dlp.v2.TransformationDetailsStorageConfig.getDefaultInstance()
+          : transformationDetailsStorageConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for storing transformation details. This is separate from the
+     * de-identified content, and contains metadata about the successful
+     * transformations and/or failures that occurred while de-identifying. This
+     * needs to be set in order for users to access information about the status
+     * of each transformation (see
+     * [TransformationDetails][google.privacy.dlp.v2.TransformationDetails]
+     * message for more information about what is noted).
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.TransformationDetailsStorageConfig transformation_details_storage_config = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.TransformationDetailsStorageConfigOrBuilder
+        getTransformationDetailsStorageConfigOrBuilder() {
+      return getTransformationDetailsStorageConfig();
+    }
+
+    public static final int CLOUD_STORAGE_OUTPUT_FIELD_NUMBER = 9;
+    /**
+     *
+     *
+     * <pre>
+     * Required. User settable Cloud Storage bucket and folders to store de-identified
+     * files. This field must be set for cloud storage deidentification. The
+     * output Cloud Storage bucket must be different from the input bucket.
+     * De-identified files will overwrite files in the output path.
+     * Form of: gs://bucket/folder/ or gs://bucket
+     * </pre>
+     *
+     * <code>string cloud_storage_output = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the cloudStorageOutput field is set.
+     */
+    public boolean hasCloudStorageOutput() {
+      return outputCase_ == 9;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. User settable Cloud Storage bucket and folders to store de-identified
+     * files. This field must be set for cloud storage deidentification. The
+     * output Cloud Storage bucket must be different from the input bucket.
+     * De-identified files will overwrite files in the output path.
+     * Form of: gs://bucket/folder/ or gs://bucket
+     * </pre>
+     *
+     * <code>string cloud_storage_output = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The cloudStorageOutput.
+     */
+    public java.lang.String getCloudStorageOutput() {
+      java.lang.Object ref = "";
+      if (outputCase_ == 9) {
+        ref = output_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (outputCase_ == 9) {
+          output_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. User settable Cloud Storage bucket and folders to store de-identified
+     * files. This field must be set for cloud storage deidentification. The
+     * output Cloud Storage bucket must be different from the input bucket.
+     * De-identified files will overwrite files in the output path.
+     * Form of: gs://bucket/folder/ or gs://bucket
+     * </pre>
+     *
+     * <code>string cloud_storage_output = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for cloudStorageOutput.
+     */
+    public com.google.protobuf.ByteString getCloudStorageOutputBytes() {
+      java.lang.Object ref = "";
+      if (outputCase_ == 9) {
+        ref = output_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (outputCase_ == 9) {
+          output_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FILE_TYPES_TO_TRANSFORM_FIELD_NUMBER = 8;
+    private java.util.List<java.lang.Integer> fileTypesToTransform_;
+    private static final com.google.protobuf.Internal.ListAdapter.Converter<
+            java.lang.Integer, com.google.privacy.dlp.v2.FileType>
+        fileTypesToTransform_converter_ =
+            new com.google.protobuf.Internal.ListAdapter.Converter<
+                java.lang.Integer, com.google.privacy.dlp.v2.FileType>() {
+              public com.google.privacy.dlp.v2.FileType convert(java.lang.Integer from) {
+                @SuppressWarnings("deprecation")
+                com.google.privacy.dlp.v2.FileType result =
+                    com.google.privacy.dlp.v2.FileType.valueOf(from);
+                return result == null ? com.google.privacy.dlp.v2.FileType.UNRECOGNIZED : result;
+              }
+            };
+    /**
+     *
+     *
+     * <pre>
+     * List of user-specified file type groups to transform. If specified, only
+     * the files with these filetypes will be transformed. If empty, all
+     * supported files will be transformed. Supported types may be automatically
+     * added over time. If a file type is set in this field that isn't supported
+     * by the Deidentify action then the job will fail and will not be
+     * successfully created/started. Currently the only filetypes supported are:
+     * IMAGES, TEXT_FILES, CSV, TSV.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
+     *
+     * @return A list containing the fileTypesToTransform.
+     */
+    @java.lang.Override
+    public java.util.List<com.google.privacy.dlp.v2.FileType> getFileTypesToTransformList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.google.privacy.dlp.v2.FileType>(
+          fileTypesToTransform_, fileTypesToTransform_converter_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of user-specified file type groups to transform. If specified, only
+     * the files with these filetypes will be transformed. If empty, all
+     * supported files will be transformed. Supported types may be automatically
+     * added over time. If a file type is set in this field that isn't supported
+     * by the Deidentify action then the job will fail and will not be
+     * successfully created/started. Currently the only filetypes supported are:
+     * IMAGES, TEXT_FILES, CSV, TSV.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
+     *
+     * @return The count of fileTypesToTransform.
+     */
+    @java.lang.Override
+    public int getFileTypesToTransformCount() {
+      return fileTypesToTransform_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of user-specified file type groups to transform. If specified, only
+     * the files with these filetypes will be transformed. If empty, all
+     * supported files will be transformed. Supported types may be automatically
+     * added over time. If a file type is set in this field that isn't supported
+     * by the Deidentify action then the job will fail and will not be
+     * successfully created/started. Currently the only filetypes supported are:
+     * IMAGES, TEXT_FILES, CSV, TSV.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The fileTypesToTransform at the given index.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.FileType getFileTypesToTransform(int index) {
+      return fileTypesToTransform_converter_.convert(fileTypesToTransform_.get(index));
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of user-specified file type groups to transform. If specified, only
+     * the files with these filetypes will be transformed. If empty, all
+     * supported files will be transformed. Supported types may be automatically
+     * added over time. If a file type is set in this field that isn't supported
+     * by the Deidentify action then the job will fail and will not be
+     * successfully created/started. Currently the only filetypes supported are:
+     * IMAGES, TEXT_FILES, CSV, TSV.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
+     *
+     * @return A list containing the enum numeric values on the wire for fileTypesToTransform.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer> getFileTypesToTransformValueList() {
+      return fileTypesToTransform_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of user-specified file type groups to transform. If specified, only
+     * the files with these filetypes will be transformed. If empty, all
+     * supported files will be transformed. Supported types may be automatically
+     * added over time. If a file type is set in this field that isn't supported
+     * by the Deidentify action then the job will fail and will not be
+     * successfully created/started. Currently the only filetypes supported are:
+     * IMAGES, TEXT_FILES, CSV, TSV.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of fileTypesToTransform at the given index.
+     */
+    @java.lang.Override
+    public int getFileTypesToTransformValue(int index) {
+      return fileTypesToTransform_.get(index);
+    }
+
+    private int fileTypesToTransformMemoizedSerializedSize;
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getSerializedSize();
+      if (transformationDetailsStorageConfig_ != null) {
+        output.writeMessage(3, getTransformationDetailsStorageConfig());
+      }
+      if (transformationConfig_ != null) {
+        output.writeMessage(7, getTransformationConfig());
+      }
+      if (getFileTypesToTransformList().size() > 0) {
+        output.writeUInt32NoTag(66);
+        output.writeUInt32NoTag(fileTypesToTransformMemoizedSerializedSize);
+      }
+      for (int i = 0; i < fileTypesToTransform_.size(); i++) {
+        output.writeEnumNoTag(fileTypesToTransform_.get(i));
+      }
+      if (outputCase_ == 9) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, output_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (transformationDetailsStorageConfig_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3, getTransformationDetailsStorageConfig());
+      }
+      if (transformationConfig_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(7, getTransformationConfig());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < fileTypesToTransform_.size(); i++) {
+          dataSize +=
+              com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(
+                  fileTypesToTransform_.get(i));
+        }
+        size += dataSize;
+        if (!getFileTypesToTransformList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+        }
+        fileTypesToTransformMemoizedSerializedSize = dataSize;
+      }
+      if (outputCase_ == 9) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, output_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.privacy.dlp.v2.Action.Deidentify)) {
+        return super.equals(obj);
+      }
+      com.google.privacy.dlp.v2.Action.Deidentify other =
+          (com.google.privacy.dlp.v2.Action.Deidentify) obj;
+
+      if (hasTransformationConfig() != other.hasTransformationConfig()) return false;
+      if (hasTransformationConfig()) {
+        if (!getTransformationConfig().equals(other.getTransformationConfig())) return false;
+      }
+      if (hasTransformationDetailsStorageConfig() != other.hasTransformationDetailsStorageConfig())
+        return false;
+      if (hasTransformationDetailsStorageConfig()) {
+        if (!getTransformationDetailsStorageConfig()
+            .equals(other.getTransformationDetailsStorageConfig())) return false;
+      }
+      if (!fileTypesToTransform_.equals(other.fileTypesToTransform_)) return false;
+      if (!getOutputCase().equals(other.getOutputCase())) return false;
+      switch (outputCase_) {
+        case 9:
+          if (!getCloudStorageOutput().equals(other.getCloudStorageOutput())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasTransformationConfig()) {
+        hash = (37 * hash) + TRANSFORMATION_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getTransformationConfig().hashCode();
+      }
+      if (hasTransformationDetailsStorageConfig()) {
+        hash = (37 * hash) + TRANSFORMATION_DETAILS_STORAGE_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getTransformationDetailsStorageConfig().hashCode();
+      }
+      if (getFileTypesToTransformCount() > 0) {
+        hash = (37 * hash) + FILE_TYPES_TO_TRANSFORM_FIELD_NUMBER;
+        hash = (53 * hash) + fileTypesToTransform_.hashCode();
+      }
+      switch (outputCase_) {
+        case 9:
+          hash = (37 * hash) + CLOUD_STORAGE_OUTPUT_FIELD_NUMBER;
+          hash = (53 * hash) + getCloudStorageOutput().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.privacy.dlp.v2.Action.Deidentify parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.Deidentify parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.Deidentify parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.Deidentify parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.Deidentify parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.Deidentify parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.Deidentify parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.Deidentify parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.Deidentify parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.Deidentify parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.Deidentify parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.Deidentify parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.privacy.dlp.v2.Action.Deidentify prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Create a de-identified copy of the requested table or files.
+     * A TransformationDetail will be created for each transformation.
+     * If any rows in BigQuery are skipped during de-identification
+     * (transformation errors or row size exceeds BigQuery insert API limits) they
+     * are placed in the failure output table. If the original row exceeds
+     * the BigQuery insert API limit it will be truncated when written to the
+     * failure output table. The failure output table can be set in the
+     * action.deidentify.output.big_query_output.deidentified_failure_output_table
+     * field, if no table is set, a table will be automatically created in the
+     * same project and dataset as the original table.
+     * Compatible with: Inspect
+     * </pre>
+     *
+     * Protobuf type {@code google.privacy.dlp.v2.Action.Deidentify}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.Action.Deidentify)
+        com.google.privacy.dlp.v2.Action.DeidentifyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_Action_Deidentify_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_Action_Deidentify_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.privacy.dlp.v2.Action.Deidentify.class,
+                com.google.privacy.dlp.v2.Action.Deidentify.Builder.class);
+      }
+
+      // Construct using com.google.privacy.dlp.v2.Action.Deidentify.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (transformationConfigBuilder_ == null) {
+          transformationConfig_ = null;
+        } else {
+          transformationConfig_ = null;
+          transformationConfigBuilder_ = null;
+        }
+        if (transformationDetailsStorageConfigBuilder_ == null) {
+          transformationDetailsStorageConfig_ = null;
+        } else {
+          transformationDetailsStorageConfig_ = null;
+          transformationDetailsStorageConfigBuilder_ = null;
+        }
+        fileTypesToTransform_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        outputCase_ = 0;
+        output_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_Action_Deidentify_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.Action.Deidentify getDefaultInstanceForType() {
+        return com.google.privacy.dlp.v2.Action.Deidentify.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.Action.Deidentify build() {
+        com.google.privacy.dlp.v2.Action.Deidentify result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.Action.Deidentify buildPartial() {
+        com.google.privacy.dlp.v2.Action.Deidentify result =
+            new com.google.privacy.dlp.v2.Action.Deidentify(this);
+        int from_bitField0_ = bitField0_;
+        if (transformationConfigBuilder_ == null) {
+          result.transformationConfig_ = transformationConfig_;
+        } else {
+          result.transformationConfig_ = transformationConfigBuilder_.build();
+        }
+        if (transformationDetailsStorageConfigBuilder_ == null) {
+          result.transformationDetailsStorageConfig_ = transformationDetailsStorageConfig_;
+        } else {
+          result.transformationDetailsStorageConfig_ =
+              transformationDetailsStorageConfigBuilder_.build();
+        }
+        if (outputCase_ == 9) {
+          result.output_ = output_;
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          fileTypesToTransform_ = java.util.Collections.unmodifiableList(fileTypesToTransform_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.fileTypesToTransform_ = fileTypesToTransform_;
+        result.outputCase_ = outputCase_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.privacy.dlp.v2.Action.Deidentify) {
+          return mergeFrom((com.google.privacy.dlp.v2.Action.Deidentify) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.privacy.dlp.v2.Action.Deidentify other) {
+        if (other == com.google.privacy.dlp.v2.Action.Deidentify.getDefaultInstance()) return this;
+        if (other.hasTransformationConfig()) {
+          mergeTransformationConfig(other.getTransformationConfig());
+        }
+        if (other.hasTransformationDetailsStorageConfig()) {
+          mergeTransformationDetailsStorageConfig(other.getTransformationDetailsStorageConfig());
+        }
+        if (!other.fileTypesToTransform_.isEmpty()) {
+          if (fileTypesToTransform_.isEmpty()) {
+            fileTypesToTransform_ = other.fileTypesToTransform_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureFileTypesToTransformIsMutable();
+            fileTypesToTransform_.addAll(other.fileTypesToTransform_);
+          }
+          onChanged();
+        }
+        switch (other.getOutputCase()) {
+          case CLOUD_STORAGE_OUTPUT:
+            {
+              outputCase_ = 9;
+              output_ = other.output_;
+              onChanged();
+              break;
+            }
+          case OUTPUT_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.privacy.dlp.v2.Action.Deidentify parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.privacy.dlp.v2.Action.Deidentify) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int outputCase_ = 0;
+      private java.lang.Object output_;
+
+      public OutputCase getOutputCase() {
+        return OutputCase.forNumber(outputCase_);
+      }
+
+      public Builder clearOutput() {
+        outputCase_ = 0;
+        output_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.privacy.dlp.v2.TransformationConfig transformationConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.privacy.dlp.v2.TransformationConfig,
+              com.google.privacy.dlp.v2.TransformationConfig.Builder,
+              com.google.privacy.dlp.v2.TransformationConfigOrBuilder>
+          transformationConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * User specified deidentify templates and configs for structured,
+       * unstructured, and image files.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.TransformationConfig transformation_config = 7;</code>
+       *
+       * @return Whether the transformationConfig field is set.
+       */
+      public boolean hasTransformationConfig() {
+        return transformationConfigBuilder_ != null || transformationConfig_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * User specified deidentify templates and configs for structured,
+       * unstructured, and image files.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.TransformationConfig transformation_config = 7;</code>
+       *
+       * @return The transformationConfig.
+       */
+      public com.google.privacy.dlp.v2.TransformationConfig getTransformationConfig() {
+        if (transformationConfigBuilder_ == null) {
+          return transformationConfig_ == null
+              ? com.google.privacy.dlp.v2.TransformationConfig.getDefaultInstance()
+              : transformationConfig_;
+        } else {
+          return transformationConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * User specified deidentify templates and configs for structured,
+       * unstructured, and image files.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.TransformationConfig transformation_config = 7;</code>
+       */
+      public Builder setTransformationConfig(com.google.privacy.dlp.v2.TransformationConfig value) {
+        if (transformationConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          transformationConfig_ = value;
+          onChanged();
+        } else {
+          transformationConfigBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * User specified deidentify templates and configs for structured,
+       * unstructured, and image files.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.TransformationConfig transformation_config = 7;</code>
+       */
+      public Builder setTransformationConfig(
+          com.google.privacy.dlp.v2.TransformationConfig.Builder builderForValue) {
+        if (transformationConfigBuilder_ == null) {
+          transformationConfig_ = builderForValue.build();
+          onChanged();
+        } else {
+          transformationConfigBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * User specified deidentify templates and configs for structured,
+       * unstructured, and image files.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.TransformationConfig transformation_config = 7;</code>
+       */
+      public Builder mergeTransformationConfig(
+          com.google.privacy.dlp.v2.TransformationConfig value) {
+        if (transformationConfigBuilder_ == null) {
+          if (transformationConfig_ != null) {
+            transformationConfig_ =
+                com.google.privacy.dlp.v2.TransformationConfig.newBuilder(transformationConfig_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            transformationConfig_ = value;
+          }
+          onChanged();
+        } else {
+          transformationConfigBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * User specified deidentify templates and configs for structured,
+       * unstructured, and image files.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.TransformationConfig transformation_config = 7;</code>
+       */
+      public Builder clearTransformationConfig() {
+        if (transformationConfigBuilder_ == null) {
+          transformationConfig_ = null;
+          onChanged();
+        } else {
+          transformationConfig_ = null;
+          transformationConfigBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * User specified deidentify templates and configs for structured,
+       * unstructured, and image files.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.TransformationConfig transformation_config = 7;</code>
+       */
+      public com.google.privacy.dlp.v2.TransformationConfig.Builder
+          getTransformationConfigBuilder() {
+
+        onChanged();
+        return getTransformationConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * User specified deidentify templates and configs for structured,
+       * unstructured, and image files.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.TransformationConfig transformation_config = 7;</code>
+       */
+      public com.google.privacy.dlp.v2.TransformationConfigOrBuilder
+          getTransformationConfigOrBuilder() {
+        if (transformationConfigBuilder_ != null) {
+          return transformationConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return transformationConfig_ == null
+              ? com.google.privacy.dlp.v2.TransformationConfig.getDefaultInstance()
+              : transformationConfig_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * User specified deidentify templates and configs for structured,
+       * unstructured, and image files.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.TransformationConfig transformation_config = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.privacy.dlp.v2.TransformationConfig,
+              com.google.privacy.dlp.v2.TransformationConfig.Builder,
+              com.google.privacy.dlp.v2.TransformationConfigOrBuilder>
+          getTransformationConfigFieldBuilder() {
+        if (transformationConfigBuilder_ == null) {
+          transformationConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.privacy.dlp.v2.TransformationConfig,
+                  com.google.privacy.dlp.v2.TransformationConfig.Builder,
+                  com.google.privacy.dlp.v2.TransformationConfigOrBuilder>(
+                  getTransformationConfig(), getParentForChildren(), isClean());
+          transformationConfig_ = null;
+        }
+        return transformationConfigBuilder_;
+      }
+
+      private com.google.privacy.dlp.v2.TransformationDetailsStorageConfig
+          transformationDetailsStorageConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.privacy.dlp.v2.TransformationDetailsStorageConfig,
+              com.google.privacy.dlp.v2.TransformationDetailsStorageConfig.Builder,
+              com.google.privacy.dlp.v2.TransformationDetailsStorageConfigOrBuilder>
+          transformationDetailsStorageConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Config for storing transformation details. This is separate from the
+       * de-identified content, and contains metadata about the successful
+       * transformations and/or failures that occurred while de-identifying. This
+       * needs to be set in order for users to access information about the status
+       * of each transformation (see
+       * [TransformationDetails][google.privacy.dlp.v2.TransformationDetails]
+       * message for more information about what is noted).
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.TransformationDetailsStorageConfig transformation_details_storage_config = 3;
+       * </code>
+       *
+       * @return Whether the transformationDetailsStorageConfig field is set.
+       */
+      public boolean hasTransformationDetailsStorageConfig() {
+        return transformationDetailsStorageConfigBuilder_ != null
+            || transformationDetailsStorageConfig_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Config for storing transformation details. This is separate from the
+       * de-identified content, and contains metadata about the successful
+       * transformations and/or failures that occurred while de-identifying. This
+       * needs to be set in order for users to access information about the status
+       * of each transformation (see
+       * [TransformationDetails][google.privacy.dlp.v2.TransformationDetails]
+       * message for more information about what is noted).
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.TransformationDetailsStorageConfig transformation_details_storage_config = 3;
+       * </code>
+       *
+       * @return The transformationDetailsStorageConfig.
+       */
+      public com.google.privacy.dlp.v2.TransformationDetailsStorageConfig
+          getTransformationDetailsStorageConfig() {
+        if (transformationDetailsStorageConfigBuilder_ == null) {
+          return transformationDetailsStorageConfig_ == null
+              ? com.google.privacy.dlp.v2.TransformationDetailsStorageConfig.getDefaultInstance()
+              : transformationDetailsStorageConfig_;
+        } else {
+          return transformationDetailsStorageConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Config for storing transformation details. This is separate from the
+       * de-identified content, and contains metadata about the successful
+       * transformations and/or failures that occurred while de-identifying. This
+       * needs to be set in order for users to access information about the status
+       * of each transformation (see
+       * [TransformationDetails][google.privacy.dlp.v2.TransformationDetails]
+       * message for more information about what is noted).
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.TransformationDetailsStorageConfig transformation_details_storage_config = 3;
+       * </code>
+       */
+      public Builder setTransformationDetailsStorageConfig(
+          com.google.privacy.dlp.v2.TransformationDetailsStorageConfig value) {
+        if (transformationDetailsStorageConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          transformationDetailsStorageConfig_ = value;
+          onChanged();
+        } else {
+          transformationDetailsStorageConfigBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Config for storing transformation details. This is separate from the
+       * de-identified content, and contains metadata about the successful
+       * transformations and/or failures that occurred while de-identifying. This
+       * needs to be set in order for users to access information about the status
+       * of each transformation (see
+       * [TransformationDetails][google.privacy.dlp.v2.TransformationDetails]
+       * message for more information about what is noted).
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.TransformationDetailsStorageConfig transformation_details_storage_config = 3;
+       * </code>
+       */
+      public Builder setTransformationDetailsStorageConfig(
+          com.google.privacy.dlp.v2.TransformationDetailsStorageConfig.Builder builderForValue) {
+        if (transformationDetailsStorageConfigBuilder_ == null) {
+          transformationDetailsStorageConfig_ = builderForValue.build();
+          onChanged();
+        } else {
+          transformationDetailsStorageConfigBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Config for storing transformation details. This is separate from the
+       * de-identified content, and contains metadata about the successful
+       * transformations and/or failures that occurred while de-identifying. This
+       * needs to be set in order for users to access information about the status
+       * of each transformation (see
+       * [TransformationDetails][google.privacy.dlp.v2.TransformationDetails]
+       * message for more information about what is noted).
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.TransformationDetailsStorageConfig transformation_details_storage_config = 3;
+       * </code>
+       */
+      public Builder mergeTransformationDetailsStorageConfig(
+          com.google.privacy.dlp.v2.TransformationDetailsStorageConfig value) {
+        if (transformationDetailsStorageConfigBuilder_ == null) {
+          if (transformationDetailsStorageConfig_ != null) {
+            transformationDetailsStorageConfig_ =
+                com.google.privacy.dlp.v2.TransformationDetailsStorageConfig.newBuilder(
+                        transformationDetailsStorageConfig_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            transformationDetailsStorageConfig_ = value;
+          }
+          onChanged();
+        } else {
+          transformationDetailsStorageConfigBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Config for storing transformation details. This is separate from the
+       * de-identified content, and contains metadata about the successful
+       * transformations and/or failures that occurred while de-identifying. This
+       * needs to be set in order for users to access information about the status
+       * of each transformation (see
+       * [TransformationDetails][google.privacy.dlp.v2.TransformationDetails]
+       * message for more information about what is noted).
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.TransformationDetailsStorageConfig transformation_details_storage_config = 3;
+       * </code>
+       */
+      public Builder clearTransformationDetailsStorageConfig() {
+        if (transformationDetailsStorageConfigBuilder_ == null) {
+          transformationDetailsStorageConfig_ = null;
+          onChanged();
+        } else {
+          transformationDetailsStorageConfig_ = null;
+          transformationDetailsStorageConfigBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Config for storing transformation details. This is separate from the
+       * de-identified content, and contains metadata about the successful
+       * transformations and/or failures that occurred while de-identifying. This
+       * needs to be set in order for users to access information about the status
+       * of each transformation (see
+       * [TransformationDetails][google.privacy.dlp.v2.TransformationDetails]
+       * message for more information about what is noted).
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.TransformationDetailsStorageConfig transformation_details_storage_config = 3;
+       * </code>
+       */
+      public com.google.privacy.dlp.v2.TransformationDetailsStorageConfig.Builder
+          getTransformationDetailsStorageConfigBuilder() {
+
+        onChanged();
+        return getTransformationDetailsStorageConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Config for storing transformation details. This is separate from the
+       * de-identified content, and contains metadata about the successful
+       * transformations and/or failures that occurred while de-identifying. This
+       * needs to be set in order for users to access information about the status
+       * of each transformation (see
+       * [TransformationDetails][google.privacy.dlp.v2.TransformationDetails]
+       * message for more information about what is noted).
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.TransformationDetailsStorageConfig transformation_details_storage_config = 3;
+       * </code>
+       */
+      public com.google.privacy.dlp.v2.TransformationDetailsStorageConfigOrBuilder
+          getTransformationDetailsStorageConfigOrBuilder() {
+        if (transformationDetailsStorageConfigBuilder_ != null) {
+          return transformationDetailsStorageConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return transformationDetailsStorageConfig_ == null
+              ? com.google.privacy.dlp.v2.TransformationDetailsStorageConfig.getDefaultInstance()
+              : transformationDetailsStorageConfig_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Config for storing transformation details. This is separate from the
+       * de-identified content, and contains metadata about the successful
+       * transformations and/or failures that occurred while de-identifying. This
+       * needs to be set in order for users to access information about the status
+       * of each transformation (see
+       * [TransformationDetails][google.privacy.dlp.v2.TransformationDetails]
+       * message for more information about what is noted).
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.TransformationDetailsStorageConfig transformation_details_storage_config = 3;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.privacy.dlp.v2.TransformationDetailsStorageConfig,
+              com.google.privacy.dlp.v2.TransformationDetailsStorageConfig.Builder,
+              com.google.privacy.dlp.v2.TransformationDetailsStorageConfigOrBuilder>
+          getTransformationDetailsStorageConfigFieldBuilder() {
+        if (transformationDetailsStorageConfigBuilder_ == null) {
+          transformationDetailsStorageConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.privacy.dlp.v2.TransformationDetailsStorageConfig,
+                  com.google.privacy.dlp.v2.TransformationDetailsStorageConfig.Builder,
+                  com.google.privacy.dlp.v2.TransformationDetailsStorageConfigOrBuilder>(
+                  getTransformationDetailsStorageConfig(), getParentForChildren(), isClean());
+          transformationDetailsStorageConfig_ = null;
+        }
+        return transformationDetailsStorageConfigBuilder_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. User settable Cloud Storage bucket and folders to store de-identified
+       * files. This field must be set for cloud storage deidentification. The
+       * output Cloud Storage bucket must be different from the input bucket.
+       * De-identified files will overwrite files in the output path.
+       * Form of: gs://bucket/folder/ or gs://bucket
+       * </pre>
+       *
+       * <code>string cloud_storage_output = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return Whether the cloudStorageOutput field is set.
+       */
+      @java.lang.Override
+      public boolean hasCloudStorageOutput() {
+        return outputCase_ == 9;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. User settable Cloud Storage bucket and folders to store de-identified
+       * files. This field must be set for cloud storage deidentification. The
+       * output Cloud Storage bucket must be different from the input bucket.
+       * De-identified files will overwrite files in the output path.
+       * Form of: gs://bucket/folder/ or gs://bucket
+       * </pre>
+       *
+       * <code>string cloud_storage_output = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The cloudStorageOutput.
+       */
+      @java.lang.Override
+      public java.lang.String getCloudStorageOutput() {
+        java.lang.Object ref = "";
+        if (outputCase_ == 9) {
+          ref = output_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (outputCase_ == 9) {
+            output_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. User settable Cloud Storage bucket and folders to store de-identified
+       * files. This field must be set for cloud storage deidentification. The
+       * output Cloud Storage bucket must be different from the input bucket.
+       * De-identified files will overwrite files in the output path.
+       * Form of: gs://bucket/folder/ or gs://bucket
+       * </pre>
+       *
+       * <code>string cloud_storage_output = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for cloudStorageOutput.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getCloudStorageOutputBytes() {
+        java.lang.Object ref = "";
+        if (outputCase_ == 9) {
+          ref = output_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          if (outputCase_ == 9) {
+            output_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. User settable Cloud Storage bucket and folders to store de-identified
+       * files. This field must be set for cloud storage deidentification. The
+       * output Cloud Storage bucket must be different from the input bucket.
+       * De-identified files will overwrite files in the output path.
+       * Form of: gs://bucket/folder/ or gs://bucket
+       * </pre>
+       *
+       * <code>string cloud_storage_output = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The cloudStorageOutput to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCloudStorageOutput(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        outputCase_ = 9;
+        output_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. User settable Cloud Storage bucket and folders to store de-identified
+       * files. This field must be set for cloud storage deidentification. The
+       * output Cloud Storage bucket must be different from the input bucket.
+       * De-identified files will overwrite files in the output path.
+       * Form of: gs://bucket/folder/ or gs://bucket
+       * </pre>
+       *
+       * <code>string cloud_storage_output = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCloudStorageOutput() {
+        if (outputCase_ == 9) {
+          outputCase_ = 0;
+          output_ = null;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. User settable Cloud Storage bucket and folders to store de-identified
+       * files. This field must be set for cloud storage deidentification. The
+       * output Cloud Storage bucket must be different from the input bucket.
+       * De-identified files will overwrite files in the output path.
+       * Form of: gs://bucket/folder/ or gs://bucket
+       * </pre>
+       *
+       * <code>string cloud_storage_output = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for cloudStorageOutput to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCloudStorageOutputBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        outputCase_ = 9;
+        output_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<java.lang.Integer> fileTypesToTransform_ =
+          java.util.Collections.emptyList();
+
+      private void ensureFileTypesToTransformIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          fileTypesToTransform_ = new java.util.ArrayList<java.lang.Integer>(fileTypesToTransform_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of user-specified file type groups to transform. If specified, only
+       * the files with these filetypes will be transformed. If empty, all
+       * supported files will be transformed. Supported types may be automatically
+       * added over time. If a file type is set in this field that isn't supported
+       * by the Deidentify action then the job will fail and will not be
+       * successfully created/started. Currently the only filetypes supported are:
+       * IMAGES, TEXT_FILES, CSV, TSV.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
+       *
+       * @return A list containing the fileTypesToTransform.
+       */
+      public java.util.List<com.google.privacy.dlp.v2.FileType> getFileTypesToTransformList() {
+        return new com.google.protobuf.Internal.ListAdapter<
+            java.lang.Integer, com.google.privacy.dlp.v2.FileType>(
+            fileTypesToTransform_, fileTypesToTransform_converter_);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of user-specified file type groups to transform. If specified, only
+       * the files with these filetypes will be transformed. If empty, all
+       * supported files will be transformed. Supported types may be automatically
+       * added over time. If a file type is set in this field that isn't supported
+       * by the Deidentify action then the job will fail and will not be
+       * successfully created/started. Currently the only filetypes supported are:
+       * IMAGES, TEXT_FILES, CSV, TSV.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
+       *
+       * @return The count of fileTypesToTransform.
+       */
+      public int getFileTypesToTransformCount() {
+        return fileTypesToTransform_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of user-specified file type groups to transform. If specified, only
+       * the files with these filetypes will be transformed. If empty, all
+       * supported files will be transformed. Supported types may be automatically
+       * added over time. If a file type is set in this field that isn't supported
+       * by the Deidentify action then the job will fail and will not be
+       * successfully created/started. Currently the only filetypes supported are:
+       * IMAGES, TEXT_FILES, CSV, TSV.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The fileTypesToTransform at the given index.
+       */
+      public com.google.privacy.dlp.v2.FileType getFileTypesToTransform(int index) {
+        return fileTypesToTransform_converter_.convert(fileTypesToTransform_.get(index));
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of user-specified file type groups to transform. If specified, only
+       * the files with these filetypes will be transformed. If empty, all
+       * supported files will be transformed. Supported types may be automatically
+       * added over time. If a file type is set in this field that isn't supported
+       * by the Deidentify action then the job will fail and will not be
+       * successfully created/started. Currently the only filetypes supported are:
+       * IMAGES, TEXT_FILES, CSV, TSV.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The fileTypesToTransform to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFileTypesToTransform(int index, com.google.privacy.dlp.v2.FileType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFileTypesToTransformIsMutable();
+        fileTypesToTransform_.set(index, value.getNumber());
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of user-specified file type groups to transform. If specified, only
+       * the files with these filetypes will be transformed. If empty, all
+       * supported files will be transformed. Supported types may be automatically
+       * added over time. If a file type is set in this field that isn't supported
+       * by the Deidentify action then the job will fail and will not be
+       * successfully created/started. Currently the only filetypes supported are:
+       * IMAGES, TEXT_FILES, CSV, TSV.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
+       *
+       * @param value The fileTypesToTransform to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFileTypesToTransform(com.google.privacy.dlp.v2.FileType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFileTypesToTransformIsMutable();
+        fileTypesToTransform_.add(value.getNumber());
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of user-specified file type groups to transform. If specified, only
+       * the files with these filetypes will be transformed. If empty, all
+       * supported files will be transformed. Supported types may be automatically
+       * added over time. If a file type is set in this field that isn't supported
+       * by the Deidentify action then the job will fail and will not be
+       * successfully created/started. Currently the only filetypes supported are:
+       * IMAGES, TEXT_FILES, CSV, TSV.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
+       *
+       * @param values The fileTypesToTransform to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllFileTypesToTransform(
+          java.lang.Iterable<? extends com.google.privacy.dlp.v2.FileType> values) {
+        ensureFileTypesToTransformIsMutable();
+        for (com.google.privacy.dlp.v2.FileType value : values) {
+          fileTypesToTransform_.add(value.getNumber());
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of user-specified file type groups to transform. If specified, only
+       * the files with these filetypes will be transformed. If empty, all
+       * supported files will be transformed. Supported types may be automatically
+       * added over time. If a file type is set in this field that isn't supported
+       * by the Deidentify action then the job will fail and will not be
+       * successfully created/started. Currently the only filetypes supported are:
+       * IMAGES, TEXT_FILES, CSV, TSV.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFileTypesToTransform() {
+        fileTypesToTransform_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of user-specified file type groups to transform. If specified, only
+       * the files with these filetypes will be transformed. If empty, all
+       * supported files will be transformed. Supported types may be automatically
+       * added over time. If a file type is set in this field that isn't supported
+       * by the Deidentify action then the job will fail and will not be
+       * successfully created/started. Currently the only filetypes supported are:
+       * IMAGES, TEXT_FILES, CSV, TSV.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
+       *
+       * @return A list containing the enum numeric values on the wire for fileTypesToTransform.
+       */
+      public java.util.List<java.lang.Integer> getFileTypesToTransformValueList() {
+        return java.util.Collections.unmodifiableList(fileTypesToTransform_);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of user-specified file type groups to transform. If specified, only
+       * the files with these filetypes will be transformed. If empty, all
+       * supported files will be transformed. Supported types may be automatically
+       * added over time. If a file type is set in this field that isn't supported
+       * by the Deidentify action then the job will fail and will not be
+       * successfully created/started. Currently the only filetypes supported are:
+       * IMAGES, TEXT_FILES, CSV, TSV.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of fileTypesToTransform at the given index.
+       */
+      public int getFileTypesToTransformValue(int index) {
+        return fileTypesToTransform_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of user-specified file type groups to transform. If specified, only
+       * the files with these filetypes will be transformed. If empty, all
+       * supported files will be transformed. Supported types may be automatically
+       * added over time. If a file type is set in this field that isn't supported
+       * by the Deidentify action then the job will fail and will not be
+       * successfully created/started. Currently the only filetypes supported are:
+       * IMAGES, TEXT_FILES, CSV, TSV.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The enum numeric value on the wire for fileTypesToTransform to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFileTypesToTransformValue(int index, int value) {
+        ensureFileTypesToTransformIsMutable();
+        fileTypesToTransform_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of user-specified file type groups to transform. If specified, only
+       * the files with these filetypes will be transformed. If empty, all
+       * supported files will be transformed. Supported types may be automatically
+       * added over time. If a file type is set in this field that isn't supported
+       * by the Deidentify action then the job will fail and will not be
+       * successfully created/started. Currently the only filetypes supported are:
+       * IMAGES, TEXT_FILES, CSV, TSV.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
+       *
+       * @param value The enum numeric value on the wire for fileTypesToTransform to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFileTypesToTransformValue(int value) {
+        ensureFileTypesToTransformIsMutable();
+        fileTypesToTransform_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of user-specified file type groups to transform. If specified, only
+       * the files with these filetypes will be transformed. If empty, all
+       * supported files will be transformed. Supported types may be automatically
+       * added over time. If a file type is set in this field that isn't supported
+       * by the Deidentify action then the job will fail and will not be
+       * successfully created/started. Currently the only filetypes supported are:
+       * IMAGES, TEXT_FILES, CSV, TSV.
+       * </pre>
+       *
+       * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
+       *
+       * @param values The enum numeric values on the wire for fileTypesToTransform to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllFileTypesToTransformValue(java.lang.Iterable<java.lang.Integer> values) {
+        ensureFileTypesToTransformIsMutable();
+        for (int value : values) {
+          fileTypesToTransform_.add(value);
+        }
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.Action.Deidentify)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.Action.Deidentify)
+    private static final com.google.privacy.dlp.v2.Action.Deidentify DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.Action.Deidentify();
+    }
+
+    public static com.google.privacy.dlp.v2.Action.Deidentify getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Deidentify> PARSER =
+        new com.google.protobuf.AbstractParser<Deidentify>() {
+          @java.lang.Override
+          public Deidentify parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Deidentify(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<Deidentify> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Deidentify> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.Action.Deidentify getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface JobNotificationEmailsOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.Action.JobNotificationEmails)
@@ -2626,8 +4895,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Enable email notification to project owners and editors on jobs's
-   * completion/failure.
+   * Sends an email when the job completes. The email goes to IAM project owners
+   * and technical [Essential
+   * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.Action.JobNotificationEmails}
@@ -2865,8 +5135,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable email notification to project owners and editors on jobs's
-     * completion/failure.
+     * Sends an email when the job completes. The email goes to IAM project owners
+     * and technical [Essential
+     * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.Action.JobNotificationEmails}
@@ -3535,6 +5806,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     PUB_SUB(2),
     PUBLISH_SUMMARY_TO_CSCC(3),
     PUBLISH_FINDINGS_TO_CLOUD_DATA_CATALOG(5),
+    DEIDENTIFY(7),
     JOB_NOTIFICATION_EMAILS(8),
     PUBLISH_TO_STACKDRIVER(9),
     ACTION_NOT_SET(0);
@@ -3563,6 +5835,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return PUBLISH_SUMMARY_TO_CSCC;
         case 5:
           return PUBLISH_FINDINGS_TO_CLOUD_DATA_CATALOG;
+        case 7:
+          return DEIDENTIFY;
         case 8:
           return JOB_NOTIFICATION_EMAILS;
         case 9:
@@ -3639,7 +5913,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Publish a notification to a pubsub topic.
+   * Publish a notification to a Pub/Sub topic.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
@@ -3654,7 +5928,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Publish a notification to a pubsub topic.
+   * Publish a notification to a Pub/Sub topic.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
@@ -3672,7 +5946,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Publish a notification to a pubsub topic.
+   * Publish a notification to a Pub/Sub topic.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
@@ -3794,6 +6068,57 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       return (com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog) action_;
     }
     return com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog.getDefaultInstance();
+  }
+
+  public static final int DEIDENTIFY_FIELD_NUMBER = 7;
+  /**
+   *
+   *
+   * <pre>
+   * Create a de-identified copy of the input data.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Action.Deidentify deidentify = 7;</code>
+   *
+   * @return Whether the deidentify field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeidentify() {
+    return actionCase_ == 7;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Create a de-identified copy of the input data.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Action.Deidentify deidentify = 7;</code>
+   *
+   * @return The deidentify.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.Action.Deidentify getDeidentify() {
+    if (actionCase_ == 7) {
+      return (com.google.privacy.dlp.v2.Action.Deidentify) action_;
+    }
+    return com.google.privacy.dlp.v2.Action.Deidentify.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Create a de-identified copy of the input data.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Action.Deidentify deidentify = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.Action.DeidentifyOrBuilder getDeidentifyOrBuilder() {
+    if (actionCase_ == 7) {
+      return (com.google.privacy.dlp.v2.Action.Deidentify) action_;
+    }
+    return com.google.privacy.dlp.v2.Action.Deidentify.getDefaultInstance();
   }
 
   public static final int JOB_NOTIFICATION_EMAILS_FIELD_NUMBER = 8;
@@ -3930,6 +6255,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           5, (com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog) action_);
     }
+    if (actionCase_ == 7) {
+      output.writeMessage(7, (com.google.privacy.dlp.v2.Action.Deidentify) action_);
+    }
     if (actionCase_ == 8) {
       output.writeMessage(8, (com.google.privacy.dlp.v2.Action.JobNotificationEmails) action_);
     }
@@ -3964,6 +6292,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, (com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog) action_);
+    }
+    if (actionCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.privacy.dlp.v2.Action.Deidentify) action_);
     }
     if (actionCase_ == 8) {
       size +=
@@ -4005,6 +6338,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         if (!getPublishFindingsToCloudDataCatalog()
             .equals(other.getPublishFindingsToCloudDataCatalog())) return false;
         break;
+      case 7:
+        if (!getDeidentify().equals(other.getDeidentify())) return false;
+        break;
       case 8:
         if (!getJobNotificationEmails().equals(other.getJobNotificationEmails())) return false;
         break;
@@ -4041,6 +6377,10 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       case 5:
         hash = (37 * hash) + PUBLISH_FINDINGS_TO_CLOUD_DATA_CATALOG_FIELD_NUMBER;
         hash = (53 * hash) + getPublishFindingsToCloudDataCatalog().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + DEIDENTIFY_FIELD_NUMBER;
+        hash = (53 * hash) + getDeidentify().hashCode();
         break;
       case 8:
         hash = (37 * hash) + JOB_NOTIFICATION_EMAILS_FIELD_NUMBER;
@@ -4254,6 +6594,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           result.action_ = publishFindingsToCloudDataCatalogBuilder_.build();
         }
       }
+      if (actionCase_ == 7) {
+        if (deidentifyBuilder_ == null) {
+          result.action_ = action_;
+        } else {
+          result.action_ = deidentifyBuilder_.build();
+        }
+      }
       if (actionCase_ == 8) {
         if (jobNotificationEmailsBuilder_ == null) {
           result.action_ = action_;
@@ -4337,6 +6684,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         case PUBLISH_FINDINGS_TO_CLOUD_DATA_CATALOG:
           {
             mergePublishFindingsToCloudDataCatalog(other.getPublishFindingsToCloudDataCatalog());
+            break;
+          }
+        case DEIDENTIFY:
+          {
+            mergeDeidentify(other.getDeidentify());
             break;
           }
         case JOB_NOTIFICATION_EMAILS:
@@ -4616,7 +6968,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Publish a notification to a pubsub topic.
+     * Publish a notification to a Pub/Sub topic.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
@@ -4631,7 +6983,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Publish a notification to a pubsub topic.
+     * Publish a notification to a Pub/Sub topic.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
@@ -4656,7 +7008,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Publish a notification to a pubsub topic.
+     * Publish a notification to a Pub/Sub topic.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
@@ -4678,7 +7030,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Publish a notification to a pubsub topic.
+     * Publish a notification to a Pub/Sub topic.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
@@ -4698,7 +7050,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Publish a notification to a pubsub topic.
+     * Publish a notification to a Pub/Sub topic.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
@@ -4730,7 +7082,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Publish a notification to a pubsub topic.
+     * Publish a notification to a Pub/Sub topic.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
@@ -4755,7 +7107,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Publish a notification to a pubsub topic.
+     * Publish a notification to a Pub/Sub topic.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
@@ -4767,7 +7119,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Publish a notification to a pubsub topic.
+     * Publish a notification to a Pub/Sub topic.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
@@ -4787,7 +7139,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Publish a notification to a pubsub topic.
+     * Publish a notification to a Pub/Sub topic.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
@@ -5271,6 +7623,216 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return publishFindingsToCloudDataCatalogBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.Action.Deidentify,
+            com.google.privacy.dlp.v2.Action.Deidentify.Builder,
+            com.google.privacy.dlp.v2.Action.DeidentifyOrBuilder>
+        deidentifyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Create a de-identified copy of the input data.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.Deidentify deidentify = 7;</code>
+     *
+     * @return Whether the deidentify field is set.
+     */
+    @java.lang.Override
+    public boolean hasDeidentify() {
+      return actionCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Create a de-identified copy of the input data.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.Deidentify deidentify = 7;</code>
+     *
+     * @return The deidentify.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.Action.Deidentify getDeidentify() {
+      if (deidentifyBuilder_ == null) {
+        if (actionCase_ == 7) {
+          return (com.google.privacy.dlp.v2.Action.Deidentify) action_;
+        }
+        return com.google.privacy.dlp.v2.Action.Deidentify.getDefaultInstance();
+      } else {
+        if (actionCase_ == 7) {
+          return deidentifyBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.Action.Deidentify.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Create a de-identified copy of the input data.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.Deidentify deidentify = 7;</code>
+     */
+    public Builder setDeidentify(com.google.privacy.dlp.v2.Action.Deidentify value) {
+      if (deidentifyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        action_ = value;
+        onChanged();
+      } else {
+        deidentifyBuilder_.setMessage(value);
+      }
+      actionCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Create a de-identified copy of the input data.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.Deidentify deidentify = 7;</code>
+     */
+    public Builder setDeidentify(
+        com.google.privacy.dlp.v2.Action.Deidentify.Builder builderForValue) {
+      if (deidentifyBuilder_ == null) {
+        action_ = builderForValue.build();
+        onChanged();
+      } else {
+        deidentifyBuilder_.setMessage(builderForValue.build());
+      }
+      actionCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Create a de-identified copy of the input data.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.Deidentify deidentify = 7;</code>
+     */
+    public Builder mergeDeidentify(com.google.privacy.dlp.v2.Action.Deidentify value) {
+      if (deidentifyBuilder_ == null) {
+        if (actionCase_ == 7
+            && action_ != com.google.privacy.dlp.v2.Action.Deidentify.getDefaultInstance()) {
+          action_ =
+              com.google.privacy.dlp.v2.Action.Deidentify.newBuilder(
+                      (com.google.privacy.dlp.v2.Action.Deidentify) action_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          action_ = value;
+        }
+        onChanged();
+      } else {
+        if (actionCase_ == 7) {
+          deidentifyBuilder_.mergeFrom(value);
+        } else {
+          deidentifyBuilder_.setMessage(value);
+        }
+      }
+      actionCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Create a de-identified copy of the input data.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.Deidentify deidentify = 7;</code>
+     */
+    public Builder clearDeidentify() {
+      if (deidentifyBuilder_ == null) {
+        if (actionCase_ == 7) {
+          actionCase_ = 0;
+          action_ = null;
+          onChanged();
+        }
+      } else {
+        if (actionCase_ == 7) {
+          actionCase_ = 0;
+          action_ = null;
+        }
+        deidentifyBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Create a de-identified copy of the input data.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.Deidentify deidentify = 7;</code>
+     */
+    public com.google.privacy.dlp.v2.Action.Deidentify.Builder getDeidentifyBuilder() {
+      return getDeidentifyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Create a de-identified copy of the input data.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.Deidentify deidentify = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.Action.DeidentifyOrBuilder getDeidentifyOrBuilder() {
+      if ((actionCase_ == 7) && (deidentifyBuilder_ != null)) {
+        return deidentifyBuilder_.getMessageOrBuilder();
+      } else {
+        if (actionCase_ == 7) {
+          return (com.google.privacy.dlp.v2.Action.Deidentify) action_;
+        }
+        return com.google.privacy.dlp.v2.Action.Deidentify.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Create a de-identified copy of the input data.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Action.Deidentify deidentify = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.Action.Deidentify,
+            com.google.privacy.dlp.v2.Action.Deidentify.Builder,
+            com.google.privacy.dlp.v2.Action.DeidentifyOrBuilder>
+        getDeidentifyFieldBuilder() {
+      if (deidentifyBuilder_ == null) {
+        if (!(actionCase_ == 7)) {
+          action_ = com.google.privacy.dlp.v2.Action.Deidentify.getDefaultInstance();
+        }
+        deidentifyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.Action.Deidentify,
+                com.google.privacy.dlp.v2.Action.Deidentify.Builder,
+                com.google.privacy.dlp.v2.Action.DeidentifyOrBuilder>(
+                (com.google.privacy.dlp.v2.Action.Deidentify) action_,
+                getParentForChildren(),
+                isClean());
+        action_ = null;
+      }
+      actionCase_ = 7;
+      onChanged();
+      ;
+      return deidentifyBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

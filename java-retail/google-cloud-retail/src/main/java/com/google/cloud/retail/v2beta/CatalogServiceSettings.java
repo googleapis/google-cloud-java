@@ -132,6 +132,13 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
     return ((CatalogServiceStubSettings) getStubSettings()).removeCatalogAttributeSettings();
   }
 
+  /** Returns the object with the settings used for calls to batchRemoveCatalogAttributes. */
+  public UnaryCallSettings<
+          BatchRemoveCatalogAttributesRequest, BatchRemoveCatalogAttributesResponse>
+      batchRemoveCatalogAttributesSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).batchRemoveCatalogAttributesSettings();
+  }
+
   /** Returns the object with the settings used for calls to replaceCatalogAttribute. */
   public UnaryCallSettings<ReplaceCatalogAttributeRequest, AttributesConfig>
       replaceCatalogAttributeSettings() {
@@ -310,6 +317,13 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
     public UnaryCallSettings.Builder<RemoveCatalogAttributeRequest, AttributesConfig>
         removeCatalogAttributeSettings() {
       return getStubSettingsBuilder().removeCatalogAttributeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchRemoveCatalogAttributes. */
+    public UnaryCallSettings.Builder<
+            BatchRemoveCatalogAttributesRequest, BatchRemoveCatalogAttributesResponse>
+        batchRemoveCatalogAttributesSettings() {
+      return getStubSettingsBuilder().batchRemoveCatalogAttributesSettings();
     }
 
     /** Returns the builder for the settings used for calls to replaceCatalogAttribute. */

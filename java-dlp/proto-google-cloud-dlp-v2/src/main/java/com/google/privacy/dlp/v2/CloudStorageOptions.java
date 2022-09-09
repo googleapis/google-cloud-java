@@ -22,7 +22,7 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * Options defining a file or a set of files within a Google Cloud Storage
+ * Options defining a file or a set of files within a Cloud Storage
  * bucket.
  * </pre>
  *
@@ -1864,7 +1864,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Options defining a file or a set of files within a Google Cloud Storage
+   * Options defining a file or a set of files within a Cloud Storage
    * bucket.
    * </pre>
    *

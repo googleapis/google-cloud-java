@@ -382,4 +382,17 @@ public interface ScanConfigOrBuilder
    * @return The staticIpScan.
    */
   boolean getStaticIpScan();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether to keep scanning even if most requests return HTTP error codes.
+   * </pre>
+   *
+   * <code>bool ignore_http_status_errors = 15;</code>
+   *
+   * @return The ignoreHttpStatusErrors.
+   */
+  boolean getIgnoreHttpStatusErrors();
 }

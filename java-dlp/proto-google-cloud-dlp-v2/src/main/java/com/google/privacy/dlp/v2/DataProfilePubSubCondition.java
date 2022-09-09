@@ -22,7 +22,7 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * A condition for determining whether a PubSub should be triggered.
+ * A condition for determining whether a Pub/Sub should be triggered.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.DataProfilePubSubCondition}
@@ -3074,7 +3074,7 @@ public final class DataProfilePubSubCondition extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * A condition for determining whether a PubSub should be triggered.
+   * A condition for determining whether a Pub/Sub should be triggered.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.DataProfilePubSubCondition}

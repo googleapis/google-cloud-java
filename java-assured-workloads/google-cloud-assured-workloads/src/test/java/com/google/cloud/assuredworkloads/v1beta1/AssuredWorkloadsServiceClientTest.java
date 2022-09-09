@@ -104,6 +104,7 @@ public class AssuredWorkloadsServiceClientTest {
             .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
             .setEnableSovereignControls(true)
             .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
+            .addAllCompliantButDisallowedServices(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -164,6 +165,7 @@ public class AssuredWorkloadsServiceClientTest {
             .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
             .setEnableSovereignControls(true)
             .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
+            .addAllCompliantButDisallowedServices(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -224,6 +226,7 @@ public class AssuredWorkloadsServiceClientTest {
             .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
             .setEnableSovereignControls(true)
             .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
+            .addAllCompliantButDisallowedServices(new ArrayList<String>())
             .build();
     mockAssuredWorkloadsService.addResponse(expectedResponse);
 
@@ -384,6 +387,7 @@ public class AssuredWorkloadsServiceClientTest {
             .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
             .setEnableSovereignControls(true)
             .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
+            .addAllCompliantButDisallowedServices(new ArrayList<String>())
             .build();
     mockAssuredWorkloadsService.addResponse(expectedResponse);
 
@@ -433,6 +437,7 @@ public class AssuredWorkloadsServiceClientTest {
             .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
             .setEnableSovereignControls(true)
             .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
+            .addAllCompliantButDisallowedServices(new ArrayList<String>())
             .build();
     mockAssuredWorkloadsService.addResponse(expectedResponse);
 

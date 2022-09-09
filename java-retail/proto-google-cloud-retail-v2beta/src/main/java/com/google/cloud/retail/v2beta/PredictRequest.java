@@ -364,10 +364,10 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Maximum number of results to return per page. Set this property
-   * to the number of prediction results needed. If zero, the service will
-   * choose a reasonable default. The maximum allowed value is 100. Values
-   * above 100 will be coerced to 100.
+   * Maximum number of results to return. Set this property to the number of
+   * prediction results needed. If zero, the service will choose a reasonable
+   * default. The maximum allowed value is 100. Values above 100 will be coerced
+   * to 100.
    * </pre>
    *
    * <code>int32 page_size = 3;</code>
@@ -385,14 +385,17 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This field is not used for now; leave it unset.
+   * This field is not used; leave it unset.
    * </pre>
    *
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 4 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.retail.v2beta.PredictRequest.page_token is deprecated. See
+   *     google/cloud/retail/v2beta/prediction_service.proto;l=94
    * @return The pageToken.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -408,14 +411,17 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This field is not used for now; leave it unset.
+   * This field is not used; leave it unset.
    * </pre>
    *
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 4 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.retail.v2beta.PredictRequest.page_token is deprecated. See
+   *     google/cloud/retail/v2beta/prediction_service.proto;l=94
    * @return The bytes for pageToken.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -1863,10 +1869,10 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum number of results to return per page. Set this property
-     * to the number of prediction results needed. If zero, the service will
-     * choose a reasonable default. The maximum allowed value is 100. Values
-     * above 100 will be coerced to 100.
+     * Maximum number of results to return. Set this property to the number of
+     * prediction results needed. If zero, the service will choose a reasonable
+     * default. The maximum allowed value is 100. Values above 100 will be coerced
+     * to 100.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
@@ -1881,10 +1887,10 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum number of results to return per page. Set this property
-     * to the number of prediction results needed. If zero, the service will
-     * choose a reasonable default. The maximum allowed value is 100. Values
-     * above 100 will be coerced to 100.
+     * Maximum number of results to return. Set this property to the number of
+     * prediction results needed. If zero, the service will choose a reasonable
+     * default. The maximum allowed value is 100. Values above 100 will be coerced
+     * to 100.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
@@ -1902,10 +1908,10 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum number of results to return per page. Set this property
-     * to the number of prediction results needed. If zero, the service will
-     * choose a reasonable default. The maximum allowed value is 100. Values
-     * above 100 will be coerced to 100.
+     * Maximum number of results to return. Set this property to the number of
+     * prediction results needed. If zero, the service will choose a reasonable
+     * default. The maximum allowed value is 100. Values above 100 will be coerced
+     * to 100.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
@@ -1924,13 +1930,16 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is not used for now; leave it unset.
+     * This field is not used; leave it unset.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.retail.v2beta.PredictRequest.page_token is deprecated. See
+     *     google/cloud/retail/v2beta/prediction_service.proto;l=94
      * @return The pageToken.
      */
+    @java.lang.Deprecated
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
       if (!(ref instanceof java.lang.String)) {
@@ -1946,13 +1955,16 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is not used for now; leave it unset.
+     * This field is not used; leave it unset.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.retail.v2beta.PredictRequest.page_token is deprecated. See
+     *     google/cloud/retail/v2beta/prediction_service.proto;l=94
      * @return The bytes for pageToken.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
       if (ref instanceof String) {
@@ -1968,14 +1980,17 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is not used for now; leave it unset.
+     * This field is not used; leave it unset.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.retail.v2beta.PredictRequest.page_token is deprecated. See
+     *     google/cloud/retail/v2beta/prediction_service.proto;l=94
      * @param value The pageToken to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setPageToken(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1989,13 +2004,16 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is not used for now; leave it unset.
+     * This field is not used; leave it unset.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.retail.v2beta.PredictRequest.page_token is deprecated. See
+     *     google/cloud/retail/v2beta/prediction_service.proto;l=94
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearPageToken() {
 
       pageToken_ = getDefaultInstance().getPageToken();
@@ -2006,14 +2024,17 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is not used for now; leave it unset.
+     * This field is not used; leave it unset.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.retail.v2beta.PredictRequest.page_token is deprecated. See
+     *     google/cloud/retail/v2beta/prediction_service.proto;l=94
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();

@@ -123,7 +123,7 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Convenience enum for indication common characters to not transform.
+   * Convenience enum for indicating common characters to not transform.
    * </pre>
    *
    * Protobuf enum {@code google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore}
