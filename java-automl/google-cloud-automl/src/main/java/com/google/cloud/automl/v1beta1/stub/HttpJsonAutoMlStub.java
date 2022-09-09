@@ -126,7 +126,8 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("dataset", request.getDataset()))
+                              ProtoRestSerializer.create()
+                                  .toBody("dataset", request.getDataset(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Dataset>newBuilder()
@@ -231,7 +232,8 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("dataset", request.getDataset()))
+                              ProtoRestSerializer.create()
+                                  .toBody("dataset", request.getDataset(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Dataset>newBuilder()
@@ -303,7 +305,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -342,7 +344,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -487,7 +489,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("tableSpec", request.getTableSpec()))
+                                  .toBody("tableSpec", request.getTableSpec(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TableSpec>newBuilder()
@@ -596,7 +598,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("columnSpec", request.getColumnSpec()))
+                                  .toBody("columnSpec", request.getColumnSpec(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ColumnSpec>newBuilder()
@@ -631,7 +633,8 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("model", request.getModel()))
+                              ProtoRestSerializer.create()
+                                  .toBody("model", request.getModel(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -774,7 +777,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -813,7 +816,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -852,7 +855,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -891,7 +894,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
