@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/googleapis/java-beyondcorp-clientconnectorservices/compare/v0.1.0...v0.1.1) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#13](https://github.com/googleapis/java-beyondcorp-clientconnectorservices/issues/13)) ([51317b2](https://github.com/googleapis/java-beyondcorp-clientconnectorservices/commit/51317b23cafdf2fc27ad1f23a01dddb3dc29b08c))
+
 ## 0.1.0 (2022-08-05)
 
 
