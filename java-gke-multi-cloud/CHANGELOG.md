@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/googleapis/java-gke-multi-cloud/compare/v0.2.2...v0.2.3) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#52](https://github.com/googleapis/java-gke-multi-cloud/issues/52)) ([e09502c](https://github.com/googleapis/java-gke-multi-cloud/commit/e09502c3cf3dc7a7b74c31c344e0311abc9bc288))
+
 ## [0.2.2](https://github.com/googleapis/java-gke-multi-cloud/compare/v0.2.1...v0.2.2) (2022-08-09)
 
 
