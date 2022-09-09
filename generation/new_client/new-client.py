@@ -241,11 +241,6 @@ def generate(
 
     print("Removing googleapis-gen...")
     subprocess.check_call(["rm", "-fr", "gen"], cwd=workdir)
-    # run post processor owl-bot image
-    subprocess.check_call(["git", "add", "."], cwd=workdir)
-    subprocess.check_call(
-        ["git", "commit", "-m", f"feat: initial generation of {api_shortname}"], cwd=workdir
-    )
 
     # Bringing owl-bot-staging from the new module's directory to the root
     # directory so that owlbot-java can process them.
@@ -279,10 +274,43 @@ def generate(
                           cwd=workdir)
 
     subprocess.check_call(["git", "add", "."], cwd=workdir)
-    subprocess.check_call(["git", "commit", "--amend", "--no-edit"], cwd=workdir)
+    subprocess.check_call(
+        ["git", "commit", "-m", f"feat: initial generation of {api_shortname}"], cwd=workdir
+    )
+
+    print("Regenerating the BOM")
+    subprocess.check_call(
+        [
+            "bash",
+            "-x"
+            "generation/generate_gapic_bom.sh",
+        ],
+        cwd=workdir_parent,
+    )
+
+    print("Regenerating CoverageAggregator module and root pom.xml")
+    # This script takes care of updating the root pom.xml
+    subprocess.check_call(
+        [
+            "bash",
+            "-x"
+            "generation/generate_coverage_aggregator.sh",
+        ],
+        cwd=workdir_parent,
+    )
+    subprocess.check_call(
+        ["git", "commit", "-m", f"build: add the {api_shortname}"
+                                "module to monorepo"],
+        cwd=workdir
+    )
+
+    # It seems generate_release_please_config.sh is not ready to run as
+    # part of client library generation process.
+
     print(f"Prepared new library in {workdir}")
     print(f"Please create a pull request from that directory:"
-          f" cd {workdir} && gh pr create")
+          f" cd {workdir_parent} && gh pr create "
+          f"--title 'feat: new module for {api_shortname}")
 
 if __name__ == "__main__":
     main()
