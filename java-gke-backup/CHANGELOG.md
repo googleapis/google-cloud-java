@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/googleapis/java-gke-backup/compare/v0.2.2...v0.2.3) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#46](https://github.com/googleapis/java-gke-backup/issues/46)) ([e47ee0c](https://github.com/googleapis/java-gke-backup/commit/e47ee0cc9e61a982c91b0e8718e1aa51d0df9117))
+
 ## [0.2.2](https://github.com/googleapis/java-gke-backup/compare/v0.2.1...v0.2.2) (2022-08-09)
 
 
