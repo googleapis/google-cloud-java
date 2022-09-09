@@ -110,7 +110,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("deviceRegistry", request.getDeviceRegistry()))
+                                  .toBody("deviceRegistry", request.getDeviceRegistry(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<DeviceRegistry>newBuilder()
@@ -183,7 +183,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("deviceRegistry", request.getDeviceRegistry()))
+                                  .toBody("deviceRegistry", request.getDeviceRegistry(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<DeviceRegistry>newBuilder()
@@ -288,7 +288,8 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("device", request.getDevice()))
+                              ProtoRestSerializer.create()
+                                  .toBody("device", request.getDevice(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Device>newBuilder()
@@ -362,7 +363,8 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("device", request.getDevice()))
+                              ProtoRestSerializer.create()
+                                  .toBody("device", request.getDevice(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Device>newBuilder()
@@ -477,7 +479,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<DeviceConfig>newBuilder()
@@ -590,7 +592,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -628,7 +630,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -666,7 +668,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()
@@ -704,7 +706,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SendCommandToDeviceResponse>newBuilder()
@@ -742,7 +744,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BindDeviceToGatewayResponse>newBuilder()
@@ -782,7 +784,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<UnbindDeviceFromGatewayResponse>newBuilder()
