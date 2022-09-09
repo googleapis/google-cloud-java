@@ -1,0 +1,78 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.tasks.v2beta2",
+  "libraryPackage": "com.google.cloud.tasks.v2beta2",
+  "services": {
+    "CloudTasks": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CloudTasksClient",
+          "rpcs": {
+            "AcknowledgeTask": {
+              "methods": ["acknowledgeTask", "acknowledgeTask", "acknowledgeTask", "acknowledgeTaskCallable"]
+            },
+            "CancelLease": {
+              "methods": ["cancelLease", "cancelLease", "cancelLease", "cancelLeaseCallable"]
+            },
+            "CreateQueue": {
+              "methods": ["createQueue", "createQueue", "createQueue", "createQueueCallable"]
+            },
+            "CreateTask": {
+              "methods": ["createTask", "createTask", "createTask", "createTaskCallable"]
+            },
+            "DeleteQueue": {
+              "methods": ["deleteQueue", "deleteQueue", "deleteQueue", "deleteQueueCallable"]
+            },
+            "DeleteTask": {
+              "methods": ["deleteTask", "deleteTask", "deleteTask", "deleteTaskCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetQueue": {
+              "methods": ["getQueue", "getQueue", "getQueue", "getQueueCallable"]
+            },
+            "GetTask": {
+              "methods": ["getTask", "getTask", "getTask", "getTaskCallable"]
+            },
+            "LeaseTasks": {
+              "methods": ["leaseTasks", "leaseTasks", "leaseTasks", "leaseTasksCallable"]
+            },
+            "ListQueues": {
+              "methods": ["listQueues", "listQueues", "listQueues", "listQueuesPagedCallable", "listQueuesCallable"]
+            },
+            "ListTasks": {
+              "methods": ["listTasks", "listTasks", "listTasks", "listTasksPagedCallable", "listTasksCallable"]
+            },
+            "PauseQueue": {
+              "methods": ["pauseQueue", "pauseQueue", "pauseQueue", "pauseQueueCallable"]
+            },
+            "PurgeQueue": {
+              "methods": ["purgeQueue", "purgeQueue", "purgeQueue", "purgeQueueCallable"]
+            },
+            "RenewLease": {
+              "methods": ["renewLease", "renewLease", "renewLease", "renewLeaseCallable"]
+            },
+            "ResumeQueue": {
+              "methods": ["resumeQueue", "resumeQueue", "resumeQueue", "resumeQueueCallable"]
+            },
+            "RunTask": {
+              "methods": ["runTask", "runTask", "runTask", "runTaskCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateQueue": {
+              "methods": ["updateQueue", "updateQueue", "updateQueueCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
