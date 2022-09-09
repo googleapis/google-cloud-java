@@ -1,0 +1,51 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.batch.v1alpha",
+  "libraryPackage": "com.google.cloud.batch.v1alpha",
+  "services": {
+    "BatchService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BatchServiceClient",
+          "rpcs": {
+            "CreateJob": {
+              "methods": ["createJob", "createJob", "createJob", "createJobCallable"]
+            },
+            "DeleteJob": {
+              "methods": ["deleteJobAsync", "deleteJobAsync", "deleteJobOperationCallable", "deleteJobCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetJob": {
+              "methods": ["getJob", "getJob", "getJob", "getJobCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetTask": {
+              "methods": ["getTask", "getTask", "getTask", "getTaskCallable"]
+            },
+            "ListJobs": {
+              "methods": ["listJobs", "listJobs", "listJobsPagedCallable", "listJobsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListTasks": {
+              "methods": ["listTasks", "listTasks", "listTasks", "listTasksPagedCallable", "listTasksCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
