@@ -45,8 +45,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (PoliciesClient policiesClient = PoliciesClient.create()) {
  *   String name = "name3373707";
  *   Policy response = policiesClient.getPolicy(name);
@@ -82,8 +85,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * PoliciesSettings policiesSettings =
  *     PoliciesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -94,8 +100,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * PoliciesSettings policiesSettings =
  *     PoliciesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * PoliciesClient policiesClient = PoliciesClient.create(policiesSettings);
@@ -105,8 +114,11 @@ import javax.annotation.Generated;
  * the wire:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * PoliciesSettings policiesSettings =
  *     PoliciesSettings.newBuilder()
  *         .setTransportChannelProvider(
@@ -200,8 +212,11 @@ public class PoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PoliciesClient policiesClient = PoliciesClient.create()) {
    *   String parent = "parent-995424086";
    *   for (Policy element : policiesClient.listPolicies(parent).iterateAll()) {
@@ -233,8 +248,11 @@ public class PoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PoliciesClient policiesClient = PoliciesClient.create()) {
    *   ListPoliciesRequest request =
    *       ListPoliciesRequest.newBuilder()
@@ -264,8 +282,11 @@ public class PoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PoliciesClient policiesClient = PoliciesClient.create()) {
    *   ListPoliciesRequest request =
    *       ListPoliciesRequest.newBuilder()
@@ -295,8 +316,11 @@ public class PoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PoliciesClient policiesClient = PoliciesClient.create()) {
    *   ListPoliciesRequest request =
    *       ListPoliciesRequest.newBuilder()
@@ -330,8 +354,11 @@ public class PoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PoliciesClient policiesClient = PoliciesClient.create()) {
    *   String name = "name3373707";
    *   Policy response = policiesClient.getPolicy(name);
@@ -359,8 +386,11 @@ public class PoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PoliciesClient policiesClient = PoliciesClient.create()) {
    *   GetPolicyRequest request = GetPolicyRequest.newBuilder().setName("name3373707").build();
    *   Policy response = policiesClient.getPolicy(request);
@@ -381,8 +411,11 @@ public class PoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PoliciesClient policiesClient = PoliciesClient.create()) {
    *   GetPolicyRequest request = GetPolicyRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<Policy> future = policiesClient.getPolicyCallable().futureCall(request);
@@ -402,8 +435,11 @@ public class PoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PoliciesClient policiesClient = PoliciesClient.create()) {
    *   String parent = "parent-995424086";
    *   Policy policy = Policy.newBuilder().build();
@@ -444,8 +480,11 @@ public class PoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PoliciesClient policiesClient = PoliciesClient.create()) {
    *   CreatePolicyRequest request =
    *       CreatePolicyRequest.newBuilder()
@@ -472,8 +511,11 @@ public class PoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PoliciesClient policiesClient = PoliciesClient.create()) {
    *   CreatePolicyRequest request =
    *       CreatePolicyRequest.newBuilder()
@@ -500,8 +542,11 @@ public class PoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PoliciesClient policiesClient = PoliciesClient.create()) {
    *   CreatePolicyRequest request =
    *       CreatePolicyRequest.newBuilder()
@@ -535,8 +580,11 @@ public class PoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PoliciesClient policiesClient = PoliciesClient.create()) {
    *   UpdatePolicyRequest request =
    *       UpdatePolicyRequest.newBuilder().setPolicy(Policy.newBuilder().build()).build();
@@ -568,8 +616,11 @@ public class PoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PoliciesClient policiesClient = PoliciesClient.create()) {
    *   UpdatePolicyRequest request =
    *       UpdatePolicyRequest.newBuilder().setPolicy(Policy.newBuilder().build()).build();
@@ -601,8 +652,11 @@ public class PoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PoliciesClient policiesClient = PoliciesClient.create()) {
    *   UpdatePolicyRequest request =
    *       UpdatePolicyRequest.newBuilder().setPolicy(Policy.newBuilder().build()).build();
@@ -623,8 +677,11 @@ public class PoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PoliciesClient policiesClient = PoliciesClient.create()) {
    *   String name = "name3373707";
    *   Policy response = policiesClient.deletePolicyAsync(name).get();
@@ -652,8 +709,11 @@ public class PoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PoliciesClient policiesClient = PoliciesClient.create()) {
    *   DeletePolicyRequest request =
    *       DeletePolicyRequest.newBuilder().setName("name3373707").setEtag("etag3123477").build();
@@ -676,8 +736,11 @@ public class PoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PoliciesClient policiesClient = PoliciesClient.create()) {
    *   DeletePolicyRequest request =
    *       DeletePolicyRequest.newBuilder().setName("name3373707").setEtag("etag3123477").build();
@@ -700,8 +763,11 @@ public class PoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PoliciesClient policiesClient = PoliciesClient.create()) {
    *   DeletePolicyRequest request =
    *       DeletePolicyRequest.newBuilder().setName("name3373707").setEtag("etag3123477").build();
