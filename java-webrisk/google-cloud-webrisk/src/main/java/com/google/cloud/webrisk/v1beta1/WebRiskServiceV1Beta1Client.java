@@ -43,8 +43,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client =
  *     WebRiskServiceV1Beta1Client.create()) {
  *   ThreatType threatType = ThreatType.forNumber(0);
@@ -86,8 +89,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * WebRiskServiceV1Beta1Settings webRiskServiceV1Beta1Settings =
  *     WebRiskServiceV1Beta1Settings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -99,8 +105,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * WebRiskServiceV1Beta1Settings webRiskServiceV1Beta1Settings =
  *     WebRiskServiceV1Beta1Settings.newBuilder().setEndpoint(myEndpoint).build();
  * WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client =
@@ -111,8 +120,11 @@ import javax.annotation.Generated;
  * the wire:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * WebRiskServiceV1Beta1Settings webRiskServiceV1Beta1Settings =
  *     WebRiskServiceV1Beta1Settings.newBuilder()
  *         .setTransportChannelProvider(
@@ -182,8 +194,11 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client =
    *     WebRiskServiceV1Beta1Client.create()) {
    *   ThreatType threatType = ThreatType.forNumber(0);
@@ -221,8 +236,11 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client =
    *     WebRiskServiceV1Beta1Client.create()) {
    *   ComputeThreatListDiffRequest request =
@@ -251,8 +269,11 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client =
    *     WebRiskServiceV1Beta1Client.create()) {
    *   ComputeThreatListDiffRequest request =
@@ -280,8 +301,11 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client =
    *     WebRiskServiceV1Beta1Client.create()) {
    *   String uri = "uri116076";
@@ -307,8 +331,11 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client =
    *     WebRiskServiceV1Beta1Client.create()) {
    *   SearchUrisRequest request =
@@ -334,8 +361,11 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client =
    *     WebRiskServiceV1Beta1Client.create()) {
    *   SearchUrisRequest request =
@@ -364,8 +394,11 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client =
    *     WebRiskServiceV1Beta1Client.create()) {
    *   ByteString hashPrefix = ByteString.EMPTY;
@@ -400,8 +433,11 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client =
    *     WebRiskServiceV1Beta1Client.create()) {
    *   SearchHashesRequest request =
@@ -430,8 +466,11 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client =
    *     WebRiskServiceV1Beta1Client.create()) {
    *   SearchHashesRequest request =
