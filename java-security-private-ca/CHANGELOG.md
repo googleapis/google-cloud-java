@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.2](https://github.com/googleapis/java-security-private-ca/compare/v2.5.1...v2.5.2) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#455](https://github.com/googleapis/java-security-private-ca/issues/455)) ([a90d743](https://github.com/googleapis/java-security-private-ca/commit/a90d7439ecbc6b8a04a023384039d1928ed8a5c4))
+
 ## [2.5.1](https://github.com/googleapis/java-security-private-ca/compare/v2.5.0...v2.5.1) (2022-08-02)
 
 
