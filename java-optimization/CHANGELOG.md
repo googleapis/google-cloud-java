@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.9](https://github.com/googleapis/java-optimization/compare/v1.1.8...v1.1.9) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#107](https://github.com/googleapis/java-optimization/issues/107)) ([343d34d](https://github.com/googleapis/java-optimization/commit/343d34d54baa6e142b4e1baade10ead1d67b4922))
+
 ## [1.1.8](https://github.com/googleapis/java-optimization/compare/v1.1.7...v1.1.8) (2022-09-06)
 
 
