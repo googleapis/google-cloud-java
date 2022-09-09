@@ -140,8 +140,8 @@ def generate(
     if proto_path is None:
         proto_path = f"/google/cloud/{api_shortname}"
 
-    if name_pretty == "":
-        sys.exit("name_pretty is empty")
+    if api_shortname == "":
+        sys.exit("api_shortname is empty")
 
     repo_metadata = {
         "api_shortname": api_shortname,
