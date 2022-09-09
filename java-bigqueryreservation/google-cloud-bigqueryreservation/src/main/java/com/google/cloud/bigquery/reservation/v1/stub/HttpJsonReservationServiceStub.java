@@ -116,7 +116,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("reservation", request.getReservation()))
+                                  .toBody("reservation", request.getReservation(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Reservation>newBuilder()
@@ -259,7 +259,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("reservation", request.getReservation()))
+                                  .toBody("reservation", request.getReservation(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Reservation>newBuilder()
@@ -302,7 +302,8 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("capacityCommitment", request.getCapacityCommitment()))
+                                  .toBody(
+                                      "capacityCommitment", request.getCapacityCommitment(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CapacityCommitment>newBuilder()
@@ -450,7 +451,8 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("capacityCommitment", request.getCapacityCommitment()))
+                                  .toBody(
+                                      "capacityCommitment", request.getCapacityCommitment(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CapacityCommitment>newBuilder()
@@ -489,7 +491,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SplitCapacityCommitmentResponse>newBuilder()
@@ -526,7 +528,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CapacityCommitment>newBuilder()
@@ -565,7 +567,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("assignment", request.getAssignment()))
+                                  .toBody("assignment", request.getAssignment(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Assignment>newBuilder()
@@ -748,7 +750,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Assignment>newBuilder()
@@ -787,7 +789,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("assignment", request.getAssignment()))
+                                  .toBody("assignment", request.getAssignment(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Assignment>newBuilder()
@@ -860,7 +862,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("biReservation", request.getBiReservation()))
+                                  .toBody("biReservation", request.getBiReservation(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BiReservation>newBuilder()
