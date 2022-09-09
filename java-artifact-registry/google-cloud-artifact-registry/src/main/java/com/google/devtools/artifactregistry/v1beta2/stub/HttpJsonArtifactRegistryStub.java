@@ -139,7 +139,7 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -179,7 +179,7 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -291,7 +291,7 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("repository", request.getRepository()))
+                                  .toBody("repository", request.getRepository(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -333,7 +333,7 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("repository", request.getRepository()))
+                                  .toBody("repository", request.getRepository(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Repository>newBuilder()
@@ -756,7 +756,8 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("tag", request.getTag()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("tag", request.getTag(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Tag>newBuilder()
@@ -790,7 +791,8 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("tag", request.getTag()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("tag", request.getTag(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Tag>newBuilder()
@@ -859,7 +861,7 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -931,7 +933,7 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()
@@ -1006,7 +1008,7 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("projectSettings", request.getProjectSettings()))
+                                  .toBody("projectSettings", request.getProjectSettings(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ProjectSettings>newBuilder()
