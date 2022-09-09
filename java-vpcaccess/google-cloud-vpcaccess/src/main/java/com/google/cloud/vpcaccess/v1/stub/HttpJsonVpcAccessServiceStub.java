@@ -99,7 +99,7 @@ public class HttpJsonVpcAccessServiceStub extends VpcAccessServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("connector", request.getConnector()))
+                                  .toBody("connector", request.getConnector(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
