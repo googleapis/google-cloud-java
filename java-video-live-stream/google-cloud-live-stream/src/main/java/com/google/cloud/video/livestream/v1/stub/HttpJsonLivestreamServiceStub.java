@@ -116,7 +116,8 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("channel", request.getChannel()))
+                              ProtoRestSerializer.create()
+                                  .toBody("channel", request.getChannel(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -264,7 +265,8 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("channel", request.getChannel()))
+                              ProtoRestSerializer.create()
+                                  .toBody("channel", request.getChannel(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -303,7 +305,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -342,7 +344,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -382,7 +384,8 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("input", request.getInput()))
+                              ProtoRestSerializer.create()
+                                  .toBody("input", request.getInput(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -529,7 +532,8 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("input", request.getInput()))
+                              ProtoRestSerializer.create()
+                                  .toBody("input", request.getInput(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -567,7 +571,8 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("event", request.getEvent()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("event", request.getEvent(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Event>newBuilder()
