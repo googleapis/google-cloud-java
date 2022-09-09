@@ -75,7 +75,8 @@ public class HttpJsonImageAnnotatorStub extends ImageAnnotatorStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("*", request.toBuilder().build()))
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BatchAnnotateImagesResponse>newBuilder()
