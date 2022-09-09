@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.6](https://github.com/googleapis/java-speech/compare/v2.5.5...v2.5.6) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#946](https://github.com/googleapis/java-speech/issues/946)) ([6e4186d](https://github.com/googleapis/java-speech/commit/6e4186dceb56a61393850751e65146ffbf952b0a))
+
 ## [2.5.5](https://github.com/googleapis/java-speech/compare/v2.5.4...v2.5.5) (2022-09-06)
 
 
