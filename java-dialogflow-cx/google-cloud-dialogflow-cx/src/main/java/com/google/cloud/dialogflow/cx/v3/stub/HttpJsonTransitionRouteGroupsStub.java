@@ -170,7 +170,9 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "transitionRouteGroup", request.getTransitionRouteGroup()))
+                                      "transitionRouteGroup",
+                                      request.getTransitionRouteGroup(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TransitionRouteGroup>newBuilder()
@@ -214,7 +216,9 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "transitionRouteGroup", request.getTransitionRouteGroup()))
+                                      "transitionRouteGroup",
+                                      request.getTransitionRouteGroup(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TransitionRouteGroup>newBuilder()

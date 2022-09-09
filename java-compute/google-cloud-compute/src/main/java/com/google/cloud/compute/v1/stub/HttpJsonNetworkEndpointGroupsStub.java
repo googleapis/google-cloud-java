@@ -171,7 +171,8 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                                   .toBody(
                                       "networkEndpointGroupsAttachEndpointsRequestResource",
                                       request
-                                          .getNetworkEndpointGroupsAttachEndpointsRequestResource()))
+                                          .getNetworkEndpointGroupsAttachEndpointsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -286,7 +287,8 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                                   .toBody(
                                       "networkEndpointGroupsDetachEndpointsRequestResource",
                                       request
-                                          .getNetworkEndpointGroupsDetachEndpointsRequestResource()))
+                                          .getNetworkEndpointGroupsDetachEndpointsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -378,7 +380,8 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "networkEndpointGroupResource",
-                                      request.getNetworkEndpointGroupResource()))
+                                      request.getNetworkEndpointGroupResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -514,7 +517,8 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                                   .toBody(
                                       "networkEndpointGroupsListEndpointsRequestResource",
                                       request
-                                          .getNetworkEndpointGroupsListEndpointsRequestResource()))
+                                          .getNetworkEndpointGroupsListEndpointsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<NetworkEndpointGroupsListNetworkEndpoints>newBuilder()
@@ -558,7 +562,8 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "testPermissionsRequestResource",
-                                      request.getTestPermissionsRequestResource()))
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()

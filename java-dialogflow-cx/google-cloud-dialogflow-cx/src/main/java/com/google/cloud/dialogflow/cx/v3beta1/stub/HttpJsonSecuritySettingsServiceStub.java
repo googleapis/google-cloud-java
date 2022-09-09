@@ -91,7 +91,7 @@ public class HttpJsonSecuritySettingsServiceStub extends SecuritySettingsService
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("securitySettings", request.getSecuritySettings()))
+                                  .toBody("securitySettings", request.getSecuritySettings(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SecuritySettings>newBuilder()
@@ -166,7 +166,7 @@ public class HttpJsonSecuritySettingsServiceStub extends SecuritySettingsService
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("securitySettings", request.getSecuritySettings()))
+                                  .toBody("securitySettings", request.getSecuritySettings(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SecuritySettings>newBuilder()

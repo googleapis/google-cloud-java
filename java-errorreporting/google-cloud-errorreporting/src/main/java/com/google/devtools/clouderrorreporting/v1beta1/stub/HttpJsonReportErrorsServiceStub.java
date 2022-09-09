@@ -78,7 +78,8 @@ public class HttpJsonReportErrorsServiceStub extends ReportErrorsServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("event", request.getEvent()))
+                              ProtoRestSerializer.create()
+                                  .toBody("event", request.getEvent(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ReportErrorEventResponse>newBuilder()

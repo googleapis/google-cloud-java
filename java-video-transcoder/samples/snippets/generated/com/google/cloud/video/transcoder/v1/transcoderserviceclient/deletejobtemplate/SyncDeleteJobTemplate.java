@@ -20,6 +20,7 @@ package com.google.cloud.video.transcoder.v1.samples;
 import com.google.cloud.video.transcoder.v1.DeleteJobTemplateRequest;
 import com.google.cloud.video.transcoder.v1.JobTemplateName;
 import com.google.cloud.video.transcoder.v1.TranscoderServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteJobTemplate {
 
@@ -28,8 +29,11 @@ public class SyncDeleteJobTemplate {
   }
 
   public static void syncDeleteJobTemplate() throws Exception {
-    // This snippet has been automatically generated for illustrative purposes only.
-    // It may require modifications to work in your environment.
+    // This snippet has been automatically generated and should be regarded as a code template only.
+    // It will require modifications to work:
+    // - It may require correct/in-range values for request initialization.
+    // - It may require specifying regional endpoints when creating the service client as shown in
+    // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
       DeleteJobTemplateRequest request =
           DeleteJobTemplateRequest.newBuilder()

@@ -199,7 +199,7 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("deliveryPipeline", request.getDeliveryPipeline()))
+                                  .toBody("deliveryPipeline", request.getDeliveryPipeline(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -247,7 +247,7 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("deliveryPipeline", request.getDeliveryPipeline()))
+                                  .toBody("deliveryPipeline", request.getDeliveryPipeline(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -401,7 +401,8 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("target", request.getTarget()))
+                              ProtoRestSerializer.create()
+                                  .toBody("target", request.getTarget(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -446,7 +447,8 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("target", request.getTarget()))
+                              ProtoRestSerializer.create()
+                                  .toBody("target", request.getTarget(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -599,7 +601,8 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("release", request.getRelease()))
+                              ProtoRestSerializer.create()
+                                  .toBody("release", request.getRelease(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -638,7 +641,7 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApproveRolloutResponse>newBuilder()
@@ -746,7 +749,8 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("rollout", request.getRollout()))
+                              ProtoRestSerializer.create()
+                                  .toBody("rollout", request.getRollout(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

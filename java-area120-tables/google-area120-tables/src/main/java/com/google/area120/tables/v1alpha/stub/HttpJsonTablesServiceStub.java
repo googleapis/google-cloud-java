@@ -301,7 +301,8 @@ public class HttpJsonTablesServiceStub extends TablesServiceStub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("row", request.getRow()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("row", request.getRow(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Row>newBuilder()
@@ -337,7 +338,7 @@ public class HttpJsonTablesServiceStub extends TablesServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BatchCreateRowsResponse>newBuilder()
@@ -372,7 +373,8 @@ public class HttpJsonTablesServiceStub extends TablesServiceStub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("row", request.getRow()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("row", request.getRow(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Row>newBuilder()
@@ -408,7 +410,7 @@ public class HttpJsonTablesServiceStub extends TablesServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BatchUpdateRowsResponse>newBuilder()
@@ -476,7 +478,7 @@ public class HttpJsonTablesServiceStub extends TablesServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()

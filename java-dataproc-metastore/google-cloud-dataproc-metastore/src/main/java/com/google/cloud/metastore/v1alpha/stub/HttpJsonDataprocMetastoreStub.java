@@ -187,7 +187,8 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("service", request.getService()))
+                              ProtoRestSerializer.create()
+                                  .toBody("service", request.getService(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -228,7 +229,8 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("service", request.getService()))
+                              ProtoRestSerializer.create()
+                                  .toBody("service", request.getService(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -380,7 +382,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("metadataImport", request.getMetadataImport()))
+                                  .toBody("metadataImport", request.getMetadataImport(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -425,7 +427,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("metadataImport", request.getMetadataImport()))
+                                  .toBody("metadataImport", request.getMetadataImport(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -464,7 +466,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearService().build()))
+                                  .toBody("*", request.toBuilder().clearService().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -503,7 +505,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearService().build()))
+                                  .toBody("*", request.toBuilder().clearService().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -612,7 +614,8 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("backup", request.getBackup()))
+                              ProtoRestSerializer.create()
+                                  .toBody("backup", request.getBackup(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

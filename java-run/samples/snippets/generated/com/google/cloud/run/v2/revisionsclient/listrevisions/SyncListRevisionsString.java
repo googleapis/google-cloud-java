@@ -28,8 +28,11 @@ public class SyncListRevisionsString {
   }
 
   public static void syncListRevisionsString() throws Exception {
-    // This snippet has been automatically generated for illustrative purposes only.
-    // It may require modifications to work in your environment.
+    // This snippet has been automatically generated and should be regarded as a code template only.
+    // It will require modifications to work:
+    // - It may require correct/in-range values for request initialization.
+    // - It may require specifying regional endpoints when creating the service client as shown in
+    // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (RevisionsClient revisionsClient = RevisionsClient.create()) {
       String parent = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString();
       for (Revision element : revisionsClient.listRevisions(parent).iterateAll()) {

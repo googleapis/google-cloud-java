@@ -334,7 +334,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("routerResource", request.getRouterResource()))
+                              .toBody("routerResource", request.getRouterResource(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -436,7 +436,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("routerResource", request.getRouterResource()))
+                              .toBody("routerResource", request.getRouterResource(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -487,7 +487,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("routerResource", request.getRouterResource()))
+                                  .toBody("routerResource", request.getRouterResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RoutersPreviewResponse>newBuilder()
@@ -527,7 +527,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("routerResource", request.getRouterResource()))
+                              .toBody("routerResource", request.getRouterResource(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()

@@ -251,7 +251,8 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("source", request.getSource()))
+                              ProtoRestSerializer.create()
+                                  .toBody("source", request.getSource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -292,7 +293,8 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("source", request.getSource()))
+                              ProtoRestSerializer.create()
+                                  .toBody("source", request.getSource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -480,7 +482,8 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("utilizationReport", request.getUtilizationReport()))
+                                  .toBody(
+                                      "utilizationReport", request.getUtilizationReport(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -634,7 +637,10 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("datacenterConnector", request.getDatacenterConnector()))
+                                  .toBody(
+                                      "datacenterConnector",
+                                      request.getDatacenterConnector(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -713,7 +719,9 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "*", request.toBuilder().clearDatacenterConnector().build()))
+                                      "*",
+                                      request.toBuilder().clearDatacenterConnector().build(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -755,7 +763,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("migratingVm", request.getMigratingVm()))
+                                  .toBody("migratingVm", request.getMigratingVm(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -869,7 +877,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("migratingVm", request.getMigratingVm()))
+                                  .toBody("migratingVm", request.getMigratingVm(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -945,7 +953,8 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearMigratingVm().build()))
+                                  .toBody(
+                                      "*", request.toBuilder().clearMigratingVm().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -985,7 +994,8 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearMigratingVm().build()))
+                                  .toBody(
+                                      "*", request.toBuilder().clearMigratingVm().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1025,7 +1035,8 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearMigratingVm().build()))
+                                  .toBody(
+                                      "*", request.toBuilder().clearMigratingVm().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1065,7 +1076,8 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearMigratingVm().build()))
+                                  .toBody(
+                                      "*", request.toBuilder().clearMigratingVm().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1106,7 +1118,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("cloneJob", request.getCloneJob()))
+                                  .toBody("cloneJob", request.getCloneJob(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1145,7 +1157,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1257,7 +1269,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("cutoverJob", request.getCutoverJob()))
+                                  .toBody("cutoverJob", request.getCutoverJob(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1296,7 +1308,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1475,7 +1487,8 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("group", request.getGroup()))
+                              ProtoRestSerializer.create()
+                                  .toBody("group", request.getGroup(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1516,7 +1529,8 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("group", request.getGroup()))
+                              ProtoRestSerializer.create()
+                                  .toBody("group", request.getGroup(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1592,7 +1606,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearGroup().build()))
+                                  .toBody("*", request.toBuilder().clearGroup().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1631,7 +1645,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearGroup().build()))
+                                  .toBody("*", request.toBuilder().clearGroup().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1743,7 +1757,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("targetProject", request.getTargetProject()))
+                                  .toBody("targetProject", request.getTargetProject(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1785,7 +1799,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("targetProject", request.getTargetProject()))
+                                  .toBody("targetProject", request.getTargetProject(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

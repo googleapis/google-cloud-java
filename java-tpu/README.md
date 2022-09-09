@@ -27,13 +27,13 @@ If you are using Maven, add this to your pom.xml file:
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-tpu:2.3.3'
+implementation 'com.google.cloud:google-cloud-tpu:2.3.4'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-tpu" % "2.3.3"
+libraryDependencies += "com.google.cloud" % "google-cloud-tpu" % "2.3.4"
 ```
 
 ## Authentication

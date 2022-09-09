@@ -98,7 +98,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("participant", request.getParticipant()))
+                                  .toBody("participant", request.getParticipant(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Participant>newBuilder()
@@ -210,7 +210,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("participant", request.getParticipant()))
+                                  .toBody("participant", request.getParticipant(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Participant>newBuilder()
@@ -249,7 +249,8 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParticipant().build()))
+                                  .toBody(
+                                      "*", request.toBuilder().clearParticipant().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AnalyzeContentResponse>newBuilder()
@@ -287,7 +288,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SuggestArticlesResponse>newBuilder()
@@ -325,7 +326,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SuggestFaqAnswersResponse>newBuilder()
@@ -363,7 +364,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SuggestSmartRepliesResponse>newBuilder()

@@ -131,7 +131,7 @@ public class HttpJsonTagBindingsStub extends TagBindingsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("tagBinding", request.getTagBinding()))
+                                  .toBody("tagBinding", request.getTagBinding(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

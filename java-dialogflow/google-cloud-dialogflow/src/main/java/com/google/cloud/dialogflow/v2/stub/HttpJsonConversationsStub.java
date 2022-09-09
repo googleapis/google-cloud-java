@@ -94,7 +94,7 @@ public class HttpJsonConversationsStub extends ConversationsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("conversation", request.getConversation()))
+                                  .toBody("conversation", request.getConversation(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Conversation>newBuilder()
@@ -203,7 +203,7 @@ public class HttpJsonConversationsStub extends ConversationsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Conversation>newBuilder()

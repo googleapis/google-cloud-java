@@ -186,7 +186,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("transferConfig", request.getTransferConfig()))
+                                  .toBody("transferConfig", request.getTransferConfig(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TransferConfig>newBuilder()
@@ -234,7 +234,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("transferConfig", request.getTransferConfig()))
+                                  .toBody("transferConfig", request.getTransferConfig(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TransferConfig>newBuilder()
@@ -383,7 +383,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ScheduleTransferRunsResponse>newBuilder()
@@ -424,7 +424,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<StartManualTransferRunsResponse>newBuilder()
@@ -611,7 +611,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CheckValidCredsResponse>newBuilder()
@@ -649,7 +649,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()

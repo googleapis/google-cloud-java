@@ -98,7 +98,8 @@ public class HttpJsonMetadataServiceStub extends MetadataServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("entity", request.getEntity()))
+                              ProtoRestSerializer.create()
+                                  .toBody("entity", request.getEntity(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Entity>newBuilder()
@@ -136,7 +137,8 @@ public class HttpJsonMetadataServiceStub extends MetadataServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("entity", request.getEntity()))
+                              ProtoRestSerializer.create()
+                                  .toBody("entity", request.getEntity(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Entity>newBuilder()
@@ -278,7 +280,7 @@ public class HttpJsonMetadataServiceStub extends MetadataServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("partition", request.getPartition()))
+                                  .toBody("partition", request.getPartition(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Partition>newBuilder()

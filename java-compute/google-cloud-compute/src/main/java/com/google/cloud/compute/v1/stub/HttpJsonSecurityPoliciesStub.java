@@ -107,7 +107,8 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "securityPolicyRuleResource",
-                                      request.getSecurityPolicyRuleResource()))
+                                      request.getSecurityPolicyRuleResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -345,7 +346,8 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "securityPolicyResource",
-                                      request.getSecurityPolicyResource()))
+                                      request.getSecurityPolicyResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -516,7 +518,8 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "securityPolicyResource",
-                                      request.getSecurityPolicyResource()))
+                                      request.getSecurityPolicyResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -575,7 +578,8 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "securityPolicyRuleResource",
-                                      request.getSecurityPolicyRuleResource()))
+                                      request.getSecurityPolicyRuleResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

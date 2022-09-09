@@ -179,7 +179,7 @@ public class HttpJsonDomainsStub extends DomainsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -254,7 +254,7 @@ public class HttpJsonDomainsStub extends DomainsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -364,7 +364,7 @@ public class HttpJsonDomainsStub extends DomainsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("registration", request.getRegistration()))
+                                  .toBody("registration", request.getRegistration(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -405,7 +405,8 @@ public class HttpJsonDomainsStub extends DomainsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearRegistration().build()))
+                                  .toBody(
+                                      "*", request.toBuilder().clearRegistration().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -445,7 +446,8 @@ public class HttpJsonDomainsStub extends DomainsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearRegistration().build()))
+                                  .toBody(
+                                      "*", request.toBuilder().clearRegistration().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -485,7 +487,8 @@ public class HttpJsonDomainsStub extends DomainsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearRegistration().build()))
+                                  .toBody(
+                                      "*", request.toBuilder().clearRegistration().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -524,7 +527,7 @@ public class HttpJsonDomainsStub extends DomainsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -634,7 +637,8 @@ public class HttpJsonDomainsStub extends DomainsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearRegistration().build()))
+                                  .toBody(
+                                      "*", request.toBuilder().clearRegistration().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AuthorizationCode>newBuilder()

@@ -287,7 +287,10 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("reservationResource", request.getReservationResource()))
+                                  .toBody(
+                                      "reservationResource",
+                                      request.getReservationResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -397,7 +400,8 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "reservationsResizeRequestResource",
-                                      request.getReservationsResizeRequestResource()))
+                                      request.getReservationsResizeRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -450,7 +454,8 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "zoneSetPolicyRequestResource",
-                                      request.getZoneSetPolicyRequestResource()))
+                                      request.getZoneSetPolicyRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -492,7 +497,8 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "testPermissionsRequestResource",
-                                      request.getTestPermissionsRequestResource()))
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
@@ -541,7 +547,10 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("reservationResource", request.getReservationResource()))
+                                  .toBody(
+                                      "reservationResource",
+                                      request.getReservationResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

@@ -99,7 +99,9 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "signedUrlKeyResource", request.getSignedUrlKeyResource()))
+                                      "signedUrlKeyResource",
+                                      request.getSignedUrlKeyResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -287,7 +289,9 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "backendBucketResource", request.getBackendBucketResource()))
+                                      "backendBucketResource",
+                                      request.getBackendBucketResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -393,7 +397,9 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "backendBucketResource", request.getBackendBucketResource()))
+                                      "backendBucketResource",
+                                      request.getBackendBucketResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -449,7 +455,8 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "securityPolicyReferenceResource",
-                                      request.getSecurityPolicyReferenceResource()))
+                                      request.getSecurityPolicyReferenceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -503,7 +510,9 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "backendBucketResource", request.getBackendBucketResource()))
+                                      "backendBucketResource",
+                                      request.getBackendBucketResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

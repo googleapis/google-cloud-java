@@ -192,7 +192,7 @@ public class HttpJsonWebRiskServiceStub extends WebRiskServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("submission", request.getSubmission()))
+                                  .toBody("submission", request.getSubmission(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Submission>newBuilder()

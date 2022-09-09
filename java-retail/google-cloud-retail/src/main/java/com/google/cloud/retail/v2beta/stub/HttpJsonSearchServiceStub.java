@@ -80,7 +80,7 @@ public class HttpJsonSearchServiceStub extends SearchServiceStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearPlacement().build()))
+                              .toBody("*", request.toBuilder().clearPlacement().build(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<SearchResponse>newBuilder()

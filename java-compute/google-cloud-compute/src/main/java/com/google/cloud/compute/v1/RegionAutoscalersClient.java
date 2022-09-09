@@ -43,8 +43,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
  *   String project = "project-309310695";
  *   String region = "region-934795532";
@@ -83,8 +86,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * RegionAutoscalersSettings regionAutoscalersSettings =
  *     RegionAutoscalersSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -96,8 +102,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * RegionAutoscalersSettings regionAutoscalersSettings =
  *     RegionAutoscalersSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RegionAutoscalersClient regionAutoscalersClient =
@@ -163,8 +172,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -196,8 +208,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   DeleteRegionAutoscalerRequest request =
    *       DeleteRegionAutoscalerRequest.newBuilder()
@@ -227,8 +242,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   DeleteRegionAutoscalerRequest request =
    *       DeleteRegionAutoscalerRequest.newBuilder()
@@ -256,8 +274,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   DeleteRegionAutoscalerRequest request =
    *       DeleteRegionAutoscalerRequest.newBuilder()
@@ -283,8 +304,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -315,8 +339,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   GetRegionAutoscalerRequest request =
    *       GetRegionAutoscalerRequest.newBuilder()
@@ -342,8 +369,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   GetRegionAutoscalerRequest request =
    *       GetRegionAutoscalerRequest.newBuilder()
@@ -368,8 +398,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -402,8 +435,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   InsertRegionAutoscalerRequest request =
    *       InsertRegionAutoscalerRequest.newBuilder()
@@ -433,8 +469,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   InsertRegionAutoscalerRequest request =
    *       InsertRegionAutoscalerRequest.newBuilder()
@@ -462,8 +501,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   InsertRegionAutoscalerRequest request =
    *       InsertRegionAutoscalerRequest.newBuilder()
@@ -489,8 +531,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -517,8 +562,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   ListRegionAutoscalersRequest request =
    *       ListRegionAutoscalersRequest.newBuilder()
@@ -550,8 +598,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   ListRegionAutoscalersRequest request =
    *       ListRegionAutoscalersRequest.newBuilder()
@@ -583,8 +634,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   ListRegionAutoscalersRequest request =
    *       ListRegionAutoscalersRequest.newBuilder()
@@ -623,8 +677,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -658,8 +715,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   PatchRegionAutoscalerRequest request =
    *       PatchRegionAutoscalerRequest.newBuilder()
@@ -691,8 +751,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   PatchRegionAutoscalerRequest request =
    *       PatchRegionAutoscalerRequest.newBuilder()
@@ -722,8 +785,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   PatchRegionAutoscalerRequest request =
    *       PatchRegionAutoscalerRequest.newBuilder()
@@ -750,8 +816,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -784,8 +853,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   UpdateRegionAutoscalerRequest request =
    *       UpdateRegionAutoscalerRequest.newBuilder()
@@ -816,8 +888,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   UpdateRegionAutoscalerRequest request =
    *       UpdateRegionAutoscalerRequest.newBuilder()
@@ -846,8 +921,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   UpdateRegionAutoscalerRequest request =
    *       UpdateRegionAutoscalerRequest.newBuilder()

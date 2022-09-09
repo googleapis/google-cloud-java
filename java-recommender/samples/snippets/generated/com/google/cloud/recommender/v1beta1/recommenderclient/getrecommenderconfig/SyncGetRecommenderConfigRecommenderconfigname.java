@@ -16,8 +16,7 @@
 
 package com.google.cloud.recommender.v1beta1.samples;
 
-// [START
-// recommender_v1beta1_generated_recommenderclient_getrecommenderconfig_recommenderconfigname_sync]
+// [START recommender_v1beta1_generated_recommenderclient_getrecommenderconfig_recommenderconfigname_sync]
 import com.google.cloud.recommender.v1beta1.RecommenderClient;
 import com.google.cloud.recommender.v1beta1.RecommenderConfig;
 import com.google.cloud.recommender.v1beta1.RecommenderConfigName;
@@ -29,8 +28,11 @@ public class SyncGetRecommenderConfigRecommenderconfigname {
   }
 
   public static void syncGetRecommenderConfigRecommenderconfigname() throws Exception {
-    // This snippet has been automatically generated for illustrative purposes only.
-    // It may require modifications to work in your environment.
+    // This snippet has been automatically generated and should be regarded as a code template only.
+    // It will require modifications to work:
+    // - It may require correct/in-range values for request initialization.
+    // - It may require specifying regional endpoints when creating the service client as shown in
+    // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (RecommenderClient recommenderClient = RecommenderClient.create()) {
       RecommenderConfigName name =
           RecommenderConfigName.ofProjectLocationRecommenderName(
@@ -39,5 +41,4 @@ public class SyncGetRecommenderConfigRecommenderconfigname {
     }
   }
 }
-// [END
-// recommender_v1beta1_generated_recommenderclient_getrecommenderconfig_recommenderconfigname_sync]
+// [END recommender_v1beta1_generated_recommenderclient_getrecommenderconfig_recommenderconfigname_sync]

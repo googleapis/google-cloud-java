@@ -246,7 +246,8 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "packetMirroringResource",
-                                      request.getPacketMirroringResource()))
+                                      request.getPacketMirroringResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -356,7 +357,8 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "packetMirroringResource",
-                                      request.getPacketMirroringResource()))
+                                      request.getPacketMirroringResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -412,7 +414,8 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "testPermissionsRequestResource",
-                                      request.getTestPermissionsRequestResource()))
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()

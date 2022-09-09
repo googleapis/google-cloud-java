@@ -183,7 +183,8 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "targetSslProxyResource",
-                                      request.getTargetSslProxyResource()))
+                                      request.getTargetSslProxyResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -290,8 +291,8 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "targetSslProxiesSetBackendServiceRequestResource",
-                                      request
-                                          .getTargetSslProxiesSetBackendServiceRequestResource()))
+                                      request.getTargetSslProxiesSetBackendServiceRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -346,8 +347,8 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "targetSslProxiesSetCertificateMapRequestResource",
-                                      request
-                                          .getTargetSslProxiesSetCertificateMapRequestResource()))
+                                      request.getTargetSslProxiesSetCertificateMapRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -402,7 +403,8 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "targetSslProxiesSetProxyHeaderRequestResource",
-                                      request.getTargetSslProxiesSetProxyHeaderRequestResource()))
+                                      request.getTargetSslProxiesSetProxyHeaderRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -458,7 +460,8 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                                   .toBody(
                                       "targetSslProxiesSetSslCertificatesRequestResource",
                                       request
-                                          .getTargetSslProxiesSetSslCertificatesRequestResource()))
+                                          .getTargetSslProxiesSetSslCertificatesRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -513,7 +516,8 @@ public class HttpJsonTargetSslProxiesStub extends TargetSslProxiesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "sslPolicyReferenceResource",
-                                      request.getSslPolicyReferenceResource()))
+                                      request.getSslPolicyReferenceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

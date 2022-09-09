@@ -82,7 +82,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearParent().build()))
+                              .toBody("*", request.toBuilder().clearParent().build(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Feed>newBuilder()
@@ -181,7 +181,8 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                       })
                   .setRequestBodyExtractor(
                       request ->
-                          ProtoRestSerializer.create().toBody("*", request.toBuilder().build()))
+                          ProtoRestSerializer.create()
+                              .toBody("*", request.toBuilder().build(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Feed>newBuilder()

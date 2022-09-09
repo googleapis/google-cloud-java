@@ -93,7 +93,7 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("connection", request.getConnection()))
+                                  .toBody("connection", request.getConnection(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Connection>newBuilder()
@@ -201,7 +201,7 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("connection", request.getConnection()))
+                                  .toBody("connection", request.getConnection(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Connection>newBuilder()
@@ -272,7 +272,7 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -309,7 +309,7 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -346,7 +346,7 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()

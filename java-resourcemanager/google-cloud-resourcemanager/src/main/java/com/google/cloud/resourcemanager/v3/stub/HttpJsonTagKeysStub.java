@@ -169,7 +169,8 @@ public class HttpJsonTagKeysStub extends TagKeysStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("tagKey", request.getTagKey()))
+                              ProtoRestSerializer.create()
+                                  .toBody("tagKey", request.getTagKey(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -211,7 +212,8 @@ public class HttpJsonTagKeysStub extends TagKeysStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("tagKey", request.getTagKey()))
+                              ProtoRestSerializer.create()
+                                  .toBody("tagKey", request.getTagKey(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -289,7 +291,7 @@ public class HttpJsonTagKeysStub extends TagKeysStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -325,7 +327,7 @@ public class HttpJsonTagKeysStub extends TagKeysStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -361,7 +363,7 @@ public class HttpJsonTagKeysStub extends TagKeysStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()

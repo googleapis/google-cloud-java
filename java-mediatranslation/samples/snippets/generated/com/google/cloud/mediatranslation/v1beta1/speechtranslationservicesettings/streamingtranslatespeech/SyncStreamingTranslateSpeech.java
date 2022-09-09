@@ -16,8 +16,7 @@
 
 package com.google.cloud.mediatranslation.v1beta1.samples;
 
-// [START
-// mediatranslation_v1beta1_generated_speechtranslationservicesettings_streamingtranslatespeech_sync]
+// [START mediatranslation_v1beta1_generated_speechtranslationservicesettings_streamingtranslatespeech_sync]
 import com.google.cloud.mediatranslation.v1beta1.SpeechTranslationServiceSettings;
 import java.time.Duration;
 
@@ -28,8 +27,11 @@ public class SyncStreamingTranslateSpeech {
   }
 
   public static void syncStreamingTranslateSpeech() throws Exception {
-    // This snippet has been automatically generated for illustrative purposes only.
-    // It may require modifications to work in your environment.
+    // This snippet has been automatically generated and should be regarded as a code template only.
+    // It will require modifications to work:
+    // - It may require correct/in-range values for request initialization.
+    // - It may require specifying regional endpoints when creating the service client as shown in
+    // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     SpeechTranslationServiceSettings.Builder speechTranslationServiceSettingsBuilder =
         SpeechTranslationServiceSettings.newBuilder();
     speechTranslationServiceSettingsBuilder
@@ -45,5 +47,4 @@ public class SyncStreamingTranslateSpeech {
         speechTranslationServiceSettingsBuilder.build();
   }
 }
-// [END
-// mediatranslation_v1beta1_generated_speechtranslationservicesettings_streamingtranslatespeech_sync]
+// [END mediatranslation_v1beta1_generated_speechtranslationservicesettings_streamingtranslatespeech_sync]
