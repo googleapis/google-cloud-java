@@ -126,7 +126,7 @@ public class HttpJsonFirewallStub extends FirewallStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BatchUpdateIngressRulesResponse>newBuilder()
@@ -160,7 +160,8 @@ public class HttpJsonFirewallStub extends FirewallStub {
                             return fields;
                           })
                       .setRequestBodyExtractor(
-                          request -> ProtoRestSerializer.create().toBody("rule", request.getRule()))
+                          request ->
+                              ProtoRestSerializer.create().toBody("rule", request.getRule(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<FirewallRule>newBuilder()
@@ -228,7 +229,8 @@ public class HttpJsonFirewallStub extends FirewallStub {
                             return fields;
                           })
                       .setRequestBodyExtractor(
-                          request -> ProtoRestSerializer.create().toBody("rule", request.getRule()))
+                          request ->
+                              ProtoRestSerializer.create().toBody("rule", request.getRule(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<FirewallRule>newBuilder()

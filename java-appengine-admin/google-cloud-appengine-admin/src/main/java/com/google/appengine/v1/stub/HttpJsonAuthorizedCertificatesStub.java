@@ -162,7 +162,7 @@ public class HttpJsonAuthorizedCertificatesStub extends AuthorizedCertificatesSt
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("certificate", request.getCertificate()))
+                                  .toBody("certificate", request.getCertificate(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AuthorizedCertificate>newBuilder()
@@ -202,7 +202,7 @@ public class HttpJsonAuthorizedCertificatesStub extends AuthorizedCertificatesSt
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("certificate", request.getCertificate()))
+                                  .toBody("certificate", request.getCertificate(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AuthorizedCertificate>newBuilder()
