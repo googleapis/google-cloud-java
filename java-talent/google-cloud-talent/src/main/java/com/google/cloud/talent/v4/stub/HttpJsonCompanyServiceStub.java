@@ -84,7 +84,8 @@ public class HttpJsonCompanyServiceStub extends CompanyServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("company", request.getCompany()))
+                              ProtoRestSerializer.create()
+                                  .toBody("company", request.getCompany(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Company>newBuilder()
@@ -153,7 +154,8 @@ public class HttpJsonCompanyServiceStub extends CompanyServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("company", request.getCompany()))
+                              ProtoRestSerializer.create()
+                                  .toBody("company", request.getCompany(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Company>newBuilder()
