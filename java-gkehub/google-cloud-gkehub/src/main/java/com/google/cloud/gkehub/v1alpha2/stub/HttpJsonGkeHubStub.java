@@ -171,7 +171,7 @@ public class HttpJsonGkeHubStub extends GkeHubStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("resource", request.getResource()))
+                                  .toBody("resource", request.getResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -247,7 +247,7 @@ public class HttpJsonGkeHubStub extends GkeHubStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("resource", request.getResource()))
+                                  .toBody("resource", request.getResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -330,7 +330,7 @@ public class HttpJsonGkeHubStub extends GkeHubStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearProject().build()))
+                                  .toBody("*", request.toBuilder().clearProject().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<InitializeHubResponse>newBuilder()
