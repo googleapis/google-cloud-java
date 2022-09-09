@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.3](https://github.com/googleapis/java-video-stitcher/compare/v0.3.2...v0.3.3) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#70](https://github.com/googleapis/java-video-stitcher/issues/70)) ([79c0c1f](https://github.com/googleapis/java-video-stitcher/commit/79c0c1f03b1fa96554e27c6c3d29d4dd324c53e0))
+
 ## [0.3.2](https://github.com/googleapis/java-video-stitcher/compare/v0.3.1...v0.3.2) (2022-08-09)
 
 
