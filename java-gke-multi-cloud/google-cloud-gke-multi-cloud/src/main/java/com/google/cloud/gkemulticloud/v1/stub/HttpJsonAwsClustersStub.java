@@ -112,7 +112,7 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("awsCluster", request.getAwsCluster()))
+                                  .toBody("awsCluster", request.getAwsCluster(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -155,7 +155,7 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("awsCluster", request.getAwsCluster()))
+                                  .toBody("awsCluster", request.getAwsCluster(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -342,7 +342,7 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("awsNodePool", request.getAwsNodePool()))
+                                  .toBody("awsNodePool", request.getAwsNodePool(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -385,7 +385,7 @@ public class HttpJsonAwsClustersStub extends AwsClustersStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("awsNodePool", request.getAwsNodePool()))
+                                  .toBody("awsNodePool", request.getAwsNodePool(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
