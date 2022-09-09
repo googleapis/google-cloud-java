@@ -219,7 +219,7 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("snapshotResource", request.getSnapshotResource()))
+                                  .toBody("snapshotResource", request.getSnapshotResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -322,7 +322,8 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "globalSetPolicyRequestResource",
-                                      request.getGlobalSetPolicyRequestResource()))
+                                      request.getGlobalSetPolicyRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -361,7 +362,8 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "globalSetLabelsRequestResource",
-                                      request.getGlobalSetLabelsRequestResource()))
+                                      request.getGlobalSetLabelsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -414,7 +416,8 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "testPermissionsRequestResource",
-                                      request.getTestPermissionsRequestResource()))
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()

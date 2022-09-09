@@ -182,7 +182,10 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("healthCheckResource", request.getHealthCheckResource()))
+                                  .toBody(
+                                      "healthCheckResource",
+                                      request.getHealthCheckResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -290,7 +293,10 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("healthCheckResource", request.getHealthCheckResource()))
+                                  .toBody(
+                                      "healthCheckResource",
+                                      request.getHealthCheckResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -345,7 +351,10 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("healthCheckResource", request.getHealthCheckResource()))
+                                  .toBody(
+                                      "healthCheckResource",
+                                      request.getHealthCheckResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

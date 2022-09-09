@@ -241,7 +241,8 @@ public class HttpJsonTargetHttpProxiesStub extends TargetHttpProxiesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "targetHttpProxyResource",
-                                      request.getTargetHttpProxyResource()))
+                                      request.getTargetHttpProxyResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -348,7 +349,8 @@ public class HttpJsonTargetHttpProxiesStub extends TargetHttpProxiesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "targetHttpProxyResource",
-                                      request.getTargetHttpProxyResource()))
+                                      request.getTargetHttpProxyResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -403,7 +405,8 @@ public class HttpJsonTargetHttpProxiesStub extends TargetHttpProxiesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "urlMapReferenceResource",
-                                      request.getUrlMapReferenceResource()))
+                                      request.getUrlMapReferenceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

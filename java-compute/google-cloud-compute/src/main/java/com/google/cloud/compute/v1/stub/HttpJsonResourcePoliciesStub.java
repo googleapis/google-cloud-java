@@ -289,7 +289,8 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "resourcePolicyResource",
-                                      request.getResourcePolicyResource()))
+                                      request.getResourcePolicyResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -395,7 +396,8 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "regionSetPolicyRequestResource",
-                                      request.getRegionSetPolicyRequestResource()))
+                                      request.getRegionSetPolicyRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -437,7 +439,8 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "testPermissionsRequestResource",
-                                      request.getTestPermissionsRequestResource()))
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()

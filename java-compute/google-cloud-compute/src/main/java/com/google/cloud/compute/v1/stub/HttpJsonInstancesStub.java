@@ -149,7 +149,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "accessConfigResource", request.getAccessConfigResource()))
+                                      "accessConfigResource",
+                                      request.getAccessConfigResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -205,7 +207,8 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "instancesAddResourcePoliciesRequestResource",
-                                      request.getInstancesAddResourcePoliciesRequestResource()))
+                                      request.getInstancesAddResourcePoliciesRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -320,7 +323,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "attachedDiskResource", request.getAttachedDiskResource()))
+                                      "attachedDiskResource",
+                                      request.getAttachedDiskResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -375,7 +380,8 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "bulkInsertInstanceResourceResource",
-                                      request.getBulkInsertInstanceResourceResource()))
+                                      request.getBulkInsertInstanceResourceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -868,7 +874,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("instanceResource", request.getInstanceResource()))
+                                  .toBody("instanceResource", request.getInstanceResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1031,7 +1037,8 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "instancesRemoveResourcePoliciesRequestResource",
-                                      request.getInstancesRemoveResourcePoliciesRequestResource()))
+                                      request.getInstancesRemoveResourcePoliciesRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1332,7 +1339,8 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "zoneSetPolicyRequestResource",
-                                      request.getZoneSetPolicyRequestResource()))
+                                      request.getZoneSetPolicyRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -1375,7 +1383,8 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "instancesSetLabelsRequestResource",
-                                      request.getInstancesSetLabelsRequestResource()))
+                                      request.getInstancesSetLabelsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1431,7 +1440,8 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "instancesSetMachineResourcesRequestResource",
-                                      request.getInstancesSetMachineResourcesRequestResource()))
+                                      request.getInstancesSetMachineResourcesRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1487,7 +1497,8 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "instancesSetMachineTypeRequestResource",
-                                      request.getInstancesSetMachineTypeRequestResource()))
+                                      request.getInstancesSetMachineTypeRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1541,7 +1552,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("metadataResource", request.getMetadataResource()))
+                                  .toBody("metadataResource", request.getMetadataResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1597,7 +1608,8 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "instancesSetMinCpuPlatformRequestResource",
-                                      request.getInstancesSetMinCpuPlatformRequestResource()))
+                                      request.getInstancesSetMinCpuPlatformRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1651,7 +1663,8 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("schedulingResource", request.getSchedulingResource()))
+                                  .toBody(
+                                      "schedulingResource", request.getSchedulingResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1707,7 +1720,8 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "instancesSetServiceAccountRequestResource",
-                                      request.getInstancesSetServiceAccountRequestResource()))
+                                      request.getInstancesSetServiceAccountRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1767,7 +1781,8 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "shieldedInstanceIntegrityPolicyResource",
-                                      request.getShieldedInstanceIntegrityPolicyResource()))
+                                      request.getShieldedInstanceIntegrityPolicyResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1822,7 +1837,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("tagsResource", request.getTagsResource()))
+                                  .toBody("tagsResource", request.getTagsResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1976,7 +1991,8 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "instancesStartWithEncryptionKeyRequestResource",
-                                      request.getInstancesStartWithEncryptionKeyRequestResource()))
+                                      request.getInstancesStartWithEncryptionKeyRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -2132,7 +2148,8 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "testPermissionsRequestResource",
-                                      request.getTestPermissionsRequestResource()))
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
@@ -2183,7 +2200,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("instanceResource", request.getInstanceResource()))
+                                  .toBody("instanceResource", request.getInstanceResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -2240,7 +2257,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "accessConfigResource", request.getAccessConfigResource()))
+                                      "accessConfigResource",
+                                      request.getAccessConfigResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -2295,7 +2314,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "displayDeviceResource", request.getDisplayDeviceResource()))
+                                      "displayDeviceResource",
+                                      request.getDisplayDeviceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -2353,7 +2374,8 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "networkInterfaceResource",
-                                      request.getNetworkInterfaceResource()))
+                                      request.getNetworkInterfaceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -2410,7 +2432,8 @@ public class HttpJsonInstancesStub extends InstancesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "shieldedInstanceConfigResource",
-                                      request.getShieldedInstanceConfigResource()))
+                                      request.getShieldedInstanceConfigResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

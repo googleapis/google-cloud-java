@@ -171,7 +171,7 @@ public class HttpJsonRoutesStub extends RoutesStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("routeResource", request.getRouteResource()))
+                              .toBody("routeResource", request.getRouteResource(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()

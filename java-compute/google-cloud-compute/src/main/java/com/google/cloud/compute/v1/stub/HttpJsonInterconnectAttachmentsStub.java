@@ -254,7 +254,8 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "interconnectAttachmentResource",
-                                      request.getInterconnectAttachmentResource()))
+                                      request.getInterconnectAttachmentResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -368,7 +369,8 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "interconnectAttachmentResource",
-                                      request.getInterconnectAttachmentResource()))
+                                      request.getInterconnectAttachmentResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

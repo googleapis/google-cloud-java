@@ -278,7 +278,8 @@ public class HttpJsonVpnGatewaysStub extends VpnGatewaysStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("vpnGatewayResource", request.getVpnGatewayResource()))
+                                  .toBody(
+                                      "vpnGatewayResource", request.getVpnGatewayResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -387,7 +388,8 @@ public class HttpJsonVpnGatewaysStub extends VpnGatewaysStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "regionSetLabelsRequestResource",
-                                      request.getRegionSetLabelsRequestResource()))
+                                      request.getRegionSetLabelsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -442,7 +444,8 @@ public class HttpJsonVpnGatewaysStub extends VpnGatewaysStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "testPermissionsRequestResource",
-                                      request.getTestPermissionsRequestResource()))
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()

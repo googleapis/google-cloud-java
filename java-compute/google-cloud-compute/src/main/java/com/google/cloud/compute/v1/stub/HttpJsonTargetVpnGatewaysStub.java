@@ -243,7 +243,8 @@ public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "targetVpnGatewayResource",
-                                      request.getTargetVpnGatewayResource()))
+                                      request.getTargetVpnGatewayResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

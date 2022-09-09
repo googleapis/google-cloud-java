@@ -43,8 +43,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
  *   String project = "project-309310695";
  *   String targetSslProxy = "targetSslProxy-879314829";
@@ -82,8 +85,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * TargetSslProxiesSettings targetSslProxiesSettings =
  *     TargetSslProxiesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -95,8 +101,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * TargetSslProxiesSettings targetSslProxiesSettings =
  *     TargetSslProxiesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * TargetSslProxiesClient targetSslProxiesClient =
@@ -162,8 +171,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   String project = "project-309310695";
    *   String targetSslProxy = "targetSslProxy-879314829";
@@ -192,8 +204,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   DeleteTargetSslProxyRequest request =
    *       DeleteTargetSslProxyRequest.newBuilder()
@@ -222,8 +237,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   DeleteTargetSslProxyRequest request =
    *       DeleteTargetSslProxyRequest.newBuilder()
@@ -250,8 +268,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   DeleteTargetSslProxyRequest request =
    *       DeleteTargetSslProxyRequest.newBuilder()
@@ -277,8 +298,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   String project = "project-309310695";
    *   String targetSslProxy = "targetSslProxy-879314829";
@@ -307,8 +331,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   GetTargetSslProxyRequest request =
    *       GetTargetSslProxyRequest.newBuilder()
@@ -334,8 +361,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   GetTargetSslProxyRequest request =
    *       GetTargetSslProxyRequest.newBuilder()
@@ -360,8 +390,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   String project = "project-309310695";
    *   TargetSslProxy targetSslProxyResource = TargetSslProxy.newBuilder().build();
@@ -392,8 +425,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   InsertTargetSslProxyRequest request =
    *       InsertTargetSslProxyRequest.newBuilder()
@@ -423,8 +459,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   InsertTargetSslProxyRequest request =
    *       InsertTargetSslProxyRequest.newBuilder()
@@ -452,8 +491,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   InsertTargetSslProxyRequest request =
    *       InsertTargetSslProxyRequest.newBuilder()
@@ -478,8 +520,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   String project = "project-309310695";
    *   for (TargetSslProxy element : targetSslProxiesClient.list(project).iterateAll()) {
@@ -504,8 +549,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   ListTargetSslProxiesRequest request =
    *       ListTargetSslProxiesRequest.newBuilder()
@@ -536,8 +584,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   ListTargetSslProxiesRequest request =
    *       ListTargetSslProxiesRequest.newBuilder()
@@ -568,8 +619,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   ListTargetSslProxiesRequest request =
    *       ListTargetSslProxiesRequest.newBuilder()
@@ -606,8 +660,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   String project = "project-309310695";
    *   String targetSslProxy = "targetSslProxy-879314829";
@@ -648,8 +705,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   SetBackendServiceTargetSslProxyRequest request =
    *       SetBackendServiceTargetSslProxyRequest.newBuilder()
@@ -680,8 +740,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   SetBackendServiceTargetSslProxyRequest request =
    *       SetBackendServiceTargetSslProxyRequest.newBuilder()
@@ -710,8 +773,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   SetBackendServiceTargetSslProxyRequest request =
    *       SetBackendServiceTargetSslProxyRequest.newBuilder()
@@ -740,8 +806,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   String project = "project-309310695";
    *   String targetSslProxy = "targetSslProxy-879314829";
@@ -782,8 +851,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   SetCertificateMapTargetSslProxyRequest request =
    *       SetCertificateMapTargetSslProxyRequest.newBuilder()
@@ -814,8 +886,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   SetCertificateMapTargetSslProxyRequest request =
    *       SetCertificateMapTargetSslProxyRequest.newBuilder()
@@ -844,8 +919,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   SetCertificateMapTargetSslProxyRequest request =
    *       SetCertificateMapTargetSslProxyRequest.newBuilder()
@@ -874,8 +952,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   String project = "project-309310695";
    *   String targetSslProxy = "targetSslProxy-879314829";
@@ -915,8 +996,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   SetProxyHeaderTargetSslProxyRequest request =
    *       SetProxyHeaderTargetSslProxyRequest.newBuilder()
@@ -947,8 +1031,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   SetProxyHeaderTargetSslProxyRequest request =
    *       SetProxyHeaderTargetSslProxyRequest.newBuilder()
@@ -977,8 +1064,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   SetProxyHeaderTargetSslProxyRequest request =
    *       SetProxyHeaderTargetSslProxyRequest.newBuilder()
@@ -1007,8 +1097,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   String project = "project-309310695";
    *   String targetSslProxy = "targetSslProxy-879314829";
@@ -1049,8 +1142,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   SetSslCertificatesTargetSslProxyRequest request =
    *       SetSslCertificatesTargetSslProxyRequest.newBuilder()
@@ -1081,8 +1177,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   SetSslCertificatesTargetSslProxyRequest request =
    *       SetSslCertificatesTargetSslProxyRequest.newBuilder()
@@ -1111,8 +1210,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   SetSslCertificatesTargetSslProxyRequest request =
    *       SetSslCertificatesTargetSslProxyRequest.newBuilder()
@@ -1143,8 +1245,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   String project = "project-309310695";
    *   String targetSslProxy = "targetSslProxy-879314829";
@@ -1182,8 +1287,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   SetSslPolicyTargetSslProxyRequest request =
    *       SetSslPolicyTargetSslProxyRequest.newBuilder()
@@ -1215,8 +1323,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   SetSslPolicyTargetSslProxyRequest request =
    *       SetSslPolicyTargetSslProxyRequest.newBuilder()
@@ -1246,8 +1357,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   SetSslPolicyTargetSslProxyRequest request =
    *       SetSslPolicyTargetSslProxyRequest.newBuilder()

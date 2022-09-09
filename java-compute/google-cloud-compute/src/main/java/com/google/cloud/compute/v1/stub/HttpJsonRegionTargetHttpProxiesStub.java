@@ -183,7 +183,8 @@ public class HttpJsonRegionTargetHttpProxiesStub extends RegionTargetHttpProxies
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "targetHttpProxyResource",
-                                      request.getTargetHttpProxyResource()))
+                                      request.getTargetHttpProxyResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -293,7 +294,8 @@ public class HttpJsonRegionTargetHttpProxiesStub extends RegionTargetHttpProxies
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "urlMapReferenceResource",
-                                      request.getUrlMapReferenceResource()))
+                                      request.getUrlMapReferenceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

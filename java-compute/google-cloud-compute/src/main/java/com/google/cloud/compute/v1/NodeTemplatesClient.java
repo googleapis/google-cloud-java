@@ -44,8 +44,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
  *   String project = "project-309310695";
  *   String region = "region-934795532";
@@ -83,8 +86,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * NodeTemplatesSettings nodeTemplatesSettings =
  *     NodeTemplatesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -95,8 +101,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * NodeTemplatesSettings nodeTemplatesSettings =
  *     NodeTemplatesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create(nodeTemplatesSettings);
@@ -161,8 +170,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, NodeTemplatesScopedList> element :
@@ -188,8 +200,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   AggregatedListNodeTemplatesRequest request =
    *       AggregatedListNodeTemplatesRequest.newBuilder()
@@ -223,8 +238,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   AggregatedListNodeTemplatesRequest request =
    *       AggregatedListNodeTemplatesRequest.newBuilder()
@@ -257,8 +275,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   AggregatedListNodeTemplatesRequest request =
    *       AggregatedListNodeTemplatesRequest.newBuilder()
@@ -298,8 +319,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -331,8 +355,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   DeleteNodeTemplateRequest request =
    *       DeleteNodeTemplateRequest.newBuilder()
@@ -362,8 +389,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   DeleteNodeTemplateRequest request =
    *       DeleteNodeTemplateRequest.newBuilder()
@@ -391,8 +421,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   DeleteNodeTemplateRequest request =
    *       DeleteNodeTemplateRequest.newBuilder()
@@ -419,8 +452,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -452,8 +488,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   GetNodeTemplateRequest request =
    *       GetNodeTemplateRequest.newBuilder()
@@ -480,8 +519,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   GetNodeTemplateRequest request =
    *       GetNodeTemplateRequest.newBuilder()
@@ -507,8 +549,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -540,8 +585,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   GetIamPolicyNodeTemplateRequest request =
    *       GetIamPolicyNodeTemplateRequest.newBuilder()
@@ -569,8 +617,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   GetIamPolicyNodeTemplateRequest request =
    *       GetIamPolicyNodeTemplateRequest.newBuilder()
@@ -597,8 +648,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -632,8 +686,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   InsertNodeTemplateRequest request =
    *       InsertNodeTemplateRequest.newBuilder()
@@ -664,8 +721,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   InsertNodeTemplateRequest request =
    *       InsertNodeTemplateRequest.newBuilder()
@@ -694,8 +754,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   InsertNodeTemplateRequest request =
    *       InsertNodeTemplateRequest.newBuilder()
@@ -721,8 +784,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -749,8 +815,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   ListNodeTemplatesRequest request =
    *       ListNodeTemplatesRequest.newBuilder()
@@ -782,8 +851,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   ListNodeTemplatesRequest request =
    *       ListNodeTemplatesRequest.newBuilder()
@@ -814,8 +886,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   ListNodeTemplatesRequest request =
    *       ListNodeTemplatesRequest.newBuilder()
@@ -853,8 +928,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -895,8 +973,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   SetIamPolicyNodeTemplateRequest request =
    *       SetIamPolicyNodeTemplateRequest.newBuilder()
@@ -923,8 +1004,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   SetIamPolicyNodeTemplateRequest request =
    *       SetIamPolicyNodeTemplateRequest.newBuilder()
@@ -950,8 +1034,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -992,8 +1079,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   TestIamPermissionsNodeTemplateRequest request =
    *       TestIamPermissionsNodeTemplateRequest.newBuilder()
@@ -1021,8 +1111,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   TestIamPermissionsNodeTemplateRequest request =
    *       TestIamPermissionsNodeTemplateRequest.newBuilder()

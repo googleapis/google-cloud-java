@@ -110,7 +110,8 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "nodeGroupsAddNodesRequestResource",
-                                      request.getNodeGroupsAddNodesRequestResource()))
+                                      request.getNodeGroupsAddNodesRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -273,7 +274,8 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "nodeGroupsDeleteNodesRequestResource",
-                                      request.getNodeGroupsDeleteNodesRequestResource()))
+                                      request.getNodeGroupsDeleteNodesRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -403,7 +405,8 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("nodeGroupResource", request.getNodeGroupResource()))
+                                  .toBody(
+                                      "nodeGroupResource", request.getNodeGroupResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -563,7 +566,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("nodeGroupResource", request.getNodeGroupResource()))
+                              .toBody("nodeGroupResource", request.getNodeGroupResource(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -616,7 +619,8 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "zoneSetPolicyRequestResource",
-                                      request.getZoneSetPolicyRequestResource()))
+                                      request.getZoneSetPolicyRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -659,7 +663,8 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "nodeGroupsSetNodeTemplateRequestResource",
-                                      request.getNodeGroupsSetNodeTemplateRequestResource()))
+                                      request.getNodeGroupsSetNodeTemplateRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -714,7 +719,8 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "testPermissionsRequestResource",
-                                      request.getTestPermissionsRequestResource()))
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()

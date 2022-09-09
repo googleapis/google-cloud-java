@@ -181,7 +181,7 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("urlMapResource", request.getUrlMapResource()))
+                                  .toBody("urlMapResource", request.getUrlMapResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -288,7 +288,7 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("urlMapResource", request.getUrlMapResource()))
+                                  .toBody("urlMapResource", request.getUrlMapResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -342,7 +342,7 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("urlMapResource", request.getUrlMapResource()))
+                                  .toBody("urlMapResource", request.getUrlMapResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -395,7 +395,8 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "regionUrlMapsValidateRequestResource",
-                                      request.getRegionUrlMapsValidateRequestResource()))
+                                      request.getRegionUrlMapsValidateRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<UrlMapsValidateResponse>newBuilder()

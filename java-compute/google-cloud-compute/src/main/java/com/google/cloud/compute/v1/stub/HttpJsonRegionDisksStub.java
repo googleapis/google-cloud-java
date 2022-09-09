@@ -105,7 +105,8 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "regionDisksAddResourcePoliciesRequestResource",
-                                      request.getRegionDisksAddResourcePoliciesRequestResource()))
+                                      request.getRegionDisksAddResourcePoliciesRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -159,7 +160,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("snapshotResource", request.getSnapshotResource()))
+                                  .toBody("snapshotResource", request.getSnapshotResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -342,7 +343,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("diskResource", request.getDiskResource()))
+                                  .toBody("diskResource", request.getDiskResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -447,8 +448,8 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "regionDisksRemoveResourcePoliciesRequestResource",
-                                      request
-                                          .getRegionDisksRemoveResourcePoliciesRequestResource()))
+                                      request.getRegionDisksRemoveResourcePoliciesRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -504,7 +505,8 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "regionDisksResizeRequestResource",
-                                      request.getRegionDisksResizeRequestResource()))
+                                      request.getRegionDisksResizeRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -557,7 +559,8 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "regionSetPolicyRequestResource",
-                                      request.getRegionSetPolicyRequestResource()))
+                                      request.getRegionSetPolicyRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -600,7 +603,8 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "regionSetLabelsRequestResource",
-                                      request.getRegionSetLabelsRequestResource()))
+                                      request.getRegionSetLabelsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -655,7 +659,8 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "testPermissionsRequestResource",
-                                      request.getTestPermissionsRequestResource()))
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()

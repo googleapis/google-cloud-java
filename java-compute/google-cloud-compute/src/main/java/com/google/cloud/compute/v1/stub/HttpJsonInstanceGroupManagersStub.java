@@ -122,7 +122,8 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                                   .toBody(
                                       "instanceGroupManagersAbandonInstancesRequestResource",
                                       request
-                                          .getInstanceGroupManagersAbandonInstancesRequestResource()))
+                                          .getInstanceGroupManagersAbandonInstancesRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -240,8 +241,8 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "instanceGroupManagersApplyUpdatesRequestResource",
-                                      request
-                                          .getInstanceGroupManagersApplyUpdatesRequestResource()))
+                                      request.getInstanceGroupManagersApplyUpdatesRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -301,7 +302,8 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                                   .toBody(
                                       "instanceGroupManagersCreateInstancesRequestResource",
                                       request
-                                          .getInstanceGroupManagersCreateInstancesRequestResource()))
+                                          .getInstanceGroupManagersCreateInstancesRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -412,7 +414,8 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                                   .toBody(
                                       "instanceGroupManagersDeleteInstancesRequestResource",
                                       request
-                                          .getInstanceGroupManagersDeleteInstancesRequestResource()))
+                                          .getInstanceGroupManagersDeleteInstancesRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -471,7 +474,8 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                                   .toBody(
                                       "instanceGroupManagersDeletePerInstanceConfigsReqResource",
                                       request
-                                          .getInstanceGroupManagersDeletePerInstanceConfigsReqResource()))
+                                          .getInstanceGroupManagersDeletePerInstanceConfigsReqResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -563,7 +567,8 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "instanceGroupManagerResource",
-                                      request.getInstanceGroupManagerResource()))
+                                      request.getInstanceGroupManagerResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -862,7 +867,8 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "instanceGroupManagerResource",
-                                      request.getInstanceGroupManagerResource()))
+                                      request.getInstanceGroupManagerResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -924,7 +930,8 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                                   .toBody(
                                       "instanceGroupManagersPatchPerInstanceConfigsReqResource",
                                       request
-                                          .getInstanceGroupManagersPatchPerInstanceConfigsReqResource()))
+                                          .getInstanceGroupManagersPatchPerInstanceConfigsReqResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -984,7 +991,8 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                                   .toBody(
                                       "instanceGroupManagersRecreateInstancesRequestResource",
                                       request
-                                          .getInstanceGroupManagersRecreateInstancesRequestResource()))
+                                          .getInstanceGroupManagersRecreateInstancesRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1099,7 +1107,8 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                                   .toBody(
                                       "instanceGroupManagersSetInstanceTemplateRequestResource",
                                       request
-                                          .getInstanceGroupManagersSetInstanceTemplateRequestResource()))
+                                          .getInstanceGroupManagersSetInstanceTemplateRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1158,7 +1167,8 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                                   .toBody(
                                       "instanceGroupManagersSetTargetPoolsRequestResource",
                                       request
-                                          .getInstanceGroupManagersSetTargetPoolsRequestResource()))
+                                          .getInstanceGroupManagersSetTargetPoolsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1220,7 +1230,8 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                                   .toBody(
                                       "instanceGroupManagersUpdatePerInstanceConfigsReqResource",
                                       request
-                                          .getInstanceGroupManagersUpdatePerInstanceConfigsReqResource()))
+                                          .getInstanceGroupManagersUpdatePerInstanceConfigsReqResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
