@@ -16,8 +16,7 @@
 
 package com.google.cloud.eventarc.v1.samples;
 
-// [START
-// eventarc_v1_generated_eventarcclient_createchannelconnection_stringchannelconnectionstring_sync]
+// [START eventarc_v1_generated_eventarcclient_createchannelconnection_stringchannelconnectionstring_sync]
 import com.google.cloud.eventarc.v1.ChannelConnection;
 import com.google.cloud.eventarc.v1.EventarcClient;
 import com.google.cloud.eventarc.v1.LocationName;
@@ -29,8 +28,11 @@ public class SyncCreateChannelConnectionStringChannelconnectionString {
   }
 
   public static void syncCreateChannelConnectionStringChannelconnectionString() throws Exception {
-    // This snippet has been automatically generated for illustrative purposes only.
-    // It may require modifications to work in your environment.
+    // This snippet has been automatically generated and should be regarded as a code template only.
+    // It will require modifications to work:
+    // - It may require correct/in-range values for request initialization.
+    // - It may require specifying regional endpoints when creating the service client as shown in
+    // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (EventarcClient eventarcClient = EventarcClient.create()) {
       String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
       ChannelConnection channelConnection = ChannelConnection.newBuilder().build();
@@ -42,5 +44,4 @@ public class SyncCreateChannelConnectionStringChannelconnectionString {
     }
   }
 }
-// [END
-// eventarc_v1_generated_eventarcclient_createchannelconnection_stringchannelconnectionstring_sync]
+// [END eventarc_v1_generated_eventarcclient_createchannelconnection_stringchannelconnectionstring_sync]
