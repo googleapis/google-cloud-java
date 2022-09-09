@@ -123,7 +123,8 @@ public class HttpJsonBinauthzManagementServiceV1Beta1Stub
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("policy", request.getPolicy()))
+                              ProtoRestSerializer.create()
+                                  .toBody("policy", request.getPolicy(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -161,7 +162,7 @@ public class HttpJsonBinauthzManagementServiceV1Beta1Stub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("attestor", request.getAttestor()))
+                                  .toBody("attestor", request.getAttestor(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Attestor>newBuilder()
@@ -233,7 +234,7 @@ public class HttpJsonBinauthzManagementServiceV1Beta1Stub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("attestor", request.getAttestor()))
+                                  .toBody("attestor", request.getAttestor(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Attestor>newBuilder()
