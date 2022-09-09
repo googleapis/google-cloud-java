@@ -230,6 +230,16 @@ def generate(
     print("Cloning googleapis-gen...")
     subprocess.check_call(["git", "clone", "https://github.com/googleapis/googleapis-gen.git", "./gen/googleapis-gen"], cwd=workdir)
     subprocess.check_call(["docker", "pull", "gcr.io/cloud-devrel-public-resources/owlbot-cli:latest"])
+    workdir_parent=(workdir / '..').resolve()
+    print(f"Before copy-code. Content of the parent directory of workdir ({workdir_parent}):")
+    subprocess.check_call(
+        [
+            "ls",
+            "-alt"
+        ],
+        cwd=workdir_parent,
+    )
+
     print("Running copy-code...")
     subprocess.check_call(
         [
@@ -252,6 +262,14 @@ def generate(
         ],
         cwd=workdir,
     )
+    print(f"After copy-code. Content of the parent directory of workdir ({workdir_parent}):")
+    subprocess.check_call(
+        [
+            "ls",
+            "-alt"
+        ],
+        cwd=workdir_parent)
+
     print("Removing googleapis-gen...")
     subprocess.check_call(["rm", "-fr", "gen"], cwd=workdir)
     # run post processor owl-bot image
@@ -262,17 +280,28 @@ def generate(
 
     # Bringing owl-bot-staging from the new module's directory to the root
     # directory so that owlbot-java can process them.
-    if monorepo_url:
-        subprocess.check_call(
-            [
-                "mv",
-                "owl-bot-staging",
-                "../"
-            ],
-            cwd=workdir,
-        )
+
+    # There's a strange step that creates unnecessary directory workspace/
+    # monorepo/owl-bot-staging.
+    print("Deleting owl-bot-staging in workspace/monorepo")
+    subprocess.check_call(
+        [
+            "rm",
+            "-fr"
+            "../owl-bot-staging"
+        ],
+        cwd=workdir,
+    )
+
+    subprocess.check_call(
+        [
+            "mv",
+            "owl-bot-staging",
+            "../"
+        ],
+        cwd=workdir,
+    )
     print("Running the post-processor...")
-    workdir_parent=(workdir / '..').resolve()
     subprocess.check_call(
         [
             "docker",
@@ -296,6 +325,8 @@ def generate(
     subprocess.check_call(["git", "add", "."], cwd=workdir)
     subprocess.check_call(["git", "commit", "--amend", "--no-edit"], cwd=workdir)
     print(f"Prepared new library in {workdir}")
+    print(f"Please create a pull request from that directory:"
+          f" cd {workdir} && gh pr create")
 
 if __name__ == "__main__":
     main()
