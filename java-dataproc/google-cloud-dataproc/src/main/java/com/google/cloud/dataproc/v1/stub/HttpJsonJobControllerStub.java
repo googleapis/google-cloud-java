@@ -93,7 +93,9 @@ public class HttpJsonJobControllerStub extends JobControllerStub {
                       request ->
                           ProtoRestSerializer.create()
                               .toBody(
-                                  "*", request.toBuilder().clearProjectId().clearRegion().build()))
+                                  "*",
+                                  request.toBuilder().clearProjectId().clearRegion().build(),
+                                  false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Job>newBuilder()
@@ -132,7 +134,8 @@ public class HttpJsonJobControllerStub extends JobControllerStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder().clearProjectId().clearRegion().build()))
+                                      request.toBuilder().clearProjectId().clearRegion().build(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -246,7 +249,8 @@ public class HttpJsonJobControllerStub extends JobControllerStub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("job", request.getJob()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("job", request.getJob(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Job>newBuilder()
@@ -290,7 +294,8 @@ public class HttpJsonJobControllerStub extends JobControllerStub {
                                       .clearJobId()
                                       .clearProjectId()
                                       .clearRegion()
-                                      .build()))
+                                      .build(),
+                                  false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Job>newBuilder()
