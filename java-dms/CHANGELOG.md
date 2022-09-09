@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.4](https://github.com/googleapis/java-dms/compare/v2.2.3...v2.2.4) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#258](https://github.com/googleapis/java-dms/issues/258)) ([da927bf](https://github.com/googleapis/java-dms/commit/da927bf96d5c0c419e48e60eea2a18490a61d11c))
+
 ## [2.2.3](https://github.com/googleapis/java-dms/compare/v2.2.2...v2.2.3) (2022-08-09)
 
 
