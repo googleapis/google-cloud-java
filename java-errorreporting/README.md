@@ -63,7 +63,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-errorreporting</artifactId>
-  <version>0.124.4-beta</version>
+  <version>0.124.5-beta</version>
 </dependency>
 
 ```
