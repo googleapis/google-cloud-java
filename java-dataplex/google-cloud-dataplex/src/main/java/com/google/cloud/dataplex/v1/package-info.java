@@ -26,8 +26,11 @@
  * <p>Sample for ContentServiceClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
  *   LakeName parent = LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]");
  *   Content content = Content.newBuilder().build();
@@ -43,8 +46,11 @@
  * <p>Sample for MetadataServiceClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
  *   ZoneName parent = ZoneName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]");
  *   Entity entity = Entity.newBuilder().build();
@@ -62,8 +68,11 @@
  * <p>Sample for DataplexServiceClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
  *   LakeName name = LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]");
  *   Lake response = dataplexServiceClient.getLake(name);

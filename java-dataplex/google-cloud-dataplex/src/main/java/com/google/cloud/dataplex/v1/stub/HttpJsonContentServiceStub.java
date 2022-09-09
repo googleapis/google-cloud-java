@@ -97,7 +97,8 @@ public class HttpJsonContentServiceStub extends ContentServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("content", request.getContent()))
+                              ProtoRestSerializer.create()
+                                  .toBody("content", request.getContent(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Content>newBuilder()
@@ -138,7 +139,8 @@ public class HttpJsonContentServiceStub extends ContentServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("content", request.getContent()))
+                              ProtoRestSerializer.create()
+                                  .toBody("content", request.getContent(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Content>newBuilder()
@@ -280,7 +282,7 @@ public class HttpJsonContentServiceStub extends ContentServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -318,7 +320,7 @@ public class HttpJsonContentServiceStub extends ContentServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()
