@@ -171,7 +171,8 @@ public class HttpJsonVersionsStub extends VersionsStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("version", request.getVersion()))
+                              ProtoRestSerializer.create()
+                                  .toBody("version", request.getVersion(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -211,7 +212,8 @@ public class HttpJsonVersionsStub extends VersionsStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("version", request.getVersion()))
+                              ProtoRestSerializer.create()
+                                  .toBody("version", request.getVersion(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Version>newBuilder()
@@ -280,7 +282,7 @@ public class HttpJsonVersionsStub extends VersionsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -320,7 +322,8 @@ public class HttpJsonVersionsStub extends VersionsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearBaseVersion().build()))
+                                  .toBody(
+                                      "*", request.toBuilder().clearBaseVersion().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CompareVersionsResponse>newBuilder()
