@@ -162,26 +162,19 @@ def generate(
         repo_metadata["requires_billing"] = True
 
     # Initialize workdir
-    if monorepo_url:
-        print("Creating a new module in monorepo " + monorepo_url)
-        subprocess.check_call(["mkdir", "-p", "workspace"])
-        subprocess.check_call(["rm", "-fr", "monorepo"], cwd="workspace")
-        subprocess.check_call(["git", "clone", monorepo_url, "monorepo"],
-                              cwd="workspace")
-        workdir = Path(f"workspace/monorepo/java-{output_name}")
-        os.makedirs(workdir, exist_ok=True)
-        subprocess.check_call(["git", "checkout", "-b",
-                               f"new_module_java-{output_name}"],
-                              cwd=workdir)
-        add_module_to_root_pom(workdir / ".." / "pom.xml",
-                               f"java-{output_name}")
-        subprocess.check_call(["git", "add", "."], cwd=workdir / "..")
-    else:
-        print("Creating a new split repo")
-        workdir = Path(f"workspace/java-{output_name}")
-        os.makedirs(workdir, exist_ok=True)
-        subprocess.check_call(["git", "init", "-b", "main"], cwd=workdir)
-
+    print("Creating a new module in monorepo " + monorepo_url)
+    subprocess.check_call(["mkdir", "-p", "workspace"])
+    subprocess.check_call(["rm", "-fr", "monorepo"], cwd="workspace")
+    subprocess.check_call(["git", "clone", monorepo_url, "monorepo"],
+                          cwd="workspace")
+    workdir = Path(f"workspace/monorepo/java-{output_name}")
+    os.makedirs(workdir, exist_ok=True)
+    subprocess.check_call(["git", "checkout", "-b",
+                           f"new_module_java-{output_name}"],
+                          cwd=workdir)
+    add_module_to_root_pom(workdir / ".." / "pom.xml",
+                           f"java-{output_name}")
+    subprocess.check_call(["git", "add", "."], cwd=workdir / "..")
     # write .repo-metadata.json file
     with open(workdir / ".repo-metadata.json", "w") as fp:
         json.dump(repo_metadata, fp, indent=2)
@@ -195,12 +188,10 @@ def generate(
     )
 
     # In monorepo, .OwlBot.yaml needs to be in the directory of the module.
-    owlbot_yaml_location_from_module = ".OwlBot.yaml" if monorepo_url else \
-        ".github/.OwlBot.yaml"
+    owlbot_yaml_location_from_module = ".OwlBot.yaml"
     # create owlbot config
     templates.render(
-        template_name="new-client/owlbot.yaml.monorepo.j2" if monorepo_url else
-                      "new-client/owlbot.yaml.j2",
+        template_name="new-client/owlbot.yaml.monorepo.j2",
         output_name=str(workdir / owlbot_yaml_location_from_module),
         artifact_name=distribution_name_short,
         proto_path=proto_path,
@@ -218,15 +209,6 @@ def generate(
             .split("@")[-1]
     )
 
-    # create owlbot lock. Monorepo does not need this file.
-    if not monorepo_url:
-        templates.render(
-            template_name="new-client/owlbot.lock.yaml.j2",
-            output_name=str(workdir / ".github" / ".OwlBot.lock.yaml"),
-            owlbot_image_digest=owlbot_image_digest,
-            owlbot_image=owlbot_image,
-        )
-
     user = subprocess.check_output(["id", "-u"], encoding="utf8").strip()
     group = subprocess.check_output(["id", "-g"], encoding="utf8").strip()
 
@@ -234,16 +216,6 @@ def generate(
     print("Cloning googleapis-gen...")
     subprocess.check_call(["git", "clone", "https://github.com/googleapis/googleapis-gen.git", "./gen/googleapis-gen"], cwd=workdir)
     subprocess.check_call(["docker", "pull", "gcr.io/cloud-devrel-public-resources/owlbot-cli:latest"])
-    workdir_parent=(workdir / '..').resolve()
-    print(f"Before copy-code. Content of the parent directory of workdir ({workdir_parent}):")
-    subprocess.check_call(
-        [
-            "ls",
-            "-alt"
-        ],
-        cwd=workdir_parent,
-    )
-
     print("Running copy-code...")
     subprocess.check_call(
         [
@@ -266,13 +238,6 @@ def generate(
         ],
         cwd=workdir,
     )
-    print(f"After copy-code. Content of the parent directory of workdir ({workdir_parent}):")
-    subprocess.check_call(
-        [
-            "ls",
-            "-alt"
-        ],
-        cwd=workdir_parent)
 
     print("Removing googleapis-gen...")
     subprocess.check_call(["rm", "-fr", "gen"], cwd=workdir)
@@ -284,19 +249,6 @@ def generate(
 
     # Bringing owl-bot-staging from the new module's directory to the root
     # directory so that owlbot-java can process them.
-
-    # There's a strange step that creates unnecessary directory workspace/
-    # monorepo/owl-bot-staging.
-    print("Deleting owl-bot-staging in workspace/monorepo")
-    subprocess.check_call(
-        [
-            "rm",
-            "-fr"
-            "../owl-bot-staging"
-        ],
-        cwd=workdir,
-    )
-
     subprocess.check_call(
         [
             "mv",
@@ -305,6 +257,7 @@ def generate(
         ],
         cwd=workdir,
     )
+    workdir_parent=(workdir / '..').resolve()
     print("Running the post-processor...")
     subprocess.check_call(
         [
@@ -312,19 +265,18 @@ def generate(
             "run",
             "--rm",
             "-v",
-            f"{workdir_parent}:/workspace" if monorepo_url else f"{workdir.resolve()}:/workspace",
+            f"{workdir_parent}:/workspace",
             "--user",
             f"{user}:{group}",
             owlbot_image,
         ],
-        cwd=workdir_parent if monorepo_url else workdir,
+        cwd=workdir_parent,
     )
-    if monorepo_url:
-        # In monorpeo, .github and .kokoro under the module is unused
-        subprocess.check_call(["rm", "-fr", ".github"],
-                              cwd=workdir)
-        subprocess.check_call(["rm", "-fr", ".kokoro"],
-                              cwd=workdir)
+    # In monorpeo, .github and .kokoro under the module is unused
+    subprocess.check_call(["rm", "-fr", ".github"],
+                          cwd=workdir)
+    subprocess.check_call(["rm", "-fr", ".kokoro"],
+                          cwd=workdir)
 
     subprocess.check_call(["git", "add", "."], cwd=workdir)
     subprocess.check_call(["git", "commit", "--amend", "--no-edit"], cwd=workdir)
