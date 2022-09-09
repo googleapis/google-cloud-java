@@ -84,7 +84,8 @@ public class HttpJsonBudgetServiceStub extends BudgetServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("budget", request.getBudget()))
+                              ProtoRestSerializer.create()
+                                  .toBody("budget", request.getBudget(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Budget>newBuilder()
@@ -121,7 +122,8 @@ public class HttpJsonBudgetServiceStub extends BudgetServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("budget", request.getBudget()))
+                              ProtoRestSerializer.create()
+                                  .toBody("budget", request.getBudget(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Budget>newBuilder()
