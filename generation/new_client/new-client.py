@@ -17,6 +17,7 @@ import os
 from pathlib import Path
 import re
 import subprocess
+import sys
 
 import click
 from jinja2 import Environment, FileSystemLoader
@@ -138,6 +139,9 @@ def generate(
 
     if proto_path is None:
         proto_path = f"/google/cloud/{api_shortname}"
+
+    if name_pretty == "":
+        sys.exit("name_pretty is empty")
 
     repo_metadata = {
         "api_shortname": api_shortname,

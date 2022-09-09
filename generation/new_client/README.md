@@ -1,8 +1,12 @@
 # Script to create a new client library module in google-cloud-java monorepo
 
+This tool is for repository maintainers only. Not for library users.
+
 ## Prerequisites
 
-Use Linux environment
+Use Linux environment.
+
+Install Docker
 
 ### Checkout google-cloud-java repository
 
