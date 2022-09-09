@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.123.10](https://github.com/googleapis/java-notification/compare/v0.123.9...v0.123.10) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#661](https://github.com/googleapis/java-notification/issues/661)) ([849e026](https://github.com/googleapis/java-notification/commit/849e026c541cea61ce7b62f1f6cd3429396b776f))
+
 ## [0.123.9](https://github.com/googleapis/java-notification/compare/v0.123.8...v0.123.9) (2022-08-24)
 
 
