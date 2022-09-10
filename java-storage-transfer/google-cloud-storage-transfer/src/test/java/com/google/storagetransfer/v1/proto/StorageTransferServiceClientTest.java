@@ -495,6 +495,50 @@ public class StorageTransferServiceClientTest {
   }
 
   @Test
+  public void deleteTransferJobTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockStorageTransferService.addResponse(expectedResponse);
+
+    TransferProto.DeleteTransferJobRequest request =
+        TransferProto.DeleteTransferJobRequest.newBuilder()
+            .setJobName("jobName-1438096408")
+            .setProjectId("projectId-894832108")
+            .build();
+
+    client.deleteTransferJob(request);
+
+    List<AbstractMessage> actualRequests = mockStorageTransferService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TransferProto.DeleteTransferJobRequest actualRequest =
+        ((TransferProto.DeleteTransferJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getJobName(), actualRequest.getJobName());
+    Assert.assertEquals(request.getProjectId(), actualRequest.getProjectId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteTransferJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageTransferService.addException(exception);
+
+    try {
+      TransferProto.DeleteTransferJobRequest request =
+          TransferProto.DeleteTransferJobRequest.newBuilder()
+              .setJobName("jobName-1438096408")
+              .setProjectId("projectId-894832108")
+              .build();
+      client.deleteTransferJob(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void createAgentPoolTest() throws Exception {
     TransferTypes.AgentPool expectedResponse =
         TransferTypes.AgentPool.newBuilder()

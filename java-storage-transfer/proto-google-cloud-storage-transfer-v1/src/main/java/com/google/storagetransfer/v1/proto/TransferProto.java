@@ -1622,7 +1622,7 @@ public final class TransferProto {
      * other fields are rejected with the error
      * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
      * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
-     * `storagetransfer.jobs.delete` permissions.
+     * `storagetransfer.jobs.delete` permission.
      * </pre>
      *
      * <code>
@@ -1645,7 +1645,7 @@ public final class TransferProto {
      * other fields are rejected with the error
      * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
      * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
-     * `storagetransfer.jobs.delete` permissions.
+     * `storagetransfer.jobs.delete` permission.
      * </pre>
      *
      * <code>
@@ -1668,7 +1668,7 @@ public final class TransferProto {
      * other fields are rejected with the error
      * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
      * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
-     * `storagetransfer.jobs.delete` permissions.
+     * `storagetransfer.jobs.delete` permission.
      * </pre>
      *
      * <code>
@@ -1992,7 +1992,7 @@ public final class TransferProto {
      * other fields are rejected with the error
      * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
      * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
-     * `storagetransfer.jobs.delete` permissions.
+     * `storagetransfer.jobs.delete` permission.
      * </pre>
      *
      * <code>
@@ -2018,7 +2018,7 @@ public final class TransferProto {
      * other fields are rejected with the error
      * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
      * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
-     * `storagetransfer.jobs.delete` permissions.
+     * `storagetransfer.jobs.delete` permission.
      * </pre>
      *
      * <code>
@@ -2046,7 +2046,7 @@ public final class TransferProto {
      * other fields are rejected with the error
      * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
      * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
-     * `storagetransfer.jobs.delete` permissions.
+     * `storagetransfer.jobs.delete` permission.
      * </pre>
      *
      * <code>
@@ -2787,7 +2787,7 @@ public final class TransferProto {
        * other fields are rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
        * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
-       * `storagetransfer.jobs.delete` permissions.
+       * `storagetransfer.jobs.delete` permission.
        * </pre>
        *
        * <code>
@@ -2812,7 +2812,7 @@ public final class TransferProto {
        * other fields are rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
        * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
-       * `storagetransfer.jobs.delete` permissions.
+       * `storagetransfer.jobs.delete` permission.
        * </pre>
        *
        * <code>
@@ -2843,7 +2843,7 @@ public final class TransferProto {
        * other fields are rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
        * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
-       * `storagetransfer.jobs.delete` permissions.
+       * `storagetransfer.jobs.delete` permission.
        * </pre>
        *
        * <code>
@@ -2877,7 +2877,7 @@ public final class TransferProto {
        * other fields are rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
        * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
-       * `storagetransfer.jobs.delete` permissions.
+       * `storagetransfer.jobs.delete` permission.
        * </pre>
        *
        * <code>
@@ -2908,7 +2908,7 @@ public final class TransferProto {
        * other fields are rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
        * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
-       * `storagetransfer.jobs.delete` permissions.
+       * `storagetransfer.jobs.delete` permission.
        * </pre>
        *
        * <code>
@@ -2947,7 +2947,7 @@ public final class TransferProto {
        * other fields are rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
        * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
-       * `storagetransfer.jobs.delete` permissions.
+       * `storagetransfer.jobs.delete` permission.
        * </pre>
        *
        * <code>
@@ -2978,7 +2978,7 @@ public final class TransferProto {
        * other fields are rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
        * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
-       * `storagetransfer.jobs.delete` permissions.
+       * `storagetransfer.jobs.delete` permission.
        * </pre>
        *
        * <code>
@@ -3004,7 +3004,7 @@ public final class TransferProto {
        * other fields are rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
        * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
-       * `storagetransfer.jobs.delete` permissions.
+       * `storagetransfer.jobs.delete` permission.
        * </pre>
        *
        * <code>
@@ -3034,7 +3034,7 @@ public final class TransferProto {
        * other fields are rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
        * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
-       * `storagetransfer.jobs.delete` permissions.
+       * `storagetransfer.jobs.delete` permission.
        * </pre>
        *
        * <code>
@@ -4263,6 +4263,898 @@ public final class TransferProto {
 
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferProto.GetTransferJobRequest
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface DeleteTransferJobRequestOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.storagetransfer.v1.DeleteTransferJobRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The job to delete.
+     * </pre>
+     *
+     * <code>string job_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The jobName.
+     */
+    java.lang.String getJobName();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The job to delete.
+     * </pre>
+     *
+     * <code>string job_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for jobName.
+     */
+    com.google.protobuf.ByteString getJobNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The ID of the Google Cloud project that owns the
+     * job.
+     * </pre>
+     *
+     * <code>string project_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The projectId.
+     */
+    java.lang.String getProjectId();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The ID of the Google Cloud project that owns the
+     * job.
+     * </pre>
+     *
+     * <code>string project_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for projectId.
+     */
+    com.google.protobuf.ByteString getProjectIdBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Request passed to DeleteTransferJob.
+   * </pre>
+   *
+   * Protobuf type {@code google.storagetransfer.v1.DeleteTransferJobRequest}
+   */
+  public static final class DeleteTransferJobRequest extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.storagetransfer.v1.DeleteTransferJobRequest)
+      DeleteTransferJobRequestOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use DeleteTransferJobRequest.newBuilder() to construct.
+    private DeleteTransferJobRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DeleteTransferJobRequest() {
+      jobName_ = "";
+      projectId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DeleteTransferJobRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private DeleteTransferJobRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                jobName_ = s;
+                break;
+              }
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                projectId_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.storagetransfer.v1.proto.TransferProto
+          .internal_static_google_storagetransfer_v1_DeleteTransferJobRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.storagetransfer.v1.proto.TransferProto
+          .internal_static_google_storagetransfer_v1_DeleteTransferJobRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest.class,
+              com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest.Builder
+                  .class);
+    }
+
+    public static final int JOB_NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object jobName_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The job to delete.
+     * </pre>
+     *
+     * <code>string job_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The jobName.
+     */
+    @java.lang.Override
+    public java.lang.String getJobName() {
+      java.lang.Object ref = jobName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        jobName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The job to delete.
+     * </pre>
+     *
+     * <code>string job_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for jobName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getJobNameBytes() {
+      java.lang.Object ref = jobName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        jobName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PROJECT_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object projectId_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The ID of the Google Cloud project that owns the
+     * job.
+     * </pre>
+     *
+     * <code>string project_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The projectId.
+     */
+    @java.lang.Override
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectId_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The ID of the Google Cloud project that owns the
+     * job.
+     * </pre>
+     *
+     * <code>string project_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for projectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        projectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, jobName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, jobName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest)) {
+        return super.equals(obj);
+      }
+      com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest other =
+          (com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest) obj;
+
+      if (!getJobName().equals(other.getJobName())) return false;
+      if (!getProjectId().equals(other.getProjectId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + JOB_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getJobName().hashCode();
+      hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProjectId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Request passed to DeleteTransferJob.
+     * </pre>
+     *
+     * Protobuf type {@code google.storagetransfer.v1.DeleteTransferJobRequest}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.storagetransfer.v1.DeleteTransferJobRequest)
+        com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.storagetransfer.v1.proto.TransferProto
+            .internal_static_google_storagetransfer_v1_DeleteTransferJobRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.storagetransfer.v1.proto.TransferProto
+            .internal_static_google_storagetransfer_v1_DeleteTransferJobRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest.class,
+                com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        jobName_ = "";
+
+        projectId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.storagetransfer.v1.proto.TransferProto
+            .internal_static_google_storagetransfer_v1_DeleteTransferJobRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest
+          getDefaultInstanceForType() {
+        return com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest build() {
+        com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest
+          buildPartial() {
+        com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest result =
+            new com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest(this);
+        result.jobName_ = jobName_;
+        result.projectId_ = projectId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest) {
+          return mergeFrom(
+              (com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest other) {
+        if (other
+            == com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest
+                .getDefaultInstance()) return this;
+        if (!other.getJobName().isEmpty()) {
+          jobName_ = other.jobName_;
+          onChanged();
+        }
+        if (!other.getProjectId().isEmpty()) {
+          projectId_ = other.projectId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest parsedMessage =
+            null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object jobName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The job to delete.
+       * </pre>
+       *
+       * <code>string job_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The jobName.
+       */
+      public java.lang.String getJobName() {
+        java.lang.Object ref = jobName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          jobName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The job to delete.
+       * </pre>
+       *
+       * <code>string job_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for jobName.
+       */
+      public com.google.protobuf.ByteString getJobNameBytes() {
+        java.lang.Object ref = jobName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          jobName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The job to delete.
+       * </pre>
+       *
+       * <code>string job_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The jobName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        jobName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The job to delete.
+       * </pre>
+       *
+       * <code>string job_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearJobName() {
+
+        jobName_ = getDefaultInstance().getJobName();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The job to delete.
+       * </pre>
+       *
+       * <code>string job_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for jobName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        jobName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object projectId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The ID of the Google Cloud project that owns the
+       * job.
+       * </pre>
+       *
+       * <code>string project_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The projectId.
+       */
+      public java.lang.String getProjectId() {
+        java.lang.Object ref = projectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The ID of the Google Cloud project that owns the
+       * job.
+       * </pre>
+       *
+       * <code>string project_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for projectId.
+       */
+      public com.google.protobuf.ByteString getProjectIdBytes() {
+        java.lang.Object ref = projectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          projectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The ID of the Google Cloud project that owns the
+       * job.
+       * </pre>
+       *
+       * <code>string project_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        projectId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The ID of the Google Cloud project that owns the
+       * job.
+       * </pre>
+       *
+       * <code>string project_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearProjectId() {
+
+        projectId_ = getDefaultInstance().getProjectId();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The ID of the Google Cloud project that owns the
+       * job.
+       * </pre>
+       *
+       * <code>string project_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        projectId_ = value;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.storagetransfer.v1.DeleteTransferJobRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.storagetransfer.v1.DeleteTransferJobRequest)
+    private static final com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest();
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DeleteTransferJobRequest> PARSER =
+        new com.google.protobuf.AbstractParser<DeleteTransferJobRequest>() {
+          @java.lang.Override
+          public DeleteTransferJobRequest parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new DeleteTransferJobRequest(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<DeleteTransferJobRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DeleteTransferJobRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest
         getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -15332,6 +16224,10 @@ public final class TransferProto {
   private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_storagetransfer_v1_GetTransferJobRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_storagetransfer_v1_DeleteTransferJobRequest_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_storagetransfer_v1_DeleteTransferJobRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_storagetransfer_v1_ListTransferJobsRequest_descriptor;
   private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_storagetransfer_v1_ListTransferJobsRequest_fieldAccessorTable;
@@ -15402,95 +16298,101 @@ public final class TransferProto {
           + "\340A\002\022B\n\036update_transfer_job_field_mask\030\004 "
           + "\001(\0132\032.google.protobuf.FieldMask\"G\n\025GetTr"
           + "ansferJobRequest\022\025\n\010job_name\030\001 \001(\tB\003\340A\002\022"
-          + "\027\n\nproject_id\030\002 \001(\tB\003\340A\002\"U\n\027ListTransfer"
-          + "JobsRequest\022\023\n\006filter\030\001 \001(\tB\003\340A\002\022\021\n\tpage"
-          + "_size\030\004 \001(\005\022\022\n\npage_token\030\005 \001(\t\"r\n\030ListT"
-          + "ransferJobsResponse\022=\n\rtransfer_jobs\030\001 \003"
-          + "(\0132&.google.storagetransfer.v1.TransferJ"
-          + "ob\022\027\n\017next_page_token\030\002 \001(\t\"2\n\035PauseTran"
-          + "sferOperationRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\""
-          + "3\n\036ResumeTransferOperationRequest\022\021\n\004nam"
-          + "e\030\001 \001(\tB\003\340A\002\"G\n\025RunTransferJobRequest\022\025\n"
-          + "\010job_name\030\001 \001(\tB\003\340A\002\022\027\n\nproject_id\030\002 \001(\t"
-          + "B\003\340A\002\"\214\001\n\026CreateAgentPoolRequest\022\027\n\nproj"
-          + "ect_id\030\001 \001(\tB\003\340A\002\022=\n\nagent_pool\030\002 \001(\0132$."
-          + "google.storagetransfer.v1.AgentPoolB\003\340A\002"
-          + "\022\032\n\ragent_pool_id\030\003 \001(\tB\003\340A\002\"\210\001\n\026UpdateA"
-          + "gentPoolRequest\022=\n\nagent_pool\030\001 \001(\0132$.go"
-          + "ogle.storagetransfer.v1.AgentPoolB\003\340A\002\022/"
-          + "\n\013update_mask\030\002 \001(\0132\032.google.protobuf.Fi"
-          + "eldMask\"(\n\023GetAgentPoolRequest\022\021\n\004name\030\001"
-          + " \001(\tB\003\340A\002\"+\n\026DeleteAgentPoolRequest\022\021\n\004n"
-          + "ame\030\001 \001(\tB\003\340A\002\"g\n\025ListAgentPoolsRequest\022"
-          + "\027\n\nproject_id\030\001 \001(\tB\003\340A\002\022\016\n\006filter\030\002 \001(\t"
-          + "\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\""
-          + "l\n\026ListAgentPoolsResponse\0229\n\013agent_pools"
-          + "\030\001 \003(\0132$.google.storagetransfer.v1.Agent"
-          + "Pool\022\027\n\017next_page_token\030\002 \001(\t2\206\022\n\026Storag"
-          + "eTransferService\022\265\001\n\027GetGoogleServiceAcc"
-          + "ount\0229.google.storagetransfer.v1.GetGoog"
-          + "leServiceAccountRequest\032/.google.storage"
-          + "transfer.v1.GoogleServiceAccount\".\202\323\344\223\002("
-          + "\022&/v1/googleServiceAccounts/{project_id}"
-          + "\022\230\001\n\021CreateTransferJob\0223.google.storaget"
-          + "ransfer.v1.CreateTransferJobRequest\032&.go"
-          + "ogle.storagetransfer.v1.TransferJob\"&\202\323\344"
-          + "\223\002 \"\020/v1/transferJobs:\014transfer_job\022\233\001\n\021"
-          + "UpdateTransferJob\0223.google.storagetransf"
-          + "er.v1.UpdateTransferJobRequest\032&.google."
-          + "storagetransfer.v1.TransferJob\")\202\323\344\223\002#2\036"
-          + "/v1/{job_name=transferJobs/**}:\001*\022\222\001\n\016Ge"
-          + "tTransferJob\0220.google.storagetransfer.v1"
-          + ".GetTransferJobRequest\032&.google.storaget"
-          + "ransfer.v1.TransferJob\"&\202\323\344\223\002 \022\036/v1/{job"
-          + "_name=transferJobs/**}\022\225\001\n\020ListTransferJ"
-          + "obs\0222.google.storagetransfer.v1.ListTran"
-          + "sferJobsRequest\0323.google.storagetransfer"
-          + ".v1.ListTransferJobsResponse\"\030\202\323\344\223\002\022\022\020/v"
-          + "1/transferJobs\022\235\001\n\026PauseTransferOperatio"
-          + "n\0228.google.storagetransfer.v1.PauseTrans"
-          + "ferOperationRequest\032\026.google.protobuf.Em"
-          + "pty\"1\202\323\344\223\002+\"&/v1/{name=transferOperation"
-          + "s/**}:pause:\001*\022\240\001\n\027ResumeTransferOperati"
-          + "on\0229.google.storagetransfer.v1.ResumeTra"
-          + "nsferOperationRequest\032\026.google.protobuf."
-          + "Empty\"2\202\323\344\223\002,\"\'/v1/{name=transferOperati"
-          + "ons/**}:resume:\001*\022\275\001\n\016RunTransferJob\0220.g"
-          + "oogle.storagetransfer.v1.RunTransferJobR"
-          + "equest\032\035.google.longrunning.Operation\"Z\202"
-          + "\323\344\223\002\'\"\"/v1/{job_name=transferJobs/**}:ru"
-          + "n:\001*\312A*\n\025google.protobuf.Empty\022\021Transfer"
-          + "Operation\022\314\001\n\017CreateAgentPool\0221.google.s"
-          + "toragetransfer.v1.CreateAgentPoolRequest"
-          + "\032$.google.storagetransfer.v1.AgentPool\"`"
-          + "\202\323\344\223\0024\"&/v1/projects/{project_id=*}/agen"
-          + "tPools:\nagent_pool\332A#project_id,agent_po"
-          + "ol,agent_pool_id\022\306\001\n\017UpdateAgentPool\0221.g"
-          + "oogle.storagetransfer.v1.UpdateAgentPool"
-          + "Request\032$.google.storagetransfer.v1.Agen"
-          + "tPool\"Z\202\323\344\223\002;2-/v1/{agent_pool.name=proj"
-          + "ects/*/agentPools/*}:\nagent_pool\332A\026agent"
-          + "_pool,update_mask\022\227\001\n\014GetAgentPool\022..goo"
-          + "gle.storagetransfer.v1.GetAgentPoolReque"
-          + "st\032$.google.storagetransfer.v1.AgentPool"
-          + "\"1\202\323\344\223\002$\022\"/v1/{name=projects/*/agentPool"
-          + "s/*}\332A\004name\022\262\001\n\016ListAgentPools\0220.google."
-          + "storagetransfer.v1.ListAgentPoolsRequest"
-          + "\0321.google.storagetransfer.v1.ListAgentPo"
-          + "olsResponse\";\202\323\344\223\002(\022&/v1/projects/{proje"
-          + "ct_id=*}/agentPools\332A\nproject_id\022\217\001\n\017Del"
-          + "eteAgentPool\0221.google.storagetransfer.v1"
-          + ".DeleteAgentPoolRequest\032\026.google.protobu"
-          + "f.Empty\"1\202\323\344\223\002$*\"/v1/{name=projects/*/ag"
-          + "entPools/*}\332A\004name\032R\312A\036storagetransfer.g"
-          + "oogleapis.com\322A.https://www.googleapis.c"
-          + "om/auth/cloud-platformB\352\001\n#com.google.st"
-          + "oragetransfer.v1.protoB\rTransferProtoZHg"
-          + "oogle.golang.org/genproto/googleapis/sto"
-          + "ragetransfer/v1;storagetransfer\370\001\001\252\002\037Goo"
-          + "gle.Cloud.StorageTransfer.V1\312\002\037Google\\Cl"
-          + "oud\\StorageTransfer\\V1\352\002\"Google::Cloud::"
-          + "StorageTransfer::V1b\006proto3"
+          + "\027\n\nproject_id\030\002 \001(\tB\003\340A\002\"J\n\030DeleteTransf"
+          + "erJobRequest\022\025\n\010job_name\030\001 \001(\tB\003\340A\002\022\027\n\np"
+          + "roject_id\030\002 \001(\tB\003\340A\002\"U\n\027ListTransferJobs"
+          + "Request\022\023\n\006filter\030\001 \001(\tB\003\340A\002\022\021\n\tpage_siz"
+          + "e\030\004 \001(\005\022\022\n\npage_token\030\005 \001(\t\"r\n\030ListTrans"
+          + "ferJobsResponse\022=\n\rtransfer_jobs\030\001 \003(\0132&"
+          + ".google.storagetransfer.v1.TransferJob\022\027"
+          + "\n\017next_page_token\030\002 \001(\t\"2\n\035PauseTransfer"
+          + "OperationRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\"3\n\036R"
+          + "esumeTransferOperationRequest\022\021\n\004name\030\001 "
+          + "\001(\tB\003\340A\002\"G\n\025RunTransferJobRequest\022\025\n\010job"
+          + "_name\030\001 \001(\tB\003\340A\002\022\027\n\nproject_id\030\002 \001(\tB\003\340A"
+          + "\002\"\214\001\n\026CreateAgentPoolRequest\022\027\n\nproject_"
+          + "id\030\001 \001(\tB\003\340A\002\022=\n\nagent_pool\030\002 \001(\0132$.goog"
+          + "le.storagetransfer.v1.AgentPoolB\003\340A\002\022\032\n\r"
+          + "agent_pool_id\030\003 \001(\tB\003\340A\002\"\210\001\n\026UpdateAgent"
+          + "PoolRequest\022=\n\nagent_pool\030\001 \001(\0132$.google"
+          + ".storagetransfer.v1.AgentPoolB\003\340A\002\022/\n\013up"
+          + "date_mask\030\002 \001(\0132\032.google.protobuf.FieldM"
+          + "ask\"(\n\023GetAgentPoolRequest\022\021\n\004name\030\001 \001(\t"
+          + "B\003\340A\002\"+\n\026DeleteAgentPoolRequest\022\021\n\004name\030"
+          + "\001 \001(\tB\003\340A\002\"g\n\025ListAgentPoolsRequest\022\027\n\np"
+          + "roject_id\030\001 \001(\tB\003\340A\002\022\016\n\006filter\030\002 \001(\t\022\021\n\t"
+          + "page_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\"l\n\026L"
+          + "istAgentPoolsResponse\0229\n\013agent_pools\030\001 \003"
+          + "(\0132$.google.storagetransfer.v1.AgentPool"
+          + "\022\027\n\017next_page_token\030\002 \001(\t2\221\023\n\026StorageTra"
+          + "nsferService\022\265\001\n\027GetGoogleServiceAccount"
+          + "\0229.google.storagetransfer.v1.GetGoogleSe"
+          + "rviceAccountRequest\032/.google.storagetran"
+          + "sfer.v1.GoogleServiceAccount\".\202\323\344\223\002(\022&/v"
+          + "1/googleServiceAccounts/{project_id}\022\230\001\n"
+          + "\021CreateTransferJob\0223.google.storagetrans"
+          + "fer.v1.CreateTransferJobRequest\032&.google"
+          + ".storagetransfer.v1.TransferJob\"&\202\323\344\223\002 \""
+          + "\020/v1/transferJobs:\014transfer_job\022\233\001\n\021Upda"
+          + "teTransferJob\0223.google.storagetransfer.v"
+          + "1.UpdateTransferJobRequest\032&.google.stor"
+          + "agetransfer.v1.TransferJob\")\202\323\344\223\002#2\036/v1/"
+          + "{job_name=transferJobs/**}:\001*\022\222\001\n\016GetTra"
+          + "nsferJob\0220.google.storagetransfer.v1.Get"
+          + "TransferJobRequest\032&.google.storagetrans"
+          + "fer.v1.TransferJob\"&\202\323\344\223\002 \022\036/v1/{job_nam"
+          + "e=transferJobs/**}\022\225\001\n\020ListTransferJobs\022"
+          + "2.google.storagetransfer.v1.ListTransfer"
+          + "JobsRequest\0323.google.storagetransfer.v1."
+          + "ListTransferJobsResponse\"\030\202\323\344\223\002\022\022\020/v1/tr"
+          + "ansferJobs\022\235\001\n\026PauseTransferOperation\0228."
+          + "google.storagetransfer.v1.PauseTransferO"
+          + "perationRequest\032\026.google.protobuf.Empty\""
+          + "1\202\323\344\223\002+\"&/v1/{name=transferOperations/**"
+          + "}:pause:\001*\022\240\001\n\027ResumeTransferOperation\0229"
+          + ".google.storagetransfer.v1.ResumeTransfe"
+          + "rOperationRequest\032\026.google.protobuf.Empt"
+          + "y\"2\202\323\344\223\002,\"\'/v1/{name=transferOperations/"
+          + "**}:resume:\001*\022\275\001\n\016RunTransferJob\0220.googl"
+          + "e.storagetransfer.v1.RunTransferJobReque"
+          + "st\032\035.google.longrunning.Operation\"Z\202\323\344\223\002"
+          + "\'\"\"/v1/{job_name=transferJobs/**}:run:\001*"
+          + "\312A*\n\025google.protobuf.Empty\022\021TransferOper"
+          + "ation\022\210\001\n\021DeleteTransferJob\0223.google.sto"
+          + "ragetransfer.v1.DeleteTransferJobRequest"
+          + "\032\026.google.protobuf.Empty\"&\202\323\344\223\002 *\036/v1/{j"
+          + "ob_name=transferJobs/**}\022\314\001\n\017CreateAgent"
+          + "Pool\0221.google.storagetransfer.v1.CreateA"
+          + "gentPoolRequest\032$.google.storagetransfer"
+          + ".v1.AgentPool\"`\202\323\344\223\0024\"&/v1/projects/{pro"
+          + "ject_id=*}/agentPools:\nagent_pool\332A#proj"
+          + "ect_id,agent_pool,agent_pool_id\022\306\001\n\017Upda"
+          + "teAgentPool\0221.google.storagetransfer.v1."
+          + "UpdateAgentPoolRequest\032$.google.storaget"
+          + "ransfer.v1.AgentPool\"Z\202\323\344\223\002;2-/v1/{agent"
+          + "_pool.name=projects/*/agentPools/*}:\nage"
+          + "nt_pool\332A\026agent_pool,update_mask\022\227\001\n\014Get"
+          + "AgentPool\022..google.storagetransfer.v1.Ge"
+          + "tAgentPoolRequest\032$.google.storagetransf"
+          + "er.v1.AgentPool\"1\202\323\344\223\002$\022\"/v1/{name=proje"
+          + "cts/*/agentPools/*}\332A\004name\022\262\001\n\016ListAgent"
+          + "Pools\0220.google.storagetransfer.v1.ListAg"
+          + "entPoolsRequest\0321.google.storagetransfer"
+          + ".v1.ListAgentPoolsResponse\";\202\323\344\223\002(\022&/v1/"
+          + "projects/{project_id=*}/agentPools\332A\npro"
+          + "ject_id\022\217\001\n\017DeleteAgentPool\0221.google.sto"
+          + "ragetransfer.v1.DeleteAgentPoolRequest\032\026"
+          + ".google.protobuf.Empty\"1\202\323\344\223\002$*\"/v1/{nam"
+          + "e=projects/*/agentPools/*}\332A\004name\032R\312A\036st"
+          + "oragetransfer.googleapis.com\322A.https://w"
+          + "ww.googleapis.com/auth/cloud-platformB\352\001"
+          + "\n#com.google.storagetransfer.v1.protoB\rT"
+          + "ransferProtoZHgoogle.golang.org/genproto"
+          + "/googleapis/storagetransfer/v1;storagetr"
+          + "ansfer\370\001\001\252\002\037Google.Cloud.StorageTransfer"
+          + ".V1\312\002\037Google\\Cloud\\StorageTransfer\\V1\352\002\""
+          + "Google::Cloud::StorageTransfer::V1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -15536,8 +16438,16 @@ public final class TransferProto {
             new java.lang.String[] {
               "JobName", "ProjectId",
             });
-    internal_static_google_storagetransfer_v1_ListTransferJobsRequest_descriptor =
+    internal_static_google_storagetransfer_v1_DeleteTransferJobRequest_descriptor =
         getDescriptor().getMessageTypes().get(4);
+    internal_static_google_storagetransfer_v1_DeleteTransferJobRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_storagetransfer_v1_DeleteTransferJobRequest_descriptor,
+            new java.lang.String[] {
+              "JobName", "ProjectId",
+            });
+    internal_static_google_storagetransfer_v1_ListTransferJobsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_storagetransfer_v1_ListTransferJobsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_ListTransferJobsRequest_descriptor,
@@ -15545,7 +16455,7 @@ public final class TransferProto {
               "Filter", "PageSize", "PageToken",
             });
     internal_static_google_storagetransfer_v1_ListTransferJobsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_storagetransfer_v1_ListTransferJobsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_ListTransferJobsResponse_descriptor,
@@ -15553,7 +16463,7 @@ public final class TransferProto {
               "TransferJobs", "NextPageToken",
             });
     internal_static_google_storagetransfer_v1_PauseTransferOperationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_storagetransfer_v1_PauseTransferOperationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_PauseTransferOperationRequest_descriptor,
@@ -15561,7 +16471,7 @@ public final class TransferProto {
               "Name",
             });
     internal_static_google_storagetransfer_v1_ResumeTransferOperationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_storagetransfer_v1_ResumeTransferOperationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_ResumeTransferOperationRequest_descriptor,
@@ -15569,7 +16479,7 @@ public final class TransferProto {
               "Name",
             });
     internal_static_google_storagetransfer_v1_RunTransferJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_storagetransfer_v1_RunTransferJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_RunTransferJobRequest_descriptor,
@@ -15577,7 +16487,7 @@ public final class TransferProto {
               "JobName", "ProjectId",
             });
     internal_static_google_storagetransfer_v1_CreateAgentPoolRequest_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_storagetransfer_v1_CreateAgentPoolRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_CreateAgentPoolRequest_descriptor,
@@ -15585,7 +16495,7 @@ public final class TransferProto {
               "ProjectId", "AgentPool", "AgentPoolId",
             });
     internal_static_google_storagetransfer_v1_UpdateAgentPoolRequest_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_storagetransfer_v1_UpdateAgentPoolRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_UpdateAgentPoolRequest_descriptor,
@@ -15593,7 +16503,7 @@ public final class TransferProto {
               "AgentPool", "UpdateMask",
             });
     internal_static_google_storagetransfer_v1_GetAgentPoolRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_storagetransfer_v1_GetAgentPoolRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_GetAgentPoolRequest_descriptor,
@@ -15601,7 +16511,7 @@ public final class TransferProto {
               "Name",
             });
     internal_static_google_storagetransfer_v1_DeleteAgentPoolRequest_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_storagetransfer_v1_DeleteAgentPoolRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_DeleteAgentPoolRequest_descriptor,
@@ -15609,7 +16519,7 @@ public final class TransferProto {
               "Name",
             });
     internal_static_google_storagetransfer_v1_ListAgentPoolsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_storagetransfer_v1_ListAgentPoolsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_ListAgentPoolsRequest_descriptor,
@@ -15617,7 +16527,7 @@ public final class TransferProto {
               "ProjectId", "Filter", "PageSize", "PageToken",
             });
     internal_static_google_storagetransfer_v1_ListAgentPoolsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_storagetransfer_v1_ListAgentPoolsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_ListAgentPoolsResponse_descriptor,

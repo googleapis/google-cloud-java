@@ -98,6 +98,10 @@ public abstract class StorageTransferServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: runTransferJobCallable()");
   }
 
+  public UnaryCallable<TransferProto.DeleteTransferJobRequest, Empty> deleteTransferJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteTransferJobCallable()");
+  }
+
   public UnaryCallable<TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>
       createAgentPoolCallable() {
     throw new UnsupportedOperationException("Not implemented: createAgentPoolCallable()");
