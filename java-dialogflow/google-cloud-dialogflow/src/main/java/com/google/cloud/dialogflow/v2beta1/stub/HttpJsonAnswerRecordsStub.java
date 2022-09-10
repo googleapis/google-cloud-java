@@ -162,7 +162,7 @@ public class HttpJsonAnswerRecordsStub extends AnswerRecordsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("answerRecord", request.getAnswerRecord()))
+                                  .toBody("answerRecord", request.getAnswerRecord(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AnswerRecord>newBuilder()

@@ -123,7 +123,7 @@ public class HttpJsonFulfillmentsStub extends FulfillmentsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("fulfillment", request.getFulfillment()))
+                                  .toBody("fulfillment", request.getFulfillment(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Fulfillment>newBuilder()
