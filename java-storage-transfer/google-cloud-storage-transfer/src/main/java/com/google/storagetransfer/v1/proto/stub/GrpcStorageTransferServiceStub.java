@@ -155,6 +155,18 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<TransferProto.DeleteTransferJobRequest, Empty>
+      deleteTransferJobMethodDescriptor =
+          MethodDescriptor.<TransferProto.DeleteTransferJobRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.storagetransfer.v1.StorageTransferService/DeleteTransferJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      TransferProto.DeleteTransferJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<
           TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>
       createAgentPoolMethodDescriptor =
@@ -239,6 +251,8 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
   private final OperationCallable<
           TransferProto.RunTransferJobRequest, Empty, TransferTypes.TransferOperation>
       runTransferJobOperationCallable;
+  private final UnaryCallable<TransferProto.DeleteTransferJobRequest, Empty>
+      deleteTransferJobCallable;
   private final UnaryCallable<TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>
       createAgentPoolCallable;
   private final UnaryCallable<TransferProto.UpdateAgentPoolRequest, TransferTypes.AgentPool>
@@ -380,6 +394,17 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<TransferProto.DeleteTransferJobRequest, Empty>
+        deleteTransferJobTransportSettings =
+            GrpcCallSettings.<TransferProto.DeleteTransferJobRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteTransferJobMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("job_name", String.valueOf(request.getJobName()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>
         createAgentPoolTransportSettings =
             GrpcCallSettings
@@ -484,6 +509,11 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
             settings.runTransferJobOperationSettings(),
             clientContext,
             operationsStub);
+    this.deleteTransferJobCallable =
+        callableFactory.createUnaryCallable(
+            deleteTransferJobTransportSettings,
+            settings.deleteTransferJobSettings(),
+            clientContext);
     this.createAgentPoolCallable =
         callableFactory.createUnaryCallable(
             createAgentPoolTransportSettings, settings.createAgentPoolSettings(), clientContext);
@@ -571,6 +601,11 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
           TransferProto.RunTransferJobRequest, Empty, TransferTypes.TransferOperation>
       runTransferJobOperationCallable() {
     return runTransferJobOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TransferProto.DeleteTransferJobRequest, Empty> deleteTransferJobCallable() {
+    return deleteTransferJobCallable;
   }
 
   @Override

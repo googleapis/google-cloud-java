@@ -812,6 +812,69 @@ public class StorageTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Deletes a transfer job. Deleting a transfer job sets its status to
+   * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageTransferServiceClient storageTransferServiceClient =
+   *     StorageTransferServiceClient.create()) {
+   *   TransferProto.DeleteTransferJobRequest request =
+   *       TransferProto.DeleteTransferJobRequest.newBuilder()
+   *           .setJobName("jobName-1438096408")
+   *           .setProjectId("projectId-894832108")
+   *           .build();
+   *   storageTransferServiceClient.deleteTransferJob(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTransferJob(TransferProto.DeleteTransferJobRequest request) {
+    deleteTransferJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a transfer job. Deleting a transfer job sets its status to
+   * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageTransferServiceClient storageTransferServiceClient =
+   *     StorageTransferServiceClient.create()) {
+   *   TransferProto.DeleteTransferJobRequest request =
+   *       TransferProto.DeleteTransferJobRequest.newBuilder()
+   *           .setJobName("jobName-1438096408")
+   *           .setProjectId("projectId-894832108")
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       storageTransferServiceClient.deleteTransferJobCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TransferProto.DeleteTransferJobRequest, Empty>
+      deleteTransferJobCallable() {
+    return stub.deleteTransferJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates an agent pool resource.
    *
    * <p>Sample code:
