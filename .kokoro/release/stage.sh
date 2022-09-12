@@ -31,7 +31,7 @@ create_settings_xml_file "settings.xml"
 #    echo "**** THE JAVADOCS CREATED BEFORE MAVEN DEPLOY ARE '$line'"
 #done
 
-mvn -v \
+   mvn -v -B \
 #mvn clean deploy -B \
   -DskipTests=true \
   -Dclirr.skip=true \
