@@ -3,9 +3,28 @@
 # This script takes the following variables
 export REPO=https://github.com/googleapis/java-spanner
 export BRANCH=6.4.4-sp
+export BAZEL_VERSION=3.7.2
+
 
 rm -rf workspace
 mkdir -p workspace
+
+
+if python -V |grep 'Python 3' ; then
+  echo 'Please use Python 2 for googleapis build'
+  echo "Current python version: $(python -V)"
+  exit 1
+fi
+
+
+echo "Installing Bazel ${BAZEL_VERSION}"
+wget "https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh" \
+    -O workspace/bazel_install.sh && \
+    bash workspace/bazel_install.sh --user && \
+    echo "Bazel installed" && \
+    bazel version
+
+echo "Cloning ${REPO}'s ${BRANCH} as workspace/repo"
 git clone --branch $BRANCH --single-branch -- $REPO workspace/repo
 
 pushd workspace/repo
@@ -37,6 +56,13 @@ popd
 protobuf_target_version=$protobuf_current_version
 curl "https://github.com/protocolbuffers/protobuf/archive/v${protobuf_target_version}.tar.gz" \
     --output workspace/protobuf.tar.gz
+
+pushd workspace/googleapis
+echo "Building workspace/googleapis by Bazel: $(bazel version)"
+bazel query 'filter("-java$", kind("rule", //...:*))' | xargs bazel build
+
+popd
+
 
 echo "Exiting this for now"
 exit 1
