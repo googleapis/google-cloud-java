@@ -73,33 +73,6 @@ function assign_modules_to_job() {
   done
 }
 
-function maven_install_modified_modules() {
-  generate_modified_modules_list
-  if [ ${#modified_module_list[@]} -gt 0 ]; then
-    # Combine each entry with a comma
-    module_list=$(
-      IFS=,
-      echo "${modified_module_list[*]}"
-    )
-    printf "Module List:\n%s\n" "${module_list}"
-    mvn -B -pl "${module_list},!CoverageAggregator" \
-      -amd \
-      -ntp \
-      -DtrimStackTrace=false \
-      -Dclirr.skip=true \
-      -Denforcer.skip=true \
-      -Dcheckstyle.skip=true \
-      -Dflatten.skip=true \
-      -Danimal.sniffer.skip=true \
-      -DskipTests=true \
-      -Djacoco.skip=true \
-      -T 1C \
-      install
-  else
-    echo "No Modules to Maven Install"
-  fi
-}
-
 function generate_excluded_module_string() {
   excluded_modules_list=()
   for excluded_module in "${excluded_modules[@]}"; do
@@ -120,18 +93,34 @@ if [ -f "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secr
   source "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secrets"
 fi
 
+# Generate a list of modified modules
+generate_modified_modules_list
+
 RETURN_CODE=0
 
 case ${JOB_TYPE} in
   integration)
-    maven_install_modified_modules
     if [ ${#modified_module_list[@]} -gt 0 ]; then
       # Combine each entry with a comma
       module_list=$(
         IFS=,
         echo "${modified_module_list[*]}"
       )
-      printf "Module List:\n%s\n" "${module_list}"
+      printf "Installing Module List:\n%s\n" "${module_list}"
+      mvn -B -pl "${module_list},!CoverageAggregator" \
+        -amd \
+        -ntp \
+        -DtrimStackTrace=false \
+        -Dclirr.skip=true \
+        -Denforcer.skip=true \
+        -Dcheckstyle.skip=true \
+        -Dflatten.skip=true \
+        -Danimal.sniffer.skip=true \
+        -DskipTests=true \
+        -Djacoco.skip=true \
+        -T 1C \
+        install
+
       printf "Running Integration Tests for:\n%s\n" "${module_list}"
       mvn -B ${INTEGRATION_TEST_ARGS} \
         -pl "${module_list}" \
@@ -156,17 +145,30 @@ case ${JOB_TYPE} in
     fi
     ;;
   graalvm)
-    maven_install_modified_modules
+    assign_modules_to_job
     # If there are modified modules, assign the modules to a job
-    if [ ${#modified_module_list[@]} -gt 0 ]; then
-      assign_modules_to_job
+    if [ ${#modules_assigned_list[@]} -gt 0 ]; then
       # Combine each entry with a comma
       module_list=$(
         IFS=,
         echo "${modules_assigned_list[*]}"
       )
-      printf "Running GraalVM Native ITs on:\n%s\n" "${module_list[*]}"
+      printf "Installing Module List:\n%s\n" "${module_list}"
+      mvn -B -pl "${module_list},!CoverageAggregator" \
+        -amd \
+        -ntp \
+        -DtrimStackTrace=false \
+        -Dclirr.skip=true \
+        -Denforcer.skip=true \
+        -Dcheckstyle.skip=true \
+        -Dflatten.skip=true \
+        -Danimal.sniffer.skip=true \
+        -DskipTests=true \
+        -Djacoco.skip=true \
+        -T 1C \
+        install
 
+      printf "Running GraalVM Native ITs on:\n%s\n" "${module_list[*]}"
       mvn -B ${INTEGRATION_TEST_ARGS} \
         -pl "${module_list}" \
         -amd \
@@ -188,17 +190,30 @@ case ${JOB_TYPE} in
     fi
     ;;
   graalvm17)
-    maven_install_modified_modules
+    assign_modules_to_job
     # If there are modified modules, assign the modules to a job
-    if [ ${#modified_module_list[@]} -gt 0 ]; then
-      assign_modules_to_job
+    if [ ${#modules_assigned_list[@]} -gt 0 ]; then
       # Combine each entry with a comma
       module_list=$(
         IFS=,
         echo "${modules_assigned_list[*]}"
       )
-      printf "Running GraalVM Native-17 ITs on:\n%s\n" "${module_list[*]}"
+      printf "Installing Module List:\n%s\n" "${module_list}"
+      mvn -B -pl "${module_list},!CoverageAggregator" \
+        -amd \
+        -ntp \
+        -DtrimStackTrace=false \
+        -Dclirr.skip=true \
+        -Denforcer.skip=true \
+        -Dcheckstyle.skip=true \
+        -Dflatten.skip=true \
+        -Danimal.sniffer.skip=true \
+        -DskipTests=true \
+        -Djacoco.skip=true \
+        -T 1C \
+        install
 
+      printf "Running GraalVM Native-17 ITs on:\n%s\n" "${module_list[*]}"
       mvn -B ${INTEGRATION_TEST_ARGS} \
         -pl "${module_list}" \
         -amd \
