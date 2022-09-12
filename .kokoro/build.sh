@@ -123,144 +123,144 @@ fi
 RETURN_CODE=0
 
 case ${JOB_TYPE} in
-integration)
-  maven_install_modified_modules
-  if [ ${#modified_module_list[@]} -gt 0 ]; then
-    # Combine each entry with a comma
-    module_list=$(
-      IFS=,
-      echo "${modified_module_list[*]}"
-    )
-    printf "Module List:\n%s\n" "${module_list}"
-    printf "Running Integration Tests for:\n%s\n" "${module_list}"
-    mvn -B ${INTEGRATION_TEST_ARGS} \
-      -pl "${module_list}" \
-      -amd \
+  integration)
+    maven_install_modified_modules
+    if [ ${#modified_module_list[@]} -gt 0 ]; then
+      # Combine each entry with a comma
+      module_list=$(
+        IFS=,
+        echo "${modified_module_list[*]}"
+      )
+      printf "Module List:\n%s\n" "${module_list}"
+      printf "Running Integration Tests for:\n%s\n" "${module_list}"
+      mvn -B ${INTEGRATION_TEST_ARGS} \
+        -pl "${module_list}" \
+        -amd \
+        -ntp \
+        -Penable-integration-tests \
+        -DtrimStackTrace=false \
+        -Dclirr.skip=true \
+        -Denforcer.skip=true \
+        -Dcheckstyle.skip=true \
+        -Dflatten.skip=true \
+        -Danimal.sniffer.skip=true \
+        -Djacoco.skip=true \
+        -DskipUnitTests=true \
+        -fae \
+        -T 1C \
+        verify
+      RETURN_CODE=$?
+      printf "Finished Integration Tests for:\n%s\n" "${module_list}"
+    else
+      echo "No Integration Tests to run"
+    fi
+    ;;
+  graalvm)
+    maven_install_modified_modules
+    # If there are modified modules, assign the modules to a job
+    if [ ${#modified_module_list[@]} -gt 0 ]; then
+      assign_modules_to_job
+      # Combine each entry with a comma
+      module_list=$(
+        IFS=,
+        echo "${modules_assigned_list[*]}"
+      )
+      printf "Running GraalVM Native ITs on:\n%s\n" "${module_list[*]}"
+
+      mvn -B ${INTEGRATION_TEST_ARGS} \
+        -pl "${module_list}" \
+        -amd \
+        -ntp \
+        -DtrimStackTrace=false \
+        -Dclirr.skip=true \
+        -Denforcer.skip=true \
+        -Dcheckstyle.skip=true \
+        -Dflatten.skip=true \
+        -Danimal.sniffer.skip=true \
+        -Penable-integration-tests \
+        -Pnative \
+        -fae \
+        test
+      RETURN_CODE=$?
+      printf "Finished Unit and Integration Tests for GraalVM Native:\n%s\n" "${module_list}"
+    else
+      echo "No Unit and Integration Tests to run for GraalVM Native"
+    fi
+    ;;
+  graalvm17)
+    maven_install_modified_modules
+    # If there are modified modules, assign the modules to a job
+    if [ ${#modified_module_list[@]} -gt 0 ]; then
+      assign_modules_to_job
+      # Combine each entry with a comma
+      module_list=$(
+        IFS=,
+        echo "${modules_assigned_list[*]}"
+      )
+      printf "Running GraalVM Native-17 ITs on:\n%s\n" "${module_list[*]}"
+
+      mvn -B ${INTEGRATION_TEST_ARGS} \
+        -pl "${module_list}" \
+        -amd \
+        -ntp \
+        -DtrimStackTrace=false \
+        -Dclirr.skip=true \
+        -Denforcer.skip=true \
+        -Dcheckstyle.skip=true \
+        -Dflatten.skip=true \
+        -Danimal.sniffer.skip=true \
+        -Penable-integration-tests \
+        -Pnative \
+        -fae \
+        test
+      RETURN_CODE=$?
+      printf "Finished Unit and Integration Tests for GraalVM Native 17:\n%s\n" "${module_list}"
+    else
+      echo "No Unit and Integration Tests to run for GraalVM Native 17"
+    fi
+    ;;
+  samples)
+    # Generate excluded_modules_string
+    generate_excluded_module_string
+    mvn -B -pl "${excluded_modules_string}" \
       -ntp \
-      -Penable-integration-tests \
       -DtrimStackTrace=false \
       -Dclirr.skip=true \
       -Denforcer.skip=true \
       -Dcheckstyle.skip=true \
       -Dflatten.skip=true \
       -Danimal.sniffer.skip=true \
+      -DskipTests=true \
       -Djacoco.skip=true \
-      -DskipUnitTests=true \
-      -fae \
       -T 1C \
-      verify
-    RETURN_CODE=$?
-    printf "Finished Integration Tests for:\n%s\n" "${module_list}"
-  else
-    echo "No Integration Tests to run"
-  fi
-  ;;
-graalvm)
-  maven_install_modified_modules
-  # If there are modified modules, assign the modules to a job
-  if [ ${#modified_module_list[@]} -gt 0 ]; then
-    assign_modules_to_job
-    # Combine each entry with a comma
-    module_list=$(
-      IFS=,
-      echo "${modules_assigned_list[*]}"
-    )
-    printf "Running GraalVM Native ITs on:\n%s\n" "${module_list[*]}"
+      install
 
-    mvn -B ${INTEGRATION_TEST_ARGS} \
-      -pl "${module_list}" \
-      -amd \
-      -ntp \
-      -DtrimStackTrace=false \
-      -Dclirr.skip=true \
-      -Denforcer.skip=true \
-      -Dcheckstyle.skip=true \
-      -Dflatten.skip=true \
-      -Danimal.sniffer.skip=true \
-      -Penable-integration-tests \
-      -Pnative \
-      -fae \
-      test
-    RETURN_CODE=$?
-    printf "Finished Unit and Integration Tests for GraalVM Native:\n%s\n" "${module_list}"
-  else
-    echo "No Unit and Integration Tests to run for GraalVM Native"
-  fi
-  ;;
-graalvm17)
-  maven_install_modified_modules
-  # If there are modified modules, assign the modules to a job
-  if [ ${#modified_module_list[@]} -gt 0 ]; then
-    assign_modules_to_job
-    # Combine each entry with a comma
-    module_list=$(
-      IFS=,
-      echo "${modules_assigned_list[*]}"
-    )
-    printf "Running GraalVM Native-17 ITs on:\n%s\n" "${module_list[*]}"
+    SAMPLES_DIR=samples
+    # only run ITs in snapshot/ on presubmit PRs. run ITs in all 3 samples/ submodules otherwise.
+    if [[ ! -z ${KOKORO_GITHUB_PULL_REQUEST_NUMBER} ]]; then
+      SAMPLES_DIR=samples/snapshot
+    fi
 
-    mvn -B ${INTEGRATION_TEST_ARGS} \
-      -pl "${module_list}" \
-      -amd \
-      -ntp \
-      -DtrimStackTrace=false \
-      -Dclirr.skip=true \
-      -Denforcer.skip=true \
-      -Dcheckstyle.skip=true \
-      -Dflatten.skip=true \
-      -Danimal.sniffer.skip=true \
-      -Penable-integration-tests \
-      -Pnative \
-      -fae \
-      test
-    RETURN_CODE=$?
-    printf "Finished Unit and Integration Tests for GraalVM Native 17:\n%s\n" "${module_list}"
-  else
-    echo "No Unit and Integration Tests to run for GraalVM Native 17"
-  fi
-  ;;
-samples)
-  # Generate excluded_modules_string
-  generate_excluded_module_string
-  mvn -B -pl "${excluded_modules_string}" \
-    -ntp \
-    -DtrimStackTrace=false \
-    -Dclirr.skip=true \
-    -Denforcer.skip=true \
-    -Dcheckstyle.skip=true \
-    -Dflatten.skip=true \
-    -Danimal.sniffer.skip=true \
-    -DskipTests=true \
-    -Djacoco.skip=true \
-    -T 1C \
-    install
+    if [[ -f ${SAMPLES_DIR}/pom.xml ]]; then
+      for FILE in ${KOKORO_GFILE_DIR}/secret_manager/*-samples-secrets; do
+        [[ -f "$FILE" ]] || continue
+        source "$FILE"
+      done
 
-  SAMPLES_DIR=samples
-  # only run ITs in snapshot/ on presubmit PRs. run ITs in all 3 samples/ submodules otherwise.
-  if [[ ! -z ${KOKORO_GITHUB_PULL_REQUEST_NUMBER} ]]; then
-    SAMPLES_DIR=samples/snapshot
-  fi
-
-  if [[ -f ${SAMPLES_DIR}/pom.xml ]]; then
-    for FILE in ${KOKORO_GFILE_DIR}/secret_manager/*-samples-secrets; do
-      [[ -f "$FILE" ]] || continue
-      source "$FILE"
-    done
-
-    pushd ${SAMPLES_DIR}
-    mvn -B \
-      -ntp \
-      -DtrimStackTrace=false \
-      -Dclirr.skip=true \
-      -fae \
-      verify
-    RETURN_CODE=$?
-    popd
-  else
-    echo "no sample pom.xml found - skipping sample tests"
-  fi
-  ;;
-*) ;;
+      pushd ${SAMPLES_DIR}
+      mvn -B \
+        -ntp \
+        -DtrimStackTrace=false \
+        -Dclirr.skip=true \
+        -fae \
+        verify
+      RETURN_CODE=$?
+      popd
+    else
+      echo "no sample pom.xml found - skipping sample tests"
+    fi
+    ;;
+  *) ;;
 
 esac
 
