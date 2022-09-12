@@ -126,7 +126,7 @@ RETURN_CODE=0
 case ${JOB_TYPE} in
 integration)
   maven_install_modified_modules
-  if [[ -n $modified_module_list ]]; then
+  if [ ${#modified_module_list[@]} -gt 0 ]; then
     # Combine each entry with a comma
     module_list=$(
       IFS=,
@@ -159,7 +159,7 @@ integration)
 graalvm)
   maven_install_modified_modules
   assign_modules_to_job
-  if [[ -n $modules_assigned_list ]]; then
+  if [ ${#modules_assigned_list[@]} -gt 0 ]; then
     # Combine each entry with a comma
     module_list=$(
       IFS=,
@@ -191,7 +191,7 @@ graalvm17)
   maven_install_modified_modules
   assign_modules_to_job
 
-  if [[ -n $modules_assigned_list ]]; then
+  if [ ${#modules_assigned_list[@]} -gt 0 ]; then
     # Combine each entry with a comma
     module_list=$(
       IFS=,
