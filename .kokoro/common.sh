@@ -70,7 +70,7 @@ function generate_modified_modules_list() {
   modified_module_list=()
   # If root pom.xml is touched, run ITs on all the modules
   root_pom_modified=$(echo "${modified_files}" | grep -e '^pom.xml$' || true)
-  if [[ -n $root_pom_modified ]]; then
+  if [[ ( -n $root_pom_modified ) || ( "${TEST_ALL_MODULES}" == "true" ) ]]; then
     modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
     for module in $modules; do
       if [[ ! "${excluded_modules[*]}" =~ $module ]]; then
