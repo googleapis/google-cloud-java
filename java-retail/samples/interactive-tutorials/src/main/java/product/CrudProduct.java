@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-// [START retail_crud_product]
-
 /*
  * Create product in a catalog using Retail API
  */
@@ -175,5 +173,3 @@ public class CrudProduct {
     }
   }
 }
-
-// [END retail_crud_product]

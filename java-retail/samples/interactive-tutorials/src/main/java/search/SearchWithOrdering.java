@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-// [START retail_search_for_products_with_ordering]
-
 /*
  * Call Retail API to search for a products in a catalog,
  * order the results by different product fields.
@@ -68,5 +66,3 @@ public class SearchWithOrdering {
     }
   }
 }
-
-// [END retail_search_for_products_with_ordering]

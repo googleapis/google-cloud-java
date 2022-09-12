@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-// [START retail_write_user_event]
-
 /*
  * Write user events into a catalog from inline source using Retail API
  */
@@ -79,5 +77,3 @@ public class WriteUserEvent {
     purgeUserEvent(visitorId);
   }
 }
-
-// [END retail_write_user_event]

@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-// [START retail_search_for_products_with_query_parameter]
-
 /*
  * Call Retail API to search for a products in a catalog
  * using only search query.
@@ -66,5 +64,3 @@ public class SearchSimpleQuery {
     }
   }
 }
-
-// [END retail_search_for_products_with_query_parameter]

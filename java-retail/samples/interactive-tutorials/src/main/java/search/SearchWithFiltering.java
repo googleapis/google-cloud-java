@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-// [START retail_search_for_products_with_filter]
-
 /*
  * Call Retail API to search for a products in a catalog,
  * filter the results by different product fields.
@@ -69,5 +67,3 @@ public class SearchWithFiltering {
     }
   }
 }
-
-// [END retail_search_for_products_with_filter]

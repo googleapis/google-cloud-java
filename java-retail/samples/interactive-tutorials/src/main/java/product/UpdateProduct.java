@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-// [START retail_update_product]
-
 /*
  * Update product in a catalog using Retail API
  */
@@ -93,5 +91,3 @@ public class UpdateProduct {
     }
   }
 }
-
-// [END retail_update_product]

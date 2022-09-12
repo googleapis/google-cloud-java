@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-// [START retail_search_product_with_facet_spec]
-
 package search;
 
 import com.google.cloud.ServiceOptions;
@@ -68,5 +66,3 @@ public class SearchWithFacetSpec {
     }
   }
 }
-
-// [END retail_search_product_with_facet_spec]

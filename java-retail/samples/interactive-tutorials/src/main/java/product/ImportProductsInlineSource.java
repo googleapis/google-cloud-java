@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-// [START retail_import_products_from_inline_source]
-
 /*
  * Import products into a catalog from inline source using Retail API
  */
@@ -207,5 +205,3 @@ public class ImportProductsInlineSource {
     }
   }
 }
-
-// [END retail_import_products_from_inline_source]

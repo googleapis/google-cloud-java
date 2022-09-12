@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-// [START retail_import_user_events_from_big_query]
-
 /*
  * Import user events into a catalog from GCS using Retail API
  */
@@ -112,5 +110,3 @@ public class ImportUserEventsBigQuery {
     }
   }
 }
-
-// [END retail_import_user_events_from_big_query]

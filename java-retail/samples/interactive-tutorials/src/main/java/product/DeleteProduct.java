@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-// [START retail_delete_product]
-
 /*
  * Delete product from a catalog using Retail API
  */
@@ -54,5 +52,3 @@ public class DeleteProduct {
     }
   }
 }
-
-// [END retail_delete_product]

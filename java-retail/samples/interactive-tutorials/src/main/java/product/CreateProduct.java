@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-// [START retail_create_product]
-
 /*
  * Create product in a catalog using Retail API
  */
@@ -88,5 +86,3 @@ public class CreateProduct {
     }
   }
 }
-
-// [END retail_create_product]

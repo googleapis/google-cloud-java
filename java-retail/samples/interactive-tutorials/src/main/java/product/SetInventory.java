@@ -14,10 +14,6 @@
  * limitations under the License.
  */
 
-/*
- * [START retail_set_inventory]
- */
-
 package product;
 
 import static setup.SetupCleanup.createProduct;
@@ -121,5 +117,3 @@ public class SetInventory {
     TimeUnit.SECONDS.sleep(30);
   }
 }
-
-// [END retail_set_inventory]

@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-// [START retail_search_for_products_with_query_expansion_specification]
-
 /*
  * Call Retail API to search for a products in a catalog,
  * enabling the query expansion feature to let the Google Retail Search
@@ -74,5 +72,3 @@ public class SearchWithQueryExpansionSpec {
     }
   }
 }
-
-// [END retail_search_for_products_with_query_expansion_specification]

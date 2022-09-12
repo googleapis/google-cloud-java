@@ -14,10 +14,6 @@
  * limitations under the License.
  */
 
-/*
- * [START retail_remove_fulfillment_places]
- */
-
 package product;
 
 import static setup.SetupCleanup.createProduct;
@@ -82,5 +78,3 @@ public class RemoveFulfillmentPlaces {
     }
   }
 }
-
-// [END retail_remove_fulfillment_places]

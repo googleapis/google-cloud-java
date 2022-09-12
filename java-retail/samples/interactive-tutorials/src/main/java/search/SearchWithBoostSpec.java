@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-// [START retail_search_product_with_boost_spec]
-
 /*
  * Call Retail API to search for a products in a catalog, rerank the
  * results boosting or burying the products that match defined condition.
@@ -77,5 +75,3 @@ public class SearchWithBoostSpec {
     }
   }
 }
-
-// [END retail_search_product_with_boost_spec]

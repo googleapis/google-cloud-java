@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-// [START retail_import_products_from_big_query]
-
 /*
  * Import products into a catalog from big query table using Retail API
  */
@@ -116,5 +114,3 @@ public class ImportProductsBigQueryTable {
     }
   }
 }
-
-// [END retail_import_products_from_big_query]

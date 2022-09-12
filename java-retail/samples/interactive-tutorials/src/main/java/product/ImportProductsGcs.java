@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-// [START retail_import_products_from_gcs]
-
 /*
  * Import products into a catalog from gcs using Retail API
  */
@@ -119,5 +117,3 @@ public class ImportProductsGcs {
     }
   }
 }
-
-// [END retail_import_products_from_gcs]

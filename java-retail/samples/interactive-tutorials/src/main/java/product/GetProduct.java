@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-// [START retail_get_product]
-
 /*
  * Get product from a catalog using Retail API
  */
@@ -63,5 +61,3 @@ public class GetProduct {
     }
   }
 }
-
-// [END retail_get_product]

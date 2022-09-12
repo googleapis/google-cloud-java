@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-// [START retail_rejoin_user_event]
-
 /*
  * Rejoin user events into a catalog from inline source using Retail API
  */
@@ -74,5 +72,3 @@ public class RejoinUserEvent {
     purgeUserEvent(visitorId);
   }
 }
-
-// [END retail_rejoin_user_event]

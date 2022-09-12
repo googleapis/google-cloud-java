@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-// [START retail_search_for_products_with_page_size]
-
 /*
  * Call Retail API to search for a products in a catalog,
  * limit the number of the products per page and go to the next page
@@ -75,5 +73,3 @@ public class SearchWithPagination {
     }
   }
 }
-
-// [END retail_search_for_products_with_page_size]

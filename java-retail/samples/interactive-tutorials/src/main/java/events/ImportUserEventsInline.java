@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-// [START retail_import_user_events_from_inline_source]
-
 /*
  * Import user events into a catalog from inline source using Retail API
  */
@@ -125,5 +123,3 @@ public class ImportUserEventsInline {
     }
   }
 }
-
-// [END retail_import_user_events_from_inline_source]

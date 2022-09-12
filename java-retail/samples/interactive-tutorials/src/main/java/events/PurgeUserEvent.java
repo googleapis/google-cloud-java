@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-// [START retail_purge_user_event]
-
 /*
  * Purge user events into a catalog from inline source using Retail API
  */
@@ -72,5 +70,3 @@ public class PurgeUserEvent {
     }
   }
 }
-
-// [END retail_purge_user_event]
