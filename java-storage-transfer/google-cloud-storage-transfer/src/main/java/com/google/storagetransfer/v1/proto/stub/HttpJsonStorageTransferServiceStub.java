@@ -129,7 +129,7 @@ public class HttpJsonStorageTransferServiceStub extends StorageTransferServiceSt
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("transferJob", request.getTransferJob()))
+                                  .toBody("transferJob", request.getTransferJob(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TransferTypes.TransferJob>newBuilder()
@@ -168,7 +168,7 @@ public class HttpJsonStorageTransferServiceStub extends StorageTransferServiceSt
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearJobName().build()))
+                                  .toBody("*", request.toBuilder().clearJobName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TransferTypes.TransferJob>newBuilder()
@@ -282,7 +282,7 @@ public class HttpJsonStorageTransferServiceStub extends StorageTransferServiceSt
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -320,7 +320,7 @@ public class HttpJsonStorageTransferServiceStub extends StorageTransferServiceSt
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -356,7 +356,7 @@ public class HttpJsonStorageTransferServiceStub extends StorageTransferServiceSt
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearJobName().build()))
+                                  .toBody("*", request.toBuilder().clearJobName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -366,6 +366,41 @@ public class HttpJsonStorageTransferServiceStub extends StorageTransferServiceSt
               .setOperationSnapshotFactory(
                   (TransferProto.RunTransferJobRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<TransferProto.DeleteTransferJobRequest, Empty>
+      deleteTransferJobMethodDescriptor =
+          ApiMethodDescriptor.<TransferProto.DeleteTransferJobRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.storagetransfer.v1.StorageTransferService/DeleteTransferJob")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TransferProto.DeleteTransferJobRequest>newBuilder()
+                      .setPath(
+                          "/v1/{jobName=transferJobs/**}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TransferProto.DeleteTransferJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "jobName", request.getJobName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TransferProto.DeleteTransferJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "projectId", request.getProjectId());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
               .build();
 
   private static final ApiMethodDescriptor<
@@ -399,7 +434,7 @@ public class HttpJsonStorageTransferServiceStub extends StorageTransferServiceSt
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("agentPool", request.getAgentPool()))
+                                  .toBody("agentPool", request.getAgentPool(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TransferTypes.AgentPool>newBuilder()
@@ -439,7 +474,7 @@ public class HttpJsonStorageTransferServiceStub extends StorageTransferServiceSt
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("agentPool", request.getAgentPool()))
+                                  .toBody("agentPool", request.getAgentPool(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TransferTypes.AgentPool>newBuilder()
@@ -578,6 +613,8 @@ public class HttpJsonStorageTransferServiceStub extends StorageTransferServiceSt
   private final OperationCallable<
           TransferProto.RunTransferJobRequest, Empty, TransferTypes.TransferOperation>
       runTransferJobOperationCallable;
+  private final UnaryCallable<TransferProto.DeleteTransferJobRequest, Empty>
+      deleteTransferJobCallable;
   private final UnaryCallable<TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>
       createAgentPoolCallable;
   private final UnaryCallable<TransferProto.UpdateAgentPoolRequest, TransferTypes.AgentPool>
@@ -695,6 +732,12 @@ public class HttpJsonStorageTransferServiceStub extends StorageTransferServiceSt
                 .setMethodDescriptor(runTransferJobMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<TransferProto.DeleteTransferJobRequest, Empty>
+        deleteTransferJobTransportSettings =
+            HttpJsonCallSettings.<TransferProto.DeleteTransferJobRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteTransferJobMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>
         createAgentPoolTransportSettings =
             HttpJsonCallSettings
@@ -774,6 +817,11 @@ public class HttpJsonStorageTransferServiceStub extends StorageTransferServiceSt
             settings.runTransferJobOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.deleteTransferJobCallable =
+        callableFactory.createUnaryCallable(
+            deleteTransferJobTransportSettings,
+            settings.deleteTransferJobSettings(),
+            clientContext);
     this.createAgentPoolCallable =
         callableFactory.createUnaryCallable(
             createAgentPoolTransportSettings, settings.createAgentPoolSettings(), clientContext);
@@ -808,6 +856,7 @@ public class HttpJsonStorageTransferServiceStub extends StorageTransferServiceSt
     methodDescriptors.add(pauseTransferOperationMethodDescriptor);
     methodDescriptors.add(resumeTransferOperationMethodDescriptor);
     methodDescriptors.add(runTransferJobMethodDescriptor);
+    methodDescriptors.add(deleteTransferJobMethodDescriptor);
     methodDescriptors.add(createAgentPoolMethodDescriptor);
     methodDescriptors.add(updateAgentPoolMethodDescriptor);
     methodDescriptors.add(getAgentPoolMethodDescriptor);
@@ -880,6 +929,11 @@ public class HttpJsonStorageTransferServiceStub extends StorageTransferServiceSt
           TransferProto.RunTransferJobRequest, Empty, TransferTypes.TransferOperation>
       runTransferJobOperationCallable() {
     return runTransferJobOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TransferProto.DeleteTransferJobRequest, Empty> deleteTransferJobCallable() {
+    return deleteTransferJobCallable;
   }
 
   @Override

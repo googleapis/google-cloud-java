@@ -447,6 +447,55 @@ public final class StorageTransferServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest,
+          com.google.protobuf.Empty>
+      getDeleteTransferJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteTransferJob",
+      requestType =
+          com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest,
+          com.google.protobuf.Empty>
+      getDeleteTransferJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest,
+            com.google.protobuf.Empty>
+        getDeleteTransferJobMethod;
+    if ((getDeleteTransferJobMethod = StorageTransferServiceGrpc.getDeleteTransferJobMethod)
+        == null) {
+      synchronized (StorageTransferServiceGrpc.class) {
+        if ((getDeleteTransferJobMethod = StorageTransferServiceGrpc.getDeleteTransferJobMethod)
+            == null) {
+          StorageTransferServiceGrpc.getDeleteTransferJobMethod =
+              getDeleteTransferJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteTransferJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storagetransfer.v1.proto.TransferProto
+                                  .DeleteTransferJobRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageTransferServiceMethodDescriptorSupplier("DeleteTransferJob"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteTransferJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest,
           com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>
       getCreateAgentPoolMethod;
@@ -874,6 +923,21 @@ public final class StorageTransferServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a transfer job. Deleting a transfer job sets its status to
+     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED].
+     * </pre>
+     */
+    public void deleteTransferJob(
+        com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteTransferJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates an agent pool resource.
      * </pre>
      */
@@ -1004,6 +1068,12 @@ public final class StorageTransferServiceGrpc {
                   new MethodHandlers<
                       com.google.storagetransfer.v1.proto.TransferProto.RunTransferJobRequest,
                       com.google.longrunning.Operation>(this, METHODID_RUN_TRANSFER_JOB)))
+          .addMethod(
+              getDeleteTransferJobMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest,
+                      com.google.protobuf.Empty>(this, METHODID_DELETE_TRANSFER_JOB)))
           .addMethod(
               getCreateAgentPoolMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1209,6 +1279,23 @@ public final class StorageTransferServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRunTransferJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a transfer job. Deleting a transfer job sets its status to
+     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED].
+     * </pre>
+     */
+    public void deleteTransferJob(
+        com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteTransferJobMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1447,6 +1534,20 @@ public final class StorageTransferServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a transfer job. Deleting a transfer job sets its status to
+     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED].
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteTransferJob(
+        com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTransferJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates an agent pool resource.
      * </pre>
      */
@@ -1670,6 +1771,21 @@ public final class StorageTransferServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a transfer job. Deleting a transfer job sets its status to
+     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteTransferJob(
+            com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteTransferJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates an agent pool resource.
      * </pre>
      */
@@ -1749,11 +1865,12 @@ public final class StorageTransferServiceGrpc {
   private static final int METHODID_PAUSE_TRANSFER_OPERATION = 5;
   private static final int METHODID_RESUME_TRANSFER_OPERATION = 6;
   private static final int METHODID_RUN_TRANSFER_JOB = 7;
-  private static final int METHODID_CREATE_AGENT_POOL = 8;
-  private static final int METHODID_UPDATE_AGENT_POOL = 9;
-  private static final int METHODID_GET_AGENT_POOL = 10;
-  private static final int METHODID_LIST_AGENT_POOLS = 11;
-  private static final int METHODID_DELETE_AGENT_POOL = 12;
+  private static final int METHODID_DELETE_TRANSFER_JOB = 8;
+  private static final int METHODID_CREATE_AGENT_POOL = 9;
+  private static final int METHODID_UPDATE_AGENT_POOL = 10;
+  private static final int METHODID_GET_AGENT_POOL = 11;
+  private static final int METHODID_LIST_AGENT_POOLS = 12;
+  private static final int METHODID_DELETE_AGENT_POOL = 13;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1824,6 +1941,11 @@ public final class StorageTransferServiceGrpc {
           serviceImpl.runTransferJob(
               (com.google.storagetransfer.v1.proto.TransferProto.RunTransferJobRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_TRANSFER_JOB:
+          serviceImpl.deleteTransferJob(
+              (com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_CREATE_AGENT_POOL:
           serviceImpl.createAgentPool(
@@ -1930,6 +2052,7 @@ public final class StorageTransferServiceGrpc {
                       .addMethod(getPauseTransferOperationMethod())
                       .addMethod(getResumeTransferOperationMethod())
                       .addMethod(getRunTransferJobMethod())
+                      .addMethod(getDeleteTransferJobMethod())
                       .addMethod(getCreateAgentPoolMethod())
                       .addMethod(getUpdateAgentPoolMethod())
                       .addMethod(getGetAgentPoolMethod())
