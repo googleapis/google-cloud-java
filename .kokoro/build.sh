@@ -40,7 +40,6 @@ fi
 generate_modified_modules_list
 
 RETURN_CODE=0
-JOB_TYPE="graalvm"
 
 case ${JOB_TYPE} in
   integration)
@@ -79,7 +78,6 @@ case ${JOB_TYPE} in
         echo "${modules_assigned_list[*]}"
       )
       install_modules
-      exit
       run_graalvm_tests
     else
      echo "No Unit and Integration Tests to run for GraalVM Native 17"
