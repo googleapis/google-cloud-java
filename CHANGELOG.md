@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.16.0](https://github.com/googleapis/java-bigquery/compare/v2.15.0...v2.16.0) (2022-09-12)
+
+
+### Features
+
+* Add preserveAsciiControlCharacters to CsvOptions ([#2143](https://github.com/googleapis/java-bigquery/issues/2143)) ([856893f](https://github.com/googleapis/java-bigquery/commit/856893f4d8f1b419365d8f179ce9f9e571dec718))
+* Add reference file schema option for federated formats ([#2269](https://github.com/googleapis/java-bigquery/issues/2269)) ([8c488e6](https://github.com/googleapis/java-bigquery/commit/8c488e64259bd67716342f48f96d2932c5e57c3e))
+
+
+### Bug Fixes
+
+* Socket-timeout at bigquery.it.ITNightlyBigQueryTest: testForTableNotFound ([#2260](https://github.com/googleapis/java-bigquery/issues/2260)) ([a9b5fb2](https://github.com/googleapis/java-bigquery/commit/a9b5fb2c1078788ddb1ac3169c9ce597af228ac0))
+
+
+### Dependencies
+
+* Update dependency com.google.apis:google-api-services-bigquery to v2-rev20220827-2.0.0 ([#2261](https://github.com/googleapis/java-bigquery/issues/2261)) ([3c67d21](https://github.com/googleapis/java-bigquery/commit/3c67d21c10f66b3c5313a1733f4e81db42c1b7c3))
+* Update dependency com.google.cloud:google-cloud-datacatalog-bom to v1.9.3 ([#2259](https://github.com/googleapis/java-bigquery/issues/2259)) ([5e30a04](https://github.com/googleapis/java-bigquery/commit/5e30a04e5b14b03e60e587787180b27f605d6abd))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#2267](https://github.com/googleapis/java-bigquery/issues/2267)) ([8472fe5](https://github.com/googleapis/java-bigquery/commit/8472fe580a8197aaa3957dd3231fed0a9511fbb5))
+
 ## [2.15.0](https://github.com/googleapis/java-bigquery/compare/v2.14.7...v2.15.0) (2022-08-25)
 
 
