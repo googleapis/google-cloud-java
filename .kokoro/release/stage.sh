@@ -27,11 +27,12 @@ setup_environment_secrets
 create_settings_xml_file "settings.xml"
 
 
-find . -name "*-javadoc.jar" | while read line; do
-    echo "**** THE JAVADOCS CREATED BEFORE MAVEN DEPLOY ARE '$line'"
-done
+#find . -name "*-javadoc.jar" | while read line; do
+#    echo "**** THE JAVADOCS CREATED BEFORE MAVEN DEPLOY ARE '$line'"
+#done
 
-mvn clean deploy -B \
+mvn -v \
+#mvn clean deploy -B \
   -DskipTests=true \
   -Dclirr.skip=true \
   --settings ${MAVEN_SETTINGS_FILE} \
@@ -39,10 +40,10 @@ mvn clean deploy -B \
   -Dgpg.passphrase=${GPG_PASSPHRASE} \
   -Dgpg.homedir=${GPG_HOMEDIR} \
   -P release
-
-find . -name "*-javadoc.jar" | while read line; do
-    echo "**** THE JAVADOCS CREATED AFTER MAVEN DEPLOY ARE '$line'"
-done
+#
+#find . -name "*-javadoc.jar" | while read line; do
+#    echo "**** THE JAVADOCS CREATED AFTER MAVEN DEPLOY ARE '$line'"
+#done
 
 
 # During shadow-mode, do not release.
