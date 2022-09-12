@@ -31,8 +31,8 @@ create_settings_xml_file "settings.xml"
 #    echo "**** THE JAVADOCS CREATED BEFORE MAVEN DEPLOY ARE '$line'"
 #done
 
-   mvn -v -B \
-#mvn clean deploy -B \
+
+mvn clean deploy -B \
   -DskipTests=true \
   -Dclirr.skip=true \
   --settings ${MAVEN_SETTINGS_FILE} \
@@ -40,6 +40,7 @@ create_settings_xml_file "settings.xml"
   -Dgpg.passphrase=${GPG_PASSPHRASE} \
   -Dgpg.homedir=${GPG_HOMEDIR} \
   -P release
+
 #
 #find . -name "*-javadoc.jar" | while read line; do
 #    echo "**** THE JAVADOCS CREATED AFTER MAVEN DEPLOY ARE '$line'"
