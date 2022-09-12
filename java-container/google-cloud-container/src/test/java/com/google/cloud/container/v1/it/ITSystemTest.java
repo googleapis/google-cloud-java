@@ -26,6 +26,7 @@ import com.google.container.v1.ListNodePoolsResponse;
 import com.google.container.v1.ListOperationsResponse;
 import com.google.container.v1.NodePool;
 import com.google.container.v1.Operation;
+import com.google.container.v1.Operation.Status;
 import com.google.container.v1.ServerConfig;
 import java.util.List;
 import java.util.UUID;
@@ -37,6 +38,8 @@ import org.junit.Test;
 
 public class ITSystemTest {
 
+  protected static final String CONTAINER_PREFIX = "it-test-container";
+
   private static ClusterManagerClient client;
   private static Operation operation;
 
@@ -44,9 +47,9 @@ public class ITSystemTest {
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   private static final String ZONE = "us-central1-a";
   private static final String CLUSTER_NAME =
-      "test-cluster-" + UUID.randomUUID().toString().substring(0, 8);
+      CONTAINER_PREFIX + "-cluster-" + UUID.randomUUID().toString().substring(0, 8);
   private static final String NODE_POOL_NAME =
-      "test-node-pool-" + UUID.randomUUID().toString().substring(0, 8);
+      CONTAINER_PREFIX + "-node-pool-" + UUID.randomUUID().toString().substring(0, 8);
   private static final String DETAIL = "test-detail";
   private static final String STATUS_MESSAGE = "test-status-message";
   private static final String SELF_LINK =
@@ -63,7 +66,7 @@ public class ITSystemTest {
     client = ClusterManagerClient.create();
     Util.cleanUpExistingInstanceCluster(PROJECT_ID, ZONE, client);
 
-    /** create node pool* */
+    /* create node pool* */
     NodePool nodePool =
         NodePool.newBuilder()
             .setInitialNodeCount(INITIAL_NODE_COUNT)
@@ -72,7 +75,7 @@ public class ITSystemTest {
             .setStatusMessage(STATUS_MESSAGE)
             .build();
 
-    /** create cluster */
+    /* create cluster */
     Cluster cluster =
         Cluster.newBuilder()
             .setName(CLUSTER_NAME)
@@ -84,13 +87,20 @@ public class ITSystemTest {
             .setNetwork(NETWORK)
             .build();
     operation = client.createCluster(PROJECT_ID, ZONE, cluster);
+
+    Operation response = client.getOperation(PROJECT_ID, ZONE, operation.getName());
+    // Busy Wait for one minute at a time until Cluster CREATE operation is complete
+    while (response.getStatus() != Status.DONE) {
+      LOG.info(String.format("Cluster CREATE Operation Status: %s", response.getStatus()));
+      Thread.sleep(TimeUnit.MINUTES.toMillis(1));
+      response = client.getOperation(PROJECT_ID, ZONE, operation.getName());
+    }
     LOG.info(String.format("%s cluster created successfully.", CLUSTER_NAME));
     LOG.info(String.format("%s node pool created successfully.", NODE_POOL_NAME));
   }
 
   @AfterClass
-  public static void afterClass() throws Exception {
-    Thread.sleep(TimeUnit.MINUTES.toMillis(5));
+  public static void afterClass() {
     client.deleteCluster(PROJECT_ID, ZONE, CLUSTER_NAME);
     LOG.info(String.format("%s cluster deleted successfully.", CLUSTER_NAME));
     client.close();
