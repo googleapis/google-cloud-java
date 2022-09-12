@@ -23,9 +23,7 @@ import static setup.SetupCleanup.getProduct;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.retail.v2.AddFulfillmentPlacesRequest;
 import com.google.cloud.retail.v2.ProductServiceClient;
-import com.google.protobuf.Timestamp;
 import java.io.IOException;
-import java.time.Instant;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
@@ -47,22 +45,17 @@ public class AddFulfillmentPlaces {
 
   public static void addFulfillmentPlaces(String productName, String placeId)
       throws IOException, InterruptedException {
-    Timestamp currentDate =
-        Timestamp.newBuilder()
-            .setSeconds(Instant.now().getEpochSecond())
-            .setNanos(Instant.now().getNano())
-            .build();
 
-    System.out.printf("Add fulfilment places with current date: %s", currentDate);
+    System.out.println("Add fulfilment places");
 
     AddFulfillmentPlacesRequest addFulfillmentPlacesRequest =
         AddFulfillmentPlacesRequest.newBuilder()
             .setProduct(productName)
             .setType("pickup-in-store")
             .addPlaceIds(placeId)
-            .setAddTime(currentDate)
             .setAllowMissing(true)
             .build();
+
     System.out.println("Add fulfillment request " + addFulfillmentPlacesRequest);
 
     // Initialize client that will be used to send requests. This client only
