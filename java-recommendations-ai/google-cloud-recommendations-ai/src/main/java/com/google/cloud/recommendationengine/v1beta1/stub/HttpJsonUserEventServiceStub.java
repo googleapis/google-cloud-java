@@ -100,7 +100,7 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("userEvent", request.getUserEvent()))
+                                  .toBody("userEvent", request.getUserEvent(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<UserEvent>newBuilder()
@@ -211,7 +211,7 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -251,7 +251,7 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
