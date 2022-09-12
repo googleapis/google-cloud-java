@@ -65,6 +65,7 @@ import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.ExternalTableDefinition;
 import com.google.cloud.bigquery.ExtractJobConfiguration;
 import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.Field.Mode;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValue.Attribute;
@@ -4585,5 +4586,206 @@ public class ITBigQueryTest {
     FieldValueList row = rows.getValues().iterator().next();
     assertEquals("\u0000", row.get(0).getStringValue());
     assertTrue(bigquery.delete(tableId));
+  }
+
+  @Test
+  public void testReferenceFileSchemaUriForAvro() {
+    try {
+      String destinationTableName = "test_reference_file_schema_avro";
+      TableId tableId = TableId.of(DATASET, destinationTableName);
+      Schema expectedSchema =
+          Schema.of(
+              Field.newBuilder("username", StandardSQLTypeName.STRING)
+                  .setMode(Mode.NULLABLE)
+                  .build(),
+              Field.newBuilder("tweet", StandardSQLTypeName.STRING).setMode(Mode.NULLABLE).build(),
+              Field.newBuilder("timestamp", StandardSQLTypeName.STRING)
+                  .setMode(Mode.NULLABLE)
+                  .build(),
+              Field.newBuilder("likes", StandardSQLTypeName.INT64).setMode(Mode.NULLABLE).build());
+
+      // By default, the table should have c-twitter schema because it is lexicographically last.
+      // a-twitter schema (username, tweet, timestamp, likes)
+      // b-twitter schema (username, tweet, timestamp)
+      // c-twitter schema (username, tweet)
+      List<String> SOURCE_URIS =
+          ImmutableList.of(
+              "gs://"
+                  + CLOUD_SAMPLES_DATA
+                  + "/bigquery/federated-formats-reference-file-schema/a-twitter.avro",
+              "gs://"
+                  + CLOUD_SAMPLES_DATA
+                  + "/bigquery/federated-formats-reference-file-schema/b-twitter.avro",
+              "gs://"
+                  + CLOUD_SAMPLES_DATA
+                  + "/bigquery/federated-formats-reference-file-schema/c-twitter.avro");
+
+      // Because referenceFileSchemaUri is set as a-twitter, the table will have a-twitter schema
+      String referenceFileSchema =
+          "gs://"
+              + CLOUD_SAMPLES_DATA
+              + "/bigquery/federated-formats-reference-file-schema/a-twitter.avro";
+
+      LoadJobConfiguration loadJobConfiguration =
+          LoadJobConfiguration.newBuilder(tableId, SOURCE_URIS, FormatOptions.avro())
+              .setReferenceFileSchemaUri(referenceFileSchema)
+              .build();
+
+      Job job = bigquery.create(JobInfo.of(loadJobConfiguration));
+      // Blocks until this load table job completes its execution, either failing or succeeding.
+      job = job.waitFor();
+      assertEquals(true, job.isDone());
+
+      LoadJobConfiguration actualLoadJobConfiguration = job.getConfiguration();
+      Table generatedTable = bigquery.getTable(actualLoadJobConfiguration.getDestinationTable());
+
+      assertEquals(expectedSchema, generatedTable.getDefinition().getSchema());
+      // clean up after test to avoid conflict with other tests
+      boolean success = bigquery.delete(tableId);
+      assertEquals(true, success);
+    } catch (BigQueryException | InterruptedException e) {
+      System.out.println("Column not added during load append \n" + e.toString());
+    }
+  }
+
+  @Test
+  public void testReferenceFileSchemaUriForParquet() {
+    try {
+      String destinationTableName = "test_reference_file_schema_parquet";
+      TableId tableId = TableId.of(DATASET, destinationTableName);
+      Schema expectedSchema =
+          Schema.of(
+              Field.newBuilder("username", StandardSQLTypeName.STRING)
+                  .setMode(Mode.NULLABLE)
+                  .build(),
+              Field.newBuilder("tweet", StandardSQLTypeName.STRING).setMode(Mode.NULLABLE).build(),
+              Field.newBuilder("timestamp", StandardSQLTypeName.STRING)
+                  .setMode(Mode.NULLABLE)
+                  .build(),
+              Field.newBuilder("likes", StandardSQLTypeName.INT64).setMode(Mode.NULLABLE).build());
+
+      // By default, the table should have c-twitter schema because it is lexicographically last.
+      // a-twitter schema (username, tweet, timestamp, likes)
+      // b-twitter schema (username, tweet, timestamp)
+      // c-twitter schema (username, tweet)
+      List<String> SOURCE_URIS =
+          ImmutableList.of(
+              "gs://"
+                  + CLOUD_SAMPLES_DATA
+                  + "/bigquery/federated-formats-reference-file-schema/a-twitter.parquet",
+              "gs://"
+                  + CLOUD_SAMPLES_DATA
+                  + "/bigquery/federated-formats-reference-file-schema/b-twitter.parquet",
+              "gs://"
+                  + CLOUD_SAMPLES_DATA
+                  + "/bigquery/federated-formats-reference-file-schema/c-twitter.parquet");
+
+      // Because referenceFileSchemaUri is set as a-twitter, the table will have a-twitter schema
+      String referenceFileSchema =
+          "gs://"
+              + CLOUD_SAMPLES_DATA
+              + "/bigquery/federated-formats-reference-file-schema/a-twitter.parquet";
+
+      LoadJobConfiguration loadJobConfiguration =
+          LoadJobConfiguration.newBuilder(tableId, SOURCE_URIS, FormatOptions.parquet())
+              .setReferenceFileSchemaUri(referenceFileSchema)
+              .build();
+
+      Job job = bigquery.create(JobInfo.of(loadJobConfiguration));
+      // Blocks until this load table job completes its execution, either failing or succeeding.
+      job = job.waitFor();
+      assertEquals(true, job.isDone());
+      LoadJobConfiguration actualLoadJobConfiguration = job.getConfiguration();
+      Table generatedTable = bigquery.getTable(actualLoadJobConfiguration.getDestinationTable());
+
+      assertEquals(expectedSchema, generatedTable.getDefinition().getSchema());
+      // clean up after test to avoid conflict with other tests
+      boolean success = bigquery.delete(tableId);
+      assertEquals(true, success);
+    } catch (BigQueryException | InterruptedException e) {
+      System.out.println("Column not added during load append \n" + e.toString());
+    }
+  }
+
+  @Test
+  public void testCreateExternalTableWithReferenceFileSchemaAvro() {
+    String destinationTableName = "test_create_external_table_reference_file_schema_avro";
+    TableId tableId = TableId.of(DATASET, destinationTableName);
+    Schema expectedSchema =
+        Schema.of(
+            Field.newBuilder("username", StandardSQLTypeName.STRING).setMode(Mode.NULLABLE).build(),
+            Field.newBuilder("tweet", StandardSQLTypeName.STRING).setMode(Mode.NULLABLE).build(),
+            Field.newBuilder("timestamp", StandardSQLTypeName.STRING)
+                .setMode(Mode.NULLABLE)
+                .build(),
+            Field.newBuilder("likes", StandardSQLTypeName.INT64).setMode(Mode.NULLABLE).build());
+    String CLOUD_SAMPLES_DATA = "cloud-samples-data";
+
+    // By default, the table should have c-twitter schema because it is lexicographically last.
+    // a-twitter schema (username, tweet, timestamp, likes)
+    // b-twitter schema (username, tweet, timestamp)
+    // c-twitter schema (username, tweet)
+    String SOURCE_URI =
+        "gs://" + CLOUD_SAMPLES_DATA + "/bigquery/federated-formats-reference-file-schema/*.avro";
+
+    // Because referenceFileSchemaUri is set as a-twitter, the table will have a-twitter schema
+    String referenceFileSchema =
+        "gs://"
+            + CLOUD_SAMPLES_DATA
+            + "/bigquery/federated-formats-reference-file-schema/a-twitter.avro";
+
+    ExternalTableDefinition externalTableDefinition =
+        ExternalTableDefinition.newBuilder(SOURCE_URI, FormatOptions.avro())
+            .setReferenceFileSchemaUri(referenceFileSchema)
+            .build();
+    TableInfo tableInfo = TableInfo.of(tableId, externalTableDefinition);
+    Table createdTable = bigquery.create(tableInfo);
+    Table generatedTable = bigquery.getTable(createdTable.getTableId());
+    assertEquals(expectedSchema, generatedTable.getDefinition().getSchema());
+    // clean up after test to avoid conflict with other tests
+    boolean success = bigquery.delete(tableId);
+    assertEquals(true, success);
+  }
+
+  @Test
+  public void testCreateExternalTableWithReferenceFileSchemaParquet() {
+    String destinationTableName = "test_create_external_table_reference_file_schema_parquet";
+    TableId tableId = TableId.of(DATASET, destinationTableName);
+    Schema expectedSchema =
+        Schema.of(
+            Field.newBuilder("username", StandardSQLTypeName.STRING).setMode(Mode.NULLABLE).build(),
+            Field.newBuilder("tweet", StandardSQLTypeName.STRING).setMode(Mode.NULLABLE).build(),
+            Field.newBuilder("timestamp", StandardSQLTypeName.STRING)
+                .setMode(Mode.NULLABLE)
+                .build(),
+            Field.newBuilder("likes", StandardSQLTypeName.INT64).setMode(Mode.NULLABLE).build());
+    String CLOUD_SAMPLES_DATA = "cloud-samples-data";
+
+    // By default, the table should have c-twitter schema because it is lexicographically last.
+    // a-twitter schema (username, tweet, timestamp, likes)
+    // b-twitter schema (username, tweet, timestamp)
+    // c-twitter schema (username, tweet)
+    String SOURCE_URI =
+        "gs://"
+            + CLOUD_SAMPLES_DATA
+            + "/bigquery/federated-formats-reference-file-schema/*.parquet";
+
+    // Because referenceFileSchemaUri is set as a-twitter, the table will have a-twitter schema
+    String referenceFileSchema =
+        "gs://"
+            + CLOUD_SAMPLES_DATA
+            + "/bigquery/federated-formats-reference-file-schema/a-twitter.parquet";
+
+    ExternalTableDefinition externalTableDefinition =
+        ExternalTableDefinition.newBuilder(SOURCE_URI, FormatOptions.parquet())
+            .setReferenceFileSchemaUri(referenceFileSchema)
+            .build();
+    TableInfo tableInfo = TableInfo.of(tableId, externalTableDefinition);
+    Table createdTable = bigquery.create(tableInfo);
+    Table generatedTable = bigquery.getTable(createdTable.getTableId());
+    assertEquals(expectedSchema, generatedTable.getDefinition().getSchema());
+    // clean up after test to avoid conflict with other tests
+    boolean success = bigquery.delete(tableId);
+    assertEquals(true, success);
   }
 }

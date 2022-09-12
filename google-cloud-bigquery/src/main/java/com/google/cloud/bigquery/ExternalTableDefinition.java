@@ -157,6 +157,14 @@ public abstract class ExternalTableDefinition extends TableDefinition {
       return setHivePartitioningOptionsInner(hivePartitioningOptions);
     };
 
+    /**
+     * When creating an external table, the user can provide a reference file with the table schema.
+     * This is enabled for the following formats: AVRO, PARQUET, ORC.
+     *
+     * @param referenceFileSchemaUri or {@code null} for none
+     */
+    public abstract Builder setReferenceFileSchemaUri(String referenceFileSchemaUri);
+
     abstract Builder setHivePartitioningOptionsInner(
         HivePartitioningOptions hivePartitioningOptions);
 
@@ -250,6 +258,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
   @Nullable
   public abstract Boolean getAutodetect();
 
+  @Nullable
+  public abstract String getReferenceFileSchemaUri();
+
   /**
    * [Experimental] Returns the HivePartitioningOptions when the data layout follows Hive
    * partitioning convention
@@ -317,6 +328,10 @@ public abstract class ExternalTableDefinition extends TableDefinition {
     if (getAutodetect() != null) {
       externalConfigurationPb.setAutodetect(getAutodetect());
     }
+    if (getReferenceFileSchemaUri() != null) {
+      externalConfigurationPb.setReferenceFileSchemaUri(getReferenceFileSchemaUri());
+    }
+
     if (getHivePartitioningOptions() != null) {
       externalConfigurationPb.setHivePartitioningOptions(getHivePartitioningOptions().toPb());
     }
@@ -486,6 +501,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
         builder.setHivePartitioningOptions(
             HivePartitioningOptions.fromPb(externalDataConfiguration.getHivePartitioningOptions()));
       }
+      if (externalDataConfiguration.getReferenceFileSchemaUri() != null) {
+        builder.setReferenceFileSchemaUri(externalDataConfiguration.getReferenceFileSchemaUri());
+      }
     }
     return builder.build();
   }
@@ -538,10 +556,14 @@ public abstract class ExternalTableDefinition extends TableDefinition {
     if (externalDataConfiguration.getAutodetect() != null) {
       builder.setAutodetect(externalDataConfiguration.getAutodetect());
     }
+    if (externalDataConfiguration.getReferenceFileSchemaUri() != null) {
+      builder.setReferenceFileSchemaUri(externalDataConfiguration.getReferenceFileSchemaUri());
+    }
     if (externalDataConfiguration.getHivePartitioningOptions() != null) {
       builder.setHivePartitioningOptions(
           HivePartitioningOptions.fromPb(externalDataConfiguration.getHivePartitioningOptions()));
     }
+
     return builder.build();
   }
 }
