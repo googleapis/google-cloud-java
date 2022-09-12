@@ -61,7 +61,6 @@ function generate_modified_modules_list() {
 }
 
 function assign_modules_to_job() {
-  generate_modified_modules_list
   modules_assigned_list=()
   num=0
   for module in "${modified_module_list[@]}"; do
@@ -76,7 +75,7 @@ function assign_modules_to_job() {
 
 function maven_install_modified_modules() {
   generate_modified_modules_list
-  if [[ -n $modified_module_list ]]; then
+  if [ ${#modified_module_list[@]} -gt 0 ]; then
     # Combine each entry with a comma
     module_list=$(
       IFS=,
@@ -158,8 +157,9 @@ integration)
   ;;
 graalvm)
   maven_install_modified_modules
-  assign_modules_to_job
-  if [ ${#modules_assigned_list[@]} -gt 0 ]; then
+  # If there are modified modules, assign the modules to a job
+  if [ ${#modified_module_list[@]} -gt 0 ]; then
+    assign_modules_to_job
     # Combine each entry with a comma
     module_list=$(
       IFS=,
@@ -189,9 +189,9 @@ graalvm)
   ;;
 graalvm17)
   maven_install_modified_modules
-  assign_modules_to_job
-
-  if [ ${#modules_assigned_list[@]} -gt 0 ]; then
+  # If there are modified modules, assign the modules to a job
+  if [ ${#modified_module_list[@]} -gt 0 ]; then
+    assign_modules_to_job
     # Combine each entry with a comma
     module_list=$(
       IFS=,
