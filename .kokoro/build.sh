@@ -27,63 +27,6 @@ source ${scriptDir}/common.sh
 mkdir -p ${HOME}/.m2
 cp settings.xml ${HOME}/.m2
 
-excluded_modules=('CoverageAggregator' 'google-cloud-gapic-bom')
-
-function generate_modified_modules_list() {
-  # Find the files changed from when the PR branched to the last commit
-  # Filter for java modules and get all the unique elements
-  # grep returns 1 (error code) and exits the pipeline if there is no match
-  # If there is no match, it will return true so the rest of the commands can run
-  modified_files=$(git diff --name-only $KOKORO_GITHUB_PULL_REQUEST_COMMIT $KOKORO_GITHUB_PULL_REQUEST_TARGET_BRANCH)
-  printf "Modified files:\n%s\n" "${modified_files}"
-
-  modified_module_list=()
-  # If root pom.xml is touched, run ITs on all the modules
-  root_pom_modified=$(echo "${modified_files}" | grep -e '^pom.xml$' || true)
-  if [[ -n $root_pom_modified ]]; then
-    modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
-    for module in $modules; do
-      if [[ ! "${excluded_modules[*]}" =~ $module ]]; then
-        modified_module_list+=($module)
-      fi
-    done
-    echo "Testing the entire monorepo"
-  else
-    modules=$(echo "${modified_files}" | grep -e 'java-.*' || true)
-    printf "Files in java modules:\n%s\n" "${modules}"
-    if [[ -n $modules ]]; then
-      modules=$(echo "${modules}" | cut -d '/' -f1 | sort -u)
-      for module in $modules; do
-        modified_module_list+=($module)
-      done
-    fi
-  fi
-}
-
-function assign_modules_to_job() {
-  modules_assigned_list=()
-  num=0
-  for module in "${modified_module_list[@]}"; do
-    # Add 1 as JOB_NUMBER is 1-indexed instead of 0-indexed
-    mod_num=$((num % NUM_JOBS + 1))
-    if [[ ! "${excluded_modules[*]}" =~ $module ]] && [[ $mod_num -eq $JOB_NUMBER ]]; then
-      modules_assigned_list+=($module)
-    fi
-    num=$((num + 1))
-  done
-}
-
-function generate_excluded_module_string() {
-  excluded_modules_list=()
-  for excluded_module in "${excluded_modules[@]}"; do
-    excluded_modules_list+=("!${excluded_module}")
-  done
-  excluded_modules_string=$(
-    IFS=,
-    echo "${excluded_modules_list[*]}"
-  )
-}
-
 # if GOOGLE_APPLICATION_CREDENTIALS is specified as a relative path, prepend Kokoro root directory onto it
 if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" && "${GOOGLE_APPLICATION_CREDENTIALS}" != /* ]]; then
   export GOOGLE_APPLICATION_CREDENTIALS=$(realpath ${KOKORO_GFILE_DIR}/${GOOGLE_APPLICATION_CREDENTIALS})
@@ -97,6 +40,7 @@ fi
 generate_modified_modules_list
 
 RETURN_CODE=0
+JOB_TYPE="graalvm"
 
 case ${JOB_TYPE} in
   integration)
@@ -106,132 +50,39 @@ case ${JOB_TYPE} in
         IFS=,
         echo "${modified_module_list[*]}"
       )
-      printf "Installing Module List:\n%s\n" "${module_list}"
-      mvn -B -pl "${module_list},!CoverageAggregator" \
-        -amd \
-        -ntp \
-        -DtrimStackTrace=false \
-        -Dclirr.skip=true \
-        -Denforcer.skip=true \
-        -Dcheckstyle.skip=true \
-        -Dflatten.skip=true \
-        -Danimal.sniffer.skip=true \
-        -DskipTests=true \
-        -Djacoco.skip=true \
-        -T 1C \
-        install
-
-      printf "Running Integration Tests for:\n%s\n" "${module_list}"
-      mvn -B ${INTEGRATION_TEST_ARGS} \
-        -pl "${module_list}" \
-        -amd \
-        -ntp \
-        -Penable-integration-tests \
-        -DtrimStackTrace=false \
-        -Dclirr.skip=true \
-        -Denforcer.skip=true \
-        -Dcheckstyle.skip=true \
-        -Dflatten.skip=true \
-        -Danimal.sniffer.skip=true \
-        -Djacoco.skip=true \
-        -DskipUnitTests=true \
-        -fae \
-        -T 1C \
-        verify
-      RETURN_CODE=$?
-      printf "Finished Integration Tests for:\n%s\n" "${module_list}"
+      install_modules
+      run_integration_tests
     else
       echo "No Integration Tests to run"
     fi
     ;;
   graalvm)
     assign_modules_to_job
-    # If there are modified modules, assign the modules to a job
     if [ ${#modules_assigned_list[@]} -gt 0 ]; then
       # Combine each entry with a comma
       module_list=$(
         IFS=,
         echo "${modules_assigned_list[*]}"
       )
-      printf "Installing Module List:\n%s\n" "${module_list}"
-      mvn -B -pl "${module_list},!CoverageAggregator" \
-        -amd \
-        -ntp \
-        -DtrimStackTrace=false \
-        -Dclirr.skip=true \
-        -Denforcer.skip=true \
-        -Dcheckstyle.skip=true \
-        -Dflatten.skip=true \
-        -Danimal.sniffer.skip=true \
-        -DskipTests=true \
-        -Djacoco.skip=true \
-        -T 1C \
-        install
-
-      printf "Running GraalVM Native ITs on:\n%s\n" "${module_list[*]}"
-      mvn -B ${INTEGRATION_TEST_ARGS} \
-        -pl "${module_list}" \
-        -amd \
-        -ntp \
-        -DtrimStackTrace=false \
-        -Dclirr.skip=true \
-        -Denforcer.skip=true \
-        -Dcheckstyle.skip=true \
-        -Dflatten.skip=true \
-        -Danimal.sniffer.skip=true \
-        -Penable-integration-tests \
-        -Pnative \
-        -fae \
-        test
-      RETURN_CODE=$?
-      printf "Finished Unit and Integration Tests for GraalVM Native:\n%s\n" "${module_list}"
+      install_modules
+      run_graalvm_tests
     else
       echo "No Unit and Integration Tests to run for GraalVM Native"
     fi
     ;;
   graalvm17)
     assign_modules_to_job
-    # If there are modified modules, assign the modules to a job
     if [ ${#modules_assigned_list[@]} -gt 0 ]; then
       # Combine each entry with a comma
       module_list=$(
         IFS=,
         echo "${modules_assigned_list[*]}"
       )
-      printf "Installing Module List:\n%s\n" "${module_list}"
-      mvn -B -pl "${module_list},!CoverageAggregator" \
-        -amd \
-        -ntp \
-        -DtrimStackTrace=false \
-        -Dclirr.skip=true \
-        -Denforcer.skip=true \
-        -Dcheckstyle.skip=true \
-        -Dflatten.skip=true \
-        -Danimal.sniffer.skip=true \
-        -DskipTests=true \
-        -Djacoco.skip=true \
-        -T 1C \
-        install
-
-      printf "Running GraalVM Native-17 ITs on:\n%s\n" "${module_list[*]}"
-      mvn -B ${INTEGRATION_TEST_ARGS} \
-        -pl "${module_list}" \
-        -amd \
-        -ntp \
-        -DtrimStackTrace=false \
-        -Dclirr.skip=true \
-        -Denforcer.skip=true \
-        -Dcheckstyle.skip=true \
-        -Dflatten.skip=true \
-        -Danimal.sniffer.skip=true \
-        -Penable-integration-tests \
-        -Pnative \
-        -fae \
-        test
-      RETURN_CODE=$?
-      printf "Finished Unit and Integration Tests for GraalVM Native 17:\n%s\n" "${module_list}"
+      install_modules
+      exit
+      run_graalvm_tests
     else
-      echo "No Unit and Integration Tests to run for GraalVM Native 17"
+     echo "No Unit and Integration Tests to run for GraalVM Native 17"
     fi
     ;;
   samples)
