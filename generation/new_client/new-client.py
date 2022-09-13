@@ -314,7 +314,7 @@ def generate(
     print(f"Prepared new library in {workdir}")
     print(f"Please create a pull request from that directory:"
           f" cd {workdir_parent} && gh pr create "
-          f"--title 'feat: new module for {api_shortname}")
+          f"--title 'feat: [{api_shortname}] new module for {api_shortname}")
 
 if __name__ == "__main__":
     main()
