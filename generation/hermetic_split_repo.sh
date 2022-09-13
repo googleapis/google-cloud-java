@@ -3,26 +3,21 @@
 # This script takes the following variables
 export REPO=https://github.com/googleapis/java-spanner
 export BRANCH=6.4.4-sp
-export BAZEL_VERSION=3.7.2
 
 
 rm -rf workspace
 mkdir -p workspace
 
 
-if python -V |grep 'Python 3' ; then
-  echo 'Please use Python 2 for googleapis build'
-  echo "Current python version: $(python -V)"
+if /usr/bin/python3 -V |grep 'Python 3.8' ; then
+  echo '/usr/bin/python3 points to Python3.8. Good'
+else
+  echo 'Please prepare /usr/bin/python3 to point to Python 3.8 for googleapis build'
+  echo "Current python version: $(/usr/bin/python3 -V)"
   exit 1
 fi
 
 
-echo "Installing Bazel ${BAZEL_VERSION}"
-wget "https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh" \
-    -O workspace/bazel_install.sh && \
-    bash workspace/bazel_install.sh --user && \
-    echo "Bazel installed" && \
-    bazel version
 
 echo "Cloning ${REPO}'s ${BRANCH} as workspace/repo"
 git clone --branch $BRANCH --single-branch -- $REPO workspace/repo
@@ -44,7 +39,9 @@ git fetch origin ${last_googleapis_commit}
 
 last_googleapis_commit_short=${last_googleapis_commit:0:7}
 git checkout -b "branch-from-${last_googleapis_commit_short}" ${last_googleapis_commit}
-
+ls -alt .bazeliskrc
+source .bazeliskrc
+export BAZEL_VERSION=$USE_BAZEL_VERSION
 
 # Searching for the line
 #     urls = ["https://github.com/protocolbuffers/protobuf/archive/v3.15.3.tar.gz"],
@@ -53,9 +50,18 @@ protobuf_current_version=$(perl -nle 'print $1 if m|protocolbuffers/protobuf/arc
 
 popd
 
+
 protobuf_target_version=$protobuf_current_version
 curl "https://github.com/protocolbuffers/protobuf/archive/v${protobuf_target_version}.tar.gz" \
     --output workspace/protobuf.tar.gz
+
+
+echo "Installing Bazel ${BAZEL_VERSION}"
+wget "https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh" \
+    -O workspace/bazel_install.sh && \
+    bash workspace/bazel_install.sh --user && \
+    echo "Bazel installed" && \
+    bazel version
 
 pushd workspace/googleapis
 echo "Building workspace/googleapis by Bazel: $(bazel version)"
