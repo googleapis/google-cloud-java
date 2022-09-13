@@ -14,34 +14,44 @@
  * limitations under the License.
  */
 
-package init;
+package events.setup;
 
 import static setup.SetupCleanup.deleteBucket;
 import static setup.SetupCleanup.deleteDataset;
 
 import com.google.api.gax.rpc.PermissionDeniedException;
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.retail.v2.DeleteProductRequest;
-import com.google.cloud.retail.v2.ListProductsRequest;
-import com.google.cloud.retail.v2.Product;
-import com.google.cloud.retail.v2.ProductServiceClient;
+import com.google.cloud.retail.v2.*;
 import com.google.cloud.retail.v2.ProductServiceClient.ListProductsPagedResponse;
 import java.io.IOException;
 
-public class RemoveTestResources {
+public class RemoveEventsResources {
 
-  public static void main(String... args) throws IOException {
-    // TODO(developer): Replace these variables before running the sample.
+  public static void main(String[] args) throws IOException {
     String projectId = ServiceOptions.getDefaultProjectId();
-    String bucketName = System.getenv("BUCKET_NAME");
+    String bucketName = System.getenv("EVENTS_BUCKET_NAME");
     String branchName =
         String.format(
             "projects/%s/locations/global/catalogs/default_catalog/branches/0", projectId);
 
     deleteBucket(bucketName);
-    deleteAllProducts(branchName);
-    deleteDataset(projectId, "products");
+    deleteAllEvents(branchName);
     deleteDataset(projectId, "user_events");
+  }
+
+  public static void deleteAllEvents(String branchName) throws IOException {
+    System.out.println("Deleting events in process, please wait...");
+
+    // Initialize client that will be used to send requests. This client only
+    // needs to be created once, and can be reused for multiple requests. After
+    // completing all of your requests, call the "close" method on the client to
+    // safely clean up any remaining background resources.
+    try (UserEventServiceClient eventServiceClient = UserEventServiceClient.create()) {
+      PurgeUserEventsRequest purgeUserEventsRequest =
+          PurgeUserEventsRequest.newBuilder().setParent(branchName).build();
+      eventServiceClient.purgeUserEventsAsync(purgeUserEventsRequest);
+      System.out.printf("Events were deleted from %s%n", branchName);
+    }
   }
 
   public static void deleteAllProducts(String branchName) throws IOException {

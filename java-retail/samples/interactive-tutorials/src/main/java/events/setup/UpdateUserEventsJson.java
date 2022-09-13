@@ -1,46 +1,53 @@
+/*
+ * Copyright 2022 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package events.setup;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import org.json.JSONObject;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 
 public class UpdateUserEventsJson {
 
-  public static void main(String[] args) {
-    try {
-      String timestamp = LocalDateTime.now().minusDays(1).toString();
-      String filename = "src/main/resources/user_events.json";
-      updateFields(timestamp, filename);
-      filename = "src/main/resources/user_events_some_invalid.json";
-      updateFields(timestamp, filename);
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+  public static void main(String[] args) throws IOException {
+    // TODO(developer): Replace these variables before running the sample.
+    String filePath = "src/main/resources/user_events.json";
+
+    updateEventsTimestamp(filePath);
   }
 
-  private static void updateFields(String timestamp, String filename) throws IOException {
-    List<String> newLines = new ArrayList<>();
-    try (BufferedReader file = new BufferedReader(new FileReader(filename))) {
-      String line = file.readLine();
-      String field = "eventTime";
-      while (line != null) {
-        JSONObject object = new JSONObject(line);
-        object.put(field, timestamp);
-        newLines.add(object.toString());
-        line = file.readLine();
-      }
-    }
-    try (FileWriter file = new FileWriter(filename)) {
-      for (String event : newLines) {
-        file.write(event);
-        file.write("\n");
-      }
-      System.out.println("Successfully updated json file!");
-    }
+  public static void updateEventsTimestamp(String jsonFile) throws IOException {
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    Timestamp yesterdayDate = Timestamp.from(Instant.now().minus(1, ChronoUnit.DAYS));
+
+    String json = new String(Files.readAllBytes(Paths.get(jsonFile)));
+    json =
+        json.replaceAll(
+            "(\"eventTime\"\\s*:\\s*\"(\\d{4}-\\d{2}-\\d{2}(T.*Z)?))",
+            "\"eventTime\":\"" + dateFormat.format(yesterdayDate) + "");
+
+    BufferedWriter writer = new BufferedWriter(new FileWriter(jsonFile));
+    writer.write(json);
+    System.out.printf("User events file '%s' updated.%n", jsonFile);
+    writer.close();
   }
 }

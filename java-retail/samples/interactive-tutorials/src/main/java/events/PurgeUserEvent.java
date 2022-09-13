@@ -23,7 +23,6 @@ package events;
 import static setup.SetupCleanup.writeUserEvent;
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.ServiceOptions;
 import com.google.cloud.retail.v2.PurgeMetadata;
 import com.google.cloud.retail.v2.PurgeUserEventsRequest;
 import com.google.cloud.retail.v2.PurgeUserEventsResponse;
@@ -37,7 +36,7 @@ public class PurgeUserEvent {
   public static void main(String[] args)
       throws IOException, ExecutionException, InterruptedException {
     // TODO(developer): Replace these variables before running the sample.
-    String projectId = ServiceOptions.getDefaultProjectId();
+    String projectId = "your-project-id";
     String defaultCatalog =
         String.format("projects/%s/locations/global/catalogs/default_catalog", projectId);
     // visitorId generated randomly.
@@ -50,9 +49,10 @@ public class PurgeUserEvent {
       throws IOException, ExecutionException, InterruptedException {
     writeUserEvent(visitorId);
 
-    // Initialize client that will be used to send requests. This client only needs to be created
-    // once, and can be reused for multiple requests. After completing all of your requests, call
-    // the "close" method on the client to safely clean up any remaining background resources.
+    // Initialize client that will be used to send requests. This client only
+    // needs to be created once, and can be reused for multiple requests. After
+    // completing all of your requests, call the "close" method on the client to
+    // safely clean up any remaining background resources.
     try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
       PurgeUserEventsRequest purgeUserEventsRequest =
           PurgeUserEventsRequest.newBuilder()

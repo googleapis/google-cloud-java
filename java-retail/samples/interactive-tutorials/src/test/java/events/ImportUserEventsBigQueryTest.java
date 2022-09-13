@@ -17,9 +17,10 @@
 package events;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 
+import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.cloud.ServiceOptions;
-import events.setup.EventsCreateBigQueryTable;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -27,7 +28,10 @@ import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
+@RunWith(JUnit4.class)
 public class ImportUserEventsBigQueryTest {
 
   private ByteArrayOutputStream bout;
@@ -35,28 +39,60 @@ public class ImportUserEventsBigQueryTest {
 
   @Before
   public void setUp() throws IOException, InterruptedException, ExecutionException {
+    bout = new ByteArrayOutputStream();
+    PrintStream out = new PrintStream(bout);
+    originalPrintStream = System.out;
+    System.setOut(out);
+  }
+
+  @Test
+  public void testValidImportUserEventsBigQuery() throws IOException, InterruptedException {
     String projectId = ServiceOptions.getDefaultProjectId();
     String defaultCatalog =
         String.format("projects/%s/locations/global/catalogs/default_catalog", projectId);
     String datasetId = "user_events";
     String tableId = "events";
-    bout = new ByteArrayOutputStream();
-    PrintStream out = new PrintStream(bout);
-    originalPrintStream = System.out;
-    System.setOut(out);
 
-    EventsCreateBigQueryTable.main();
     ImportUserEventsBigQuery.importUserEventsFromBigQuery(
         projectId, defaultCatalog, datasetId, tableId);
-  }
 
-  @Test
-  public void testImportUserEventsBigQuery() {
     String outputResult = bout.toString();
 
     assertThat(outputResult).contains("Import user events from BigQuery source request");
-    assertThat(outputResult).contains("Number of successfully imported events");
-    assertThat(outputResult).contains("Number of failures during the importing");
+    assertThat(outputResult).contains("table_id: \"events\"");
+    assertThat(outputResult).contains("Number of successfully imported events:");
+    assertThat(outputResult).contains("Number of failures during the importing: 0");
+  }
+
+  @Test
+  public void testInvalidImportUserEventsBigQuery() throws IOException, InterruptedException {
+    String projectId = ServiceOptions.getDefaultProjectId();
+    String defaultCatalog =
+        String.format("projects/%s/locations/global/catalogs/invalid_catalog_name", projectId);
+    String datasetId = "user_events";
+    String tableId = "events_some_invalid";
+
+    ImportUserEventsBigQuery.importUserEventsFromBigQuery(
+        projectId, defaultCatalog, datasetId, tableId);
+
+    String outputResult = bout.toString();
+
+    assertThat(outputResult).contains("table_id: \"events_some_invalid\"");
+    assertThat(outputResult).contains("Catalog name is not found.");
+  }
+
+  @Test
+  public void testInvalidDefaultCatalogBigQuery() {
+    String projectId = ServiceOptions.getDefaultProjectId();
+    String defaultCatalog = "invalid_catalog_name";
+    String datasetId = "user_events";
+    String tableId = "events";
+
+    assertThrows(
+        InvalidArgumentException.class,
+        () ->
+            ImportUserEventsBigQuery.importUserEventsFromBigQuery(
+                projectId, defaultCatalog, datasetId, tableId));
   }
 
   @After

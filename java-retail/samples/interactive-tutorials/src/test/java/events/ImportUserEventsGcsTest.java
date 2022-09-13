@@ -17,6 +17,7 @@
 package events;
 
 import static com.google.common.truth.Truth.assertThat;
+import static events.ImportUserEventsGcs.importUserEventsFromGcs;
 
 import com.google.cloud.ServiceOptions;
 import events.setup.EventsCreateGcsBucket;
@@ -26,7 +27,10 @@ import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
+@RunWith(JUnit4.class)
 public class ImportUserEventsGcsTest {
 
   private ByteArrayOutputStream bout;
@@ -39,22 +43,23 @@ public class ImportUserEventsGcsTest {
     String projectId = ServiceOptions.getDefaultProjectId();
     String defaultCatalog =
         String.format("projects/%s/locations/global/catalogs/default_catalog", projectId);
+    String bucketName = EventsCreateGcsBucket.getBucketName();
     String gcsEventsObject = "user_events.json";
     bout = new ByteArrayOutputStream();
     PrintStream out = new PrintStream(bout);
     originalPrintStream = System.out;
     System.setOut(out);
 
-    ImportUserEventsGcs.importUserEventsFromGcs(gcsEventsObject, defaultCatalog);
+    importUserEventsFromGcs(defaultCatalog, bucketName, gcsEventsObject);
   }
 
   @Test
-  public void testImportUserEventsGcs() {
+  public void testValidImportUserEventsGcs() {
     String outputResult = bout.toString();
 
     assertThat(outputResult).contains("Import user events from google cloud source request");
-    assertThat(outputResult).contains("Number of successfully imported events");
-    assertThat(outputResult).contains("Number of failures during the importing");
+    assertThat(outputResult).contains("Number of successfully imported events:");
+    assertThat(outputResult).contains("Number of failures during the importing: 0");
   }
 
   @After
