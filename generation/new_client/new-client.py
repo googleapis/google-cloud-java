@@ -282,7 +282,7 @@ def generate(
     subprocess.check_call(
         [
             "bash",
-            "-x"
+            "-x",
             "generation/generate_gapic_bom.sh",
         ],
         cwd=workdir_parent,

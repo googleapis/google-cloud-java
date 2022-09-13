@@ -131,6 +131,7 @@ The script is in generation/new_client.
 
 ```
 $ cd generation/new_client
+$ API_SHORT_NAME=apikeys
 $ python3.9 new-client.py generate \
   --api_shortname=${API_SHORT_NAME} \
   --proto-path=google/api/apikeys \
