@@ -19,8 +19,6 @@
   </properties>
 
   <modules>
-    <module>CoverageAggregator</module>
-    <module>google-cloud-gapic-bom</module>
     <module>java-accessapproval</module>
     <module>java-accesscontextmanager</module>
     <module>java-aiplatform</module>
@@ -29,6 +27,7 @@
     <module>java-api-gateway</module>
     <module>java-apigee-connect</module>
     <module>java-apigee-registry</module>
+    <module>java-apikeys</module>
     <module>java-appengine-admin</module>
     <module>java-area120-tables</module>
     <module>java-artifact-registry</module>
@@ -64,13 +63,13 @@
     <module>java-dataform</module>
     <module>java-datalabeling</module>
     <module>java-dataplex</module>
-    <module>java-dataproc-metastore</module>
     <module>java-dataproc</module>
+    <module>java-dataproc-metastore</module>
     <module>java-datastream</module>
     <module>java-debugger-client</module>
     <module>java-deploy</module>
-    <module>java-dialogflow-cx</module>
     <module>java-dialogflow</module>
+    <module>java-dialogflow-cx</module>
     <module>java-dlp</module>
     <module>java-dms</module>
     <module>java-dns</module>
@@ -78,8 +77,8 @@
     <module>java-domains</module>
     <module>java-errorreporting</module>
     <module>java-essential-contacts</module>
-    <module>java-eventarc-publishing</module>
     <module>java-eventarc</module>
+    <module>java-eventarc-publishing</module>
     <module>java-filestore</module>
     <module>java-functions</module>
     <module>java-game-servers</module>
@@ -99,8 +98,8 @@
     <module>java-managed-identities</module>
     <module>java-mediatranslation</module>
     <module>java-memcache</module>
-    <module>java-monitoring-dashboards</module>
     <module>java-monitoring</module>
+    <module>java-monitoring-dashboards</module>
     <module>java-network-management</module>
     <module>java-network-security</module>
     <module>java-networkconnectivity</module>
@@ -126,8 +125,8 @@
     <module>java-scheduler</module>
     <module>java-secretmanager</module>
     <module>java-security-private-ca</module>
-    <module>java-securitycenter-settings</module>
     <module>java-securitycenter</module>
+    <module>java-securitycenter-settings</module>
     <module>java-service-control</module>
     <module>java-service-management</module>
     <module>java-service-usage</module>
@@ -152,6 +151,8 @@
     <module>java-websecurityscanner</module>
     <module>java-workflow-executions</module>
     <module>java-workflows</module>
+    <module>CoverageAggregator</module>
+    <module>google-cloud-gapic-bom</module>
   </modules>
 
   <build>
