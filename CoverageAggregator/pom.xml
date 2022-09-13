@@ -138,7 +138,7 @@
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-trace</artifactId><version>2.3.2-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-translate</artifactId><version>2.3.4-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-video-intelligence</artifactId><version>2.2.4</version></dependency>
-<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-live-stream</artifactId><version>0.5.3-SNAPSHOT</version></dependency>
+<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-live-stream</artifactId><version>0.5.3</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-video-stitcher</artifactId><version>0.3.3-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-video-transcoder</artifactId><version>1.2.2-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-vision</artifactId><version>3.1.1-SNAPSHOT</version></dependency>
@@ -282,7 +282,7 @@
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-trace</artifactId><version>2.3.2-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-translate</artifactId><version>2.3.4-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-video-intelligence</artifactId><version>2.2.4</version></dependency>
-<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-live-stream</artifactId><version>0.5.3-SNAPSHOT</version></dependency>
+<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-live-stream</artifactId><version>0.5.3</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-video-stitcher</artifactId><version>0.3.3-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-video-transcoder</artifactId><version>1.2.2-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-vision</artifactId><version>3.1.1-SNAPSHOT</version></dependency>
