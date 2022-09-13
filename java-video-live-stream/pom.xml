@@ -69,7 +69,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-live-stream</artifactId>
-        <version>0.5.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-live-stream:current} -->
+        <version>0.5.3</version><!-- {x-version-update:google-cloud-live-stream:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
