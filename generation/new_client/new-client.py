@@ -289,26 +289,22 @@ def generate(
     )
 
     print("Regenerating CoverageAggregator module and root pom.xml")
+
     # This script takes care of updating the root pom.xml
-    subprocess.check_call(
-        [
-            "bash",
-            "-x",
-            "generation/generate_coverage_aggregator.sh",
-        ],
-        cwd=workdir_parent,
-    )
+    os.system(f"cd {workdir_parent} && generation/print_root_pom.sh > pom.xml")
+
     # This script updates every module's pom sets the root as parent
     subprocess.check_call(
         [
             "bash",
             "-x",
             "generation/set_parent_pom.sh"
-        ]
+        ],
+        cwd=workdir_parent,
     )
     subprocess.check_call(
-        ["git", "commit", "-m", f"build: add the {api_shortname}"
-                                "module to monorepo"],
+        ["git", "commit", "-a", "-m",
+         f"build: add the {api_shortname} module to monorepo"],
         cwd=workdir
     )
 
