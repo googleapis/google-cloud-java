@@ -97,7 +97,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("catalogItem", request.getCatalogItem()))
+                                  .toBody("catalogItem", request.getCatalogItem(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CatalogItem>newBuilder()
@@ -206,7 +206,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("catalogItem", request.getCatalogItem()))
+                                  .toBody("catalogItem", request.getCatalogItem(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CatalogItem>newBuilder()
@@ -277,7 +277,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
