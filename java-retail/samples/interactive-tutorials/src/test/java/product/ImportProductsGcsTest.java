@@ -17,11 +17,9 @@
 package product;
 
 import static com.google.common.truth.Truth.assertThat;
-import static product.ImportProductsGcs.getImportProductsGcsRequest;
-import static product.ImportProductsGcs.waitForOperationCompletion;
+import static product.ImportProductsGcs.importProductsFromGcs;
 
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.retail.v2.ImportProductsRequest;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -29,8 +27,11 @@ import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 import product.setup.ProductsCreateGcsBucket;
 
+@RunWith(JUnit4.class)
 public class ImportProductsGcsTest {
 
   private ByteArrayOutputStream bout;
@@ -39,31 +40,28 @@ public class ImportProductsGcsTest {
   @Before
   public void setUp() throws IOException, InterruptedException, ExecutionException {
     ProductsCreateGcsBucket.main();
-
     String projectId = ServiceOptions.getDefaultProjectId();
     String branchName =
         String.format(
             "projects/%s/locations/global/catalogs/default_catalog/branches/0", projectId);
-    String gcsBucket = String.format("gs://%s", ProductsCreateGcsBucket.getBucketName());
-    String gcsErrorBucket = String.format("%s/errors", gcsBucket);
+    String bucketName = ProductsCreateGcsBucket.getBucketName();
+    String gcsBucket = String.format("gs://%s", bucketName);
     String gscProductsObject = "products.json";
     bout = new ByteArrayOutputStream();
     PrintStream out = new PrintStream(bout);
     originalPrintStream = System.out;
     System.setOut(out);
 
-    ImportProductsRequest importGcsRequest =
-        getImportProductsGcsRequest(gscProductsObject, gcsBucket, gcsErrorBucket, branchName);
-    waitForOperationCompletion(importGcsRequest);
+    importProductsFromGcs(branchName, gcsBucket, gscProductsObject);
   }
 
   @Test
-  public void testImportProductsGcs() {
+  public void testValidImportProductsGcs() {
     String outputResult = bout.toString();
 
     assertThat(outputResult).contains("Import products from google cloud source request");
-    assertThat(outputResult).contains("Number of successfully imported products");
-    assertThat(outputResult).contains("Number of failures during the importing");
+    assertThat(outputResult).contains("Number of successfully imported products:");
+    assertThat(outputResult).contains("Number of failures during the importing: 0");
   }
 
   @After

@@ -30,16 +30,15 @@ import java.util.stream.Collectors;
 
 public class ProductsCreateBigqueryTable {
 
-  public static void main(String... args) throws IOException {
+  public static void main(String[] args) throws IOException {
     String dataset = "products";
     String validProductsTable = "products";
     String invalidProductsTable = "products_some_invalid";
     String productSchemaFilePath = "src/main/resources/product_schema.json";
     String validProductsSourceFile =
-        String.format("gs://%s/products.json", ProductsCreateGcsBucket.getBucketName());
+        String.format("gs://%s/products.json", System.getenv("BUCKET_NAME"));
     String invalidProductsSourceFile =
-        String.format(
-            "gs://%s/products_some_invalid.json", ProductsCreateGcsBucket.getBucketName());
+        String.format("gs://%s/products_some_invalid.json", System.getenv("BUCKET_NAME"));
 
     BufferedReader bufferedReader = new BufferedReader(new FileReader(productSchemaFilePath));
     String jsonToString = bufferedReader.lines().collect(Collectors.joining());

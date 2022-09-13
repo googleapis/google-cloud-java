@@ -38,16 +38,20 @@ public class ProductsCreateGcsBucket {
       String.format("%s_products_%s", PROJECT_ID, CURRENT_DATE.getSeconds());
 
   public static void main(String... args) throws IOException {
-    createBucket(BUCKET_NAME);
-    System.out.printf("Products gcs bucket %s was created.", BUCKET_NAME);
+    createGcsBucketAndUploadData(BUCKET_NAME);
+  }
 
-    uploadObject(BUCKET_NAME, "products.json", "src/main/resources/products.json");
-    System.out.printf("File 'products.json' was uploaded into bucket '%s'.", BUCKET_NAME);
+  public static void createGcsBucketAndUploadData(String bucketName) throws IOException {
+    createBucket(bucketName);
+    System.out.printf("Products gcs bucket %s was created.%n", bucketName);
+
+    uploadObject(bucketName, "products.json", "src/main/resources/products.json");
+    System.out.printf("File 'products.json' was uploaded into bucket '%s'.%n", bucketName);
 
     uploadObject(
-        BUCKET_NAME, "products_some_invalid.json", "src/main/resources/products_some_invalid.json");
+        bucketName, "products_some_invalid.json", "src/main/resources/products_some_invalid.json");
     System.out.printf(
-        "File 'products_some_invalid.json' was uploaded into bucket '%s'.", BUCKET_NAME);
+        "File 'products_some_invalid.json' was uploaded into bucket '%s'.%n", bucketName);
   }
 
   public static String getBucketName() {

@@ -20,6 +20,7 @@
 
 package product;
 
+import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.retail.v2.ColorInfo;
 import com.google.cloud.retail.v2.FulfillmentInfo;
@@ -40,24 +41,23 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 public class ImportProductsInlineSource {
 
   public static void main(String[] args) throws IOException, InterruptedException {
-    // TODO(developer): Replace these variables before running the sample.
     String projectId = ServiceOptions.getDefaultProjectId();
     String branchName =
         String.format(
             "projects/%s/locations/global/catalogs/default_catalog/branches/0", projectId);
 
-    ImportProductsRequest importRequest = getImportProductsInlineRequest(getProducts(), branchName);
-    waitForOperationCompletion(importRequest);
+    importProductsInlineSource(branchName);
   }
 
-  public static ImportProductsRequest getImportProductsInlineRequest(
-      List<Product> productsToImport, String branchName) {
+  public static void importProductsInlineSource(String branchName)
+      throws IOException, InterruptedException {
     ProductInlineSource inlineSource =
-        ProductInlineSource.newBuilder().addAllProducts(productsToImport).build();
+        ProductInlineSource.newBuilder().addAllProducts(getProducts()).build();
 
     ProductInputConfig inputConfig =
         ProductInputConfig.newBuilder().setProductInlineSource(inlineSource).build();
@@ -70,7 +70,41 @@ public class ImportProductsInlineSource {
 
     System.out.printf("Import products from inline source request: %s%n", importRequest);
 
-    return importRequest;
+    // Initialize client that will be used to send requests. This client only
+    // needs to be created once, and can be reused for multiple requests. After
+    // completing all of your requests, call the "close" method on the client to
+    // safely clean up any remaining background resources.
+    try (ProductServiceClient serviceClient = ProductServiceClient.create()) {
+      String operationName = serviceClient.importProductsCallable().call(importRequest).getName();
+      System.out.printf("OperationName = %s%n", operationName);
+
+      OperationsClient operationsClient = serviceClient.getOperationsClient();
+      Operation operation = operationsClient.getOperation(operationName);
+
+      long assuredBreak = System.currentTimeMillis() + 60000; // 60 seconds delay
+
+      while (!operation.getDone() || System.currentTimeMillis() < assuredBreak) {
+        // Keep polling the operation periodically until the import task is done.
+        TimeUnit.SECONDS.sleep(30);
+        operation = operationsClient.getOperation(operationName);
+      }
+
+      if (operation.hasMetadata()) {
+        ImportMetadata metadata = operation.getMetadata().unpack(ImportMetadata.class);
+        System.out.printf(
+            "Number of successfully imported products: %s%n", metadata.getSuccessCount());
+        System.out.printf(
+            "Number of failures during the importing: %s%n", metadata.getFailureCount());
+      }
+
+      if (operation.hasResponse()) {
+        ImportProductsResponse response =
+            operation.getResponse().unpack(ImportProductsResponse.class);
+        System.out.printf("Operation result: %s%n", response);
+      }
+    } catch (InvalidArgumentException e) {
+      System.out.println(e.getMessage());
+    }
   }
 
   public static List<Product> getProducts() {
@@ -172,36 +206,5 @@ public class ImportProductsInlineSource {
     products.add(product2);
 
     return products;
-  }
-
-  public static void waitForOperationCompletion(ImportProductsRequest importRequest)
-      throws IOException, InterruptedException {
-    try (ProductServiceClient serviceClient = ProductServiceClient.create()) {
-      String operationName = serviceClient.importProductsCallable().call(importRequest).getName();
-      System.out.printf("OperationName = %s\n", operationName);
-
-      OperationsClient operationsClient = serviceClient.getOperationsClient();
-      Operation operation = operationsClient.getOperation(operationName);
-
-      while (!operation.getDone()) {
-        // Keep polling the operation periodically until the import task is done.
-        Thread.sleep(30_000);
-        operation = operationsClient.getOperation(operationName);
-      }
-
-      if (operation.hasMetadata()) {
-        ImportMetadata metadata = operation.getMetadata().unpack(ImportMetadata.class);
-        System.out.printf(
-            "Number of successfully imported products: %s\n", metadata.getSuccessCount());
-        System.out.printf(
-            "Number of failures during the importing: %s\n", metadata.getFailureCount());
-      }
-
-      if (operation.hasResponse()) {
-        ImportProductsResponse response =
-            operation.getResponse().unpack(ImportProductsResponse.class);
-        System.out.printf("Operation result: %s%n", response);
-      }
-    }
   }
 }

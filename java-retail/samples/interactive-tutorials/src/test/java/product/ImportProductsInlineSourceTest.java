@@ -17,12 +17,9 @@
 package product;
 
 import static com.google.common.truth.Truth.assertThat;
-import static product.ImportProductsInlineSource.getImportProductsInlineRequest;
-import static product.ImportProductsInlineSource.getProducts;
-import static product.ImportProductsInlineSource.waitForOperationCompletion;
+import static product.ImportProductsInlineSource.importProductsInlineSource;
 
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.retail.v2.ImportProductsRequest;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -30,7 +27,10 @@ import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
+@RunWith(JUnit4.class)
 public class ImportProductsInlineSourceTest {
 
   private ByteArrayOutputStream bout;
@@ -47,8 +47,7 @@ public class ImportProductsInlineSourceTest {
     originalPrintStream = System.out;
     System.setOut(out);
 
-    ImportProductsRequest importRequest = getImportProductsInlineRequest(getProducts(), branchName);
-    waitForOperationCompletion(importRequest);
+    importProductsInlineSource(branchName);
   }
 
   @Test

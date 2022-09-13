@@ -20,6 +20,8 @@
 
 package product;
 
+import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.PermissionDeniedException;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.retail.v2.GcsSource;
 import com.google.cloud.retail.v2.ImportErrorsConfig;
@@ -32,37 +34,42 @@ import com.google.cloud.retail.v2.ProductServiceClient;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import java.io.IOException;
+import java.time.Instant;
 import java.util.Collections;
+import java.util.concurrent.TimeUnit;
 
 public class ImportProductsGcs {
 
   public static void main(String[] args) throws IOException, InterruptedException {
-    // TODO(developer): Replace these variables before running the sample.
     String projectId = ServiceOptions.getDefaultProjectId();
     String branchName =
         String.format(
             "projects/%s/locations/global/catalogs/default_catalog/branches/0", projectId);
+
+    String bucketName = System.getenv("BUCKET_NAME");
+    String gcsBucket = String.format("gs://%s", bucketName);
+    String gcsErrorBucket = String.format("%s/errors", gcsBucket);
+
     // To check error handling, use an invalid catalog in request
     // branchName =
     // String.format("projects/%s/locations/global/catalogs/invalid_catalog/branches/default_branch", projectId);
 
-    String gcsBucket = String.format("gs://%s", System.getenv("BUCKET_NAME"));
-    String gcsErrorBucket = String.format("%s/errors", gcsBucket);
     String gcsProductsObject = "products.json";
     // To check error handling, use an invalid product JSON.
-    // gcsProductsObject = "products_some_invalid.json";
+    // gcsProductsObject = "products_some_invalid.json"
 
-    ImportProductsRequest importGcsRequest =
-        getImportProductsGcsRequest(gcsProductsObject, gcsBucket, gcsErrorBucket, branchName);
-    waitForOperationCompletion(importGcsRequest);
+    importProductsFromGcs(branchName, gcsBucket, gcsProductsObject);
   }
 
-  public static ImportProductsRequest getImportProductsGcsRequest(
-      String gcsObjectName, String gcsBucket, String gcsErrorBucket, String branchName) {
+  public static void importProductsFromGcs(
+      String branchName, String gcsBucket, String gcsProductsObject)
+      throws IOException, InterruptedException {
+    String gcsErrorBucket = String.format("%s/errors", gcsBucket);
+
     GcsSource gcsSource =
         GcsSource.newBuilder()
             .addAllInputUris(
-                Collections.singleton(String.format("%s/%s", gcsBucket, gcsObjectName)))
+                Collections.singleton(String.format("%s/%s", gcsBucket, gcsProductsObject)))
             .build();
 
     ProductInputConfig inputConfig =
@@ -81,39 +88,53 @@ public class ImportProductsGcs {
             .setErrorsConfig(errorsConfig)
             .build();
 
-    System.out.println("Import products from google cloud source request: " + importRequest);
+    System.out.printf("Import products from google cloud source request: %s%n", importRequest);
 
-    return importRequest;
-  }
-
-  public static void waitForOperationCompletion(ImportProductsRequest importRequest)
-      throws IOException, InterruptedException {
+    // Initialize client that will be used to send requests. This client only
+    // needs to be created once, and can be reused for multiple requests. After
+    // completing all of your requests, call the "close" method on the client to
+    // safely clean up any remaining background resources.
     try (ProductServiceClient serviceClient = ProductServiceClient.create()) {
       String operationName = serviceClient.importProductsCallable().call(importRequest).getName();
-      System.out.printf("OperationName = %s\n", operationName);
+
+      System.out.println("The operation was started.");
+      System.out.printf("OperationName = %s%n", operationName);
 
       OperationsClient operationsClient = serviceClient.getOperationsClient();
       Operation operation = operationsClient.getOperation(operationName);
 
-      while (!operation.getDone()) {
-        // Keep polling the operation periodically until the import task is done.
-        Thread.sleep(30_000);
+      Instant deadline = Instant.now().plusSeconds(60);
+
+      while (!operation.getDone() || Instant.now().isBefore(deadline)) {
+        System.out.println("Please wait till operation is done.");
+        TimeUnit.SECONDS.sleep(30);
         operation = operationsClient.getOperation(operationName);
       }
 
       if (operation.hasMetadata()) {
         ImportMetadata metadata = operation.getMetadata().unpack(ImportMetadata.class);
         System.out.printf(
-            "Number of successfully imported products: %s\n", metadata.getSuccessCount());
+            "Number of successfully imported products: %s%n", metadata.getSuccessCount());
         System.out.printf(
-            "Number of failures during the importing: %s\n", metadata.getFailureCount());
+            "Number of failures during the importing: %s%n", metadata.getFailureCount());
+      } else {
+        System.out.println("Metadata is empty.");
       }
 
       if (operation.hasResponse()) {
         ImportProductsResponse response =
             operation.getResponse().unpack(ImportProductsResponse.class);
         System.out.printf("Operation result: %s%n", response);
+      } else {
+        System.out.println("Operation result is empty.");
       }
+    } catch (InvalidArgumentException e) {
+      System.out.printf(
+          "%s%n'%s' file does not exist in the bucket. Please "
+              + "make sure you have followed the setting up instructions.",
+          e.getMessage(), gcsProductsObject);
+    } catch (PermissionDeniedException e) {
+      System.out.println(e.getMessage());
     }
   }
 }
