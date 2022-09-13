@@ -298,6 +298,14 @@ def generate(
         ],
         cwd=workdir_parent,
     )
+    # This script updates every module's pom sets the root as parent
+    subprocess.check_call(
+        [
+            "bash",
+            "-x",
+            "generation/set_parent_pom.sh"
+        ]
+    )
     subprocess.check_call(
         ["git", "commit", "-m", f"build: add the {api_shortname}"
                                 "module to monorepo"],
