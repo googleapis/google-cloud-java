@@ -99,7 +99,7 @@
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-monitoring</artifactId><version>3.4.2</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-network-management</artifactId><version>1.4.1-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-network-security</artifactId><version>0.6.1-SNAPSHOT</version></dependency>
-<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-networkconnectivity</artifactId><version>1.2.4-SNAPSHOT</version></dependency>
+<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-networkconnectivity</artifactId><version>1.2.4</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-notebooks</artifactId><version>1.1.3-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.api</groupId><artifactId>google-cloud-notification</artifactId><version>0.123.10-beta-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-optimization</artifactId><version>1.1.8</version></dependency>
@@ -243,7 +243,7 @@
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-monitoring</artifactId><version>3.4.2</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-network-management</artifactId><version>1.4.1-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-network-security</artifactId><version>0.6.1-SNAPSHOT</version></dependency>
-<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-networkconnectivity</artifactId><version>1.2.4-SNAPSHOT</version></dependency>
+<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-networkconnectivity</artifactId><version>1.2.4</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-notebooks</artifactId><version>1.1.3-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.api</groupId><artifactId>google-cloud-notification</artifactId><version>0.123.10-beta-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-optimization</artifactId><version>1.1.8</version></dependency>
