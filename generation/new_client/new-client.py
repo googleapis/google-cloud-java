@@ -293,7 +293,7 @@ def generate(
     subprocess.check_call(
         [
             "bash",
-            "-x"
+            "-x",
             "generation/generate_coverage_aggregator.sh",
         ],
         cwd=workdir_parent,

@@ -145,4 +145,9 @@ $ python3.9 new-client.py generate \
 ```
 
 
+# Principles
+
+The script should finish creating a pull request even when the newly created
+module fails to compile. This gives the user flexibility to fix things in the
+created pull request.
 
