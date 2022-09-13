@@ -1,0 +1,25 @@
+#!/bin/bash
+
+set -ef
+
+# For each library module in current working directory, this script
+# sets the parent to the root pom.xml
+
+# Run this script at the root of google-cloud-java repository
+
+
+parent_version=$(perl -nle 'print $1 if m|<version>(.+)</version>|' pom.xml |head -1)
+parent_group_id=$(perl -nle 'print $1 if m|<groupId>(.+)</groupId>|' pom.xml |head -1)
+parent_artifact_id=$(perl -nle 'print $1 if m|<artifactId>(.+)</artifactId>|' pom.xml |head -1)
+
+for module in $(find . -mindepth 2 -maxdepth 2 -name pom.xml |sort | xargs dirname); do
+  if [[ "${module}" = *google-cloud-gapic-bom ]] || [[ "${module}" = *CoverageAggregator ]]; then
+    continue
+  fi
+  echo "Processing module $module"
+  pushd $module
+  # Search for <parent> tag in module pom and replace the next three lines -- groupId, artifcatId, and version
+  sed -i.bak -e "/<parent>/{N;s|<groupId>.*</groupId>|<groupId>${parent_group_id}</groupId>|;N;s|<artifactId>.*</artifactId>|<artifactId>${parent_artifact_id}</artifactId>|;N;s|<version>.*</version>|<version>${parent_version}</version>|}" pom.xml
+  rm pom.xml.bak
+  popd
+done
