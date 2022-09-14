@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.11.0](https://github.com/googleapis/java-logging/compare/v3.10.8...v3.11.0) (2022-09-14)
+
+
+### Features
+
+* Apply Google style recommendations ([#1057](https://github.com/googleapis/java-logging/issues/1057)) ([bfef3d1](https://github.com/googleapis/java-logging/commit/bfef3d1a26b499c67d064dcdfd071ea8b6f1eb1b))
+
+
+### Bug Fixes
+
+* Fix a couple linter issues on my stderr update ([#1061](https://github.com/googleapis/java-logging/issues/1061)) ([fa1a18f](https://github.com/googleapis/java-logging/commit/fa1a18f6f6c0924c1dba51d8796a5bb3f43c40a7))
+
 ## [3.10.8](https://github.com/googleapis/java-logging/compare/v3.10.7...v3.10.8) (2022-09-09)
 
 
