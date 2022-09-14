@@ -68,11 +68,11 @@ public class InstrumentationTest {
   @Test
   public void testInstrumentationUpdated() {
     Instrumentation.setInstrumentationStatus(false);
-    LogEntry json_entry =
+    LogEntry jsonEntry =
         LogEntry.newBuilder(generateInstrumentationPayload(JAVA_OTHER_NAME, JAVA_OTHER_VERSION))
             .build();
     verifyEntries(
-        Instrumentation.populateInstrumentationInfo(ImmutableList.of(json_entry)),
+        Instrumentation.populateInstrumentationInfo(ImmutableList.of(jsonEntry)),
         0,
         1,
         new HashSet<>(Arrays.asList(Instrumentation.JAVA_LIBRARY_NAME_PREFIX, JAVA_OTHER_NAME)),
@@ -84,11 +84,11 @@ public class InstrumentationTest {
   @Test
   public void testInvalidInstrumentationRemoved() {
     Instrumentation.setInstrumentationStatus(false);
-    LogEntry json_entry =
+    LogEntry jsonEntry =
         LogEntry.newBuilder(generateInstrumentationPayload(JAVA_INVALID_NAME, JAVA_OTHER_VERSION))
             .build();
     verifyEntries(
-        Instrumentation.populateInstrumentationInfo(ImmutableList.of(json_entry)),
+        Instrumentation.populateInstrumentationInfo(ImmutableList.of(jsonEntry)),
         0,
         1,
         new HashSet<>(Arrays.asList(Instrumentation.JAVA_LIBRARY_NAME_PREFIX)),
@@ -97,15 +97,15 @@ public class InstrumentationTest {
 
   public static JsonPayload generateInstrumentationPayload(
       String libraryName, String libraryVersion) {
-    Map<String, Object> json_data = new HashMap<>();
-    Map<String, Object> instrumentation_data = new HashMap<>();
+    Map<String, Object> jsonData = new HashMap<>();
+    Map<String, Object> instrumentationData = new HashMap<>();
     Map<String, Object> info = new HashMap<>();
     info.put(Instrumentation.INSTRUMENTATION_NAME_KEY, libraryName);
     info.put(Instrumentation.INSTRUMENTATION_VERSION_KEY, libraryVersion);
     ImmutableList<Object> list = ImmutableList.<Object>of(info);
-    instrumentation_data.put(Instrumentation.INSTRUMENTATION_SOURCE_KEY, list);
-    json_data.put(Instrumentation.DIAGNOSTIC_INFO_KEY, instrumentation_data);
-    return JsonPayload.of(json_data);
+    instrumentationData.put(Instrumentation.INSTRUMENTATION_SOURCE_KEY, list);
+    jsonData.put(Instrumentation.DIAGNOSTIC_INFO_KEY, instrumentationData);
+    return JsonPayload.of(jsonData);
   }
 
   private static void verifyEntries(

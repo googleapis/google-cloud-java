@@ -36,7 +36,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-@SuppressWarnings("deprecation")
+@SuppressWarnings("deprecation") // We're testing our own deprecated Builder methods
 public class LogEntryTest {
 
   private static final String LOG_NAME = "syslog";
@@ -382,11 +382,11 @@ public class LogEntryTest {
   @Test
   public void testStructureLogPresentations() {
     for (int i = 0; i < TEST_LOG_ENTRIES.length; i++) {
-      String structured_log = TEST_LOG_ENTRIES[i].toStructuredJsonString();
+      String structuredLog = TEST_LOG_ENTRIES[i].toStructuredJsonString();
 
       assertEquals(
           JsonParser.parseString(EXPECTED_STRUCTURED_LOGS[i]),
-          JsonParser.parseString(structured_log));
+          JsonParser.parseString(structuredLog));
     }
   }
 

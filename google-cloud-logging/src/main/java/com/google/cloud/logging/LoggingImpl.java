@@ -90,7 +90,9 @@ import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
 import com.google.protobuf.util.Durations;
 import java.text.ParseException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
@@ -288,6 +290,16 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   }
 
   @Override
+  public Metric create(MetricInfo metric) {
+    return get(createAsync(metric));
+  }
+
+  @Override
+  public Exclusion create(Exclusion exclusion) {
+    return get(createAsync(exclusion));
+  }
+
+  @Override
   public ApiFuture<Sink> createAsync(SinkInfo sink) {
     CreateSinkRequest request =
         CreateSinkRequest.newBuilder()
@@ -298,8 +310,38 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   }
 
   @Override
+  public ApiFuture<Metric> createAsync(MetricInfo metric) {
+    CreateLogMetricRequest request =
+        CreateLogMetricRequest.newBuilder()
+            .setParent(ProjectName.of(getOptions().getProjectId()).toString())
+            .setMetric(metric.toPb())
+            .build();
+    return transform(rpc.create(request), Metric.fromPbFunction(this));
+  }
+
+  @Override
+  public ApiFuture<Exclusion> createAsync(Exclusion exclusion) {
+    CreateExclusionRequest request =
+        CreateExclusionRequest.newBuilder()
+            .setParent(ProjectName.of(getOptions().getProjectId()).toString())
+            .setExclusion(exclusion.toProtobuf())
+            .build();
+    return transform(rpc.create(request), Exclusion.FROM_PROTOBUF_FUNCTION);
+  }
+
+  @Override
   public Sink update(SinkInfo sink) {
     return get(updateAsync(sink));
+  }
+
+  @Override
+  public Metric update(MetricInfo metric) {
+    return get(updateAsync(metric));
+  }
+
+  @Override
+  public Exclusion update(Exclusion exclusion) {
+    return get(updateAsync(exclusion));
   }
 
   @Override
@@ -312,6 +354,28 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
             .setSink(sink.toPb(getOptions().getProjectId()))
             .build();
     return transform(rpc.update(request), Sink.fromPbFunction(this));
+  }
+
+  @Override
+  public ApiFuture<Metric> updateAsync(MetricInfo metric) {
+    UpdateLogMetricRequest request =
+        UpdateLogMetricRequest.newBuilder()
+            .setMetricName(
+                LogMetricName.of(getOptions().getProjectId(), metric.getName()).toString())
+            .setMetric(metric.toPb())
+            .build();
+    return transform(rpc.update(request), Metric.fromPbFunction(this));
+  }
+
+  @Override
+  public ApiFuture<Exclusion> updateAsync(Exclusion exclusion) {
+    UpdateExclusionRequest request =
+        UpdateExclusionRequest.newBuilder()
+            .setName(
+                LogExclusionName.of(getOptions().getProjectId(), exclusion.getName()).toString())
+            .setExclusion(exclusion.toProtobuf())
+            .build();
+    return transform(rpc.update(request), Exclusion.FROM_PROTOBUF_FUNCTION);
   }
 
   @Override
@@ -370,13 +434,13 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   }
 
   @Override
-  public Page<Sink> listSinks(ListOption... options) {
-    return get(listSinksAsync(options));
+  public ApiFuture<AsyncPage<Sink>> listSinksAsync(ListOption... options) {
+    return listSinksAsync(getOptions(), optionMap(options));
   }
 
   @Override
-  public ApiFuture<AsyncPage<Sink>> listSinksAsync(ListOption... options) {
-    return listSinksAsync(getOptions(), optionMap(options));
+  public Page<Sink> listSinks(ListOption... options) {
+    return get(listSinksAsync(options));
   }
 
   @Override
@@ -442,13 +506,13 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   }
 
   @Override
-  public Page<String> listLogs(ListOption... options) {
-    return get(listLogsAsync(options));
+  public ApiFuture<AsyncPage<String>> listLogsAsync(ListOption... options) {
+    return listLogsAsync(getOptions(), optionMap(options));
   }
 
   @Override
-  public ApiFuture<AsyncPage<String>> listLogsAsync(ListOption... options) {
-    return listLogsAsync(getOptions(), optionMap(options));
+  public Page<String> listLogs(ListOption... options) {
+    return get(listLogsAsync(options));
   }
 
   @Override
@@ -530,45 +594,14 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   }
 
   @Override
-  public Page<MonitoredResourceDescriptor> listMonitoredResourceDescriptors(ListOption... options) {
-    return get(listMonitoredResourceDescriptorsAsync(options));
-  }
-
-  @Override
   public ApiFuture<AsyncPage<MonitoredResourceDescriptor>> listMonitoredResourceDescriptorsAsync(
       ListOption... options) {
     return listMonitoredResourceDescriptorsAsync(getOptions(), optionMap(options));
   }
 
   @Override
-  public Metric create(MetricInfo metric) {
-    return get(createAsync(metric));
-  }
-
-  @Override
-  public ApiFuture<Metric> createAsync(MetricInfo metric) {
-    CreateLogMetricRequest request =
-        CreateLogMetricRequest.newBuilder()
-            .setParent(ProjectName.of(getOptions().getProjectId()).toString())
-            .setMetric(metric.toPb())
-            .build();
-    return transform(rpc.create(request), Metric.fromPbFunction(this));
-  }
-
-  @Override
-  public Metric update(MetricInfo metric) {
-    return get(updateAsync(metric));
-  }
-
-  @Override
-  public ApiFuture<Metric> updateAsync(MetricInfo metric) {
-    UpdateLogMetricRequest request =
-        UpdateLogMetricRequest.newBuilder()
-            .setMetricName(
-                LogMetricName.of(getOptions().getProjectId(), metric.getName()).toString())
-            .setMetric(metric.toPb())
-            .build();
-    return transform(rpc.update(request), Metric.fromPbFunction(this));
+  public Page<MonitoredResourceDescriptor> listMonitoredResourceDescriptors(ListOption... options) {
+    return get(listMonitoredResourceDescriptorsAsync(options));
   }
 
   @Override
@@ -626,13 +659,13 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   }
 
   @Override
-  public Page<Metric> listMetrics(ListOption... options) {
-    return get(listMetricsAsync(options));
+  public ApiFuture<AsyncPage<Metric>> listMetricsAsync(ListOption... options) {
+    return listMetricsAsync(getOptions(), optionMap(options));
   }
 
   @Override
-  public ApiFuture<AsyncPage<Metric>> listMetricsAsync(ListOption... options) {
-    return listMetricsAsync(getOptions(), optionMap(options));
+  public Page<Metric> listMetrics(ListOption... options) {
+    return get(listMetricsAsync(options));
   }
 
   @Override
@@ -650,21 +683,6 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   }
 
   @Override
-  public Exclusion create(Exclusion exclusion) {
-    return get(createAsync(exclusion));
-  }
-
-  @Override
-  public ApiFuture<Exclusion> createAsync(Exclusion exclusion) {
-    CreateExclusionRequest request =
-        CreateExclusionRequest.newBuilder()
-            .setParent(ProjectName.of(getOptions().getProjectId()).toString())
-            .setExclusion(exclusion.toProtobuf())
-            .build();
-    return transform(rpc.create(request), Exclusion.FROM_PROTOBUF_FUNCTION);
-  }
-
-  @Override
   public Exclusion getExclusion(String exclusion) {
     return get(getExclusionAsync(exclusion));
   }
@@ -676,22 +694,6 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
             .setName(LogExclusionName.of(getOptions().getProjectId(), exclusion).toString())
             .build();
     return transform(rpc.get(request), Exclusion.FROM_PROTOBUF_FUNCTION);
-  }
-
-  @Override
-  public Exclusion update(Exclusion exclusion) {
-    return get(updateAsync(exclusion));
-  }
-
-  @Override
-  public ApiFuture<Exclusion> updateAsync(Exclusion exclusion) {
-    UpdateExclusionRequest request =
-        UpdateExclusionRequest.newBuilder()
-            .setName(
-                LogExclusionName.of(getOptions().getProjectId(), exclusion.getName()).toString())
-            .setExclusion(exclusion.toProtobuf())
-            .build();
-    return transform(rpc.update(request), Exclusion.FROM_PROTOBUF_FUNCTION);
   }
 
   @Override
@@ -926,7 +928,9 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
    * setting.
    */
   private void writeLogEntries(Iterable<LogEntry> logEntries, WriteOption... writeOptions) {
-    if (closed) return;
+    if (closed) {
+      return;
+    }
 
     switch (this.writeSynchronicity) {
       case SYNC:
@@ -1045,13 +1049,13 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   }
 
   @Override
-  public Page<LogEntry> listLogEntries(EntryListOption... options) {
-    return get(listLogEntriesAsync(options));
+  public ApiFuture<AsyncPage<LogEntry>> listLogEntriesAsync(EntryListOption... options) {
+    return listLogEntriesAsync(getOptions(), optionMap(options));
   }
 
   @Override
-  public ApiFuture<AsyncPage<LogEntry>> listLogEntriesAsync(EntryListOption... options) {
-    return listLogEntriesAsync(getOptions(), optionMap(options));
+  public Page<LogEntry> listLogEntries(EntryListOption... options) {
+    return get(listLogEntriesAsync(options));
   }
 
   static TailLogEntriesRequest buildTailLogEntriesRequest(

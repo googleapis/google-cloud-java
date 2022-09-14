@@ -16,15 +16,15 @@
 
 package com.google.cloud.logging;
 
-import static com.google.cloud.logging.Logging.EntryListOption;
-import static com.google.cloud.logging.Logging.SortingField;
-import static com.google.cloud.logging.Logging.SortingOrder;
-import static com.google.cloud.logging.Logging.WriteOption;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.MonitoredResource;
+import com.google.cloud.logging.Logging.EntryListOption;
 import com.google.cloud.logging.Logging.ListOption;
+import com.google.cloud.logging.Logging.SortingField;
+import com.google.cloud.logging.Logging.SortingOrder;
+import com.google.cloud.logging.Logging.WriteOption;
 import com.google.common.collect.ImmutableMap;
 import com.google.logging.v2.ListLogEntriesRequest;
 import org.junit.Test;

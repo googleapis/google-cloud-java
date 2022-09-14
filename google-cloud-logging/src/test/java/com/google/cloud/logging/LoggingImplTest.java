@@ -16,7 +16,6 @@
 
 package com.google.cloud.logging;
 
-import static com.google.cloud.logging.SinkInfo.VersionFormat;
 import static com.google.protobuf.util.Timestamps.fromMillis;
 import static org.easymock.EasyMock.replay;
 import static org.junit.Assert.assertArrayEquals;
@@ -40,6 +39,7 @@ import com.google.cloud.logging.Logging.SortingField;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.cloud.logging.Payload.StringPayload;
 import com.google.cloud.logging.SinkInfo.Destination;
+import com.google.cloud.logging.SinkInfo.VersionFormat;
 import com.google.cloud.logging.spi.LoggingRpcFactory;
 import com.google.cloud.logging.spi.v2.LoggingRpc;
 import com.google.common.collect.ImmutableList;
@@ -348,7 +348,7 @@ public class LoggingImplTest {
   }
 
   @Test
-  public void testGetSink_Null() {
+  public void testGetSink_null() {
     ApiFuture<LogSink> response = ApiFutures.immediateFuture(null);
     GetSinkRequest request = GetSinkRequest.newBuilder().setSinkName(SINK_NAME_PB).build();
     EasyMock.expect(loggingRpcMock.get(request)).andReturn(response);
@@ -370,7 +370,7 @@ public class LoggingImplTest {
   }
 
   @Test
-  public void testGetSinkAsync_Null() throws ExecutionException, InterruptedException {
+  public void testGetSinkAsync_null() throws ExecutionException, InterruptedException {
     ApiFuture<LogSink> response = ApiFutures.immediateFuture(null);
     GetSinkRequest request = GetSinkRequest.newBuilder().setSinkName(SINK_NAME_PB).build();
     EasyMock.expect(loggingRpcMock.get(request)).andReturn(response);
@@ -390,7 +390,7 @@ public class LoggingImplTest {
   }
 
   @Test
-  public void testDeleteSink_Null() {
+  public void testDeleteSink_null() {
     DeleteSinkRequest request = DeleteSinkRequest.newBuilder().setSinkName(SINK_NAME_PB).build();
     ApiFuture<Empty> response = ApiFutures.immediateFuture(null);
     EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
@@ -410,7 +410,7 @@ public class LoggingImplTest {
   }
 
   @Test
-  public void testDeleteSinkAsync_Null() throws ExecutionException, InterruptedException {
+  public void testDeleteSinkAsync_null() throws ExecutionException, InterruptedException {
     DeleteSinkRequest request = DeleteSinkRequest.newBuilder().setSinkName(SINK_NAME_PB).build();
     ApiFuture<Empty> response = ApiFutures.immediateFuture(null);
     EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
@@ -704,7 +704,7 @@ public class LoggingImplTest {
   }
 
   @Test
-  public void testGetMetric_Null() {
+  public void testGetMetric_null() {
     ApiFuture<LogMetric> response = ApiFutures.immediateFuture(null);
     GetLogMetricRequest request =
         GetLogMetricRequest.newBuilder().setMetricName(METRIC_NAME_PB).build();
@@ -728,7 +728,7 @@ public class LoggingImplTest {
   }
 
   @Test
-  public void testGetMetricAsync_Null() throws ExecutionException, InterruptedException {
+  public void testGetMetricAsync_null() throws ExecutionException, InterruptedException {
     ApiFuture<LogMetric> response = ApiFutures.immediateFuture(null);
     GetLogMetricRequest request =
         GetLogMetricRequest.newBuilder().setMetricName(METRIC_NAME_PB).build();
@@ -750,7 +750,7 @@ public class LoggingImplTest {
   }
 
   @Test
-  public void testDeleteMetric_Null() {
+  public void testDeleteMetric_null() {
     DeleteLogMetricRequest request =
         DeleteLogMetricRequest.newBuilder().setMetricName(METRIC_NAME_PB).build();
     ApiFuture<Empty> response = ApiFutures.immediateFuture(null);
@@ -772,7 +772,7 @@ public class LoggingImplTest {
   }
 
   @Test
-  public void testDeleteMetricAsync_Null() throws ExecutionException, InterruptedException {
+  public void testDeleteMetricAsync_null() throws ExecutionException, InterruptedException {
     DeleteLogMetricRequest request =
         DeleteLogMetricRequest.newBuilder().setMetricName(METRIC_NAME_PB).build();
     ApiFuture<Empty> response = ApiFutures.immediateFuture(null);
@@ -1065,7 +1065,7 @@ public class LoggingImplTest {
   }
 
   @Test
-  public void testGetExclusion_Null() {
+  public void testGetExclusion_null() {
     ApiFuture<LogExclusion> response = ApiFutures.immediateFuture(null);
     GetExclusionRequest request =
         GetExclusionRequest.newBuilder().setName(EXCLUSION_NAME_PB).build();
@@ -1094,7 +1094,7 @@ public class LoggingImplTest {
   }
 
   @Test
-  public void testGetExclusionAsync_Null() throws ExecutionException, InterruptedException {
+  public void testGetExclusionAsync_null() throws ExecutionException, InterruptedException {
     ApiFuture<LogExclusion> response = ApiFutures.immediateFuture(null);
     GetExclusionRequest request =
         GetExclusionRequest.newBuilder().setName(EXCLUSION_NAME_PB).build();
@@ -1157,7 +1157,7 @@ public class LoggingImplTest {
   }
 
   @Test
-  public void testDeleteExclusion_Null() {
+  public void testDeleteExclusion_null() {
     DeleteExclusionRequest request =
         DeleteExclusionRequest.newBuilder().setName(EXCLUSION_NAME_PB).build();
     ApiFuture<Empty> response = ApiFutures.immediateFuture(null);
@@ -1179,7 +1179,7 @@ public class LoggingImplTest {
   }
 
   @Test
-  public void testDeleteExclusionAsync_Null() throws ExecutionException, InterruptedException {
+  public void testDeleteExclusionAsync_null() throws ExecutionException, InterruptedException {
     DeleteExclusionRequest request =
         DeleteExclusionRequest.newBuilder().setName(EXCLUSION_NAME_PB).build();
     ApiFuture<Empty> response = ApiFutures.immediateFuture(null);
@@ -1768,7 +1768,7 @@ public class LoggingImplTest {
   }
 
   @Test
-  public void testDeleteLog_Null() {
+  public void testDeleteLog_null() {
     DeleteLogRequest request =
         DeleteLogRequest.newBuilder().setLogName(LOG_NAME_PROJECT_PATH).build();
     EasyMock.expect(loggingRpcMock.delete(request))
@@ -1834,7 +1834,7 @@ public class LoggingImplTest {
   }
 
   @Test
-  public void testDeleteLogAsync_Null() throws ExecutionException, InterruptedException {
+  public void testDeleteLogAsync_null() throws ExecutionException, InterruptedException {
     DeleteLogRequest request =
         DeleteLogRequest.newBuilder().setLogName(LOG_NAME_PROJECT_PATH).build();
     EasyMock.expect(loggingRpcMock.delete(request))
@@ -2306,7 +2306,7 @@ public class LoggingImplTest {
 
   private void testDiagnosticInfoGeneration(boolean addPartialSuccessOption) {
     Instrumentation.setInstrumentationStatus(false);
-    LogEntry json_entry =
+    LogEntry jsonEntry =
         LogEntry.newBuilder(
                 InstrumentationTest.generateInstrumentationPayload(
                     Instrumentation.JAVA_LIBRARY_NAME_PREFIX,
@@ -2317,7 +2317,7 @@ public class LoggingImplTest {
         WriteLogEntriesRequest.newBuilder()
             .addAllEntries(
                 Iterables.transform(
-                    ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2, json_entry),
+                    ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2, jsonEntry),
                     LogEntry.toPbFunction(PROJECT)))
             .setPartialSuccess(true)
             .build();

@@ -104,11 +104,9 @@ class LoggingConfig {
       List<LoggingEnhancer> enhancers = new ArrayList<>();
       if (list != null) {
         Iterable<String> items = Splitter.on(',').split(list);
-        for (String e_name : items) {
+        for (String eName : items) {
           Class<? extends LoggingEnhancer> clazz =
-              ClassLoader.getSystemClassLoader()
-                  .loadClass(e_name)
-                  .asSubclass(LoggingEnhancer.class);
+              ClassLoader.getSystemClassLoader().loadClass(eName).asSubclass(LoggingEnhancer.class);
           enhancers.add(clazz.getDeclaredConstructor().newInstance());
         }
       }
@@ -133,6 +131,10 @@ class LoggingConfig {
 
   private String getProperty(String name, String defaultValue) {
     return firstNonNull(getProperty(name), defaultValue);
+  }
+
+  private String getProperty(String propertyName) {
+    return manager.getProperty(className + "." + propertyName);
   }
 
   private Boolean getBooleanProperty(String name, Boolean defaultValue) {
@@ -180,9 +182,5 @@ class LoggingConfig {
       // If we cannot create the filter we fall back to default value
     }
     return defaultValue;
-  }
-
-  private String getProperty(String propertyName) {
-    return manager.getProperty(className + "." + propertyName);
   }
 }

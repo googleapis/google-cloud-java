@@ -16,9 +16,6 @@
 
 package com.google.cloud.logging;
 
-import com.google.cloud.MetadataConfig;
-import org.jspecify.nullness.Nullable;
-
 public interface ResourceTypeEnvironmentGetter {
 
   /**
@@ -40,23 +37,4 @@ public interface ResourceTypeEnvironmentGetter {
    * @see MetadataConfig#getAttribute()
    */
   String getAttribute(String name);
-}
-
-final class ResourceTypeEnvironmentGetterImpl implements ResourceTypeEnvironmentGetter {
-
-  @Override
-  public @Nullable String getEnv(String name) {
-    // handle exception thrown if a security manager exists and blocks access to the
-    // process environment
-    try {
-      return System.getenv(name);
-    } catch (SecurityException ex) {
-      return null;
-    }
-  }
-
-  @Override
-  public String getAttribute(String name) {
-    return MetadataConfig.getAttribute(name);
-  }
 }

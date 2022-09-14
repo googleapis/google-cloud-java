@@ -59,7 +59,7 @@ public class MonitoredResourceUtilTest {
 
   @Test
   public void testResourceTypeGlobal() {
-    final ImmutableMap<String, String> ExpectedLabels =
+    final ImmutableMap<String, String> expectedLabels =
         ImmutableMap.of("project_id", MonitoredResourceUtilTest.MOCKED_PROJECT_ID);
 
     // setup
@@ -70,41 +70,41 @@ public class MonitoredResourceUtilTest {
     MonitoredResource response = MonitoredResourceUtil.getResource("", "");
     // verify
     assertEquals("global", response.getType());
-    assertEquals(ExpectedLabels, response.getLabels());
+    assertEquals(expectedLabels, response.getLabels());
   }
 
   @Test
   public void testGetResourceWithParameters() {
-    final String MyProjectId = "my-project-id";
-    final String MyResourceType = "my-resource-type";
-    final ImmutableMap<String, String> ExpectedLabels = ImmutableMap.of("project_id", MyProjectId);
+    final String myProjectId = "my-project-id";
+    final String myResourceType = "my-resource-type";
+    final ImmutableMap<String, String> expectedLabels = ImmutableMap.of("project_id", myProjectId);
 
     // setup
     replay(getterMock);
     // exercise
-    MonitoredResource response = MonitoredResourceUtil.getResource(MyProjectId, MyResourceType);
+    MonitoredResource response = MonitoredResourceUtil.getResource(myProjectId, myResourceType);
     // The above doesn't query metadata... So just to satisfy the verify stage, query it:
     getterMock.getAttribute("project/project-id");
     getterMock.getAttribute("");
     // verify
     assertEquals("my-resource-type", response.getType());
-    assertEquals(ExpectedLabels, response.getLabels());
+    assertEquals(expectedLabels, response.getLabels());
   }
 
   @Test
   public void testResourceTypeGCEInstance() {
-    final String MockedInstanceId = "1234567890abcdefg";
-    final ImmutableMap<String, String> ExpectedLabels =
+    final String mockedInstanceId = "1234567890abcdefg";
+    final ImmutableMap<String, String> expectedLabels =
         ImmutableMap.of(
             "project_id",
             MonitoredResourceUtilTest.MOCKED_PROJECT_ID,
             "instance_id",
-            MockedInstanceId,
+            mockedInstanceId,
             "zone",
             MOCKED_ZONE);
 
     // setup
-    expect(getterMock.getAttribute("instance/id")).andReturn(MockedInstanceId).anyTimes();
+    expect(getterMock.getAttribute("instance/id")).andReturn(mockedInstanceId).anyTimes();
     expect(getterMock.getAttribute("instance/preempted")).andReturn(MOCKED_NON_EMPTY).once();
     expect(getterMock.getAttribute("instance/cpu-platform")).andReturn(MOCKED_NON_EMPTY).once();
     expect(getterMock.getAttribute("instance/zone")).andReturn(MOCKED_QUALIFIED_ZONE).once();
@@ -115,7 +115,7 @@ public class MonitoredResourceUtilTest {
     MonitoredResource response = MonitoredResourceUtil.getResource("", "");
     // verify
     assertEquals("gce_instance", response.getType());
-    assertEquals(ExpectedLabels, response.getLabels());
+    assertEquals(expectedLabels, response.getLabels());
   }
 
   /**
@@ -125,36 +125,36 @@ public class MonitoredResourceUtilTest {
    */
   @Test
   public void testResourceTypeK8sContainer() {
-    final String MockedClusterName = "mocked-cluster-1";
-    final String MockedNamespaceName = "default";
-    final String MockedPodName = "mocked-pod";
-    final String MockedContainerName = "mocked-container";
-    final ImmutableMap<String, String> ExpectedLabels =
+    final String mockedClusterName = "mocked-cluster-1";
+    final String mockedNamespaceName = "default";
+    final String mockedPodName = "mocked-pod";
+    final String mockedContainerName = "mocked-container";
+    final ImmutableMap<String, String> expectedLabels =
         ImmutableMap.<String, String>builder()
             .put("project_id", MonitoredResourceUtilTest.MOCKED_PROJECT_ID)
-            .put("cluster_name", MockedClusterName)
+            .put("cluster_name", mockedClusterName)
             .put("location", MOCKED_ZONE)
-            .put("namespace_name", MockedNamespaceName)
-            .put("pod_name", MockedPodName)
-            .put("container_name", MockedContainerName)
+            .put("namespace_name", mockedNamespaceName)
+            .put("pod_name", mockedPodName)
+            .put("container_name", mockedContainerName)
             .buildOrThrow();
 
     // setup
     expect(getterMock.getAttribute("instance/attributes/cluster-name"))
-        .andReturn(MockedClusterName)
+        .andReturn(mockedClusterName)
         .times(2);
     expect(getterMock.getAttribute("instance/zone")).andReturn(MOCKED_QUALIFIED_ZONE).once();
     expect(getterMock.getAttribute(anyString())).andReturn(null).anyTimes();
-    expect(getterMock.getEnv("HOSTNAME")).andReturn(MockedPodName).anyTimes();
-    expect(getterMock.getEnv("NAMESPACE_NAME")).andReturn(MockedNamespaceName).anyTimes();
-    expect(getterMock.getEnv("CONTAINER_NAME")).andReturn(MockedContainerName).anyTimes();
+    expect(getterMock.getEnv("HOSTNAME")).andReturn(mockedPodName).anyTimes();
+    expect(getterMock.getEnv("NAMESPACE_NAME")).andReturn(mockedNamespaceName).anyTimes();
+    expect(getterMock.getEnv("CONTAINER_NAME")).andReturn(mockedContainerName).anyTimes();
     expect(getterMock.getEnv(anyString())).andReturn(null).anyTimes();
     replay(getterMock);
     // exercise
     MonitoredResource response = MonitoredResourceUtil.getResource("", "");
     // verify
     assertEquals("k8s_container", response.getType());
-    assertEquals(ExpectedLabels, response.getLabels());
+    assertEquals(expectedLabels, response.getLabels());
   }
 
   private void setupCommonGAEMocks(String mockedModuleId, String mockedVersionId) {
@@ -167,51 +167,51 @@ public class MonitoredResourceUtilTest {
 
   @Test
   public void testResourceTypeGAEStandardEnvironment() {
-    final String MockedModuleId = "mocked-module-id";
-    final String MockedVersionId = "mocked-version-id";
-    final ImmutableMap<String, String> ExpectedLabels =
+    final String mockedModuleId = "mocked-module-id";
+    final String mockedVersionId = "mocked-version-id";
+    final ImmutableMap<String, String> expectedLabels =
         ImmutableMap.of(
             "project_id",
             MonitoredResourceUtilTest.MOCKED_PROJECT_ID,
             "module_id",
-            MockedModuleId,
+            mockedModuleId,
             "version_id",
-            MockedVersionId,
+            mockedVersionId,
             "env",
             "standard",
             "zone",
             MOCKED_ZONE);
 
     // setup
-    setupCommonGAEMocks(MockedModuleId, MockedVersionId);
+    setupCommonGAEMocks(mockedModuleId, mockedVersionId);
     expect(getterMock.getAttribute(anyString())).andReturn(null).anyTimes();
     replay(getterMock);
     // exercise
     MonitoredResource response = MonitoredResourceUtil.getResource("", "");
     // verify
     assertEquals("gae_app", response.getType());
-    assertEquals(ExpectedLabels, response.getLabels());
+    assertEquals(expectedLabels, response.getLabels());
   }
 
   @Test
   public void testResourceTypeGAEFlexibleEnvironment() {
-    final String MockedModuleId = "mocked-module-id";
-    final String MockedVersionId = "mocked-version-id";
-    final ImmutableMap<String, String> ExpectedLabels =
+    final String mockedModuleId = "mocked-module-id";
+    final String mockedVersionId = "mocked-version-id";
+    final ImmutableMap<String, String> expectedLabels =
         ImmutableMap.of(
             "project_id",
             MonitoredResourceUtilTest.MOCKED_PROJECT_ID,
             "module_id",
-            MockedModuleId,
+            mockedModuleId,
             "version_id",
-            MockedVersionId,
+            mockedVersionId,
             "env",
             "flex",
             "zone",
             MOCKED_ZONE);
 
     // setup
-    setupCommonGAEMocks(MockedModuleId, MockedVersionId);
+    setupCommonGAEMocks(mockedModuleId, mockedVersionId);
     expect(getterMock.getAttribute("instance/attributes/startup-script"))
         .andReturn("/var/lib/flex/startup_script.sh")
         .once();
@@ -220,18 +220,18 @@ public class MonitoredResourceUtilTest {
     MonitoredResource response = MonitoredResourceUtil.getResource("", "");
     // verify
     assertEquals("gae_app", response.getType());
-    assertEquals(ExpectedLabels, response.getLabels());
+    assertEquals(expectedLabels, response.getLabels());
   }
 
   @Test
   public void testResourceTypeCloudFunction() {
-    final String MockedFunctionName = "mocked-function-name";
-    final ImmutableMap<String, String> ExpectedLabels =
+    final String mockedFunctionName = "mocked-function-name";
+    final ImmutableMap<String, String> expectedLabels =
         ImmutableMap.of(
             "project_id",
             MonitoredResourceUtilTest.MOCKED_PROJECT_ID,
             "function_name",
-            MockedFunctionName,
+            mockedFunctionName,
             "region",
             MOCKED_REGION);
 
@@ -240,10 +240,10 @@ public class MonitoredResourceUtilTest {
     expect(getterMock.getAttribute(anyString())).andReturn(null).anyTimes();
     expect(getterMock.getEnv("FUNCTION_SIGNATURE_TYPE")).andReturn(MOCKED_NON_EMPTY).once();
     expect(getterMock.getEnv("FUNCTION_TARGET")).andReturn(MOCKED_NON_EMPTY).once();
-    expect(getterMock.getEnv("K_SERVICE")).andReturn(MockedFunctionName).anyTimes();
-    expect(getterMock.getEnv("K_REVISION")).andReturn(MockedFunctionName + ".1").anyTimes();
+    expect(getterMock.getEnv("K_SERVICE")).andReturn(mockedFunctionName).anyTimes();
+    expect(getterMock.getEnv("K_REVISION")).andReturn(mockedFunctionName + ".1").anyTimes();
     expect(getterMock.getEnv("K_CONFIGURATION"))
-        .andReturn(MockedFunctionName + "-config")
+        .andReturn(mockedFunctionName + "-config")
         .anyTimes();
     expect(getterMock.getEnv(anyString())).andReturn(null).anyTimes();
     replay(getterMock);
@@ -251,39 +251,39 @@ public class MonitoredResourceUtilTest {
     MonitoredResource response = MonitoredResourceUtil.getResource("", "");
     // verify
     assertEquals("cloud_function", response.getType());
-    assertEquals(ExpectedLabels, response.getLabels());
+    assertEquals(expectedLabels, response.getLabels());
   }
 
   @Test
   public void testResourceTypeCloudRun() {
-    final String MockedRevisionName = "mocked-revision-name";
-    final String MockedServiceName = "mocked-service-name";
-    final String MockedConfigurationName = "mocked-config-name";
-    final ImmutableMap<String, String> ExpectedLabels =
+    final String mockedRevisionName = "mocked-revision-name";
+    final String mockedServiceName = "mocked-service-name";
+    final String mockedConfigurationName = "mocked-config-name";
+    final ImmutableMap<String, String> expectedLabels =
         ImmutableMap.of(
             "project_id",
             MonitoredResourceUtilTest.MOCKED_PROJECT_ID,
             "revision_name",
-            MockedRevisionName,
+            mockedRevisionName,
             "configuration_name",
-            MockedConfigurationName,
+            mockedConfigurationName,
             "service_name",
-            MockedServiceName,
+            mockedServiceName,
             "location",
             MOCKED_REGION);
 
     // setup
     expect(getterMock.getAttribute("instance/region")).andReturn(MOCKED_QUALIFIED_REGION).once();
     expect(getterMock.getAttribute(anyString())).andReturn(null).anyTimes();
-    expect(getterMock.getEnv("K_CONFIGURATION")).andReturn(MockedConfigurationName).times(2);
-    expect(getterMock.getEnv("K_REVISION")).andReturn(MockedRevisionName).times(2);
-    expect(getterMock.getEnv("K_SERVICE")).andReturn(MockedServiceName).anyTimes();
+    expect(getterMock.getEnv("K_CONFIGURATION")).andReturn(mockedConfigurationName).times(2);
+    expect(getterMock.getEnv("K_REVISION")).andReturn(mockedRevisionName).times(2);
+    expect(getterMock.getEnv("K_SERVICE")).andReturn(mockedServiceName).anyTimes();
     expect(getterMock.getEnv(anyString())).andReturn(null).anyTimes();
     replay(getterMock);
     // exercise
     MonitoredResource response = MonitoredResourceUtil.getResource("", "");
     // verify
     assertEquals("cloud_run_revision", response.getType());
-    assertEquals(ExpectedLabels, response.getLabels());
+    assertEquals(expectedLabels, response.getLabels());
   }
 }

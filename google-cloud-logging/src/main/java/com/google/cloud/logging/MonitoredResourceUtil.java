@@ -66,12 +66,12 @@ public class MonitoredResourceUtil {
   }
 
   private enum Resource {
-    CloudRun("cloud_run_revision"),
-    CloudFunction("cloud_function"),
-    AppEngine("gae_app"),
-    GceInstance("gce_instance"),
-    K8sContainer("k8s_container"),
-    Global("global");
+    CLOUD_RUN("cloud_run_revision"),
+    CLOUD_FUNCTION("cloud_function"),
+    APP_ENGINE("gae_app"),
+    GCE_INSTANCE("gce_instance"),
+    K8S_CONTAINER("k8s_container"),
+    GLOBAL("global");
 
     private final String key;
 
@@ -84,20 +84,20 @@ public class MonitoredResourceUtil {
     }
   }
 
-  private static final ImmutableMultimap<String, Label> resourceTypeWithLabels =
+  private static final ImmutableMultimap<String, Label> RESOURCE_TYPE_WITH_LABELS =
       ImmutableMultimap.<String, Label>builder()
-          .putAll(Resource.CloudFunction.getKey(), Label.FunctionName, Label.Region)
+          .putAll(Resource.CLOUD_FUNCTION.getKey(), Label.FunctionName, Label.Region)
           .putAll(
-              Resource.CloudRun.getKey(),
+              Resource.CLOUD_RUN.getKey(),
               Label.RevisionName,
               Label.ServiceName,
               Label.CloudRunLocation,
               Label.ConfigurationName)
           .putAll(
-              Resource.AppEngine.getKey(), Label.ModuleId, Label.VersionId, Label.Zone, Label.Env)
-          .putAll(Resource.GceInstance.getKey(), Label.InstanceId, Label.Zone)
+              Resource.APP_ENGINE.getKey(), Label.ModuleId, Label.VersionId, Label.Zone, Label.Env)
+          .putAll(Resource.GCE_INSTANCE.getKey(), Label.InstanceId, Label.Zone)
           .putAll(
-              Resource.K8sContainer.getKey(),
+              Resource.K8S_CONTAINER.getKey(),
               Label.GKELocation,
               Label.ClusterName,
               Label.NamespaceName,
@@ -147,7 +147,7 @@ public class MonitoredResourceUtil {
     MonitoredResource.Builder builder =
         MonitoredResource.newBuilder(resourceType).addLabel(Label.ProjectId.getKey(), projectId);
 
-    for (Label label : resourceTypeWithLabels.get(resourceType)) {
+    for (Label label : RESOURCE_TYPE_WITH_LABELS.get(resourceType)) {
       String value = metadataLoader.getValue(label);
       if (value != null) {
         builder.addLabel(label.getKey(), value);
@@ -165,33 +165,33 @@ public class MonitoredResourceUtil {
   private static Resource detectResourceType() {
     // expects supported Google Cloud resource to have access to metadata server
     if (getter.getAttribute("") == null) {
-      return Resource.Global;
+      return Resource.GLOBAL;
     }
 
     if (getter.getEnv("FUNCTION_SIGNATURE_TYPE") != null
         && getter.getEnv("FUNCTION_TARGET") != null) {
-      return Resource.CloudFunction;
+      return Resource.CLOUD_FUNCTION;
     }
     if (getter.getEnv("K_SERVICE") != null
         && getter.getEnv("K_REVISION") != null
         && getter.getEnv("K_CONFIGURATION") != null) {
-      return Resource.CloudRun;
+      return Resource.CLOUD_RUN;
     }
     if (getter.getEnv("GAE_INSTANCE") != null
         && getter.getEnv("GAE_SERVICE") != null
         && getter.getEnv("GAE_VERSION") != null) {
-      return Resource.AppEngine;
+      return Resource.APP_ENGINE;
     }
     if (getter.getAttribute("instance/attributes/cluster-name") != null) {
-      return Resource.K8sContainer;
+      return Resource.K8S_CONTAINER;
     }
     if (getter.getAttribute("instance/preempted") != null
         && getter.getAttribute("instance/cpu-platform") != null
         && getter.getAttribute("instance/attributes/gae_app_bucket") == null) {
-      return Resource.GceInstance;
+      return Resource.GCE_INSTANCE;
     }
     // other Google Cloud resources (e.g. CloudBuild) might be misdetected
-    return Resource.Global;
+    return Resource.GLOBAL;
   }
 
   /**
@@ -206,7 +206,7 @@ public class MonitoredResourceUtil {
 
   private static List<LoggingEnhancer> createEnhancers(Resource resourceType) {
     List<LoggingEnhancer> enhancers = new ArrayList<>(2);
-    if (resourceType == Resource.AppEngine) {
+    if (resourceType == Resource.APP_ENGINE) {
       enhancers.add(new TraceLoggingEnhancer(APPENGINE_LABEL_PREFIX));
       if (MetadataLoader.ENV_FLEXIBLE.equals(metadataLoader.getValue(Label.Env))) {
         enhancers.add(

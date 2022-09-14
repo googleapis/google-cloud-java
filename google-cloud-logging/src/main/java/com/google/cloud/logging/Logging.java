@@ -339,6 +339,46 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   Sink create(SinkInfo sink);
 
   /**
+   * Creates a new metric.
+   *
+   * <p>Example of creating a metric for logs with severity higher or equal to ERROR.
+   *
+   * <pre>
+   * {
+   *   &#64;code
+   *   String metricName = "my_metric_name";
+   *   MetricInfo metricInfo = MetricInfo.of(metricName, "severity>=ERROR");
+   *   Metric metric = logging.create(metricInfo);
+   * }
+   * </pre>
+   *
+   * @return the created metric
+   * @throws LoggingException upon failure
+   */
+  Metric create(MetricInfo metric);
+
+  /**
+   * Creates a new exclusion in a specified parent resource. Only log entries belonging to that
+   * resource can be excluded. You can have up to 10 exclusions in a resource.
+   *
+   * <p>Example of creating the exclusion:
+   *
+   * <pre>
+   * {
+   *   &#64;code
+   *   String exclusionName = "my_exclusion_name";
+   *   Exclusion exclusion = Exclusion.of(exclusionName,
+   *       "resource.type=gcs_bucket severity<ERROR sample(insertId, 0.99)");
+   *   Exclusion exclusion = logging.create(exclusion);
+   * }
+   * </pre>
+   *
+   * @return the created exclusion
+   * @throws LoggingException upon failure
+   */
+  Exclusion create(Exclusion exclusion);
+
+  /**
    * Sends a request for creating a sink. This method returns a {@code ApiFuture} object to consume
    * the result. {@link ApiFuture#get()} returns the created sink.
    *
@@ -358,6 +398,45 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * </pre>
    */
   ApiFuture<Sink> createAsync(SinkInfo sink);
+
+  /**
+   * Sends a request for creating a metric. This method returns a {@code ApiFuture} object to
+   * consume the result. {@link ApiFuture#get()} returns the created metric.
+   *
+   * <p>Example of asynchronously creating a metric for logs with severity higher or equal to ERROR.
+   *
+   * <pre>
+   * {
+   *   &#64;code
+   *   String metricName = "my_metric_name";
+   *   MetricInfo metricInfo = MetricInfo.of(metricName, "severity>=ERROR");
+   *   ApiFuture<Metric> future = logging.createAsync(metricInfo);
+   *   // ...
+   *   Metric metric = future.get();
+   * }
+   * </pre>
+   */
+  ApiFuture<Metric> createAsync(MetricInfo metric);
+
+  /**
+   * Sends a request to create the exclusion. This method returns an {@code ApiFuture} object to
+   * consume the result. {@link ApiFuture#get()} returns the created exclusion.
+   *
+   * <p>Example of asynchronously creating the exclusion:
+   *
+   * <pre>
+   * {
+   *   &#64;code
+   *   String exclusionName = "my_exclusion_name";
+   *   Exclusion exclusion = Exclusion.of(exclusionName,
+   *       "resource.type=gcs_bucket severity<ERROR sample(insertId, 0.99)");
+   *   ApiFuture<Exclusion> future = logging.createAsync(exclusion);
+   *   // ...
+   *   Exclusion exclusion = future.get();
+   * }
+   * </pre>
+   */
+  ApiFuture<Exclusion> createAsync(Exclusion exclusion);
 
   /**
    * Updates a sink or creates one if it does not exist.
@@ -381,6 +460,47 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   Sink update(SinkInfo sink);
 
   /**
+   * Updates a metric or creates one if it does not exist.
+   *
+   * <p>Example of updating a metric.
+   *
+   * <pre>
+   * {
+   *   &#64;code
+   *   String metricName = "my_metric_name";
+   *   MetricInfo metricInfo = MetricInfo.newBuilder(metricName, "severity>=ERROR").setDescription("new description")
+   *       .build();
+   *   Metric metric = logging.update(metricInfo);
+   * }
+   * </pre>
+   *
+   * @return the created metric
+   * @throws LoggingException upon failure
+   */
+  Metric update(MetricInfo metric);
+
+  /**
+   * Updates one or more properties of an existing exclusion.
+   *
+   * <p>Example of updating the exclusion:
+   *
+   * <pre>
+   * {
+   *   &#64;code
+   *   String exclusionName = "my_exclusion_name";
+   *   Exclusion exclusion = Exclusion
+   *       .newBuilder(exclusionName, "resource.type=gcs_bucket severity<ERROR sample(insertId, 0.99)")
+   *       .setDescription("new description").setIsDisabled(false).build();
+   *   Exclusion exclusion = logging.update(exclusion);
+   * }
+   * </pre>
+   *
+   * @return the updated exclusion
+   * @throws LoggingException upon failure
+   */
+  Exclusion update(Exclusion exclusion);
+
+  /**
    * Sends a request for updating a sink (or creating it, if it does not exist). This method returns
    * a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns the
    * updated/created sink or {@code null} if not found.
@@ -401,6 +521,49 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * </pre>
    */
   ApiFuture<Sink> updateAsync(SinkInfo sink);
+
+  /**
+   * Sends a request for updating a metric (or creating it, if it does not exist). This method
+   * returns a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns the
+   * updated/created metric or {@code null} if not found.
+   *
+   * <p>Example of asynchronously updating a metric.
+   *
+   * <pre>
+   * {
+   *   &#64;code
+   *   String metricName = "my_metric_name";
+   *   MetricInfo metricInfo = MetricInfo.newBuilder(metricName, "severity>=ERROR").setDescription("new description")
+   *       .build();
+   *   ApiFuture<Metric> future = logging.updateAsync(metricInfo);
+   *   // ...
+   *   Metric metric = future.get();
+   * }
+   * </pre>
+   */
+  ApiFuture<Metric> updateAsync(MetricInfo metric);
+
+  /**
+   * Sends a request to change one or more properties of an existing exclusion. This method returns
+   * an {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns the updated
+   * exclusion or {@code null} if not found.
+   *
+   * <p>Example of asynchronous exclusion update:
+   *
+   * <pre>
+   * {
+   *   &#64;code
+   *   String exclusionName = "my_exclusion_name";
+   *   Exclusion exclusion = Exclusion
+   *       .newBuilder(exclusionName, "resource.type=gcs_bucket severity<ERROR sample(insertId, 0.99)")
+   *       .setDescription("new description").setIsDisabled(false).build();
+   *   ApiFuture<Exclusion> future = logging.updateAsync(exclusion);
+   *   // ...
+   *   Exclusion exclusion = future.get();
+   * }
+   * </pre>
+   */
+  ApiFuture<Exclusion> updateAsync(Exclusion exclusion);
 
   /**
    * Returns the requested sink or {@code null} if not found.
@@ -737,85 +900,6 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
       ListOption... options);
 
   /**
-   * Creates a new metric.
-   *
-   * <p>Example of creating a metric for logs with severity higher or equal to ERROR.
-   *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String metricName = "my_metric_name";
-   *   MetricInfo metricInfo = MetricInfo.of(metricName, "severity>=ERROR");
-   *   Metric metric = logging.create(metricInfo);
-   * }
-   * </pre>
-   *
-   * @return the created metric
-   * @throws LoggingException upon failure
-   */
-  Metric create(MetricInfo metric);
-
-  /**
-   * Sends a request for creating a metric. This method returns a {@code ApiFuture} object to
-   * consume the result. {@link ApiFuture#get()} returns the created metric.
-   *
-   * <p>Example of asynchronously creating a metric for logs with severity higher or equal to ERROR.
-   *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String metricName = "my_metric_name";
-   *   MetricInfo metricInfo = MetricInfo.of(metricName, "severity>=ERROR");
-   *   ApiFuture<Metric> future = logging.createAsync(metricInfo);
-   *   // ...
-   *   Metric metric = future.get();
-   * }
-   * </pre>
-   */
-  ApiFuture<Metric> createAsync(MetricInfo metric);
-
-  /**
-   * Updates a metric or creates one if it does not exist.
-   *
-   * <p>Example of updating a metric.
-   *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String metricName = "my_metric_name";
-   *   MetricInfo metricInfo = MetricInfo.newBuilder(metricName, "severity>=ERROR").setDescription("new description")
-   *       .build();
-   *   Metric metric = logging.update(metricInfo);
-   * }
-   * </pre>
-   *
-   * @return the created metric
-   * @throws LoggingException upon failure
-   */
-  Metric update(MetricInfo metric);
-
-  /**
-   * Sends a request for updating a metric (or creating it, if it does not exist). This method
-   * returns a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns the
-   * updated/created metric or {@code null} if not found.
-   *
-   * <p>Example of asynchronously updating a metric.
-   *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String metricName = "my_metric_name";
-   *   MetricInfo metricInfo = MetricInfo.newBuilder(metricName, "severity>=ERROR").setDescription("new description")
-   *       .build();
-   *   ApiFuture<Metric> future = logging.updateAsync(metricInfo);
-   *   // ...
-   *   Metric metric = future.get();
-   * }
-   * </pre>
-   */
-  ApiFuture<Metric> updateAsync(MetricInfo metric);
-
-  /**
    * Returns the requested metric or {@code null} if not found.
    *
    * <p>Example of getting a metric.
@@ -949,47 +1033,6 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   ApiFuture<Boolean> deleteMetricAsync(String metric);
 
   /**
-   * Creates a new exclusion in a specified parent resource. Only log entries belonging to that
-   * resource can be excluded. You can have up to 10 exclusions in a resource.
-   *
-   * <p>Example of creating the exclusion:
-   *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String exclusionName = "my_exclusion_name";
-   *   Exclusion exclusion = Exclusion.of(exclusionName,
-   *       "resource.type=gcs_bucket severity<ERROR sample(insertId, 0.99)");
-   *   Exclusion exclusion = logging.create(exclusion);
-   * }
-   * </pre>
-   *
-   * @return the created exclusion
-   * @throws LoggingException upon failure
-   */
-  Exclusion create(Exclusion exclusion);
-
-  /**
-   * Sends a request to create the exclusion. This method returns an {@code ApiFuture} object to
-   * consume the result. {@link ApiFuture#get()} returns the created exclusion.
-   *
-   * <p>Example of asynchronously creating the exclusion:
-   *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String exclusionName = "my_exclusion_name";
-   *   Exclusion exclusion = Exclusion.of(exclusionName,
-   *       "resource.type=gcs_bucket severity<ERROR sample(insertId, 0.99)");
-   *   ApiFuture<Exclusion> future = logging.createAsync(exclusion);
-   *   // ...
-   *   Exclusion exclusion = future.get();
-   * }
-   * </pre>
-   */
-  ApiFuture<Exclusion> createAsync(Exclusion exclusion);
-
-  /**
    * Gets the description of an exclusion or {@code null} if not found.
    *
    * <p>Example of getting the description of an exclusion:
@@ -1032,49 +1075,6 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * @throws LoggingException upon failure
    */
   ApiFuture<Exclusion> getExclusionAsync(String exclusion);
-
-  /**
-   * Updates one or more properties of an existing exclusion.
-   *
-   * <p>Example of updating the exclusion:
-   *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String exclusionName = "my_exclusion_name";
-   *   Exclusion exclusion = Exclusion
-   *       .newBuilder(exclusionName, "resource.type=gcs_bucket severity<ERROR sample(insertId, 0.99)")
-   *       .setDescription("new description").setIsDisabled(false).build();
-   *   Exclusion exclusion = logging.update(exclusion);
-   * }
-   * </pre>
-   *
-   * @return the updated exclusion
-   * @throws LoggingException upon failure
-   */
-  Exclusion update(Exclusion exclusion);
-
-  /**
-   * Sends a request to change one or more properties of an existing exclusion. This method returns
-   * an {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns the updated
-   * exclusion or {@code null} if not found.
-   *
-   * <p>Example of asynchronous exclusion update:
-   *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String exclusionName = "my_exclusion_name";
-   *   Exclusion exclusion = Exclusion
-   *       .newBuilder(exclusionName, "resource.type=gcs_bucket severity<ERROR sample(insertId, 0.99)")
-   *       .setDescription("new description").setIsDisabled(false).build();
-   *   ApiFuture<Exclusion> future = logging.updateAsync(exclusion);
-   *   // ...
-   *   Exclusion exclusion = future.get();
-   * }
-   * </pre>
-   */
-  ApiFuture<Exclusion> updateAsync(Exclusion exclusion);
 
   /**
    * Deletes the requested exclusion.

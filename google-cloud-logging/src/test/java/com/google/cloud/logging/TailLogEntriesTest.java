@@ -16,12 +16,12 @@
 
 package com.google.cloud.logging;
 
-import static com.google.cloud.logging.Logging.TailOption;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertNotNull;
 
 import com.google.api.gax.rpc.BidiStream;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.logging.Logging.TailOption;
 import com.google.cloud.logging.spi.LoggingRpcFactory;
 import com.google.cloud.logging.spi.v2.LoggingRpc;
 import com.google.logging.v2.TailLogEntriesRequest;

@@ -54,7 +54,9 @@ public final class Instrumentation {
   public static Tuple<Boolean, Iterable<LogEntry>> populateInstrumentationInfo(
       Iterable<LogEntry> logEntries) {
     boolean isWritten = setInstrumentationStatus(true);
-    if (isWritten) return Tuple.of(false, logEntries);
+    if (isWritten) {
+      return Tuple.of(false, logEntries);
+    }
     List<LogEntry> entries = new ArrayList<>();
 
     for (LogEntry logEntry : logEntries) {
@@ -97,7 +99,9 @@ public final class Instrumentation {
    *     true
    */
   public static WriteOption @Nullable [] addPartialSuccessOption(WriteOption[] options) {
-    if (options == null) return options;
+    if (options == null) {
+      return options;
+    }
     List<WriteOption> writeOptions = new ArrayList<>();
     Collections.addAll(writeOptions, options);
     // Make sure we remove all partial success flags if any exist
@@ -146,8 +150,9 @@ public final class Instrumentation {
 
   private static ListValue generateLibrariesList(
       String libraryName, String libraryVersion, ListValue existingLibraryList) {
-    if (Strings.isNullOrEmpty(libraryName) || !libraryName.startsWith(JAVA_LIBRARY_NAME_PREFIX))
+    if (Strings.isNullOrEmpty(libraryName) || !libraryName.startsWith(JAVA_LIBRARY_NAME_PREFIX)) {
       libraryName = JAVA_LIBRARY_NAME_PREFIX;
+    }
     if (Strings.isNullOrEmpty(libraryVersion)) {
       libraryVersion = getLibraryVersion(Instrumentation.class);
     }
@@ -161,14 +166,21 @@ public final class Instrumentation {
           try {
             String name =
                 val.getStructValue().getFieldsOrThrow(INSTRUMENTATION_NAME_KEY).getStringValue();
-            if (Strings.isNullOrEmpty(name) || !name.startsWith(JAVA_LIBRARY_NAME_PREFIX)) continue;
+            if (Strings.isNullOrEmpty(name) || !name.startsWith(JAVA_LIBRARY_NAME_PREFIX)) {
+              continue;
+            }
             String version =
                 val.getStructValue().getFieldsOrThrow(INSTRUMENTATION_VERSION_KEY).getStringValue();
-            if (Strings.isNullOrEmpty(version)) continue;
+            if (Strings.isNullOrEmpty(version)) {
+              continue;
+            }
             libraryList.addValues(
                 Value.newBuilder().setStructValue(createInfoStruct(name, version)).build());
-            if (libraryList.getValuesCount() == MAX_DIAGNOSTIC_ENTIES) break;
+            if (libraryList.getValuesCount() == MAX_DIAGNOSTIC_ENTIES) {
+              break;
+            }
           } catch (RuntimeException ex) {
+            System.err.println("ERROR: unexpected exception in generateLibrariesList: " + ex);
           }
         }
       }
@@ -194,7 +206,9 @@ public final class Instrumentation {
    * @return The value of the flag before it was set.
    */
   static boolean setInstrumentationStatus(boolean value) {
-    if (instrumentationAdded == value) return instrumentationAdded;
+    if (instrumentationAdded == value) {
+      return instrumentationAdded;
+    }
     synchronized (instrumentationLock) {
       boolean current = instrumentationAdded;
       instrumentationAdded = value;
@@ -211,12 +225,16 @@ public final class Instrumentation {
    */
   public static String getLibraryVersion(Class<?> libraryClass) {
     String libraryVersion = GaxProperties.getLibraryVersion(libraryClass);
-    if (Strings.isNullOrEmpty(libraryVersion)) libraryVersion = DEFAULT_INSTRUMENTATION_VERSION;
+    if (Strings.isNullOrEmpty(libraryVersion)) {
+      libraryVersion = DEFAULT_INSTRUMENTATION_VERSION;
+    }
     return libraryVersion;
   }
 
   private static String truncateValue(String value) {
-    if (Strings.isNullOrEmpty(value) || value.length() < MAX_DIAGNOSTIC_VALUE_LENGTH) return value;
+    if (Strings.isNullOrEmpty(value) || value.length() < MAX_DIAGNOSTIC_VALUE_LENGTH) {
+      return value;
+    }
     return value.substring(0, MAX_DIAGNOSTIC_VALUE_LENGTH) + "*";
   }
 

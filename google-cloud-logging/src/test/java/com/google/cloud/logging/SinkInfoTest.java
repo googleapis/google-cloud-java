@@ -133,7 +133,7 @@ public class SinkInfoTest {
   }
 
   @Test
-  public void testToAndFromPbDestination_NoProjectId() {
+  public void testToAndFromPbDestination_noProjectId() {
     DatasetDestination datasetDestination =
         DatasetDestination.fromPb(DatasetDestination.of("dataset").toPb("project"));
     compareDatasetDestination(DATASET_DESTINATION, datasetDestination);
@@ -208,7 +208,7 @@ public class SinkInfoTest {
   }
 
   @Test
-  public void testToAndFromPb_NoProjectId() {
+  public void testToAndFromPb_noProjectId() {
     DatasetDestination datasetDestination = DatasetDestination.of("dataset");
     SinkInfo sinkInfo =
         SinkInfo.newBuilder(NAME, DATASET_DESTINATION).setVersionFormat(VERSION).build();
