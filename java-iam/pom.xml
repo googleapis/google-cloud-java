@@ -75,6 +75,16 @@
         <scope>import</scope>
       </dependency>
       <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-iam-v2</artifactId>
+        <version>1.5.3-SNAPSHOT</version><!-- {x-version-update:proto-google-iam-v2:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-iam-v2</artifactId>
+        <version>1.5.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-iam-v2:current} -->
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-iam-policy</artifactId>
         <version>1.5.3-SNAPSHOT</version><!-- {x-version-update:google-iam-policy:current} -->
@@ -112,7 +122,9 @@
   <modules>
     <module>proto-google-iam-v1</module>
     <module>grpc-google-iam-v2beta</module>
+    <module>grpc-google-iam-v2</module>
     <module>proto-google-iam-v2beta</module>
+    <module>proto-google-iam-v2</module>
     <module>grpc-google-iam-v1</module>
     <module>google-iam-policy</module>
   </modules>
