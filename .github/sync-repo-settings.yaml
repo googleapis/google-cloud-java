@@ -30,7 +30,7 @@ branchProtectionRules:
     requiredStatusCheckContexts:
       - units (8)
       - units (11)
-      - units (11)
+      - units (17)
       - cla/google
       - OwlBot Post Processor
       - 'Kokoro - Test: Integration'

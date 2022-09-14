@@ -31,7 +31,7 @@ import javax.annotation.Generated;
 public class CatalogItemPathName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_CATALOG_CATALOG_ITEM_PATH =
       PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/locations/{location}/catalogs/{catalog}/catalogItems/{catalog_item_path=**}");
+          "projects/{project}/locations/{location}/catalogs/{catalog}/catalogItems/{catalog_item_path}");
   private volatile Map<String, String> fieldValuesMap;
   private final String project;
   private final String location;
@@ -209,7 +209,7 @@ public class CatalogItemPathName implements ResourceName {
 
   /**
    * Builder for
-   * projects/{project}/locations/{location}/catalogs/{catalog}/catalogItems/{catalog_item_path=&#42;&#42;}.
+   * projects/{project}/locations/{location}/catalogs/{catalog}/catalogItems/{catalog_item_path}.
    */
   public static class Builder {
     private String project;
