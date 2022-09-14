@@ -102,7 +102,7 @@ public class HttpJsonDatastoreAdminStub extends DatastoreAdminStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearProjectId().build()))
+                                  .toBody("*", request.toBuilder().clearProjectId().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -141,7 +141,7 @@ public class HttpJsonDatastoreAdminStub extends DatastoreAdminStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearProjectId().build()))
+                                  .toBody("*", request.toBuilder().clearProjectId().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -179,7 +179,8 @@ public class HttpJsonDatastoreAdminStub extends DatastoreAdminStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("index", request.getIndex()))
+                              ProtoRestSerializer.create()
+                                  .toBody("index", request.getIndex(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
