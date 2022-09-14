@@ -6,7 +6,7 @@ export BRANCH=6.4.4-sp
 
 # The sha256 is the oldest one I found in gcr.io. This version did not reqiure
 # api_shortname in .repo-metadata.json.
-export OWLBOT_JAVA_IMAGE=74e6e91f946530fa28ca045bc33f37490122c1ca57630372d2d6ec9ff3758ebe
+export OWLBOT_JAVA_VERSION=@sha256:74e6e91f946530fa28ca045bc33f37490122c1ca57630372d2d6ec9ff3758ebe
 
 rm -rf workspace
 mkdir -p workspace
@@ -105,5 +105,14 @@ fi
 # api_shortname in .repo-metadata.json.
 docker run --rm --user "$(id -u):$(id -g)" \
     -v "$(pwd)/workspace/repo:/workspace"   -w /workspace \
-    gcr.io/cloud-devrel-public-resources/owlbot-java@sha256:74e6e91f946530fa28ca045bc33f37490122c1ca57630372d2d6ec9ff3758ebe
+    gcr.io/cloud-devrel-public-resources/owlbot-java:${OWLBOT_JAVA_VERSION}
 
+# Exclude irrelevant changes
+git checkout -- samples README.md .github .kokoro java.header renovate.json \
+    versions.txt
+git add ./**/*.java
+
+git commit -m 'fix: applying a different protobuf'
+
+echo "Create a pull request: "
+echo "  cd workspace/repo && gh pr create --draft --base ${BRANCH} --title 'fix: applying a different protobuf'"
