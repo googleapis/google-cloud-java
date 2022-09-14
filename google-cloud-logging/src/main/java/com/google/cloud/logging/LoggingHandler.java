@@ -453,9 +453,9 @@ public class LoggingHandler extends Handler {
    * the Json format that can be parsed by the logging agent. If set to {@code false}, logs will be
    * ingested to Cloud Logging by calling Logging API.
    *
-   * <p>This method is mutually exclusive with {@link #setLogTarget()}.
+   * <p>This method is mutually exclusive with {@link #setLogTarget(LogTarget)}.
    *
-   * @deprecated Use {@link #setLogTarget()}.
+   * @deprecated Use {@link #setLogTarget(LogTarget)}.
    */
   @Deprecated
   public void setRedirectToStdout(boolean value) {
@@ -475,7 +475,7 @@ public class LoggingHandler extends Handler {
    * to the corresponding stream in the Json format that can be parsed by the logging agent. If set
    * to CLOUD_LOGGING, logs will be sent directly to the Google Cloud Logging API.
    *
-   * <p>This method is mutually exclusive with {@link #setRedirectToStdout()}.
+   * <p>This method is mutually exclusive with {@link #setRedirectToStdout(boolean)}.
    */
   public void setLogTarget(LogTarget value) {
     this.logTarget = value;

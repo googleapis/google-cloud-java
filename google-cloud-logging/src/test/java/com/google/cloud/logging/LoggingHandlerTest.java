@@ -32,6 +32,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.gson.JsonParser;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 import java.util.logging.ErrorManager;
 import java.util.logging.Filter;
 import java.util.logging.Formatter;
@@ -398,14 +399,15 @@ public class LoggingHandlerTest {
     handler.publish(newLogRecord(Level.FINEST, MESSAGE));
   }
 
-  void validateJsonOutput(ByteArrayOutputStream bout) {
+  void validateJsonOutput(ByteArrayOutputStream bout) throws UnsupportedEncodingException {
     final String expectedOutput =
         "{\"severity\":\"INFO\",\"time\":\"1970-01-02T10:17:36.789Z\",\"logging.googleapis.com/labels\":{\"enhanced\":\"true\"},\"logging.googleapis.com/trace_sampled\":false,\"message\":\"message\"}";
-    assertEquals(JsonParser.parseString(expectedOutput), JsonParser.parseString(bout.toString()));
+    assertEquals(
+        JsonParser.parseString(expectedOutput), JsonParser.parseString(bout.toString("UTF-8")));
   }
 
   @Test
-  public void testEnhancedLogEntryPrintToStdout() {
+  public void testEnhancedLogEntryPrintToStdout() throws UnsupportedEncodingException {
     outputStreamPatcher.patch();
 
     replay(options, logging);
@@ -422,7 +424,7 @@ public class LoggingHandlerTest {
   }
 
   @Test
-  public void testEnhancedLogEntryPrintToStderr() {
+  public void testEnhancedLogEntryPrintToStderr() throws UnsupportedEncodingException {
     outputStreamPatcher.patch();
 
     replay(options, logging);
