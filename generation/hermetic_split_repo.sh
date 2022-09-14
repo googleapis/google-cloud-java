@@ -115,4 +115,4 @@ git add ./**/*.java
 git commit -m 'fix: applying a different protobuf'
 
 echo "Create a pull request: "
-echo "  cd workspace/repo && gh pr create --draft --base ${BRANCH} --title 'fix: applying a different protobuf'"
+echo "  cd workspace/repo && gh pr create --draft --base ${BRANCH} --title 'fix: applying a fix to old branch'"
