@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.8.12](https://github.com/googleapis/java-core/compare/v2.8.11...v2.8.12) (2022-09-14)
+
+
+### Dependencies
+
+* Update dependency com.google.api:gax-bom to v2.19.1 ([#915](https://github.com/googleapis/java-core/issues/915)) ([2647fde](https://github.com/googleapis/java-core/commit/2647fdee8e2b168f3364af8e76abfe2903578b29))
+* Update dependency com.google.protobuf:protobuf-bom to v3.21.6 ([#916](https://github.com/googleapis/java-core/issues/916)) ([a7db234](https://github.com/googleapis/java-core/commit/a7db234800481ffba71d3222542971dbcd212d8e))
+
 ## [2.8.11](https://github.com/googleapis/java-core/compare/v2.8.10...v2.8.11) (2022-09-08)
 
 
