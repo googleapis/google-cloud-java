@@ -21,6 +21,7 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
 import com.google.cloud.grpc.multiendpoint.Endpoint.EndpointState;
 import com.google.common.base.Preconditions;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import com.google.errorprone.annotations.CheckReturnValue;
 import com.google.errorprone.annotations.concurrent.GuardedBy;
 import java.time.Duration;
@@ -28,6 +29,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
@@ -46,6 +48,12 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
  * MultiEndpoint will preserve endpoints' state and update their priority according to their new
  * positions.
  *
+ * <p>After updating the list of endpoints, MultiEndpoint will switch the current endpoint to the
+ * top-priority available endpoint. If you have many processes using MultiEndpoint, this may lead to
+ * immediate shift of all traffic which may be undesired. To smooth this transfer, use {@link
+ * Builder#withSwitchingDelay} with randomized value to introduce a jitter. MultiEndpoint will delay
+ * switching from an available endpoint to another endpoint for this amount of time.
+ *
  * <p>The initial state of endpoint is "unavailable" or "recovering" if using recovery timeout.
  */
 @CheckReturnValue
@@ -54,14 +62,22 @@ public final class MultiEndpoint {
   private final Map<String, Endpoint> endpointsMap = new HashMap<>();
 
   @GuardedBy("this")
-  private String currentId;
+  private volatile String currentId;
 
   private final Duration recoveryTimeout;
+  private final Duration switchingDelay;
 
-  private final ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(1);
+  @GuardedBy("this")
+  private ScheduledFuture<?> scheduledSwitch;
+
+  @GuardedBy("this")
+  private volatile String switchTo;
+
+  final ScheduledExecutorService executor = new ScheduledThreadPoolExecutor(1);
 
   private MultiEndpoint(Builder builder) {
     this.recoveryTimeout = builder.recoveryTimeout;
+    this.switchingDelay = builder.switchingDelay;
     this.setEndpoints(builder.endpoints);
   }
 
@@ -69,6 +85,7 @@ public final class MultiEndpoint {
   public static final class Builder {
     private final List<String> endpoints;
     private Duration recoveryTimeout = Duration.ZERO;
+    private Duration switchingDelay = Duration.ZERO;
 
     public Builder(List<String> endpoints) {
       Preconditions.checkNotNull(endpoints);
@@ -80,9 +97,21 @@ public final class MultiEndpoint {
      * MultiEndpoint will keep the current endpoint for up to recovery timeout after it became
      * unavailable to give it some time to recover.
      */
+    @CanIgnoreReturnValue
     public Builder withRecoveryTimeout(Duration timeout) {
       Preconditions.checkNotNull(timeout);
-      this.recoveryTimeout = timeout;
+      recoveryTimeout = timeout;
+      return this;
+    }
+
+    /**
+     * MultiEndpoint will delay switching from an available endpoint to another endpoint for this
+     * amount of time.
+     */
+    @CanIgnoreReturnValue
+    public Builder withSwitchingDelay(Duration delay) {
+      Preconditions.checkNotNull(delay);
+      switchingDelay = delay;
       return this;
     }
 
@@ -102,42 +131,30 @@ public final class MultiEndpoint {
     return currentId;
   }
 
-  private synchronized void setEndpointStateInternal(String endpointId, EndpointState state) {
-    Endpoint endpoint = endpointsMap.get(endpointId);
-    if (endpoint != null) {
-      endpoint.setState(state);
-      maybeUpdateCurrentEndpoint();
-    }
+  synchronized Map<String, Endpoint> getEndpointsMap() {
+    return endpointsMap;
   }
 
-  private boolean isRecoveryEnabled() {
+  Duration getRecoveryTimeout() {
+    return recoveryTimeout;
+  }
+
+  boolean isRecoveryEnabled() {
     return !recoveryTimeout.isNegative() && !recoveryTimeout.isZero();
+  }
+
+  private boolean isSwitchingDelayed() {
+    return !switchingDelay.isNegative() && !switchingDelay.isZero();
   }
 
   /** Inform MultiEndpoint when an endpoint becomes available or unavailable. */
   public synchronized void setEndpointAvailable(String endpointId, boolean available) {
-    setEndpointState(endpointId, available ? EndpointState.AVAILABLE : EndpointState.UNAVAILABLE);
-  }
-
-  private synchronized void setEndpointState(String endpointId, EndpointState state) {
-    Preconditions.checkNotNull(state);
     Endpoint endpoint = endpointsMap.get(endpointId);
     if (endpoint == null) {
       return;
     }
-    // If we allow some recovery time.
-    if (EndpointState.UNAVAILABLE.equals(state) && isRecoveryEnabled()) {
-      endpoint.setState(EndpointState.RECOVERING);
-      ScheduledFuture<?> future =
-          executor.schedule(
-              () -> setEndpointStateInternal(endpointId, EndpointState.UNAVAILABLE),
-              recoveryTimeout.toMillis(),
-              MILLISECONDS);
-      endpoint.setChangeStateFuture(future);
-      return;
-    }
-    endpoint.resetStateChangeFuture();
-    endpoint.setState(state);
+
+    endpoint.setAvailability(available);
     maybeUpdateCurrentEndpoint();
   }
 
@@ -162,18 +179,8 @@ public final class MultiEndpoint {
         existingEndpoint.setPriority(priority++);
         continue;
       }
-      EndpointState newState =
-          isRecoveryEnabled() ? EndpointState.RECOVERING : EndpointState.UNAVAILABLE;
-      Endpoint newEndpoint = new Endpoint(endpointId, newState, priority++);
-      if (isRecoveryEnabled()) {
-        ScheduledFuture<?> future =
-            executor.schedule(
-                () -> setEndpointStateInternal(endpointId, EndpointState.UNAVAILABLE),
-                recoveryTimeout.toMillis(),
-                MILLISECONDS);
-        newEndpoint.setChangeStateFuture(future);
-      }
-      endpointsMap.put(endpointId, newEndpoint);
+      endpointsMap.put(
+          endpointId, new Endpoint(endpointId, EndpointState.UNAVAILABLE, priority++, this));
     }
 
     maybeUpdateCurrentEndpoint();
@@ -181,7 +188,7 @@ public final class MultiEndpoint {
 
   // Updates currentId to the top-priority available endpoint unless the current endpoint is
   // recovering.
-  private synchronized void maybeUpdateCurrentEndpoint() {
+  synchronized void maybeUpdateCurrentEndpoint() {
     Optional<Endpoint> topEndpoint =
         endpointsMap.values().stream()
             .filter((c) -> c.getState().equals(EndpointState.AVAILABLE))
@@ -199,6 +206,53 @@ public final class MultiEndpoint {
       topEndpoint = endpointsMap.values().stream().min(comparingInt(Endpoint::getPriority));
     }
 
-    topEndpoint.ifPresent(endpoint -> currentId = endpoint.getId());
+    if (topEndpoint.isPresent()) {
+      updateCurrentEndpoint(current, topEndpoint.get().getId());
+    }
+  }
+
+  private synchronized void updateCurrentEndpoint(Endpoint current, String newCurrentId) {
+    // If no current or became unavailable then switch immediately.
+    if (current == null || current.getState().equals(EndpointState.UNAVAILABLE)) {
+      currentId = newCurrentId;
+      return;
+    }
+
+    if (!isSwitchingDelayed()) {
+      currentId = newCurrentId;
+      return;
+    }
+
+    switchTo = newCurrentId;
+    if (scheduledSwitch == null || scheduledSwitch.isDone()) {
+      scheduledSwitch =
+          executor.schedule(this::switchCurrentEndpoint, switchingDelay.toMillis(), MILLISECONDS);
+    }
+  }
+
+  private synchronized void switchCurrentEndpoint() {
+    currentId = switchTo;
+  }
+
+  // It is okay to read currentId and endpointsMap without obtaining a lock here.
+  @SuppressWarnings("GuardedBy")
+  @Override
+  public String toString() {
+    return "MultiEndpoint{"
+        + "endpointsMap="
+        + endpointsMap
+        + ", currentId='"
+        + currentId
+        + "', recoveryTimeout="
+        + recoveryTimeout
+        + ", switchingDelay="
+        + switchingDelay
+        + ", scheduledSwitch="
+        + scheduledSwitch
+        + ", switchTo='"
+        + switchTo
+        + "', executor="
+        + executor
+        + '}';
   }
 }

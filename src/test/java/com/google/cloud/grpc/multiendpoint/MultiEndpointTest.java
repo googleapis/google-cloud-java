@@ -17,33 +17,35 @@
 package com.google.cloud.grpc.multiendpoint;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 
 import com.google.api.client.util.Sleeper;
+import com.google.cloud.grpc.multiendpoint.Endpoint.EndpointState;
 import com.google.common.collect.ImmutableList;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Unit tests for MultiEndpoint.
- */
+/** Unit tests for MultiEndpoint. */
 @RunWith(JUnit4.class)
 public final class MultiEndpointTest {
+
   private final List<String> threeEndpoints =
       new ArrayList<>(ImmutableList.of("first", "second", "third"));
 
   private final List<String> fourEndpoints =
-      new ArrayList<>(ImmutableList.of("four", "first", "third", "second"));
+      new ArrayList<>(ImmutableList.of("fourth", "first", "third", "second"));
 
-  private static final long RECOVERY_MS = 1000;
+  private static final long RECOVERY_MS = 20;
+  private static final long DELAY_MS = 40;
+  private static final long MARGIN_MS = 10;
 
-  @Rule
-  public ExpectedException expectedEx = ExpectedException.none();
+  private void sleep(long millis) throws InterruptedException {
+    Sleeper.DEFAULT.sleep(millis);
+  }
 
   private MultiEndpoint initPlain(List<String> endpoints) {
     return new MultiEndpoint.Builder(endpoints).build();
@@ -55,18 +57,32 @@ public final class MultiEndpointTest {
         .build();
   }
 
-  @Test
-  public void initPlain_raisesErrorWhenEmptyEndpoints() {
-    expectedEx.expect(IllegalArgumentException.class);
-    expectedEx.expectMessage("Endpoints list must not be empty.");
-    initPlain(ImmutableList.of());
+  private MultiEndpoint initWithDelays(
+      List<String> endpoints, long recoveryTimeOut, long switchingDelay) {
+    return new MultiEndpoint.Builder(endpoints)
+        .withRecoveryTimeout(Duration.ofMillis(recoveryTimeOut))
+        .withSwitchingDelay(Duration.ofMillis(switchingDelay))
+        .build();
   }
 
   @Test
-  public void initWithRecovery_raisesErrorWhenEmptyEndpoints() {
-    expectedEx.expect(IllegalArgumentException.class);
-    expectedEx.expectMessage("Endpoints list must not be empty.");
-    initWithRecovery(ImmutableList.of(), RECOVERY_MS);
+  public void constructor_raisesErrorWhenEmptyEndpoints() {
+    IllegalArgumentException thrown =
+        assertThrows(IllegalArgumentException.class, () -> initPlain(ImmutableList.of()));
+    assertThat(thrown).hasMessageThat().contains("Endpoints list must not be empty.");
+
+    thrown =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> initWithRecovery(ImmutableList.of(), RECOVERY_MS));
+    assertThat(thrown).hasMessageThat().contains("Endpoints list must not be empty.");
+  }
+
+  @Test
+  public void constructor_currentIsFirstAfterInit() {
+    MultiEndpoint multiEndpoint = initWithDelays(threeEndpoints, RECOVERY_MS, DELAY_MS);
+
+    assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(0));
   }
 
   @Test
@@ -128,7 +144,7 @@ public final class MultiEndpointTest {
     assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(0));
 
     // After recovery timeout has passed.
-    Sleeper.DEFAULT.sleep(RECOVERY_MS + 100);
+    sleep(RECOVERY_MS + MARGIN_MS);
 
     // Second becomes current as an available endpoint with top priority.
     assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(1));
@@ -146,21 +162,21 @@ public final class MultiEndpointTest {
     assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(1));
 
     // Halfway through recovery timeout the second recovers.
-    Sleeper.DEFAULT.sleep(RECOVERY_MS / 2);
+    sleep(RECOVERY_MS / 2);
     multiEndpoint.setEndpointAvailable(threeEndpoints.get(1), true);
 
     // Second is the current.
     assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(1));
 
     // After the initial recovery timeout, the second is still current.
-    Sleeper.DEFAULT.sleep(RECOVERY_MS / 2 + 100);
+    sleep(RECOVERY_MS / 2 + MARGIN_MS);
     assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(1));
 
     // Second becomes unavailable.
     multiEndpoint.setEndpointAvailable(threeEndpoints.get(1), false);
 
     // After recovery timeout has passed.
-    Sleeper.DEFAULT.sleep(RECOVERY_MS + 100);
+    sleep(RECOVERY_MS + MARGIN_MS);
 
     // Changes to an available endpoint -- third.
     assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(2));
@@ -178,7 +194,7 @@ public final class MultiEndpointTest {
     assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(0));
 
     // After recovery timeout has passed.
-    Sleeper.DEFAULT.sleep(RECOVERY_MS + 100);
+    sleep(RECOVERY_MS + MARGIN_MS);
 
     // Changes to an available endpoint -- third.
     assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(2));
@@ -190,7 +206,7 @@ public final class MultiEndpointTest {
     assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(2));
 
     // Halfway through recovery timeout the second becomes available.
-    // Sleeper.defaultSleeper().sleep(Duration.ofMillis(RECOVERY_MS - 100));
+    sleep(RECOVERY_MS / 2);
     multiEndpoint.setEndpointAvailable(threeEndpoints.get(1), true);
 
     // Second becomes current immediately.
@@ -203,7 +219,7 @@ public final class MultiEndpointTest {
     assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(1));
 
     // After recovery timeout has passed.
-    Sleeper.DEFAULT.sleep(RECOVERY_MS + 100);
+    sleep(RECOVERY_MS + MARGIN_MS);
 
     // After all endpoints became unavailable the multiEndpoint sticks to the last used endpoint.
     assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(1));
@@ -212,8 +228,10 @@ public final class MultiEndpointTest {
   @Test
   public void setEndpoints_raisesErrorWhenEmptyEndpoints() {
     MultiEndpoint multiEndpoint = initPlain(threeEndpoints);
-    expectedEx.expect(IllegalArgumentException.class);
-    multiEndpoint.setEndpoints(ImmutableList.of());
+    IllegalArgumentException thrown =
+        assertThrows(
+            IllegalArgumentException.class, () -> multiEndpoint.setEndpoints(ImmutableList.of()));
+    assertThat(thrown).hasMessageThat().contains("Endpoints list must not be empty.");
   }
 
   @Test
@@ -252,7 +270,7 @@ public final class MultiEndpointTest {
     MultiEndpoint multiEndpoint = initWithRecovery(threeEndpoints, RECOVERY_MS);
 
     // After recovery timeout has passed.
-    Sleeper.DEFAULT.sleep(RECOVERY_MS + 100);
+    sleep(RECOVERY_MS + MARGIN_MS);
 
     // Second is available.
     multiEndpoint.setEndpointAvailable(threeEndpoints.get(1), true);
@@ -282,7 +300,7 @@ public final class MultiEndpointTest {
     MultiEndpoint multiEndpoint = initWithRecovery(threeEndpoints, RECOVERY_MS);
 
     // After recovery timeout has passed.
-    Sleeper.DEFAULT.sleep(RECOVERY_MS + 100);
+    sleep(RECOVERY_MS + MARGIN_MS);
 
     // Second and third is available.
     multiEndpoint.setEndpointAvailable(threeEndpoints.get(1), true);
@@ -306,7 +324,7 @@ public final class MultiEndpointTest {
     // Extra is removed.
     multiEndpoint.setEndpoints(fourEndpoints);
 
-    // "four" which is under index 0 must become current, because no endpoints available.
+    // "fourth" which is under index 0 must become current, because no endpoints available.
     assertThat(multiEndpoint.getCurrentId()).isEqualTo(fourEndpoints.get(0));
   }
 
@@ -318,7 +336,7 @@ public final class MultiEndpointTest {
     MultiEndpoint multiEndpoint = initWithRecovery(extraEndpoints, RECOVERY_MS);
 
     // After recovery timeout has passed.
-    Sleeper.DEFAULT.sleep(RECOVERY_MS + 100);
+    sleep(RECOVERY_MS + MARGIN_MS);
 
     // Extra is available.
     multiEndpoint.setEndpointAvailable("extra", true);
@@ -326,7 +344,7 @@ public final class MultiEndpointTest {
     // Extra is removed.
     multiEndpoint.setEndpoints(fourEndpoints);
 
-    // "four" which is under index 0 must become current, because no endpoints available.
+    // "fourth" which is under index 0 must become current, because no endpoints available.
     assertThat(multiEndpoint.getCurrentId()).isEqualTo(fourEndpoints.get(0));
   }
 
@@ -337,7 +355,7 @@ public final class MultiEndpointTest {
     MultiEndpoint multiEndpoint = initWithRecovery(extraEndpoints, RECOVERY_MS);
 
     // After recovery timeout has passed.
-    Sleeper.DEFAULT.sleep(RECOVERY_MS + 100);
+    sleep(RECOVERY_MS + MARGIN_MS);
 
     // Extra is available.
     multiEndpoint.setEndpointAvailable("extra", true);
@@ -348,13 +366,143 @@ public final class MultiEndpointTest {
     // Extra is removed.
     multiEndpoint.setEndpoints(fourEndpoints);
 
-    // "four" which is under index 0 must become current, because no endpoints available.
+    // "fourth" which is under index 0 must become current, because no endpoints available.
     assertThat(multiEndpoint.getCurrentId()).isEqualTo(fourEndpoints.get(0));
 
     // After recovery timeout has passed.
-    Sleeper.DEFAULT.sleep(RECOVERY_MS + 100);
+    sleep(RECOVERY_MS + MARGIN_MS);
 
-    // "four" is still current.
+    // "fourth" is still current.
     assertThat(multiEndpoint.getCurrentId()).isEqualTo(fourEndpoints.get(0));
+  }
+
+  @Test
+  public void setEndpointAvailable_subsequentUnavailableShouldNotExtendRecoveryTimeout()
+      throws InterruptedException {
+    // All endpoints are recovering.
+    MultiEndpoint multiEndpoint = initWithRecovery(threeEndpoints, RECOVERY_MS);
+
+    // Before recovery timeout repeat unavailable signal.
+    sleep(RECOVERY_MS / 2);
+    multiEndpoint.setEndpointAvailable(threeEndpoints.get(0), false);
+
+    // After the initial timeout it must become unavailable.
+    sleep(RECOVERY_MS / 2 + MARGIN_MS);
+    assertThat(multiEndpoint.getEndpointsMap().get(threeEndpoints.get(0)).getState())
+        .isEqualTo(EndpointState.UNAVAILABLE);
+  }
+
+  @Test
+  public void setEndpointAvailable_recoveredUnavailableRace() throws InterruptedException {
+    // All endpoints are recovering.
+    MultiEndpoint multiEndpoint = initWithRecovery(threeEndpoints, RECOVERY_MS);
+
+    for (int i = 0; i < 100; i++) {
+      // Right at the recovery timeout we enable the "first". This should race with the "first"
+      // becoming unavailable from its recovery timer. If this race condition is not covered then
+      // the test will most likely fail or at least be flaky.
+      sleep(RECOVERY_MS);
+      multiEndpoint.setEndpointAvailable(threeEndpoints.get(0), true);
+
+      sleep(MARGIN_MS);
+      assertThat(multiEndpoint.getEndpointsMap().get(threeEndpoints.get(0)).getState())
+          .isEqualTo(EndpointState.AVAILABLE);
+
+      // Send it back to recovery state and start recovery timer.
+      multiEndpoint.setEndpointAvailable(threeEndpoints.get(0), false);
+    }
+  }
+
+  @Test
+  public void setEndpointAvailable_doNotSwitchToUnavailableFromAvailable()
+      throws InterruptedException {
+    MultiEndpoint multiEndpoint = initWithDelays(threeEndpoints, RECOVERY_MS, DELAY_MS);
+    // Second and third endpoint are available.
+    multiEndpoint.setEndpointAvailable(threeEndpoints.get(1), true);
+    multiEndpoint.setEndpointAvailable(threeEndpoints.get(2), true);
+
+    sleep(RECOVERY_MS + MARGIN_MS);
+    // Second is current.
+    assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(1));
+
+    // First becomes available.
+    multiEndpoint.setEndpointAvailable(threeEndpoints.get(0), true);
+
+    // Switching is planned to "first" after switching delay. "second" is still current.
+    assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(1));
+
+    // Almost at switching delay the "first" endpoint becomes unavailable again.
+    sleep(DELAY_MS - MARGIN_MS);
+    multiEndpoint.setEndpointAvailable(threeEndpoints.get(0), false);
+
+    // After switching delay the current must be "second". No switching to "first" should occur.
+    sleep(2 * MARGIN_MS);
+    assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(1));
+  }
+
+  @Test
+  public void setEndpoints_switchingDelayed() throws InterruptedException {
+    MultiEndpoint multiEndpoint = initWithDelays(threeEndpoints, RECOVERY_MS, DELAY_MS);
+    // All endpoints are available.
+    threeEndpoints.forEach(e -> multiEndpoint.setEndpointAvailable(e, true));
+
+    assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(0));
+
+    // Prepend a new endpoint and make it available.
+    List<String> extraEndpoints = new ArrayList<>();
+    extraEndpoints.add("extra");
+    extraEndpoints.addAll(threeEndpoints);
+
+    multiEndpoint.setEndpoints(extraEndpoints);
+    multiEndpoint.setEndpointAvailable("extra", true);
+
+    // The current endpoint should not change instantly.
+    assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(0));
+
+    // But after switching delay it should.
+    sleep(DELAY_MS + MARGIN_MS);
+    assertThat(multiEndpoint.getCurrentId()).isEqualTo("extra");
+
+    // Make current endpoint unavailable.
+    multiEndpoint.setEndpointAvailable("extra", false);
+
+    // Should wait for recovery timeout.
+    assertThat(multiEndpoint.getCurrentId()).isEqualTo("extra");
+
+    // Should switch to a healthy endpoint after recovery timeout and not the switching delay.
+    sleep(RECOVERY_MS + MARGIN_MS);
+    assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(0));
+
+    // Prepend another endpoint.
+    List<String> updatedEndpoints = new ArrayList<>();
+    updatedEndpoints.add("extra2");
+    updatedEndpoints.addAll(extraEndpoints);
+
+    multiEndpoint.setEndpoints(updatedEndpoints);
+    // Now the endpoints are:
+    // extra2 UNAVAILABLE
+    // extra UNAVAILABLE
+    // first AVAILABLE <-- current
+    // second AVAILABLE
+    // third AVAILABLE
+
+    // Make "extra" endpoint available.
+    multiEndpoint.setEndpointAvailable("extra", true);
+
+    // Should wait for the switching delay.
+    // Halfway it should be still "first" endpoint.
+    sleep(DELAY_MS / 2);
+    assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(0));
+
+    // Now another higher priority endpoint becomes available.
+    multiEndpoint.setEndpointAvailable("extra2", true);
+
+    // Still "first" endpoint is current because switching delay has not passed.
+    assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(0));
+
+    // After another half of the switching delay has passed it should switch to the "extra2" because
+    // it is a top priority available endpoint at the moment.
+    sleep(DELAY_MS / 2 + MARGIN_MS);
+    assertThat(multiEndpoint.getCurrentId()).isEqualTo("extra2");
   }
 }

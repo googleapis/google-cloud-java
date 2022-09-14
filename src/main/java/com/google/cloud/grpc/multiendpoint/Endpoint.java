@@ -16,18 +16,16 @@
 
 package com.google.cloud.grpc.multiendpoint;
 
+import static java.util.concurrent.TimeUnit.MILLISECONDS;
+
 import com.google.errorprone.annotations.CheckReturnValue;
 import java.util.concurrent.ScheduledFuture;
 
-/**
- * Endpoint holds an endpoint's state, priority and a future of upcoming state change.
- */
+/** Endpoint holds an endpoint's state, priority and a future of upcoming state change. */
 @CheckReturnValue
 final class Endpoint {
 
-  /**
-   * Holds a state of an endpoint.
-   */
+  /** Holds a state of an endpoint. */
   public enum EndpointState {
     UNAVAILABLE,
     AVAILABLE,
@@ -36,13 +34,16 @@ final class Endpoint {
 
   private final String id;
   private EndpointState state;
+  private long lastStateChangeNano;
   private int priority;
   private ScheduledFuture<?> changeStateFuture;
+  private final MultiEndpoint multiEndpoint;
 
-  public Endpoint(String id, EndpointState state, int priority) {
+  Endpoint(String id, EndpointState state, int priority, MultiEndpoint multiEndpoint) {
     this.id = id;
     this.priority = priority;
-    this.state = state;
+    this.multiEndpoint = multiEndpoint;
+    setAvailability(EndpointState.AVAILABLE.equals(state));
   }
 
   public String getId() {
@@ -57,22 +58,72 @@ final class Endpoint {
     return priority;
   }
 
-  public void setState(EndpointState state) {
-    this.state = state;
-  }
-
   public void setPriority(int priority) {
     this.priority = priority;
   }
 
-  public synchronized void setChangeStateFuture(ScheduledFuture<?> future) {
-    resetStateChangeFuture();
-    changeStateFuture = future;
+  // Internal method to change state to any state.
+  private void setState(EndpointState state) {
+    synchronized (multiEndpoint) {
+      if (changeStateFuture != null) {
+        changeStateFuture.cancel(false);
+      }
+      this.state = state;
+      lastStateChangeNano = System.nanoTime();
+    }
   }
 
-  public synchronized void resetStateChangeFuture() {
-    if (changeStateFuture != null) {
-      changeStateFuture.cancel(true);
+  void setAvailability(boolean available) {
+    synchronized (multiEndpoint) {
+      if (available) {
+        setState(EndpointState.AVAILABLE);
+        return;
+      }
+
+      if (state != null && !EndpointState.AVAILABLE.equals(state)) {
+        return;
+      }
+
+      if (!multiEndpoint.isRecoveryEnabled()) {
+        setState(EndpointState.UNAVAILABLE);
+        return;
+      }
+
+      setState(EndpointState.RECOVERING);
+      final long stateChangeNano = lastStateChangeNano;
+      changeStateFuture =
+          multiEndpoint.executor.schedule(
+              () -> triggerRecoveryTimeout(stateChangeNano),
+              multiEndpoint.getRecoveryTimeout().toMillis(),
+              MILLISECONDS);
     }
+  }
+
+  private void triggerRecoveryTimeout(long statusChangeNano) {
+    synchronized (multiEndpoint) {
+      if (lastStateChangeNano != statusChangeNano) {
+        // This timer is outdated.
+        return;
+      }
+
+      setState(EndpointState.UNAVAILABLE);
+      multiEndpoint.maybeUpdateCurrentEndpoint();
+    }
+  }
+
+  @Override
+  public String toString() {
+    return "Endpoint{"
+        + "id='"
+        + id
+        + "', state="
+        + state
+        + ", lastStateChangeNano="
+        + lastStateChangeNano
+        + ", priority="
+        + priority
+        + ", changeStateFuture="
+        + changeStateFuture
+        + '}';
   }
 }

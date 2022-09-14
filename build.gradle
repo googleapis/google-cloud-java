@@ -47,7 +47,7 @@ dependencies {
     testImplementation "io.grpc:grpc-auth:${grpcVersion}"
     testImplementation "io.grpc:grpc-stub:${grpcVersion}"
     testImplementation "com.google.truth:truth:0.42"
-    testImplementation "junit:junit:4.12"
+    testImplementation 'junit:junit:4.13.2'
 }
 
 protobuf {
