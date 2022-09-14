@@ -1,6 +1,17 @@
 # Changelog
 
 
+## [3.0.3](https://github.com/googleapis/java-shared-dependencies/compare/v3.0.2...v3.0.3) (2022-09-14)
+
+
+### Dependencies
+
+* Google-cloud-core 2.8.12 ([#799](https://github.com/googleapis/java-shared-dependencies/issues/799)) ([1b3db8d](https://github.com/googleapis/java-shared-dependencies/commit/1b3db8d1e17c49ebae79fc96164fa9058e1df6e3))
+* Moving gson to first-party-dependencies ([#800](https://github.com/googleapis/java-shared-dependencies/issues/800)) ([a41fcc1](https://github.com/googleapis/java-shared-dependencies/commit/a41fcc11d32e02e5af2837561792e3919f6d4b3f))
+* Update dependency com.google.protobuf:protobuf-bom to v3.21.6 ([#797](https://github.com/googleapis/java-shared-dependencies/issues/797)) ([bc5fdc9](https://github.com/googleapis/java-shared-dependencies/commit/bc5fdc9b3af7973c28f063a9ac156fe2af562814))
+* Update gax.version to v2.19.1 ([#798](https://github.com/googleapis/java-shared-dependencies/issues/798)) ([84e5487](https://github.com/googleapis/java-shared-dependencies/commit/84e5487b2e3dce4bb60badecebde788c3cb702b8))
+* Update google.core.version to v2.8.11 ([#793](https://github.com/googleapis/java-shared-dependencies/issues/793)) ([63c1297](https://github.com/googleapis/java-shared-dependencies/commit/63c129722aa0b821031ff5b4c11004adf7b12044))
+
 ## [3.0.2](https://github.com/googleapis/java-shared-dependencies/compare/v3.0.1...v3.0.2) (2022-09-08)
 
 
