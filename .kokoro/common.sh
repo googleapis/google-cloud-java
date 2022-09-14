@@ -42,7 +42,7 @@ function retry_with_backoff {
     fi
 
     # failure
-    if [[ ${attempts_left} > 0 ]]
+    if [[ ${attempts_left} -gt 0 ]]
     then
         echo "failure (${exit_code}), sleeping ${sleep_seconds}..."
         sleep ${sleep_seconds}
@@ -54,7 +54,7 @@ function retry_with_backoff {
     return $exit_code
 }
 
-## Helper functionss
+## Helper functions
 function now() { date +"%Y-%m-%d %H:%M:%S" | tr -d '\n'; }
 function msg() { println "$*" >&2; }
 function println() { printf '%s\n' "$(now) $*"; }
@@ -74,7 +74,7 @@ function generate_modified_modules_list() {
     modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
     for module in $modules; do
       if [[ ! "${excluded_modules[*]}" =~ $module ]]; then
-        modified_module_list+=($module)
+        modified_module_list+=("${module}")
       fi
     done
     echo "Testing the entire monorepo"
@@ -84,7 +84,7 @@ function generate_modified_modules_list() {
     if [[ -n $modules ]]; then
       modules=$(echo "${modules}" | cut -d '/' -f1 | sort -u)
       for module in $modules; do
-        modified_module_list+=($module)
+        modified_module_list+=("${module}")
       done
     fi
   fi
@@ -97,7 +97,7 @@ function assign_modules_to_job() {
     # Add 1 as JOB_NUMBER is 1-indexed instead of 0-indexed
     mod_num=$((num % NUM_JOBS + 1))
     if [[ ! "${excluded_modules[*]}" =~ $module ]] && [[ $mod_num -eq $JOB_NUMBER ]]; then
-      modules_assigned_list+=($module)
+      modules_assigned_list+=("${module}")
     fi
     num=$((num + 1))
   done
