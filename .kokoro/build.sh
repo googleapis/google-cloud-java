@@ -41,14 +41,32 @@ RETURN_CODE=0
 case ${JOB_TYPE} in
   integration)
     generate_modified_modules_list
-    if [ ${#modified_module_list[@]} -gt 0 ]; then
+    if [[ ${#modified_module_list[@]} -gt 0 ]]; then
       # Combine each entry with a comma
       module_list=$(
         IFS=,
         echo "${modified_module_list[*]}"
       )
       install_modules
-      run_integration_tests
+      printf "Running Integration Tests for:\n%s\n" "${module_list}"
+      mvn -B ${INTEGRATION_TEST_ARGS} \
+        -pl "${module_list}" \
+        -amd \
+        -ntp \
+        -Penable-integration-tests \
+        -DtrimStackTrace=false \
+        -Dclirr.skip=true \
+        -Denforcer.skip=true \
+        -Dcheckstyle.skip=true \
+        -Dflatten.skip=true \
+        -Danimal.sniffer.skip=true \
+        -Djacoco.skip=true \
+        -DskipUnitTests=true \
+        -fae \
+        -T 1C \
+        verify
+      RETURN_CODE=$?
+      printf "Finished Integration Tests for:\n%s\n" "${module_list}"
     else
       echo "No Integration Tests to run"
     fi

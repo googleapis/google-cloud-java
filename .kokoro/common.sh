@@ -103,28 +103,6 @@ function assign_modules_to_job() {
   done
 }
 
-function run_integration_tests() {
-  printf "Running Integration Tests for:\n%s\n" "${module_list}"
-  mvn -B ${INTEGRATION_TEST_ARGS} \
-    -pl "${module_list}" \
-    -amd \
-    -ntp \
-    -Penable-integration-tests \
-    -DtrimStackTrace=false \
-    -Dclirr.skip=true \
-    -Denforcer.skip=true \
-    -Dcheckstyle.skip=true \
-    -Dflatten.skip=true \
-    -Danimal.sniffer.skip=true \
-    -Djacoco.skip=true \
-    -DskipUnitTests=true \
-    -fae \
-    -T 1C \
-    verify
-  RETURN_CODE=$?
-  printf "Finished Integration Tests for:\n%s\n" "${module_list}"
-}
-
 function run_graalvm_tests() {
   printf "Running GraalVM ITs on:\n%s\n" "${module_list[*]}"
   mvn -B ${INTEGRATION_TEST_ARGS} \
@@ -156,8 +134,9 @@ function generate_graalvm_modules_list() {
       echo "${modules_assigned_list[*]}"
     )
   else
-    module_list=$MAVEN_MODULE
+    module_list="${MAVEN_MODULES}"
   fi
+  printf "Module list is:\n%s\n" "${module_list}"
 }
 
 function install_modules() {
