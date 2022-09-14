@@ -145,6 +145,21 @@ function run_graalvm_tests() {
   printf "Finished Unit and Integration Tests for GraalVM:\n%s\n" "${module_list}"
 }
 
+function generate_graalvm_modules_list() {
+  if [[ "${TEST_ALL_MODULES}" == "true" ]]; then
+    # This will get a list of all modules
+    generate_modified_modules_list
+    assign_modules_to_job
+    # Combine each entry with a comma
+    module_list=$(
+      IFS=,
+      echo "${modules_assigned_list[*]}"
+    )
+  else
+    module_list=$MAVEN_MODULE
+  fi
+}
+
 function install_modules() {
   mvn -B -pl "${module_list},!CoverageAggregator" \
     -amd \

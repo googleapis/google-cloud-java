@@ -36,13 +36,11 @@ if [ -f "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secr
   source "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secrets"
 fi
 
-# Generate a list of modified modules
-generate_modified_modules_list
-
 RETURN_CODE=0
 
 case ${JOB_TYPE} in
   integration)
+    generate_modified_modules_list
     if [ ${#modified_module_list[@]} -gt 0 ]; then
       # Combine each entry with a comma
       module_list=$(
@@ -56,32 +54,14 @@ case ${JOB_TYPE} in
     fi
     ;;
   graalvm)
-    assign_modules_to_job
-    if [ ${#modules_assigned_list[@]} -gt 0 ]; then
-      # Combine each entry with a comma
-      module_list=$(
-        IFS=,
-        echo "${modules_assigned_list[*]}"
-      )
-      install_modules
-      run_graalvm_tests
-    else
-      echo "No Unit and Integration Tests to run for GraalVM Native"
-    fi
+    generate_graalvm_modules_list
+    install_modules
+    run_graalvm_tests
     ;;
   graalvm17)
-    assign_modules_to_job
-    if [ ${#modules_assigned_list[@]} -gt 0 ]; then
-      # Combine each entry with a comma
-      module_list=$(
-        IFS=,
-        echo "${modules_assigned_list[*]}"
-      )
-      install_modules
-      run_graalvm_tests
-    else
-     echo "No Unit and Integration Tests to run for GraalVM Native 17"
-    fi
+    generate_graalvm_modules_list
+    install_modules
+    run_graalvm_tests
     ;;
   samples)
     # Generate excluded_modules_string
