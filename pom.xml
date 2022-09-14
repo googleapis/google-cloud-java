@@ -181,6 +181,8 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <configuration>
           <skip>${skipUnitTests}</skip>
+          <forkCount>1C</forkCount>
+          <reuseForks>true</reuseForks>
         </configuration>
       </plugin>
       <plugin>
