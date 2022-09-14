@@ -86,6 +86,8 @@ function generate_modified_modules_list() {
       for module in $modules; do
         modified_module_list+=("${module}")
       done
+    else
+      echo "Found no changes in the java modules"
     fi
   fi
 }
@@ -106,7 +108,7 @@ function assign_modules_to_job() {
 function run_graalvm_tests() {
   printf "Running GraalVM ITs on:\n%s\n" "${module_list[*]}"
   mvn -B ${INTEGRATION_TEST_ARGS} \
-    -pl "${module_list}" \
+    -pl "${module_list},!CoverageAggregator" \
     -amd \
     -ntp \
     -DtrimStackTrace=false \
@@ -133,10 +135,11 @@ function generate_graalvm_modules_list() {
       IFS=,
       echo "${modules_assigned_list[*]}"
     )
+    printf "Module list is:\n%s\n" "${module_list}"
   else
     module_list="${MAVEN_MODULES}"
+    printf "Running the GraalVM test on pre-selected maven modules: %s\n" "${MAVEN_MODULES}"
   fi
-  printf "Module list is:\n%s\n" "${module_list}"
 }
 
 function install_modules() {
@@ -153,15 +156,4 @@ function install_modules() {
     -Djacoco.skip=true \
     -T 1C \
     install
-}
-
-function generate_excluded_module_string() {
-  excluded_modules_list=()
-  for excluded_module in "${excluded_modules[@]}"; do
-    excluded_modules_list+=("!${excluded_module}")
-  done
-  excluded_modules_string=$(
-    IFS=,
-    echo "${excluded_modules_list[*]}"
-  )
 }
