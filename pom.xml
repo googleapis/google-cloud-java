@@ -222,6 +222,7 @@
             <!-- Must use older version of surefire plugin for native-image testing. -->
             <version>2.22.2</version>
             <configuration>
+              <skip>false</skip>
               <forkCount>1C</forkCount>
               <reuseForks>true</reuseForks>
               <!-- Include all tests during native image testing. -->
