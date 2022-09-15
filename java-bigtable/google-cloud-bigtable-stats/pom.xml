@@ -16,23 +16,12 @@
     <version>2.11.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
     <description>Experimental project to shade OpenCensus dependencies.</description>
 
-    <properties>
-        <cloud.monitoring.version>3.4.3</cloud.monitoring.version>
-    </properties>
-
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>com.google.cloud</groupId>
                 <artifactId>google-cloud-bigtable-deps-bom</artifactId>
                 <version>2.11.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.google.cloud</groupId>
-                <artifactId>google-cloud-monitoring-bom</artifactId>
-                <version>${cloud.monitoring.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
