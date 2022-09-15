@@ -191,6 +191,7 @@
         <configuration>
           <forkCount>1C</forkCount>
           <reuseForks>true</reuseForks>
+          <parallel>classes</parallel>
         </configuration>
       </plugin>
     </plugins>
@@ -225,6 +226,7 @@
               <skip>false</skip>
               <forkCount>1C</forkCount>
               <reuseForks>true</reuseForks>
+              <parallel>classes</parallel>
               <!-- Include all tests during native image testing. -->
               <excludes combine.self="override" />
               <includes>
