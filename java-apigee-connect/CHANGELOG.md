@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.4](https://github.com/googleapis/java-apigee-connect/compare/v2.3.3...v2.3.4) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#213](https://github.com/googleapis/java-apigee-connect/issues/213)) ([49df0c3](https://github.com/googleapis/java-apigee-connect/commit/49df0c3bbd570bb1bac7f7e9f6b8c947b27a5753))
+
 ## [2.3.3](https://github.com/googleapis/java-apigee-connect/compare/v2.3.2...v2.3.3) (2022-09-08)
 
 
