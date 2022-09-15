@@ -16,19 +16,18 @@
 
 package com.google.cloud.notebooks.v1beta1.it;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import com.google.api.FieldBehavior;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.notebooks.v1beta1.*;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
 import java.io.IOException;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 public class ITNotebookServiceClientTest {
 
