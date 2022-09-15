@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.6](https://github.com/googleapis/java-binary-authorization/compare/v1.2.5...v1.2.6) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#266](https://github.com/googleapis/java-binary-authorization/issues/266)) ([0ab7733](https://github.com/googleapis/java-binary-authorization/commit/0ab77337543942c8bdd5e9ae554790ca826931a8))
+
 ## [1.2.5](https://github.com/googleapis/java-binary-authorization/compare/v1.2.4...v1.2.5) (2022-09-10)
 
 
