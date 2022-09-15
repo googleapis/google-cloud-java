@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.4](https://github.com/googleapis/java-service-usage/compare/v2.3.3...v2.3.4) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#270](https://github.com/googleapis/java-service-usage/issues/270)) ([78294d8](https://github.com/googleapis/java-service-usage/commit/78294d8a22949be147dfd1561e245091eab84ad4))
+
 ## [2.3.3](https://github.com/googleapis/java-service-usage/compare/v2.3.2...v2.3.3) (2022-09-09)
 
 
