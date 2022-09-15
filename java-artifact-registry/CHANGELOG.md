@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.7](https://github.com/googleapis/java-artifact-registry/compare/v1.2.6...v1.2.7) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#310](https://github.com/googleapis/java-artifact-registry/issues/310)) ([92f86bb](https://github.com/googleapis/java-artifact-registry/commit/92f86bb6ef1cb7d4d0fd5a2cf1a2fd9f623f939e))
+
 ## [1.2.6](https://github.com/googleapis/java-artifact-registry/compare/v1.2.5...v1.2.6) (2022-09-09)
 
 
