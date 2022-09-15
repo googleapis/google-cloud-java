@@ -150,6 +150,9 @@
             },
             "UpdateBackup": {
               "methods": ["updateBackup", "updateBackup", "updateBackupCallable"]
+            },
+            "UpdateTable": {
+              "methods": ["updateTableAsync", "updateTableAsync", "updateTableOperationCallable", "updateTableCallable"]
             }
           }
         }

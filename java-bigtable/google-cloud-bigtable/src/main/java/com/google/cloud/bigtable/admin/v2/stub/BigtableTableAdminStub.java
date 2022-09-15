@@ -57,6 +57,8 @@ import com.google.bigtable.admin.v2.Table;
 import com.google.bigtable.admin.v2.UndeleteTableMetadata;
 import com.google.bigtable.admin.v2.UndeleteTableRequest;
 import com.google.bigtable.admin.v2.UpdateBackupRequest;
+import com.google.bigtable.admin.v2.UpdateTableMetadata;
+import com.google.bigtable.admin.v2.UpdateTableRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -102,6 +104,15 @@ public abstract class BigtableTableAdminStub implements BackgroundResource {
 
   public UnaryCallable<GetTableRequest, Table> getTableCallable() {
     throw new UnsupportedOperationException("Not implemented: getTableCallable()");
+  }
+
+  public OperationCallable<UpdateTableRequest, Table, UpdateTableMetadata>
+      updateTableOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateTableOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateTableRequest, Operation> updateTableCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateTableCallable()");
   }
 
   public UnaryCallable<DeleteTableRequest, Empty> deleteTableCallable() {

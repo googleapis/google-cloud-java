@@ -158,8 +158,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
@@ -209,8 +212,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
@@ -260,8 +266,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   CreateInstanceRequest request =
@@ -295,8 +304,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   CreateInstanceRequest request =
@@ -330,8 +342,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   CreateInstanceRequest request =
@@ -359,8 +374,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
@@ -385,8 +403,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   String name = InstanceName.of("[PROJECT]", "[INSTANCE]").toString();
@@ -410,8 +431,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   GetInstanceRequest request =
@@ -436,8 +460,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   GetInstanceRequest request =
@@ -462,8 +489,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
@@ -490,8 +520,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
@@ -515,8 +548,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   ListInstancesRequest request =
@@ -542,8 +578,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   ListInstancesRequest request =
@@ -570,8 +609,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   Instance request =
@@ -580,6 +622,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *           .setDisplayName("displayName1714148973")
    *           .putAllLabels(new HashMap<String, String>())
    *           .setCreateTime(Timestamp.newBuilder().build())
+   *           .setSatisfiesPzs(true)
    *           .build();
    *   Instance response = baseBigtableInstanceAdminClient.updateInstance(request);
    * }
@@ -600,8 +643,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   Instance request =
@@ -610,6 +656,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *           .setDisplayName("displayName1714148973")
    *           .putAllLabels(new HashMap<String, String>())
    *           .setCreateTime(Timestamp.newBuilder().build())
+   *           .setSatisfiesPzs(true)
    *           .build();
    *   ApiFuture<Instance> future =
    *       baseBigtableInstanceAdminClient.updateInstanceCallable().futureCall(request);
@@ -630,8 +677,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   Instance instance = Instance.newBuilder().build();
@@ -664,8 +714,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   PartialUpdateInstanceRequest request =
@@ -693,8 +746,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   PartialUpdateInstanceRequest request =
@@ -724,8 +780,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   PartialUpdateInstanceRequest request =
@@ -752,8 +811,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[INSTANCE]");
@@ -778,8 +840,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   String name = InstanceName.of("[PROJECT]", "[INSTANCE]").toString();
@@ -803,8 +868,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   DeleteInstanceRequest request =
@@ -829,8 +897,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   DeleteInstanceRequest request =
@@ -860,8 +931,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
@@ -904,8 +978,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   String parent = InstanceName.of("[PROJECT]", "[INSTANCE]").toString();
@@ -948,8 +1025,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   CreateClusterRequest request =
@@ -982,8 +1062,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   CreateClusterRequest request =
@@ -1016,8 +1099,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   CreateClusterRequest request =
@@ -1044,8 +1130,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
@@ -1070,8 +1159,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   String name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]").toString();
@@ -1095,8 +1187,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   GetClusterRequest request =
@@ -1121,8 +1216,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   GetClusterRequest request =
@@ -1147,8 +1245,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
@@ -1177,8 +1278,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   String parent = InstanceName.of("[PROJECT]", "[INSTANCE]").toString();
@@ -1204,8 +1308,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   ListClustersRequest request =
@@ -1231,8 +1338,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   ListClustersRequest request =
@@ -1261,8 +1371,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   Cluster request =
@@ -1294,8 +1407,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   Cluster request =
@@ -1328,8 +1444,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   Cluster request =
@@ -1368,8 +1487,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   Cluster cluster = Cluster.newBuilder().build();
@@ -1411,8 +1533,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   PartialUpdateClusterRequest request =
@@ -1449,8 +1574,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   PartialUpdateClusterRequest request =
@@ -1489,8 +1617,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   PartialUpdateClusterRequest request =
@@ -1517,8 +1648,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
@@ -1543,8 +1677,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   String name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]").toString();
@@ -1568,8 +1705,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   DeleteClusterRequest request =
@@ -1594,8 +1734,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   DeleteClusterRequest request =
@@ -1620,8 +1763,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
@@ -1659,8 +1805,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   String parent = InstanceName.of("[PROJECT]", "[INSTANCE]").toString();
@@ -1698,8 +1847,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   CreateAppProfileRequest request =
@@ -1727,8 +1879,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   CreateAppProfileRequest request =
@@ -1756,8 +1911,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   AppProfileName name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
@@ -1782,8 +1940,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   String name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]").toString();
@@ -1807,8 +1968,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   GetAppProfileRequest request =
@@ -1833,8 +1997,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   GetAppProfileRequest request =
@@ -1859,8 +2026,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
@@ -1892,8 +2062,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   String parent = InstanceName.of("[PROJECT]", "[INSTANCE]").toString();
@@ -1922,8 +2095,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   ListAppProfilesRequest request =
@@ -1953,8 +2129,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   ListAppProfilesRequest request =
@@ -1984,8 +2163,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   ListAppProfilesRequest request =
@@ -2022,8 +2204,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   AppProfile appProfile = AppProfile.newBuilder().build();
@@ -2055,8 +2240,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   UpdateAppProfileRequest request =
@@ -2084,8 +2272,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   UpdateAppProfileRequest request =
@@ -2113,8 +2304,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   UpdateAppProfileRequest request =
@@ -2141,8 +2335,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   AppProfileName name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
@@ -2167,8 +2364,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   String name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]").toString();
@@ -2192,8 +2392,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   DeleteAppProfileRequest request =
@@ -2219,8 +2422,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   DeleteAppProfileRequest request =
@@ -2247,8 +2453,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
@@ -2276,8 +2485,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   String resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]").toString();
@@ -2302,8 +2514,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   GetIamPolicyRequest request =
@@ -2330,8 +2545,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   GetIamPolicyRequest request =
@@ -2357,8 +2575,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
@@ -2390,8 +2611,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   String resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]").toString();
@@ -2420,8 +2644,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   SetIamPolicyRequest request =
@@ -2448,8 +2675,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   SetIamPolicyRequest request =
@@ -2476,8 +2706,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   ResourceName resource = InstanceName.of("[PROJECT]", "[INSTANCE]");
@@ -2511,8 +2744,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   String resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]").toString();
@@ -2546,8 +2782,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   TestIamPermissionsRequest request =
@@ -2574,8 +2813,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   TestIamPermissionsRequest request =
@@ -2603,8 +2845,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   ClusterName parent = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
@@ -2635,8 +2880,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   String parent = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]").toString();
@@ -2664,8 +2912,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   ListHotTabletsRequest request =
@@ -2698,8 +2949,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   ListHotTabletsRequest request =
@@ -2732,8 +2986,11 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
    *     BaseBigtableInstanceAdminClient.create()) {
    *   ListHotTabletsRequest request =

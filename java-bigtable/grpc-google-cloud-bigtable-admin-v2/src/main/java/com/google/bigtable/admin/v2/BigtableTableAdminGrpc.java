@@ -217,6 +217,48 @@ public final class BigtableTableAdminGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.UpdateTableRequest, com.google.longrunning.Operation>
+      getUpdateTableMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateTable",
+      requestType = com.google.bigtable.admin.v2.UpdateTableRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.UpdateTableRequest, com.google.longrunning.Operation>
+      getUpdateTableMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.UpdateTableRequest, com.google.longrunning.Operation>
+        getUpdateTableMethod;
+    if ((getUpdateTableMethod = BigtableTableAdminGrpc.getUpdateTableMethod) == null) {
+      synchronized (BigtableTableAdminGrpc.class) {
+        if ((getUpdateTableMethod = BigtableTableAdminGrpc.getUpdateTableMethod) == null) {
+          BigtableTableAdminGrpc.getUpdateTableMethod =
+              getUpdateTableMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.UpdateTableRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateTable"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.UpdateTableRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableTableAdminMethodDescriptorSupplier("UpdateTable"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateTableMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.bigtable.admin.v2.DeleteTableRequest, com.google.protobuf.Empty>
       getDeleteTableMethod;
 
@@ -1168,6 +1210,20 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
+     * Updates a specified table.
+     * </pre>
+     */
+    public void updateTable(
+        com.google.bigtable.admin.v2.UpdateTableRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateTableMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Permanently deletes a specified table and all of its data.
      * </pre>
      */
@@ -1511,6 +1567,12 @@ public final class BigtableTableAdminGrpc {
                       com.google.bigtable.admin.v2.GetTableRequest,
                       com.google.bigtable.admin.v2.Table>(this, METHODID_GET_TABLE)))
           .addMethod(
+              getUpdateTableMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.bigtable.admin.v2.UpdateTableRequest,
+                      com.google.longrunning.Operation>(this, METHODID_UPDATE_TABLE)))
+          .addMethod(
               getDeleteTableMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -1721,6 +1783,22 @@ public final class BigtableTableAdminGrpc {
         io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.Table> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetTableMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a specified table.
+     * </pre>
+     */
+    public void updateTable(
+        com.google.bigtable.admin.v2.UpdateTableRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateTableMethod(), getCallOptions()),
+          request,
+          responseObserver);
     }
 
     /**
@@ -2166,6 +2244,19 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
+     * Updates a specified table.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateTable(
+        com.google.bigtable.admin.v2.UpdateTableRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTableMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Permanently deletes a specified table and all of its data.
      * </pre>
      */
@@ -2544,6 +2635,19 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
+     * Updates a specified table.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateTable(com.google.bigtable.admin.v2.UpdateTableRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateTableMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Permanently deletes a specified table and all of its data.
      * </pre>
      */
@@ -2847,25 +2951,26 @@ public final class BigtableTableAdminGrpc {
   private static final int METHODID_CREATE_TABLE_FROM_SNAPSHOT = 1;
   private static final int METHODID_LIST_TABLES = 2;
   private static final int METHODID_GET_TABLE = 3;
-  private static final int METHODID_DELETE_TABLE = 4;
-  private static final int METHODID_UNDELETE_TABLE = 5;
-  private static final int METHODID_MODIFY_COLUMN_FAMILIES = 6;
-  private static final int METHODID_DROP_ROW_RANGE = 7;
-  private static final int METHODID_GENERATE_CONSISTENCY_TOKEN = 8;
-  private static final int METHODID_CHECK_CONSISTENCY = 9;
-  private static final int METHODID_SNAPSHOT_TABLE = 10;
-  private static final int METHODID_GET_SNAPSHOT = 11;
-  private static final int METHODID_LIST_SNAPSHOTS = 12;
-  private static final int METHODID_DELETE_SNAPSHOT = 13;
-  private static final int METHODID_CREATE_BACKUP = 14;
-  private static final int METHODID_GET_BACKUP = 15;
-  private static final int METHODID_UPDATE_BACKUP = 16;
-  private static final int METHODID_DELETE_BACKUP = 17;
-  private static final int METHODID_LIST_BACKUPS = 18;
-  private static final int METHODID_RESTORE_TABLE = 19;
-  private static final int METHODID_GET_IAM_POLICY = 20;
-  private static final int METHODID_SET_IAM_POLICY = 21;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 22;
+  private static final int METHODID_UPDATE_TABLE = 4;
+  private static final int METHODID_DELETE_TABLE = 5;
+  private static final int METHODID_UNDELETE_TABLE = 6;
+  private static final int METHODID_MODIFY_COLUMN_FAMILIES = 7;
+  private static final int METHODID_DROP_ROW_RANGE = 8;
+  private static final int METHODID_GENERATE_CONSISTENCY_TOKEN = 9;
+  private static final int METHODID_CHECK_CONSISTENCY = 10;
+  private static final int METHODID_SNAPSHOT_TABLE = 11;
+  private static final int METHODID_GET_SNAPSHOT = 12;
+  private static final int METHODID_LIST_SNAPSHOTS = 13;
+  private static final int METHODID_DELETE_SNAPSHOT = 14;
+  private static final int METHODID_CREATE_BACKUP = 15;
+  private static final int METHODID_GET_BACKUP = 16;
+  private static final int METHODID_UPDATE_BACKUP = 17;
+  private static final int METHODID_DELETE_BACKUP = 18;
+  private static final int METHODID_LIST_BACKUPS = 19;
+  private static final int METHODID_RESTORE_TABLE = 20;
+  private static final int METHODID_GET_IAM_POLICY = 21;
+  private static final int METHODID_SET_IAM_POLICY = 22;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 23;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2904,6 +3009,11 @@ public final class BigtableTableAdminGrpc {
           serviceImpl.getTable(
               (com.google.bigtable.admin.v2.GetTableRequest) request,
               (io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.Table>) responseObserver);
+          break;
+        case METHODID_UPDATE_TABLE:
+          serviceImpl.updateTable(
+              (com.google.bigtable.admin.v2.UpdateTableRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_DELETE_TABLE:
           serviceImpl.deleteTable(
@@ -3075,6 +3185,7 @@ public final class BigtableTableAdminGrpc {
                       .addMethod(getCreateTableFromSnapshotMethod())
                       .addMethod(getListTablesMethod())
                       .addMethod(getGetTableMethod())
+                      .addMethod(getUpdateTableMethod())
                       .addMethod(getDeleteTableMethod())
                       .addMethod(getUndeleteTableMethod())
                       .addMethod(getModifyColumnFamiliesMethod())

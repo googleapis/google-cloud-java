@@ -66,6 +66,8 @@ import com.google.bigtable.admin.v2.Table;
 import com.google.bigtable.admin.v2.UndeleteTableMetadata;
 import com.google.bigtable.admin.v2.UndeleteTableRequest;
 import com.google.bigtable.admin.v2.UpdateBackupRequest;
+import com.google.bigtable.admin.v2.UpdateTableMetadata;
+import com.google.bigtable.admin.v2.UpdateTableRequest;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStubSettings;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -112,6 +114,17 @@ public class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableT
   /** Returns the object with the settings used for calls to getTable. */
   public UnaryCallSettings<GetTableRequest, Table> getTableSettings() {
     return ((BigtableTableAdminStubSettings) getStubSettings()).getTableSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateTable. */
+  public UnaryCallSettings<UpdateTableRequest, Operation> updateTableSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).updateTableSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateTable. */
+  public OperationCallSettings<UpdateTableRequest, Table, UpdateTableMetadata>
+      updateTableOperationSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).updateTableOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to deleteTable. */
@@ -363,6 +376,17 @@ public class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableT
     /** Returns the builder for the settings used for calls to getTable. */
     public UnaryCallSettings.Builder<GetTableRequest, Table> getTableSettings() {
       return getStubSettingsBuilder().getTableSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateTable. */
+    public UnaryCallSettings.Builder<UpdateTableRequest, Operation> updateTableSettings() {
+      return getStubSettingsBuilder().updateTableSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateTable. */
+    public OperationCallSettings.Builder<UpdateTableRequest, Table, UpdateTableMetadata>
+        updateTableOperationSettings() {
+      return getStubSettingsBuilder().updateTableOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteTable. */

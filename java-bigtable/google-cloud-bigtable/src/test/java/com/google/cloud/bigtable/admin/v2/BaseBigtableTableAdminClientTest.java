@@ -65,6 +65,7 @@ import com.google.bigtable.admin.v2.Table;
 import com.google.bigtable.admin.v2.TableName;
 import com.google.bigtable.admin.v2.UndeleteTableRequest;
 import com.google.bigtable.admin.v2.UpdateBackupRequest;
+import com.google.bigtable.admin.v2.UpdateTableRequest;
 import com.google.common.collect.Lists;
 import com.google.iam.v1.AuditConfig;
 import com.google.iam.v1.Binding;
@@ -142,6 +143,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setDeletionProtection(true)
             .build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
 
@@ -189,6 +191,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setDeletionProtection(true)
             .build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
 
@@ -236,6 +239,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setDeletionProtection(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -295,6 +299,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setDeletionProtection(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -352,6 +357,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setDeletionProtection(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -411,6 +417,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setDeletionProtection(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -556,6 +563,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setDeletionProtection(true)
             .build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
 
@@ -597,6 +605,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setDeletionProtection(true)
             .build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
 
@@ -627,6 +636,59 @@ public class BaseBigtableTableAdminClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateTableTest() throws Exception {
+    Table expectedResponse =
+        Table.newBuilder()
+            .setName(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+            .putAllClusterStates(new HashMap<String, Table.ClusterState>())
+            .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
+            .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setDeletionProtection(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateTableTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBigtableTableAdmin.addResponse(resultOperation);
+
+    Table table = Table.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Table actualResponse = client.updateTableAsync(table, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigtableTableAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateTableRequest actualRequest = ((UpdateTableRequest) actualRequests.get(0));
+
+    Assert.assertEquals(table, actualRequest.getTable());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateTableExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableTableAdmin.addException(exception);
+
+    try {
+      Table table = Table.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateTableAsync(table, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -706,6 +768,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setDeletionProtection(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -755,6 +818,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setDeletionProtection(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -804,6 +868,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setDeletionProtection(true)
             .build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
 
@@ -849,6 +914,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setDeletionProtection(true)
             .build();
     mockBigtableTableAdmin.addResponse(expectedResponse);
 
@@ -1992,6 +2058,7 @@ public class BaseBigtableTableAdminClientTest {
             .putAllClusterStates(new HashMap<String, Table.ClusterState>())
             .putAllColumnFamilies(new HashMap<String, ColumnFamily>())
             .setRestoreInfo(RestoreInfo.newBuilder().build())
+            .setDeletionProtection(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

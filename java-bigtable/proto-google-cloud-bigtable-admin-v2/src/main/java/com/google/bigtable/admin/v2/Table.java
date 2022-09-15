@@ -141,6 +141,11 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 72:
+            {
+              deletionProtection_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -2587,6 +2592,29 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     return getRestoreInfo();
   }
 
+  public static final int DELETION_PROTECTION_FIELD_NUMBER = 9;
+  private boolean deletionProtection_;
+  /**
+   *
+   *
+   * <pre>
+   * Set to true to make the table protected against data loss. i.e. deleting
+   * the following resources through Admin APIs are prohibited:
+   *   - The table.
+   *   - The column families in the table.
+   *   - The instance containing the table.
+   * Note one can still delete the data stored in the table through Data APIs.
+   * </pre>
+   *
+   * <code>bool deletion_protection = 9;</code>
+   *
+   * @return The deletionProtection.
+   */
+  @java.lang.Override
+  public boolean getDeletionProtection() {
+    return deletionProtection_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2615,6 +2643,9 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     }
     if (restoreInfo_ != null) {
       output.writeMessage(6, getRestoreInfo());
+    }
+    if (deletionProtection_ != false) {
+      output.writeBool(9, deletionProtection_);
     }
     unknownFields.writeTo(output);
   }
@@ -2659,6 +2690,9 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     if (restoreInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getRestoreInfo());
     }
+    if (deletionProtection_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, deletionProtection_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2682,6 +2716,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     if (hasRestoreInfo()) {
       if (!getRestoreInfo().equals(other.getRestoreInfo())) return false;
     }
+    if (getDeletionProtection() != other.getDeletionProtection()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2709,6 +2744,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + RESTORE_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getRestoreInfo().hashCode();
     }
+    hash = (37 * hash) + DELETION_PROTECTION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDeletionProtection());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2890,6 +2927,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         restoreInfo_ = null;
         restoreInfoBuilder_ = null;
       }
+      deletionProtection_ = false;
+
       return this;
     }
 
@@ -2928,6 +2967,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.restoreInfo_ = restoreInfoBuilder_.build();
       }
+      result.deletionProtection_ = deletionProtection_;
       onBuilt();
       return result;
     }
@@ -2988,6 +3028,9 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasRestoreInfo()) {
         mergeRestoreInfo(other.getRestoreInfo());
+      }
+      if (other.getDeletionProtection() != false) {
+        setDeletionProtection(other.getDeletionProtection());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3860,6 +3903,73 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         restoreInfo_ = null;
       }
       return restoreInfoBuilder_;
+    }
+
+    private boolean deletionProtection_;
+    /**
+     *
+     *
+     * <pre>
+     * Set to true to make the table protected against data loss. i.e. deleting
+     * the following resources through Admin APIs are prohibited:
+     *   - The table.
+     *   - The column families in the table.
+     *   - The instance containing the table.
+     * Note one can still delete the data stored in the table through Data APIs.
+     * </pre>
+     *
+     * <code>bool deletion_protection = 9;</code>
+     *
+     * @return The deletionProtection.
+     */
+    @java.lang.Override
+    public boolean getDeletionProtection() {
+      return deletionProtection_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set to true to make the table protected against data loss. i.e. deleting
+     * the following resources through Admin APIs are prohibited:
+     *   - The table.
+     *   - The column families in the table.
+     *   - The instance containing the table.
+     * Note one can still delete the data stored in the table through Data APIs.
+     * </pre>
+     *
+     * <code>bool deletion_protection = 9;</code>
+     *
+     * @param value The deletionProtection to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeletionProtection(boolean value) {
+
+      deletionProtection_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set to true to make the table protected against data loss. i.e. deleting
+     * the following resources through Admin APIs are prohibited:
+     *   - The table.
+     *   - The column families in the table.
+     *   - The instance containing the table.
+     * Note one can still delete the data stored in the table through Data APIs.
+     * </pre>
+     *
+     * <code>bool deletion_protection = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDeletionProtection() {
+
+      deletionProtection_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

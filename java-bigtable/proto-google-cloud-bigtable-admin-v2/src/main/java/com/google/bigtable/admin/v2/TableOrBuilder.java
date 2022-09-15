@@ -285,4 +285,22 @@ public interface TableOrBuilder
    * </code>
    */
   com.google.bigtable.admin.v2.RestoreInfoOrBuilder getRestoreInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Set to true to make the table protected against data loss. i.e. deleting
+   * the following resources through Admin APIs are prohibited:
+   *   - The table.
+   *   - The column families in the table.
+   *   - The instance containing the table.
+   * Note one can still delete the data stored in the table through Data APIs.
+   * </pre>
+   *
+   * <code>bool deletion_protection = 9;</code>
+   *
+   * @return The deletionProtection.
+   */
+  boolean getDeletionProtection();
 }

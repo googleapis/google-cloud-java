@@ -137,6 +137,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .setDisplayName("displayName1714148973")
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -196,6 +197,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .setDisplayName("displayName1714148973")
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -255,6 +257,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .setDisplayName("displayName1714148973")
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
@@ -296,6 +299,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .setDisplayName("displayName1714148973")
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
@@ -417,6 +421,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .setDisplayName("displayName1714148973")
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
@@ -426,6 +431,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .setDisplayName("displayName1714148973")
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
 
     Instance actualResponse = client.updateInstance(request);
@@ -441,6 +447,7 @@ public class BaseBigtableInstanceAdminClientTest {
     Assert.assertEquals(request.getType(), actualRequest.getType());
     Assert.assertEquals(request.getLabelsMap(), actualRequest.getLabelsMap());
     Assert.assertEquals(request.getCreateTime(), actualRequest.getCreateTime());
+    Assert.assertEquals(request.getSatisfiesPzs(), actualRequest.getSatisfiesPzs());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -459,6 +466,7 @@ public class BaseBigtableInstanceAdminClientTest {
               .setDisplayName("displayName1714148973")
               .putAllLabels(new HashMap<String, String>())
               .setCreateTime(Timestamp.newBuilder().build())
+              .setSatisfiesPzs(true)
               .build();
       client.updateInstance(request);
       Assert.fail("No exception raised");
@@ -475,6 +483,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .setDisplayName("displayName1714148973")
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

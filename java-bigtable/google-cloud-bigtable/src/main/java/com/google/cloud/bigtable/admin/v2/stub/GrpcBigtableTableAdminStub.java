@@ -61,6 +61,8 @@ import com.google.bigtable.admin.v2.Table;
 import com.google.bigtable.admin.v2.UndeleteTableMetadata;
 import com.google.bigtable.admin.v2.UndeleteTableRequest;
 import com.google.bigtable.admin.v2.UpdateBackupRequest;
+import com.google.bigtable.admin.v2.UpdateTableMetadata;
+import com.google.bigtable.admin.v2.UpdateTableRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -115,6 +117,14 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
           .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/GetTable")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTableRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Table.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<UpdateTableRequest, Operation> updateTableMethodDescriptor =
+      MethodDescriptor.<UpdateTableRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/UpdateTable")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateTableRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
 
   private static final MethodDescriptor<DeleteTableRequest, Empty> deleteTableMethodDescriptor =
@@ -305,6 +315,9 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
   private final UnaryCallable<ListTablesRequest, ListTablesResponse> listTablesCallable;
   private final UnaryCallable<ListTablesRequest, ListTablesPagedResponse> listTablesPagedCallable;
   private final UnaryCallable<GetTableRequest, Table> getTableCallable;
+  private final UnaryCallable<UpdateTableRequest, Operation> updateTableCallable;
+  private final OperationCallable<UpdateTableRequest, Table, UpdateTableMetadata>
+      updateTableOperationCallable;
   private final UnaryCallable<DeleteTableRequest, Empty> deleteTableCallable;
   private final UnaryCallable<UndeleteTableRequest, Operation> undeleteTableCallable;
   private final OperationCallable<UndeleteTableRequest, Table, UndeleteTableMetadata>
@@ -422,6 +435,16 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
                 request -> {
                   ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                   params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateTableRequest, Operation> updateTableTransportSettings =
+        GrpcCallSettings.<UpdateTableRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateTableMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("table.name", String.valueOf(request.getTable().getName()));
                   return params.build();
                 })
             .build();
@@ -643,6 +666,15 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
     this.getTableCallable =
         callableFactory.createUnaryCallable(
             getTableTransportSettings, settings.getTableSettings(), clientContext);
+    this.updateTableCallable =
+        callableFactory.createUnaryCallable(
+            updateTableTransportSettings, settings.updateTableSettings(), clientContext);
+    this.updateTableOperationCallable =
+        callableFactory.createOperationCallable(
+            updateTableTransportSettings,
+            settings.updateTableOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deleteTableCallable =
         callableFactory.createUnaryCallable(
             deleteTableTransportSettings, settings.deleteTableSettings(), clientContext);
@@ -775,6 +807,17 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
   @Override
   public UnaryCallable<GetTableRequest, Table> getTableCallable() {
     return getTableCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateTableRequest, Operation> updateTableCallable() {
+    return updateTableCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateTableRequest, Table, UpdateTableMetadata>
+      updateTableOperationCallable() {
+    return updateTableOperationCallable;
   }
 
   @Override

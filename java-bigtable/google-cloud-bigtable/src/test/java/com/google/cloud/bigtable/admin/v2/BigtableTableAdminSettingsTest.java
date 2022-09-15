@@ -134,7 +134,9 @@ public class BigtableTableAdminSettingsTest {
     "restoreTableSettings",
     "restoreTableOperationSettings",
     "undeleteTableSettings",
-    "undeleteTableOperationSettings"
+    "undeleteTableOperationSettings",
+    "updateTableSettings",
+    "updateTableOperationSettings"
   };
 
   @Test
@@ -184,6 +186,6 @@ public class BigtableTableAdminSettingsTest {
     for (String subSettings : SETTINGS_LIST) {
       assertThat(toString).contains(subSettings + "=");
     }
-    assertThat(toString.contains(settings.getStubSettings().toString()));
+    assertThat(toString).contains(settings.getStubSettings().toString());
   }
 }
