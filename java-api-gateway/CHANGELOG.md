@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.4](https://github.com/googleapis/java-api-gateway/compare/v2.3.3...v2.3.4) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#295](https://github.com/googleapis/java-api-gateway/issues/295)) ([d67e01b](https://github.com/googleapis/java-api-gateway/commit/d67e01bb5a8146ceec301182e425f2c261c9fc25))
+
 ## [2.3.3](https://github.com/googleapis/java-api-gateway/compare/v2.3.2...v2.3.3) (2022-09-09)
 
 
