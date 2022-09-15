@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,35 +16,19 @@
 
 package com.google.cloud.notebooks.v1beta1.it;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
 import com.google.api.FieldBehavior;
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.notebooks.v1beta1.ContainerImage;
-import com.google.cloud.notebooks.v1beta1.CreateEnvironmentRequest;
-import com.google.cloud.notebooks.v1beta1.CreateInstanceRequest;
-import com.google.cloud.notebooks.v1beta1.DeleteEnvironmentRequest;
-import com.google.cloud.notebooks.v1beta1.DeleteInstanceRequest;
-import com.google.cloud.notebooks.v1beta1.Environment;
-import com.google.cloud.notebooks.v1beta1.GetEnvironmentRequest;
-import com.google.cloud.notebooks.v1beta1.GetInstanceRequest;
-import com.google.cloud.notebooks.v1beta1.Instance;
-import com.google.cloud.notebooks.v1beta1.ListEnvironmentsRequest;
-import com.google.cloud.notebooks.v1beta1.ListInstancesRequest;
-import com.google.cloud.notebooks.v1beta1.NotebookServiceClient;
-import com.google.cloud.notebooks.v1beta1.ResetInstanceRequest;
-import com.google.cloud.notebooks.v1beta1.SetInstanceAcceleratorRequest;
-import com.google.cloud.notebooks.v1beta1.SetInstanceLabelsRequest;
-import com.google.cloud.notebooks.v1beta1.SetInstanceMachineTypeRequest;
-import com.google.cloud.notebooks.v1beta1.StartInstanceRequest;
-import com.google.cloud.notebooks.v1beta1.StopInstanceRequest;
-import java.io.IOException;
-import java.util.UUID;
-import java.util.concurrent.ExecutionException;
+import com.google.cloud.notebooks.v1beta1.*;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import java.io.IOException;
+import java.util.UUID;
+import java.util.concurrent.ExecutionException;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class ITNotebookServiceClientTest {
 
@@ -60,7 +44,7 @@ public class ITNotebookServiceClientTest {
   private static final String INSTANCE_NAME = PARENT + "/instances/" + NOTEBOOK_INSTANCE_ID;
   private static final String ENVIRONMENT_NAME = PARENT + "/environments/" + ENVIRONMENT_ID;
   private static Instance expectedNotebookInstance;
-  private static Environment expectedEnvironmentResponse;
+  private static Environment expectedEnvironment;
   private static final String MACHINE_TYPE_A = "n1-standard-4";
   private static final String MACHINE_TYPE_B = "n1-standard-2";
 
@@ -86,7 +70,7 @@ public class ITNotebookServiceClientTest {
             .setEnvironment(environment)
             .build();
 
-    expectedEnvironmentResponse = client.createEnvironmentAsync(environmentRequest).get();
+    expectedEnvironment = client.createEnvironmentAsync(environmentRequest).get();
 
     Instance notebookInstance =
         Instance.newBuilder()
@@ -156,11 +140,9 @@ public class ITNotebookServiceClientTest {
   public void testGetEnvironment() {
     GetEnvironmentRequest environmentRequest =
         GetEnvironmentRequest.newBuilder().setName(ENVIRONMENT_NAME).build();
-    Environment expectedEnvironmentResponse = client.getEnvironment(environmentRequest);
-    assertEquals(expectedEnvironmentResponse.getName(), expectedEnvironmentResponse.getName());
-    assertEquals(
-        expectedEnvironmentResponse.getContainerImage(),
-        expectedEnvironmentResponse.getContainerImage());
+    Environment actualEnvironment = client.getEnvironment(environmentRequest);
+    assertEquals(expectedEnvironment.getName(), actualEnvironment.getName());
+    assertEquals(expectedEnvironment.getContainerImage(), actualEnvironment.getContainerImage());
   }
 
   @Test
@@ -169,8 +151,8 @@ public class ITNotebookServiceClientTest {
         ListEnvironmentsRequest.newBuilder().setParent(PARENT).build();
     for (Environment element : client.listEnvironments(request).iterateAll()) {
       if (element.getName().equals(ENVIRONMENT_ID)) {
-        assertEquals(expectedEnvironmentResponse.getName(), element.getName());
-        assertEquals(expectedEnvironmentResponse.getContainerImage(), element.getContainerImage());
+        assertEquals(expectedEnvironment.getName(), element.getName());
+        assertEquals(expectedEnvironment.getContainerImage(), element.getContainerImage());
       }
     }
   }
