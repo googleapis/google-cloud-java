@@ -50,7 +50,7 @@ case ${JOB_TYPE} in
       install_modules
       printf "Running Integration Tests for:\n%s\n" "${module_list}"
       mvn -B ${INTEGRATION_TEST_ARGS} \
-        -pl "${module_list}" \
+        -pl "${module_list},!CoverageAggregator" \
         -amd \
         -ntp \
         -Penable-integration-tests \
