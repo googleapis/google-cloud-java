@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.4](https://github.com/googleapis/java-eventarc-publishing/compare/v0.3.3...v0.3.4) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#117](https://github.com/googleapis/java-eventarc-publishing/issues/117)) ([9b0e333](https://github.com/googleapis/java-eventarc-publishing/commit/9b0e33349c687e694729a6d97153cbab9fa5c96e))
+
 ## [0.3.3](https://github.com/googleapis/java-eventarc-publishing/compare/v0.3.2...v0.3.3) (2022-09-09)
 
 
