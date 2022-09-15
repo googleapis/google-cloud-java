@@ -121,6 +121,7 @@ function run_graalvm_tests() {
     -Penable-integration-tests \
     -Pnative \
     -fae \
+    -T 1C \
     test
   RETURN_CODE=$?
   printf "Finished Unit and Integration Tests for GraalVM:\n%s\n" "${module_list}"
