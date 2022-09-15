@@ -38,12 +38,12 @@ public class Util {
 
   /** Bring down any addresses that are older than 24 hours */
   public static void cleanUpComputeAddresses(AddressesClient addressesClient, String project,
-      String zone) {
-    AddressesClient.ListPagedResponse listPagedResponse = addressesClient.list(project, zone);
+      String region) {
+    AddressesClient.ListPagedResponse listPagedResponse = addressesClient.list(project, region);
     for (Address address : listPagedResponse.iterateAll()) {
       if (isCreatedBeforeThresholdTime(address.getCreationTimestamp()) && address.getName()
           .startsWith(COMPUTE_PREFIX)) {
-        addressesClient.deleteAsync(project, zone, address.getName());
+        addressesClient.deleteAsync(project, region, address.getName());
       }
     }
   }
