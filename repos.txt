@@ -6,6 +6,7 @@ java-analytics-data
 java-api-gateway
 java-apigee-connect
 java-apigee-registry
+java-apikeys
 java-appengine-admin
 java-area120-tables
 java-artifact-registry
