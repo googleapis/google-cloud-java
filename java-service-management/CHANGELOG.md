@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.5](https://github.com/googleapis/java-service-management/compare/v3.1.4...v3.1.5) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#282](https://github.com/googleapis/java-service-management/issues/282)) ([d441f50](https://github.com/googleapis/java-service-management/commit/d441f50c7cd93d0ee19ef2a59fc3b469b23ffe7f))
+
 ## [3.1.4](https://github.com/googleapis/java-service-management/compare/v3.1.3...v3.1.4) (2022-09-09)
 
 
