@@ -18,16 +18,19 @@ package com.google.cloud.bigquery.storage.v1;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.FlowController;
+import com.google.auto.value.AutoValue;
 import com.google.cloud.bigquery.storage.util.Errors;
 import com.google.cloud.bigquery.storage.v1.AppendRowsRequest.ProtoData;
 import com.google.cloud.bigquery.storage.v1.StreamConnection.DoneCallback;
 import com.google.cloud.bigquery.storage.v1.StreamConnection.RequestCallback;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.util.concurrent.Uninterruptibles;
 import com.google.protobuf.Int64Value;
 import io.grpc.Status;
 import io.grpc.Status.Code;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.Comparator;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.UUID;
@@ -670,6 +673,78 @@ public class ConnectionWorker implements AutoCloseable {
       this.appendResult = SettableApiFuture.create();
       this.message = message;
       this.messageSize = message.getProtoRows().getSerializedSize();
+    }
+  }
+
+  /**
+   * Represent the current workload for this worker. Used for multiplexing algorithm to determine
+   * the distribution of requests.
+   */
+  @AutoValue
+  public abstract static class Load {
+    // Consider the load on this worker to be overwhelmed when above some percentage of
+    // in-flight bytes or in-flight requests count.
+    private static double overwhelmedInflightCount = 0.5;
+    private static double overwhelmedInflightBytes = 0.6;
+
+    // Number of in-flight requests bytes in the worker.
+    abstract long inFlightRequestsBytes();
+
+    // Number of in-flight requests count in the worker.
+    abstract long inFlightRequestsCount();
+
+    // Number of destination handled by this worker.
+    abstract long destinationCount();
+
+    // Max number of in-flight requests count allowed.
+    abstract long maxInflightBytes();
+
+    // Max number of in-flight requests bytes allowed.
+    abstract long maxInflightCount();
+
+    static Load create(
+        long inFlightRequestsBytes,
+        long inFlightRequestsCount,
+        long destinationCount,
+        long maxInflightBytes,
+        long maxInflightCount) {
+      return new AutoValue_ConnectionWorker_Load(
+          inFlightRequestsBytes,
+          inFlightRequestsCount,
+          destinationCount,
+          maxInflightBytes,
+          maxInflightCount);
+    }
+
+    boolean isOverwhelmed() {
+      // Consider only in flight bytes and count for now, as by experiment those two are the most
+      // efficient and has great simplity.
+      return inFlightRequestsCount() > overwhelmedInflightCount * maxInflightCount()
+          || inFlightRequestsBytes() > overwhelmedInflightBytes * maxInflightBytes();
+    }
+
+    // Compares two different load. First compare in flight request bytes split by size 1024 bucket.
+    // Then compare the inflight requests count.
+    // Then compare destination count of the two connections.
+    public static final Comparator<Load> LOAD_COMPARATOR =
+        Comparator.comparing((Load key) -> (int) (key.inFlightRequestsBytes() / 1024))
+            .thenComparing((Load key) -> (int) (key.inFlightRequestsCount() / 100))
+            .thenComparing(Load::destinationCount);
+
+    // Compares two different load without bucket, used in smaller scale unit testing.
+    public static final Comparator<Load> TEST_LOAD_COMPARATOR =
+        Comparator.comparing((Load key) -> (int) key.inFlightRequestsBytes())
+            .thenComparing((Load key) -> (int) key.inFlightRequestsCount())
+            .thenComparing(Load::destinationCount);
+
+    @VisibleForTesting
+    public static void setOverwhelmedBytesThreshold(double newThreshold) {
+      overwhelmedInflightBytes = newThreshold;
+    }
+
+    @VisibleForTesting
+    public static void setOverwhelmedCountsThreshold(double newThreshold) {
+      overwhelmedInflightCount = newThreshold;
     }
   }
 }
