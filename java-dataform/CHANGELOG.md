@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/googleapis/java-dataform/compare/v0.2.1...v0.2.2) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#27](https://github.com/googleapis/java-dataform/issues/27)) ([8fb72bf](https://github.com/googleapis/java-dataform/commit/8fb72bf250068402e7afe6cfd537984b45777260))
+
 ## [0.2.1](https://github.com/googleapis/java-dataform/compare/v0.2.0...v0.2.1) (2022-09-09)
 
 
