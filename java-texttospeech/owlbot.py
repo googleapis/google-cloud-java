@@ -21,4 +21,10 @@ for library in s.get_staging_dirs():
     s.move(library)
 
 s.remove_staging_dirs()
-java.common_templates()
+java.common_templates(
+    excludes=[
+        ".kokoro/release/publish_javadoc.sh",
+        ".kokoro/release/publish_javadoc11.sh",
+        ".kokoro/release/stage.sh"
+    ]
+)
