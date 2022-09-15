@@ -117,8 +117,6 @@ function run_graalvm_tests() {
     -Dcheckstyle.skip=true \
     -Dflatten.skip=true \
     -Danimal.sniffer.skip=true \
-    -DskipUnitTests=true \
-    -Penable-integration-tests \
     -Pnative \
     -fae \
     test
