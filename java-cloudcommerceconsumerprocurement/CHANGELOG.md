@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/googleapis/java-cloudcommerceconsumerprocurement/compare/v0.1.1...v0.1.2) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#17](https://github.com/googleapis/java-cloudcommerceconsumerprocurement/issues/17)) ([c08960b](https://github.com/googleapis/java-cloudcommerceconsumerprocurement/commit/c08960b629fac374f9f5797e1cf19bad119f44d0))
+
 ## [0.1.1](https://github.com/googleapis/java-cloudcommerceconsumerprocurement/compare/v0.1.0...v0.1.1) (2022-09-13)
 
 
