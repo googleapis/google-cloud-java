@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.3](https://github.com/googleapis/java-run/compare/v0.3.2...v0.3.3) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#74](https://github.com/googleapis/java-run/issues/74)) ([0acb312](https://github.com/googleapis/java-run/commit/0acb31280d8fa956b1d675ac98e8922e189bb467))
+
 ## [0.3.2](https://github.com/googleapis/java-run/compare/v0.3.1...v0.3.2) (2022-09-09)
 
 
