@@ -192,6 +192,7 @@
           <forkCount>1C</forkCount>
           <reuseForks>true</reuseForks>
           <parallel>classes</parallel>
+          <useUnlimitedThreads>true</useUnlimitedThreads>
         </configuration>
       </plugin>
     </plugins>
