@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.12.0](https://github.com/googleapis/java-bigtable/compare/v2.11.2...v2.12.0) (2022-09-15)
+
+
+### Features
+
+* **generated:** Publish CBT deletion_protection field in Table, UpdateTableRequest, and UpdateTable API ([f1f3f05](https://github.com/googleapis/java-bigtable/commit/f1f3f05ae2dc84a8dc853eb5467fbd157b7293c3))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-monitoring-bom to v3.4.3 ([#1386](https://github.com/googleapis/java-bigtable/issues/1386)) ([f460373](https://github.com/googleapis/java-bigtable/commit/f460373eb74776fae1787b74392b508643e6139f))
+* Update dependency com.google.cloud:google-cloud-monitoring-bom to v3.4.3 ([#1387](https://github.com/googleapis/java-bigtable/issues/1387)) ([e339cb1](https://github.com/googleapis/java-bigtable/commit/e339cb186289fa53a0d65c3d77fb7edbae737882))
+* Update dependency com.google.cloud:google-cloud-monitoring-bom to v3.4.4 ([#1395](https://github.com/googleapis/java-bigtable/issues/1395)) ([a2db183](https://github.com/googleapis/java-bigtable/commit/a2db183dea46cd83ea70bb89848e0579b9c61fac))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#1384](https://github.com/googleapis/java-bigtable/issues/1384)) ([ee3b256](https://github.com/googleapis/java-bigtable/commit/ee3b256a62c2665e2c4230d9acfc14c3d5c2aebf))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#1393](https://github.com/googleapis/java-bigtable/issues/1393)) ([df6c6c7](https://github.com/googleapis/java-bigtable/commit/df6c6c79715ecc7b99e026ce8dfa8645765fc9d5))
+
 ## [2.11.2](https://github.com/googleapis/java-bigtable/compare/v2.11.1...v2.11.2) (2022-09-07)
 
 
