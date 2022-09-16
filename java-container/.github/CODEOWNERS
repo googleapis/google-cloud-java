@@ -5,7 +5,7 @@
 # https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners#codeowners-syntax
 
 # The @googleapis/yoshi-java is the default owner for changes in this repo
-*                       @googleapis/yoshi-java
+*                       @googleapis/yoshi-java @googleapis/yoshi-java
 
 
 # The java-samples-reviewers team is the default owner for samples changes

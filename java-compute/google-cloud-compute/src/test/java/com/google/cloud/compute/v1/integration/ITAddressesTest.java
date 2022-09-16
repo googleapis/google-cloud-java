@@ -46,7 +46,7 @@ public class ITAddressesTest extends BaseTest {
     addresses = new ArrayList<>();
     AddressesSettings addressesSettings = AddressesSettings.newBuilder().build();
     addressesClient = AddressesClient.create(addressesSettings);
-    Util.cleanUpComputeAddresses(addressesClient, DEFAULT_PROJECT, DEFAULT_REGION);
+    Util.cleanUpComputeAddresses(addressesClient, DEFAULT_PROJECT, DEFAULT_REGION, COMPUTE_PREFIX);
   }
 
   @Before

@@ -38,14 +38,13 @@ import org.junit.Test;
 
 public class ITSystemTest {
 
-  protected static final String CONTAINER_PREFIX = "it-test-container";
-
   private static ClusterManagerClient client;
   private static Operation operation;
 
   private static final Logger LOG = Logger.getLogger(ITSystemTest.class.getName());
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   private static final String ZONE = "us-central1-a";
+  private static final String CONTAINER_PREFIX = "it-test-container";
   private static final String CLUSTER_NAME =
       CONTAINER_PREFIX + "-cluster-" + UUID.randomUUID().toString().substring(0, 8);
   private static final String NODE_POOL_NAME =
@@ -64,7 +63,7 @@ public class ITSystemTest {
   @BeforeClass
   public static void beforeClass() throws Exception {
     client = ClusterManagerClient.create();
-    Util.cleanUpExistingInstanceCluster(PROJECT_ID, ZONE, client);
+    Util.cleanUpExistingInstanceCluster(client, PROJECT_ID, ZONE, CONTAINER_PREFIX);
 
     /* create node pool* */
     NodePool nodePool =
