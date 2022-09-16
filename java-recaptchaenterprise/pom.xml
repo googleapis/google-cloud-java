@@ -76,7 +76,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-recaptchaenterprise-v1beta1</artifactId>
-        <version>0.42.6</version><!-- {x-version-update:grpc-google-cloud-recaptchaenterprise-v1beta1:current} -->
+        <version>0.42.6-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-recaptchaenterprise-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
