@@ -27,6 +27,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.stream.Collectors;
+import product.setup.ProductsCreateBigqueryTable;
 
 public class EventsCreateBigQueryTable {
 
@@ -35,10 +36,11 @@ public class EventsCreateBigQueryTable {
     String validEventsTable = "events";
     String invalidEventsTable = "events_some_invalid";
     String eventsSchemaFilePath = "src/main/resources/events_schema.json";
+    // user_events.json and user_events_some_invalid.json are located in the resources folder
     String validEventsSourceFile =
-        String.format("gs://%s/user_events.json", System.getenv("EVENTS_BUCKET_NAME"));
+        ProductsCreateBigqueryTable.class.getResource("/user_events.json").getPath();
     String invalidEventsSourceFile =
-        String.format("gs://%s/user_events_some_invalid.json", System.getenv("EVENTS_BUCKET_NAME"));
+        ProductsCreateBigqueryTable.class.getResource("/user_events_some_invalid.json").getPath();
 
     BufferedReader bufferedReader = new BufferedReader(new FileReader(eventsSchemaFilePath));
     String jsonToString = bufferedReader.lines().collect(Collectors.joining());
@@ -48,8 +50,8 @@ public class EventsCreateBigQueryTable {
 
     createBqDataset(dataset);
     createBqTable(dataset, validEventsTable, eventsSchema);
-    uploadDataToBqTable(dataset, validEventsTable, validEventsSourceFile, eventsSchema);
+    uploadDataToBqTable(dataset, validEventsTable, validEventsSourceFile);
     createBqTable(dataset, invalidEventsTable, eventsSchema);
-    uploadDataToBqTable(dataset, invalidEventsTable, invalidEventsSourceFile, eventsSchema);
+    uploadDataToBqTable(dataset, invalidEventsTable, invalidEventsSourceFile);
   }
 }

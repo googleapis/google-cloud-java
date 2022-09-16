@@ -36,9 +36,9 @@ public class ProductsCreateBigqueryTable {
     String invalidProductsTable = "products_some_invalid";
     String productSchemaFilePath = "src/main/resources/product_schema.json";
     String validProductsSourceFile =
-        String.format("gs://%s/products.json", System.getenv("BUCKET_NAME"));
+        ProductsCreateBigqueryTable.class.getResource("/products.json").getPath();
     String invalidProductsSourceFile =
-        String.format("gs://%s/products_some_invalid.json", System.getenv("BUCKET_NAME"));
+        ProductsCreateBigqueryTable.class.getResource("products_some_invalid.json").getPath();
 
     BufferedReader bufferedReader = new BufferedReader(new FileReader(productSchemaFilePath));
     String jsonToString = bufferedReader.lines().collect(Collectors.joining());
@@ -48,8 +48,8 @@ public class ProductsCreateBigqueryTable {
 
     createBqDataset(dataset);
     createBqTable(dataset, validProductsTable, productSchema);
-    uploadDataToBqTable(dataset, validProductsTable, validProductsSourceFile, productSchema);
+    uploadDataToBqTable(dataset, validProductsTable, validProductsSourceFile);
     createBqTable(dataset, invalidProductsTable, productSchema);
-    uploadDataToBqTable(dataset, invalidProductsTable, invalidProductsSourceFile, productSchema);
+    uploadDataToBqTable(dataset, invalidProductsTable, invalidProductsSourceFile);
   }
 }

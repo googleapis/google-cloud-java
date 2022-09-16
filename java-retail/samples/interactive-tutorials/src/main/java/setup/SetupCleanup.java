@@ -33,14 +33,15 @@ import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.FormatOptions;
 import com.google.cloud.bigquery.Job;
-import com.google.cloud.bigquery.JobInfo;
+import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.LegacySQLTypeName;
-import com.google.cloud.bigquery.LoadJobConfiguration;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
+import com.google.cloud.bigquery.TableDataWriteChannel;
 import com.google.cloud.bigquery.TableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
+import com.google.cloud.bigquery.WriteChannelConfiguration;
 import com.google.cloud.retail.v2.CreateProductRequest;
 import com.google.cloud.retail.v2.DeleteProductRequest;
 import com.google.cloud.retail.v2.FulfillmentInfo;
@@ -71,6 +72,8 @@ import com.google.gson.JsonDeserializer;
 import com.google.protobuf.Int32Value;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.nio.channels.Channels;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.Instant;
@@ -349,20 +352,28 @@ public class SetupCleanup {
     }
   }
 
-  public static void uploadDataToBqTable(
-      String datasetName, String tableName, String sourceUri, Schema schema) {
+  public static void uploadDataToBqTable(String datasetName, String tableName, String sourceUri) {
     try {
       BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
       TableId tableId = TableId.of(datasetName, tableName);
-      LoadJobConfiguration loadConfig =
-          LoadJobConfiguration.newBuilder(tableId, sourceUri)
+
+      WriteChannelConfiguration writeChannelConfiguration =
+          WriteChannelConfiguration.newBuilder(tableId)
               .setFormatOptions(FormatOptions.json())
-              .setSchema(schema)
               .build();
-      Job job = bigquery.create(JobInfo.of(loadConfig));
-      job = job.waitFor();
+
+      String jobName = "jobId_" + UUID.randomUUID();
+      JobId jobId = JobId.newBuilder().setLocation("us").setJob(jobName).build();
+
+      try (TableDataWriteChannel writer = bigquery.writer(jobId, writeChannelConfiguration);
+          OutputStream stream = Channels.newOutputStream(writer)) {
+        Files.copy(Paths.get(sourceUri), stream);
+      }
+
+      Job job = bigquery.getJob(jobId);
+      Job completedJob = job.waitFor();
       if (job.isDone()) {
-        System.out.printf("Json from GCS successfully loaded in a table '%s'.%n", tableName);
+        System.out.printf("Json successfully loaded in a table '%s'.%n", tableName);
       } else {
         System.out.println(
             "BigQuery was unable to load into the table due to an error:"
@@ -370,6 +381,8 @@ public class SetupCleanup {
       }
     } catch (BigQueryException | InterruptedException e) {
       System.out.printf("Column not added during load append: %s%n", e.getMessage());
+    } catch (IOException e) {
+      System.out.printf("Error copying file: %s%n", e.getMessage());
     }
   }
 
