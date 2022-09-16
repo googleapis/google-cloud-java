@@ -24,6 +24,6 @@
     {
       "matchPackagePatterns": ["^io.opencensus:opencensus-"],
       "groupName": "OpenCensus packages"
-    } 
+    }
   ]
 }
