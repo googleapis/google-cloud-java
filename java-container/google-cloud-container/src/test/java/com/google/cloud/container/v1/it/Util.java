@@ -31,14 +31,14 @@ public class Util {
 
   /** tear down any clusters that are older than 24 hours * */
   public static void cleanUpExistingInstanceCluster(
-      String projectId, String zone, ClusterManagerClient client) {
+      ClusterManagerClient client, String projectId, String zone, String prefix) {
 
     ListClustersResponse clustersResponse = client.listClusters(projectId, zone);
     List<Cluster> clusters = clustersResponse.getClustersList();
 
     for (Cluster cluster : clusters) {
       if (isCreatedBeforeThresholdTime(cluster.getCreateTime())
-          && cluster.getName().startsWith(ITSystemTest.CONTAINER_PREFIX)) {
+          && cluster.getName().startsWith(prefix)) {
         client.deleteCluster(projectId, zone, cluster.getName());
       }
     }
