@@ -39,7 +39,7 @@
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-beyondcorp-clientconnectorservices</artifactId><version>0.1.1-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-beyondcorp-clientgateways</artifactId><version>0.0.1-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-bigquery-data-exchange</artifactId><version>0.3.3-SNAPSHOT</version></dependency>
-<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-bigqueryconnection</artifactId><version>2.5.2</version></dependency>
+<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-bigqueryconnection</artifactId><version>2.5.1</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-bigquerydatatransfer</artifactId><version>2.3.8</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-bigquerymigration</artifactId><version>0.5.1-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-bigqueryreservation</artifactId><version>2.4.3</version></dependency>
@@ -183,7 +183,7 @@
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-beyondcorp-clientconnectorservices</artifactId><version>0.1.1-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-beyondcorp-clientgateways</artifactId><version>0.0.1-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-bigquery-data-exchange</artifactId><version>0.3.3-SNAPSHOT</version></dependency>
-<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-bigqueryconnection</artifactId><version>2.5.2</version></dependency>
+<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-bigqueryconnection</artifactId><version>2.5.1</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-bigquerydatatransfer</artifactId><version>2.3.8</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-bigquerymigration</artifactId><version>0.5.1-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-bigqueryreservation</artifactId><version>2.4.3</version></dependency>
