@@ -58,7 +58,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-automl-v1beta1</artifactId>
-        <version>0.90.7</version><!-- {x-version-update:grpc-google-cloud-automl-v1beta1:current} -->
+        <version>0.90.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-automl-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
