@@ -15,7 +15,8 @@ public class Util {
   private static final int DELETION_THRESHOLD_TIME_HOURS = 24;
 
   /** Bring down any instances that are older than 24 hours */
-  public static void cleanUpNotebookInstances(NotebookServiceClient client, String parent, String prefix) {
+  public static void cleanUpNotebookInstances(
+      NotebookServiceClient client, String parent, String prefix) {
     ListInstancesPagedResponse listInstancesPagedResponse =
         client.listInstances(ListInstancesRequest.newBuilder().setParent(parent).build());
     for (Instance instance : listInstancesPagedResponse.iterateAll()) {
