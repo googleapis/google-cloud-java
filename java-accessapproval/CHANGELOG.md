@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.4.5](https://github.com/googleapis/java-accessapproval/compare/v2.4.4...v2.4.5) (2022-09-15)
+
+
+### Documentation
+
+* Added Cloud Dataproc and Secret Manager to the list of supported services ([#799](https://github.com/googleapis/java-accessapproval/issues/799)) ([29055aa](https://github.com/googleapis/java-accessapproval/commit/29055aaeef5788e360c074dbca8bea64e04c3426))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-core to v2.8.10 ([#797](https://github.com/googleapis/java-accessapproval/issues/797)) ([d550d8f](https://github.com/googleapis/java-accessapproval/commit/d550d8f11116b816820304d5efb2fd4e66a92a01))
+* Update dependency com.google.cloud:google-cloud-core to v2.8.11 ([#802](https://github.com/googleapis/java-accessapproval/issues/802)) ([67eb6cc](https://github.com/googleapis/java-accessapproval/commit/67eb6ccf2c64fd0dbc53c64f29af283e0588dadb))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#803](https://github.com/googleapis/java-accessapproval/issues/803)) ([799422a](https://github.com/googleapis/java-accessapproval/commit/799422a6f42cb904e640cd04e4eb533c882ff948))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#806](https://github.com/googleapis/java-accessapproval/issues/806)) ([ca10a33](https://github.com/googleapis/java-accessapproval/commit/ca10a3308abb92b03ff01c5759584c81d59845a6))
+
 ## [2.4.4](https://github.com/googleapis/java-accessapproval/compare/v2.4.3...v2.4.4) (2022-08-18)
 
 
