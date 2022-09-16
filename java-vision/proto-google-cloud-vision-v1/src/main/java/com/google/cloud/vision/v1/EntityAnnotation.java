@@ -378,7 +378,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    * <code>float confidence = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.vision.v1.EntityAnnotation.confidence is deprecated. See
-   *     google/cloud/vision/v1/image_annotator.proto;l=505
+   *     google/cloud/vision/v1/image_annotator.proto;l=506
    * @return The confidence.
    */
   @java.lang.Override
@@ -1559,7 +1559,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * <code>float confidence = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.vision.v1.EntityAnnotation.confidence is deprecated. See
-     *     google/cloud/vision/v1/image_annotator.proto;l=505
+     *     google/cloud/vision/v1/image_annotator.proto;l=506
      * @return The confidence.
      */
     @java.lang.Override
@@ -1581,7 +1581,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * <code>float confidence = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.vision.v1.EntityAnnotation.confidence is deprecated. See
-     *     google/cloud/vision/v1/image_annotator.proto;l=505
+     *     google/cloud/vision/v1/image_annotator.proto;l=506
      * @param value The confidence to set.
      * @return This builder for chaining.
      */
@@ -1606,7 +1606,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      * <code>float confidence = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.vision.v1.EntityAnnotation.confidence is deprecated. See
-     *     google/cloud/vision/v1/image_annotator.proto;l=505
+     *     google/cloud/vision/v1/image_annotator.proto;l=506
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

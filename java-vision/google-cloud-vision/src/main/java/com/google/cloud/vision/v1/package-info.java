@@ -28,8 +28,11 @@
  * <p>Sample for ImageAnnotatorClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
  *   List<AnnotateImageRequest> requests = new ArrayList<>();
  *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(requests);
@@ -57,8 +60,11 @@
  * <p>Sample for ProductSearchClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   ProductSet productSet = ProductSet.newBuilder().build();
