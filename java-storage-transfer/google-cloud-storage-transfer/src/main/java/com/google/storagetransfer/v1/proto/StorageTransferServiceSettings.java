@@ -144,6 +144,12 @@ public class StorageTransferServiceSettings extends ClientSettings<StorageTransf
         .runTransferJobOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to deleteTransferJob. */
+  public UnaryCallSettings<TransferProto.DeleteTransferJobRequest, Empty>
+      deleteTransferJobSettings() {
+    return ((StorageTransferServiceStubSettings) getStubSettings()).deleteTransferJobSettings();
+  }
+
   /** Returns the object with the settings used for calls to createAgentPool. */
   public UnaryCallSettings<TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>
       createAgentPoolSettings() {
@@ -351,6 +357,12 @@ public class StorageTransferServiceSettings extends ClientSettings<StorageTransf
             TransferProto.RunTransferJobRequest, Empty, TransferTypes.TransferOperation>
         runTransferJobOperationSettings() {
       return getStubSettingsBuilder().runTransferJobOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTransferJob. */
+    public UnaryCallSettings.Builder<TransferProto.DeleteTransferJobRequest, Empty>
+        deleteTransferJobSettings() {
+      return getStubSettingsBuilder().deleteTransferJobSettings();
     }
 
     /** Returns the builder for the settings used for calls to createAgentPool. */
