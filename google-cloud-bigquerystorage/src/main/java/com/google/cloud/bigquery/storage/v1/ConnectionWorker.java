@@ -33,7 +33,9 @@ import java.io.IOException;
 import java.util.Comparator;
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.Set;
 import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.Condition;
@@ -47,6 +49,8 @@ import javax.annotation.concurrent.GuardedBy;
  * A BigQuery Stream Writer that can be used to write data into BigQuery Table.
  *
  * <p>TODO: Support batching.
+ *
+ * <p>TODO: support updated schema
  */
 public class ConnectionWorker implements AutoCloseable {
   private static final Logger log = Logger.getLogger(StreamWriter.class.getName());
@@ -56,14 +60,15 @@ public class ConnectionWorker implements AutoCloseable {
   private Condition inflightReduced;
 
   /*
-   * The identifier of stream to write to.
+   * The identifier of the current stream to write to. This stream name can change during
+   * multiplexing.
    */
-  private final String streamName;
+  private String streamName;
 
   /*
-   * The proto schema of rows to write.
+   * The proto schema of rows to write. This schema can change during multiplexing.
    */
-  private final ProtoSchema writerSchema;
+  private ProtoSchema writerSchema;
 
   /*
    * Max allowed inflight requests in the stream. Method append is blocked at this.
@@ -141,6 +146,11 @@ public class ConnectionWorker implements AutoCloseable {
    */
   @GuardedBy("lock")
   private final Deque<AppendRequestAndResponse> inflightRequestQueue;
+
+  /*
+   * Tracks number of destinations handled by this connection.
+   */
+  private final Set<String> destinationSet = ConcurrentHashMap.newKeySet();
 
   /*
    * Contains the updated TableSchema.
@@ -241,18 +251,16 @@ public class ConnectionWorker implements AutoCloseable {
             });
   }
 
-  /** Schedules the writing of rows at the end of current stream. */
-  public ApiFuture<AppendRowsResponse> append(ProtoRows rows) {
-    return append(rows, -1);
-  }
-
   /** Schedules the writing of rows at given offset. */
-  public ApiFuture<AppendRowsResponse> append(ProtoRows rows, long offset) {
+  ApiFuture<AppendRowsResponse> append(
+      String streamName, ProtoSchema writerSchema, ProtoRows rows, long offset) {
     AppendRowsRequest.Builder requestBuilder = AppendRowsRequest.newBuilder();
-    requestBuilder.setProtoRows(ProtoData.newBuilder().setRows(rows).build());
+    requestBuilder.setProtoRows(
+        ProtoData.newBuilder().setWriterSchema(writerSchema).setRows(rows).build());
     if (offset >= 0) {
       requestBuilder.setOffset(Int64Value.of(offset));
     }
+    requestBuilder.setWriteStream(streamName);
     return appendInternal(requestBuilder.build());
   }
 
@@ -381,9 +389,13 @@ public class ConnectionWorker implements AutoCloseable {
   private void appendLoop() {
     Deque<AppendRequestAndResponse> localQueue = new LinkedList<AppendRequestAndResponse>();
     boolean streamNeedsConnecting = false;
-    // Set firstRequestInConnection to true immediately after connecting the steam,
-    // indicates then next row sent, needs the schema and other metadata.
-    boolean isFirstRequestInConnection = true;
+
+    // Indicate whether we are at the first request after switching destination.
+    // True means the schema and other metadata are needed.
+    boolean firstRequestForDestinationSwitch = true;
+    // Represent whether we have entered multiplexing.
+    boolean isMultiplexing = false;
+
     while (!waitingQueueDrained()) {
       this.lock.lock();
       try {
@@ -430,13 +442,43 @@ public class ConnectionWorker implements AutoCloseable {
         }
         resetConnection();
         // Set firstRequestInConnection to indicate the next request to be sent should include
-        // metedata.
-        isFirstRequestInConnection = true;
+        // metedata. Reset everytime after reconnection.
+        firstRequestForDestinationSwitch = true;
       }
       while (!localQueue.isEmpty()) {
-        AppendRowsRequest preparedRequest =
-            prepareRequestBasedOnPosition(
-                localQueue.pollFirst().message, isFirstRequestInConnection);
+        AppendRowsRequest originalRequest = localQueue.pollFirst().message;
+        AppendRowsRequest.Builder originalRequestBuilder = originalRequest.toBuilder();
+
+        // Consider we enter multiplexing if we met a different non empty stream name.
+        if (!originalRequest.getWriteStream().isEmpty()
+            && !streamName.isEmpty()
+            && !originalRequest.getWriteStream().equals(streamName)) {
+          streamName = originalRequest.getWriteStream();
+          writerSchema = originalRequest.getProtoRows().getWriterSchema();
+          isMultiplexing = true;
+          firstRequestForDestinationSwitch = true;
+        }
+
+        if (firstRequestForDestinationSwitch) {
+          // If we are at the first request for every table switch, including the first request in
+          // the connection, we will attach both stream name and table schema to the request.
+          // We don't support change of schema change during multiplexing for the saeme stream name.
+          destinationSet.add(streamName);
+          if (this.traceId != null) {
+            originalRequestBuilder.setTraceId(this.traceId);
+          }
+          firstRequestForDestinationSwitch = false;
+        } else if (isMultiplexing) {
+          // If we are not at the first request after table switch, but we are in multiplexing
+          // mode, we only need the stream name but not the schema in the request.
+          originalRequestBuilder.getProtoRowsBuilder().clearWriterSchema();
+        } else {
+          // If we are not at the first request or in multiplexing, create request with no schema
+          // and no stream name.
+          originalRequestBuilder.clearWriteStream();
+          originalRequestBuilder.getProtoRowsBuilder().clearWriterSchema();
+        }
+
         // Send should only throw an exception if there is a problem with the request. The catch
         // block will handle this case, and return the exception with the result.
         // Otherwise send will return:
@@ -446,8 +488,7 @@ public class ConnectionWorker implements AutoCloseable {
         // TODO: Handle NOT_ENOUGH_QUOTA.
         // In the close case, the request is in the inflight queue, and will either be returned
         // to the user with an error, or will be resent.
-        this.streamConnection.send(preparedRequest);
-        isFirstRequestInConnection = false;
+        this.streamConnection.send(originalRequestBuilder.build());
       }
     }
 
@@ -510,24 +551,6 @@ public class ConnectionWorker implements AutoCloseable {
     }
 
     return;
-  }
-
-  private AppendRowsRequest prepareRequestBasedOnPosition(
-      AppendRowsRequest original, boolean isFirstRequest) {
-    AppendRowsRequest.Builder requestBuilder = original.toBuilder();
-    if (isFirstRequest) {
-      if (this.writerSchema != null) {
-        requestBuilder.getProtoRowsBuilder().setWriterSchema(this.writerSchema);
-      }
-      requestBuilder.setWriteStream(this.streamName);
-      if (this.traceId != null) {
-        requestBuilder.setTraceId(this.traceId);
-      }
-    } else {
-      requestBuilder.clearWriteStream();
-      requestBuilder.getProtoRowsBuilder().clearWriterSchema();
-    }
-    return requestBuilder.build();
   }
 
   private void cleanupInflightRequests() {
@@ -674,6 +697,16 @@ public class ConnectionWorker implements AutoCloseable {
       this.message = message;
       this.messageSize = message.getProtoRows().getSerializedSize();
     }
+  }
+
+  /** Returns the current workload of this worker. */
+  public Load getLoad() {
+    return Load.create(
+        inflightBytes,
+        inflightRequests,
+        destinationSet.size(),
+        maxInflightBytes,
+        maxInflightRequests);
   }
 
   /**

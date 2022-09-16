@@ -43,6 +43,9 @@ public class StreamWriter implements AutoCloseable {
    */
   private final String streamName;
 
+  /** Every writer has a fixed proto schema. */
+  private final ProtoSchema writerSchema;
+
   /*
    * A String that uniquely identifies this writer.
    */
@@ -56,6 +59,7 @@ public class StreamWriter implements AutoCloseable {
   private StreamWriter(Builder builder) throws IOException {
     BigQueryWriteClient client;
     this.streamName = builder.streamName;
+    this.writerSchema = builder.writerSchema;
     boolean ownsBigQueryWriteClient;
     if (builder.client == null) {
       BigQueryWriteSettings stubSettings =
@@ -123,7 +127,7 @@ public class StreamWriter implements AutoCloseable {
    * @return the append response wrapped in a future.
    */
   public ApiFuture<AppendRowsResponse> append(ProtoRows rows, long offset) {
-    return this.connectionWorker.append(rows, offset);
+    return this.connectionWorker.append(streamName, writerSchema, rows, offset);
   }
 
   /**
