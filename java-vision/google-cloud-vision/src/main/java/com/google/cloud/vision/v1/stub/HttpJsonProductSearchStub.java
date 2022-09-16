@@ -120,7 +120,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("productSet", request.getProductSet()))
+                                  .toBody("productSet", request.getProductSet(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ProductSet>newBuilder()
@@ -226,7 +226,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("productSet", request.getProductSet()))
+                                  .toBody("productSet", request.getProductSet(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ProductSet>newBuilder()
@@ -295,7 +295,8 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("product", request.getProduct()))
+                              ProtoRestSerializer.create()
+                                  .toBody("product", request.getProduct(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Product>newBuilder()
@@ -399,7 +400,8 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("product", request.getProduct()))
+                              ProtoRestSerializer.create()
+                                  .toBody("product", request.getProduct(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Product>newBuilder()
@@ -470,7 +472,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("referenceImage", request.getReferenceImage()))
+                                  .toBody("referenceImage", request.getReferenceImage(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ReferenceImage>newBuilder()
@@ -607,7 +609,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -643,7 +645,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -716,7 +718,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -755,7 +757,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

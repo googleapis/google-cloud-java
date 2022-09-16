@@ -58,41 +58,37 @@ public final class WebDetectionProto {
     java.lang.String[] descriptorData = {
       "\n1google/cloud/vision/v1p2beta1/web_dete"
           + "ction.proto\022\035google.cloud.vision.v1p2bet"
-          + "a1\032\034google/api/annotations.proto\"\214\007\n\014Web"
-          + "Detection\022K\n\014web_entities\030\001 \003(\01325.google"
-          + ".cloud.vision.v1p2beta1.WebDetection.Web"
-          + "Entity\022R\n\024full_matching_images\030\002 \003(\01324.g"
-          + "oogle.cloud.vision.v1p2beta1.WebDetectio"
-          + "n.WebImage\022U\n\027partial_matching_images\030\003 "
-          + "\003(\01324.google.cloud.vision.v1p2beta1.WebD"
-          + "etection.WebImage\022W\n\032pages_with_matching"
-          + "_images\030\004 \003(\01323.google.cloud.vision.v1p2"
-          + "beta1.WebDetection.WebPage\022U\n\027visually_s"
-          + "imilar_images\030\006 \003(\01324.google.cloud.visio"
-          + "n.v1p2beta1.WebDetection.WebImage\022O\n\021bes"
-          + "t_guess_labels\030\010 \003(\01324.google.cloud.visi"
-          + "on.v1p2beta1.WebDetection.WebLabel\032B\n\tWe"
-          + "bEntity\022\021\n\tentity_id\030\001 \001(\t\022\r\n\005score\030\002 \001("
-          + "\002\022\023\n\013description\030\003 \001(\t\032&\n\010WebImage\022\013\n\003ur"
-          + "l\030\001 \001(\t\022\r\n\005score\030\002 \001(\002\032\344\001\n\007WebPage\022\013\n\003ur"
-          + "l\030\001 \001(\t\022\r\n\005score\030\002 \001(\002\022\022\n\npage_title\030\003 \001"
-          + "(\t\022R\n\024full_matching_images\030\004 \003(\01324.googl"
-          + "e.cloud.vision.v1p2beta1.WebDetection.We"
-          + "bImage\022U\n\027partial_matching_images\030\005 \003(\0132"
-          + "4.google.cloud.vision.v1p2beta1.WebDetec"
-          + "tion.WebImage\0320\n\010WebLabel\022\r\n\005label\030\001 \001(\t"
-          + "\022\025\n\rlanguage_code\030\002 \001(\tB\200\001\n!com.google.c"
-          + "loud.vision.v1p2beta1B\021WebDetectionProto"
-          + "P\001ZCgoogle.golang.org/genproto/googleapi"
-          + "s/cloud/vision/v1p2beta1;vision\370\001\001b\006prot"
-          + "o3"
+          + "a1\"\214\007\n\014WebDetection\022K\n\014web_entities\030\001 \003("
+          + "\01325.google.cloud.vision.v1p2beta1.WebDet"
+          + "ection.WebEntity\022R\n\024full_matching_images"
+          + "\030\002 \003(\01324.google.cloud.vision.v1p2beta1.W"
+          + "ebDetection.WebImage\022U\n\027partial_matching"
+          + "_images\030\003 \003(\01324.google.cloud.vision.v1p2"
+          + "beta1.WebDetection.WebImage\022W\n\032pages_wit"
+          + "h_matching_images\030\004 \003(\01323.google.cloud.v"
+          + "ision.v1p2beta1.WebDetection.WebPage\022U\n\027"
+          + "visually_similar_images\030\006 \003(\01324.google.c"
+          + "loud.vision.v1p2beta1.WebDetection.WebIm"
+          + "age\022O\n\021best_guess_labels\030\010 \003(\01324.google."
+          + "cloud.vision.v1p2beta1.WebDetection.WebL"
+          + "abel\032B\n\tWebEntity\022\021\n\tentity_id\030\001 \001(\t\022\r\n\005"
+          + "score\030\002 \001(\002\022\023\n\013description\030\003 \001(\t\032&\n\010WebI"
+          + "mage\022\013\n\003url\030\001 \001(\t\022\r\n\005score\030\002 \001(\002\032\344\001\n\007Web"
+          + "Page\022\013\n\003url\030\001 \001(\t\022\r\n\005score\030\002 \001(\002\022\022\n\npage"
+          + "_title\030\003 \001(\t\022R\n\024full_matching_images\030\004 \003"
+          + "(\01324.google.cloud.vision.v1p2beta1.WebDe"
+          + "tection.WebImage\022U\n\027partial_matching_ima"
+          + "ges\030\005 \003(\01324.google.cloud.vision.v1p2beta"
+          + "1.WebDetection.WebImage\0320\n\010WebLabel\022\r\n\005l"
+          + "abel\030\001 \001(\t\022\025\n\rlanguage_code\030\002 \001(\tB\200\001\n!co"
+          + "m.google.cloud.vision.v1p2beta1B\021WebDete"
+          + "ctionProtoP\001ZCgoogle.golang.org/genproto"
+          + "/googleapis/cloud/vision/v1p2beta1;visio"
+          + "n\370\001\001b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_vision_v1p2beta1_WebDetection_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_vision_v1p2beta1_WebDetection_fieldAccessorTable =
@@ -146,7 +142,6 @@ public final class WebDetectionProto {
             new java.lang.String[] {
               "Label", "LanguageCode",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

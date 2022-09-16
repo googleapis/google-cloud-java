@@ -131,7 +131,7 @@ public interface EntityAnnotationOrBuilder
    * <code>float confidence = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.vision.v1.EntityAnnotation.confidence is deprecated. See
-   *     google/cloud/vision/v1/image_annotator.proto;l=505
+   *     google/cloud/vision/v1/image_annotator.proto;l=506
    * @return The confidence.
    */
   @java.lang.Deprecated
