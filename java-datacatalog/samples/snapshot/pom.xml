@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-datacatalog</artifactId>
-      <version>1.9.3</version>
+      <version>1.9.2</version>
     </dependency>
 
     <dependency>
