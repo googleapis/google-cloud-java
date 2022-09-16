@@ -57,4 +57,39 @@ public interface NodeConfigDefaultsOrBuilder
    * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
    */
   com.google.container.v1.GcfsConfigOrBuilder getGcfsConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration for node pools.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePoolLoggingConfig logging_config = 3;</code>
+   *
+   * @return Whether the loggingConfig field is set.
+   */
+  boolean hasLoggingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration for node pools.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePoolLoggingConfig logging_config = 3;</code>
+   *
+   * @return The loggingConfig.
+   */
+  com.google.container.v1.NodePoolLoggingConfig getLoggingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration for node pools.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePoolLoggingConfig logging_config = 3;</code>
+   */
+  com.google.container.v1.NodePoolLoggingConfigOrBuilder getLoggingConfigOrBuilder();
 }
