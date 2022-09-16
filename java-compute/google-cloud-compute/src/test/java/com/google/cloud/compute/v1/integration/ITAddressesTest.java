@@ -46,6 +46,7 @@ public class ITAddressesTest extends BaseTest {
     addresses = new ArrayList<>();
     AddressesSettings addressesSettings = AddressesSettings.newBuilder().build();
     addressesClient = AddressesClient.create(addressesSettings);
+    Util.cleanUpComputeAddresses(addressesClient, DEFAULT_PROJECT, DEFAULT_REGION);
   }
 
   @Before
@@ -56,7 +57,7 @@ public class ITAddressesTest extends BaseTest {
   @AfterClass
   public static void tearDown() throws ExecutionException, InterruptedException {
     for (Address address : addresses) {
-      addressesClient.deleteAsync(DEFAULT_PROJECT, DEFAULT_REGION, address.getName()).get();
+      addressesClient.deleteAsync(DEFAULT_PROJECT, DEFAULT_REGION, address.getName());
     }
     addressesClient.close();
   }
