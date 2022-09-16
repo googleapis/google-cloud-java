@@ -12,6 +12,11 @@ if [ -z "$BRANCH" ]; then
   exit 1
 fi
 
+if [ -z "${PROTOBUF_VERSION}" ]; then
+  echo "Please set PROTOBUF_VERSION. E.g., export PROTOBUF_VERSION=3.16.1"
+  exit 1
+fi
+
 # The sha256 is the oldest one I found in gcr.io, built on Sep 8, 2021.
 # This version did not reqiure api_shortname in .repo-metadata.json.
 # This value will be overridden by .github/.OwlBot.lock.yaml below if the file
@@ -51,11 +56,22 @@ fi
 last_googleapis_commit_url=$(git log -1000 |grep 'Source-Link: https://github.com/googleapis/googleapis/commit' |head -1)
 # e.g., "3b236df084cf9222c529a2890f90e3a4ff0f2dfd"
 last_googleapis_commit=${last_googleapis_commit_url##*/}
+if [ -z "${last_googleapis_commit}" ]; then
+  echo "Couldn't find last googleapis commit in the repository"
+  echo "Maybe pure hand-written library?"
+  exit 1
+fi
+
+
 popd
 
 git clone --single-branch -- https://github.com/googleapis/googleapis workspace/googleapis
 
 pushd workspace/googleapis
+
+echo "The last googleapis commit on the branch ${BRANCH} was:"
+git log --pretty=format:"%h%x09%an%x09%ad%x09%s" -1 $last_googleapis_commit
+echo "Checking out this commit from googleapis/googleapis repository:"
 
 git fetch origin ${last_googleapis_commit}
 
@@ -67,7 +83,25 @@ export BAZEL_VERSION=$USE_BAZEL_VERSION
 # Searching for the line
 #     urls = ["https://github.com/protocolbuffers/protobuf/archive/v3.15.3.tar.gz"],
 
-protobuf_current_version=$(perl -nle 'print $1 if m|protocolbuffers/protobuf/archive/v(.+).tar.gz|' WORKSPACE)
+protobuf_current_version=$(perl -nle 'print $1 if m|protocolbuffers/protobuf/archive/v(.+).(zip\|tar\.gz)|' WORKSPACE)
+echo "Overriding WORKSPACE to use Protobuf ${PROTOBUF_VERSION} from ${protobuf_current_version}"
+
+# WORKSPACE file has the following section to declare Protobuf version.
+# sha256 field is optional.
+#
+# http_archive(
+#    name = "com_google_protobuf",
+#    sha256 = "b10bf4e2d1a7586f54e64a5d9e7837e5188fc75ae69e36f215eb01def4f9721b",
+#    strip_prefix = "protobuf-3.15.3",
+#    urls = ["https://github.com/protocolbuffers/protobuf/archive/v3.15.3.tar.gz"],
+#)
+sed -i.bak -e "/com_google_protobuf/{N;s|sha256 = .*||;N;s|\"protobuf-.*\"|\"protobuf-${PROTOBUF_VERSION}\"|;N;s|/v.*\"|/v${PROTOBUF_VERSION}\.tar\.gz\"|}" WORKSPACE
+rm WORKSPACE.bak
+
+if ! grep $PROTOBUF_VERSION WORKSPACE; then
+  echo "Could not update Protobuf version section. Please check regular expression in script above."
+  exit 1
+fi
 
 popd
 
@@ -87,7 +121,7 @@ curl "https://github.com/protocolbuffers/protobuf/archive/v${protobuf_target_ver
 
 cp hermetic_bazel_command.sh workspace/
 
-echo "Building workspace/googleapis by Bazel: $(bazel version)"
+echo "Building workspace/googleapis"
 
 # Bazel requires USER environment variable
 docker run --rm  --user "$(id -u):$(id -g)" --env HOME=/workspace --env USER=$(id -u -n) \
