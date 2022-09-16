@@ -29,16 +29,18 @@ public class Util {
   // Cleans existing test resources if any.
   private static final int DELETION_THRESHOLD_TIME_HOURS = 24;
 
-  /** tear down any clusters that are older than 24 hours * */
-  public static void cleanUpExistingInstanceCluster(
-      String projectId, String zone, ClusterManagerClient client) {
+  /**
+   * tear down any clusters that are older than 24 hours *
+   */
+  public static void cleanUpExistingInstanceCluster(ClusterManagerClient client,
+      String projectId, String zone, String prefix) {
 
     ListClustersResponse clustersResponse = client.listClusters(projectId, zone);
     List<Cluster> clusters = clustersResponse.getClustersList();
 
     for (Cluster cluster : clusters) {
       if (isCreatedBeforeThresholdTime(cluster.getCreateTime())
-          && cluster.getName().startsWith(ITSystemTest.CONTAINER_PREFIX)) {
+          && cluster.getName().startsWith(prefix)) {
         client.deleteCluster(projectId, zone, cluster.getName());
       }
     }

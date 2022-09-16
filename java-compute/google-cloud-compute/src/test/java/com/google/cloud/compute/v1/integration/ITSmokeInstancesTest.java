@@ -73,7 +73,7 @@ public class ITSmokeInstancesTest extends BaseTest {
     InstancesSettings instanceSettings = InstancesSettings.newBuilder().build();
     instancesClient = InstancesClient.create(instanceSettings);
 
-    Util.cleanUpComputeInstances(instancesClient, DEFAULT_PROJECT, DEFAULT_ZONE);
+    Util.cleanUpComputeInstances(instancesClient, DEFAULT_PROJECT, DEFAULT_ZONE, COMPUTE_PREFIX);
   }
 
   @Before
