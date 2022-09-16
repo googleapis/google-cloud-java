@@ -51,8 +51,28 @@ for module in $(find . -mindepth 2 -maxdepth 2 -name pom.xml |sort | xargs dirna
   #adding the line to manifest config file
   echo "${rp_manifest_line}" >> .release-please-manifest.json
 
+  #for multi-module libraries, sync the versions to released(non-snapshot):current(snapshot) type
+  cat ${version_file} | while read line
+      do
+         if [[ ${line} =~ [0-9] ]] && ! [[ ${line} == *"SNAPSHOT"* ]] ; then
+           artifact_name=$(echo "${line}" | awk -F':' '{print $1}')
+           old_version=$(echo "${line}" | awk -F':' '{print $3}')
+           new_version=$(echo ${old_version} |  awk -F'.' '{print $1"."$2"."$3+1}' |  sed s/[.]$//)
+           new_version="${new_version}-SNAPSHOT"
+           sed -i.bak -e "s|${artifact_name}:${old_version}:${old_version}|${artifact_name}:${old_version}:${new_version}|" "${version_file}" && rm "${version_file}".bak
+         fi
+      done
+
+  snapshot_version=$(echo ${module_released_version} |  awk -F'.' '{print $1"."$2"."$3+1}' |  sed s/[.]$//)
+
+  if [[ ${module_name} == "java-notification" ]]; then
+    snapshot_version="${snapshot_version}-beta-SNAPSHOT"
+  else
+    snapshot_version="${snapshot_version}-SNAPSHOT"
+  fi
+
   #bumping to snapshot in module root pom
-  mvn -B -ntp -f ${module} -U versions:set -DnewVersion="${module_snapshot_version}" -DprocessAllModules -DgenerateBackupPoms=false -DprocessFromLocalAggregationRoot=false
+  mvn -B -ntp -f ${module} -U versions:set -DnewVersion="${snapshot_version}" -DprocessAllModules -DgenerateBackupPoms=false -DprocessFromLocalAggregationRoot=false
 
 done
 
