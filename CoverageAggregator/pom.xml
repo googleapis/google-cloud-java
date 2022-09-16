@@ -48,7 +48,7 @@
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-binary-authorization</artifactId><version>1.2.4-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-certificate-manager</artifactId><version>0.5.1-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-channel</artifactId><version>3.7.3-SNAPSHOT</version></dependency>
-<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-build</artifactId><version>3.5.3</version></dependency>
+<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-build</artifactId><version>3.5.3-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-cloudcommerceconsumerprocurement</artifactId><version>0.1.1-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-compute</artifactId><version>1.12.1-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-contact-center-insights</artifactId><version>2.3.9-SNAPSHOT</version></dependency>
@@ -192,7 +192,7 @@
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-binary-authorization</artifactId><version>1.2.4-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-certificate-manager</artifactId><version>0.5.1-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-channel</artifactId><version>3.7.3-SNAPSHOT</version></dependency>
-<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-build</artifactId><version>3.5.3</version></dependency>
+<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-build</artifactId><version>3.5.3-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-cloudcommerceconsumerprocurement</artifactId><version>0.1.1-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-compute</artifactId><version>1.12.1-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-contact-center-insights</artifactId><version>2.3.9-SNAPSHOT</version></dependency>
