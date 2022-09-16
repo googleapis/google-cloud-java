@@ -28,7 +28,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>libraries-bom</artifactId>
-        <version>26.1.1</version>
+        <version>26.1.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -40,7 +40,7 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigqueryconnection</artifactId>
       <!-- TODO: REMOVE VERSION SPECIFIED BELOW WHEN THE CLIENT GOES GA-->
-      <version>2.5.2</version>
+      <version>2.5.0</version>
     </dependency>
 
     <dependency>

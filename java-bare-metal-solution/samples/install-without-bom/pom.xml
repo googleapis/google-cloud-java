@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bare-metal-solution</artifactId>
-      <version>0.3.3</version>
+      <version>0.3.2</version>
     </dependency>
     <!-- [END _install_without_bom] -->
 

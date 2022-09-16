@@ -57,17 +57,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-resourcemanager</artifactId>
-        <version>1.5.4</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
+        <version>1.5.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-resourcemanager-v3</artifactId>
-        <version>1.5.4</version><!-- {x-version-update:grpc-google-cloud-resourcemanager-v3:current} -->
+        <version>1.5.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-resourcemanager-v3:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-resourcemanager-v3</artifactId>
-        <version>1.5.4</version><!-- {x-version-update:proto-google-cloud-resourcemanager-v3:current} -->
+        <version>1.5.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-resourcemanager-v3:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

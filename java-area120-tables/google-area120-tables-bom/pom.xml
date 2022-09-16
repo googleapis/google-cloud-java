@@ -57,7 +57,7 @@
       <dependency>
         <groupId>com.google.area120</groupId>
         <artifactId>google-area120-tables</artifactId>
-        <version>0.7.3</version><!-- {x-version-update:google-area120-tables:current} -->
+        <version>0.7.3-SNAPSHOT</version><!-- {x-version-update:google-area120-tables:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>

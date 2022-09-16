@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-mediatranslation</artifactId>
-      <version>0.9.3</version>
+      <version>0.9.2</version>
     </dependency>
     <!-- [END mediatranslation_install_without_bom] -->
 

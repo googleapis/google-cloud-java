@@ -57,7 +57,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dataflow</artifactId>
-        <version>0.7.3</version><!-- {x-version-update:google-cloud-dataflow:current} -->
+        <version>0.7.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataflow:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>

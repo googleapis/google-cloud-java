@@ -57,7 +57,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-orchestration-airflow</artifactId>
-        <version>1.3.3</version><!-- {x-version-update:google-cloud-orchestration-airflow:current} -->
+        <version>1.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-orchestration-airflow:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>

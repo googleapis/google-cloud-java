@@ -10,7 +10,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-monitoring-parent</artifactId>
-    <version>3.4.2</version><!-- {x-version-update:google-cloud-monitoring:current} -->
+    <version>3.4.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
   </parent>
   <dependencies>
     <dependency>

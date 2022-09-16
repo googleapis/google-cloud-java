@@ -154,7 +154,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-speech</artifactId>
-        <version>2.5.5</version><!-- {x-version-update:google-cloud-speech:current} -->
+        <version>2.5.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-speech:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -169,12 +169,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-speech-v1</artifactId>
-        <version>2.5.5</version><!-- {x-version-update:grpc-google-cloud-speech-v1:current} -->
+        <version>2.5.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-speech-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-speech-v1beta1</artifactId>
-        <version>0.89.6</version><!-- {x-version-update:grpc-google-cloud-speech-v1beta1:current} -->
+        <version>0.89.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-speech-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -185,7 +185,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>3.0.2</version>
+        <version>3.0.3</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

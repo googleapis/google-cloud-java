@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-dataform</artifactId>
-      <version>0.2.1</version>
+      <version>0.2.0</version>
     </dependency>
 
     <dependency>
