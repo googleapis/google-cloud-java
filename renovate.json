@@ -14,15 +14,6 @@
   ],
   "packageRules": [
     {
-      "matchPackagePatterns": ["*"],
-      "enabled": false
-    },
-    {
-      "matchPackageNames": ["com.google.cloud:google-cloud-shared-config", "com.google.cloud:google-cloud-shared-dependencies"],
-      "dependencyDashboardApproval": true,
-      "enabled": true
-    },
-    {
       "matchPackagePatterns": ["^io.grpc:grpc-"],
       "groupName": "gRPC packages"
     },
@@ -33,6 +24,6 @@
     {
       "matchPackagePatterns": ["^io.opencensus:opencensus-"],
       "groupName": "OpenCensus packages"
-    }
+    } 
   ]
 }
