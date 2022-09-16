@@ -22,29 +22,29 @@ package com.google.container.v1beta1;
  *
  *
  * <pre>
- * Configuration options for Istio addon.
+ * LoggingVariantConfig specifies the behaviour of the logging component.
  * </pre>
  *
- * Protobuf type {@code google.container.v1beta1.IstioConfig}
+ * Protobuf type {@code google.container.v1beta1.LoggingVariantConfig}
  */
-public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
+public final class LoggingVariantConfig extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.container.v1beta1.IstioConfig)
-    IstioConfigOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.container.v1beta1.LoggingVariantConfig)
+    LoggingVariantConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use IstioConfig.newBuilder() to construct.
-  private IstioConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use LoggingVariantConfig.newBuilder() to construct.
+  private LoggingVariantConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private IstioConfig() {
-    auth_ = 0;
+  private LoggingVariantConfig() {
+    variant_ = 0;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new IstioConfig();
+    return new LoggingVariantConfig();
   }
 
   @java.lang.Override
@@ -52,7 +52,7 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private IstioConfig(
+  private LoggingVariantConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -72,14 +72,9 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
             break;
           case 8:
             {
-              disabled_ = input.readBool();
-              break;
-            }
-          case 16:
-            {
               int rawValue = input.readEnum();
 
-              auth_ = rawValue;
+              variant_ = rawValue;
               break;
             }
           default:
@@ -105,49 +100,59 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1beta1.ClusterServiceProto
-        .internal_static_google_container_v1beta1_IstioConfig_descriptor;
+        .internal_static_google_container_v1beta1_LoggingVariantConfig_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.container.v1beta1.ClusterServiceProto
-        .internal_static_google_container_v1beta1_IstioConfig_fieldAccessorTable
+        .internal_static_google_container_v1beta1_LoggingVariantConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.container.v1beta1.IstioConfig.class,
-            com.google.container.v1beta1.IstioConfig.Builder.class);
+            com.google.container.v1beta1.LoggingVariantConfig.class,
+            com.google.container.v1beta1.LoggingVariantConfig.Builder.class);
   }
 
   /**
    *
    *
    * <pre>
-   * Istio auth mode, https://istio.io/docs/concepts/security/mutual-tls.html
+   * Logging component variants.
    * </pre>
    *
-   * Protobuf enum {@code google.container.v1beta1.IstioConfig.IstioAuthMode}
+   * Protobuf enum {@code google.container.v1beta1.LoggingVariantConfig.Variant}
    */
-  public enum IstioAuthMode implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Variant implements com.google.protobuf.ProtocolMessageEnum {
     /**
      *
      *
      * <pre>
-     * auth not enabled
+     * Default value. This shouldn't be used.
      * </pre>
      *
-     * <code>AUTH_NONE = 0;</code>
+     * <code>VARIANT_UNSPECIFIED = 0;</code>
      */
-    AUTH_NONE(0),
+    VARIANT_UNSPECIFIED(0),
     /**
      *
      *
      * <pre>
-     * auth mutual TLS enabled
+     * default logging variant.
      * </pre>
      *
-     * <code>AUTH_MUTUAL_TLS = 1;</code>
+     * <code>DEFAULT = 1;</code>
      */
-    AUTH_MUTUAL_TLS(1),
+    DEFAULT(1),
+    /**
+     *
+     *
+     * <pre>
+     * maximum logging throughput variant.
+     * </pre>
+     *
+     * <code>MAX_THROUGHPUT = 2;</code>
+     */
+    MAX_THROUGHPUT(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -155,22 +160,32 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * auth not enabled
+     * Default value. This shouldn't be used.
      * </pre>
      *
-     * <code>AUTH_NONE = 0;</code>
+     * <code>VARIANT_UNSPECIFIED = 0;</code>
      */
-    public static final int AUTH_NONE_VALUE = 0;
+    public static final int VARIANT_UNSPECIFIED_VALUE = 0;
     /**
      *
      *
      * <pre>
-     * auth mutual TLS enabled
+     * default logging variant.
      * </pre>
      *
-     * <code>AUTH_MUTUAL_TLS = 1;</code>
+     * <code>DEFAULT = 1;</code>
      */
-    public static final int AUTH_MUTUAL_TLS_VALUE = 1;
+    public static final int DEFAULT_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * maximum logging throughput variant.
+     * </pre>
+     *
+     * <code>MAX_THROUGHPUT = 2;</code>
+     */
+    public static final int MAX_THROUGHPUT_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -186,7 +201,7 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static IstioAuthMode valueOf(int value) {
+    public static Variant valueOf(int value) {
       return forNumber(value);
     }
 
@@ -194,25 +209,27 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      * @param value The numeric wire value of the corresponding enum entry.
      * @return The enum associated with the given numeric wire value.
      */
-    public static IstioAuthMode forNumber(int value) {
+    public static Variant forNumber(int value) {
       switch (value) {
         case 0:
-          return AUTH_NONE;
+          return VARIANT_UNSPECIFIED;
         case 1:
-          return AUTH_MUTUAL_TLS;
+          return DEFAULT;
+        case 2:
+          return MAX_THROUGHPUT;
         default:
           return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<IstioAuthMode> internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Variant> internalGetValueMap() {
       return internalValueMap;
     }
 
-    private static final com.google.protobuf.Internal.EnumLiteMap<IstioAuthMode> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<IstioAuthMode>() {
-          public IstioAuthMode findValueByNumber(int number) {
-            return IstioAuthMode.forNumber(number);
+    private static final com.google.protobuf.Internal.EnumLiteMap<Variant> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Variant>() {
+          public Variant findValueByNumber(int number) {
+            return Variant.forNumber(number);
           }
         };
 
@@ -229,12 +246,14 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.container.v1beta1.IstioConfig.getDescriptor().getEnumTypes().get(0);
+      return com.google.container.v1beta1.LoggingVariantConfig.getDescriptor()
+          .getEnumTypes()
+          .get(0);
     }
 
-    private static final IstioAuthMode[] VALUES = values();
+    private static final Variant[] VALUES = values();
 
-    public static IstioAuthMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Variant valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
@@ -246,75 +265,48 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
 
     private final int value;
 
-    private IstioAuthMode(int value) {
+    private Variant(int value) {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:google.container.v1beta1.IstioConfig.IstioAuthMode)
+    // @@protoc_insertion_point(enum_scope:google.container.v1beta1.LoggingVariantConfig.Variant)
   }
 
-  public static final int DISABLED_FIELD_NUMBER = 1;
-  private boolean disabled_;
+  public static final int VARIANT_FIELD_NUMBER = 1;
+  private int variant_;
   /**
    *
    *
    * <pre>
-   * Whether Istio is enabled for this cluster.
+   * Logging variant deployed on nodes.
    * </pre>
    *
-   * <code>bool disabled = 1 [deprecated = true];</code>
+   * <code>.google.container.v1beta1.LoggingVariantConfig.Variant variant = 1;</code>
    *
-   * @deprecated google.container.v1beta1.IstioConfig.disabled is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1188
-   * @return The disabled.
+   * @return The enum numeric value on the wire for variant.
    */
   @java.lang.Override
-  @java.lang.Deprecated
-  public boolean getDisabled() {
-    return disabled_;
-  }
-
-  public static final int AUTH_FIELD_NUMBER = 2;
-  private int auth_;
-  /**
-   *
-   *
-   * <pre>
-   * The specified Istio auth mode, either none, or mutual TLS.
-   * </pre>
-   *
-   * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];</code>
-   *
-   * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1191
-   * @return The enum numeric value on the wire for auth.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public int getAuthValue() {
-    return auth_;
+  public int getVariantValue() {
+    return variant_;
   }
   /**
    *
    *
    * <pre>
-   * The specified Istio auth mode, either none, or mutual TLS.
+   * Logging variant deployed on nodes.
    * </pre>
    *
-   * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];</code>
+   * <code>.google.container.v1beta1.LoggingVariantConfig.Variant variant = 1;</code>
    *
-   * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1191
-   * @return The auth.
+   * @return The variant.
    */
   @java.lang.Override
-  @java.lang.Deprecated
-  public com.google.container.v1beta1.IstioConfig.IstioAuthMode getAuth() {
+  public com.google.container.v1beta1.LoggingVariantConfig.Variant getVariant() {
     @SuppressWarnings("deprecation")
-    com.google.container.v1beta1.IstioConfig.IstioAuthMode result =
-        com.google.container.v1beta1.IstioConfig.IstioAuthMode.valueOf(auth_);
+    com.google.container.v1beta1.LoggingVariantConfig.Variant result =
+        com.google.container.v1beta1.LoggingVariantConfig.Variant.valueOf(variant_);
     return result == null
-        ? com.google.container.v1beta1.IstioConfig.IstioAuthMode.UNRECOGNIZED
+        ? com.google.container.v1beta1.LoggingVariantConfig.Variant.UNRECOGNIZED
         : result;
   }
 
@@ -332,11 +324,10 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (disabled_ != false) {
-      output.writeBool(1, disabled_);
-    }
-    if (auth_ != com.google.container.v1beta1.IstioConfig.IstioAuthMode.AUTH_NONE.getNumber()) {
-      output.writeEnum(2, auth_);
+    if (variant_
+        != com.google.container.v1beta1.LoggingVariantConfig.Variant.VARIANT_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(1, variant_);
     }
     unknownFields.writeTo(output);
   }
@@ -347,11 +338,10 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (disabled_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, disabled_);
-    }
-    if (auth_ != com.google.container.v1beta1.IstioConfig.IstioAuthMode.AUTH_NONE.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, auth_);
+    if (variant_
+        != com.google.container.v1beta1.LoggingVariantConfig.Variant.VARIANT_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, variant_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -363,13 +353,13 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.container.v1beta1.IstioConfig)) {
+    if (!(obj instanceof com.google.container.v1beta1.LoggingVariantConfig)) {
       return super.equals(obj);
     }
-    com.google.container.v1beta1.IstioConfig other = (com.google.container.v1beta1.IstioConfig) obj;
+    com.google.container.v1beta1.LoggingVariantConfig other =
+        (com.google.container.v1beta1.LoggingVariantConfig) obj;
 
-    if (getDisabled() != other.getDisabled()) return false;
-    if (auth_ != other.auth_) return false;
+    if (variant_ != other.variant_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -381,80 +371,78 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + DISABLED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisabled());
-    hash = (37 * hash) + AUTH_FIELD_NUMBER;
-    hash = (53 * hash) + auth_;
+    hash = (37 * hash) + VARIANT_FIELD_NUMBER;
+    hash = (53 * hash) + variant_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.container.v1beta1.LoggingVariantConfig parseFrom(
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(
+  public static com.google.container.v1beta1.LoggingVariantConfig parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(
+  public static com.google.container.v1beta1.LoggingVariantConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(
+  public static com.google.container.v1beta1.LoggingVariantConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(byte[] data)
+  public static com.google.container.v1beta1.LoggingVariantConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(
+  public static com.google.container.v1beta1.LoggingVariantConfig parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
+  public static com.google.container.v1beta1.LoggingVariantConfig parseFrom(
+      java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(
+  public static com.google.container.v1beta1.LoggingVariantConfig parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseDelimitedFrom(
+  public static com.google.container.v1beta1.LoggingVariantConfig parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseDelimitedFrom(
+  public static com.google.container.v1beta1.LoggingVariantConfig parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(
+  public static com.google.container.v1beta1.LoggingVariantConfig parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(
+  public static com.google.container.v1beta1.LoggingVariantConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -471,7 +459,7 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.container.v1beta1.IstioConfig prototype) {
+  public static Builder newBuilder(com.google.container.v1beta1.LoggingVariantConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -489,31 +477,31 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration options for Istio addon.
+   * LoggingVariantConfig specifies the behaviour of the logging component.
    * </pre>
    *
-   * Protobuf type {@code google.container.v1beta1.IstioConfig}
+   * Protobuf type {@code google.container.v1beta1.LoggingVariantConfig}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.container.v1beta1.IstioConfig)
-      com.google.container.v1beta1.IstioConfigOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.container.v1beta1.LoggingVariantConfig)
+      com.google.container.v1beta1.LoggingVariantConfigOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.container.v1beta1.ClusterServiceProto
-          .internal_static_google_container_v1beta1_IstioConfig_descriptor;
+          .internal_static_google_container_v1beta1_LoggingVariantConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.container.v1beta1.ClusterServiceProto
-          .internal_static_google_container_v1beta1_IstioConfig_fieldAccessorTable
+          .internal_static_google_container_v1beta1_LoggingVariantConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.container.v1beta1.IstioConfig.class,
-              com.google.container.v1beta1.IstioConfig.Builder.class);
+              com.google.container.v1beta1.LoggingVariantConfig.class,
+              com.google.container.v1beta1.LoggingVariantConfig.Builder.class);
     }
 
-    // Construct using com.google.container.v1beta1.IstioConfig.newBuilder()
+    // Construct using com.google.container.v1beta1.LoggingVariantConfig.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -530,9 +518,7 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      disabled_ = false;
-
-      auth_ = 0;
+      variant_ = 0;
 
       return this;
     }
@@ -540,17 +526,17 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.container.v1beta1.ClusterServiceProto
-          .internal_static_google_container_v1beta1_IstioConfig_descriptor;
+          .internal_static_google_container_v1beta1_LoggingVariantConfig_descriptor;
     }
 
     @java.lang.Override
-    public com.google.container.v1beta1.IstioConfig getDefaultInstanceForType() {
-      return com.google.container.v1beta1.IstioConfig.getDefaultInstance();
+    public com.google.container.v1beta1.LoggingVariantConfig getDefaultInstanceForType() {
+      return com.google.container.v1beta1.LoggingVariantConfig.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.container.v1beta1.IstioConfig build() {
-      com.google.container.v1beta1.IstioConfig result = buildPartial();
+    public com.google.container.v1beta1.LoggingVariantConfig build() {
+      com.google.container.v1beta1.LoggingVariantConfig result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -558,11 +544,10 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.container.v1beta1.IstioConfig buildPartial() {
-      com.google.container.v1beta1.IstioConfig result =
-          new com.google.container.v1beta1.IstioConfig(this);
-      result.disabled_ = disabled_;
-      result.auth_ = auth_;
+    public com.google.container.v1beta1.LoggingVariantConfig buildPartial() {
+      com.google.container.v1beta1.LoggingVariantConfig result =
+          new com.google.container.v1beta1.LoggingVariantConfig(this);
+      result.variant_ = variant_;
       onBuilt();
       return result;
     }
@@ -602,21 +587,19 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.container.v1beta1.IstioConfig) {
-        return mergeFrom((com.google.container.v1beta1.IstioConfig) other);
+      if (other instanceof com.google.container.v1beta1.LoggingVariantConfig) {
+        return mergeFrom((com.google.container.v1beta1.LoggingVariantConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.container.v1beta1.IstioConfig other) {
-      if (other == com.google.container.v1beta1.IstioConfig.getDefaultInstance()) return this;
-      if (other.getDisabled() != false) {
-        setDisabled(other.getDisabled());
-      }
-      if (other.auth_ != 0) {
-        setAuthValue(other.getAuthValue());
+    public Builder mergeFrom(com.google.container.v1beta1.LoggingVariantConfig other) {
+      if (other == com.google.container.v1beta1.LoggingVariantConfig.getDefaultInstance())
+        return this;
+      if (other.variant_ != 0) {
+        setVariantValue(other.getVariantValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -633,11 +616,12 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.container.v1beta1.IstioConfig parsedMessage = null;
+      com.google.container.v1beta1.LoggingVariantConfig parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.container.v1beta1.IstioConfig) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.container.v1beta1.LoggingVariantConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -647,43 +631,37 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private boolean disabled_;
+    private int variant_ = 0;
     /**
      *
      *
      * <pre>
-     * Whether Istio is enabled for this cluster.
+     * Logging variant deployed on nodes.
      * </pre>
      *
-     * <code>bool disabled = 1 [deprecated = true];</code>
+     * <code>.google.container.v1beta1.LoggingVariantConfig.Variant variant = 1;</code>
      *
-     * @deprecated google.container.v1beta1.IstioConfig.disabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1188
-     * @return The disabled.
+     * @return The enum numeric value on the wire for variant.
      */
     @java.lang.Override
-    @java.lang.Deprecated
-    public boolean getDisabled() {
-      return disabled_;
+    public int getVariantValue() {
+      return variant_;
     }
     /**
      *
      *
      * <pre>
-     * Whether Istio is enabled for this cluster.
+     * Logging variant deployed on nodes.
      * </pre>
      *
-     * <code>bool disabled = 1 [deprecated = true];</code>
+     * <code>.google.container.v1beta1.LoggingVariantConfig.Variant variant = 1;</code>
      *
-     * @deprecated google.container.v1beta1.IstioConfig.disabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1188
-     * @param value The disabled to set.
+     * @param value The enum numeric value on the wire for variant to set.
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated
-    public Builder setDisabled(boolean value) {
+    public Builder setVariantValue(int value) {
 
-      disabled_ = value;
+      variant_ = value;
       onChanged();
       return this;
     }
@@ -691,111 +669,40 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether Istio is enabled for this cluster.
+     * Logging variant deployed on nodes.
      * </pre>
      *
-     * <code>bool disabled = 1 [deprecated = true];</code>
+     * <code>.google.container.v1beta1.LoggingVariantConfig.Variant variant = 1;</code>
      *
-     * @deprecated google.container.v1beta1.IstioConfig.disabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1188
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder clearDisabled() {
-
-      disabled_ = false;
-      onChanged();
-      return this;
-    }
-
-    private int auth_ = 0;
-    /**
-     *
-     *
-     * <pre>
-     * The specified Istio auth mode, either none, or mutual TLS.
-     * </pre>
-     *
-     * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];
-     * </code>
-     *
-     * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1191
-     * @return The enum numeric value on the wire for auth.
+     * @return The variant.
      */
     @java.lang.Override
-    @java.lang.Deprecated
-    public int getAuthValue() {
-      return auth_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The specified Istio auth mode, either none, or mutual TLS.
-     * </pre>
-     *
-     * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];
-     * </code>
-     *
-     * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1191
-     * @param value The enum numeric value on the wire for auth to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder setAuthValue(int value) {
-
-      auth_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The specified Istio auth mode, either none, or mutual TLS.
-     * </pre>
-     *
-     * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];
-     * </code>
-     *
-     * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1191
-     * @return The auth.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public com.google.container.v1beta1.IstioConfig.IstioAuthMode getAuth() {
+    public com.google.container.v1beta1.LoggingVariantConfig.Variant getVariant() {
       @SuppressWarnings("deprecation")
-      com.google.container.v1beta1.IstioConfig.IstioAuthMode result =
-          com.google.container.v1beta1.IstioConfig.IstioAuthMode.valueOf(auth_);
+      com.google.container.v1beta1.LoggingVariantConfig.Variant result =
+          com.google.container.v1beta1.LoggingVariantConfig.Variant.valueOf(variant_);
       return result == null
-          ? com.google.container.v1beta1.IstioConfig.IstioAuthMode.UNRECOGNIZED
+          ? com.google.container.v1beta1.LoggingVariantConfig.Variant.UNRECOGNIZED
           : result;
     }
     /**
      *
      *
      * <pre>
-     * The specified Istio auth mode, either none, or mutual TLS.
+     * Logging variant deployed on nodes.
      * </pre>
      *
-     * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];
-     * </code>
+     * <code>.google.container.v1beta1.LoggingVariantConfig.Variant variant = 1;</code>
      *
-     * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1191
-     * @param value The auth to set.
+     * @param value The variant to set.
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated
-    public Builder setAuth(com.google.container.v1beta1.IstioConfig.IstioAuthMode value) {
+    public Builder setVariant(com.google.container.v1beta1.LoggingVariantConfig.Variant value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      auth_ = value.getNumber();
+      variant_ = value.getNumber();
       onChanged();
       return this;
     }
@@ -803,20 +710,16 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The specified Istio auth mode, either none, or mutual TLS.
+     * Logging variant deployed on nodes.
      * </pre>
      *
-     * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];
-     * </code>
+     * <code>.google.container.v1beta1.LoggingVariantConfig.Variant variant = 1;</code>
      *
-     * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1191
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated
-    public Builder clearAuth() {
+    public Builder clearVariant() {
 
-      auth_ = 0;
+      variant_ = 0;
       onChanged();
       return this;
     }
@@ -832,42 +735,42 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.container.v1beta1.IstioConfig)
+    // @@protoc_insertion_point(builder_scope:google.container.v1beta1.LoggingVariantConfig)
   }
 
-  // @@protoc_insertion_point(class_scope:google.container.v1beta1.IstioConfig)
-  private static final com.google.container.v1beta1.IstioConfig DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.container.v1beta1.LoggingVariantConfig)
+  private static final com.google.container.v1beta1.LoggingVariantConfig DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.container.v1beta1.IstioConfig();
+    DEFAULT_INSTANCE = new com.google.container.v1beta1.LoggingVariantConfig();
   }
 
-  public static com.google.container.v1beta1.IstioConfig getDefaultInstance() {
+  public static com.google.container.v1beta1.LoggingVariantConfig getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<IstioConfig> PARSER =
-      new com.google.protobuf.AbstractParser<IstioConfig>() {
+  private static final com.google.protobuf.Parser<LoggingVariantConfig> PARSER =
+      new com.google.protobuf.AbstractParser<LoggingVariantConfig>() {
         @java.lang.Override
-        public IstioConfig parsePartialFrom(
+        public LoggingVariantConfig parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new IstioConfig(input, extensionRegistry);
+          return new LoggingVariantConfig(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<IstioConfig> parser() {
+  public static com.google.protobuf.Parser<LoggingVariantConfig> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<IstioConfig> getParserForType() {
+  public com.google.protobuf.Parser<LoggingVariantConfig> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.container.v1beta1.IstioConfig getDefaultInstanceForType() {
+  public com.google.container.v1beta1.LoggingVariantConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

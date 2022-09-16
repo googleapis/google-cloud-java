@@ -18,24 +18,33 @@
 
 package com.google.container.v1beta1;
 
-public interface KalmConfigOrBuilder
+public interface LoggingVariantConfigOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.container.v1beta1.KalmConfig)
+    // @@protoc_insertion_point(interface_extends:google.container.v1beta1.LoggingVariantConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Whether KALM is enabled for this cluster.
+   * Logging variant deployed on nodes.
    * </pre>
    *
-   * <code>bool enabled = 1 [deprecated = true];</code>
+   * <code>.google.container.v1beta1.LoggingVariantConfig.Variant variant = 1;</code>
    *
-   * @deprecated google.container.v1beta1.KalmConfig.enabled is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1114
-   * @return The enabled.
+   * @return The enum numeric value on the wire for variant.
    */
-  @java.lang.Deprecated
-  boolean getEnabled();
+  int getVariantValue();
+  /**
+   *
+   *
+   * <pre>
+   * Logging variant deployed on nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.LoggingVariantConfig.Variant variant = 1;</code>
+   *
+   * @return The variant.
+   */
+  com.google.container.v1beta1.LoggingVariantConfig.Variant getVariant();
 }
