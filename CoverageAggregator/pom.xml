@@ -82,7 +82,7 @@
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-gke-backup</artifactId><version>0.2.3-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-gke-connect-gateway</artifactId><version>0.4.4</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-gke-multi-cloud</artifactId><version>0.2.3-SNAPSHOT</version></dependency>
-<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-gkehub</artifactId><version>1.3.3</version></dependency>
+<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-gkehub</artifactId><version>1.3.3-SNAPSHOT</version></dependency>
 <dependency><groupId>io.grafeas</groupId><artifactId>grafeas</artifactId><version>2.4.4-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-gsuite-addons</artifactId><version>2.3.3-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-iam-admin</artifactId><version>1.2.4-SNAPSHOT</version></dependency>
@@ -226,7 +226,7 @@
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-gke-backup</artifactId><version>0.2.3-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-gke-connect-gateway</artifactId><version>0.4.4</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-gke-multi-cloud</artifactId><version>0.2.3-SNAPSHOT</version></dependency>
-<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-gkehub</artifactId><version>1.3.3</version></dependency>
+<dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-gkehub</artifactId><version>1.3.3-SNAPSHOT</version></dependency>
 <dependency><groupId>io.grafeas</groupId><artifactId>grafeas</artifactId><version>2.4.4-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-cloud-gsuite-addons</artifactId><version>2.3.3-SNAPSHOT</version></dependency>
 <dependency><groupId>com.google.cloud</groupId><artifactId>google-iam-admin</artifactId><version>1.2.4-SNAPSHOT</version></dependency>
