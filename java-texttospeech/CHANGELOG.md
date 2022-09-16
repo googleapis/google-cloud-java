@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.5](https://github.com/googleapis/java-texttospeech/compare/v2.4.4...v2.4.5) (2022-09-15)
+
+
+### Bug Fixes
+
+* Empty commit to test out changes to release script ([#747](https://github.com/googleapis/java-texttospeech/issues/747)) ([95ca728](https://github.com/googleapis/java-texttospeech/commit/95ca72898e4ea8a571b83916df9fcfdb15ca4f65))
+
 ## [2.4.4](https://github.com/googleapis/java-texttospeech/compare/v2.4.3...v2.4.4) (2022-09-15)
 
 
