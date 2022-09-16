@@ -53,7 +53,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-automl</artifactId>
-        <version>2.3.7</version><!-- {x-version-update:google-cloud-automl:current} -->
+        <version>2.3.10</version><!-- {x-version-update:google-cloud-automl:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
