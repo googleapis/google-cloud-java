@@ -26,7 +26,6 @@ git init -b main
 cat ../../repos.txt | while read service
 do
   cd ..
-  echo "    <module>${service}</module>" >> repo-modules.txt
   git clone https://github.com/googleapis/${service}.git
   cd  ${service}
   git filter-repo --to-subdirectory-filter ${service}
@@ -87,7 +86,7 @@ git commit -m 'chore: add template files'
 
 ./generation/generate_gapic_bom.sh
 
-# add the gapic bom module to root pom.xml
+# add the gapic bom module to root pom.xml by regenerating aggregator pom
 generation/print_root_pom.sh > pom.xml
 
 git add google-cloud-gapic-bom/pom.xml
