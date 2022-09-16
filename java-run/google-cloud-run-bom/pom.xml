@@ -66,7 +66,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-run</artifactId>
-        <version>0.3.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-run:current} -->
+        <version>0.3.3</version><!-- {x-version-update:google-cloud-run:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
