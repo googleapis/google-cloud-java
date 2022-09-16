@@ -17,10 +17,10 @@
       "packagePatterns": ["*"],
       "enabled": false
     },
-		{
-			"packageNames": ["com.google.cloud:google-cloud-shared-config", "com.google.cloud:google-cloud-shared-dependencies"],
-			"enabled": true
-		},
+    {
+      "packageNames": ["com.google.cloud:google-cloud-shared-config", "com.google.cloud:google-cloud-shared-dependencies"],
+      "enabled": true
+    },
     {
       "packagePatterns": ["^io.grpc:grpc-"],
       "groupName": "gRPC packages"
