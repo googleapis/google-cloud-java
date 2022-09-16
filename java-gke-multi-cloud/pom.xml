@@ -69,7 +69,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-gke-multi-cloud</artifactId>
-        <version>0.2.3</version><!-- {x-version-update:google-cloud-gke-multi-cloud:current} -->
+        <version>0.2.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-multi-cloud:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -85,7 +85,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>3.0.2</version>
+        <version>3.0.3</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

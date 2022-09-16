@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-secretmanager</artifactId>
-      <version>2.3.2</version>
+      <version>2.3.1</version>
     </dependency>
 
     <dependency>

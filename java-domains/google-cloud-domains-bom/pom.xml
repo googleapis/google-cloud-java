@@ -57,7 +57,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-domains</artifactId>
-        <version>1.0.3</version><!-- {x-version-update:google-cloud-domains:current} -->
+        <version>1.0.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-domains:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>

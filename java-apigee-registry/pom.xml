@@ -69,23 +69,23 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-apigee-registry</artifactId>
-        <version>0.3.0</version><!-- {x-version-update:google-cloud-apigee-registry:current} -->
+        <version>0.2.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-apigee-registry:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-apigee-registry-v1</artifactId>
-        <version>0.3.0</version><!-- {x-version-update:grpc-google-cloud-apigee-registry-v1:current} -->
+        <version>0.2.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-apigee-registry-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-apigee-registry-v1</artifactId>
-        <version>0.3.0</version><!-- {x-version-update:proto-google-cloud-apigee-registry-v1:current} -->
+        <version>0.2.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-apigee-registry-v1:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>3.0.2</version>
+        <version>3.0.3</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

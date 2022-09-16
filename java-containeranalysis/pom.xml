@@ -81,13 +81,13 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-containeranalysis</artifactId>
-        <version>2.4.5</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
+        <version>2.4.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>3.0.2</version>
+        <version>3.0.3</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

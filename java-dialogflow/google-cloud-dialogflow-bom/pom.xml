@@ -53,17 +53,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dialogflow</artifactId>
-        <version>4.8.1</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
+        <version>4.8.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dialogflow-v2beta1</artifactId>
-        <version>0.106.1</version><!-- {x-version-update:grpc-google-cloud-dialogflow-v2beta1:current} -->
+        <version>0.106.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dialogflow-v2beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dialogflow-v2</artifactId>
-        <version>4.8.1</version><!-- {x-version-update:grpc-google-cloud-dialogflow-v2:current} -->
+        <version>4.8.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dialogflow-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
