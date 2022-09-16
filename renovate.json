@@ -1,6 +1,6 @@
 {
   "extends": [
-    "config:base"
+    "config:base", ":dependencyDashboardApproval"
   ],
   "ignoreDeps": [
     "com.google.api:gax-bom",
@@ -19,6 +19,7 @@
     },
     {
       "matchPackageNames": ["com.google.cloud:google-cloud-shared-config", "com.google.cloud:google-cloud-shared-dependencies"],
+      "dependencyDashboardApproval": true,
       "enabled": true
     },
     {
