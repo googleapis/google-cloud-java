@@ -53,7 +53,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-containeranalysis</artifactId>
-        <version>2.4.5</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
+        <version>2.4.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
