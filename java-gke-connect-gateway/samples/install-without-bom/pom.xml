@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-gke-connect-gateway</artifactId>
-      <version>0.4.4</version>
+      <version>0.4.3</version>
     </dependency>
     <!-- [END gke-connect-gateway_install_without_bom] -->
 

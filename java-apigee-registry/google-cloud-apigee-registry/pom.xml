@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-apigee-registry-parent</artifactId>
-    <version>0.3.0</version><!-- {x-version-update:google-cloud-apigee-registry:current} -->
+    <version>0.2.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-apigee-registry:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-apigee-registry</site.installationModule>

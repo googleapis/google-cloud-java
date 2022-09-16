@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-gke-multi-cloud</artifactId>
-      <version>0.2.3</version>
+      <version>0.2.2</version>
     </dependency>
 
     <dependency>

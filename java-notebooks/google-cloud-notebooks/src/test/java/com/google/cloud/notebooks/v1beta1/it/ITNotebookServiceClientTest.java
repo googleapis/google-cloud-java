@@ -48,13 +48,12 @@ import org.junit.Test;
 
 public class ITNotebookServiceClientTest {
 
-  protected static final String NOTEBOOK_PREFIX = "it-test-notebook";
-
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   private static final String LOCATION = "us-central1-a";
   private static final String PARENT = "projects/" + PROJECT_ID + "/locations/" + LOCATION;
   private static NotebookServiceClient client;
   private static final String ID = UUID.randomUUID().toString().substring(0, 8);
+  private static final String NOTEBOOK_PREFIX = "it-test-notebook";
   private static final String NOTEBOOK_INSTANCE_ID = NOTEBOOK_PREFIX + "-instance-id-" + ID;
   private static final String ENVIRONMENT_ID = NOTEBOOK_PREFIX + "-environment-id-" + ID;
   private static final String INSTANCE_NAME = PARENT + "/instances/" + NOTEBOOK_INSTANCE_ID;
@@ -68,7 +67,7 @@ public class ITNotebookServiceClientTest {
   public static void setUp() throws IOException, ExecutionException, InterruptedException {
     // Create Test Notebook Instance
     client = NotebookServiceClient.create();
-    Util.cleanUpNotebookInstances(client, PARENT);
+    Util.cleanUpNotebookInstances(client, PARENT, NOTEBOOK_PREFIX);
 
     ContainerImage containerImage =
         ContainerImage.newBuilder().setRepository(FieldBehavior.OPTIONAL.name()).build();

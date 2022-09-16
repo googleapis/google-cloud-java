@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.area120</groupId>
       <artifactId>google-area120-tables</artifactId>
-      <version>0.7.3</version>
+      <version>0.7.2</version>
     </dependency>
 
     <dependency>

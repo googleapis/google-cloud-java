@@ -61,7 +61,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dialogflow-cx</artifactId>
-        <version>0.14.5</version><!-- {x-version-update:google-cloud-dialogflow-cx:current} -->
+        <version>0.14.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow-cx:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -76,18 +76,18 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dialogflow-cx-v3beta1</artifactId>
-        <version>0.14.4</version><!-- {x-version-update:grpc-google-cloud-dialogflow-cx-v3beta1:current} -->
+        <version>0.14.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dialogflow-cx-v3beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dialogflow-cx-v3</artifactId>
-        <version>0.14.4</version><!-- {x-version-update:grpc-google-cloud-dialogflow-cx-v3:current} -->
+        <version>0.14.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dialogflow-cx-v3:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>3.0.2</version>
+        <version>3.0.3</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

@@ -66,7 +66,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-eventarc-publishing</artifactId>
-        <version>0.3.3</version><!-- {x-version-update:google-cloud-eventarc-publishing:current} -->
+        <version>0.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-eventarc-publishing:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>

@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-dataflow</artifactId>
-      <version>0.7.3</version>
+      <version>0.7.2</version>
     </dependency>
   <!-- {x-version-update-end} -->
 

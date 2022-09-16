@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-orchestration-airflow</artifactId>
-      <version>1.3.3</version>
+      <version>1.3.2</version>
     </dependency>
   <!-- {x-version-update-end} -->
 

@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquerydatatransfer</artifactId>
-      <version>2.3.9</version>
+      <version>2.3.7-SNAPSHOT</version>
     </dependency>
     <!-- {x-version-update-end} -->
 
@@ -53,7 +53,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquery</artifactId>
-      <version>2.15.0</version>
+      <version>2.14.7</version>
       <scope>test</scope>
     </dependency>
     <dependency>

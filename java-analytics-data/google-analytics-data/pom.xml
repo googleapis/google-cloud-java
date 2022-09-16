@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.analytics</groupId>
     <artifactId>google-analytics-data-parent</artifactId>
-    <version>0.14.4</version><!-- {x-version-update:google-analytics-data:current} -->
+    <version>0.14.4-SNAPSHOT</version><!-- {x-version-update:google-analytics-data:current} -->
   </parent>
   <properties>
     <site.installationModule>google-analytics-data</site.installationModule>
