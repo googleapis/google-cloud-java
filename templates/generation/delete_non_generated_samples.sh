@@ -2,7 +2,7 @@
 
 set -e
 
-for samples_dir in $(find . -type d -name 'samples'); do
+for samples_dir in $(find . -maxdepth 2 -mindepth 2 -type d -name 'samples'); do
   pushd $samples_dir/..
 
   if [[ -d "samples/snippets/generated" ]]; then
