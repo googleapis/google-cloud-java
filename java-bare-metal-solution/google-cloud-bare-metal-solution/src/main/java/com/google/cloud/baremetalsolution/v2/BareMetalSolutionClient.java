@@ -52,8 +52,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
  *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
  *   Instance response = bareMetalSolutionClient.getInstance(name);
@@ -90,8 +93,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * BareMetalSolutionSettings bareMetalSolutionSettings =
  *     BareMetalSolutionSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -103,8 +109,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * BareMetalSolutionSettings bareMetalSolutionSettings =
  *     BareMetalSolutionSettings.newBuilder().setEndpoint(myEndpoint).build();
  * BareMetalSolutionClient bareMetalSolutionClient =
@@ -115,8 +124,11 @@ import javax.annotation.Generated;
  * the wire:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * BareMetalSolutionSettings bareMetalSolutionSettings =
  *     BareMetalSolutionSettings.newBuilder()
  *         .setTransportChannelProvider(
@@ -210,8 +222,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Instance element : bareMetalSolutionClient.listInstances(parent).iterateAll()) {
@@ -238,8 +253,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Instance element : bareMetalSolutionClient.listInstances(parent).iterateAll()) {
@@ -263,8 +281,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListInstancesRequest request =
    *       ListInstancesRequest.newBuilder()
@@ -293,8 +314,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListInstancesRequest request =
    *       ListInstancesRequest.newBuilder()
@@ -324,8 +348,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListInstancesRequest request =
    *       ListInstancesRequest.newBuilder()
@@ -361,8 +388,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   Instance response = bareMetalSolutionClient.getInstance(name);
@@ -385,8 +415,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
    *   Instance response = bareMetalSolutionClient.getInstance(name);
@@ -408,8 +441,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   GetInstanceRequest request =
    *       GetInstanceRequest.newBuilder()
@@ -433,8 +469,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   GetInstanceRequest request =
    *       GetInstanceRequest.newBuilder()
@@ -458,8 +497,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   Instance instance = Instance.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -488,8 +530,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   UpdateInstanceRequest request =
    *       UpdateInstanceRequest.newBuilder()
@@ -515,8 +560,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   UpdateInstanceRequest request =
    *       UpdateInstanceRequest.newBuilder()
@@ -542,8 +590,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   UpdateInstanceRequest request =
    *       UpdateInstanceRequest.newBuilder()
@@ -569,8 +620,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   ResetInstanceResponse response = bareMetalSolutionClient.resetInstanceAsync(name).get();
@@ -595,8 +649,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
    *   ResetInstanceResponse response = bareMetalSolutionClient.resetInstanceAsync(name).get();
@@ -620,8 +677,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ResetInstanceRequest request =
    *       ResetInstanceRequest.newBuilder()
@@ -647,8 +707,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ResetInstanceRequest request =
    *       ResetInstanceRequest.newBuilder()
@@ -674,8 +737,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ResetInstanceRequest request =
    *       ResetInstanceRequest.newBuilder()
@@ -699,8 +765,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   StartInstanceResponse response = bareMetalSolutionClient.startInstanceAsync(name).get();
@@ -724,8 +793,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
    *   StartInstanceResponse response = bareMetalSolutionClient.startInstanceAsync(name).get();
@@ -748,8 +820,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   StartInstanceRequest request =
    *       StartInstanceRequest.newBuilder()
@@ -774,8 +849,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   StartInstanceRequest request =
    *       StartInstanceRequest.newBuilder()
@@ -800,8 +878,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   StartInstanceRequest request =
    *       StartInstanceRequest.newBuilder()
@@ -825,8 +906,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   StopInstanceResponse response = bareMetalSolutionClient.stopInstanceAsync(name).get();
@@ -850,8 +934,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
    *   StopInstanceResponse response = bareMetalSolutionClient.stopInstanceAsync(name).get();
@@ -874,8 +961,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   StopInstanceRequest request =
    *       StopInstanceRequest.newBuilder()
@@ -900,8 +990,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   StopInstanceRequest request =
    *       StopInstanceRequest.newBuilder()
@@ -926,8 +1019,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   StopInstanceRequest request =
    *       StopInstanceRequest.newBuilder()
@@ -951,8 +1047,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   LunName lun = LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]");
@@ -981,8 +1080,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   String lun = LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]").toString();
@@ -1011,8 +1113,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
    *   LunName lun = LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]");
@@ -1041,8 +1146,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
    *   String lun = LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]").toString();
@@ -1068,8 +1176,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   DetachLunRequest request =
    *       DetachLunRequest.newBuilder()
@@ -1095,8 +1206,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   DetachLunRequest request =
    *       DetachLunRequest.newBuilder()
@@ -1122,8 +1236,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   DetachLunRequest request =
    *       DetachLunRequest.newBuilder()
@@ -1147,8 +1264,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Volume element : bareMetalSolutionClient.listVolumes(parent).iterateAll()) {
@@ -1175,8 +1295,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Volume element : bareMetalSolutionClient.listVolumes(parent).iterateAll()) {
@@ -1200,8 +1323,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListVolumesRequest request =
    *       ListVolumesRequest.newBuilder()
@@ -1230,8 +1356,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListVolumesRequest request =
    *       ListVolumesRequest.newBuilder()
@@ -1261,8 +1390,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListVolumesRequest request =
    *       ListVolumesRequest.newBuilder()
@@ -1297,8 +1429,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   VolumeName name = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
    *   Volume response = bareMetalSolutionClient.getVolume(name);
@@ -1321,8 +1456,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String name = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString();
    *   Volume response = bareMetalSolutionClient.getVolume(name);
@@ -1344,8 +1482,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   GetVolumeRequest request =
    *       GetVolumeRequest.newBuilder()
@@ -1369,8 +1510,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   GetVolumeRequest request =
    *       GetVolumeRequest.newBuilder()
@@ -1393,8 +1537,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   Volume volume = Volume.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1424,8 +1571,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   UpdateVolumeRequest request =
    *       UpdateVolumeRequest.newBuilder()
@@ -1451,8 +1601,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   UpdateVolumeRequest request =
    *       UpdateVolumeRequest.newBuilder()
@@ -1478,8 +1631,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   UpdateVolumeRequest request =
    *       UpdateVolumeRequest.newBuilder()
@@ -1504,8 +1660,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   VolumeName volume = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
    *   long sizeGib = 847296130;
@@ -1534,8 +1693,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String volume = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString();
    *   long sizeGib = 847296130;
@@ -1561,8 +1723,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ResizeVolumeRequest request =
    *       ResizeVolumeRequest.newBuilder()
@@ -1588,8 +1753,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ResizeVolumeRequest request =
    *       ResizeVolumeRequest.newBuilder()
@@ -1615,8 +1783,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ResizeVolumeRequest request =
    *       ResizeVolumeRequest.newBuilder()
@@ -1641,8 +1812,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Network element : bareMetalSolutionClient.listNetworks(parent).iterateAll()) {
@@ -1669,8 +1843,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Network element : bareMetalSolutionClient.listNetworks(parent).iterateAll()) {
@@ -1694,8 +1871,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListNetworksRequest request =
    *       ListNetworksRequest.newBuilder()
@@ -1724,8 +1904,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListNetworksRequest request =
    *       ListNetworksRequest.newBuilder()
@@ -1755,8 +1938,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListNetworksRequest request =
    *       ListNetworksRequest.newBuilder()
@@ -1793,8 +1979,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
    *   ListNetworkUsageResponse response = bareMetalSolutionClient.listNetworkUsage(location);
@@ -1820,8 +2009,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String location = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   ListNetworkUsageResponse response = bareMetalSolutionClient.listNetworkUsage(location);
@@ -1845,8 +2037,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListNetworkUsageRequest request =
    *       ListNetworkUsageRequest.newBuilder()
@@ -1871,8 +2066,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListNetworkUsageRequest request =
    *       ListNetworkUsageRequest.newBuilder()
@@ -1897,8 +2095,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   NetworkName name = NetworkName.of("[PROJECT]", "[LOCATION]", "[NETWORK]");
    *   Network response = bareMetalSolutionClient.getNetwork(name);
@@ -1921,8 +2122,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String name = NetworkName.of("[PROJECT]", "[LOCATION]", "[NETWORK]").toString();
    *   Network response = bareMetalSolutionClient.getNetwork(name);
@@ -1944,8 +2148,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   GetNetworkRequest request =
    *       GetNetworkRequest.newBuilder()
@@ -1969,8 +2176,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   GetNetworkRequest request =
    *       GetNetworkRequest.newBuilder()
@@ -1993,8 +2203,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   Network network = Network.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -2023,8 +2236,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   UpdateNetworkRequest request =
    *       UpdateNetworkRequest.newBuilder()
@@ -2050,8 +2266,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   UpdateNetworkRequest request =
    *       UpdateNetworkRequest.newBuilder()
@@ -2077,8 +2296,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   UpdateNetworkRequest request =
    *       UpdateNetworkRequest.newBuilder()
@@ -2103,8 +2325,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   LunName name = LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]");
    *   Lun response = bareMetalSolutionClient.getLun(name);
@@ -2127,8 +2352,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String name = LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]").toString();
    *   Lun response = bareMetalSolutionClient.getLun(name);
@@ -2150,8 +2378,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   GetLunRequest request =
    *       GetLunRequest.newBuilder()
@@ -2175,8 +2406,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   GetLunRequest request =
    *       GetLunRequest.newBuilder()
@@ -2199,8 +2433,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   VolumeName parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
    *   for (Lun element : bareMetalSolutionClient.listLuns(parent).iterateAll()) {
@@ -2225,8 +2462,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString();
    *   for (Lun element : bareMetalSolutionClient.listLuns(parent).iterateAll()) {
@@ -2250,8 +2490,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListLunsRequest request =
    *       ListLunsRequest.newBuilder()
@@ -2279,8 +2522,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListLunsRequest request =
    *       ListLunsRequest.newBuilder()
@@ -2307,8 +2553,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListLunsRequest request =
    *       ListLunsRequest.newBuilder()
@@ -2342,8 +2591,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   NFSShareName name = NFSShareName.of("[PROJECT]", "[LOCATION]", "[NFS_SHARE]");
    *   NfsShare response = bareMetalSolutionClient.getNfsShare(name);
@@ -2366,8 +2618,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String name = NFSShareName.of("[PROJECT]", "[LOCATION]", "[NFS_SHARE]").toString();
    *   NfsShare response = bareMetalSolutionClient.getNfsShare(name);
@@ -2389,8 +2644,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   GetNfsShareRequest request =
    *       GetNfsShareRequest.newBuilder()
@@ -2414,8 +2672,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   GetNfsShareRequest request =
    *       GetNfsShareRequest.newBuilder()
@@ -2439,8 +2700,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (NfsShare element : bareMetalSolutionClient.listNfsShares(parent).iterateAll()) {
@@ -2467,8 +2731,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (NfsShare element : bareMetalSolutionClient.listNfsShares(parent).iterateAll()) {
@@ -2492,8 +2759,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListNfsSharesRequest request =
    *       ListNfsSharesRequest.newBuilder()
@@ -2522,8 +2792,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListNfsSharesRequest request =
    *       ListNfsSharesRequest.newBuilder()
@@ -2553,8 +2826,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListNfsSharesRequest request =
    *       ListNfsSharesRequest.newBuilder()
@@ -2590,8 +2866,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   NfsShare nfsShare = NfsShare.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -2620,8 +2899,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   UpdateNfsShareRequest request =
    *       UpdateNfsShareRequest.newBuilder()
@@ -2647,8 +2929,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   UpdateNfsShareRequest request =
    *       UpdateNfsShareRequest.newBuilder()
@@ -2674,8 +2959,11 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   UpdateNfsShareRequest request =
    *       UpdateNfsShareRequest.newBuilder()

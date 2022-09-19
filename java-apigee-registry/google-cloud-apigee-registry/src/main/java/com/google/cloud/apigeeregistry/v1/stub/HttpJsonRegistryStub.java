@@ -208,7 +208,8 @@ public class HttpJsonRegistryStub extends RegistryStub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("api", request.getApi()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("api", request.getApi(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Api>newBuilder()
@@ -243,7 +244,8 @@ public class HttpJsonRegistryStub extends RegistryStub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("api", request.getApi()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("api", request.getApi(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Api>newBuilder()
@@ -383,7 +385,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("apiVersion", request.getApiVersion()))
+                                  .toBody("apiVersion", request.getApiVersion(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApiVersion>newBuilder()
@@ -423,7 +425,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("apiVersion", request.getApiVersion()))
+                                  .toBody("apiVersion", request.getApiVersion(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApiVersion>newBuilder()
@@ -594,7 +596,8 @@ public class HttpJsonRegistryStub extends RegistryStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("apiSpec", request.getApiSpec()))
+                              ProtoRestSerializer.create()
+                                  .toBody("apiSpec", request.getApiSpec(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApiSpec>newBuilder()
@@ -633,7 +636,8 @@ public class HttpJsonRegistryStub extends RegistryStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("apiSpec", request.getApiSpec()))
+                              ProtoRestSerializer.create()
+                                  .toBody("apiSpec", request.getApiSpec(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApiSpec>newBuilder()
@@ -703,7 +707,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApiSpec>newBuilder()
@@ -776,7 +780,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApiSpec>newBuilder()
@@ -916,7 +920,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("apiDeployment", request.getApiDeployment()))
+                                  .toBody("apiDeployment", request.getApiDeployment(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApiDeployment>newBuilder()
@@ -956,7 +960,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("apiDeployment", request.getApiDeployment()))
+                                  .toBody("apiDeployment", request.getApiDeployment(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApiDeployment>newBuilder()
@@ -1026,7 +1030,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApiDeployment>newBuilder()
@@ -1100,7 +1104,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApiDeployment>newBuilder()
@@ -1293,7 +1297,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("artifact", request.getArtifact()))
+                                  .toBody("artifact", request.getArtifact(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Artifact>newBuilder()
@@ -1335,7 +1339,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("artifact", request.getArtifact()))
+                                  .toBody("artifact", request.getArtifact(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Artifact>newBuilder()
@@ -1485,7 +1489,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -1574,7 +1578,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()

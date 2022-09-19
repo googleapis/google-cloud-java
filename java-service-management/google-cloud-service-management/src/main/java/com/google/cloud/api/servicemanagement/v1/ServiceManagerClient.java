@@ -72,8 +72,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
  *   String serviceName = "serviceName-1928572192";
  *   ManagedService response = serviceManagerClient.getService(serviceName);
@@ -109,8 +112,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * ServiceManagerSettings serviceManagerSettings =
  *     ServiceManagerSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -121,8 +127,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * ServiceManagerSettings serviceManagerSettings =
  *     ServiceManagerSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ServiceManagerClient serviceManagerClient = ServiceManagerClient.create(serviceManagerSettings);
@@ -132,8 +141,11 @@ import javax.annotation.Generated;
  * the wire:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * ServiceManagerSettings serviceManagerSettings =
  *     ServiceManagerSettings.newBuilder()
  *         .setTransportChannelProvider(
@@ -229,8 +241,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   String producerProjectId = "producerProjectId-1297373534";
    *   String consumerId = "consumerId-166238287";
@@ -266,8 +281,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   ListServicesRequest request =
    *       ListServicesRequest.newBuilder()
@@ -299,8 +317,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   ListServicesRequest request =
    *       ListServicesRequest.newBuilder()
@@ -333,8 +354,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   ListServicesRequest request =
    *       ListServicesRequest.newBuilder()
@@ -369,8 +393,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   String serviceName = "serviceName-1928572192";
    *   ManagedService response = serviceManagerClient.getService(serviceName);
@@ -393,8 +420,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   GetServiceRequest request =
    *       GetServiceRequest.newBuilder().setServiceName("serviceName-1928572192").build();
@@ -416,8 +446,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   GetServiceRequest request =
    *       GetServiceRequest.newBuilder().setServiceName("serviceName-1928572192").build();
@@ -447,8 +480,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   ManagedService service = ManagedService.newBuilder().build();
    *   ManagedService response = serviceManagerClient.createServiceAsync(service).get();
@@ -479,8 +515,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   CreateServiceRequest request =
    *       CreateServiceRequest.newBuilder().setService(ManagedService.newBuilder().build()).build();
@@ -511,8 +550,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   CreateServiceRequest request =
    *       CreateServiceRequest.newBuilder().setService(ManagedService.newBuilder().build()).build();
@@ -543,8 +585,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   CreateServiceRequest request =
    *       CreateServiceRequest.newBuilder().setService(ManagedService.newBuilder().build()).build();
@@ -571,8 +616,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   String serviceName = "serviceName-1928572192";
    *   serviceManagerClient.deleteServiceAsync(serviceName).get();
@@ -602,8 +650,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   DeleteServiceRequest request =
    *       DeleteServiceRequest.newBuilder().setServiceName("serviceName-1928572192").build();
@@ -631,8 +682,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   DeleteServiceRequest request =
    *       DeleteServiceRequest.newBuilder().setServiceName("serviceName-1928572192").build();
@@ -660,8 +714,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   DeleteServiceRequest request =
    *       DeleteServiceRequest.newBuilder().setServiceName("serviceName-1928572192").build();
@@ -687,8 +744,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   String serviceName = "serviceName-1928572192";
    *   UndeleteServiceResponse response =
@@ -719,8 +779,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   UndeleteServiceRequest request =
    *       UndeleteServiceRequest.newBuilder().setServiceName("serviceName-1928572192").build();
@@ -747,8 +810,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   UndeleteServiceRequest request =
    *       UndeleteServiceRequest.newBuilder().setServiceName("serviceName-1928572192").build();
@@ -775,8 +841,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   UndeleteServiceRequest request =
    *       UndeleteServiceRequest.newBuilder().setServiceName("serviceName-1928572192").build();
@@ -799,8 +868,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   String serviceName = "serviceName-1928572192";
    *   for (Service element : serviceManagerClient.listServiceConfigs(serviceName).iterateAll()) {
@@ -828,8 +900,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   ListServiceConfigsRequest request =
    *       ListServiceConfigsRequest.newBuilder()
@@ -859,8 +934,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   ListServiceConfigsRequest request =
    *       ListServiceConfigsRequest.newBuilder()
@@ -890,8 +968,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   ListServiceConfigsRequest request =
    *       ListServiceConfigsRequest.newBuilder()
@@ -927,8 +1008,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   String serviceName = "serviceName-1928572192";
    *   String configId = "configId-580140035";
@@ -964,8 +1048,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   GetServiceConfigRequest request =
    *       GetServiceConfigRequest.newBuilder()
@@ -990,8 +1077,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   GetServiceConfigRequest request =
    *       GetServiceConfigRequest.newBuilder()
@@ -1021,8 +1111,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   String serviceName = "serviceName-1928572192";
    *   Service serviceConfig = Service.newBuilder().build();
@@ -1057,8 +1150,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   CreateServiceConfigRequest request =
    *       CreateServiceConfigRequest.newBuilder()
@@ -1088,8 +1184,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   CreateServiceConfigRequest request =
    *       CreateServiceConfigRequest.newBuilder()
@@ -1123,8 +1222,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   String serviceName = "serviceName-1928572192";
    *   ConfigSource configSource = ConfigSource.newBuilder().build();
@@ -1172,8 +1274,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   SubmitConfigSourceRequest request =
    *       SubmitConfigSourceRequest.newBuilder()
@@ -1210,8 +1315,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   SubmitConfigSourceRequest request =
    *       SubmitConfigSourceRequest.newBuilder()
@@ -1248,8 +1356,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   SubmitConfigSourceRequest request =
    *       SubmitConfigSourceRequest.newBuilder()
@@ -1276,8 +1387,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   String serviceName = "serviceName-1928572192";
    *   String filter = "filter-1274492040";
@@ -1316,8 +1430,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   ListServiceRolloutsRequest request =
    *       ListServiceRolloutsRequest.newBuilder()
@@ -1348,8 +1465,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   ListServiceRolloutsRequest request =
    *       ListServiceRolloutsRequest.newBuilder()
@@ -1380,8 +1500,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   ListServiceRolloutsRequest request =
    *       ListServiceRolloutsRequest.newBuilder()
@@ -1418,8 +1541,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   String serviceName = "serviceName-1928572192";
    *   String rolloutId = "rolloutId551248556";
@@ -1449,8 +1575,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   GetServiceRolloutRequest request =
    *       GetServiceRolloutRequest.newBuilder()
@@ -1475,8 +1604,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   GetServiceRolloutRequest request =
    *       GetServiceRolloutRequest.newBuilder()
@@ -1512,8 +1644,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   String serviceName = "serviceName-1928572192";
    *   Rollout rollout = Rollout.newBuilder().build();
@@ -1555,8 +1690,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   CreateServiceRolloutRequest request =
    *       CreateServiceRolloutRequest.newBuilder()
@@ -1593,8 +1731,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   CreateServiceRolloutRequest request =
    *       CreateServiceRolloutRequest.newBuilder()
@@ -1631,8 +1772,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   CreateServiceRolloutRequest request =
    *       CreateServiceRolloutRequest.newBuilder()
@@ -1665,8 +1809,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   Any newConfig = Any.newBuilder().build();
    *   Any oldConfig = Any.newBuilder().build();
@@ -1710,8 +1857,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   GenerateConfigReportRequest request =
    *       GenerateConfigReportRequest.newBuilder()
@@ -1744,8 +1894,11 @@ public class ServiceManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServiceManagerClient serviceManagerClient = ServiceManagerClient.create()) {
    *   GenerateConfigReportRequest request =
    *       GenerateConfigReportRequest.newBuilder()

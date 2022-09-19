@@ -165,7 +165,8 @@ public class HttpJsonVersionsStub extends VersionsStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("version", request.getVersion()))
+                              ProtoRestSerializer.create()
+                                  .toBody("version", request.getVersion(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -204,7 +205,8 @@ public class HttpJsonVersionsStub extends VersionsStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("version", request.getVersion()))
+                              ProtoRestSerializer.create()
+                                  .toBody("version", request.getVersion(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

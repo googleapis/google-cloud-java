@@ -202,7 +202,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("certificate", request.getCertificate()))
+                                  .toBody("certificate", request.getCertificate(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -244,7 +244,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("certificate", request.getCertificate()))
+                                  .toBody("certificate", request.getCertificate(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -395,7 +395,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("certificateMap", request.getCertificateMap()))
+                                  .toBody("certificateMap", request.getCertificateMap(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -439,7 +439,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("certificateMap", request.getCertificateMap()))
+                                  .toBody("certificateMap", request.getCertificateMap(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -594,7 +594,10 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("certificateMapEntry", request.getCertificateMapEntry()))
+                                  .toBody(
+                                      "certificateMapEntry",
+                                      request.getCertificateMapEntry(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -638,7 +641,10 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("certificateMapEntry", request.getCertificateMapEntry()))
+                                  .toBody(
+                                      "certificateMapEntry",
+                                      request.getCertificateMapEntry(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -791,7 +797,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("dnsAuthorization", request.getDnsAuthorization()))
+                                  .toBody("dnsAuthorization", request.getDnsAuthorization(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -835,7 +841,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("dnsAuthorization", request.getDnsAuthorization()))
+                                  .toBody("dnsAuthorization", request.getDnsAuthorization(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

@@ -136,7 +136,7 @@ public class HttpJsonCloudShellServiceStub extends CloudShellServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -175,7 +175,7 @@ public class HttpJsonCloudShellServiceStub extends CloudShellServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -215,7 +215,8 @@ public class HttpJsonCloudShellServiceStub extends CloudShellServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearEnvironment().build()))
+                                  .toBody(
+                                      "*", request.toBuilder().clearEnvironment().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -255,7 +256,8 @@ public class HttpJsonCloudShellServiceStub extends CloudShellServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearEnvironment().build()))
+                                  .toBody(
+                                      "*", request.toBuilder().clearEnvironment().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

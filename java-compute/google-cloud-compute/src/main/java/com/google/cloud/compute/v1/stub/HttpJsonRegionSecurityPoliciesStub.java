@@ -187,7 +187,8 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "securityPolicyResource",
-                                      request.getSecurityPolicyResource()))
+                                      request.getSecurityPolicyResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -297,7 +298,8 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "securityPolicyResource",
-                                      request.getSecurityPolicyResource()))
+                                      request.getSecurityPolicyResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

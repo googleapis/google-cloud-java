@@ -184,7 +184,8 @@ public class HttpJsonRegionNotificationEndpointsStub extends RegionNotificationE
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "notificationEndpointResource",
-                                      request.getNotificationEndpointResource()))
+                                      request.getNotificationEndpointResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

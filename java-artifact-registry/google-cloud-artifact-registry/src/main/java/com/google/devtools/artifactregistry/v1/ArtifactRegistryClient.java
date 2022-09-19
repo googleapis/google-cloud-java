@@ -65,8 +65,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
  *   DockerImageName name =
  *       DockerImageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[DOCKER_IMAGE]");
@@ -104,8 +107,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * ArtifactRegistrySettings artifactRegistrySettings =
  *     ArtifactRegistrySettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -117,8 +123,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * ArtifactRegistrySettings artifactRegistrySettings =
  *     ArtifactRegistrySettings.newBuilder().setEndpoint(myEndpoint).build();
  * ArtifactRegistryClient artifactRegistryClient =
@@ -129,8 +138,11 @@ import javax.annotation.Generated;
  * the wire:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * ArtifactRegistrySettings artifactRegistrySettings =
  *     ArtifactRegistrySettings.newBuilder()
  *         .setTransportChannelProvider(
@@ -224,8 +236,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   String parent = "parent-995424086";
    *   for (DockerImage element : artifactRegistryClient.listDockerImages(parent).iterateAll()) {
@@ -250,8 +265,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListDockerImagesRequest request =
    *       ListDockerImagesRequest.newBuilder()
@@ -279,8 +297,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListDockerImagesRequest request =
    *       ListDockerImagesRequest.newBuilder()
@@ -309,8 +330,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListDockerImagesRequest request =
    *       ListDockerImagesRequest.newBuilder()
@@ -346,8 +370,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   DockerImageName name =
    *       DockerImageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[DOCKER_IMAGE]");
@@ -371,8 +398,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   String name =
    *       DockerImageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[DOCKER_IMAGE]")
@@ -396,8 +426,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   GetDockerImageRequest request =
    *       GetDockerImageRequest.newBuilder()
@@ -423,8 +456,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   GetDockerImageRequest request =
    *       GetDockerImageRequest.newBuilder()
@@ -452,8 +488,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ImportAptArtifactsRequest request =
    *       ImportAptArtifactsRequest.newBuilder().setParent("parent-995424086").build();
@@ -479,8 +518,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ImportAptArtifactsRequest request =
    *       ImportAptArtifactsRequest.newBuilder().setParent("parent-995424086").build();
@@ -506,8 +548,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ImportAptArtifactsRequest request =
    *       ImportAptArtifactsRequest.newBuilder().setParent("parent-995424086").build();
@@ -531,8 +576,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ImportYumArtifactsRequest request =
    *       ImportYumArtifactsRequest.newBuilder().setParent("parent-995424086").build();
@@ -558,8 +606,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ImportYumArtifactsRequest request =
    *       ImportYumArtifactsRequest.newBuilder().setParent("parent-995424086").build();
@@ -585,8 +636,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ImportYumArtifactsRequest request =
    *       ImportYumArtifactsRequest.newBuilder().setParent("parent-995424086").build();
@@ -608,8 +662,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Repository element : artifactRegistryClient.listRepositories(parent).iterateAll()) {
@@ -636,8 +693,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Repository element : artifactRegistryClient.listRepositories(parent).iterateAll()) {
@@ -662,8 +722,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListRepositoriesRequest request =
    *       ListRepositoriesRequest.newBuilder()
@@ -691,8 +754,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListRepositoriesRequest request =
    *       ListRepositoriesRequest.newBuilder()
@@ -721,8 +787,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListRepositoriesRequest request =
    *       ListRepositoriesRequest.newBuilder()
@@ -758,8 +827,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   RepositoryName name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
    *   Repository response = artifactRegistryClient.getRepository(name);
@@ -782,8 +854,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   String name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString();
    *   Repository response = artifactRegistryClient.getRepository(name);
@@ -805,8 +880,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   GetRepositoryRequest request =
    *       GetRepositoryRequest.newBuilder()
@@ -830,8 +908,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   GetRepositoryRequest request =
    *       GetRepositoryRequest.newBuilder()
@@ -856,8 +937,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Repository repository = Repository.newBuilder().build();
@@ -891,8 +975,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Repository repository = Repository.newBuilder().build();
@@ -926,8 +1013,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   CreateRepositoryRequest request =
    *       CreateRepositoryRequest.newBuilder()
@@ -955,8 +1045,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   CreateRepositoryRequest request =
    *       CreateRepositoryRequest.newBuilder()
@@ -984,8 +1077,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   CreateRepositoryRequest request =
    *       CreateRepositoryRequest.newBuilder()
@@ -1011,8 +1107,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   Repository repository = Repository.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1041,8 +1140,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   UpdateRepositoryRequest request =
    *       UpdateRepositoryRequest.newBuilder()
@@ -1067,8 +1169,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   UpdateRepositoryRequest request =
    *       UpdateRepositoryRequest.newBuilder()
@@ -1095,8 +1200,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   RepositoryName name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
    *   artifactRegistryClient.deleteRepositoryAsync(name).get();
@@ -1122,8 +1230,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   String name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString();
    *   artifactRegistryClient.deleteRepositoryAsync(name).get();
@@ -1147,8 +1258,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   DeleteRepositoryRequest request =
    *       DeleteRepositoryRequest.newBuilder()
@@ -1175,8 +1289,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   DeleteRepositoryRequest request =
    *       DeleteRepositoryRequest.newBuilder()
@@ -1203,8 +1320,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   DeleteRepositoryRequest request =
    *       DeleteRepositoryRequest.newBuilder()
@@ -1228,8 +1348,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   String parent = "parent-995424086";
    *   for (Package element : artifactRegistryClient.listPackages(parent).iterateAll()) {
@@ -1253,8 +1376,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListPackagesRequest request =
    *       ListPackagesRequest.newBuilder()
@@ -1282,8 +1408,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListPackagesRequest request =
    *       ListPackagesRequest.newBuilder()
@@ -1312,8 +1441,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListPackagesRequest request =
    *       ListPackagesRequest.newBuilder()
@@ -1347,8 +1479,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   String name = "name3373707";
    *   Package response = artifactRegistryClient.getPackage(name);
@@ -1370,8 +1505,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   GetPackageRequest request = GetPackageRequest.newBuilder().setName("name3373707").build();
    *   Package response = artifactRegistryClient.getPackage(request);
@@ -1392,8 +1530,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   GetPackageRequest request = GetPackageRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<Package> future = artifactRegistryClient.getPackageCallable().futureCall(request);
@@ -1414,8 +1555,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   String name = "name3373707";
    *   artifactRegistryClient.deletePackageAsync(name).get();
@@ -1438,8 +1582,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   DeletePackageRequest request =
    *       DeletePackageRequest.newBuilder().setName("name3373707").build();
@@ -1463,8 +1610,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   DeletePackageRequest request =
    *       DeletePackageRequest.newBuilder().setName("name3373707").build();
@@ -1488,8 +1638,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   DeletePackageRequest request =
    *       DeletePackageRequest.newBuilder().setName("name3373707").build();
@@ -1511,8 +1664,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   String parent = "parent-995424086";
    *   for (Version element : artifactRegistryClient.listVersions(parent).iterateAll()) {
@@ -1536,8 +1692,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListVersionsRequest request =
    *       ListVersionsRequest.newBuilder()
@@ -1567,8 +1726,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListVersionsRequest request =
    *       ListVersionsRequest.newBuilder()
@@ -1599,8 +1761,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListVersionsRequest request =
    *       ListVersionsRequest.newBuilder()
@@ -1636,8 +1801,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   String name = "name3373707";
    *   Version response = artifactRegistryClient.getVersion(name);
@@ -1659,8 +1827,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   GetVersionRequest request =
    *       GetVersionRequest.newBuilder()
@@ -1685,8 +1856,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   GetVersionRequest request =
    *       GetVersionRequest.newBuilder()
@@ -1711,8 +1885,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   String name = "name3373707";
    *   artifactRegistryClient.deleteVersionAsync(name).get();
@@ -1735,8 +1912,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   DeleteVersionRequest request =
    *       DeleteVersionRequest.newBuilder().setName("name3373707").setForce(true).build();
@@ -1760,8 +1940,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   DeleteVersionRequest request =
    *       DeleteVersionRequest.newBuilder().setName("name3373707").setForce(true).build();
@@ -1785,8 +1968,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   DeleteVersionRequest request =
    *       DeleteVersionRequest.newBuilder().setName("name3373707").setForce(true).build();
@@ -1808,8 +1994,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   String parent = "parent-995424086";
    *   for (File element : artifactRegistryClient.listFiles(parent).iterateAll()) {
@@ -1834,8 +2023,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListFilesRequest request =
    *       ListFilesRequest.newBuilder()
@@ -1865,8 +2057,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListFilesRequest request =
    *       ListFilesRequest.newBuilder()
@@ -1895,8 +2090,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListFilesRequest request =
    *       ListFilesRequest.newBuilder()
@@ -1932,8 +2130,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   String name = "name3373707";
    *   File response = artifactRegistryClient.getFile(name);
@@ -1955,8 +2156,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   GetFileRequest request = GetFileRequest.newBuilder().setName("name3373707").build();
    *   File response = artifactRegistryClient.getFile(request);
@@ -1977,8 +2181,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   GetFileRequest request = GetFileRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<File> future = artifactRegistryClient.getFileCallable().futureCall(request);
@@ -1998,8 +2205,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   String parent = "parent-995424086";
    *   for (Tag element : artifactRegistryClient.listTags(parent).iterateAll()) {
@@ -2023,8 +2233,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListTagsRequest request =
    *       ListTagsRequest.newBuilder()
@@ -2053,8 +2266,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListTagsRequest request =
    *       ListTagsRequest.newBuilder()
@@ -2082,8 +2298,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ListTagsRequest request =
    *       ListTagsRequest.newBuilder()
@@ -2118,8 +2337,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   String name = "name3373707";
    *   Tag response = artifactRegistryClient.getTag(name);
@@ -2141,8 +2363,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   GetTagRequest request = GetTagRequest.newBuilder().setName("name3373707").build();
    *   Tag response = artifactRegistryClient.getTag(request);
@@ -2163,8 +2388,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   GetTagRequest request = GetTagRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<Tag> future = artifactRegistryClient.getTagCallable().futureCall(request);
@@ -2184,8 +2412,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   String parent = "parent-995424086";
    *   Tag tag = Tag.newBuilder().build();
@@ -2212,8 +2443,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   CreateTagRequest request =
    *       CreateTagRequest.newBuilder()
@@ -2239,8 +2473,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   CreateTagRequest request =
    *       CreateTagRequest.newBuilder()
@@ -2265,8 +2502,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   Tag tag = Tag.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -2292,8 +2532,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   UpdateTagRequest request =
    *       UpdateTagRequest.newBuilder()
@@ -2318,8 +2561,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   UpdateTagRequest request =
    *       UpdateTagRequest.newBuilder()
@@ -2343,8 +2589,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   String name = "name3373707";
    *   artifactRegistryClient.deleteTag(name);
@@ -2366,8 +2615,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   DeleteTagRequest request = DeleteTagRequest.newBuilder().setName("name3373707").build();
    *   artifactRegistryClient.deleteTag(request);
@@ -2388,8 +2640,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   DeleteTagRequest request = DeleteTagRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<Empty> future = artifactRegistryClient.deleteTagCallable().futureCall(request);
@@ -2409,8 +2664,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
@@ -2436,8 +2694,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
@@ -2462,8 +2723,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
@@ -2488,8 +2752,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
@@ -2513,8 +2780,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
@@ -2539,8 +2809,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
@@ -2566,8 +2839,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ProjectSettingsName name = ProjectSettingsName.of("[PROJECT]");
    *   ProjectSettings response = artifactRegistryClient.getProjectSettings(name);
@@ -2592,8 +2868,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   String name = ProjectSettingsName.of("[PROJECT]").toString();
    *   ProjectSettings response = artifactRegistryClient.getProjectSettings(name);
@@ -2616,8 +2895,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   GetProjectSettingsRequest request =
    *       GetProjectSettingsRequest.newBuilder()
@@ -2641,8 +2923,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   GetProjectSettingsRequest request =
    *       GetProjectSettingsRequest.newBuilder()
@@ -2667,8 +2952,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   ProjectSettings projectSettings = ProjectSettings.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -2698,8 +2986,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   UpdateProjectSettingsRequest request =
    *       UpdateProjectSettingsRequest.newBuilder()
@@ -2724,8 +3015,11 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   UpdateProjectSettingsRequest request =
    *       UpdateProjectSettingsRequest.newBuilder()

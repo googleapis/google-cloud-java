@@ -43,8 +43,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
  *     RegionInstanceGroupsClient.create()) {
  *   String project = "project-309310695";
@@ -84,8 +87,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * RegionInstanceGroupsSettings regionInstanceGroupsSettings =
  *     RegionInstanceGroupsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -97,8 +103,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * RegionInstanceGroupsSettings regionInstanceGroupsSettings =
  *     RegionInstanceGroupsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RegionInstanceGroupsClient regionInstanceGroupsClient =
@@ -164,8 +173,11 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
    *     RegionInstanceGroupsClient.create()) {
    *   String project = "project-309310695";
@@ -197,8 +209,11 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
    *     RegionInstanceGroupsClient.create()) {
    *   GetRegionInstanceGroupRequest request =
@@ -225,8 +240,11 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
    *     RegionInstanceGroupsClient.create()) {
    *   GetRegionInstanceGroupRequest request =
@@ -253,8 +271,11 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
    *     RegionInstanceGroupsClient.create()) {
    *   String project = "project-309310695";
@@ -282,8 +303,11 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
    *     RegionInstanceGroupsClient.create()) {
    *   ListRegionInstanceGroupsRequest request =
@@ -316,8 +340,11 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
    *     RegionInstanceGroupsClient.create()) {
    *   ListRegionInstanceGroupsRequest request =
@@ -351,8 +378,11 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
    *     RegionInstanceGroupsClient.create()) {
    *   ListRegionInstanceGroupsRequest request =
@@ -394,8 +424,11 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
    *     RegionInstanceGroupsClient.create()) {
    *   String project = "project-309310695";
@@ -445,8 +478,11 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
    *     RegionInstanceGroupsClient.create()) {
    *   ListInstancesRegionInstanceGroupsRequest request =
@@ -486,8 +522,11 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
    *     RegionInstanceGroupsClient.create()) {
    *   ListInstancesRegionInstanceGroupsRequest request =
@@ -526,8 +565,11 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
    *     RegionInstanceGroupsClient.create()) {
    *   ListInstancesRegionInstanceGroupsRequest request =
@@ -572,8 +614,11 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
    *     RegionInstanceGroupsClient.create()) {
    *   String project = "project-309310695";
@@ -618,8 +663,11 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
    *     RegionInstanceGroupsClient.create()) {
    *   SetNamedPortsRegionInstanceGroupRequest request =
@@ -652,8 +700,11 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
    *     RegionInstanceGroupsClient.create()) {
    *   SetNamedPortsRegionInstanceGroupRequest request =
@@ -684,8 +735,11 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionInstanceGroupsClient regionInstanceGroupsClient =
    *     RegionInstanceGroupsClient.create()) {
    *   SetNamedPortsRegionInstanceGroupRequest request =

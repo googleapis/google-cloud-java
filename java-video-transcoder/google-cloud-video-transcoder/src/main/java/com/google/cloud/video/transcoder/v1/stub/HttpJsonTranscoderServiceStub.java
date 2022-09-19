@@ -88,7 +88,8 @@ public class HttpJsonTranscoderServiceStub extends TranscoderServiceStub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("job", request.getJob()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("job", request.getJob(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Job>newBuilder()
@@ -229,7 +230,7 @@ public class HttpJsonTranscoderServiceStub extends TranscoderServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("jobTemplate", request.getJobTemplate()))
+                                  .toBody("jobTemplate", request.getJobTemplate(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<JobTemplate>newBuilder()

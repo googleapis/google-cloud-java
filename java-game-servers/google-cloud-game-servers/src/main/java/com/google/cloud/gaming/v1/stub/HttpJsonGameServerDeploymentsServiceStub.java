@@ -180,7 +180,9 @@ public class HttpJsonGameServerDeploymentsServiceStub extends GameServerDeployme
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "gameServerDeployment", request.getGameServerDeployment()))
+                                      "gameServerDeployment",
+                                      request.getGameServerDeployment(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -262,7 +264,9 @@ public class HttpJsonGameServerDeploymentsServiceStub extends GameServerDeployme
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "gameServerDeployment", request.getGameServerDeployment()))
+                                      "gameServerDeployment",
+                                      request.getGameServerDeployment(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -340,7 +344,8 @@ public class HttpJsonGameServerDeploymentsServiceStub extends GameServerDeployme
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("rollout", request.getRollout()))
+                              ProtoRestSerializer.create()
+                                  .toBody("rollout", request.getRollout(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -388,7 +393,8 @@ public class HttpJsonGameServerDeploymentsServiceStub extends GameServerDeployme
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("rollout", request.getRollout()))
+                              ProtoRestSerializer.create()
+                                  .toBody("rollout", request.getRollout(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser
@@ -429,7 +435,7 @@ public class HttpJsonGameServerDeploymentsServiceStub extends GameServerDeployme
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<FetchDeploymentStateResponse>newBuilder()

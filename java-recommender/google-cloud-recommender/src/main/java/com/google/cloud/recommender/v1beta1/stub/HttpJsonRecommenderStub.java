@@ -176,7 +176,7 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Insight>newBuilder()
@@ -294,7 +294,7 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Recommendation>newBuilder()
@@ -335,7 +335,7 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Recommendation>newBuilder()
@@ -376,7 +376,7 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Recommendation>newBuilder()
@@ -457,7 +457,8 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("recommenderConfig", request.getRecommenderConfig()))
+                                  .toBody(
+                                      "recommenderConfig", request.getRecommenderConfig(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RecommenderConfig>newBuilder()
@@ -538,7 +539,8 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("insightTypeConfig", request.getInsightTypeConfig()))
+                                  .toBody(
+                                      "insightTypeConfig", request.getInsightTypeConfig(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<InsightTypeConfig>newBuilder()

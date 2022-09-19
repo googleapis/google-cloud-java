@@ -27,8 +27,11 @@
  * <p>Sample for JobsV1Beta3Client:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
  *   CreateJobRequest request =
  *       CreateJobRequest.newBuilder()
@@ -50,8 +53,11 @@
  * <p>Sample for MessagesV1Beta3Client:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (MessagesV1Beta3Client messagesV1Beta3Client = MessagesV1Beta3Client.create()) {
  *   ListJobMessagesRequest request =
  *       ListJobMessagesRequest.newBuilder()
@@ -77,8 +83,11 @@
  * <p>Sample for MetricsV1Beta3Client:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (MetricsV1Beta3Client metricsV1Beta3Client = MetricsV1Beta3Client.create()) {
  *   GetJobMetricsRequest request =
  *       GetJobMetricsRequest.newBuilder()
@@ -98,8 +107,11 @@
  * <p>Sample for SnapshotsV1Beta3Client:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (SnapshotsV1Beta3Client snapshotsV1Beta3Client = SnapshotsV1Beta3Client.create()) {
  *   GetSnapshotRequest request =
  *       GetSnapshotRequest.newBuilder()
@@ -118,8 +130,11 @@
  * <p>Sample for TemplatesServiceClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (TemplatesServiceClient templatesServiceClient = TemplatesServiceClient.create()) {
  *   CreateJobFromTemplateRequest request =
  *       CreateJobFromTemplateRequest.newBuilder()
@@ -140,8 +155,11 @@
  * <p>Sample for FlexTemplatesServiceClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (FlexTemplatesServiceClient flexTemplatesServiceClient =
  *     FlexTemplatesServiceClient.create()) {
  *   LaunchFlexTemplateRequest request =

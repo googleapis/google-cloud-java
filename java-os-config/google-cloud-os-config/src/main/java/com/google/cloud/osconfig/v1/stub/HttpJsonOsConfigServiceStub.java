@@ -82,7 +82,7 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PatchJobs.PatchJob>newBuilder()
@@ -151,7 +151,7 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PatchJobs.PatchJob>newBuilder()
@@ -276,7 +276,7 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("patchDeployment", request.getPatchDeployment()))
+                                  .toBody("patchDeployment", request.getPatchDeployment(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PatchDeployments.PatchDeployment>newBuilder()
@@ -434,7 +434,7 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("patchDeployment", request.getPatchDeployment()))
+                                  .toBody("patchDeployment", request.getPatchDeployment(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PatchDeployments.PatchDeployment>newBuilder()
@@ -474,7 +474,7 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PatchDeployments.PatchDeployment>newBuilder()
@@ -514,7 +514,7 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PatchDeployments.PatchDeployment>newBuilder()

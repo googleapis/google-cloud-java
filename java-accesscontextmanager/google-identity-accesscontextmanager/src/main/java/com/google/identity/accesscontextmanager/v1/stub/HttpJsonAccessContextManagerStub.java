@@ -201,7 +201,8 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("*", request.toBuilder().build()))
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -242,7 +243,8 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("policy", request.getPolicy()))
+                              ProtoRestSerializer.create()
+                                  .toBody("policy", request.getPolicy(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -393,7 +395,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("accessLevel", request.getAccessLevel()))
+                                  .toBody("accessLevel", request.getAccessLevel(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -435,7 +437,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("accessLevel", request.getAccessLevel()))
+                                  .toBody("accessLevel", request.getAccessLevel(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -512,7 +514,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -624,7 +626,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("servicePerimeter", request.getServicePerimeter()))
+                                  .toBody("servicePerimeter", request.getServicePerimeter(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -668,7 +670,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("servicePerimeter", request.getServicePerimeter()))
+                                  .toBody("servicePerimeter", request.getServicePerimeter(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -745,7 +747,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -785,7 +787,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -898,7 +900,9 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "gcpUserAccessBinding", request.getGcpUserAccessBinding()))
+                                      "gcpUserAccessBinding",
+                                      request.getGcpUserAccessBinding(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -943,7 +947,9 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "gcpUserAccessBinding", request.getGcpUserAccessBinding()))
+                                      "gcpUserAccessBinding",
+                                      request.getGcpUserAccessBinding(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

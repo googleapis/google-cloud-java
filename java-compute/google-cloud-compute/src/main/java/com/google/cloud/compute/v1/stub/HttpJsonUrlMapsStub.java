@@ -235,7 +235,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("urlMapResource", request.getUrlMapResource()))
+                              .toBody("urlMapResource", request.getUrlMapResource(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -289,7 +289,8 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "cacheInvalidationRuleResource",
-                                      request.getCacheInvalidationRuleResource()))
+                                      request.getCacheInvalidationRuleResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -388,7 +389,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("urlMapResource", request.getUrlMapResource()))
+                              .toBody("urlMapResource", request.getUrlMapResource(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -439,7 +440,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("urlMapResource", request.getUrlMapResource()))
+                              .toBody("urlMapResource", request.getUrlMapResource(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -490,7 +491,8 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "urlMapsValidateRequestResource",
-                                      request.getUrlMapsValidateRequestResource()))
+                                      request.getUrlMapsValidateRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<UrlMapsValidateResponse>newBuilder()

@@ -245,7 +245,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CheckCloudIdentityAccountsExistResponse>newBuilder()
@@ -283,7 +283,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("customer", request.getCustomer()))
+                                  .toBody("customer", request.getCustomer(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Customer>newBuilder()
@@ -323,7 +323,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("customer", request.getCustomer()))
+                                  .toBody("customer", request.getCustomer(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Customer>newBuilder()
@@ -395,7 +395,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Customer>newBuilder()
@@ -432,7 +432,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearCustomer().build()))
+                                  .toBody("*", request.toBuilder().clearCustomer().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -508,7 +508,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ListTransferableSkusResponse>newBuilder()
@@ -547,7 +547,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ListTransferableOffersResponse>newBuilder()
@@ -616,7 +616,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -655,7 +655,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -695,7 +695,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -734,7 +734,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -773,7 +773,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -812,7 +812,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -851,7 +851,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -890,7 +890,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -929,7 +929,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -969,7 +969,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1083,7 +1083,8 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("channelPartnerLink", request.getChannelPartnerLink()))
+                                  .toBody(
+                                      "channelPartnerLink", request.getChannelPartnerLink(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ChannelPartnerLink>newBuilder()
@@ -1120,7 +1121,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ChannelPartnerLink>newBuilder()
@@ -1237,7 +1238,8 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "customerRepricingConfig",
-                                      request.getCustomerRepricingConfig()))
+                                      request.getCustomerRepricingConfig(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CustomerRepricingConfig>newBuilder()
@@ -1281,7 +1283,8 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "customerRepricingConfig",
-                                      request.getCustomerRepricingConfig()))
+                                      request.getCustomerRepricingConfig(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CustomerRepricingConfig>newBuilder()
@@ -1438,7 +1441,8 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "channelPartnerRepricingConfig",
-                                      request.getChannelPartnerRepricingConfig()))
+                                      request.getChannelPartnerRepricingConfig(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ChannelPartnerRepricingConfig>newBuilder()
@@ -1484,7 +1488,8 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "channelPartnerRepricingConfig",
-                                      request.getChannelPartnerRepricingConfig()))
+                                      request.getChannelPartnerRepricingConfig(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ChannelPartnerRepricingConfig>newBuilder()
@@ -1789,7 +1794,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearAccount().build()))
+                                  .toBody("*", request.toBuilder().clearAccount().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RegisterSubscriberResponse>newBuilder()
@@ -1827,7 +1832,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearAccount().build()))
+                                  .toBody("*", request.toBuilder().clearAccount().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<UnregisterSubscriberResponse>newBuilder()

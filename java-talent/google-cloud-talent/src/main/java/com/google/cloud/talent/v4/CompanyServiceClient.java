@@ -42,8 +42,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
  *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
  *   Company company = Company.newBuilder().build();
@@ -80,8 +83,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * CompanyServiceSettings companyServiceSettings =
  *     CompanyServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -92,8 +98,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * CompanyServiceSettings companyServiceSettings =
  *     CompanyServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * CompanyServiceClient companyServiceClient = CompanyServiceClient.create(companyServiceSettings);
@@ -103,8 +112,11 @@ import javax.annotation.Generated;
  * the wire:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * CompanyServiceSettings companyServiceSettings =
  *     CompanyServiceSettings.newBuilder()
  *         .setTransportChannelProvider(
@@ -172,8 +184,11 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
    *   Company company = Company.newBuilder().build();
@@ -203,8 +218,11 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   String parent = TenantName.of("[PROJECT]", "[TENANT]").toString();
    *   Company company = Company.newBuilder().build();
@@ -231,8 +249,11 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   CreateCompanyRequest request =
    *       CreateCompanyRequest.newBuilder()
@@ -257,8 +278,11 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   CreateCompanyRequest request =
    *       CreateCompanyRequest.newBuilder()
@@ -282,8 +306,11 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   CompanyName name = CompanyName.of("[PROJECT]", "[TENANT]", "[COMPANY]");
    *   Company response = companyServiceClient.getCompany(name);
@@ -308,8 +335,11 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   String name = CompanyName.of("[PROJECT]", "[TENANT]", "[COMPANY]").toString();
    *   Company response = companyServiceClient.getCompany(name);
@@ -333,8 +363,11 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   GetCompanyRequest request =
    *       GetCompanyRequest.newBuilder()
@@ -358,8 +391,11 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   GetCompanyRequest request =
    *       GetCompanyRequest.newBuilder()
@@ -382,8 +418,11 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   Company company = Company.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -413,8 +452,11 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   UpdateCompanyRequest request =
    *       UpdateCompanyRequest.newBuilder()
@@ -439,8 +481,11 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   UpdateCompanyRequest request =
    *       UpdateCompanyRequest.newBuilder()
@@ -464,8 +509,11 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   CompanyName name = CompanyName.of("[PROJECT]", "[TENANT]", "[COMPANY]");
    *   companyServiceClient.deleteCompany(name);
@@ -490,8 +538,11 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   String name = CompanyName.of("[PROJECT]", "[TENANT]", "[COMPANY]").toString();
    *   companyServiceClient.deleteCompany(name);
@@ -515,8 +566,11 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   DeleteCompanyRequest request =
    *       DeleteCompanyRequest.newBuilder()
@@ -540,8 +594,11 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   DeleteCompanyRequest request =
    *       DeleteCompanyRequest.newBuilder()
@@ -564,8 +621,11 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
    *   for (Company element : companyServiceClient.listCompanies(parent).iterateAll()) {
@@ -594,8 +654,11 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   String parent = TenantName.of("[PROJECT]", "[TENANT]").toString();
    *   for (Company element : companyServiceClient.listCompanies(parent).iterateAll()) {
@@ -621,8 +684,11 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   ListCompaniesRequest request =
    *       ListCompaniesRequest.newBuilder()
@@ -651,8 +717,11 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   ListCompaniesRequest request =
    *       ListCompaniesRequest.newBuilder()
@@ -682,8 +751,11 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   ListCompaniesRequest request =
    *       ListCompaniesRequest.newBuilder()

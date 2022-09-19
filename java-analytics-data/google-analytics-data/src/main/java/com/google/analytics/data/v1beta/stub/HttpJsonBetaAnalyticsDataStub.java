@@ -89,7 +89,7 @@ public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearProperty().build()))
+                                  .toBody("*", request.toBuilder().clearProperty().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RunReportResponse>newBuilder()
@@ -125,7 +125,7 @@ public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearProperty().build()))
+                                  .toBody("*", request.toBuilder().clearProperty().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RunPivotReportResponse>newBuilder()
@@ -161,7 +161,7 @@ public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearProperty().build()))
+                                  .toBody("*", request.toBuilder().clearProperty().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BatchRunReportsResponse>newBuilder()
@@ -200,7 +200,7 @@ public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearProperty().build()))
+                                  .toBody("*", request.toBuilder().clearProperty().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BatchRunPivotReportsResponse>newBuilder()
@@ -269,7 +269,7 @@ public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearProperty().build()))
+                                  .toBody("*", request.toBuilder().clearProperty().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RunRealtimeReportResponse>newBuilder()
@@ -306,7 +306,7 @@ public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearProperty().build()))
+                                  .toBody("*", request.toBuilder().clearProperty().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CheckCompatibilityResponse>newBuilder()

@@ -44,8 +44,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
  *   String project = "project-309310695";
  *   String region = "region-934795532";
@@ -84,8 +87,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * PacketMirroringsSettings packetMirroringsSettings =
  *     PacketMirroringsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -97,8 +103,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * PacketMirroringsSettings packetMirroringsSettings =
  *     PacketMirroringsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * PacketMirroringsClient packetMirroringsClient =
@@ -164,8 +173,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, PacketMirroringsScopedList> element :
@@ -191,8 +203,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   AggregatedListPacketMirroringsRequest request =
    *       AggregatedListPacketMirroringsRequest.newBuilder()
@@ -226,8 +241,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   AggregatedListPacketMirroringsRequest request =
    *       AggregatedListPacketMirroringsRequest.newBuilder()
@@ -260,8 +278,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   AggregatedListPacketMirroringsRequest request =
    *       AggregatedListPacketMirroringsRequest.newBuilder()
@@ -301,8 +322,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -335,8 +359,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   DeletePacketMirroringRequest request =
    *       DeletePacketMirroringRequest.newBuilder()
@@ -366,8 +393,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   DeletePacketMirroringRequest request =
    *       DeletePacketMirroringRequest.newBuilder()
@@ -395,8 +425,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   DeletePacketMirroringRequest request =
    *       DeletePacketMirroringRequest.newBuilder()
@@ -422,8 +455,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -454,8 +490,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   GetPacketMirroringRequest request =
    *       GetPacketMirroringRequest.newBuilder()
@@ -481,8 +520,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   GetPacketMirroringRequest request =
    *       GetPacketMirroringRequest.newBuilder()
@@ -508,8 +550,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -543,8 +588,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   InsertPacketMirroringRequest request =
    *       InsertPacketMirroringRequest.newBuilder()
@@ -575,8 +623,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   InsertPacketMirroringRequest request =
    *       InsertPacketMirroringRequest.newBuilder()
@@ -605,8 +656,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   InsertPacketMirroringRequest request =
    *       InsertPacketMirroringRequest.newBuilder()
@@ -632,8 +686,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -660,8 +717,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   ListPacketMirroringsRequest request =
    *       ListPacketMirroringsRequest.newBuilder()
@@ -693,8 +753,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   ListPacketMirroringsRequest request =
    *       ListPacketMirroringsRequest.newBuilder()
@@ -726,8 +789,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   ListPacketMirroringsRequest request =
    *       ListPacketMirroringsRequest.newBuilder()
@@ -766,8 +832,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -809,8 +878,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   PatchPacketMirroringRequest request =
    *       PatchPacketMirroringRequest.newBuilder()
@@ -842,8 +914,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   PatchPacketMirroringRequest request =
    *       PatchPacketMirroringRequest.newBuilder()
@@ -873,8 +948,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   PatchPacketMirroringRequest request =
    *       PatchPacketMirroringRequest.newBuilder()
@@ -901,8 +979,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -943,8 +1024,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   TestIamPermissionsPacketMirroringRequest request =
    *       TestIamPermissionsPacketMirroringRequest.newBuilder()
@@ -972,8 +1056,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   TestIamPermissionsPacketMirroringRequest request =
    *       TestIamPermissionsPacketMirroringRequest.newBuilder()

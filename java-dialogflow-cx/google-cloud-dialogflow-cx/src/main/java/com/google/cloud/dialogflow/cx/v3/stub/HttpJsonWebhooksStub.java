@@ -156,7 +156,8 @@ public class HttpJsonWebhooksStub extends WebhooksStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("webhook", request.getWebhook()))
+                              ProtoRestSerializer.create()
+                                  .toBody("webhook", request.getWebhook(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Webhook>newBuilder()
@@ -193,7 +194,8 @@ public class HttpJsonWebhooksStub extends WebhooksStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("webhook", request.getWebhook()))
+                              ProtoRestSerializer.create()
+                                  .toBody("webhook", request.getWebhook(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Webhook>newBuilder()

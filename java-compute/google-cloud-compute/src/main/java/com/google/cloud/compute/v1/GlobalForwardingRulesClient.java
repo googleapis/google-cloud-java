@@ -43,8 +43,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (GlobalForwardingRulesClient globalForwardingRulesClient =
  *     GlobalForwardingRulesClient.create()) {
  *   String project = "project-309310695";
@@ -83,8 +86,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * GlobalForwardingRulesSettings globalForwardingRulesSettings =
  *     GlobalForwardingRulesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -96,8 +102,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * GlobalForwardingRulesSettings globalForwardingRulesSettings =
  *     GlobalForwardingRulesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * GlobalForwardingRulesClient globalForwardingRulesClient =
@@ -163,8 +172,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   String project = "project-309310695";
@@ -194,8 +206,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   DeleteGlobalForwardingRuleRequest request =
@@ -225,8 +240,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   DeleteGlobalForwardingRuleRequest request =
@@ -254,8 +272,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   DeleteGlobalForwardingRuleRequest request =
@@ -283,8 +304,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   String project = "project-309310695";
@@ -314,8 +338,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   GetGlobalForwardingRuleRequest request =
@@ -342,8 +369,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   GetGlobalForwardingRuleRequest request =
@@ -370,8 +400,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   String project = "project-309310695";
@@ -403,8 +436,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   InsertGlobalForwardingRuleRequest request =
@@ -435,8 +471,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   InsertGlobalForwardingRuleRequest request =
@@ -465,8 +504,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   InsertGlobalForwardingRuleRequest request =
@@ -493,8 +535,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   String project = "project-309310695";
@@ -520,8 +565,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   ListGlobalForwardingRulesRequest request =
@@ -553,8 +601,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   ListGlobalForwardingRulesRequest request =
@@ -587,8 +638,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   ListGlobalForwardingRulesRequest request =
@@ -628,8 +682,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   String project = "project-309310695";
@@ -667,8 +724,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   PatchGlobalForwardingRuleRequest request =
@@ -701,8 +761,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   PatchGlobalForwardingRuleRequest request =
@@ -733,8 +796,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   PatchGlobalForwardingRuleRequest request =
@@ -762,8 +828,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   String project = "project-309310695";
@@ -801,8 +870,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   SetLabelsGlobalForwardingRuleRequest request =
@@ -833,8 +905,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   SetLabelsGlobalForwardingRuleRequest request =
@@ -863,8 +938,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   SetLabelsGlobalForwardingRuleRequest request =
@@ -892,8 +970,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   String project = "project-309310695";
@@ -930,8 +1011,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   SetTargetGlobalForwardingRuleRequest request =
@@ -963,8 +1047,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   SetTargetGlobalForwardingRuleRequest request =
@@ -994,8 +1081,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   SetTargetGlobalForwardingRuleRequest request =

@@ -170,7 +170,7 @@ public class HttpJsonGameServerConfigsServiceStub extends GameServerConfigsServi
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("gameServerConfig", request.getGameServerConfig()))
+                                  .toBody("gameServerConfig", request.getGameServerConfig(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

@@ -153,7 +153,8 @@ public class HttpJsonTraceServiceStub extends TraceServiceStub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("traces", request.getTraces()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("traces", request.getTraces(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Empty>newBuilder()

@@ -54,7 +54,6 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-bigqueryconnection-parent</site.installationModule>
-    <google.cloud.shared-dependencies.version>3.0.1</google.cloud.shared-dependencies.version>
   </properties>
 
   <dependencyManagement>
@@ -88,7 +87,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>${google.cloud.shared-dependencies.version}</version>
+        <version>3.0.3</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

@@ -152,7 +152,8 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("job", request.getJob()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("job", request.getJob(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Job>newBuilder()
@@ -186,7 +187,8 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("job", request.getJob()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("job", request.getJob(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Job>newBuilder()
@@ -253,7 +255,7 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearName().build()))
+                              .toBody("*", request.toBuilder().clearName().build(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Job>newBuilder()
@@ -288,7 +290,7 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearName().build()))
+                              .toBody("*", request.toBuilder().clearName().build(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Job>newBuilder()
@@ -323,7 +325,7 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearName().build()))
+                              .toBody("*", request.toBuilder().clearName().build(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Job>newBuilder()

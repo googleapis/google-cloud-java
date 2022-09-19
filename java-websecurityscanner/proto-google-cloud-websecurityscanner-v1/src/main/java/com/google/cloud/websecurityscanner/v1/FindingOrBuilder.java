@@ -542,45 +542,4 @@ public interface FindingOrBuilder
    * <code>.google.cloud.websecurityscanner.v1.Xss xss = 14;</code>
    */
   com.google.cloud.websecurityscanner.v1.XssOrBuilder getXssOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. An addon containing information reported for an XXE, if any.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return Whether the xxe field is set.
-   */
-  boolean hasXxe();
-  /**
-   *
-   *
-   * <pre>
-   * Output only. An addon containing information reported for an XXE, if any.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return The xxe.
-   */
-  com.google.cloud.websecurityscanner.v1.Xxe getXxe();
-  /**
-   *
-   *
-   * <pre>
-   * Output only. An addon containing information reported for an XXE, if any.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  com.google.cloud.websecurityscanner.v1.XxeOrBuilder getXxeOrBuilder();
 }

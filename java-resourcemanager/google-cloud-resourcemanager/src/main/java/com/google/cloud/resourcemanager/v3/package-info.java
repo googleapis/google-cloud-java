@@ -25,8 +25,11 @@
  * <p>Sample for FoldersClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (FoldersClient foldersClient = FoldersClient.create()) {
  *   FolderName name = FolderName.of("[FOLDER]");
  *   Folder response = foldersClient.getFolder(name);
@@ -40,8 +43,11 @@
  * <p>Sample for OrganizationsClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
  *   OrganizationName name = OrganizationName.of("[ORGANIZATION]");
  *   Organization response = organizationsClient.getOrganization(name);
@@ -55,8 +61,11 @@
  * <p>Sample for ProjectsClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ProjectsClient projectsClient = ProjectsClient.create()) {
  *   ProjectName name = ProjectName.of("[PROJECT]");
  *   Project response = projectsClient.getProject(name);
@@ -71,8 +80,11 @@
  * <p>Sample for TagBindingsClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
  *   ResourceName parent = FolderName.of("[FOLDER]");
  *   for (TagBinding element : tagBindingsClient.listTagBindings(parent).iterateAll()) {
@@ -88,8 +100,11 @@
  * <p>Sample for TagKeysClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
  *   TagKeyName name = TagKeyName.of("[TAG_KEY]");
  *   TagKey response = tagKeysClient.getTagKey(name);
@@ -103,8 +118,11 @@
  * <p>Sample for TagValuesClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
  *   TagValueName name = TagValueName.of("[TAG_VALUE]");
  *   TagValue response = tagValuesClient.getTagValue(name);

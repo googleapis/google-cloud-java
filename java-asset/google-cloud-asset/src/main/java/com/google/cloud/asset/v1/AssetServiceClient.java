@@ -48,8 +48,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
  *   BatchGetAssetsHistoryRequest request =
  *       BatchGetAssetsHistoryRequest.newBuilder()
@@ -92,8 +95,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * AssetServiceSettings assetServiceSettings =
  *     AssetServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -104,8 +110,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * AssetServiceSettings assetServiceSettings =
  *     AssetServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * AssetServiceClient assetServiceClient = AssetServiceClient.create(assetServiceSettings);
@@ -115,8 +124,11 @@ import javax.annotation.Generated;
  * the wire:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * AssetServiceSettings assetServiceSettings =
  *     AssetServiceSettings.newBuilder()
  *         .setTransportChannelProvider(
@@ -215,8 +227,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ExportAssetsRequest request =
    *       ExportAssetsRequest.newBuilder()
@@ -253,8 +268,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ExportAssetsRequest request =
    *       ExportAssetsRequest.newBuilder()
@@ -291,8 +309,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ExportAssetsRequest request =
    *       ExportAssetsRequest.newBuilder()
@@ -320,8 +341,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ResourceName parent = FolderName.of("[FOLDER]");
    *   for (Asset element : assetServiceClient.listAssets(parent).iterateAll()) {
@@ -349,8 +373,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   String parent = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString();
    *   for (Asset element : assetServiceClient.listAssets(parent).iterateAll()) {
@@ -377,8 +404,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ListAssetsRequest request =
    *       ListAssetsRequest.newBuilder()
@@ -410,8 +440,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ListAssetsRequest request =
    *       ListAssetsRequest.newBuilder()
@@ -442,8 +475,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ListAssetsRequest request =
    *       ListAssetsRequest.newBuilder()
@@ -485,8 +521,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   BatchGetAssetsHistoryRequest request =
    *       BatchGetAssetsHistoryRequest.newBuilder()
@@ -519,8 +558,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   BatchGetAssetsHistoryRequest request =
    *       BatchGetAssetsHistoryRequest.newBuilder()
@@ -549,8 +591,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   String parent = "parent-995424086";
    *   Feed response = assetServiceClient.createFeed(parent);
@@ -575,8 +620,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   CreateFeedRequest request =
    *       CreateFeedRequest.newBuilder()
@@ -602,8 +650,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   CreateFeedRequest request =
    *       CreateFeedRequest.newBuilder()
@@ -628,8 +679,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
    *   Feed response = assetServiceClient.getFeed(name);
@@ -654,8 +708,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   String name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString();
    *   Feed response = assetServiceClient.getFeed(name);
@@ -679,8 +736,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   GetFeedRequest request =
    *       GetFeedRequest.newBuilder()
@@ -704,8 +764,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   GetFeedRequest request =
    *       GetFeedRequest.newBuilder()
@@ -728,8 +791,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   String parent = "parent-995424086";
    *   ListFeedsResponse response = assetServiceClient.listFeeds(parent);
@@ -753,8 +819,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ListFeedsRequest request =
    *       ListFeedsRequest.newBuilder().setParent("parent-995424086").build();
@@ -776,8 +845,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ListFeedsRequest request =
    *       ListFeedsRequest.newBuilder().setParent("parent-995424086").build();
@@ -799,8 +871,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   Feed feed = Feed.newBuilder().build();
    *   Feed response = assetServiceClient.updateFeed(feed);
@@ -824,8 +899,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   UpdateFeedRequest request =
    *       UpdateFeedRequest.newBuilder()
@@ -850,8 +928,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   UpdateFeedRequest request =
    *       UpdateFeedRequest.newBuilder()
@@ -875,8 +956,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   FeedName name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
    *   assetServiceClient.deleteFeed(name);
@@ -901,8 +985,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   String name = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString();
    *   assetServiceClient.deleteFeed(name);
@@ -926,8 +1013,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   DeleteFeedRequest request =
    *       DeleteFeedRequest.newBuilder()
@@ -951,8 +1041,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   DeleteFeedRequest request =
    *       DeleteFeedRequest.newBuilder()
@@ -977,8 +1070,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   String scope = "scope109264468";
    *   String query = "query107944136";
@@ -1080,8 +1176,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   SearchAllResourcesRequest request =
    *       SearchAllResourcesRequest.newBuilder()
@@ -1117,8 +1216,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   SearchAllResourcesRequest request =
    *       SearchAllResourcesRequest.newBuilder()
@@ -1153,8 +1255,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   SearchAllResourcesRequest request =
    *       SearchAllResourcesRequest.newBuilder()
@@ -1196,8 +1301,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   String scope = "scope109264468";
    *   String query = "query107944136";
@@ -1275,8 +1383,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   SearchAllIamPoliciesRequest request =
    *       SearchAllIamPoliciesRequest.newBuilder()
@@ -1311,8 +1422,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   SearchAllIamPoliciesRequest request =
    *       SearchAllIamPoliciesRequest.newBuilder()
@@ -1346,8 +1460,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   SearchAllIamPoliciesRequest request =
    *       SearchAllIamPoliciesRequest.newBuilder()
@@ -1386,8 +1503,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   AnalyzeIamPolicyRequest request =
    *       AnalyzeIamPolicyRequest.newBuilder()
@@ -1413,8 +1533,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   AnalyzeIamPolicyRequest request =
    *       AnalyzeIamPolicyRequest.newBuilder()
@@ -1448,8 +1571,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   AnalyzeIamPolicyLongrunningRequest request =
    *       AnalyzeIamPolicyLongrunningRequest.newBuilder()
@@ -1485,8 +1611,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   AnalyzeIamPolicyLongrunningRequest request =
    *       AnalyzeIamPolicyLongrunningRequest.newBuilder()
@@ -1524,8 +1653,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   AnalyzeIamPolicyLongrunningRequest request =
    *       AnalyzeIamPolicyLongrunningRequest.newBuilder()
@@ -1555,8 +1687,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   AnalyzeMoveRequest request =
    *       AnalyzeMoveRequest.newBuilder()
@@ -1584,8 +1719,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   AnalyzeMoveRequest request =
    *       AnalyzeMoveRequest.newBuilder()
@@ -1621,8 +1759,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   QueryAssetsRequest request =
    *       QueryAssetsRequest.newBuilder()
@@ -1661,8 +1802,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   QueryAssetsRequest request =
    *       QueryAssetsRequest.newBuilder()
@@ -1690,8 +1834,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   FolderName parent = FolderName.of("[FOLDER]");
    *   SavedQuery savedQuery = SavedQuery.newBuilder().build();
@@ -1731,8 +1878,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
    *   SavedQuery savedQuery = SavedQuery.newBuilder().build();
@@ -1772,8 +1922,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   SavedQuery savedQuery = SavedQuery.newBuilder().build();
@@ -1813,8 +1966,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
    *   SavedQuery savedQuery = SavedQuery.newBuilder().build();
@@ -1854,8 +2010,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   CreateSavedQueryRequest request =
    *       CreateSavedQueryRequest.newBuilder()
@@ -1881,8 +2040,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   CreateSavedQueryRequest request =
    *       CreateSavedQueryRequest.newBuilder()
@@ -1908,8 +2070,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   SavedQueryName name = SavedQueryName.ofProjectSavedQueryName("[PROJECT]", "[SAVED_QUERY]");
    *   SavedQuery response = assetServiceClient.getSavedQuery(name);
@@ -1938,8 +2103,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   String name = SavedQueryName.ofProjectSavedQueryName("[PROJECT]", "[SAVED_QUERY]").toString();
    *   SavedQuery response = assetServiceClient.getSavedQuery(name);
@@ -1967,8 +2135,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   GetSavedQueryRequest request =
    *       GetSavedQueryRequest.newBuilder()
@@ -1993,8 +2164,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   GetSavedQueryRequest request =
    *       GetSavedQueryRequest.newBuilder()
@@ -2018,8 +2192,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   FolderName parent = FolderName.of("[FOLDER]");
    *   for (SavedQuery element : assetServiceClient.listSavedQueries(parent).iterateAll()) {
@@ -2048,8 +2225,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
    *   for (SavedQuery element : assetServiceClient.listSavedQueries(parent).iterateAll()) {
@@ -2078,8 +2258,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   for (SavedQuery element : assetServiceClient.listSavedQueries(parent).iterateAll()) {
@@ -2108,8 +2291,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
    *   for (SavedQuery element : assetServiceClient.listSavedQueries(parent).iterateAll()) {
@@ -2136,8 +2322,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ListSavedQueriesRequest request =
    *       ListSavedQueriesRequest.newBuilder()
@@ -2166,8 +2355,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ListSavedQueriesRequest request =
    *       ListSavedQueriesRequest.newBuilder()
@@ -2197,8 +2389,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ListSavedQueriesRequest request =
    *       ListSavedQueriesRequest.newBuilder()
@@ -2235,8 +2430,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   SavedQuery savedQuery = SavedQuery.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -2272,8 +2470,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   UpdateSavedQueryRequest request =
    *       UpdateSavedQueryRequest.newBuilder()
@@ -2298,8 +2499,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   UpdateSavedQueryRequest request =
    *       UpdateSavedQueryRequest.newBuilder()
@@ -2324,8 +2528,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   SavedQueryName name = SavedQueryName.ofProjectSavedQueryName("[PROJECT]", "[SAVED_QUERY]");
    *   assetServiceClient.deleteSavedQuery(name);
@@ -2354,8 +2561,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   String name = SavedQueryName.ofProjectSavedQueryName("[PROJECT]", "[SAVED_QUERY]").toString();
    *   assetServiceClient.deleteSavedQuery(name);
@@ -2383,8 +2593,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   DeleteSavedQueryRequest request =
    *       DeleteSavedQueryRequest.newBuilder()
@@ -2409,8 +2622,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   DeleteSavedQueryRequest request =
    *       DeleteSavedQueryRequest.newBuilder()
@@ -2434,8 +2650,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   BatchGetEffectiveIamPoliciesRequest request =
    *       BatchGetEffectiveIamPoliciesRequest.newBuilder()
@@ -2462,8 +2681,11 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   BatchGetEffectiveIamPoliciesRequest request =
    *       BatchGetEffectiveIamPoliciesRequest.newBuilder()

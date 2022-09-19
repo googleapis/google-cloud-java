@@ -112,7 +112,8 @@ public class HttpJsonErrorGroupServiceStub extends ErrorGroupServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("group", request.getGroup()))
+                              ProtoRestSerializer.create()
+                                  .toBody("group", request.getGroup(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ErrorGroup>newBuilder()

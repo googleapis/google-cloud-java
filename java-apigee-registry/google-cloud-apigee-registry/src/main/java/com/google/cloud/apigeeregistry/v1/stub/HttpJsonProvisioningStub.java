@@ -102,7 +102,7 @@ public class HttpJsonProvisioningStub extends ProvisioningStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("instance", request.getInstance()))
+                                  .toBody("instance", request.getInstance(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -286,7 +286,7 @@ public class HttpJsonProvisioningStub extends ProvisioningStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -375,7 +375,7 @@ public class HttpJsonProvisioningStub extends ProvisioningStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()

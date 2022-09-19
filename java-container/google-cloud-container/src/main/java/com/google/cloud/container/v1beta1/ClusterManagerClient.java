@@ -93,8 +93,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
  *   String projectId = "projectId-894832108";
  *   String zone = "zone3744684";
@@ -131,8 +134,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * ClusterManagerSettings clusterManagerSettings =
  *     ClusterManagerSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -143,8 +149,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * ClusterManagerSettings clusterManagerSettings =
  *     ClusterManagerSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ClusterManagerClient clusterManagerClient = ClusterManagerClient.create(clusterManagerSettings);
@@ -210,8 +219,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String zone = "zone3744684";
@@ -240,8 +252,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   ListClustersRequest request =
    *       ListClustersRequest.newBuilder()
@@ -267,8 +282,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   ListClustersRequest request =
    *       ListClustersRequest.newBuilder()
@@ -294,8 +312,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String zone = "zone3744684";
@@ -331,8 +352,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   GetClusterRequest request =
    *       GetClusterRequest.newBuilder()
@@ -359,8 +383,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   GetClusterRequest request =
    *       GetClusterRequest.newBuilder()
@@ -397,8 +424,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String zone = "zone3744684";
@@ -445,8 +475,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   CreateClusterRequest request =
    *       CreateClusterRequest.newBuilder()
@@ -484,8 +517,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   CreateClusterRequest request =
    *       CreateClusterRequest.newBuilder()
@@ -512,8 +548,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String zone = "zone3744684";
@@ -553,8 +592,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   UpdateClusterRequest request =
    *       UpdateClusterRequest.newBuilder()
@@ -582,8 +624,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   UpdateClusterRequest request =
    *       UpdateClusterRequest.newBuilder()
@@ -611,8 +656,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   UpdateNodePoolRequest request =
    *       UpdateNodePoolRequest.newBuilder()
@@ -654,8 +702,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   UpdateNodePoolRequest request =
    *       UpdateNodePoolRequest.newBuilder()
@@ -697,8 +748,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   SetNodePoolAutoscalingRequest request =
    *       SetNodePoolAutoscalingRequest.newBuilder()
@@ -727,8 +781,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   SetNodePoolAutoscalingRequest request =
    *       SetNodePoolAutoscalingRequest.newBuilder()
@@ -758,8 +815,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String zone = "zone3744684";
@@ -810,8 +870,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   SetLoggingServiceRequest request =
    *       SetLoggingServiceRequest.newBuilder()
@@ -839,8 +902,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   SetLoggingServiceRequest request =
    *       SetLoggingServiceRequest.newBuilder()
@@ -868,8 +934,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String zone = "zone3744684";
@@ -920,8 +989,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   SetMonitoringServiceRequest request =
    *       SetMonitoringServiceRequest.newBuilder()
@@ -949,8 +1021,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   SetMonitoringServiceRequest request =
    *       SetMonitoringServiceRequest.newBuilder()
@@ -979,8 +1054,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String zone = "zone3744684";
@@ -1022,8 +1100,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   SetAddonsConfigRequest request =
    *       SetAddonsConfigRequest.newBuilder()
@@ -1051,8 +1132,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   SetAddonsConfigRequest request =
    *       SetAddonsConfigRequest.newBuilder()
@@ -1082,8 +1166,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String zone = "zone3744684";
@@ -1132,8 +1219,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   SetLocationsRequest request =
    *       SetLocationsRequest.newBuilder()
@@ -1165,8 +1255,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   SetLocationsRequest request =
    *       SetLocationsRequest.newBuilder()
@@ -1196,8 +1289,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String zone = "zone3744684";
@@ -1244,8 +1340,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   UpdateMasterRequest request =
    *       UpdateMasterRequest.newBuilder()
@@ -1273,8 +1372,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   UpdateMasterRequest request =
    *       UpdateMasterRequest.newBuilder()
@@ -1302,8 +1404,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   SetMasterAuthRequest request =
    *       SetMasterAuthRequest.newBuilder()
@@ -1332,8 +1437,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   SetMasterAuthRequest request =
    *       SetMasterAuthRequest.newBuilder()
@@ -1367,8 +1475,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String zone = "zone3744684";
@@ -1410,8 +1521,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   DeleteClusterRequest request =
    *       DeleteClusterRequest.newBuilder()
@@ -1444,8 +1558,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   DeleteClusterRequest request =
    *       DeleteClusterRequest.newBuilder()
@@ -1472,8 +1589,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String zone = "zone3744684";
@@ -1502,8 +1622,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   ListOperationsRequest request =
    *       ListOperationsRequest.newBuilder()
@@ -1529,8 +1652,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   ListOperationsRequest request =
    *       ListOperationsRequest.newBuilder()
@@ -1557,8 +1683,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String zone = "zone3744684";
@@ -1594,8 +1723,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   GetOperationRequest request =
    *       GetOperationRequest.newBuilder()
@@ -1622,8 +1754,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   GetOperationRequest request =
    *       GetOperationRequest.newBuilder()
@@ -1649,8 +1784,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String zone = "zone3744684";
@@ -1686,8 +1824,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   CancelOperationRequest request =
    *       CancelOperationRequest.newBuilder()
@@ -1714,8 +1855,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   CancelOperationRequest request =
    *       CancelOperationRequest.newBuilder()
@@ -1741,8 +1885,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String zone = "zone3744684";
@@ -1771,8 +1918,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   GetServerConfigRequest request =
    *       GetServerConfigRequest.newBuilder()
@@ -1798,8 +1948,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   GetServerConfigRequest request =
    *       GetServerConfigRequest.newBuilder()
@@ -1825,8 +1978,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String zone = "zone3744684";
@@ -1864,8 +2020,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   ListNodePoolsRequest request =
    *       ListNodePoolsRequest.newBuilder()
@@ -1892,8 +2051,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   ListNodePoolsRequest request =
    *       ListNodePoolsRequest.newBuilder()
@@ -1921,8 +2083,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   GetJSONWebKeysRequest request =
    *       GetJSONWebKeysRequest.newBuilder().setParent("parent-995424086").build();
@@ -1945,8 +2110,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   GetJSONWebKeysRequest request =
    *       GetJSONWebKeysRequest.newBuilder().setParent("parent-995424086").build();
@@ -1969,8 +2137,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String zone = "zone3744684";
@@ -2011,8 +2182,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   GetNodePoolRequest request =
    *       GetNodePoolRequest.newBuilder()
@@ -2040,8 +2214,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   GetNodePoolRequest request =
    *       GetNodePoolRequest.newBuilder()
@@ -2068,8 +2245,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String zone = "zone3744684";
@@ -2110,8 +2290,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   CreateNodePoolRequest request =
    *       CreateNodePoolRequest.newBuilder()
@@ -2139,8 +2322,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   CreateNodePoolRequest request =
    *       CreateNodePoolRequest.newBuilder()
@@ -2168,8 +2354,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String zone = "zone3744684";
@@ -2211,8 +2400,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   DeleteNodePoolRequest request =
    *       DeleteNodePoolRequest.newBuilder()
@@ -2240,8 +2432,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   DeleteNodePoolRequest request =
    *       DeleteNodePoolRequest.newBuilder()
@@ -2269,8 +2464,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   CompleteNodePoolUpgradeRequest request =
    *       CompleteNodePoolUpgradeRequest.newBuilder().setName("name3373707").build();
@@ -2292,8 +2490,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   CompleteNodePoolUpgradeRequest request =
    *       CompleteNodePoolUpgradeRequest.newBuilder().setName("name3373707").build();
@@ -2317,8 +2518,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String zone = "zone3744684";
@@ -2361,8 +2565,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   RollbackNodePoolUpgradeRequest request =
    *       RollbackNodePoolUpgradeRequest.newBuilder()
@@ -2392,8 +2599,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   RollbackNodePoolUpgradeRequest request =
    *       RollbackNodePoolUpgradeRequest.newBuilder()
@@ -2423,8 +2633,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String zone = "zone3744684";
@@ -2474,8 +2687,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   SetNodePoolManagementRequest request =
    *       SetNodePoolManagementRequest.newBuilder()
@@ -2504,8 +2720,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   SetNodePoolManagementRequest request =
    *       SetNodePoolManagementRequest.newBuilder()
@@ -2535,8 +2754,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String zone = "zone3744684";
@@ -2589,8 +2811,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   SetLabelsRequest request =
    *       SetLabelsRequest.newBuilder()
@@ -2619,8 +2844,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   SetLabelsRequest request =
    *       SetLabelsRequest.newBuilder()
@@ -2648,8 +2876,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String zone = "zone3744684";
@@ -2689,8 +2920,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   SetLegacyAbacRequest request =
    *       SetLegacyAbacRequest.newBuilder()
@@ -2718,8 +2952,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   SetLegacyAbacRequest request =
    *       SetLegacyAbacRequest.newBuilder()
@@ -2747,8 +2984,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String zone = "zone3744684";
@@ -2784,8 +3024,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   StartIPRotationRequest request =
    *       StartIPRotationRequest.newBuilder()
@@ -2813,8 +3056,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   StartIPRotationRequest request =
    *       StartIPRotationRequest.newBuilder()
@@ -2842,8 +3088,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String zone = "zone3744684";
@@ -2879,8 +3128,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   CompleteIPRotationRequest request =
    *       CompleteIPRotationRequest.newBuilder()
@@ -2907,8 +3159,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   CompleteIPRotationRequest request =
    *       CompleteIPRotationRequest.newBuilder()
@@ -2937,8 +3192,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   SetNodePoolSizeRequest request =
    *       SetNodePoolSizeRequest.newBuilder()
@@ -2969,8 +3227,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   SetNodePoolSizeRequest request =
    *       SetNodePoolSizeRequest.newBuilder()
@@ -2999,8 +3260,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String zone = "zone3744684";
@@ -3041,8 +3305,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   SetNetworkPolicyRequest request =
    *       SetNetworkPolicyRequest.newBuilder()
@@ -3070,8 +3337,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   SetNetworkPolicyRequest request =
    *       SetNetworkPolicyRequest.newBuilder()
@@ -3099,8 +3369,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String zone = "zone3744684";
@@ -3139,8 +3412,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   SetMaintenancePolicyRequest request =
    *       SetMaintenancePolicyRequest.newBuilder()
@@ -3168,8 +3444,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   SetMaintenancePolicyRequest request =
    *       SetMaintenancePolicyRequest.newBuilder()
@@ -3198,8 +3477,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String parent = "parent-995424086";
    *   for (UsableSubnetwork element :
@@ -3226,8 +3508,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   ListUsableSubnetworksRequest request =
    *       ListUsableSubnetworksRequest.newBuilder()
@@ -3258,8 +3543,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   ListUsableSubnetworksRequest request =
    *       ListUsableSubnetworksRequest.newBuilder()
@@ -3289,8 +3577,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   ListUsableSubnetworksRequest request =
    *       ListUsableSubnetworksRequest.newBuilder()
@@ -3327,8 +3618,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   String parent = "parent-995424086";
    *   ListLocationsResponse response = clusterManagerClient.listLocations(parent);
@@ -3351,8 +3645,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   ListLocationsRequest request =
    *       ListLocationsRequest.newBuilder().setParent("parent-995424086").build();
@@ -3374,8 +3671,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
    *   ListLocationsRequest request =
    *       ListLocationsRequest.newBuilder().setParent("parent-995424086").build();

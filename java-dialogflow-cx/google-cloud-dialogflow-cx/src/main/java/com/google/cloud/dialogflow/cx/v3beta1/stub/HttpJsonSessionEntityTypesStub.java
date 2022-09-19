@@ -169,7 +169,8 @@ public class HttpJsonSessionEntityTypesStub extends SessionEntityTypesStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("sessionEntityType", request.getSessionEntityType()))
+                                  .toBody(
+                                      "sessionEntityType", request.getSessionEntityType(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SessionEntityType>newBuilder()
@@ -212,7 +213,8 @@ public class HttpJsonSessionEntityTypesStub extends SessionEntityTypesStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("sessionEntityType", request.getSessionEntityType()))
+                                  .toBody(
+                                      "sessionEntityType", request.getSessionEntityType(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SessionEntityType>newBuilder()
