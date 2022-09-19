@@ -205,6 +205,9 @@
             "DeleteFeature": {
               "methods": ["deleteFeatureAsync", "deleteFeatureAsync", "deleteFeatureAsync", "deleteFeatureOperationCallable", "deleteFeatureCallable"]
             },
+            "DeleteFeatureValues": {
+              "methods": ["deleteFeatureValuesAsync", "deleteFeatureValuesAsync", "deleteFeatureValuesAsync", "deleteFeatureValuesOperationCallable", "deleteFeatureValuesCallable"]
+            },
             "DeleteFeaturestore": {
               "methods": ["deleteFeaturestoreAsync", "deleteFeaturestoreAsync", "deleteFeaturestoreAsync", "deleteFeaturestoreAsync", "deleteFeaturestoreAsync", "deleteFeaturestoreOperationCallable", "deleteFeaturestoreCallable"]
             },
