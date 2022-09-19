@@ -12,6 +12,39 @@
     depend on this artifact explicitly because this BOM is an implementation
     detail of the Libraries BOM.
   </description>
+
+  <developers>
+    <developer>
+      <id>chingor</id>
+      <name>Jeff Ching</name>
+      <email>chingor@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+  <organization>
+    <name>Google LLC</name>
+  </organization>
+  <scm>
+    <connection>scm:git:git@github.com:googleapis/google-cloud-java.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/google-cloud-java.git</developerConnection>
+    <url>https://github.com/googleapis/google-cloud-java</url>
+    <tag>HEAD</tag>
+  </scm>
+  <issueManagement>
+    <url>https://github.com/googleapis/google-cloud-java/issues</url>
+    <system>GitHub Issues</system>
+  </issueManagement>
+
+  <licenses>
+    <license>
+      <name>Apache-2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
