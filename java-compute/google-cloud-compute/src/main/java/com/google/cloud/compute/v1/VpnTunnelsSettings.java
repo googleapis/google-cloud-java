@@ -111,6 +111,17 @@ public class VpnTunnelsSettings extends ClientSettings<VpnTunnelsSettings> {
     return ((VpnTunnelsStubSettings) getStubSettings()).listSettings();
   }
 
+  /** Returns the object with the settings used for calls to setLabels. */
+  public UnaryCallSettings<SetLabelsVpnTunnelRequest, Operation> setLabelsSettings() {
+    return ((VpnTunnelsStubSettings) getStubSettings()).setLabelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsVpnTunnelRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return ((VpnTunnelsStubSettings) getStubSettings()).setLabelsOperationSettings();
+  }
+
   public static final VpnTunnelsSettings create(VpnTunnelsStubSettings stub) throws IOException {
     return new VpnTunnelsSettings.Builder(stub.toBuilder()).build();
   }
@@ -246,6 +257,17 @@ public class VpnTunnelsSettings extends ClientSettings<VpnTunnelsSettings> {
     public PagedCallSettings.Builder<ListVpnTunnelsRequest, VpnTunnelList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public UnaryCallSettings.Builder<SetLabelsVpnTunnelRequest, Operation> setLabelsSettings() {
+      return getStubSettingsBuilder().setLabelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public OperationCallSettings.Builder<SetLabelsVpnTunnelRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return getStubSettingsBuilder().setLabelsOperationSettings();
     }
 
     @Override

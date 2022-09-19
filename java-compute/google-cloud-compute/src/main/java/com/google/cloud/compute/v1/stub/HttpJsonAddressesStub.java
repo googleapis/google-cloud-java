@@ -43,6 +43,7 @@ import com.google.cloud.compute.v1.InsertAddressRequest;
 import com.google.cloud.compute.v1.ListAddressesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
+import com.google.cloud.compute.v1.SetLabelsAddressRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -305,6 +306,63 @@ public class HttpJsonAddressesStub extends AddressesStub {
                   .build())
           .build();
 
+  private static final ApiMethodDescriptor<SetLabelsAddressRequest, Operation>
+      setLabelsMethodDescriptor =
+          ApiMethodDescriptor.<SetLabelsAddressRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Addresses/SetLabels")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetLabelsAddressRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/addresses/{resource}/setLabels",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetLabelsAddressRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetLabelsAddressRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "regionSetLabelsRequestResource",
+                                      request.getRegionSetLabelsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SetLabelsAddressRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private final UnaryCallable<AggregatedListAddressesRequest, AddressAggregatedList>
       aggregatedListCallable;
   private final UnaryCallable<AggregatedListAddressesRequest, AggregatedListPagedResponse>
@@ -318,6 +376,9 @@ public class HttpJsonAddressesStub extends AddressesStub {
       insertOperationCallable;
   private final UnaryCallable<ListAddressesRequest, AddressList> listCallable;
   private final UnaryCallable<ListAddressesRequest, ListPagedResponse> listPagedCallable;
+  private final UnaryCallable<SetLabelsAddressRequest, Operation> setLabelsCallable;
+  private final OperationCallable<SetLabelsAddressRequest, Operation, Operation>
+      setLabelsOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
@@ -388,6 +449,11 @@ public class HttpJsonAddressesStub extends AddressesStub {
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<SetLabelsAddressRequest, Operation> setLabelsTransportSettings =
+        HttpJsonCallSettings.<SetLabelsAddressRequest, Operation>newBuilder()
+            .setMethodDescriptor(setLabelsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
 
     this.aggregatedListCallable =
         callableFactory.createUnaryCallable(
@@ -422,6 +488,15 @@ public class HttpJsonAddressesStub extends AddressesStub {
     this.listPagedCallable =
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
+    this.setLabelsCallable =
+        callableFactory.createUnaryCallable(
+            setLabelsTransportSettings, settings.setLabelsSettings(), clientContext);
+    this.setLabelsOperationCallable =
+        callableFactory.createOperationCallable(
+            setLabelsTransportSettings,
+            settings.setLabelsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -435,6 +510,7 @@ public class HttpJsonAddressesStub extends AddressesStub {
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(setLabelsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -483,6 +559,17 @@ public class HttpJsonAddressesStub extends AddressesStub {
   @Override
   public UnaryCallable<ListAddressesRequest, ListPagedResponse> listPagedCallable() {
     return listPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetLabelsAddressRequest, Operation> setLabelsCallable() {
+    return setLabelsCallable;
+  }
+
+  @Override
+  public OperationCallable<SetLabelsAddressRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    return setLabelsOperationCallable;
   }
 
   @Override

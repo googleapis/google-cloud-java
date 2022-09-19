@@ -39,6 +39,7 @@ import com.google.cloud.compute.v1.SecurityPoliciesListPreconfiguredExpressionSe
 import com.google.cloud.compute.v1.SecurityPolicy;
 import com.google.cloud.compute.v1.SecurityPolicyList;
 import com.google.cloud.compute.v1.SecurityPolicyRule;
+import com.google.cloud.compute.v1.SetLabelsSecurityPolicyRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -136,6 +137,15 @@ public abstract class SecurityPoliciesStub implements BackgroundResource {
 
   public UnaryCallable<RemoveRuleSecurityPolicyRequest, Operation> removeRuleCallable() {
     throw new UnsupportedOperationException("Not implemented: removeRuleCallable()");
+  }
+
+  public OperationCallable<SetLabelsSecurityPolicyRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setLabelsOperationCallable()");
+  }
+
+  public UnaryCallable<SetLabelsSecurityPolicyRequest, Operation> setLabelsCallable() {
+    throw new UnsupportedOperationException("Not implemented: setLabelsCallable()");
   }
 
   @Override
