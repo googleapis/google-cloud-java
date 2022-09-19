@@ -103,14 +103,14 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
             }
           case 28246024:
             {
-              bitField0_ |= 0x00001000;
+              bitField0_ |= 0x00002000;
               size_ = input.readInt32();
               break;
             }
           case 29957474:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00004000;
+              bitField0_ |= 0x00008000;
               zone_ = s;
               break;
             }
@@ -124,7 +124,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
           case 1450082194:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00002000;
+              bitField0_ |= 0x00004000;
               status_ = s;
               break;
             }
@@ -167,6 +167,22 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
               fingerprint_ = s;
+              break;
+            }
+          case 2133345306:
+            {
+              com.google.cloud.compute.v1.ShareSettings.Builder subBuilder = null;
+              if (((bitField0_ & 0x00001000) != 0)) {
+                subBuilder = shareSettings_.toBuilder();
+              }
+              shareSettings_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.ShareSettings.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(shareSettings_);
+                shareSettings_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00001000;
               break;
             }
           case -1709731654:
@@ -1255,6 +1271,56 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SHARE_SETTINGS_FIELD_NUMBER = 266668163;
+  private com.google.cloud.compute.v1.ShareSettings shareSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Share-settings for the node group
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
+   *
+   * @return Whether the shareSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasShareSettings() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Share-settings for the node group
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
+   *
+   * @return The shareSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ShareSettings getShareSettings() {
+    return shareSettings_ == null
+        ? com.google.cloud.compute.v1.ShareSettings.getDefaultInstance()
+        : shareSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Share-settings for the node group
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ShareSettingsOrBuilder getShareSettingsOrBuilder() {
+    return shareSettings_ == null
+        ? com.google.cloud.compute.v1.ShareSettings.getDefaultInstance()
+        : shareSettings_;
+  }
+
   public static final int SIZE_FIELD_NUMBER = 3530753;
   private int size_;
   /**
@@ -1270,7 +1336,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSize() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    *
@@ -1304,7 +1370,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
   /**
    *
@@ -1370,7 +1436,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasZone() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
   /**
    *
@@ -1442,16 +1508,16 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       output.writeInt32(3530753, size_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
@@ -1462,6 +1528,9 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeMessage(266668163, getShareSettings());
     }
     if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 323154455, nodeTemplate_);
@@ -1496,17 +1565,17 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3530753, size_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
@@ -1521,6 +1590,10 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(266668163, getShareSettings());
     }
     if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(323154455, nodeTemplate_);
@@ -1601,6 +1674,10 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     if (hasSelfLink()) {
       if (!getSelfLink().equals(other.getSelfLink())) return false;
     }
+    if (hasShareSettings() != other.hasShareSettings()) return false;
+    if (hasShareSettings()) {
+      if (!getShareSettings().equals(other.getShareSettings())) return false;
+    }
     if (hasSize() != other.hasSize()) return false;
     if (hasSize()) {
       if (getSize() != other.getSize()) return false;
@@ -1671,6 +1748,10 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
       hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (hasShareSettings()) {
+      hash = (37 * hash) + SHARE_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getShareSettings().hashCode();
     }
     if (hasSize()) {
       hash = (37 * hash) + SIZE_FIELD_NUMBER;
@@ -1825,6 +1906,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getAutoscalingPolicyFieldBuilder();
         getMaintenanceWindowFieldBuilder();
+        getShareSettingsFieldBuilder();
       }
     }
 
@@ -1863,12 +1945,18 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000400);
       selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x00000800);
-      size_ = 0;
+      if (shareSettingsBuilder_ == null) {
+        shareSettings_ = null;
+      } else {
+        shareSettingsBuilder_.clear();
+      }
       bitField0_ = (bitField0_ & ~0x00001000);
-      status_ = "";
+      size_ = 0;
       bitField0_ = (bitField0_ & ~0x00002000);
-      zone_ = "";
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x00004000);
+      zone_ = "";
+      bitField0_ = (bitField0_ & ~0x00008000);
       return this;
     }
 
@@ -1955,15 +2043,23 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       }
       result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.size_ = size_;
+        if (shareSettingsBuilder_ == null) {
+          result.shareSettings_ = shareSettings_;
+        } else {
+          result.shareSettings_ = shareSettingsBuilder_.build();
+        }
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.size_ = size_;
         to_bitField0_ |= 0x00002000;
       }
-      result.status_ = status_;
       if (((from_bitField0_ & 0x00004000) != 0)) {
         to_bitField0_ |= 0x00004000;
+      }
+      result.status_ = status_;
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        to_bitField0_ |= 0x00008000;
       }
       result.zone_ = zone_;
       result.bitField0_ = to_bitField0_;
@@ -2070,16 +2166,19 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
         selfLink_ = other.selfLink_;
         onChanged();
       }
+      if (other.hasShareSettings()) {
+        mergeShareSettings(other.getShareSettings());
+      }
       if (other.hasSize()) {
         setSize(other.getSize());
       }
       if (other.hasStatus()) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         status_ = other.status_;
         onChanged();
       }
       if (other.hasZone()) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         zone_ = other.zone_;
         onChanged();
       }
@@ -3597,6 +3696,193 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.compute.v1.ShareSettings shareSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.ShareSettings,
+            com.google.cloud.compute.v1.ShareSettings.Builder,
+            com.google.cloud.compute.v1.ShareSettingsOrBuilder>
+        shareSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Share-settings for the node group
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
+     *
+     * @return Whether the shareSettings field is set.
+     */
+    public boolean hasShareSettings() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Share-settings for the node group
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
+     *
+     * @return The shareSettings.
+     */
+    public com.google.cloud.compute.v1.ShareSettings getShareSettings() {
+      if (shareSettingsBuilder_ == null) {
+        return shareSettings_ == null
+            ? com.google.cloud.compute.v1.ShareSettings.getDefaultInstance()
+            : shareSettings_;
+      } else {
+        return shareSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Share-settings for the node group
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
+     */
+    public Builder setShareSettings(com.google.cloud.compute.v1.ShareSettings value) {
+      if (shareSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        shareSettings_ = value;
+        onChanged();
+      } else {
+        shareSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Share-settings for the node group
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
+     */
+    public Builder setShareSettings(
+        com.google.cloud.compute.v1.ShareSettings.Builder builderForValue) {
+      if (shareSettingsBuilder_ == null) {
+        shareSettings_ = builderForValue.build();
+        onChanged();
+      } else {
+        shareSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Share-settings for the node group
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
+     */
+    public Builder mergeShareSettings(com.google.cloud.compute.v1.ShareSettings value) {
+      if (shareSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && shareSettings_ != null
+            && shareSettings_ != com.google.cloud.compute.v1.ShareSettings.getDefaultInstance()) {
+          shareSettings_ =
+              com.google.cloud.compute.v1.ShareSettings.newBuilder(shareSettings_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          shareSettings_ = value;
+        }
+        onChanged();
+      } else {
+        shareSettingsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00001000;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Share-settings for the node group
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
+     */
+    public Builder clearShareSettings() {
+      if (shareSettingsBuilder_ == null) {
+        shareSettings_ = null;
+        onChanged();
+      } else {
+        shareSettingsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00001000);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Share-settings for the node group
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
+     */
+    public com.google.cloud.compute.v1.ShareSettings.Builder getShareSettingsBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getShareSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Share-settings for the node group
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
+     */
+    public com.google.cloud.compute.v1.ShareSettingsOrBuilder getShareSettingsOrBuilder() {
+      if (shareSettingsBuilder_ != null) {
+        return shareSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return shareSettings_ == null
+            ? com.google.cloud.compute.v1.ShareSettings.getDefaultInstance()
+            : shareSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Share-settings for the node group
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.ShareSettings,
+            com.google.cloud.compute.v1.ShareSettings.Builder,
+            com.google.cloud.compute.v1.ShareSettingsOrBuilder>
+        getShareSettingsFieldBuilder() {
+      if (shareSettingsBuilder_ == null) {
+        shareSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.ShareSettings,
+                com.google.cloud.compute.v1.ShareSettings.Builder,
+                com.google.cloud.compute.v1.ShareSettingsOrBuilder>(
+                getShareSettings(), getParentForChildren(), isClean());
+        shareSettings_ = null;
+      }
+      return shareSettingsBuilder_;
+    }
+
     private int size_;
     /**
      *
@@ -3611,7 +3897,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasSize() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -3641,7 +3927,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSize(int value) {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       size_ = value;
       onChanged();
       return this;
@@ -3658,7 +3944,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSize() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       size_ = 0;
       onChanged();
       return this;
@@ -3678,7 +3964,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -3743,7 +4029,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       status_ = value;
       onChanged();
       return this;
@@ -3761,7 +4047,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
@@ -3784,7 +4070,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       status_ = value;
       onChanged();
       return this;
@@ -3803,7 +4089,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the zone field is set.
      */
     public boolean hasZone() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -3865,7 +4151,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       zone_ = value;
       onChanged();
       return this;
@@ -3882,7 +4168,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       zone_ = getDefaultInstance().getZone();
       onChanged();
       return this;
@@ -3904,7 +4190,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       zone_ = value;
       onChanged();
       return this;

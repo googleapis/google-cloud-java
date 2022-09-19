@@ -82,9 +82,9 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
           case 177763082:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
                 resourcePolicies_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000400;
               }
               resourcePolicies_.add(s);
               break;
@@ -170,6 +170,24 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
               licenses_.add(s);
               break;
             }
+          case -1273597982:
+            {
+              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+                resourceManagerTags_ =
+                    com.google.protobuf.MapField.newMapField(
+                        ResourceManagerTagsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000200;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                  resourceManagerTags__ =
+                      input.readMessage(
+                          ResourceManagerTagsDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+              resourceManagerTags_
+                  .getMutableMap()
+                  .put(resourceManagerTags__.getKey(), resourceManagerTags__.getValue());
+              break;
+            }
           case -1242938022:
             {
               com.google.cloud.compute.v1.CustomerEncryptionKey.Builder subBuilder = null;
@@ -223,7 +241,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+      if (((mutable_bitField0_ & 0x00000400) != 0)) {
         resourcePolicies_ = resourcePolicies_.getUnmodifiableView();
       }
       if (((mutable_bitField0_ & 0x00000040) != 0)) {
@@ -245,6 +263,8 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     switch (number) {
       case 500195327:
         return internalGetLabels();
+      case 377671164:
+        return internalGetResourceManagerTags();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -1174,6 +1194,109 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     return provisionedIops_;
   }
 
+  public static final int RESOURCE_MANAGER_TAGS_FIELD_NUMBER = 377671164;
+
+  private static final class ResourceManagerTagsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.compute.v1.Compute
+                .internal_static_google_cloud_compute_v1_AttachedDiskInitializeParams_ResourceManagerTagsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> resourceManagerTags_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetResourceManagerTags() {
+    if (resourceManagerTags_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          ResourceManagerTagsDefaultEntryHolder.defaultEntry);
+    }
+    return resourceManagerTags_;
+  }
+
+  public int getResourceManagerTagsCount() {
+    return internalGetResourceManagerTags().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Resource manager tags to be bound to the disk. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+   */
+  @java.lang.Override
+  public boolean containsResourceManagerTags(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetResourceManagerTags().getMap().containsKey(key);
+  }
+  /** Use {@link #getResourceManagerTagsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getResourceManagerTags() {
+    return getResourceManagerTagsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Resource manager tags to be bound to the disk. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getResourceManagerTagsMap() {
+    return internalGetResourceManagerTags().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Resource manager tags to be bound to the disk. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getResourceManagerTagsOrDefault(
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetResourceManagerTags().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Resource manager tags to be bound to the disk. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getResourceManagerTagsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetResourceManagerTags().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   public static final int RESOURCE_POLICIES_FIELD_NUMBER = 22220385;
   private com.google.protobuf.LazyStringList resourcePolicies_;
   /**
@@ -1525,6 +1648,11 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     for (int i = 0; i < licenses_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 337642578, licenses_.getRaw(i));
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output,
+        internalGetResourceManagerTags(),
+        ResourceManagerTagsDefaultEntryHolder.defaultEntry,
+        377671164);
     if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(381503659, getSourceImageEncryptionKey());
     }
@@ -1586,6 +1714,18 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       }
       size += dataSize;
       size += 5 * getLicensesList().size();
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetResourceManagerTags().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> resourceManagerTags__ =
+          ResourceManagerTagsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              377671164, resourceManagerTags__);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       size +=
@@ -1651,6 +1791,8 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     if (hasProvisionedIops()) {
       if (getProvisionedIops() != other.getProvisionedIops()) return false;
     }
+    if (!internalGetResourceManagerTags().equals(other.internalGetResourceManagerTags()))
+      return false;
     if (!getResourcePoliciesList().equals(other.getResourcePoliciesList())) return false;
     if (hasSourceImage() != other.hasSourceImage()) return false;
     if (hasSourceImage()) {
@@ -1715,6 +1857,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     if (hasProvisionedIops()) {
       hash = (37 * hash) + PROVISIONED_IOPS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getProvisionedIops());
+    }
+    if (!internalGetResourceManagerTags().getMap().isEmpty()) {
+      hash = (37 * hash) + RESOURCE_MANAGER_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetResourceManagerTags().hashCode();
     }
     if (getResourcePoliciesCount() > 0) {
       hash = (37 * hash) + RESOURCE_POLICIES_FIELD_NUMBER;
@@ -1860,6 +2006,8 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       switch (number) {
         case 500195327:
           return internalGetLabels();
+        case 377671164:
+          return internalGetResourceManagerTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1870,6 +2018,8 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       switch (number) {
         case 500195327:
           return internalGetMutableLabels();
+        case 377671164:
+          return internalGetMutableResourceManagerTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1922,24 +2072,25 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       bitField0_ = (bitField0_ & ~0x00000080);
       provisionedIops_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000100);
+      internalGetMutableResourceManagerTags().clear();
       resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
-      sourceImage_ = "";
       bitField0_ = (bitField0_ & ~0x00000400);
+      sourceImage_ = "";
+      bitField0_ = (bitField0_ & ~0x00000800);
       if (sourceImageEncryptionKeyBuilder_ == null) {
         sourceImageEncryptionKey_ = null;
       } else {
         sourceImageEncryptionKeyBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000800);
-      sourceSnapshot_ = "";
       bitField0_ = (bitField0_ & ~0x00001000);
+      sourceSnapshot_ = "";
+      bitField0_ = (bitField0_ & ~0x00002000);
       if (sourceSnapshotEncryptionKeyBuilder_ == null) {
         sourceSnapshotEncryptionKey_ = null;
       } else {
         sourceSnapshotEncryptionKeyBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       return this;
     }
 
@@ -2004,16 +2155,18 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         result.provisionedIops_ = provisionedIops_;
         to_bitField0_ |= 0x00000040;
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      result.resourceManagerTags_ = internalGetResourceManagerTags();
+      result.resourceManagerTags_.makeImmutable();
+      if (((bitField0_ & 0x00000400) != 0)) {
         resourcePolicies_ = resourcePolicies_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
       }
       result.resourcePolicies_ = resourcePolicies_;
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         to_bitField0_ |= 0x00000080;
       }
       result.sourceImage_ = sourceImage_;
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         if (sourceImageEncryptionKeyBuilder_ == null) {
           result.sourceImageEncryptionKey_ = sourceImageEncryptionKey_;
         } else {
@@ -2021,11 +2174,11 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         }
         to_bitField0_ |= 0x00000100;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         to_bitField0_ |= 0x00000200;
       }
       result.sourceSnapshot_ = sourceSnapshot_;
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         if (sourceSnapshotEncryptionKeyBuilder_ == null) {
           result.sourceSnapshotEncryptionKey_ = sourceSnapshotEncryptionKey_;
         } else {
@@ -2126,10 +2279,11 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       if (other.hasProvisionedIops()) {
         setProvisionedIops(other.getProvisionedIops());
       }
+      internalGetMutableResourceManagerTags().mergeFrom(other.internalGetResourceManagerTags());
       if (!other.resourcePolicies_.isEmpty()) {
         if (resourcePolicies_.isEmpty()) {
           resourcePolicies_ = other.resourcePolicies_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
         } else {
           ensureResourcePoliciesIsMutable();
           resourcePolicies_.addAll(other.resourcePolicies_);
@@ -2137,7 +2291,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         onChanged();
       }
       if (other.hasSourceImage()) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         sourceImage_ = other.sourceImage_;
         onChanged();
       }
@@ -2145,7 +2299,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         mergeSourceImageEncryptionKey(other.getSourceImageEncryptionKey());
       }
       if (other.hasSourceSnapshot()) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         sourceSnapshot_ = other.sourceSnapshot_;
         onChanged();
       }
@@ -3256,13 +3410,178 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       return this;
     }
 
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> resourceManagerTags_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetResourceManagerTags() {
+      if (resourceManagerTags_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ResourceManagerTagsDefaultEntryHolder.defaultEntry);
+      }
+      return resourceManagerTags_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableResourceManagerTags() {
+      onChanged();
+      ;
+      if (resourceManagerTags_ == null) {
+        resourceManagerTags_ =
+            com.google.protobuf.MapField.newMapField(
+                ResourceManagerTagsDefaultEntryHolder.defaultEntry);
+      }
+      if (!resourceManagerTags_.isMutable()) {
+        resourceManagerTags_ = resourceManagerTags_.copy();
+      }
+      return resourceManagerTags_;
+    }
+
+    public int getResourceManagerTagsCount() {
+      return internalGetResourceManagerTags().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource manager tags to be bound to the disk. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+     */
+    @java.lang.Override
+    public boolean containsResourceManagerTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetResourceManagerTags().getMap().containsKey(key);
+    }
+    /** Use {@link #getResourceManagerTagsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getResourceManagerTags() {
+      return getResourceManagerTagsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource manager tags to be bound to the disk. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getResourceManagerTagsMap() {
+      return internalGetResourceManagerTags().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource manager tags to be bound to the disk. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getResourceManagerTagsOrDefault(
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetResourceManagerTags().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource manager tags to be bound to the disk. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getResourceManagerTagsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetResourceManagerTags().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearResourceManagerTags() {
+      internalGetMutableResourceManagerTags().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource manager tags to be bound to the disk. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+     */
+    public Builder removeResourceManagerTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableResourceManagerTags().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableResourceManagerTags() {
+      return internalGetMutableResourceManagerTags().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource manager tags to be bound to the disk. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+     */
+    public Builder putResourceManagerTags(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+
+      internalGetMutableResourceManagerTags().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource manager tags to be bound to the disk. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
+     */
+    public Builder putAllResourceManagerTags(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableResourceManagerTags().getMutableMap().putAll(values);
+      return this;
+    }
+
     private com.google.protobuf.LazyStringList resourcePolicies_ =
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureResourcePoliciesIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         resourcePolicies_ = new com.google.protobuf.LazyStringArrayList(resourcePolicies_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
       }
     }
     /**
@@ -3397,7 +3716,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      */
     public Builder clearResourcePolicies() {
       resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3437,7 +3756,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * @return Whether the sourceImage field is set.
      */
     public boolean hasSourceImage() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3499,7 +3818,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       sourceImage_ = value;
       onChanged();
       return this;
@@ -3516,7 +3835,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearSourceImage() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       sourceImage_ = getDefaultInstance().getSourceImage();
       onChanged();
       return this;
@@ -3538,7 +3857,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       sourceImage_ = value;
       onChanged();
       return this;
@@ -3564,7 +3883,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * @return Whether the sourceImageEncryptionKey field is set.
      */
     public boolean hasSourceImageEncryptionKey() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -3610,7 +3929,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       } else {
         sourceImageEncryptionKeyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       return this;
     }
     /**
@@ -3632,7 +3951,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       } else {
         sourceImageEncryptionKeyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       return this;
     }
     /**
@@ -3649,7 +3968,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     public Builder mergeSourceImageEncryptionKey(
         com.google.cloud.compute.v1.CustomerEncryptionKey value) {
       if (sourceImageEncryptionKeyBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && sourceImageEncryptionKey_ != null
             && sourceImageEncryptionKey_
                 != com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()) {
@@ -3665,7 +3984,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       } else {
         sourceImageEncryptionKeyBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       return this;
     }
     /**
@@ -3686,7 +4005,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       } else {
         sourceImageEncryptionKeyBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       return this;
     }
     /**
@@ -3702,7 +4021,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder
         getSourceImageEncryptionKeyBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getSourceImageEncryptionKeyFieldBuilder().getBuilder();
     }
@@ -3768,7 +4087,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * @return Whether the sourceSnapshot field is set.
      */
     public boolean hasSourceSnapshot() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -3830,7 +4149,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       sourceSnapshot_ = value;
       onChanged();
       return this;
@@ -3847,7 +4166,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearSourceSnapshot() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       sourceSnapshot_ = getDefaultInstance().getSourceSnapshot();
       onChanged();
       return this;
@@ -3869,7 +4188,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       sourceSnapshot_ = value;
       onChanged();
       return this;
@@ -3895,7 +4214,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * @return Whether the sourceSnapshotEncryptionKey field is set.
      */
     public boolean hasSourceSnapshotEncryptionKey() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -3941,7 +4260,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       } else {
         sourceSnapshotEncryptionKeyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       return this;
     }
     /**
@@ -3963,7 +4282,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       } else {
         sourceSnapshotEncryptionKeyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       return this;
     }
     /**
@@ -3980,7 +4299,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     public Builder mergeSourceSnapshotEncryptionKey(
         com.google.cloud.compute.v1.CustomerEncryptionKey value) {
       if (sourceSnapshotEncryptionKeyBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && sourceSnapshotEncryptionKey_ != null
             && sourceSnapshotEncryptionKey_
                 != com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()) {
@@ -3996,7 +4315,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       } else {
         sourceSnapshotEncryptionKeyBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       return this;
     }
     /**
@@ -4017,7 +4336,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       } else {
         sourceSnapshotEncryptionKeyBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       return this;
     }
     /**
@@ -4033,7 +4352,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder
         getSourceSnapshotEncryptionKeyBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getSourceSnapshotEncryptionKeyFieldBuilder().getBuilder();
     }

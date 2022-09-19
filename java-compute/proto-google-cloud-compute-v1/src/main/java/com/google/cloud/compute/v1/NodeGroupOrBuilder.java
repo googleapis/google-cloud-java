@@ -434,6 +434,41 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
+   * Share-settings for the node group
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
+   *
+   * @return Whether the shareSettings field is set.
+   */
+  boolean hasShareSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Share-settings for the node group
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
+   *
+   * @return The shareSettings.
+   */
+  com.google.cloud.compute.v1.ShareSettings getShareSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Share-settings for the node group
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
+   */
+  com.google.cloud.compute.v1.ShareSettingsOrBuilder getShareSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The total number of nodes in the node group.
    * </pre>
    *

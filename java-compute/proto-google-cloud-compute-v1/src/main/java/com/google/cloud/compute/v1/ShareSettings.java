@@ -176,6 +176,16 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Shared-reservation is open to entire Organization
+     * </pre>
+     *
+     * <code>ORGANIZATION = 274978099;</code>
+     */
+    ORGANIZATION(274978099),
+    /**
+     *
+     *
+     * <pre>
      * Default value. This value is unused.
      * </pre>
      *
@@ -215,6 +225,16 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
      * <code>LOCAL = 72607563;</code>
      */
     public static final int LOCAL_VALUE = 72607563;
+    /**
+     *
+     *
+     * <pre>
+     * Shared-reservation is open to entire Organization
+     * </pre>
+     *
+     * <code>ORGANIZATION = 274978099;</code>
+     */
+    public static final int ORGANIZATION_VALUE = 274978099;
     /**
      *
      *
@@ -264,6 +284,8 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
           return UNDEFINED_SHARE_TYPE;
         case 72607563:
           return LOCAL;
+        case 274978099:
+          return ORGANIZATION;
         case 494771730:
           return SHARE_TYPE_UNSPECIFIED;
         case 347838695:

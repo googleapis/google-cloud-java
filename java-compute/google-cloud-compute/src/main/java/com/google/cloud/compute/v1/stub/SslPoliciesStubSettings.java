@@ -16,6 +16,7 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.SslPoliciesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.SslPoliciesClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -44,6 +45,7 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListSslPoliciesRequest;
 import com.google.cloud.compute.v1.DeleteSslPolicyRequest;
 import com.google.cloud.compute.v1.GetSslPolicyRequest;
 import com.google.cloud.compute.v1.InsertSslPolicyRequest;
@@ -51,15 +53,19 @@ import com.google.cloud.compute.v1.ListAvailableFeaturesSslPoliciesRequest;
 import com.google.cloud.compute.v1.ListSslPoliciesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchSslPolicyRequest;
+import com.google.cloud.compute.v1.SslPoliciesAggregatedList;
 import com.google.cloud.compute.v1.SslPoliciesList;
 import com.google.cloud.compute.v1.SslPoliciesListAvailableFeaturesResponse;
+import com.google.cloud.compute.v1.SslPoliciesScopedList;
 import com.google.cloud.compute.v1.SslPolicy;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -106,6 +112,9 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
+  private final PagedCallSettings<
+          AggregatedListSslPoliciesRequest, SslPoliciesAggregatedList, AggregatedListPagedResponse>
+      aggregatedListSettings;
   private final UnaryCallSettings<DeleteSslPolicyRequest, Operation> deleteSettings;
   private final OperationCallSettings<DeleteSslPolicyRequest, Operation, Operation>
       deleteOperationSettings;
@@ -121,6 +130,55 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
   private final UnaryCallSettings<PatchSslPolicyRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchSslPolicyRequest, Operation, Operation>
       patchOperationSettings;
+
+  private static final PagedListDescriptor<
+          AggregatedListSslPoliciesRequest,
+          SslPoliciesAggregatedList,
+          Map.Entry<String, SslPoliciesScopedList>>
+      AGGREGATED_LIST_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              AggregatedListSslPoliciesRequest,
+              SslPoliciesAggregatedList,
+              Map.Entry<String, SslPoliciesScopedList>>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public AggregatedListSslPoliciesRequest injectToken(
+                AggregatedListSslPoliciesRequest payload, String token) {
+              return AggregatedListSslPoliciesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public AggregatedListSslPoliciesRequest injectPageSize(
+                AggregatedListSslPoliciesRequest payload, int pageSize) {
+              return AggregatedListSslPoliciesRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(AggregatedListSslPoliciesRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(SslPoliciesAggregatedList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Map.Entry<String, SslPoliciesScopedList>> extractResources(
+                SslPoliciesAggregatedList payload) {
+              return payload.getItemsMap() == null
+                  ? Collections.<Map.Entry<String, SslPoliciesScopedList>>emptySet()
+                  : payload.getItemsMap().entrySet();
+            }
+          };
 
   private static final PagedListDescriptor<ListSslPoliciesRequest, SslPoliciesList, SslPolicy>
       LIST_PAGE_STR_DESC =
@@ -161,6 +219,29 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
           };
 
   private static final PagedListResponseFactory<
+          AggregatedListSslPoliciesRequest, SslPoliciesAggregatedList, AggregatedListPagedResponse>
+      AGGREGATED_LIST_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AggregatedListSslPoliciesRequest,
+              SslPoliciesAggregatedList,
+              AggregatedListPagedResponse>() {
+            @Override
+            public ApiFuture<AggregatedListPagedResponse> getFuturePagedResponse(
+                UnaryCallable<AggregatedListSslPoliciesRequest, SslPoliciesAggregatedList> callable,
+                AggregatedListSslPoliciesRequest request,
+                ApiCallContext context,
+                ApiFuture<SslPoliciesAggregatedList> futureResponse) {
+              PageContext<
+                      AggregatedListSslPoliciesRequest,
+                      SslPoliciesAggregatedList,
+                      Map.Entry<String, SslPoliciesScopedList>>
+                  pageContext =
+                      PageContext.create(callable, AGGREGATED_LIST_PAGE_STR_DESC, request, context);
+              return AggregatedListPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListSslPoliciesRequest, SslPoliciesList, ListPagedResponse>
       LIST_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -176,6 +257,13 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
               return ListPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
+
+  /** Returns the object with the settings used for calls to aggregatedList. */
+  public PagedCallSettings<
+          AggregatedListSslPoliciesRequest, SslPoliciesAggregatedList, AggregatedListPagedResponse>
+      aggregatedListSettings() {
+    return aggregatedListSettings;
+  }
 
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteSslPolicyRequest, Operation> deleteSettings() {
@@ -304,6 +392,7 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
   protected SslPoliciesStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    aggregatedListSettings = settingsBuilder.aggregatedListSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
     deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
@@ -318,6 +407,11 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
   /** Builder for SslPoliciesStubSettings. */
   public static class Builder extends StubSettings.Builder<SslPoliciesStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
+    private final PagedCallSettings.Builder<
+            AggregatedListSslPoliciesRequest,
+            SslPoliciesAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings;
     private final UnaryCallSettings.Builder<DeleteSslPolicyRequest, Operation> deleteSettings;
     private final OperationCallSettings.Builder<DeleteSslPolicyRequest, Operation, Operation>
         deleteOperationSettings;
@@ -341,12 +435,12 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -355,14 +449,6 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -374,6 +460,14 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -384,6 +478,7 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -396,6 +491,7 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              aggregatedListSettings,
               deleteSettings,
               getSettings,
               insertSettings,
@@ -408,6 +504,7 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
     protected Builder(SslPoliciesStubSettings settings) {
       super(settings);
 
+      aggregatedListSettings = settings.aggregatedListSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
       deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
@@ -420,6 +517,7 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              aggregatedListSettings,
               deleteSettings,
               getSettings,
               insertSettings,
@@ -442,6 +540,11 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
     }
 
     private static Builder initDefaults(Builder builder) {
+      builder
+          .aggregatedListSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
       builder
           .deleteSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
@@ -560,6 +663,15 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregatedList. */
+    public PagedCallSettings.Builder<
+            AggregatedListSslPoliciesRequest,
+            SslPoliciesAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings() {
+      return aggregatedListSettings;
     }
 
     /** Returns the builder for the settings used for calls to delete. */
