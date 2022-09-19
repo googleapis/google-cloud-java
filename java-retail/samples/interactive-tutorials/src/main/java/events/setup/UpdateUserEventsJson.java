@@ -29,10 +29,10 @@ import java.time.temporal.ChronoUnit;
 public class UpdateUserEventsJson {
 
   public static void main(String[] args) throws IOException {
-    // TODO(developer): Replace these variables before running the sample.
     String filePath = "src/main/resources/user_events.json";
-
+    String invalidFilePath = "src/main/resources/user_events_some_invalid.json";
     updateEventsTimestamp(filePath);
+    updateEventsTimestamp(invalidFilePath);
   }
 
   public static void updateEventsTimestamp(String jsonFile) throws IOException {
