@@ -151,7 +151,8 @@ public class HttpJsonImagesStub extends ImagesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "deprecationStatusResource",
-                                      request.getDeprecationStatusResource()))
+                                      request.getDeprecationStatusResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -311,7 +312,7 @@ public class HttpJsonImagesStub extends ImagesStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("imageResource", request.getImageResource()))
+                              .toBody("imageResource", request.getImageResource(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -410,7 +411,7 @@ public class HttpJsonImagesStub extends ImagesStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("imageResource", request.getImageResource()))
+                              .toBody("imageResource", request.getImageResource(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -461,7 +462,8 @@ public class HttpJsonImagesStub extends ImagesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "globalSetPolicyRequestResource",
-                                      request.getGlobalSetPolicyRequestResource()))
+                                      request.getGlobalSetPolicyRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -500,7 +502,8 @@ public class HttpJsonImagesStub extends ImagesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "globalSetLabelsRequestResource",
-                                      request.getGlobalSetLabelsRequestResource()))
+                                      request.getGlobalSetLabelsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -551,7 +554,8 @@ public class HttpJsonImagesStub extends ImagesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "testPermissionsRequestResource",
-                                      request.getTestPermissionsRequestResource()))
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()

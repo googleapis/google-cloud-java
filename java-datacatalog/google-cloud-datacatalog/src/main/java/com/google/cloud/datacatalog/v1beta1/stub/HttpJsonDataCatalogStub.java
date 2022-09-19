@@ -117,7 +117,8 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("*", request.toBuilder().build()))
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SearchCatalogResponse>newBuilder()
@@ -155,7 +156,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("entryGroup", request.getEntryGroup()))
+                                  .toBody("entryGroup", request.getEntryGroup(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<EntryGroup>newBuilder()
@@ -193,7 +194,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("entryGroup", request.getEntryGroup()))
+                                  .toBody("entryGroup", request.getEntryGroup(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<EntryGroup>newBuilder()
@@ -330,7 +331,8 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("entry", request.getEntry()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("entry", request.getEntry(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Entry>newBuilder()
@@ -364,7 +366,8 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("entry", request.getEntry()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("entry", request.getEntry(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Entry>newBuilder()
@@ -536,7 +539,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("tagTemplate", request.getTagTemplate()))
+                                  .toBody("tagTemplate", request.getTagTemplate(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TagTemplate>newBuilder()
@@ -607,7 +610,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("tagTemplate", request.getTagTemplate()))
+                                  .toBody("tagTemplate", request.getTagTemplate(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TagTemplate>newBuilder()
@@ -680,7 +683,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("tagTemplateField", request.getTagTemplateField()))
+                                  .toBody("tagTemplateField", request.getTagTemplateField(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TagTemplateField>newBuilder()
@@ -718,7 +721,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("tagTemplateField", request.getTagTemplateField()))
+                                  .toBody("tagTemplateField", request.getTagTemplateField(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TagTemplateField>newBuilder()
@@ -755,7 +758,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TagTemplateField>newBuilder()
@@ -824,7 +827,8 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("tag", request.getTag()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("tag", request.getTag(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Tag>newBuilder()
@@ -860,7 +864,8 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("tag", request.getTag()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("tag", request.getTag(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Tag>newBuilder()
@@ -968,7 +973,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -1007,7 +1012,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -1046,7 +1051,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()

@@ -123,7 +123,7 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("certificate", request.getCertificate()))
+                                  .toBody("certificate", request.getCertificate(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Certificate>newBuilder()
@@ -232,7 +232,7 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Certificate>newBuilder()
@@ -272,7 +272,7 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("certificate", request.getCertificate()))
+                                  .toBody("certificate", request.getCertificate(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Certificate>newBuilder()
@@ -309,7 +309,7 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -355,7 +355,9 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "certificateAuthority", request.getCertificateAuthority()))
+                                      "certificateAuthority",
+                                      request.getCertificateAuthority(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -395,7 +397,7 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -435,7 +437,7 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -586,7 +588,7 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -627,7 +629,7 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -673,7 +675,9 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "certificateAuthority", request.getCertificateAuthority()))
+                                      "certificateAuthority",
+                                      request.getCertificateAuthority(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -798,7 +802,8 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "certificateRevocationList",
-                                      request.getCertificateRevocationList()))
+                                      request.getCertificateRevocationList(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

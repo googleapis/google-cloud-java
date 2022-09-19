@@ -263,7 +263,8 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("account", request.getAccount()))
+                              ProtoRestSerializer.create()
+                                  .toBody("account", request.getAccount(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Account>newBuilder()
@@ -300,7 +301,8 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("*", request.toBuilder().build()))
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ProvisionAccountTicketResponse>newBuilder()
@@ -444,7 +446,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("property", request.getProperty()))
+                                  .toBody("property", request.getProperty(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Property>newBuilder()
@@ -517,7 +519,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("property", request.getProperty()))
+                                  .toBody("property", request.getProperty(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Property>newBuilder()
@@ -554,7 +556,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("firebaseLink", request.getFirebaseLink()))
+                                  .toBody("firebaseLink", request.getFirebaseLink(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<FirebaseLink>newBuilder()
@@ -661,7 +663,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("googleAdsLink", request.getGoogleAdsLink()))
+                                  .toBody("googleAdsLink", request.getGoogleAdsLink(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<GoogleAdsLink>newBuilder()
@@ -700,7 +702,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("googleAdsLink", request.getGoogleAdsLink()))
+                                  .toBody("googleAdsLink", request.getGoogleAdsLink(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<GoogleAdsLink>newBuilder()
@@ -921,7 +923,8 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "measurementProtocolSecret",
-                                      request.getMeasurementProtocolSecret()))
+                                      request.getMeasurementProtocolSecret(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<MeasurementProtocolSecret>newBuilder()
@@ -1000,7 +1003,8 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "measurementProtocolSecret",
-                                      request.getMeasurementProtocolSecret()))
+                                      request.getMeasurementProtocolSecret(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<MeasurementProtocolSecret>newBuilder()
@@ -1040,7 +1044,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearProperty().build()))
+                                  .toBody("*", request.toBuilder().clearProperty().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AcknowledgeUserDataCollectionResponse>newBuilder()
@@ -1080,7 +1084,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearAccount().build()))
+                                  .toBody("*", request.toBuilder().clearAccount().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SearchChangeHistoryEventsResponse>newBuilder()
@@ -1117,7 +1121,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("conversionEvent", request.getConversionEvent()))
+                                  .toBody("conversionEvent", request.getConversionEvent(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ConversionEvent>newBuilder()
@@ -1260,7 +1264,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("customDimension", request.getCustomDimension()))
+                                  .toBody("customDimension", request.getCustomDimension(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CustomDimension>newBuilder()
@@ -1301,7 +1305,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("customDimension", request.getCustomDimension()))
+                                  .toBody("customDimension", request.getCustomDimension(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CustomDimension>newBuilder()
@@ -1376,7 +1380,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -1447,7 +1451,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("customMetric", request.getCustomMetric()))
+                                  .toBody("customMetric", request.getCustomMetric(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CustomMetric>newBuilder()
@@ -1486,7 +1490,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("customMetric", request.getCustomMetric()))
+                                  .toBody("customMetric", request.getCustomMetric(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CustomMetric>newBuilder()
@@ -1559,7 +1563,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -1671,7 +1675,9 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "dataRetentionSettings", request.getDataRetentionSettings()))
+                                      "dataRetentionSettings",
+                                      request.getDataRetentionSettings(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<DataRetentionSettings>newBuilder()
@@ -1708,7 +1714,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("dataStream", request.getDataStream()))
+                                  .toBody("dataStream", request.getDataStream(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<DataStream>newBuilder()
@@ -1781,7 +1787,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("dataStream", request.getDataStream()))
+                                  .toBody("dataStream", request.getDataStream(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<DataStream>newBuilder()

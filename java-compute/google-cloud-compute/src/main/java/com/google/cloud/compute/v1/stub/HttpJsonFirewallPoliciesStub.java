@@ -119,7 +119,8 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "firewallPolicyAssociationResource",
-                                      request.getFirewallPolicyAssociationResource()))
+                                      request.getFirewallPolicyAssociationResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -172,7 +173,8 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "firewallPolicyRuleResource",
-                                      request.getFirewallPolicyRuleResource()))
+                                      request.getFirewallPolicyRuleResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -475,7 +477,8 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "firewallPolicyResource",
-                                      request.getFirewallPolicyResource()))
+                                      request.getFirewallPolicyResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -673,7 +676,8 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "firewallPolicyResource",
-                                      request.getFirewallPolicyResource()))
+                                      request.getFirewallPolicyResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -729,7 +733,8 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "firewallPolicyRuleResource",
-                                      request.getFirewallPolicyRuleResource()))
+                                      request.getFirewallPolicyRuleResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -880,7 +885,8 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "globalOrganizationSetPolicyRequestResource",
-                                      request.getGlobalOrganizationSetPolicyRequestResource()))
+                                      request.getGlobalOrganizationSetPolicyRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -920,7 +926,8 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "testPermissionsRequestResource",
-                                      request.getTestPermissionsRequestResource()))
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()

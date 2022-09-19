@@ -85,7 +85,9 @@ public class HttpJsonPublisherStub extends PublisherStub {
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "*", request.toBuilder().clearChannelConnection().build()))
+                                      "*",
+                                      request.toBuilder().clearChannelConnection().build(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PublishChannelConnectionEventsResponse>newBuilder()
@@ -122,7 +124,7 @@ public class HttpJsonPublisherStub extends PublisherStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearChannel().build()))
+                                  .toBody("*", request.toBuilder().clearChannel().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PublishEventsResponse>newBuilder()

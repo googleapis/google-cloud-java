@@ -92,7 +92,7 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("workload", request.getWorkload()))
+                                  .toBody("workload", request.getWorkload(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -134,7 +134,7 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RestrictAllowedResourcesResponse>newBuilder()

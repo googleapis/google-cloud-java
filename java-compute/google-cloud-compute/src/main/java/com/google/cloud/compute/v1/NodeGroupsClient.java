@@ -44,8 +44,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
@@ -83,8 +86,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * NodeGroupsSettings nodeGroupsSettings =
  *     NodeGroupsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -95,8 +101,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * NodeGroupsSettings nodeGroupsSettings =
  *     NodeGroupsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create(nodeGroupsSettings);
@@ -159,8 +168,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -202,8 +214,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   AddNodesNodeGroupRequest request =
    *       AddNodesNodeGroupRequest.newBuilder()
@@ -234,8 +249,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   AddNodesNodeGroupRequest request =
    *       AddNodesNodeGroupRequest.newBuilder()
@@ -264,8 +282,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   AddNodesNodeGroupRequest request =
    *       AddNodesNodeGroupRequest.newBuilder()
@@ -293,8 +314,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, NodeGroupsScopedList> element :
@@ -321,8 +345,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   AggregatedListNodeGroupsRequest request =
    *       AggregatedListNodeGroupsRequest.newBuilder()
@@ -356,8 +383,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   AggregatedListNodeGroupsRequest request =
    *       AggregatedListNodeGroupsRequest.newBuilder()
@@ -391,8 +421,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   AggregatedListNodeGroupsRequest request =
    *       AggregatedListNodeGroupsRequest.newBuilder()
@@ -431,8 +464,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -464,8 +500,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   DeleteNodeGroupRequest request =
    *       DeleteNodeGroupRequest.newBuilder()
@@ -494,8 +533,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   DeleteNodeGroupRequest request =
    *       DeleteNodeGroupRequest.newBuilder()
@@ -523,8 +565,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   DeleteNodeGroupRequest request =
    *       DeleteNodeGroupRequest.newBuilder()
@@ -550,8 +595,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -593,8 +641,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   DeleteNodesNodeGroupRequest request =
    *       DeleteNodesNodeGroupRequest.newBuilder()
@@ -626,8 +677,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   DeleteNodesNodeGroupRequest request =
    *       DeleteNodesNodeGroupRequest.newBuilder()
@@ -657,8 +711,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   DeleteNodesNodeGroupRequest request =
    *       DeleteNodesNodeGroupRequest.newBuilder()
@@ -687,8 +744,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -720,8 +780,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   GetNodeGroupRequest request =
    *       GetNodeGroupRequest.newBuilder()
@@ -748,8 +811,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   GetNodeGroupRequest request =
    *       GetNodeGroupRequest.newBuilder()
@@ -775,8 +841,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -808,8 +877,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   GetIamPolicyNodeGroupRequest request =
    *       GetIamPolicyNodeGroupRequest.newBuilder()
@@ -837,8 +909,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   GetIamPolicyNodeGroupRequest request =
    *       GetIamPolicyNodeGroupRequest.newBuilder()
@@ -864,8 +939,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -901,8 +979,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   InsertNodeGroupRequest request =
    *       InsertNodeGroupRequest.newBuilder()
@@ -932,8 +1013,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   InsertNodeGroupRequest request =
    *       InsertNodeGroupRequest.newBuilder()
@@ -962,8 +1046,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   InsertNodeGroupRequest request =
    *       InsertNodeGroupRequest.newBuilder()
@@ -991,8 +1078,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1020,8 +1110,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   ListNodeGroupsRequest request =
    *       ListNodeGroupsRequest.newBuilder()
@@ -1054,8 +1147,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   ListNodeGroupsRequest request =
    *       ListNodeGroupsRequest.newBuilder()
@@ -1087,8 +1183,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   ListNodeGroupsRequest request =
    *       ListNodeGroupsRequest.newBuilder()
@@ -1126,8 +1225,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1161,8 +1263,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   ListNodesNodeGroupsRequest request =
    *       ListNodesNodeGroupsRequest.newBuilder()
@@ -1195,8 +1300,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   ListNodesNodeGroupsRequest request =
    *       ListNodesNodeGroupsRequest.newBuilder()
@@ -1230,8 +1338,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   ListNodesNodeGroupsRequest request =
    *       ListNodesNodeGroupsRequest.newBuilder()
@@ -1270,8 +1381,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1307,8 +1421,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   PatchNodeGroupRequest request =
    *       PatchNodeGroupRequest.newBuilder()
@@ -1338,8 +1455,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   PatchNodeGroupRequest request =
    *       PatchNodeGroupRequest.newBuilder()
@@ -1368,8 +1488,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   PatchNodeGroupRequest request =
    *       PatchNodeGroupRequest.newBuilder()
@@ -1396,8 +1519,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1436,8 +1562,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   SetIamPolicyNodeGroupRequest request =
    *       SetIamPolicyNodeGroupRequest.newBuilder()
@@ -1464,8 +1593,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   SetIamPolicyNodeGroupRequest request =
    *       SetIamPolicyNodeGroupRequest.newBuilder()
@@ -1491,8 +1623,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1535,8 +1670,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   SetNodeTemplateNodeGroupRequest request =
    *       SetNodeTemplateNodeGroupRequest.newBuilder()
@@ -1568,8 +1706,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   SetNodeTemplateNodeGroupRequest request =
    *       SetNodeTemplateNodeGroupRequest.newBuilder()
@@ -1599,8 +1740,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   SetNodeTemplateNodeGroupRequest request =
    *       SetNodeTemplateNodeGroupRequest.newBuilder()
@@ -1628,8 +1772,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1670,8 +1817,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   TestIamPermissionsNodeGroupRequest request =
    *       TestIamPermissionsNodeGroupRequest.newBuilder()
@@ -1699,8 +1849,11 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   TestIamPermissionsNodeGroupRequest request =
    *       TestIamPermissionsNodeGroupRequest.newBuilder()

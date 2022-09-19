@@ -85,7 +85,8 @@ public class HttpJsonTemplatesServiceStub extends TemplatesServiceStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder().clearLocation().clearProjectId().build()))
+                                      request.toBuilder().clearLocation().clearProjectId().build(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Job>newBuilder()
@@ -128,7 +129,7 @@ public class HttpJsonTemplatesServiceStub extends TemplatesServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("launchParameters", request.getLaunchParameters()))
+                                  .toBody("launchParameters", request.getLaunchParameters(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<LaunchTemplateResponse>newBuilder()

@@ -16,8 +16,7 @@
 
 package com.google.cloud.phishingprotection.v1beta1.samples;
 
-// [START
-// phishingprotection_v1beta1_generated_phishingprotectionservicev1beta1client_create_setcredentialsprovider_sync]
+// [START phishingprotection_v1beta1_generated_phishingprotectionservicev1beta1client_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.phishingprotection.v1beta1.PhishingProtectionServiceV1Beta1Client;
 import com.google.cloud.phishingprotection.v1beta1.PhishingProtectionServiceV1Beta1Settings;
@@ -30,8 +29,11 @@ public class SyncCreateSetCredentialsProvider {
   }
 
   public static void syncCreateSetCredentialsProvider() throws Exception {
-    // This snippet has been automatically generated for illustrative purposes only.
-    // It may require modifications to work in your environment.
+    // This snippet has been automatically generated and should be regarded as a code template only.
+    // It will require modifications to work:
+    // - It may require correct/in-range values for request initialization.
+    // - It may require specifying regional endpoints when creating the service client as shown in
+    // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     PhishingProtectionServiceV1Beta1Settings phishingProtectionServiceV1Beta1Settings =
         PhishingProtectionServiceV1Beta1Settings.newBuilder()
             .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -40,5 +42,4 @@ public class SyncCreateSetCredentialsProvider {
         PhishingProtectionServiceV1Beta1Client.create(phishingProtectionServiceV1Beta1Settings);
   }
 }
-// [END
-// phishingprotection_v1beta1_generated_phishingprotectionservicev1beta1client_create_setcredentialsprovider_sync]
+// [END phishingprotection_v1beta1_generated_phishingprotectionservicev1beta1client_create_setcredentialsprovider_sync]

@@ -158,7 +158,8 @@ public class HttpJsonPagesStub extends PagesStub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("page", request.getPage()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("page", request.getPage(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Page>newBuilder()
@@ -193,7 +194,8 @@ public class HttpJsonPagesStub extends PagesStub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("page", request.getPage()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("page", request.getPage(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Page>newBuilder()

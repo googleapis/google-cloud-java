@@ -173,7 +173,7 @@ public class HttpJsonAccessApprovalStub extends AccessApprovalStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApprovalRequest>newBuilder()
@@ -213,7 +213,7 @@ public class HttpJsonAccessApprovalStub extends AccessApprovalStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApprovalRequest>newBuilder()
@@ -253,7 +253,7 @@ public class HttpJsonAccessApprovalStub extends AccessApprovalStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApprovalRequest>newBuilder()
@@ -334,7 +334,7 @@ public class HttpJsonAccessApprovalStub extends AccessApprovalStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("settings", request.getSettings()))
+                                  .toBody("settings", request.getSettings(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AccessApprovalSettings>newBuilder()

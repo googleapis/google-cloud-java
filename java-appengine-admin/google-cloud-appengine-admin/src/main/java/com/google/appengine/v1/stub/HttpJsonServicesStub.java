@@ -163,7 +163,8 @@ public class HttpJsonServicesStub extends ServicesStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("service", request.getService()))
+                              ProtoRestSerializer.create()
+                                  .toBody("service", request.getService(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

@@ -236,7 +236,8 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("vpnTunnelResource", request.getVpnTunnelResource()))
+                                  .toBody(
+                                      "vpnTunnelResource", request.getVpnTunnelResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

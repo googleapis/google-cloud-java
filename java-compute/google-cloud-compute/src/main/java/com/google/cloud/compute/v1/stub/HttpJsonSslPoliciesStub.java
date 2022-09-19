@@ -176,7 +176,8 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("sslPolicyResource", request.getSslPolicyResource()))
+                                  .toBody(
+                                      "sslPolicyResource", request.getSslPolicyResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -335,7 +336,7 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("sslPolicyResource", request.getSslPolicyResource()))
+                              .toBody("sslPolicyResource", request.getSslPolicyResource(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()

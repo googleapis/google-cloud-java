@@ -180,7 +180,8 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "targetTcpProxyResource",
-                                      request.getTargetTcpProxyResource()))
+                                      request.getTargetTcpProxyResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -287,8 +288,8 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "targetTcpProxiesSetBackendServiceRequestResource",
-                                      request
-                                          .getTargetTcpProxiesSetBackendServiceRequestResource()))
+                                      request.getTargetTcpProxiesSetBackendServiceRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -343,7 +344,8 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "targetTcpProxiesSetProxyHeaderRequestResource",
-                                      request.getTargetTcpProxiesSetProxyHeaderRequestResource()))
+                                      request.getTargetTcpProxiesSetProxyHeaderRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

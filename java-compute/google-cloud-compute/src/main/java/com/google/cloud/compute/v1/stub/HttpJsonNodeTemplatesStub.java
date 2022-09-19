@@ -288,7 +288,9 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "nodeTemplateResource", request.getNodeTemplateResource()))
+                                      "nodeTemplateResource",
+                                      request.getNodeTemplateResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -394,7 +396,8 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "regionSetPolicyRequestResource",
-                                      request.getRegionSetPolicyRequestResource()))
+                                      request.getRegionSetPolicyRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -436,7 +439,8 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "testPermissionsRequestResource",
-                                      request.getTestPermissionsRequestResource()))
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()

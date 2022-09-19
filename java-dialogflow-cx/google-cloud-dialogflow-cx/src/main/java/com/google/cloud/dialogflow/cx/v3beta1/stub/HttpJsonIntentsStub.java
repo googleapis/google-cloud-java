@@ -162,7 +162,8 @@ public class HttpJsonIntentsStub extends IntentsStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("intent", request.getIntent()))
+                              ProtoRestSerializer.create()
+                                  .toBody("intent", request.getIntent(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Intent>newBuilder()
@@ -201,7 +202,8 @@ public class HttpJsonIntentsStub extends IntentsStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("intent", request.getIntent()))
+                              ProtoRestSerializer.create()
+                                  .toBody("intent", request.getIntent(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Intent>newBuilder()

@@ -169,7 +169,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("environment", request.getEnvironment()))
+                                  .toBody("environment", request.getEnvironment(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Environment>newBuilder()
@@ -213,7 +213,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("environment", request.getEnvironment()))
+                                  .toBody("environment", request.getEnvironment(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Environment>newBuilder()

@@ -237,7 +237,10 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("healthCheckResource", request.getHealthCheckResource()))
+                                  .toBody(
+                                      "healthCheckResource",
+                                      request.getHealthCheckResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -342,7 +345,10 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("healthCheckResource", request.getHealthCheckResource()))
+                                  .toBody(
+                                      "healthCheckResource",
+                                      request.getHealthCheckResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -395,7 +401,10 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("healthCheckResource", request.getHealthCheckResource()))
+                                  .toBody(
+                                      "healthCheckResource",
+                                      request.getHealthCheckResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

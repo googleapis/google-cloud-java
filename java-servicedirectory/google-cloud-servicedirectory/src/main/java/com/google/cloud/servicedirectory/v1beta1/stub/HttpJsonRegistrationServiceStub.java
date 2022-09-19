@@ -109,7 +109,7 @@ public class HttpJsonRegistrationServiceStub extends RegistrationServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("namespace", request.getNamespace()))
+                                  .toBody("namespace", request.getNamespace(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Namespace>newBuilder()
@@ -220,7 +220,7 @@ public class HttpJsonRegistrationServiceStub extends RegistrationServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("namespace", request.getNamespace()))
+                                  .toBody("namespace", request.getNamespace(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Namespace>newBuilder()
@@ -291,7 +291,8 @@ public class HttpJsonRegistrationServiceStub extends RegistrationServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("service", request.getService()))
+                              ProtoRestSerializer.create()
+                                  .toBody("service", request.getService(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Service>newBuilder()
@@ -399,7 +400,8 @@ public class HttpJsonRegistrationServiceStub extends RegistrationServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("service", request.getService()))
+                              ProtoRestSerializer.create()
+                                  .toBody("service", request.getService(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Service>newBuilder()
@@ -471,7 +473,7 @@ public class HttpJsonRegistrationServiceStub extends RegistrationServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("endpoint", request.getEndpoint()))
+                                  .toBody("endpoint", request.getEndpoint(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Endpoint>newBuilder()
@@ -582,7 +584,7 @@ public class HttpJsonRegistrationServiceStub extends RegistrationServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("endpoint", request.getEndpoint()))
+                                  .toBody("endpoint", request.getEndpoint(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Endpoint>newBuilder()
@@ -655,7 +657,7 @@ public class HttpJsonRegistrationServiceStub extends RegistrationServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -694,7 +696,7 @@ public class HttpJsonRegistrationServiceStub extends RegistrationServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -733,7 +735,7 @@ public class HttpJsonRegistrationServiceStub extends RegistrationServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()

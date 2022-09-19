@@ -105,7 +105,8 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "instanceGroupsAddInstancesRequestResource",
-                                      request.getInstanceGroupsAddInstancesRequestResource()))
+                                      request.getInstanceGroupsAddInstancesRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -305,7 +306,9 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "instanceGroupResource", request.getInstanceGroupResource()))
+                                      "instanceGroupResource",
+                                      request.getInstanceGroupResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -433,7 +436,8 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "instanceGroupsListInstancesRequestResource",
-                                      request.getInstanceGroupsListInstancesRequestResource()))
+                                      request.getInstanceGroupsListInstancesRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<InstanceGroupsListInstances>newBuilder()
@@ -477,7 +481,8 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "instanceGroupsRemoveInstancesRequestResource",
-                                      request.getInstanceGroupsRemoveInstancesRequestResource()))
+                                      request.getInstanceGroupsRemoveInstancesRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -534,7 +539,8 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "instanceGroupsSetNamedPortsRequestResource",
-                                      request.getInstanceGroupsSetNamedPortsRequestResource()))
+                                      request.getInstanceGroupsSetNamedPortsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

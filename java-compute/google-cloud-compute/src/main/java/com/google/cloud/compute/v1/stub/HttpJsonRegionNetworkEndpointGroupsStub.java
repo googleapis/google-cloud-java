@@ -184,7 +184,8 @@ public class HttpJsonRegionNetworkEndpointGroupsStub extends RegionNetworkEndpoi
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "networkEndpointGroupResource",
-                                      request.getNetworkEndpointGroupResource()))
+                                      request.getNetworkEndpointGroupResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

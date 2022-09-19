@@ -182,11 +182,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               staticIpScan_ = input.readBool();
               break;
             }
-          case 120:
-            {
-              ignoreHttpStatusErrors_ = input.readBool();
-              break;
-            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -748,14 +743,11 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
+     * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
      * </code>
      *
-     * @deprecated google.cloud.websecurityscanner.v1.ScanConfig.Authentication.google_account is
-     *     deprecated. See google/cloud/websecurityscanner/v1/scan_config.proto;l=80
      * @return Whether the googleAccount field is set.
      */
-    @java.lang.Deprecated
     boolean hasGoogleAccount();
     /**
      *
@@ -765,14 +757,11 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
+     * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
      * </code>
      *
-     * @deprecated google.cloud.websecurityscanner.v1.ScanConfig.Authentication.google_account is
-     *     deprecated. See google/cloud/websecurityscanner/v1/scan_config.proto;l=80
      * @return The googleAccount.
      */
-    @java.lang.Deprecated
     com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount
         getGoogleAccount();
     /**
@@ -783,10 +772,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
+     * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
      * </code>
      */
-    @java.lang.Deprecated
     com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccountOrBuilder
         getGoogleAccountOrBuilder();
 
@@ -1046,7 +1034,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.Builder.class);
     }
 
-    @java.lang.Deprecated
     public interface GoogleAccountOrBuilder
         extends
         // @@protoc_insertion_point(interface_extends:google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount)
@@ -1114,7 +1101,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * Protobuf type {@code
      * google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount}
      */
-    @java.lang.Deprecated
     public static final class GoogleAccount extends com.google.protobuf.GeneratedMessageV3
         implements
         // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount)
@@ -4849,7 +4835,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         implements
             com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      @java.lang.Deprecated
       GOOGLE_ACCOUNT(1),
       CUSTOM_ACCOUNT(2),
       IAP_CREDENTIAL(4),
@@ -4902,15 +4887,12 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
+     * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
      * </code>
      *
-     * @deprecated google.cloud.websecurityscanner.v1.ScanConfig.Authentication.google_account is
-     *     deprecated. See google/cloud/websecurityscanner/v1/scan_config.proto;l=80
      * @return Whether the googleAccount field is set.
      */
     @java.lang.Override
-    @java.lang.Deprecated
     public boolean hasGoogleAccount() {
       return authenticationCase_ == 1;
     }
@@ -4922,15 +4904,12 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
+     * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
      * </code>
      *
-     * @deprecated google.cloud.websecurityscanner.v1.ScanConfig.Authentication.google_account is
-     *     deprecated. See google/cloud/websecurityscanner/v1/scan_config.proto;l=80
      * @return The googleAccount.
      */
     @java.lang.Override
-    @java.lang.Deprecated
     public com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount
         getGoogleAccount() {
       if (authenticationCase_ == 1) {
@@ -4948,11 +4927,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
+     * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
      * </code>
      */
     @java.lang.Override
-    @java.lang.Deprecated
     public com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccountOrBuilder
         getGoogleAccountOrBuilder() {
       if (authenticationCase_ == 1) {
@@ -5547,15 +5525,12 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
+       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
        * </code>
        *
-       * @deprecated google.cloud.websecurityscanner.v1.ScanConfig.Authentication.google_account is
-       *     deprecated. See google/cloud/websecurityscanner/v1/scan_config.proto;l=80
        * @return Whether the googleAccount field is set.
        */
       @java.lang.Override
-      @java.lang.Deprecated
       public boolean hasGoogleAccount() {
         return authenticationCase_ == 1;
       }
@@ -5567,15 +5542,12 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
+       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
        * </code>
        *
-       * @deprecated google.cloud.websecurityscanner.v1.ScanConfig.Authentication.google_account is
-       *     deprecated. See google/cloud/websecurityscanner/v1/scan_config.proto;l=80
        * @return The googleAccount.
        */
       @java.lang.Override
-      @java.lang.Deprecated
       public com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount
           getGoogleAccount() {
         if (googleAccountBuilder_ == null) {
@@ -5601,10 +5573,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
+       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
        * </code>
        */
-      @java.lang.Deprecated
       public Builder setGoogleAccount(
           com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount value) {
         if (googleAccountBuilder_ == null) {
@@ -5627,10 +5598,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
+       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
        * </code>
        */
-      @java.lang.Deprecated
       public Builder setGoogleAccount(
           com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount.Builder
               builderForValue) {
@@ -5651,10 +5621,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
+       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
        * </code>
        */
-      @java.lang.Deprecated
       public Builder mergeGoogleAccount(
           com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount value) {
         if (googleAccountBuilder_ == null) {
@@ -5692,10 +5661,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
+       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
        * </code>
        */
-      @java.lang.Deprecated
       public Builder clearGoogleAccount() {
         if (googleAccountBuilder_ == null) {
           if (authenticationCase_ == 1) {
@@ -5720,10 +5688,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
+       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
        * </code>
        */
-      @java.lang.Deprecated
       public com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount.Builder
           getGoogleAccountBuilder() {
         return getGoogleAccountFieldBuilder().getBuilder();
@@ -5736,11 +5703,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
+       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
        * </code>
        */
       @java.lang.Override
-      @java.lang.Deprecated
       public com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccountOrBuilder
           getGoogleAccountOrBuilder() {
         if ((authenticationCase_ == 1) && (googleAccountBuilder_ != null)) {
@@ -5762,7 +5728,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
+       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
        * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -7781,24 +7747,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     return staticIpScan_;
   }
 
-  public static final int IGNORE_HTTP_STATUS_ERRORS_FIELD_NUMBER = 15;
-  private boolean ignoreHttpStatusErrors_;
-  /**
-   *
-   *
-   * <pre>
-   * Whether to keep scanning even if most requests return HTTP error codes.
-   * </pre>
-   *
-   * <code>bool ignore_http_status_errors = 15;</code>
-   *
-   * @return The ignoreHttpStatusErrors.
-   */
-  @java.lang.Override
-  public boolean getIgnoreHttpStatusErrors() {
-    return ignoreHttpStatusErrors_;
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -7855,9 +7803,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (staticIpScan_ != false) {
       output.writeBool(14, staticIpScan_);
-    }
-    if (ignoreHttpStatusErrors_ != false) {
-      output.writeBool(15, ignoreHttpStatusErrors_);
     }
     unknownFields.writeTo(output);
   }
@@ -7922,9 +7867,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     if (staticIpScan_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(14, staticIpScan_);
     }
-    if (ignoreHttpStatusErrors_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, ignoreHttpStatusErrors_);
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -7959,7 +7901,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     if (riskLevel_ != other.riskLevel_) return false;
     if (getManagedScan() != other.getManagedScan()) return false;
     if (getStaticIpScan() != other.getStaticIpScan()) return false;
-    if (getIgnoreHttpStatusErrors() != other.getIgnoreHttpStatusErrors()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -8003,8 +7944,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getManagedScan());
     hash = (37 * hash) + STATIC_IP_SCAN_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getStaticIpScan());
-    hash = (37 * hash) + IGNORE_HTTP_STATUS_ERRORS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIgnoreHttpStatusErrors());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -8182,8 +8121,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
       staticIpScan_ = false;
 
-      ignoreHttpStatusErrors_ = false;
-
       return this;
     }
 
@@ -8240,7 +8177,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       result.riskLevel_ = riskLevel_;
       result.managedScan_ = managedScan_;
       result.staticIpScan_ = staticIpScan_;
-      result.ignoreHttpStatusErrors_ = ignoreHttpStatusErrors_;
       onBuilt();
       return result;
     }
@@ -8342,9 +8278,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getStaticIpScan() != false) {
         setStaticIpScan(other.getStaticIpScan());
-      }
-      if (other.getIgnoreHttpStatusErrors() != false) {
-        setIgnoreHttpStatusErrors(other.getIgnoreHttpStatusErrors());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -9806,58 +9739,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearStaticIpScan() {
 
       staticIpScan_ = false;
-      onChanged();
-      return this;
-    }
-
-    private boolean ignoreHttpStatusErrors_;
-    /**
-     *
-     *
-     * <pre>
-     * Whether to keep scanning even if most requests return HTTP error codes.
-     * </pre>
-     *
-     * <code>bool ignore_http_status_errors = 15;</code>
-     *
-     * @return The ignoreHttpStatusErrors.
-     */
-    @java.lang.Override
-    public boolean getIgnoreHttpStatusErrors() {
-      return ignoreHttpStatusErrors_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Whether to keep scanning even if most requests return HTTP error codes.
-     * </pre>
-     *
-     * <code>bool ignore_http_status_errors = 15;</code>
-     *
-     * @param value The ignoreHttpStatusErrors to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIgnoreHttpStatusErrors(boolean value) {
-
-      ignoreHttpStatusErrors_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Whether to keep scanning even if most requests return HTTP error codes.
-     * </pre>
-     *
-     * <code>bool ignore_http_status_errors = 15;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearIgnoreHttpStatusErrors() {
-
-      ignoreHttpStatusErrors_ = false;
       onChanged();
       return this;
     }

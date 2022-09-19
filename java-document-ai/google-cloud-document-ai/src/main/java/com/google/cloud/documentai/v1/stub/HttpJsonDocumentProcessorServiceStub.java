@@ -151,7 +151,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ProcessResponse>newBuilder()
@@ -190,7 +190,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -478,7 +478,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -518,7 +518,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -558,7 +558,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("processor", request.getProcessor()))
+                                  .toBody("processor", request.getProcessor(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Processor>newBuilder()
@@ -632,7 +632,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -672,7 +672,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -712,7 +712,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearProcessor().build()))
+                                  .toBody("*", request.toBuilder().clearProcessor().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -754,7 +754,9 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "*", request.toBuilder().clearHumanReviewConfig().build()))
+                                      "*",
+                                      request.toBuilder().clearHumanReviewConfig().build(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

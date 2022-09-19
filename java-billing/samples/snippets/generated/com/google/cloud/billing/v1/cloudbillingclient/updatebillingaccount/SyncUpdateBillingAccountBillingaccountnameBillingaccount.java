@@ -16,8 +16,7 @@
 
 package com.google.cloud.billing.v1.samples;
 
-// [START
-// billing_v1_generated_cloudbillingclient_updatebillingaccount_billingaccountnamebillingaccount_sync]
+// [START billing_v1_generated_cloudbillingclient_updatebillingaccount_billingaccountnamebillingaccount_sync]
 import com.google.cloud.billing.v1.BillingAccount;
 import com.google.cloud.billing.v1.BillingAccountName;
 import com.google.cloud.billing.v1.CloudBillingClient;
@@ -29,8 +28,11 @@ public class SyncUpdateBillingAccountBillingaccountnameBillingaccount {
   }
 
   public static void syncUpdateBillingAccountBillingaccountnameBillingaccount() throws Exception {
-    // This snippet has been automatically generated for illustrative purposes only.
-    // It may require modifications to work in your environment.
+    // This snippet has been automatically generated and should be regarded as a code template only.
+    // It will require modifications to work:
+    // - It may require correct/in-range values for request initialization.
+    // - It may require specifying regional endpoints when creating the service client as shown in
+    // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
       BillingAccountName name = BillingAccountName.of("[BILLING_ACCOUNT]");
       BillingAccount account = BillingAccount.newBuilder().build();
@@ -38,5 +40,4 @@ public class SyncUpdateBillingAccountBillingaccountnameBillingaccount {
     }
   }
 }
-// [END
-// billing_v1_generated_cloudbillingclient_updatebillingaccount_billingaccountnamebillingaccount_sync]
+// [END billing_v1_generated_cloudbillingclient_updatebillingaccount_billingaccountnamebillingaccount_sync]

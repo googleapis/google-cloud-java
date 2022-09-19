@@ -160,7 +160,7 @@ public class HttpJsonExperimentsStub extends ExperimentsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("experiment", request.getExperiment()))
+                                  .toBody("experiment", request.getExperiment(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Experiment>newBuilder()
@@ -198,7 +198,7 @@ public class HttpJsonExperimentsStub extends ExperimentsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("experiment", request.getExperiment()))
+                                  .toBody("experiment", request.getExperiment(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Experiment>newBuilder()
@@ -267,7 +267,7 @@ public class HttpJsonExperimentsStub extends ExperimentsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Experiment>newBuilder()
@@ -303,7 +303,7 @@ public class HttpJsonExperimentsStub extends ExperimentsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Experiment>newBuilder()

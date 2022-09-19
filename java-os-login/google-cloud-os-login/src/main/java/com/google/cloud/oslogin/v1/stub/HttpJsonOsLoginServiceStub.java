@@ -220,7 +220,7 @@ public class HttpJsonOsLoginServiceStub extends OsLoginServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("sshPublicKey", request.getSshPublicKey()))
+                                  .toBody("sshPublicKey", request.getSshPublicKey(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ImportSshPublicKeyResponse>newBuilder()
@@ -257,7 +257,7 @@ public class HttpJsonOsLoginServiceStub extends OsLoginServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("sshPublicKey", request.getSshPublicKey()))
+                                  .toBody("sshPublicKey", request.getSshPublicKey(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<OsLoginProto.SshPublicKey>newBuilder()

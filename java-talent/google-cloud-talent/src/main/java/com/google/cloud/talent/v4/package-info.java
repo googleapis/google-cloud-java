@@ -25,8 +25,11 @@
  * <p>Sample for CompanyServiceClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
  *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
  *   Company company = Company.newBuilder().build();
@@ -41,8 +44,11 @@
  * <p>Sample for CompletionClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (CompletionClient completionClient = CompletionClient.create()) {
  *   CompleteQueryRequest request =
  *       CompleteQueryRequest.newBuilder()
@@ -63,8 +69,11 @@
  * <p>Sample for EventServiceClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
  *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
  *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
@@ -80,8 +89,11 @@
  * <p>Sample for JobServiceClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
  *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
  *   Job job = Job.newBuilder().build();
@@ -96,8 +108,11 @@
  * <p>Sample for TenantServiceClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
  *   ProjectName parent = ProjectName.of("[PROJECT]");
  *   Tenant tenant = Tenant.newBuilder().build();

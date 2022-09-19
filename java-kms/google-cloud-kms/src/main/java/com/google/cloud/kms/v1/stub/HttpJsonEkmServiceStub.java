@@ -160,7 +160,7 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("ekmConnection", request.getEkmConnection()))
+                                  .toBody("ekmConnection", request.getEkmConnection(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<EkmConnection>newBuilder()
@@ -198,7 +198,7 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("ekmConnection", request.getEkmConnection()))
+                                  .toBody("ekmConnection", request.getEkmConnection(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<EkmConnection>newBuilder()
@@ -238,7 +238,7 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -315,7 +315,7 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()

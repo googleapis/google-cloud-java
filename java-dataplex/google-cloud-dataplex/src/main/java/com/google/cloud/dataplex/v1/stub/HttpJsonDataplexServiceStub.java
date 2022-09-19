@@ -153,7 +153,8 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                             return fields;
                           })
                       .setRequestBodyExtractor(
-                          request -> ProtoRestSerializer.create().toBody("lake", request.getLake()))
+                          request ->
+                              ProtoRestSerializer.create().toBody("lake", request.getLake(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -194,7 +195,8 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                             return fields;
                           })
                       .setRequestBodyExtractor(
-                          request -> ProtoRestSerializer.create().toBody("lake", request.getLake()))
+                          request ->
+                              ProtoRestSerializer.create().toBody("lake", request.getLake(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -374,7 +376,8 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                             return fields;
                           })
                       .setRequestBodyExtractor(
-                          request -> ProtoRestSerializer.create().toBody("zone", request.getZone()))
+                          request ->
+                              ProtoRestSerializer.create().toBody("zone", request.getZone(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -415,7 +418,8 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                             return fields;
                           })
                       .setRequestBodyExtractor(
-                          request -> ProtoRestSerializer.create().toBody("zone", request.getZone()))
+                          request ->
+                              ProtoRestSerializer.create().toBody("zone", request.getZone(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -596,7 +600,8 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("asset", request.getAsset()))
+                              ProtoRestSerializer.create()
+                                  .toBody("asset", request.getAsset(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -638,7 +643,8 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("asset", request.getAsset()))
+                              ProtoRestSerializer.create()
+                                  .toBody("asset", request.getAsset(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -818,7 +824,8 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                             return fields;
                           })
                       .setRequestBodyExtractor(
-                          request -> ProtoRestSerializer.create().toBody("task", request.getTask()))
+                          request ->
+                              ProtoRestSerializer.create().toBody("task", request.getTask(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -859,7 +866,8 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                             return fields;
                           })
                       .setRequestBodyExtractor(
-                          request -> ProtoRestSerializer.create().toBody("task", request.getTask()))
+                          request ->
+                              ProtoRestSerializer.create().toBody("task", request.getTask(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1069,7 +1077,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearName().build()))
+                              .toBody("*", request.toBuilder().clearName().build(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Empty>newBuilder()
@@ -1109,7 +1117,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("environment", request.getEnvironment()))
+                                  .toBody("environment", request.getEnvironment(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1152,7 +1160,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("environment", request.getEnvironment()))
+                                  .toBody("environment", request.getEnvironment(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

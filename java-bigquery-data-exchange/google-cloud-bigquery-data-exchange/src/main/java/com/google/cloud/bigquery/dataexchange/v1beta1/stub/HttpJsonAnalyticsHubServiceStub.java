@@ -220,7 +220,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("dataExchange", request.getDataExchange()))
+                                  .toBody("dataExchange", request.getDataExchange(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<DataExchange>newBuilder()
@@ -259,7 +259,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("dataExchange", request.getDataExchange()))
+                                  .toBody("dataExchange", request.getDataExchange(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<DataExchange>newBuilder()
@@ -399,7 +399,8 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("listing", request.getListing()))
+                              ProtoRestSerializer.create()
+                                  .toBody("listing", request.getListing(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Listing>newBuilder()
@@ -437,7 +438,8 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("listing", request.getListing()))
+                              ProtoRestSerializer.create()
+                                  .toBody("listing", request.getListing(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Listing>newBuilder()
@@ -508,7 +510,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SubscribeListingResponse>newBuilder()
@@ -547,7 +549,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -586,7 +588,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -625,7 +627,7 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()

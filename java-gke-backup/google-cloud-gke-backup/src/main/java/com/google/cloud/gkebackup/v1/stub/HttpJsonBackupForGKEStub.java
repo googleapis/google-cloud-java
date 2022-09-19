@@ -134,7 +134,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("backupPlan", request.getBackupPlan()))
+                                  .toBody("backupPlan", request.getBackupPlan(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -245,7 +245,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("backupPlan", request.getBackupPlan()))
+                                  .toBody("backupPlan", request.getBackupPlan(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -321,7 +321,8 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("backup", request.getBackup()))
+                              ProtoRestSerializer.create()
+                                  .toBody("backup", request.getBackup(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -430,7 +431,8 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("backup", request.getBackup()))
+                              ProtoRestSerializer.create()
+                                  .toBody("backup", request.getBackup(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -579,7 +581,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("restorePlan", request.getRestorePlan()))
+                                  .toBody("restorePlan", request.getRestorePlan(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -690,7 +692,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("restorePlan", request.getRestorePlan()))
+                                  .toBody("restorePlan", request.getRestorePlan(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -767,7 +769,8 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("restore", request.getRestore()))
+                              ProtoRestSerializer.create()
+                                  .toBody("restore", request.getRestore(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -876,7 +879,8 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("restore", request.getRestore()))
+                              ProtoRestSerializer.create()
+                                  .toBody("restore", request.getRestore(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

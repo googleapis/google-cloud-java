@@ -218,7 +218,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("repository", request.getRepository()))
+                                  .toBody("repository", request.getRepository(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Repository>newBuilder()
@@ -256,7 +256,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("repository", request.getRepository()))
+                                  .toBody("repository", request.getRepository(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Repository>newBuilder()
@@ -431,7 +431,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("workspace", request.getWorkspace()))
+                                  .toBody("workspace", request.getWorkspace(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Workspace>newBuilder()
@@ -500,7 +500,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearWorkspace().build()))
+                                  .toBody("*", request.toBuilder().clearWorkspace().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<InstallNpmPackagesResponse>newBuilder()
@@ -536,7 +536,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -572,7 +572,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -678,7 +678,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -714,7 +714,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -822,7 +822,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearWorkspace().build()))
+                                  .toBody("*", request.toBuilder().clearWorkspace().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<MakeDirectoryResponse>newBuilder()
@@ -858,7 +858,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearWorkspace().build()))
+                                  .toBody("*", request.toBuilder().clearWorkspace().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -894,7 +894,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearWorkspace().build()))
+                                  .toBody("*", request.toBuilder().clearWorkspace().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<MoveDirectoryResponse>newBuilder()
@@ -963,7 +963,7 @@ public class HttpJsonDataformStub extends DataformStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearWorkspace().build()))
+                              .toBody("*", request.toBuilder().clearWorkspace().build(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Empty>newBuilder()
@@ -999,7 +999,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearWorkspace().build()))
+                                  .toBody("*", request.toBuilder().clearWorkspace().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<MoveFileResponse>newBuilder()
@@ -1035,7 +1035,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearWorkspace().build()))
+                                  .toBody("*", request.toBuilder().clearWorkspace().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<WriteFileResponse>newBuilder()
@@ -1141,7 +1141,8 @@ public class HttpJsonDataformStub extends DataformStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("compilationResult", request.getCompilationResult()))
+                                  .toBody(
+                                      "compilationResult", request.getCompilationResult(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CompilationResult>newBuilder()
@@ -1288,7 +1289,8 @@ public class HttpJsonDataformStub extends DataformStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("workflowInvocation", request.getWorkflowInvocation()))
+                                  .toBody(
+                                      "workflowInvocation", request.getWorkflowInvocation(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<WorkflowInvocation>newBuilder()
@@ -1357,7 +1359,7 @@ public class HttpJsonDataformStub extends DataformStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()

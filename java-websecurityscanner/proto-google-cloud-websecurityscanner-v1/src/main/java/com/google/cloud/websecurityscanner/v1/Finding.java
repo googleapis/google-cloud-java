@@ -258,22 +258,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
               severity_ = rawValue;
               break;
             }
-          case 146:
-            {
-              com.google.cloud.websecurityscanner.v1.Xxe.Builder subBuilder = null;
-              if (xxe_ != null) {
-                subBuilder = xxe_.toBuilder();
-              }
-              xxe_ =
-                  input.readMessage(
-                      com.google.cloud.websecurityscanner.v1.Xxe.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(xxe_);
-                xxe_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1361,58 +1345,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     return getXss();
   }
 
-  public static final int XXE_FIELD_NUMBER = 18;
-  private com.google.cloud.websecurityscanner.v1.Xxe xxe_;
-  /**
-   *
-   *
-   * <pre>
-   * Output only. An addon containing information reported for an XXE, if any.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return Whether the xxe field is set.
-   */
-  @java.lang.Override
-  public boolean hasXxe() {
-    return xxe_ != null;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Output only. An addon containing information reported for an XXE, if any.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return The xxe.
-   */
-  @java.lang.Override
-  public com.google.cloud.websecurityscanner.v1.Xxe getXxe() {
-    return xxe_ == null ? com.google.cloud.websecurityscanner.v1.Xxe.getDefaultInstance() : xxe_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Output only. An addon containing information reported for an XXE, if any.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.cloud.websecurityscanner.v1.XxeOrBuilder getXxeOrBuilder() {
-    return getXxe();
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1480,9 +1412,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(17, severity_);
     }
-    if (xxe_ != null) {
-      output.writeMessage(18, getXxe());
-    }
     unknownFields.writeTo(output);
   }
 
@@ -1546,9 +1475,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(17, severity_);
     }
-    if (xxe_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getXxe());
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1599,10 +1525,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (hasXss() != other.hasXss()) return false;
     if (hasXss()) {
       if (!getXss().equals(other.getXss())) return false;
-    }
-    if (hasXxe() != other.hasXxe()) return false;
-    if (hasXxe()) {
-      if (!getXxe().equals(other.getXxe())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1660,10 +1582,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (hasXss()) {
       hash = (37 * hash) + XSS_FIELD_NUMBER;
       hash = (53 * hash) + getXss().hashCode();
-    }
-    if (hasXxe()) {
-      hash = (37 * hash) + XXE_FIELD_NUMBER;
-      hash = (53 * hash) + getXxe().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1869,12 +1787,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         xss_ = null;
         xssBuilder_ = null;
       }
-      if (xxeBuilder_ == null) {
-        xxe_ = null;
-      } else {
-        xxe_ = null;
-        xxeBuilder_ = null;
-      }
       return this;
     }
 
@@ -1942,11 +1854,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         result.xss_ = xss_;
       } else {
         result.xss_ = xssBuilder_.build();
-      }
-      if (xxeBuilder_ == null) {
-        result.xxe_ = xxe_;
-      } else {
-        result.xxe_ = xxeBuilder_.build();
       }
       onBuilt();
       return result;
@@ -2057,9 +1964,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasXss()) {
         mergeXss(other.getXss());
-      }
-      if (other.hasXxe()) {
-        mergeXxe(other.getXxe());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4465,209 +4369,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         xss_ = null;
       }
       return xssBuilder_;
-    }
-
-    private com.google.cloud.websecurityscanner.v1.Xxe xxe_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.websecurityscanner.v1.Xxe,
-            com.google.cloud.websecurityscanner.v1.Xxe.Builder,
-            com.google.cloud.websecurityscanner.v1.XxeOrBuilder>
-        xxeBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * Output only. An addon containing information reported for an XXE, if any.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @return Whether the xxe field is set.
-     */
-    public boolean hasXxe() {
-      return xxeBuilder_ != null || xxe_ != null;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. An addon containing information reported for an XXE, if any.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @return The xxe.
-     */
-    public com.google.cloud.websecurityscanner.v1.Xxe getXxe() {
-      if (xxeBuilder_ == null) {
-        return xxe_ == null
-            ? com.google.cloud.websecurityscanner.v1.Xxe.getDefaultInstance()
-            : xxe_;
-      } else {
-        return xxeBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. An addon containing information reported for an XXE, if any.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder setXxe(com.google.cloud.websecurityscanner.v1.Xxe value) {
-      if (xxeBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        xxe_ = value;
-        onChanged();
-      } else {
-        xxeBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. An addon containing information reported for an XXE, if any.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder setXxe(com.google.cloud.websecurityscanner.v1.Xxe.Builder builderForValue) {
-      if (xxeBuilder_ == null) {
-        xxe_ = builderForValue.build();
-        onChanged();
-      } else {
-        xxeBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. An addon containing information reported for an XXE, if any.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder mergeXxe(com.google.cloud.websecurityscanner.v1.Xxe value) {
-      if (xxeBuilder_ == null) {
-        if (xxe_ != null) {
-          xxe_ =
-              com.google.cloud.websecurityscanner.v1.Xxe.newBuilder(xxe_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          xxe_ = value;
-        }
-        onChanged();
-      } else {
-        xxeBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. An addon containing information reported for an XXE, if any.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder clearXxe() {
-      if (xxeBuilder_ == null) {
-        xxe_ = null;
-        onChanged();
-      } else {
-        xxe_ = null;
-        xxeBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. An addon containing information reported for an XXE, if any.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public com.google.cloud.websecurityscanner.v1.Xxe.Builder getXxeBuilder() {
-
-      onChanged();
-      return getXxeFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. An addon containing information reported for an XXE, if any.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public com.google.cloud.websecurityscanner.v1.XxeOrBuilder getXxeOrBuilder() {
-      if (xxeBuilder_ != null) {
-        return xxeBuilder_.getMessageOrBuilder();
-      } else {
-        return xxe_ == null
-            ? com.google.cloud.websecurityscanner.v1.Xxe.getDefaultInstance()
-            : xxe_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. An addon containing information reported for an XXE, if any.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.websecurityscanner.v1.Xxe,
-            com.google.cloud.websecurityscanner.v1.Xxe.Builder,
-            com.google.cloud.websecurityscanner.v1.XxeOrBuilder>
-        getXxeFieldBuilder() {
-      if (xxeBuilder_ == null) {
-        xxeBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.websecurityscanner.v1.Xxe,
-                com.google.cloud.websecurityscanner.v1.Xxe.Builder,
-                com.google.cloud.websecurityscanner.v1.XxeOrBuilder>(
-                getXxe(), getParentForChildren(), isClean());
-        xxe_ = null;
-      }
-      return xxeBuilder_;
     }
 
     @java.lang.Override

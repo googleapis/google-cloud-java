@@ -24,8 +24,11 @@
  * <p>Sample for AutoscalingPolicyServiceClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
  *     AutoscalingPolicyServiceClient.create()) {
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -42,8 +45,11 @@
  * <p>Sample for BatchControllerClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
  *   BatchName name = BatchName.of("[PROJECT]", "[LOCATION]", "[BATCH]");
  *   Batch response = batchControllerClient.getBatch(name);
@@ -58,8 +64,11 @@
  * <p>Sample for ClusterControllerClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
  *   String projectId = "projectId-894832108";
  *   String region = "region-934795532";
@@ -75,8 +84,11 @@
  * <p>Sample for JobControllerClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
  *   String projectId = "projectId-894832108";
  *   String region = "region-934795532";
@@ -92,8 +104,11 @@
  * <p>Sample for WorkflowTemplateServiceClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
  *     WorkflowTemplateServiceClient.create()) {
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");

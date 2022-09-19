@@ -48,8 +48,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
  *     GameServerDeploymentsServiceClient.create()) {
  *   GameServerDeploymentName name =
@@ -89,8 +92,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * GameServerDeploymentsServiceSettings gameServerDeploymentsServiceSettings =
  *     GameServerDeploymentsServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -102,8 +108,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * GameServerDeploymentsServiceSettings gameServerDeploymentsServiceSettings =
  *     GameServerDeploymentsServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
@@ -114,8 +123,11 @@ import javax.annotation.Generated;
  * the wire:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * GameServerDeploymentsServiceSettings gameServerDeploymentsServiceSettings =
  *     GameServerDeploymentsServiceSettings.newBuilder()
  *         .setTransportChannelProvider(
@@ -214,8 +226,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -246,8 +261,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
@@ -275,8 +293,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   ListGameServerDeploymentsRequest request =
@@ -309,8 +330,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   ListGameServerDeploymentsRequest request =
@@ -345,8 +369,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   ListGameServerDeploymentsRequest request =
@@ -385,8 +412,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   GameServerDeploymentName name =
@@ -415,8 +445,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   String name =
@@ -443,8 +476,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   GetGameServerDeploymentRequest request =
@@ -472,8 +508,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   GetGameServerDeploymentRequest request =
@@ -500,8 +539,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -536,8 +578,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
@@ -571,8 +616,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   CreateGameServerDeploymentRequest request =
@@ -601,8 +649,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   CreateGameServerDeploymentRequest request =
@@ -633,8 +684,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   CreateGameServerDeploymentRequest request =
@@ -664,8 +718,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   GameServerDeploymentName name =
@@ -694,8 +751,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   String name =
@@ -722,8 +782,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   DeleteGameServerDeploymentRequest request =
@@ -750,8 +813,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   DeleteGameServerDeploymentRequest request =
@@ -780,8 +846,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   DeleteGameServerDeploymentRequest request =
@@ -810,8 +879,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   GameServerDeployment gameServerDeployment = GameServerDeployment.newBuilder().build();
@@ -848,8 +920,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   UpdateGameServerDeploymentRequest request =
@@ -877,8 +952,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   UpdateGameServerDeploymentRequest request =
@@ -908,8 +986,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   UpdateGameServerDeploymentRequest request =
@@ -938,8 +1019,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   GameServerDeploymentName name =
@@ -969,8 +1053,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   String name =
@@ -997,8 +1084,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   GetGameServerDeploymentRolloutRequest request =
@@ -1026,8 +1116,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   GetGameServerDeploymentRolloutRequest request =
@@ -1060,8 +1153,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   GameServerDeploymentRollout rollout = GameServerDeploymentRollout.newBuilder().build();
@@ -1102,8 +1198,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   UpdateGameServerDeploymentRolloutRequest request =
@@ -1135,8 +1234,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   UpdateGameServerDeploymentRolloutRequest request =
@@ -1170,8 +1272,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   UpdateGameServerDeploymentRolloutRequest request =
@@ -1200,8 +1305,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   PreviewGameServerDeploymentRolloutRequest request =
@@ -1230,8 +1338,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   PreviewGameServerDeploymentRolloutRequest request =
@@ -1264,8 +1375,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   FetchDeploymentStateRequest request =
@@ -1292,8 +1406,11 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   FetchDeploymentStateRequest request =

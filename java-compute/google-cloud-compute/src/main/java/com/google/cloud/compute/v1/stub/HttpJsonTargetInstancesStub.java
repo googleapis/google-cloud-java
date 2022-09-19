@@ -243,7 +243,8 @@ public class HttpJsonTargetInstancesStub extends TargetInstancesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "targetInstanceResource",
-                                      request.getTargetInstanceResource()))
+                                      request.getTargetInstanceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

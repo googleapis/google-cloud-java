@@ -203,7 +203,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("instance", request.getInstance()))
+                                  .toBody("instance", request.getInstance(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -243,7 +243,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -283,7 +283,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -322,7 +322,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -360,7 +360,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearInstance().build()))
+                              .toBody("*", request.toBuilder().clearInstance().build(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -468,7 +468,8 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("volume", request.getVolume()))
+                              ProtoRestSerializer.create()
+                                  .toBody("volume", request.getVolume(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -507,7 +508,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearVolume().build()))
+                                  .toBody("*", request.toBuilder().clearVolume().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -650,7 +651,8 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("network", request.getNetwork()))
+                              ProtoRestSerializer.create()
+                                  .toBody("network", request.getNetwork(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -829,7 +831,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("nfsShare", request.getNfsShare()))
+                                  .toBody("nfsShare", request.getNfsShare(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

@@ -42,8 +42,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
  *   CreateJobRequest request =
  *       CreateJobRequest.newBuilder()
@@ -86,8 +89,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * JobsV1Beta3Settings jobsV1Beta3Settings =
  *     JobsV1Beta3Settings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -98,8 +104,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * JobsV1Beta3Settings jobsV1Beta3Settings =
  *     JobsV1Beta3Settings.newBuilder().setEndpoint(myEndpoint).build();
  * JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create(jobsV1Beta3Settings);
@@ -109,8 +118,11 @@ import javax.annotation.Generated;
  * the wire:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * JobsV1Beta3Settings jobsV1Beta3Settings =
  *     JobsV1Beta3Settings.newBuilder()
  *         .setTransportChannelProvider(
@@ -182,8 +194,11 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   CreateJobRequest request =
    *       CreateJobRequest.newBuilder()
@@ -215,8 +230,11 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   CreateJobRequest request =
    *       CreateJobRequest.newBuilder()
@@ -248,8 +266,11 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   GetJobRequest request =
    *       GetJobRequest.newBuilder()
@@ -281,8 +302,11 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   GetJobRequest request =
    *       GetJobRequest.newBuilder()
@@ -314,8 +338,11 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   UpdateJobRequest request =
    *       UpdateJobRequest.newBuilder()
@@ -348,8 +375,11 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   UpdateJobRequest request =
    *       UpdateJobRequest.newBuilder()
@@ -381,8 +411,11 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
@@ -418,8 +451,11 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
@@ -454,8 +490,11 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
@@ -491,8 +530,11 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
@@ -522,8 +564,11 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
@@ -554,8 +599,11 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
@@ -591,8 +639,11 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   CheckActiveJobsRequest request =
    *       CheckActiveJobsRequest.newBuilder().setProjectId("projectId-894832108").build();
@@ -614,8 +665,11 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   CheckActiveJobsRequest request =
    *       CheckActiveJobsRequest.newBuilder().setProjectId("projectId-894832108").build();
@@ -638,8 +692,11 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   SnapshotJobRequest request =
    *       SnapshotJobRequest.newBuilder()
@@ -668,8 +725,11 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   SnapshotJobRequest request =
    *       SnapshotJobRequest.newBuilder()

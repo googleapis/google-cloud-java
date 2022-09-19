@@ -54,8 +54,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
  *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
  *   Occurrence response = grafeasClient.getOccurrence(name);
@@ -91,8 +94,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * GrafeasSettings grafeasSettings =
  *     GrafeasSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -103,8 +109,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * GrafeasSettings grafeasSettings = GrafeasSettings.newBuilder().setEndpoint(myEndpoint).build();
  * GrafeasClient grafeasClient = GrafeasClient.create(grafeasSettings);
  * }</pre>
@@ -166,8 +175,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
    *   Occurrence response = grafeasClient.getOccurrence(name);
@@ -191,8 +203,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   String name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]").toString();
    *   Occurrence response = grafeasClient.getOccurrence(name);
@@ -215,8 +230,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   GetOccurrenceRequest request =
    *       GetOccurrenceRequest.newBuilder()
@@ -240,8 +258,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   GetOccurrenceRequest request =
    *       GetOccurrenceRequest.newBuilder()
@@ -264,8 +285,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String filter = "filter-1274492040";
@@ -296,8 +320,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
    *   String filter = "filter-1274492040";
@@ -325,8 +352,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   ListOccurrencesRequest request =
    *       ListOccurrencesRequest.newBuilder()
@@ -355,8 +385,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   ListOccurrencesRequest request =
    *       ListOccurrencesRequest.newBuilder()
@@ -386,8 +419,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   ListOccurrencesRequest request =
    *       ListOccurrencesRequest.newBuilder()
@@ -424,8 +460,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
    *   grafeasClient.deleteOccurrence(name);
@@ -450,8 +489,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   String name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]").toString();
    *   grafeasClient.deleteOccurrence(name);
@@ -475,8 +517,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   DeleteOccurrenceRequest request =
    *       DeleteOccurrenceRequest.newBuilder()
@@ -501,8 +546,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   DeleteOccurrenceRequest request =
    *       DeleteOccurrenceRequest.newBuilder()
@@ -525,8 +573,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   Occurrence occurrence = Occurrence.newBuilder().build();
@@ -555,8 +606,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
    *   Occurrence occurrence = Occurrence.newBuilder().build();
@@ -582,8 +636,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   CreateOccurrenceRequest request =
    *       CreateOccurrenceRequest.newBuilder()
@@ -608,8 +665,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   CreateOccurrenceRequest request =
    *       CreateOccurrenceRequest.newBuilder()
@@ -633,8 +693,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   List<Occurrence> occurrences = new ArrayList<>();
@@ -665,8 +728,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
    *   List<Occurrence> occurrences = new ArrayList<>();
@@ -697,8 +763,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   BatchCreateOccurrencesRequest request =
    *       BatchCreateOccurrencesRequest.newBuilder()
@@ -724,8 +793,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   BatchCreateOccurrencesRequest request =
    *       BatchCreateOccurrencesRequest.newBuilder()
@@ -751,8 +823,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
    *   Occurrence occurrence = Occurrence.newBuilder().build();
@@ -785,8 +860,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   String name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]").toString();
    *   Occurrence occurrence = Occurrence.newBuilder().build();
@@ -819,8 +897,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   UpdateOccurrenceRequest request =
    *       UpdateOccurrenceRequest.newBuilder()
@@ -846,8 +927,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   UpdateOccurrenceRequest request =
    *       UpdateOccurrenceRequest.newBuilder()
@@ -873,8 +957,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
    *   Note response = grafeasClient.getOccurrenceNote(name);
@@ -901,8 +988,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   String name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]").toString();
    *   Note response = grafeasClient.getOccurrenceNote(name);
@@ -926,8 +1016,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   GetOccurrenceNoteRequest request =
    *       GetOccurrenceNoteRequest.newBuilder()
@@ -952,8 +1045,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   GetOccurrenceNoteRequest request =
    *       GetOccurrenceNoteRequest.newBuilder()
@@ -976,8 +1072,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
    *   Note response = grafeasClient.getNote(name);
@@ -1000,8 +1099,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   String name = NoteName.of("[PROJECT]", "[NOTE]").toString();
    *   Note response = grafeasClient.getNote(name);
@@ -1023,8 +1125,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   GetNoteRequest request =
    *       GetNoteRequest.newBuilder()
@@ -1048,8 +1153,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   GetNoteRequest request =
    *       GetNoteRequest.newBuilder()
@@ -1072,8 +1180,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String filter = "filter-1274492040";
@@ -1103,8 +1214,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
    *   String filter = "filter-1274492040";
@@ -1131,8 +1245,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   ListNotesRequest request =
    *       ListNotesRequest.newBuilder()
@@ -1161,8 +1278,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   ListNotesRequest request =
    *       ListNotesRequest.newBuilder()
@@ -1190,8 +1310,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   ListNotesRequest request =
    *       ListNotesRequest.newBuilder()
@@ -1226,8 +1349,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
    *   grafeasClient.deleteNote(name);
@@ -1250,8 +1376,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   String name = NoteName.of("[PROJECT]", "[NOTE]").toString();
    *   grafeasClient.deleteNote(name);
@@ -1273,8 +1402,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   DeleteNoteRequest request =
    *       DeleteNoteRequest.newBuilder()
@@ -1298,8 +1430,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   DeleteNoteRequest request =
    *       DeleteNoteRequest.newBuilder()
@@ -1322,8 +1457,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String noteId = "noteId-1039694675";
@@ -1355,8 +1493,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
    *   String noteId = "noteId-1039694675";
@@ -1384,8 +1525,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   CreateNoteRequest request =
    *       CreateNoteRequest.newBuilder()
@@ -1411,8 +1555,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   CreateNoteRequest request =
    *       CreateNoteRequest.newBuilder()
@@ -1437,8 +1584,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   Map<String, Note> notes = new HashMap<>();
@@ -1468,8 +1618,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
    *   Map<String, Note> notes = new HashMap<>();
@@ -1495,8 +1648,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   BatchCreateNotesRequest request =
    *       BatchCreateNotesRequest.newBuilder()
@@ -1521,8 +1677,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   BatchCreateNotesRequest request =
    *       BatchCreateNotesRequest.newBuilder()
@@ -1548,8 +1707,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
    *   Note note = Note.newBuilder().build();
@@ -1580,8 +1742,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   String name = NoteName.of("[PROJECT]", "[NOTE]").toString();
    *   Note note = Note.newBuilder().build();
@@ -1612,8 +1777,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   UpdateNoteRequest request =
    *       UpdateNoteRequest.newBuilder()
@@ -1639,8 +1807,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   UpdateNoteRequest request =
    *       UpdateNoteRequest.newBuilder()
@@ -1666,8 +1837,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
    *   String filter = "filter-1274492040";
@@ -1699,8 +1873,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   String name = NoteName.of("[PROJECT]", "[NOTE]").toString();
    *   String filter = "filter-1274492040";
@@ -1729,8 +1906,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   ListNoteOccurrencesRequest request =
    *       ListNoteOccurrencesRequest.newBuilder()
@@ -1761,8 +1941,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   ListNoteOccurrencesRequest request =
    *       ListNoteOccurrencesRequest.newBuilder()
@@ -1793,8 +1976,11 @@ public class GrafeasClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
    *   ListNoteOccurrencesRequest request =
    *       ListNoteOccurrencesRequest.newBuilder()

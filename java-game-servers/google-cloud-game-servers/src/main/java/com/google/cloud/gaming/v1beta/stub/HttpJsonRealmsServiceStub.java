@@ -166,7 +166,8 @@ public class HttpJsonRealmsServiceStub extends RealmsServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("realm", request.getRealm()))
+                              ProtoRestSerializer.create()
+                                  .toBody("realm", request.getRealm(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -242,7 +243,8 @@ public class HttpJsonRealmsServiceStub extends RealmsServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("realm", request.getRealm()))
+                              ProtoRestSerializer.create()
+                                  .toBody("realm", request.getRealm(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -284,7 +286,8 @@ public class HttpJsonRealmsServiceStub extends RealmsServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("realm", request.getRealm()))
+                              ProtoRestSerializer.create()
+                                  .toBody("realm", request.getRealm(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PreviewRealmUpdateResponse>newBuilder()

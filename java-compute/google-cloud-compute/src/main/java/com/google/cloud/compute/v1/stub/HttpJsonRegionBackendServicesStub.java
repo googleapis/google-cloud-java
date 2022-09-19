@@ -187,7 +187,8 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "resourceGroupReferenceResource",
-                                      request.getResourceGroupReferenceResource()))
+                                      request.getResourceGroupReferenceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BackendServiceGroupHealth>newBuilder()
@@ -229,7 +230,8 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "backendServiceResource",
-                                      request.getBackendServiceResource()))
+                                      request.getBackendServiceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -339,7 +341,8 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "backendServiceResource",
-                                      request.getBackendServiceResource()))
+                                      request.getBackendServiceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -396,7 +399,8 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "backendServiceResource",
-                                      request.getBackendServiceResource()))
+                                      request.getBackendServiceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

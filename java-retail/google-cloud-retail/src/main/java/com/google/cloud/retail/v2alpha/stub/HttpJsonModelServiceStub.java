@@ -100,7 +100,8 @@ public class HttpJsonModelServiceStub extends ModelServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("model", request.getModel()))
+                              ProtoRestSerializer.create()
+                                  .toBody("model", request.getModel(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -138,7 +139,7 @@ public class HttpJsonModelServiceStub extends ModelServiceStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearName().build()))
+                              .toBody("*", request.toBuilder().clearName().build(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Model>newBuilder()
@@ -173,7 +174,7 @@ public class HttpJsonModelServiceStub extends ModelServiceStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearName().build()))
+                              .toBody("*", request.toBuilder().clearName().build(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Model>newBuilder()
@@ -274,7 +275,8 @@ public class HttpJsonModelServiceStub extends ModelServiceStub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("model", request.getModel()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("model", request.getModel(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Model>newBuilder()
@@ -309,7 +311,7 @@ public class HttpJsonModelServiceStub extends ModelServiceStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearName().build()))
+                              .toBody("*", request.toBuilder().clearName().build(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()

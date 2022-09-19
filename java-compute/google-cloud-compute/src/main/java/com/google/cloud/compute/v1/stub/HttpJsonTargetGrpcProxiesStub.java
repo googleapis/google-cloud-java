@@ -179,7 +179,8 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "targetGrpcProxyResource",
-                                      request.getTargetGrpcProxyResource()))
+                                      request.getTargetGrpcProxyResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -286,7 +287,8 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "targetGrpcProxyResource",
-                                      request.getTargetGrpcProxyResource()))
+                                      request.getTargetGrpcProxyResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

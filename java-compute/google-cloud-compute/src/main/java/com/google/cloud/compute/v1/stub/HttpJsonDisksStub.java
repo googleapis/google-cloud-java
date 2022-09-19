@@ -108,7 +108,8 @@ public class HttpJsonDisksStub extends DisksStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "disksAddResourcePoliciesRequestResource",
-                                      request.getDisksAddResourcePoliciesRequestResource()))
+                                      request.getDisksAddResourcePoliciesRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -222,7 +223,7 @@ public class HttpJsonDisksStub extends DisksStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("snapshotResource", request.getSnapshotResource()))
+                                  .toBody("snapshotResource", request.getSnapshotResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -402,7 +403,7 @@ public class HttpJsonDisksStub extends DisksStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("diskResource", request.getDiskResource()))
+                              .toBody("diskResource", request.getDiskResource(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -507,7 +508,8 @@ public class HttpJsonDisksStub extends DisksStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "disksRemoveResourcePoliciesRequestResource",
-                                      request.getDisksRemoveResourcePoliciesRequestResource()))
+                                      request.getDisksRemoveResourcePoliciesRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -562,7 +564,8 @@ public class HttpJsonDisksStub extends DisksStub {
                           ProtoRestSerializer.create()
                               .toBody(
                                   "disksResizeRequestResource",
-                                  request.getDisksResizeRequestResource()))
+                                  request.getDisksResizeRequestResource(),
+                                  false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -615,7 +618,8 @@ public class HttpJsonDisksStub extends DisksStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "zoneSetPolicyRequestResource",
-                                      request.getZoneSetPolicyRequestResource()))
+                                      request.getZoneSetPolicyRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -658,7 +662,8 @@ public class HttpJsonDisksStub extends DisksStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "zoneSetLabelsRequestResource",
-                                      request.getZoneSetLabelsRequestResource()))
+                                      request.getZoneSetLabelsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -711,7 +716,8 @@ public class HttpJsonDisksStub extends DisksStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "testPermissionsRequestResource",
-                                      request.getTestPermissionsRequestResource()))
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()

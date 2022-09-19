@@ -168,7 +168,7 @@ public class HttpJsonKnowledgeBasesStub extends KnowledgeBasesStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("knowledgeBase", request.getKnowledgeBase()))
+                                  .toBody("knowledgeBase", request.getKnowledgeBase(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<KnowledgeBase>newBuilder()
@@ -246,7 +246,7 @@ public class HttpJsonKnowledgeBasesStub extends KnowledgeBasesStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("knowledgeBase", request.getKnowledgeBase()))
+                                  .toBody("knowledgeBase", request.getKnowledgeBase(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<KnowledgeBase>newBuilder()

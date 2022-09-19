@@ -94,7 +94,8 @@ public class HttpJsonBatchControllerStub extends BatchControllerStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("batch", request.getBatch()))
+                              ProtoRestSerializer.create()
+                                  .toBody("batch", request.getBatch(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

@@ -83,7 +83,7 @@ public class HttpJsonValidationHelperV1Stub extends ValidationHelperV1Stub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearAttestor().build()))
+                                  .toBody("*", request.toBuilder().clearAttestor().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser

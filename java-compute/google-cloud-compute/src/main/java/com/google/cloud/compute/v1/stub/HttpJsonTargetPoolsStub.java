@@ -105,7 +105,8 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "targetPoolsAddHealthCheckRequestResource",
-                                      request.getTargetPoolsAddHealthCheckRequestResource()))
+                                      request.getTargetPoolsAddHealthCheckRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -161,7 +162,8 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "targetPoolsAddInstanceRequestResource",
-                                      request.getTargetPoolsAddInstanceRequestResource()))
+                                      request.getTargetPoolsAddInstanceRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -357,7 +359,8 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "instanceReferenceResource",
-                                      request.getInstanceReferenceResource()))
+                                      request.getInstanceReferenceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TargetPoolInstanceHealth>newBuilder()
@@ -397,7 +400,8 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("targetPoolResource", request.getTargetPoolResource()))
+                                  .toBody(
+                                      "targetPoolResource", request.getTargetPoolResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -506,7 +510,8 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "targetPoolsRemoveHealthCheckRequestResource",
-                                      request.getTargetPoolsRemoveHealthCheckRequestResource()))
+                                      request.getTargetPoolsRemoveHealthCheckRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -562,7 +567,8 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "targetPoolsRemoveInstanceRequestResource",
-                                      request.getTargetPoolsRemoveInstanceRequestResource()))
+                                      request.getTargetPoolsRemoveInstanceRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -622,7 +628,8 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "targetReferenceResource",
-                                      request.getTargetReferenceResource()))
+                                      request.getTargetReferenceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

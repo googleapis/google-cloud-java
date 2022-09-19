@@ -87,7 +87,7 @@ public class HttpJsonSessionsStub extends SessionsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearSession().build()))
+                                  .toBody("*", request.toBuilder().clearSession().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<DetectIntentResponse>newBuilder()

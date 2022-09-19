@@ -183,7 +183,8 @@ public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServ
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "healthCheckServiceResource",
-                                      request.getHealthCheckServiceResource()))
+                                      request.getHealthCheckServiceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -295,7 +296,8 @@ public class HttpJsonRegionHealthCheckServicesStub extends RegionHealthCheckServ
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "healthCheckServiceResource",
-                                      request.getHealthCheckServiceResource()))
+                                      request.getHealthCheckServiceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

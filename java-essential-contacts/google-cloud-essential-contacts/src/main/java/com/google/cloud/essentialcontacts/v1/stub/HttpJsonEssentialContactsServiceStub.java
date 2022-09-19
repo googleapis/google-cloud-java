@@ -92,7 +92,8 @@ public class HttpJsonEssentialContactsServiceStub extends EssentialContactsServi
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("contact", request.getContact()))
+                              ProtoRestSerializer.create()
+                                  .toBody("contact", request.getContact(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Contact>newBuilder()
@@ -133,7 +134,8 @@ public class HttpJsonEssentialContactsServiceStub extends EssentialContactsServi
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("contact", request.getContact()))
+                              ProtoRestSerializer.create()
+                                  .toBody("contact", request.getContact(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Contact>newBuilder()
@@ -327,7 +329,7 @@ public class HttpJsonEssentialContactsServiceStub extends EssentialContactsServi
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()

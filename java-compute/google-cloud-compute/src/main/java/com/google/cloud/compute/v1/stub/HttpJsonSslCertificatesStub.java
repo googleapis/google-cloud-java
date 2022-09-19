@@ -239,7 +239,8 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "sslCertificateResource",
-                                      request.getSslCertificateResource()))
+                                      request.getSslCertificateResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

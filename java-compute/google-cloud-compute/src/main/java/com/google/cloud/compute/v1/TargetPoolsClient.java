@@ -44,8 +44,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
  *   String project = "project-309310695";
  *   String region = "region-934795532";
@@ -83,8 +86,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * TargetPoolsSettings targetPoolsSettings =
  *     TargetPoolsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -95,8 +101,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * TargetPoolsSettings targetPoolsSettings =
  *     TargetPoolsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * TargetPoolsClient targetPoolsClient = TargetPoolsClient.create(targetPoolsSettings);
@@ -160,8 +169,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -204,8 +216,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   AddHealthCheckTargetPoolRequest request =
    *       AddHealthCheckTargetPoolRequest.newBuilder()
@@ -237,8 +252,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   AddHealthCheckTargetPoolRequest request =
    *       AddHealthCheckTargetPoolRequest.newBuilder()
@@ -268,8 +286,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   AddHealthCheckTargetPoolRequest request =
    *       AddHealthCheckTargetPoolRequest.newBuilder()
@@ -297,8 +318,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -340,8 +364,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   AddInstanceTargetPoolRequest request =
    *       AddInstanceTargetPoolRequest.newBuilder()
@@ -373,8 +400,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   AddInstanceTargetPoolRequest request =
    *       AddInstanceTargetPoolRequest.newBuilder()
@@ -404,8 +434,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   AddInstanceTargetPoolRequest request =
    *       AddInstanceTargetPoolRequest.newBuilder()
@@ -433,8 +466,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, TargetPoolsScopedList> element :
@@ -460,8 +496,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   AggregatedListTargetPoolsRequest request =
    *       AggregatedListTargetPoolsRequest.newBuilder()
@@ -495,8 +534,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   AggregatedListTargetPoolsRequest request =
    *       AggregatedListTargetPoolsRequest.newBuilder()
@@ -529,8 +571,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   AggregatedListTargetPoolsRequest request =
    *       AggregatedListTargetPoolsRequest.newBuilder()
@@ -570,8 +615,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -603,8 +651,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   DeleteTargetPoolRequest request =
    *       DeleteTargetPoolRequest.newBuilder()
@@ -633,8 +684,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   DeleteTargetPoolRequest request =
    *       DeleteTargetPoolRequest.newBuilder()
@@ -662,8 +716,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   DeleteTargetPoolRequest request =
    *       DeleteTargetPoolRequest.newBuilder()
@@ -690,8 +747,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -723,8 +783,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   GetTargetPoolRequest request =
    *       GetTargetPoolRequest.newBuilder()
@@ -751,8 +814,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   GetTargetPoolRequest request =
    *       GetTargetPoolRequest.newBuilder()
@@ -778,8 +844,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -819,8 +888,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   GetHealthTargetPoolRequest request =
    *       GetHealthTargetPoolRequest.newBuilder()
@@ -848,8 +920,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   GetHealthTargetPoolRequest request =
    *       GetHealthTargetPoolRequest.newBuilder()
@@ -878,8 +953,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -912,8 +990,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   InsertTargetPoolRequest request =
    *       InsertTargetPoolRequest.newBuilder()
@@ -943,8 +1024,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   InsertTargetPoolRequest request =
    *       InsertTargetPoolRequest.newBuilder()
@@ -973,8 +1057,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   InsertTargetPoolRequest request =
    *       InsertTargetPoolRequest.newBuilder()
@@ -1000,8 +1087,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -1028,8 +1118,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   ListTargetPoolsRequest request =
    *       ListTargetPoolsRequest.newBuilder()
@@ -1061,8 +1154,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   ListTargetPoolsRequest request =
    *       ListTargetPoolsRequest.newBuilder()
@@ -1093,8 +1189,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   ListTargetPoolsRequest request =
    *       ListTargetPoolsRequest.newBuilder()
@@ -1132,8 +1231,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -1177,8 +1279,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   RemoveHealthCheckTargetPoolRequest request =
    *       RemoveHealthCheckTargetPoolRequest.newBuilder()
@@ -1210,8 +1315,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   RemoveHealthCheckTargetPoolRequest request =
    *       RemoveHealthCheckTargetPoolRequest.newBuilder()
@@ -1241,8 +1349,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   RemoveHealthCheckTargetPoolRequest request =
    *       RemoveHealthCheckTargetPoolRequest.newBuilder()
@@ -1272,8 +1383,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -1316,8 +1430,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   RemoveInstanceTargetPoolRequest request =
    *       RemoveInstanceTargetPoolRequest.newBuilder()
@@ -1349,8 +1466,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   RemoveInstanceTargetPoolRequest request =
    *       RemoveInstanceTargetPoolRequest.newBuilder()
@@ -1380,8 +1500,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   RemoveInstanceTargetPoolRequest request =
    *       RemoveInstanceTargetPoolRequest.newBuilder()
@@ -1409,8 +1532,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -1448,8 +1574,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   SetBackupTargetPoolRequest request =
    *       SetBackupTargetPoolRequest.newBuilder()
@@ -1481,8 +1610,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   SetBackupTargetPoolRequest request =
    *       SetBackupTargetPoolRequest.newBuilder()
@@ -1512,8 +1644,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   SetBackupTargetPoolRequest request =
    *       SetBackupTargetPoolRequest.newBuilder()

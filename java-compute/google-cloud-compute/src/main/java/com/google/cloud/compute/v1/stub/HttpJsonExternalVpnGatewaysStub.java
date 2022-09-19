@@ -181,7 +181,8 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "externalVpnGatewayResource",
-                                      request.getExternalVpnGatewayResource()))
+                                      request.getExternalVpnGatewayResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -284,7 +285,8 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "globalSetLabelsRequestResource",
-                                      request.getGlobalSetLabelsRequestResource()))
+                                      request.getGlobalSetLabelsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -338,7 +340,8 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "testPermissionsRequestResource",
-                                      request.getTestPermissionsRequestResource()))
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()

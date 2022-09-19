@@ -77,7 +77,7 @@ public class HttpJsonEventServiceStub extends EventServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("clientEvent", request.getClientEvent()))
+                                  .toBody("clientEvent", request.getClientEvent(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ClientEvent>newBuilder()

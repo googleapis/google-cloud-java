@@ -183,7 +183,7 @@ public class HttpJsonEntityTypesStub extends EntityTypesStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("entityType", request.getEntityType()))
+                                  .toBody("entityType", request.getEntityType(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<EntityType>newBuilder()
@@ -225,7 +225,7 @@ public class HttpJsonEntityTypesStub extends EntityTypesStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("entityType", request.getEntityType()))
+                                  .toBody("entityType", request.getEntityType(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<EntityType>newBuilder()
@@ -297,7 +297,7 @@ public class HttpJsonEntityTypesStub extends EntityTypesStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -338,7 +338,7 @@ public class HttpJsonEntityTypesStub extends EntityTypesStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -379,7 +379,7 @@ public class HttpJsonEntityTypesStub extends EntityTypesStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -420,7 +420,7 @@ public class HttpJsonEntityTypesStub extends EntityTypesStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -461,7 +461,7 @@ public class HttpJsonEntityTypesStub extends EntityTypesStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

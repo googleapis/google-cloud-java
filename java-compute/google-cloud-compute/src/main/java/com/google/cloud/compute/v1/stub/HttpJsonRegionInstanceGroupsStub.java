@@ -207,8 +207,8 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "regionInstanceGroupsListInstancesRequestResource",
-                                      request
-                                          .getRegionInstanceGroupsListInstancesRequestResource()))
+                                      request.getRegionInstanceGroupsListInstancesRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RegionInstanceGroupsListInstances>newBuilder()
@@ -252,8 +252,8 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "regionInstanceGroupsSetNamedPortsRequestResource",
-                                      request
-                                          .getRegionInstanceGroupsSetNamedPortsRequestResource()))
+                                      request.getRegionInstanceGroupsSetNamedPortsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

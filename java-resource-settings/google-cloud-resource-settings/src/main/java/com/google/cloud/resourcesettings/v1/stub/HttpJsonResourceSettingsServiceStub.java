@@ -160,7 +160,8 @@ public class HttpJsonResourceSettingsServiceStub extends ResourceSettingsService
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("setting", request.getSetting()))
+                              ProtoRestSerializer.create()
+                                  .toBody("setting", request.getSetting(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Setting>newBuilder()

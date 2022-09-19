@@ -226,7 +226,9 @@ public class HttpJsonMachineImagesStub extends MachineImagesStub {
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "machineImageResource", request.getMachineImageResource()))
+                                      "machineImageResource",
+                                      request.getMachineImageResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -329,7 +331,8 @@ public class HttpJsonMachineImagesStub extends MachineImagesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "globalSetPolicyRequestResource",
-                                      request.getGlobalSetPolicyRequestResource()))
+                                      request.getGlobalSetPolicyRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -370,7 +373,8 @@ public class HttpJsonMachineImagesStub extends MachineImagesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "testPermissionsRequestResource",
-                                      request.getTestPermissionsRequestResource()))
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()

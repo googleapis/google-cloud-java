@@ -183,7 +183,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("environment", request.getEnvironment()))
+                                  .toBody("environment", request.getEnvironment(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -224,7 +224,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("environment", request.getEnvironment()))
+                                  .toBody("environment", request.getEnvironment(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -335,7 +335,8 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearEnvironment().build()))
+                                  .toBody(
+                                      "*", request.toBuilder().clearEnvironment().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -413,7 +414,8 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearEnvironment().build()))
+                                  .toBody(
+                                      "*", request.toBuilder().clearEnvironment().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

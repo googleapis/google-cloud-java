@@ -250,7 +250,8 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "publicDelegatedPrefixResource",
-                                      request.getPublicDelegatedPrefixResource()))
+                                      request.getPublicDelegatedPrefixResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -364,7 +365,8 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "publicDelegatedPrefixResource",
-                                      request.getPublicDelegatedPrefixResource()))
+                                      request.getPublicDelegatedPrefixResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

@@ -89,7 +89,7 @@ public class HttpJsonSessionsStub extends SessionsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearSession().build()))
+                                  .toBody("*", request.toBuilder().clearSession().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<DetectIntentResponse>newBuilder()
@@ -127,7 +127,7 @@ public class HttpJsonSessionsStub extends SessionsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearSession().build()))
+                                  .toBody("*", request.toBuilder().clearSession().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<MatchIntentResponse>newBuilder()
@@ -167,7 +167,8 @@ public class HttpJsonSessionsStub extends SessionsStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("*", request.toBuilder().build()))
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<FulfillIntentResponse>newBuilder()

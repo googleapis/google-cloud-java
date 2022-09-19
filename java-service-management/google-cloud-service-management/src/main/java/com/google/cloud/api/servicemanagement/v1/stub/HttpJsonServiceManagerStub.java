@@ -184,7 +184,8 @@ public class HttpJsonServiceManagerStub extends ServiceManagerStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("service", request.getService()))
+                              ProtoRestSerializer.create()
+                                  .toBody("service", request.getService(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -373,7 +374,7 @@ public class HttpJsonServiceManagerStub extends ServiceManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("serviceConfig", request.getServiceConfig()))
+                                  .toBody("serviceConfig", request.getServiceConfig(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Service>newBuilder()
@@ -411,7 +412,8 @@ public class HttpJsonServiceManagerStub extends ServiceManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearServiceName().build()))
+                                  .toBody(
+                                      "*", request.toBuilder().clearServiceName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -524,7 +526,8 @@ public class HttpJsonServiceManagerStub extends ServiceManagerStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("rollout", request.getRollout()))
+                              ProtoRestSerializer.create()
+                                  .toBody("rollout", request.getRollout(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -564,7 +567,8 @@ public class HttpJsonServiceManagerStub extends ServiceManagerStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("*", request.toBuilder().build()))
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<GenerateConfigReportResponse>newBuilder()

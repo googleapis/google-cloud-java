@@ -107,7 +107,8 @@ public class HttpJsonFlowsStub extends FlowsStub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("flow", request.getFlow()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("flow", request.getFlow(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Flow>newBuilder()
@@ -245,7 +246,8 @@ public class HttpJsonFlowsStub extends FlowsStub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("flow", request.getFlow()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("flow", request.getFlow(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Flow>newBuilder()
@@ -280,7 +282,7 @@ public class HttpJsonFlowsStub extends FlowsStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearName().build()))
+                              .toBody("*", request.toBuilder().clearName().build(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -319,7 +321,7 @@ public class HttpJsonFlowsStub extends FlowsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<FlowValidationResult>newBuilder()
@@ -390,7 +392,7 @@ public class HttpJsonFlowsStub extends FlowsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -429,7 +431,7 @@ public class HttpJsonFlowsStub extends FlowsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

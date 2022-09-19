@@ -111,7 +111,8 @@ public class HttpJsonTextToSpeechStub extends TextToSpeechStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("*", request.toBuilder().build()))
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SynthesizeSpeechResponse>newBuilder()

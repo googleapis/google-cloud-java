@@ -182,7 +182,8 @@ public class HttpJsonRegionSslCertificatesStub extends RegionSslCertificatesStub
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "sslCertificateResource",
-                                      request.getSslCertificateResource()))
+                                      request.getSslCertificateResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

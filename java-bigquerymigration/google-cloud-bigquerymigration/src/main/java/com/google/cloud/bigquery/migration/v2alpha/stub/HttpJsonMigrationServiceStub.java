@@ -91,7 +91,8 @@ public class HttpJsonMigrationServiceStub extends MigrationServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("migrationWorkflow", request.getMigrationWorkflow()))
+                                  .toBody(
+                                      "migrationWorkflow", request.getMigrationWorkflow(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<MigrationWorkflow>newBuilder()
@@ -236,7 +237,7 @@ public class HttpJsonMigrationServiceStub extends MigrationServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()

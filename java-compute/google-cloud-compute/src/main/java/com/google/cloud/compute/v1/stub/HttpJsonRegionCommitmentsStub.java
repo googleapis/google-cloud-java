@@ -188,7 +188,8 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("commitmentResource", request.getCommitmentResource()))
+                                  .toBody(
+                                      "commitmentResource", request.getCommitmentResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -302,7 +303,8 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("commitmentResource", request.getCommitmentResource()))
+                                  .toBody(
+                                      "commitmentResource", request.getCommitmentResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

@@ -107,7 +107,10 @@ public class HttpJsonConversationDatasetsStub extends ConversationDatasetsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("conversationDataset", request.getConversationDataset()))
+                                  .toBody(
+                                      "conversationDataset",
+                                      request.getConversationDataset(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -262,7 +265,7 @@ public class HttpJsonConversationDatasetsStub extends ConversationDatasetsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

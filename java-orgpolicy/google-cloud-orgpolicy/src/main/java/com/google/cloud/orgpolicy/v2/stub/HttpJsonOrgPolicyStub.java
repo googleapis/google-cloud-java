@@ -237,7 +237,8 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("policy", request.getPolicy()))
+                              ProtoRestSerializer.create()
+                                  .toBody("policy", request.getPolicy(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -276,7 +277,8 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("policy", request.getPolicy()))
+                              ProtoRestSerializer.create()
+                                  .toBody("policy", request.getPolicy(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()

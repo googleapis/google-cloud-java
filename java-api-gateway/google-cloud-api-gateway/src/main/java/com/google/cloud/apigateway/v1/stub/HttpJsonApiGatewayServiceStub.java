@@ -182,7 +182,8 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("gateway", request.getGateway()))
+                              ProtoRestSerializer.create()
+                                  .toBody("gateway", request.getGateway(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -222,7 +223,8 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("gateway", request.getGateway()))
+                              ProtoRestSerializer.create()
+                                  .toBody("gateway", request.getGateway(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -364,7 +366,8 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("api", request.getApi()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("api", request.getApi(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -401,7 +404,8 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("api", request.getApi()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("api", request.getApi(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -548,7 +552,7 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("apiConfig", request.getApiConfig()))
+                                  .toBody("apiConfig", request.getApiConfig(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -589,7 +593,7 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("apiConfig", request.getApiConfig()))
+                                  .toBody("apiConfig", request.getApiConfig(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

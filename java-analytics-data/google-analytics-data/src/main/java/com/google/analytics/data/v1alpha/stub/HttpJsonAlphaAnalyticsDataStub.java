@@ -77,7 +77,7 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearProperty().build()))
+                                  .toBody("*", request.toBuilder().clearProperty().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RunFunnelReportResponse>newBuilder()

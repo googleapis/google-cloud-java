@@ -160,7 +160,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("conversation", request.getConversation()))
+                                  .toBody("conversation", request.getConversation(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Conversation>newBuilder()
@@ -199,7 +199,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("conversation", request.getConversation()))
+                                  .toBody("conversation", request.getConversation(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Conversation>newBuilder()
@@ -344,7 +344,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("analysis", request.getAnalysis()))
+                                  .toBody("analysis", request.getAnalysis(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -489,7 +489,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -529,7 +529,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("issueModel", request.getIssueModel()))
+                                  .toBody("issueModel", request.getIssueModel(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -571,7 +571,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("issueModel", request.getIssueModel()))
+                                  .toBody("issueModel", request.getIssueModel(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<IssueModel>newBuilder()
@@ -713,7 +713,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -753,7 +753,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -857,7 +857,8 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("issue", request.getIssue()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("issue", request.getIssue(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Issue>newBuilder()
@@ -930,7 +931,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("phraseMatcher", request.getPhraseMatcher()))
+                                  .toBody("phraseMatcher", request.getPhraseMatcher(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PhraseMatcher>newBuilder()
@@ -1074,7 +1075,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("phraseMatcher", request.getPhraseMatcher()))
+                                  .toBody("phraseMatcher", request.getPhraseMatcher(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PhraseMatcher>newBuilder()
@@ -1182,7 +1183,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("settings", request.getSettings()))
+                                  .toBody("settings", request.getSettings(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Settings>newBuilder()
@@ -1216,7 +1217,8 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("view", request.getView()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("view", request.getView(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<View>newBuilder()
@@ -1319,7 +1321,8 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("view", request.getView()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("view", request.getView(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<View>newBuilder()

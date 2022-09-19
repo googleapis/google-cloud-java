@@ -169,7 +169,7 @@ public class HttpJsonCloudMemcacheStub extends CloudMemcacheStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("resource", request.getResource()))
+                                  .toBody("resource", request.getResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -210,7 +210,7 @@ public class HttpJsonCloudMemcacheStub extends CloudMemcacheStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("resource", request.getResource()))
+                                  .toBody("resource", request.getResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -249,7 +249,7 @@ public class HttpJsonCloudMemcacheStub extends CloudMemcacheStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -324,7 +324,7 @@ public class HttpJsonCloudMemcacheStub extends CloudMemcacheStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -363,7 +363,7 @@ public class HttpJsonCloudMemcacheStub extends CloudMemcacheStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearInstance().build()))
+                                  .toBody("*", request.toBuilder().clearInstance().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

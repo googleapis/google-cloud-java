@@ -87,7 +87,7 @@ public class HttpJsonDashboardsServiceStub extends DashboardsServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("dashboard", request.getDashboard()))
+                                  .toBody("dashboard", request.getDashboard(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Dashboard>newBuilder()
@@ -227,7 +227,7 @@ public class HttpJsonDashboardsServiceStub extends DashboardsServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("dashboard", request.getDashboard()))
+                                  .toBody("dashboard", request.getDashboard(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Dashboard>newBuilder()

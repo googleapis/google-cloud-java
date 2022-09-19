@@ -245,7 +245,8 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "targetHttpsProxyResource",
-                                      request.getTargetHttpsProxyResource()))
+                                      request.getTargetHttpsProxyResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -352,7 +353,8 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "targetHttpsProxyResource",
-                                      request.getTargetHttpsProxyResource()))
+                                      request.getTargetHttpsProxyResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -409,7 +411,8 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                                   .toBody(
                                       "targetHttpsProxiesSetCertificateMapRequestResource",
                                       request
-                                          .getTargetHttpsProxiesSetCertificateMapRequestResource()))
+                                          .getTargetHttpsProxiesSetCertificateMapRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -464,8 +467,8 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "targetHttpsProxiesSetQuicOverrideRequestResource",
-                                      request
-                                          .getTargetHttpsProxiesSetQuicOverrideRequestResource()))
+                                      request.getTargetHttpsProxiesSetQuicOverrideRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -522,7 +525,8 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                                   .toBody(
                                       "targetHttpsProxiesSetSslCertificatesRequestResource",
                                       request
-                                          .getTargetHttpsProxiesSetSslCertificatesRequestResource()))
+                                          .getTargetHttpsProxiesSetSslCertificatesRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -577,7 +581,8 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "sslPolicyReferenceResource",
-                                      request.getSslPolicyReferenceResource()))
+                                      request.getSslPolicyReferenceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -632,7 +637,8 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "urlMapReferenceResource",
-                                      request.getUrlMapReferenceResource()))
+                                      request.getUrlMapReferenceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

@@ -24,8 +24,11 @@
  * <p>Sample for EnvironmentsClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
  *   String name = "name3373707";
  *   Environment response = environmentsClient.getEnvironment(name);
@@ -39,8 +42,11 @@
  * <p>Sample for ImageVersionsClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ImageVersionsClient imageVersionsClient = ImageVersionsClient.create()) {
  *   String parent = "parent-995424086";
  *   for (ImageVersion element : imageVersionsClient.listImageVersions(parent).iterateAll()) {

@@ -78,7 +78,8 @@ public class HttpJsonQuotaControllerStub extends QuotaControllerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearServiceName().build()))
+                                  .toBody(
+                                      "*", request.toBuilder().clearServiceName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AllocateQuotaResponse>newBuilder()

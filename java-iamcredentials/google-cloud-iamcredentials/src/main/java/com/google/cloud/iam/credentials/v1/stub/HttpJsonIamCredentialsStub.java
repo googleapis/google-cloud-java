@@ -83,7 +83,7 @@ public class HttpJsonIamCredentialsStub extends IamCredentialsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<GenerateAccessTokenResponse>newBuilder()
@@ -119,7 +119,7 @@ public class HttpJsonIamCredentialsStub extends IamCredentialsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<GenerateIdTokenResponse>newBuilder()
@@ -155,7 +155,7 @@ public class HttpJsonIamCredentialsStub extends IamCredentialsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SignBlobResponse>newBuilder()
@@ -191,7 +191,7 @@ public class HttpJsonIamCredentialsStub extends IamCredentialsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SignJwtResponse>newBuilder()

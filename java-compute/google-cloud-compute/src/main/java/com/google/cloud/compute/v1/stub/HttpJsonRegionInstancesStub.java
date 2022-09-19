@@ -87,7 +87,8 @@ public class HttpJsonRegionInstancesStub extends RegionInstancesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "bulkInsertInstanceResourceResource",
-                                      request.getBulkInsertInstanceResourceResource()))
+                                      request.getBulkInsertInstanceResourceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

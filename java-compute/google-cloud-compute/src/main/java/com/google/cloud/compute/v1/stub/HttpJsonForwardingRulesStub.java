@@ -246,7 +246,8 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "forwardingRuleResource",
-                                      request.getForwardingRuleResource()))
+                                      request.getForwardingRuleResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -356,7 +357,8 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "forwardingRuleResource",
-                                      request.getForwardingRuleResource()))
+                                      request.getForwardingRuleResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -412,7 +414,8 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "regionSetLabelsRequestResource",
-                                      request.getRegionSetLabelsRequestResource()))
+                                      request.getRegionSetLabelsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -469,7 +472,8 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "targetReferenceResource",
-                                      request.getTargetReferenceResource()))
+                                      request.getTargetReferenceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

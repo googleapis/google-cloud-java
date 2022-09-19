@@ -107,7 +107,8 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
                                   .toBody(
                                       "globalNetworkEndpointGroupsAttachEndpointsRequestResource",
                                       request
-                                          .getGlobalNetworkEndpointGroupsAttachEndpointsRequestResource()))
+                                          .getGlobalNetworkEndpointGroupsAttachEndpointsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -220,7 +221,8 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
                                   .toBody(
                                       "globalNetworkEndpointGroupsDetachEndpointsRequestResource",
                                       request
-                                          .getGlobalNetworkEndpointGroupsDetachEndpointsRequestResource()))
+                                          .getGlobalNetworkEndpointGroupsDetachEndpointsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -311,7 +313,8 @@ public class HttpJsonGlobalNetworkEndpointGroupsStub extends GlobalNetworkEndpoi
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "networkEndpointGroupResource",
-                                      request.getNetworkEndpointGroupResource()))
+                                      request.getNetworkEndpointGroupResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

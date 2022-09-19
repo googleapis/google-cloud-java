@@ -162,7 +162,8 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("account", request.getAccount()))
+                              ProtoRestSerializer.create()
+                                  .toBody("account", request.getAccount(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BillingAccount>newBuilder()
@@ -197,7 +198,7 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("billingAccount", request.getBillingAccount()))
+                                  .toBody("billingAccount", request.getBillingAccount(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BillingAccount>newBuilder()
@@ -303,7 +304,8 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("projectBillingInfo", request.getProjectBillingInfo()))
+                                  .toBody(
+                                      "projectBillingInfo", request.getProjectBillingInfo(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ProjectBillingInfo>newBuilder()
@@ -373,7 +375,7 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -409,7 +411,7 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()

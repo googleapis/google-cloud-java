@@ -81,7 +81,7 @@ public class HttpJsonRecaptchaEnterpriseServiceV1Beta1Stub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("assessment", request.getAssessment()))
+                                  .toBody("assessment", request.getAssessment(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Assessment>newBuilder()
@@ -118,7 +118,7 @@ public class HttpJsonRecaptchaEnterpriseServiceV1Beta1Stub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AnnotateAssessmentResponse>newBuilder()

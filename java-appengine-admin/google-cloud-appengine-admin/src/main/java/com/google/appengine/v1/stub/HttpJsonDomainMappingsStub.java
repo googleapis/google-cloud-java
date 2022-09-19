@@ -165,7 +165,7 @@ public class HttpJsonDomainMappingsStub extends DomainMappingsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("domainMapping", request.getDomainMapping()))
+                                  .toBody("domainMapping", request.getDomainMapping(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -205,7 +205,7 @@ public class HttpJsonDomainMappingsStub extends DomainMappingsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("domainMapping", request.getDomainMapping()))
+                                  .toBody("domainMapping", request.getDomainMapping(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

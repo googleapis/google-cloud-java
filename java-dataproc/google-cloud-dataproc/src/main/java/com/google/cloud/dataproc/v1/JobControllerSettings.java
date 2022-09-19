@@ -56,16 +56,16 @@ import javax.annotation.Generated;
  * <p>For example, to set the total timeout of submitJob to 30 seconds:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * JobControllerSettings.Builder jobControllerSettingsBuilder = JobControllerSettings.newBuilder();
  * jobControllerSettingsBuilder
  *     .submitJobSettings()
  *     .setRetrySettings(
- *         jobControllerSettingsBuilder
- *             .submitJobSettings()
- *             .getRetrySettings()
- *             .toBuilder()
+ *         jobControllerSettingsBuilder.submitJobSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * JobControllerSettings jobControllerSettings = jobControllerSettingsBuilder.build();

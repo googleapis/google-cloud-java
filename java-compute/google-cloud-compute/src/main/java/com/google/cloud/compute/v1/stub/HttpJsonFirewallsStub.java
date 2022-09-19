@@ -175,7 +175,7 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("firewallResource", request.getFirewallResource()))
+                                  .toBody("firewallResource", request.getFirewallResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -278,7 +278,7 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("firewallResource", request.getFirewallResource()))
+                              .toBody("firewallResource", request.getFirewallResource(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -330,7 +330,7 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("firewallResource", request.getFirewallResource()))
+                                  .toBody("firewallResource", request.getFirewallResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

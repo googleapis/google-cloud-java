@@ -95,7 +95,6 @@ public class WebSecurityScannerClientHttpJsonTest {
             .setSchedule(ScanConfig.Schedule.newBuilder().build())
             .setManagedScan(true)
             .setStaticIpScan(true)
-            .setIgnoreHttpStatusErrors(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -202,7 +201,6 @@ public class WebSecurityScannerClientHttpJsonTest {
             .setSchedule(ScanConfig.Schedule.newBuilder().build())
             .setManagedScan(true)
             .setStaticIpScan(true)
-            .setIgnoreHttpStatusErrors(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -321,7 +319,6 @@ public class WebSecurityScannerClientHttpJsonTest {
             .setSchedule(ScanConfig.Schedule.newBuilder().build())
             .setManagedScan(true)
             .setStaticIpScan(true)
-            .setIgnoreHttpStatusErrors(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -338,7 +335,6 @@ public class WebSecurityScannerClientHttpJsonTest {
                     .setSchedule(ScanConfig.Schedule.newBuilder().build())
                     .setManagedScan(true)
                     .setStaticIpScan(true)
-                    .setIgnoreHttpStatusErrors(true)
                     .build())
             .setUpdateMask(FieldMask.newBuilder().build())
             .build();
@@ -382,7 +378,6 @@ public class WebSecurityScannerClientHttpJsonTest {
                       .setSchedule(ScanConfig.Schedule.newBuilder().build())
                       .setManagedScan(true)
                       .setStaticIpScan(true)
-                      .setIgnoreHttpStatusErrors(true)
                       .build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();
@@ -707,7 +702,6 @@ public class WebSecurityScannerClientHttpJsonTest {
             .setVulnerableHeaders(VulnerableHeaders.newBuilder().build())
             .setVulnerableParameters(VulnerableParameters.newBuilder().build())
             .setXss(Xss.newBuilder().build())
-            .setXxe(Xxe.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

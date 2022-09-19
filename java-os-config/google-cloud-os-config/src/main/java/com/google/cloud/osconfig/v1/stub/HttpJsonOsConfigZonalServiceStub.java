@@ -116,7 +116,8 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("osPolicyAssignment", request.getOsPolicyAssignment()))
+                                  .toBody(
+                                      "osPolicyAssignment", request.getOsPolicyAssignment(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -160,7 +161,8 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("osPolicyAssignment", request.getOsPolicyAssignment()))
+                                  .toBody(
+                                      "osPolicyAssignment", request.getOsPolicyAssignment(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

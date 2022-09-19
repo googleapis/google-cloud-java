@@ -182,7 +182,10 @@ public class HttpJsonConversationProfilesStub extends ConversationProfilesStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("conversationProfile", request.getConversationProfile()))
+                                  .toBody(
+                                      "conversationProfile",
+                                      request.getConversationProfile(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ConversationProfile>newBuilder()
@@ -225,7 +228,10 @@ public class HttpJsonConversationProfilesStub extends ConversationProfilesStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("conversationProfile", request.getConversationProfile()))
+                                  .toBody(
+                                      "conversationProfile",
+                                      request.getConversationProfile(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ConversationProfile>newBuilder()
@@ -302,7 +308,9 @@ public class HttpJsonConversationProfilesStub extends ConversationProfilesStub {
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "*", request.toBuilder().clearConversationProfile().build()))
+                                      "*",
+                                      request.toBuilder().clearConversationProfile().build(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -346,7 +354,9 @@ public class HttpJsonConversationProfilesStub extends ConversationProfilesStub {
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "*", request.toBuilder().clearConversationProfile().build()))
+                                      "*",
+                                      request.toBuilder().clearConversationProfile().build(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

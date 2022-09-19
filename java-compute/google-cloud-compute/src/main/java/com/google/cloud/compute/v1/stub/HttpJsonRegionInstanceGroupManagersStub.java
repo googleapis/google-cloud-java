@@ -122,7 +122,8 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                                   .toBody(
                                       "regionInstanceGroupManagersAbandonInstancesRequestResource",
                                       request
-                                          .getRegionInstanceGroupManagersAbandonInstancesRequestResource()))
+                                          .getRegionInstanceGroupManagersAbandonInstancesRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -184,7 +185,8 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                                   .toBody(
                                       "regionInstanceGroupManagersApplyUpdatesRequestResource",
                                       request
-                                          .getRegionInstanceGroupManagersApplyUpdatesRequestResource()))
+                                          .getRegionInstanceGroupManagersApplyUpdatesRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -247,7 +249,8 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                                   .toBody(
                                       "regionInstanceGroupManagersCreateInstancesRequestResource",
                                       request
-                                          .getRegionInstanceGroupManagersCreateInstancesRequestResource()))
+                                          .getRegionInstanceGroupManagersCreateInstancesRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -362,7 +365,8 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                                   .toBody(
                                       "regionInstanceGroupManagersDeleteInstancesRequestResource",
                                       request
-                                          .getRegionInstanceGroupManagersDeleteInstancesRequestResource()))
+                                          .getRegionInstanceGroupManagersDeleteInstancesRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -424,7 +428,8 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                                   .toBody(
                                       "regionInstanceGroupManagerDeleteInstanceConfigReqResource",
                                       request
-                                          .getRegionInstanceGroupManagerDeleteInstanceConfigReqResource()))
+                                          .getRegionInstanceGroupManagerDeleteInstanceConfigReqResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -518,7 +523,8 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "instanceGroupManagerResource",
-                                      request.getInstanceGroupManagerResource()))
+                                      request.getInstanceGroupManagerResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -825,7 +831,8 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "instanceGroupManagerResource",
-                                      request.getInstanceGroupManagerResource()))
+                                      request.getInstanceGroupManagerResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -889,7 +896,8 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                                   .toBody(
                                       "regionInstanceGroupManagerPatchInstanceConfigReqResource",
                                       request
-                                          .getRegionInstanceGroupManagerPatchInstanceConfigReqResource()))
+                                          .getRegionInstanceGroupManagerPatchInstanceConfigReqResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -952,7 +960,8 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                                   .toBody(
                                       "regionInstanceGroupManagersRecreateRequestResource",
                                       request
-                                          .getRegionInstanceGroupManagersRecreateRequestResource()))
+                                          .getRegionInstanceGroupManagersRecreateRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1070,7 +1079,8 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                                   .toBody(
                                       "regionInstanceGroupManagersSetTemplateRequestResource",
                                       request
-                                          .getRegionInstanceGroupManagersSetTemplateRequestResource()))
+                                          .getRegionInstanceGroupManagersSetTemplateRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1133,7 +1143,8 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                                   .toBody(
                                       "regionInstanceGroupManagersSetTargetPoolsRequestResource",
                                       request
-                                          .getRegionInstanceGroupManagersSetTargetPoolsRequestResource()))
+                                          .getRegionInstanceGroupManagersSetTargetPoolsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1197,7 +1208,8 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                                   .toBody(
                                       "regionInstanceGroupManagerUpdateInstanceConfigReqResource",
                                       request
-                                          .getRegionInstanceGroupManagerUpdateInstanceConfigReqResource()))
+                                          .getRegionInstanceGroupManagerUpdateInstanceConfigReqResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

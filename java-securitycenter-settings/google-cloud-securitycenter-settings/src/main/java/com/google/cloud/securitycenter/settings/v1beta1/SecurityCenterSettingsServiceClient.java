@@ -47,8 +47,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
  *     SecurityCenterSettingsServiceClient.create()) {
  *   ServiceAccountName name = ServiceAccountName.of("[ORGANIZATION]");
@@ -86,8 +89,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * SecurityCenterSettingsServiceSettings securityCenterSettingsServiceSettings =
  *     SecurityCenterSettingsServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -99,8 +105,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * SecurityCenterSettingsServiceSettings securityCenterSettingsServiceSettings =
  *     SecurityCenterSettingsServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
@@ -178,8 +187,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   ServiceAccountName name = ServiceAccountName.of("[ORGANIZATION]");
@@ -213,8 +225,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   String name = ServiceAccountName.of("[ORGANIZATION]").toString();
@@ -245,8 +260,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   GetServiceAccountRequest request =
@@ -278,8 +296,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   GetServiceAccountRequest request =
@@ -304,8 +325,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   SettingsName name = SettingsName.ofOrganizationName("[ORGANIZATION]");
@@ -334,8 +358,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   String name = SettingsName.ofOrganizationName("[ORGANIZATION]").toString();
@@ -363,8 +390,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   GetSettingsRequest request =
@@ -389,8 +419,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   GetSettingsRequest request =
@@ -415,8 +448,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   Settings settings = Settings.newBuilder().build();
@@ -448,8 +484,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   UpdateSettingsRequest request =
@@ -475,8 +514,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   UpdateSettingsRequest request =
@@ -510,8 +552,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   ResetSettingsRequest request =
@@ -545,8 +590,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   ResetSettingsRequest request =
@@ -572,8 +620,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   BatchGetSettingsRequest request =
@@ -600,8 +651,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   BatchGetSettingsRequest request =
@@ -633,8 +687,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   SettingsName name = SettingsName.ofOrganizationName("[ORGANIZATION]");
@@ -670,8 +727,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   String name = SettingsName.ofOrganizationName("[ORGANIZATION]").toString();
@@ -705,8 +765,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   CalculateEffectiveSettingsRequest request =
@@ -736,8 +799,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   CalculateEffectiveSettingsRequest request =
@@ -765,8 +831,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   BatchCalculateEffectiveSettingsRequest request =
@@ -794,8 +863,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   BatchCalculateEffectiveSettingsRequest request =
@@ -825,8 +897,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   ComponentSettingsName name =
@@ -860,8 +935,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   String name =
@@ -894,8 +972,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   GetComponentSettingsRequest request =
@@ -923,8 +1004,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   GetComponentSettingsRequest request =
@@ -952,8 +1036,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   ComponentSettings componentSettings = ComponentSettings.newBuilder().build();
@@ -993,8 +1080,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   UpdateComponentSettingsRequest request =
@@ -1021,8 +1111,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   UpdateComponentSettingsRequest request =
@@ -1052,8 +1145,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   ResetComponentSettingsRequest request =
@@ -1084,8 +1180,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   ResetComponentSettingsRequest request =
@@ -1114,8 +1213,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   ComponentSettingsName name =
@@ -1150,8 +1252,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   String name =
@@ -1185,8 +1290,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   CalculateEffectiveComponentSettingsRequest request =
@@ -1215,8 +1323,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   CalculateEffectiveComponentSettingsRequest request =
@@ -1246,8 +1357,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
@@ -1277,8 +1391,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   String parent = OrganizationName.of("[ORGANIZATION]").toString();
@@ -1305,8 +1422,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   ListDetectorsRequest request =
@@ -1337,8 +1457,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   ListDetectorsRequest request =
@@ -1369,8 +1492,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   ListDetectorsRequest request =
@@ -1407,8 +1533,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
@@ -1438,8 +1567,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   String parent = OrganizationName.of("[ORGANIZATION]").toString();
@@ -1466,8 +1598,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   ListComponentsRequest request =
@@ -1497,8 +1632,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   ListComponentsRequest request =
@@ -1528,8 +1666,11 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
    *     SecurityCenterSettingsServiceClient.create()) {
    *   ListComponentsRequest request =

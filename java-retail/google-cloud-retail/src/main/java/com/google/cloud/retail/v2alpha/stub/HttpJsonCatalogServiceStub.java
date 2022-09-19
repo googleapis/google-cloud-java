@@ -130,7 +130,8 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("catalog", request.getCatalog()))
+                              ProtoRestSerializer.create()
+                                  .toBody("catalog", request.getCatalog(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Catalog>newBuilder()
@@ -166,7 +167,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearCatalog().build()))
+                                  .toBody("*", request.toBuilder().clearCatalog().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -273,7 +274,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("completionConfig", request.getCompletionConfig()))
+                                  .toBody("completionConfig", request.getCompletionConfig(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CompletionConfig>newBuilder()
@@ -347,7 +348,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("attributesConfig", request.getAttributesConfig()))
+                                  .toBody("attributesConfig", request.getAttributesConfig(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AttributesConfig>newBuilder()
@@ -384,7 +385,10 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearAttributesConfig().build()))
+                                  .toBody(
+                                      "*",
+                                      request.toBuilder().clearAttributesConfig().build(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AttributesConfig>newBuilder()
@@ -422,7 +426,10 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearAttributesConfig().build()))
+                                  .toBody(
+                                      "*",
+                                      request.toBuilder().clearAttributesConfig().build(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AttributesConfig>newBuilder()
@@ -460,7 +467,10 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearAttributesConfig().build()))
+                                  .toBody(
+                                      "*",
+                                      request.toBuilder().clearAttributesConfig().build(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AttributesConfig>newBuilder()

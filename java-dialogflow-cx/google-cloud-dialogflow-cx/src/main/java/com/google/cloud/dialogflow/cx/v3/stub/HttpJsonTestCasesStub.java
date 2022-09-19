@@ -159,7 +159,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -228,7 +228,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("testCase", request.getTestCase()))
+                                  .toBody("testCase", request.getTestCase(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestCase>newBuilder()
@@ -266,7 +266,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("testCase", request.getTestCase()))
+                                  .toBody("testCase", request.getTestCase(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestCase>newBuilder()
@@ -302,7 +302,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -341,7 +341,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -414,7 +414,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -453,7 +453,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

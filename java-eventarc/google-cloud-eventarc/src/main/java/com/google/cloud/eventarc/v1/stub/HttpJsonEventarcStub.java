@@ -185,7 +185,8 @@ public class HttpJsonEventarcStub extends EventarcStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("trigger", request.getTrigger()))
+                              ProtoRestSerializer.create()
+                                  .toBody("trigger", request.getTrigger(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -229,7 +230,8 @@ public class HttpJsonEventarcStub extends EventarcStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("trigger", request.getTrigger()))
+                              ProtoRestSerializer.create()
+                                  .toBody("trigger", request.getTrigger(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -379,7 +381,8 @@ public class HttpJsonEventarcStub extends EventarcStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("channel", request.getChannel()))
+                              ProtoRestSerializer.create()
+                                  .toBody("channel", request.getChannel(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -421,7 +424,8 @@ public class HttpJsonEventarcStub extends EventarcStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("channel", request.getChannel()))
+                              ProtoRestSerializer.create()
+                                  .toBody("channel", request.getChannel(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -640,7 +644,8 @@ public class HttpJsonEventarcStub extends EventarcStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("channelConnection", request.getChannelConnection()))
+                                  .toBody(
+                                      "channelConnection", request.getChannelConnection(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

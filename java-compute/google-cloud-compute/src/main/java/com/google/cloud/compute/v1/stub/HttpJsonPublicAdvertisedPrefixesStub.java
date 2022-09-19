@@ -185,7 +185,8 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "publicAdvertisedPrefixResource",
-                                      request.getPublicAdvertisedPrefixResource()))
+                                      request.getPublicAdvertisedPrefixResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -296,7 +297,8 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "publicAdvertisedPrefixResource",
-                                      request.getPublicAdvertisedPrefixResource()))
+                                      request.getPublicAdvertisedPrefixResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

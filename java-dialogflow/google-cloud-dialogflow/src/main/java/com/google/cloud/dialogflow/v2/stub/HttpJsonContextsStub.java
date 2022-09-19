@@ -169,7 +169,8 @@ public class HttpJsonContextsStub extends ContextsStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("context", request.getContext()))
+                              ProtoRestSerializer.create()
+                                  .toBody("context", request.getContext(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Context>newBuilder()
@@ -210,7 +211,8 @@ public class HttpJsonContextsStub extends ContextsStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("context", request.getContext()))
+                              ProtoRestSerializer.create()
+                                  .toBody("context", request.getContext(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Context>newBuilder()

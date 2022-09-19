@@ -120,7 +120,7 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("azureClient", request.getAzureClient()))
+                                  .toBody("azureClient", request.getAzureClient(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -271,7 +271,7 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("azureCluster", request.getAzureCluster()))
+                                  .toBody("azureCluster", request.getAzureCluster(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -314,7 +314,7 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("azureCluster", request.getAzureCluster()))
+                                  .toBody("azureCluster", request.getAzureCluster(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -503,7 +503,7 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("azureNodePool", request.getAzureNodePool()))
+                                  .toBody("azureNodePool", request.getAzureNodePool(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -546,7 +546,7 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("azureNodePool", request.getAzureNodePool()))
+                                  .toBody("azureNodePool", request.getAzureNodePool(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

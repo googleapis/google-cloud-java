@@ -200,7 +200,10 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("authorizationPolicy", request.getAuthorizationPolicy()))
+                                  .toBody(
+                                      "authorizationPolicy",
+                                      request.getAuthorizationPolicy(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -244,7 +247,10 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("authorizationPolicy", request.getAuthorizationPolicy()))
+                                  .toBody(
+                                      "authorizationPolicy",
+                                      request.getAuthorizationPolicy(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -395,7 +401,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("serverTlsPolicy", request.getServerTlsPolicy()))
+                                  .toBody("serverTlsPolicy", request.getServerTlsPolicy(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -439,7 +445,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("serverTlsPolicy", request.getServerTlsPolicy()))
+                                  .toBody("serverTlsPolicy", request.getServerTlsPolicy(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -590,7 +596,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("clientTlsPolicy", request.getClientTlsPolicy()))
+                                  .toBody("clientTlsPolicy", request.getClientTlsPolicy(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -634,7 +640,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("clientTlsPolicy", request.getClientTlsPolicy()))
+                                  .toBody("clientTlsPolicy", request.getClientTlsPolicy(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -779,7 +785,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -854,7 +860,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()

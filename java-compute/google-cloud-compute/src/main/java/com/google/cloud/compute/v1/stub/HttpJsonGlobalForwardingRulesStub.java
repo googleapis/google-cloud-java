@@ -181,7 +181,8 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "forwardingRuleResource",
-                                      request.getForwardingRuleResource()))
+                                      request.getForwardingRuleResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -288,7 +289,8 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "forwardingRuleResource",
-                                      request.getForwardingRuleResource()))
+                                      request.getForwardingRuleResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -339,7 +341,8 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "globalSetLabelsRequestResource",
-                                      request.getGlobalSetLabelsRequestResource()))
+                                      request.getGlobalSetLabelsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -394,7 +397,8 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "targetReferenceResource",
-                                      request.getTargetReferenceResource()))
+                                      request.getTargetReferenceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

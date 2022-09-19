@@ -105,7 +105,8 @@ public class HttpJsonClusterControllerStub extends ClusterControllerStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("cluster", request.getCluster()))
+                              ProtoRestSerializer.create()
+                                  .toBody("cluster", request.getCluster(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -152,7 +153,8 @@ public class HttpJsonClusterControllerStub extends ClusterControllerStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("cluster", request.getCluster()))
+                              ProtoRestSerializer.create()
+                                  .toBody("cluster", request.getCluster(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -201,7 +203,8 @@ public class HttpJsonClusterControllerStub extends ClusterControllerStub {
                                           .clearClusterName()
                                           .clearProjectId()
                                           .clearRegion()
-                                          .build()))
+                                          .build(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -250,7 +253,8 @@ public class HttpJsonClusterControllerStub extends ClusterControllerStub {
                                           .clearClusterName()
                                           .clearProjectId()
                                           .clearRegion()
-                                          .build()))
+                                          .build(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -412,7 +416,8 @@ public class HttpJsonClusterControllerStub extends ClusterControllerStub {
                                           .clearClusterName()
                                           .clearProjectId()
                                           .clearRegion()
-                                          .build()))
+                                          .build(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

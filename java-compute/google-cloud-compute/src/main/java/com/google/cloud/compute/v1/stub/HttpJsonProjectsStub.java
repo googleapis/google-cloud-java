@@ -152,7 +152,8 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "projectsDisableXpnResourceRequestResource",
-                                      request.getProjectsDisableXpnResourceRequestResource()))
+                                      request.getProjectsDisableXpnResourceRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -253,7 +254,8 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "projectsEnableXpnResourceRequestResource",
-                                      request.getProjectsEnableXpnResourceRequestResource()))
+                                      request.getProjectsEnableXpnResourceRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -439,7 +441,8 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "projectsListXpnHostsRequestResource",
-                                      request.getProjectsListXpnHostsRequestResource()))
+                                      request.getProjectsListXpnHostsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<XpnHostList>newBuilder()
@@ -480,7 +483,8 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "diskMoveRequestResource",
-                                      request.getDiskMoveRequestResource()))
+                                      request.getDiskMoveRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -533,7 +537,8 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "instanceMoveRequestResource",
-                                      request.getInstanceMoveRequestResource()))
+                                      request.getInstanceMoveRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -584,7 +589,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("metadataResource", request.getMetadataResource()))
+                                  .toBody("metadataResource", request.getMetadataResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -637,7 +642,8 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "projectsSetDefaultNetworkTierRequestResource",
-                                      request.getProjectsSetDefaultNetworkTierRequestResource()))
+                                      request.getProjectsSetDefaultNetworkTierRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -690,7 +696,8 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "usageExportLocationResource",
-                                      request.getUsageExportLocationResource()))
+                                      request.getUsageExportLocationResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

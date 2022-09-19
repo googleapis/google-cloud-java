@@ -55,8 +55,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
  *     DeploymentResourcePoolServiceClient.create()) {
  *   DeploymentResourcePoolName name =
@@ -96,8 +99,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * DeploymentResourcePoolServiceSettings deploymentResourcePoolServiceSettings =
  *     DeploymentResourcePoolServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -109,8 +115,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * DeploymentResourcePoolServiceSettings deploymentResourcePoolServiceSettings =
  *     DeploymentResourcePoolServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
@@ -192,8 +201,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -238,8 +250,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
@@ -284,8 +299,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   CreateDeploymentResourcePoolRequest request =
@@ -315,8 +333,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   CreateDeploymentResourcePoolRequest request =
@@ -350,8 +371,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   CreateDeploymentResourcePoolRequest request =
@@ -381,8 +405,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   DeploymentResourcePoolName name =
@@ -411,8 +438,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   String name =
@@ -440,8 +470,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   GetDeploymentResourcePoolRequest request =
@@ -471,8 +504,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   GetDeploymentResourcePoolRequest request =
@@ -503,8 +539,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
@@ -535,8 +574,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
@@ -564,8 +606,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   ListDeploymentResourcePoolsRequest request =
@@ -596,8 +641,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   ListDeploymentResourcePoolsRequest request =
@@ -630,8 +678,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   ListDeploymentResourcePoolsRequest request =
@@ -669,8 +720,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   DeploymentResourcePoolName name =
@@ -699,8 +753,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   String name =
@@ -728,8 +785,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   DeleteDeploymentResourcePoolRequest request =
@@ -758,8 +818,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   DeleteDeploymentResourcePoolRequest request =
@@ -791,8 +854,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   DeleteDeploymentResourcePoolRequest request =
@@ -823,8 +889,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   String deploymentResourcePool = "deploymentResourcePool-1928845137";
@@ -857,8 +926,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   QueryDeployedModelsRequest request =
@@ -889,8 +961,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   QueryDeployedModelsRequest request =
@@ -922,8 +997,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   QueryDeployedModelsRequest request =
@@ -960,8 +1038,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   ListLocationsRequest request =
@@ -992,8 +1073,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   ListLocationsRequest request =
@@ -1024,8 +1108,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   ListLocationsRequest request =
@@ -1062,8 +1149,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
@@ -1085,8 +1175,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
@@ -1110,8 +1203,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   SetIamPolicyRequest request =
@@ -1142,8 +1238,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   SetIamPolicyRequest request =
@@ -1173,8 +1272,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   GetIamPolicyRequest request =
@@ -1203,8 +1305,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   GetIamPolicyRequest request =
@@ -1237,8 +1342,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   TestIamPermissionsRequest request =
@@ -1272,8 +1380,11 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
    *     DeploymentResourcePoolServiceClient.create()) {
    *   TestIamPermissionsRequest request =

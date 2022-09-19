@@ -185,7 +185,8 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "targetHttpsProxyResource",
-                                      request.getTargetHttpsProxyResource()))
+                                      request.getTargetHttpsProxyResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -297,7 +298,8 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "targetHttpsProxyResource",
-                                      request.getTargetHttpsProxyResource()))
+                                      request.getTargetHttpsProxyResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -359,7 +361,8 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
                                   .toBody(
                                       "regionTargetHttpsProxiesSetSslCertificatesRequestResource",
                                       request
-                                          .getRegionTargetHttpsProxiesSetSslCertificatesRequestResource()))
+                                          .getRegionTargetHttpsProxiesSetSslCertificatesRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -416,7 +419,8 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "urlMapReferenceResource",
-                                      request.getUrlMapReferenceResource()))
+                                      request.getUrlMapReferenceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

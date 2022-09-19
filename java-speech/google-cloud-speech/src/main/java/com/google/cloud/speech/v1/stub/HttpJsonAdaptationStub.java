@@ -93,7 +93,7 @@ public class HttpJsonAdaptationStub extends AdaptationStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PhraseSet>newBuilder()
@@ -199,7 +199,7 @@ public class HttpJsonAdaptationStub extends AdaptationStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("phraseSet", request.getPhraseSet()))
+                                  .toBody("phraseSet", request.getPhraseSet(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PhraseSet>newBuilder()
@@ -268,7 +268,7 @@ public class HttpJsonAdaptationStub extends AdaptationStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CustomClass>newBuilder()
@@ -374,7 +374,7 @@ public class HttpJsonAdaptationStub extends AdaptationStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("customClass", request.getCustomClass()))
+                                  .toBody("customClass", request.getCustomClass(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CustomClass>newBuilder()
