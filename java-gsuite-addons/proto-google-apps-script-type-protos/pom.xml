@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-gsuite-addons-parent</artifactId>
+    <version>2.3.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-gsuite-addons:current} -->
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.api.grpc</groupId>
+  <artifactId>proto-google-apps-script-type-protos</artifactId>
+  <name>proto-google-apps-script-type-protos</name>
+  <version>2.3.5-SNAPSHOT</version><!-- {x-version-update:proto-google-apps-script-type-protos:current} -->
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-common-protos</artifactId>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>flatten-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
