@@ -57,6 +57,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     muteInitiator_ = "";
     processes_ = java.util.Collections.emptyList();
     compliances_ = java.util.Collections.emptyList();
+    parentDisplayName_ = "";
     description_ = "";
     iamBindings_ = java.util.Collections.emptyList();
     nextSteps_ = "";
@@ -382,6 +383,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
               compliances_.add(
                   input.readMessage(
                       com.google.cloud.securitycenter.v1.Compliance.parser(), extensionRegistry));
+              break;
+            }
+          case 290:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              parentDisplayName_ = s;
               break;
             }
           case 298:
@@ -2360,8 +2368,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external
-   * system information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -2386,8 +2394,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external
-   * system information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -2403,8 +2411,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external
-   * system information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -2425,8 +2433,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external
-   * system information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -2779,9 +2787,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Map containing the point of contacts for the given finding.
-   * The key represents the type of contact, while the value contains a list of
-   * all the contacts that pertain. Please refer to:
+   * Output only. Map containing the points of contact for the given finding. The key
+   * represents the type of contact, while the value contains a list of all the
+   * contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -2819,9 +2827,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Map containing the point of contacts for the given finding.
-   * The key represents the type of contact, while the value contains a list of
-   * all the contacts that pertain. Please refer to:
+   * Output only. Map containing the points of contact for the given finding. The key
+   * represents the type of contact, while the value contains a list of all the
+   * contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -2850,9 +2858,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Map containing the point of contacts for the given finding.
-   * The key represents the type of contact, while the value contains a list of
-   * all the contacts that pertain. Please refer to:
+   * Output only. Map containing the points of contact for the given finding. The key
+   * represents the type of contact, while the value contains a list of all the
+   * contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -2886,9 +2894,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Map containing the point of contacts for the given finding.
-   * The key represents the type of contact, while the value contains a list of
-   * all the contacts that pertain. Please refer to:
+   * Output only. Map containing the points of contact for the given finding. The key
+   * represents the type of contact, while the value contains a list of all the
+   * contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -2994,6 +3002,57 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.securitycenter.v1.ComplianceOrBuilder getCompliancesOrBuilder(int index) {
     return compliances_.get(index);
+  }
+
+  public static final int PARENT_DISPLAY_NAME_FIELD_NUMBER = 36;
+  private volatile java.lang.Object parentDisplayName_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The human readable display name of the finding source such as
+   * "Event Threat Detection" or "Security Health Analytics".
+   * </pre>
+   *
+   * <code>string parent_display_name = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The parentDisplayName.
+   */
+  @java.lang.Override
+  public java.lang.String getParentDisplayName() {
+    java.lang.Object ref = parentDisplayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      parentDisplayName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The human readable display name of the finding source such as
+   * "Event Threat Detection" or "Security Health Analytics".
+   * </pre>
+   *
+   * <code>string parent_display_name = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for parentDisplayName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getParentDisplayNameBytes() {
+    java.lang.Object ref = parentDisplayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      parentDisplayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 37;
@@ -3470,6 +3529,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < compliances_.size(); i++) {
       output.writeMessage(34, compliances_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentDisplayName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 36, parentDisplayName_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37, description_);
     }
@@ -3603,6 +3665,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < compliances_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(34, compliances_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentDisplayName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(36, parentDisplayName_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37, description_);
     }
@@ -3689,6 +3754,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (!getProcessesList().equals(other.getProcessesList())) return false;
     if (!internalGetContacts().equals(other.internalGetContacts())) return false;
     if (!getCompliancesList().equals(other.getCompliancesList())) return false;
+    if (!getParentDisplayName().equals(other.getParentDisplayName())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (hasExfiltration() != other.hasExfiltration()) return false;
     if (hasExfiltration()) {
@@ -3794,6 +3860,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + COMPLIANCES_FIELD_NUMBER;
       hash = (53 * hash) + getCompliancesList().hashCode();
     }
+    hash = (37 * hash) + PARENT_DISPLAY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getParentDisplayName().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
     if (hasExfiltration()) {
@@ -4093,6 +4161,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       } else {
         compliancesBuilder_.clear();
       }
+      parentDisplayName_ = "";
+
       description_ = "";
 
       if (exfiltrationBuilder_ == null) {
@@ -4239,6 +4309,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.compliances_ = compliancesBuilder_.build();
       }
+      result.parentDisplayName_ = parentDisplayName_;
       result.description_ = description_;
       if (exfiltrationBuilder_ == null) {
         result.exfiltration_ = exfiltration_;
@@ -4470,6 +4541,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
             compliancesBuilder_.addAllMessages(other.compliances_);
           }
         }
+      }
+      if (!other.getParentDisplayName().isEmpty()) {
+        parentDisplayName_ = other.parentDisplayName_;
+        onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
@@ -7190,8 +7265,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external
-     * system information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+     * information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -7216,8 +7291,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external
-     * system information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+     * information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -7233,8 +7308,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external
-     * system information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+     * information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -7255,8 +7330,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external
-     * system information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+     * information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -7285,8 +7360,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external
-     * system information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+     * information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -7310,8 +7385,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external
-     * system information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+     * information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -7334,8 +7409,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external
-     * system information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+     * information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -8596,9 +8671,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map containing the point of contacts for the given finding.
-     * The key represents the type of contact, while the value contains a list of
-     * all the contacts that pertain. Please refer to:
+     * Output only. Map containing the points of contact for the given finding. The key
+     * represents the type of contact, while the value contains a list of all the
+     * contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
      *     {
      *       "security": {
@@ -8636,9 +8711,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map containing the point of contacts for the given finding.
-     * The key represents the type of contact, while the value contains a list of
-     * all the contacts that pertain. Please refer to:
+     * Output only. Map containing the points of contact for the given finding. The key
+     * represents the type of contact, while the value contains a list of all the
+     * contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
      *     {
      *       "security": {
@@ -8667,9 +8742,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map containing the point of contacts for the given finding.
-     * The key represents the type of contact, while the value contains a list of
-     * all the contacts that pertain. Please refer to:
+     * Output only. Map containing the points of contact for the given finding. The key
+     * represents the type of contact, while the value contains a list of all the
+     * contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
      *     {
      *       "security": {
@@ -8703,9 +8778,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map containing the point of contacts for the given finding.
-     * The key represents the type of contact, while the value contains a list of
-     * all the contacts that pertain. Please refer to:
+     * Output only. Map containing the points of contact for the given finding. The key
+     * represents the type of contact, while the value contains a list of all the
+     * contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
      *     {
      *       "security": {
@@ -8747,9 +8822,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map containing the point of contacts for the given finding.
-     * The key represents the type of contact, while the value contains a list of
-     * all the contacts that pertain. Please refer to:
+     * Output only. Map containing the points of contact for the given finding. The key
+     * represents the type of contact, while the value contains a list of all the
+     * contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
      *     {
      *       "security": {
@@ -8786,9 +8861,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map containing the point of contacts for the given finding.
-     * The key represents the type of contact, while the value contains a list of
-     * all the contacts that pertain. Please refer to:
+     * Output only. Map containing the points of contact for the given finding. The key
+     * represents the type of contact, while the value contains a list of all the
+     * contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
      *     {
      *       "security": {
@@ -8824,9 +8899,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map containing the point of contacts for the given finding.
-     * The key represents the type of contact, while the value contains a list of
-     * all the contacts that pertain. Please refer to:
+     * Output only. Map containing the points of contact for the given finding. The key
+     * represents the type of contact, while the value contains a list of all the
+     * contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
      *     {
      *       "security": {
@@ -9220,6 +9295,117 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         compliances_ = null;
       }
       return compliancesBuilder_;
+    }
+
+    private java.lang.Object parentDisplayName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The human readable display name of the finding source such as
+     * "Event Threat Detection" or "Security Health Analytics".
+     * </pre>
+     *
+     * <code>string parent_display_name = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The parentDisplayName.
+     */
+    public java.lang.String getParentDisplayName() {
+      java.lang.Object ref = parentDisplayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parentDisplayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The human readable display name of the finding source such as
+     * "Event Threat Detection" or "Security Health Analytics".
+     * </pre>
+     *
+     * <code>string parent_display_name = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for parentDisplayName.
+     */
+    public com.google.protobuf.ByteString getParentDisplayNameBytes() {
+      java.lang.Object ref = parentDisplayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        parentDisplayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The human readable display name of the finding source such as
+     * "Event Threat Detection" or "Security Health Analytics".
+     * </pre>
+     *
+     * <code>string parent_display_name = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The parentDisplayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      parentDisplayName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The human readable display name of the finding source such as
+     * "Event Threat Detection" or "Security Health Analytics".
+     * </pre>
+     *
+     * <code>string parent_display_name = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearParentDisplayName() {
+
+      parentDisplayName_ = getDefaultInstance().getParentDisplayName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The human readable display name of the finding source such as
+     * "Event Threat Detection" or "Security Health Analytics".
+     * </pre>
+     *
+     * <code>string parent_display_name = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for parentDisplayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      parentDisplayName_ = value;
+      onChanged();
+      return this;
     }
 
     private java.lang.Object description_ = "";

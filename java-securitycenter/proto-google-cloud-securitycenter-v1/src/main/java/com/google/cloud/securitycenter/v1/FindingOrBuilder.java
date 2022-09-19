@@ -663,8 +663,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external
-   * system information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -676,8 +676,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external
-   * system information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -693,8 +693,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external
-   * system information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -707,8 +707,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external
-   * system information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -725,8 +725,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external
-   * system information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -950,9 +950,9 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Map containing the point of contacts for the given finding.
-   * The key represents the type of contact, while the value contains a list of
-   * all the contacts that pertain. Please refer to:
+   * Output only. Map containing the points of contact for the given finding. The key
+   * represents the type of contact, while the value contains a list of all the
+   * contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -977,9 +977,9 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Map containing the point of contacts for the given finding.
-   * The key represents the type of contact, while the value contains a list of
-   * all the contacts that pertain. Please refer to:
+   * Output only. Map containing the points of contact for the given finding. The key
+   * represents the type of contact, while the value contains a list of all the
+   * contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -1007,9 +1007,9 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Map containing the point of contacts for the given finding.
-   * The key represents the type of contact, while the value contains a list of
-   * all the contacts that pertain. Please refer to:
+   * Output only. Map containing the points of contact for the given finding. The key
+   * represents the type of contact, while the value contains a list of all the
+   * contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -1035,9 +1035,9 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Map containing the point of contacts for the given finding.
-   * The key represents the type of contact, while the value contains a list of
-   * all the contacts that pertain. Please refer to:
+   * Output only. Map containing the points of contact for the given finding. The key
+   * represents the type of contact, while the value contains a list of all the
+   * contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -1067,9 +1067,9 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Map containing the point of contacts for the given finding.
-   * The key represents the type of contact, while the value contains a list of
-   * all the contacts that pertain. Please refer to:
+   * Output only. Map containing the points of contact for the given finding. The key
+   * represents the type of contact, while the value contains a list of all the
+   * contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -1147,6 +1147,33 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
    */
   com.google.cloud.securitycenter.v1.ComplianceOrBuilder getCompliancesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The human readable display name of the finding source such as
+   * "Event Threat Detection" or "Security Health Analytics".
+   * </pre>
+   *
+   * <code>string parent_display_name = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The parentDisplayName.
+   */
+  java.lang.String getParentDisplayName();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The human readable display name of the finding source such as
+   * "Event Threat Detection" or "Security Health Analytics".
+   * </pre>
+   *
+   * <code>string parent_display_name = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for parentDisplayName.
+   */
+  com.google.protobuf.ByteString getParentDisplayNameBytes();
 
   /**
    *
