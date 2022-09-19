@@ -1,0 +1,16 @@
+{
+  "api_shortname": "batch",
+  "name_pretty": "Cloud Batch",
+  "product_documentation": "https://cloud.google.com/",
+  "api_description": "n/a",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-batch/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-batch",
+  "repo_short": "java-batch",
+  "distribution_name": "com.google.cloud:google-cloud-batch",
+  "api_id": "batch.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
