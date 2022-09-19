@@ -97,7 +97,6 @@ case ${JOB_TYPE} in
       install
 
     for FILE in ${KOKORO_GFILE_DIR}/secret_manager/*-samples-secrets; do
-      echo "${FILE}"
       [[ -f "${FILE}" ]] || continue
       source "${FILE}"
     done
