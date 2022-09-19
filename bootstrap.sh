@@ -108,3 +108,8 @@ mvn -q -B -ntp validate
 
 git add --all
 git commit -am 'feat: create CoverageAggregator module'
+
+./generation/delete_non_generated_samples.sh
+
+git add --all
+git commit -am 'chore: delete non-auto-generated samples'
