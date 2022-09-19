@@ -96,10 +96,26 @@ case ${JOB_TYPE} in
       -T 1C \
       install
 
+    for FILE in ${KOKORO_GFILE_DIR}/secret_manager/*-samples-secrets; do
+      echo "${FILE}"
+      [[ -f "${FILE}" ]] || continue
+      source "${FILE}"
+    done
+
+    if [ -f "${KOKORO_GFILE_DIR}/secret_manager/ucaip_samples_secrets" ]
+    then
+        source "${KOKORO_GFILE_DIR}/secret_manager/ucaip_samples_secrets"
+    fi
+
+    if [ -f "${KOKORO_GFILE_DIR}/secret_manager/java-aiplatform-samples-secrets" ]
+    then
+        source "${KOKORO_GFILE_DIR}/secret_manager/java-aiplatform-samples-secrets"
+    fi
+
     modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
     for module in $modules; do
-      echo "Running now for ${module}\n"
       if [[ ! "${excluded_modules[*]}" =~ $module ]]; then
+        printf "Running now for %s\n" "${module}"
         pushd $module
         SAMPLES_DIR=samples
         # only run ITs in snapshot/ on presubmit PRs. run ITs in all 3 samples/ submodules otherwise.
@@ -108,22 +124,6 @@ case ${JOB_TYPE} in
         fi
 
         if [[ -f ${SAMPLES_DIR}/pom.xml ]]; then
-          for FILE in ${KOKORO_GFILE_DIR}/secret_manager/*-samples-secrets; do
-            echo "${FILE}"
-            [[ -f "${FILE}" ]] || continue
-            source "${FILE}"
-          done
-
-#          if [ -f "${KOKORO_GFILE_DIR}/secret_manager/ucaip_samples_secrets" ]
-#          then
-#              source "${KOKORO_GFILE_DIR}/secret_manager/ucaip_samples_secrets"
-#          fi
-#
-#          if [ -f "${KOKORO_GFILE_DIR}/secret_manager/java-aiplatform-samples-secrets" ]
-#          then
-#              source "${KOKORO_GFILE_DIR}/secret_manager/java-aiplatform-samples-secrets"
-#          fi
-
           pushd ${SAMPLES_DIR}
           mvn -B \
             -ntp \
