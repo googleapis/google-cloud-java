@@ -1,0 +1,8 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-datacatalog:1.9.4:1.9.4
+grpc-google-cloud-datacatalog-v1:1.9.4:1.9.4
+grpc-google-cloud-datacatalog-v1beta1:0.46.4:0.46.4
+proto-google-cloud-datacatalog-v1:1.9.4:1.9.4
+proto-google-cloud-datacatalog-v1beta1:0.46.4:0.46.4
