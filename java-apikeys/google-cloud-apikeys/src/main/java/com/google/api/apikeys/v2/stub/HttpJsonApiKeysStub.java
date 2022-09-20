@@ -93,7 +93,8 @@ public class HttpJsonApiKeysStub extends ApiKeysStub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("key", request.getKey()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("key", request.getKey(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -232,7 +233,8 @@ public class HttpJsonApiKeysStub extends ApiKeysStub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("key", request.getKey()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("key", request.getKey(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -307,7 +309,7 @@ public class HttpJsonApiKeysStub extends ApiKeysStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
