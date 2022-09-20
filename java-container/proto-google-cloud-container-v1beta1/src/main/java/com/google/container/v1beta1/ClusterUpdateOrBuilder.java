@@ -1622,4 +1622,43 @@ public interface ClusterUpdateOrBuilder
    * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
    */
   com.google.container.v1beta1.ProtectConfigOrBuilder getDesiredProtectConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired node pool logging configuration defaults for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePoolLoggingConfig desired_node_pool_logging_config = 116;
+   * </code>
+   *
+   * @return Whether the desiredNodePoolLoggingConfig field is set.
+   */
+  boolean hasDesiredNodePoolLoggingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired node pool logging configuration defaults for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePoolLoggingConfig desired_node_pool_logging_config = 116;
+   * </code>
+   *
+   * @return The desiredNodePoolLoggingConfig.
+   */
+  com.google.container.v1beta1.NodePoolLoggingConfig getDesiredNodePoolLoggingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired node pool logging configuration defaults for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePoolLoggingConfig desired_node_pool_logging_config = 116;
+   * </code>
+   */
+  com.google.container.v1beta1.NodePoolLoggingConfigOrBuilder
+      getDesiredNodePoolLoggingConfigOrBuilder();
 }

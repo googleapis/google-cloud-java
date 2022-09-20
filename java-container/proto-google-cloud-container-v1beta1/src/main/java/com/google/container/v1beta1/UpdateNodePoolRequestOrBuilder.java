@@ -36,7 +36,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2400
+   *     google/container/v1beta1/cluster_service.proto;l=2410
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2400
+   *     google/container/v1beta1/cluster_service.proto;l=2410
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2409
+   *     google/container/v1beta1/cluster_service.proto;l=2419
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -91,7 +91,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2409
+   *     google/container/v1beta1/cluster_service.proto;l=2419
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2416
+   *     google/container/v1beta1/cluster_service.proto;l=2426
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2416
+   *     google/container/v1beta1/cluster_service.proto;l=2426
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -144,7 +144,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2423
+   *     google/container/v1beta1/cluster_service.proto;l=2433
    * @return The nodePoolId.
    */
   @java.lang.Deprecated
@@ -161,7 +161,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2423
+   *     google/container/v1beta1/cluster_service.proto;l=2433
    * @return The bytes for nodePoolId.
    */
   @java.lang.Deprecated
@@ -734,4 +734,39 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
    */
   com.google.container.v1beta1.VirtualNICOrBuilder getGvnicOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 32;</code>
+   *
+   * @return Whether the loggingConfig field is set.
+   */
+  boolean hasLoggingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 32;</code>
+   *
+   * @return The loggingConfig.
+   */
+  com.google.container.v1beta1.NodePoolLoggingConfig getLoggingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 32;</code>
+   */
+  com.google.container.v1beta1.NodePoolLoggingConfigOrBuilder getLoggingConfigOrBuilder();
 }

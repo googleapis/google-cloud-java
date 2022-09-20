@@ -1231,4 +1231,39 @@ public interface NodeConfigOrBuilder
    * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 35;</code>
    */
   com.google.container.v1.ConfidentialNodesOrBuilder getConfidentialNodesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePoolLoggingConfig logging_config = 38;</code>
+   *
+   * @return Whether the loggingConfig field is set.
+   */
+  boolean hasLoggingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePoolLoggingConfig logging_config = 38;</code>
+   *
+   * @return The loggingConfig.
+   */
+  com.google.container.v1.NodePoolLoggingConfig getLoggingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePoolLoggingConfig logging_config = 38;</code>
+   */
+  com.google.container.v1.NodePoolLoggingConfigOrBuilder getLoggingConfigOrBuilder();
 }

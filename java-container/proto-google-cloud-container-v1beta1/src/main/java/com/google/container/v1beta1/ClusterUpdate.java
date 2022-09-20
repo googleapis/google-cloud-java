@@ -687,6 +687,23 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
               bitField0_ |= 0x00000001;
               break;
             }
+          case 930:
+            {
+              com.google.container.v1beta1.NodePoolLoggingConfig.Builder subBuilder = null;
+              if (desiredNodePoolLoggingConfig_ != null) {
+                subBuilder = desiredNodePoolLoggingConfig_.toBuilder();
+              }
+              desiredNodePoolLoggingConfig_ =
+                  input.readMessage(
+                      com.google.container.v1beta1.NodePoolLoggingConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(desiredNodePoolLoggingConfig_);
+                desiredNodePoolLoggingConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -2950,6 +2967,58 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         : desiredProtectConfig_;
   }
 
+  public static final int DESIRED_NODE_POOL_LOGGING_CONFIG_FIELD_NUMBER = 116;
+  private com.google.container.v1beta1.NodePoolLoggingConfig desiredNodePoolLoggingConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired node pool logging configuration defaults for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePoolLoggingConfig desired_node_pool_logging_config = 116;
+   * </code>
+   *
+   * @return Whether the desiredNodePoolLoggingConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredNodePoolLoggingConfig() {
+    return desiredNodePoolLoggingConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired node pool logging configuration defaults for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePoolLoggingConfig desired_node_pool_logging_config = 116;
+   * </code>
+   *
+   * @return The desiredNodePoolLoggingConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NodePoolLoggingConfig getDesiredNodePoolLoggingConfig() {
+    return desiredNodePoolLoggingConfig_ == null
+        ? com.google.container.v1beta1.NodePoolLoggingConfig.getDefaultInstance()
+        : desiredNodePoolLoggingConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired node pool logging configuration defaults for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePoolLoggingConfig desired_node_pool_logging_config = 116;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NodePoolLoggingConfigOrBuilder
+      getDesiredNodePoolLoggingConfigOrBuilder() {
+    return getDesiredNodePoolLoggingConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3094,6 +3163,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(112, getDesiredProtectConfig());
+    }
+    if (desiredNodePoolLoggingConfig_ != null) {
+      output.writeMessage(116, getDesiredNodePoolLoggingConfig());
     }
     unknownFields.writeTo(output);
   }
@@ -3295,6 +3367,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(112, getDesiredProtectConfig());
     }
+    if (desiredNodePoolLoggingConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              116, getDesiredNodePoolLoggingConfig());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3481,6 +3558,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredProtectConfig()) {
       if (!getDesiredProtectConfig().equals(other.getDesiredProtectConfig())) return false;
     }
+    if (hasDesiredNodePoolLoggingConfig() != other.hasDesiredNodePoolLoggingConfig()) return false;
+    if (hasDesiredNodePoolLoggingConfig()) {
+      if (!getDesiredNodePoolLoggingConfig().equals(other.getDesiredNodePoolLoggingConfig()))
+        return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -3643,6 +3725,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredProtectConfig()) {
       hash = (37 * hash) + DESIRED_PROTECT_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredProtectConfig().hashCode();
+    }
+    if (hasDesiredNodePoolLoggingConfig()) {
+      hash = (37 * hash) + DESIRED_NODE_POOL_LOGGING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredNodePoolLoggingConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -4009,6 +4095,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredProtectConfigBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      if (desiredNodePoolLoggingConfigBuilder_ == null) {
+        desiredNodePoolLoggingConfig_ = null;
+      } else {
+        desiredNodePoolLoggingConfig_ = null;
+        desiredNodePoolLoggingConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -4221,6 +4313,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         }
         to_bitField0_ |= 0x00000001;
       }
+      if (desiredNodePoolLoggingConfigBuilder_ == null) {
+        result.desiredNodePoolLoggingConfig_ = desiredNodePoolLoggingConfig_;
+      } else {
+        result.desiredNodePoolLoggingConfig_ = desiredNodePoolLoggingConfigBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -4410,6 +4507,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDesiredProtectConfig()) {
         mergeDesiredProtectConfig(other.getDesiredProtectConfig());
+      }
+      if (other.hasDesiredNodePoolLoggingConfig()) {
+        mergeDesiredNodePoolLoggingConfig(other.getDesiredNodePoolLoggingConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -12186,6 +12286,206 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredProtectConfig_ = null;
       }
       return desiredProtectConfigBuilder_;
+    }
+
+    private com.google.container.v1beta1.NodePoolLoggingConfig desiredNodePoolLoggingConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.NodePoolLoggingConfig,
+            com.google.container.v1beta1.NodePoolLoggingConfig.Builder,
+            com.google.container.v1beta1.NodePoolLoggingConfigOrBuilder>
+        desiredNodePoolLoggingConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired node pool logging configuration defaults for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig desired_node_pool_logging_config = 116;
+     * </code>
+     *
+     * @return Whether the desiredNodePoolLoggingConfig field is set.
+     */
+    public boolean hasDesiredNodePoolLoggingConfig() {
+      return desiredNodePoolLoggingConfigBuilder_ != null || desiredNodePoolLoggingConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node pool logging configuration defaults for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig desired_node_pool_logging_config = 116;
+     * </code>
+     *
+     * @return The desiredNodePoolLoggingConfig.
+     */
+    public com.google.container.v1beta1.NodePoolLoggingConfig getDesiredNodePoolLoggingConfig() {
+      if (desiredNodePoolLoggingConfigBuilder_ == null) {
+        return desiredNodePoolLoggingConfig_ == null
+            ? com.google.container.v1beta1.NodePoolLoggingConfig.getDefaultInstance()
+            : desiredNodePoolLoggingConfig_;
+      } else {
+        return desiredNodePoolLoggingConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node pool logging configuration defaults for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig desired_node_pool_logging_config = 116;
+     * </code>
+     */
+    public Builder setDesiredNodePoolLoggingConfig(
+        com.google.container.v1beta1.NodePoolLoggingConfig value) {
+      if (desiredNodePoolLoggingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredNodePoolLoggingConfig_ = value;
+        onChanged();
+      } else {
+        desiredNodePoolLoggingConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node pool logging configuration defaults for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig desired_node_pool_logging_config = 116;
+     * </code>
+     */
+    public Builder setDesiredNodePoolLoggingConfig(
+        com.google.container.v1beta1.NodePoolLoggingConfig.Builder builderForValue) {
+      if (desiredNodePoolLoggingConfigBuilder_ == null) {
+        desiredNodePoolLoggingConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredNodePoolLoggingConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node pool logging configuration defaults for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig desired_node_pool_logging_config = 116;
+     * </code>
+     */
+    public Builder mergeDesiredNodePoolLoggingConfig(
+        com.google.container.v1beta1.NodePoolLoggingConfig value) {
+      if (desiredNodePoolLoggingConfigBuilder_ == null) {
+        if (desiredNodePoolLoggingConfig_ != null) {
+          desiredNodePoolLoggingConfig_ =
+              com.google.container.v1beta1.NodePoolLoggingConfig.newBuilder(
+                      desiredNodePoolLoggingConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          desiredNodePoolLoggingConfig_ = value;
+        }
+        onChanged();
+      } else {
+        desiredNodePoolLoggingConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node pool logging configuration defaults for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig desired_node_pool_logging_config = 116;
+     * </code>
+     */
+    public Builder clearDesiredNodePoolLoggingConfig() {
+      if (desiredNodePoolLoggingConfigBuilder_ == null) {
+        desiredNodePoolLoggingConfig_ = null;
+        onChanged();
+      } else {
+        desiredNodePoolLoggingConfig_ = null;
+        desiredNodePoolLoggingConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node pool logging configuration defaults for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig desired_node_pool_logging_config = 116;
+     * </code>
+     */
+    public com.google.container.v1beta1.NodePoolLoggingConfig.Builder
+        getDesiredNodePoolLoggingConfigBuilder() {
+
+      onChanged();
+      return getDesiredNodePoolLoggingConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node pool logging configuration defaults for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig desired_node_pool_logging_config = 116;
+     * </code>
+     */
+    public com.google.container.v1beta1.NodePoolLoggingConfigOrBuilder
+        getDesiredNodePoolLoggingConfigOrBuilder() {
+      if (desiredNodePoolLoggingConfigBuilder_ != null) {
+        return desiredNodePoolLoggingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredNodePoolLoggingConfig_ == null
+            ? com.google.container.v1beta1.NodePoolLoggingConfig.getDefaultInstance()
+            : desiredNodePoolLoggingConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node pool logging configuration defaults for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig desired_node_pool_logging_config = 116;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.NodePoolLoggingConfig,
+            com.google.container.v1beta1.NodePoolLoggingConfig.Builder,
+            com.google.container.v1beta1.NodePoolLoggingConfigOrBuilder>
+        getDesiredNodePoolLoggingConfigFieldBuilder() {
+      if (desiredNodePoolLoggingConfigBuilder_ == null) {
+        desiredNodePoolLoggingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.NodePoolLoggingConfig,
+                com.google.container.v1beta1.NodePoolLoggingConfig.Builder,
+                com.google.container.v1beta1.NodePoolLoggingConfigOrBuilder>(
+                getDesiredNodePoolLoggingConfig(), getParentForChildren(), isClean());
+        desiredNodePoolLoggingConfig_ = null;
+      }
+      return desiredNodePoolLoggingConfigBuilder_;
     }
 
     @java.lang.Override
