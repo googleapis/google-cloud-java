@@ -34,7 +34,9 @@ import com.google.iam.admin.v1.CreateServiceAccountRequest;
 import com.google.iam.admin.v1.DeleteRoleRequest;
 import com.google.iam.admin.v1.DeleteServiceAccountKeyRequest;
 import com.google.iam.admin.v1.DeleteServiceAccountRequest;
+import com.google.iam.admin.v1.DisableServiceAccountKeyRequest;
 import com.google.iam.admin.v1.DisableServiceAccountRequest;
+import com.google.iam.admin.v1.EnableServiceAccountKeyRequest;
 import com.google.iam.admin.v1.EnableServiceAccountRequest;
 import com.google.iam.admin.v1.GetRoleRequest;
 import com.google.iam.admin.v1.GetServiceAccountKeyRequest;
@@ -233,6 +235,26 @@ public class GrpcIAMStub extends IAMStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<DisableServiceAccountKeyRequest, Empty>
+      disableServiceAccountKeyMethodDescriptor =
+          MethodDescriptor.<DisableServiceAccountKeyRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.iam.admin.v1.IAM/DisableServiceAccountKey")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DisableServiceAccountKeyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<EnableServiceAccountKeyRequest, Empty>
+      enableServiceAccountKeyMethodDescriptor =
+          MethodDescriptor.<EnableServiceAccountKeyRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.iam.admin.v1.IAM/EnableServiceAccountKey")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(EnableServiceAccountKeyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<SignBlobRequest, SignBlobResponse>
       signBlobMethodDescriptor =
           MethodDescriptor.<SignBlobRequest, SignBlobResponse>newBuilder()
@@ -397,6 +419,10 @@ public class GrpcIAMStub extends IAMStub {
       uploadServiceAccountKeyCallable;
   private final UnaryCallable<DeleteServiceAccountKeyRequest, Empty>
       deleteServiceAccountKeyCallable;
+  private final UnaryCallable<DisableServiceAccountKeyRequest, Empty>
+      disableServiceAccountKeyCallable;
+  private final UnaryCallable<EnableServiceAccountKeyRequest, Empty>
+      enableServiceAccountKeyCallable;
   private final UnaryCallable<SignBlobRequest, SignBlobResponse> signBlobCallable;
   private final UnaryCallable<SignJwtRequest, SignJwtResponse> signJwtCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
@@ -613,6 +639,28 @@ public class GrpcIAMStub extends IAMStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<DisableServiceAccountKeyRequest, Empty>
+        disableServiceAccountKeyTransportSettings =
+            GrpcCallSettings.<DisableServiceAccountKeyRequest, Empty>newBuilder()
+                .setMethodDescriptor(disableServiceAccountKeyMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<EnableServiceAccountKeyRequest, Empty>
+        enableServiceAccountKeyTransportSettings =
+            GrpcCallSettings.<EnableServiceAccountKeyRequest, Empty>newBuilder()
+                .setMethodDescriptor(enableServiceAccountKeyMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<SignBlobRequest, SignBlobResponse> signBlobTransportSettings =
         GrpcCallSettings.<SignBlobRequest, SignBlobResponse>newBuilder()
             .setMethodDescriptor(signBlobMethodDescriptor)
@@ -821,6 +869,16 @@ public class GrpcIAMStub extends IAMStub {
             deleteServiceAccountKeyTransportSettings,
             settings.deleteServiceAccountKeySettings(),
             clientContext);
+    this.disableServiceAccountKeyCallable =
+        callableFactory.createUnaryCallable(
+            disableServiceAccountKeyTransportSettings,
+            settings.disableServiceAccountKeySettings(),
+            clientContext);
+    this.enableServiceAccountKeyCallable =
+        callableFactory.createUnaryCallable(
+            enableServiceAccountKeyTransportSettings,
+            settings.enableServiceAccountKeySettings(),
+            clientContext);
     this.signBlobCallable =
         callableFactory.createUnaryCallable(
             signBlobTransportSettings, settings.signBlobSettings(), clientContext);
@@ -976,6 +1034,16 @@ public class GrpcIAMStub extends IAMStub {
   @Override
   public UnaryCallable<DeleteServiceAccountKeyRequest, Empty> deleteServiceAccountKeyCallable() {
     return deleteServiceAccountKeyCallable;
+  }
+
+  @Override
+  public UnaryCallable<DisableServiceAccountKeyRequest, Empty> disableServiceAccountKeyCallable() {
+    return disableServiceAccountKeyCallable;
+  }
+
+  @Override
+  public UnaryCallable<EnableServiceAccountKeyRequest, Empty> enableServiceAccountKeyCallable() {
+    return enableServiceAccountKeyCallable;
   }
 
   @Override

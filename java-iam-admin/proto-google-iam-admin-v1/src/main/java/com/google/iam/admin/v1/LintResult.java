@@ -136,14 +136,13 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.iam.admin.v1.IamProto
-        .internal_static_google_iam_admin_v1_LintResult_descriptor;
+    return com.google.iam.admin.v1.Iam.internal_static_google_iam_admin_v1_LintResult_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_LintResult_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.iam.admin.v1.LintResult.class,
@@ -330,7 +329,7 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
      * won't behave as expected during policy evaluation in `checkPolicy`.
      * This includes the following common scenarios:
      * - Unsatisfiable condition: Expired timestamp in date/time condition.
-     * - Ineffective condition: Condition on a &lt;member, role&gt; pair which is
+     * - Ineffective condition: Condition on a &lt;principal, role&gt; pair which is
      *   granted unconditionally in another binding of the same policy.
      * </pre>
      *
@@ -407,7 +406,7 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
      * won't behave as expected during policy evaluation in `checkPolicy`.
      * This includes the following common scenarios:
      * - Unsatisfiable condition: Expired timestamp in date/time condition.
-     * - Ineffective condition: Condition on a &lt;member, role&gt; pair which is
+     * - Ineffective condition: Condition on a &lt;principal, role&gt; pair which is
      *   granted unconditionally in another binding of the same policy.
      * </pre>
      *
@@ -1006,14 +1005,13 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(builder_implements:google.iam.admin.v1.LintResult)
       com.google.iam.admin.v1.LintResultOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.iam.admin.v1.IamProto
-          .internal_static_google_iam_admin_v1_LintResult_descriptor;
+      return com.google.iam.admin.v1.Iam.internal_static_google_iam_admin_v1_LintResult_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_LintResult_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.iam.admin.v1.LintResult.class,
@@ -1054,8 +1052,7 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.iam.admin.v1.IamProto
-          .internal_static_google_iam_admin_v1_LintResult_descriptor;
+      return com.google.iam.admin.v1.Iam.internal_static_google_iam_admin_v1_LintResult_descriptor;
     }
 
     @java.lang.Override
