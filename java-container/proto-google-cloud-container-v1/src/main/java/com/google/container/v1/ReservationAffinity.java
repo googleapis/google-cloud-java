@@ -362,8 +362,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Corresponds to the label key of a reservation resource. To target a
-   * SPECIFIC_RESERVATION by name, specify "googleapis.com/reservation-name" as
-   * the key and specify the name of your reservation as its value.
+   * SPECIFIC_RESERVATION by name, specify
+   * "compute.googleapis.com/reservation-name" as the key and specify the name
+   * of your reservation as its value.
    * </pre>
    *
    * <code>string key = 2;</code>
@@ -387,8 +388,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Corresponds to the label key of a reservation resource. To target a
-   * SPECIFIC_RESERVATION by name, specify "googleapis.com/reservation-name" as
-   * the key and specify the name of your reservation as its value.
+   * SPECIFIC_RESERVATION by name, specify
+   * "compute.googleapis.com/reservation-name" as the key and specify the name
+   * of your reservation as its value.
    * </pre>
    *
    * <code>string key = 2;</code>
@@ -940,8 +942,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Corresponds to the label key of a reservation resource. To target a
-     * SPECIFIC_RESERVATION by name, specify "googleapis.com/reservation-name" as
-     * the key and specify the name of your reservation as its value.
+     * SPECIFIC_RESERVATION by name, specify
+     * "compute.googleapis.com/reservation-name" as the key and specify the name
+     * of your reservation as its value.
      * </pre>
      *
      * <code>string key = 2;</code>
@@ -964,8 +967,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Corresponds to the label key of a reservation resource. To target a
-     * SPECIFIC_RESERVATION by name, specify "googleapis.com/reservation-name" as
-     * the key and specify the name of your reservation as its value.
+     * SPECIFIC_RESERVATION by name, specify
+     * "compute.googleapis.com/reservation-name" as the key and specify the name
+     * of your reservation as its value.
      * </pre>
      *
      * <code>string key = 2;</code>
@@ -988,8 +992,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Corresponds to the label key of a reservation resource. To target a
-     * SPECIFIC_RESERVATION by name, specify "googleapis.com/reservation-name" as
-     * the key and specify the name of your reservation as its value.
+     * SPECIFIC_RESERVATION by name, specify
+     * "compute.googleapis.com/reservation-name" as the key and specify the name
+     * of your reservation as its value.
      * </pre>
      *
      * <code>string key = 2;</code>
@@ -1011,8 +1016,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Corresponds to the label key of a reservation resource. To target a
-     * SPECIFIC_RESERVATION by name, specify "googleapis.com/reservation-name" as
-     * the key and specify the name of your reservation as its value.
+     * SPECIFIC_RESERVATION by name, specify
+     * "compute.googleapis.com/reservation-name" as the key and specify the name
+     * of your reservation as its value.
      * </pre>
      *
      * <code>string key = 2;</code>
@@ -1030,8 +1036,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Corresponds to the label key of a reservation resource. To target a
-     * SPECIFIC_RESERVATION by name, specify "googleapis.com/reservation-name" as
-     * the key and specify the name of your reservation as its value.
+     * SPECIFIC_RESERVATION by name, specify
+     * "compute.googleapis.com/reservation-name" as the key and specify the name
+     * of your reservation as its value.
      * </pre>
      *
      * <code>string key = 2;</code>

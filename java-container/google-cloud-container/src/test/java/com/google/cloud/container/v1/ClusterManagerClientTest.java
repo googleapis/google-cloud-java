@@ -81,6 +81,7 @@ import com.google.container.v1.NodePool;
 import com.google.container.v1.NodePoolAutoConfig;
 import com.google.container.v1.NodePoolAutoscaling;
 import com.google.container.v1.NodePoolDefaults;
+import com.google.container.v1.NodePoolLoggingConfig;
 import com.google.container.v1.NodeTaints;
 import com.google.container.v1.NotificationConfig;
 import com.google.container.v1.Operation;
@@ -712,6 +713,7 @@ public class ClusterManagerClientTest {
             .setGcfsConfig(GcfsConfig.newBuilder().build())
             .setConfidentialNodes(ConfidentialNodes.newBuilder().build())
             .setGvnic(VirtualNIC.newBuilder().build())
+            .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
             .build();
 
     Operation actualResponse = client.updateNodePool(request);
@@ -741,6 +743,7 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(request.getGcfsConfig(), actualRequest.getGcfsConfig());
     Assert.assertEquals(request.getConfidentialNodes(), actualRequest.getConfidentialNodes());
     Assert.assertEquals(request.getGvnic(), actualRequest.getGvnic());
+    Assert.assertEquals(request.getLoggingConfig(), actualRequest.getLoggingConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -774,6 +777,7 @@ public class ClusterManagerClientTest {
               .setGcfsConfig(GcfsConfig.newBuilder().build())
               .setConfidentialNodes(ConfidentialNodes.newBuilder().build())
               .setGvnic(VirtualNIC.newBuilder().build())
+              .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
               .build();
       client.updateNodePool(request);
       Assert.fail("No exception raised");

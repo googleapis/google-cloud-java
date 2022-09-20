@@ -1283,4 +1283,39 @@ public interface ClusterUpdateOrBuilder
    * <code>.google.container.v1.NetworkTags desired_node_pool_auto_config_network_tags = 110;</code>
    */
   com.google.container.v1.NetworkTagsOrBuilder getDesiredNodePoolAutoConfigNetworkTagsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired node pool logging configuration defaults for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePoolLoggingConfig desired_node_pool_logging_config = 116;</code>
+   *
+   * @return Whether the desiredNodePoolLoggingConfig field is set.
+   */
+  boolean hasDesiredNodePoolLoggingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired node pool logging configuration defaults for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePoolLoggingConfig desired_node_pool_logging_config = 116;</code>
+   *
+   * @return The desiredNodePoolLoggingConfig.
+   */
+  com.google.container.v1.NodePoolLoggingConfig getDesiredNodePoolLoggingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired node pool logging configuration defaults for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePoolLoggingConfig desired_node_pool_logging_config = 116;</code>
+   */
+  com.google.container.v1.NodePoolLoggingConfigOrBuilder getDesiredNodePoolLoggingConfigOrBuilder();
 }

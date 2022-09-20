@@ -405,6 +405,23 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 306:
+            {
+              com.google.container.v1beta1.NodePoolLoggingConfig.Builder subBuilder = null;
+              if (loggingConfig_ != null) {
+                subBuilder = loggingConfig_.toBuilder();
+              }
+              loggingConfig_ =
+                  input.readMessage(
+                      com.google.container.v1beta1.NodePoolLoggingConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(loggingConfig_);
+                loggingConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1504,7 +1521,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * `minCpuPlatform: "Intel Haswell"` or
    * `minCpuPlatform: "Intel Sandy Bridge"`. For more
    * information, read [how to specify min CPU
-   * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+   * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform).
    * </pre>
    *
    * <code>string min_cpu_platform = 13;</code>
@@ -1533,7 +1550,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * `minCpuPlatform: "Intel Haswell"` or
    * `minCpuPlatform: "Intel Sandy Bridge"`. For more
    * information, read [how to specify min CPU
-   * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+   * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform).
    * </pre>
    *
    * <code>string min_cpu_platform = 13;</code>
@@ -2150,6 +2167,54 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     return getConfidentialNodes();
   }
 
+  public static final int LOGGING_CONFIG_FIELD_NUMBER = 38;
+  private com.google.container.v1beta1.NodePoolLoggingConfig loggingConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 38;</code>
+   *
+   * @return Whether the loggingConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasLoggingConfig() {
+    return loggingConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 38;</code>
+   *
+   * @return The loggingConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NodePoolLoggingConfig getLoggingConfig() {
+    return loggingConfig_ == null
+        ? com.google.container.v1beta1.NodePoolLoggingConfig.getDefaultInstance()
+        : loggingConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 38;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NodePoolLoggingConfigOrBuilder getLoggingConfigOrBuilder() {
+    return getLoggingConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2245,6 +2310,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (confidentialNodes_ != null) {
       output.writeMessage(35, getConfidentialNodes());
+    }
+    if (loggingConfig_ != null) {
+      output.writeMessage(38, getLoggingConfig());
     }
     unknownFields.writeTo(output);
   }
@@ -2369,6 +2437,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (confidentialNodes_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(35, getConfidentialNodes());
     }
+    if (loggingConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(38, getLoggingConfig());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2444,6 +2515,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasConfidentialNodes() != other.hasConfidentialNodes()) return false;
     if (hasConfidentialNodes()) {
       if (!getConfidentialNodes().equals(other.getConfidentialNodes())) return false;
+    }
+    if (hasLoggingConfig() != other.hasLoggingConfig()) return false;
+    if (hasLoggingConfig()) {
+      if (!getLoggingConfig().equals(other.getLoggingConfig())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -2545,6 +2620,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasConfidentialNodes()) {
       hash = (37 * hash) + CONFIDENTIAL_NODES_FIELD_NUMBER;
       hash = (53 * hash) + getConfidentialNodes().hashCode();
+    }
+    if (hasLoggingConfig()) {
+      hash = (37 * hash) + LOGGING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getLoggingConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -2828,6 +2907,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         confidentialNodes_ = null;
         confidentialNodesBuilder_ = null;
       }
+      if (loggingConfigBuilder_ == null) {
+        loggingConfig_ = null;
+      } else {
+        loggingConfig_ = null;
+        loggingConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -2953,6 +3038,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         result.confidentialNodes_ = confidentialNodes_;
       } else {
         result.confidentialNodes_ = confidentialNodesBuilder_.build();
+      }
+      if (loggingConfigBuilder_ == null) {
+        result.loggingConfig_ = loggingConfig_;
+      } else {
+        result.loggingConfig_ = loggingConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -3151,6 +3241,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasConfidentialNodes()) {
         mergeConfidentialNodes(other.getConfidentialNodes());
+      }
+      if (other.hasLoggingConfig()) {
+        mergeLoggingConfig(other.getLoggingConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -5770,7 +5863,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * `minCpuPlatform: "Intel Haswell"` or
      * `minCpuPlatform: "Intel Sandy Bridge"`. For more
      * information, read [how to specify min CPU
-     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform).
      * </pre>
      *
      * <code>string min_cpu_platform = 13;</code>
@@ -5798,7 +5891,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * `minCpuPlatform: "Intel Haswell"` or
      * `minCpuPlatform: "Intel Sandy Bridge"`. For more
      * information, read [how to specify min CPU
-     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform).
      * </pre>
      *
      * <code>string min_cpu_platform = 13;</code>
@@ -5826,7 +5919,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * `minCpuPlatform: "Intel Haswell"` or
      * `minCpuPlatform: "Intel Sandy Bridge"`. For more
      * information, read [how to specify min CPU
-     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform).
      * </pre>
      *
      * <code>string min_cpu_platform = 13;</code>
@@ -5853,7 +5946,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * `minCpuPlatform: "Intel Haswell"` or
      * `minCpuPlatform: "Intel Sandy Bridge"`. For more
      * information, read [how to specify min CPU
-     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform).
      * </pre>
      *
      * <code>string min_cpu_platform = 13;</code>
@@ -5876,7 +5969,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * `minCpuPlatform: "Intel Haswell"` or
      * `minCpuPlatform: "Intel Sandy Bridge"`. For more
      * information, read [how to specify min CPU
-     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform).
      * </pre>
      *
      * <code>string min_cpu_platform = 13;</code>
@@ -8182,6 +8275,192 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         confidentialNodes_ = null;
       }
       return confidentialNodesBuilder_;
+    }
+
+    private com.google.container.v1beta1.NodePoolLoggingConfig loggingConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.NodePoolLoggingConfig,
+            com.google.container.v1beta1.NodePoolLoggingConfig.Builder,
+            com.google.container.v1beta1.NodePoolLoggingConfigOrBuilder>
+        loggingConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 38;</code>
+     *
+     * @return Whether the loggingConfig field is set.
+     */
+    public boolean hasLoggingConfig() {
+      return loggingConfigBuilder_ != null || loggingConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 38;</code>
+     *
+     * @return The loggingConfig.
+     */
+    public com.google.container.v1beta1.NodePoolLoggingConfig getLoggingConfig() {
+      if (loggingConfigBuilder_ == null) {
+        return loggingConfig_ == null
+            ? com.google.container.v1beta1.NodePoolLoggingConfig.getDefaultInstance()
+            : loggingConfig_;
+      } else {
+        return loggingConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 38;</code>
+     */
+    public Builder setLoggingConfig(com.google.container.v1beta1.NodePoolLoggingConfig value) {
+      if (loggingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        loggingConfig_ = value;
+        onChanged();
+      } else {
+        loggingConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 38;</code>
+     */
+    public Builder setLoggingConfig(
+        com.google.container.v1beta1.NodePoolLoggingConfig.Builder builderForValue) {
+      if (loggingConfigBuilder_ == null) {
+        loggingConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        loggingConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 38;</code>
+     */
+    public Builder mergeLoggingConfig(com.google.container.v1beta1.NodePoolLoggingConfig value) {
+      if (loggingConfigBuilder_ == null) {
+        if (loggingConfig_ != null) {
+          loggingConfig_ =
+              com.google.container.v1beta1.NodePoolLoggingConfig.newBuilder(loggingConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          loggingConfig_ = value;
+        }
+        onChanged();
+      } else {
+        loggingConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 38;</code>
+     */
+    public Builder clearLoggingConfig() {
+      if (loggingConfigBuilder_ == null) {
+        loggingConfig_ = null;
+        onChanged();
+      } else {
+        loggingConfig_ = null;
+        loggingConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 38;</code>
+     */
+    public com.google.container.v1beta1.NodePoolLoggingConfig.Builder getLoggingConfigBuilder() {
+
+      onChanged();
+      return getLoggingConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 38;</code>
+     */
+    public com.google.container.v1beta1.NodePoolLoggingConfigOrBuilder getLoggingConfigOrBuilder() {
+      if (loggingConfigBuilder_ != null) {
+        return loggingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return loggingConfig_ == null
+            ? com.google.container.v1beta1.NodePoolLoggingConfig.getDefaultInstance()
+            : loggingConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 38;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.NodePoolLoggingConfig,
+            com.google.container.v1beta1.NodePoolLoggingConfig.Builder,
+            com.google.container.v1beta1.NodePoolLoggingConfigOrBuilder>
+        getLoggingConfigFieldBuilder() {
+      if (loggingConfigBuilder_ == null) {
+        loggingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.NodePoolLoggingConfig,
+                com.google.container.v1beta1.NodePoolLoggingConfig.Builder,
+                com.google.container.v1beta1.NodePoolLoggingConfigOrBuilder>(
+                getLoggingConfig(), getParentForChildren(), isClean());
+        loggingConfig_ = null;
+      }
+      return loggingConfigBuilder_;
     }
 
     @java.lang.Override

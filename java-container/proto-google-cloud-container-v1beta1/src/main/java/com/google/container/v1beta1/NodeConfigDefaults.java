@@ -84,6 +84,23 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
 
               break;
             }
+          case 26:
+            {
+              com.google.container.v1beta1.NodePoolLoggingConfig.Builder subBuilder = null;
+              if (loggingConfig_ != null) {
+                subBuilder = loggingConfig_.toBuilder();
+              }
+              loggingConfig_ =
+                  input.readMessage(
+                      com.google.container.v1beta1.NodePoolLoggingConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(loggingConfig_);
+                loggingConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -168,6 +185,54 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     return getGcfsConfig();
   }
 
+  public static final int LOGGING_CONFIG_FIELD_NUMBER = 3;
+  private com.google.container.v1beta1.NodePoolLoggingConfig loggingConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration for node pools.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 3;</code>
+   *
+   * @return Whether the loggingConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasLoggingConfig() {
+    return loggingConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration for node pools.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 3;</code>
+   *
+   * @return The loggingConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NodePoolLoggingConfig getLoggingConfig() {
+    return loggingConfig_ == null
+        ? com.google.container.v1beta1.NodePoolLoggingConfig.getDefaultInstance()
+        : loggingConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration for node pools.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NodePoolLoggingConfigOrBuilder getLoggingConfigOrBuilder() {
+    return getLoggingConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -185,6 +250,9 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     if (gcfsConfig_ != null) {
       output.writeMessage(1, getGcfsConfig());
     }
+    if (loggingConfig_ != null) {
+      output.writeMessage(3, getLoggingConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -196,6 +264,9 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     size = 0;
     if (gcfsConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getGcfsConfig());
+    }
+    if (loggingConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getLoggingConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -217,6 +288,10 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     if (hasGcfsConfig()) {
       if (!getGcfsConfig().equals(other.getGcfsConfig())) return false;
     }
+    if (hasLoggingConfig() != other.hasLoggingConfig()) return false;
+    if (hasLoggingConfig()) {
+      if (!getLoggingConfig().equals(other.getLoggingConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -231,6 +306,10 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     if (hasGcfsConfig()) {
       hash = (37 * hash) + GCFS_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getGcfsConfig().hashCode();
+    }
+    if (hasLoggingConfig()) {
+      hash = (37 * hash) + LOGGING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getLoggingConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -383,6 +462,12 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
         gcfsConfig_ = null;
         gcfsConfigBuilder_ = null;
       }
+      if (loggingConfigBuilder_ == null) {
+        loggingConfig_ = null;
+      } else {
+        loggingConfig_ = null;
+        loggingConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -414,6 +499,11 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
         result.gcfsConfig_ = gcfsConfig_;
       } else {
         result.gcfsConfig_ = gcfsConfigBuilder_.build();
+      }
+      if (loggingConfigBuilder_ == null) {
+        result.loggingConfig_ = loggingConfig_;
+      } else {
+        result.loggingConfig_ = loggingConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -467,6 +557,9 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
         return this;
       if (other.hasGcfsConfig()) {
         mergeGcfsConfig(other.getGcfsConfig());
+      }
+      if (other.hasLoggingConfig()) {
+        mergeLoggingConfig(other.getLoggingConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -680,6 +773,192 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
         gcfsConfig_ = null;
       }
       return gcfsConfigBuilder_;
+    }
+
+    private com.google.container.v1beta1.NodePoolLoggingConfig loggingConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.NodePoolLoggingConfig,
+            com.google.container.v1beta1.NodePoolLoggingConfig.Builder,
+            com.google.container.v1beta1.NodePoolLoggingConfigOrBuilder>
+        loggingConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration for node pools.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 3;</code>
+     *
+     * @return Whether the loggingConfig field is set.
+     */
+    public boolean hasLoggingConfig() {
+      return loggingConfigBuilder_ != null || loggingConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration for node pools.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 3;</code>
+     *
+     * @return The loggingConfig.
+     */
+    public com.google.container.v1beta1.NodePoolLoggingConfig getLoggingConfig() {
+      if (loggingConfigBuilder_ == null) {
+        return loggingConfig_ == null
+            ? com.google.container.v1beta1.NodePoolLoggingConfig.getDefaultInstance()
+            : loggingConfig_;
+      } else {
+        return loggingConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration for node pools.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 3;</code>
+     */
+    public Builder setLoggingConfig(com.google.container.v1beta1.NodePoolLoggingConfig value) {
+      if (loggingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        loggingConfig_ = value;
+        onChanged();
+      } else {
+        loggingConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration for node pools.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 3;</code>
+     */
+    public Builder setLoggingConfig(
+        com.google.container.v1beta1.NodePoolLoggingConfig.Builder builderForValue) {
+      if (loggingConfigBuilder_ == null) {
+        loggingConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        loggingConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration for node pools.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 3;</code>
+     */
+    public Builder mergeLoggingConfig(com.google.container.v1beta1.NodePoolLoggingConfig value) {
+      if (loggingConfigBuilder_ == null) {
+        if (loggingConfig_ != null) {
+          loggingConfig_ =
+              com.google.container.v1beta1.NodePoolLoggingConfig.newBuilder(loggingConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          loggingConfig_ = value;
+        }
+        onChanged();
+      } else {
+        loggingConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration for node pools.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 3;</code>
+     */
+    public Builder clearLoggingConfig() {
+      if (loggingConfigBuilder_ == null) {
+        loggingConfig_ = null;
+        onChanged();
+      } else {
+        loggingConfig_ = null;
+        loggingConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration for node pools.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 3;</code>
+     */
+    public com.google.container.v1beta1.NodePoolLoggingConfig.Builder getLoggingConfigBuilder() {
+
+      onChanged();
+      return getLoggingConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration for node pools.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 3;</code>
+     */
+    public com.google.container.v1beta1.NodePoolLoggingConfigOrBuilder getLoggingConfigOrBuilder() {
+      if (loggingConfigBuilder_ != null) {
+        return loggingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return loggingConfig_ == null
+            ? com.google.container.v1beta1.NodePoolLoggingConfig.getDefaultInstance()
+            : loggingConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration for node pools.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.NodePoolLoggingConfig,
+            com.google.container.v1beta1.NodePoolLoggingConfig.Builder,
+            com.google.container.v1beta1.NodePoolLoggingConfigOrBuilder>
+        getLoggingConfigFieldBuilder() {
+      if (loggingConfigBuilder_ == null) {
+        loggingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.NodePoolLoggingConfig,
+                com.google.container.v1beta1.NodePoolLoggingConfig.Builder,
+                com.google.container.v1beta1.NodePoolLoggingConfigOrBuilder>(
+                getLoggingConfig(), getParentForChildren(), isClean());
+        loggingConfig_ = null;
+      }
+      return loggingConfigBuilder_;
     }
 
     @java.lang.Override
