@@ -105,6 +105,17 @@ public class GlobalAddressesSettings extends ClientSettings<GlobalAddressesSetti
     return ((GlobalAddressesStubSettings) getStubSettings()).listSettings();
   }
 
+  /** Returns the object with the settings used for calls to setLabels. */
+  public UnaryCallSettings<SetLabelsGlobalAddressRequest, Operation> setLabelsSettings() {
+    return ((GlobalAddressesStubSettings) getStubSettings()).setLabelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsGlobalAddressRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return ((GlobalAddressesStubSettings) getStubSettings()).setLabelsOperationSettings();
+  }
+
   public static final GlobalAddressesSettings create(GlobalAddressesStubSettings stub)
       throws IOException {
     return new GlobalAddressesSettings.Builder(stub.toBuilder()).build();
@@ -234,6 +245,17 @@ public class GlobalAddressesSettings extends ClientSettings<GlobalAddressesSetti
     public PagedCallSettings.Builder<ListGlobalAddressesRequest, AddressList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public UnaryCallSettings.Builder<SetLabelsGlobalAddressRequest, Operation> setLabelsSettings() {
+      return getStubSettingsBuilder().setLabelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public OperationCallSettings.Builder<SetLabelsGlobalAddressRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return getStubSettingsBuilder().setLabelsOperationSettings();
     }
 
     @Override

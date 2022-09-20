@@ -486,7 +486,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments). Not currently available publicly.
+   * Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments).
    * </pre>
    *
    * <code>optional bool encrypted_interconnect_router = 297996575;</code>
@@ -501,7 +501,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments). Not currently available publicly.
+   * Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments).
    * </pre>
    *
    * <code>optional bool encrypted_interconnect_router = 297996575;</code>
@@ -2503,7 +2503,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments). Not currently available publicly.
+     * Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments).
      * </pre>
      *
      * <code>optional bool encrypted_interconnect_router = 297996575;</code>
@@ -2518,7 +2518,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments). Not currently available publicly.
+     * Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments).
      * </pre>
      *
      * <code>optional bool encrypted_interconnect_router = 297996575;</code>
@@ -2533,7 +2533,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments). Not currently available publicly.
+     * Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments).
      * </pre>
      *
      * <code>optional bool encrypted_interconnect_router = 297996575;</code>
@@ -2551,7 +2551,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments). Not currently available publicly.
+     * Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments).
      * </pre>
      *
      * <code>optional bool encrypted_interconnect_router = 297996575;</code>

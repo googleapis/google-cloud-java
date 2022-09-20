@@ -121,6 +121,17 @@ public class InterconnectsSettings extends ClientSettings<InterconnectsSettings>
     return ((InterconnectsStubSettings) getStubSettings()).patchOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to setLabels. */
+  public UnaryCallSettings<SetLabelsInterconnectRequest, Operation> setLabelsSettings() {
+    return ((InterconnectsStubSettings) getStubSettings()).setLabelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsInterconnectRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return ((InterconnectsStubSettings) getStubSettings()).setLabelsOperationSettings();
+  }
+
   public static final InterconnectsSettings create(InterconnectsStubSettings stub)
       throws IOException {
     return new InterconnectsSettings.Builder(stub.toBuilder()).build();
@@ -268,6 +279,17 @@ public class InterconnectsSettings extends ClientSettings<InterconnectsSettings>
     public OperationCallSettings.Builder<PatchInterconnectRequest, Operation, Operation>
         patchOperationSettings() {
       return getStubSettingsBuilder().patchOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public UnaryCallSettings.Builder<SetLabelsInterconnectRequest, Operation> setLabelsSettings() {
+      return getStubSettingsBuilder().setLabelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public OperationCallSettings.Builder<SetLabelsInterconnectRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return getStubSettingsBuilder().setLabelsOperationSettings();
     }
 
     @Override

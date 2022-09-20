@@ -515,6 +515,110 @@ public class RegionBackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resource = "resource-341064690";
+   *   Policy response = regionBackendServicesClient.getIamPolicy(project, region, resource);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region The name of the region for this request.
+   * @param resource Name or id of the resource for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(String project, String region, String resource) {
+    GetIamPolicyRegionBackendServiceRequest request =
+        GetIamPolicyRegionBackendServiceRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setResource(resource)
+            .build();
+    return getIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   GetIamPolicyRegionBackendServiceRequest request =
+   *       GetIamPolicyRegionBackendServiceRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   Policy response = regionBackendServicesClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyRegionBackendServiceRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   GetIamPolicyRegionBackendServiceRequest request =
+   *       GetIamPolicyRegionBackendServiceRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Policy> future =
+   *       regionBackendServicesClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIamPolicyRegionBackendServiceRequest, Policy>
+      getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates a regional BackendService resource in the specified project using the data included in
    * the request. For more information, see Backend services overview.
    *
@@ -961,6 +1065,117 @@ public class RegionBackendServicesClient implements BackgroundResource {
    */
   public final UnaryCallable<PatchRegionBackendServiceRequest, Operation> patchCallable() {
     return stub.patchCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resource = "resource-341064690";
+   *   RegionSetPolicyRequest regionSetPolicyRequestResource =
+   *       RegionSetPolicyRequest.newBuilder().build();
+   *   Policy response =
+   *       regionBackendServicesClient.setIamPolicy(
+   *           project, region, resource, regionSetPolicyRequestResource);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region The name of the region for this request.
+   * @param resource Name or id of the resource for this request.
+   * @param regionSetPolicyRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(
+      String project,
+      String region,
+      String resource,
+      RegionSetPolicyRequest regionSetPolicyRequestResource) {
+    SetIamPolicyRegionBackendServiceRequest request =
+        SetIamPolicyRegionBackendServiceRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setResource(resource)
+            .setRegionSetPolicyRequestResource(regionSetPolicyRequestResource)
+            .build();
+    return setIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   SetIamPolicyRegionBackendServiceRequest request =
+   *       SetIamPolicyRegionBackendServiceRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionSetPolicyRequestResource(RegionSetPolicyRequest.newBuilder().build())
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   Policy response = regionBackendServicesClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyRegionBackendServiceRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionBackendServicesClient regionBackendServicesClient =
+   *     RegionBackendServicesClient.create()) {
+   *   SetIamPolicyRegionBackendServiceRequest request =
+   *       SetIamPolicyRegionBackendServiceRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionSetPolicyRequestResource(RegionSetPolicyRequest.newBuilder().build())
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Policy> future =
+   *       regionBackendServicesClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetIamPolicyRegionBackendServiceRequest, Policy>
+      setIamPolicyCallable() {
+    return stub.setIamPolicyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

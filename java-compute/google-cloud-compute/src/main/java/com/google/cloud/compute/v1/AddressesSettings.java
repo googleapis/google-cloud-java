@@ -111,6 +111,17 @@ public class AddressesSettings extends ClientSettings<AddressesSettings> {
     return ((AddressesStubSettings) getStubSettings()).listSettings();
   }
 
+  /** Returns the object with the settings used for calls to setLabels. */
+  public UnaryCallSettings<SetLabelsAddressRequest, Operation> setLabelsSettings() {
+    return ((AddressesStubSettings) getStubSettings()).setLabelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsAddressRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return ((AddressesStubSettings) getStubSettings()).setLabelsOperationSettings();
+  }
+
   public static final AddressesSettings create(AddressesStubSettings stub) throws IOException {
     return new AddressesSettings.Builder(stub.toBuilder()).build();
   }
@@ -246,6 +257,17 @@ public class AddressesSettings extends ClientSettings<AddressesSettings> {
     public PagedCallSettings.Builder<ListAddressesRequest, AddressList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public UnaryCallSettings.Builder<SetLabelsAddressRequest, Operation> setLabelsSettings() {
+      return getStubSettingsBuilder().setLabelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public OperationCallSettings.Builder<SetLabelsAddressRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return getStubSettingsBuilder().setLabelsOperationSettings();
     }
 
     @Override

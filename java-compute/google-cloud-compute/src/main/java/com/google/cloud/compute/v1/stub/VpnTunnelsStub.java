@@ -28,6 +28,7 @@ import com.google.cloud.compute.v1.GetVpnTunnelRequest;
 import com.google.cloud.compute.v1.InsertVpnTunnelRequest;
 import com.google.cloud.compute.v1.ListVpnTunnelsRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.SetLabelsVpnTunnelRequest;
 import com.google.cloud.compute.v1.VpnTunnel;
 import com.google.cloud.compute.v1.VpnTunnelAggregatedList;
 import com.google.cloud.compute.v1.VpnTunnelList;
@@ -78,6 +79,15 @@ public abstract class VpnTunnelsStub implements BackgroundResource {
 
   public UnaryCallable<ListVpnTunnelsRequest, VpnTunnelList> listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public OperationCallable<SetLabelsVpnTunnelRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setLabelsOperationCallable()");
+  }
+
+  public UnaryCallable<SetLabelsVpnTunnelRequest, Operation> setLabelsCallable() {
+    throw new UnsupportedOperationException("Not implemented: setLabelsCallable()");
   }
 
   @Override

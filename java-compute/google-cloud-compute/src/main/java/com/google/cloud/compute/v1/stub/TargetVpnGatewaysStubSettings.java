@@ -51,6 +51,7 @@ import com.google.cloud.compute.v1.GetTargetVpnGatewayRequest;
 import com.google.cloud.compute.v1.InsertTargetVpnGatewayRequest;
 import com.google.cloud.compute.v1.ListTargetVpnGatewaysRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.SetLabelsTargetVpnGatewayRequest;
 import com.google.cloud.compute.v1.TargetVpnGateway;
 import com.google.cloud.compute.v1.TargetVpnGatewayAggregatedList;
 import com.google.cloud.compute.v1.TargetVpnGatewayList;
@@ -125,6 +126,9 @@ public class TargetVpnGatewaysStubSettings extends StubSettings<TargetVpnGateway
   private final PagedCallSettings<
           ListTargetVpnGatewaysRequest, TargetVpnGatewayList, ListPagedResponse>
       listSettings;
+  private final UnaryCallSettings<SetLabelsTargetVpnGatewayRequest, Operation> setLabelsSettings;
+  private final OperationCallSettings<SetLabelsTargetVpnGatewayRequest, Operation, Operation>
+      setLabelsOperationSettings;
 
   private static final PagedListDescriptor<
           AggregatedListTargetVpnGatewaysRequest,
@@ -303,6 +307,17 @@ public class TargetVpnGatewaysStubSettings extends StubSettings<TargetVpnGateway
     return listSettings;
   }
 
+  /** Returns the object with the settings used for calls to setLabels. */
+  public UnaryCallSettings<SetLabelsTargetVpnGatewayRequest, Operation> setLabelsSettings() {
+    return setLabelsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsTargetVpnGatewayRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return setLabelsOperationSettings;
+  }
+
   public TargetVpnGatewaysStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -386,6 +401,8 @@ public class TargetVpnGatewaysStubSettings extends StubSettings<TargetVpnGateway
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
+    setLabelsSettings = settingsBuilder.setLabelsSettings().build();
+    setLabelsOperationSettings = settingsBuilder.setLabelsOperationSettings().build();
   }
 
   /** Builder for TargetVpnGatewaysStubSettings. */
@@ -409,6 +426,11 @@ public class TargetVpnGatewaysStubSettings extends StubSettings<TargetVpnGateway
     private final PagedCallSettings.Builder<
             ListTargetVpnGatewaysRequest, TargetVpnGatewayList, ListPagedResponse>
         listSettings;
+    private final UnaryCallSettings.Builder<SetLabelsTargetVpnGatewayRequest, Operation>
+        setLabelsSettings;
+    private final OperationCallSettings.Builder<
+            SetLabelsTargetVpnGatewayRequest, Operation, Operation>
+        setLabelsOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -466,10 +488,17 @@ public class TargetVpnGatewaysStubSettings extends StubSettings<TargetVpnGateway
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
+      setLabelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setLabelsOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              aggregatedListSettings, deleteSettings, getSettings, insertSettings, listSettings);
+              aggregatedListSettings,
+              deleteSettings,
+              getSettings,
+              insertSettings,
+              listSettings,
+              setLabelsSettings);
       initDefaults(this);
     }
 
@@ -483,10 +512,17 @@ public class TargetVpnGatewaysStubSettings extends StubSettings<TargetVpnGateway
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
+      setLabelsSettings = settings.setLabelsSettings.toBuilder();
+      setLabelsOperationSettings = settings.setLabelsOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              aggregatedListSettings, deleteSettings, getSettings, insertSettings, listSettings);
+              aggregatedListSettings,
+              deleteSettings,
+              getSettings,
+              insertSettings,
+              listSettings,
+              setLabelsSettings);
     }
 
     private static Builder createDefault() {
@@ -529,6 +565,11 @@ public class TargetVpnGatewaysStubSettings extends StubSettings<TargetVpnGateway
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .setLabelsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .deleteOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -557,6 +598,31 @@ public class TargetVpnGatewaysStubSettings extends StubSettings<TargetVpnGateway
           .setInitialCallSettings(
               UnaryCallSettings
                   .<InsertTargetVpnGatewayRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setLabelsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetLabelsTargetVpnGatewayRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -639,6 +705,20 @@ public class TargetVpnGatewaysStubSettings extends StubSettings<TargetVpnGateway
             ListTargetVpnGatewaysRequest, TargetVpnGatewayList, ListPagedResponse>
         listSettings() {
       return listSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public UnaryCallSettings.Builder<SetLabelsTargetVpnGatewayRequest, Operation>
+        setLabelsSettings() {
+      return setLabelsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SetLabelsTargetVpnGatewayRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return setLabelsOperationSettings;
     }
 
     @Override

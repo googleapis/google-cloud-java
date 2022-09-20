@@ -88,28 +88,28 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000200;
+              bitField0_ |= 0x00000400;
               kind_ = s;
               break;
             }
           case 26856730:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000400;
+              bitField0_ |= 0x00000800;
               mode_ = s;
               break;
             }
           case 28604882:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00002000;
+              bitField0_ |= 0x00004000;
               type_ = s;
               break;
             }
           case 141576362:
             {
               com.google.cloud.compute.v1.AttachedDiskInitializeParams.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000080) != 0)) {
+              if (((bitField0_ & 0x00000100) != 0)) {
                 subBuilder = initializeParams_.toBuilder();
               }
               initializeParams_ =
@@ -120,7 +120,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
                 subBuilder.mergeFrom(initializeParams_);
                 initializeParams_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000100;
               break;
             }
           case 540333730:
@@ -132,10 +132,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
             }
           case 634356362:
             {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
                 guestOsFeatures_ =
                     new java.util.ArrayList<com.google.cloud.compute.v1.GuestOsFeature>();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000080;
               }
               guestOsFeatures_.add(
                   input.readMessage(
@@ -144,21 +144,27 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
             }
           case 802768528:
             {
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000080;
               index_ = input.readInt32();
+              break;
+            }
+          case 1142067400:
+            {
+              bitField0_ |= 0x00000040;
+              forceAttach_ = input.readBool();
               break;
             }
           case 1417887962:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00001000;
+              bitField0_ |= 0x00002000;
               source_ = s;
               break;
             }
           case 1538854938:
             {
               com.google.cloud.compute.v1.InitialStateConfig.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000800) != 0)) {
+              if (((bitField0_ & 0x00001000) != 0)) {
                 subBuilder = shieldedInstanceInitialState_.toBuilder();
               }
               shieldedInstanceInitialState_ =
@@ -168,7 +174,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
                 subBuilder.mergeFrom(shieldedInstanceInitialState_);
                 shieldedInstanceInitialState_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000800;
+              bitField0_ |= 0x00001000;
               break;
             }
           case -2121681878:
@@ -204,9 +210,9 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
           case -1593826670:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
+              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
                 licenses_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000800;
+                mutable_bitField0_ |= 0x00001000;
               }
               licenses_.add(s);
               break;
@@ -220,7 +226,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
           case -273978934:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000200;
               interface_ = s;
               break;
             }
@@ -240,10 +246,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+      if (((mutable_bitField0_ & 0x00000080) != 0)) {
         guestOsFeatures_ = java.util.Collections.unmodifiableList(guestOsFeatures_);
       }
-      if (((mutable_bitField0_ & 0x00000800) != 0)) {
+      if (((mutable_bitField0_ & 0x00001000) != 0)) {
         licenses_ = licenses_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -449,7 +455,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. For most machine types, the default is SCSI. Local SSDs can use either NVME or SCSI. In certain configurations, persistent disks can use NVMe. For more information, see About persistent disks.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.AttachedDisk.Interface}
@@ -1137,6 +1143,39 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     return diskSizeGb_;
   }
 
+  public static final int FORCE_ATTACH_FIELD_NUMBER = 142758425;
+  private boolean forceAttach_;
+  /**
+   *
+   *
+   * <pre>
+   * [Input Only] Whether to force attach the regional disk even if it's currently attached to another instance. If you try to force attach a zonal disk to an instance, you will receive an error.
+   * </pre>
+   *
+   * <code>optional bool force_attach = 142758425;</code>
+   *
+   * @return Whether the forceAttach field is set.
+   */
+  @java.lang.Override
+  public boolean hasForceAttach() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Input Only] Whether to force attach the regional disk even if it's currently attached to another instance. If you try to force attach a zonal disk to an instance, you will receive an error.
+   * </pre>
+   *
+   * <code>optional bool force_attach = 142758425;</code>
+   *
+   * @return The forceAttach.
+   */
+  @java.lang.Override
+  public boolean getForceAttach() {
+    return forceAttach_;
+  }
+
   public static final int GUEST_OS_FEATURES_FIELD_NUMBER = 79294545;
   private java.util.List<com.google.cloud.compute.v1.GuestOsFeature> guestOsFeatures_;
   /**
@@ -1222,7 +1261,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasIndex() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -1257,7 +1296,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasInitializeParams() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -1303,7 +1342,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. For most machine types, the default is SCSI. Local SSDs can use either NVME or SCSI. In certain configurations, persistent disks can use NVMe. For more information, see About persistent disks.
    * Check the Interface enum for the list of possible values.
    * </pre>
    *
@@ -1313,13 +1352,13 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasInterface() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
    *
    * <pre>
-   * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. For most machine types, the default is SCSI. Local SSDs can use either NVME or SCSI. In certain configurations, persistent disks can use NVMe. For more information, see About persistent disks.
    * Check the Interface enum for the list of possible values.
    * </pre>
    *
@@ -1343,7 +1382,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. For most machine types, the default is SCSI. Local SSDs can use either NVME or SCSI. In certain configurations, persistent disks can use NVMe. For more information, see About persistent disks.
    * Check the Interface enum for the list of possible values.
    * </pre>
    *
@@ -1379,7 +1418,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -1505,7 +1544,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasMode() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -1573,7 +1612,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasShieldedInstanceInitialState() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -1628,7 +1667,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSource() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    *
@@ -1693,7 +1732,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasType() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
   /**
    *
@@ -1761,16 +1800,16 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeBool(3029746, boot_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3357091, mode_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(17697045, getInitializeParams());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -1779,13 +1818,16 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < guestOsFeatures_.size(); i++) {
       output.writeMessage(79294545, guestOsFeatures_.get(i));
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeInt32(100346066, index_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeBool(142758425, forceAttach_);
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 177235995, source_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       output.writeMessage(192356867, getShieldedInstanceInitialState());
     }
     if (((bitField0_ & 0x00000010) != 0)) {
@@ -1803,7 +1845,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(464761403, autoDelete_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 502623545, interface_);
     }
     unknownFields.writeTo(output);
@@ -1818,16 +1860,16 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3029746, boot_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3357091, mode_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(17697045, getInitializeParams());
     }
@@ -1839,13 +1881,16 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               79294545, guestOsFeatures_.get(i));
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(100346066, index_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(142758425, forceAttach_);
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(177235995, source_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               192356867, getShieldedInstanceInitialState());
@@ -1872,7 +1917,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(464761403, autoDelete_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(502623545, interface_);
     }
     size += unknownFields.getSerializedSize();
@@ -1913,6 +1958,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     if (hasDiskSizeGb() != other.hasDiskSizeGb()) return false;
     if (hasDiskSizeGb()) {
       if (getDiskSizeGb() != other.getDiskSizeGb()) return false;
+    }
+    if (hasForceAttach() != other.hasForceAttach()) return false;
+    if (hasForceAttach()) {
+      if (getForceAttach() != other.getForceAttach()) return false;
     }
     if (!getGuestOsFeaturesList().equals(other.getGuestOsFeaturesList())) return false;
     if (hasIndex() != other.hasIndex()) return false;
@@ -1983,6 +2032,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     if (hasDiskSizeGb()) {
       hash = (37 * hash) + DISK_SIZE_GB_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDiskSizeGb());
+    }
+    if (hasForceAttach()) {
+      hash = (37 * hash) + FORCE_ATTACH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getForceAttach());
     }
     if (getGuestOsFeaturesCount() > 0) {
       hash = (37 * hash) + GUEST_OS_FEATURES_FIELD_NUMBER;
@@ -2190,38 +2243,40 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000010);
       diskSizeGb_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000020);
+      forceAttach_ = false;
+      bitField0_ = (bitField0_ & ~0x00000040);
       if (guestOsFeaturesBuilder_ == null) {
         guestOsFeatures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
       } else {
         guestOsFeaturesBuilder_.clear();
       }
       index_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       if (initializeParamsBuilder_ == null) {
         initializeParams_ = null;
       } else {
         initializeParamsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000100);
-      interface_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
-      kind_ = "";
+      interface_ = "";
       bitField0_ = (bitField0_ & ~0x00000400);
-      licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      kind_ = "";
       bitField0_ = (bitField0_ & ~0x00000800);
-      mode_ = "";
+      licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00001000);
+      mode_ = "";
+      bitField0_ = (bitField0_ & ~0x00002000);
       if (shieldedInstanceInitialStateBuilder_ == null) {
         shieldedInstanceInitialState_ = null;
       } else {
         shieldedInstanceInitialStateBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00002000);
-      source_ = "";
       bitField0_ = (bitField0_ & ~0x00004000);
-      type_ = "";
+      source_ = "";
       bitField0_ = (bitField0_ & ~0x00008000);
+      type_ = "";
+      bitField0_ = (bitField0_ & ~0x00010000);
       return this;
     }
 
@@ -2279,58 +2334,62 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
         result.diskSizeGb_ = diskSizeGb_;
         to_bitField0_ |= 0x00000020;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.forceAttach_ = forceAttach_;
+        to_bitField0_ |= 0x00000040;
+      }
       if (guestOsFeaturesBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           guestOsFeatures_ = java.util.Collections.unmodifiableList(guestOsFeatures_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.guestOsFeatures_ = guestOsFeatures_;
       } else {
         result.guestOsFeatures_ = guestOsFeaturesBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.index_ = index_;
-        to_bitField0_ |= 0x00000040;
-      }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.index_ = index_;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         if (initializeParamsBuilder_ == null) {
           result.initializeParams_ = initializeParams_;
         } else {
           result.initializeParams_ = initializeParamsBuilder_.build();
         }
-        to_bitField0_ |= 0x00000080;
-      }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
         to_bitField0_ |= 0x00000100;
       }
-      result.interface_ = interface_;
       if (((from_bitField0_ & 0x00000400) != 0)) {
         to_bitField0_ |= 0x00000200;
       }
-      result.kind_ = kind_;
-      if (((bitField0_ & 0x00000800) != 0)) {
-        licenses_ = licenses_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000800);
-      }
-      result.licenses_ = licenses_;
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      result.interface_ = interface_;
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         to_bitField0_ |= 0x00000400;
       }
-      result.mode_ = mode_;
+      result.kind_ = kind_;
+      if (((bitField0_ & 0x00001000) != 0)) {
+        licenses_ = licenses_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00001000);
+      }
+      result.licenses_ = licenses_;
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        to_bitField0_ |= 0x00000800;
+      }
+      result.mode_ = mode_;
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         if (shieldedInstanceInitialStateBuilder_ == null) {
           result.shieldedInstanceInitialState_ = shieldedInstanceInitialState_;
         } else {
           result.shieldedInstanceInitialState_ = shieldedInstanceInitialStateBuilder_.build();
         }
-        to_bitField0_ |= 0x00000800;
-      }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
         to_bitField0_ |= 0x00001000;
       }
-      result.source_ = source_;
       if (((from_bitField0_ & 0x00008000) != 0)) {
         to_bitField0_ |= 0x00002000;
+      }
+      result.source_ = source_;
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        to_bitField0_ |= 0x00004000;
       }
       result.type_ = type_;
       result.bitField0_ = to_bitField0_;
@@ -2405,11 +2464,14 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDiskSizeGb()) {
         setDiskSizeGb(other.getDiskSizeGb());
       }
+      if (other.hasForceAttach()) {
+        setForceAttach(other.getForceAttach());
+      }
       if (guestOsFeaturesBuilder_ == null) {
         if (!other.guestOsFeatures_.isEmpty()) {
           if (guestOsFeatures_.isEmpty()) {
             guestOsFeatures_ = other.guestOsFeatures_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureGuestOsFeaturesIsMutable();
             guestOsFeatures_.addAll(other.guestOsFeatures_);
@@ -2422,7 +2484,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
             guestOsFeaturesBuilder_.dispose();
             guestOsFeaturesBuilder_ = null;
             guestOsFeatures_ = other.guestOsFeatures_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
             guestOsFeaturesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getGuestOsFeaturesFieldBuilder()
@@ -2439,19 +2501,19 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
         mergeInitializeParams(other.getInitializeParams());
       }
       if (other.hasInterface()) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         interface_ = other.interface_;
         onChanged();
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         kind_ = other.kind_;
         onChanged();
       }
       if (!other.licenses_.isEmpty()) {
         if (licenses_.isEmpty()) {
           licenses_ = other.licenses_;
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00001000);
         } else {
           ensureLicensesIsMutable();
           licenses_.addAll(other.licenses_);
@@ -2459,7 +2521,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       if (other.hasMode()) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         mode_ = other.mode_;
         onChanged();
       }
@@ -2467,12 +2529,12 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
         mergeShieldedInstanceInitialState(other.getShieldedInstanceInitialState());
       }
       if (other.hasSource()) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         source_ = other.source_;
         onChanged();
       }
       if (other.hasType()) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         type_ = other.type_;
         onChanged();
       }
@@ -3161,14 +3223,81 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean forceAttach_;
+    /**
+     *
+     *
+     * <pre>
+     * [Input Only] Whether to force attach the regional disk even if it's currently attached to another instance. If you try to force attach a zonal disk to an instance, you will receive an error.
+     * </pre>
+     *
+     * <code>optional bool force_attach = 142758425;</code>
+     *
+     * @return Whether the forceAttach field is set.
+     */
+    @java.lang.Override
+    public boolean hasForceAttach() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Input Only] Whether to force attach the regional disk even if it's currently attached to another instance. If you try to force attach a zonal disk to an instance, you will receive an error.
+     * </pre>
+     *
+     * <code>optional bool force_attach = 142758425;</code>
+     *
+     * @return The forceAttach.
+     */
+    @java.lang.Override
+    public boolean getForceAttach() {
+      return forceAttach_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Input Only] Whether to force attach the regional disk even if it's currently attached to another instance. If you try to force attach a zonal disk to an instance, you will receive an error.
+     * </pre>
+     *
+     * <code>optional bool force_attach = 142758425;</code>
+     *
+     * @param value The forceAttach to set.
+     * @return This builder for chaining.
+     */
+    public Builder setForceAttach(boolean value) {
+      bitField0_ |= 0x00000040;
+      forceAttach_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Input Only] Whether to force attach the regional disk even if it's currently attached to another instance. If you try to force attach a zonal disk to an instance, you will receive an error.
+     * </pre>
+     *
+     * <code>optional bool force_attach = 142758425;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearForceAttach() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      forceAttach_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.compute.v1.GuestOsFeature> guestOsFeatures_ =
         java.util.Collections.emptyList();
 
     private void ensureGuestOsFeaturesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         guestOsFeatures_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.GuestOsFeature>(guestOsFeatures_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -3384,7 +3513,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     public Builder clearGuestOsFeatures() {
       if (guestOsFeaturesBuilder_ == null) {
         guestOsFeatures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         guestOsFeaturesBuilder_.clear();
@@ -3508,7 +3637,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.GuestOsFeature.Builder,
                 com.google.cloud.compute.v1.GuestOsFeatureOrBuilder>(
                 guestOsFeatures_,
-                ((bitField0_ & 0x00000040) != 0),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         guestOsFeatures_ = null;
@@ -3530,7 +3659,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasIndex() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3560,7 +3689,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setIndex(int value) {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       index_ = value;
       onChanged();
       return this;
@@ -3577,7 +3706,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIndex() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       index_ = 0;
       onChanged();
       return this;
@@ -3603,7 +3732,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the initializeParams field is set.
      */
     public boolean hasInitializeParams() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3649,7 +3778,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       } else {
         initializeParamsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
     /**
@@ -3671,7 +3800,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       } else {
         initializeParamsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
     /**
@@ -3688,7 +3817,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeInitializeParams(
         com.google.cloud.compute.v1.AttachedDiskInitializeParams value) {
       if (initializeParamsBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && initializeParams_ != null
             && initializeParams_
                 != com.google.cloud.compute.v1.AttachedDiskInitializeParams.getDefaultInstance()) {
@@ -3703,7 +3832,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       } else {
         initializeParamsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
     /**
@@ -3724,7 +3853,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       } else {
         initializeParamsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
     /**
@@ -3740,7 +3869,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.AttachedDiskInitializeParams.Builder
         getInitializeParamsBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getInitializeParamsFieldBuilder().getBuilder();
     }
@@ -3798,7 +3927,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. For most machine types, the default is SCSI. Local SSDs can use either NVME or SCSI. In certain configurations, persistent disks can use NVMe. For more information, see About persistent disks.
      * Check the Interface enum for the list of possible values.
      * </pre>
      *
@@ -3807,13 +3936,13 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the interface field is set.
      */
     public boolean hasInterface() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. For most machine types, the default is SCSI. Local SSDs can use either NVME or SCSI. In certain configurations, persistent disks can use NVMe. For more information, see About persistent disks.
      * Check the Interface enum for the list of possible values.
      * </pre>
      *
@@ -3836,7 +3965,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. For most machine types, the default is SCSI. Local SSDs can use either NVME or SCSI. In certain configurations, persistent disks can use NVMe. For more information, see About persistent disks.
      * Check the Interface enum for the list of possible values.
      * </pre>
      *
@@ -3859,7 +3988,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. For most machine types, the default is SCSI. Local SSDs can use either NVME or SCSI. In certain configurations, persistent disks can use NVMe. For more information, see About persistent disks.
      * Check the Interface enum for the list of possible values.
      * </pre>
      *
@@ -3872,7 +4001,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       interface_ = value;
       onChanged();
       return this;
@@ -3881,7 +4010,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. For most machine types, the default is SCSI. Local SSDs can use either NVME or SCSI. In certain configurations, persistent disks can use NVMe. For more information, see About persistent disks.
      * Check the Interface enum for the list of possible values.
      * </pre>
      *
@@ -3890,7 +4019,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInterface() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       interface_ = getDefaultInstance().getInterface();
       onChanged();
       return this;
@@ -3899,7 +4028,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. For most machine types, the default is SCSI. Local SSDs can use either NVME or SCSI. In certain configurations, persistent disks can use NVMe. For more information, see About persistent disks.
      * Check the Interface enum for the list of possible values.
      * </pre>
      *
@@ -3913,7 +4042,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       interface_ = value;
       onChanged();
       return this;
@@ -3932,7 +4061,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3994,7 +4123,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       kind_ = value;
       onChanged();
       return this;
@@ -4011,7 +4140,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -4033,7 +4162,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       kind_ = value;
       onChanged();
       return this;
@@ -4043,9 +4172,9 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLicensesIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         licenses_ = new com.google.protobuf.LazyStringArrayList(licenses_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
       }
     }
     /**
@@ -4180,7 +4309,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLicenses() {
       licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4221,7 +4350,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the mode field is set.
      */
     public boolean hasMode() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -4286,7 +4415,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       mode_ = value;
       onChanged();
       return this;
@@ -4304,7 +4433,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMode() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       mode_ = getDefaultInstance().getMode();
       onChanged();
       return this;
@@ -4327,7 +4456,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       mode_ = value;
       onChanged();
       return this;
@@ -4353,7 +4482,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the shieldedInstanceInitialState field is set.
      */
     public boolean hasShieldedInstanceInitialState() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -4399,7 +4528,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       } else {
         shieldedInstanceInitialStateBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       return this;
     }
     /**
@@ -4421,7 +4550,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       } else {
         shieldedInstanceInitialStateBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       return this;
     }
     /**
@@ -4438,7 +4567,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeShieldedInstanceInitialState(
         com.google.cloud.compute.v1.InitialStateConfig value) {
       if (shieldedInstanceInitialStateBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && shieldedInstanceInitialState_ != null
             && shieldedInstanceInitialState_
                 != com.google.cloud.compute.v1.InitialStateConfig.getDefaultInstance()) {
@@ -4454,7 +4583,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       } else {
         shieldedInstanceInitialStateBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       return this;
     }
     /**
@@ -4475,7 +4604,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       } else {
         shieldedInstanceInitialStateBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       return this;
     }
     /**
@@ -4491,7 +4620,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.InitialStateConfig.Builder
         getShieldedInstanceInitialStateBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getShieldedInstanceInitialStateFieldBuilder().getBuilder();
     }
@@ -4557,7 +4686,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the source field is set.
      */
     public boolean hasSource() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4619,7 +4748,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       source_ = value;
       onChanged();
       return this;
@@ -4636,7 +4765,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSource() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       source_ = getDefaultInstance().getSource();
       onChanged();
       return this;
@@ -4658,7 +4787,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       source_ = value;
       onChanged();
       return this;
@@ -4678,7 +4807,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the type field is set.
      */
     public boolean hasType() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4743,7 +4872,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       type_ = value;
       onChanged();
       return this;
@@ -4761,7 +4890,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       type_ = getDefaultInstance().getType();
       onChanged();
       return this;
@@ -4784,7 +4913,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       type_ = value;
       onChanged();
       return this;

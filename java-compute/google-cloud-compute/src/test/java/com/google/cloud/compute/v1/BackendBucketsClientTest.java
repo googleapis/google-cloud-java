@@ -294,6 +294,7 @@ public class BackendBucketsClientTest {
         BackendBucket.newBuilder()
             .setBucketName("bucketName1117008789")
             .setCdnPolicy(BackendBucketCdnPolicy.newBuilder().build())
+            .setCompressionMode("compressionMode71820329")
             .setCreationTimestamp("creationTimestamp-370203401")
             .addAllCustomResponseHeaders(new ArrayList<String>())
             .setDescription("description-1724546052")

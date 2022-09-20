@@ -815,6 +815,155 @@ public class VpnTunnelsClient implements BackgroundResource {
     return stub.listCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on a VpnTunnel. To learn more about labels, read the Labeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resource = "resource-341064690";
+   *   RegionSetLabelsRequest regionSetLabelsRequestResource =
+   *       RegionSetLabelsRequest.newBuilder().build();
+   *   Operation response =
+   *       vpnTunnelsClient
+   *           .setLabelsAsync(project, region, resource, regionSetLabelsRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region The region for this request.
+   * @param resource Name or id of the resource for this request.
+   * @param regionSetLabelsRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> setLabelsAsync(
+      String project,
+      String region,
+      String resource,
+      RegionSetLabelsRequest regionSetLabelsRequestResource) {
+    SetLabelsVpnTunnelRequest request =
+        SetLabelsVpnTunnelRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setResource(resource)
+            .setRegionSetLabelsRequestResource(regionSetLabelsRequestResource)
+            .build();
+    return setLabelsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on a VpnTunnel. To learn more about labels, read the Labeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
+   *   SetLabelsVpnTunnelRequest request =
+   *       SetLabelsVpnTunnelRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionSetLabelsRequestResource(RegionSetLabelsRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   Operation response = vpnTunnelsClient.setLabelsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setLabelsAsync(
+      SetLabelsVpnTunnelRequest request) {
+    return setLabelsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on a VpnTunnel. To learn more about labels, read the Labeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
+   *   SetLabelsVpnTunnelRequest request =
+   *       SetLabelsVpnTunnelRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionSetLabelsRequestResource(RegionSetLabelsRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       vpnTunnelsClient.setLabelsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetLabelsVpnTunnelRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    return stub.setLabelsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on a VpnTunnel. To learn more about labels, read the Labeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
+   *   SetLabelsVpnTunnelRequest request =
+   *       SetLabelsVpnTunnelRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionSetLabelsRequestResource(RegionSetLabelsRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Operation> future = vpnTunnelsClient.setLabelsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetLabelsVpnTunnelRequest, Operation> setLabelsCallable() {
+    return stub.setLabelsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
