@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.7.2](https://github.com/googleapis/java-document-ai/compare/v2.7.1...v2.7.2) (2022-09-20)
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:grpc-google-common-protos to v2.9.3 ([#891](https://github.com/googleapis/java-document-ai/issues/891)) ([916c7f1](https://github.com/googleapis/java-document-ai/commit/916c7f17e98f32a5cdd0e89c747d778a005a16ba))
+
 ## [2.7.1](https://github.com/googleapis/java-document-ai/compare/v2.7.0...v2.7.1) (2022-09-20)
 
 
