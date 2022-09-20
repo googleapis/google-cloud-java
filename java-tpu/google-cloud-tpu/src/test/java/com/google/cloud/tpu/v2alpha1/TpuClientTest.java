@@ -197,6 +197,7 @@ public class TpuClientTest {
             .setId(3355)
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
+            .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .build();
     mockTpu.addResponse(expectedResponse);
 
@@ -251,6 +252,7 @@ public class TpuClientTest {
             .setId(3355)
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
+            .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .build();
     mockTpu.addResponse(expectedResponse);
 
@@ -305,6 +307,7 @@ public class TpuClientTest {
             .setId(3355)
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
+            .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -373,6 +376,7 @@ public class TpuClientTest {
             .setId(3355)
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
+            .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -441,6 +445,7 @@ public class TpuClientTest {
             .setId(3355)
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
+            .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -503,6 +508,7 @@ public class TpuClientTest {
             .setId(3355)
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
+            .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -565,6 +571,7 @@ public class TpuClientTest {
             .setId(3355)
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
+            .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -627,6 +634,7 @@ public class TpuClientTest {
             .setId(3355)
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
+            .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -689,6 +697,7 @@ public class TpuClientTest {
             .setId(3355)
             .addAllDataDisks(new ArrayList<AttachedDisk>())
             .addAllSymptoms(new ArrayList<Symptom>())
+            .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

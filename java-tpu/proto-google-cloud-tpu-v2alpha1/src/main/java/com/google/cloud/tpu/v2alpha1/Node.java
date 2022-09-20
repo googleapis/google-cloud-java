@@ -286,6 +286,23 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
                       com.google.cloud.tpu.v2alpha1.AttachedDisk.parser(), extensionRegistry));
               break;
             }
+          case 362:
+            {
+              com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig.Builder subBuilder = null;
+              if (shieldedInstanceConfig_ != null) {
+                subBuilder = shieldedInstanceConfig_.toBuilder();
+              }
+              shieldedInstanceConfig_ =
+                  input.readMessage(
+                      com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(shieldedInstanceConfig_);
+                shieldedInstanceConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -2303,6 +2320,55 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     return symptoms_.get(index);
   }
 
+  public static final int SHIELDED_INSTANCE_CONFIG_FIELD_NUMBER = 45;
+  private com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig shieldedInstanceConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Shielded Instance options.
+   * </pre>
+   *
+   * <code>.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig shielded_instance_config = 45;</code>
+   *
+   * @return Whether the shieldedInstanceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasShieldedInstanceConfig() {
+    return shieldedInstanceConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Shielded Instance options.
+   * </pre>
+   *
+   * <code>.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig shielded_instance_config = 45;</code>
+   *
+   * @return The shieldedInstanceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig getShieldedInstanceConfig() {
+    return shieldedInstanceConfig_ == null
+        ? com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig.getDefaultInstance()
+        : shieldedInstanceConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Shielded Instance options.
+   * </pre>
+   *
+   * <code>.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig shielded_instance_config = 45;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfigOrBuilder
+      getShieldedInstanceConfigOrBuilder() {
+    return getShieldedInstanceConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2375,6 +2441,9 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < dataDisks_.size(); i++) {
       output.writeMessage(41, dataDisks_.get(i));
+    }
+    if (shieldedInstanceConfig_ != null) {
+      output.writeMessage(45, getShieldedInstanceConfig());
     }
     unknownFields.writeTo(output);
   }
@@ -2466,6 +2535,10 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < dataDisks_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(41, dataDisks_.get(i));
     }
+    if (shieldedInstanceConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(45, getShieldedInstanceConfig());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2513,6 +2586,10 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     if (!getDataDisksList().equals(other.getDataDisksList())) return false;
     if (apiVersion_ != other.apiVersion_) return false;
     if (!getSymptomsList().equals(other.getSymptomsList())) return false;
+    if (hasShieldedInstanceConfig() != other.hasShieldedInstanceConfig()) return false;
+    if (hasShieldedInstanceConfig()) {
+      if (!getShieldedInstanceConfig().equals(other.getShieldedInstanceConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2583,6 +2660,10 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     if (getSymptomsCount() > 0) {
       hash = (37 * hash) + SYMPTOMS_FIELD_NUMBER;
       hash = (53 * hash) + getSymptomsList().hashCode();
+    }
+    if (hasShieldedInstanceConfig()) {
+      hash = (37 * hash) + SHIELDED_INSTANCE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getShieldedInstanceConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -2822,6 +2903,12 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       } else {
         symptomsBuilder_.clear();
       }
+      if (shieldedInstanceConfigBuilder_ == null) {
+        shieldedInstanceConfig_ = null;
+      } else {
+        shieldedInstanceConfig_ = null;
+        shieldedInstanceConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -2914,6 +3001,11 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         result.symptoms_ = symptoms_;
       } else {
         result.symptoms_ = symptomsBuilder_.build();
+      }
+      if (shieldedInstanceConfigBuilder_ == null) {
+        result.shieldedInstanceConfig_ = shieldedInstanceConfig_;
+      } else {
+        result.shieldedInstanceConfig_ = shieldedInstanceConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -3104,6 +3196,9 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
             symptomsBuilder_.addAllMessages(other.symptoms_);
           }
         }
+      }
+      if (other.hasShieldedInstanceConfig()) {
+        mergeShieldedInstanceConfig(other.getShieldedInstanceConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -6601,6 +6696,197 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         symptoms_ = null;
       }
       return symptomsBuilder_;
+    }
+
+    private com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig shieldedInstanceConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig,
+            com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig.Builder,
+            com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfigOrBuilder>
+        shieldedInstanceConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig shielded_instance_config = 45;</code>
+     *
+     * @return Whether the shieldedInstanceConfig field is set.
+     */
+    public boolean hasShieldedInstanceConfig() {
+      return shieldedInstanceConfigBuilder_ != null || shieldedInstanceConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig shielded_instance_config = 45;</code>
+     *
+     * @return The shieldedInstanceConfig.
+     */
+    public com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig getShieldedInstanceConfig() {
+      if (shieldedInstanceConfigBuilder_ == null) {
+        return shieldedInstanceConfig_ == null
+            ? com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig.getDefaultInstance()
+            : shieldedInstanceConfig_;
+      } else {
+        return shieldedInstanceConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig shielded_instance_config = 45;</code>
+     */
+    public Builder setShieldedInstanceConfig(
+        com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig value) {
+      if (shieldedInstanceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        shieldedInstanceConfig_ = value;
+        onChanged();
+      } else {
+        shieldedInstanceConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig shielded_instance_config = 45;</code>
+     */
+    public Builder setShieldedInstanceConfig(
+        com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig.Builder builderForValue) {
+      if (shieldedInstanceConfigBuilder_ == null) {
+        shieldedInstanceConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        shieldedInstanceConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig shielded_instance_config = 45;</code>
+     */
+    public Builder mergeShieldedInstanceConfig(
+        com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig value) {
+      if (shieldedInstanceConfigBuilder_ == null) {
+        if (shieldedInstanceConfig_ != null) {
+          shieldedInstanceConfig_ =
+              com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig.newBuilder(
+                      shieldedInstanceConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          shieldedInstanceConfig_ = value;
+        }
+        onChanged();
+      } else {
+        shieldedInstanceConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig shielded_instance_config = 45;</code>
+     */
+    public Builder clearShieldedInstanceConfig() {
+      if (shieldedInstanceConfigBuilder_ == null) {
+        shieldedInstanceConfig_ = null;
+        onChanged();
+      } else {
+        shieldedInstanceConfig_ = null;
+        shieldedInstanceConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig shielded_instance_config = 45;</code>
+     */
+    public com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig.Builder
+        getShieldedInstanceConfigBuilder() {
+
+      onChanged();
+      return getShieldedInstanceConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig shielded_instance_config = 45;</code>
+     */
+    public com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfigOrBuilder
+        getShieldedInstanceConfigOrBuilder() {
+      if (shieldedInstanceConfigBuilder_ != null) {
+        return shieldedInstanceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return shieldedInstanceConfig_ == null
+            ? com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig.getDefaultInstance()
+            : shieldedInstanceConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Shielded Instance options.
+     * </pre>
+     *
+     * <code>.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig shielded_instance_config = 45;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig,
+            com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig.Builder,
+            com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfigOrBuilder>
+        getShieldedInstanceConfigFieldBuilder() {
+      if (shieldedInstanceConfigBuilder_ == null) {
+        shieldedInstanceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig,
+                com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig.Builder,
+                com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfigOrBuilder>(
+                getShieldedInstanceConfig(), getParentForChildren(), isClean());
+        shieldedInstanceConfig_ = null;
+      }
+      return shieldedInstanceConfigBuilder_;
     }
 
     @java.lang.Override
