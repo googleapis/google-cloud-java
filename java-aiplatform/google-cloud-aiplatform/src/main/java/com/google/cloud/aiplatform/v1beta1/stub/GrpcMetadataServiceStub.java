@@ -82,6 +82,8 @@ import com.google.cloud.aiplatform.v1beta1.PurgeExecutionsResponse;
 import com.google.cloud.aiplatform.v1beta1.QueryArtifactLineageSubgraphRequest;
 import com.google.cloud.aiplatform.v1beta1.QueryContextLineageSubgraphRequest;
 import com.google.cloud.aiplatform.v1beta1.QueryExecutionInputsAndOutputsRequest;
+import com.google.cloud.aiplatform.v1beta1.RemoveContextChildrenRequest;
+import com.google.cloud.aiplatform.v1beta1.RemoveContextChildrenResponse;
 import com.google.cloud.aiplatform.v1beta1.UpdateArtifactRequest;
 import com.google.cloud.aiplatform.v1beta1.UpdateContextRequest;
 import com.google.cloud.aiplatform.v1beta1.UpdateExecutionRequest;
@@ -301,6 +303,18 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   ProtoUtils.marshaller(AddContextChildrenRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AddContextChildrenResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RemoveContextChildrenRequest, RemoveContextChildrenResponse>
+      removeContextChildrenMethodDescriptor =
+          MethodDescriptor.<RemoveContextChildrenRequest, RemoveContextChildrenResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.MetadataService/RemoveContextChildren")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RemoveContextChildrenRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RemoveContextChildrenResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<QueryContextLineageSubgraphRequest, LineageSubgraph>
@@ -532,6 +546,8 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
       addContextArtifactsAndExecutionsCallable;
   private final UnaryCallable<AddContextChildrenRequest, AddContextChildrenResponse>
       addContextChildrenCallable;
+  private final UnaryCallable<RemoveContextChildrenRequest, RemoveContextChildrenResponse>
+      removeContextChildrenCallable;
   private final UnaryCallable<QueryContextLineageSubgraphRequest, LineageSubgraph>
       queryContextLineageSubgraphCallable;
   private final UnaryCallable<CreateExecutionRequest, Execution> createExecutionCallable;
@@ -792,6 +808,18 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
         addContextChildrenTransportSettings =
             GrpcCallSettings.<AddContextChildrenRequest, AddContextChildrenResponse>newBuilder()
                 .setMethodDescriptor(addContextChildrenMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("context", String.valueOf(request.getContext()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<RemoveContextChildrenRequest, RemoveContextChildrenResponse>
+        removeContextChildrenTransportSettings =
+            GrpcCallSettings
+                .<RemoveContextChildrenRequest, RemoveContextChildrenResponse>newBuilder()
+                .setMethodDescriptor(removeContextChildrenMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
                       ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
@@ -1099,6 +1127,11 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
             addContextChildrenTransportSettings,
             settings.addContextChildrenSettings(),
             clientContext);
+    this.removeContextChildrenCallable =
+        callableFactory.createUnaryCallable(
+            removeContextChildrenTransportSettings,
+            settings.removeContextChildrenSettings(),
+            clientContext);
     this.queryContextLineageSubgraphCallable =
         callableFactory.createUnaryCallable(
             queryContextLineageSubgraphTransportSettings,
@@ -1347,6 +1380,12 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
   public UnaryCallable<AddContextChildrenRequest, AddContextChildrenResponse>
       addContextChildrenCallable() {
     return addContextChildrenCallable;
+  }
+
+  @Override
+  public UnaryCallable<RemoveContextChildrenRequest, RemoveContextChildrenResponse>
+      removeContextChildrenCallable() {
+    return removeContextChildrenCallable;
   }
 
   @Override
