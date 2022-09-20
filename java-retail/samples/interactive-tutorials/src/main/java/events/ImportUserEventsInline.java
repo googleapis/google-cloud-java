@@ -21,6 +21,7 @@
 package events;
 
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.retail.v2.ImportMetadata;
 import com.google.cloud.retail.v2.ImportUserEventsRequest;
@@ -43,7 +44,7 @@ public class ImportUserEventsInline {
   public static void main(String[] args)
       throws IOException, ExecutionException, InterruptedException {
     // TODO(developer): Replace these variables before running the sample.
-    String projectId = "your-project-id";
+    String projectId = ServiceOptions.getDefaultProjectId();
     String defaultCatalog =
         String.format("projects/%s/locations/global/catalogs/default_catalog", projectId);
 

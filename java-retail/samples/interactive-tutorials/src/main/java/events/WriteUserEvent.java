@@ -22,6 +22,7 @@ package events;
 
 import static setup.SetupCleanup.purgeUserEvent;
 
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.retail.v2.UserEvent;
 import com.google.cloud.retail.v2.UserEventServiceClient;
 import com.google.cloud.retail.v2.WriteUserEventRequest;
@@ -36,7 +37,7 @@ public class WriteUserEvent {
   public static void main(String[] args)
       throws IOException, ExecutionException, InterruptedException {
     // TODO(developer): Replace these variables before running the sample.
-    String projectId = "your-project-id";
+    String projectId = ServiceOptions.getDefaultProjectId();
     String defaultCatalog =
         String.format("projects/%s/locations/global/catalogs/default_catalog", projectId);
     // visitorId generated randomly.
