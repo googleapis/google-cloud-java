@@ -109,14 +109,14 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_SignJwtRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_SignJwtRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.iam.admin.v1.SignJwtRequest.class,
@@ -143,7 +143,7 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.iam.admin.v1.SignJwtRequest.name is deprecated. See
-   *     google/iam/admin/v1/iam.proto;l=955
+   *     google/iam/admin/v1/iam.proto;l=1023
    * @return The name.
    */
   @java.lang.Override
@@ -177,7 +177,7 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.iam.admin.v1.SignJwtRequest.name is deprecated. See
-   *     google/iam/admin/v1/iam.proto;l=955
+   *     google/iam/admin/v1/iam.proto;l=1023
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -205,8 +205,8 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
    * The JWT payload to sign. Must be a serialized JSON object that contains a
    * JWT Claims Set. For example: `{"sub": "user&#64;example.com", "iat": 313435}`
    * If the JWT Claims Set contains an expiration time (`exp`) claim, it must be
-   * an integer timestamp that is not in the past and no more than 1 hour in the
-   * future.
+   * an integer timestamp that is not in the past and no more than 12 hours in
+   * the future.
    * If the JWT Claims Set does not contain an expiration time (`exp`) claim,
    * this claim is added automatically, with a timestamp that is 1 hour in the
    * future.
@@ -215,7 +215,7 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>string payload = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.iam.admin.v1.SignJwtRequest.payload is deprecated. See
-   *     google/iam/admin/v1/iam.proto;l=976
+   *     google/iam/admin/v1/iam.proto;l=1044
    * @return The payload.
    */
   @java.lang.Override
@@ -240,8 +240,8 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
    * The JWT payload to sign. Must be a serialized JSON object that contains a
    * JWT Claims Set. For example: `{"sub": "user&#64;example.com", "iat": 313435}`
    * If the JWT Claims Set contains an expiration time (`exp`) claim, it must be
-   * an integer timestamp that is not in the past and no more than 1 hour in the
-   * future.
+   * an integer timestamp that is not in the past and no more than 12 hours in
+   * the future.
    * If the JWT Claims Set does not contain an expiration time (`exp`) claim,
    * this claim is added automatically, with a timestamp that is 1 hour in the
    * future.
@@ -250,7 +250,7 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>string payload = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.iam.admin.v1.SignJwtRequest.payload is deprecated. See
-   *     google/iam/admin/v1/iam.proto;l=976
+   *     google/iam/admin/v1/iam.proto;l=1044
    * @return The bytes for payload.
    */
   @java.lang.Override
@@ -450,14 +450,14 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(builder_implements:google.iam.admin.v1.SignJwtRequest)
       com.google.iam.admin.v1.SignJwtRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_SignJwtRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_SignJwtRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.iam.admin.v1.SignJwtRequest.class,
@@ -490,7 +490,7 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_SignJwtRequest_descriptor;
     }
 
@@ -619,7 +619,7 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.iam.admin.v1.SignJwtRequest.name is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=955
+     *     google/iam/admin/v1/iam.proto;l=1023
      * @return The name.
      */
     @java.lang.Deprecated
@@ -652,7 +652,7 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.iam.admin.v1.SignJwtRequest.name is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=955
+     *     google/iam/admin/v1/iam.proto;l=1023
      * @return The bytes for name.
      */
     @java.lang.Deprecated
@@ -685,7 +685,7 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.iam.admin.v1.SignJwtRequest.name is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=955
+     *     google/iam/admin/v1/iam.proto;l=1023
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -717,7 +717,7 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.iam.admin.v1.SignJwtRequest.name is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=955
+     *     google/iam/admin/v1/iam.proto;l=1023
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -745,7 +745,7 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.iam.admin.v1.SignJwtRequest.name is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=955
+     *     google/iam/admin/v1/iam.proto;l=1023
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -771,8 +771,8 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
      * The JWT payload to sign. Must be a serialized JSON object that contains a
      * JWT Claims Set. For example: `{"sub": "user&#64;example.com", "iat": 313435}`
      * If the JWT Claims Set contains an expiration time (`exp`) claim, it must be
-     * an integer timestamp that is not in the past and no more than 1 hour in the
-     * future.
+     * an integer timestamp that is not in the past and no more than 12 hours in
+     * the future.
      * If the JWT Claims Set does not contain an expiration time (`exp`) claim,
      * this claim is added automatically, with a timestamp that is 1 hour in the
      * future.
@@ -781,7 +781,7 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>string payload = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.iam.admin.v1.SignJwtRequest.payload is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=976
+     *     google/iam/admin/v1/iam.proto;l=1044
      * @return The payload.
      */
     @java.lang.Deprecated
@@ -805,8 +805,8 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
      * The JWT payload to sign. Must be a serialized JSON object that contains a
      * JWT Claims Set. For example: `{"sub": "user&#64;example.com", "iat": 313435}`
      * If the JWT Claims Set contains an expiration time (`exp`) claim, it must be
-     * an integer timestamp that is not in the past and no more than 1 hour in the
-     * future.
+     * an integer timestamp that is not in the past and no more than 12 hours in
+     * the future.
      * If the JWT Claims Set does not contain an expiration time (`exp`) claim,
      * this claim is added automatically, with a timestamp that is 1 hour in the
      * future.
@@ -815,7 +815,7 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>string payload = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.iam.admin.v1.SignJwtRequest.payload is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=976
+     *     google/iam/admin/v1/iam.proto;l=1044
      * @return The bytes for payload.
      */
     @java.lang.Deprecated
@@ -839,8 +839,8 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
      * The JWT payload to sign. Must be a serialized JSON object that contains a
      * JWT Claims Set. For example: `{"sub": "user&#64;example.com", "iat": 313435}`
      * If the JWT Claims Set contains an expiration time (`exp`) claim, it must be
-     * an integer timestamp that is not in the past and no more than 1 hour in the
-     * future.
+     * an integer timestamp that is not in the past and no more than 12 hours in
+     * the future.
      * If the JWT Claims Set does not contain an expiration time (`exp`) claim,
      * this claim is added automatically, with a timestamp that is 1 hour in the
      * future.
@@ -849,7 +849,7 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>string payload = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.iam.admin.v1.SignJwtRequest.payload is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=976
+     *     google/iam/admin/v1/iam.proto;l=1044
      * @param value The payload to set.
      * @return This builder for chaining.
      */
@@ -872,8 +872,8 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
      * The JWT payload to sign. Must be a serialized JSON object that contains a
      * JWT Claims Set. For example: `{"sub": "user&#64;example.com", "iat": 313435}`
      * If the JWT Claims Set contains an expiration time (`exp`) claim, it must be
-     * an integer timestamp that is not in the past and no more than 1 hour in the
-     * future.
+     * an integer timestamp that is not in the past and no more than 12 hours in
+     * the future.
      * If the JWT Claims Set does not contain an expiration time (`exp`) claim,
      * this claim is added automatically, with a timestamp that is 1 hour in the
      * future.
@@ -882,7 +882,7 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>string payload = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.iam.admin.v1.SignJwtRequest.payload is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=976
+     *     google/iam/admin/v1/iam.proto;l=1044
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -901,8 +901,8 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
      * The JWT payload to sign. Must be a serialized JSON object that contains a
      * JWT Claims Set. For example: `{"sub": "user&#64;example.com", "iat": 313435}`
      * If the JWT Claims Set contains an expiration time (`exp`) claim, it must be
-     * an integer timestamp that is not in the past and no more than 1 hour in the
-     * future.
+     * an integer timestamp that is not in the past and no more than 12 hours in
+     * the future.
      * If the JWT Claims Set does not contain an expiration time (`exp`) claim,
      * this claim is added automatically, with a timestamp that is 1 hour in the
      * future.
@@ -911,7 +911,7 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>string payload = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.iam.admin.v1.SignJwtRequest.payload is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=976
+     *     google/iam/admin/v1/iam.proto;l=1044
      * @param value The bytes for payload to set.
      * @return This builder for chaining.
      */

@@ -22,8 +22,7 @@ package com.google.iam.admin.v1;
  *
  *
  * <pre>
- * The request for
- * [PatchServiceAccount][google.iam.admin.v1.PatchServiceAccount].
+ * The service account patch request.
  * You can patch only the `display_name` and `description` fields. You must use
  * the `update_mask` field to specify which of these fields you want to patch.
  * Only the fields specified in the request are guaranteed to be returned in
@@ -126,14 +125,14 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_PatchServiceAccountRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_PatchServiceAccountRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.iam.admin.v1.PatchServiceAccountRequest.class,
@@ -376,8 +375,7 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The request for
-   * [PatchServiceAccount][google.iam.admin.v1.PatchServiceAccount].
+   * The service account patch request.
    * You can patch only the `display_name` and `description` fields. You must use
    * the `update_mask` field to specify which of these fields you want to patch.
    * Only the fields specified in the request are guaranteed to be returned in
@@ -391,14 +389,14 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
       // @@protoc_insertion_point(builder_implements:google.iam.admin.v1.PatchServiceAccountRequest)
       com.google.iam.admin.v1.PatchServiceAccountRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_PatchServiceAccountRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_PatchServiceAccountRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.iam.admin.v1.PatchServiceAccountRequest.class,
@@ -439,7 +437,7 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_PatchServiceAccountRequest_descriptor;
     }
 

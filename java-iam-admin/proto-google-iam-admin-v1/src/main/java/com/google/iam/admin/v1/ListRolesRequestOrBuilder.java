@@ -29,23 +29,26 @@ public interface ListRolesRequestOrBuilder
    * <pre>
    * The `parent` parameter's value depends on the target resource for the
    * request, namely
-   * [`roles`](/iam/reference/rest/v1/roles),
-   * [`projects`](/iam/reference/rest/v1/projects.roles), or
-   * [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
-   * resource type's `parent` value format is described below:
-   * * [`roles.list()`](/iam/reference/rest/v1/roles/list): An empty string.
+   * [`roles`](https://cloud.google.com/iam/reference/rest/v1/roles),
+   * [`projects`](https://cloud.google.com/iam/reference/rest/v1/projects.roles),
+   * or
+   * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
+   * Each resource type's `parent` value format is described below:
+   * * [`roles.list()`](https://cloud.google.com/iam/reference/rest/v1/roles/list): An empty string.
    *   This method doesn't require a resource; it simply returns all
-   *   [predefined roles](/iam/docs/understanding-roles#predefined_roles) in
-   *   Cloud IAM. Example request URL:
-   *   `https://iam.googleapis.com/v1/roles`
-   * * [`projects.roles.list()`](/iam/reference/rest/v1/projects.roles/list):
+   *   [predefined
+   *   roles](https://cloud.google.com/iam/docs/understanding-roles#predefined_roles)
+   *   in Cloud IAM. Example request URL: `https://iam.googleapis.com/v1/roles`
+   * * [`projects.roles.list()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/list):
    *   `projects/{PROJECT_ID}`. This method lists all project-level
-   *   [custom roles](/iam/docs/understanding-custom-roles).
+   *   [custom
+   *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles).
    *   Example request URL:
    *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles`
-   * * [`organizations.roles.list()`](/iam/reference/rest/v1/organizations.roles/list):
+   * * [`organizations.roles.list()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/list):
    *   `organizations/{ORGANIZATION_ID}`. This method lists all
-   *   organization-level [custom roles](/iam/docs/understanding-custom-roles).
+   *   organization-level [custom
+   *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles).
    *   Example request URL:
    *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles`
    * Note: Wildcard (*) values are invalid; you must specify a complete project
@@ -63,23 +66,26 @@ public interface ListRolesRequestOrBuilder
    * <pre>
    * The `parent` parameter's value depends on the target resource for the
    * request, namely
-   * [`roles`](/iam/reference/rest/v1/roles),
-   * [`projects`](/iam/reference/rest/v1/projects.roles), or
-   * [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
-   * resource type's `parent` value format is described below:
-   * * [`roles.list()`](/iam/reference/rest/v1/roles/list): An empty string.
+   * [`roles`](https://cloud.google.com/iam/reference/rest/v1/roles),
+   * [`projects`](https://cloud.google.com/iam/reference/rest/v1/projects.roles),
+   * or
+   * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
+   * Each resource type's `parent` value format is described below:
+   * * [`roles.list()`](https://cloud.google.com/iam/reference/rest/v1/roles/list): An empty string.
    *   This method doesn't require a resource; it simply returns all
-   *   [predefined roles](/iam/docs/understanding-roles#predefined_roles) in
-   *   Cloud IAM. Example request URL:
-   *   `https://iam.googleapis.com/v1/roles`
-   * * [`projects.roles.list()`](/iam/reference/rest/v1/projects.roles/list):
+   *   [predefined
+   *   roles](https://cloud.google.com/iam/docs/understanding-roles#predefined_roles)
+   *   in Cloud IAM. Example request URL: `https://iam.googleapis.com/v1/roles`
+   * * [`projects.roles.list()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/list):
    *   `projects/{PROJECT_ID}`. This method lists all project-level
-   *   [custom roles](/iam/docs/understanding-custom-roles).
+   *   [custom
+   *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles).
    *   Example request URL:
    *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles`
-   * * [`organizations.roles.list()`](/iam/reference/rest/v1/organizations.roles/list):
+   * * [`organizations.roles.list()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/list):
    *   `organizations/{ORGANIZATION_ID}`. This method lists all
-   *   organization-level [custom roles](/iam/docs/understanding-custom-roles).
+   *   organization-level [custom
+   *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles).
    *   Example request URL:
    *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles`
    * Note: Wildcard (*) values are invalid; you must specify a complete project

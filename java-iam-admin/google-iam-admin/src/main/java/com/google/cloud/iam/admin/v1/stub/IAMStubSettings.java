@@ -53,7 +53,9 @@ import com.google.iam.admin.v1.CreateServiceAccountRequest;
 import com.google.iam.admin.v1.DeleteRoleRequest;
 import com.google.iam.admin.v1.DeleteServiceAccountKeyRequest;
 import com.google.iam.admin.v1.DeleteServiceAccountRequest;
+import com.google.iam.admin.v1.DisableServiceAccountKeyRequest;
 import com.google.iam.admin.v1.DisableServiceAccountRequest;
+import com.google.iam.admin.v1.EnableServiceAccountKeyRequest;
 import com.google.iam.admin.v1.EnableServiceAccountRequest;
 import com.google.iam.admin.v1.GetRoleRequest;
 import com.google.iam.admin.v1.GetServiceAccountKeyRequest;
@@ -162,6 +164,10 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
       uploadServiceAccountKeySettings;
   private final UnaryCallSettings<DeleteServiceAccountKeyRequest, Empty>
       deleteServiceAccountKeySettings;
+  private final UnaryCallSettings<DisableServiceAccountKeyRequest, Empty>
+      disableServiceAccountKeySettings;
+  private final UnaryCallSettings<EnableServiceAccountKeyRequest, Empty>
+      enableServiceAccountKeySettings;
   private final UnaryCallSettings<SignBlobRequest, SignBlobResponse> signBlobSettings;
   private final UnaryCallSettings<SignJwtRequest, SignJwtResponse> signJwtSettings;
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
@@ -510,6 +516,18 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
     return deleteServiceAccountKeySettings;
   }
 
+  /** Returns the object with the settings used for calls to disableServiceAccountKey. */
+  public UnaryCallSettings<DisableServiceAccountKeyRequest, Empty>
+      disableServiceAccountKeySettings() {
+    return disableServiceAccountKeySettings;
+  }
+
+  /** Returns the object with the settings used for calls to enableServiceAccountKey. */
+  public UnaryCallSettings<EnableServiceAccountKeyRequest, Empty>
+      enableServiceAccountKeySettings() {
+    return enableServiceAccountKeySettings;
+  }
+
   /**
    * Returns the object with the settings used for calls to signBlob.
    *
@@ -692,6 +710,8 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
     createServiceAccountKeySettings = settingsBuilder.createServiceAccountKeySettings().build();
     uploadServiceAccountKeySettings = settingsBuilder.uploadServiceAccountKeySettings().build();
     deleteServiceAccountKeySettings = settingsBuilder.deleteServiceAccountKeySettings().build();
+    disableServiceAccountKeySettings = settingsBuilder.disableServiceAccountKeySettings().build();
+    enableServiceAccountKeySettings = settingsBuilder.enableServiceAccountKeySettings().build();
     signBlobSettings = settingsBuilder.signBlobSettings().build();
     signJwtSettings = settingsBuilder.signJwtSettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
@@ -745,6 +765,10 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
         uploadServiceAccountKeySettings;
     private final UnaryCallSettings.Builder<DeleteServiceAccountKeyRequest, Empty>
         deleteServiceAccountKeySettings;
+    private final UnaryCallSettings.Builder<DisableServiceAccountKeyRequest, Empty>
+        disableServiceAccountKeySettings;
+    private final UnaryCallSettings.Builder<EnableServiceAccountKeyRequest, Empty>
+        enableServiceAccountKeySettings;
     private final UnaryCallSettings.Builder<SignBlobRequest, SignBlobResponse> signBlobSettings;
     private final UnaryCallSettings.Builder<SignJwtRequest, SignJwtResponse> signJwtSettings;
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
@@ -842,6 +866,8 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
       createServiceAccountKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       uploadServiceAccountKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteServiceAccountKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      disableServiceAccountKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      enableServiceAccountKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       signBlobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       signJwtSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -876,6 +902,8 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
               createServiceAccountKeySettings,
               uploadServiceAccountKeySettings,
               deleteServiceAccountKeySettings,
+              disableServiceAccountKeySettings,
+              enableServiceAccountKeySettings,
               signBlobSettings,
               signJwtSettings,
               getIamPolicySettings,
@@ -911,6 +939,8 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
       createServiceAccountKeySettings = settings.createServiceAccountKeySettings.toBuilder();
       uploadServiceAccountKeySettings = settings.uploadServiceAccountKeySettings.toBuilder();
       deleteServiceAccountKeySettings = settings.deleteServiceAccountKeySettings.toBuilder();
+      disableServiceAccountKeySettings = settings.disableServiceAccountKeySettings.toBuilder();
+      enableServiceAccountKeySettings = settings.enableServiceAccountKeySettings.toBuilder();
       signBlobSettings = settings.signBlobSettings.toBuilder();
       signJwtSettings = settings.signJwtSettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
@@ -943,6 +973,8 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
               createServiceAccountKeySettings,
               uploadServiceAccountKeySettings,
               deleteServiceAccountKeySettings,
+              disableServiceAccountKeySettings,
+              enableServiceAccountKeySettings,
               signBlobSettings,
               signJwtSettings,
               getIamPolicySettings,
@@ -1043,6 +1075,16 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
           .deleteServiceAccountKeySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .disableServiceAccountKeySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .enableServiceAccountKeySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .signBlobSettings()
@@ -1222,6 +1264,18 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
     public UnaryCallSettings.Builder<DeleteServiceAccountKeyRequest, Empty>
         deleteServiceAccountKeySettings() {
       return deleteServiceAccountKeySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to disableServiceAccountKey. */
+    public UnaryCallSettings.Builder<DisableServiceAccountKeyRequest, Empty>
+        disableServiceAccountKeySettings() {
+      return disableServiceAccountKeySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to enableServiceAccountKey. */
+    public UnaryCallSettings.Builder<EnableServiceAccountKeyRequest, Empty>
+        enableServiceAccountKeySettings() {
+      return enableServiceAccountKeySettings;
     }
 
     /**

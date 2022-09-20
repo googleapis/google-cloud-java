@@ -131,7 +131,7 @@ public enum RoleView implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.iam.admin.v1.IamProto.getDescriptor().getEnumTypes().get(4);
+    return com.google.iam.admin.v1.Iam.getDescriptor().getEnumTypes().get(4);
   }
 
   private static final RoleView[] VALUES = values();
