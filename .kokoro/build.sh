@@ -101,16 +101,6 @@ case ${JOB_TYPE} in
       source "${FILE}"
     done
 
-    if [ -f "${KOKORO_GFILE_DIR}/secret_manager/ucaip_samples_secrets" ]
-    then
-        source "${KOKORO_GFILE_DIR}/secret_manager/ucaip_samples_secrets"
-    fi
-
-    if [ -f "${KOKORO_GFILE_DIR}/secret_manager/java-aiplatform-samples-secrets" ]
-    then
-        source "${KOKORO_GFILE_DIR}/secret_manager/java-aiplatform-samples-secrets"
-    fi
-
     modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
     for module in $modules; do
       if [[ ! "${excluded_modules[*]}" =~ $module ]]; then
