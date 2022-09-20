@@ -937,6 +937,55 @@ public final class FeaturestoreServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest,
+          com.google.longrunning.Operation>
+      getDeleteFeatureValuesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteFeatureValues",
+      requestType = com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest,
+          com.google.longrunning.Operation>
+      getDeleteFeatureValuesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest,
+            com.google.longrunning.Operation>
+        getDeleteFeatureValuesMethod;
+    if ((getDeleteFeatureValuesMethod = FeaturestoreServiceGrpc.getDeleteFeatureValuesMethod)
+        == null) {
+      synchronized (FeaturestoreServiceGrpc.class) {
+        if ((getDeleteFeatureValuesMethod = FeaturestoreServiceGrpc.getDeleteFeatureValuesMethod)
+            == null) {
+          FeaturestoreServiceGrpc.getDeleteFeatureValuesMethod =
+              getDeleteFeatureValuesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteFeatureValues"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new FeaturestoreServiceMethodDescriptorSupplier("DeleteFeatureValues"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteFeatureValuesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1beta1.SearchFeaturesRequest,
           com.google.cloud.aiplatform.v1beta1.SearchFeaturesResponse>
       getSearchFeaturesMethod;
@@ -1329,6 +1378,27 @@ public final class FeaturestoreServiceGrpc {
      *
      *
      * <pre>
+     * Delete Feature values from Featurestore.
+     * The progress of the deletion is tracked by the returned operation. The
+     * deleted feature values are guaranteed to be invisible to subsequent read
+     * operations after the operation is marked as successfully done.
+     * If a delete feature values operation fails, the feature values
+     * returned from reads and exports may be inconsistent. If consistency is
+     * required, the caller must retry the same delete request again and wait till
+     * the new operation returned is marked as successfully done.
+     * </pre>
+     */
+    public void deleteFeatureValues(
+        com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteFeatureValuesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Searches Features matching a query in a given project.
      * </pre>
      */
@@ -1463,6 +1533,12 @@ public final class FeaturestoreServiceGrpc {
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest,
                       com.google.longrunning.Operation>(this, METHODID_EXPORT_FEATURE_VALUES)))
+          .addMethod(
+              getDeleteFeatureValuesMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest,
+                      com.google.longrunning.Operation>(this, METHODID_DELETE_FEATURE_VALUES)))
           .addMethod(
               getSearchFeaturesMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1826,6 +1902,29 @@ public final class FeaturestoreServiceGrpc {
      *
      *
      * <pre>
+     * Delete Feature values from Featurestore.
+     * The progress of the deletion is tracked by the returned operation. The
+     * deleted feature values are guaranteed to be invisible to subsequent read
+     * operations after the operation is marked as successfully done.
+     * If a delete feature values operation fails, the feature values
+     * returned from reads and exports may be inconsistent. If consistency is
+     * required, the caller must retry the same delete request again and wait till
+     * the new operation returned is marked as successfully done.
+     * </pre>
+     */
+    public void deleteFeatureValues(
+        com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteFeatureValuesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Searches Features matching a query in a given project.
      * </pre>
      */
@@ -2126,6 +2225,26 @@ public final class FeaturestoreServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getExportFeatureValuesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete Feature values from Featurestore.
+     * The progress of the deletion is tracked by the returned operation. The
+     * deleted feature values are guaranteed to be invisible to subsequent read
+     * operations after the operation is marked as successfully done.
+     * If a delete feature values operation fails, the feature values
+     * returned from reads and exports may be inconsistent. If consistency is
+     * required, the caller must retry the same delete request again and wait till
+     * the new operation returned is marked as successfully done.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteFeatureValues(
+        com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteFeatureValuesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2446,6 +2565,27 @@ public final class FeaturestoreServiceGrpc {
      *
      *
      * <pre>
+     * Delete Feature values from Featurestore.
+     * The progress of the deletion is tracked by the returned operation. The
+     * deleted feature values are guaranteed to be invisible to subsequent read
+     * operations after the operation is marked as successfully done.
+     * If a delete feature values operation fails, the feature values
+     * returned from reads and exports may be inconsistent. If consistency is
+     * required, the caller must retry the same delete request again and wait till
+     * the new operation returned is marked as successfully done.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteFeatureValues(
+            com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteFeatureValuesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Searches Features matching a query in a given project.
      * </pre>
      */
@@ -2476,7 +2616,8 @@ public final class FeaturestoreServiceGrpc {
   private static final int METHODID_IMPORT_FEATURE_VALUES = 16;
   private static final int METHODID_BATCH_READ_FEATURE_VALUES = 17;
   private static final int METHODID_EXPORT_FEATURE_VALUES = 18;
-  private static final int METHODID_SEARCH_FEATURES = 19;
+  private static final int METHODID_DELETE_FEATURE_VALUES = 19;
+  private static final int METHODID_SEARCH_FEATURES = 20;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2601,6 +2742,11 @@ public final class FeaturestoreServiceGrpc {
               (com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_DELETE_FEATURE_VALUES:
+          serviceImpl.deleteFeatureValues(
+              (com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_SEARCH_FEATURES:
           serviceImpl.searchFeatures(
               (com.google.cloud.aiplatform.v1beta1.SearchFeaturesRequest) request,
@@ -2691,6 +2837,7 @@ public final class FeaturestoreServiceGrpc {
                       .addMethod(getImportFeatureValuesMethod())
                       .addMethod(getBatchReadFeatureValuesMethod())
                       .addMethod(getExportFeatureValuesMethod())
+                      .addMethod(getDeleteFeatureValuesMethod())
                       .addMethod(getSearchFeaturesMethod())
                       .build();
         }
