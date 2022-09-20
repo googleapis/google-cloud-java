@@ -135,7 +135,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Input document.
+   * Required. Input document.
    * </pre>
    *
    * <code>
@@ -152,7 +152,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Input document.
+   * Required. Input document.
    * </pre>
    *
    * <code>
@@ -171,7 +171,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Input document.
+   * Required. Input document.
    * </pre>
    *
    * <code>
@@ -575,7 +575,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
      * <code>
@@ -591,7 +591,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
      * <code>
@@ -613,7 +613,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
      * <code>
@@ -637,7 +637,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
      * <code>
@@ -658,7 +658,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
      * <code>
@@ -686,7 +686,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
      * <code>
@@ -708,7 +708,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
      * <code>
@@ -724,7 +724,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
      * <code>
@@ -744,7 +744,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
      * <code>
