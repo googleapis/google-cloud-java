@@ -10,6 +10,7 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
   versions_array=($(grep -E "^.*:[0-9]+\.[0-9]+\.[0-9]+:.*$" "${path}/versions.txt"))
 
   for line in "${versions_array[@]}"; do
+    echo "Running for ${line}"
     artifactId=$(echo "${line}" | cut -d ":" -f1)
 
     if [[ "${artifactId}" =~ ^.grafeas.*$ ]]; then
@@ -35,5 +36,6 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
     new_version="${artifactId}:${maven_latest_version}:${maven_version_bump}-SNAPSHOT"
 
     sed -i "s/${line}/${new_version}/g" "${path}/versions.txt"
+    echo "Done running for ${line}"
   done
 done
