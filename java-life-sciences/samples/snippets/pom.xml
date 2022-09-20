@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-life-sciences</artifactId>
-      <version>0.5.2</version>
+      <version>0.5.4</version>
     </dependency>
 
     <dependency>
