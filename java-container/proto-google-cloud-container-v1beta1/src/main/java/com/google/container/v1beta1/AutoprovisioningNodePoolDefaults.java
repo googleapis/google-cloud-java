@@ -484,7 +484,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    * minCpuPlatform: Intel Haswell or
    * minCpuPlatform: Intel Sandy Bridge. For more
    * information, read [how to specify min CPU
-   * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+   * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform).
    * This field is deprecated, min_cpu_platform should be specified using
    * https://cloud.google.com/requested-min-cpu-platform label selector on the
    * pod.
@@ -495,7 +495,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3856
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3869
    * @return The minCpuPlatform.
    */
   @java.lang.Override
@@ -521,7 +521,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    * minCpuPlatform: Intel Haswell or
    * minCpuPlatform: Intel Sandy Bridge. For more
    * information, read [how to specify min CPU
-   * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+   * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform).
    * This field is deprecated, min_cpu_platform should be specified using
    * https://cloud.google.com/requested-min-cpu-platform label selector on the
    * pod.
@@ -532,7 +532,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3856
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3869
    * @return The bytes for minCpuPlatform.
    */
   @java.lang.Override
@@ -2071,7 +2071,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * minCpuPlatform: Intel Haswell or
      * minCpuPlatform: Intel Sandy Bridge. For more
      * information, read [how to specify min CPU
-     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform).
      * This field is deprecated, min_cpu_platform should be specified using
      * https://cloud.google.com/requested-min-cpu-platform label selector on the
      * pod.
@@ -2082,7 +2082,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3856
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3869
      * @return The minCpuPlatform.
      */
     @java.lang.Deprecated
@@ -2107,7 +2107,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * minCpuPlatform: Intel Haswell or
      * minCpuPlatform: Intel Sandy Bridge. For more
      * information, read [how to specify min CPU
-     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform).
      * This field is deprecated, min_cpu_platform should be specified using
      * https://cloud.google.com/requested-min-cpu-platform label selector on the
      * pod.
@@ -2118,7 +2118,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3856
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3869
      * @return The bytes for minCpuPlatform.
      */
     @java.lang.Deprecated
@@ -2143,7 +2143,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * minCpuPlatform: Intel Haswell or
      * minCpuPlatform: Intel Sandy Bridge. For more
      * information, read [how to specify min CPU
-     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform).
      * This field is deprecated, min_cpu_platform should be specified using
      * https://cloud.google.com/requested-min-cpu-platform label selector on the
      * pod.
@@ -2154,7 +2154,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3856
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3869
      * @param value The minCpuPlatform to set.
      * @return This builder for chaining.
      */
@@ -2178,7 +2178,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * minCpuPlatform: Intel Haswell or
      * minCpuPlatform: Intel Sandy Bridge. For more
      * information, read [how to specify min CPU
-     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform).
      * This field is deprecated, min_cpu_platform should be specified using
      * https://cloud.google.com/requested-min-cpu-platform label selector on the
      * pod.
@@ -2189,7 +2189,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3856
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3869
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2209,7 +2209,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * minCpuPlatform: Intel Haswell or
      * minCpuPlatform: Intel Sandy Bridge. For more
      * information, read [how to specify min CPU
-     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform).
      * This field is deprecated, min_cpu_platform should be specified using
      * https://cloud.google.com/requested-min-cpu-platform label selector on the
      * pod.
@@ -2220,7 +2220,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3856
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3869
      * @param value The bytes for minCpuPlatform to set.
      * @return This builder for chaining.
      */
