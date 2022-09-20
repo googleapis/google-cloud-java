@@ -867,6 +867,56 @@ public final class MetadataServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.RemoveContextChildrenRequest,
+          com.google.cloud.aiplatform.v1.RemoveContextChildrenResponse>
+      getRemoveContextChildrenMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RemoveContextChildren",
+      requestType = com.google.cloud.aiplatform.v1.RemoveContextChildrenRequest.class,
+      responseType = com.google.cloud.aiplatform.v1.RemoveContextChildrenResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.RemoveContextChildrenRequest,
+          com.google.cloud.aiplatform.v1.RemoveContextChildrenResponse>
+      getRemoveContextChildrenMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.RemoveContextChildrenRequest,
+            com.google.cloud.aiplatform.v1.RemoveContextChildrenResponse>
+        getRemoveContextChildrenMethod;
+    if ((getRemoveContextChildrenMethod = MetadataServiceGrpc.getRemoveContextChildrenMethod)
+        == null) {
+      synchronized (MetadataServiceGrpc.class) {
+        if ((getRemoveContextChildrenMethod = MetadataServiceGrpc.getRemoveContextChildrenMethod)
+            == null) {
+          MetadataServiceGrpc.getRemoveContextChildrenMethod =
+              getRemoveContextChildrenMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.RemoveContextChildrenRequest,
+                          com.google.cloud.aiplatform.v1.RemoveContextChildrenResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RemoveContextChildren"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.RemoveContextChildrenRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.RemoveContextChildrenResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MetadataServiceMethodDescriptorSupplier("RemoveContextChildren"))
+                      .build();
+        }
+      }
+    }
+    return getRemoveContextChildrenMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1.QueryContextLineageSubgraphRequest,
           com.google.cloud.aiplatform.v1.LineageSubgraph>
       getQueryContextLineageSubgraphMethod;
@@ -1804,6 +1854,23 @@ public final class MetadataServiceGrpc {
      *
      *
      * <pre>
+     * Remove a set of children contexts from a parent Context. If any of the
+     * child Contexts were NOT added to the parent Context, they are
+     * simply skipped.
+     * </pre>
+     */
+    public void removeContextChildren(
+        com.google.cloud.aiplatform.v1.RemoveContextChildrenRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.RemoveContextChildrenResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRemoveContextChildrenMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Retrieves Artifacts and Executions within the specified Context, connected
      * by Event edges and returned as a LineageSubgraph.
      * </pre>
@@ -2114,6 +2181,13 @@ public final class MetadataServiceGrpc {
                       com.google.cloud.aiplatform.v1.AddContextChildrenRequest,
                       com.google.cloud.aiplatform.v1.AddContextChildrenResponse>(
                       this, METHODID_ADD_CONTEXT_CHILDREN)))
+          .addMethod(
+              getRemoveContextChildrenMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1.RemoveContextChildrenRequest,
+                      com.google.cloud.aiplatform.v1.RemoveContextChildrenResponse>(
+                      this, METHODID_REMOVE_CONTEXT_CHILDREN)))
           .addMethod(
               getQueryContextLineageSubgraphMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2518,6 +2592,25 @@ public final class MetadataServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getAddContextChildrenMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Remove a set of children contexts from a parent Context. If any of the
+     * child Contexts were NOT added to the parent Context, they are
+     * simply skipped.
+     * </pre>
+     */
+    public void removeContextChildren(
+        com.google.cloud.aiplatform.v1.RemoveContextChildrenRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.RemoveContextChildrenResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRemoveContextChildrenMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -3011,6 +3104,21 @@ public final class MetadataServiceGrpc {
      *
      *
      * <pre>
+     * Remove a set of children contexts from a parent Context. If any of the
+     * child Contexts were NOT added to the parent Context, they are
+     * simply skipped.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.RemoveContextChildrenResponse removeContextChildren(
+        com.google.cloud.aiplatform.v1.RemoveContextChildrenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRemoveContextChildrenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Retrieves Artifacts and Executions within the specified Context, connected
      * by Event edges and returned as a LineageSubgraph.
      * </pre>
@@ -3462,6 +3570,22 @@ public final class MetadataServiceGrpc {
      *
      *
      * <pre>
+     * Remove a set of children contexts from a parent Context. If any of the
+     * child Contexts were NOT added to the parent Context, they are
+     * simply skipped.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1.RemoveContextChildrenResponse>
+        removeContextChildren(com.google.cloud.aiplatform.v1.RemoveContextChildrenRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRemoveContextChildrenMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Retrieves Artifacts and Executions within the specified Context, connected
      * by Event edges and returned as a LineageSubgraph.
      * </pre>
@@ -3668,19 +3792,20 @@ public final class MetadataServiceGrpc {
   private static final int METHODID_PURGE_CONTEXTS = 15;
   private static final int METHODID_ADD_CONTEXT_ARTIFACTS_AND_EXECUTIONS = 16;
   private static final int METHODID_ADD_CONTEXT_CHILDREN = 17;
-  private static final int METHODID_QUERY_CONTEXT_LINEAGE_SUBGRAPH = 18;
-  private static final int METHODID_CREATE_EXECUTION = 19;
-  private static final int METHODID_GET_EXECUTION = 20;
-  private static final int METHODID_LIST_EXECUTIONS = 21;
-  private static final int METHODID_UPDATE_EXECUTION = 22;
-  private static final int METHODID_DELETE_EXECUTION = 23;
-  private static final int METHODID_PURGE_EXECUTIONS = 24;
-  private static final int METHODID_ADD_EXECUTION_EVENTS = 25;
-  private static final int METHODID_QUERY_EXECUTION_INPUTS_AND_OUTPUTS = 26;
-  private static final int METHODID_CREATE_METADATA_SCHEMA = 27;
-  private static final int METHODID_GET_METADATA_SCHEMA = 28;
-  private static final int METHODID_LIST_METADATA_SCHEMAS = 29;
-  private static final int METHODID_QUERY_ARTIFACT_LINEAGE_SUBGRAPH = 30;
+  private static final int METHODID_REMOVE_CONTEXT_CHILDREN = 18;
+  private static final int METHODID_QUERY_CONTEXT_LINEAGE_SUBGRAPH = 19;
+  private static final int METHODID_CREATE_EXECUTION = 20;
+  private static final int METHODID_GET_EXECUTION = 21;
+  private static final int METHODID_LIST_EXECUTIONS = 22;
+  private static final int METHODID_UPDATE_EXECUTION = 23;
+  private static final int METHODID_DELETE_EXECUTION = 24;
+  private static final int METHODID_PURGE_EXECUTIONS = 25;
+  private static final int METHODID_ADD_EXECUTION_EVENTS = 26;
+  private static final int METHODID_QUERY_EXECUTION_INPUTS_AND_OUTPUTS = 27;
+  private static final int METHODID_CREATE_METADATA_SCHEMA = 28;
+  private static final int METHODID_GET_METADATA_SCHEMA = 29;
+  private static final int METHODID_LIST_METADATA_SCHEMAS = 30;
+  private static final int METHODID_QUERY_ARTIFACT_LINEAGE_SUBGRAPH = 31;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3802,6 +3927,13 @@ public final class MetadataServiceGrpc {
               (com.google.cloud.aiplatform.v1.AddContextChildrenRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.aiplatform.v1.AddContextChildrenResponse>)
+                  responseObserver);
+          break;
+        case METHODID_REMOVE_CONTEXT_CHILDREN:
+          serviceImpl.removeContextChildren(
+              (com.google.cloud.aiplatform.v1.RemoveContextChildrenRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1.RemoveContextChildrenResponse>)
                   responseObserver);
           break;
         case METHODID_QUERY_CONTEXT_LINEAGE_SUBGRAPH:
@@ -3964,6 +4096,7 @@ public final class MetadataServiceGrpc {
                       .addMethod(getPurgeContextsMethod())
                       .addMethod(getAddContextArtifactsAndExecutionsMethod())
                       .addMethod(getAddContextChildrenMethod())
+                      .addMethod(getRemoveContextChildrenMethod())
                       .addMethod(getQueryContextLineageSubgraphMethod())
                       .addMethod(getCreateExecutionMethod())
                       .addMethod(getGetExecutionMethod())
