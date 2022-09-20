@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.11](https://github.com/googleapis/java-optimization/compare/v1.1.10...v1.1.11) (2022-09-20)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-storage to v2.12.0 ([#116](https://github.com/googleapis/java-optimization/issues/116)) ([8d5a9c8](https://github.com/googleapis/java-optimization/commit/8d5a9c827c5e6c3365daff6c3b129668ce016e1e))
+
 ## [1.1.10](https://github.com/googleapis/java-optimization/compare/v1.1.9...v1.1.10) (2022-09-15)
 
 
