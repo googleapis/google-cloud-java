@@ -798,4 +798,40 @@ public interface NodeOrBuilder
    * </code>
    */
   com.google.cloud.tpu.v2alpha1.SymptomOrBuilder getSymptomsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Shielded Instance options.
+   * </pre>
+   *
+   * <code>.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig shielded_instance_config = 45;</code>
+   *
+   * @return Whether the shieldedInstanceConfig field is set.
+   */
+  boolean hasShieldedInstanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Shielded Instance options.
+   * </pre>
+   *
+   * <code>.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig shielded_instance_config = 45;</code>
+   *
+   * @return The shieldedInstanceConfig.
+   */
+  com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig getShieldedInstanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Shielded Instance options.
+   * </pre>
+   *
+   * <code>.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig shielded_instance_config = 45;</code>
+   */
+  com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfigOrBuilder
+      getShieldedInstanceConfigOrBuilder();
 }
