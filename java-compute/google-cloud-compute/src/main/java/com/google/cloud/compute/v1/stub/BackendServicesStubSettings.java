@@ -56,11 +56,14 @@ import com.google.cloud.compute.v1.DeleteBackendServiceRequest;
 import com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendServiceRequest;
 import com.google.cloud.compute.v1.GetBackendServiceRequest;
 import com.google.cloud.compute.v1.GetHealthBackendServiceRequest;
+import com.google.cloud.compute.v1.GetIamPolicyBackendServiceRequest;
 import com.google.cloud.compute.v1.InsertBackendServiceRequest;
 import com.google.cloud.compute.v1.ListBackendServicesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchBackendServiceRequest;
+import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetEdgeSecurityPolicyBackendServiceRequest;
+import com.google.cloud.compute.v1.SetIamPolicyBackendServiceRequest;
 import com.google.cloud.compute.v1.SetSecurityPolicyBackendServiceRequest;
 import com.google.cloud.compute.v1.UpdateBackendServiceRequest;
 import com.google.common.collect.ImmutableList;
@@ -136,6 +139,7 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
   private final UnaryCallSettings<GetBackendServiceRequest, BackendService> getSettings;
   private final UnaryCallSettings<GetHealthBackendServiceRequest, BackendServiceGroupHealth>
       getHealthSettings;
+  private final UnaryCallSettings<GetIamPolicyBackendServiceRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<InsertBackendServiceRequest, Operation> insertSettings;
   private final OperationCallSettings<InsertBackendServiceRequest, Operation, Operation>
       insertOperationSettings;
@@ -149,6 +153,7 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
   private final OperationCallSettings<
           SetEdgeSecurityPolicyBackendServiceRequest, Operation, Operation>
       setEdgeSecurityPolicyOperationSettings;
+  private final UnaryCallSettings<SetIamPolicyBackendServiceRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<SetSecurityPolicyBackendServiceRequest, Operation>
       setSecurityPolicySettings;
   private final OperationCallSettings<SetSecurityPolicyBackendServiceRequest, Operation, Operation>
@@ -344,6 +349,11 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
     return getHealthSettings;
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyBackendServiceRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertBackendServiceRequest, Operation> insertSettings() {
     return insertSettings;
@@ -382,6 +392,11 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
   public OperationCallSettings<SetEdgeSecurityPolicyBackendServiceRequest, Operation, Operation>
       setEdgeSecurityPolicyOperationSettings() {
     return setEdgeSecurityPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyBackendServiceRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
   }
 
   /** Returns the object with the settings used for calls to setSecurityPolicy. */
@@ -493,6 +508,7 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
         settingsBuilder.deleteSignedUrlKeyOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
     getHealthSettings = settingsBuilder.getHealthSettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
@@ -501,6 +517,7 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
     setEdgeSecurityPolicySettings = settingsBuilder.setEdgeSecurityPolicySettings().build();
     setEdgeSecurityPolicyOperationSettings =
         settingsBuilder.setEdgeSecurityPolicyOperationSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     setSecurityPolicySettings = settingsBuilder.setSecurityPolicySettings().build();
     setSecurityPolicyOperationSettings =
         settingsBuilder.setSecurityPolicyOperationSettings().build();
@@ -533,6 +550,8 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
     private final UnaryCallSettings.Builder<
             GetHealthBackendServiceRequest, BackendServiceGroupHealth>
         getHealthSettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyBackendServiceRequest, Policy>
+        getIamPolicySettings;
     private final UnaryCallSettings.Builder<InsertBackendServiceRequest, Operation> insertSettings;
     private final OperationCallSettings.Builder<InsertBackendServiceRequest, Operation, Operation>
         insertOperationSettings;
@@ -547,6 +566,8 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
     private final OperationCallSettings.Builder<
             SetEdgeSecurityPolicyBackendServiceRequest, Operation, Operation>
         setEdgeSecurityPolicyOperationSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyBackendServiceRequest, Policy>
+        setIamPolicySettings;
     private final UnaryCallSettings.Builder<SetSecurityPolicyBackendServiceRequest, Operation>
         setSecurityPolicySettings;
     private final OperationCallSettings.Builder<
@@ -614,6 +635,7 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
       deleteSignedUrlKeyOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getHealthSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
@@ -621,6 +643,7 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
       patchOperationSettings = OperationCallSettings.newBuilder();
       setEdgeSecurityPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setEdgeSecurityPolicyOperationSettings = OperationCallSettings.newBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setSecurityPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setSecurityPolicyOperationSettings = OperationCallSettings.newBuilder();
       updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -634,10 +657,12 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
               deleteSignedUrlKeySettings,
               getSettings,
               getHealthSettings,
+              getIamPolicySettings,
               insertSettings,
               listSettings,
               patchSettings,
               setEdgeSecurityPolicySettings,
+              setIamPolicySettings,
               setSecurityPolicySettings,
               updateSettings);
       initDefaults(this);
@@ -656,6 +681,7 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
           settings.deleteSignedUrlKeyOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
       getHealthSettings = settings.getHealthSettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
@@ -664,6 +690,7 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
       setEdgeSecurityPolicySettings = settings.setEdgeSecurityPolicySettings.toBuilder();
       setEdgeSecurityPolicyOperationSettings =
           settings.setEdgeSecurityPolicyOperationSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       setSecurityPolicySettings = settings.setSecurityPolicySettings.toBuilder();
       setSecurityPolicyOperationSettings = settings.setSecurityPolicyOperationSettings.toBuilder();
       updateSettings = settings.updateSettings.toBuilder();
@@ -677,10 +704,12 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
               deleteSignedUrlKeySettings,
               getSettings,
               getHealthSettings,
+              getIamPolicySettings,
               insertSettings,
               listSettings,
               patchSettings,
               setEdgeSecurityPolicySettings,
+              setIamPolicySettings,
               setSecurityPolicySettings,
               updateSettings);
     }
@@ -730,6 +759,11 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .insertSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -746,6 +780,11 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
 
       builder
           .setEdgeSecurityPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setIamPolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -1035,6 +1074,12 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
       return getHealthSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyBackendServiceRequest, Policy>
+        getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertBackendServiceRequest, Operation> insertSettings() {
       return insertSettings;
@@ -1081,6 +1126,12 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
             SetEdgeSecurityPolicyBackendServiceRequest, Operation, Operation>
         setEdgeSecurityPolicyOperationSettings() {
       return setEdgeSecurityPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyBackendServiceRequest, Policy>
+        setIamPolicySettings() {
+      return setIamPolicySettings;
     }
 
     /** Returns the builder for the settings used for calls to setSecurityPolicy. */

@@ -43,6 +43,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
     kind_ = "";
     name_ = "";
     proxyHeader_ = "";
+    region_ = "";
     selfLink_ = "";
     service_ = "";
   }
@@ -104,6 +105,13 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
               creationTimestamp_ = s;
               break;
             }
+          case 1111570338:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000080;
+              region_ = s;
+              break;
+            }
           case 1282993138:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -120,7 +128,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
           case -1306643030:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000200;
               service_ = s;
               break;
             }
@@ -134,7 +142,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
           case -645248918:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000100;
               selfLink_ = s;
               break;
             }
@@ -689,6 +697,70 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int REGION_FIELD_NUMBER = 138946292;
+  private volatile java.lang.Object region_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the regional TCP proxy resides. This field is not applicable to global TCP proxy.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegion() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the regional TCP proxy resides. This field is not applicable to global TCP proxy.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return The region.
+   */
+  @java.lang.Override
+  public java.lang.String getRegion() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      region_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the regional TCP proxy resides. This field is not applicable to global TCP proxy.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return The bytes for region.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRegionBytes() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      region_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
@@ -704,7 +776,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -768,7 +840,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasService() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -843,19 +915,22 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
+    }
     if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 160374142, proxyHeader_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeBool(286025582, proxyBind_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 373540533, service_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     unknownFields.writeTo(output);
@@ -880,19 +955,22 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
+    }
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(160374142, proxyHeader_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(286025582, proxyBind_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(373540533, service_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     size += unknownFields.getSerializedSize();
@@ -938,6 +1016,10 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
     if (hasProxyHeader() != other.hasProxyHeader()) return false;
     if (hasProxyHeader()) {
       if (!getProxyHeader().equals(other.getProxyHeader())) return false;
+    }
+    if (hasRegion() != other.hasRegion()) return false;
+    if (hasRegion()) {
+      if (!getRegion().equals(other.getRegion())) return false;
     }
     if (hasSelfLink() != other.hasSelfLink()) return false;
     if (hasSelfLink()) {
@@ -985,6 +1067,10 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
     if (hasProxyHeader()) {
       hash = (37 * hash) + PROXY_HEADER_FIELD_NUMBER;
       hash = (53 * hash) + getProxyHeader().hashCode();
+    }
+    if (hasRegion()) {
+      hash = (37 * hash) + REGION_FIELD_NUMBER;
+      hash = (53 * hash) + getRegion().hashCode();
     }
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
@@ -1153,10 +1239,12 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000020);
       proxyHeader_ = "";
       bitField0_ = (bitField0_ & ~0x00000040);
-      selfLink_ = "";
+      region_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
-      service_ = "";
+      selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
+      service_ = "";
+      bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
 
@@ -1217,9 +1305,13 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000080) != 0)) {
         to_bitField0_ |= 0x00000080;
       }
-      result.selfLink_ = selfLink_;
+      result.region_ = region_;
       if (((from_bitField0_ & 0x00000100) != 0)) {
         to_bitField0_ |= 0x00000100;
+      }
+      result.selfLink_ = selfLink_;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        to_bitField0_ |= 0x00000200;
       }
       result.service_ = service_;
       result.bitField0_ = to_bitField0_;
@@ -1303,13 +1395,18 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
         proxyHeader_ = other.proxyHeader_;
         onChanged();
       }
-      if (other.hasSelfLink()) {
+      if (other.hasRegion()) {
         bitField0_ |= 0x00000080;
+        region_ = other.region_;
+        onChanged();
+      }
+      if (other.hasSelfLink()) {
+        bitField0_ |= 0x00000100;
         selfLink_ = other.selfLink_;
         onChanged();
       }
       if (other.hasService()) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         service_ = other.service_;
         onChanged();
       }
@@ -2084,6 +2181,126 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object region_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional TCP proxy resides. This field is not applicable to global TCP proxy.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @return Whether the region field is set.
+     */
+    public boolean hasRegion() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional TCP proxy resides. This field is not applicable to global TCP proxy.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @return The region.
+     */
+    public java.lang.String getRegion() {
+      java.lang.Object ref = region_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        region_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional TCP proxy resides. This field is not applicable to global TCP proxy.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @return The bytes for region.
+     */
+    public com.google.protobuf.ByteString getRegionBytes() {
+      java.lang.Object ref = region_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        region_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional TCP proxy resides. This field is not applicable to global TCP proxy.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @param value The region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000080;
+      region_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional TCP proxy resides. This field is not applicable to global TCP proxy.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRegion() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      region_ = getDefaultInstance().getRegion();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional TCP proxy resides. This field is not applicable to global TCP proxy.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @param value The bytes for region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000080;
+      region_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object selfLink_ = "";
     /**
      *
@@ -2097,7 +2314,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2159,7 +2376,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       selfLink_ = value;
       onChanged();
       return this;
@@ -2176,7 +2393,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -2198,7 +2415,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       selfLink_ = value;
       onChanged();
       return this;
@@ -2217,7 +2434,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the service field is set.
      */
     public boolean hasService() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2279,7 +2496,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       service_ = value;
       onChanged();
       return this;
@@ -2296,7 +2513,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearService() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       service_ = getDefaultInstance().getService();
       onChanged();
       return this;
@@ -2318,7 +2535,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       service_ = value;
       onChanged();
       return this;

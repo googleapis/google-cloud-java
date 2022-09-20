@@ -40,6 +40,7 @@ import com.google.cloud.compute.v1.InsertVpnTunnelRequest;
 import com.google.cloud.compute.v1.ListVpnTunnelsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
+import com.google.cloud.compute.v1.SetLabelsVpnTunnelRequest;
 import com.google.cloud.compute.v1.VpnTunnel;
 import com.google.cloud.compute.v1.VpnTunnelAggregatedList;
 import com.google.cloud.compute.v1.VpnTunnelList;
@@ -312,6 +313,63 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<SetLabelsVpnTunnelRequest, Operation>
+      setLabelsMethodDescriptor =
+          ApiMethodDescriptor.<SetLabelsVpnTunnelRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.VpnTunnels/SetLabels")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetLabelsVpnTunnelRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/vpnTunnels/{resource}/setLabels",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetLabelsVpnTunnelRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetLabelsVpnTunnelRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "regionSetLabelsRequestResource",
+                                      request.getRegionSetLabelsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SetLabelsVpnTunnelRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private final UnaryCallable<AggregatedListVpnTunnelsRequest, VpnTunnelAggregatedList>
       aggregatedListCallable;
   private final UnaryCallable<AggregatedListVpnTunnelsRequest, AggregatedListPagedResponse>
@@ -325,6 +383,9 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
       insertOperationCallable;
   private final UnaryCallable<ListVpnTunnelsRequest, VpnTunnelList> listCallable;
   private final UnaryCallable<ListVpnTunnelsRequest, ListPagedResponse> listPagedCallable;
+  private final UnaryCallable<SetLabelsVpnTunnelRequest, Operation> setLabelsCallable;
+  private final OperationCallable<SetLabelsVpnTunnelRequest, Operation, Operation>
+      setLabelsOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
@@ -397,6 +458,11 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<SetLabelsVpnTunnelRequest, Operation> setLabelsTransportSettings =
+        HttpJsonCallSettings.<SetLabelsVpnTunnelRequest, Operation>newBuilder()
+            .setMethodDescriptor(setLabelsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
 
     this.aggregatedListCallable =
         callableFactory.createUnaryCallable(
@@ -431,6 +497,15 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
     this.listPagedCallable =
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
+    this.setLabelsCallable =
+        callableFactory.createUnaryCallable(
+            setLabelsTransportSettings, settings.setLabelsSettings(), clientContext);
+    this.setLabelsOperationCallable =
+        callableFactory.createOperationCallable(
+            setLabelsTransportSettings,
+            settings.setLabelsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -444,6 +519,7 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(setLabelsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -492,6 +568,17 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
   @Override
   public UnaryCallable<ListVpnTunnelsRequest, ListPagedResponse> listPagedCallable() {
     return listPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetLabelsVpnTunnelRequest, Operation> setLabelsCallable() {
+    return setLabelsCallable;
+  }
+
+  @Override
+  public OperationCallable<SetLabelsVpnTunnelRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    return setLabelsOperationCallable;
   }
 
   @Override

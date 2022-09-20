@@ -115,6 +115,17 @@ public class TargetVpnGatewaysSettings extends ClientSettings<TargetVpnGatewaysS
     return ((TargetVpnGatewaysStubSettings) getStubSettings()).listSettings();
   }
 
+  /** Returns the object with the settings used for calls to setLabels. */
+  public UnaryCallSettings<SetLabelsTargetVpnGatewayRequest, Operation> setLabelsSettings() {
+    return ((TargetVpnGatewaysStubSettings) getStubSettings()).setLabelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsTargetVpnGatewayRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return ((TargetVpnGatewaysStubSettings) getStubSettings()).setLabelsOperationSettings();
+  }
+
   public static final TargetVpnGatewaysSettings create(TargetVpnGatewaysStubSettings stub)
       throws IOException {
     return new TargetVpnGatewaysSettings.Builder(stub.toBuilder()).build();
@@ -254,6 +265,18 @@ public class TargetVpnGatewaysSettings extends ClientSettings<TargetVpnGatewaysS
             ListTargetVpnGatewaysRequest, TargetVpnGatewayList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public UnaryCallSettings.Builder<SetLabelsTargetVpnGatewayRequest, Operation>
+        setLabelsSettings() {
+      return getStubSettingsBuilder().setLabelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public OperationCallSettings.Builder<SetLabelsTargetVpnGatewayRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return getStubSettingsBuilder().setLabelsOperationSettings();
     }
 
     @Override

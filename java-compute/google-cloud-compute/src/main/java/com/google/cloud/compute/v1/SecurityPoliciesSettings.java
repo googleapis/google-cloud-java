@@ -173,6 +173,17 @@ public class SecurityPoliciesSettings extends ClientSettings<SecurityPoliciesSet
     return ((SecurityPoliciesStubSettings) getStubSettings()).removeRuleOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to setLabels. */
+  public UnaryCallSettings<SetLabelsSecurityPolicyRequest, Operation> setLabelsSettings() {
+    return ((SecurityPoliciesStubSettings) getStubSettings()).setLabelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsSecurityPolicyRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return ((SecurityPoliciesStubSettings) getStubSettings()).setLabelsOperationSettings();
+  }
+
   public static final SecurityPoliciesSettings create(SecurityPoliciesStubSettings stub)
       throws IOException {
     return new SecurityPoliciesSettings.Builder(stub.toBuilder()).build();
@@ -372,6 +383,18 @@ public class SecurityPoliciesSettings extends ClientSettings<SecurityPoliciesSet
     public OperationCallSettings.Builder<RemoveRuleSecurityPolicyRequest, Operation, Operation>
         removeRuleOperationSettings() {
       return getStubSettingsBuilder().removeRuleOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public UnaryCallSettings.Builder<SetLabelsSecurityPolicyRequest, Operation>
+        setLabelsSettings() {
+      return getStubSettingsBuilder().setLabelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public OperationCallSettings.Builder<SetLabelsSecurityPolicyRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return getStubSettingsBuilder().setLabelsOperationSettings();
     }
 
     @Override

@@ -95,6 +95,11 @@ public class RegionBackendServicesSettings extends ClientSettings<RegionBackendS
     return ((RegionBackendServicesStubSettings) getStubSettings()).getHealthSettings();
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRegionBackendServiceRequest, Policy> getIamPolicySettings() {
+    return ((RegionBackendServicesStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertRegionBackendServiceRequest, Operation> insertSettings() {
     return ((RegionBackendServicesStubSettings) getStubSettings()).insertSettings();
@@ -121,6 +126,11 @@ public class RegionBackendServicesSettings extends ClientSettings<RegionBackendS
   public OperationCallSettings<PatchRegionBackendServiceRequest, Operation, Operation>
       patchOperationSettings() {
     return ((RegionBackendServicesStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRegionBackendServiceRequest, Policy> setIamPolicySettings() {
+    return ((RegionBackendServicesStubSettings) getStubSettings()).setIamPolicySettings();
   }
 
   /** Returns the object with the settings used for calls to update. */
@@ -257,6 +267,12 @@ public class RegionBackendServicesSettings extends ClientSettings<RegionBackendS
       return getStubSettingsBuilder().getHealthSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRegionBackendServiceRequest, Policy>
+        getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertRegionBackendServiceRequest, Operation>
         insertSettings() {
@@ -285,6 +301,12 @@ public class RegionBackendServicesSettings extends ClientSettings<RegionBackendS
     public OperationCallSettings.Builder<PatchRegionBackendServiceRequest, Operation, Operation>
         patchOperationSettings() {
       return getStubSettingsBuilder().patchOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRegionBackendServiceRequest, Policy>
+        setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
     }
 
     /** Returns the builder for the settings used for calls to update. */
