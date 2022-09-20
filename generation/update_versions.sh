@@ -25,7 +25,6 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
       maven_url="https://repo1.maven.org/maven2/com/google/api/grpc/${artifactId}/maven-metadata.xml"
     fi
 
-    echo $maven_url
     maven_version=$(curl -s "${maven_url}" | grep 'latest')
     maven_latest_version=$(echo "$maven_version" | cut -d '>' -f 2 | cut -d '<' -f 1)
 
@@ -33,11 +32,7 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
     minor_version=$(echo "${maven_latest_version}" | cut -d "." -f2)
     patch_version=$(echo "${maven_latest_version}" | cut -d "." -f3)
     patch_version_bump=$((patch_version + 1))
-
     maven_version_bump="${major_version}:${minor_version}:${patch_version_bump}"
-
-    echo "${artifactId}'s latest version: ${maven_latest_version}"
-
     new_version="${artifactId}:${maven_latest_version}:${maven_version_bump}-SNAPSHOT"
 
     sed -i "s/${line}/${new_version}/g" "${path}/versions.txt"
