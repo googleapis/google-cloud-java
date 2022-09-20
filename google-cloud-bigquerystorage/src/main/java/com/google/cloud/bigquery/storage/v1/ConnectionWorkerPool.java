@@ -340,6 +340,40 @@ public class ConnectionWorkerPool {
     return connectionWorker;
   }
 
+  /**
+   * Reports the close of the given write stream.
+   *
+   * <p>The corresponding worker is not closed until there is no stream reference is targeting to
+   * that worker.
+   */
+  public void close(StreamWriter streamWriter) {
+    lock.lock();
+    try {
+      streamWriterToConnection.remove(streamWriter);
+      // Since it's possible some other connections may have served this writeStream, we
+      // iterate and see whether it's also fine to close other connections.
+      Set<ConnectionWorker> connectionToRemove = new HashSet<>();
+      for (ConnectionWorker connectionWorker : connectionToWriteStream.keySet()) {
+        if (connectionToWriteStream.containsKey(connectionWorker)) {
+          connectionToWriteStream.get(connectionWorker).remove(streamWriter);
+          if (connectionToWriteStream.get(connectionWorker).isEmpty()) {
+            connectionWorker.close();
+            connectionWorkerPool.remove(connectionWorker);
+            connectionToRemove.add(connectionWorker);
+          }
+        }
+      }
+      log.info(
+          String.format(
+              "During closing of writeStream for %s with writer id %s, we decided to close %s "
+                  + "connections",
+              streamWriter.getStreamName(), streamWriter.getWriterId(), connectionToRemove.size()));
+      connectionToWriteStream.keySet().removeAll(connectionToRemove);
+    } finally {
+      lock.unlock();
+    }
+  }
+
   /** Enable Test related logic. */
   public static void enableTestingLogic() {
     enableTesting = true;
@@ -350,8 +384,7 @@ public class ConnectionWorkerPool {
     return testValueCreateConnectionCount.get();
   }
 
-  /** Close the stream writer. Shut down all resources. */
-  public void close(StreamWriter streamWriter) {
-    throw new RuntimeException("close is implemented on connection pool");
+  int getTotalConnectionCount() {
+    return connectionWorkerPool.size();
   }
 }
