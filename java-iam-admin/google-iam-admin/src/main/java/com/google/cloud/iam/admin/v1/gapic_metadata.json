@@ -31,8 +31,14 @@
             "DisableServiceAccount": {
               "methods": ["disableServiceAccount", "disableServiceAccountCallable"]
             },
+            "DisableServiceAccountKey": {
+              "methods": ["disableServiceAccountKey", "disableServiceAccountKey", "disableServiceAccountKey", "disableServiceAccountKeyCallable"]
+            },
             "EnableServiceAccount": {
               "methods": ["enableServiceAccount", "enableServiceAccountCallable"]
+            },
+            "EnableServiceAccountKey": {
+              "methods": ["enableServiceAccountKey", "enableServiceAccountKey", "enableServiceAccountKey", "enableServiceAccountKeyCallable"]
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]

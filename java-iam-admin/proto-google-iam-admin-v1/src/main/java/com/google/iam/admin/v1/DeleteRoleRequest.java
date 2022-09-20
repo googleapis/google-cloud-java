@@ -105,14 +105,14 @@ public final class DeleteRoleRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_DeleteRoleRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_DeleteRoleRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.iam.admin.v1.DeleteRoleRequest.class,
@@ -127,17 +127,20 @@ public final class DeleteRoleRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * The `name` parameter's value depends on the target resource for the
    * request, namely
-   * [`projects`](/iam/reference/rest/v1/projects.roles) or
-   * [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
-   * resource type's `name` value format is described below:
-   * * [`projects.roles.delete()`](/iam/reference/rest/v1/projects.roles/delete):
+   * [`projects`](https://cloud.google.com/iam/reference/rest/v1/projects.roles)
+   * or
+   * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
+   * Each resource type's `name` value format is described below:
+   * * [`projects.roles.delete()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/delete):
    *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method deletes only
-   *   [custom roles](/iam/docs/understanding-custom-roles) that have been
-   *   created at the project level. Example request URL:
+   *   [custom
+   *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
+   *   have been created at the project level. Example request URL:
    *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
-   * * [`organizations.roles.delete()`](/iam/reference/rest/v1/organizations.roles/delete):
+   * * [`organizations.roles.delete()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/delete):
    *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
-   *   deletes only [custom roles](/iam/docs/understanding-custom-roles) that
+   *   deletes only [custom
+   *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
    *   have been created at the organization level. Example request URL:
    *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
    * Note: Wildcard (*) values are invalid; you must specify a complete project
@@ -166,17 +169,20 @@ public final class DeleteRoleRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * The `name` parameter's value depends on the target resource for the
    * request, namely
-   * [`projects`](/iam/reference/rest/v1/projects.roles) or
-   * [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
-   * resource type's `name` value format is described below:
-   * * [`projects.roles.delete()`](/iam/reference/rest/v1/projects.roles/delete):
+   * [`projects`](https://cloud.google.com/iam/reference/rest/v1/projects.roles)
+   * or
+   * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
+   * Each resource type's `name` value format is described below:
+   * * [`projects.roles.delete()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/delete):
    *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method deletes only
-   *   [custom roles](/iam/docs/understanding-custom-roles) that have been
-   *   created at the project level. Example request URL:
+   *   [custom
+   *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
+   *   have been created at the project level. Example request URL:
    *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
-   * * [`organizations.roles.delete()`](/iam/reference/rest/v1/organizations.roles/delete):
+   * * [`organizations.roles.delete()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/delete):
    *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
-   *   deletes only [custom roles](/iam/docs/understanding-custom-roles) that
+   *   deletes only [custom
+   *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
    *   have been created at the organization level. Example request URL:
    *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
    * Note: Wildcard (*) values are invalid; you must specify a complete project
@@ -400,14 +406,14 @@ public final class DeleteRoleRequest extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(builder_implements:google.iam.admin.v1.DeleteRoleRequest)
       com.google.iam.admin.v1.DeleteRoleRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_DeleteRoleRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_DeleteRoleRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.iam.admin.v1.DeleteRoleRequest.class,
@@ -440,7 +446,7 @@ public final class DeleteRoleRequest extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_DeleteRoleRequest_descriptor;
     }
 
@@ -556,17 +562,20 @@ public final class DeleteRoleRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The `name` parameter's value depends on the target resource for the
      * request, namely
-     * [`projects`](/iam/reference/rest/v1/projects.roles) or
-     * [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
-     * resource type's `name` value format is described below:
-     * * [`projects.roles.delete()`](/iam/reference/rest/v1/projects.roles/delete):
+     * [`projects`](https://cloud.google.com/iam/reference/rest/v1/projects.roles)
+     * or
+     * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
+     * Each resource type's `name` value format is described below:
+     * * [`projects.roles.delete()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/delete):
      *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method deletes only
-     *   [custom roles](/iam/docs/understanding-custom-roles) that have been
-     *   created at the project level. Example request URL:
+     *   [custom
+     *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
+     *   have been created at the project level. Example request URL:
      *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
-     * * [`organizations.roles.delete()`](/iam/reference/rest/v1/organizations.roles/delete):
+     * * [`organizations.roles.delete()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/delete):
      *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
-     *   deletes only [custom roles](/iam/docs/understanding-custom-roles) that
+     *   deletes only [custom
+     *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
      *   have been created at the organization level. Example request URL:
      *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
      * Note: Wildcard (*) values are invalid; you must specify a complete project
@@ -594,17 +603,20 @@ public final class DeleteRoleRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The `name` parameter's value depends on the target resource for the
      * request, namely
-     * [`projects`](/iam/reference/rest/v1/projects.roles) or
-     * [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
-     * resource type's `name` value format is described below:
-     * * [`projects.roles.delete()`](/iam/reference/rest/v1/projects.roles/delete):
+     * [`projects`](https://cloud.google.com/iam/reference/rest/v1/projects.roles)
+     * or
+     * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
+     * Each resource type's `name` value format is described below:
+     * * [`projects.roles.delete()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/delete):
      *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method deletes only
-     *   [custom roles](/iam/docs/understanding-custom-roles) that have been
-     *   created at the project level. Example request URL:
+     *   [custom
+     *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
+     *   have been created at the project level. Example request URL:
      *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
-     * * [`organizations.roles.delete()`](/iam/reference/rest/v1/organizations.roles/delete):
+     * * [`organizations.roles.delete()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/delete):
      *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
-     *   deletes only [custom roles](/iam/docs/understanding-custom-roles) that
+     *   deletes only [custom
+     *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
      *   have been created at the organization level. Example request URL:
      *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
      * Note: Wildcard (*) values are invalid; you must specify a complete project
@@ -632,17 +644,20 @@ public final class DeleteRoleRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The `name` parameter's value depends on the target resource for the
      * request, namely
-     * [`projects`](/iam/reference/rest/v1/projects.roles) or
-     * [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
-     * resource type's `name` value format is described below:
-     * * [`projects.roles.delete()`](/iam/reference/rest/v1/projects.roles/delete):
+     * [`projects`](https://cloud.google.com/iam/reference/rest/v1/projects.roles)
+     * or
+     * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
+     * Each resource type's `name` value format is described below:
+     * * [`projects.roles.delete()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/delete):
      *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method deletes only
-     *   [custom roles](/iam/docs/understanding-custom-roles) that have been
-     *   created at the project level. Example request URL:
+     *   [custom
+     *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
+     *   have been created at the project level. Example request URL:
      *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
-     * * [`organizations.roles.delete()`](/iam/reference/rest/v1/organizations.roles/delete):
+     * * [`organizations.roles.delete()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/delete):
      *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
-     *   deletes only [custom roles](/iam/docs/understanding-custom-roles) that
+     *   deletes only [custom
+     *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
      *   have been created at the organization level. Example request URL:
      *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
      * Note: Wildcard (*) values are invalid; you must specify a complete project
@@ -669,17 +684,20 @@ public final class DeleteRoleRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The `name` parameter's value depends on the target resource for the
      * request, namely
-     * [`projects`](/iam/reference/rest/v1/projects.roles) or
-     * [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
-     * resource type's `name` value format is described below:
-     * * [`projects.roles.delete()`](/iam/reference/rest/v1/projects.roles/delete):
+     * [`projects`](https://cloud.google.com/iam/reference/rest/v1/projects.roles)
+     * or
+     * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
+     * Each resource type's `name` value format is described below:
+     * * [`projects.roles.delete()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/delete):
      *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method deletes only
-     *   [custom roles](/iam/docs/understanding-custom-roles) that have been
-     *   created at the project level. Example request URL:
+     *   [custom
+     *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
+     *   have been created at the project level. Example request URL:
      *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
-     * * [`organizations.roles.delete()`](/iam/reference/rest/v1/organizations.roles/delete):
+     * * [`organizations.roles.delete()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/delete):
      *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
-     *   deletes only [custom roles](/iam/docs/understanding-custom-roles) that
+     *   deletes only [custom
+     *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
      *   have been created at the organization level. Example request URL:
      *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
      * Note: Wildcard (*) values are invalid; you must specify a complete project
@@ -702,17 +720,20 @@ public final class DeleteRoleRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The `name` parameter's value depends on the target resource for the
      * request, namely
-     * [`projects`](/iam/reference/rest/v1/projects.roles) or
-     * [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
-     * resource type's `name` value format is described below:
-     * * [`projects.roles.delete()`](/iam/reference/rest/v1/projects.roles/delete):
+     * [`projects`](https://cloud.google.com/iam/reference/rest/v1/projects.roles)
+     * or
+     * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
+     * Each resource type's `name` value format is described below:
+     * * [`projects.roles.delete()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/delete):
      *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method deletes only
-     *   [custom roles](/iam/docs/understanding-custom-roles) that have been
-     *   created at the project level. Example request URL:
+     *   [custom
+     *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
+     *   have been created at the project level. Example request URL:
      *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
-     * * [`organizations.roles.delete()`](/iam/reference/rest/v1/organizations.roles/delete):
+     * * [`organizations.roles.delete()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/delete):
      *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
-     *   deletes only [custom roles](/iam/docs/understanding-custom-roles) that
+     *   deletes only [custom
+     *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
      *   have been created at the organization level. Example request URL:
      *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
      * Note: Wildcard (*) values are invalid; you must specify a complete project

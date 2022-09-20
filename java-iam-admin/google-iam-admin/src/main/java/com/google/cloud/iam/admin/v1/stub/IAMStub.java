@@ -29,7 +29,9 @@ import com.google.iam.admin.v1.CreateServiceAccountRequest;
 import com.google.iam.admin.v1.DeleteRoleRequest;
 import com.google.iam.admin.v1.DeleteServiceAccountKeyRequest;
 import com.google.iam.admin.v1.DeleteServiceAccountRequest;
+import com.google.iam.admin.v1.DisableServiceAccountKeyRequest;
 import com.google.iam.admin.v1.DisableServiceAccountRequest;
+import com.google.iam.admin.v1.EnableServiceAccountKeyRequest;
 import com.google.iam.admin.v1.EnableServiceAccountRequest;
 import com.google.iam.admin.v1.GetRoleRequest;
 import com.google.iam.admin.v1.GetServiceAccountKeyRequest;
@@ -143,6 +145,14 @@ public abstract class IAMStub implements BackgroundResource {
 
   public UnaryCallable<DeleteServiceAccountKeyRequest, Empty> deleteServiceAccountKeyCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteServiceAccountKeyCallable()");
+  }
+
+  public UnaryCallable<DisableServiceAccountKeyRequest, Empty> disableServiceAccountKeyCallable() {
+    throw new UnsupportedOperationException("Not implemented: disableServiceAccountKeyCallable()");
+  }
+
+  public UnaryCallable<EnableServiceAccountKeyRequest, Empty> enableServiceAccountKeyCallable() {
+    throw new UnsupportedOperationException("Not implemented: enableServiceAccountKeyCallable()");
   }
 
   @Deprecated

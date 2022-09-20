@@ -23,7 +23,9 @@ import com.google.iam.admin.v1.CreateServiceAccountRequest;
 import com.google.iam.admin.v1.DeleteRoleRequest;
 import com.google.iam.admin.v1.DeleteServiceAccountKeyRequest;
 import com.google.iam.admin.v1.DeleteServiceAccountRequest;
+import com.google.iam.admin.v1.DisableServiceAccountKeyRequest;
 import com.google.iam.admin.v1.DisableServiceAccountRequest;
+import com.google.iam.admin.v1.EnableServiceAccountKeyRequest;
 import com.google.iam.admin.v1.EnableServiceAccountRequest;
 import com.google.iam.admin.v1.GetRoleRequest;
 import com.google.iam.admin.v1.GetServiceAccountKeyRequest;
@@ -393,6 +395,48 @@ public class MockIAMImpl extends IAMImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteServiceAccountKey, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void disableServiceAccountKey(
+      DisableServiceAccountKeyRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DisableServiceAccountKey, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void enableServiceAccountKey(
+      EnableServiceAccountKeyRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method EnableServiceAccountKey, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

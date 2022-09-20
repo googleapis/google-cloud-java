@@ -39,7 +39,9 @@ import com.google.iam.admin.v1.CreateServiceAccountRequest;
 import com.google.iam.admin.v1.DeleteRoleRequest;
 import com.google.iam.admin.v1.DeleteServiceAccountKeyRequest;
 import com.google.iam.admin.v1.DeleteServiceAccountRequest;
+import com.google.iam.admin.v1.DisableServiceAccountKeyRequest;
 import com.google.iam.admin.v1.DisableServiceAccountRequest;
+import com.google.iam.admin.v1.EnableServiceAccountKeyRequest;
 import com.google.iam.admin.v1.EnableServiceAccountRequest;
 import com.google.iam.admin.v1.GetRoleRequest;
 import com.google.iam.admin.v1.GetServiceAccountKeyRequest;
@@ -195,6 +197,18 @@ public class IAMSettings extends ClientSettings<IAMSettings> {
   public UnaryCallSettings<DeleteServiceAccountKeyRequest, Empty>
       deleteServiceAccountKeySettings() {
     return ((IAMStubSettings) getStubSettings()).deleteServiceAccountKeySettings();
+  }
+
+  /** Returns the object with the settings used for calls to disableServiceAccountKey. */
+  public UnaryCallSettings<DisableServiceAccountKeyRequest, Empty>
+      disableServiceAccountKeySettings() {
+    return ((IAMStubSettings) getStubSettings()).disableServiceAccountKeySettings();
+  }
+
+  /** Returns the object with the settings used for calls to enableServiceAccountKey. */
+  public UnaryCallSettings<EnableServiceAccountKeyRequest, Empty>
+      enableServiceAccountKeySettings() {
+    return ((IAMStubSettings) getStubSettings()).enableServiceAccountKeySettings();
   }
 
   /**
@@ -472,6 +486,18 @@ public class IAMSettings extends ClientSettings<IAMSettings> {
     public UnaryCallSettings.Builder<DeleteServiceAccountKeyRequest, Empty>
         deleteServiceAccountKeySettings() {
       return getStubSettingsBuilder().deleteServiceAccountKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to disableServiceAccountKey. */
+    public UnaryCallSettings.Builder<DisableServiceAccountKeyRequest, Empty>
+        disableServiceAccountKeySettings() {
+      return getStubSettingsBuilder().disableServiceAccountKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to enableServiceAccountKey. */
+    public UnaryCallSettings.Builder<EnableServiceAccountKeyRequest, Empty>
+        enableServiceAccountKeySettings() {
+      return getStubSettingsBuilder().enableServiceAccountKeySettings();
     }
 
     /**

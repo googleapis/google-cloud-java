@@ -268,4 +268,17 @@ public interface ServiceAccountKeyOrBuilder
    * @return The keyType.
    */
   com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType getKeyType();
+
+  /**
+   *
+   *
+   * <pre>
+   * The key status.
+   * </pre>
+   *
+   * <code>bool disabled = 11;</code>
+   *
+   * @return The disabled.
+   */
+  boolean getDisabled();
 }

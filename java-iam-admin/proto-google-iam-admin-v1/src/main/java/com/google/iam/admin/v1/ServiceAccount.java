@@ -166,14 +166,14 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_ServiceAccount_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_ServiceAccount_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.iam.admin.v1.ServiceAccount.class,
@@ -473,7 +473,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
    * <code>bytes etag = 7 [deprecated = true];</code>
    *
    * @deprecated google.iam.admin.v1.ServiceAccount.etag is deprecated. See
-   *     google/iam/admin/v1/iam.proto;l=504
+   *     google/iam/admin/v1/iam.proto;l=538
    * @return The etag.
    */
   @java.lang.Override
@@ -852,14 +852,14 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(builder_implements:google.iam.admin.v1.ServiceAccount)
       com.google.iam.admin.v1.ServiceAccountOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_ServiceAccount_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_ServiceAccount_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.iam.admin.v1.ServiceAccount.class,
@@ -906,7 +906,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_ServiceAccount_descriptor;
     }
 
@@ -1680,7 +1680,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * <code>bytes etag = 7 [deprecated = true];</code>
      *
      * @deprecated google.iam.admin.v1.ServiceAccount.etag is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=504
+     *     google/iam/admin/v1/iam.proto;l=538
      * @return The etag.
      */
     @java.lang.Override
@@ -1698,7 +1698,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * <code>bytes etag = 7 [deprecated = true];</code>
      *
      * @deprecated google.iam.admin.v1.ServiceAccount.etag is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=504
+     *     google/iam/admin/v1/iam.proto;l=538
      * @param value The etag to set.
      * @return This builder for chaining.
      */
@@ -1722,7 +1722,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * <code>bytes etag = 7 [deprecated = true];</code>
      *
      * @deprecated google.iam.admin.v1.ServiceAccount.etag is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=504
+     *     google/iam/admin/v1/iam.proto;l=538
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

@@ -22,30 +22,30 @@ package com.google.iam.admin.v1;
  *
  *
  * <pre>
- * The service account key delete request.
+ * The service account key enable request.
  * </pre>
  *
- * Protobuf type {@code google.iam.admin.v1.DeleteServiceAccountKeyRequest}
+ * Protobuf type {@code google.iam.admin.v1.EnableServiceAccountKeyRequest}
  */
-public final class DeleteServiceAccountKeyRequest extends com.google.protobuf.GeneratedMessageV3
+public final class EnableServiceAccountKeyRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.iam.admin.v1.DeleteServiceAccountKeyRequest)
-    DeleteServiceAccountKeyRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.iam.admin.v1.EnableServiceAccountKeyRequest)
+    EnableServiceAccountKeyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use DeleteServiceAccountKeyRequest.newBuilder() to construct.
-  private DeleteServiceAccountKeyRequest(
+  // Use EnableServiceAccountKeyRequest.newBuilder() to construct.
+  private EnableServiceAccountKeyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private DeleteServiceAccountKeyRequest() {
+  private EnableServiceAccountKeyRequest() {
     name_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new DeleteServiceAccountKeyRequest();
+    return new EnableServiceAccountKeyRequest();
   }
 
   @java.lang.Override
@@ -53,7 +53,7 @@ public final class DeleteServiceAccountKeyRequest extends com.google.protobuf.Ge
     return this.unknownFields;
   }
 
-  private DeleteServiceAccountKeyRequest(
+  private EnableServiceAccountKeyRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -101,17 +101,17 @@ public final class DeleteServiceAccountKeyRequest extends com.google.protobuf.Ge
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.iam.admin.v1.Iam
-        .internal_static_google_iam_admin_v1_DeleteServiceAccountKeyRequest_descriptor;
+        .internal_static_google_iam_admin_v1_EnableServiceAccountKeyRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.iam.admin.v1.Iam
-        .internal_static_google_iam_admin_v1_DeleteServiceAccountKeyRequest_fieldAccessorTable
+        .internal_static_google_iam_admin_v1_EnableServiceAccountKeyRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.iam.admin.v1.DeleteServiceAccountKeyRequest.class,
-            com.google.iam.admin.v1.DeleteServiceAccountKeyRequest.Builder.class);
+            com.google.iam.admin.v1.EnableServiceAccountKeyRequest.class,
+            com.google.iam.admin.v1.EnableServiceAccountKeyRequest.Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -214,11 +214,11 @@ public final class DeleteServiceAccountKeyRequest extends com.google.protobuf.Ge
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.iam.admin.v1.DeleteServiceAccountKeyRequest)) {
+    if (!(obj instanceof com.google.iam.admin.v1.EnableServiceAccountKeyRequest)) {
       return super.equals(obj);
     }
-    com.google.iam.admin.v1.DeleteServiceAccountKeyRequest other =
-        (com.google.iam.admin.v1.DeleteServiceAccountKeyRequest) obj;
+    com.google.iam.admin.v1.EnableServiceAccountKeyRequest other =
+        (com.google.iam.admin.v1.EnableServiceAccountKeyRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -239,71 +239,71 @@ public final class DeleteServiceAccountKeyRequest extends com.google.protobuf.Ge
     return hash;
   }
 
-  public static com.google.iam.admin.v1.DeleteServiceAccountKeyRequest parseFrom(
+  public static com.google.iam.admin.v1.EnableServiceAccountKeyRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.iam.admin.v1.DeleteServiceAccountKeyRequest parseFrom(
+  public static com.google.iam.admin.v1.EnableServiceAccountKeyRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.iam.admin.v1.DeleteServiceAccountKeyRequest parseFrom(
+  public static com.google.iam.admin.v1.EnableServiceAccountKeyRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.iam.admin.v1.DeleteServiceAccountKeyRequest parseFrom(
+  public static com.google.iam.admin.v1.EnableServiceAccountKeyRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.iam.admin.v1.DeleteServiceAccountKeyRequest parseFrom(byte[] data)
+  public static com.google.iam.admin.v1.EnableServiceAccountKeyRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.iam.admin.v1.DeleteServiceAccountKeyRequest parseFrom(
+  public static com.google.iam.admin.v1.EnableServiceAccountKeyRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.iam.admin.v1.DeleteServiceAccountKeyRequest parseFrom(
+  public static com.google.iam.admin.v1.EnableServiceAccountKeyRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.iam.admin.v1.DeleteServiceAccountKeyRequest parseFrom(
+  public static com.google.iam.admin.v1.EnableServiceAccountKeyRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.iam.admin.v1.DeleteServiceAccountKeyRequest parseDelimitedFrom(
+  public static com.google.iam.admin.v1.EnableServiceAccountKeyRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.iam.admin.v1.DeleteServiceAccountKeyRequest parseDelimitedFrom(
+  public static com.google.iam.admin.v1.EnableServiceAccountKeyRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.iam.admin.v1.DeleteServiceAccountKeyRequest parseFrom(
+  public static com.google.iam.admin.v1.EnableServiceAccountKeyRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.iam.admin.v1.DeleteServiceAccountKeyRequest parseFrom(
+  public static com.google.iam.admin.v1.EnableServiceAccountKeyRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -321,7 +321,7 @@ public final class DeleteServiceAccountKeyRequest extends com.google.protobuf.Ge
   }
 
   public static Builder newBuilder(
-      com.google.iam.admin.v1.DeleteServiceAccountKeyRequest prototype) {
+      com.google.iam.admin.v1.EnableServiceAccountKeyRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -339,31 +339,31 @@ public final class DeleteServiceAccountKeyRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The service account key delete request.
+   * The service account key enable request.
    * </pre>
    *
-   * Protobuf type {@code google.iam.admin.v1.DeleteServiceAccountKeyRequest}
+   * Protobuf type {@code google.iam.admin.v1.EnableServiceAccountKeyRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.iam.admin.v1.DeleteServiceAccountKeyRequest)
-      com.google.iam.admin.v1.DeleteServiceAccountKeyRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.iam.admin.v1.EnableServiceAccountKeyRequest)
+      com.google.iam.admin.v1.EnableServiceAccountKeyRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.iam.admin.v1.Iam
-          .internal_static_google_iam_admin_v1_DeleteServiceAccountKeyRequest_descriptor;
+          .internal_static_google_iam_admin_v1_EnableServiceAccountKeyRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.iam.admin.v1.Iam
-          .internal_static_google_iam_admin_v1_DeleteServiceAccountKeyRequest_fieldAccessorTable
+          .internal_static_google_iam_admin_v1_EnableServiceAccountKeyRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.iam.admin.v1.DeleteServiceAccountKeyRequest.class,
-              com.google.iam.admin.v1.DeleteServiceAccountKeyRequest.Builder.class);
+              com.google.iam.admin.v1.EnableServiceAccountKeyRequest.class,
+              com.google.iam.admin.v1.EnableServiceAccountKeyRequest.Builder.class);
     }
 
-    // Construct using com.google.iam.admin.v1.DeleteServiceAccountKeyRequest.newBuilder()
+    // Construct using com.google.iam.admin.v1.EnableServiceAccountKeyRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -388,17 +388,17 @@ public final class DeleteServiceAccountKeyRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.iam.admin.v1.Iam
-          .internal_static_google_iam_admin_v1_DeleteServiceAccountKeyRequest_descriptor;
+          .internal_static_google_iam_admin_v1_EnableServiceAccountKeyRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.iam.admin.v1.DeleteServiceAccountKeyRequest getDefaultInstanceForType() {
-      return com.google.iam.admin.v1.DeleteServiceAccountKeyRequest.getDefaultInstance();
+    public com.google.iam.admin.v1.EnableServiceAccountKeyRequest getDefaultInstanceForType() {
+      return com.google.iam.admin.v1.EnableServiceAccountKeyRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.iam.admin.v1.DeleteServiceAccountKeyRequest build() {
-      com.google.iam.admin.v1.DeleteServiceAccountKeyRequest result = buildPartial();
+    public com.google.iam.admin.v1.EnableServiceAccountKeyRequest build() {
+      com.google.iam.admin.v1.EnableServiceAccountKeyRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -406,9 +406,9 @@ public final class DeleteServiceAccountKeyRequest extends com.google.protobuf.Ge
     }
 
     @java.lang.Override
-    public com.google.iam.admin.v1.DeleteServiceAccountKeyRequest buildPartial() {
-      com.google.iam.admin.v1.DeleteServiceAccountKeyRequest result =
-          new com.google.iam.admin.v1.DeleteServiceAccountKeyRequest(this);
+    public com.google.iam.admin.v1.EnableServiceAccountKeyRequest buildPartial() {
+      com.google.iam.admin.v1.EnableServiceAccountKeyRequest result =
+          new com.google.iam.admin.v1.EnableServiceAccountKeyRequest(this);
       result.name_ = name_;
       onBuilt();
       return result;
@@ -449,16 +449,16 @@ public final class DeleteServiceAccountKeyRequest extends com.google.protobuf.Ge
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.iam.admin.v1.DeleteServiceAccountKeyRequest) {
-        return mergeFrom((com.google.iam.admin.v1.DeleteServiceAccountKeyRequest) other);
+      if (other instanceof com.google.iam.admin.v1.EnableServiceAccountKeyRequest) {
+        return mergeFrom((com.google.iam.admin.v1.EnableServiceAccountKeyRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.iam.admin.v1.DeleteServiceAccountKeyRequest other) {
-      if (other == com.google.iam.admin.v1.DeleteServiceAccountKeyRequest.getDefaultInstance())
+    public Builder mergeFrom(com.google.iam.admin.v1.EnableServiceAccountKeyRequest other) {
+      if (other == com.google.iam.admin.v1.EnableServiceAccountKeyRequest.getDefaultInstance())
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
@@ -479,12 +479,12 @@ public final class DeleteServiceAccountKeyRequest extends com.google.protobuf.Ge
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.iam.admin.v1.DeleteServiceAccountKeyRequest parsedMessage = null;
+      com.google.iam.admin.v1.EnableServiceAccountKeyRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.iam.admin.v1.DeleteServiceAccountKeyRequest) e.getUnfinishedMessage();
+            (com.google.iam.admin.v1.EnableServiceAccountKeyRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -641,42 +641,42 @@ public final class DeleteServiceAccountKeyRequest extends com.google.protobuf.Ge
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.iam.admin.v1.DeleteServiceAccountKeyRequest)
+    // @@protoc_insertion_point(builder_scope:google.iam.admin.v1.EnableServiceAccountKeyRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.iam.admin.v1.DeleteServiceAccountKeyRequest)
-  private static final com.google.iam.admin.v1.DeleteServiceAccountKeyRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.iam.admin.v1.EnableServiceAccountKeyRequest)
+  private static final com.google.iam.admin.v1.EnableServiceAccountKeyRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.iam.admin.v1.DeleteServiceAccountKeyRequest();
+    DEFAULT_INSTANCE = new com.google.iam.admin.v1.EnableServiceAccountKeyRequest();
   }
 
-  public static com.google.iam.admin.v1.DeleteServiceAccountKeyRequest getDefaultInstance() {
+  public static com.google.iam.admin.v1.EnableServiceAccountKeyRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DeleteServiceAccountKeyRequest> PARSER =
-      new com.google.protobuf.AbstractParser<DeleteServiceAccountKeyRequest>() {
+  private static final com.google.protobuf.Parser<EnableServiceAccountKeyRequest> PARSER =
+      new com.google.protobuf.AbstractParser<EnableServiceAccountKeyRequest>() {
         @java.lang.Override
-        public DeleteServiceAccountKeyRequest parsePartialFrom(
+        public EnableServiceAccountKeyRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DeleteServiceAccountKeyRequest(input, extensionRegistry);
+          return new EnableServiceAccountKeyRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<DeleteServiceAccountKeyRequest> parser() {
+  public static com.google.protobuf.Parser<EnableServiceAccountKeyRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<DeleteServiceAccountKeyRequest> getParserForType() {
+  public com.google.protobuf.Parser<EnableServiceAccountKeyRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.iam.admin.v1.DeleteServiceAccountKeyRequest getDefaultInstanceForType() {
+  public com.google.iam.admin.v1.EnableServiceAccountKeyRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

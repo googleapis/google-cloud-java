@@ -15,7 +15,9 @@
  */
 
 /**
- * The interfaces provided are listed below, along with usage samples.
+ * A client to Identity and Access Management (IAM) API
+ *
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= IAMClient =======================
  *
@@ -29,9 +31,9 @@
  *   <li>&#42;&#42;Service account keys&#42;&#42;, which service accounts use to authenticate with
  *       Google APIs
  *   <li>&#42;&#42;IAM policies for service accounts&#42;&#42;, which specify the roles that a
- *       member has for the service account
+ *       principal has for the service account
  *   <li>&#42;&#42;IAM custom roles&#42;&#42;, which help you limit the number of permissions that
- *       you grant to members
+ *       you grant to principals
  * </ul>
  *
  * <p>In addition, you can use this service to complete the following tasks, among others:
@@ -41,6 +43,14 @@
  *   <li>Check which roles you can grant for a specific resource
  *   <li>Lint, or validate, condition expressions in an IAM policy
  * </ul>
+ *
+ * <p>When you read data from the IAM API, each read is eventually consistent. In other words, if
+ * you write data with the IAM API, then immediately read that data, the read operation might return
+ * an older version of the data. To deal with this behavior, your application can retry the request
+ * with truncated exponential backoff.
+ *
+ * <p>In contrast, writing data to the IAM API is sequentially consistent. In other words, write
+ * operations are always processed in the order in which they were received.
  *
  * <p>Sample for IAMClient:
  *

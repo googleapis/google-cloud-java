@@ -35,7 +35,7 @@ public interface SignJwtResponseOrBuilder
    * <code>string key_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.iam.admin.v1.SignJwtResponse.key_id is deprecated. See
-   *     google/iam/admin/v1/iam.proto;l=991
+   *     google/iam/admin/v1/iam.proto;l=1059
    * @return The keyId.
    */
   @java.lang.Deprecated
@@ -52,7 +52,7 @@ public interface SignJwtResponseOrBuilder
    * <code>string key_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.iam.admin.v1.SignJwtResponse.key_id is deprecated. See
-   *     google/iam/admin/v1/iam.proto;l=991
+   *     google/iam/admin/v1/iam.proto;l=1059
    * @return The bytes for keyId.
    */
   @java.lang.Deprecated
@@ -70,7 +70,7 @@ public interface SignJwtResponseOrBuilder
    * <code>string signed_jwt = 2 [deprecated = true];</code>
    *
    * @deprecated google.iam.admin.v1.SignJwtResponse.signed_jwt is deprecated. See
-   *     google/iam/admin/v1/iam.proto;l=997
+   *     google/iam/admin/v1/iam.proto;l=1065
    * @return The signedJwt.
    */
   @java.lang.Deprecated
@@ -87,7 +87,7 @@ public interface SignJwtResponseOrBuilder
    * <code>string signed_jwt = 2 [deprecated = true];</code>
    *
    * @deprecated google.iam.admin.v1.SignJwtResponse.signed_jwt is deprecated. See
-   *     google/iam/admin/v1/iam.proto;l=997
+   *     google/iam/admin/v1/iam.proto;l=1065
    * @return The bytes for signedJwt.
    */
   @java.lang.Deprecated

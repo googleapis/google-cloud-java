@@ -112,14 +112,14 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_QueryAuditableServicesResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_QueryAuditableServicesResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.iam.admin.v1.QueryAuditableServicesResponse.class,
@@ -239,14 +239,14 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_QueryAuditableServicesResponse_AuditableService_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_QueryAuditableServicesResponse_AuditableService_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.iam.admin.v1.QueryAuditableServicesResponse.AuditableService.class,
@@ -483,14 +483,14 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
         // @@protoc_insertion_point(builder_implements:google.iam.admin.v1.QueryAuditableServicesResponse.AuditableService)
         com.google.iam.admin.v1.QueryAuditableServicesResponse.AuditableServiceOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.iam.admin.v1.IamProto
+        return com.google.iam.admin.v1.Iam
             .internal_static_google_iam_admin_v1_QueryAuditableServicesResponse_AuditableService_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.iam.admin.v1.IamProto
+        return com.google.iam.admin.v1.Iam
             .internal_static_google_iam_admin_v1_QueryAuditableServicesResponse_AuditableService_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.google.iam.admin.v1.QueryAuditableServicesResponse.AuditableService.class,
@@ -523,7 +523,7 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.iam.admin.v1.IamProto
+        return com.google.iam.admin.v1.Iam
             .internal_static_google_iam_admin_v1_QueryAuditableServicesResponse_AuditableService_descriptor;
       }
 
@@ -1070,14 +1070,14 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
       // @@protoc_insertion_point(builder_implements:google.iam.admin.v1.QueryAuditableServicesResponse)
       com.google.iam.admin.v1.QueryAuditableServicesResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_QueryAuditableServicesResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_QueryAuditableServicesResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.iam.admin.v1.QueryAuditableServicesResponse.class,
@@ -1114,7 +1114,7 @@ public final class QueryAuditableServicesResponse extends com.google.protobuf.Ge
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_QueryAuditableServicesResponse_descriptor;
     }
 

@@ -194,7 +194,7 @@ public interface ServiceAccountOrBuilder
    * <code>bytes etag = 7 [deprecated = true];</code>
    *
    * @deprecated google.iam.admin.v1.ServiceAccount.etag is deprecated. See
-   *     google/iam/admin/v1/iam.proto;l=504
+   *     google/iam/admin/v1/iam.proto;l=538
    * @return The etag.
    */
   @java.lang.Deprecated

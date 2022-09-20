@@ -36,7 +36,9 @@ import com.google.iam.admin.v1.CreateServiceAccountRequest;
 import com.google.iam.admin.v1.DeleteRoleRequest;
 import com.google.iam.admin.v1.DeleteServiceAccountKeyRequest;
 import com.google.iam.admin.v1.DeleteServiceAccountRequest;
+import com.google.iam.admin.v1.DisableServiceAccountKeyRequest;
 import com.google.iam.admin.v1.DisableServiceAccountRequest;
+import com.google.iam.admin.v1.EnableServiceAccountKeyRequest;
 import com.google.iam.admin.v1.EnableServiceAccountRequest;
 import com.google.iam.admin.v1.GetRoleRequest;
 import com.google.iam.admin.v1.GetServiceAccountKeyRequest;
@@ -840,6 +842,7 @@ public class IAMClientTest {
             .setValidAfterTime(Timestamp.newBuilder().build())
             .setValidBeforeTime(Timestamp.newBuilder().build())
             .setKeyOrigin(ServiceAccountKeyOrigin.forNumber(0))
+            .setDisabled(true)
             .build();
     mockIAM.addResponse(expectedResponse);
 
@@ -889,6 +892,7 @@ public class IAMClientTest {
             .setValidAfterTime(Timestamp.newBuilder().build())
             .setValidBeforeTime(Timestamp.newBuilder().build())
             .setKeyOrigin(ServiceAccountKeyOrigin.forNumber(0))
+            .setDisabled(true)
             .build();
     mockIAM.addResponse(expectedResponse);
 
@@ -938,6 +942,7 @@ public class IAMClientTest {
             .setValidAfterTime(Timestamp.newBuilder().build())
             .setValidBeforeTime(Timestamp.newBuilder().build())
             .setKeyOrigin(ServiceAccountKeyOrigin.forNumber(0))
+            .setDisabled(true)
             .build();
     mockIAM.addResponse(expectedResponse);
 
@@ -991,6 +996,7 @@ public class IAMClientTest {
             .setValidAfterTime(Timestamp.newBuilder().build())
             .setValidBeforeTime(Timestamp.newBuilder().build())
             .setKeyOrigin(ServiceAccountKeyOrigin.forNumber(0))
+            .setDisabled(true)
             .build();
     mockIAM.addResponse(expectedResponse);
 
@@ -1044,6 +1050,7 @@ public class IAMClientTest {
             .setValidAfterTime(Timestamp.newBuilder().build())
             .setValidBeforeTime(Timestamp.newBuilder().build())
             .setKeyOrigin(ServiceAccountKeyOrigin.forNumber(0))
+            .setDisabled(true)
             .build();
     mockIAM.addResponse(expectedResponse);
 
@@ -1151,6 +1158,146 @@ public class IAMClientTest {
     try {
       String name = "name3373707";
       client.deleteServiceAccountKey(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void disableServiceAccountKeyTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockIAM.addResponse(expectedResponse);
+
+    KeyName name = KeyName.of("[PROJECT]", "[SERVICE_ACCOUNT]", "[KEY]");
+
+    client.disableServiceAccountKey(name);
+
+    List<AbstractMessage> actualRequests = mockIAM.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DisableServiceAccountKeyRequest actualRequest =
+        ((DisableServiceAccountKeyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void disableServiceAccountKeyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIAM.addException(exception);
+
+    try {
+      KeyName name = KeyName.of("[PROJECT]", "[SERVICE_ACCOUNT]", "[KEY]");
+      client.disableServiceAccountKey(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void disableServiceAccountKeyTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockIAM.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.disableServiceAccountKey(name);
+
+    List<AbstractMessage> actualRequests = mockIAM.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DisableServiceAccountKeyRequest actualRequest =
+        ((DisableServiceAccountKeyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void disableServiceAccountKeyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIAM.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.disableServiceAccountKey(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void enableServiceAccountKeyTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockIAM.addResponse(expectedResponse);
+
+    KeyName name = KeyName.of("[PROJECT]", "[SERVICE_ACCOUNT]", "[KEY]");
+
+    client.enableServiceAccountKey(name);
+
+    List<AbstractMessage> actualRequests = mockIAM.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    EnableServiceAccountKeyRequest actualRequest =
+        ((EnableServiceAccountKeyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void enableServiceAccountKeyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIAM.addException(exception);
+
+    try {
+      KeyName name = KeyName.of("[PROJECT]", "[SERVICE_ACCOUNT]", "[KEY]");
+      client.enableServiceAccountKey(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void enableServiceAccountKeyTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockIAM.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.enableServiceAccountKey(name);
+
+    List<AbstractMessage> actualRequests = mockIAM.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    EnableServiceAccountKeyRequest actualRequest =
+        ((EnableServiceAccountKeyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void enableServiceAccountKeyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIAM.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.enableServiceAccountKey(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

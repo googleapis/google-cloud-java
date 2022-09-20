@@ -149,14 +149,13 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.iam.admin.v1.IamProto.internal_static_google_iam_admin_v1_Role_descriptor;
+    return com.google.iam.admin.v1.Iam.internal_static_google_iam_admin_v1_Role_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.iam.admin.v1.IamProto
-        .internal_static_google_iam_admin_v1_Role_fieldAccessorTable
+    return com.google.iam.admin.v1.Iam.internal_static_google_iam_admin_v1_Role_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.iam.admin.v1.Role.class, com.google.iam.admin.v1.Role.Builder.class);
   }
@@ -217,8 +216,8 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This role is disabled and will not contribute permissions to any members
-     * it is granted to in policies.
+     * This role is disabled and will not contribute permissions to any
+     * principals it is granted to in policies.
      * </pre>
      *
      * <code>DISABLED = 5;</code>
@@ -283,8 +282,8 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This role is disabled and will not contribute permissions to any members
-     * it is granted to in policies.
+     * This role is disabled and will not contribute permissions to any
+     * principals it is granted to in policies.
      * </pre>
      *
      * <code>DISABLED = 5;</code>
@@ -919,14 +918,13 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(builder_implements:google.iam.admin.v1.Role)
       com.google.iam.admin.v1.RoleOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.iam.admin.v1.IamProto.internal_static_google_iam_admin_v1_Role_descriptor;
+      return com.google.iam.admin.v1.Iam.internal_static_google_iam_admin_v1_Role_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.iam.admin.v1.IamProto
-          .internal_static_google_iam_admin_v1_Role_fieldAccessorTable
+      return com.google.iam.admin.v1.Iam.internal_static_google_iam_admin_v1_Role_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.iam.admin.v1.Role.class, com.google.iam.admin.v1.Role.Builder.class);
     }
@@ -967,7 +965,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.iam.admin.v1.IamProto.internal_static_google_iam_admin_v1_Role_descriptor;
+      return com.google.iam.admin.v1.Iam.internal_static_google_iam_admin_v1_Role_descriptor;
     }
 
     @java.lang.Override

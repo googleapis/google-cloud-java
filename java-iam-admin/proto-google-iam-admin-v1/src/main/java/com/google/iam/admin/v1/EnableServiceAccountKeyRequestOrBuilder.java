@@ -18,23 +18,25 @@
 
 package com.google.iam.admin.v1;
 
-public interface UploadServiceAccountKeyRequestOrBuilder
+public interface EnableServiceAccountKeyRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.iam.admin.v1.UploadServiceAccountKeyRequest)
+    // @@protoc_insertion_point(interface_extends:google.iam.admin.v1.EnableServiceAccountKeyRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * The resource name of the service account in the following format:
-   * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+   * Required. The resource name of the service account key in the following format:
+   * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`.
    * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
    * the account. The `ACCOUNT` value can be the `email` address or the
    * `unique_id` of the service account.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -43,32 +45,18 @@ public interface UploadServiceAccountKeyRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name of the service account in the following format:
-   * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+   * Required. The resource name of the service account key in the following format:
+   * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`.
    * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
    * the account. The `ACCOUNT` value can be the `email` address or the
    * `unique_id` of the service account.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * The public key to associate with the service account. Must be an RSA public
-   * key that is wrapped in an X.509 v3 certificate. Include the first line,
-   * `-----BEGIN CERTIFICATE-----`, and the last line,
-   * `-----END CERTIFICATE-----`.
-   * </pre>
-   *
-   * <code>bytes public_key_data = 2;</code>
-   *
-   * @return The publicKeyData.
-   */
-  com.google.protobuf.ByteString getPublicKeyData();
 }

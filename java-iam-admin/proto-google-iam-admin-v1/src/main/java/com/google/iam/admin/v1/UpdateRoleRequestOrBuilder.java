@@ -29,17 +29,20 @@ public interface UpdateRoleRequestOrBuilder
    * <pre>
    * The `name` parameter's value depends on the target resource for the
    * request, namely
-   * [`projects`](/iam/reference/rest/v1/projects.roles) or
-   * [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
-   * resource type's `name` value format is described below:
-   * * [`projects.roles.patch()`](/iam/reference/rest/v1/projects.roles/patch):
+   * [`projects`](https://cloud.google.com/iam/reference/rest/v1/projects.roles)
+   * or
+   * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
+   * Each resource type's `name` value format is described below:
+   * * [`projects.roles.patch()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/patch):
    *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method updates only
-   *   [custom roles](/iam/docs/understanding-custom-roles) that have been
-   *   created at the project level. Example request URL:
+   *   [custom
+   *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
+   *   have been created at the project level. Example request URL:
    *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
-   * * [`organizations.roles.patch()`](/iam/reference/rest/v1/organizations.roles/patch):
+   * * [`organizations.roles.patch()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/patch):
    *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
-   *   updates only [custom roles](/iam/docs/understanding-custom-roles) that
+   *   updates only [custom
+   *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
    *   have been created at the organization level. Example request URL:
    *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
    * Note: Wildcard (*) values are invalid; you must specify a complete project
@@ -57,17 +60,20 @@ public interface UpdateRoleRequestOrBuilder
    * <pre>
    * The `name` parameter's value depends on the target resource for the
    * request, namely
-   * [`projects`](/iam/reference/rest/v1/projects.roles) or
-   * [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
-   * resource type's `name` value format is described below:
-   * * [`projects.roles.patch()`](/iam/reference/rest/v1/projects.roles/patch):
+   * [`projects`](https://cloud.google.com/iam/reference/rest/v1/projects.roles)
+   * or
+   * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
+   * Each resource type's `name` value format is described below:
+   * * [`projects.roles.patch()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/patch):
    *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method updates only
-   *   [custom roles](/iam/docs/understanding-custom-roles) that have been
-   *   created at the project level. Example request URL:
+   *   [custom
+   *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
+   *   have been created at the project level. Example request URL:
    *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
-   * * [`organizations.roles.patch()`](/iam/reference/rest/v1/organizations.roles/patch):
+   * * [`organizations.roles.patch()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/patch):
    *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
-   *   updates only [custom roles](/iam/docs/understanding-custom-roles) that
+   *   updates only [custom
+   *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
    *   have been created at the organization level. Example request URL:
    *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
    * Note: Wildcard (*) values are invalid; you must specify a complete project

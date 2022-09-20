@@ -64,11 +64,13 @@ public interface GetServiceAccountKeyRequestOrBuilder
    *
    *
    * <pre>
-   * The output format of the public key requested.
-   * X509_PEM is the default output format.
+   * Optional. The output format of the public key. The default is `TYPE_NONE`, which
+   * means that the public key is not returned.
    * </pre>
    *
-   * <code>.google.iam.admin.v1.ServiceAccountPublicKeyType public_key_type = 2;</code>
+   * <code>
+   * .google.iam.admin.v1.ServiceAccountPublicKeyType public_key_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for publicKeyType.
    */
@@ -77,11 +79,13 @@ public interface GetServiceAccountKeyRequestOrBuilder
    *
    *
    * <pre>
-   * The output format of the public key requested.
-   * X509_PEM is the default output format.
+   * Optional. The output format of the public key. The default is `TYPE_NONE`, which
+   * means that the public key is not returned.
    * </pre>
    *
-   * <code>.google.iam.admin.v1.ServiceAccountPublicKeyType public_key_type = 2;</code>
+   * <code>
+   * .google.iam.admin.v1.ServiceAccountPublicKeyType public_key_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The publicKeyType.
    */

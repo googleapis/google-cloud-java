@@ -109,14 +109,14 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_SignJwtResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_SignJwtResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.iam.admin.v1.SignJwtResponse.class,
@@ -137,7 +137,7 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
    * <code>string key_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.iam.admin.v1.SignJwtResponse.key_id is deprecated. See
-   *     google/iam/admin/v1/iam.proto;l=991
+   *     google/iam/admin/v1/iam.proto;l=1059
    * @return The keyId.
    */
   @java.lang.Override
@@ -165,7 +165,7 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
    * <code>string key_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.iam.admin.v1.SignJwtResponse.key_id is deprecated. See
-   *     google/iam/admin/v1/iam.proto;l=991
+   *     google/iam/admin/v1/iam.proto;l=1059
    * @return The bytes for keyId.
    */
   @java.lang.Override
@@ -196,7 +196,7 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
    * <code>string signed_jwt = 2 [deprecated = true];</code>
    *
    * @deprecated google.iam.admin.v1.SignJwtResponse.signed_jwt is deprecated. See
-   *     google/iam/admin/v1/iam.proto;l=997
+   *     google/iam/admin/v1/iam.proto;l=1065
    * @return The signedJwt.
    */
   @java.lang.Override
@@ -224,7 +224,7 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
    * <code>string signed_jwt = 2 [deprecated = true];</code>
    *
    * @deprecated google.iam.admin.v1.SignJwtResponse.signed_jwt is deprecated. See
-   *     google/iam/admin/v1/iam.proto;l=997
+   *     google/iam/admin/v1/iam.proto;l=1065
    * @return The bytes for signedJwt.
    */
   @java.lang.Override
@@ -424,14 +424,14 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(builder_implements:google.iam.admin.v1.SignJwtResponse)
       com.google.iam.admin.v1.SignJwtResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_SignJwtResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_SignJwtResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.iam.admin.v1.SignJwtResponse.class,
@@ -464,7 +464,7 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_SignJwtResponse_descriptor;
     }
 
@@ -587,7 +587,7 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
      * <code>string key_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.iam.admin.v1.SignJwtResponse.key_id is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=991
+     *     google/iam/admin/v1/iam.proto;l=1059
      * @return The keyId.
      */
     @java.lang.Deprecated
@@ -614,7 +614,7 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
      * <code>string key_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.iam.admin.v1.SignJwtResponse.key_id is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=991
+     *     google/iam/admin/v1/iam.proto;l=1059
      * @return The bytes for keyId.
      */
     @java.lang.Deprecated
@@ -641,7 +641,7 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
      * <code>string key_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.iam.admin.v1.SignJwtResponse.key_id is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=991
+     *     google/iam/admin/v1/iam.proto;l=1059
      * @param value The keyId to set.
      * @return This builder for chaining.
      */
@@ -667,7 +667,7 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
      * <code>string key_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.iam.admin.v1.SignJwtResponse.key_id is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=991
+     *     google/iam/admin/v1/iam.proto;l=1059
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -689,7 +689,7 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
      * <code>string key_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.iam.admin.v1.SignJwtResponse.key_id is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=991
+     *     google/iam/admin/v1/iam.proto;l=1059
      * @param value The bytes for keyId to set.
      * @return This builder for chaining.
      */
@@ -718,7 +718,7 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
      * <code>string signed_jwt = 2 [deprecated = true];</code>
      *
      * @deprecated google.iam.admin.v1.SignJwtResponse.signed_jwt is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=997
+     *     google/iam/admin/v1/iam.proto;l=1065
      * @return The signedJwt.
      */
     @java.lang.Deprecated
@@ -745,7 +745,7 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
      * <code>string signed_jwt = 2 [deprecated = true];</code>
      *
      * @deprecated google.iam.admin.v1.SignJwtResponse.signed_jwt is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=997
+     *     google/iam/admin/v1/iam.proto;l=1065
      * @return The bytes for signedJwt.
      */
     @java.lang.Deprecated
@@ -772,7 +772,7 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
      * <code>string signed_jwt = 2 [deprecated = true];</code>
      *
      * @deprecated google.iam.admin.v1.SignJwtResponse.signed_jwt is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=997
+     *     google/iam/admin/v1/iam.proto;l=1065
      * @param value The signedJwt to set.
      * @return This builder for chaining.
      */
@@ -798,7 +798,7 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
      * <code>string signed_jwt = 2 [deprecated = true];</code>
      *
      * @deprecated google.iam.admin.v1.SignJwtResponse.signed_jwt is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=997
+     *     google/iam/admin/v1/iam.proto;l=1065
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -820,7 +820,7 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
      * <code>string signed_jwt = 2 [deprecated = true];</code>
      *
      * @deprecated google.iam.admin.v1.SignJwtResponse.signed_jwt is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=997
+     *     google/iam/admin/v1/iam.proto;l=1065
      * @param value The bytes for signedJwt to set.
      * @return This builder for chaining.
      */

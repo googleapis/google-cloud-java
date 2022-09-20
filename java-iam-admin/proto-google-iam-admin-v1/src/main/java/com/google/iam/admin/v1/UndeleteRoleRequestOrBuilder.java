@@ -29,17 +29,20 @@ public interface UndeleteRoleRequestOrBuilder
    * <pre>
    * The `name` parameter's value depends on the target resource for the
    * request, namely
-   * [`projects`](/iam/reference/rest/v1/projects.roles) or
-   * [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
-   * resource type's `name` value format is described below:
-   * * [`projects.roles.undelete()`](/iam/reference/rest/v1/projects.roles/undelete):
+   * [`projects`](https://cloud.google.com/iam/reference/rest/v1/projects.roles)
+   * or
+   * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
+   * Each resource type's `name` value format is described below:
+   * * [`projects.roles.undelete()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/undelete):
    *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method undeletes
-   *   only [custom roles](/iam/docs/understanding-custom-roles) that have been
-   *   created at the project level. Example request URL:
+   *   only [custom
+   *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
+   *   have been created at the project level. Example request URL:
    *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
-   * * [`organizations.roles.undelete()`](/iam/reference/rest/v1/organizations.roles/undelete):
+   * * [`organizations.roles.undelete()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/undelete):
    *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
-   *   undeletes only [custom roles](/iam/docs/understanding-custom-roles) that
+   *   undeletes only [custom
+   *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
    *   have been created at the organization level. Example request URL:
    *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
    * Note: Wildcard (*) values are invalid; you must specify a complete project
@@ -57,17 +60,20 @@ public interface UndeleteRoleRequestOrBuilder
    * <pre>
    * The `name` parameter's value depends on the target resource for the
    * request, namely
-   * [`projects`](/iam/reference/rest/v1/projects.roles) or
-   * [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
-   * resource type's `name` value format is described below:
-   * * [`projects.roles.undelete()`](/iam/reference/rest/v1/projects.roles/undelete):
+   * [`projects`](https://cloud.google.com/iam/reference/rest/v1/projects.roles)
+   * or
+   * [`organizations`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles).
+   * Each resource type's `name` value format is described below:
+   * * [`projects.roles.undelete()`](https://cloud.google.com/iam/reference/rest/v1/projects.roles/undelete):
    *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method undeletes
-   *   only [custom roles](/iam/docs/understanding-custom-roles) that have been
-   *   created at the project level. Example request URL:
+   *   only [custom
+   *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
+   *   have been created at the project level. Example request URL:
    *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
-   * * [`organizations.roles.undelete()`](/iam/reference/rest/v1/organizations.roles/undelete):
+   * * [`organizations.roles.undelete()`](https://cloud.google.com/iam/reference/rest/v1/organizations.roles/undelete):
    *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
-   *   undeletes only [custom roles](/iam/docs/understanding-custom-roles) that
+   *   undeletes only [custom
+   *   roles](https://cloud.google.com/iam/docs/understanding-custom-roles) that
    *   have been created at the organization level. Example request URL:
    *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
    * Note: Wildcard (*) values are invalid; you must specify a complete project

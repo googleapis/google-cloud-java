@@ -41,7 +41,7 @@ public interface SignBlobRequestOrBuilder
    * </code>
    *
    * @deprecated google.iam.admin.v1.SignBlobRequest.name is deprecated. See
-   *     google/iam/admin/v1/iam.proto;l=856
+   *     google/iam/admin/v1/iam.proto;l=974
    * @return The name.
    */
   @java.lang.Deprecated
@@ -64,7 +64,7 @@ public interface SignBlobRequestOrBuilder
    * </code>
    *
    * @deprecated google.iam.admin.v1.SignBlobRequest.name is deprecated. See
-   *     google/iam/admin/v1/iam.proto;l=856
+   *     google/iam/admin/v1/iam.proto;l=974
    * @return The bytes for name.
    */
   @java.lang.Deprecated
@@ -83,7 +83,7 @@ public interface SignBlobRequestOrBuilder
    * </code>
    *
    * @deprecated google.iam.admin.v1.SignBlobRequest.bytes_to_sign is deprecated. See
-   *     google/iam/admin/v1/iam.proto;l=868
+   *     google/iam/admin/v1/iam.proto;l=986
    * @return The bytesToSign.
    */
   @java.lang.Deprecated
