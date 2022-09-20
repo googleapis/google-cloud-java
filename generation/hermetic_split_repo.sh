@@ -17,9 +17,6 @@ if [ -z "${PROTOBUF_VERSION}" ]; then
   exit 1
 fi
 
-# hermetic_synthtool_command.sh uses this variable
-export PROTOBUF_VERSION
-
 # The sha256 is the oldest one I found in gcr.io, built on Sep 8, 2021.
 # This version did not reqiure api_shortname in .repo-metadata.json.
 # This value will be overridden by .github/.OwlBot.lock.yaml below if the file
@@ -30,7 +27,6 @@ mkdir -p workspace
 # Why not removing entire workspace? It's because it has bazel cache that makes
 # the build faster.
 rm -rf workspace/repo
-rm -rf workspace/googleapis
 rm -rf workspace/synthtool
 rm -rf workspace/.cache/synthtool
 
@@ -39,7 +35,7 @@ git clone -- $REPO workspace/repo
 
 pushd workspace/repo
 
-git checkout -b "${BRANCH}_patch" "origin/${BRANCH}"
+git checkout -B "${BRANCH}_patch" "origin/${BRANCH}"
 
 OWLBOT_YAML_NAME=.github/.OwlBot.yaml
 echo "Checking ${OWLBOT_YAML_NAME}, which we use for owlbot-cli copy-bazel-bin."
@@ -56,21 +52,25 @@ synthtool_commits=$(git log -1000 |grep 'Source-Link: https://github.com/googlea
 
 popd
 
-git clone -- https://github.com/googleapis/googleapis workspace/googleapis
+if [ ! -d workspace/googleapis ]; then
+  git clone -- https://github.com/googleapis/googleapis workspace/googleapis
+fi
 
 pushd workspace/googleapis
+
+git reset --hard HEAD
 
 # Sort the commits by the date. Choose the latest one.
 last_googleapis_commit=$(for C in $googleapis_commits; do
   git --no-pager log -1 --format='%H %at %ai' $C
-done |sort -k 2 -r |head -1 )
+done |sort -k 2 -r |head -1 |cut -d ' ' -f1)
 
 echo "The last googleapis commit on the branch ${BRANCH} was:"
 git log --pretty=format:"%h%x09%an%x09%ad%x09%s" -1 $last_googleapis_commit
 echo "Checking out this commit from googleapis/googleapis repository:"
 
 last_googleapis_commit_short=${last_googleapis_commit:0:7}
-git checkout -b "branch-from-${last_googleapis_commit_short}" ${last_googleapis_commit}
+git checkout -B "branch-from-${last_googleapis_commit_short}" ${last_googleapis_commit}
 
 # Searching for the line
 #     urls = ["https://github.com/protocolbuffers/protobuf/archive/v3.15.3.tar.gz"],
@@ -149,17 +149,18 @@ function regenerate_with_synthtool() {
 
   git clone https://github.com/googleapis/synthtool workspace/synthtool
 
-  cd workspace/synthtool
+  pushd workspace/synthtool
 
   # Sort the commits by the date. Choose the last one.
   last_synthtool_commit=$(for C in $synthtool_commits; do
     git --no-pager log -1 --format='%H %at %ai' $C
-  done |sort -k 2 -r |head -1 )
+  done |sort -k 2 -r |head -1 |cut -d ' ' -f1)
   echo "The last synthtool commit on the branch ${BRANCH} was:"
   git log --pretty=format:"%h%x09%an%x09%ad%x09%s" -1 $last_synthtool_commit
   echo "Checking out this commit from googleapis/synthtool repository:"
   last_synthtool_commit_short=${last_synthtool_commit:0:7}
-  git checkout -b "branch-from-${last_synthtool_commit_short}" ${last_synthtool_commit_short}
+  git checkout -B "branch-from-${last_synthtool_commit_short}" ${last_synthtool_commit_short}
+  popd
 
   docker run --rm  --user "$(id -u):$(id -g)" --env HOME=/workspace \
       --env USER=$(id -u -n) -v $(pwd)/workspace:/workspace \
@@ -180,7 +181,8 @@ git checkout "origin/${BRANCH}" -- samples README.md .github .kokoro java.header
     versions.txt ./**/*.xml
 git add ./**/*.java
 
-git commit -m 'fix: applying a different protobuf'
+# It's possible that there's no code change.
+git commit -m 'fix: applying a different protobuf' --allow-empty
 popd
 
 echo "Changes are ready in workspace/repo. Create a pull request: "

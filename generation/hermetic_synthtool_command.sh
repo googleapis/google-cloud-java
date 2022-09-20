@@ -2,6 +2,7 @@
 
 set -ef
 
+pushd /workspace/googleapis
 source .bazeliskrc
 export BAZEL_VERSION=$USE_BAZEL_VERSION
 
@@ -13,10 +14,15 @@ wget "https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/baz
     export PATH=$HOME/bin:$PATH && \
     bazel version
 
+popd
+
 pushd /workspace/synthtool
 
-echo "Installing Python protobuf package with version ${PROTOBUF_VERSION} (because default invocation chooses the latest which does notwork)"
+PROTOBUF_VERSION=3.16.0
+echo "Installing Python protobuf package with version ${PROTOBUF_VERSION}"
+echo "(because default invocation chooses the latest (3.21) which does notwork)"
 python3 -m pip install --upgrade protobuf=="${PROTOBUF_VERSION}"
+
 
 echo "Installing Python synthtool package with commit: $(git log --pretty=format:"%h%x09%an%x09%ad%x09%s")"
 python3 -m pip install -e .
