@@ -83,6 +83,7 @@ case ${JOB_TYPE} in
     ;;
   samples)
     mvn -B \
+      -pl "!CoverageAggregator,!google-cloud-gapic-bom" \
       -ntp \
       -DtrimStackTrace=false \
       -Dclirr.skip=true \
@@ -95,30 +96,42 @@ case ${JOB_TYPE} in
       -T 1C \
       install
 
-    SAMPLES_DIR=samples
-    # only run ITs in snapshot/ on presubmit PRs. run ITs in all 3 samples/ submodules otherwise.
-    if [[ ! -z ${KOKORO_GITHUB_PULL_REQUEST_NUMBER} ]]; then
-      SAMPLES_DIR=samples/snapshot
-    fi
+    for FILE in ${KOKORO_GFILE_DIR}/secret_manager/*-samples-secrets; do
+      [[ -f "${FILE}" ]] || continue
+      source "${FILE}"
+    done
 
-    if [[ -f ${SAMPLES_DIR}/pom.xml ]]; then
-      for FILE in ${KOKORO_GFILE_DIR}/secret_manager/*-samples-secrets; do
-        [[ -f "$FILE" ]] || continue
-        source "$FILE"
-      done
+    modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
+    for module in $modules; do
+      if [[ ! "${excluded_modules[*]}" =~ $module ]]; then
+        printf "Running now for %s\n" "${module}"
+        pushd $module
+        SAMPLES_DIR=samples
+        # only run ITs in snapshot/ on presubmit PRs. run ITs in all 3 samples/ submodules otherwise.
+        if [[ ! -z ${KOKORO_GITHUB_PULL_REQUEST_NUMBER} ]]; then
+          SAMPLES_DIR=samples/snapshot
+        fi
 
-      pushd ${SAMPLES_DIR}
-      mvn -B \
-        -ntp \
-        -DtrimStackTrace=false \
-        -Dclirr.skip=true \
-        -fae \
-        verify
-      RETURN_CODE=$?
-      popd
-    else
-      echo "no sample pom.xml found - skipping sample tests"
-    fi
+        if [[ -f ${SAMPLES_DIR}/pom.xml ]]; then
+          pushd ${SAMPLES_DIR}
+          mvn -B \
+            -ntp \
+            -DtrimStackTrace=false \
+            -Dclirr.skip=true \
+            -Denforcer.skip=true \
+            -Dcheckstyle.skip=true \
+            -Dflatten.skip=true \
+            -Danimal.sniffer.skip=true \
+            -fae \
+            verify
+          RETURN_CODE=$?
+          popd
+        else
+          echo "no sample pom.xml found - skipping sample tests"
+        fi
+        popd
+      fi
+    done
     ;;
   *) ;;
 
