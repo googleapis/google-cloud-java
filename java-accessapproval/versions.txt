@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-accessapproval:2.4.7:2.4.7
-grpc-google-cloud-accessapproval-v1:2.4.7:2.4.7
-proto-google-cloud-accessapproval-v1:2.4.7:2.4.7
+google-cloud-accessapproval:2.4.7:2.4.8-SNAPSHOT
+grpc-google-cloud-accessapproval-v1:2.4.7:2.4.8-SNAPSHOT
+proto-google-cloud-accessapproval-v1:2.4.7:2.4.8-SNAPSHOT
