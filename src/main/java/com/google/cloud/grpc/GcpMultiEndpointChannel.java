@@ -16,6 +16,7 @@
 
 package com.google.cloud.grpc;
 
+import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import static java.util.concurrent.TimeUnit.NANOSECONDS;
 
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpChannelPoolOptions;
@@ -23,6 +24,8 @@ import com.google.cloud.grpc.GcpManagedChannelOptions.GcpMetricsOptions;
 import com.google.cloud.grpc.multiendpoint.MultiEndpoint;
 import com.google.cloud.grpc.proto.ApiConfig;
 import com.google.common.base.Preconditions;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
+import com.google.errorprone.annotations.concurrent.GuardedBy;
 import io.grpc.CallOptions;
 import io.grpc.ClientCall;
 import io.grpc.ClientCall.Listener;
@@ -34,12 +37,17 @@ import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.opencensus.metrics.LabelKey;
 import io.opencensus.metrics.LabelValue;
+import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -118,6 +126,11 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
   private final GcpManagedChannelOptions gcpManagedChannelOptions;
 
   private final Map<String, GcpManagedChannel> pools = new ConcurrentHashMap<>();
+
+  @GuardedBy("this")
+  private final Set<String> currentEndpoints = new HashSet<>();
+
+  private final ScheduledExecutorService executor = new ScheduledThreadPoolExecutor(1);
 
   /**
    * Constructor for {@link GcpMultiEndpointChannel}.
@@ -219,11 +232,10 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
    * no channel credentials change, nor channel configurator change).
    * </ul>
    */
-  public void setMultiEndpoints(List<GcpMultiEndpointOptions> meOptions) {
+  public synchronized void setMultiEndpoints(List<GcpMultiEndpointOptions> meOptions) {
     Preconditions.checkNotNull(meOptions);
     Preconditions.checkArgument(!meOptions.isEmpty(), "MultiEndpoints list is empty");
     Set<String> currentMultiEndpoints = new HashSet<>();
-    Set<String> currentEndpoints = new HashSet<>();
 
     // Must have all multiendpoints before initializing the pools so that all multiendpoints
     // can get status update of every pool.
@@ -236,10 +248,12 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
         multiEndpoints.put(options.getName(),
             (new MultiEndpoint.Builder(options.getEndpoints()))
                 .withRecoveryTimeout(options.getRecoveryTimeout())
+                .withSwitchingDelay(options.getSwitchingDelay())
                 .build());
       }
     });
 
+    currentEndpoints.clear();
     // TODO: Support the same endpoint in different MultiEndpoint to use different channel
     //       credentials.
     // TODO: Support different endpoints in the same MultiEndpoint to use different channel
@@ -289,11 +303,32 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
     multiEndpoints.keySet().removeIf(name -> !currentMultiEndpoints.contains(name));
 
     // Shutdown and remove the pools not present in options.
-    for (String endpoint : pools.keySet()) {
-      if (!currentEndpoints.contains(endpoint)) {
-        pools.get(endpoint).shutdown();
-        pools.remove(endpoint);
+    final Set<String> poolsToRemove = new HashSet<>(pools.keySet());
+    poolsToRemove.removeIf(currentEndpoints::contains);
+    if (!poolsToRemove.isEmpty()) {
+      // Get max switching delay.
+      Optional<Duration> maxDelay = meOptions.stream()
+          .map(GcpMultiEndpointOptions::getSwitchingDelay)
+          .max(Comparator.naturalOrder());
+      if (maxDelay.isPresent() && maxDelay.get().toMillis() > 0) {
+        executor.schedule(
+            () -> maybeCleanupPools(poolsToRemove),
+            maxDelay.get().toMillis(),
+            MILLISECONDS
+        );
+      } else {
+        maybeCleanupPools(poolsToRemove);
       }
+    }
+  }
+
+  private synchronized void maybeCleanupPools(Set<String> endpoints) {
+    for (String endpoint : endpoints) {
+      if (currentEndpoints.contains(endpoint)) {
+        continue;
+      }
+      pools.get(endpoint).shutdown();
+      pools.remove(endpoint);
     }
   }
 
@@ -305,6 +340,7 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
    * @since 1.0.0
    */
   @Override
+  @CanIgnoreReturnValue
   public ManagedChannel shutdown() {
     pools.values().forEach(GcpManagedChannel::shutdown);
     return this;
@@ -344,6 +380,7 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
    * @since 1.0.0
    */
   @Override
+  @CanIgnoreReturnValue
   public ManagedChannel shutdownNow() {
     pools.values().forEach(GcpManagedChannel::shutdownNow);
     return this;

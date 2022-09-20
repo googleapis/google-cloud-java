@@ -19,6 +19,7 @@ package com.google.cloud.grpc;
 import com.google.api.core.ApiFunction;
 import com.google.cloud.grpc.multiendpoint.MultiEndpoint;
 import com.google.common.base.Preconditions;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import io.grpc.ChannelCredentials;
 import io.grpc.ManagedChannelBuilder;
 import java.time.Duration;
@@ -34,6 +35,7 @@ public class GcpMultiEndpointOptions {
   private final ApiFunction<ManagedChannelBuilder<?>, ManagedChannelBuilder<?>> channelConfigurator;
   private final ChannelCredentials channelCredentials;
   private final Duration recoveryTimeout;
+  private final Duration switchingDelay;
 
   public static String DEFAULT_NAME = "default";
 
@@ -43,6 +45,7 @@ public class GcpMultiEndpointOptions {
     this.channelConfigurator = builder.channelConfigurator;
     this.channelCredentials = builder.channelCredentials;
     this.recoveryTimeout = builder.recoveryTimeout;
+    this.switchingDelay = builder.switchingDelay;
   }
 
   /**
@@ -81,6 +84,10 @@ public class GcpMultiEndpointOptions {
     return recoveryTimeout;
   }
 
+  public Duration getSwitchingDelay() {
+    return switchingDelay;
+  }
+
   public static class Builder {
 
     private String name = GcpMultiEndpointOptions.DEFAULT_NAME;
@@ -88,6 +95,7 @@ public class GcpMultiEndpointOptions {
     private ApiFunction<ManagedChannelBuilder<?>, ManagedChannelBuilder<?>> channelConfigurator;
     private ChannelCredentials channelCredentials;
     private Duration recoveryTimeout = Duration.ZERO;
+    private Duration switchingDelay = Duration.ZERO;
 
     public Builder(List<String> endpoints) {
       setEndpoints(endpoints);
@@ -99,6 +107,7 @@ public class GcpMultiEndpointOptions {
       this.channelConfigurator = options.getChannelConfigurator();
       this.channelCredentials = options.getChannelCredentials();
       this.recoveryTimeout = options.getRecoveryTimeout();
+      this.switchingDelay = options.getSwitchingDelay();
     }
 
     public GcpMultiEndpointOptions build() {
@@ -119,6 +128,7 @@ public class GcpMultiEndpointOptions {
      *
      * @param name MultiEndpoint name.
      */
+    @CanIgnoreReturnValue
     public GcpMultiEndpointOptions.Builder withName(String name) {
       this.name = name;
       return this;
@@ -129,6 +139,7 @@ public class GcpMultiEndpointOptions {
      *
      * @param endpoints List of endpoints in the form of host:port in descending priority order.
      */
+    @CanIgnoreReturnValue
     public GcpMultiEndpointOptions.Builder withEndpoints(List<String> endpoints) {
       this.setEndpoints(endpoints);
       return this;
@@ -140,6 +151,7 @@ public class GcpMultiEndpointOptions {
      * @param channelConfigurator function to perform on the ManagedChannelBuilder in the channel
      * pool.
      */
+    @CanIgnoreReturnValue
     public GcpMultiEndpointOptions.Builder withChannelConfigurator(
         ApiFunction<ManagedChannelBuilder<?>, ManagedChannelBuilder<?>> channelConfigurator) {
       this.channelConfigurator = channelConfigurator;
@@ -151,6 +163,7 @@ public class GcpMultiEndpointOptions {
      *
      * @param channelCredentials channel credentials.
      */
+    @CanIgnoreReturnValue
     public GcpMultiEndpointOptions.Builder withChannelCredentials(
         ChannelCredentials channelCredentials) {
       this.channelCredentials = channelCredentials;
@@ -162,8 +175,22 @@ public class GcpMultiEndpointOptions {
      *
      * @param recoveryTimeout recovery timeout.
      */
+    @CanIgnoreReturnValue
     public GcpMultiEndpointOptions.Builder withRecoveryTimeout(Duration recoveryTimeout) {
       this.recoveryTimeout = recoveryTimeout;
+      return this;
+    }
+
+    /**
+     * Sets the switching delay for the MultiEndpoint.
+     * <p>When switching between endpoints the MultiEndpoint will stick to previous endpoint for the
+     * switching delay.
+     *
+     * @param switchingDelay switching delay.
+     */
+    @CanIgnoreReturnValue
+    public GcpMultiEndpointOptions.Builder withSwitchingDelay(Duration switchingDelay) {
+      this.switchingDelay = switchingDelay;
       return this;
     }
   }

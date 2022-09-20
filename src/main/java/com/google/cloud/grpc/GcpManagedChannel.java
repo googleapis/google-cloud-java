@@ -57,6 +57,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -882,7 +883,12 @@ public class GcpManagedChannel extends ManagedChannel {
   @Override
   public void notifyWhenStateChanged(ConnectivityState source, Runnable callback) {
     if (!getState(false).equals(source)) {
-      stateNotificationExecutor.execute(callback);
+      try {
+        stateNotificationExecutor.execute(callback);
+      } catch (RejectedExecutionException e) {
+        // Ignore exceptions on shutdown.
+        logger.fine(log("State notification change task rejected: %s", e.getMessage()));
+      }
       return;
     }
     stateChangeCallbacks.add(callback);
@@ -938,7 +944,12 @@ public class GcpManagedChannel extends ManagedChannel {
   private synchronized void executeStateChangeCallbacks() {
     List<Runnable> callbacksToTrigger = stateChangeCallbacks;
     stateChangeCallbacks = new LinkedList<>();
-    callbacksToTrigger.forEach(stateNotificationExecutor::execute);
+    try {
+      callbacksToTrigger.forEach(stateNotificationExecutor::execute);
+    } catch (RejectedExecutionException e) {
+      // Ignore exceptions on shutdown.
+      logger.fine(log("State notification change task rejected: %s", e.getMessage()));
+    }
   }
 
   void processChannelStateChange(int channelId, ConnectivityState state) {

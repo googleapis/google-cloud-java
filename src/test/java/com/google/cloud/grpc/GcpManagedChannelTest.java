@@ -379,7 +379,6 @@ public final class GcpManagedChannelTest {
     assertEquals(2, pool.getNumberOfChannels());
     // This was a fallback from non-ready channel 0 to the newly created channel 1.
     assertThat(logRecords.size()).isEqualTo(logCount + 3);
-    logRecords.forEach(logRecord -> System.out.println(logRecord.getMessage()));
     assertThat(lastLogMessage()).isEqualTo(
         poolIndex + ": Fallback to newly created channel 1");
     assertThat(lastLogLevel()).isEqualTo(Level.FINEST);
