@@ -69,8 +69,54 @@ public interface DeleteFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the EntityType grouping the Features for
-   * which values are being deleted from. Format:
+   * Select feature values to be deleted by specifying time range and
+   * features.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature select_time_range_and_feature = 3;
+   * </code>
+   *
+   * @return Whether the selectTimeRangeAndFeature field is set.
+   */
+  boolean hasSelectTimeRangeAndFeature();
+  /**
+   *
+   *
+   * <pre>
+   * Select feature values to be deleted by specifying time range and
+   * features.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature select_time_range_and_feature = 3;
+   * </code>
+   *
+   * @return The selectTimeRangeAndFeature.
+   */
+  com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature
+      getSelectTimeRangeAndFeature();
+  /**
+   *
+   *
+   * <pre>
+   * Select feature values to be deleted by specifying time range and
+   * features.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature select_time_range_and_feature = 3;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeatureOrBuilder
+      getSelectTimeRangeAndFeatureOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The resource name of the EntityType grouping the Features for which values
+   * are being deleted from. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
    * </pre>
    *
@@ -85,8 +131,8 @@ public interface DeleteFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the EntityType grouping the Features for
-   * which values are being deleted from. Format:
+   * Required. The resource name of the EntityType grouping the Features for which values
+   * are being deleted from. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
    * </pre>
    *

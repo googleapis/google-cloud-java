@@ -101,4 +101,18 @@ public interface ImportFeatureValuesOperationMetadataOrBuilder
    * @return The invalidRowCount.
    */
   long getInvalidRowCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number rows that weren't ingested due to having timestamps outside the
+   * retention boundary.
+   * </pre>
+   *
+   * <code>int64 timestamp_outside_retention_rows_count = 7;</code>
+   *
+   * @return The timestampOutsideRetentionRowsCount.
+   */
+  long getTimestampOutsideRetentionRowsCount();
 }

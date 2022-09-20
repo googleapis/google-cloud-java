@@ -2063,6 +2063,7 @@ public class FeaturestoreServiceClientTest {
             .setImportedEntityCount(-1840044274)
             .setImportedFeatureValueCount(-1221471427)
             .setInvalidRowCount(-366655966)
+            .setTimestampOutsideRetentionRowsCount(-43092019)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2113,6 +2114,7 @@ public class FeaturestoreServiceClientTest {
             .setImportedEntityCount(-1840044274)
             .setImportedFeatureValueCount(-1221471427)
             .setInvalidRowCount(-366655966)
+            .setTimestampOutsideRetentionRowsCount(-43092019)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

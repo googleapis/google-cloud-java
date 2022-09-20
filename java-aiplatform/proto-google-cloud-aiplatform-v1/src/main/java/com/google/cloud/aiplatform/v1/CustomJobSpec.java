@@ -23,7 +23,6 @@ package com.google.cloud.aiplatform.v1;
  *
  * <pre>
  * Represents the spec of a CustomJob.
- * Next Id: 15
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.CustomJobSpec}
@@ -968,7 +967,6 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Represents the spec of a CustomJob.
-   * Next Id: 15
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.CustomJobSpec}

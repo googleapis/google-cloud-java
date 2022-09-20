@@ -219,6 +219,24 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               automatedStoppingSpecCase_ = 9;
               break;
             }
+          case 82:
+            {
+              com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.Builder
+                  subBuilder = null;
+              if (transferLearningConfig_ != null) {
+                subBuilder = transferLearningConfig_.toBuilder();
+              }
+              transferLearningConfig_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(transferLearningConfig_);
+                transferLearningConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -17775,6 +17793,934 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface TransferLearningConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Flag to to manually prevent vizier from using transfer learning on a
+     * new study. Otherwise, vizier will automatically determine whether or not
+     * to use transfer learning.
+     * </pre>
+     *
+     * <code>bool disable_transfer_learning = 1;</code>
+     *
+     * @return The disableTransferLearning.
+     */
+    boolean getDisableTransferLearning();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Names of previously completed studies
+     * </pre>
+     *
+     * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the priorStudyNames.
+     */
+    java.util.List<java.lang.String> getPriorStudyNamesList();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Names of previously completed studies
+     * </pre>
+     *
+     * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of priorStudyNames.
+     */
+    int getPriorStudyNamesCount();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Names of previously completed studies
+     * </pre>
+     *
+     * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The priorStudyNames at the given index.
+     */
+    java.lang.String getPriorStudyNames(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Names of previously completed studies
+     * </pre>
+     *
+     * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the priorStudyNames at the given index.
+     */
+    com.google.protobuf.ByteString getPriorStudyNamesBytes(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This contains flag for manually disabling transfer learning for a study.
+   * The names of prior studies being used for transfer learning (if any)
+   * are also listed here.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig}
+   */
+  public static final class TransferLearningConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig)
+      TransferLearningConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use TransferLearningConfig.newBuilder() to construct.
+    private TransferLearningConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private TransferLearningConfig() {
+      priorStudyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TransferLearningConfig();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private TransferLearningConfig(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                disableTransferLearning_ = input.readBool();
+                break;
+              }
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  priorStudyNames_ = new com.google.protobuf.LazyStringArrayList();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                priorStudyNames_.add(s);
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          priorStudyNames_ = priorStudyNames_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.StudyProto
+          .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_TransferLearningConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.StudyProto
+          .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_TransferLearningConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.class,
+              com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.Builder.class);
+    }
+
+    public static final int DISABLE_TRANSFER_LEARNING_FIELD_NUMBER = 1;
+    private boolean disableTransferLearning_;
+    /**
+     *
+     *
+     * <pre>
+     * Flag to to manually prevent vizier from using transfer learning on a
+     * new study. Otherwise, vizier will automatically determine whether or not
+     * to use transfer learning.
+     * </pre>
+     *
+     * <code>bool disable_transfer_learning = 1;</code>
+     *
+     * @return The disableTransferLearning.
+     */
+    @java.lang.Override
+    public boolean getDisableTransferLearning() {
+      return disableTransferLearning_;
+    }
+
+    public static final int PRIOR_STUDY_NAMES_FIELD_NUMBER = 2;
+    private com.google.protobuf.LazyStringList priorStudyNames_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Names of previously completed studies
+     * </pre>
+     *
+     * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the priorStudyNames.
+     */
+    public com.google.protobuf.ProtocolStringList getPriorStudyNamesList() {
+      return priorStudyNames_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Names of previously completed studies
+     * </pre>
+     *
+     * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of priorStudyNames.
+     */
+    public int getPriorStudyNamesCount() {
+      return priorStudyNames_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Names of previously completed studies
+     * </pre>
+     *
+     * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The priorStudyNames at the given index.
+     */
+    public java.lang.String getPriorStudyNames(int index) {
+      return priorStudyNames_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Names of previously completed studies
+     * </pre>
+     *
+     * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the priorStudyNames at the given index.
+     */
+    public com.google.protobuf.ByteString getPriorStudyNamesBytes(int index) {
+      return priorStudyNames_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (disableTransferLearning_ != false) {
+        output.writeBool(1, disableTransferLearning_);
+      }
+      for (int i = 0; i < priorStudyNames_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, priorStudyNames_.getRaw(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (disableTransferLearning_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, disableTransferLearning_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < priorStudyNames_.size(); i++) {
+          dataSize += computeStringSizeNoTag(priorStudyNames_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getPriorStudyNamesList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig other =
+          (com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig) obj;
+
+      if (getDisableTransferLearning() != other.getDisableTransferLearning()) return false;
+      if (!getPriorStudyNamesList().equals(other.getPriorStudyNamesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DISABLE_TRANSFER_LEARNING_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableTransferLearning());
+      if (getPriorStudyNamesCount() > 0) {
+        hash = (37 * hash) + PRIOR_STUDY_NAMES_FIELD_NUMBER;
+        hash = (53 * hash) + getPriorStudyNamesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This contains flag for manually disabling transfer learning for a study.
+     * The names of prior studies being used for transfer learning (if any)
+     * are also listed here.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig)
+        com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.StudyProto
+            .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_TransferLearningConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.StudyProto
+            .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_TransferLearningConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.class,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        disableTransferLearning_ = false;
+
+        priorStudyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.StudyProto
+            .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_TransferLearningConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig build() {
+        com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig result =
+            new com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig(this);
+        int from_bitField0_ = bitField0_;
+        result.disableTransferLearning_ = disableTransferLearning_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          priorStudyNames_ = priorStudyNames_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.priorStudyNames_ = priorStudyNames_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+                .getDefaultInstance()) return this;
+        if (other.getDisableTransferLearning() != false) {
+          setDisableTransferLearning(other.getDisableTransferLearning());
+        }
+        if (!other.priorStudyNames_.isEmpty()) {
+          if (priorStudyNames_.isEmpty()) {
+            priorStudyNames_ = other.priorStudyNames_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensurePriorStudyNamesIsMutable();
+            priorStudyNames_.addAll(other.priorStudyNames_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean disableTransferLearning_;
+      /**
+       *
+       *
+       * <pre>
+       * Flag to to manually prevent vizier from using transfer learning on a
+       * new study. Otherwise, vizier will automatically determine whether or not
+       * to use transfer learning.
+       * </pre>
+       *
+       * <code>bool disable_transfer_learning = 1;</code>
+       *
+       * @return The disableTransferLearning.
+       */
+      @java.lang.Override
+      public boolean getDisableTransferLearning() {
+        return disableTransferLearning_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Flag to to manually prevent vizier from using transfer learning on a
+       * new study. Otherwise, vizier will automatically determine whether or not
+       * to use transfer learning.
+       * </pre>
+       *
+       * <code>bool disable_transfer_learning = 1;</code>
+       *
+       * @param value The disableTransferLearning to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisableTransferLearning(boolean value) {
+
+        disableTransferLearning_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Flag to to manually prevent vizier from using transfer learning on a
+       * new study. Otherwise, vizier will automatically determine whether or not
+       * to use transfer learning.
+       * </pre>
+       *
+       * <code>bool disable_transfer_learning = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDisableTransferLearning() {
+
+        disableTransferLearning_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList priorStudyNames_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensurePriorStudyNamesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          priorStudyNames_ = new com.google.protobuf.LazyStringArrayList(priorStudyNames_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Names of previously completed studies
+       * </pre>
+       *
+       * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return A list containing the priorStudyNames.
+       */
+      public com.google.protobuf.ProtocolStringList getPriorStudyNamesList() {
+        return priorStudyNames_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Names of previously completed studies
+       * </pre>
+       *
+       * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The count of priorStudyNames.
+       */
+      public int getPriorStudyNamesCount() {
+        return priorStudyNames_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Names of previously completed studies
+       * </pre>
+       *
+       * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The priorStudyNames at the given index.
+       */
+      public java.lang.String getPriorStudyNames(int index) {
+        return priorStudyNames_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Names of previously completed studies
+       * </pre>
+       *
+       * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the priorStudyNames at the given index.
+       */
+      public com.google.protobuf.ByteString getPriorStudyNamesBytes(int index) {
+        return priorStudyNames_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Names of previously completed studies
+       * </pre>
+       *
+       * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The priorStudyNames to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPriorStudyNames(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePriorStudyNamesIsMutable();
+        priorStudyNames_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Names of previously completed studies
+       * </pre>
+       *
+       * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The priorStudyNames to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPriorStudyNames(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePriorStudyNamesIsMutable();
+        priorStudyNames_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Names of previously completed studies
+       * </pre>
+       *
+       * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param values The priorStudyNames to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllPriorStudyNames(java.lang.Iterable<java.lang.String> values) {
+        ensurePriorStudyNamesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, priorStudyNames_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Names of previously completed studies
+       * </pre>
+       *
+       * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPriorStudyNames() {
+        priorStudyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Names of previously completed studies
+       * </pre>
+       *
+       * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The bytes of the priorStudyNames to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPriorStudyNamesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensurePriorStudyNamesIsMutable();
+        priorStudyNames_.add(value);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig)
+    private static final com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TransferLearningConfig> PARSER =
+        new com.google.protobuf.AbstractParser<TransferLearningConfig>() {
+          @java.lang.Override
+          public TransferLearningConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new TransferLearningConfig(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<TransferLearningConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TransferLearningConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int automatedStoppingSpecCase_ = 0;
   private java.lang.Object automatedStoppingSpec_;
 
@@ -17969,7 +18915,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/study.proto;l=553
+   *     google/cloud/aiplatform/v1beta1/study.proto;l=566
    * @return Whether the convexStopConfig field is set.
    */
   @java.lang.Override
@@ -17990,7 +18936,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/study.proto;l=553
+   *     google/cloud/aiplatform/v1beta1/study.proto;l=566
    * @return The convexStopConfig.
    */
   @java.lang.Override
@@ -18374,6 +19320,66 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int TRANSFER_LEARNING_CONFIG_FIELD_NUMBER = 10;
+  private com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+      transferLearningConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The configuration info/options for transfer learning. Currently supported
+   * for Vertex AI Vizier service, not HyperParameterTuningJob
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig transfer_learning_config = 10;
+   * </code>
+   *
+   * @return Whether the transferLearningConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasTransferLearningConfig() {
+    return transferLearningConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration info/options for transfer learning. Currently supported
+   * for Vertex AI Vizier service, not HyperParameterTuningJob
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig transfer_learning_config = 10;
+   * </code>
+   *
+   * @return The transferLearningConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+      getTransferLearningConfig() {
+    return transferLearningConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.getDefaultInstance()
+        : transferLearningConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration info/options for transfer learning. Currently supported
+   * for Vertex AI Vizier service, not HyperParameterTuningJob
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig transfer_learning_config = 10;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfigOrBuilder
+      getTransferLearningConfigOrBuilder() {
+    return getTransferLearningConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -18433,6 +19439,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           9,
           (com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexAutomatedStoppingSpec)
               automatedStoppingSpec_);
+    }
+    if (transferLearningConfig_ != null) {
+      output.writeMessage(10, getTransferLearningConfig());
     }
     unknownFields.writeTo(output);
   }
@@ -18494,6 +19503,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               (com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexAutomatedStoppingSpec)
                   automatedStoppingSpec_);
     }
+    if (transferLearningConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(10, getTransferLearningConfig());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -18515,6 +19528,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     if (algorithm_ != other.algorithm_) return false;
     if (observationNoise_ != other.observationNoise_) return false;
     if (measurementSelectionType_ != other.measurementSelectionType_) return false;
+    if (hasTransferLearningConfig() != other.hasTransferLearningConfig()) return false;
+    if (hasTransferLearningConfig()) {
+      if (!getTransferLearningConfig().equals(other.getTransferLearningConfig())) return false;
+    }
     if (!getAutomatedStoppingSpecCase().equals(other.getAutomatedStoppingSpecCase())) return false;
     switch (automatedStoppingSpecCase_) {
       case 4:
@@ -18559,6 +19576,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + observationNoise_;
     hash = (37 * hash) + MEASUREMENT_SELECTION_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + measurementSelectionType_;
+    if (hasTransferLearningConfig()) {
+      hash = (37 * hash) + TRANSFER_LEARNING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getTransferLearningConfig().hashCode();
+    }
     switch (automatedStoppingSpecCase_) {
       case 4:
         hash = (37 * hash) + DECAY_CURVE_STOPPING_SPEC_FIELD_NUMBER;
@@ -18745,6 +19766,12 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
       measurementSelectionType_ = 0;
 
+      if (transferLearningConfigBuilder_ == null) {
+        transferLearningConfig_ = null;
+      } else {
+        transferLearningConfig_ = null;
+        transferLearningConfigBuilder_ = null;
+      }
       automatedStoppingSpecCase_ = 0;
       automatedStoppingSpec_ = null;
       return this;
@@ -18824,6 +19851,11 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       result.algorithm_ = algorithm_;
       result.observationNoise_ = observationNoise_;
       result.measurementSelectionType_ = measurementSelectionType_;
+      if (transferLearningConfigBuilder_ == null) {
+        result.transferLearningConfig_ = transferLearningConfig_;
+      } else {
+        result.transferLearningConfig_ = transferLearningConfigBuilder_.build();
+      }
       result.automatedStoppingSpecCase_ = automatedStoppingSpecCase_;
       onBuilt();
       return result;
@@ -18936,6 +19968,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.measurementSelectionType_ != 0) {
         setMeasurementSelectionTypeValue(other.getMeasurementSelectionTypeValue());
+      }
+      if (other.hasTransferLearningConfig()) {
+        mergeTransferLearningConfig(other.getTransferLearningConfig());
       }
       switch (other.getAutomatedStoppingSpecCase()) {
         case DECAY_CURVE_STOPPING_SPEC:
@@ -19520,7 +20555,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/study.proto;l=553
+     *     google/cloud/aiplatform/v1beta1/study.proto;l=566
      * @return Whether the convexStopConfig field is set.
      */
     @java.lang.Override
@@ -19541,7 +20576,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/study.proto;l=553
+     *     google/cloud/aiplatform/v1beta1/study.proto;l=566
      * @return The convexStopConfig.
      */
     @java.lang.Override
@@ -21116,6 +22151,229 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       measurementSelectionType_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+        transferLearningConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig,
+            com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfigOrBuilder>
+        transferLearningConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The configuration info/options for transfer learning. Currently supported
+     * for Vertex AI Vizier service, not HyperParameterTuningJob
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig transfer_learning_config = 10;
+     * </code>
+     *
+     * @return Whether the transferLearningConfig field is set.
+     */
+    public boolean hasTransferLearningConfig() {
+      return transferLearningConfigBuilder_ != null || transferLearningConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration info/options for transfer learning. Currently supported
+     * for Vertex AI Vizier service, not HyperParameterTuningJob
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig transfer_learning_config = 10;
+     * </code>
+     *
+     * @return The transferLearningConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+        getTransferLearningConfig() {
+      if (transferLearningConfigBuilder_ == null) {
+        return transferLearningConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+                .getDefaultInstance()
+            : transferLearningConfig_;
+      } else {
+        return transferLearningConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration info/options for transfer learning. Currently supported
+     * for Vertex AI Vizier service, not HyperParameterTuningJob
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig transfer_learning_config = 10;
+     * </code>
+     */
+    public Builder setTransferLearningConfig(
+        com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig value) {
+      if (transferLearningConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        transferLearningConfig_ = value;
+        onChanged();
+      } else {
+        transferLearningConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration info/options for transfer learning. Currently supported
+     * for Vertex AI Vizier service, not HyperParameterTuningJob
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig transfer_learning_config = 10;
+     * </code>
+     */
+    public Builder setTransferLearningConfig(
+        com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.Builder
+            builderForValue) {
+      if (transferLearningConfigBuilder_ == null) {
+        transferLearningConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        transferLearningConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration info/options for transfer learning. Currently supported
+     * for Vertex AI Vizier service, not HyperParameterTuningJob
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig transfer_learning_config = 10;
+     * </code>
+     */
+    public Builder mergeTransferLearningConfig(
+        com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig value) {
+      if (transferLearningConfigBuilder_ == null) {
+        if (transferLearningConfig_ != null) {
+          transferLearningConfig_ =
+              com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.newBuilder(
+                      transferLearningConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          transferLearningConfig_ = value;
+        }
+        onChanged();
+      } else {
+        transferLearningConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration info/options for transfer learning. Currently supported
+     * for Vertex AI Vizier service, not HyperParameterTuningJob
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig transfer_learning_config = 10;
+     * </code>
+     */
+    public Builder clearTransferLearningConfig() {
+      if (transferLearningConfigBuilder_ == null) {
+        transferLearningConfig_ = null;
+        onChanged();
+      } else {
+        transferLearningConfig_ = null;
+        transferLearningConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration info/options for transfer learning. Currently supported
+     * for Vertex AI Vizier service, not HyperParameterTuningJob
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig transfer_learning_config = 10;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.Builder
+        getTransferLearningConfigBuilder() {
+
+      onChanged();
+      return getTransferLearningConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration info/options for transfer learning. Currently supported
+     * for Vertex AI Vizier service, not HyperParameterTuningJob
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig transfer_learning_config = 10;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfigOrBuilder
+        getTransferLearningConfigOrBuilder() {
+      if (transferLearningConfigBuilder_ != null) {
+        return transferLearningConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return transferLearningConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+                .getDefaultInstance()
+            : transferLearningConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration info/options for transfer learning. Currently supported
+     * for Vertex AI Vizier service, not HyperParameterTuningJob
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig transfer_learning_config = 10;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig,
+            com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfigOrBuilder>
+        getTransferLearningConfigFieldBuilder() {
+      if (transferLearningConfigBuilder_ == null) {
+        transferLearningConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfigOrBuilder>(
+                getTransferLearningConfig(), getParentForChildren(), isClean());
+        transferLearningConfig_ = null;
+      }
+      return transferLearningConfigBuilder_;
     }
 
     @java.lang.Override

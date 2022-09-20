@@ -100,6 +100,8 @@ import com.google.cloud.aiplatform.v1.PurgeExecutionsResponse;
 import com.google.cloud.aiplatform.v1.QueryArtifactLineageSubgraphRequest;
 import com.google.cloud.aiplatform.v1.QueryContextLineageSubgraphRequest;
 import com.google.cloud.aiplatform.v1.QueryExecutionInputsAndOutputsRequest;
+import com.google.cloud.aiplatform.v1.RemoveContextChildrenRequest;
+import com.google.cloud.aiplatform.v1.RemoveContextChildrenResponse;
 import com.google.cloud.aiplatform.v1.UpdateArtifactRequest;
 import com.google.cloud.aiplatform.v1.UpdateContextRequest;
 import com.google.cloud.aiplatform.v1.UpdateExecutionRequest;
@@ -208,6 +210,8 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
       addContextArtifactsAndExecutionsSettings;
   private final UnaryCallSettings<AddContextChildrenRequest, AddContextChildrenResponse>
       addContextChildrenSettings;
+  private final UnaryCallSettings<RemoveContextChildrenRequest, RemoveContextChildrenResponse>
+      removeContextChildrenSettings;
   private final UnaryCallSettings<QueryContextLineageSubgraphRequest, LineageSubgraph>
       queryContextLineageSubgraphSettings;
   private final UnaryCallSettings<CreateExecutionRequest, Execution> createExecutionSettings;
@@ -716,6 +720,12 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
     return addContextChildrenSettings;
   }
 
+  /** Returns the object with the settings used for calls to removeContextChildren. */
+  public UnaryCallSettings<RemoveContextChildrenRequest, RemoveContextChildrenResponse>
+      removeContextChildrenSettings() {
+    return removeContextChildrenSettings;
+  }
+
   /** Returns the object with the settings used for calls to queryContextLineageSubgraph. */
   public UnaryCallSettings<QueryContextLineageSubgraphRequest, LineageSubgraph>
       queryContextLineageSubgraphSettings() {
@@ -932,6 +942,7 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
     addContextArtifactsAndExecutionsSettings =
         settingsBuilder.addContextArtifactsAndExecutionsSettings().build();
     addContextChildrenSettings = settingsBuilder.addContextChildrenSettings().build();
+    removeContextChildrenSettings = settingsBuilder.removeContextChildrenSettings().build();
     queryContextLineageSubgraphSettings =
         settingsBuilder.queryContextLineageSubgraphSettings().build();
     createExecutionSettings = settingsBuilder.createExecutionSettings().build();
@@ -1010,6 +1021,9 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
         addContextArtifactsAndExecutionsSettings;
     private final UnaryCallSettings.Builder<AddContextChildrenRequest, AddContextChildrenResponse>
         addContextChildrenSettings;
+    private final UnaryCallSettings.Builder<
+            RemoveContextChildrenRequest, RemoveContextChildrenResponse>
+        removeContextChildrenSettings;
     private final UnaryCallSettings.Builder<QueryContextLineageSubgraphRequest, LineageSubgraph>
         queryContextLineageSubgraphSettings;
     private final UnaryCallSettings.Builder<CreateExecutionRequest, Execution>
@@ -1104,6 +1118,7 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
       purgeContextsOperationSettings = OperationCallSettings.newBuilder();
       addContextArtifactsAndExecutionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       addContextChildrenSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      removeContextChildrenSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       queryContextLineageSubgraphSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createExecutionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getExecutionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1146,6 +1161,7 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
               purgeContextsSettings,
               addContextArtifactsAndExecutionsSettings,
               addContextChildrenSettings,
+              removeContextChildrenSettings,
               queryContextLineageSubgraphSettings,
               createExecutionSettings,
               getExecutionSettings,
@@ -1197,6 +1213,7 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
       addContextArtifactsAndExecutionsSettings =
           settings.addContextArtifactsAndExecutionsSettings.toBuilder();
       addContextChildrenSettings = settings.addContextChildrenSettings.toBuilder();
+      removeContextChildrenSettings = settings.removeContextChildrenSettings.toBuilder();
       queryContextLineageSubgraphSettings =
           settings.queryContextLineageSubgraphSettings.toBuilder();
       createExecutionSettings = settings.createExecutionSettings.toBuilder();
@@ -1241,6 +1258,7 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
               purgeContextsSettings,
               addContextArtifactsAndExecutionsSettings,
               addContextChildrenSettings,
+              removeContextChildrenSettings,
               queryContextLineageSubgraphSettings,
               createExecutionSettings,
               getExecutionSettings,
@@ -1362,6 +1380,11 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
 
       builder
           .addContextChildrenSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .removeContextChildrenSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1819,6 +1842,12 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
     public UnaryCallSettings.Builder<AddContextChildrenRequest, AddContextChildrenResponse>
         addContextChildrenSettings() {
       return addContextChildrenSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to removeContextChildren. */
+    public UnaryCallSettings.Builder<RemoveContextChildrenRequest, RemoveContextChildrenResponse>
+        removeContextChildrenSettings() {
+      return removeContextChildrenSettings;
     }
 
     /** Returns the builder for the settings used for calls to queryContextLineageSubgraph. */

@@ -6588,10 +6588,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Output from
-     * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]
-     * for Model Monitoring baseline dataset, which can be used to generate
-     * baseline attribution scores.
+     * Output from [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob] for Model Monitoring baseline dataset,
+     * which can be used to generate baseline attribution scores.
      * </pre>
      *
      * Protobuf type {@code
@@ -7329,10 +7327,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        *
        *
        * <pre>
-       * Output from
-       * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]
-       * for Model Monitoring baseline dataset, which can be used to generate
-       * baseline attribution scores.
+       * Output from [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob] for Model Monitoring baseline dataset,
+       * which can be used to generate baseline attribution scores.
        * </pre>
        *
        * Protobuf type {@code
