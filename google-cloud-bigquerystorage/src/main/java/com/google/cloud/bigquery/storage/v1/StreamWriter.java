@@ -152,6 +152,11 @@ public class StreamWriter implements AutoCloseable {
     return streamName;
   }
 
+  /** @return the passed in user schema. */
+  public ProtoSchema getProtoSchema() {
+    return writerSchema;
+  }
+
   /** Close the stream writer. Shut down all resources. */
   @Override
   public void close() {
