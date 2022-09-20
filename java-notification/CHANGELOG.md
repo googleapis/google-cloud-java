@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.123.13](https://github.com/googleapis/java-notification/compare/v0.123.12...v0.123.13) (2022-09-20)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-pubsub-bom to v1.120.16 ([#670](https://github.com/googleapis/java-notification/issues/670)) ([ac12a3f](https://github.com/googleapis/java-notification/commit/ac12a3fa5b97dccd1cd8cb6aa4c717c90b445415))
+* Update dependency com.google.cloud:google-cloud-storage to v2.12.0 ([#673](https://github.com/googleapis/java-notification/issues/673)) ([558d46c](https://github.com/googleapis/java-notification/commit/558d46c04ba9992ddf9ad5bd3443377bb58fa20f))
+
 ## [0.123.12](https://github.com/googleapis/java-notification/compare/v0.123.11...v0.123.12) (2022-09-15)
 
 
