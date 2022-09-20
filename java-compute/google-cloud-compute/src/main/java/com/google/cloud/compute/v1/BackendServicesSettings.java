@@ -128,6 +128,11 @@ public class BackendServicesSettings extends ClientSettings<BackendServicesSetti
     return ((BackendServicesStubSettings) getStubSettings()).getHealthSettings();
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyBackendServiceRequest, Policy> getIamPolicySettings() {
+    return ((BackendServicesStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertBackendServiceRequest, Operation> insertSettings() {
     return ((BackendServicesStubSettings) getStubSettings()).insertSettings();
@@ -167,6 +172,11 @@ public class BackendServicesSettings extends ClientSettings<BackendServicesSetti
       setEdgeSecurityPolicyOperationSettings() {
     return ((BackendServicesStubSettings) getStubSettings())
         .setEdgeSecurityPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyBackendServiceRequest, Policy> setIamPolicySettings() {
+    return ((BackendServicesStubSettings) getStubSettings()).setIamPolicySettings();
   }
 
   /** Returns the object with the settings used for calls to setSecurityPolicy. */
@@ -346,6 +356,12 @@ public class BackendServicesSettings extends ClientSettings<BackendServicesSetti
       return getStubSettingsBuilder().getHealthSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyBackendServiceRequest, Policy>
+        getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertBackendServiceRequest, Operation> insertSettings() {
       return getStubSettingsBuilder().insertSettings();
@@ -386,6 +402,12 @@ public class BackendServicesSettings extends ClientSettings<BackendServicesSetti
             SetEdgeSecurityPolicyBackendServiceRequest, Operation, Operation>
         setEdgeSecurityPolicyOperationSettings() {
       return getStubSettingsBuilder().setEdgeSecurityPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyBackendServiceRequest, Policy>
+        setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
     }
 
     /** Returns the builder for the settings used for calls to setSecurityPolicy. */

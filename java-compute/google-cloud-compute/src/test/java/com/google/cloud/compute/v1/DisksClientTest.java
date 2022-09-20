@@ -375,6 +375,7 @@ public class DisksClientTest {
             .setLocationHint("locationHint-58650660")
             .setName("name3373707")
             .setOptions("options-1249474914")
+            .setParams(DiskParams.newBuilder().build())
             .setPhysicalBlockSizeBytes(-1190604793)
             .setProvisionedIops(1260510932)
             .setRegion("region-934795532")

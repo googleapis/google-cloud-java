@@ -124,7 +124,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * This field denotes whether to enable logging for the load balancer traffic served by this backend service.
+   * Denotes whether to enable logging for the load balancer traffic served by this backend service. The default value is false.
    * </pre>
    *
    * <code>optional bool enable = 311764355;</code>
@@ -139,7 +139,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * This field denotes whether to enable logging for the load balancer traffic served by this backend service.
+   * Denotes whether to enable logging for the load balancer traffic served by this backend service. The default value is false.
    * </pre>
    *
    * <code>optional bool enable = 311764355;</code>
@@ -157,7 +157,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * This field can only be specified if logging is enabled for this backend service. The value of the field must be in [0, 1]. This configures the sampling rate of requests to the load balancer where 1.0 means all logged requests are reported and 0.0 means no logged requests are reported. The default value is 0.0.
+   * This field can only be specified if logging is enabled for this backend service. The value of the field must be in [0, 1]. This configures the sampling rate of requests to the load balancer where 1.0 means all logged requests are reported and 0.0 means no logged requests are reported. The default value is 1.0.
    * </pre>
    *
    * <code>optional float sample_rate = 153193045;</code>
@@ -172,7 +172,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * This field can only be specified if logging is enabled for this backend service. The value of the field must be in [0, 1]. This configures the sampling rate of requests to the load balancer where 1.0 means all logged requests are reported and 0.0 means no logged requests are reported. The default value is 0.0.
+   * This field can only be specified if logging is enabled for this backend service. The value of the field must be in [0, 1]. This configures the sampling rate of requests to the load balancer where 1.0 means all logged requests are reported and 0.0 means no logged requests are reported. The default value is 1.0.
    * </pre>
    *
    * <code>optional float sample_rate = 153193045;</code>
@@ -543,7 +543,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field denotes whether to enable logging for the load balancer traffic served by this backend service.
+     * Denotes whether to enable logging for the load balancer traffic served by this backend service. The default value is false.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -558,7 +558,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field denotes whether to enable logging for the load balancer traffic served by this backend service.
+     * Denotes whether to enable logging for the load balancer traffic served by this backend service. The default value is false.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -573,7 +573,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field denotes whether to enable logging for the load balancer traffic served by this backend service.
+     * Denotes whether to enable logging for the load balancer traffic served by this backend service. The default value is false.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -591,7 +591,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field denotes whether to enable logging for the load balancer traffic served by this backend service.
+     * Denotes whether to enable logging for the load balancer traffic served by this backend service. The default value is false.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -610,7 +610,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field can only be specified if logging is enabled for this backend service. The value of the field must be in [0, 1]. This configures the sampling rate of requests to the load balancer where 1.0 means all logged requests are reported and 0.0 means no logged requests are reported. The default value is 0.0.
+     * This field can only be specified if logging is enabled for this backend service. The value of the field must be in [0, 1]. This configures the sampling rate of requests to the load balancer where 1.0 means all logged requests are reported and 0.0 means no logged requests are reported. The default value is 1.0.
      * </pre>
      *
      * <code>optional float sample_rate = 153193045;</code>
@@ -625,7 +625,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field can only be specified if logging is enabled for this backend service. The value of the field must be in [0, 1]. This configures the sampling rate of requests to the load balancer where 1.0 means all logged requests are reported and 0.0 means no logged requests are reported. The default value is 0.0.
+     * This field can only be specified if logging is enabled for this backend service. The value of the field must be in [0, 1]. This configures the sampling rate of requests to the load balancer where 1.0 means all logged requests are reported and 0.0 means no logged requests are reported. The default value is 1.0.
      * </pre>
      *
      * <code>optional float sample_rate = 153193045;</code>
@@ -640,7 +640,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field can only be specified if logging is enabled for this backend service. The value of the field must be in [0, 1]. This configures the sampling rate of requests to the load balancer where 1.0 means all logged requests are reported and 0.0 means no logged requests are reported. The default value is 0.0.
+     * This field can only be specified if logging is enabled for this backend service. The value of the field must be in [0, 1]. This configures the sampling rate of requests to the load balancer where 1.0 means all logged requests are reported and 0.0 means no logged requests are reported. The default value is 1.0.
      * </pre>
      *
      * <code>optional float sample_rate = 153193045;</code>
@@ -658,7 +658,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field can only be specified if logging is enabled for this backend service. The value of the field must be in [0, 1]. This configures the sampling rate of requests to the load balancer where 1.0 means all logged requests are reported and 0.0 means no logged requests are reported. The default value is 0.0.
+     * This field can only be specified if logging is enabled for this backend service. The value of the field must be in [0, 1]. This configures the sampling rate of requests to the load balancer where 1.0 means all logged requests are reported and 0.0 means no logged requests are reported. The default value is 1.0.
      * </pre>
      *
      * <code>optional float sample_rate = 153193045;</code>

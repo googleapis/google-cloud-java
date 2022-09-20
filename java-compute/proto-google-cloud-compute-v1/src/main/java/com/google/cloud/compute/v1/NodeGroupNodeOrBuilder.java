@@ -79,6 +79,44 @@ public interface NodeGroupNodeOrBuilder
    *
    *
    * <pre>
+   * Node resources that are reserved by all instances.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.InstanceConsumptionInfo consumed_resources = 334527118;
+   * </code>
+   *
+   * @return Whether the consumedResources field is set.
+   */
+  boolean hasConsumedResources();
+  /**
+   *
+   *
+   * <pre>
+   * Node resources that are reserved by all instances.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.InstanceConsumptionInfo consumed_resources = 334527118;
+   * </code>
+   *
+   * @return The consumedResources.
+   */
+  com.google.cloud.compute.v1.InstanceConsumptionInfo getConsumedResources();
+  /**
+   *
+   *
+   * <pre>
+   * Node resources that are reserved by all instances.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.InstanceConsumptionInfo consumed_resources = 334527118;
+   * </code>
+   */
+  com.google.cloud.compute.v1.InstanceConsumptionInfoOrBuilder getConsumedResourcesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * CPU overcommit.
    * Check the CpuOvercommitType enum for the list of possible values.
    * </pre>
@@ -165,6 +203,70 @@ public interface NodeGroupNodeOrBuilder
    * <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code>
    */
   com.google.cloud.compute.v1.LocalDiskOrBuilder getDisksOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Instance data that shows consumed resources on the node.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.InstanceConsumptionData instance_consumption_data = 84715576;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.InstanceConsumptionData>
+      getInstanceConsumptionDataList();
+  /**
+   *
+   *
+   * <pre>
+   * Instance data that shows consumed resources on the node.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.InstanceConsumptionData instance_consumption_data = 84715576;
+   * </code>
+   */
+  com.google.cloud.compute.v1.InstanceConsumptionData getInstanceConsumptionData(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Instance data that shows consumed resources on the node.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.InstanceConsumptionData instance_consumption_data = 84715576;
+   * </code>
+   */
+  int getInstanceConsumptionDataCount();
+  /**
+   *
+   *
+   * <pre>
+   * Instance data that shows consumed resources on the node.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.InstanceConsumptionData instance_consumption_data = 84715576;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.InstanceConsumptionDataOrBuilder>
+      getInstanceConsumptionDataOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Instance data that shows consumed resources on the node.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.InstanceConsumptionData instance_consumption_data = 84715576;
+   * </code>
+   */
+  com.google.cloud.compute.v1.InstanceConsumptionDataOrBuilder getInstanceConsumptionDataOrBuilder(
+      int index);
 
   /**
    *
@@ -427,4 +529,42 @@ public interface NodeGroupNodeOrBuilder
    * @return The bytes for status.
    */
   com.google.protobuf.ByteString getStatusBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Total amount of available resources on the node.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.InstanceConsumptionInfo total_resources = 97406698;
+   * </code>
+   *
+   * @return Whether the totalResources field is set.
+   */
+  boolean hasTotalResources();
+  /**
+   *
+   *
+   * <pre>
+   * Total amount of available resources on the node.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.InstanceConsumptionInfo total_resources = 97406698;
+   * </code>
+   *
+   * @return The totalResources.
+   */
+  com.google.cloud.compute.v1.InstanceConsumptionInfo getTotalResources();
+  /**
+   *
+   *
+   * <pre>
+   * Total amount of available resources on the node.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.InstanceConsumptionInfo total_resources = 97406698;
+   * </code>
+   */
+  com.google.cloud.compute.v1.InstanceConsumptionInfoOrBuilder getTotalResourcesOrBuilder();
 }
