@@ -1267,6 +1267,7 @@ public class PipelineServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setReadMask(FieldMask.newBuilder().build())
    *           .build();
    *   for (PipelineJob element : pipelineServiceClient.listPipelineJobs(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1301,6 +1302,7 @@ public class PipelineServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setReadMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<PipelineJob> future =
    *       pipelineServiceClient.listPipelineJobsPagedCallable().futureCall(request);
@@ -1336,6 +1338,7 @@ public class PipelineServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setReadMask(FieldMask.newBuilder().build())
    *           .build();
    *   while (true) {
    *     ListPipelineJobsResponse response =
