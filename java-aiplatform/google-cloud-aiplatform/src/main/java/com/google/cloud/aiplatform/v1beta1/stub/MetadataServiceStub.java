@@ -78,6 +78,8 @@ import com.google.cloud.aiplatform.v1beta1.PurgeExecutionsResponse;
 import com.google.cloud.aiplatform.v1beta1.QueryArtifactLineageSubgraphRequest;
 import com.google.cloud.aiplatform.v1beta1.QueryContextLineageSubgraphRequest;
 import com.google.cloud.aiplatform.v1beta1.QueryExecutionInputsAndOutputsRequest;
+import com.google.cloud.aiplatform.v1beta1.RemoveContextChildrenRequest;
+import com.google.cloud.aiplatform.v1beta1.RemoveContextChildrenResponse;
 import com.google.cloud.aiplatform.v1beta1.UpdateArtifactRequest;
 import com.google.cloud.aiplatform.v1beta1.UpdateContextRequest;
 import com.google.cloud.aiplatform.v1beta1.UpdateExecutionRequest;
@@ -231,6 +233,11 @@ public abstract class MetadataServiceStub implements BackgroundResource {
   public UnaryCallable<AddContextChildrenRequest, AddContextChildrenResponse>
       addContextChildrenCallable() {
     throw new UnsupportedOperationException("Not implemented: addContextChildrenCallable()");
+  }
+
+  public UnaryCallable<RemoveContextChildrenRequest, RemoveContextChildrenResponse>
+      removeContextChildrenCallable() {
+    throw new UnsupportedOperationException("Not implemented: removeContextChildrenCallable()");
   }
 
   public UnaryCallable<QueryContextLineageSubgraphRequest, LineageSubgraph>
