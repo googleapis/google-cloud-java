@@ -102,6 +102,11 @@ public final class ImportFeatureValuesOperationMetadata
               invalidRowCount_ = input.readInt64();
               break;
             }
+          case 56:
+            {
+              timestampOutsideRetentionRowsCount_ = input.readInt64();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -245,6 +250,25 @@ public final class ImportFeatureValuesOperationMetadata
     return invalidRowCount_;
   }
 
+  public static final int TIMESTAMP_OUTSIDE_RETENTION_ROWS_COUNT_FIELD_NUMBER = 7;
+  private long timestampOutsideRetentionRowsCount_;
+  /**
+   *
+   *
+   * <pre>
+   * The number rows that weren't ingested due to having timestamps outside the
+   * retention boundary.
+   * </pre>
+   *
+   * <code>int64 timestamp_outside_retention_rows_count = 7;</code>
+   *
+   * @return The timestampOutsideRetentionRowsCount.
+   */
+  @java.lang.Override
+  public long getTimestampOutsideRetentionRowsCount() {
+    return timestampOutsideRetentionRowsCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -271,6 +295,9 @@ public final class ImportFeatureValuesOperationMetadata
     if (invalidRowCount_ != 0L) {
       output.writeInt64(6, invalidRowCount_);
     }
+    if (timestampOutsideRetentionRowsCount_ != 0L) {
+      output.writeInt64(7, timestampOutsideRetentionRowsCount_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -291,6 +318,11 @@ public final class ImportFeatureValuesOperationMetadata
     }
     if (invalidRowCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(6, invalidRowCount_);
+    }
+    if (timestampOutsideRetentionRowsCount_ != 0L) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt64Size(
+              7, timestampOutsideRetentionRowsCount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -315,6 +347,8 @@ public final class ImportFeatureValuesOperationMetadata
     if (getImportedEntityCount() != other.getImportedEntityCount()) return false;
     if (getImportedFeatureValueCount() != other.getImportedFeatureValueCount()) return false;
     if (getInvalidRowCount() != other.getInvalidRowCount()) return false;
+    if (getTimestampOutsideRetentionRowsCount() != other.getTimestampOutsideRetentionRowsCount())
+      return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -336,6 +370,10 @@ public final class ImportFeatureValuesOperationMetadata
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getImportedFeatureValueCount());
     hash = (37 * hash) + INVALID_ROW_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getInvalidRowCount());
+    hash = (37 * hash) + TIMESTAMP_OUTSIDE_RETENTION_ROWS_COUNT_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashLong(getTimestampOutsideRetentionRowsCount());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -496,6 +534,8 @@ public final class ImportFeatureValuesOperationMetadata
 
       invalidRowCount_ = 0L;
 
+      timestampOutsideRetentionRowsCount_ = 0L;
+
       return this;
     }
 
@@ -533,6 +573,7 @@ public final class ImportFeatureValuesOperationMetadata
       result.importedEntityCount_ = importedEntityCount_;
       result.importedFeatureValueCount_ = importedFeatureValueCount_;
       result.invalidRowCount_ = invalidRowCount_;
+      result.timestampOutsideRetentionRowsCount_ = timestampOutsideRetentionRowsCount_;
       onBuilt();
       return result;
     }
@@ -597,6 +638,9 @@ public final class ImportFeatureValuesOperationMetadata
       }
       if (other.getInvalidRowCount() != 0L) {
         setInvalidRowCount(other.getInvalidRowCount());
+      }
+      if (other.getTimestampOutsideRetentionRowsCount() != 0L) {
+        setTimestampOutsideRetentionRowsCount(other.getTimestampOutsideRetentionRowsCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -983,6 +1027,61 @@ public final class ImportFeatureValuesOperationMetadata
     public Builder clearInvalidRowCount() {
 
       invalidRowCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long timestampOutsideRetentionRowsCount_;
+    /**
+     *
+     *
+     * <pre>
+     * The number rows that weren't ingested due to having timestamps outside the
+     * retention boundary.
+     * </pre>
+     *
+     * <code>int64 timestamp_outside_retention_rows_count = 7;</code>
+     *
+     * @return The timestampOutsideRetentionRowsCount.
+     */
+    @java.lang.Override
+    public long getTimestampOutsideRetentionRowsCount() {
+      return timestampOutsideRetentionRowsCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number rows that weren't ingested due to having timestamps outside the
+     * retention boundary.
+     * </pre>
+     *
+     * <code>int64 timestamp_outside_retention_rows_count = 7;</code>
+     *
+     * @param value The timestampOutsideRetentionRowsCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTimestampOutsideRetentionRowsCount(long value) {
+
+      timestampOutsideRetentionRowsCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number rows that weren't ingested due to having timestamps outside the
+     * retention boundary.
+     * </pre>
+     *
+     * <code>int64 timestamp_outside_retention_rows_count = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTimestampOutsideRetentionRowsCount() {
+
+      timestampOutsideRetentionRowsCount_ = 0L;
       onChanged();
       return this;
     }

@@ -5411,7 +5411,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The name of the Model resoure that produces the predictions via this job,
+   * The name of the Model resource that produces the predictions via this job,
    * must share the same ancestor Location.
    * Starting this job has no impact on any existing deployments of the Model
    * and their resources.
@@ -5440,7 +5440,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The name of the Model resoure that produces the predictions via this job,
+   * The name of the Model resource that produces the predictions via this job,
    * must share the same ancestor Location.
    * Starting this job has no impact on any existing deployments of the Model
    * and their resources.
@@ -7884,7 +7884,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The name of the Model resoure that produces the predictions via this job,
+     * The name of the Model resource that produces the predictions via this job,
      * must share the same ancestor Location.
      * Starting this job has no impact on any existing deployments of the Model
      * and their resources.
@@ -7912,7 +7912,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The name of the Model resoure that produces the predictions via this job,
+     * The name of the Model resource that produces the predictions via this job,
      * must share the same ancestor Location.
      * Starting this job has no impact on any existing deployments of the Model
      * and their resources.
@@ -7940,7 +7940,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The name of the Model resoure that produces the predictions via this job,
+     * The name of the Model resource that produces the predictions via this job,
      * must share the same ancestor Location.
      * Starting this job has no impact on any existing deployments of the Model
      * and their resources.
@@ -7967,7 +7967,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The name of the Model resoure that produces the predictions via this job,
+     * The name of the Model resource that produces the predictions via this job,
      * must share the same ancestor Location.
      * Starting this job has no impact on any existing deployments of the Model
      * and their resources.
@@ -7990,7 +7990,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The name of the Model resoure that produces the predictions via this job,
+     * The name of the Model resource that produces the predictions via this job,
      * must share the same ancestor Location.
      * Starting this job has no impact on any existing deployments of the Model
      * and their resources.

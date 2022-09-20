@@ -439,6 +439,28 @@ public class MockMetadataServiceImpl extends MetadataServiceImplBase {
   }
 
   @Override
+  public void removeContextChildren(
+      RemoveContextChildrenRequest request,
+      StreamObserver<RemoveContextChildrenResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RemoveContextChildrenResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RemoveContextChildrenResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RemoveContextChildren, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RemoveContextChildrenResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void queryContextLineageSubgraph(
       QueryContextLineageSubgraphRequest request,
       StreamObserver<LineageSubgraph> responseObserver) {

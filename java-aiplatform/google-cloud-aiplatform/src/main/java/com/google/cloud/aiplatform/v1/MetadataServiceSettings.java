@@ -225,6 +225,12 @@ public class MetadataServiceSettings extends ClientSettings<MetadataServiceSetti
     return ((MetadataServiceStubSettings) getStubSettings()).addContextChildrenSettings();
   }
 
+  /** Returns the object with the settings used for calls to removeContextChildren. */
+  public UnaryCallSettings<RemoveContextChildrenRequest, RemoveContextChildrenResponse>
+      removeContextChildrenSettings() {
+    return ((MetadataServiceStubSettings) getStubSettings()).removeContextChildrenSettings();
+  }
+
   /** Returns the object with the settings used for calls to queryContextLineageSubgraph. */
   public UnaryCallSettings<QueryContextLineageSubgraphRequest, LineageSubgraph>
       queryContextLineageSubgraphSettings() {
@@ -577,6 +583,12 @@ public class MetadataServiceSettings extends ClientSettings<MetadataServiceSetti
     public UnaryCallSettings.Builder<AddContextChildrenRequest, AddContextChildrenResponse>
         addContextChildrenSettings() {
       return getStubSettingsBuilder().addContextChildrenSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeContextChildren. */
+    public UnaryCallSettings.Builder<RemoveContextChildrenRequest, RemoveContextChildrenResponse>
+        removeContextChildrenSettings() {
+      return getStubSettingsBuilder().removeContextChildrenSettings();
     }
 
     /** Returns the builder for the settings used for calls to queryContextLineageSubgraph. */
