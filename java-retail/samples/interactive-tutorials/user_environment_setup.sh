@@ -14,61 +14,83 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# set the Google Cloud Project ID
-{
-  project_id=$1
-  echo "Project ID: $project_id"
-  gcloud config set project "$project_id"
-
-} && {
-
-  timestamp=$(date +%s)
-
-  service_account_id="service-acc-$timestamp"
-  echo "Service Account: $service_account_id"
-
-  # create service account (your service-acc-$timestamp)
-  gcloud iam service-accounts create "$service_account_id"
-
-} && {
-
-  # assign necessary roles to your new service account
-  for role in {retail.admin,editor,bigquery.admin}
-    do
-      gcloud projects add-iam-policy-binding "$project_id" --member="serviceAccount:$service_account_id@$project_id.iam.gserviceaccount.com" --role=roles/"${role}"
-  done
-
-} && {
-
-  echo "Wait ~60 seconds to be sure the appropriate roles have been assigned to your service account"
-  sleep 60
-
-  # upload your service account key file
-  service_acc_email="$service_account_id@$project_id.iam.gserviceaccount.com"
-  gcloud iam service-accounts keys create ~/key.json --iam-account "$service_acc_email"
-
-  # activate the service account using the key
-  gcloud auth activate-service-account --key-file ~/key.json
-
-} && {
-
-  # install needed Google client libraries
-  cd ~/cloudshell_open/java-retail/samples/interactive-tutorials || exit
-  mvn clean install -DskipTests
-
-} && {
-
-  # Print success message
-  echo "========================================"
-  echo "The Google Cloud setup is completed."
-  echo "Please proceed with the Tutorial steps"
-  echo "========================================"
-
-} || {
-
-  # Print error message
-  echo "========================================"
-  echo "The Google Cloud setup was not completed."
-  echo "Please fix the errors above!"
-  echo "========================================"
+failure() {
+    echo "========================================="
+    echo "The Google Cloud setup was not completed."
+    echo "Please fix the errors above!"
+    echo "========================================="
+    exit 0
 }
+
+# catch any error that happened during execution
+trap 'failure' ERR
+
+# set the Google Cloud Project ID
+
+project_id=$1
+echo "Project ID: $project_id"
+gcloud config set project "$project_id"
+
+email=$(gcloud auth list --filter="status:ACTIVE account:$project_id.iam.gserviceaccount.com" --format="value(account)")
+echo $email
+
+# Check if user has service account active
+if [ -z "$email" ]
+then
+  # Create a new service account
+    timestamp=$(date +%s)
+
+    service_account_id="service-acc-$timestamp"
+    echo "Service Account: $service_account_id"
+
+    # create service account (your service-acc-$timestamp)
+    gcloud iam service-accounts create "$service_account_id"
+else
+    service_account_id="${email%@*}"
+  # Log out of service account
+    gcloud auth revoke
+fi
+echo "$service_account_id"
+
+editor=$(gcloud projects get-iam-policy $project_id  \
+--flatten="bindings[].members" \
+--format='table(bindings.role)' \
+--filter="bindings.members:$service_account_id ROLE=roles/editor")
+
+retail_admin=$(gcloud projects get-iam-policy $project_id  \
+--flatten="bindings[].members" \
+--format='table(bindings.role)' \
+--filter="bindings.members:$service_account_id ROLE=roles/retail.admin")
+
+
+# assign necessary roles to your new service account
+# Check if any of the needed roles is missing
+if [ -z "$editor" ] || [ -z "$retail_admin" ]
+then
+    # Assign necessary roles to your new service account.
+    for role in {retail.admin,editor}
+    do
+        gcloud projects add-iam-policy-binding "$project_id" --member="serviceAccount:$service_account_id@$project_id.iam.gserviceaccount.com" --role=roles/"${role}"
+    done
+    echo "Wait ~60 seconds to be sure the appropriate roles have been assigned to your service account"
+    sleep 60
+fi
+
+# upload your service account key file
+service_acc_email="$service_account_id@$project_id.iam.gserviceaccount.com"
+gcloud iam service-accounts keys create ~/key.json --iam-account "$service_acc_email"
+
+# activate the service account using the key
+gcloud auth activate-service-account --key-file ~/key.json
+
+
+# install needed Google client libraries
+cd ~/cloudshell_open/java-retail/samples/interactive-tutorials || exit
+mvn clean install -DskipTests
+
+
+# Print success message
+echo "========================================"
+echo "The Google Cloud setup is completed."
+echo "Please proceed with the Tutorial steps"
+echo "========================================"
