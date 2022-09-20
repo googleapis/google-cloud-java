@@ -19,20 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-security-private-ca</artifactId>
-  <version>2.5.2</version>
+  <version>2.5.3</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-security-private-ca:2.5.2'
+implementation 'com.google.cloud:google-cloud-security-private-ca:2.5.3'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-security-private-ca" % "2.5.2"
+libraryDependencies += "com.google.cloud" % "google-cloud-security-private-ca" % "2.5.3"
 ```
 
 ## Authentication
