@@ -28,6 +28,7 @@ import com.google.cloud.compute.v1.GetTargetVpnGatewayRequest;
 import com.google.cloud.compute.v1.InsertTargetVpnGatewayRequest;
 import com.google.cloud.compute.v1.ListTargetVpnGatewaysRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.SetLabelsTargetVpnGatewayRequest;
 import com.google.cloud.compute.v1.TargetVpnGateway;
 import com.google.cloud.compute.v1.TargetVpnGatewayAggregatedList;
 import com.google.cloud.compute.v1.TargetVpnGatewayList;
@@ -80,6 +81,15 @@ public abstract class TargetVpnGatewaysStub implements BackgroundResource {
 
   public UnaryCallable<ListTargetVpnGatewaysRequest, TargetVpnGatewayList> listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public OperationCallable<SetLabelsTargetVpnGatewayRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setLabelsOperationCallable()");
+  }
+
+  public UnaryCallable<SetLabelsTargetVpnGatewayRequest, Operation> setLabelsCallable() {
+    throw new UnsupportedOperationException("Not implemented: setLabelsCallable()");
   }
 
   @Override

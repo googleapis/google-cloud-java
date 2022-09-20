@@ -73,17 +73,37 @@ public final class SecurityPolicyAdvancedOptionsConfig
           case 0:
             done = true;
             break;
+          case 892560842:
+            {
+              com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
+                      .Builder
+                  subBuilder = null;
+              if (((bitField0_ & 0x00000001) != 0)) {
+                subBuilder = jsonCustomConfig_.toBuilder();
+              }
+              jsonCustomConfig_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1
+                          .SecurityPolicyAdvancedOptionsConfigJsonCustomConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(jsonCustomConfig_);
+                jsonCustomConfig_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
           case 1124660810:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000004;
               logLevel_ = s;
               break;
             }
           case -2035019062:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
+              bitField0_ |= 0x00000002;
               jsonParsing_ = s;
               break;
             }
@@ -376,6 +396,67 @@ public final class SecurityPolicyAdvancedOptionsConfig
   }
 
   private int bitField0_;
+  public static final int JSON_CUSTOM_CONFIG_FIELD_NUMBER = 111570105;
+  private com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
+      jsonCustomConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig json_custom_config = 111570105;
+   * </code>
+   *
+   * @return Whether the jsonCustomConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasJsonCustomConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig json_custom_config = 111570105;
+   * </code>
+   *
+   * @return The jsonCustomConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
+      getJsonCustomConfig() {
+    return jsonCustomConfig_ == null
+        ? com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
+            .getDefaultInstance()
+        : jsonCustomConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig json_custom_config = 111570105;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfigOrBuilder
+      getJsonCustomConfigOrBuilder() {
+    return jsonCustomConfig_ == null
+        ? com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
+            .getDefaultInstance()
+        : jsonCustomConfig_;
+  }
+
   public static final int JSON_PARSING_FIELD_NUMBER = 282493529;
   private volatile java.lang.Object jsonParsing_;
   /**
@@ -392,7 +473,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
    */
   @java.lang.Override
   public boolean hasJsonParsing() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -459,7 +540,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
    */
   @java.lang.Override
   public boolean hasLogLevel() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -524,10 +605,13 @@ public final class SecurityPolicyAdvancedOptionsConfig
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(111570105, getJsonCustomConfig());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 140582601, logLevel_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 282493529, jsonParsing_);
     }
     unknownFields.writeTo(output);
@@ -539,10 +623,15 @@ public final class SecurityPolicyAdvancedOptionsConfig
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              111570105, getJsonCustomConfig());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(140582601, logLevel_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(282493529, jsonParsing_);
     }
     size += unknownFields.getSerializedSize();
@@ -561,6 +650,10 @@ public final class SecurityPolicyAdvancedOptionsConfig
     com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig other =
         (com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig) obj;
 
+    if (hasJsonCustomConfig() != other.hasJsonCustomConfig()) return false;
+    if (hasJsonCustomConfig()) {
+      if (!getJsonCustomConfig().equals(other.getJsonCustomConfig())) return false;
+    }
     if (hasJsonParsing() != other.hasJsonParsing()) return false;
     if (hasJsonParsing()) {
       if (!getJsonParsing().equals(other.getJsonParsing())) return false;
@@ -580,6 +673,10 @@ public final class SecurityPolicyAdvancedOptionsConfig
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasJsonCustomConfig()) {
+      hash = (37 * hash) + JSON_CUSTOM_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getJsonCustomConfig().hashCode();
+    }
     if (hasJsonParsing()) {
       hash = (37 * hash) + JSON_PARSING_FIELD_NUMBER;
       hash = (53 * hash) + getJsonParsing().hashCode();
@@ -727,16 +824,24 @@ public final class SecurityPolicyAdvancedOptionsConfig
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getJsonCustomConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      jsonParsing_ = "";
+      if (jsonCustomConfigBuilder_ == null) {
+        jsonCustomConfig_ = null;
+      } else {
+        jsonCustomConfigBuilder_.clear();
+      }
       bitField0_ = (bitField0_ & ~0x00000001);
-      logLevel_ = "";
+      jsonParsing_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
+      logLevel_ = "";
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -768,11 +873,19 @@ public final class SecurityPolicyAdvancedOptionsConfig
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (jsonCustomConfigBuilder_ == null) {
+          result.jsonCustomConfig_ = jsonCustomConfig_;
+        } else {
+          result.jsonCustomConfig_ = jsonCustomConfigBuilder_.build();
+        }
         to_bitField0_ |= 0x00000001;
       }
-      result.jsonParsing_ = jsonParsing_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         to_bitField0_ |= 0x00000002;
+      }
+      result.jsonParsing_ = jsonParsing_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
       }
       result.logLevel_ = logLevel_;
       result.bitField0_ = to_bitField0_;
@@ -828,13 +941,16 @@ public final class SecurityPolicyAdvancedOptionsConfig
       if (other
           == com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.getDefaultInstance())
         return this;
+      if (other.hasJsonCustomConfig()) {
+        mergeJsonCustomConfig(other.getJsonCustomConfig());
+      }
       if (other.hasJsonParsing()) {
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         jsonParsing_ = other.jsonParsing_;
         onChanged();
       }
       if (other.hasLogLevel()) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         logLevel_ = other.logLevel_;
         onChanged();
       }
@@ -871,6 +987,227 @@ public final class SecurityPolicyAdvancedOptionsConfig
 
     private int bitField0_;
 
+    private com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
+        jsonCustomConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig,
+            com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig.Builder,
+            com.google.cloud.compute.v1
+                .SecurityPolicyAdvancedOptionsConfigJsonCustomConfigOrBuilder>
+        jsonCustomConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig json_custom_config = 111570105;
+     * </code>
+     *
+     * @return Whether the jsonCustomConfig field is set.
+     */
+    public boolean hasJsonCustomConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig json_custom_config = 111570105;
+     * </code>
+     *
+     * @return The jsonCustomConfig.
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
+        getJsonCustomConfig() {
+      if (jsonCustomConfigBuilder_ == null) {
+        return jsonCustomConfig_ == null
+            ? com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
+                .getDefaultInstance()
+            : jsonCustomConfig_;
+      } else {
+        return jsonCustomConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig json_custom_config = 111570105;
+     * </code>
+     */
+    public Builder setJsonCustomConfig(
+        com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig value) {
+      if (jsonCustomConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        jsonCustomConfig_ = value;
+        onChanged();
+      } else {
+        jsonCustomConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig json_custom_config = 111570105;
+     * </code>
+     */
+    public Builder setJsonCustomConfig(
+        com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig.Builder
+            builderForValue) {
+      if (jsonCustomConfigBuilder_ == null) {
+        jsonCustomConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        jsonCustomConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig json_custom_config = 111570105;
+     * </code>
+     */
+    public Builder mergeJsonCustomConfig(
+        com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig value) {
+      if (jsonCustomConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && jsonCustomConfig_ != null
+            && jsonCustomConfig_
+                != com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
+                    .getDefaultInstance()) {
+          jsonCustomConfig_ =
+              com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
+                  .newBuilder(jsonCustomConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          jsonCustomConfig_ = value;
+        }
+        onChanged();
+      } else {
+        jsonCustomConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000001;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig json_custom_config = 111570105;
+     * </code>
+     */
+    public Builder clearJsonCustomConfig() {
+      if (jsonCustomConfigBuilder_ == null) {
+        jsonCustomConfig_ = null;
+        onChanged();
+      } else {
+        jsonCustomConfigBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000001);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig json_custom_config = 111570105;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig.Builder
+        getJsonCustomConfigBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getJsonCustomConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig json_custom_config = 111570105;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfigOrBuilder
+        getJsonCustomConfigOrBuilder() {
+      if (jsonCustomConfigBuilder_ != null) {
+        return jsonCustomConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return jsonCustomConfig_ == null
+            ? com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
+                .getDefaultInstance()
+            : jsonCustomConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig json_custom_config = 111570105;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig,
+            com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig.Builder,
+            com.google.cloud.compute.v1
+                .SecurityPolicyAdvancedOptionsConfigJsonCustomConfigOrBuilder>
+        getJsonCustomConfigFieldBuilder() {
+      if (jsonCustomConfigBuilder_ == null) {
+        jsonCustomConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig,
+                com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
+                    .Builder,
+                com.google.cloud.compute.v1
+                    .SecurityPolicyAdvancedOptionsConfigJsonCustomConfigOrBuilder>(
+                getJsonCustomConfig(), getParentForChildren(), isClean());
+        jsonCustomConfig_ = null;
+      }
+      return jsonCustomConfigBuilder_;
+    }
+
     private java.lang.Object jsonParsing_ = "";
     /**
      *
@@ -885,7 +1222,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
      * @return Whether the jsonParsing field is set.
      */
     public boolean hasJsonParsing() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -950,7 +1287,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       jsonParsing_ = value;
       onChanged();
       return this;
@@ -968,7 +1305,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
      * @return This builder for chaining.
      */
     public Builder clearJsonParsing() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       jsonParsing_ = getDefaultInstance().getJsonParsing();
       onChanged();
       return this;
@@ -991,7 +1328,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       jsonParsing_ = value;
       onChanged();
       return this;
@@ -1011,7 +1348,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
      * @return Whether the logLevel field is set.
      */
     public boolean hasLogLevel() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1076,7 +1413,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       logLevel_ = value;
       onChanged();
       return this;
@@ -1094,7 +1431,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
      * @return This builder for chaining.
      */
     public Builder clearLogLevel() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       logLevel_ = getDefaultInstance().getLogLevel();
       onChanged();
       return this;
@@ -1117,7 +1454,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       logLevel_ = value;
       onChanged();
       return this;

@@ -51,6 +51,7 @@ import com.google.cloud.compute.v1.SecurityPoliciesListPreconfiguredExpressionSe
 import com.google.cloud.compute.v1.SecurityPolicy;
 import com.google.cloud.compute.v1.SecurityPolicyList;
 import com.google.cloud.compute.v1.SecurityPolicyRule;
+import com.google.cloud.compute.v1.SetLabelsSecurityPolicyRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -650,6 +651,58 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<SetLabelsSecurityPolicyRequest, Operation>
+      setLabelsMethodDescriptor =
+          ApiMethodDescriptor.<SetLabelsSecurityPolicyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.SecurityPolicies/SetLabels")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetLabelsSecurityPolicyRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/securityPolicies/{resource}/setLabels",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetLabelsSecurityPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetLabelsSecurityPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "globalSetLabelsRequestResource",
+                                      request.getGlobalSetLabelsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SetLabelsSecurityPolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private final UnaryCallable<AddRuleSecurityPolicyRequest, Operation> addRuleCallable;
   private final OperationCallable<AddRuleSecurityPolicyRequest, Operation, Operation>
       addRuleOperationCallable;
@@ -680,6 +733,9 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
   private final UnaryCallable<RemoveRuleSecurityPolicyRequest, Operation> removeRuleCallable;
   private final OperationCallable<RemoveRuleSecurityPolicyRequest, Operation, Operation>
       removeRuleOperationCallable;
+  private final UnaryCallable<SetLabelsSecurityPolicyRequest, Operation> setLabelsCallable;
+  private final OperationCallable<SetLabelsSecurityPolicyRequest, Operation, Operation>
+      setLabelsOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
@@ -790,6 +846,11 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
             .setMethodDescriptor(removeRuleMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<SetLabelsSecurityPolicyRequest, Operation> setLabelsTransportSettings =
+        HttpJsonCallSettings.<SetLabelsSecurityPolicyRequest, Operation>newBuilder()
+            .setMethodDescriptor(setLabelsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
 
     this.addRuleCallable =
         callableFactory.createUnaryCallable(
@@ -868,6 +929,15 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
             settings.removeRuleOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.setLabelsCallable =
+        callableFactory.createUnaryCallable(
+            setLabelsTransportSettings, settings.setLabelsSettings(), clientContext);
+    this.setLabelsOperationCallable =
+        callableFactory.createOperationCallable(
+            setLabelsTransportSettings,
+            settings.setLabelsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -887,6 +957,7 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
     methodDescriptors.add(patchMethodDescriptor);
     methodDescriptors.add(patchRuleMethodDescriptor);
     methodDescriptors.add(removeRuleMethodDescriptor);
+    methodDescriptors.add(setLabelsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -994,6 +1065,17 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
   public OperationCallable<RemoveRuleSecurityPolicyRequest, Operation, Operation>
       removeRuleOperationCallable() {
     return removeRuleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetLabelsSecurityPolicyRequest, Operation> setLabelsCallable() {
+    return setLabelsCallable;
+  }
+
+  @Override
+  public OperationCallable<SetLabelsSecurityPolicyRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    return setLabelsOperationCallable;
   }
 
   @Override

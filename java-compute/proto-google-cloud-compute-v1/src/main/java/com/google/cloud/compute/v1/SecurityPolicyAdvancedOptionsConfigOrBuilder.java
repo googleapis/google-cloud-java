@@ -27,6 +27,49 @@ public interface SecurityPolicyAdvancedOptionsConfigOrBuilder
    *
    *
    * <pre>
+   * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig json_custom_config = 111570105;
+   * </code>
+   *
+   * @return Whether the jsonCustomConfig field is set.
+   */
+  boolean hasJsonCustomConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig json_custom_config = 111570105;
+   * </code>
+   *
+   * @return The jsonCustomConfig.
+   */
+  com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
+      getJsonCustomConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfig json_custom_config = 111570105;
+   * </code>
+   */
+  com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfigJsonCustomConfigOrBuilder
+      getJsonCustomConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    *
    * Check the JsonParsing enum for the list of possible values.
    * </pre>

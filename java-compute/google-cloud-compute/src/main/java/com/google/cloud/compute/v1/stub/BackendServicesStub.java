@@ -32,11 +32,14 @@ import com.google.cloud.compute.v1.DeleteBackendServiceRequest;
 import com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendServiceRequest;
 import com.google.cloud.compute.v1.GetBackendServiceRequest;
 import com.google.cloud.compute.v1.GetHealthBackendServiceRequest;
+import com.google.cloud.compute.v1.GetIamPolicyBackendServiceRequest;
 import com.google.cloud.compute.v1.InsertBackendServiceRequest;
 import com.google.cloud.compute.v1.ListBackendServicesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchBackendServiceRequest;
+import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetEdgeSecurityPolicyBackendServiceRequest;
+import com.google.cloud.compute.v1.SetIamPolicyBackendServiceRequest;
 import com.google.cloud.compute.v1.SetSecurityPolicyBackendServiceRequest;
 import com.google.cloud.compute.v1.UpdateBackendServiceRequest;
 import javax.annotation.Generated;
@@ -98,6 +101,10 @@ public abstract class BackendServicesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getHealthCallable()");
   }
 
+  public UnaryCallable<GetIamPolicyBackendServiceRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
   public OperationCallable<InsertBackendServiceRequest, Operation, Operation>
       insertOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
@@ -133,6 +140,10 @@ public abstract class BackendServicesStub implements BackgroundResource {
   public UnaryCallable<SetEdgeSecurityPolicyBackendServiceRequest, Operation>
       setEdgeSecurityPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: setEdgeSecurityPolicyCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyBackendServiceRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
   }
 
   public OperationCallable<SetSecurityPolicyBackendServiceRequest, Operation, Operation>

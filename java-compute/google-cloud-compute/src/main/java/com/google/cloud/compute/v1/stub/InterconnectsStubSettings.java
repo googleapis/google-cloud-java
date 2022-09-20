@@ -54,6 +54,7 @@ import com.google.cloud.compute.v1.InterconnectsGetDiagnosticsResponse;
 import com.google.cloud.compute.v1.ListInterconnectsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchInterconnectRequest;
+import com.google.cloud.compute.v1.SetLabelsInterconnectRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -121,6 +122,9 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
   private final UnaryCallSettings<PatchInterconnectRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchInterconnectRequest, Operation, Operation>
       patchOperationSettings;
+  private final UnaryCallSettings<SetLabelsInterconnectRequest, Operation> setLabelsSettings;
+  private final OperationCallSettings<SetLabelsInterconnectRequest, Operation, Operation>
+      setLabelsOperationSettings;
 
   private static final PagedListDescriptor<ListInterconnectsRequest, InterconnectList, Interconnect>
       LIST_PAGE_STR_DESC =
@@ -227,6 +231,17 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
     return patchOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to setLabels. */
+  public UnaryCallSettings<SetLabelsInterconnectRequest, Operation> setLabelsSettings() {
+    return setLabelsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsInterconnectRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return setLabelsOperationSettings;
+  }
+
   public InterconnectsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -312,6 +327,8 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
     listSettings = settingsBuilder.listSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
+    setLabelsSettings = settingsBuilder.setLabelsSettings().build();
+    setLabelsOperationSettings = settingsBuilder.setLabelsOperationSettings().build();
   }
 
   /** Builder for InterconnectsStubSettings. */
@@ -333,6 +350,10 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
     private final UnaryCallSettings.Builder<PatchInterconnectRequest, Operation> patchSettings;
     private final OperationCallSettings.Builder<PatchInterconnectRequest, Operation, Operation>
         patchOperationSettings;
+    private final UnaryCallSettings.Builder<SetLabelsInterconnectRequest, Operation>
+        setLabelsSettings;
+    private final OperationCallSettings.Builder<SetLabelsInterconnectRequest, Operation, Operation>
+        setLabelsOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -392,6 +413,8 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchOperationSettings = OperationCallSettings.newBuilder();
+      setLabelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setLabelsOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -400,7 +423,8 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
               getDiagnosticsSettings,
               insertSettings,
               listSettings,
-              patchSettings);
+              patchSettings,
+              setLabelsSettings);
       initDefaults(this);
     }
 
@@ -416,6 +440,8 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
       listSettings = settings.listSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
+      setLabelsSettings = settings.setLabelsSettings.toBuilder();
+      setLabelsOperationSettings = settings.setLabelsOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -424,7 +450,8 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
               getDiagnosticsSettings,
               insertSettings,
               listSettings,
-              patchSettings);
+              patchSettings,
+              setLabelsSettings);
     }
 
     private static Builder createDefault() {
@@ -468,6 +495,11 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
 
       builder
           .patchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setLabelsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -524,6 +556,30 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
           .setInitialCallSettings(
               UnaryCallSettings
                   .<PatchInterconnectRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setLabelsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetLabelsInterconnectRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -616,6 +672,19 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
     public OperationCallSettings.Builder<PatchInterconnectRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public UnaryCallSettings.Builder<SetLabelsInterconnectRequest, Operation> setLabelsSettings() {
+      return setLabelsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SetLabelsInterconnectRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return setLabelsOperationSettings;
     }
 
     @Override

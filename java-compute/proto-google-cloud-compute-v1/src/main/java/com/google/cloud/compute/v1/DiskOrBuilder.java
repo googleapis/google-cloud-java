@@ -663,6 +663,41 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.DiskParams params = 78313862;</code>
+   *
+   * @return Whether the params field is set.
+   */
+  boolean hasParams();
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.DiskParams params = 78313862;</code>
+   *
+   * @return The params.
+   */
+  com.google.cloud.compute.v1.DiskParams getParams();
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.DiskParams params = 78313862;</code>
+   */
+  com.google.cloud.compute.v1.DiskParamsOrBuilder getParamsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
    * </pre>
    *

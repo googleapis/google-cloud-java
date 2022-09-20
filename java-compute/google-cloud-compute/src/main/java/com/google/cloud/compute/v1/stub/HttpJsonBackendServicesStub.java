@@ -43,12 +43,15 @@ import com.google.cloud.compute.v1.DeleteBackendServiceRequest;
 import com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendServiceRequest;
 import com.google.cloud.compute.v1.GetBackendServiceRequest;
 import com.google.cloud.compute.v1.GetHealthBackendServiceRequest;
+import com.google.cloud.compute.v1.GetIamPolicyBackendServiceRequest;
 import com.google.cloud.compute.v1.InsertBackendServiceRequest;
 import com.google.cloud.compute.v1.ListBackendServicesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchBackendServiceRequest;
+import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetEdgeSecurityPolicyBackendServiceRequest;
+import com.google.cloud.compute.v1.SetIamPolicyBackendServiceRequest;
 import com.google.cloud.compute.v1.SetSecurityPolicyBackendServiceRequest;
 import com.google.cloud.compute.v1.UpdateBackendServiceRequest;
 import com.google.protobuf.TypeRegistry;
@@ -365,6 +368,46 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetIamPolicyBackendServiceRequest, Policy>
+      getIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<GetIamPolicyBackendServiceRequest, Policy>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.BackendServices/GetIamPolicy")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetIamPolicyBackendServiceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/backendServices/{resource}/getIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyBackendServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyBackendServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasOptionsRequestedPolicyVersion()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "optionsRequestedPolicyVersion",
+                                  request.getOptionsRequestedPolicyVersion());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<InsertBackendServiceRequest, Operation>
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertBackendServiceRequest, Operation>newBuilder()
@@ -584,6 +627,46 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<SetIamPolicyBackendServiceRequest, Policy>
+      setIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<SetIamPolicyBackendServiceRequest, Policy>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.BackendServices/SetIamPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetIamPolicyBackendServiceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/backendServices/{resource}/setIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyBackendServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyBackendServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "globalSetPolicyRequestResource",
+                                      request.getGlobalSetPolicyRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<SetSecurityPolicyBackendServiceRequest, Operation>
       setSecurityPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetSecurityPolicyBackendServiceRequest, Operation>newBuilder()
@@ -714,6 +797,7 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
   private final UnaryCallable<GetBackendServiceRequest, BackendService> getCallable;
   private final UnaryCallable<GetHealthBackendServiceRequest, BackendServiceGroupHealth>
       getHealthCallable;
+  private final UnaryCallable<GetIamPolicyBackendServiceRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<InsertBackendServiceRequest, Operation> insertCallable;
   private final OperationCallable<InsertBackendServiceRequest, Operation, Operation>
       insertOperationCallable;
@@ -726,6 +810,7 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
       setEdgeSecurityPolicyCallable;
   private final OperationCallable<SetEdgeSecurityPolicyBackendServiceRequest, Operation, Operation>
       setEdgeSecurityPolicyOperationCallable;
+  private final UnaryCallable<SetIamPolicyBackendServiceRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<SetSecurityPolicyBackendServiceRequest, Operation>
       setSecurityPolicyCallable;
   private final OperationCallable<SetSecurityPolicyBackendServiceRequest, Operation, Operation>
@@ -815,6 +900,11 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                 .setMethodDescriptor(getHealthMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<GetIamPolicyBackendServiceRequest, Policy> getIamPolicyTransportSettings =
+        HttpJsonCallSettings.<GetIamPolicyBackendServiceRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
     HttpJsonCallSettings<InsertBackendServiceRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertBackendServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
@@ -836,6 +926,11 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
                 .setMethodDescriptor(setEdgeSecurityPolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<SetIamPolicyBackendServiceRequest, Policy> setIamPolicyTransportSettings =
+        HttpJsonCallSettings.<SetIamPolicyBackendServiceRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
     HttpJsonCallSettings<SetSecurityPolicyBackendServiceRequest, Operation>
         setSecurityPolicyTransportSettings =
             HttpJsonCallSettings.<SetSecurityPolicyBackendServiceRequest, Operation>newBuilder()
@@ -889,6 +984,9 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
     this.getHealthCallable =
         callableFactory.createUnaryCallable(
             getHealthTransportSettings, settings.getHealthSettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
@@ -924,6 +1022,9 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
             settings.setEdgeSecurityPolicyOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
     this.setSecurityPolicyCallable =
         callableFactory.createUnaryCallable(
             setSecurityPolicyTransportSettings,
@@ -958,10 +1059,12 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
     methodDescriptors.add(deleteSignedUrlKeyMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(getHealthMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
     methodDescriptors.add(setEdgeSecurityPolicyMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(setSecurityPolicyMethodDescriptor);
     methodDescriptors.add(updateMethodDescriptor);
     return methodDescriptors;
@@ -1025,6 +1128,11 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
   }
 
   @Override
+  public UnaryCallable<GetIamPolicyBackendServiceRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  @Override
   public UnaryCallable<InsertBackendServiceRequest, Operation> insertCallable() {
     return insertCallable;
   }
@@ -1066,6 +1174,11 @@ public class HttpJsonBackendServicesStub extends BackendServicesStub {
   public OperationCallable<SetEdgeSecurityPolicyBackendServiceRequest, Operation, Operation>
       setEdgeSecurityPolicyOperationCallable() {
     return setEdgeSecurityPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyBackendServiceRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
   }
 
   @Override

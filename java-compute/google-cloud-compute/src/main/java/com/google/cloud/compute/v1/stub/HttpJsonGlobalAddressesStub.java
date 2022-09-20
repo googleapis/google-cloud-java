@@ -40,6 +40,7 @@ import com.google.cloud.compute.v1.InsertGlobalAddressRequest;
 import com.google.cloud.compute.v1.ListGlobalAddressesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
+import com.google.cloud.compute.v1.SetLabelsGlobalAddressRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -246,6 +247,58 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<SetLabelsGlobalAddressRequest, Operation>
+      setLabelsMethodDescriptor =
+          ApiMethodDescriptor.<SetLabelsGlobalAddressRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.GlobalAddresses/SetLabels")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetLabelsGlobalAddressRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/addresses/{resource}/setLabels",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetLabelsGlobalAddressRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetLabelsGlobalAddressRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "globalSetLabelsRequestResource",
+                                      request.getGlobalSetLabelsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SetLabelsGlobalAddressRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private final UnaryCallable<DeleteGlobalAddressRequest, Operation> deleteCallable;
   private final OperationCallable<DeleteGlobalAddressRequest, Operation, Operation>
       deleteOperationCallable;
@@ -255,6 +308,9 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
       insertOperationCallable;
   private final UnaryCallable<ListGlobalAddressesRequest, AddressList> listCallable;
   private final UnaryCallable<ListGlobalAddressesRequest, ListPagedResponse> listPagedCallable;
+  private final UnaryCallable<SetLabelsGlobalAddressRequest, Operation> setLabelsCallable;
+  private final OperationCallable<SetLabelsGlobalAddressRequest, Operation, Operation>
+      setLabelsOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
@@ -321,6 +377,11 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<SetLabelsGlobalAddressRequest, Operation> setLabelsTransportSettings =
+        HttpJsonCallSettings.<SetLabelsGlobalAddressRequest, Operation>newBuilder()
+            .setMethodDescriptor(setLabelsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
 
     this.deleteCallable =
         callableFactory.createUnaryCallable(
@@ -349,6 +410,15 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
     this.listPagedCallable =
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
+    this.setLabelsCallable =
+        callableFactory.createUnaryCallable(
+            setLabelsTransportSettings, settings.setLabelsSettings(), clientContext);
+    this.setLabelsOperationCallable =
+        callableFactory.createOperationCallable(
+            setLabelsTransportSettings,
+            settings.setLabelsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -361,6 +431,7 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(setLabelsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -399,6 +470,17 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
   @Override
   public UnaryCallable<ListGlobalAddressesRequest, ListPagedResponse> listPagedCallable() {
     return listPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetLabelsGlobalAddressRequest, Operation> setLabelsCallable() {
+    return setLabelsCallable;
+  }
+
+  @Override
+  public OperationCallable<SetLabelsGlobalAddressRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    return setLabelsOperationCallable;
   }
 
   @Override

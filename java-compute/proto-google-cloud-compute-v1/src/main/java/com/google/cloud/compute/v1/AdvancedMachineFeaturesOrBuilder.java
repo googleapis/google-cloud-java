@@ -97,4 +97,29 @@ public interface AdvancedMachineFeaturesOrBuilder
    * @return The threadsPerCore.
    */
   int getThreadsPerCore();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of physical cores to expose to an instance. Multiply by the number of threads per core to compute the total number of virtual CPUs to expose to the instance. If unset, the number of cores is inferred from the instance's nominal CPU count and the underlying platform's SMT width.
+   * </pre>
+   *
+   * <code>optional int32 visible_core_count = 193198684;</code>
+   *
+   * @return Whether the visibleCoreCount field is set.
+   */
+  boolean hasVisibleCoreCount();
+  /**
+   *
+   *
+   * <pre>
+   * The number of physical cores to expose to an instance. Multiply by the number of threads per core to compute the total number of virtual CPUs to expose to the instance. If unset, the number of cores is inferred from the instance's nominal CPU count and the underlying platform's SMT width.
+   * </pre>
+   *
+   * <code>optional int32 visible_core_count = 193198684;</code>
+   *
+   * @return The visibleCoreCount.
+   */
+  int getVisibleCoreCount();
 }

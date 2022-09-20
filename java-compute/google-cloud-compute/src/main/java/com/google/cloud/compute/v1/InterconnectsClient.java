@@ -874,6 +874,143 @@ public class InterconnectsClient implements BackgroundResource {
     return stub.patchCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on an Interconnect. To learn more about labels, read the Labeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
+   *   String project = "project-309310695";
+   *   String resource = "resource-341064690";
+   *   GlobalSetLabelsRequest globalSetLabelsRequestResource =
+   *       GlobalSetLabelsRequest.newBuilder().build();
+   *   Operation response =
+   *       interconnectsClient
+   *           .setLabelsAsync(project, resource, globalSetLabelsRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param resource Name or id of the resource for this request.
+   * @param globalSetLabelsRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> setLabelsAsync(
+      String project, String resource, GlobalSetLabelsRequest globalSetLabelsRequestResource) {
+    SetLabelsInterconnectRequest request =
+        SetLabelsInterconnectRequest.newBuilder()
+            .setProject(project)
+            .setResource(resource)
+            .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
+            .build();
+    return setLabelsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on an Interconnect. To learn more about labels, read the Labeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
+   *   SetLabelsInterconnectRequest request =
+   *       SetLabelsInterconnectRequest.newBuilder()
+   *           .setGlobalSetLabelsRequestResource(GlobalSetLabelsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   Operation response = interconnectsClient.setLabelsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setLabelsAsync(
+      SetLabelsInterconnectRequest request) {
+    return setLabelsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on an Interconnect. To learn more about labels, read the Labeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
+   *   SetLabelsInterconnectRequest request =
+   *       SetLabelsInterconnectRequest.newBuilder()
+   *           .setGlobalSetLabelsRequestResource(GlobalSetLabelsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       interconnectsClient.setLabelsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetLabelsInterconnectRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    return stub.setLabelsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on an Interconnect. To learn more about labels, read the Labeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
+   *   SetLabelsInterconnectRequest request =
+   *       SetLabelsInterconnectRequest.newBuilder()
+   *           .setGlobalSetLabelsRequestResource(GlobalSetLabelsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Operation> future = interconnectsClient.setLabelsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetLabelsInterconnectRequest, Operation> setLabelsCallable() {
+    return stub.setLabelsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();

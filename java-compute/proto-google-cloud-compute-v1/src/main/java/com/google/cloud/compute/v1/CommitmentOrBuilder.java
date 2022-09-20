@@ -303,6 +303,57 @@ public interface CommitmentOrBuilder
    *
    *
    * <pre>
+   * List of source commitments to be merged into a new commitment.
+   * </pre>
+   *
+   * <code>repeated string merge_source_commitments = 188093761;</code>
+   *
+   * @return A list containing the mergeSourceCommitments.
+   */
+  java.util.List<java.lang.String> getMergeSourceCommitmentsList();
+  /**
+   *
+   *
+   * <pre>
+   * List of source commitments to be merged into a new commitment.
+   * </pre>
+   *
+   * <code>repeated string merge_source_commitments = 188093761;</code>
+   *
+   * @return The count of mergeSourceCommitments.
+   */
+  int getMergeSourceCommitmentsCount();
+  /**
+   *
+   *
+   * <pre>
+   * List of source commitments to be merged into a new commitment.
+   * </pre>
+   *
+   * <code>repeated string merge_source_commitments = 188093761;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The mergeSourceCommitments at the given index.
+   */
+  java.lang.String getMergeSourceCommitments(int index);
+  /**
+   *
+   *
+   * <pre>
+   * List of source commitments to be merged into a new commitment.
+   * </pre>
+   *
+   * <code>repeated string merge_source_commitments = 188093761;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the mergeSourceCommitments at the given index.
+   */
+  com.google.protobuf.ByteString getMergeSourceCommitmentsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
@@ -553,6 +604,43 @@ public interface CommitmentOrBuilder
    * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Source commitment to be splitted into a new commitment.
+   * </pre>
+   *
+   * <code>optional string split_source_commitment = 402611156;</code>
+   *
+   * @return Whether the splitSourceCommitment field is set.
+   */
+  boolean hasSplitSourceCommitment();
+  /**
+   *
+   *
+   * <pre>
+   * Source commitment to be splitted into a new commitment.
+   * </pre>
+   *
+   * <code>optional string split_source_commitment = 402611156;</code>
+   *
+   * @return The splitSourceCommitment.
+   */
+  java.lang.String getSplitSourceCommitment();
+  /**
+   *
+   *
+   * <pre>
+   * Source commitment to be splitted into a new commitment.
+   * </pre>
+   *
+   * <code>optional string split_source_commitment = 402611156;</code>
+   *
+   * @return The bytes for splitSourceCommitment.
+   */
+  com.google.protobuf.ByteString getSplitSourceCommitmentBytes();
 
   /**
    *

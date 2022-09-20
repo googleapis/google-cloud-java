@@ -16,11 +16,13 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.SslPoliciesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.SslPoliciesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListSslPoliciesRequest;
 import com.google.cloud.compute.v1.DeleteSslPolicyRequest;
 import com.google.cloud.compute.v1.GetSslPolicyRequest;
 import com.google.cloud.compute.v1.InsertSslPolicyRequest;
@@ -28,6 +30,7 @@ import com.google.cloud.compute.v1.ListAvailableFeaturesSslPoliciesRequest;
 import com.google.cloud.compute.v1.ListSslPoliciesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchSslPolicyRequest;
+import com.google.cloud.compute.v1.SslPoliciesAggregatedList;
 import com.google.cloud.compute.v1.SslPoliciesList;
 import com.google.cloud.compute.v1.SslPoliciesListAvailableFeaturesResponse;
 import com.google.cloud.compute.v1.SslPolicy;
@@ -41,6 +44,16 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public abstract class SslPoliciesStub implements BackgroundResource {
+
+  public UnaryCallable<AggregatedListSslPoliciesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregatedListPagedCallable()");
+  }
+
+  public UnaryCallable<AggregatedListSslPoliciesRequest, SslPoliciesAggregatedList>
+      aggregatedListCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
+  }
 
   public OperationCallable<DeleteSslPolicyRequest, Operation, Operation> deleteOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteOperationCallable()");

@@ -55,6 +55,7 @@ import com.google.cloud.compute.v1.GetAddressRequest;
 import com.google.cloud.compute.v1.InsertAddressRequest;
 import com.google.cloud.compute.v1.ListAddressesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.SetLabelsAddressRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -120,6 +121,9 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
       insertOperationSettings;
   private final PagedCallSettings<ListAddressesRequest, AddressList, ListPagedResponse>
       listSettings;
+  private final UnaryCallSettings<SetLabelsAddressRequest, Operation> setLabelsSettings;
+  private final OperationCallSettings<SetLabelsAddressRequest, Operation, Operation>
+      setLabelsOperationSettings;
 
   private static final PagedListDescriptor<
           AggregatedListAddressesRequest,
@@ -282,6 +286,17 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
     return listSettings;
   }
 
+  /** Returns the object with the settings used for calls to setLabels. */
+  public UnaryCallSettings<SetLabelsAddressRequest, Operation> setLabelsSettings() {
+    return setLabelsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsAddressRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return setLabelsOperationSettings;
+  }
+
   public AddressesStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -364,6 +379,8 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
+    setLabelsSettings = settingsBuilder.setLabelsSettings().build();
+    setLabelsOperationSettings = settingsBuilder.setLabelsOperationSettings().build();
   }
 
   /** Builder for AddressesStubSettings. */
@@ -381,6 +398,9 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
         insertOperationSettings;
     private final PagedCallSettings.Builder<ListAddressesRequest, AddressList, ListPagedResponse>
         listSettings;
+    private final UnaryCallSettings.Builder<SetLabelsAddressRequest, Operation> setLabelsSettings;
+    private final OperationCallSettings.Builder<SetLabelsAddressRequest, Operation, Operation>
+        setLabelsOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -438,10 +458,17 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
+      setLabelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setLabelsOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              aggregatedListSettings, deleteSettings, getSettings, insertSettings, listSettings);
+              aggregatedListSettings,
+              deleteSettings,
+              getSettings,
+              insertSettings,
+              listSettings,
+              setLabelsSettings);
       initDefaults(this);
     }
 
@@ -455,10 +482,17 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
+      setLabelsSettings = settings.setLabelsSettings.toBuilder();
+      setLabelsOperationSettings = settings.setLabelsOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              aggregatedListSettings, deleteSettings, getSettings, insertSettings, listSettings);
+              aggregatedListSettings,
+              deleteSettings,
+              getSettings,
+              insertSettings,
+              listSettings,
+              setLabelsSettings);
     }
 
     private static Builder createDefault() {
@@ -501,6 +535,11 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .setLabelsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .deleteOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -529,6 +568,30 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<InsertAddressRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setLabelsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetLabelsAddressRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -608,6 +671,19 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
     public PagedCallSettings.Builder<ListAddressesRequest, AddressList, ListPagedResponse>
         listSettings() {
       return listSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public UnaryCallSettings.Builder<SetLabelsAddressRequest, Operation> setLabelsSettings() {
+      return setLabelsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SetLabelsAddressRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return setLabelsOperationSettings;
     }
 
     @Override

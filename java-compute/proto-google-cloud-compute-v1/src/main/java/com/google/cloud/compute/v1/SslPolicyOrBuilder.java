@@ -419,6 +419,43 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
+   * [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  boolean hasRegion();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return The region.
+   */
+  java.lang.String getRegion();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return The bytes for region.
+   */
+  com.google.protobuf.ByteString getRegionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *

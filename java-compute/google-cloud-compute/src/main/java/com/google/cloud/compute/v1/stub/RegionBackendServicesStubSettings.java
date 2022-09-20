@@ -49,11 +49,14 @@ import com.google.cloud.compute.v1.BackendServiceGroupHealth;
 import com.google.cloud.compute.v1.BackendServiceList;
 import com.google.cloud.compute.v1.DeleteRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.GetHealthRegionBackendServiceRequest;
+import com.google.cloud.compute.v1.GetIamPolicyRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.GetRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.InsertRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.ListRegionBackendServicesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRegionBackendServiceRequest;
+import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.SetIamPolicyRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.UpdateRegionBackendServiceRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -115,6 +118,8 @@ public class RegionBackendServicesStubSettings
   private final UnaryCallSettings<GetRegionBackendServiceRequest, BackendService> getSettings;
   private final UnaryCallSettings<GetHealthRegionBackendServiceRequest, BackendServiceGroupHealth>
       getHealthSettings;
+  private final UnaryCallSettings<GetIamPolicyRegionBackendServiceRequest, Policy>
+      getIamPolicySettings;
   private final UnaryCallSettings<InsertRegionBackendServiceRequest, Operation> insertSettings;
   private final OperationCallSettings<InsertRegionBackendServiceRequest, Operation, Operation>
       insertOperationSettings;
@@ -124,6 +129,8 @@ public class RegionBackendServicesStubSettings
   private final UnaryCallSettings<PatchRegionBackendServiceRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchRegionBackendServiceRequest, Operation, Operation>
       patchOperationSettings;
+  private final UnaryCallSettings<SetIamPolicyRegionBackendServiceRequest, Policy>
+      setIamPolicySettings;
   private final UnaryCallSettings<UpdateRegionBackendServiceRequest, Operation> updateSettings;
   private final OperationCallSettings<UpdateRegionBackendServiceRequest, Operation, Operation>
       updateOperationSettings;
@@ -211,6 +218,11 @@ public class RegionBackendServicesStubSettings
     return getHealthSettings;
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRegionBackendServiceRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertRegionBackendServiceRequest, Operation> insertSettings() {
     return insertSettings;
@@ -237,6 +249,11 @@ public class RegionBackendServicesStubSettings
   public OperationCallSettings<PatchRegionBackendServiceRequest, Operation, Operation>
       patchOperationSettings() {
     return patchOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRegionBackendServiceRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
   }
 
   /** Returns the object with the settings used for calls to update. */
@@ -330,11 +347,13 @@ public class RegionBackendServicesStubSettings
     deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
     getHealthSettings = settingsBuilder.getHealthSettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     updateSettings = settingsBuilder.updateSettings().build();
     updateOperationSettings = settingsBuilder.updateOperationSettings().build();
   }
@@ -353,6 +372,8 @@ public class RegionBackendServicesStubSettings
     private final UnaryCallSettings.Builder<
             GetHealthRegionBackendServiceRequest, BackendServiceGroupHealth>
         getHealthSettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRegionBackendServiceRequest, Policy>
+        getIamPolicySettings;
     private final UnaryCallSettings.Builder<InsertRegionBackendServiceRequest, Operation>
         insertSettings;
     private final OperationCallSettings.Builder<
@@ -366,6 +387,8 @@ public class RegionBackendServicesStubSettings
     private final OperationCallSettings.Builder<
             PatchRegionBackendServiceRequest, Operation, Operation>
         patchOperationSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRegionBackendServiceRequest, Policy>
+        setIamPolicySettings;
     private final UnaryCallSettings.Builder<UpdateRegionBackendServiceRequest, Operation>
         updateSettings;
     private final OperationCallSettings.Builder<
@@ -425,11 +448,13 @@ public class RegionBackendServicesStubSettings
       deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getHealthSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchOperationSettings = OperationCallSettings.newBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateOperationSettings = OperationCallSettings.newBuilder();
 
@@ -438,9 +463,11 @@ public class RegionBackendServicesStubSettings
               deleteSettings,
               getSettings,
               getHealthSettings,
+              getIamPolicySettings,
               insertSettings,
               listSettings,
               patchSettings,
+              setIamPolicySettings,
               updateSettings);
       initDefaults(this);
     }
@@ -452,11 +479,13 @@ public class RegionBackendServicesStubSettings
       deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
       getHealthSettings = settings.getHealthSettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       updateSettings = settings.updateSettings.toBuilder();
       updateOperationSettings = settings.updateOperationSettings.toBuilder();
 
@@ -465,9 +494,11 @@ public class RegionBackendServicesStubSettings
               deleteSettings,
               getSettings,
               getHealthSettings,
+              getIamPolicySettings,
               insertSettings,
               listSettings,
               patchSettings,
+              setIamPolicySettings,
               updateSettings);
     }
 
@@ -501,6 +532,11 @@ public class RegionBackendServicesStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .insertSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -512,6 +548,11 @@ public class RegionBackendServicesStubSettings
 
       builder
           .patchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setIamPolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -664,6 +705,12 @@ public class RegionBackendServicesStubSettings
       return getHealthSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRegionBackendServiceRequest, Policy>
+        getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertRegionBackendServiceRequest, Operation>
         insertSettings() {
@@ -696,6 +743,12 @@ public class RegionBackendServicesStubSettings
     public OperationCallSettings.Builder<PatchRegionBackendServiceRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRegionBackendServiceRequest, Policy>
+        setIamPolicySettings() {
+      return setIamPolicySettings;
     }
 
     /** Returns the builder for the settings used for calls to update. */

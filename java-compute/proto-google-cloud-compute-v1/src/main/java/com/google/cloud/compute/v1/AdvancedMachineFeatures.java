@@ -75,6 +75,12 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
               enableNestedVirtualization_ = input.readBool();
               break;
             }
+          case 1545589472:
+            {
+              bitField0_ |= 0x00000008;
+              visibleCoreCount_ = input.readInt32();
+              break;
+            }
           case -1619081952:
             {
               bitField0_ |= 0x00000002;
@@ -223,6 +229,39 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     return threadsPerCore_;
   }
 
+  public static final int VISIBLE_CORE_COUNT_FIELD_NUMBER = 193198684;
+  private int visibleCoreCount_;
+  /**
+   *
+   *
+   * <pre>
+   * The number of physical cores to expose to an instance. Multiply by the number of threads per core to compute the total number of virtual CPUs to expose to the instance. If unset, the number of cores is inferred from the instance's nominal CPU count and the underlying platform's SMT width.
+   * </pre>
+   *
+   * <code>optional int32 visible_core_count = 193198684;</code>
+   *
+   * @return Whether the visibleCoreCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasVisibleCoreCount() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The number of physical cores to expose to an instance. Multiply by the number of threads per core to compute the total number of virtual CPUs to expose to the instance. If unset, the number of cores is inferred from the instance's nominal CPU count and the underlying platform's SMT width.
+   * </pre>
+   *
+   * <code>optional int32 visible_core_count = 193198684;</code>
+   *
+   * @return The visibleCoreCount.
+   */
+  @java.lang.Override
+  public int getVisibleCoreCount() {
+    return visibleCoreCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -239,6 +278,9 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(16639365, enableNestedVirtualization_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeInt32(193198684, visibleCoreCount_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(334485668, enableUefiNetworking_);
@@ -259,6 +301,9 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               16639365, enableNestedVirtualization_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(193198684, visibleCoreCount_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
@@ -295,6 +340,10 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     if (hasThreadsPerCore()) {
       if (getThreadsPerCore() != other.getThreadsPerCore()) return false;
     }
+    if (hasVisibleCoreCount() != other.hasVisibleCoreCount()) return false;
+    if (hasVisibleCoreCount()) {
+      if (getVisibleCoreCount() != other.getVisibleCoreCount()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -318,6 +367,10 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     if (hasThreadsPerCore()) {
       hash = (37 * hash) + THREADS_PER_CORE_FIELD_NUMBER;
       hash = (53 * hash) + getThreadsPerCore();
+    }
+    if (hasVisibleCoreCount()) {
+      hash = (37 * hash) + VISIBLE_CORE_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getVisibleCoreCount();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -470,6 +523,8 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       bitField0_ = (bitField0_ & ~0x00000002);
       threadsPerCore_ = 0;
       bitField0_ = (bitField0_ & ~0x00000004);
+      visibleCoreCount_ = 0;
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -510,6 +565,10 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.threadsPerCore_ = threadsPerCore_;
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.visibleCoreCount_ = visibleCoreCount_;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -570,6 +629,9 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
       }
       if (other.hasThreadsPerCore()) {
         setThreadsPerCore(other.getThreadsPerCore());
+      }
+      if (other.hasVisibleCoreCount()) {
+        setVisibleCoreCount(other.getVisibleCoreCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -800,6 +862,73 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
     public Builder clearThreadsPerCore() {
       bitField0_ = (bitField0_ & ~0x00000004);
       threadsPerCore_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int visibleCoreCount_;
+    /**
+     *
+     *
+     * <pre>
+     * The number of physical cores to expose to an instance. Multiply by the number of threads per core to compute the total number of virtual CPUs to expose to the instance. If unset, the number of cores is inferred from the instance's nominal CPU count and the underlying platform's SMT width.
+     * </pre>
+     *
+     * <code>optional int32 visible_core_count = 193198684;</code>
+     *
+     * @return Whether the visibleCoreCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasVisibleCoreCount() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of physical cores to expose to an instance. Multiply by the number of threads per core to compute the total number of virtual CPUs to expose to the instance. If unset, the number of cores is inferred from the instance's nominal CPU count and the underlying platform's SMT width.
+     * </pre>
+     *
+     * <code>optional int32 visible_core_count = 193198684;</code>
+     *
+     * @return The visibleCoreCount.
+     */
+    @java.lang.Override
+    public int getVisibleCoreCount() {
+      return visibleCoreCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of physical cores to expose to an instance. Multiply by the number of threads per core to compute the total number of virtual CPUs to expose to the instance. If unset, the number of cores is inferred from the instance's nominal CPU count and the underlying platform's SMT width.
+     * </pre>
+     *
+     * <code>optional int32 visible_core_count = 193198684;</code>
+     *
+     * @param value The visibleCoreCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVisibleCoreCount(int value) {
+      bitField0_ |= 0x00000008;
+      visibleCoreCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of physical cores to expose to an instance. Multiply by the number of threads per core to compute the total number of virtual CPUs to expose to the instance. If unset, the number of cores is inferred from the instance's nominal CPU count and the underlying platform's SMT width.
+     * </pre>
+     *
+     * <code>optional int32 visible_core_count = 193198684;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVisibleCoreCount() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      visibleCoreCount_ = 0;
       onChanged();
       return this;
     }

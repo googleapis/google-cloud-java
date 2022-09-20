@@ -16,6 +16,7 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.SslPoliciesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.SslPoliciesClient.ListPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -32,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListSslPoliciesRequest;
 import com.google.cloud.compute.v1.DeleteSslPolicyRequest;
 import com.google.cloud.compute.v1.GetSslPolicyRequest;
 import com.google.cloud.compute.v1.InsertSslPolicyRequest;
@@ -40,6 +42,7 @@ import com.google.cloud.compute.v1.ListSslPoliciesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchSslPolicyRequest;
+import com.google.cloud.compute.v1.SslPoliciesAggregatedList;
 import com.google.cloud.compute.v1.SslPoliciesList;
 import com.google.cloud.compute.v1.SslPoliciesListAvailableFeaturesResponse;
 import com.google.cloud.compute.v1.SslPolicy;
@@ -63,6 +66,64 @@ import javax.annotation.Generated;
 public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
+  private static final ApiMethodDescriptor<
+          AggregatedListSslPoliciesRequest, SslPoliciesAggregatedList>
+      aggregatedListMethodDescriptor =
+          ApiMethodDescriptor
+              .<AggregatedListSslPoliciesRequest, SslPoliciesAggregatedList>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.SslPolicies/AggregatedList")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AggregatedListSslPoliciesRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/aggregated/sslPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListSslPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListSslPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
+                            }
+                            if (request.hasIncludeAllScopes()) {
+                              serializer.putQueryParam(
+                                  fields, "includeAllScopes", request.getIncludeAllScopes());
+                            }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SslPoliciesAggregatedList>newBuilder()
+                      .setDefaultInstance(SslPoliciesAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<DeleteSslPolicyRequest, Operation>
       deleteMethodDescriptor =
@@ -357,6 +418,10 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
               })
           .build();
 
+  private final UnaryCallable<AggregatedListSslPoliciesRequest, SslPoliciesAggregatedList>
+      aggregatedListCallable;
+  private final UnaryCallable<AggregatedListSslPoliciesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable;
   private final UnaryCallable<DeleteSslPolicyRequest, Operation> deleteCallable;
   private final OperationCallable<DeleteSslPolicyRequest, Operation, Operation>
       deleteOperationCallable;
@@ -417,6 +482,13 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
     this.httpJsonOperationsStub =
         HttpJsonGlobalOperationsStub.create(clientContext, callableFactory);
 
+    HttpJsonCallSettings<AggregatedListSslPoliciesRequest, SslPoliciesAggregatedList>
+        aggregatedListTransportSettings =
+            HttpJsonCallSettings
+                .<AggregatedListSslPoliciesRequest, SslPoliciesAggregatedList>newBuilder()
+                .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<DeleteSslPolicyRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteSslPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
@@ -452,6 +524,12 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
             .setTypeRegistry(typeRegistry)
             .build();
 
+    this.aggregatedListCallable =
+        callableFactory.createUnaryCallable(
+            aggregatedListTransportSettings, settings.aggregatedListSettings(), clientContext);
+    this.aggregatedListPagedCallable =
+        callableFactory.createPagedCallable(
+            aggregatedListTransportSettings, settings.aggregatedListSettings(), clientContext);
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
@@ -501,6 +579,7 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
   @InternalApi
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(aggregatedListMethodDescriptor);
     methodDescriptors.add(deleteMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
@@ -508,6 +587,18 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
     methodDescriptors.add(listAvailableFeaturesMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
     return methodDescriptors;
+  }
+
+  @Override
+  public UnaryCallable<AggregatedListSslPoliciesRequest, SslPoliciesAggregatedList>
+      aggregatedListCallable() {
+    return aggregatedListCallable;
+  }
+
+  @Override
+  public UnaryCallable<AggregatedListSslPoliciesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
   }
 
   @Override

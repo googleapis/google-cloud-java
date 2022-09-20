@@ -1194,6 +1194,26 @@
  * }
  * }</pre>
  *
+ * <p>======================= RegionSslPoliciesClient =======================
+ *
+ * <p>Service Description: The RegionSslPolicies API.
+ *
+ * <p>Sample for RegionSslPoliciesClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (RegionSslPoliciesClient regionSslPoliciesClient = RegionSslPoliciesClient.create()) {
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String sslPolicy = "sslPolicy618174046";
+ *   SslPolicy response = regionSslPoliciesClient.get(project, region, sslPolicy);
+ * }
+ * }</pre>
+ *
  * <p>======================= RegionTargetHttpProxiesClient =======================
  *
  * <p>Service Description: The RegionTargetHttpProxies API.
@@ -1235,6 +1255,27 @@
  *   String targetHttpsProxy = "targetHttpsProxy833943732";
  *   TargetHttpsProxy response =
  *       regionTargetHttpsProxiesClient.get(project, region, targetHttpsProxy);
+ * }
+ * }</pre>
+ *
+ * <p>======================= RegionTargetTcpProxiesClient =======================
+ *
+ * <p>Service Description: The RegionTargetTcpProxies API.
+ *
+ * <p>Sample for RegionTargetTcpProxiesClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (RegionTargetTcpProxiesClient regionTargetTcpProxiesClient =
+ *     RegionTargetTcpProxiesClient.create()) {
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String targetTcpProxy = "targetTcpProxy-337144898";
+ *   TargetTcpProxy response = regionTargetTcpProxiesClient.get(project, region, targetTcpProxy);
  * }
  * }</pre>
  *

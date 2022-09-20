@@ -371,6 +371,7 @@ public class NodeGroupsClientTest {
             .setName("name3373707")
             .setNodeTemplate("nodeTemplate2118368412")
             .setSelfLink("selfLink1191800166")
+            .setShareSettings(ShareSettings.newBuilder().build())
             .setSize(3530753)
             .setStatus("status-892481550")
             .setZone("zone3744684")

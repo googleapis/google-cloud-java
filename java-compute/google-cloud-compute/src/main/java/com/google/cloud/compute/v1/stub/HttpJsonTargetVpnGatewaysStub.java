@@ -40,6 +40,7 @@ import com.google.cloud.compute.v1.InsertTargetVpnGatewayRequest;
 import com.google.cloud.compute.v1.ListTargetVpnGatewaysRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
+import com.google.cloud.compute.v1.SetLabelsTargetVpnGatewayRequest;
 import com.google.cloud.compute.v1.TargetVpnGateway;
 import com.google.cloud.compute.v1.TargetVpnGatewayAggregatedList;
 import com.google.cloud.compute.v1.TargetVpnGatewayList;
@@ -319,6 +320,63 @@ public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<SetLabelsTargetVpnGatewayRequest, Operation>
+      setLabelsMethodDescriptor =
+          ApiMethodDescriptor.<SetLabelsTargetVpnGatewayRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.TargetVpnGateways/SetLabels")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetLabelsTargetVpnGatewayRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/targetVpnGateways/{resource}/setLabels",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetLabelsTargetVpnGatewayRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetLabelsTargetVpnGatewayRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "regionSetLabelsRequestResource",
+                                      request.getRegionSetLabelsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SetLabelsTargetVpnGatewayRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private final UnaryCallable<
           AggregatedListTargetVpnGatewaysRequest, TargetVpnGatewayAggregatedList>
       aggregatedListCallable;
@@ -333,6 +391,9 @@ public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
       insertOperationCallable;
   private final UnaryCallable<ListTargetVpnGatewaysRequest, TargetVpnGatewayList> listCallable;
   private final UnaryCallable<ListTargetVpnGatewaysRequest, ListPagedResponse> listPagedCallable;
+  private final UnaryCallable<SetLabelsTargetVpnGatewayRequest, Operation> setLabelsCallable;
+  private final OperationCallable<SetLabelsTargetVpnGatewayRequest, Operation, Operation>
+      setLabelsOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
@@ -407,6 +468,11 @@ public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<SetLabelsTargetVpnGatewayRequest, Operation> setLabelsTransportSettings =
+        HttpJsonCallSettings.<SetLabelsTargetVpnGatewayRequest, Operation>newBuilder()
+            .setMethodDescriptor(setLabelsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
 
     this.aggregatedListCallable =
         callableFactory.createUnaryCallable(
@@ -441,6 +507,15 @@ public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
     this.listPagedCallable =
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
+    this.setLabelsCallable =
+        callableFactory.createUnaryCallable(
+            setLabelsTransportSettings, settings.setLabelsSettings(), clientContext);
+    this.setLabelsOperationCallable =
+        callableFactory.createOperationCallable(
+            setLabelsTransportSettings,
+            settings.setLabelsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -454,6 +529,7 @@ public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(setLabelsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -504,6 +580,17 @@ public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
   @Override
   public UnaryCallable<ListTargetVpnGatewaysRequest, ListPagedResponse> listPagedCallable() {
     return listPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetLabelsTargetVpnGatewayRequest, Operation> setLabelsCallable() {
+    return setLabelsCallable;
+  }
+
+  @Override
+  public OperationCallable<SetLabelsTargetVpnGatewayRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    return setLabelsOperationCallable;
   }
 
   @Override
