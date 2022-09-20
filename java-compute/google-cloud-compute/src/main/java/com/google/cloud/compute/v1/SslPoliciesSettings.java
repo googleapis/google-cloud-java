@@ -16,6 +16,7 @@
 
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.SslPoliciesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.SslPoliciesClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -53,16 +54,16 @@ import javax.annotation.Generated;
  * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * SslPoliciesSettings.Builder sslPoliciesSettingsBuilder = SslPoliciesSettings.newBuilder();
  * sslPoliciesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         sslPoliciesSettingsBuilder
- *             .getSettings()
- *             .getRetrySettings()
- *             .toBuilder()
+ *         sslPoliciesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * SslPoliciesSettings sslPoliciesSettings = sslPoliciesSettingsBuilder.build();
@@ -70,6 +71,13 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public class SslPoliciesSettings extends ClientSettings<SslPoliciesSettings> {
+
+  /** Returns the object with the settings used for calls to aggregatedList. */
+  public PagedCallSettings<
+          AggregatedListSslPoliciesRequest, SslPoliciesAggregatedList, AggregatedListPagedResponse>
+      aggregatedListSettings() {
+    return ((SslPoliciesStubSettings) getStubSettings()).aggregatedListSettings();
+  }
 
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteSslPolicyRequest, Operation> deleteSettings() {
@@ -217,6 +225,15 @@ public class SslPoliciesSettings extends ClientSettings<SslPoliciesSettings> {
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregatedList. */
+    public PagedCallSettings.Builder<
+            AggregatedListSslPoliciesRequest,
+            SslPoliciesAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings() {
+      return getStubSettingsBuilder().aggregatedListSettings();
     }
 
     /** Returns the builder for the settings used for calls to delete. */

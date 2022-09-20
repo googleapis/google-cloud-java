@@ -19,6 +19,9 @@
             "DeleteAgentPool": {
               "methods": ["deleteAgentPool", "deleteAgentPool", "deleteAgentPoolCallable"]
             },
+            "DeleteTransferJob": {
+              "methods": ["deleteTransferJob", "deleteTransferJobCallable"]
+            },
             "GetAgentPool": {
               "methods": ["getAgentPool", "getAgentPool", "getAgentPoolCallable"]
             },

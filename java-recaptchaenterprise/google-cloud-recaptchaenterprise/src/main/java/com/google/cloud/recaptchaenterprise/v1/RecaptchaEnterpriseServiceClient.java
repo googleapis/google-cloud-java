@@ -68,8 +68,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
  *     RecaptchaEnterpriseServiceClient.create()) {
  *   ProjectName parent = ProjectName.of("[PROJECT]");
@@ -108,8 +111,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * RecaptchaEnterpriseServiceSettings recaptchaEnterpriseServiceSettings =
  *     RecaptchaEnterpriseServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -121,8 +127,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * RecaptchaEnterpriseServiceSettings recaptchaEnterpriseServiceSettings =
  *     RecaptchaEnterpriseServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
@@ -190,8 +199,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
@@ -221,8 +233,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
@@ -249,8 +264,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   CreateAssessmentRequest request =
@@ -276,8 +294,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   CreateAssessmentRequest request =
@@ -304,8 +325,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   AssessmentName name = AssessmentName.of("[PROJECT]", "[ASSESSMENT]");
@@ -341,8 +365,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   String name = AssessmentName.of("[PROJECT]", "[ASSESSMENT]").toString();
@@ -375,8 +402,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   AnnotateAssessmentRequest request =
@@ -405,8 +435,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   AnnotateAssessmentRequest request =
@@ -434,8 +467,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   CreateKeyRequest request =
@@ -461,8 +497,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   CreateKeyRequest request =
@@ -488,8 +527,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   ListKeysRequest request =
@@ -518,8 +560,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   ListKeysRequest request =
@@ -548,8 +593,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   ListKeysRequest request =
@@ -585,8 +633,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   GetKeyRequest request =
@@ -609,8 +660,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   GetKeyRequest request =
@@ -632,8 +686,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   UpdateKeyRequest request =
@@ -659,8 +716,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   UpdateKeyRequest request =
@@ -686,8 +746,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   DeleteKeyRequest request =
@@ -712,8 +775,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   DeleteKeyRequest request =
@@ -741,8 +807,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   MigrateKeyRequest request =
@@ -770,8 +839,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   MigrateKeyRequest request =
@@ -796,8 +868,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   MetricsName name = MetricsName.of("[PROJECT]", "[KEY]");
@@ -822,8 +897,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   String name = MetricsName.of("[PROJECT]", "[KEY]").toString();
@@ -847,8 +925,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   GetMetricsRequest request =
@@ -873,8 +954,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   GetMetricsRequest request =
@@ -899,8 +983,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
@@ -930,8 +1017,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
@@ -959,8 +1049,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   ListRelatedAccountGroupsRequest request =
@@ -991,8 +1084,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   ListRelatedAccountGroupsRequest request =
@@ -1024,8 +1120,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   ListRelatedAccountGroupsRequest request =
@@ -1062,8 +1161,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   RelatedAccountGroupName parent =
@@ -1097,8 +1199,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   String parent = RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString();
@@ -1129,8 +1234,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   ListRelatedAccountGroupMembershipsRequest request =
@@ -1164,8 +1272,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   ListRelatedAccountGroupMembershipsRequest request =
@@ -1200,8 +1311,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   ListRelatedAccountGroupMembershipsRequest request =
@@ -1243,8 +1357,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   RelatedAccountGroupName project =
@@ -1284,8 +1401,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   String project = RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString();
@@ -1323,8 +1443,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   SearchRelatedAccountGroupMembershipsRequest request =
@@ -1359,8 +1482,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   SearchRelatedAccountGroupMembershipsRequest request =
@@ -1396,8 +1522,11 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   SearchRelatedAccountGroupMembershipsRequest request =

@@ -80,8 +80,11 @@ import org.threeten.bp.Duration;
  * <p>For example, to set the total timeout of getGoogleServiceAccount to 30 seconds:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * StorageTransferServiceStubSettings.Builder storageTransferServiceSettingsBuilder =
  *     StorageTransferServiceStubSettings.newBuilder();
  * storageTransferServiceSettingsBuilder
@@ -127,6 +130,8 @@ public class StorageTransferServiceStubSettings
   private final OperationCallSettings<
           TransferProto.RunTransferJobRequest, Empty, TransferTypes.TransferOperation>
       runTransferJobOperationSettings;
+  private final UnaryCallSettings<TransferProto.DeleteTransferJobRequest, Empty>
+      deleteTransferJobSettings;
   private final UnaryCallSettings<TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>
       createAgentPoolSettings;
   private final UnaryCallSettings<TransferProto.UpdateAgentPoolRequest, TransferTypes.AgentPool>
@@ -355,6 +360,12 @@ public class StorageTransferServiceStubSettings
     return runTransferJobOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to deleteTransferJob. */
+  public UnaryCallSettings<TransferProto.DeleteTransferJobRequest, Empty>
+      deleteTransferJobSettings() {
+    return deleteTransferJobSettings;
+  }
+
   /** Returns the object with the settings used for calls to createAgentPool. */
   public UnaryCallSettings<TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>
       createAgentPoolSettings() {
@@ -502,6 +513,7 @@ public class StorageTransferServiceStubSettings
     resumeTransferOperationSettings = settingsBuilder.resumeTransferOperationSettings().build();
     runTransferJobSettings = settingsBuilder.runTransferJobSettings().build();
     runTransferJobOperationSettings = settingsBuilder.runTransferJobOperationSettings().build();
+    deleteTransferJobSettings = settingsBuilder.deleteTransferJobSettings().build();
     createAgentPoolSettings = settingsBuilder.createAgentPoolSettings().build();
     updateAgentPoolSettings = settingsBuilder.updateAgentPoolSettings().build();
     getAgentPoolSettings = settingsBuilder.getAgentPoolSettings().build();
@@ -539,6 +551,8 @@ public class StorageTransferServiceStubSettings
     private final OperationCallSettings.Builder<
             TransferProto.RunTransferJobRequest, Empty, TransferTypes.TransferOperation>
         runTransferJobOperationSettings;
+    private final UnaryCallSettings.Builder<TransferProto.DeleteTransferJobRequest, Empty>
+        deleteTransferJobSettings;
     private final UnaryCallSettings.Builder<
             TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>
         createAgentPoolSettings;
@@ -562,7 +576,10 @@ public class StorageTransferServiceStubSettings
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "retry_policy_0_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -573,12 +590,23 @@ public class StorageTransferServiceStubSettings
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setRetryDelayMultiplier(2.0)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("no_retry_0_params", settings);
+      definitions.put("retry_policy_0_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -598,6 +626,7 @@ public class StorageTransferServiceStubSettings
       resumeTransferOperationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       runTransferJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       runTransferJobOperationSettings = OperationCallSettings.newBuilder();
+      deleteTransferJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createAgentPoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateAgentPoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getAgentPoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -614,6 +643,7 @@ public class StorageTransferServiceStubSettings
               pauseTransferOperationSettings,
               resumeTransferOperationSettings,
               runTransferJobSettings,
+              deleteTransferJobSettings,
               createAgentPoolSettings,
               updateAgentPoolSettings,
               getAgentPoolSettings,
@@ -634,6 +664,7 @@ public class StorageTransferServiceStubSettings
       resumeTransferOperationSettings = settings.resumeTransferOperationSettings.toBuilder();
       runTransferJobSettings = settings.runTransferJobSettings.toBuilder();
       runTransferJobOperationSettings = settings.runTransferJobOperationSettings.toBuilder();
+      deleteTransferJobSettings = settings.deleteTransferJobSettings.toBuilder();
       createAgentPoolSettings = settings.createAgentPoolSettings.toBuilder();
       updateAgentPoolSettings = settings.updateAgentPoolSettings.toBuilder();
       getAgentPoolSettings = settings.getAgentPoolSettings.toBuilder();
@@ -650,6 +681,7 @@ public class StorageTransferServiceStubSettings
               pauseTransferOperationSettings,
               resumeTransferOperationSettings,
               runTransferJobSettings,
+              deleteTransferJobSettings,
               createAgentPoolSettings,
               updateAgentPoolSettings,
               getAgentPoolSettings,
@@ -686,68 +718,73 @@ public class StorageTransferServiceStubSettings
     private static Builder initDefaults(Builder builder) {
       builder
           .getGoogleServiceAccountSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .createTransferJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .updateTransferJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .getTransferJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listTransferJobsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .pauseTransferOperationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .resumeTransferOperationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .runTransferJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteTransferJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .createAgentPoolSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .updateAgentPoolSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .getAgentPoolSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listAgentPoolsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .deleteAgentPoolSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .runTransferJobOperationSettings()
@@ -755,8 +792,8 @@ public class StorageTransferServiceStubSettings
               UnaryCallSettings
                   .<TransferProto.RunTransferJobRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -854,6 +891,12 @@ public class StorageTransferServiceStubSettings
             TransferProto.RunTransferJobRequest, Empty, TransferTypes.TransferOperation>
         runTransferJobOperationSettings() {
       return runTransferJobOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTransferJob. */
+    public UnaryCallSettings.Builder<TransferProto.DeleteTransferJobRequest, Empty>
+        deleteTransferJobSettings() {
+      return deleteTransferJobSettings;
     }
 
     /** Returns the builder for the settings used for calls to createAgentPool. */

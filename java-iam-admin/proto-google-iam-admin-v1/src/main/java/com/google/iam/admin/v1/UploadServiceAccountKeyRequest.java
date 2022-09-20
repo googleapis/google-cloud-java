@@ -106,14 +106,14 @@ public final class UploadServiceAccountKeyRequest extends com.google.protobuf.Ge
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_UploadServiceAccountKeyRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_UploadServiceAccountKeyRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.iam.admin.v1.UploadServiceAccountKeyRequest.class,
@@ -183,10 +183,10 @@ public final class UploadServiceAccountKeyRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * A field that allows clients to upload their own public key. If set,
-   * use this public key data to create a service account key for given
-   * service account.
-   * Please note, the expected format for this field is X509_PEM.
+   * The public key to associate with the service account. Must be an RSA public
+   * key that is wrapped in an X.509 v3 certificate. Include the first line,
+   * `-----BEGIN CERTIFICATE-----`, and the last line,
+   * `-----END CERTIFICATE-----`.
    * </pre>
    *
    * <code>bytes public_key_data = 2;</code>
@@ -381,14 +381,14 @@ public final class UploadServiceAccountKeyRequest extends com.google.protobuf.Ge
       // @@protoc_insertion_point(builder_implements:google.iam.admin.v1.UploadServiceAccountKeyRequest)
       com.google.iam.admin.v1.UploadServiceAccountKeyRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_UploadServiceAccountKeyRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_UploadServiceAccountKeyRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.iam.admin.v1.UploadServiceAccountKeyRequest.class,
@@ -421,7 +421,7 @@ public final class UploadServiceAccountKeyRequest extends com.google.protobuf.Ge
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_UploadServiceAccountKeyRequest_descriptor;
     }
 
@@ -663,10 +663,10 @@ public final class UploadServiceAccountKeyRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * A field that allows clients to upload their own public key. If set,
-     * use this public key data to create a service account key for given
-     * service account.
-     * Please note, the expected format for this field is X509_PEM.
+     * The public key to associate with the service account. Must be an RSA public
+     * key that is wrapped in an X.509 v3 certificate. Include the first line,
+     * `-----BEGIN CERTIFICATE-----`, and the last line,
+     * `-----END CERTIFICATE-----`.
      * </pre>
      *
      * <code>bytes public_key_data = 2;</code>
@@ -681,10 +681,10 @@ public final class UploadServiceAccountKeyRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * A field that allows clients to upload their own public key. If set,
-     * use this public key data to create a service account key for given
-     * service account.
-     * Please note, the expected format for this field is X509_PEM.
+     * The public key to associate with the service account. Must be an RSA public
+     * key that is wrapped in an X.509 v3 certificate. Include the first line,
+     * `-----BEGIN CERTIFICATE-----`, and the last line,
+     * `-----END CERTIFICATE-----`.
      * </pre>
      *
      * <code>bytes public_key_data = 2;</code>
@@ -705,10 +705,10 @@ public final class UploadServiceAccountKeyRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * A field that allows clients to upload their own public key. If set,
-     * use this public key data to create a service account key for given
-     * service account.
-     * Please note, the expected format for this field is X509_PEM.
+     * The public key to associate with the service account. Must be an RSA public
+     * key that is wrapped in an X.509 v3 certificate. Include the first line,
+     * `-----BEGIN CERTIFICATE-----`, and the last line,
+     * `-----END CERTIFICATE-----`.
      * </pre>
      *
      * <code>bytes public_key_data = 2;</code>

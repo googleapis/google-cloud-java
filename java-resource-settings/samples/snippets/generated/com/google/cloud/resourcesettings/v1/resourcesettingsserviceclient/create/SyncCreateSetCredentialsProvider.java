@@ -16,8 +16,7 @@
 
 package com.google.cloud.resourcesettings.v1.samples;
 
-// [START
-// resourcesettings_v1_generated_resourcesettingsserviceclient_create_setcredentialsprovider_sync]
+// [START resourcesettings_v1_generated_resourcesettingsserviceclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.resourcesettings.v1.ResourceSettingsServiceClient;
 import com.google.cloud.resourcesettings.v1.ResourceSettingsServiceSettings;
@@ -30,8 +29,11 @@ public class SyncCreateSetCredentialsProvider {
   }
 
   public static void syncCreateSetCredentialsProvider() throws Exception {
-    // This snippet has been automatically generated for illustrative purposes only.
-    // It may require modifications to work in your environment.
+    // This snippet has been automatically generated and should be regarded as a code template only.
+    // It will require modifications to work:
+    // - It may require correct/in-range values for request initialization.
+    // - It may require specifying regional endpoints when creating the service client as shown in
+    // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     ResourceSettingsServiceSettings resourceSettingsServiceSettings =
         ResourceSettingsServiceSettings.newBuilder()
             .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -40,5 +42,4 @@ public class SyncCreateSetCredentialsProvider {
         ResourceSettingsServiceClient.create(resourceSettingsServiceSettings);
   }
 }
-// [END
-// resourcesettings_v1_generated_resourcesettingsserviceclient_create_setcredentialsprovider_sync]
+// [END resourcesettings_v1_generated_resourcesettingsserviceclient_create_setcredentialsprovider_sync]

@@ -444,7 +444,8 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("keyRing", request.getKeyRing()))
+                              ProtoRestSerializer.create()
+                                  .toBody("keyRing", request.getKeyRing(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<KeyRing>newBuilder()
@@ -486,7 +487,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("cryptoKey", request.getCryptoKey()))
+                                  .toBody("cryptoKey", request.getCryptoKey(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CryptoKey>newBuilder()
@@ -522,7 +523,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("cryptoKeyVersion", request.getCryptoKeyVersion()))
+                                  .toBody("cryptoKeyVersion", request.getCryptoKeyVersion(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CryptoKeyVersion>newBuilder()
@@ -558,7 +559,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CryptoKeyVersion>newBuilder()
@@ -596,7 +597,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("importJob", request.getImportJob()))
+                                  .toBody("importJob", request.getImportJob(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ImportJob>newBuilder()
@@ -634,7 +635,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("cryptoKey", request.getCryptoKey()))
+                                  .toBody("cryptoKey", request.getCryptoKey(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CryptoKey>newBuilder()
@@ -674,7 +675,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("cryptoKeyVersion", request.getCryptoKeyVersion()))
+                                  .toBody("cryptoKeyVersion", request.getCryptoKeyVersion(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CryptoKeyVersion>newBuilder()
@@ -711,7 +712,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CryptoKey>newBuilder()
@@ -747,7 +748,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CryptoKeyVersion>newBuilder()
@@ -783,7 +784,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CryptoKeyVersion>newBuilder()
@@ -819,7 +820,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<EncryptResponse>newBuilder()
@@ -855,7 +856,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<DecryptResponse>newBuilder()
@@ -891,7 +892,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AsymmetricSignResponse>newBuilder()
@@ -927,7 +928,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AsymmetricDecryptResponse>newBuilder()
@@ -963,7 +964,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<MacSignResponse>newBuilder()
@@ -999,7 +1000,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<MacVerifyResponse>newBuilder()
@@ -1035,7 +1036,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearLocation().build()))
+                                  .toBody("*", request.toBuilder().clearLocation().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<GenerateRandomBytesResponse>newBuilder()
@@ -1075,7 +1076,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -1152,7 +1153,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()

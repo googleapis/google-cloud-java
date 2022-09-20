@@ -26,11 +26,14 @@ import com.google.cloud.compute.v1.BackendServiceGroupHealth;
 import com.google.cloud.compute.v1.BackendServiceList;
 import com.google.cloud.compute.v1.DeleteRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.GetHealthRegionBackendServiceRequest;
+import com.google.cloud.compute.v1.GetIamPolicyRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.GetRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.InsertRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.ListRegionBackendServicesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRegionBackendServiceRequest;
+import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.SetIamPolicyRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.UpdateRegionBackendServiceRequest;
 import javax.annotation.Generated;
 
@@ -61,6 +64,10 @@ public abstract class RegionBackendServicesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getHealthCallable()");
   }
 
+  public UnaryCallable<GetIamPolicyRegionBackendServiceRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
   public OperationCallable<InsertRegionBackendServiceRequest, Operation, Operation>
       insertOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
@@ -85,6 +92,10 @@ public abstract class RegionBackendServicesStub implements BackgroundResource {
 
   public UnaryCallable<PatchRegionBackendServiceRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyRegionBackendServiceRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
   }
 
   public OperationCallable<UpdateRegionBackendServiceRequest, Operation, Operation>

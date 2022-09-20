@@ -43,8 +43,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
  *   String project = "project-309310695";
  *   String address = "address-1147692044";
@@ -82,8 +85,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * GlobalAddressesSettings globalAddressesSettings =
  *     GlobalAddressesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -95,8 +101,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * GlobalAddressesSettings globalAddressesSettings =
  *     GlobalAddressesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * GlobalAddressesClient globalAddressesClient =
@@ -162,8 +171,11 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   String project = "project-309310695";
    *   String address = "address-1147692044";
@@ -188,8 +200,11 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   DeleteGlobalAddressRequest request =
    *       DeleteGlobalAddressRequest.newBuilder()
@@ -218,8 +233,11 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   DeleteGlobalAddressRequest request =
    *       DeleteGlobalAddressRequest.newBuilder()
@@ -246,8 +264,11 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   DeleteGlobalAddressRequest request =
    *       DeleteGlobalAddressRequest.newBuilder()
@@ -273,8 +294,11 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   String project = "project-309310695";
    *   String address = "address-1147692044";
@@ -300,8 +324,11 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   GetGlobalAddressRequest request =
    *       GetGlobalAddressRequest.newBuilder()
@@ -327,8 +354,11 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   GetGlobalAddressRequest request =
    *       GetGlobalAddressRequest.newBuilder()
@@ -352,8 +382,11 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   String project = "project-309310695";
    *   Address addressResource = Address.newBuilder().build();
@@ -382,8 +415,11 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   InsertGlobalAddressRequest request =
    *       InsertGlobalAddressRequest.newBuilder()
@@ -412,8 +448,11 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   InsertGlobalAddressRequest request =
    *       InsertGlobalAddressRequest.newBuilder()
@@ -440,8 +479,11 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   InsertGlobalAddressRequest request =
    *       InsertGlobalAddressRequest.newBuilder()
@@ -466,8 +508,11 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   String project = "project-309310695";
    *   for (Address element : globalAddressesClient.list(project).iterateAll()) {
@@ -492,8 +537,11 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   ListGlobalAddressesRequest request =
    *       ListGlobalAddressesRequest.newBuilder()
@@ -524,8 +572,11 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   ListGlobalAddressesRequest request =
    *       ListGlobalAddressesRequest.newBuilder()
@@ -555,8 +606,11 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   ListGlobalAddressesRequest request =
    *       ListGlobalAddressesRequest.newBuilder()
@@ -584,6 +638,143 @@ public class GlobalAddressesClient implements BackgroundResource {
    */
   public final UnaryCallable<ListGlobalAddressesRequest, AddressList> listCallable() {
     return stub.listCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on a GlobalAddress. To learn more about labels, read the Labeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
+   *   String project = "project-309310695";
+   *   String resource = "resource-341064690";
+   *   GlobalSetLabelsRequest globalSetLabelsRequestResource =
+   *       GlobalSetLabelsRequest.newBuilder().build();
+   *   Operation response =
+   *       globalAddressesClient
+   *           .setLabelsAsync(project, resource, globalSetLabelsRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param resource Name or id of the resource for this request.
+   * @param globalSetLabelsRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> setLabelsAsync(
+      String project, String resource, GlobalSetLabelsRequest globalSetLabelsRequestResource) {
+    SetLabelsGlobalAddressRequest request =
+        SetLabelsGlobalAddressRequest.newBuilder()
+            .setProject(project)
+            .setResource(resource)
+            .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
+            .build();
+    return setLabelsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on a GlobalAddress. To learn more about labels, read the Labeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
+   *   SetLabelsGlobalAddressRequest request =
+   *       SetLabelsGlobalAddressRequest.newBuilder()
+   *           .setGlobalSetLabelsRequestResource(GlobalSetLabelsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   Operation response = globalAddressesClient.setLabelsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setLabelsAsync(
+      SetLabelsGlobalAddressRequest request) {
+    return setLabelsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on a GlobalAddress. To learn more about labels, read the Labeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
+   *   SetLabelsGlobalAddressRequest request =
+   *       SetLabelsGlobalAddressRequest.newBuilder()
+   *           .setGlobalSetLabelsRequestResource(GlobalSetLabelsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       globalAddressesClient.setLabelsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetLabelsGlobalAddressRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    return stub.setLabelsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on a GlobalAddress. To learn more about labels, read the Labeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
+   *   SetLabelsGlobalAddressRequest request =
+   *       SetLabelsGlobalAddressRequest.newBuilder()
+   *           .setGlobalSetLabelsRequestResource(GlobalSetLabelsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Operation> future = globalAddressesClient.setLabelsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetLabelsGlobalAddressRequest, Operation> setLabelsCallable() {
+    return stub.setLabelsCallable();
   }
 
   @Override

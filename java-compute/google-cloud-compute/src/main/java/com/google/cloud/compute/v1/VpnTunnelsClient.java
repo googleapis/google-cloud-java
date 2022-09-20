@@ -44,8 +44,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
  *   String project = "project-309310695";
  *   String region = "region-934795532";
@@ -83,8 +86,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * VpnTunnelsSettings vpnTunnelsSettings =
  *     VpnTunnelsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -95,8 +101,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * VpnTunnelsSettings vpnTunnelsSettings =
  *     VpnTunnelsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create(vpnTunnelsSettings);
@@ -159,8 +168,11 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, VpnTunnelsScopedList> element :
@@ -186,8 +198,11 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   AggregatedListVpnTunnelsRequest request =
    *       AggregatedListVpnTunnelsRequest.newBuilder()
@@ -220,8 +235,11 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   AggregatedListVpnTunnelsRequest request =
    *       AggregatedListVpnTunnelsRequest.newBuilder()
@@ -254,8 +272,11 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   AggregatedListVpnTunnelsRequest request =
    *       AggregatedListVpnTunnelsRequest.newBuilder()
@@ -294,8 +315,11 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -327,8 +351,11 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   DeleteVpnTunnelRequest request =
    *       DeleteVpnTunnelRequest.newBuilder()
@@ -357,8 +384,11 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   DeleteVpnTunnelRequest request =
    *       DeleteVpnTunnelRequest.newBuilder()
@@ -386,8 +416,11 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   DeleteVpnTunnelRequest request =
    *       DeleteVpnTunnelRequest.newBuilder()
@@ -414,8 +447,11 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -447,8 +483,11 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   GetVpnTunnelRequest request =
    *       GetVpnTunnelRequest.newBuilder()
@@ -475,8 +514,11 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   GetVpnTunnelRequest request =
    *       GetVpnTunnelRequest.newBuilder()
@@ -502,8 +544,11 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -536,8 +581,11 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   InsertVpnTunnelRequest request =
    *       InsertVpnTunnelRequest.newBuilder()
@@ -567,8 +615,11 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   InsertVpnTunnelRequest request =
    *       InsertVpnTunnelRequest.newBuilder()
@@ -597,8 +648,11 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   InsertVpnTunnelRequest request =
    *       InsertVpnTunnelRequest.newBuilder()
@@ -624,8 +678,11 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -652,8 +709,11 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   ListVpnTunnelsRequest request =
    *       ListVpnTunnelsRequest.newBuilder()
@@ -685,8 +745,11 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   ListVpnTunnelsRequest request =
    *       ListVpnTunnelsRequest.newBuilder()
@@ -717,8 +780,11 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   ListVpnTunnelsRequest request =
    *       ListVpnTunnelsRequest.newBuilder()
@@ -747,6 +813,155 @@ public class VpnTunnelsClient implements BackgroundResource {
    */
   public final UnaryCallable<ListVpnTunnelsRequest, VpnTunnelList> listCallable() {
     return stub.listCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on a VpnTunnel. To learn more about labels, read the Labeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resource = "resource-341064690";
+   *   RegionSetLabelsRequest regionSetLabelsRequestResource =
+   *       RegionSetLabelsRequest.newBuilder().build();
+   *   Operation response =
+   *       vpnTunnelsClient
+   *           .setLabelsAsync(project, region, resource, regionSetLabelsRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region The region for this request.
+   * @param resource Name or id of the resource for this request.
+   * @param regionSetLabelsRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> setLabelsAsync(
+      String project,
+      String region,
+      String resource,
+      RegionSetLabelsRequest regionSetLabelsRequestResource) {
+    SetLabelsVpnTunnelRequest request =
+        SetLabelsVpnTunnelRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setResource(resource)
+            .setRegionSetLabelsRequestResource(regionSetLabelsRequestResource)
+            .build();
+    return setLabelsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on a VpnTunnel. To learn more about labels, read the Labeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
+   *   SetLabelsVpnTunnelRequest request =
+   *       SetLabelsVpnTunnelRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionSetLabelsRequestResource(RegionSetLabelsRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   Operation response = vpnTunnelsClient.setLabelsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setLabelsAsync(
+      SetLabelsVpnTunnelRequest request) {
+    return setLabelsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on a VpnTunnel. To learn more about labels, read the Labeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
+   *   SetLabelsVpnTunnelRequest request =
+   *       SetLabelsVpnTunnelRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionSetLabelsRequestResource(RegionSetLabelsRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       vpnTunnelsClient.setLabelsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetLabelsVpnTunnelRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    return stub.setLabelsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on a VpnTunnel. To learn more about labels, read the Labeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
+   *   SetLabelsVpnTunnelRequest request =
+   *       SetLabelsVpnTunnelRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionSetLabelsRequestResource(RegionSetLabelsRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Operation> future = vpnTunnelsClient.setLabelsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetLabelsVpnTunnelRequest, Operation> setLabelsCallable() {
+    return stub.setLabelsCallable();
   }
 
   @Override

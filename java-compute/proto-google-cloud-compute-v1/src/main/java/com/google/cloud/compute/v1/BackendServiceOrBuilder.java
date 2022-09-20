@@ -152,6 +152,46 @@ public interface BackendServiceOrBuilder
   com.google.cloud.compute.v1.CircuitBreakersOrBuilder getCircuitBreakersOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Compress text responses using Brotli or gzip compression, based on the client's Accept-Encoding header.
+   * Check the CompressionMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string compression_mode = 95520988;</code>
+   *
+   * @return Whether the compressionMode field is set.
+   */
+  boolean hasCompressionMode();
+  /**
+   *
+   *
+   * <pre>
+   * Compress text responses using Brotli or gzip compression, based on the client's Accept-Encoding header.
+   * Check the CompressionMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string compression_mode = 95520988;</code>
+   *
+   * @return The compressionMode.
+   */
+  java.lang.String getCompressionMode();
+  /**
+   *
+   *
+   * <pre>
+   * Compress text responses using Brotli or gzip compression, based on the client's Accept-Encoding header.
+   * Check the CompressionMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string compression_mode = 95520988;</code>
+   *
+   * @return The bytes for compressionMode.
+   */
+  com.google.protobuf.ByteString getCompressionModeBytes();
+
+  /**
    * <code>optional .google.cloud.compute.v1.ConnectionDraining connection_draining = 461096747;
    * </code>
    *

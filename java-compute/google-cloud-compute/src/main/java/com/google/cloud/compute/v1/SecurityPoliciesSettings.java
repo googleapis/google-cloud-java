@@ -54,17 +54,17 @@ import javax.annotation.Generated;
  * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * SecurityPoliciesSettings.Builder securityPoliciesSettingsBuilder =
  *     SecurityPoliciesSettings.newBuilder();
  * securityPoliciesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         securityPoliciesSettingsBuilder
- *             .getSettings()
- *             .getRetrySettings()
- *             .toBuilder()
+ *         securityPoliciesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * SecurityPoliciesSettings securityPoliciesSettings = securityPoliciesSettingsBuilder.build();
@@ -171,6 +171,17 @@ public class SecurityPoliciesSettings extends ClientSettings<SecurityPoliciesSet
   public OperationCallSettings<RemoveRuleSecurityPolicyRequest, Operation, Operation>
       removeRuleOperationSettings() {
     return ((SecurityPoliciesStubSettings) getStubSettings()).removeRuleOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public UnaryCallSettings<SetLabelsSecurityPolicyRequest, Operation> setLabelsSettings() {
+    return ((SecurityPoliciesStubSettings) getStubSettings()).setLabelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsSecurityPolicyRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return ((SecurityPoliciesStubSettings) getStubSettings()).setLabelsOperationSettings();
   }
 
   public static final SecurityPoliciesSettings create(SecurityPoliciesStubSettings stub)
@@ -372,6 +383,18 @@ public class SecurityPoliciesSettings extends ClientSettings<SecurityPoliciesSet
     public OperationCallSettings.Builder<RemoveRuleSecurityPolicyRequest, Operation, Operation>
         removeRuleOperationSettings() {
       return getStubSettingsBuilder().removeRuleOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public UnaryCallSettings.Builder<SetLabelsSecurityPolicyRequest, Operation>
+        setLabelsSettings() {
+      return getStubSettingsBuilder().setLabelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public OperationCallSettings.Builder<SetLabelsSecurityPolicyRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return getStubSettingsBuilder().setLabelsOperationSettings();
     }
 
     @Override

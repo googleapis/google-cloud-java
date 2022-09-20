@@ -48,8 +48,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (StorageTransferServiceClient storageTransferServiceClient =
  *     StorageTransferServiceClient.create()) {
  *   TransferProto.GetGoogleServiceAccountRequest request =
@@ -91,8 +94,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * StorageTransferServiceSettings storageTransferServiceSettings =
  *     StorageTransferServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -104,8 +110,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * StorageTransferServiceSettings storageTransferServiceSettings =
  *     StorageTransferServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * StorageTransferServiceClient storageTransferServiceClient =
@@ -116,8 +125,11 @@ import javax.annotation.Generated;
  * the wire:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * StorageTransferServiceSettings storageTransferServiceSettings =
  *     StorageTransferServiceSettings.newBuilder()
  *         .setTransportChannelProvider(
@@ -216,8 +228,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.GetGoogleServiceAccountRequest request =
@@ -248,8 +263,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.GetGoogleServiceAccountRequest request =
@@ -276,8 +294,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.CreateTransferJobRequest request =
@@ -303,8 +324,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.CreateTransferJobRequest request =
@@ -337,8 +361,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.UpdateTransferJobRequest request =
@@ -374,8 +401,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.UpdateTransferJobRequest request =
@@ -404,8 +434,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.GetTransferJobRequest request =
@@ -432,8 +465,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.GetTransferJobRequest request =
@@ -460,8 +496,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.ListTransferJobsRequest request =
@@ -492,8 +531,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.ListTransferJobsRequest request =
@@ -523,8 +565,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.ListTransferJobsRequest request =
@@ -562,8 +607,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.PauseTransferOperationRequest request =
@@ -586,8 +634,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.PauseTransferOperationRequest request =
@@ -611,8 +662,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.ResumeTransferOperationRequest request =
@@ -635,8 +689,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.ResumeTransferOperationRequest request =
@@ -662,8 +719,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.RunTransferJobRequest request =
@@ -692,8 +752,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.RunTransferJobRequest request =
@@ -723,8 +786,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.RunTransferJobRequest request =
@@ -746,13 +812,79 @@ public class StorageTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Deletes a transfer job. Deleting a transfer job sets its status to
+   * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageTransferServiceClient storageTransferServiceClient =
+   *     StorageTransferServiceClient.create()) {
+   *   TransferProto.DeleteTransferJobRequest request =
+   *       TransferProto.DeleteTransferJobRequest.newBuilder()
+   *           .setJobName("jobName-1438096408")
+   *           .setProjectId("projectId-894832108")
+   *           .build();
+   *   storageTransferServiceClient.deleteTransferJob(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTransferJob(TransferProto.DeleteTransferJobRequest request) {
+    deleteTransferJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a transfer job. Deleting a transfer job sets its status to
+   * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageTransferServiceClient storageTransferServiceClient =
+   *     StorageTransferServiceClient.create()) {
+   *   TransferProto.DeleteTransferJobRequest request =
+   *       TransferProto.DeleteTransferJobRequest.newBuilder()
+   *           .setJobName("jobName-1438096408")
+   *           .setProjectId("projectId-894832108")
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       storageTransferServiceClient.deleteTransferJobCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TransferProto.DeleteTransferJobRequest, Empty>
+      deleteTransferJobCallable() {
+    return stub.deleteTransferJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates an agent pool resource.
    *
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   String projectId = "projectId-894832108";
@@ -795,8 +927,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.CreateAgentPoolRequest request =
@@ -824,8 +959,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.CreateAgentPoolRequest request =
@@ -853,8 +991,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferTypes.AgentPool agentPool = TransferTypes.AgentPool.newBuilder().build();
@@ -908,8 +1049,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.UpdateAgentPoolRequest request =
@@ -936,8 +1080,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.UpdateAgentPoolRequest request =
@@ -964,8 +1111,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   String name = "name3373707";
@@ -989,8 +1139,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.GetAgentPoolRequest request =
@@ -1013,8 +1166,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.GetAgentPoolRequest request =
@@ -1038,8 +1194,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   String projectId = "projectId-894832108";
@@ -1066,8 +1225,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.ListAgentPoolsRequest request =
@@ -1099,8 +1261,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.ListAgentPoolsRequest request =
@@ -1131,8 +1296,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.ListAgentPoolsRequest request =
@@ -1171,8 +1339,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   String name = "name3373707";
@@ -1196,8 +1367,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.DeleteAgentPoolRequest request =
@@ -1220,8 +1394,11 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageTransferServiceClient storageTransferServiceClient =
    *     StorageTransferServiceClient.create()) {
    *   TransferProto.DeleteAgentPoolRequest request =

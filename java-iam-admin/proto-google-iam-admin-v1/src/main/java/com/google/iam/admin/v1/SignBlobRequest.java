@@ -107,14 +107,14 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_SignBlobRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_SignBlobRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.iam.admin.v1.SignBlobRequest.class,
@@ -141,7 +141,7 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
    * </code>
    *
    * @deprecated google.iam.admin.v1.SignBlobRequest.name is deprecated. See
-   *     google/iam/admin/v1/iam.proto;l=856
+   *     google/iam/admin/v1/iam.proto;l=974
    * @return The name.
    */
   @java.lang.Override
@@ -175,7 +175,7 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
    * </code>
    *
    * @deprecated google.iam.admin.v1.SignBlobRequest.name is deprecated. See
-   *     google/iam/admin/v1/iam.proto;l=856
+   *     google/iam/admin/v1/iam.proto;l=974
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -207,7 +207,7 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
    * </code>
    *
    * @deprecated google.iam.admin.v1.SignBlobRequest.bytes_to_sign is deprecated. See
-   *     google/iam/admin/v1/iam.proto;l=868
+   *     google/iam/admin/v1/iam.proto;l=986
    * @return The bytesToSign.
    */
   @java.lang.Override
@@ -399,14 +399,14 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(builder_implements:google.iam.admin.v1.SignBlobRequest)
       com.google.iam.admin.v1.SignBlobRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_SignBlobRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_SignBlobRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.iam.admin.v1.SignBlobRequest.class,
@@ -439,7 +439,7 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_SignBlobRequest_descriptor;
     }
 
@@ -567,7 +567,7 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * </code>
      *
      * @deprecated google.iam.admin.v1.SignBlobRequest.name is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=856
+     *     google/iam/admin/v1/iam.proto;l=974
      * @return The name.
      */
     @java.lang.Deprecated
@@ -600,7 +600,7 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * </code>
      *
      * @deprecated google.iam.admin.v1.SignBlobRequest.name is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=856
+     *     google/iam/admin/v1/iam.proto;l=974
      * @return The bytes for name.
      */
     @java.lang.Deprecated
@@ -633,7 +633,7 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * </code>
      *
      * @deprecated google.iam.admin.v1.SignBlobRequest.name is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=856
+     *     google/iam/admin/v1/iam.proto;l=974
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -665,7 +665,7 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * </code>
      *
      * @deprecated google.iam.admin.v1.SignBlobRequest.name is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=856
+     *     google/iam/admin/v1/iam.proto;l=974
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -693,7 +693,7 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * </code>
      *
      * @deprecated google.iam.admin.v1.SignBlobRequest.name is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=856
+     *     google/iam/admin/v1/iam.proto;l=974
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -723,7 +723,7 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * </code>
      *
      * @deprecated google.iam.admin.v1.SignBlobRequest.bytes_to_sign is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=868
+     *     google/iam/admin/v1/iam.proto;l=986
      * @return The bytesToSign.
      */
     @java.lang.Override
@@ -744,7 +744,7 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * </code>
      *
      * @deprecated google.iam.admin.v1.SignBlobRequest.bytes_to_sign is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=868
+     *     google/iam/admin/v1/iam.proto;l=986
      * @param value The bytesToSign to set.
      * @return This builder for chaining.
      */
@@ -771,7 +771,7 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * </code>
      *
      * @deprecated google.iam.admin.v1.SignBlobRequest.bytes_to_sign is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=868
+     *     google/iam/admin/v1/iam.proto;l=986
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

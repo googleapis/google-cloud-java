@@ -54,17 +54,17 @@ import javax.annotation.Generated;
  * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * InterconnectAttachmentsSettings.Builder interconnectAttachmentsSettingsBuilder =
  *     InterconnectAttachmentsSettings.newBuilder();
  * interconnectAttachmentsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         interconnectAttachmentsSettingsBuilder
- *             .getSettings()
- *             .getRetrySettings()
- *             .toBuilder()
+ *         interconnectAttachmentsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * InterconnectAttachmentsSettings interconnectAttachmentsSettings =
@@ -127,6 +127,17 @@ public class InterconnectAttachmentsSettings
   public OperationCallSettings<PatchInterconnectAttachmentRequest, Operation, Operation>
       patchOperationSettings() {
     return ((InterconnectAttachmentsStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public UnaryCallSettings<SetLabelsInterconnectAttachmentRequest, Operation> setLabelsSettings() {
+    return ((InterconnectAttachmentsStubSettings) getStubSettings()).setLabelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsInterconnectAttachmentRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return ((InterconnectAttachmentsStubSettings) getStubSettings()).setLabelsOperationSettings();
   }
 
   public static final InterconnectAttachmentsSettings create(
@@ -284,6 +295,19 @@ public class InterconnectAttachmentsSettings
     public OperationCallSettings.Builder<PatchInterconnectAttachmentRequest, Operation, Operation>
         patchOperationSettings() {
       return getStubSettingsBuilder().patchOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public UnaryCallSettings.Builder<SetLabelsInterconnectAttachmentRequest, Operation>
+        setLabelsSettings() {
+      return getStubSettingsBuilder().setLabelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public OperationCallSettings.Builder<
+            SetLabelsInterconnectAttachmentRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return getStubSettingsBuilder().setLabelsOperationSettings();
     }
 
     @Override

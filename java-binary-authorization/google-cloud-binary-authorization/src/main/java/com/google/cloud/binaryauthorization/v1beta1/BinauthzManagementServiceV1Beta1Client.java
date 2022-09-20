@@ -50,8 +50,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
  *     BinauthzManagementServiceV1Beta1Client.create()) {
  *   PolicyName name = PolicyName.ofProjectName("[PROJECT]");
@@ -89,8 +92,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * BinauthzManagementServiceV1Beta1Settings binauthzManagementServiceV1Beta1Settings =
  *     BinauthzManagementServiceV1Beta1Settings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -102,8 +108,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * BinauthzManagementServiceV1Beta1Settings binauthzManagementServiceV1Beta1Settings =
  *     BinauthzManagementServiceV1Beta1Settings.newBuilder().setEndpoint(myEndpoint).build();
  * BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
@@ -114,8 +123,11 @@ import javax.annotation.Generated;
  * the wire:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * BinauthzManagementServiceV1Beta1Settings binauthzManagementServiceV1Beta1Settings =
  *     BinauthzManagementServiceV1Beta1Settings.newBuilder()
  *         .setTransportChannelProvider(
@@ -198,8 +210,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   PolicyName name = PolicyName.ofProjectName("[PROJECT]");
@@ -232,8 +247,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   String name = PolicyName.ofProjectName("[PROJECT]").toString();
@@ -265,8 +283,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   GetPolicyRequest request =
@@ -298,8 +319,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   GetPolicyRequest request =
@@ -328,8 +352,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   Policy policy = Policy.newBuilder().build();
@@ -359,8 +386,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   UpdatePolicyRequest request =
@@ -387,8 +417,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   UpdatePolicyRequest request =
@@ -414,8 +447,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
@@ -456,8 +492,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
@@ -498,8 +537,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   CreateAttestorRequest request =
@@ -529,8 +571,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   CreateAttestorRequest request =
@@ -558,8 +603,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   AttestorName name = AttestorName.of("[PROJECT]", "[ATTESTOR]");
@@ -586,8 +634,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   String name = AttestorName.of("[PROJECT]", "[ATTESTOR]").toString();
@@ -613,8 +664,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   GetAttestorRequest request =
@@ -640,8 +694,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   GetAttestorRequest request =
@@ -667,8 +724,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   Attestor attestor = Attestor.newBuilder().build();
@@ -696,8 +756,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   UpdateAttestorRequest request =
@@ -721,8 +784,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   UpdateAttestorRequest request =
@@ -746,8 +812,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
@@ -779,8 +848,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
@@ -809,8 +881,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   ListAttestorsRequest request =
@@ -841,8 +916,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   ListAttestorsRequest request =
@@ -873,8 +951,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   ListAttestorsRequest request =
@@ -911,8 +992,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   AttestorName name = AttestorName.of("[PROJECT]", "[ATTESTOR]");
@@ -939,8 +1023,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   String name = AttestorName.of("[PROJECT]", "[ATTESTOR]").toString();
@@ -966,8 +1053,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   DeleteAttestorRequest request =
@@ -993,8 +1083,11 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   DeleteAttestorRequest request =

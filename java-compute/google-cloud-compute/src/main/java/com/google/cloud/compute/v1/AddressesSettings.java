@@ -54,16 +54,16 @@ import javax.annotation.Generated;
  * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * AddressesSettings.Builder addressesSettingsBuilder = AddressesSettings.newBuilder();
  * addressesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         addressesSettingsBuilder
- *             .getSettings()
- *             .getRetrySettings()
- *             .toBuilder()
+ *         addressesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AddressesSettings addressesSettings = addressesSettingsBuilder.build();
@@ -109,6 +109,17 @@ public class AddressesSettings extends ClientSettings<AddressesSettings> {
   /** Returns the object with the settings used for calls to list. */
   public PagedCallSettings<ListAddressesRequest, AddressList, ListPagedResponse> listSettings() {
     return ((AddressesStubSettings) getStubSettings()).listSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public UnaryCallSettings<SetLabelsAddressRequest, Operation> setLabelsSettings() {
+    return ((AddressesStubSettings) getStubSettings()).setLabelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsAddressRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return ((AddressesStubSettings) getStubSettings()).setLabelsOperationSettings();
   }
 
   public static final AddressesSettings create(AddressesStubSettings stub) throws IOException {
@@ -246,6 +257,17 @@ public class AddressesSettings extends ClientSettings<AddressesSettings> {
     public PagedCallSettings.Builder<ListAddressesRequest, AddressList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public UnaryCallSettings.Builder<SetLabelsAddressRequest, Operation> setLabelsSettings() {
+      return getStubSettingsBuilder().setLabelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public OperationCallSettings.Builder<SetLabelsAddressRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return getStubSettingsBuilder().setLabelsOperationSettings();
     }
 
     @Override

@@ -48,8 +48,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
  *   ResourceName parent = FolderName.of("[FOLDER]");
  *   for (TagBinding element : tagBindingsClient.listTagBindings(parent).iterateAll()) {
@@ -87,8 +90,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * TagBindingsSettings tagBindingsSettings =
  *     TagBindingsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -99,8 +105,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * TagBindingsSettings tagBindingsSettings =
  *     TagBindingsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * TagBindingsClient tagBindingsClient = TagBindingsClient.create(tagBindingsSettings);
@@ -110,8 +119,11 @@ import javax.annotation.Generated;
  * the wire:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * TagBindingsSettings tagBindingsSettings =
  *     TagBindingsSettings.newBuilder()
  *         .setTransportChannelProvider(
@@ -206,8 +218,11 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   ResourceName parent = FolderName.of("[FOLDER]");
    *   for (TagBinding element : tagBindingsClient.listTagBindings(parent).iterateAll()) {
@@ -238,8 +253,11 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   String parent = FolderName.of("[FOLDER]").toString();
    *   for (TagBinding element : tagBindingsClient.listTagBindings(parent).iterateAll()) {
@@ -267,8 +285,11 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   ListTagBindingsRequest request =
    *       ListTagBindingsRequest.newBuilder()
@@ -299,8 +320,11 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   ListTagBindingsRequest request =
    *       ListTagBindingsRequest.newBuilder()
@@ -332,8 +356,11 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   ListTagBindingsRequest request =
    *       ListTagBindingsRequest.newBuilder()
@@ -370,8 +397,11 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   TagBinding tagBinding = TagBinding.newBuilder().build();
    *   TagBinding response = tagBindingsClient.createTagBindingAsync(tagBinding).get();
@@ -396,8 +426,11 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   CreateTagBindingRequest request =
    *       CreateTagBindingRequest.newBuilder()
@@ -424,8 +457,11 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   CreateTagBindingRequest request =
    *       CreateTagBindingRequest.newBuilder()
@@ -452,8 +488,11 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   CreateTagBindingRequest request =
    *       CreateTagBindingRequest.newBuilder()
@@ -478,8 +517,11 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   TagBindingName name = TagBindingName.of("[TAG_BINDING]");
    *   tagBindingsClient.deleteTagBindingAsync(name).get();
@@ -505,8 +547,11 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   String name = TagBindingName.of("[TAG_BINDING]").toString();
    *   tagBindingsClient.deleteTagBindingAsync(name).get();
@@ -530,8 +575,11 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   DeleteTagBindingRequest request =
    *       DeleteTagBindingRequest.newBuilder()
@@ -556,8 +604,11 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   DeleteTagBindingRequest request =
    *       DeleteTagBindingRequest.newBuilder()
@@ -582,8 +633,11 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   DeleteTagBindingRequest request =
    *       DeleteTagBindingRequest.newBuilder()

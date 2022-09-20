@@ -218,7 +218,8 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("connectionProfile", request.getConnectionProfile()))
+                                  .toBody(
+                                      "connectionProfile", request.getConnectionProfile(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -265,7 +266,8 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("connectionProfile", request.getConnectionProfile()))
+                                  .toBody(
+                                      "connectionProfile", request.getConnectionProfile(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -343,7 +345,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<DiscoverConnectionProfileResponse>newBuilder()
@@ -452,7 +454,8 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("stream", request.getStream()))
+                              ProtoRestSerializer.create()
+                                  .toBody("stream", request.getStream(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -496,7 +499,8 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("stream", request.getStream()))
+                              ProtoRestSerializer.create()
+                                  .toBody("stream", request.getStream(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -605,7 +609,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<StreamObject>newBuilder()
@@ -676,7 +680,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearObject().build()))
+                                  .toBody("*", request.toBuilder().clearObject().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<StartBackfillJobResponse>newBuilder()
@@ -712,7 +716,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearObject().build()))
+                                  .toBody("*", request.toBuilder().clearObject().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<StopBackfillJobResponse>newBuilder()
@@ -786,7 +790,8 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("privateConnection", request.getPrivateConnection()))
+                                  .toBody(
+                                      "privateConnection", request.getPrivateConnection(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -936,7 +941,8 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("route", request.getRoute()))
+                              ProtoRestSerializer.create()
+                                  .toBody("route", request.getRoute(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

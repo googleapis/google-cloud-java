@@ -149,14 +149,13 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.iam.admin.v1.IamProto
-        .internal_static_google_iam_admin_v1_Permission_descriptor;
+    return com.google.iam.admin.v1.Iam.internal_static_google_iam_admin_v1_Permission_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_Permission_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.iam.admin.v1.Permission.class,
@@ -359,7 +358,7 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Permission is fully supported for custom role use.
+     * Default state. Permission is fully supported for custom role use.
      * </pre>
      *
      * <code>SUPPORTED = 0;</code>
@@ -392,7 +391,7 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Permission is fully supported for custom role use.
+     * Default state. Permission is fully supported for custom role use.
      * </pre>
      *
      * <code>SUPPORTED = 0;</code>
@@ -660,7 +659,7 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
    * <code>bool only_in_predefined_roles = 4 [deprecated = true];</code>
    *
    * @deprecated google.iam.admin.v1.Permission.only_in_predefined_roles is deprecated. See
-   *     google/iam/admin/v1/iam.proto;l=1341
+   *     google/iam/admin/v1/iam.proto;l=1450
    * @return The onlyInPredefinedRoles.
    */
   @java.lang.Override
@@ -1053,14 +1052,13 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(builder_implements:google.iam.admin.v1.Permission)
       com.google.iam.admin.v1.PermissionOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.iam.admin.v1.IamProto
-          .internal_static_google_iam_admin_v1_Permission_descriptor;
+      return com.google.iam.admin.v1.Iam.internal_static_google_iam_admin_v1_Permission_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_Permission_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.iam.admin.v1.Permission.class,
@@ -1105,8 +1103,7 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.iam.admin.v1.IamProto
-          .internal_static_google_iam_admin_v1_Permission_descriptor;
+      return com.google.iam.admin.v1.Iam.internal_static_google_iam_admin_v1_Permission_descriptor;
     }
 
     @java.lang.Override
@@ -1568,7 +1565,7 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
      * <code>bool only_in_predefined_roles = 4 [deprecated = true];</code>
      *
      * @deprecated google.iam.admin.v1.Permission.only_in_predefined_roles is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=1341
+     *     google/iam/admin/v1/iam.proto;l=1450
      * @return The onlyInPredefinedRoles.
      */
     @java.lang.Override
@@ -1580,7 +1577,7 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
      * <code>bool only_in_predefined_roles = 4 [deprecated = true];</code>
      *
      * @deprecated google.iam.admin.v1.Permission.only_in_predefined_roles is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=1341
+     *     google/iam/admin/v1/iam.proto;l=1450
      * @param value The onlyInPredefinedRoles to set.
      * @return This builder for chaining.
      */
@@ -1595,7 +1592,7 @@ public final class Permission extends com.google.protobuf.GeneratedMessageV3
      * <code>bool only_in_predefined_roles = 4 [deprecated = true];</code>
      *
      * @deprecated google.iam.admin.v1.Permission.only_in_predefined_roles is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=1341
+     *     google/iam/admin/v1/iam.proto;l=1450
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

@@ -53,16 +53,16 @@ import javax.annotation.Generated;
  * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * InterconnectsSettings.Builder interconnectsSettingsBuilder = InterconnectsSettings.newBuilder();
  * interconnectsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         interconnectsSettingsBuilder
- *             .getSettings()
- *             .getRetrySettings()
- *             .toBuilder()
+ *         interconnectsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * InterconnectsSettings interconnectsSettings = interconnectsSettingsBuilder.build();
@@ -119,6 +119,17 @@ public class InterconnectsSettings extends ClientSettings<InterconnectsSettings>
   public OperationCallSettings<PatchInterconnectRequest, Operation, Operation>
       patchOperationSettings() {
     return ((InterconnectsStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public UnaryCallSettings<SetLabelsInterconnectRequest, Operation> setLabelsSettings() {
+    return ((InterconnectsStubSettings) getStubSettings()).setLabelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsInterconnectRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return ((InterconnectsStubSettings) getStubSettings()).setLabelsOperationSettings();
   }
 
   public static final InterconnectsSettings create(InterconnectsStubSettings stub)
@@ -268,6 +279,17 @@ public class InterconnectsSettings extends ClientSettings<InterconnectsSettings>
     public OperationCallSettings.Builder<PatchInterconnectRequest, Operation, Operation>
         patchOperationSettings() {
       return getStubSettingsBuilder().patchOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public UnaryCallSettings.Builder<SetLabelsInterconnectRequest, Operation> setLabelsSettings() {
+      return getStubSettingsBuilder().setLabelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public OperationCallSettings.Builder<SetLabelsInterconnectRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return getStubSettingsBuilder().setLabelsOperationSettings();
     }
 
     @Override

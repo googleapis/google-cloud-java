@@ -42,8 +42,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
  *   ProjectName projectName = ProjectName.of("[PROJECT]");
  *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(projectName);
@@ -80,8 +83,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * ErrorStatsServiceSettings errorStatsServiceSettings =
  *     ErrorStatsServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -93,8 +99,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * ErrorStatsServiceSettings errorStatsServiceSettings =
  *     ErrorStatsServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ErrorStatsServiceClient errorStatsServiceClient =
@@ -105,8 +114,11 @@ import javax.annotation.Generated;
  * the wire:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * ErrorStatsServiceSettings errorStatsServiceSettings =
  *     ErrorStatsServiceSettings.newBuilder()
  *         .setTransportChannelProvider(
@@ -176,8 +188,11 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
    *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
@@ -219,8 +234,11 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
    *   String projectName = ProjectName.of("[PROJECT]").toString();
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
@@ -262,8 +280,11 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
    *   ListGroupStatsRequest request =
    *       ListGroupStatsRequest.newBuilder()
@@ -298,8 +319,11 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
    *   ListGroupStatsRequest request =
    *       ListGroupStatsRequest.newBuilder()
@@ -335,8 +359,11 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
    *   ListGroupStatsRequest request =
    *       ListGroupStatsRequest.newBuilder()
@@ -379,8 +406,11 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
    *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   String groupId = "groupId293428218";
@@ -414,8 +444,11 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
    *   String projectName = ProjectName.of("[PROJECT]").toString();
    *   String groupId = "groupId293428218";
@@ -446,8 +479,11 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
    *   ListEventsRequest request =
    *       ListEventsRequest.newBuilder()
@@ -478,8 +514,11 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
    *   ListEventsRequest request =
    *       ListEventsRequest.newBuilder()
@@ -510,8 +549,11 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
    *   ListEventsRequest request =
    *       ListEventsRequest.newBuilder()
@@ -548,8 +590,11 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
    *   ProjectName projectName = ProjectName.of("[PROJECT]");
    *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(projectName);
@@ -577,8 +622,11 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
    *   String projectName = ProjectName.of("[PROJECT]").toString();
    *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(projectName);
@@ -604,8 +652,11 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
    *   DeleteEventsRequest request =
    *       DeleteEventsRequest.newBuilder()
@@ -629,8 +680,11 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
    *   DeleteEventsRequest request =
    *       DeleteEventsRequest.newBuilder()

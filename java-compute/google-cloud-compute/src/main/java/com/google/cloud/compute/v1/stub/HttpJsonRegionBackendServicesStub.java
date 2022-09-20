@@ -37,12 +37,15 @@ import com.google.cloud.compute.v1.BackendServiceGroupHealth;
 import com.google.cloud.compute.v1.BackendServiceList;
 import com.google.cloud.compute.v1.DeleteRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.GetHealthRegionBackendServiceRequest;
+import com.google.cloud.compute.v1.GetIamPolicyRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.GetRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.InsertRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.ListRegionBackendServicesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchRegionBackendServiceRequest;
+import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.SetIamPolicyRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.UpdateRegionBackendServiceRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -187,11 +190,53 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "resourceGroupReferenceResource",
-                                      request.getResourceGroupReferenceResource()))
+                                      request.getResourceGroupReferenceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BackendServiceGroupHealth>newBuilder()
                       .setDefaultInstance(BackendServiceGroupHealth.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetIamPolicyRegionBackendServiceRequest, Policy>
+      getIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<GetIamPolicyRegionBackendServiceRequest, Policy>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.RegionBackendServices/GetIamPolicy")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetIamPolicyRegionBackendServiceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/backendServices/{resource}/getIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyRegionBackendServiceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyRegionBackendServiceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasOptionsRequestedPolicyVersion()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "optionsRequestedPolicyVersion",
+                                  request.getOptionsRequestedPolicyVersion());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -229,7 +274,8 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "backendServiceResource",
-                                      request.getBackendServiceResource()))
+                                      request.getBackendServiceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -339,7 +385,8 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "backendServiceResource",
-                                      request.getBackendServiceResource()))
+                                      request.getBackendServiceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -359,6 +406,47 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                         .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
                         .build();
                   })
+              .build();
+
+  private static final ApiMethodDescriptor<SetIamPolicyRegionBackendServiceRequest, Policy>
+      setIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<SetIamPolicyRegionBackendServiceRequest, Policy>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.RegionBackendServices/SetIamPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetIamPolicyRegionBackendServiceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/backendServices/{resource}/setIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyRegionBackendServiceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyRegionBackendServiceRequest>
+                                serializer = ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "regionSetPolicyRequestResource",
+                                      request.getRegionSetPolicyRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
               .build();
 
   private static final ApiMethodDescriptor<UpdateRegionBackendServiceRequest, Operation>
@@ -396,7 +484,8 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "backendServiceResource",
-                                      request.getBackendServiceResource()))
+                                      request.getBackendServiceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -424,6 +513,7 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
   private final UnaryCallable<GetRegionBackendServiceRequest, BackendService> getCallable;
   private final UnaryCallable<GetHealthRegionBackendServiceRequest, BackendServiceGroupHealth>
       getHealthCallable;
+  private final UnaryCallable<GetIamPolicyRegionBackendServiceRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<InsertRegionBackendServiceRequest, Operation> insertCallable;
   private final OperationCallable<InsertRegionBackendServiceRequest, Operation, Operation>
       insertOperationCallable;
@@ -433,6 +523,7 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
   private final UnaryCallable<PatchRegionBackendServiceRequest, Operation> patchCallable;
   private final OperationCallable<PatchRegionBackendServiceRequest, Operation, Operation>
       patchOperationCallable;
+  private final UnaryCallable<SetIamPolicyRegionBackendServiceRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<UpdateRegionBackendServiceRequest, Operation> updateCallable;
   private final OperationCallable<UpdateRegionBackendServiceRequest, Operation, Operation>
       updateOperationCallable;
@@ -499,6 +590,12 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
                 .setMethodDescriptor(getHealthMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<GetIamPolicyRegionBackendServiceRequest, Policy>
+        getIamPolicyTransportSettings =
+            HttpJsonCallSettings.<GetIamPolicyRegionBackendServiceRequest, Policy>newBuilder()
+                .setMethodDescriptor(getIamPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<InsertRegionBackendServiceRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertRegionBackendServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
@@ -515,6 +612,12 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
             .setMethodDescriptor(patchMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<SetIamPolicyRegionBackendServiceRequest, Policy>
+        setIamPolicyTransportSettings =
+            HttpJsonCallSettings.<SetIamPolicyRegionBackendServiceRequest, Policy>newBuilder()
+                .setMethodDescriptor(setIamPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<UpdateRegionBackendServiceRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateRegionBackendServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
@@ -536,6 +639,9 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
     this.getHealthCallable =
         callableFactory.createUnaryCallable(
             getHealthTransportSettings, settings.getHealthSettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
@@ -560,6 +666,9 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
             settings.patchOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
     this.updateCallable =
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
@@ -580,9 +689,11 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
     methodDescriptors.add(deleteMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(getHealthMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(updateMethodDescriptor);
     return methodDescriptors;
   }
@@ -607,6 +718,11 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
   public UnaryCallable<GetHealthRegionBackendServiceRequest, BackendServiceGroupHealth>
       getHealthCallable() {
     return getHealthCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIamPolicyRegionBackendServiceRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
   }
 
   @Override
@@ -639,6 +755,11 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
   public OperationCallable<PatchRegionBackendServiceRequest, Operation, Operation>
       patchOperationCallable() {
     return patchOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyRegionBackendServiceRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
   }
 
   @Override

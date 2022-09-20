@@ -48,8 +48,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
  *   AzureClientName name = AzureClientName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLIENT]");
  *   AzureClient response = azureClustersClient.getAzureClient(name);
@@ -85,8 +88,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * AzureClustersSettings azureClustersSettings =
  *     AzureClustersSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -97,8 +103,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * AzureClustersSettings azureClustersSettings =
  *     AzureClustersSettings.newBuilder().setEndpoint(myEndpoint).build();
  * AzureClustersClient azureClustersClient = AzureClustersClient.create(azureClustersSettings);
@@ -108,8 +117,11 @@ import javax.annotation.Generated;
  * the wire:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * AzureClustersSettings azureClustersSettings =
  *     AzureClustersSettings.newBuilder()
  *         .setTransportChannelProvider(
@@ -210,8 +222,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   AzureClient azureClient = AzureClient.newBuilder().build();
@@ -262,8 +277,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   AzureClient azureClient = AzureClient.newBuilder().build();
@@ -314,8 +332,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   CreateAzureClientRequest request =
    *       CreateAzureClientRequest.newBuilder()
@@ -351,8 +372,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   CreateAzureClientRequest request =
    *       CreateAzureClientRequest.newBuilder()
@@ -388,8 +412,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   CreateAzureClientRequest request =
    *       CreateAzureClientRequest.newBuilder()
@@ -416,8 +443,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   AzureClientName name = AzureClientName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLIENT]");
    *   AzureClient response = azureClustersClient.getAzureClient(name);
@@ -445,8 +475,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   String name = AzureClientName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLIENT]").toString();
    *   AzureClient response = azureClustersClient.getAzureClient(name);
@@ -473,8 +506,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   GetAzureClientRequest request =
    *       GetAzureClientRequest.newBuilder()
@@ -498,8 +534,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   GetAzureClientRequest request =
    *       GetAzureClientRequest.newBuilder()
@@ -524,8 +563,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (AzureClient element : azureClustersClient.listAzureClients(parent).iterateAll()) {
@@ -557,8 +599,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (AzureClient element : azureClustersClient.listAzureClients(parent).iterateAll()) {
@@ -588,8 +633,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   ListAzureClientsRequest request =
    *       ListAzureClientsRequest.newBuilder()
@@ -618,8 +666,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   ListAzureClientsRequest request =
    *       ListAzureClientsRequest.newBuilder()
@@ -649,8 +700,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   ListAzureClientsRequest request =
    *       ListAzureClientsRequest.newBuilder()
@@ -693,8 +747,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   AzureClientName name = AzureClientName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLIENT]");
    *   azureClustersClient.deleteAzureClientAsync(name).get();
@@ -732,8 +789,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   String name = AzureClientName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLIENT]").toString();
    *   azureClustersClient.deleteAzureClientAsync(name).get();
@@ -767,8 +827,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   DeleteAzureClientRequest request =
    *       DeleteAzureClientRequest.newBuilder()
@@ -802,8 +865,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   DeleteAzureClientRequest request =
    *       DeleteAzureClientRequest.newBuilder()
@@ -837,8 +903,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   DeleteAzureClientRequest request =
    *       DeleteAzureClientRequest.newBuilder()
@@ -869,8 +938,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   AzureCluster azureCluster = AzureCluster.newBuilder().build();
@@ -918,8 +990,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   AzureCluster azureCluster = AzureCluster.newBuilder().build();
@@ -967,8 +1042,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   CreateAzureClusterRequest request =
    *       CreateAzureClusterRequest.newBuilder()
@@ -1001,8 +1079,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   CreateAzureClusterRequest request =
    *       CreateAzureClusterRequest.newBuilder()
@@ -1035,8 +1116,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   CreateAzureClusterRequest request =
    *       CreateAzureClusterRequest.newBuilder()
@@ -1063,8 +1147,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   AzureCluster azureCluster = AzureCluster.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1100,8 +1187,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   UpdateAzureClusterRequest request =
    *       UpdateAzureClusterRequest.newBuilder()
@@ -1128,8 +1218,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   UpdateAzureClusterRequest request =
    *       UpdateAzureClusterRequest.newBuilder()
@@ -1156,8 +1249,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   UpdateAzureClusterRequest request =
    *       UpdateAzureClusterRequest.newBuilder()
@@ -1183,8 +1279,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   AzureClusterName name = AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]");
    *   AzureCluster response = azureClustersClient.getAzureCluster(name);
@@ -1212,8 +1311,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   String name = AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]").toString();
    *   AzureCluster response = azureClustersClient.getAzureCluster(name);
@@ -1240,8 +1342,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   GetAzureClusterRequest request =
    *       GetAzureClusterRequest.newBuilder()
@@ -1265,8 +1370,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   GetAzureClusterRequest request =
    *       GetAzureClusterRequest.newBuilder()
@@ -1291,8 +1399,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (AzureCluster element : azureClustersClient.listAzureClusters(parent).iterateAll()) {
@@ -1324,8 +1435,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (AzureCluster element : azureClustersClient.listAzureClusters(parent).iterateAll()) {
@@ -1355,8 +1469,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   ListAzureClustersRequest request =
    *       ListAzureClustersRequest.newBuilder()
@@ -1385,8 +1502,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   ListAzureClustersRequest request =
    *       ListAzureClustersRequest.newBuilder()
@@ -1416,8 +1536,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   ListAzureClustersRequest request =
    *       ListAzureClustersRequest.newBuilder()
@@ -1460,8 +1583,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   AzureClusterName name = AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]");
    *   azureClustersClient.deleteAzureClusterAsync(name).get();
@@ -1499,8 +1625,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   String name = AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]").toString();
    *   azureClustersClient.deleteAzureClusterAsync(name).get();
@@ -1535,8 +1664,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   DeleteAzureClusterRequest request =
    *       DeleteAzureClusterRequest.newBuilder()
@@ -1571,8 +1703,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   DeleteAzureClusterRequest request =
    *       DeleteAzureClusterRequest.newBuilder()
@@ -1607,8 +1742,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   DeleteAzureClusterRequest request =
    *       DeleteAzureClusterRequest.newBuilder()
@@ -1636,8 +1774,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   GenerateAzureAccessTokenRequest request =
    *       GenerateAzureAccessTokenRequest.newBuilder()
@@ -1665,8 +1806,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   GenerateAzureAccessTokenRequest request =
    *       GenerateAzureAccessTokenRequest.newBuilder()
@@ -1697,8 +1841,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   AzureClusterName parent = AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]");
    *   AzureNodePool azureNodePool = AzureNodePool.newBuilder().build();
@@ -1748,8 +1895,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   String parent = AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]").toString();
    *   AzureNodePool azureNodePool = AzureNodePool.newBuilder().build();
@@ -1799,8 +1949,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   CreateAzureNodePoolRequest request =
    *       CreateAzureNodePoolRequest.newBuilder()
@@ -1834,8 +1987,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   CreateAzureNodePoolRequest request =
    *       CreateAzureNodePoolRequest.newBuilder()
@@ -1869,8 +2025,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   CreateAzureNodePoolRequest request =
    *       CreateAzureNodePoolRequest.newBuilder()
@@ -1898,8 +2057,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   AzureNodePool azureNodePool = AzureNodePool.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1934,8 +2096,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   UpdateAzureNodePoolRequest request =
    *       UpdateAzureNodePoolRequest.newBuilder()
@@ -1962,8 +2127,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   UpdateAzureNodePoolRequest request =
    *       UpdateAzureNodePoolRequest.newBuilder()
@@ -1990,8 +2158,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   UpdateAzureNodePoolRequest request =
    *       UpdateAzureNodePoolRequest.newBuilder()
@@ -2017,8 +2188,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   AzureNodePoolName name =
    *       AzureNodePoolName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]", "[AZURE_NODE_POOL]");
@@ -2047,8 +2221,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   String name =
    *       AzureNodePoolName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]", "[AZURE_NODE_POOL]")
@@ -2077,8 +2254,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   GetAzureNodePoolRequest request =
    *       GetAzureNodePoolRequest.newBuilder()
@@ -2105,8 +2285,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   GetAzureNodePoolRequest request =
    *       GetAzureNodePoolRequest.newBuilder()
@@ -2134,8 +2317,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   AzureClusterName parent = AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]");
    *   for (AzureNodePool element : azureClustersClient.listAzureNodePools(parent).iterateAll()) {
@@ -2168,8 +2354,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   String parent = AzureClusterName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]").toString();
    *   for (AzureNodePool element : azureClustersClient.listAzureNodePools(parent).iterateAll()) {
@@ -2200,8 +2389,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   ListAzureNodePoolsRequest request =
    *       ListAzureNodePoolsRequest.newBuilder()
@@ -2232,8 +2424,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   ListAzureNodePoolsRequest request =
    *       ListAzureNodePoolsRequest.newBuilder()
@@ -2264,8 +2459,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   ListAzureNodePoolsRequest request =
    *       ListAzureNodePoolsRequest.newBuilder()
@@ -2306,8 +2504,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   AzureNodePoolName name =
    *       AzureNodePoolName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]", "[AZURE_NODE_POOL]");
@@ -2343,8 +2544,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   String name =
    *       AzureNodePoolName.of("[PROJECT]", "[LOCATION]", "[AZURE_CLUSTER]", "[AZURE_NODE_POOL]")
@@ -2378,8 +2582,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   DeleteAzureNodePoolRequest request =
    *       DeleteAzureNodePoolRequest.newBuilder()
@@ -2414,8 +2621,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   DeleteAzureNodePoolRequest request =
    *       DeleteAzureNodePoolRequest.newBuilder()
@@ -2450,8 +2660,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   DeleteAzureNodePoolRequest request =
    *       DeleteAzureNodePoolRequest.newBuilder()
@@ -2482,8 +2695,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   AzureServerConfigName name = AzureServerConfigName.of("[PROJECT]", "[LOCATION]");
    *   AzureServerConfig response = azureClustersClient.getAzureServerConfig(name);
@@ -2514,8 +2730,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   String name = AzureServerConfigName.of("[PROJECT]", "[LOCATION]").toString();
    *   AzureServerConfig response = azureClustersClient.getAzureServerConfig(name);
@@ -2544,8 +2763,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   GetAzureServerConfigRequest request =
    *       GetAzureServerConfigRequest.newBuilder()
@@ -2570,8 +2792,11 @@ public class AzureClustersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AzureClustersClient azureClustersClient = AzureClustersClient.create()) {
    *   GetAzureServerConfigRequest request =
    *       GetAzureServerConfigRequest.newBuilder()

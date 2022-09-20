@@ -54,17 +54,17 @@ import javax.annotation.Generated;
  * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * BackendServicesSettings.Builder backendServicesSettingsBuilder =
  *     BackendServicesSettings.newBuilder();
  * backendServicesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         backendServicesSettingsBuilder
- *             .getSettings()
- *             .getRetrySettings()
- *             .toBuilder()
+ *         backendServicesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * BackendServicesSettings backendServicesSettings = backendServicesSettingsBuilder.build();
@@ -128,6 +128,11 @@ public class BackendServicesSettings extends ClientSettings<BackendServicesSetti
     return ((BackendServicesStubSettings) getStubSettings()).getHealthSettings();
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyBackendServiceRequest, Policy> getIamPolicySettings() {
+    return ((BackendServicesStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertBackendServiceRequest, Operation> insertSettings() {
     return ((BackendServicesStubSettings) getStubSettings()).insertSettings();
@@ -167,6 +172,11 @@ public class BackendServicesSettings extends ClientSettings<BackendServicesSetti
       setEdgeSecurityPolicyOperationSettings() {
     return ((BackendServicesStubSettings) getStubSettings())
         .setEdgeSecurityPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyBackendServiceRequest, Policy> setIamPolicySettings() {
+    return ((BackendServicesStubSettings) getStubSettings()).setIamPolicySettings();
   }
 
   /** Returns the object with the settings used for calls to setSecurityPolicy. */
@@ -346,6 +356,12 @@ public class BackendServicesSettings extends ClientSettings<BackendServicesSetti
       return getStubSettingsBuilder().getHealthSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyBackendServiceRequest, Policy>
+        getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertBackendServiceRequest, Operation> insertSettings() {
       return getStubSettingsBuilder().insertSettings();
@@ -386,6 +402,12 @@ public class BackendServicesSettings extends ClientSettings<BackendServicesSetti
             SetEdgeSecurityPolicyBackendServiceRequest, Operation, Operation>
         setEdgeSecurityPolicyOperationSettings() {
       return getStubSettingsBuilder().setEdgeSecurityPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyBackendServiceRequest, Policy>
+        setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
     }
 
     /** Returns the builder for the settings used for calls to setSecurityPolicy. */

@@ -62,6 +62,9 @@ import com.google.cloud.aiplatform.v1beta1.CreateFeaturestoreOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateFeaturestoreRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteEntityTypeRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteFeatureRequest;
+import com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest;
+import com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesResponse;
 import com.google.cloud.aiplatform.v1beta1.DeleteFeaturestoreRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.EntityType;
@@ -126,8 +129,11 @@ import org.threeten.bp.Duration;
  * <p>For example, to set the total timeout of getFeaturestore to 30 seconds:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * FeaturestoreServiceStubSettings.Builder featurestoreServiceSettingsBuilder =
  *     FeaturestoreServiceStubSettings.newBuilder();
  * featurestoreServiceSettingsBuilder
@@ -216,6 +222,13 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
           ExportFeatureValuesResponse,
           ExportFeatureValuesOperationMetadata>
       exportFeatureValuesOperationSettings;
+  private final UnaryCallSettings<DeleteFeatureValuesRequest, Operation>
+      deleteFeatureValuesSettings;
+  private final OperationCallSettings<
+          DeleteFeatureValuesRequest,
+          DeleteFeatureValuesResponse,
+          DeleteFeatureValuesOperationMetadata>
+      deleteFeatureValuesOperationSettings;
   private final PagedCallSettings<
           SearchFeaturesRequest, SearchFeaturesResponse, SearchFeaturesPagedResponse>
       searchFeaturesSettings;
@@ -687,6 +700,20 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
     return exportFeatureValuesOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to deleteFeatureValues. */
+  public UnaryCallSettings<DeleteFeatureValuesRequest, Operation> deleteFeatureValuesSettings() {
+    return deleteFeatureValuesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteFeatureValues. */
+  public OperationCallSettings<
+          DeleteFeatureValuesRequest,
+          DeleteFeatureValuesResponse,
+          DeleteFeatureValuesOperationMetadata>
+      deleteFeatureValuesOperationSettings() {
+    return deleteFeatureValuesOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to searchFeatures. */
   public PagedCallSettings<
           SearchFeaturesRequest, SearchFeaturesResponse, SearchFeaturesPagedResponse>
@@ -833,6 +860,9 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
     exportFeatureValuesSettings = settingsBuilder.exportFeatureValuesSettings().build();
     exportFeatureValuesOperationSettings =
         settingsBuilder.exportFeatureValuesOperationSettings().build();
+    deleteFeatureValuesSettings = settingsBuilder.deleteFeatureValuesSettings().build();
+    deleteFeatureValuesOperationSettings =
+        settingsBuilder.deleteFeatureValuesOperationSettings().build();
     searchFeaturesSettings = settingsBuilder.searchFeaturesSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
@@ -922,6 +952,13 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
             ExportFeatureValuesResponse,
             ExportFeatureValuesOperationMetadata>
         exportFeatureValuesOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteFeatureValuesRequest, Operation>
+        deleteFeatureValuesSettings;
+    private final OperationCallSettings.Builder<
+            DeleteFeatureValuesRequest,
+            DeleteFeatureValuesResponse,
+            DeleteFeatureValuesOperationMetadata>
+        deleteFeatureValuesOperationSettings;
     private final PagedCallSettings.Builder<
             SearchFeaturesRequest, SearchFeaturesResponse, SearchFeaturesPagedResponse>
         searchFeaturesSettings;
@@ -1000,6 +1037,8 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
       batchReadFeatureValuesOperationSettings = OperationCallSettings.newBuilder();
       exportFeatureValuesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       exportFeatureValuesOperationSettings = OperationCallSettings.newBuilder();
+      deleteFeatureValuesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteFeatureValuesOperationSettings = OperationCallSettings.newBuilder();
       searchFeaturesSettings = PagedCallSettings.newBuilder(SEARCH_FEATURES_PAGE_STR_FACT);
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1028,6 +1067,7 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
               importFeatureValuesSettings,
               batchReadFeatureValuesSettings,
               exportFeatureValuesSettings,
+              deleteFeatureValuesSettings,
               searchFeaturesSettings,
               listLocationsSettings,
               getLocationSettings,
@@ -1077,6 +1117,9 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
       exportFeatureValuesSettings = settings.exportFeatureValuesSettings.toBuilder();
       exportFeatureValuesOperationSettings =
           settings.exportFeatureValuesOperationSettings.toBuilder();
+      deleteFeatureValuesSettings = settings.deleteFeatureValuesSettings.toBuilder();
+      deleteFeatureValuesOperationSettings =
+          settings.deleteFeatureValuesOperationSettings.toBuilder();
       searchFeaturesSettings = settings.searchFeaturesSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
@@ -1105,6 +1148,7 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
               importFeatureValuesSettings,
               batchReadFeatureValuesSettings,
               exportFeatureValuesSettings,
+              deleteFeatureValuesSettings,
               searchFeaturesSettings,
               listLocationsSettings,
               getLocationSettings,
@@ -1219,6 +1263,11 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
 
       builder
           .exportFeatureValuesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteFeatureValuesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1528,6 +1577,32 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .deleteFeatureValuesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteFeatureValuesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  DeleteFeatureValuesResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  DeleteFeatureValuesOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1760,6 +1835,23 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
             ExportFeatureValuesOperationMetadata>
         exportFeatureValuesOperationSettings() {
       return exportFeatureValuesOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFeatureValues. */
+    public UnaryCallSettings.Builder<DeleteFeatureValuesRequest, Operation>
+        deleteFeatureValuesSettings() {
+      return deleteFeatureValuesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFeatureValues. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            DeleteFeatureValuesRequest,
+            DeleteFeatureValuesResponse,
+            DeleteFeatureValuesOperationMetadata>
+        deleteFeatureValuesOperationSettings() {
+      return deleteFeatureValuesOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to searchFeatures. */

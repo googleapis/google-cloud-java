@@ -42,6 +42,9 @@
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "SetLabels": {
+              "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
             }
           }
         }
@@ -136,6 +139,9 @@
             "GetHealth": {
               "methods": ["getHealth", "getHealth", "getHealthCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
             "Insert": {
               "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
@@ -147,6 +153,9 @@
             },
             "SetEdgeSecurityPolicy": {
               "methods": ["setEdgeSecurityPolicyAsync", "setEdgeSecurityPolicyAsync", "setEdgeSecurityPolicyOperationCallable", "setEdgeSecurityPolicyCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
             },
             "SetSecurityPolicy": {
               "methods": ["setSecurityPolicyAsync", "setSecurityPolicyAsync", "setSecurityPolicyOperationCallable", "setSecurityPolicyCallable"]
@@ -390,6 +399,9 @@
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "SetLabels": {
+              "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
             }
           }
         }
@@ -906,6 +918,9 @@
             },
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "SetLabels": {
+              "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
             }
           }
         }
@@ -948,6 +963,9 @@
             },
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "SetLabels": {
+              "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
             }
           }
         }
@@ -1474,6 +1492,9 @@
             "GetHealth": {
               "methods": ["getHealth", "getHealth", "getHealthCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
             "Insert": {
               "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
             },
@@ -1482,6 +1503,9 @@
             },
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
             },
             "Update": {
               "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
@@ -1892,6 +1916,33 @@
         }
       }
     },
+    "RegionSslPolicies": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RegionSslPoliciesClient",
+          "rpcs": {
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "ListAvailableFeatures": {
+              "methods": ["listAvailableFeatures", "listAvailableFeatures", "listAvailableFeaturesCallable"]
+            },
+            "Patch": {
+              "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            }
+          }
+        }
+      }
+    },
     "RegionTargetHttpProxies": {
       "clients": {
         "grpc": {
@@ -1941,6 +1992,27 @@
             },
             "SetUrlMap": {
               "methods": ["setUrlMapAsync", "setUrlMapAsync", "setUrlMapOperationCallable", "setUrlMapCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RegionTargetTcpProxies": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RegionTargetTcpProxiesClient",
+          "rpcs": {
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
             }
           }
         }
@@ -2160,6 +2232,9 @@
             },
             "RemoveRule": {
               "methods": ["removeRuleAsync", "removeRuleAsync", "removeRuleOperationCallable", "removeRuleCallable"]
+            },
+            "SetLabels": {
+              "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
             }
           }
         }
@@ -2263,6 +2338,9 @@
         "grpc": {
           "libraryClient": "SslPoliciesClient",
           "rpcs": {
+            "AggregatedList": {
+              "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
+            },
             "Delete": {
               "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
@@ -2574,6 +2652,9 @@
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "SetLabels": {
+              "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
             }
           }
         }
@@ -2667,6 +2748,9 @@
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "SetLabels": {
+              "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
             }
           }
         }

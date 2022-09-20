@@ -166,7 +166,7 @@ public class HttpJsonIDSStub extends IDSStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("endpoint", request.getEndpoint()))
+                                  .toBody("endpoint", request.getEndpoint(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

@@ -87,7 +87,8 @@ public class HttpJsonJobsV1Beta3Stub extends JobsV1Beta3Stub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("job", request.getJob()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("job", request.getJob(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Job>newBuilder()
@@ -159,7 +160,8 @@ public class HttpJsonJobsV1Beta3Stub extends JobsV1Beta3Stub {
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request -> ProtoRestSerializer.create().toBody("job", request.getJob()))
+                      request ->
+                          ProtoRestSerializer.create().toBody("job", request.getJob(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Job>newBuilder()
@@ -282,7 +284,8 @@ public class HttpJsonJobsV1Beta3Stub extends JobsV1Beta3Stub {
                                           .clearJobId()
                                           .clearLocation()
                                           .clearProjectId()
-                                          .build()))
+                                          .build(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Snapshot>newBuilder()

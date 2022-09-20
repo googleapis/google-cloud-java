@@ -166,7 +166,7 @@ public class HttpJsonWorkflowsStub extends WorkflowsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("workflow", request.getWorkflow()))
+                                  .toBody("workflow", request.getWorkflow(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -243,7 +243,7 @@ public class HttpJsonWorkflowsStub extends WorkflowsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("workflow", request.getWorkflow()))
+                                  .toBody("workflow", request.getWorkflow(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

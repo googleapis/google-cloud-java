@@ -86,7 +86,8 @@ public class HttpJsonAutoscalingPolicyServiceStub extends AutoscalingPolicyServi
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("policy", request.getPolicy()))
+                              ProtoRestSerializer.create()
+                                  .toBody("policy", request.getPolicy(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AutoscalingPolicy>newBuilder()
@@ -125,7 +126,8 @@ public class HttpJsonAutoscalingPolicyServiceStub extends AutoscalingPolicyServi
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("policy", request.getPolicy()))
+                              ProtoRestSerializer.create()
+                                  .toBody("policy", request.getPolicy(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AutoscalingPolicy>newBuilder()

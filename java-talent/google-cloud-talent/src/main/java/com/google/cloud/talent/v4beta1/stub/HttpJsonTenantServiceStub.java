@@ -85,7 +85,7 @@ public class HttpJsonTenantServiceStub extends TenantServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Tenant>newBuilder()
@@ -153,7 +153,8 @@ public class HttpJsonTenantServiceStub extends TenantServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("*", request.toBuilder().build()))
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Tenant>newBuilder()

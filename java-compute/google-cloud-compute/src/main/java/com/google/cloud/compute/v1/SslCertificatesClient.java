@@ -44,8 +44,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (SslCertificatesClient sslCertificatesClient = SslCertificatesClient.create()) {
  *   String project = "project-309310695";
  *   String sslCertificate = "sslCertificate-1304941589";
@@ -83,8 +86,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * SslCertificatesSettings sslCertificatesSettings =
  *     SslCertificatesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -96,8 +102,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * SslCertificatesSettings sslCertificatesSettings =
  *     SslCertificatesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * SslCertificatesClient sslCertificatesClient =
@@ -164,8 +173,11 @@ public class SslCertificatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslCertificatesClient sslCertificatesClient = SslCertificatesClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, SslCertificatesScopedList> element :
@@ -192,8 +204,11 @@ public class SslCertificatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslCertificatesClient sslCertificatesClient = SslCertificatesClient.create()) {
    *   AggregatedListSslCertificatesRequest request =
    *       AggregatedListSslCertificatesRequest.newBuilder()
@@ -228,8 +243,11 @@ public class SslCertificatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslCertificatesClient sslCertificatesClient = SslCertificatesClient.create()) {
    *   AggregatedListSslCertificatesRequest request =
    *       AggregatedListSslCertificatesRequest.newBuilder()
@@ -263,8 +281,11 @@ public class SslCertificatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslCertificatesClient sslCertificatesClient = SslCertificatesClient.create()) {
    *   AggregatedListSslCertificatesRequest request =
    *       AggregatedListSslCertificatesRequest.newBuilder()
@@ -304,8 +325,11 @@ public class SslCertificatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslCertificatesClient sslCertificatesClient = SslCertificatesClient.create()) {
    *   String project = "project-309310695";
    *   String sslCertificate = "sslCertificate-1304941589";
@@ -334,8 +358,11 @@ public class SslCertificatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslCertificatesClient sslCertificatesClient = SslCertificatesClient.create()) {
    *   DeleteSslCertificateRequest request =
    *       DeleteSslCertificateRequest.newBuilder()
@@ -364,8 +391,11 @@ public class SslCertificatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslCertificatesClient sslCertificatesClient = SslCertificatesClient.create()) {
    *   DeleteSslCertificateRequest request =
    *       DeleteSslCertificateRequest.newBuilder()
@@ -392,8 +422,11 @@ public class SslCertificatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslCertificatesClient sslCertificatesClient = SslCertificatesClient.create()) {
    *   DeleteSslCertificateRequest request =
    *       DeleteSslCertificateRequest.newBuilder()
@@ -419,8 +452,11 @@ public class SslCertificatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslCertificatesClient sslCertificatesClient = SslCertificatesClient.create()) {
    *   String project = "project-309310695";
    *   String sslCertificate = "sslCertificate-1304941589";
@@ -449,8 +485,11 @@ public class SslCertificatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslCertificatesClient sslCertificatesClient = SslCertificatesClient.create()) {
    *   GetSslCertificateRequest request =
    *       GetSslCertificateRequest.newBuilder()
@@ -476,8 +515,11 @@ public class SslCertificatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslCertificatesClient sslCertificatesClient = SslCertificatesClient.create()) {
    *   GetSslCertificateRequest request =
    *       GetSslCertificateRequest.newBuilder()
@@ -502,8 +544,11 @@ public class SslCertificatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslCertificatesClient sslCertificatesClient = SslCertificatesClient.create()) {
    *   String project = "project-309310695";
    *   SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
@@ -533,8 +578,11 @@ public class SslCertificatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslCertificatesClient sslCertificatesClient = SslCertificatesClient.create()) {
    *   InsertSslCertificateRequest request =
    *       InsertSslCertificateRequest.newBuilder()
@@ -564,8 +612,11 @@ public class SslCertificatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslCertificatesClient sslCertificatesClient = SslCertificatesClient.create()) {
    *   InsertSslCertificateRequest request =
    *       InsertSslCertificateRequest.newBuilder()
@@ -593,8 +644,11 @@ public class SslCertificatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslCertificatesClient sslCertificatesClient = SslCertificatesClient.create()) {
    *   InsertSslCertificateRequest request =
    *       InsertSslCertificateRequest.newBuilder()
@@ -619,8 +673,11 @@ public class SslCertificatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslCertificatesClient sslCertificatesClient = SslCertificatesClient.create()) {
    *   String project = "project-309310695";
    *   for (SslCertificate element : sslCertificatesClient.list(project).iterateAll()) {
@@ -645,8 +702,11 @@ public class SslCertificatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslCertificatesClient sslCertificatesClient = SslCertificatesClient.create()) {
    *   ListSslCertificatesRequest request =
    *       ListSslCertificatesRequest.newBuilder()
@@ -677,8 +737,11 @@ public class SslCertificatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslCertificatesClient sslCertificatesClient = SslCertificatesClient.create()) {
    *   ListSslCertificatesRequest request =
    *       ListSslCertificatesRequest.newBuilder()
@@ -709,8 +772,11 @@ public class SslCertificatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslCertificatesClient sslCertificatesClient = SslCertificatesClient.create()) {
    *   ListSslCertificatesRequest request =
    *       ListSslCertificatesRequest.newBuilder()

@@ -54,17 +54,17 @@ import javax.annotation.Generated;
  * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * TargetVpnGatewaysSettings.Builder targetVpnGatewaysSettingsBuilder =
  *     TargetVpnGatewaysSettings.newBuilder();
  * targetVpnGatewaysSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         targetVpnGatewaysSettingsBuilder
- *             .getSettings()
- *             .getRetrySettings()
- *             .toBuilder()
+ *         targetVpnGatewaysSettingsBuilder.getSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TargetVpnGatewaysSettings targetVpnGatewaysSettings = targetVpnGatewaysSettingsBuilder.build();
@@ -113,6 +113,17 @@ public class TargetVpnGatewaysSettings extends ClientSettings<TargetVpnGatewaysS
   public PagedCallSettings<ListTargetVpnGatewaysRequest, TargetVpnGatewayList, ListPagedResponse>
       listSettings() {
     return ((TargetVpnGatewaysStubSettings) getStubSettings()).listSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public UnaryCallSettings<SetLabelsTargetVpnGatewayRequest, Operation> setLabelsSettings() {
+    return ((TargetVpnGatewaysStubSettings) getStubSettings()).setLabelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsTargetVpnGatewayRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return ((TargetVpnGatewaysStubSettings) getStubSettings()).setLabelsOperationSettings();
   }
 
   public static final TargetVpnGatewaysSettings create(TargetVpnGatewaysStubSettings stub)
@@ -254,6 +265,18 @@ public class TargetVpnGatewaysSettings extends ClientSettings<TargetVpnGatewaysS
             ListTargetVpnGatewaysRequest, TargetVpnGatewayList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public UnaryCallSettings.Builder<SetLabelsTargetVpnGatewayRequest, Operation>
+        setLabelsSettings() {
+      return getStubSettingsBuilder().setLabelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public OperationCallSettings.Builder<SetLabelsTargetVpnGatewayRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return getStubSettingsBuilder().setLabelsOperationSettings();
     }
 
     @Override

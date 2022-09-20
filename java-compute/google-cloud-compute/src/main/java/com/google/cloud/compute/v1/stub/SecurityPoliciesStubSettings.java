@@ -63,6 +63,7 @@ import com.google.cloud.compute.v1.SecurityPoliciesScopedList;
 import com.google.cloud.compute.v1.SecurityPolicy;
 import com.google.cloud.compute.v1.SecurityPolicyList;
 import com.google.cloud.compute.v1.SecurityPolicyRule;
+import com.google.cloud.compute.v1.SetLabelsSecurityPolicyRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -92,17 +93,17 @@ import org.threeten.bp.Duration;
  * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * SecurityPoliciesStubSettings.Builder securityPoliciesSettingsBuilder =
  *     SecurityPoliciesStubSettings.newBuilder();
  * securityPoliciesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         securityPoliciesSettingsBuilder
- *             .getSettings()
- *             .getRetrySettings()
- *             .toBuilder()
+ *         securityPoliciesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * SecurityPoliciesStubSettings securityPoliciesSettings = securityPoliciesSettingsBuilder.build();
@@ -149,6 +150,9 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
   private final UnaryCallSettings<RemoveRuleSecurityPolicyRequest, Operation> removeRuleSettings;
   private final OperationCallSettings<RemoveRuleSecurityPolicyRequest, Operation, Operation>
       removeRuleOperationSettings;
+  private final UnaryCallSettings<SetLabelsSecurityPolicyRequest, Operation> setLabelsSettings;
+  private final OperationCallSettings<SetLabelsSecurityPolicyRequest, Operation, Operation>
+      setLabelsOperationSettings;
 
   private static final PagedListDescriptor<
           AggregatedListSecurityPoliciesRequest,
@@ -383,6 +387,17 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
     return removeRuleOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to setLabels. */
+  public UnaryCallSettings<SetLabelsSecurityPolicyRequest, Operation> setLabelsSettings() {
+    return setLabelsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsSecurityPolicyRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return setLabelsOperationSettings;
+  }
+
   public SecurityPoliciesStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -477,6 +492,8 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
     patchRuleOperationSettings = settingsBuilder.patchRuleOperationSettings().build();
     removeRuleSettings = settingsBuilder.removeRuleSettings().build();
     removeRuleOperationSettings = settingsBuilder.removeRuleOperationSettings().build();
+    setLabelsSettings = settingsBuilder.setLabelsSettings().build();
+    setLabelsOperationSettings = settingsBuilder.setLabelsOperationSettings().build();
   }
 
   /** Builder for SecurityPoliciesStubSettings. */
@@ -520,6 +537,11 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
     private final OperationCallSettings.Builder<
             RemoveRuleSecurityPolicyRequest, Operation, Operation>
         removeRuleOperationSettings;
+    private final UnaryCallSettings.Builder<SetLabelsSecurityPolicyRequest, Operation>
+        setLabelsSettings;
+    private final OperationCallSettings.Builder<
+            SetLabelsSecurityPolicyRequest, Operation, Operation>
+        setLabelsOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -587,6 +609,8 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
       patchRuleOperationSettings = OperationCallSettings.newBuilder();
       removeRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       removeRuleOperationSettings = OperationCallSettings.newBuilder();
+      setLabelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setLabelsOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -600,7 +624,8 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
               listPreconfiguredExpressionSetsSettings,
               patchSettings,
               patchRuleSettings,
-              removeRuleSettings);
+              removeRuleSettings,
+              setLabelsSettings);
       initDefaults(this);
     }
 
@@ -625,6 +650,8 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
       patchRuleOperationSettings = settings.patchRuleOperationSettings.toBuilder();
       removeRuleSettings = settings.removeRuleSettings.toBuilder();
       removeRuleOperationSettings = settings.removeRuleOperationSettings.toBuilder();
+      setLabelsSettings = settings.setLabelsSettings.toBuilder();
+      setLabelsOperationSettings = settings.setLabelsOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -638,7 +665,8 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
               listPreconfiguredExpressionSetsSettings,
               patchSettings,
               patchRuleSettings,
-              removeRuleSettings);
+              removeRuleSettings,
+              setLabelsSettings);
     }
 
     private static Builder createDefault() {
@@ -707,6 +735,11 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
 
       builder
           .removeRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setLabelsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -835,6 +868,30 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
           .setInitialCallSettings(
               UnaryCallSettings
                   .<RemoveRuleSecurityPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setLabelsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetLabelsSecurityPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -985,6 +1042,20 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
     public OperationCallSettings.Builder<RemoveRuleSecurityPolicyRequest, Operation, Operation>
         removeRuleOperationSettings() {
       return removeRuleOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public UnaryCallSettings.Builder<SetLabelsSecurityPolicyRequest, Operation>
+        setLabelsSettings() {
+      return setLabelsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SetLabelsSecurityPolicyRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return setLabelsOperationSettings;
     }
 
     @Override

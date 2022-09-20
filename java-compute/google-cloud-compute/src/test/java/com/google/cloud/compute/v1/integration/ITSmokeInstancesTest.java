@@ -72,6 +72,8 @@ public class ITSmokeInstancesTest extends BaseTest {
     instances = new ArrayList<>();
     InstancesSettings instanceSettings = InstancesSettings.newBuilder().build();
     instancesClient = InstancesClient.create(instanceSettings);
+
+    Util.cleanUpComputeInstances(instancesClient, DEFAULT_PROJECT, DEFAULT_ZONE, COMPUTE_PREFIX);
   }
 
   @Before
@@ -82,7 +84,7 @@ public class ITSmokeInstancesTest extends BaseTest {
   @AfterClass
   public static void tearDown() throws ExecutionException, InterruptedException {
     for (Instance instance : instances) {
-      instancesClient.deleteAsync(DEFAULT_PROJECT, DEFAULT_ZONE, instance.getName()).get();
+      instancesClient.deleteAsync(DEFAULT_PROJECT, DEFAULT_ZONE, instance.getName());
     }
     instancesClient.close();
   }

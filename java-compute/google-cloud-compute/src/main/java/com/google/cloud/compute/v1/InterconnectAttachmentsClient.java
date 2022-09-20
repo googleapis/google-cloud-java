@@ -44,8 +44,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
  *     InterconnectAttachmentsClient.create()) {
  *   String project = "project-309310695";
@@ -86,8 +89,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * InterconnectAttachmentsSettings interconnectAttachmentsSettings =
  *     InterconnectAttachmentsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -99,8 +105,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * InterconnectAttachmentsSettings interconnectAttachmentsSettings =
  *     InterconnectAttachmentsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * InterconnectAttachmentsClient interconnectAttachmentsClient =
@@ -167,8 +176,11 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   String project = "project-309310695";
@@ -195,8 +207,11 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   AggregatedListInterconnectAttachmentsRequest request =
@@ -231,8 +246,11 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   AggregatedListInterconnectAttachmentsRequest request =
@@ -268,8 +286,11 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   AggregatedListInterconnectAttachmentsRequest request =
@@ -312,8 +333,11 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   String project = "project-309310695";
@@ -347,8 +371,11 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   DeleteInterconnectAttachmentRequest request =
@@ -379,8 +406,11 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   DeleteInterconnectAttachmentRequest request =
@@ -409,8 +439,11 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   DeleteInterconnectAttachmentRequest request =
@@ -438,8 +471,11 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   String project = "project-309310695";
@@ -473,8 +509,11 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   GetInterconnectAttachmentRequest request =
@@ -501,8 +540,11 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   GetInterconnectAttachmentRequest request =
@@ -531,8 +573,11 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   String project = "project-309310695";
@@ -570,8 +615,11 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   InsertInterconnectAttachmentRequest request =
@@ -604,8 +652,11 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   InsertInterconnectAttachmentRequest request =
@@ -636,8 +687,11 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   InsertInterconnectAttachmentRequest request =
@@ -666,8 +720,11 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   String project = "project-309310695";
@@ -699,8 +756,11 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   ListInterconnectAttachmentsRequest request =
@@ -734,8 +794,11 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   ListInterconnectAttachmentsRequest request =
@@ -769,8 +832,11 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   ListInterconnectAttachmentsRequest request =
@@ -812,8 +878,11 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   String project = "project-309310695";
@@ -857,8 +926,11 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   PatchInterconnectAttachmentRequest request =
@@ -891,8 +963,11 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   PatchInterconnectAttachmentRequest request =
@@ -923,8 +998,11 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   PatchInterconnectAttachmentRequest request =
@@ -944,6 +1022,161 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    */
   public final UnaryCallable<PatchInterconnectAttachmentRequest, Operation> patchCallable() {
     return stub.patchCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on an InterconnectAttachment. To learn more about labels, read the Labeling
+   * Resources documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
+   *     InterconnectAttachmentsClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resource = "resource-341064690";
+   *   RegionSetLabelsRequest regionSetLabelsRequestResource =
+   *       RegionSetLabelsRequest.newBuilder().build();
+   *   Operation response =
+   *       interconnectAttachmentsClient
+   *           .setLabelsAsync(project, region, resource, regionSetLabelsRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region The region for this request.
+   * @param resource Name or id of the resource for this request.
+   * @param regionSetLabelsRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> setLabelsAsync(
+      String project,
+      String region,
+      String resource,
+      RegionSetLabelsRequest regionSetLabelsRequestResource) {
+    SetLabelsInterconnectAttachmentRequest request =
+        SetLabelsInterconnectAttachmentRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setResource(resource)
+            .setRegionSetLabelsRequestResource(regionSetLabelsRequestResource)
+            .build();
+    return setLabelsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on an InterconnectAttachment. To learn more about labels, read the Labeling
+   * Resources documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
+   *     InterconnectAttachmentsClient.create()) {
+   *   SetLabelsInterconnectAttachmentRequest request =
+   *       SetLabelsInterconnectAttachmentRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionSetLabelsRequestResource(RegionSetLabelsRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   Operation response = interconnectAttachmentsClient.setLabelsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setLabelsAsync(
+      SetLabelsInterconnectAttachmentRequest request) {
+    return setLabelsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on an InterconnectAttachment. To learn more about labels, read the Labeling
+   * Resources documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
+   *     InterconnectAttachmentsClient.create()) {
+   *   SetLabelsInterconnectAttachmentRequest request =
+   *       SetLabelsInterconnectAttachmentRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionSetLabelsRequestResource(RegionSetLabelsRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       interconnectAttachmentsClient.setLabelsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetLabelsInterconnectAttachmentRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    return stub.setLabelsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on an InterconnectAttachment. To learn more about labels, read the Labeling
+   * Resources documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
+   *     InterconnectAttachmentsClient.create()) {
+   *   SetLabelsInterconnectAttachmentRequest request =
+   *       SetLabelsInterconnectAttachmentRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionSetLabelsRequestResource(RegionSetLabelsRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       interconnectAttachmentsClient.setLabelsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetLabelsInterconnectAttachmentRequest, Operation>
+      setLabelsCallable() {
+    return stub.setLabelsCallable();
   }
 
   @Override

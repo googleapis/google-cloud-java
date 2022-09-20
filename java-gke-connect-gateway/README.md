@@ -22,20 +22,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-gke-connect-gateway</artifactId>
-  <version>0.4.3</version>
+  <version>0.4.4</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-gke-connect-gateway:0.4.3'
+implementation 'com.google.cloud:google-cloud-gke-connect-gateway:0.4.4'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-gke-connect-gateway" % "0.4.3"
+libraryDependencies += "com.google.cloud" % "google-cloud-gke-connect-gateway" % "0.4.4"
 ```
 
 ## Authentication

@@ -176,7 +176,7 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("instance", request.getInstance()))
+                                  .toBody("instance", request.getInstance(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -217,7 +217,7 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("instance", request.getInstance()))
+                                  .toBody("instance", request.getInstance(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -256,7 +256,7 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -400,7 +400,8 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("backup", request.getBackup()))
+                              ProtoRestSerializer.create()
+                                  .toBody("backup", request.getBackup(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -476,7 +477,8 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("backup", request.getBackup()))
+                              ProtoRestSerializer.create()
+                                  .toBody("backup", request.getBackup(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

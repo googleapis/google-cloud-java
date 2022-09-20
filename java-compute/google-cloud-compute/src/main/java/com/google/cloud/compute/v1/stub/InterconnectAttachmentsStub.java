@@ -32,6 +32,7 @@ import com.google.cloud.compute.v1.InterconnectAttachmentList;
 import com.google.cloud.compute.v1.ListInterconnectAttachmentsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchInterconnectAttachmentRequest;
+import com.google.cloud.compute.v1.SetLabelsInterconnectAttachmentRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -92,6 +93,15 @@ public abstract class InterconnectAttachmentsStub implements BackgroundResource 
 
   public UnaryCallable<PatchInterconnectAttachmentRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public OperationCallable<SetLabelsInterconnectAttachmentRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setLabelsOperationCallable()");
+  }
+
+  public UnaryCallable<SetLabelsInterconnectAttachmentRequest, Operation> setLabelsCallable() {
+    throw new UnsupportedOperationException("Not implemented: setLabelsCallable()");
   }
 
   @Override

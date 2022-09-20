@@ -24,8 +24,11 @@
  * <p>Sample for ApplicationsClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ApplicationsClient applicationsClient = ApplicationsClient.create()) {
  *   String name = "name3373707";
  *   Application response = applicationsClient.getApplication(name);
@@ -39,8 +42,11 @@
  * <p>Sample for ServicesClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ServicesClient servicesClient = ServicesClient.create()) {
  *   GetServiceRequest request = GetServiceRequest.newBuilder().setName("name3373707").build();
  *   Service response = servicesClient.getService(request);
@@ -54,8 +60,11 @@
  * <p>Sample for VersionsClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (VersionsClient versionsClient = VersionsClient.create()) {
  *   GetVersionRequest request =
  *       GetVersionRequest.newBuilder()
@@ -73,8 +82,11 @@
  * <p>Sample for InstancesClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (InstancesClient instancesClient = InstancesClient.create()) {
  *   GetInstanceRequest request = GetInstanceRequest.newBuilder().setName("name3373707").build();
  *   Instance response = instancesClient.getInstance(request);
@@ -96,8 +108,11 @@
  * <p>Sample for FirewallClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (FirewallClient firewallClient = FirewallClient.create()) {
  *   BatchUpdateIngressRulesRequest request =
  *       BatchUpdateIngressRulesRequest.newBuilder()
@@ -117,8 +132,11 @@
  * <p>Sample for AuthorizedDomainsClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (AuthorizedDomainsClient authorizedDomainsClient = AuthorizedDomainsClient.create()) {
  *   ListAuthorizedDomainsRequest request =
  *       ListAuthorizedDomainsRequest.newBuilder()
@@ -141,8 +159,11 @@
  * <p>Sample for AuthorizedCertificatesClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (AuthorizedCertificatesClient authorizedCertificatesClient =
  *     AuthorizedCertificatesClient.create()) {
  *   GetAuthorizedCertificateRequest request =
@@ -162,8 +183,11 @@
  * <p>Sample for DomainMappingsClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (DomainMappingsClient domainMappingsClient = DomainMappingsClient.create()) {
  *   GetDomainMappingRequest request =
  *       GetDomainMappingRequest.newBuilder().setName("name3373707").build();

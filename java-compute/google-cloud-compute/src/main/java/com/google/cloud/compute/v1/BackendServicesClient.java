@@ -44,8 +44,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
  *   String project = "project-309310695";
  *   String backendService = "backendService-1884714623";
@@ -83,8 +86,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * BackendServicesSettings backendServicesSettings =
  *     BackendServicesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -96,8 +102,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * BackendServicesSettings backendServicesSettings =
  *     BackendServicesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * BackendServicesClient backendServicesClient =
@@ -163,8 +172,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String project = "project-309310695";
    *   String backendService = "backendService-1884714623";
@@ -200,8 +212,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   AddSignedUrlKeyBackendServiceRequest request =
    *       AddSignedUrlKeyBackendServiceRequest.newBuilder()
@@ -231,8 +246,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   AddSignedUrlKeyBackendServiceRequest request =
    *       AddSignedUrlKeyBackendServiceRequest.newBuilder()
@@ -260,8 +278,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   AddSignedUrlKeyBackendServiceRequest request =
    *       AddSignedUrlKeyBackendServiceRequest.newBuilder()
@@ -290,8 +311,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, BackendServicesScopedList> element :
@@ -318,8 +342,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   AggregatedListBackendServicesRequest request =
    *       AggregatedListBackendServicesRequest.newBuilder()
@@ -354,8 +381,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   AggregatedListBackendServicesRequest request =
    *       AggregatedListBackendServicesRequest.newBuilder()
@@ -389,8 +419,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   AggregatedListBackendServicesRequest request =
    *       AggregatedListBackendServicesRequest.newBuilder()
@@ -430,8 +463,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String project = "project-309310695";
    *   String backendService = "backendService-1884714623";
@@ -460,8 +496,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   DeleteBackendServiceRequest request =
    *       DeleteBackendServiceRequest.newBuilder()
@@ -490,8 +529,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   DeleteBackendServiceRequest request =
    *       DeleteBackendServiceRequest.newBuilder()
@@ -518,8 +560,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   DeleteBackendServiceRequest request =
    *       DeleteBackendServiceRequest.newBuilder()
@@ -544,8 +589,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String project = "project-309310695";
    *   String backendService = "backendService-1884714623";
@@ -579,8 +627,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   DeleteSignedUrlKeyBackendServiceRequest request =
    *       DeleteSignedUrlKeyBackendServiceRequest.newBuilder()
@@ -610,8 +661,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   DeleteSignedUrlKeyBackendServiceRequest request =
    *       DeleteSignedUrlKeyBackendServiceRequest.newBuilder()
@@ -639,8 +693,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   DeleteSignedUrlKeyBackendServiceRequest request =
    *       DeleteSignedUrlKeyBackendServiceRequest.newBuilder()
@@ -668,8 +725,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String project = "project-309310695";
    *   String backendService = "backendService-1884714623";
@@ -697,8 +757,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   GetBackendServiceRequest request =
    *       GetBackendServiceRequest.newBuilder()
@@ -723,8 +786,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   GetBackendServiceRequest request =
    *       GetBackendServiceRequest.newBuilder()
@@ -749,8 +815,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String project = "project-309310695";
    *   String backendService = "backendService-1884714623";
@@ -788,8 +857,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   GetHealthBackendServiceRequest request =
    *       GetHealthBackendServiceRequest.newBuilder()
@@ -816,8 +888,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   GetHealthBackendServiceRequest request =
    *       GetHealthBackendServiceRequest.newBuilder()
@@ -839,14 +914,111 @@ public class BackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
+   *   String project = "project-309310695";
+   *   String resource = "resource-341064690";
+   *   Policy response = backendServicesClient.getIamPolicy(project, resource);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param resource Name or id of the resource for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(String project, String resource) {
+    GetIamPolicyBackendServiceRequest request =
+        GetIamPolicyBackendServiceRequest.newBuilder()
+            .setProject(project)
+            .setResource(resource)
+            .build();
+    return getIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
+   *   GetIamPolicyBackendServiceRequest request =
+   *       GetIamPolicyBackendServiceRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   Policy response = backendServicesClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyBackendServiceRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
+   *   GetIamPolicyBackendServiceRequest request =
+   *       GetIamPolicyBackendServiceRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Policy> future = backendServicesClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIamPolicyBackendServiceRequest, Policy> getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates a BackendService resource in the specified project using the data included in the
    * request. For more information, see Backend services overview .
    *
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String project = "project-309310695";
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
@@ -876,8 +1048,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   InsertBackendServiceRequest request =
    *       InsertBackendServiceRequest.newBuilder()
@@ -907,8 +1082,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   InsertBackendServiceRequest request =
    *       InsertBackendServiceRequest.newBuilder()
@@ -936,8 +1114,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   InsertBackendServiceRequest request =
    *       InsertBackendServiceRequest.newBuilder()
@@ -962,8 +1143,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String project = "project-309310695";
    *   for (BackendService element : backendServicesClient.list(project).iterateAll()) {
@@ -988,8 +1172,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   ListBackendServicesRequest request =
    *       ListBackendServicesRequest.newBuilder()
@@ -1020,8 +1207,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   ListBackendServicesRequest request =
    *       ListBackendServicesRequest.newBuilder()
@@ -1052,8 +1242,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   ListBackendServicesRequest request =
    *       ListBackendServicesRequest.newBuilder()
@@ -1092,8 +1285,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String project = "project-309310695";
    *   String backendService = "backendService-1884714623";
@@ -1128,8 +1324,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   PatchBackendServiceRequest request =
    *       PatchBackendServiceRequest.newBuilder()
@@ -1161,8 +1360,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   PatchBackendServiceRequest request =
    *       PatchBackendServiceRequest.newBuilder()
@@ -1192,8 +1394,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   PatchBackendServiceRequest request =
    *       PatchBackendServiceRequest.newBuilder()
@@ -1219,8 +1424,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String project = "project-309310695";
    *   String backendService = "backendService-1884714623";
@@ -1259,8 +1467,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   SetEdgeSecurityPolicyBackendServiceRequest request =
    *       SetEdgeSecurityPolicyBackendServiceRequest.newBuilder()
@@ -1290,8 +1501,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   SetEdgeSecurityPolicyBackendServiceRequest request =
    *       SetEdgeSecurityPolicyBackendServiceRequest.newBuilder()
@@ -1319,8 +1533,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   SetEdgeSecurityPolicyBackendServiceRequest request =
    *       SetEdgeSecurityPolicyBackendServiceRequest.newBuilder()
@@ -1343,14 +1560,114 @@ public class BackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
+   *   String project = "project-309310695";
+   *   String resource = "resource-341064690";
+   *   GlobalSetPolicyRequest globalSetPolicyRequestResource =
+   *       GlobalSetPolicyRequest.newBuilder().build();
+   *   Policy response =
+   *       backendServicesClient.setIamPolicy(project, resource, globalSetPolicyRequestResource);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param resource Name or id of the resource for this request.
+   * @param globalSetPolicyRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(
+      String project, String resource, GlobalSetPolicyRequest globalSetPolicyRequestResource) {
+    SetIamPolicyBackendServiceRequest request =
+        SetIamPolicyBackendServiceRequest.newBuilder()
+            .setProject(project)
+            .setResource(resource)
+            .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
+            .build();
+    return setIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
+   *   SetIamPolicyBackendServiceRequest request =
+   *       SetIamPolicyBackendServiceRequest.newBuilder()
+   *           .setGlobalSetPolicyRequestResource(GlobalSetPolicyRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   Policy response = backendServicesClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyBackendServiceRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
+   *   SetIamPolicyBackendServiceRequest request =
+   *       SetIamPolicyBackendServiceRequest.newBuilder()
+   *           .setGlobalSetPolicyRequestResource(GlobalSetPolicyRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Policy> future = backendServicesClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetIamPolicyBackendServiceRequest, Policy> setIamPolicyCallable() {
+    return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Sets the Google Cloud Armor security policy for the specified backend service. For more
    * information, see Google Cloud Armor Overview
    *
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String project = "project-309310695";
    *   String backendService = "backendService-1884714623";
@@ -1390,8 +1707,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   SetSecurityPolicyBackendServiceRequest request =
    *       SetSecurityPolicyBackendServiceRequest.newBuilder()
@@ -1422,8 +1742,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   SetSecurityPolicyBackendServiceRequest request =
    *       SetSecurityPolicyBackendServiceRequest.newBuilder()
@@ -1452,8 +1775,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   SetSecurityPolicyBackendServiceRequest request =
    *       SetSecurityPolicyBackendServiceRequest.newBuilder()
@@ -1482,8 +1808,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String project = "project-309310695";
    *   String backendService = "backendService-1884714623";
@@ -1517,8 +1846,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   UpdateBackendServiceRequest request =
    *       UpdateBackendServiceRequest.newBuilder()
@@ -1549,8 +1881,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   UpdateBackendServiceRequest request =
    *       UpdateBackendServiceRequest.newBuilder()
@@ -1579,8 +1914,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   UpdateBackendServiceRequest request =
    *       UpdateBackendServiceRequest.newBuilder()

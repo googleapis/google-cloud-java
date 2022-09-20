@@ -104,7 +104,8 @@ public class HttpJsonNetworksStub extends NetworksStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "networksAddPeeringRequestResource",
-                                      request.getNetworksAddPeeringRequestResource()))
+                                      request.getNetworksAddPeeringRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -273,7 +274,7 @@ public class HttpJsonNetworksStub extends NetworksStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("networkResource", request.getNetworkResource()))
+                              .toBody("networkResource", request.getNetworkResource(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -437,7 +438,7 @@ public class HttpJsonNetworksStub extends NetworksStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("networkResource", request.getNetworkResource()))
+                              .toBody("networkResource", request.getNetworkResource(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -491,7 +492,8 @@ public class HttpJsonNetworksStub extends NetworksStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "networksRemovePeeringRequestResource",
-                                      request.getNetworksRemovePeeringRequestResource()))
+                                      request.getNetworksRemovePeeringRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -594,7 +596,8 @@ public class HttpJsonNetworksStub extends NetworksStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "networksUpdatePeeringRequestResource",
-                                      request.getNetworksUpdatePeeringRequestResource()))
+                                      request.getNetworksUpdatePeeringRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

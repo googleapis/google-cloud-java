@@ -218,7 +218,8 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "subnetworksExpandIpCidrRangeRequestResource",
-                                      request.getSubnetworksExpandIpCidrRangeRequestResource()))
+                                      request.getSubnetworksExpandIpCidrRangeRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -346,7 +347,8 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("subnetworkResource", request.getSubnetworkResource()))
+                                  .toBody(
+                                      "subnetworkResource", request.getSubnetworkResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -511,7 +513,8 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("subnetworkResource", request.getSubnetworkResource()))
+                                  .toBody(
+                                      "subnetworkResource", request.getSubnetworkResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -564,7 +567,8 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "regionSetPolicyRequestResource",
-                                      request.getRegionSetPolicyRequestResource()))
+                                      request.getRegionSetPolicyRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -609,7 +613,8 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                                   .toBody(
                                       "subnetworksSetPrivateIpGoogleAccessRequestResource",
                                       request
-                                          .getSubnetworksSetPrivateIpGoogleAccessRequestResource()))
+                                          .getSubnetworksSetPrivateIpGoogleAccessRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -664,7 +669,8 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "testPermissionsRequestResource",
-                                      request.getTestPermissionsRequestResource()))
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()

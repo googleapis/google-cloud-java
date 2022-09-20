@@ -16,8 +16,7 @@
 
 package com.google.cloud.mediatranslation.v1beta1.samples;
 
-// [START
-// mediatranslation_v1beta1_generated_speechtranslationserviceclient_streamingtranslatespeech_async]
+// [START mediatranslation_v1beta1_generated_speechtranslationserviceclient_streamingtranslatespeech_async]
 import com.google.api.gax.rpc.BidiStream;
 import com.google.cloud.mediatranslation.v1beta1.SpeechTranslationServiceClient;
 import com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechRequest;
@@ -30,8 +29,11 @@ public class AsyncStreamingTranslateSpeech {
   }
 
   public static void asyncStreamingTranslateSpeech() throws Exception {
-    // This snippet has been automatically generated for illustrative purposes only.
-    // It may require modifications to work in your environment.
+    // This snippet has been automatically generated and should be regarded as a code template only.
+    // It will require modifications to work:
+    // - It may require correct/in-range values for request initialization.
+    // - It may require specifying regional endpoints when creating the service client as shown in
+    // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (SpeechTranslationServiceClient speechTranslationServiceClient =
         SpeechTranslationServiceClient.create()) {
       BidiStream<StreamingTranslateSpeechRequest, StreamingTranslateSpeechResponse> bidiStream =
@@ -45,5 +47,4 @@ public class AsyncStreamingTranslateSpeech {
     }
   }
 }
-// [END
-// mediatranslation_v1beta1_generated_speechtranslationserviceclient_streamingtranslatespeech_async]
+// [END mediatranslation_v1beta1_generated_speechtranslationserviceclient_streamingtranslatespeech_async]

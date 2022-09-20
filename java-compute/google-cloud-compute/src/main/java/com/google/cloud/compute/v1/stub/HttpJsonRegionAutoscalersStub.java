@@ -180,7 +180,8 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("autoscalerResource", request.getAutoscalerResource()))
+                                  .toBody(
+                                      "autoscalerResource", request.getAutoscalerResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -290,7 +291,8 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("autoscalerResource", request.getAutoscalerResource()))
+                                  .toBody(
+                                      "autoscalerResource", request.getAutoscalerResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -347,7 +349,8 @@ public class HttpJsonRegionAutoscalersStub extends RegionAutoscalersStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("autoscalerResource", request.getAutoscalerResource()))
+                                  .toBody(
+                                      "autoscalerResource", request.getAutoscalerResource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

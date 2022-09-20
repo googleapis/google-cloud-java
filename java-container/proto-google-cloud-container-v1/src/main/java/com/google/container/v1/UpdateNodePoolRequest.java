@@ -309,6 +309,22 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
 
               break;
             }
+          case 258:
+            {
+              com.google.container.v1.NodePoolLoggingConfig.Builder subBuilder = null;
+              if (loggingConfig_ != null) {
+                subBuilder = loggingConfig_.toBuilder();
+              }
+              loggingConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.NodePoolLoggingConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(loggingConfig_);
+                loggingConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -362,7 +378,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2124
+   *     google/container/v1/cluster_service.proto;l=2134
    * @return The projectId.
    */
   @java.lang.Override
@@ -390,7 +406,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2124
+   *     google/container/v1/cluster_service.proto;l=2134
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -422,7 +438,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2130
+   *     google/container/v1/cluster_service.proto;l=2140
    * @return The zone.
    */
   @java.lang.Override
@@ -451,7 +467,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2130
+   *     google/container/v1/cluster_service.proto;l=2140
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -481,7 +497,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2134
+   *     google/container/v1/cluster_service.proto;l=2144
    * @return The clusterId.
    */
   @java.lang.Override
@@ -508,7 +524,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2134
+   *     google/container/v1/cluster_service.proto;l=2144
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -538,7 +554,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2138
+   *     google/container/v1/cluster_service.proto;l=2148
    * @return The nodePoolId.
    */
   @java.lang.Override
@@ -565,7 +581,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2138
+   *     google/container/v1/cluster_service.proto;l=2148
    * @return The bytes for nodePoolId.
    */
   @java.lang.Override
@@ -1368,6 +1384,54 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     return getGvnic();
   }
 
+  public static final int LOGGING_CONFIG_FIELD_NUMBER = 32;
+  private com.google.container.v1.NodePoolLoggingConfig loggingConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePoolLoggingConfig logging_config = 32;</code>
+   *
+   * @return Whether the loggingConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasLoggingConfig() {
+    return loggingConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePoolLoggingConfig logging_config = 32;</code>
+   *
+   * @return The loggingConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodePoolLoggingConfig getLoggingConfig() {
+    return loggingConfig_ == null
+        ? com.google.container.v1.NodePoolLoggingConfig.getDefaultInstance()
+        : loggingConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Logging configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePoolLoggingConfig logging_config = 32;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodePoolLoggingConfigOrBuilder getLoggingConfigOrBuilder() {
+    return getLoggingConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1438,6 +1502,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     }
     if (gvnic_ != null) {
       output.writeMessage(29, getGvnic());
+    }
+    if (loggingConfig_ != null) {
+      output.writeMessage(32, getLoggingConfig());
     }
     unknownFields.writeTo(output);
   }
@@ -1511,6 +1578,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (gvnic_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(29, getGvnic());
     }
+    if (loggingConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(32, getLoggingConfig());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1578,6 +1648,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasGvnic() != other.hasGvnic()) return false;
     if (hasGvnic()) {
       if (!getGvnic().equals(other.getGvnic())) return false;
+    }
+    if (hasLoggingConfig() != other.hasLoggingConfig()) return false;
+    if (hasLoggingConfig()) {
+      if (!getLoggingConfig().equals(other.getLoggingConfig())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1651,6 +1725,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasGvnic()) {
       hash = (37 * hash) + GVNIC_FIELD_NUMBER;
       hash = (53 * hash) + getGvnic().hashCode();
+    }
+    if (hasLoggingConfig()) {
+      hash = (37 * hash) + LOGGING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getLoggingConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1879,6 +1957,12 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         gvnic_ = null;
         gvnicBuilder_ = null;
       }
+      if (loggingConfigBuilder_ == null) {
+        loggingConfig_ = null;
+      } else {
+        loggingConfig_ = null;
+        loggingConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -1973,6 +2057,11 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         result.gvnic_ = gvnic_;
       } else {
         result.gvnic_ = gvnicBuilder_.build();
+      }
+      if (loggingConfigBuilder_ == null) {
+        result.loggingConfig_ = loggingConfig_;
+      } else {
+        result.loggingConfig_ = loggingConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -2094,6 +2183,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       if (other.hasGvnic()) {
         mergeGvnic(other.getGvnic());
       }
+      if (other.hasLoggingConfig()) {
+        mergeLoggingConfig(other.getLoggingConfig());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -2138,7 +2230,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2124
+     *     google/container/v1/cluster_service.proto;l=2134
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -2165,7 +2257,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2124
+     *     google/container/v1/cluster_service.proto;l=2134
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -2192,7 +2284,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2124
+     *     google/container/v1/cluster_service.proto;l=2134
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -2218,7 +2310,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2124
+     *     google/container/v1/cluster_service.proto;l=2134
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2240,7 +2332,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2124
+     *     google/container/v1/cluster_service.proto;l=2134
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -2270,7 +2362,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2130
+     *     google/container/v1/cluster_service.proto;l=2140
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -2298,7 +2390,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2130
+     *     google/container/v1/cluster_service.proto;l=2140
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -2326,7 +2418,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2130
+     *     google/container/v1/cluster_service.proto;l=2140
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -2353,7 +2445,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2130
+     *     google/container/v1/cluster_service.proto;l=2140
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2376,7 +2468,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2130
+     *     google/container/v1/cluster_service.proto;l=2140
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -2404,7 +2496,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2134
+     *     google/container/v1/cluster_service.proto;l=2144
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -2430,7 +2522,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2134
+     *     google/container/v1/cluster_service.proto;l=2144
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -2456,7 +2548,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2134
+     *     google/container/v1/cluster_service.proto;l=2144
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -2481,7 +2573,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2134
+     *     google/container/v1/cluster_service.proto;l=2144
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2502,7 +2594,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2134
+     *     google/container/v1/cluster_service.proto;l=2144
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -2530,7 +2622,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2138
+     *     google/container/v1/cluster_service.proto;l=2148
      * @return The nodePoolId.
      */
     @java.lang.Deprecated
@@ -2556,7 +2648,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2138
+     *     google/container/v1/cluster_service.proto;l=2148
      * @return The bytes for nodePoolId.
      */
     @java.lang.Deprecated
@@ -2582,7 +2674,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2138
+     *     google/container/v1/cluster_service.proto;l=2148
      * @param value The nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -2607,7 +2699,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2138
+     *     google/container/v1/cluster_service.proto;l=2148
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2628,7 +2720,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2138
+     *     google/container/v1/cluster_service.proto;l=2148
      * @param value The bytes for nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -5301,6 +5393,192 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         gvnic_ = null;
       }
       return gvnicBuilder_;
+    }
+
+    private com.google.container.v1.NodePoolLoggingConfig loggingConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodePoolLoggingConfig,
+            com.google.container.v1.NodePoolLoggingConfig.Builder,
+            com.google.container.v1.NodePoolLoggingConfigOrBuilder>
+        loggingConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePoolLoggingConfig logging_config = 32;</code>
+     *
+     * @return Whether the loggingConfig field is set.
+     */
+    public boolean hasLoggingConfig() {
+      return loggingConfigBuilder_ != null || loggingConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePoolLoggingConfig logging_config = 32;</code>
+     *
+     * @return The loggingConfig.
+     */
+    public com.google.container.v1.NodePoolLoggingConfig getLoggingConfig() {
+      if (loggingConfigBuilder_ == null) {
+        return loggingConfig_ == null
+            ? com.google.container.v1.NodePoolLoggingConfig.getDefaultInstance()
+            : loggingConfig_;
+      } else {
+        return loggingConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePoolLoggingConfig logging_config = 32;</code>
+     */
+    public Builder setLoggingConfig(com.google.container.v1.NodePoolLoggingConfig value) {
+      if (loggingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        loggingConfig_ = value;
+        onChanged();
+      } else {
+        loggingConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePoolLoggingConfig logging_config = 32;</code>
+     */
+    public Builder setLoggingConfig(
+        com.google.container.v1.NodePoolLoggingConfig.Builder builderForValue) {
+      if (loggingConfigBuilder_ == null) {
+        loggingConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        loggingConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePoolLoggingConfig logging_config = 32;</code>
+     */
+    public Builder mergeLoggingConfig(com.google.container.v1.NodePoolLoggingConfig value) {
+      if (loggingConfigBuilder_ == null) {
+        if (loggingConfig_ != null) {
+          loggingConfig_ =
+              com.google.container.v1.NodePoolLoggingConfig.newBuilder(loggingConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          loggingConfig_ = value;
+        }
+        onChanged();
+      } else {
+        loggingConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePoolLoggingConfig logging_config = 32;</code>
+     */
+    public Builder clearLoggingConfig() {
+      if (loggingConfigBuilder_ == null) {
+        loggingConfig_ = null;
+        onChanged();
+      } else {
+        loggingConfig_ = null;
+        loggingConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePoolLoggingConfig logging_config = 32;</code>
+     */
+    public com.google.container.v1.NodePoolLoggingConfig.Builder getLoggingConfigBuilder() {
+
+      onChanged();
+      return getLoggingConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePoolLoggingConfig logging_config = 32;</code>
+     */
+    public com.google.container.v1.NodePoolLoggingConfigOrBuilder getLoggingConfigOrBuilder() {
+      if (loggingConfigBuilder_ != null) {
+        return loggingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return loggingConfig_ == null
+            ? com.google.container.v1.NodePoolLoggingConfig.getDefaultInstance()
+            : loggingConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Logging configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePoolLoggingConfig logging_config = 32;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodePoolLoggingConfig,
+            com.google.container.v1.NodePoolLoggingConfig.Builder,
+            com.google.container.v1.NodePoolLoggingConfigOrBuilder>
+        getLoggingConfigFieldBuilder() {
+      if (loggingConfigBuilder_ == null) {
+        loggingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NodePoolLoggingConfig,
+                com.google.container.v1.NodePoolLoggingConfig.Builder,
+                com.google.container.v1.NodePoolLoggingConfigOrBuilder>(
+                getLoggingConfig(), getParentForChildren(), isClean());
+        loggingConfig_ = null;
+      }
+      return loggingConfigBuilder_;
     }
 
     @java.lang.Override

@@ -53,17 +53,17 @@ import javax.annotation.Generated;
  * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * GlobalAddressesSettings.Builder globalAddressesSettingsBuilder =
  *     GlobalAddressesSettings.newBuilder();
  * globalAddressesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         globalAddressesSettingsBuilder
- *             .getSettings()
- *             .getRetrySettings()
- *             .toBuilder()
+ *         globalAddressesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * GlobalAddressesSettings globalAddressesSettings = globalAddressesSettingsBuilder.build();
@@ -103,6 +103,17 @@ public class GlobalAddressesSettings extends ClientSettings<GlobalAddressesSetti
   public PagedCallSettings<ListGlobalAddressesRequest, AddressList, ListPagedResponse>
       listSettings() {
     return ((GlobalAddressesStubSettings) getStubSettings()).listSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public UnaryCallSettings<SetLabelsGlobalAddressRequest, Operation> setLabelsSettings() {
+    return ((GlobalAddressesStubSettings) getStubSettings()).setLabelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsGlobalAddressRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return ((GlobalAddressesStubSettings) getStubSettings()).setLabelsOperationSettings();
   }
 
   public static final GlobalAddressesSettings create(GlobalAddressesStubSettings stub)
@@ -234,6 +245,17 @@ public class GlobalAddressesSettings extends ClientSettings<GlobalAddressesSetti
     public PagedCallSettings.Builder<ListGlobalAddressesRequest, AddressList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public UnaryCallSettings.Builder<SetLabelsGlobalAddressRequest, Operation> setLabelsSettings() {
+      return getStubSettingsBuilder().setLabelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public OperationCallSettings.Builder<SetLabelsGlobalAddressRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return getStubSettingsBuilder().setLabelsOperationSettings();
     }
 
     @Override

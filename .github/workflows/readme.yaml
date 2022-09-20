@@ -21,6 +21,7 @@ name: readme
 jobs:
   update:
     runs-on: ubuntu-latest
+    if: github.repository_owner == 'googleapis'
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v4

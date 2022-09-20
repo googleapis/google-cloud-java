@@ -11326,6 +11326,3731 @@ public final class TransferTypes {
     }
   }
 
+  public interface AwsS3CompatibleDataOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.storagetransfer.v1.AwsS3CompatibleData)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Specifies the name of the bucket.
+     * </pre>
+     *
+     * <code>string bucket_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bucketName.
+     */
+    java.lang.String getBucketName();
+    /**
+     *
+     *
+     * <pre>
+     * Required. Specifies the name of the bucket.
+     * </pre>
+     *
+     * <code>string bucket_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for bucketName.
+     */
+    com.google.protobuf.ByteString getBucketNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the root path to transfer objects.
+     * Must be an empty string or full path name that ends with a '/'. This
+     * field is treated as an object prefix. As such, it should generally not
+     * begin with a '/'.
+     * </pre>
+     *
+     * <code>string path = 2;</code>
+     *
+     * @return The path.
+     */
+    java.lang.String getPath();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the root path to transfer objects.
+     * Must be an empty string or full path name that ends with a '/'. This
+     * field is treated as an object prefix. As such, it should generally not
+     * begin with a '/'.
+     * </pre>
+     *
+     * <code>string path = 2;</code>
+     *
+     * @return The bytes for path.
+     */
+    com.google.protobuf.ByteString getPathBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Specifies the endpoint of the storage service.
+     * </pre>
+     *
+     * <code>string endpoint = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The endpoint.
+     */
+    java.lang.String getEndpoint();
+    /**
+     *
+     *
+     * <pre>
+     * Required. Specifies the endpoint of the storage service.
+     * </pre>
+     *
+     * <code>string endpoint = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for endpoint.
+     */
+    com.google.protobuf.ByteString getEndpointBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the region to sign requests with. This can be left blank if
+     * requests should be signed with an empty region.
+     * </pre>
+     *
+     * <code>string region = 5;</code>
+     *
+     * @return The region.
+     */
+    java.lang.String getRegion();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the region to sign requests with. This can be left blank if
+     * requests should be signed with an empty region.
+     * </pre>
+     *
+     * <code>string region = 5;</code>
+     *
+     * @return The bytes for region.
+     */
+    com.google.protobuf.ByteString getRegionBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * A S3 compatible metadata.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.S3CompatibleMetadata s3_metadata = 4;</code>
+     *
+     * @return Whether the s3Metadata field is set.
+     */
+    boolean hasS3Metadata();
+    /**
+     *
+     *
+     * <pre>
+     * A S3 compatible metadata.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.S3CompatibleMetadata s3_metadata = 4;</code>
+     *
+     * @return The s3Metadata.
+     */
+    com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata getS3Metadata();
+    /**
+     *
+     *
+     * <pre>
+     * A S3 compatible metadata.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.S3CompatibleMetadata s3_metadata = 4;</code>
+     */
+    com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadataOrBuilder
+        getS3MetadataOrBuilder();
+
+    public com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData.DataProviderCase
+        getDataProviderCase();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An AwsS3CompatibleData resource.
+   * </pre>
+   *
+   * Protobuf type {@code google.storagetransfer.v1.AwsS3CompatibleData}
+   */
+  public static final class AwsS3CompatibleData extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.storagetransfer.v1.AwsS3CompatibleData)
+      AwsS3CompatibleDataOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use AwsS3CompatibleData.newBuilder() to construct.
+    private AwsS3CompatibleData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AwsS3CompatibleData() {
+      bucketName_ = "";
+      path_ = "";
+      endpoint_ = "";
+      region_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new AwsS3CompatibleData();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private AwsS3CompatibleData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                bucketName_ = s;
+                break;
+              }
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                path_ = s;
+                break;
+              }
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                endpoint_ = s;
+                break;
+              }
+            case 34:
+              {
+                com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.Builder
+                    subBuilder = null;
+                if (dataProviderCase_ == 4) {
+                  subBuilder =
+                      ((com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata)
+                              dataProvider_)
+                          .toBuilder();
+                }
+                dataProvider_ =
+                    input.readMessage(
+                        com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata
+                            .parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(
+                      (com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata)
+                          dataProvider_);
+                  dataProvider_ = subBuilder.buildPartial();
+                }
+                dataProviderCase_ = 4;
+                break;
+              }
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                region_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.storagetransfer.v1.proto.TransferTypes
+          .internal_static_google_storagetransfer_v1_AwsS3CompatibleData_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.storagetransfer.v1.proto.TransferTypes
+          .internal_static_google_storagetransfer_v1_AwsS3CompatibleData_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData.class,
+              com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData.Builder.class);
+    }
+
+    private int dataProviderCase_ = 0;
+    private java.lang.Object dataProvider_;
+
+    public enum DataProviderCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      S3_METADATA(4),
+      DATAPROVIDER_NOT_SET(0);
+      private final int value;
+
+      private DataProviderCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DataProviderCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static DataProviderCase forNumber(int value) {
+        switch (value) {
+          case 4:
+            return S3_METADATA;
+          case 0:
+            return DATAPROVIDER_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public DataProviderCase getDataProviderCase() {
+      return DataProviderCase.forNumber(dataProviderCase_);
+    }
+
+    public static final int BUCKET_NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object bucketName_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. Specifies the name of the bucket.
+     * </pre>
+     *
+     * <code>string bucket_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bucketName.
+     */
+    @java.lang.Override
+    public java.lang.String getBucketName() {
+      java.lang.Object ref = bucketName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bucketName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Specifies the name of the bucket.
+     * </pre>
+     *
+     * <code>string bucket_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for bucketName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getBucketNameBytes() {
+      java.lang.Object ref = bucketName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        bucketName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PATH_FIELD_NUMBER = 2;
+    private volatile java.lang.Object path_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the root path to transfer objects.
+     * Must be an empty string or full path name that ends with a '/'. This
+     * field is treated as an object prefix. As such, it should generally not
+     * begin with a '/'.
+     * </pre>
+     *
+     * <code>string path = 2;</code>
+     *
+     * @return The path.
+     */
+    @java.lang.Override
+    public java.lang.String getPath() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        path_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the root path to transfer objects.
+     * Must be an empty string or full path name that ends with a '/'. This
+     * field is treated as an object prefix. As such, it should generally not
+     * begin with a '/'.
+     * </pre>
+     *
+     * <code>string path = 2;</code>
+     *
+     * @return The bytes for path.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPathBytes() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        path_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ENDPOINT_FIELD_NUMBER = 3;
+    private volatile java.lang.Object endpoint_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. Specifies the endpoint of the storage service.
+     * </pre>
+     *
+     * <code>string endpoint = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The endpoint.
+     */
+    @java.lang.Override
+    public java.lang.String getEndpoint() {
+      java.lang.Object ref = endpoint_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        endpoint_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Specifies the endpoint of the storage service.
+     * </pre>
+     *
+     * <code>string endpoint = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for endpoint.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getEndpointBytes() {
+      java.lang.Object ref = endpoint_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        endpoint_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int REGION_FIELD_NUMBER = 5;
+    private volatile java.lang.Object region_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the region to sign requests with. This can be left blank if
+     * requests should be signed with an empty region.
+     * </pre>
+     *
+     * <code>string region = 5;</code>
+     *
+     * @return The region.
+     */
+    @java.lang.Override
+    public java.lang.String getRegion() {
+      java.lang.Object ref = region_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        region_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the region to sign requests with. This can be left blank if
+     * requests should be signed with an empty region.
+     * </pre>
+     *
+     * <code>string region = 5;</code>
+     *
+     * @return The bytes for region.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRegionBytes() {
+      java.lang.Object ref = region_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        region_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int S3_METADATA_FIELD_NUMBER = 4;
+    /**
+     *
+     *
+     * <pre>
+     * A S3 compatible metadata.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.S3CompatibleMetadata s3_metadata = 4;</code>
+     *
+     * @return Whether the s3Metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasS3Metadata() {
+      return dataProviderCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A S3 compatible metadata.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.S3CompatibleMetadata s3_metadata = 4;</code>
+     *
+     * @return The s3Metadata.
+     */
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata getS3Metadata() {
+      if (dataProviderCase_ == 4) {
+        return (com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata)
+            dataProvider_;
+      }
+      return com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A S3 compatible metadata.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.S3CompatibleMetadata s3_metadata = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadataOrBuilder
+        getS3MetadataOrBuilder() {
+      if (dataProviderCase_ == 4) {
+        return (com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata)
+            dataProvider_;
+      }
+      return com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata
+          .getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bucketName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, bucketName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, path_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endpoint_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, endpoint_);
+      }
+      if (dataProviderCase_ == 4) {
+        output.writeMessage(
+            4,
+            (com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata) dataProvider_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, region_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bucketName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, bucketName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, path_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endpoint_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, endpoint_);
+      }
+      if (dataProviderCase_ == 4) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                4,
+                (com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata)
+                    dataProvider_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, region_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData)) {
+        return super.equals(obj);
+      }
+      com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData other =
+          (com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData) obj;
+
+      if (!getBucketName().equals(other.getBucketName())) return false;
+      if (!getPath().equals(other.getPath())) return false;
+      if (!getEndpoint().equals(other.getEndpoint())) return false;
+      if (!getRegion().equals(other.getRegion())) return false;
+      if (!getDataProviderCase().equals(other.getDataProviderCase())) return false;
+      switch (dataProviderCase_) {
+        case 4:
+          if (!getS3Metadata().equals(other.getS3Metadata())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + BUCKET_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getBucketName().hashCode();
+      hash = (37 * hash) + PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getPath().hashCode();
+      hash = (37 * hash) + ENDPOINT_FIELD_NUMBER;
+      hash = (53 * hash) + getEndpoint().hashCode();
+      hash = (37 * hash) + REGION_FIELD_NUMBER;
+      hash = (53 * hash) + getRegion().hashCode();
+      switch (dataProviderCase_) {
+        case 4:
+          hash = (37 * hash) + S3_METADATA_FIELD_NUMBER;
+          hash = (53 * hash) + getS3Metadata().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An AwsS3CompatibleData resource.
+     * </pre>
+     *
+     * Protobuf type {@code google.storagetransfer.v1.AwsS3CompatibleData}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.storagetransfer.v1.AwsS3CompatibleData)
+        com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleDataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.storagetransfer.v1.proto.TransferTypes
+            .internal_static_google_storagetransfer_v1_AwsS3CompatibleData_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.storagetransfer.v1.proto.TransferTypes
+            .internal_static_google_storagetransfer_v1_AwsS3CompatibleData_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData.class,
+                com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bucketName_ = "";
+
+        path_ = "";
+
+        endpoint_ = "";
+
+        region_ = "";
+
+        dataProviderCase_ = 0;
+        dataProvider_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.storagetransfer.v1.proto.TransferTypes
+            .internal_static_google_storagetransfer_v1_AwsS3CompatibleData_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData
+          getDefaultInstanceForType() {
+        return com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData build() {
+        com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData buildPartial() {
+        com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData result =
+            new com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData(this);
+        result.bucketName_ = bucketName_;
+        result.path_ = path_;
+        result.endpoint_ = endpoint_;
+        result.region_ = region_;
+        if (dataProviderCase_ == 4) {
+          if (s3MetadataBuilder_ == null) {
+            result.dataProvider_ = dataProvider_;
+          } else {
+            result.dataProvider_ = s3MetadataBuilder_.build();
+          }
+        }
+        result.dataProviderCase_ = dataProviderCase_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData) {
+          return mergeFrom(
+              (com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData other) {
+        if (other
+            == com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData
+                .getDefaultInstance()) return this;
+        if (!other.getBucketName().isEmpty()) {
+          bucketName_ = other.bucketName_;
+          onChanged();
+        }
+        if (!other.getPath().isEmpty()) {
+          path_ = other.path_;
+          onChanged();
+        }
+        if (!other.getEndpoint().isEmpty()) {
+          endpoint_ = other.endpoint_;
+          onChanged();
+        }
+        if (!other.getRegion().isEmpty()) {
+          region_ = other.region_;
+          onChanged();
+        }
+        switch (other.getDataProviderCase()) {
+          case S3_METADATA:
+            {
+              mergeS3Metadata(other.getS3Metadata());
+              break;
+            }
+          case DATAPROVIDER_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int dataProviderCase_ = 0;
+      private java.lang.Object dataProvider_;
+
+      public DataProviderCase getDataProviderCase() {
+        return DataProviderCase.forNumber(dataProviderCase_);
+      }
+
+      public Builder clearDataProvider() {
+        dataProviderCase_ = 0;
+        dataProvider_ = null;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object bucketName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. Specifies the name of the bucket.
+       * </pre>
+       *
+       * <code>string bucket_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bucketName.
+       */
+      public java.lang.String getBucketName() {
+        java.lang.Object ref = bucketName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          bucketName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Specifies the name of the bucket.
+       * </pre>
+       *
+       * <code>string bucket_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for bucketName.
+       */
+      public com.google.protobuf.ByteString getBucketNameBytes() {
+        java.lang.Object ref = bucketName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          bucketName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Specifies the name of the bucket.
+       * </pre>
+       *
+       * <code>string bucket_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bucketName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBucketName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        bucketName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Specifies the name of the bucket.
+       * </pre>
+       *
+       * <code>string bucket_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearBucketName() {
+
+        bucketName_ = getDefaultInstance().getBucketName();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Specifies the name of the bucket.
+       * </pre>
+       *
+       * <code>string bucket_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for bucketName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBucketNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        bucketName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object path_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the root path to transfer objects.
+       * Must be an empty string or full path name that ends with a '/'. This
+       * field is treated as an object prefix. As such, it should generally not
+       * begin with a '/'.
+       * </pre>
+       *
+       * <code>string path = 2;</code>
+       *
+       * @return The path.
+       */
+      public java.lang.String getPath() {
+        java.lang.Object ref = path_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          path_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the root path to transfer objects.
+       * Must be an empty string or full path name that ends with a '/'. This
+       * field is treated as an object prefix. As such, it should generally not
+       * begin with a '/'.
+       * </pre>
+       *
+       * <code>string path = 2;</code>
+       *
+       * @return The bytes for path.
+       */
+      public com.google.protobuf.ByteString getPathBytes() {
+        java.lang.Object ref = path_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          path_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the root path to transfer objects.
+       * Must be an empty string or full path name that ends with a '/'. This
+       * field is treated as an object prefix. As such, it should generally not
+       * begin with a '/'.
+       * </pre>
+       *
+       * <code>string path = 2;</code>
+       *
+       * @param value The path to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPath(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        path_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the root path to transfer objects.
+       * Must be an empty string or full path name that ends with a '/'. This
+       * field is treated as an object prefix. As such, it should generally not
+       * begin with a '/'.
+       * </pre>
+       *
+       * <code>string path = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPath() {
+
+        path_ = getDefaultInstance().getPath();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the root path to transfer objects.
+       * Must be an empty string or full path name that ends with a '/'. This
+       * field is treated as an object prefix. As such, it should generally not
+       * begin with a '/'.
+       * </pre>
+       *
+       * <code>string path = 2;</code>
+       *
+       * @param value The bytes for path to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPathBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        path_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object endpoint_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. Specifies the endpoint of the storage service.
+       * </pre>
+       *
+       * <code>string endpoint = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The endpoint.
+       */
+      public java.lang.String getEndpoint() {
+        java.lang.Object ref = endpoint_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          endpoint_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Specifies the endpoint of the storage service.
+       * </pre>
+       *
+       * <code>string endpoint = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for endpoint.
+       */
+      public com.google.protobuf.ByteString getEndpointBytes() {
+        java.lang.Object ref = endpoint_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          endpoint_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Specifies the endpoint of the storage service.
+       * </pre>
+       *
+       * <code>string endpoint = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The endpoint to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndpoint(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        endpoint_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Specifies the endpoint of the storage service.
+       * </pre>
+       *
+       * <code>string endpoint = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEndpoint() {
+
+        endpoint_ = getDefaultInstance().getEndpoint();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Specifies the endpoint of the storage service.
+       * </pre>
+       *
+       * <code>string endpoint = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for endpoint to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndpointBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        endpoint_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object region_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the region to sign requests with. This can be left blank if
+       * requests should be signed with an empty region.
+       * </pre>
+       *
+       * <code>string region = 5;</code>
+       *
+       * @return The region.
+       */
+      public java.lang.String getRegion() {
+        java.lang.Object ref = region_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          region_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the region to sign requests with. This can be left blank if
+       * requests should be signed with an empty region.
+       * </pre>
+       *
+       * <code>string region = 5;</code>
+       *
+       * @return The bytes for region.
+       */
+      public com.google.protobuf.ByteString getRegionBytes() {
+        java.lang.Object ref = region_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          region_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the region to sign requests with. This can be left blank if
+       * requests should be signed with an empty region.
+       * </pre>
+       *
+       * <code>string region = 5;</code>
+       *
+       * @param value The region to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRegion(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        region_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the region to sign requests with. This can be left blank if
+       * requests should be signed with an empty region.
+       * </pre>
+       *
+       * <code>string region = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRegion() {
+
+        region_ = getDefaultInstance().getRegion();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the region to sign requests with. This can be left blank if
+       * requests should be signed with an empty region.
+       * </pre>
+       *
+       * <code>string region = 5;</code>
+       *
+       * @param value The bytes for region to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRegionBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        region_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata,
+              com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.Builder,
+              com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadataOrBuilder>
+          s3MetadataBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A S3 compatible metadata.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata s3_metadata = 4;</code>
+       *
+       * @return Whether the s3Metadata field is set.
+       */
+      @java.lang.Override
+      public boolean hasS3Metadata() {
+        return dataProviderCase_ == 4;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A S3 compatible metadata.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata s3_metadata = 4;</code>
+       *
+       * @return The s3Metadata.
+       */
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata
+          getS3Metadata() {
+        if (s3MetadataBuilder_ == null) {
+          if (dataProviderCase_ == 4) {
+            return (com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata)
+                dataProvider_;
+          }
+          return com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata
+              .getDefaultInstance();
+        } else {
+          if (dataProviderCase_ == 4) {
+            return s3MetadataBuilder_.getMessage();
+          }
+          return com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A S3 compatible metadata.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata s3_metadata = 4;</code>
+       */
+      public Builder setS3Metadata(
+          com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata value) {
+        if (s3MetadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dataProvider_ = value;
+          onChanged();
+        } else {
+          s3MetadataBuilder_.setMessage(value);
+        }
+        dataProviderCase_ = 4;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A S3 compatible metadata.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata s3_metadata = 4;</code>
+       */
+      public Builder setS3Metadata(
+          com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.Builder
+              builderForValue) {
+        if (s3MetadataBuilder_ == null) {
+          dataProvider_ = builderForValue.build();
+          onChanged();
+        } else {
+          s3MetadataBuilder_.setMessage(builderForValue.build());
+        }
+        dataProviderCase_ = 4;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A S3 compatible metadata.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata s3_metadata = 4;</code>
+       */
+      public Builder mergeS3Metadata(
+          com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata value) {
+        if (s3MetadataBuilder_ == null) {
+          if (dataProviderCase_ == 4
+              && dataProvider_
+                  != com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata
+                      .getDefaultInstance()) {
+            dataProvider_ =
+                com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.newBuilder(
+                        (com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata)
+                            dataProvider_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            dataProvider_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataProviderCase_ == 4) {
+            s3MetadataBuilder_.mergeFrom(value);
+          } else {
+            s3MetadataBuilder_.setMessage(value);
+          }
+        }
+        dataProviderCase_ = 4;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A S3 compatible metadata.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata s3_metadata = 4;</code>
+       */
+      public Builder clearS3Metadata() {
+        if (s3MetadataBuilder_ == null) {
+          if (dataProviderCase_ == 4) {
+            dataProviderCase_ = 0;
+            dataProvider_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataProviderCase_ == 4) {
+            dataProviderCase_ = 0;
+            dataProvider_ = null;
+          }
+          s3MetadataBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A S3 compatible metadata.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata s3_metadata = 4;</code>
+       */
+      public com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.Builder
+          getS3MetadataBuilder() {
+        return getS3MetadataFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A S3 compatible metadata.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata s3_metadata = 4;</code>
+       */
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadataOrBuilder
+          getS3MetadataOrBuilder() {
+        if ((dataProviderCase_ == 4) && (s3MetadataBuilder_ != null)) {
+          return s3MetadataBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataProviderCase_ == 4) {
+            return (com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata)
+                dataProvider_;
+          }
+          return com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A S3 compatible metadata.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata s3_metadata = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata,
+              com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.Builder,
+              com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadataOrBuilder>
+          getS3MetadataFieldBuilder() {
+        if (s3MetadataBuilder_ == null) {
+          if (!(dataProviderCase_ == 4)) {
+            dataProvider_ =
+                com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata
+                    .getDefaultInstance();
+          }
+          s3MetadataBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata,
+                  com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.Builder,
+                  com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadataOrBuilder>(
+                  (com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata)
+                      dataProvider_,
+                  getParentForChildren(),
+                  isClean());
+          dataProvider_ = null;
+        }
+        dataProviderCase_ = 4;
+        onChanged();
+        ;
+        return s3MetadataBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.storagetransfer.v1.AwsS3CompatibleData)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.storagetransfer.v1.AwsS3CompatibleData)
+    private static final com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData();
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AwsS3CompatibleData> PARSER =
+        new com.google.protobuf.AbstractParser<AwsS3CompatibleData>() {
+          @java.lang.Override
+          public AwsS3CompatibleData parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new AwsS3CompatibleData(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<AwsS3CompatibleData> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AwsS3CompatibleData> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface S3CompatibleMetadataOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.storagetransfer.v1.S3CompatibleMetadata)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the authentication and authorization method used by the storage
+     * service. When not specified, Transfer Service will attempt to determine
+     * right auth method to use.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.S3CompatibleMetadata.AuthMethod auth_method = 1;</code>
+     *
+     * @return The enum numeric value on the wire for authMethod.
+     */
+    int getAuthMethodValue();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the authentication and authorization method used by the storage
+     * service. When not specified, Transfer Service will attempt to determine
+     * right auth method to use.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.S3CompatibleMetadata.AuthMethod auth_method = 1;</code>
+     *
+     * @return The authMethod.
+     */
+    com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.AuthMethod
+        getAuthMethod();
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the API request model used to call the storage service. When not
+     * specified, the default value of RequestModel
+     * REQUEST_MODEL_VIRTUAL_HOSTED_STYLE is used.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.S3CompatibleMetadata.RequestModel request_model = 2;</code>
+     *
+     * @return The enum numeric value on the wire for requestModel.
+     */
+    int getRequestModelValue();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the API request model used to call the storage service. When not
+     * specified, the default value of RequestModel
+     * REQUEST_MODEL_VIRTUAL_HOSTED_STYLE is used.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.S3CompatibleMetadata.RequestModel request_model = 2;</code>
+     *
+     * @return The requestModel.
+     */
+    com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.RequestModel
+        getRequestModel();
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the network protocol of the agent. When not specified, the
+     * default value of NetworkProtocol NETWORK_PROTOCOL_HTTPS is used.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.S3CompatibleMetadata.NetworkProtocol protocol = 3;</code>
+     *
+     * @return The enum numeric value on the wire for protocol.
+     */
+    int getProtocolValue();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the network protocol of the agent. When not specified, the
+     * default value of NetworkProtocol NETWORK_PROTOCOL_HTTPS is used.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.S3CompatibleMetadata.NetworkProtocol protocol = 3;</code>
+     *
+     * @return The protocol.
+     */
+    com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.NetworkProtocol
+        getProtocol();
+
+    /**
+     *
+     *
+     * <pre>
+     * The Listing API to use for discovering objects. When not specified,
+     * Transfer Service will attempt to determine the right API to use.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.S3CompatibleMetadata.ListApi list_api = 4;</code>
+     *
+     * @return The enum numeric value on the wire for listApi.
+     */
+    int getListApiValue();
+    /**
+     *
+     *
+     * <pre>
+     * The Listing API to use for discovering objects. When not specified,
+     * Transfer Service will attempt to determine the right API to use.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.S3CompatibleMetadata.ListApi list_api = 4;</code>
+     *
+     * @return The listApi.
+     */
+    com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.ListApi getListApi();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * S3CompatibleMetadata contains the metadata fields that apply to the basic
+   * types of S3-compatible data providers.
+   * </pre>
+   *
+   * Protobuf type {@code google.storagetransfer.v1.S3CompatibleMetadata}
+   */
+  public static final class S3CompatibleMetadata extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.storagetransfer.v1.S3CompatibleMetadata)
+      S3CompatibleMetadataOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use S3CompatibleMetadata.newBuilder() to construct.
+    private S3CompatibleMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private S3CompatibleMetadata() {
+      authMethod_ = 0;
+      requestModel_ = 0;
+      protocol_ = 0;
+      listApi_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new S3CompatibleMetadata();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private S3CompatibleMetadata(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                int rawValue = input.readEnum();
+
+                authMethod_ = rawValue;
+                break;
+              }
+            case 16:
+              {
+                int rawValue = input.readEnum();
+
+                requestModel_ = rawValue;
+                break;
+              }
+            case 24:
+              {
+                int rawValue = input.readEnum();
+
+                protocol_ = rawValue;
+                break;
+              }
+            case 32:
+              {
+                int rawValue = input.readEnum();
+
+                listApi_ = rawValue;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.storagetransfer.v1.proto.TransferTypes
+          .internal_static_google_storagetransfer_v1_S3CompatibleMetadata_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.storagetransfer.v1.proto.TransferTypes
+          .internal_static_google_storagetransfer_v1_S3CompatibleMetadata_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.class,
+              com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The authentication and authorization method used by the storage service.
+     * </pre>
+     *
+     * Protobuf enum {@code google.storagetransfer.v1.S3CompatibleMetadata.AuthMethod}
+     */
+    public enum AuthMethod implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * AuthMethod is not specified.
+       * </pre>
+       *
+       * <code>AUTH_METHOD_UNSPECIFIED = 0;</code>
+       */
+      AUTH_METHOD_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Auth requests with AWS SigV4.
+       * </pre>
+       *
+       * <code>AUTH_METHOD_AWS_SIGNATURE_V4 = 1;</code>
+       */
+      AUTH_METHOD_AWS_SIGNATURE_V4(1),
+      /**
+       *
+       *
+       * <pre>
+       * Auth requests with AWS SigV2.
+       * </pre>
+       *
+       * <code>AUTH_METHOD_AWS_SIGNATURE_V2 = 2;</code>
+       */
+      AUTH_METHOD_AWS_SIGNATURE_V2(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * AuthMethod is not specified.
+       * </pre>
+       *
+       * <code>AUTH_METHOD_UNSPECIFIED = 0;</code>
+       */
+      public static final int AUTH_METHOD_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Auth requests with AWS SigV4.
+       * </pre>
+       *
+       * <code>AUTH_METHOD_AWS_SIGNATURE_V4 = 1;</code>
+       */
+      public static final int AUTH_METHOD_AWS_SIGNATURE_V4_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Auth requests with AWS SigV2.
+       * </pre>
+       *
+       * <code>AUTH_METHOD_AWS_SIGNATURE_V2 = 2;</code>
+       */
+      public static final int AUTH_METHOD_AWS_SIGNATURE_V2_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static AuthMethod valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static AuthMethod forNumber(int value) {
+        switch (value) {
+          case 0:
+            return AUTH_METHOD_UNSPECIFIED;
+          case 1:
+            return AUTH_METHOD_AWS_SIGNATURE_V4;
+          case 2:
+            return AUTH_METHOD_AWS_SIGNATURE_V2;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<AuthMethod> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<AuthMethod> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<AuthMethod>() {
+            public AuthMethod findValueByNumber(int number) {
+              return AuthMethod.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final AuthMethod[] VALUES = values();
+
+      public static AuthMethod valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private AuthMethod(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.storagetransfer.v1.S3CompatibleMetadata.AuthMethod)
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The request model of the API.
+     * </pre>
+     *
+     * Protobuf enum {@code google.storagetransfer.v1.S3CompatibleMetadata.RequestModel}
+     */
+    public enum RequestModel implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * RequestModel is not specified.
+       * </pre>
+       *
+       * <code>REQUEST_MODEL_UNSPECIFIED = 0;</code>
+       */
+      REQUEST_MODEL_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Perform requests using Virtual Hosted Style.
+       * Example: https://bucket-name.s3.region.amazonaws.com/key-name
+       * </pre>
+       *
+       * <code>REQUEST_MODEL_VIRTUAL_HOSTED_STYLE = 1;</code>
+       */
+      REQUEST_MODEL_VIRTUAL_HOSTED_STYLE(1),
+      /**
+       *
+       *
+       * <pre>
+       * Perform requests using Path Style.
+       * Example: https://s3.region.amazonaws.com/bucket-name/key-name
+       * </pre>
+       *
+       * <code>REQUEST_MODEL_PATH_STYLE = 2;</code>
+       */
+      REQUEST_MODEL_PATH_STYLE(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * RequestModel is not specified.
+       * </pre>
+       *
+       * <code>REQUEST_MODEL_UNSPECIFIED = 0;</code>
+       */
+      public static final int REQUEST_MODEL_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Perform requests using Virtual Hosted Style.
+       * Example: https://bucket-name.s3.region.amazonaws.com/key-name
+       * </pre>
+       *
+       * <code>REQUEST_MODEL_VIRTUAL_HOSTED_STYLE = 1;</code>
+       */
+      public static final int REQUEST_MODEL_VIRTUAL_HOSTED_STYLE_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Perform requests using Path Style.
+       * Example: https://s3.region.amazonaws.com/bucket-name/key-name
+       * </pre>
+       *
+       * <code>REQUEST_MODEL_PATH_STYLE = 2;</code>
+       */
+      public static final int REQUEST_MODEL_PATH_STYLE_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static RequestModel valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static RequestModel forNumber(int value) {
+        switch (value) {
+          case 0:
+            return REQUEST_MODEL_UNSPECIFIED;
+          case 1:
+            return REQUEST_MODEL_VIRTUAL_HOSTED_STYLE;
+          case 2:
+            return REQUEST_MODEL_PATH_STYLE;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<RequestModel> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<RequestModel> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<RequestModel>() {
+            public RequestModel findValueByNumber(int number) {
+              return RequestModel.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata
+            .getDescriptor()
+            .getEnumTypes()
+            .get(1);
+      }
+
+      private static final RequestModel[] VALUES = values();
+
+      public static RequestModel valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private RequestModel(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.storagetransfer.v1.S3CompatibleMetadata.RequestModel)
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The agent network protocol to access the storage service.
+     * </pre>
+     *
+     * Protobuf enum {@code google.storagetransfer.v1.S3CompatibleMetadata.NetworkProtocol}
+     */
+    public enum NetworkProtocol implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * NetworkProtocol is not specified.
+       * </pre>
+       *
+       * <code>NETWORK_PROTOCOL_UNSPECIFIED = 0;</code>
+       */
+      NETWORK_PROTOCOL_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Perform requests using HTTPS.
+       * </pre>
+       *
+       * <code>NETWORK_PROTOCOL_HTTPS = 1;</code>
+       */
+      NETWORK_PROTOCOL_HTTPS(1),
+      /**
+       *
+       *
+       * <pre>
+       * Not recommended: This sends data in clear-text. This is only
+       * appropriate within a closed network or for publicly available data.
+       * Perform requests using HTTP.
+       * </pre>
+       *
+       * <code>NETWORK_PROTOCOL_HTTP = 2;</code>
+       */
+      NETWORK_PROTOCOL_HTTP(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * NetworkProtocol is not specified.
+       * </pre>
+       *
+       * <code>NETWORK_PROTOCOL_UNSPECIFIED = 0;</code>
+       */
+      public static final int NETWORK_PROTOCOL_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Perform requests using HTTPS.
+       * </pre>
+       *
+       * <code>NETWORK_PROTOCOL_HTTPS = 1;</code>
+       */
+      public static final int NETWORK_PROTOCOL_HTTPS_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Not recommended: This sends data in clear-text. This is only
+       * appropriate within a closed network or for publicly available data.
+       * Perform requests using HTTP.
+       * </pre>
+       *
+       * <code>NETWORK_PROTOCOL_HTTP = 2;</code>
+       */
+      public static final int NETWORK_PROTOCOL_HTTP_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static NetworkProtocol valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static NetworkProtocol forNumber(int value) {
+        switch (value) {
+          case 0:
+            return NETWORK_PROTOCOL_UNSPECIFIED;
+          case 1:
+            return NETWORK_PROTOCOL_HTTPS;
+          case 2:
+            return NETWORK_PROTOCOL_HTTP;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<NetworkProtocol>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<NetworkProtocol>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<NetworkProtocol>() {
+                public NetworkProtocol findValueByNumber(int number) {
+                  return NetworkProtocol.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata
+            .getDescriptor()
+            .getEnumTypes()
+            .get(2);
+      }
+
+      private static final NetworkProtocol[] VALUES = values();
+
+      public static NetworkProtocol valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private NetworkProtocol(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.storagetransfer.v1.S3CompatibleMetadata.NetworkProtocol)
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The Listing API to use for discovering objects.
+     * </pre>
+     *
+     * Protobuf enum {@code google.storagetransfer.v1.S3CompatibleMetadata.ListApi}
+     */
+    public enum ListApi implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * ListApi is not specified.
+       * </pre>
+       *
+       * <code>LIST_API_UNSPECIFIED = 0;</code>
+       */
+      LIST_API_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Perform listing using ListObjectsV2 API.
+       * </pre>
+       *
+       * <code>LIST_OBJECTS_V2 = 1;</code>
+       */
+      LIST_OBJECTS_V2(1),
+      /**
+       *
+       *
+       * <pre>
+       * Legacy ListObjects API.
+       * </pre>
+       *
+       * <code>LIST_OBJECTS = 2;</code>
+       */
+      LIST_OBJECTS(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * ListApi is not specified.
+       * </pre>
+       *
+       * <code>LIST_API_UNSPECIFIED = 0;</code>
+       */
+      public static final int LIST_API_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Perform listing using ListObjectsV2 API.
+       * </pre>
+       *
+       * <code>LIST_OBJECTS_V2 = 1;</code>
+       */
+      public static final int LIST_OBJECTS_V2_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Legacy ListObjects API.
+       * </pre>
+       *
+       * <code>LIST_OBJECTS = 2;</code>
+       */
+      public static final int LIST_OBJECTS_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ListApi valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static ListApi forNumber(int value) {
+        switch (value) {
+          case 0:
+            return LIST_API_UNSPECIFIED;
+          case 1:
+            return LIST_OBJECTS_V2;
+          case 2:
+            return LIST_OBJECTS;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<ListApi> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<ListApi> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<ListApi>() {
+            public ListApi findValueByNumber(int number) {
+              return ListApi.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata
+            .getDescriptor()
+            .getEnumTypes()
+            .get(3);
+      }
+
+      private static final ListApi[] VALUES = values();
+
+      public static ListApi valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private ListApi(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.storagetransfer.v1.S3CompatibleMetadata.ListApi)
+    }
+
+    public static final int AUTH_METHOD_FIELD_NUMBER = 1;
+    private int authMethod_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the authentication and authorization method used by the storage
+     * service. When not specified, Transfer Service will attempt to determine
+     * right auth method to use.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.S3CompatibleMetadata.AuthMethod auth_method = 1;</code>
+     *
+     * @return The enum numeric value on the wire for authMethod.
+     */
+    @java.lang.Override
+    public int getAuthMethodValue() {
+      return authMethod_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the authentication and authorization method used by the storage
+     * service. When not specified, Transfer Service will attempt to determine
+     * right auth method to use.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.S3CompatibleMetadata.AuthMethod auth_method = 1;</code>
+     *
+     * @return The authMethod.
+     */
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.AuthMethod
+        getAuthMethod() {
+      @SuppressWarnings("deprecation")
+      com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.AuthMethod result =
+          com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.AuthMethod.valueOf(
+              authMethod_);
+      return result == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.AuthMethod
+              .UNRECOGNIZED
+          : result;
+    }
+
+    public static final int REQUEST_MODEL_FIELD_NUMBER = 2;
+    private int requestModel_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the API request model used to call the storage service. When not
+     * specified, the default value of RequestModel
+     * REQUEST_MODEL_VIRTUAL_HOSTED_STYLE is used.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.S3CompatibleMetadata.RequestModel request_model = 2;</code>
+     *
+     * @return The enum numeric value on the wire for requestModel.
+     */
+    @java.lang.Override
+    public int getRequestModelValue() {
+      return requestModel_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the API request model used to call the storage service. When not
+     * specified, the default value of RequestModel
+     * REQUEST_MODEL_VIRTUAL_HOSTED_STYLE is used.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.S3CompatibleMetadata.RequestModel request_model = 2;</code>
+     *
+     * @return The requestModel.
+     */
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.RequestModel
+        getRequestModel() {
+      @SuppressWarnings("deprecation")
+      com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.RequestModel result =
+          com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.RequestModel
+              .valueOf(requestModel_);
+      return result == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.RequestModel
+              .UNRECOGNIZED
+          : result;
+    }
+
+    public static final int PROTOCOL_FIELD_NUMBER = 3;
+    private int protocol_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the network protocol of the agent. When not specified, the
+     * default value of NetworkProtocol NETWORK_PROTOCOL_HTTPS is used.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.S3CompatibleMetadata.NetworkProtocol protocol = 3;</code>
+     *
+     * @return The enum numeric value on the wire for protocol.
+     */
+    @java.lang.Override
+    public int getProtocolValue() {
+      return protocol_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the network protocol of the agent. When not specified, the
+     * default value of NetworkProtocol NETWORK_PROTOCOL_HTTPS is used.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.S3CompatibleMetadata.NetworkProtocol protocol = 3;</code>
+     *
+     * @return The protocol.
+     */
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.NetworkProtocol
+        getProtocol() {
+      @SuppressWarnings("deprecation")
+      com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.NetworkProtocol
+          result =
+              com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.NetworkProtocol
+                  .valueOf(protocol_);
+      return result == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.NetworkProtocol
+              .UNRECOGNIZED
+          : result;
+    }
+
+    public static final int LIST_API_FIELD_NUMBER = 4;
+    private int listApi_;
+    /**
+     *
+     *
+     * <pre>
+     * The Listing API to use for discovering objects. When not specified,
+     * Transfer Service will attempt to determine the right API to use.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.S3CompatibleMetadata.ListApi list_api = 4;</code>
+     *
+     * @return The enum numeric value on the wire for listApi.
+     */
+    @java.lang.Override
+    public int getListApiValue() {
+      return listApi_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Listing API to use for discovering objects. When not specified,
+     * Transfer Service will attempt to determine the right API to use.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.S3CompatibleMetadata.ListApi list_api = 4;</code>
+     *
+     * @return The listApi.
+     */
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.ListApi
+        getListApi() {
+      @SuppressWarnings("deprecation")
+      com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.ListApi result =
+          com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.ListApi.valueOf(
+              listApi_);
+      return result == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.ListApi
+              .UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (authMethod_
+          != com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.AuthMethod
+              .AUTH_METHOD_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, authMethod_);
+      }
+      if (requestModel_
+          != com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.RequestModel
+              .REQUEST_MODEL_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, requestModel_);
+      }
+      if (protocol_
+          != com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.NetworkProtocol
+              .NETWORK_PROTOCOL_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(3, protocol_);
+      }
+      if (listApi_
+          != com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.ListApi
+              .LIST_API_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(4, listApi_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (authMethod_
+          != com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.AuthMethod
+              .AUTH_METHOD_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, authMethod_);
+      }
+      if (requestModel_
+          != com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.RequestModel
+              .REQUEST_MODEL_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, requestModel_);
+      }
+      if (protocol_
+          != com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.NetworkProtocol
+              .NETWORK_PROTOCOL_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, protocol_);
+      }
+      if (listApi_
+          != com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.ListApi
+              .LIST_API_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, listApi_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata)) {
+        return super.equals(obj);
+      }
+      com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata other =
+          (com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata) obj;
+
+      if (authMethod_ != other.authMethod_) return false;
+      if (requestModel_ != other.requestModel_) return false;
+      if (protocol_ != other.protocol_) return false;
+      if (listApi_ != other.listApi_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AUTH_METHOD_FIELD_NUMBER;
+      hash = (53 * hash) + authMethod_;
+      hash = (37 * hash) + REQUEST_MODEL_FIELD_NUMBER;
+      hash = (53 * hash) + requestModel_;
+      hash = (37 * hash) + PROTOCOL_FIELD_NUMBER;
+      hash = (53 * hash) + protocol_;
+      hash = (37 * hash) + LIST_API_FIELD_NUMBER;
+      hash = (53 * hash) + listApi_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * S3CompatibleMetadata contains the metadata fields that apply to the basic
+     * types of S3-compatible data providers.
+     * </pre>
+     *
+     * Protobuf type {@code google.storagetransfer.v1.S3CompatibleMetadata}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.storagetransfer.v1.S3CompatibleMetadata)
+        com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.storagetransfer.v1.proto.TransferTypes
+            .internal_static_google_storagetransfer_v1_S3CompatibleMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.storagetransfer.v1.proto.TransferTypes
+            .internal_static_google_storagetransfer_v1_S3CompatibleMetadata_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.class,
+                com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        authMethod_ = 0;
+
+        requestModel_ = 0;
+
+        protocol_ = 0;
+
+        listApi_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.storagetransfer.v1.proto.TransferTypes
+            .internal_static_google_storagetransfer_v1_S3CompatibleMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata
+          getDefaultInstanceForType() {
+        return com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata build() {
+        com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata buildPartial() {
+        com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata result =
+            new com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata(this);
+        result.authMethod_ = authMethod_;
+        result.requestModel_ = requestModel_;
+        result.protocol_ = protocol_;
+        result.listApi_ = listApi_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata) {
+          return mergeFrom(
+              (com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata other) {
+        if (other
+            == com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata
+                .getDefaultInstance()) return this;
+        if (other.authMethod_ != 0) {
+          setAuthMethodValue(other.getAuthMethodValue());
+        }
+        if (other.requestModel_ != 0) {
+          setRequestModelValue(other.getRequestModelValue());
+        }
+        if (other.protocol_ != 0) {
+          setProtocolValue(other.getProtocolValue());
+        }
+        if (other.listApi_ != 0) {
+          setListApiValue(other.getListApiValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int authMethod_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the authentication and authorization method used by the storage
+       * service. When not specified, Transfer Service will attempt to determine
+       * right auth method to use.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata.AuthMethod auth_method = 1;</code>
+       *
+       * @return The enum numeric value on the wire for authMethod.
+       */
+      @java.lang.Override
+      public int getAuthMethodValue() {
+        return authMethod_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the authentication and authorization method used by the storage
+       * service. When not specified, Transfer Service will attempt to determine
+       * right auth method to use.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata.AuthMethod auth_method = 1;</code>
+       *
+       * @param value The enum numeric value on the wire for authMethod to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuthMethodValue(int value) {
+
+        authMethod_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the authentication and authorization method used by the storage
+       * service. When not specified, Transfer Service will attempt to determine
+       * right auth method to use.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata.AuthMethod auth_method = 1;</code>
+       *
+       * @return The authMethod.
+       */
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.AuthMethod
+          getAuthMethod() {
+        @SuppressWarnings("deprecation")
+        com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.AuthMethod result =
+            com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.AuthMethod
+                .valueOf(authMethod_);
+        return result == null
+            ? com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.AuthMethod
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the authentication and authorization method used by the storage
+       * service. When not specified, Transfer Service will attempt to determine
+       * right auth method to use.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata.AuthMethod auth_method = 1;</code>
+       *
+       * @param value The authMethod to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuthMethod(
+          com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.AuthMethod value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        authMethod_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the authentication and authorization method used by the storage
+       * service. When not specified, Transfer Service will attempt to determine
+       * right auth method to use.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata.AuthMethod auth_method = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAuthMethod() {
+
+        authMethod_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int requestModel_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the API request model used to call the storage service. When not
+       * specified, the default value of RequestModel
+       * REQUEST_MODEL_VIRTUAL_HOSTED_STYLE is used.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata.RequestModel request_model = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for requestModel.
+       */
+      @java.lang.Override
+      public int getRequestModelValue() {
+        return requestModel_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the API request model used to call the storage service. When not
+       * specified, the default value of RequestModel
+       * REQUEST_MODEL_VIRTUAL_HOSTED_STYLE is used.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata.RequestModel request_model = 2;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for requestModel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequestModelValue(int value) {
+
+        requestModel_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the API request model used to call the storage service. When not
+       * specified, the default value of RequestModel
+       * REQUEST_MODEL_VIRTUAL_HOSTED_STYLE is used.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata.RequestModel request_model = 2;
+       * </code>
+       *
+       * @return The requestModel.
+       */
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.RequestModel
+          getRequestModel() {
+        @SuppressWarnings("deprecation")
+        com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.RequestModel result =
+            com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.RequestModel
+                .valueOf(requestModel_);
+        return result == null
+            ? com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.RequestModel
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the API request model used to call the storage service. When not
+       * specified, the default value of RequestModel
+       * REQUEST_MODEL_VIRTUAL_HOSTED_STYLE is used.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata.RequestModel request_model = 2;
+       * </code>
+       *
+       * @param value The requestModel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequestModel(
+          com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.RequestModel
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        requestModel_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the API request model used to call the storage service. When not
+       * specified, the default value of RequestModel
+       * REQUEST_MODEL_VIRTUAL_HOSTED_STYLE is used.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata.RequestModel request_model = 2;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRequestModel() {
+
+        requestModel_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int protocol_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the network protocol of the agent. When not specified, the
+       * default value of NetworkProtocol NETWORK_PROTOCOL_HTTPS is used.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata.NetworkProtocol protocol = 3;</code>
+       *
+       * @return The enum numeric value on the wire for protocol.
+       */
+      @java.lang.Override
+      public int getProtocolValue() {
+        return protocol_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the network protocol of the agent. When not specified, the
+       * default value of NetworkProtocol NETWORK_PROTOCOL_HTTPS is used.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata.NetworkProtocol protocol = 3;</code>
+       *
+       * @param value The enum numeric value on the wire for protocol to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProtocolValue(int value) {
+
+        protocol_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the network protocol of the agent. When not specified, the
+       * default value of NetworkProtocol NETWORK_PROTOCOL_HTTPS is used.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata.NetworkProtocol protocol = 3;</code>
+       *
+       * @return The protocol.
+       */
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.NetworkProtocol
+          getProtocol() {
+        @SuppressWarnings("deprecation")
+        com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.NetworkProtocol
+            result =
+                com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata
+                    .NetworkProtocol.valueOf(protocol_);
+        return result == null
+            ? com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.NetworkProtocol
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the network protocol of the agent. When not specified, the
+       * default value of NetworkProtocol NETWORK_PROTOCOL_HTTPS is used.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata.NetworkProtocol protocol = 3;</code>
+       *
+       * @param value The protocol to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProtocol(
+          com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.NetworkProtocol
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        protocol_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the network protocol of the agent. When not specified, the
+       * default value of NetworkProtocol NETWORK_PROTOCOL_HTTPS is used.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata.NetworkProtocol protocol = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearProtocol() {
+
+        protocol_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int listApi_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The Listing API to use for discovering objects. When not specified,
+       * Transfer Service will attempt to determine the right API to use.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata.ListApi list_api = 4;</code>
+       *
+       * @return The enum numeric value on the wire for listApi.
+       */
+      @java.lang.Override
+      public int getListApiValue() {
+        return listApi_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Listing API to use for discovering objects. When not specified,
+       * Transfer Service will attempt to determine the right API to use.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata.ListApi list_api = 4;</code>
+       *
+       * @param value The enum numeric value on the wire for listApi to set.
+       * @return This builder for chaining.
+       */
+      public Builder setListApiValue(int value) {
+
+        listApi_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Listing API to use for discovering objects. When not specified,
+       * Transfer Service will attempt to determine the right API to use.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata.ListApi list_api = 4;</code>
+       *
+       * @return The listApi.
+       */
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.ListApi
+          getListApi() {
+        @SuppressWarnings("deprecation")
+        com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.ListApi result =
+            com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.ListApi.valueOf(
+                listApi_);
+        return result == null
+            ? com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.ListApi
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Listing API to use for discovering objects. When not specified,
+       * Transfer Service will attempt to determine the right API to use.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata.ListApi list_api = 4;</code>
+       *
+       * @param value The listApi to set.
+       * @return This builder for chaining.
+       */
+      public Builder setListApi(
+          com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.ListApi value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        listApi_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Listing API to use for discovering objects. When not specified,
+       * Transfer Service will attempt to determine the right API to use.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.S3CompatibleMetadata.ListApi list_api = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearListApi() {
+
+        listApi_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.storagetransfer.v1.S3CompatibleMetadata)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.storagetransfer.v1.S3CompatibleMetadata)
+    private static final com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata();
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<S3CompatibleMetadata> PARSER =
+        new com.google.protobuf.AbstractParser<S3CompatibleMetadata>() {
+          @java.lang.Override
+          public S3CompatibleMetadata parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new S3CompatibleMetadata(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<S3CompatibleMetadata> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<S3CompatibleMetadata> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface AgentPoolOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.storagetransfer.v1.AgentPool)
@@ -13579,7 +17304,7 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * When to overwrite objects that already exist in the sink. If not set
+     * When to overwrite objects that already exist in the sink. If not set,
      * overwrite behavior is determined by
      * [overwrite_objects_already_existing_in_sink][google.storagetransfer.v1.TransferOptions.overwrite_objects_already_existing_in_sink].
      * </pre>
@@ -13593,7 +17318,7 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * When to overwrite objects that already exist in the sink. If not set
+     * When to overwrite objects that already exist in the sink. If not set,
      * overwrite behavior is determined by
      * [overwrite_objects_already_existing_in_sink][google.storagetransfer.v1.TransferOptions.overwrite_objects_already_existing_in_sink].
      * </pre>
@@ -13609,8 +17334,7 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Represents the selected metadata options for a transfer job. This feature
-     * is in Preview.
+     * Represents the selected metadata options for a transfer job.
      * </pre>
      *
      * <code>.google.storagetransfer.v1.MetadataOptions metadata_options = 5;</code>
@@ -13622,8 +17346,7 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Represents the selected metadata options for a transfer job. This feature
-     * is in Preview.
+     * Represents the selected metadata options for a transfer job.
      * </pre>
      *
      * <code>.google.storagetransfer.v1.MetadataOptions metadata_options = 5;</code>
@@ -13635,8 +17358,7 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Represents the selected metadata options for a transfer job. This feature
-     * is in Preview.
+     * Represents the selected metadata options for a transfer job.
      * </pre>
      *
      * <code>.google.storagetransfer.v1.MetadataOptions metadata_options = 5;</code>
@@ -13787,7 +17509,7 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Indicate the option is not set.
+       * Overwrite behavior is unspecified.
        * </pre>
        *
        * <code>OVERWRITE_WHEN_UNSPECIFIED = 0;</code>
@@ -13797,8 +17519,8 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Overwrite destination object with source if the two objects are
-       * different.
+       * Overwrites destination objects with the source objects, only if the
+       * objects have the same name but different HTTP ETags or checksum values.
        * </pre>
        *
        * <code>DIFFERENT = 1;</code>
@@ -13808,7 +17530,8 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Never overwrite destination object.
+       * Never overwrites a destination object if a source object has the
+       * same name. In this case, the source object is not transferred.
        * </pre>
        *
        * <code>NEVER = 2;</code>
@@ -13818,7 +17541,8 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Always overwrite destination object.
+       * Always overwrite the destination object with the source object, even if
+       * the HTTP Etags or checksum values are the same.
        * </pre>
        *
        * <code>ALWAYS = 3;</code>
@@ -13831,7 +17555,7 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Indicate the option is not set.
+       * Overwrite behavior is unspecified.
        * </pre>
        *
        * <code>OVERWRITE_WHEN_UNSPECIFIED = 0;</code>
@@ -13841,8 +17565,8 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Overwrite destination object with source if the two objects are
-       * different.
+       * Overwrites destination objects with the source objects, only if the
+       * objects have the same name but different HTTP ETags or checksum values.
        * </pre>
        *
        * <code>DIFFERENT = 1;</code>
@@ -13852,7 +17576,8 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Never overwrite destination object.
+       * Never overwrites a destination object if a source object has the
+       * same name. In this case, the source object is not transferred.
        * </pre>
        *
        * <code>NEVER = 2;</code>
@@ -13862,7 +17587,8 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Always overwrite destination object.
+       * Always overwrite the destination object with the source object, even if
+       * the HTTP Etags or checksum values are the same.
        * </pre>
        *
        * <code>ALWAYS = 3;</code>
@@ -14026,7 +17752,7 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * When to overwrite objects that already exist in the sink. If not set
+     * When to overwrite objects that already exist in the sink. If not set,
      * overwrite behavior is determined by
      * [overwrite_objects_already_existing_in_sink][google.storagetransfer.v1.TransferOptions.overwrite_objects_already_existing_in_sink].
      * </pre>
@@ -14043,7 +17769,7 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * When to overwrite objects that already exist in the sink. If not set
+     * When to overwrite objects that already exist in the sink. If not set,
      * overwrite behavior is determined by
      * [overwrite_objects_already_existing_in_sink][google.storagetransfer.v1.TransferOptions.overwrite_objects_already_existing_in_sink].
      * </pre>
@@ -14071,8 +17797,7 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Represents the selected metadata options for a transfer job. This feature
-     * is in Preview.
+     * Represents the selected metadata options for a transfer job.
      * </pre>
      *
      * <code>.google.storagetransfer.v1.MetadataOptions metadata_options = 5;</code>
@@ -14087,8 +17812,7 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Represents the selected metadata options for a transfer job. This feature
-     * is in Preview.
+     * Represents the selected metadata options for a transfer job.
      * </pre>
      *
      * <code>.google.storagetransfer.v1.MetadataOptions metadata_options = 5;</code>
@@ -14105,8 +17829,7 @@ public final class TransferTypes {
      *
      *
      * <pre>
-     * Represents the selected metadata options for a transfer job. This feature
-     * is in Preview.
+     * Represents the selected metadata options for a transfer job.
      * </pre>
      *
      * <code>.google.storagetransfer.v1.MetadataOptions metadata_options = 5;</code>
@@ -14724,7 +18447,7 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * When to overwrite objects that already exist in the sink. If not set
+       * When to overwrite objects that already exist in the sink. If not set,
        * overwrite behavior is determined by
        * [overwrite_objects_already_existing_in_sink][google.storagetransfer.v1.TransferOptions.overwrite_objects_already_existing_in_sink].
        * </pre>
@@ -14741,7 +18464,7 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * When to overwrite objects that already exist in the sink. If not set
+       * When to overwrite objects that already exist in the sink. If not set,
        * overwrite behavior is determined by
        * [overwrite_objects_already_existing_in_sink][google.storagetransfer.v1.TransferOptions.overwrite_objects_already_existing_in_sink].
        * </pre>
@@ -14761,7 +18484,7 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * When to overwrite objects that already exist in the sink. If not set
+       * When to overwrite objects that already exist in the sink. If not set,
        * overwrite behavior is determined by
        * [overwrite_objects_already_existing_in_sink][google.storagetransfer.v1.TransferOptions.overwrite_objects_already_existing_in_sink].
        * </pre>
@@ -14786,7 +18509,7 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * When to overwrite objects that already exist in the sink. If not set
+       * When to overwrite objects that already exist in the sink. If not set,
        * overwrite behavior is determined by
        * [overwrite_objects_already_existing_in_sink][google.storagetransfer.v1.TransferOptions.overwrite_objects_already_existing_in_sink].
        * </pre>
@@ -14810,7 +18533,7 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * When to overwrite objects that already exist in the sink. If not set
+       * When to overwrite objects that already exist in the sink. If not set,
        * overwrite behavior is determined by
        * [overwrite_objects_already_existing_in_sink][google.storagetransfer.v1.TransferOptions.overwrite_objects_already_existing_in_sink].
        * </pre>
@@ -14836,8 +18559,7 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Represents the selected metadata options for a transfer job. This feature
-       * is in Preview.
+       * Represents the selected metadata options for a transfer job.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.MetadataOptions metadata_options = 5;</code>
@@ -14851,8 +18573,7 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Represents the selected metadata options for a transfer job. This feature
-       * is in Preview.
+       * Represents the selected metadata options for a transfer job.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.MetadataOptions metadata_options = 5;</code>
@@ -14874,8 +18595,7 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Represents the selected metadata options for a transfer job. This feature
-       * is in Preview.
+       * Represents the selected metadata options for a transfer job.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.MetadataOptions metadata_options = 5;</code>
@@ -14898,8 +18618,7 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Represents the selected metadata options for a transfer job. This feature
-       * is in Preview.
+       * Represents the selected metadata options for a transfer job.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.MetadataOptions metadata_options = 5;</code>
@@ -14920,8 +18639,7 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Represents the selected metadata options for a transfer job. This feature
-       * is in Preview.
+       * Represents the selected metadata options for a transfer job.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.MetadataOptions metadata_options = 5;</code>
@@ -14949,8 +18667,7 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Represents the selected metadata options for a transfer job. This feature
-       * is in Preview.
+       * Represents the selected metadata options for a transfer job.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.MetadataOptions metadata_options = 5;</code>
@@ -14970,8 +18687,7 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Represents the selected metadata options for a transfer job. This feature
-       * is in Preview.
+       * Represents the selected metadata options for a transfer job.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.MetadataOptions metadata_options = 5;</code>
@@ -14986,8 +18702,7 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Represents the selected metadata options for a transfer job. This feature
-       * is in Preview.
+       * Represents the selected metadata options for a transfer job.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.MetadataOptions metadata_options = 5;</code>
@@ -15007,8 +18722,7 @@ public final class TransferTypes {
        *
        *
        * <pre>
-       * Represents the selected metadata options for a transfer job. This feature
-       * is in Preview.
+       * Represents the selected metadata options for a transfer job.
        * </pre>
        *
        * <code>.google.storagetransfer.v1.MetadataOptions metadata_options = 5;</code>
@@ -15343,6 +19057,46 @@ public final class TransferTypes {
      */
     com.google.storagetransfer.v1.proto.TransferTypes.AzureBlobStorageDataOrBuilder
         getAzureBlobStorageDataSourceOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * An AWS S3 compatible data source.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.AwsS3CompatibleData aws_s3_compatible_data_source = 19;
+     * </code>
+     *
+     * @return Whether the awsS3CompatibleDataSource field is set.
+     */
+    boolean hasAwsS3CompatibleDataSource();
+    /**
+     *
+     *
+     * <pre>
+     * An AWS S3 compatible data source.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.AwsS3CompatibleData aws_s3_compatible_data_source = 19;
+     * </code>
+     *
+     * @return The awsS3CompatibleDataSource.
+     */
+    com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData
+        getAwsS3CompatibleDataSource();
+    /**
+     *
+     *
+     * <pre>
+     * An AWS S3 compatible data source.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.AwsS3CompatibleData aws_s3_compatible_data_source = 19;
+     * </code>
+     */
+    com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleDataOrBuilder
+        getAwsS3CompatibleDataSourceOrBuilder();
 
     /**
      *
@@ -15871,6 +19625,30 @@ public final class TransferTypes {
                 sinkAgentPoolName_ = s;
                 break;
               }
+            case 154:
+              {
+                com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData.Builder
+                    subBuilder = null;
+                if (dataSourceCase_ == 19) {
+                  subBuilder =
+                      ((com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData)
+                              dataSource_)
+                          .toBuilder();
+                }
+                dataSource_ =
+                    input.readMessage(
+                        com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData
+                            .parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(
+                      (com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData)
+                          dataSource_);
+                  dataSource_ = subBuilder.buildPartial();
+                }
+                dataSourceCase_ = 19;
+                break;
+              }
             default:
               {
                 if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -15966,6 +19744,7 @@ public final class TransferTypes {
       HTTP_DATA_SOURCE(3),
       POSIX_DATA_SOURCE(14),
       AZURE_BLOB_STORAGE_DATA_SOURCE(8),
+      AWS_S3_COMPATIBLE_DATA_SOURCE(19),
       DATASOURCE_NOT_SET(0);
       private final int value;
 
@@ -15994,6 +19773,8 @@ public final class TransferTypes {
             return POSIX_DATA_SOURCE;
           case 8:
             return AZURE_BLOB_STORAGE_DATA_SOURCE;
+          case 19:
+            return AWS_S3_COMPATIBLE_DATA_SOURCE;
           case 0:
             return DATASOURCE_NOT_SET;
           default:
@@ -16424,6 +20205,64 @@ public final class TransferTypes {
           .getDefaultInstance();
     }
 
+    public static final int AWS_S3_COMPATIBLE_DATA_SOURCE_FIELD_NUMBER = 19;
+    /**
+     *
+     *
+     * <pre>
+     * An AWS S3 compatible data source.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.AwsS3CompatibleData aws_s3_compatible_data_source = 19;
+     * </code>
+     *
+     * @return Whether the awsS3CompatibleDataSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasAwsS3CompatibleDataSource() {
+      return dataSourceCase_ == 19;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An AWS S3 compatible data source.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.AwsS3CompatibleData aws_s3_compatible_data_source = 19;
+     * </code>
+     *
+     * @return The awsS3CompatibleDataSource.
+     */
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData
+        getAwsS3CompatibleDataSource() {
+      if (dataSourceCase_ == 19) {
+        return (com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData) dataSource_;
+      }
+      return com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An AWS S3 compatible data source.
+     * </pre>
+     *
+     * <code>.google.storagetransfer.v1.AwsS3CompatibleData aws_s3_compatible_data_source = 19;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleDataOrBuilder
+        getAwsS3CompatibleDataSourceOrBuilder() {
+      if (dataSourceCase_ == 19) {
+        return (com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData) dataSource_;
+      }
+      return com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData
+          .getDefaultInstance();
+    }
+
     public static final int GCS_INTERMEDIATE_DATA_LOCATION_FIELD_NUMBER = 16;
     /**
      *
@@ -16817,6 +20656,11 @@ public final class TransferTypes {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sinkAgentPoolName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 18, sinkAgentPoolName_);
       }
+      if (dataSourceCase_ == 19) {
+        output.writeMessage(
+            19,
+            (com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData) dataSource_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -16886,6 +20730,13 @@ public final class TransferTypes {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sinkAgentPoolName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, sinkAgentPoolName_);
       }
+      if (dataSourceCase_ == 19) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                19,
+                (com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData)
+                    dataSource_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -16943,6 +20794,10 @@ public final class TransferTypes {
           break;
         case 8:
           if (!getAzureBlobStorageDataSource().equals(other.getAzureBlobStorageDataSource()))
+            return false;
+          break;
+        case 19:
+          if (!getAwsS3CompatibleDataSource().equals(other.getAwsS3CompatibleDataSource()))
             return false;
           break;
         case 0:
@@ -17017,6 +20872,10 @@ public final class TransferTypes {
         case 8:
           hash = (37 * hash) + AZURE_BLOB_STORAGE_DATA_SOURCE_FIELD_NUMBER;
           hash = (53 * hash) + getAzureBlobStorageDataSource().hashCode();
+          break;
+        case 19:
+          hash = (37 * hash) + AWS_S3_COMPATIBLE_DATA_SOURCE_FIELD_NUMBER;
+          hash = (53 * hash) + getAwsS3CompatibleDataSource().hashCode();
           break;
         case 0:
         default:
@@ -17282,6 +21141,13 @@ public final class TransferTypes {
             result.dataSource_ = azureBlobStorageDataSourceBuilder_.build();
           }
         }
+        if (dataSourceCase_ == 19) {
+          if (awsS3CompatibleDataSourceBuilder_ == null) {
+            result.dataSource_ = dataSource_;
+          } else {
+            result.dataSource_ = awsS3CompatibleDataSourceBuilder_.build();
+          }
+        }
         if (intermediateDataLocationCase_ == 16) {
           if (gcsIntermediateDataLocationBuilder_ == null) {
             result.intermediateDataLocation_ = intermediateDataLocation_;
@@ -17420,6 +21286,11 @@ public final class TransferTypes {
           case AZURE_BLOB_STORAGE_DATA_SOURCE:
             {
               mergeAzureBlobStorageDataSource(other.getAzureBlobStorageDataSource());
+              break;
+            }
+          case AWS_S3_COMPATIBLE_DATA_SOURCE:
+            {
+              mergeAwsS3CompatibleDataSource(other.getAwsS3CompatibleDataSource());
               break;
             }
           case DATASOURCE_NOT_SET:
@@ -19060,6 +22931,242 @@ public final class TransferTypes {
         onChanged();
         ;
         return azureBlobStorageDataSourceBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData,
+              com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData.Builder,
+              com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleDataOrBuilder>
+          awsS3CompatibleDataSourceBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * An AWS S3 compatible data source.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.AwsS3CompatibleData aws_s3_compatible_data_source = 19;
+       * </code>
+       *
+       * @return Whether the awsS3CompatibleDataSource field is set.
+       */
+      @java.lang.Override
+      public boolean hasAwsS3CompatibleDataSource() {
+        return dataSourceCase_ == 19;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An AWS S3 compatible data source.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.AwsS3CompatibleData aws_s3_compatible_data_source = 19;
+       * </code>
+       *
+       * @return The awsS3CompatibleDataSource.
+       */
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData
+          getAwsS3CompatibleDataSource() {
+        if (awsS3CompatibleDataSourceBuilder_ == null) {
+          if (dataSourceCase_ == 19) {
+            return (com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData)
+                dataSource_;
+          }
+          return com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData
+              .getDefaultInstance();
+        } else {
+          if (dataSourceCase_ == 19) {
+            return awsS3CompatibleDataSourceBuilder_.getMessage();
+          }
+          return com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An AWS S3 compatible data source.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.AwsS3CompatibleData aws_s3_compatible_data_source = 19;
+       * </code>
+       */
+      public Builder setAwsS3CompatibleDataSource(
+          com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData value) {
+        if (awsS3CompatibleDataSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dataSource_ = value;
+          onChanged();
+        } else {
+          awsS3CompatibleDataSourceBuilder_.setMessage(value);
+        }
+        dataSourceCase_ = 19;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An AWS S3 compatible data source.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.AwsS3CompatibleData aws_s3_compatible_data_source = 19;
+       * </code>
+       */
+      public Builder setAwsS3CompatibleDataSource(
+          com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData.Builder
+              builderForValue) {
+        if (awsS3CompatibleDataSourceBuilder_ == null) {
+          dataSource_ = builderForValue.build();
+          onChanged();
+        } else {
+          awsS3CompatibleDataSourceBuilder_.setMessage(builderForValue.build());
+        }
+        dataSourceCase_ = 19;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An AWS S3 compatible data source.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.AwsS3CompatibleData aws_s3_compatible_data_source = 19;
+       * </code>
+       */
+      public Builder mergeAwsS3CompatibleDataSource(
+          com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData value) {
+        if (awsS3CompatibleDataSourceBuilder_ == null) {
+          if (dataSourceCase_ == 19
+              && dataSource_
+                  != com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData
+                      .getDefaultInstance()) {
+            dataSource_ =
+                com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData.newBuilder(
+                        (com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData)
+                            dataSource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            dataSource_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataSourceCase_ == 19) {
+            awsS3CompatibleDataSourceBuilder_.mergeFrom(value);
+          } else {
+            awsS3CompatibleDataSourceBuilder_.setMessage(value);
+          }
+        }
+        dataSourceCase_ = 19;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An AWS S3 compatible data source.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.AwsS3CompatibleData aws_s3_compatible_data_source = 19;
+       * </code>
+       */
+      public Builder clearAwsS3CompatibleDataSource() {
+        if (awsS3CompatibleDataSourceBuilder_ == null) {
+          if (dataSourceCase_ == 19) {
+            dataSourceCase_ = 0;
+            dataSource_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataSourceCase_ == 19) {
+            dataSourceCase_ = 0;
+            dataSource_ = null;
+          }
+          awsS3CompatibleDataSourceBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An AWS S3 compatible data source.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.AwsS3CompatibleData aws_s3_compatible_data_source = 19;
+       * </code>
+       */
+      public com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData.Builder
+          getAwsS3CompatibleDataSourceBuilder() {
+        return getAwsS3CompatibleDataSourceFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An AWS S3 compatible data source.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.AwsS3CompatibleData aws_s3_compatible_data_source = 19;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleDataOrBuilder
+          getAwsS3CompatibleDataSourceOrBuilder() {
+        if ((dataSourceCase_ == 19) && (awsS3CompatibleDataSourceBuilder_ != null)) {
+          return awsS3CompatibleDataSourceBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataSourceCase_ == 19) {
+            return (com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData)
+                dataSource_;
+          }
+          return com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An AWS S3 compatible data source.
+       * </pre>
+       *
+       * <code>.google.storagetransfer.v1.AwsS3CompatibleData aws_s3_compatible_data_source = 19;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData,
+              com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData.Builder,
+              com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleDataOrBuilder>
+          getAwsS3CompatibleDataSourceFieldBuilder() {
+        if (awsS3CompatibleDataSourceBuilder_ == null) {
+          if (!(dataSourceCase_ == 19)) {
+            dataSource_ =
+                com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData
+                    .getDefaultInstance();
+          }
+          awsS3CompatibleDataSourceBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData,
+                  com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData.Builder,
+                  com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleDataOrBuilder>(
+                  (com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData)
+                      dataSource_,
+                  getParentForChildren(),
+                  isClean());
+          dataSource_ = null;
+        }
+        dataSourceCase_ = 19;
+        onChanged();
+        ;
+        return awsS3CompatibleDataSourceBuilder_;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -44316,6 +48423,14 @@ public final class TransferTypes {
   private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_storagetransfer_v1_PosixFilesystem_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_storagetransfer_v1_AwsS3CompatibleData_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_storagetransfer_v1_AwsS3CompatibleData_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_storagetransfer_v1_S3CompatibleMetadata_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_storagetransfer_v1_S3CompatibleMetadata_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_storagetransfer_v1_AgentPool_descriptor;
   private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_storagetransfer_v1_AgentPool_fieldAccessorTable;
@@ -44411,181 +48526,207 @@ public final class TransferTypes {
           + "tialsB\006\340A\002\340A\004\022\026\n\tcontainer\030\004 \001(\tB\003\340A\002\022\014\n"
           + "\004path\030\005 \001(\t\"!\n\010HttpData\022\025\n\010list_url\030\001 \001("
           + "\tB\003\340A\002\")\n\017PosixFilesystem\022\026\n\016root_direct"
-          + "ory\030\001 \001(\t\"\223\003\n\tAgentPool\022\021\n\004name\030\002 \001(\tB\003\340"
-          + "A\002\022\024\n\014display_name\030\003 \001(\t\022>\n\005state\030\004 \001(\0162"
-          + "*.google.storagetransfer.v1.AgentPool.St"
-          + "ateB\003\340A\003\022L\n\017bandwidth_limit\030\005 \001(\01323.goog"
-          + "le.storagetransfer.v1.AgentPool.Bandwidt"
-          + "hLimit\032$\n\016BandwidthLimit\022\022\n\nlimit_mbps\030\001"
-          + " \001(\003\"G\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010"
-          + "CREATING\020\001\022\013\n\007CREATED\020\002\022\014\n\010DELETING\020\003:`\352"
-          + "A]\n)storagetransfer.googleapis.com/agent"
-          + "Pools\0220projects/{project_id}/agentPools/"
-          + "{agent_pool_id}\"\216\003\n\017TransferOptions\0222\n*o"
-          + "verwrite_objects_already_existing_in_sin"
-          + "k\030\001 \001(\010\022%\n\035delete_objects_unique_in_sink"
-          + "\030\002 \001(\010\0221\n)delete_objects_from_source_aft"
-          + "er_transfer\030\003 \001(\010\022P\n\016overwrite_when\030\004 \001("
-          + "\01628.google.storagetransfer.v1.TransferOp"
-          + "tions.OverwriteWhen\022D\n\020metadata_options\030"
-          + "\005 \001(\0132*.google.storagetransfer.v1.Metada"
-          + "taOptions\"U\n\rOverwriteWhen\022\036\n\032OVERWRITE_"
-          + "WHEN_UNSPECIFIED\020\000\022\r\n\tDIFFERENT\020\001\022\t\n\005NEV"
-          + "ER\020\002\022\n\n\006ALWAYS\020\003\"\226\007\n\014TransferSpec\022;\n\rgcs"
-          + "_data_sink\030\004 \001(\0132\".google.storagetransfe"
-          + "r.v1.GcsDataH\000\022E\n\017posix_data_sink\030\r \001(\0132"
-          + "*.google.storagetransfer.v1.PosixFilesys"
-          + "temH\000\022=\n\017gcs_data_source\030\001 \001(\0132\".google."
-          + "storagetransfer.v1.GcsDataH\001\022B\n\022aws_s3_d"
-          + "ata_source\030\002 \001(\0132$.google.storagetransfe"
-          + "r.v1.AwsS3DataH\001\022?\n\020http_data_source\030\003 \001"
-          + "(\0132#.google.storagetransfer.v1.HttpDataH"
-          + "\001\022G\n\021posix_data_source\030\016 \001(\0132*.google.st"
-          + "oragetransfer.v1.PosixFilesystemH\001\022Y\n\036az"
-          + "ure_blob_storage_data_source\030\010 \001(\0132/.goo"
-          + "gle.storagetransfer.v1.AzureBlobStorageD"
-          + "ataH\001\022L\n\036gcs_intermediate_data_location\030"
-          + "\020 \001(\0132\".google.storagetransfer.v1.GcsDat"
-          + "aH\002\022F\n\021object_conditions\030\005 \001(\0132+.google."
-          + "storagetransfer.v1.ObjectConditions\022D\n\020t"
-          + "ransfer_options\030\006 \001(\0132*.google.storagetr"
-          + "ansfer.v1.TransferOptions\022F\n\021transfer_ma"
-          + "nifest\030\017 \001(\0132+.google.storagetransfer.v1"
-          + ".TransferManifest\022\036\n\026source_agent_pool_n"
-          + "ame\030\021 \001(\t\022\034\n\024sink_agent_pool_name\030\022 \001(\tB"
-          + "\013\n\tdata_sinkB\r\n\013data_sourceB\034\n\032intermedi"
-          + "ate_data_location\"\361\013\n\017MetadataOptions\022C\n"
-          + "\007symlink\030\001 \001(\01622.google.storagetransfer."
-          + "v1.MetadataOptions.Symlink\022=\n\004mode\030\002 \001(\016"
-          + "2/.google.storagetransfer.v1.MetadataOpt"
-          + "ions.Mode\022;\n\003gid\030\003 \001(\0162..google.storaget"
-          + "ransfer.v1.MetadataOptions.GID\022;\n\003uid\030\004 "
-          + "\001(\0162..google.storagetransfer.v1.Metadata"
-          + "Options.UID\022;\n\003acl\030\005 \001(\0162..google.storag"
-          + "etransfer.v1.MetadataOptions.Acl\022N\n\rstor"
-          + "age_class\030\006 \001(\01627.google.storagetransfer"
-          + ".v1.MetadataOptions.StorageClass\022P\n\016temp"
-          + "orary_hold\030\007 \001(\01628.google.storagetransfe"
-          + "r.v1.MetadataOptions.TemporaryHold\022B\n\007km"
-          + "s_key\030\010 \001(\01621.google.storagetransfer.v1."
-          + "MetadataOptions.KmsKey\022L\n\014time_created\030\t"
-          + " \001(\01626.google.storagetransfer.v1.Metadat"
-          + "aOptions.TimeCreated\"J\n\007Symlink\022\027\n\023SYMLI"
-          + "NK_UNSPECIFIED\020\000\022\020\n\014SYMLINK_SKIP\020\001\022\024\n\020SY"
-          + "MLINK_PRESERVE\020\002\">\n\004Mode\022\024\n\020MODE_UNSPECI"
-          + "FIED\020\000\022\r\n\tMODE_SKIP\020\001\022\021\n\rMODE_PRESERVE\020\002"
-          + "\"8\n\003GID\022\023\n\017GID_UNSPECIFIED\020\000\022\014\n\010GID_SKIP"
-          + "\020\001\022\016\n\nGID_NUMBER\020\002\"8\n\003UID\022\023\n\017UID_UNSPECI"
-          + "FIED\020\000\022\014\n\010UID_SKIP\020\001\022\016\n\nUID_NUMBER\020\002\"P\n\003"
-          + "Acl\022\023\n\017ACL_UNSPECIFIED\020\000\022\"\n\036ACL_DESTINAT"
-          + "ION_BUCKET_DEFAULT\020\001\022\020\n\014ACL_PRESERVE\020\002\"\346"
-          + "\001\n\014StorageClass\022\035\n\031STORAGE_CLASS_UNSPECI"
-          + "FIED\020\000\022,\n(STORAGE_CLASS_DESTINATION_BUCK"
-          + "ET_DEFAULT\020\001\022\032\n\026STORAGE_CLASS_PRESERVE\020\002"
-          + "\022\032\n\026STORAGE_CLASS_STANDARD\020\003\022\032\n\026STORAGE_"
-          + "CLASS_NEARLINE\020\004\022\032\n\026STORAGE_CLASS_COLDLI"
-          + "NE\020\005\022\031\n\025STORAGE_CLASS_ARCHIVE\020\006\"e\n\rTempo"
-          + "raryHold\022\036\n\032TEMPORARY_HOLD_UNSPECIFIED\020\000"
-          + "\022\027\n\023TEMPORARY_HOLD_SKIP\020\001\022\033\n\027TEMPORARY_H"
-          + "OLD_PRESERVE\020\002\"_\n\006KmsKey\022\027\n\023KMS_KEY_UNSP"
-          + "ECIFIED\020\000\022&\n\"KMS_KEY_DESTINATION_BUCKET_"
-          + "DEFAULT\020\001\022\024\n\020KMS_KEY_PRESERVE\020\002\"l\n\013TimeC"
-          + "reated\022\034\n\030TIME_CREATED_UNSPECIFIED\020\000\022\025\n\021"
-          + "TIME_CREATED_SKIP\020\001\022(\n$TIME_CREATED_PRES"
-          + "ERVE_AS_CUSTOM_TIME\020\002\"$\n\020TransferManifes"
-          + "t\022\020\n\010location\030\001 \001(\t\"\205\002\n\010Schedule\0223\n\023sche"
-          + "dule_start_date\030\001 \001(\0132\021.google.type.Date"
-          + "B\003\340A\002\022,\n\021schedule_end_date\030\002 \001(\0132\021.googl"
-          + "e.type.Date\0221\n\021start_time_of_day\030\003 \001(\0132\026"
-          + ".google.type.TimeOfDay\022/\n\017end_time_of_da"
-          + "y\030\004 \001(\0132\026.google.type.TimeOfDay\0222\n\017repea"
-          + "t_interval\030\005 \001(\0132\031.google.protobuf.Durat"
-          + "ion\"\242\005\n\013TransferJob\022\014\n\004name\030\001 \001(\t\022\023\n\013des"
-          + "cription\030\002 \001(\t\022\022\n\nproject_id\030\003 \001(\t\022>\n\rtr"
-          + "ansfer_spec\030\004 \001(\0132\'.google.storagetransf"
-          + "er.v1.TransferSpec\022J\n\023notification_confi"
-          + "g\030\013 \001(\0132-.google.storagetransfer.v1.Noti"
-          + "ficationConfig\022@\n\016logging_config\030\016 \001(\0132("
-          + ".google.storagetransfer.v1.LoggingConfig"
-          + "\0225\n\010schedule\030\005 \001(\0132#.google.storagetrans"
-          + "fer.v1.Schedule\022=\n\006status\030\006 \001(\0162-.google"
-          + ".storagetransfer.v1.TransferJob.Status\0226"
-          + "\n\rcreation_time\030\007 \001(\0132\032.google.protobuf."
-          + "TimestampB\003\340A\003\022?\n\026last_modification_time"
-          + "\030\010 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022"
-          + "6\n\rdeletion_time\030\t \001(\0132\032.google.protobuf"
-          + ".TimestampB\003\340A\003\022\035\n\025latest_operation_name"
-          + "\030\014 \001(\t\"H\n\006Status\022\026\n\022STATUS_UNSPECIFIED\020\000"
-          + "\022\013\n\007ENABLED\020\001\022\014\n\010DISABLED\020\002\022\013\n\007DELETED\020\003"
-          + "\"8\n\rErrorLogEntry\022\020\n\003url\030\001 \001(\tB\003\340A\002\022\025\n\re"
-          + "rror_details\030\003 \003(\t\"\230\001\n\014ErrorSummary\022)\n\ne"
-          + "rror_code\030\001 \001(\0162\020.google.rpc.CodeB\003\340A\002\022\030"
-          + "\n\013error_count\030\002 \001(\003B\003\340A\002\022C\n\021error_log_en"
-          + "tries\030\003 \003(\0132(.google.storagetransfer.v1."
-          + "ErrorLogEntry\"\303\006\n\020TransferCounters\022!\n\031ob"
-          + "jects_found_from_source\030\001 \001(\003\022\037\n\027bytes_f"
-          + "ound_from_source\030\002 \001(\003\022$\n\034objects_found_"
-          + "only_from_sink\030\003 \001(\003\022\"\n\032bytes_found_only"
-          + "_from_sink\030\004 \001(\003\022+\n#objects_from_source_"
-          + "skipped_by_sync\030\005 \001(\003\022)\n!bytes_from_sour"
-          + "ce_skipped_by_sync\030\006 \001(\003\022\036\n\026objects_copi"
-          + "ed_to_sink\030\007 \001(\003\022\034\n\024bytes_copied_to_sink"
-          + "\030\010 \001(\003\022#\n\033objects_deleted_from_source\030\t "
-          + "\001(\003\022!\n\031bytes_deleted_from_source\030\n \001(\003\022!"
-          + "\n\031objects_deleted_from_sink\030\013 \001(\003\022\037\n\027byt"
-          + "es_deleted_from_sink\030\014 \001(\003\022\"\n\032objects_fr"
-          + "om_source_failed\030\r \001(\003\022 \n\030bytes_from_sou"
-          + "rce_failed\030\016 \001(\003\022*\n\"objects_failed_to_de"
-          + "lete_from_sink\030\017 \001(\003\022(\n bytes_failed_to_"
-          + "delete_from_sink\030\020 \001(\003\022%\n\035directories_fo"
-          + "und_from_source\030\021 \001(\003\022.\n&directories_fai"
-          + "led_to_list_from_source\030\022 \001(\003\0223\n+directo"
-          + "ries_successfully_listed_from_source\030\023 \001"
-          + "(\003\022\'\n\037intermediate_objects_cleaned_up\030\026 "
-          + "\001(\003\022.\n&intermediate_objects_failed_clean"
-          + "ed_up\030\027 \001(\003\"\245\003\n\022NotificationConfig\022\031\n\014pu"
-          + "bsub_topic\030\001 \001(\tB\003\340A\002\022L\n\013event_types\030\002 \003"
-          + "(\01627.google.storagetransfer.v1.Notificat"
-          + "ionConfig.EventType\022X\n\016payload_format\030\003 "
-          + "\001(\0162;.google.storagetransfer.v1.Notifica"
-          + "tionConfig.PayloadFormatB\003\340A\002\"\206\001\n\tEventT"
-          + "ype\022\032\n\026EVENT_TYPE_UNSPECIFIED\020\000\022\036\n\032TRANS"
-          + "FER_OPERATION_SUCCESS\020\001\022\035\n\031TRANSFER_OPER"
-          + "ATION_FAILED\020\002\022\036\n\032TRANSFER_OPERATION_ABO"
-          + "RTED\020\003\"C\n\rPayloadFormat\022\036\n\032PAYLOAD_FORMA"
-          + "T_UNSPECIFIED\020\000\022\010\n\004NONE\020\001\022\010\n\004JSON\020\002\"\213\003\n\r"
-          + "LoggingConfig\022L\n\013log_actions\030\001 \003(\01627.goo"
-          + "gle.storagetransfer.v1.LoggingConfig.Log"
-          + "gableAction\022W\n\021log_action_states\030\002 \003(\0162<"
-          + ".google.storagetransfer.v1.LoggingConfig"
-          + ".LoggableActionState\022\'\n\037enable_onprem_gc"
-          + "s_transfer_logs\030\003 \001(\010\"Q\n\016LoggableAction\022"
-          + "\037\n\033LOGGABLE_ACTION_UNSPECIFIED\020\000\022\010\n\004FIND"
-          + "\020\001\022\n\n\006DELETE\020\002\022\010\n\004COPY\020\003\"W\n\023LoggableActi"
-          + "onState\022%\n!LOGGABLE_ACTION_STATE_UNSPECI"
-          + "FIED\020\000\022\r\n\tSUCCEEDED\020\001\022\n\n\006FAILED\020\002\"\362\004\n\021Tr"
-          + "ansferOperation\022\014\n\004name\030\001 \001(\t\022\022\n\nproject"
-          + "_id\030\002 \001(\t\022>\n\rtransfer_spec\030\003 \001(\0132\'.googl"
-          + "e.storagetransfer.v1.TransferSpec\022J\n\023not"
-          + "ification_config\030\n \001(\0132-.google.storaget"
-          + "ransfer.v1.NotificationConfig\022.\n\nstart_t"
-          + "ime\030\004 \001(\0132\032.google.protobuf.Timestamp\022,\n"
-          + "\010end_time\030\005 \001(\0132\032.google.protobuf.Timest"
-          + "amp\022C\n\006status\030\006 \001(\01623.google.storagetran"
-          + "sfer.v1.TransferOperation.Status\022=\n\010coun"
-          + "ters\030\007 \001(\0132+.google.storagetransfer.v1.T"
-          + "ransferCounters\022A\n\020error_breakdowns\030\010 \003("
-          + "\0132\'.google.storagetransfer.v1.ErrorSumma"
-          + "ry\022\031\n\021transfer_job_name\030\t \001(\t\"o\n\006Status\022"
-          + "\026\n\022STATUS_UNSPECIFIED\020\000\022\017\n\013IN_PROGRESS\020\001"
-          + "\022\n\n\006PAUSED\020\002\022\013\n\007SUCCESS\020\003\022\n\n\006FAILED\020\004\022\013\n"
-          + "\007ABORTED\020\005\022\n\n\006QUEUED\020\006B\352\001\n#com.google.st"
-          + "oragetransfer.v1.protoB\rTransferTypesZHg"
-          + "oogle.golang.org/genproto/googleapis/sto"
-          + "ragetransfer/v1;storagetransfer\370\001\001\252\002\037Goo"
-          + "gle.Cloud.StorageTransfer.V1\312\002\037Google\\Cl"
-          + "oud\\StorageTransfer\\V1\352\002\"Google::Cloud::"
-          + "StorageTransfer::V1b\006proto3"
+          + "ory\030\001 \001(\t\"\275\001\n\023AwsS3CompatibleData\022\030\n\013buc"
+          + "ket_name\030\001 \001(\tB\003\340A\002\022\014\n\004path\030\002 \001(\t\022\025\n\010end"
+          + "point\030\003 \001(\tB\003\340A\002\022\016\n\006region\030\005 \001(\t\022F\n\013s3_m"
+          + "etadata\030\004 \001(\0132/.google.storagetransfer.v"
+          + "1.S3CompatibleMetadataH\000B\017\n\rdata_provide"
+          + "r\"\366\005\n\024S3CompatibleMetadata\022O\n\013auth_metho"
+          + "d\030\001 \001(\0162:.google.storagetransfer.v1.S3Co"
+          + "mpatibleMetadata.AuthMethod\022S\n\rrequest_m"
+          + "odel\030\002 \001(\0162<.google.storagetransfer.v1.S"
+          + "3CompatibleMetadata.RequestModel\022Q\n\010prot"
+          + "ocol\030\003 \001(\0162?.google.storagetransfer.v1.S"
+          + "3CompatibleMetadata.NetworkProtocol\022I\n\010l"
+          + "ist_api\030\004 \001(\01627.google.storagetransfer.v"
+          + "1.S3CompatibleMetadata.ListApi\"m\n\nAuthMe"
+          + "thod\022\033\n\027AUTH_METHOD_UNSPECIFIED\020\000\022 \n\034AUT"
+          + "H_METHOD_AWS_SIGNATURE_V4\020\001\022 \n\034AUTH_METH"
+          + "OD_AWS_SIGNATURE_V2\020\002\"s\n\014RequestModel\022\035\n"
+          + "\031REQUEST_MODEL_UNSPECIFIED\020\000\022&\n\"REQUEST_"
+          + "MODEL_VIRTUAL_HOSTED_STYLE\020\001\022\034\n\030REQUEST_"
+          + "MODEL_PATH_STYLE\020\002\"j\n\017NetworkProtocol\022 \n"
+          + "\034NETWORK_PROTOCOL_UNSPECIFIED\020\000\022\032\n\026NETWO"
+          + "RK_PROTOCOL_HTTPS\020\001\022\031\n\025NETWORK_PROTOCOL_"
+          + "HTTP\020\002\"J\n\007ListApi\022\030\n\024LIST_API_UNSPECIFIE"
+          + "D\020\000\022\023\n\017LIST_OBJECTS_V2\020\001\022\020\n\014LIST_OBJECTS"
+          + "\020\002\"\223\003\n\tAgentPool\022\021\n\004name\030\002 \001(\tB\003\340A\002\022\024\n\014d"
+          + "isplay_name\030\003 \001(\t\022>\n\005state\030\004 \001(\0162*.googl"
+          + "e.storagetransfer.v1.AgentPool.StateB\003\340A"
+          + "\003\022L\n\017bandwidth_limit\030\005 \001(\01323.google.stor"
+          + "agetransfer.v1.AgentPool.BandwidthLimit\032"
+          + "$\n\016BandwidthLimit\022\022\n\nlimit_mbps\030\001 \001(\003\"G\n"
+          + "\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010CREATIN"
+          + "G\020\001\022\013\n\007CREATED\020\002\022\014\n\010DELETING\020\003:`\352A]\n)sto"
+          + "ragetransfer.googleapis.com/agentPools\0220"
+          + "projects/{project_id}/agentPools/{agent_"
+          + "pool_id}\"\216\003\n\017TransferOptions\0222\n*overwrit"
+          + "e_objects_already_existing_in_sink\030\001 \001(\010"
+          + "\022%\n\035delete_objects_unique_in_sink\030\002 \001(\010\022"
+          + "1\n)delete_objects_from_source_after_tran"
+          + "sfer\030\003 \001(\010\022P\n\016overwrite_when\030\004 \001(\01628.goo"
+          + "gle.storagetransfer.v1.TransferOptions.O"
+          + "verwriteWhen\022D\n\020metadata_options\030\005 \001(\0132*"
+          + ".google.storagetransfer.v1.MetadataOptio"
+          + "ns\"U\n\rOverwriteWhen\022\036\n\032OVERWRITE_WHEN_UN"
+          + "SPECIFIED\020\000\022\r\n\tDIFFERENT\020\001\022\t\n\005NEVER\020\002\022\n\n"
+          + "\006ALWAYS\020\003\"\357\007\n\014TransferSpec\022;\n\rgcs_data_s"
+          + "ink\030\004 \001(\0132\".google.storagetransfer.v1.Gc"
+          + "sDataH\000\022E\n\017posix_data_sink\030\r \001(\0132*.googl"
+          + "e.storagetransfer.v1.PosixFilesystemH\000\022="
+          + "\n\017gcs_data_source\030\001 \001(\0132\".google.storage"
+          + "transfer.v1.GcsDataH\001\022B\n\022aws_s3_data_sou"
+          + "rce\030\002 \001(\0132$.google.storagetransfer.v1.Aw"
+          + "sS3DataH\001\022?\n\020http_data_source\030\003 \001(\0132#.go"
+          + "ogle.storagetransfer.v1.HttpDataH\001\022G\n\021po"
+          + "six_data_source\030\016 \001(\0132*.google.storagetr"
+          + "ansfer.v1.PosixFilesystemH\001\022Y\n\036azure_blo"
+          + "b_storage_data_source\030\010 \001(\0132/.google.sto"
+          + "ragetransfer.v1.AzureBlobStorageDataH\001\022W"
+          + "\n\035aws_s3_compatible_data_source\030\023 \001(\0132.."
+          + "google.storagetransfer.v1.AwsS3Compatibl"
+          + "eDataH\001\022L\n\036gcs_intermediate_data_locatio"
+          + "n\030\020 \001(\0132\".google.storagetransfer.v1.GcsD"
+          + "ataH\002\022F\n\021object_conditions\030\005 \001(\0132+.googl"
+          + "e.storagetransfer.v1.ObjectConditions\022D\n"
+          + "\020transfer_options\030\006 \001(\0132*.google.storage"
+          + "transfer.v1.TransferOptions\022F\n\021transfer_"
+          + "manifest\030\017 \001(\0132+.google.storagetransfer."
+          + "v1.TransferManifest\022\036\n\026source_agent_pool"
+          + "_name\030\021 \001(\t\022\034\n\024sink_agent_pool_name\030\022 \001("
+          + "\tB\013\n\tdata_sinkB\r\n\013data_sourceB\034\n\032interme"
+          + "diate_data_location\"\361\013\n\017MetadataOptions\022"
+          + "C\n\007symlink\030\001 \001(\01622.google.storagetransfe"
+          + "r.v1.MetadataOptions.Symlink\022=\n\004mode\030\002 \001"
+          + "(\0162/.google.storagetransfer.v1.MetadataO"
+          + "ptions.Mode\022;\n\003gid\030\003 \001(\0162..google.storag"
+          + "etransfer.v1.MetadataOptions.GID\022;\n\003uid\030"
+          + "\004 \001(\0162..google.storagetransfer.v1.Metada"
+          + "taOptions.UID\022;\n\003acl\030\005 \001(\0162..google.stor"
+          + "agetransfer.v1.MetadataOptions.Acl\022N\n\rst"
+          + "orage_class\030\006 \001(\01627.google.storagetransf"
+          + "er.v1.MetadataOptions.StorageClass\022P\n\016te"
+          + "mporary_hold\030\007 \001(\01628.google.storagetrans"
+          + "fer.v1.MetadataOptions.TemporaryHold\022B\n\007"
+          + "kms_key\030\010 \001(\01621.google.storagetransfer.v"
+          + "1.MetadataOptions.KmsKey\022L\n\014time_created"
+          + "\030\t \001(\01626.google.storagetransfer.v1.Metad"
+          + "ataOptions.TimeCreated\"J\n\007Symlink\022\027\n\023SYM"
+          + "LINK_UNSPECIFIED\020\000\022\020\n\014SYMLINK_SKIP\020\001\022\024\n\020"
+          + "SYMLINK_PRESERVE\020\002\">\n\004Mode\022\024\n\020MODE_UNSPE"
+          + "CIFIED\020\000\022\r\n\tMODE_SKIP\020\001\022\021\n\rMODE_PRESERVE"
+          + "\020\002\"8\n\003GID\022\023\n\017GID_UNSPECIFIED\020\000\022\014\n\010GID_SK"
+          + "IP\020\001\022\016\n\nGID_NUMBER\020\002\"8\n\003UID\022\023\n\017UID_UNSPE"
+          + "CIFIED\020\000\022\014\n\010UID_SKIP\020\001\022\016\n\nUID_NUMBER\020\002\"P"
+          + "\n\003Acl\022\023\n\017ACL_UNSPECIFIED\020\000\022\"\n\036ACL_DESTIN"
+          + "ATION_BUCKET_DEFAULT\020\001\022\020\n\014ACL_PRESERVE\020\002"
+          + "\"\346\001\n\014StorageClass\022\035\n\031STORAGE_CLASS_UNSPE"
+          + "CIFIED\020\000\022,\n(STORAGE_CLASS_DESTINATION_BU"
+          + "CKET_DEFAULT\020\001\022\032\n\026STORAGE_CLASS_PRESERVE"
+          + "\020\002\022\032\n\026STORAGE_CLASS_STANDARD\020\003\022\032\n\026STORAG"
+          + "E_CLASS_NEARLINE\020\004\022\032\n\026STORAGE_CLASS_COLD"
+          + "LINE\020\005\022\031\n\025STORAGE_CLASS_ARCHIVE\020\006\"e\n\rTem"
+          + "poraryHold\022\036\n\032TEMPORARY_HOLD_UNSPECIFIED"
+          + "\020\000\022\027\n\023TEMPORARY_HOLD_SKIP\020\001\022\033\n\027TEMPORARY"
+          + "_HOLD_PRESERVE\020\002\"_\n\006KmsKey\022\027\n\023KMS_KEY_UN"
+          + "SPECIFIED\020\000\022&\n\"KMS_KEY_DESTINATION_BUCKE"
+          + "T_DEFAULT\020\001\022\024\n\020KMS_KEY_PRESERVE\020\002\"l\n\013Tim"
+          + "eCreated\022\034\n\030TIME_CREATED_UNSPECIFIED\020\000\022\025"
+          + "\n\021TIME_CREATED_SKIP\020\001\022(\n$TIME_CREATED_PR"
+          + "ESERVE_AS_CUSTOM_TIME\020\002\"$\n\020TransferManif"
+          + "est\022\020\n\010location\030\001 \001(\t\"\205\002\n\010Schedule\0223\n\023sc"
+          + "hedule_start_date\030\001 \001(\0132\021.google.type.Da"
+          + "teB\003\340A\002\022,\n\021schedule_end_date\030\002 \001(\0132\021.goo"
+          + "gle.type.Date\0221\n\021start_time_of_day\030\003 \001(\013"
+          + "2\026.google.type.TimeOfDay\022/\n\017end_time_of_"
+          + "day\030\004 \001(\0132\026.google.type.TimeOfDay\0222\n\017rep"
+          + "eat_interval\030\005 \001(\0132\031.google.protobuf.Dur"
+          + "ation\"\242\005\n\013TransferJob\022\014\n\004name\030\001 \001(\t\022\023\n\013d"
+          + "escription\030\002 \001(\t\022\022\n\nproject_id\030\003 \001(\t\022>\n\r"
+          + "transfer_spec\030\004 \001(\0132\'.google.storagetran"
+          + "sfer.v1.TransferSpec\022J\n\023notification_con"
+          + "fig\030\013 \001(\0132-.google.storagetransfer.v1.No"
+          + "tificationConfig\022@\n\016logging_config\030\016 \001(\013"
+          + "2(.google.storagetransfer.v1.LoggingConf"
+          + "ig\0225\n\010schedule\030\005 \001(\0132#.google.storagetra"
+          + "nsfer.v1.Schedule\022=\n\006status\030\006 \001(\0162-.goog"
+          + "le.storagetransfer.v1.TransferJob.Status"
+          + "\0226\n\rcreation_time\030\007 \001(\0132\032.google.protobu"
+          + "f.TimestampB\003\340A\003\022?\n\026last_modification_ti"
+          + "me\030\010 \001(\0132\032.google.protobuf.TimestampB\003\340A"
+          + "\003\0226\n\rdeletion_time\030\t \001(\0132\032.google.protob"
+          + "uf.TimestampB\003\340A\003\022\035\n\025latest_operation_na"
+          + "me\030\014 \001(\t\"H\n\006Status\022\026\n\022STATUS_UNSPECIFIED"
+          + "\020\000\022\013\n\007ENABLED\020\001\022\014\n\010DISABLED\020\002\022\013\n\007DELETED"
+          + "\020\003\"8\n\rErrorLogEntry\022\020\n\003url\030\001 \001(\tB\003\340A\002\022\025\n"
+          + "\rerror_details\030\003 \003(\t\"\230\001\n\014ErrorSummary\022)\n"
+          + "\nerror_code\030\001 \001(\0162\020.google.rpc.CodeB\003\340A\002"
+          + "\022\030\n\013error_count\030\002 \001(\003B\003\340A\002\022C\n\021error_log_"
+          + "entries\030\003 \003(\0132(.google.storagetransfer.v"
+          + "1.ErrorLogEntry\"\303\006\n\020TransferCounters\022!\n\031"
+          + "objects_found_from_source\030\001 \001(\003\022\037\n\027bytes"
+          + "_found_from_source\030\002 \001(\003\022$\n\034objects_foun"
+          + "d_only_from_sink\030\003 \001(\003\022\"\n\032bytes_found_on"
+          + "ly_from_sink\030\004 \001(\003\022+\n#objects_from_sourc"
+          + "e_skipped_by_sync\030\005 \001(\003\022)\n!bytes_from_so"
+          + "urce_skipped_by_sync\030\006 \001(\003\022\036\n\026objects_co"
+          + "pied_to_sink\030\007 \001(\003\022\034\n\024bytes_copied_to_si"
+          + "nk\030\010 \001(\003\022#\n\033objects_deleted_from_source\030"
+          + "\t \001(\003\022!\n\031bytes_deleted_from_source\030\n \001(\003"
+          + "\022!\n\031objects_deleted_from_sink\030\013 \001(\003\022\037\n\027b"
+          + "ytes_deleted_from_sink\030\014 \001(\003\022\"\n\032objects_"
+          + "from_source_failed\030\r \001(\003\022 \n\030bytes_from_s"
+          + "ource_failed\030\016 \001(\003\022*\n\"objects_failed_to_"
+          + "delete_from_sink\030\017 \001(\003\022(\n bytes_failed_t"
+          + "o_delete_from_sink\030\020 \001(\003\022%\n\035directories_"
+          + "found_from_source\030\021 \001(\003\022.\n&directories_f"
+          + "ailed_to_list_from_source\030\022 \001(\003\0223\n+direc"
+          + "tories_successfully_listed_from_source\030\023"
+          + " \001(\003\022\'\n\037intermediate_objects_cleaned_up\030"
+          + "\026 \001(\003\022.\n&intermediate_objects_failed_cle"
+          + "aned_up\030\027 \001(\003\"\245\003\n\022NotificationConfig\022\031\n\014"
+          + "pubsub_topic\030\001 \001(\tB\003\340A\002\022L\n\013event_types\030\002"
+          + " \003(\01627.google.storagetransfer.v1.Notific"
+          + "ationConfig.EventType\022X\n\016payload_format\030"
+          + "\003 \001(\0162;.google.storagetransfer.v1.Notifi"
+          + "cationConfig.PayloadFormatB\003\340A\002\"\206\001\n\tEven"
+          + "tType\022\032\n\026EVENT_TYPE_UNSPECIFIED\020\000\022\036\n\032TRA"
+          + "NSFER_OPERATION_SUCCESS\020\001\022\035\n\031TRANSFER_OP"
+          + "ERATION_FAILED\020\002\022\036\n\032TRANSFER_OPERATION_A"
+          + "BORTED\020\003\"C\n\rPayloadFormat\022\036\n\032PAYLOAD_FOR"
+          + "MAT_UNSPECIFIED\020\000\022\010\n\004NONE\020\001\022\010\n\004JSON\020\002\"\213\003"
+          + "\n\rLoggingConfig\022L\n\013log_actions\030\001 \003(\01627.g"
+          + "oogle.storagetransfer.v1.LoggingConfig.L"
+          + "oggableAction\022W\n\021log_action_states\030\002 \003(\016"
+          + "2<.google.storagetransfer.v1.LoggingConf"
+          + "ig.LoggableActionState\022\'\n\037enable_onprem_"
+          + "gcs_transfer_logs\030\003 \001(\010\"Q\n\016LoggableActio"
+          + "n\022\037\n\033LOGGABLE_ACTION_UNSPECIFIED\020\000\022\010\n\004FI"
+          + "ND\020\001\022\n\n\006DELETE\020\002\022\010\n\004COPY\020\003\"W\n\023LoggableAc"
+          + "tionState\022%\n!LOGGABLE_ACTION_STATE_UNSPE"
+          + "CIFIED\020\000\022\r\n\tSUCCEEDED\020\001\022\n\n\006FAILED\020\002\"\362\004\n\021"
+          + "TransferOperation\022\014\n\004name\030\001 \001(\t\022\022\n\nproje"
+          + "ct_id\030\002 \001(\t\022>\n\rtransfer_spec\030\003 \001(\0132\'.goo"
+          + "gle.storagetransfer.v1.TransferSpec\022J\n\023n"
+          + "otification_config\030\n \001(\0132-.google.storag"
+          + "etransfer.v1.NotificationConfig\022.\n\nstart"
+          + "_time\030\004 \001(\0132\032.google.protobuf.Timestamp\022"
+          + ",\n\010end_time\030\005 \001(\0132\032.google.protobuf.Time"
+          + "stamp\022C\n\006status\030\006 \001(\01623.google.storagetr"
+          + "ansfer.v1.TransferOperation.Status\022=\n\010co"
+          + "unters\030\007 \001(\0132+.google.storagetransfer.v1"
+          + ".TransferCounters\022A\n\020error_breakdowns\030\010 "
+          + "\003(\0132\'.google.storagetransfer.v1.ErrorSum"
+          + "mary\022\031\n\021transfer_job_name\030\t \001(\t\"o\n\006Statu"
+          + "s\022\026\n\022STATUS_UNSPECIFIED\020\000\022\017\n\013IN_PROGRESS"
+          + "\020\001\022\n\n\006PAUSED\020\002\022\013\n\007SUCCESS\020\003\022\n\n\006FAILED\020\004\022"
+          + "\013\n\007ABORTED\020\005\022\n\n\006QUEUED\020\006B\352\001\n#com.google."
+          + "storagetransfer.v1.protoB\rTransferTypesZ"
+          + "Hgoogle.golang.org/genproto/googleapis/s"
+          + "toragetransfer/v1;storagetransfer\370\001\001\252\002\037G"
+          + "oogle.Cloud.StorageTransfer.V1\312\002\037Google\\"
+          + "Cloud\\StorageTransfer\\V1\352\002\"Google::Cloud"
+          + "::StorageTransfer::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -44676,8 +48817,24 @@ public final class TransferTypes {
             new java.lang.String[] {
               "RootDirectory",
             });
-    internal_static_google_storagetransfer_v1_AgentPool_descriptor =
+    internal_static_google_storagetransfer_v1_AwsS3CompatibleData_descriptor =
         getDescriptor().getMessageTypes().get(9);
+    internal_static_google_storagetransfer_v1_AwsS3CompatibleData_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_storagetransfer_v1_AwsS3CompatibleData_descriptor,
+            new java.lang.String[] {
+              "BucketName", "Path", "Endpoint", "Region", "S3Metadata", "DataProvider",
+            });
+    internal_static_google_storagetransfer_v1_S3CompatibleMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_storagetransfer_v1_S3CompatibleMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_storagetransfer_v1_S3CompatibleMetadata_descriptor,
+            new java.lang.String[] {
+              "AuthMethod", "RequestModel", "Protocol", "ListApi",
+            });
+    internal_static_google_storagetransfer_v1_AgentPool_descriptor =
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_storagetransfer_v1_AgentPool_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_AgentPool_descriptor,
@@ -44693,7 +48850,7 @@ public final class TransferTypes {
               "LimitMbps",
             });
     internal_static_google_storagetransfer_v1_TransferOptions_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_storagetransfer_v1_TransferOptions_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_TransferOptions_descriptor,
@@ -44705,7 +48862,7 @@ public final class TransferTypes {
               "MetadataOptions",
             });
     internal_static_google_storagetransfer_v1_TransferSpec_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_storagetransfer_v1_TransferSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_TransferSpec_descriptor,
@@ -44717,6 +48874,7 @@ public final class TransferTypes {
               "HttpDataSource",
               "PosixDataSource",
               "AzureBlobStorageDataSource",
+              "AwsS3CompatibleDataSource",
               "GcsIntermediateDataLocation",
               "ObjectConditions",
               "TransferOptions",
@@ -44728,7 +48886,7 @@ public final class TransferTypes {
               "IntermediateDataLocation",
             });
     internal_static_google_storagetransfer_v1_MetadataOptions_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_storagetransfer_v1_MetadataOptions_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_MetadataOptions_descriptor,
@@ -44744,7 +48902,7 @@ public final class TransferTypes {
               "TimeCreated",
             });
     internal_static_google_storagetransfer_v1_TransferManifest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_storagetransfer_v1_TransferManifest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_TransferManifest_descriptor,
@@ -44752,7 +48910,7 @@ public final class TransferTypes {
               "Location",
             });
     internal_static_google_storagetransfer_v1_Schedule_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_storagetransfer_v1_Schedule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_Schedule_descriptor,
@@ -44764,7 +48922,7 @@ public final class TransferTypes {
               "RepeatInterval",
             });
     internal_static_google_storagetransfer_v1_TransferJob_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_storagetransfer_v1_TransferJob_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_TransferJob_descriptor,
@@ -44783,7 +48941,7 @@ public final class TransferTypes {
               "LatestOperationName",
             });
     internal_static_google_storagetransfer_v1_ErrorLogEntry_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_storagetransfer_v1_ErrorLogEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_ErrorLogEntry_descriptor,
@@ -44791,7 +48949,7 @@ public final class TransferTypes {
               "Url", "ErrorDetails",
             });
     internal_static_google_storagetransfer_v1_ErrorSummary_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_storagetransfer_v1_ErrorSummary_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_ErrorSummary_descriptor,
@@ -44799,7 +48957,7 @@ public final class TransferTypes {
               "ErrorCode", "ErrorCount", "ErrorLogEntries",
             });
     internal_static_google_storagetransfer_v1_TransferCounters_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_storagetransfer_v1_TransferCounters_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_TransferCounters_descriptor,
@@ -44827,7 +48985,7 @@ public final class TransferTypes {
               "IntermediateObjectsFailedCleanedUp",
             });
     internal_static_google_storagetransfer_v1_NotificationConfig_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_storagetransfer_v1_NotificationConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_NotificationConfig_descriptor,
@@ -44835,7 +48993,7 @@ public final class TransferTypes {
               "PubsubTopic", "EventTypes", "PayloadFormat",
             });
     internal_static_google_storagetransfer_v1_LoggingConfig_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_storagetransfer_v1_LoggingConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_LoggingConfig_descriptor,
@@ -44843,7 +49001,7 @@ public final class TransferTypes {
               "LogActions", "LogActionStates", "EnableOnpremGcsTransferLogs",
             });
     internal_static_google_storagetransfer_v1_TransferOperation_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_storagetransfer_v1_TransferOperation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_storagetransfer_v1_TransferOperation_descriptor,

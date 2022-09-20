@@ -180,7 +180,8 @@ public class HttpJsonGameServerClustersServiceStub extends GameServerClustersSer
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("gameServerCluster", request.getGameServerCluster()))
+                                  .toBody(
+                                      "gameServerCluster", request.getGameServerCluster(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -228,7 +229,8 @@ public class HttpJsonGameServerClustersServiceStub extends GameServerClustersSer
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("gameServerCluster", request.getGameServerCluster()))
+                                  .toBody(
+                                      "gameServerCluster", request.getGameServerCluster(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PreviewCreateGameServerClusterResponse>newBuilder()
@@ -347,7 +349,8 @@ public class HttpJsonGameServerClustersServiceStub extends GameServerClustersSer
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("gameServerCluster", request.getGameServerCluster()))
+                                  .toBody(
+                                      "gameServerCluster", request.getGameServerCluster(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -396,7 +399,8 @@ public class HttpJsonGameServerClustersServiceStub extends GameServerClustersSer
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("gameServerCluster", request.getGameServerCluster()))
+                                  .toBody(
+                                      "gameServerCluster", request.getGameServerCluster(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PreviewUpdateGameServerClusterResponse>newBuilder()

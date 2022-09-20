@@ -115,7 +115,8 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("source", request.getSource()))
+                              ProtoRestSerializer.create()
+                                  .toBody("source", request.getSource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Source>newBuilder()
@@ -151,7 +152,8 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("finding", request.getFinding()))
+                              ProtoRestSerializer.create()
+                                  .toBody("finding", request.getFinding(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Finding>newBuilder()
@@ -187,7 +189,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -289,7 +291,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<GroupAssetsResponse>newBuilder()
@@ -325,7 +327,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<GroupFindingsResponse>newBuilder()
@@ -477,7 +479,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -517,7 +519,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Finding>newBuilder()
@@ -553,7 +555,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -590,7 +592,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()
@@ -627,7 +629,8 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("finding", request.getFinding()))
+                              ProtoRestSerializer.create()
+                                  .toBody("finding", request.getFinding(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Finding>newBuilder()
@@ -669,7 +672,9 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "organizationSettings", request.getOrganizationSettings()))
+                                      "organizationSettings",
+                                      request.getOrganizationSettings(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<OrganizationSettings>newBuilder()
@@ -706,7 +711,8 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("source", request.getSource()))
+                              ProtoRestSerializer.create()
+                                  .toBody("source", request.getSource(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Source>newBuilder()
@@ -748,7 +754,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("securityMarks", request.getSecurityMarks()))
+                                  .toBody("securityMarks", request.getSecurityMarks(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SecurityMarks>newBuilder()

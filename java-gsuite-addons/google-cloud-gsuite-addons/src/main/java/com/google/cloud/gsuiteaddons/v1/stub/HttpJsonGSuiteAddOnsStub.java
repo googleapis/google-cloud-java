@@ -126,7 +126,7 @@ public class HttpJsonGSuiteAddOnsStub extends GSuiteAddOnsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("deployment", request.getDeployment()))
+                                  .toBody("deployment", request.getDeployment(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Deployment>newBuilder()
@@ -163,7 +163,7 @@ public class HttpJsonGSuiteAddOnsStub extends GSuiteAddOnsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("deployment", request.getDeployment()))
+                                  .toBody("deployment", request.getDeployment(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Deployment>newBuilder()
@@ -301,7 +301,7 @@ public class HttpJsonGSuiteAddOnsStub extends GSuiteAddOnsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -337,7 +337,7 @@ public class HttpJsonGSuiteAddOnsStub extends GSuiteAddOnsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()

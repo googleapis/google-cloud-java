@@ -98,7 +98,7 @@ public class HttpJsonWorkflowTemplateServiceStub extends WorkflowTemplateService
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("template", request.getTemplate()))
+                                  .toBody("template", request.getTemplate(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<WorkflowTemplate>newBuilder()
@@ -173,7 +173,7 @@ public class HttpJsonWorkflowTemplateServiceStub extends WorkflowTemplateService
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -217,7 +217,7 @@ public class HttpJsonWorkflowTemplateServiceStub extends WorkflowTemplateService
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("template", request.getTemplate()))
+                                  .toBody("template", request.getTemplate(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -260,7 +260,7 @@ public class HttpJsonWorkflowTemplateServiceStub extends WorkflowTemplateService
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("template", request.getTemplate()))
+                                  .toBody("template", request.getTemplate(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<WorkflowTemplate>newBuilder()

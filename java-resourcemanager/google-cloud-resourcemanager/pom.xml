@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-resourcemanager-parent</artifactId>
-    <version>1.5.4</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
+    <version>1.5.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
   </parent>
 
   <developers>
@@ -88,7 +88,7 @@
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-cloudresourcemanager</artifactId>
-      <version>v1-rev20220828-2.0.0</version>
+      <version>v1-rev20220807-2.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.http-client</groupId>

@@ -47,6 +47,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     minTlsVersion_ = "";
     name_ = "";
     profile_ = "";
+    region_ = "";
     selfLink_ = "";
     warnings_ = java.util.Collections.emptyList();
   }
@@ -125,6 +126,13 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
               customFeatures_.add(s);
               break;
             }
+          case 1111570338:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000100;
+              region_ = s;
+              break;
+            }
           case 1819561290:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -149,7 +157,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
           case -645248918:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000200;
               selfLink_ = s;
               break;
             }
@@ -165,9 +173,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
             }
           case -310238534:
             {
-              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
+              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
                 warnings_ = new java.util.ArrayList<com.google.cloud.compute.v1.Warnings>();
-                mutable_bitField0_ |= 0x00000800;
+                mutable_bitField0_ |= 0x00001000;
               }
               warnings_.add(
                   input.readMessage(
@@ -196,7 +204,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       if (((mutable_bitField0_ & 0x00000008) != 0)) {
         enabledFeatures_ = enabledFeatures_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000800) != 0)) {
+      if (((mutable_bitField0_ & 0x00001000) != 0)) {
         warnings_ = java.util.Collections.unmodifiableList(warnings_);
       }
       this.unknownFields = unknownFields.build();
@@ -1209,6 +1217,70 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int REGION_FIELD_NUMBER = 138946292;
+  private volatile java.lang.Object region_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegion() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return The region.
+   */
+  @java.lang.Override
+  public java.lang.String getRegion() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      region_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return The bytes for region.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRegionBytes() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      region_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
@@ -1224,7 +1296,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -1375,6 +1447,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 34789707, customFeatures_.getRaw(i));
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
+    }
     if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227445161, profile_);
     }
@@ -1384,7 +1459,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     for (int i = 0; i < enabledFeatures_.size(); i++) {
@@ -1427,6 +1502,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getCustomFeaturesList().size();
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
+    }
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227445161, profile_);
     }
@@ -1436,7 +1514,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     {
@@ -1499,6 +1577,10 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasProfile()) {
       if (!getProfile().equals(other.getProfile())) return false;
     }
+    if (hasRegion() != other.hasRegion()) return false;
+    if (hasRegion()) {
+      if (!getRegion().equals(other.getRegion())) return false;
+    }
     if (hasSelfLink() != other.hasSelfLink()) return false;
     if (hasSelfLink()) {
       if (!getSelfLink().equals(other.getSelfLink())) return false;
@@ -1554,6 +1636,10 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasProfile()) {
       hash = (37 * hash) + PROFILE_FIELD_NUMBER;
       hash = (53 * hash) + getProfile().hashCode();
+    }
+    if (hasRegion()) {
+      hash = (37 * hash) + REGION_FIELD_NUMBER;
+      hash = (53 * hash) + getRegion().hashCode();
     }
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
@@ -1729,11 +1815,13 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000100);
       profile_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
-      selfLink_ = "";
+      region_ = "";
       bitField0_ = (bitField0_ & ~0x00000400);
+      selfLink_ = "";
+      bitField0_ = (bitField0_ & ~0x00000800);
       if (warningsBuilder_ == null) {
         warnings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
       } else {
         warningsBuilder_.clear();
       }
@@ -1811,11 +1899,15 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000400) != 0)) {
         to_bitField0_ |= 0x00000100;
       }
+      result.region_ = region_;
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        to_bitField0_ |= 0x00000200;
+      }
       result.selfLink_ = selfLink_;
       if (warningsBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           warnings_ = java.util.Collections.unmodifiableList(warnings_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.warnings_ = warnings_;
       } else {
@@ -1929,8 +2021,13 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         profile_ = other.profile_;
         onChanged();
       }
-      if (other.hasSelfLink()) {
+      if (other.hasRegion()) {
         bitField0_ |= 0x00000400;
+        region_ = other.region_;
+        onChanged();
+      }
+      if (other.hasSelfLink()) {
+        bitField0_ |= 0x00000800;
         selfLink_ = other.selfLink_;
         onChanged();
       }
@@ -1938,7 +2035,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         if (!other.warnings_.isEmpty()) {
           if (warnings_.isEmpty()) {
             warnings_ = other.warnings_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureWarningsIsMutable();
             warnings_.addAll(other.warnings_);
@@ -1951,7 +2048,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
             warningsBuilder_.dispose();
             warningsBuilder_ = null;
             warnings_ = other.warnings_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
             warningsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getWarningsFieldBuilder()
@@ -3247,6 +3344,126 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object region_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @return Whether the region field is set.
+     */
+    public boolean hasRegion() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @return The region.
+     */
+    public java.lang.String getRegion() {
+      java.lang.Object ref = region_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        region_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @return The bytes for region.
+     */
+    public com.google.protobuf.ByteString getRegionBytes() {
+      java.lang.Object ref = region_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        region_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @param value The region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000400;
+      region_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRegion() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      region_ = getDefaultInstance().getRegion();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @param value The bytes for region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000400;
+      region_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object selfLink_ = "";
     /**
      *
@@ -3260,7 +3477,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3322,7 +3539,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       selfLink_ = value;
       onChanged();
       return this;
@@ -3339,7 +3556,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -3361,7 +3578,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       selfLink_ = value;
       onChanged();
       return this;
@@ -3371,9 +3588,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureWarningsIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         warnings_ = new java.util.ArrayList<com.google.cloud.compute.v1.Warnings>(warnings_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -3588,7 +3805,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder clearWarnings() {
       if (warningsBuilder_ == null) {
         warnings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         warningsBuilder_.clear();
@@ -3709,7 +3926,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.Warnings,
                 com.google.cloud.compute.v1.Warnings.Builder,
                 com.google.cloud.compute.v1.WarningsOrBuilder>(
-                warnings_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
+                warnings_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
         warnings_ = null;
       }
       return warningsBuilder_;

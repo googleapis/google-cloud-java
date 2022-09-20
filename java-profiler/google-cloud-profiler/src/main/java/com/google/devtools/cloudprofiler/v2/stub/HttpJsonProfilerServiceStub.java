@@ -79,7 +79,7 @@ public class HttpJsonProfilerServiceStub extends ProfilerServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Profile>newBuilder()
@@ -115,7 +115,8 @@ public class HttpJsonProfilerServiceStub extends ProfilerServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("profile", request.getProfile()))
+                              ProtoRestSerializer.create()
+                                  .toBody("profile", request.getProfile(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Profile>newBuilder()
@@ -152,7 +153,8 @@ public class HttpJsonProfilerServiceStub extends ProfilerServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("profile", request.getProfile()))
+                              ProtoRestSerializer.create()
+                                  .toBody("profile", request.getProfile(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Profile>newBuilder()

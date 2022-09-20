@@ -257,7 +257,8 @@ public class HttpJsonNetworkEdgeSecurityServicesStub extends NetworkEdgeSecurity
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "networkEdgeSecurityServiceResource",
-                                      request.getNetworkEdgeSecurityServiceResource()))
+                                      request.getNetworkEdgeSecurityServiceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -323,7 +324,8 @@ public class HttpJsonNetworkEdgeSecurityServicesStub extends NetworkEdgeSecurity
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "networkEdgeSecurityServiceResource",
-                                      request.getNetworkEdgeSecurityServiceResource()))
+                                      request.getNetworkEdgeSecurityServiceResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

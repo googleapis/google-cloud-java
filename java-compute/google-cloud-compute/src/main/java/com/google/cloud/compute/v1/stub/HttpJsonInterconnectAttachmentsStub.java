@@ -44,6 +44,7 @@ import com.google.cloud.compute.v1.ListInterconnectAttachmentsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchInterconnectAttachmentRequest;
+import com.google.cloud.compute.v1.SetLabelsInterconnectAttachmentRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -254,7 +255,8 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "interconnectAttachmentResource",
-                                      request.getInterconnectAttachmentResource()))
+                                      request.getInterconnectAttachmentResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -368,7 +370,8 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "interconnectAttachmentResource",
-                                      request.getInterconnectAttachmentResource()))
+                                      request.getInterconnectAttachmentResource(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -377,6 +380,63 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
                       .build())
               .setOperationSnapshotFactory(
                   (PatchInterconnectAttachmentRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
+  private static final ApiMethodDescriptor<SetLabelsInterconnectAttachmentRequest, Operation>
+      setLabelsMethodDescriptor =
+          ApiMethodDescriptor.<SetLabelsInterconnectAttachmentRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.InterconnectAttachments/SetLabels")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetLabelsInterconnectAttachmentRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/interconnectAttachments/{resource}/setLabels",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetLabelsInterconnectAttachmentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetLabelsInterconnectAttachmentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "regionSetLabelsRequestResource",
+                                      request.getRegionSetLabelsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SetLabelsInterconnectAttachmentRequest request, Operation response) -> {
                     StringBuilder opName = new StringBuilder(response.getName());
                     opName.append(":").append(request.getProject());
                     opName.append(":").append(request.getRegion());
@@ -410,6 +470,9 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
   private final UnaryCallable<PatchInterconnectAttachmentRequest, Operation> patchCallable;
   private final OperationCallable<PatchInterconnectAttachmentRequest, Operation, Operation>
       patchOperationCallable;
+  private final UnaryCallable<SetLabelsInterconnectAttachmentRequest, Operation> setLabelsCallable;
+  private final OperationCallable<SetLabelsInterconnectAttachmentRequest, Operation, Operation>
+      setLabelsOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
@@ -496,6 +559,12 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
             .setMethodDescriptor(patchMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<SetLabelsInterconnectAttachmentRequest, Operation>
+        setLabelsTransportSettings =
+            HttpJsonCallSettings.<SetLabelsInterconnectAttachmentRequest, Operation>newBuilder()
+                .setMethodDescriptor(setLabelsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
 
     this.aggregatedListCallable =
         callableFactory.createUnaryCallable(
@@ -539,6 +608,15 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
             settings.patchOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.setLabelsCallable =
+        callableFactory.createUnaryCallable(
+            setLabelsTransportSettings, settings.setLabelsSettings(), clientContext);
+    this.setLabelsOperationCallable =
+        callableFactory.createOperationCallable(
+            setLabelsTransportSettings,
+            settings.setLabelsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -553,6 +631,7 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(setLabelsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -616,6 +695,17 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
   public OperationCallable<PatchInterconnectAttachmentRequest, Operation, Operation>
       patchOperationCallable() {
     return patchOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetLabelsInterconnectAttachmentRequest, Operation> setLabelsCallable() {
+    return setLabelsCallable;
+  }
+
+  @Override
+  public OperationCallable<SetLabelsInterconnectAttachmentRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    return setLabelsOperationCallable;
   }
 
   @Override

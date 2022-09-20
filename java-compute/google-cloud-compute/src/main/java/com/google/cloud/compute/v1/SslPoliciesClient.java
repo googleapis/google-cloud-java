@@ -32,6 +32,7 @@ import com.google.cloud.compute.v1.stub.SslPoliciesStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -43,8 +44,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
  *   String project = "project-309310695";
  *   String sslPolicy = "sslPolicy618174046";
@@ -81,8 +85,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * SslPoliciesSettings sslPoliciesSettings =
  *     SslPoliciesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -93,8 +100,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * SslPoliciesSettings sslPoliciesSettings =
  *     SslPoliciesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create(sslPoliciesSettings);
@@ -153,14 +163,170 @@ public class SslPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Retrieves the list of all SslPolicy resources, regional and global, available to the specified
+   * project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, SslPoliciesScopedList> element :
+   *       sslPoliciesClient.aggregatedList(project).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param project Name of the project scoping this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AggregatedListPagedResponse aggregatedList(String project) {
+    AggregatedListSslPoliciesRequest request =
+        AggregatedListSslPoliciesRequest.newBuilder().setProject(project).build();
+    return aggregatedList(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of all SslPolicy resources, regional and global, available to the specified
+   * project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
+   *   AggregatedListSslPoliciesRequest request =
+   *       AggregatedListSslPoliciesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (Map.Entry<String, SslPoliciesScopedList> element :
+   *       sslPoliciesClient.aggregatedList(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AggregatedListPagedResponse aggregatedList(
+      AggregatedListSslPoliciesRequest request) {
+    return aggregatedListPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of all SslPolicy resources, regional and global, available to the specified
+   * project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
+   *   AggregatedListSslPoliciesRequest request =
+   *       AggregatedListSslPoliciesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, SslPoliciesScopedList>> future =
+   *       sslPoliciesClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, SslPoliciesScopedList> element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AggregatedListSslPoliciesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return stub.aggregatedListPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of all SslPolicy resources, regional and global, available to the specified
+   * project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
+   *   AggregatedListSslPoliciesRequest request =
+   *       AggregatedListSslPoliciesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   while (true) {
+   *     SslPoliciesAggregatedList response =
+   *         sslPoliciesClient.aggregatedListCallable().call(request);
+   *     for (Map.Entry<String, SslPoliciesScopedList> element : response.getItemsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AggregatedListSslPoliciesRequest, SslPoliciesAggregatedList>
+      aggregatedListCallable() {
+    return stub.aggregatedListCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes the specified SSL policy. The SSL policy resource can be deleted only if it is not in
    * use by any TargetHttpsProxy or TargetSslProxy resources.
    *
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   String project = "project-309310695";
    *   String sslPolicy = "sslPolicy618174046";
@@ -187,8 +353,11 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   DeleteSslPolicyRequest request =
    *       DeleteSslPolicyRequest.newBuilder()
@@ -217,8 +386,11 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   DeleteSslPolicyRequest request =
    *       DeleteSslPolicyRequest.newBuilder()
@@ -246,8 +418,11 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   DeleteSslPolicyRequest request =
    *       DeleteSslPolicyRequest.newBuilder()
@@ -272,8 +447,11 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   String project = "project-309310695";
    *   String sslPolicy = "sslPolicy618174046";
@@ -299,8 +477,11 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   GetSslPolicyRequest request =
    *       GetSslPolicyRequest.newBuilder()
@@ -325,8 +506,11 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   GetSslPolicyRequest request =
    *       GetSslPolicyRequest.newBuilder()
@@ -351,8 +535,11 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   String project = "project-309310695";
    *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
@@ -382,8 +569,11 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   InsertSslPolicyRequest request =
    *       InsertSslPolicyRequest.newBuilder()
@@ -412,8 +602,11 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   InsertSslPolicyRequest request =
    *       InsertSslPolicyRequest.newBuilder()
@@ -441,8 +634,11 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   InsertSslPolicyRequest request =
    *       InsertSslPolicyRequest.newBuilder()
@@ -467,8 +663,11 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   String project = "project-309310695";
    *   for (SslPolicy element : sslPoliciesClient.list(project).iterateAll()) {
@@ -493,8 +692,11 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   ListSslPoliciesRequest request =
    *       ListSslPoliciesRequest.newBuilder()
@@ -525,8 +727,11 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   ListSslPoliciesRequest request =
    *       ListSslPoliciesRequest.newBuilder()
@@ -556,8 +761,11 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   ListSslPoliciesRequest request =
    *       ListSslPoliciesRequest.newBuilder()
@@ -594,8 +802,11 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   String project = "project-309310695";
    *   SslPoliciesListAvailableFeaturesResponse response =
@@ -619,8 +830,11 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   ListAvailableFeaturesSslPoliciesRequest request =
    *       ListAvailableFeaturesSslPoliciesRequest.newBuilder()
@@ -651,8 +865,11 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   ListAvailableFeaturesSslPoliciesRequest request =
    *       ListAvailableFeaturesSslPoliciesRequest.newBuilder()
@@ -683,8 +900,11 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   String project = "project-309310695";
    *   String sslPolicy = "sslPolicy618174046";
@@ -718,8 +938,11 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   PatchSslPolicyRequest request =
    *       PatchSslPolicyRequest.newBuilder()
@@ -748,8 +971,11 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   PatchSslPolicyRequest request =
    *       PatchSslPolicyRequest.newBuilder()
@@ -777,8 +1003,11 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   PatchSslPolicyRequest request =
    *       PatchSslPolicyRequest.newBuilder()
@@ -825,6 +1054,101 @@ public class SslPoliciesClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class AggregatedListPagedResponse
+      extends AbstractPagedListResponse<
+          AggregatedListSslPoliciesRequest,
+          SslPoliciesAggregatedList,
+          Map.Entry<String, SslPoliciesScopedList>,
+          AggregatedListPage,
+          AggregatedListFixedSizeCollection> {
+
+    public static ApiFuture<AggregatedListPagedResponse> createAsync(
+        PageContext<
+                AggregatedListSslPoliciesRequest,
+                SslPoliciesAggregatedList,
+                Map.Entry<String, SslPoliciesScopedList>>
+            context,
+        ApiFuture<SslPoliciesAggregatedList> futureResponse) {
+      ApiFuture<AggregatedListPage> futurePage =
+          AggregatedListPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new AggregatedListPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private AggregatedListPagedResponse(AggregatedListPage page) {
+      super(page, AggregatedListFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class AggregatedListPage
+      extends AbstractPage<
+          AggregatedListSslPoliciesRequest,
+          SslPoliciesAggregatedList,
+          Map.Entry<String, SslPoliciesScopedList>,
+          AggregatedListPage> {
+
+    private AggregatedListPage(
+        PageContext<
+                AggregatedListSslPoliciesRequest,
+                SslPoliciesAggregatedList,
+                Map.Entry<String, SslPoliciesScopedList>>
+            context,
+        SslPoliciesAggregatedList response) {
+      super(context, response);
+    }
+
+    private static AggregatedListPage createEmptyPage() {
+      return new AggregatedListPage(null, null);
+    }
+
+    @Override
+    protected AggregatedListPage createPage(
+        PageContext<
+                AggregatedListSslPoliciesRequest,
+                SslPoliciesAggregatedList,
+                Map.Entry<String, SslPoliciesScopedList>>
+            context,
+        SslPoliciesAggregatedList response) {
+      return new AggregatedListPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<AggregatedListPage> createPageAsync(
+        PageContext<
+                AggregatedListSslPoliciesRequest,
+                SslPoliciesAggregatedList,
+                Map.Entry<String, SslPoliciesScopedList>>
+            context,
+        ApiFuture<SslPoliciesAggregatedList> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class AggregatedListFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          AggregatedListSslPoliciesRequest,
+          SslPoliciesAggregatedList,
+          Map.Entry<String, SslPoliciesScopedList>,
+          AggregatedListPage,
+          AggregatedListFixedSizeCollection> {
+
+    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static AggregatedListFixedSizeCollection createEmptyCollection() {
+      return new AggregatedListFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected AggregatedListFixedSizeCollection createCollection(
+        List<AggregatedListPage> pages, int collectionSize) {
+      return new AggregatedListFixedSizeCollection(pages, collectionSize);
+    }
   }
 
   public static class ListPagedResponse

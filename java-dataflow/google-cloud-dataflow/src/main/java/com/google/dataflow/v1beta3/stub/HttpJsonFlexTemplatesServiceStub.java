@@ -80,7 +80,8 @@ public class HttpJsonFlexTemplatesServiceStub extends FlexTemplatesServiceStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder().clearLocation().clearProjectId().build()))
+                                      request.toBuilder().clearLocation().clearProjectId().build(),
+                                      false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<LaunchFlexTemplateResponse>newBuilder()

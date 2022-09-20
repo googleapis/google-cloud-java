@@ -107,14 +107,14 @@ public final class GetServiceAccountKeyRequest extends com.google.protobuf.Gener
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_GetServiceAccountKeyRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_GetServiceAccountKeyRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.iam.admin.v1.GetServiceAccountKeyRequest.class,
@@ -188,11 +188,13 @@ public final class GetServiceAccountKeyRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The output format of the public key requested.
-   * X509_PEM is the default output format.
+   * Optional. The output format of the public key. The default is `TYPE_NONE`, which
+   * means that the public key is not returned.
    * </pre>
    *
-   * <code>.google.iam.admin.v1.ServiceAccountPublicKeyType public_key_type = 2;</code>
+   * <code>
+   * .google.iam.admin.v1.ServiceAccountPublicKeyType public_key_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for publicKeyType.
    */
@@ -204,11 +206,13 @@ public final class GetServiceAccountKeyRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The output format of the public key requested.
-   * X509_PEM is the default output format.
+   * Optional. The output format of the public key. The default is `TYPE_NONE`, which
+   * means that the public key is not returned.
    * </pre>
    *
-   * <code>.google.iam.admin.v1.ServiceAccountPublicKeyType public_key_type = 2;</code>
+   * <code>
+   * .google.iam.admin.v1.ServiceAccountPublicKeyType public_key_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The publicKeyType.
    */
@@ -406,14 +410,14 @@ public final class GetServiceAccountKeyRequest extends com.google.protobuf.Gener
       // @@protoc_insertion_point(builder_implements:google.iam.admin.v1.GetServiceAccountKeyRequest)
       com.google.iam.admin.v1.GetServiceAccountKeyRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_GetServiceAccountKeyRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_GetServiceAccountKeyRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.iam.admin.v1.GetServiceAccountKeyRequest.class,
@@ -446,7 +450,7 @@ public final class GetServiceAccountKeyRequest extends com.google.protobuf.Gener
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_GetServiceAccountKeyRequest_descriptor;
     }
 
@@ -698,11 +702,13 @@ public final class GetServiceAccountKeyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The output format of the public key requested.
-     * X509_PEM is the default output format.
+     * Optional. The output format of the public key. The default is `TYPE_NONE`, which
+     * means that the public key is not returned.
      * </pre>
      *
-     * <code>.google.iam.admin.v1.ServiceAccountPublicKeyType public_key_type = 2;</code>
+     * <code>
+     * .google.iam.admin.v1.ServiceAccountPublicKeyType public_key_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The enum numeric value on the wire for publicKeyType.
      */
@@ -714,11 +720,13 @@ public final class GetServiceAccountKeyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The output format of the public key requested.
-     * X509_PEM is the default output format.
+     * Optional. The output format of the public key. The default is `TYPE_NONE`, which
+     * means that the public key is not returned.
      * </pre>
      *
-     * <code>.google.iam.admin.v1.ServiceAccountPublicKeyType public_key_type = 2;</code>
+     * <code>
+     * .google.iam.admin.v1.ServiceAccountPublicKeyType public_key_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The enum numeric value on the wire for publicKeyType to set.
      * @return This builder for chaining.
@@ -733,11 +741,13 @@ public final class GetServiceAccountKeyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The output format of the public key requested.
-     * X509_PEM is the default output format.
+     * Optional. The output format of the public key. The default is `TYPE_NONE`, which
+     * means that the public key is not returned.
      * </pre>
      *
-     * <code>.google.iam.admin.v1.ServiceAccountPublicKeyType public_key_type = 2;</code>
+     * <code>
+     * .google.iam.admin.v1.ServiceAccountPublicKeyType public_key_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The publicKeyType.
      */
@@ -754,11 +764,13 @@ public final class GetServiceAccountKeyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The output format of the public key requested.
-     * X509_PEM is the default output format.
+     * Optional. The output format of the public key. The default is `TYPE_NONE`, which
+     * means that the public key is not returned.
      * </pre>
      *
-     * <code>.google.iam.admin.v1.ServiceAccountPublicKeyType public_key_type = 2;</code>
+     * <code>
+     * .google.iam.admin.v1.ServiceAccountPublicKeyType public_key_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The publicKeyType to set.
      * @return This builder for chaining.
@@ -776,11 +788,13 @@ public final class GetServiceAccountKeyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The output format of the public key requested.
-     * X509_PEM is the default output format.
+     * Optional. The output format of the public key. The default is `TYPE_NONE`, which
+     * means that the public key is not returned.
      * </pre>
      *
-     * <code>.google.iam.admin.v1.ServiceAccountPublicKeyType public_key_type = 2;</code>
+     * <code>
+     * .google.iam.admin.v1.ServiceAccountPublicKeyType public_key_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */

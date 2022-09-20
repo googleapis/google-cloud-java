@@ -54,16 +54,16 @@ import javax.annotation.Generated;
  * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * VpnTunnelsSettings.Builder vpnTunnelsSettingsBuilder = VpnTunnelsSettings.newBuilder();
  * vpnTunnelsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         vpnTunnelsSettingsBuilder
- *             .getSettings()
- *             .getRetrySettings()
- *             .toBuilder()
+ *         vpnTunnelsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * VpnTunnelsSettings vpnTunnelsSettings = vpnTunnelsSettingsBuilder.build();
@@ -109,6 +109,17 @@ public class VpnTunnelsSettings extends ClientSettings<VpnTunnelsSettings> {
   /** Returns the object with the settings used for calls to list. */
   public PagedCallSettings<ListVpnTunnelsRequest, VpnTunnelList, ListPagedResponse> listSettings() {
     return ((VpnTunnelsStubSettings) getStubSettings()).listSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public UnaryCallSettings<SetLabelsVpnTunnelRequest, Operation> setLabelsSettings() {
+    return ((VpnTunnelsStubSettings) getStubSettings()).setLabelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsVpnTunnelRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return ((VpnTunnelsStubSettings) getStubSettings()).setLabelsOperationSettings();
   }
 
   public static final VpnTunnelsSettings create(VpnTunnelsStubSettings stub) throws IOException {
@@ -246,6 +257,17 @@ public class VpnTunnelsSettings extends ClientSettings<VpnTunnelsSettings> {
     public PagedCallSettings.Builder<ListVpnTunnelsRequest, VpnTunnelList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public UnaryCallSettings.Builder<SetLabelsVpnTunnelRequest, Operation> setLabelsSettings() {
+      return getStubSettingsBuilder().setLabelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public OperationCallSettings.Builder<SetLabelsVpnTunnelRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return getStubSettingsBuilder().setLabelsOperationSettings();
     }
 
     @Override
