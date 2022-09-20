@@ -188,6 +188,10 @@ public final class FeaturestoreServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_BatchReadFeatureValuesOperationMetadata_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesOperationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesOperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_CreateEntityTypeOperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_CreateEntityTypeOperationMetadata_fieldAccessorTable;
@@ -199,6 +203,22 @@ public final class FeaturestoreServiceProto {
       internal_static_google_cloud_aiplatform_v1beta1_BatchCreateFeaturesOperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_BatchCreateFeaturesOperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesRequest_SelectEntity_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesRequest_SelectEntity_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_EntityIdSelector_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_EntityIdSelector_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -389,16 +409,31 @@ public final class FeaturestoreServiceProto {
           + "adata\"~\n\'BatchReadFeatureValuesOperation"
           + "Metadata\022S\n\020generic_metadata\030\001 \001(\01329.goo"
           + "gle.cloud.aiplatform.v1beta1.GenericOper"
-          + "ationMetadata\"x\n!CreateEntityTypeOperati"
-          + "onMetadata\022S\n\020generic_metadata\030\001 \001(\01329.g"
-          + "oogle.cloud.aiplatform.v1beta1.GenericOp"
-          + "erationMetadata\"u\n\036CreateFeatureOperatio"
-          + "nMetadata\022S\n\020generic_metadata\030\001 \001(\01329.go"
-          + "ogle.cloud.aiplatform.v1beta1.GenericOpe"
-          + "rationMetadata\"{\n$BatchCreateFeaturesOpe"
+          + "ationMetadata\"{\n$DeleteFeatureValuesOper"
+          + "ationMetadata\022S\n\020generic_metadata\030\001 \001(\0132"
+          + "9.google.cloud.aiplatform.v1beta1.Generi"
+          + "cOperationMetadata\"x\n!CreateEntityTypeOp"
+          + "erationMetadata\022S\n\020generic_metadata\030\001 \001("
+          + "\01329.google.cloud.aiplatform.v1beta1.Gene"
+          + "ricOperationMetadata\"u\n\036CreateFeatureOpe"
           + "rationMetadata\022S\n\020generic_metadata\030\001 \001(\013"
           + "29.google.cloud.aiplatform.v1beta1.Gener"
-          + "icOperationMetadata2\260)\n\023FeaturestoreServ"
+          + "icOperationMetadata\"{\n$BatchCreateFeatur"
+          + "esOperationMetadata\022S\n\020generic_metadata\030"
+          + "\001 \001(\01329.google.cloud.aiplatform.v1beta1."
+          + "GenericOperationMetadata\"\266\002\n\032DeleteFeatu"
+          + "reValuesRequest\022a\n\rselect_entity\030\002 \001(\0132H"
+          + ".google.cloud.aiplatform.v1beta1.DeleteF"
+          + "eatureValuesRequest.SelectEntityH\000\022A\n\013en"
+          + "tity_type\030\001 \001(\tB,\340A\002\372A&\n$aiplatform.goog"
+          + "leapis.com/EntityType\032b\n\014SelectEntity\022R\n"
+          + "\022entity_id_selector\030\001 \001(\01321.google.cloud"
+          + ".aiplatform.v1beta1.EntityIdSelectorB\003\340A"
+          + "\002B\016\n\014DeleteOption\"\035\n\033DeleteFeatureValues"
+          + "Response\"\200\001\n\020EntityIdSelector\022@\n\ncsv_sou"
+          + "rce\030\003 \001(\0132*.google.cloud.aiplatform.v1be"
+          + "ta1.CsvSourceH\000\022\027\n\017entity_id_field\030\005 \001(\t"
+          + "B\021\n\017EntityIdsSource2\345+\n\023FeaturestoreServ"
           + "ice\022\260\002\n\022CreateFeaturestore\022:.google.clou"
           + "d.aiplatform.v1beta1.CreateFeaturestoreR"
           + "equest\032\035.google.longrunning.Operation\"\276\001"
@@ -522,22 +557,30 @@ public final class FeaturestoreServiceProto {
           + "ojects/*/locations/*/featurestores/*/ent"
           + "ityTypes/*}:exportFeatureValues:\001*\332A\013ent"
           + "ity_type\312AC\n\033ExportFeatureValuesResponse"
-          + "\022$ExportFeatureValuesOperationMetadata\022\356"
-          + "\001\n\016SearchFeatures\0226.google.cloud.aiplatf"
-          + "orm.v1beta1.SearchFeaturesRequest\0327.goog"
-          + "le.cloud.aiplatform.v1beta1.SearchFeatur"
-          + "esResponse\"k\202\323\344\223\002I\022G/v1beta1/{location=p"
-          + "rojects/*/locations/*}/featurestores:sea"
-          + "rchFeatures\332A\010location\332A\016location,query\032"
-          + "M\312A\031aiplatform.googleapis.com\322A.https://"
-          + "www.googleapis.com/auth/cloud-platformB\365"
-          + "\001\n#com.google.cloud.aiplatform.v1beta1B\030"
-          + "FeaturestoreServiceProtoP\001ZIgoogle.golan"
-          + "g.org/genproto/googleapis/cloud/aiplatfo"
-          + "rm/v1beta1;aiplatform\252\002\037Google.Cloud.AIP"
-          + "latform.V1Beta1\312\002\037Google\\Cloud\\AIPlatfor"
-          + "m\\V1beta1\352\002\"Google::Cloud::AIPlatform::V"
-          + "1beta1b\006proto3"
+          + "\022$ExportFeatureValuesOperationMetadata\022\262"
+          + "\002\n\023DeleteFeatureValues\022;.google.cloud.ai"
+          + "platform.v1beta1.DeleteFeatureValuesRequ"
+          + "est\032\035.google.longrunning.Operation\"\276\001\202\323\344"
+          + "\223\002d\"_/v1beta1/{entity_type=projects/*/lo"
+          + "cations/*/featurestores/*/entityTypes/*}"
+          + ":deleteFeatureValues:\001*\332A\013entity_type\312AC"
+          + "\n\033DeleteFeatureValuesResponse\022$DeleteFea"
+          + "tureValuesOperationMetadata\022\356\001\n\016SearchFe"
+          + "atures\0226.google.cloud.aiplatform.v1beta1"
+          + ".SearchFeaturesRequest\0327.google.cloud.ai"
+          + "platform.v1beta1.SearchFeaturesResponse\""
+          + "k\202\323\344\223\002I\022G/v1beta1/{location=projects/*/l"
+          + "ocations/*}/featurestores:searchFeatures"
+          + "\332A\010location\332A\016location,query\032M\312A\031aiplatf"
+          + "orm.googleapis.com\322A.https://www.googlea"
+          + "pis.com/auth/cloud-platformB\365\001\n#com.goog"
+          + "le.cloud.aiplatform.v1beta1B\030Featurestor"
+          + "eServiceProtoP\001ZIgoogle.golang.org/genpr"
+          + "oto/googleapis/cloud/aiplatform/v1beta1;"
+          + "aiplatform\252\002\037Google.Cloud.AIPlatform.V1B"
+          + "eta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002"
+          + "\"Google::Cloud::AIPlatform::V1beta1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -916,8 +959,16 @@ public final class FeaturestoreServiceProto {
             new java.lang.String[] {
               "GenericMetadata",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_CreateEntityTypeOperationMetadata_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesOperationMetadata_descriptor =
         getDescriptor().getMessageTypes().get(35);
+    internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesOperationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesOperationMetadata_descriptor,
+            new java.lang.String[] {
+              "GenericMetadata",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_CreateEntityTypeOperationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_cloud_aiplatform_v1beta1_CreateEntityTypeOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_CreateEntityTypeOperationMetadata_descriptor,
@@ -925,7 +976,7 @@ public final class FeaturestoreServiceProto {
               "GenericMetadata",
             });
     internal_static_google_cloud_aiplatform_v1beta1_CreateFeatureOperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_cloud_aiplatform_v1beta1_CreateFeatureOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_CreateFeatureOperationMetadata_descriptor,
@@ -933,12 +984,44 @@ public final class FeaturestoreServiceProto {
               "GenericMetadata",
             });
     internal_static_google_cloud_aiplatform_v1beta1_BatchCreateFeaturesOperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_cloud_aiplatform_v1beta1_BatchCreateFeaturesOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_BatchCreateFeaturesOperationMetadata_descriptor,
             new java.lang.String[] {
               "GenericMetadata",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(39);
+    internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesRequest_descriptor,
+            new java.lang.String[] {
+              "SelectEntity", "EntityType", "DeleteOption",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesRequest_SelectEntity_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesRequest_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesRequest_SelectEntity_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesRequest_SelectEntity_descriptor,
+            new java.lang.String[] {
+              "EntityIdSelector",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(40);
+    internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_aiplatform_v1beta1_EntityIdSelector_descriptor =
+        getDescriptor().getMessageTypes().get(41);
+    internal_static_google_cloud_aiplatform_v1beta1_EntityIdSelector_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_EntityIdSelector_descriptor,
+            new java.lang.String[] {
+              "CsvSource", "EntityIdField", "EntityIdsSource",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

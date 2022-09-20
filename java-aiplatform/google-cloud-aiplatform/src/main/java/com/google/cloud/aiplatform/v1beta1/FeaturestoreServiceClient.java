@@ -3575,6 +3575,209 @@ public class FeaturestoreServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Delete Feature values from Featurestore.
+   *
+   * <p>The progress of the deletion is tracked by the returned operation. The deleted feature
+   * values are guaranteed to be invisible to subsequent read operations after the operation is
+   * marked as successfully done.
+   *
+   * <p>If a delete feature values operation fails, the feature values returned from reads and
+   * exports may be inconsistent. If consistency is required, the caller must retry the same delete
+   * request again and wait till the new operation returned is marked as successfully done.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
+   *   EntityTypeName entityType =
+   *       EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]");
+   *   DeleteFeatureValuesResponse response =
+   *       featurestoreServiceClient.deleteFeatureValuesAsync(entityType).get();
+   * }
+   * }</pre>
+   *
+   * @param entityType Required. The resource name of the EntityType grouping the Features for which
+   *     values are being deleted from. Format:
+   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeleteFeatureValuesResponse, DeleteFeatureValuesOperationMetadata>
+      deleteFeatureValuesAsync(EntityTypeName entityType) {
+    DeleteFeatureValuesRequest request =
+        DeleteFeatureValuesRequest.newBuilder()
+            .setEntityType(entityType == null ? null : entityType.toString())
+            .build();
+    return deleteFeatureValuesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete Feature values from Featurestore.
+   *
+   * <p>The progress of the deletion is tracked by the returned operation. The deleted feature
+   * values are guaranteed to be invisible to subsequent read operations after the operation is
+   * marked as successfully done.
+   *
+   * <p>If a delete feature values operation fails, the feature values returned from reads and
+   * exports may be inconsistent. If consistency is required, the caller must retry the same delete
+   * request again and wait till the new operation returned is marked as successfully done.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
+   *   String entityType =
+   *       EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *           .toString();
+   *   DeleteFeatureValuesResponse response =
+   *       featurestoreServiceClient.deleteFeatureValuesAsync(entityType).get();
+   * }
+   * }</pre>
+   *
+   * @param entityType Required. The resource name of the EntityType grouping the Features for which
+   *     values are being deleted from. Format:
+   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeleteFeatureValuesResponse, DeleteFeatureValuesOperationMetadata>
+      deleteFeatureValuesAsync(String entityType) {
+    DeleteFeatureValuesRequest request =
+        DeleteFeatureValuesRequest.newBuilder().setEntityType(entityType).build();
+    return deleteFeatureValuesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete Feature values from Featurestore.
+   *
+   * <p>The progress of the deletion is tracked by the returned operation. The deleted feature
+   * values are guaranteed to be invisible to subsequent read operations after the operation is
+   * marked as successfully done.
+   *
+   * <p>If a delete feature values operation fails, the feature values returned from reads and
+   * exports may be inconsistent. If consistency is required, the caller must retry the same delete
+   * request again and wait till the new operation returned is marked as successfully done.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
+   *   DeleteFeatureValuesRequest request =
+   *       DeleteFeatureValuesRequest.newBuilder()
+   *           .setEntityType(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .build();
+   *   DeleteFeatureValuesResponse response =
+   *       featurestoreServiceClient.deleteFeatureValuesAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeleteFeatureValuesResponse, DeleteFeatureValuesOperationMetadata>
+      deleteFeatureValuesAsync(DeleteFeatureValuesRequest request) {
+    return deleteFeatureValuesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete Feature values from Featurestore.
+   *
+   * <p>The progress of the deletion is tracked by the returned operation. The deleted feature
+   * values are guaranteed to be invisible to subsequent read operations after the operation is
+   * marked as successfully done.
+   *
+   * <p>If a delete feature values operation fails, the feature values returned from reads and
+   * exports may be inconsistent. If consistency is required, the caller must retry the same delete
+   * request again and wait till the new operation returned is marked as successfully done.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
+   *   DeleteFeatureValuesRequest request =
+   *       DeleteFeatureValuesRequest.newBuilder()
+   *           .setEntityType(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<DeleteFeatureValuesResponse, DeleteFeatureValuesOperationMetadata> future =
+   *       featurestoreServiceClient.deleteFeatureValuesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DeleteFeatureValuesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          DeleteFeatureValuesRequest,
+          DeleteFeatureValuesResponse,
+          DeleteFeatureValuesOperationMetadata>
+      deleteFeatureValuesOperationCallable() {
+    return stub.deleteFeatureValuesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete Feature values from Featurestore.
+   *
+   * <p>The progress of the deletion is tracked by the returned operation. The deleted feature
+   * values are guaranteed to be invisible to subsequent read operations after the operation is
+   * marked as successfully done.
+   *
+   * <p>If a delete feature values operation fails, the feature values returned from reads and
+   * exports may be inconsistent. If consistency is required, the caller must retry the same delete
+   * request again and wait till the new operation returned is marked as successfully done.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
+   *   DeleteFeatureValuesRequest request =
+   *       DeleteFeatureValuesRequest.newBuilder()
+   *           .setEntityType(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       featurestoreServiceClient.deleteFeatureValuesCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteFeatureValuesRequest, Operation> deleteFeatureValuesCallable() {
+    return stub.deleteFeatureValuesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Searches Features matching a query in a given project.
    *
    * <p>Sample code:

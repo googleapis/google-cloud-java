@@ -283,6 +283,21 @@ public class FeaturestoreServiceSettings extends ClientSettings<FeaturestoreServ
         .exportFeatureValuesOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to deleteFeatureValues. */
+  public UnaryCallSettings<DeleteFeatureValuesRequest, Operation> deleteFeatureValuesSettings() {
+    return ((FeaturestoreServiceStubSettings) getStubSettings()).deleteFeatureValuesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteFeatureValues. */
+  public OperationCallSettings<
+          DeleteFeatureValuesRequest,
+          DeleteFeatureValuesResponse,
+          DeleteFeatureValuesOperationMetadata>
+      deleteFeatureValuesOperationSettings() {
+    return ((FeaturestoreServiceStubSettings) getStubSettings())
+        .deleteFeatureValuesOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to searchFeatures. */
   public PagedCallSettings<
           SearchFeaturesRequest, SearchFeaturesResponse, SearchFeaturesPagedResponse>
@@ -606,6 +621,21 @@ public class FeaturestoreServiceSettings extends ClientSettings<FeaturestoreServ
             ExportFeatureValuesOperationMetadata>
         exportFeatureValuesOperationSettings() {
       return getStubSettingsBuilder().exportFeatureValuesOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFeatureValues. */
+    public UnaryCallSettings.Builder<DeleteFeatureValuesRequest, Operation>
+        deleteFeatureValuesSettings() {
+      return getStubSettingsBuilder().deleteFeatureValuesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFeatureValues. */
+    public OperationCallSettings.Builder<
+            DeleteFeatureValuesRequest,
+            DeleteFeatureValuesResponse,
+            DeleteFeatureValuesOperationMetadata>
+        deleteFeatureValuesOperationSettings() {
+      return getStubSettingsBuilder().deleteFeatureValuesOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to searchFeatures. */

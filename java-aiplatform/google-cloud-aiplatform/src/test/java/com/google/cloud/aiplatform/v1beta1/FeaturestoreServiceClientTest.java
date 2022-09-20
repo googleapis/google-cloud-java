@@ -2351,6 +2351,94 @@ public class FeaturestoreServiceClientTest {
   }
 
   @Test
+  public void deleteFeatureValuesTest() throws Exception {
+    DeleteFeatureValuesResponse expectedResponse = DeleteFeatureValuesResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteFeatureValuesTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFeaturestoreService.addResponse(resultOperation);
+
+    EntityTypeName entityType =
+        EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]");
+
+    DeleteFeatureValuesResponse actualResponse = client.deleteFeatureValuesAsync(entityType).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeaturestoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteFeatureValuesRequest actualRequest = ((DeleteFeatureValuesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(entityType.toString(), actualRequest.getEntityType());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteFeatureValuesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeaturestoreService.addException(exception);
+
+    try {
+      EntityTypeName entityType =
+          EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]");
+      client.deleteFeatureValuesAsync(entityType).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteFeatureValuesTest2() throws Exception {
+    DeleteFeatureValuesResponse expectedResponse = DeleteFeatureValuesResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteFeatureValuesTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFeaturestoreService.addResponse(resultOperation);
+
+    String entityType = "entityType-1482998339";
+
+    DeleteFeatureValuesResponse actualResponse = client.deleteFeatureValuesAsync(entityType).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeaturestoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteFeatureValuesRequest actualRequest = ((DeleteFeatureValuesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(entityType, actualRequest.getEntityType());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteFeatureValuesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeaturestoreService.addException(exception);
+
+    try {
+      String entityType = "entityType-1482998339";
+      client.deleteFeatureValuesAsync(entityType).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void searchFeaturesTest() throws Exception {
     Feature responsesElement = Feature.newBuilder().build();
     SearchFeaturesResponse expectedResponse =
