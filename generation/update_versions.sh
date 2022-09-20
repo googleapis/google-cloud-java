@@ -7,17 +7,16 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
     continue
   fi
 
-  # Confirm the rest...
-  if [[ "${path}" = *area120* ]] || [[ "${path}" = *grafeas* ]]; then
-    continue
-  fi
-
   versions_array=($(grep -E "^.*:[0-9]+\.[0-9]+\.[0-9]+:.*$" "${path}/versions.txt"))
 
   for line in "${versions_array[@]}"; do
     artifactId=$(echo "${line}" | cut -d ":" -f1)
 
-    if [[ "${artifactId}" =~ ^.*analytics.*$ ]] && [[ "${artifactId}" =~ ^google- ]]; then
+    if [[ "${artifactId}" =~ ^.grafeas.*$ ]]; then
+      maven_url="https://repo1.maven.org/maven2/io/grafeas/${artifactId}/maven-metadata.xml"
+    elif [[ "${artifactId}" =~ ^.*area120.*$ ]] && [[ "${artifactId}" =~ ^google- ]]; then
+      maven_url="https://repo1.maven.org/maven2/com/google/area120/${artifactId}/maven-metadata.xml"
+    elif [[ "${artifactId}" =~ ^.*analytics.*$ ]] && [[ "${artifactId}" =~ ^google- ]]; then
       maven_url="https://repo1.maven.org/maven2/com/google/analytics/${artifactId}/maven-metadata.xml"
     elif [[ "${artifactId}" =~ ^google- ]]; then
       maven_url="https://repo1.maven.org/maven2/com/google/cloud/${artifactId}/maven-metadata.xml"
