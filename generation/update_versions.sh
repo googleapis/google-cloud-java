@@ -69,7 +69,7 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
     count=$((count + 1))
     echo "Module #${count} -- Downloading ${artifactId} from ${maven_url}"
     if wget --spider "${maven_url}" 2>/dev/null; then
-      metadata_file=$(retry_with_backoff 3 10 curl -s "${maven_url}" -H "Accept: application/xml" --limit-rate 200k)
+      metadata_file=$(retry_with_backoff 3 10 curl -s "${maven_url}" -H "Accept:application/xml" --limit-rate 200k)
       maven_version=$(echo "${metadata_file}" | grep 'latest')
       maven_latest_version=$(echo "$maven_version" | cut -d '>' -f 2 | cut -d '<' -f 1 | cut -d "-" -f1)
 
