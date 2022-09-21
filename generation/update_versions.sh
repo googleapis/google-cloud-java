@@ -84,7 +84,7 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
         new_version="${artifactId}:${maven_latest_version}:${maven_version_bump}-SNAPSHOT"
       else
         maven_version_bump="${major_version}.${minor_version}.${patch_version_bump}-${maven_latest_trailing}"
-        new_version="${artifactId}:${maven_latest_version}:${maven_version_bump}-${maven_latest_trailing}-SNAPSHOT"
+        new_version="${artifactId}:${maven_latest_version}-${maven_latest_trailing}:${maven_version_bump}-SNAPSHOT"
       fi
 
       sed -i "s/${line}/${new_version}/g" "${path}/versions.txt"
