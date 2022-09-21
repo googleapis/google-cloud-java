@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.6](https://github.com/googleapis/java-secretmanager/compare/v2.3.5...v2.3.6) (2022-09-21)
+
+
+### Dependencies
+
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.9.1 ([#842](https://github.com/googleapis/java-secretmanager/issues/842)) ([4bec542](https://github.com/googleapis/java-secretmanager/commit/4bec542060b480f3e75f0c9dbd39ed24d4c0892f))
+
 ## [2.3.5](https://github.com/googleapis/java-secretmanager/compare/v2.3.4...v2.3.5) (2022-09-20)
 
 
