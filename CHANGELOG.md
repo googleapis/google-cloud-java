@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.11.2](https://github.com/googleapis/java-logging/compare/v3.11.1...v3.11.2) (2022-09-21)
+
+
+### Dependencies
+
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.9.1 ([#1075](https://github.com/googleapis/java-logging/issues/1075)) ([d38e9e0](https://github.com/googleapis/java-logging/commit/d38e9e0a8a9b4faa487a4ce169d0189e8718a88b))
+
 ## [3.11.1](https://github.com/googleapis/java-logging/compare/v3.11.0...v3.11.1) (2022-09-15)
 
 
