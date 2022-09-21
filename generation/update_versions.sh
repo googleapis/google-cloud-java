@@ -2,9 +2,9 @@
 
 set -e
 
-error_artifacts=()
+missing_artifacts=()
 
-for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort -r | xargs dirname); do
+for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirname); do
   if [[ "${path}" =~ google-cloud-gapic-bom ]] || [[ "${path}" =~ CoverageAggregator ]] || [[ "${path}" =~ .*samples.* ]] || [[ "${path}" =~ .*beyondcorp.* ]]; then
     continue
   fi
@@ -12,8 +12,8 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort -r | xargs dir
   versions_array=($(grep -E "^.*:[0-9]+\.[0-9]+\.[0-9]+.*:[0-9]+\.[0-9]+\.[0-9]+.*$" "${path}/versions.txt"))
 
   for line in "${versions_array[@]}"; do
-    echo "Running for ${line}"
     artifactId=$(echo "${line}" | cut -d ":" -f1)
+    echo "Running for ${artifactId}"
 
     if [[ "${artifactId}" =~ .*grafeas.* ]]; then
       maven_url="https://repo1.maven.org/maven2/io/grafeas/${artifactId}/maven-metadata.xml"
@@ -29,7 +29,8 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort -r | xargs dir
 
     echo "Downloading ${artifactId} from ${maven_url}"
     if wget --spider "${maven_url}" 2>/dev/null; then
-      maven_version=$(curl -s "${maven_url}" -H "Accept: application/xml" | grep 'latest')
+      metadata_file=$(curl "${maven_url}" -H "Accept: application/xml" --limit-rate 200k)
+      maven_version=$(echo "${metadata_file}" | grep 'latest')
       maven_latest_version=$(echo "$maven_version" | cut -d '>' -f 2 | cut -d '<' -f 1 | cut -d "-" -f1)
 
       major_version=$(echo "${maven_latest_version}" | cut -d "." -f1)
@@ -41,10 +42,9 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort -r | xargs dir
 
       sed -i "s/${line}/${new_version}/g" "${path}/versions.txt"
     else
-      error_artifacts+=("${artifactId}")
+      missing_artifacts+=("${artifactId}")
     fi
-    echo "Done running for ${line}"
   done
 done
 
-echo "These artifacts don't exist: ${error_artifacts[*]}"
+echo "These artifacts don't exist: ${missing_artifacts[*]}"
