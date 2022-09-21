@@ -71,15 +71,21 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
     echo "Module #${count} -- Downloading ${artifactId} from ${maven_url}"
     if wget --spider "${maven_url}" 2>/dev/null; then
       metadata_file=$(retry_with_backoff 3 10 curl -s "${maven_url}" -H "Accept:application/xml" --limit-rate 200k)
-      maven_version=$(echo "${metadata_file}" | grep 'latest')
-      maven_latest_version=$(echo "$maven_version" | cut -d '>' -f 2 | cut -d '<' -f 1 | cut -d "-" -f1)
+      maven_metadata_version=$(echo "${metadata_file}" | grep 'latest' | cut -d '>' -f 2 | cut -d '<' -f 1)
+      maven_latest_version=$(echo "${maven_metadata_version}"  | cut -d "-" -f1)
+      maven_latest_trailing=$(echo "${maven_metadata_version}"  | cut -s -d "-" -f2-)
 
       major_version=$(echo "${maven_latest_version}" | cut -d "." -f1)
       minor_version=$(echo "${maven_latest_version}" | cut -d "." -f2)
       patch_version=$(echo "${maven_latest_version}" | cut -d "." -f3)
       patch_version_bump=$((patch_version + 1))
-      maven_version_bump="${major_version}.${minor_version}.${patch_version_bump}"
-      new_version="${artifactId}:${maven_latest_version}:${maven_version_bump}-SNAPSHOT"
+      if [[ -z "${maven_latest_trailing}" ]]; then
+        maven_version_bump="${major_version}.${minor_version}.${patch_version_bump}"
+        new_version="${artifactId}:${maven_latest_version}:${maven_version_bump}-SNAPSHOT"
+      else
+        maven_version_bump="${major_version}.${minor_version}.${patch_version_bump}-${maven_latest_trailing}"
+        new_version="${artifactId}:${maven_latest_version}:${maven_version_bump}-${maven_latest_trailing}-SNAPSHOT"
+      fi
 
       sed -i "s/${line}/${new_version}/g" "${path}/versions.txt"
     else
