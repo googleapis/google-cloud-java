@@ -167,6 +167,7 @@ public class ConnectionWorkerPool {
     /** Builder for the options to config {@link ConnectionWorkerPool}. */
     @AutoValue.Builder
     public abstract static class Builder {
+      // TODO(gaole) rename to per location for easier understanding.
       public abstract Builder setMinConnectionsPerPool(int value);
 
       public abstract Builder setMaxConnectionsPerPool(int value);
@@ -386,5 +387,21 @@ public class ConnectionWorkerPool {
 
   int getTotalConnectionCount() {
     return connectionWorkerPool.size();
+  }
+
+  String getTraceId() {
+    return traceId;
+  }
+
+  boolean ownsBigQueryWriteClient() {
+    return ownsBigQueryWriteClient;
+  }
+
+  FlowController.LimitExceededBehavior limitExceededBehavior() {
+    return limitExceededBehavior;
+  }
+
+  BigQueryWriteClient bigQueryWriteClient() {
+    return client;
   }
 }

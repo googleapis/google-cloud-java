@@ -73,7 +73,8 @@ public class ConnectionWorkerPoolTest {
   @Test
   public void testSingleTableConnection_noOverwhelmedConnection() throws Exception {
     // Set the max requests count to a large value so we will not scaling up.
-    testSend100RequestsToMultiTable(
+    testSendRequestsToMultiTable(
+        /*requestToSend=*/ 100,
         /*maxRequests=*/ 100000,
         /*maxConnections=*/ 8,
         /*expectedConnectionCount=*/ 1,
@@ -83,7 +84,8 @@ public class ConnectionWorkerPoolTest {
   @Test
   public void testSingleTableConnections_overwhelmed() throws Exception {
     // A connection will be considered overwhelmed when the requests count reach 5 (max 10).
-    testSend100RequestsToMultiTable(
+    testSendRequestsToMultiTable(
+        /*requestToSend=*/ 100,
         /*maxRequests=*/ 10,
         /*maxConnections=*/ 8,
         /*expectedConnectionCount=*/ 8,
@@ -94,7 +96,8 @@ public class ConnectionWorkerPoolTest {
   public void testMultiTableConnection_noOverwhelmedConnection() throws Exception {
     // Set the max requests count to a large value so we will not scaling up.
     // All tables will share the two connections (2 becasue we set the min connections to be 2).
-    testSend100RequestsToMultiTable(
+    testSendRequestsToMultiTable(
+        /*requestToSend=*/ 100,
         /*maxRequests=*/ 100000,
         /*maxConnections=*/ 8,
         /*expectedConnectionCount=*/ 2,
@@ -102,17 +105,44 @@ public class ConnectionWorkerPoolTest {
   }
 
   @Test
-  public void testMultiTableConnections_overwhelmed() throws Exception {
+  public void testMultiTableConnections_overwhelmed_reachingMaximum() throws Exception {
     // A connection will be considered overwhelmed when the requests count reach 5 (max 10).
-    testSend100RequestsToMultiTable(
+    testSendRequestsToMultiTable(
+        /*requestToSend=*/ 100,
         /*maxRequests=*/ 10,
         /*maxConnections=*/ 8,
         /*expectedConnectionCount=*/ 8,
         /*tableCount=*/ 4);
   }
 
-  private void testSend100RequestsToMultiTable(
-      int maxRequests, int maxConnections, int expectedConnectionCount, int tableCount)
+  @Test
+  public void testMultiTableConnections_overwhelmed_overTotalLimit() throws Exception {
+    // A connection will be considered overwhelmed when the requests count reach 5 (max 10).
+    testSendRequestsToMultiTable(
+        /*requestToSend=*/ 200,
+        /*maxRequests=*/ 10,
+        /*maxConnections=*/ 8,
+        /*expectedConnectionCount=*/ 8,
+        /*tableCount=*/ 10);
+  }
+
+  @Test
+  public void testMultiTableConnections_overwhelmed_notReachingMaximum() throws Exception {
+    // A connection will be considered overwhelmed when the requests count reach 5 (max 10).
+    testSendRequestsToMultiTable(
+        /*requestToSend=*/ 20,
+        /*maxRequests=*/ 10,
+        /*maxConnections=*/ 8,
+        /*expectedConnectionCount=*/ 4,
+        /*tableCount=*/ 4);
+  }
+
+  private void testSendRequestsToMultiTable(
+      int requestToSend,
+      int maxRequests,
+      int maxConnections,
+      int expectedConnectionCount,
+      int tableCount)
       throws IOException, ExecutionException, InterruptedException {
     ConnectionWorkerPool.setOptions(
         Settings.builder()
@@ -126,7 +156,7 @@ public class ConnectionWorkerPoolTest {
     testBigQueryWrite.setResponseSleep(Duration.ofMillis(50L));
 
     // Try append 100 requests.
-    long appendCount = 100;
+    long appendCount = requestToSend;
     for (long i = 0; i < appendCount; i++) {
       testBigQueryWrite.addResponse(createAppendResponse(i));
     }

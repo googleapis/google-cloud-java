@@ -30,6 +30,7 @@ import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.UnknownException;
 import com.google.cloud.bigquery.storage.test.Test.FooType;
 import com.google.cloud.bigquery.storage.v1.StorageError.StorageErrorCode;
+import com.google.cloud.bigquery.storage.v1.StreamWriter.SingleConnectionOrConnectionPool.Kind;
 import com.google.common.base.Strings;
 import com.google.protobuf.Any;
 import com.google.protobuf.DescriptorProtos;
@@ -88,6 +89,15 @@ public class StreamWriterTest {
     log.info("tearDown called");
     client.close();
     serviceHelper.stop();
+  }
+
+  private StreamWriter getMultiplexingTestStreamWriter() throws IOException {
+    return StreamWriter.newBuilder(TEST_STREAM, client)
+        .setWriterSchema(createProtoSchema())
+        .setTraceId(TEST_TRACE_ID)
+        .setLocation("US")
+        .enableConnectionPool()
+        .build();
   }
 
   private StreamWriter getTestStreamWriter() throws IOException {
@@ -196,7 +206,6 @@ public class StreamWriterTest {
     }
   }
 
-  @Test
   public void testBuildBigQueryWriteClientInWriter() throws Exception {
     StreamWriter writer =
         StreamWriter.newBuilder(TEST_STREAM)
@@ -701,6 +710,16 @@ public class StreamWriterTest {
     StreamWriter writer2 = getTestStreamWriter();
     Assert.assertFalse(writer2.getWriterId().isEmpty());
     Assert.assertNotEquals(writer1.getWriterId(), writer2.getWriterId());
+  }
+
+  @Test
+  public void testInitialization_operationKind() throws Exception {
+    try (StreamWriter streamWriter = getMultiplexingTestStreamWriter()) {
+      Assert.assertEquals(streamWriter.getConnectionOperationType(), Kind.CONNECTION_WORKER_POOL);
+    }
+    try (StreamWriter streamWriter = getTestStreamWriter()) {
+      Assert.assertEquals(streamWriter.getConnectionOperationType(), Kind.CONNECTION_WORKER);
+    }
   }
 
   // Timeout to ensure close() doesn't wait for done callback timeout.
