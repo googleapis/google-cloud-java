@@ -1,7 +1,6 @@
 variable "project_prefix" {
   type        = string
   description = "Prefix to use when creating the GCP project"
-  default     = "burkedavison-terraform"
 }
 
 variable "folder_id" {

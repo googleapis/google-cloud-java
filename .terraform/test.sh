@@ -87,6 +87,11 @@ if [ -z "${TF_VAR_billing_account+x}" ]; then
   read -r billing_acct
   export TF_VAR_billing_account="${billing_acct}"
 fi
+if [ -z "${TF_VAR_project_prefix+x}" ]; then
+  echo -n "What should be the project prefix for any created GCP project? Set TF_VAR_project_prefix environment variable: "
+  read -r prefix
+  export TF_VAR_project_prefix="${prefix}"
+fi
 
 # Perform gcloud auth login if no current credentials are available.
 if gcloud auth application-default print-access-token &>/dev/null; then

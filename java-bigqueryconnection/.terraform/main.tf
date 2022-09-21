@@ -17,6 +17,7 @@ module "project" {
   billing_account = var.billing_account
   region          = var.region
   zone            = var.zone
+  project_prefix  = var.project_prefix
 }
 
 

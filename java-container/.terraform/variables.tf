@@ -1,3 +1,8 @@
+variable "project_prefix" {
+  type        = string
+  description = "Prefix to use when creating the GCP project"
+}
+
 variable "folder_id" {
   type        = string
   description = "GCP folder ID in which to create the project"
