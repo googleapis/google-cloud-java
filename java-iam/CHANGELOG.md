@@ -1,5 +1,50 @@
 # Changelog
 
+## [1.6.0](https://github.com/googleapis/java-iam/compare/v1.5.2...v1.6.0) (2022-09-20)
+
+
+### Features
+
+* Add v2 client ([#423](https://github.com/googleapis/java-iam/issues/423)) ([6b6c24f](https://github.com/googleapis/java-iam/commit/6b6c24f11093d2ccc5e5005337576db7c9626ec0))
+* Update the public IAM Deny v2beta API ([5894873](https://github.com/googleapis/java-iam/commit/58948731feee6462ae75f6fe11c31e36e9ec6fce))
+
+
+### Documentation
+
+* **samples:** Update param values ([#401](https://github.com/googleapis/java-iam/issues/401)) ([8879c28](https://github.com/googleapis/java-iam/commit/8879c28cac3543c441be636da626bcc3c10509da))
+
+
+### Dependencies
+
+* Update dependency com.google.apis:google-api-services-cloudresourcemanager to v3-rev20220710-1.32.1 ([#383](https://github.com/googleapis/java-iam/issues/383)) ([0670b46](https://github.com/googleapis/java-iam/commit/0670b461db649b2be307735aa128e8273d42d38f))
+* Update dependency com.google.apis:google-api-services-cloudresourcemanager to v3-rev20220710-2.0.0 ([#396](https://github.com/googleapis/java-iam/issues/396)) ([ec96383](https://github.com/googleapis/java-iam/commit/ec96383900c271ddf96a58772ff459c6879c106f))
+* Update dependency com.google.apis:google-api-services-cloudresourcemanager to v3-rev20220731-2.0.0 ([#402](https://github.com/googleapis/java-iam/issues/402)) ([39605e5](https://github.com/googleapis/java-iam/commit/39605e5b1cb4ee9fea068e36a6452e02710ae03d))
+* Update dependency com.google.apis:google-api-services-cloudresourcemanager to v3-rev20220807-2.0.0 ([#407](https://github.com/googleapis/java-iam/issues/407)) ([475fa93](https://github.com/googleapis/java-iam/commit/475fa93c1b5affb19eec36856e719041d5bf56af))
+* Update dependency com.google.apis:google-api-services-cloudresourcemanager to v3-rev20220828-2.0.0 ([#417](https://github.com/googleapis/java-iam/issues/417)) ([f3b365d](https://github.com/googleapis/java-iam/commit/f3b365df695b61515871c24dd2d14cde015ad599))
+* Update dependency com.google.apis:google-api-services-iam to v2beta-rev20220713-1.32.1 ([#390](https://github.com/googleapis/java-iam/issues/390)) ([9bef280](https://github.com/googleapis/java-iam/commit/9bef280b9c871ad9333daa8f027b8679f91ccbb1))
+* Update dependency com.google.apis:google-api-services-iam to v2beta-rev20220713-2.0.0 ([#403](https://github.com/googleapis/java-iam/issues/403)) ([7a8270b](https://github.com/googleapis/java-iam/commit/7a8270b691b5c749c90185659bd3a51480c3e1c4))
+* Update dependency com.google.apis:google-api-services-iamcredentials to v1-rev20211203-2.0.0 ([#404](https://github.com/googleapis/java-iam/issues/404)) ([ee3537d](https://github.com/googleapis/java-iam/commit/ee3537d763c389d25d887fb1b2cfc61ff4101d65))
+* Update dependency com.google.auth:google-auth-library-oauth2-http to v1.10.0 ([#406](https://github.com/googleapis/java-iam/issues/406)) ([56284df](https://github.com/googleapis/java-iam/commit/56284df32ee657a5055e6dea3bd7b25772c218ea))
+* Update dependency com.google.auth:google-auth-library-oauth2-http to v1.11.0 ([#419](https://github.com/googleapis/java-iam/issues/419)) ([3375ba3](https://github.com/googleapis/java-iam/commit/3375ba3a5b44d97370233238a63e1a310b5b605a))
+* Update dependency com.google.auth:google-auth-library-oauth2-http to v1.8.1 ([#385](https://github.com/googleapis/java-iam/issues/385)) ([e6199b3](https://github.com/googleapis/java-iam/commit/e6199b3c094f606359c8e469a853a283cd82c836))
+* Update dependency com.google.auth:google-auth-library-oauth2-http to v1.9.0 ([#400](https://github.com/googleapis/java-iam/issues/400)) ([aa4e5b6](https://github.com/googleapis/java-iam/commit/aa4e5b6ec5af98925c4353c9393e33c423c67a60))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#395](https://github.com/googleapis/java-iam/issues/395)) ([a88edd6](https://github.com/googleapis/java-iam/commit/a88edd61e1a66c5f48185dd5e8a2a61e5e9a002e))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.1 ([#399](https://github.com/googleapis/java-iam/issues/399)) ([bf814a9](https://github.com/googleapis/java-iam/commit/bf814a9faf878195676937cfe793b4a20fff6f06))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#420](https://github.com/googleapis/java-iam/issues/420)) ([e358921](https://github.com/googleapis/java-iam/commit/e358921e5ade85359a97b6a19af7a8397227c428))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#426](https://github.com/googleapis/java-iam/issues/426)) ([6da2bd2](https://github.com/googleapis/java-iam/commit/6da2bd228c5e3b9f6d9d35e95b955c7fbd65807d))
+* Update dependency com.google.http-client:google-http-client-jackson2 to v1.42.2 ([#386](https://github.com/googleapis/java-iam/issues/386)) ([de1b271](https://github.com/googleapis/java-iam/commit/de1b27180bf93a5c9b5a9a274f9d5a2c2ff5afc1))
+* Update dependency com.google.protobuf:protobuf-java to v3.21.3 ([#391](https://github.com/googleapis/java-iam/issues/391)) ([02a3c56](https://github.com/googleapis/java-iam/commit/02a3c56b1143d497b98e2f437d9b36ea468e36ea))
+* Update dependency com.google.protobuf:protobuf-java to v3.21.4 ([#393](https://github.com/googleapis/java-iam/issues/393)) ([f4c649b](https://github.com/googleapis/java-iam/commit/f4c649b67c0a8fa950487b3e3b2f10ab85136165))
+* Update dependency com.google.protobuf:protobuf-java to v3.21.5 ([#405](https://github.com/googleapis/java-iam/issues/405)) ([66b27cb](https://github.com/googleapis/java-iam/commit/66b27cb9722cac68af7844447524f149fb08b3b0))
+* Update dependency io.grpc:grpc-protobuf to v1.48.0 ([#388](https://github.com/googleapis/java-iam/issues/388)) ([d7beea4](https://github.com/googleapis/java-iam/commit/d7beea4de4aff35f998b017c6d6136c76ec1e36b))
+* Update dependency io.grpc:grpc-protobuf to v1.48.1 ([#397](https://github.com/googleapis/java-iam/issues/397)) ([512a655](https://github.com/googleapis/java-iam/commit/512a6554067bbbe9ac400f833a0a8cd4bfaef785))
+* Update dependency io.grpc:grpc-protobuf to v1.49.0 ([#413](https://github.com/googleapis/java-iam/issues/413)) ([93ac43d](https://github.com/googleapis/java-iam/commit/93ac43deb5a663bd22b5d14f8ba7a4bdff6928cd))
+* Update dependency io.grpc:grpc-protobuf to v1.49.1 ([#427](https://github.com/googleapis/java-iam/issues/427)) ([c7b26dd](https://github.com/googleapis/java-iam/commit/c7b26dd62e4b22634f15e4eb19d96c3dfc919d11))
+* Update dependency io.grpc:grpc-stub to v1.48.0 ([#389](https://github.com/googleapis/java-iam/issues/389)) ([c76beb0](https://github.com/googleapis/java-iam/commit/c76beb01ba7a59cdfe60fc498f33881faadafe89))
+* Update dependency io.grpc:grpc-stub to v1.48.1 ([#398](https://github.com/googleapis/java-iam/issues/398)) ([4917a59](https://github.com/googleapis/java-iam/commit/4917a59ae856825e6e96a5b3ca0d766b8a931de6))
+* Update dependency io.grpc:grpc-stub to v1.49.0 ([#414](https://github.com/googleapis/java-iam/issues/414)) ([1d98460](https://github.com/googleapis/java-iam/commit/1d9846000bf41f20907dfcbc11574e88f91cc8f8))
+* Update dependency io.grpc:grpc-stub to v1.49.1 ([#428](https://github.com/googleapis/java-iam/issues/428)) ([ad6f449](https://github.com/googleapis/java-iam/commit/ad6f449c6fdfbf91a89561359ef2f124e9d8dfa2))
+
 ## [1.5.2](https://github.com/googleapis/java-iam/compare/v1.5.1...v1.5.2) (2022-07-13)
 
 
