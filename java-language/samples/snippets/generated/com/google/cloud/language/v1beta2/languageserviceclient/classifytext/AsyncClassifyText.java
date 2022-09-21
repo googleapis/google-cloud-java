@@ -18,6 +18,7 @@ package com.google.cloud.language.v1beta2.samples;
 
 // [START language_v1beta2_generated_languageserviceclient_classifytext_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.language.v1beta2.ClassificationModelOptions;
 import com.google.cloud.language.v1beta2.ClassifyTextRequest;
 import com.google.cloud.language.v1beta2.ClassifyTextResponse;
 import com.google.cloud.language.v1beta2.Document;
@@ -37,7 +38,10 @@ public class AsyncClassifyText {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
       ClassifyTextRequest request =
-          ClassifyTextRequest.newBuilder().setDocument(Document.newBuilder().build()).build();
+          ClassifyTextRequest.newBuilder()
+              .setDocument(Document.newBuilder().build())
+              .setClassificationModelOptions(ClassificationModelOptions.newBuilder().build())
+              .build();
       ApiFuture<ClassifyTextResponse> future =
           languageServiceClient.classifyTextCallable().futureCall(request);
       // Do something.

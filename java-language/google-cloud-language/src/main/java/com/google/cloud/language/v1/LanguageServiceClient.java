@@ -189,7 +189,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param document Input document.
+   * @param document Required. Input document.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnalyzeSentimentResponse analyzeSentiment(Document document) {
@@ -218,7 +218,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param document Input document.
+   * @param document Required. Input document.
    * @param encodingType The encoding type used by the API to calculate sentence offsets.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -310,7 +310,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param document Input document.
+   * @param document Required. Input document.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnalyzeEntitiesResponse analyzeEntities(Document document) {
@@ -340,7 +340,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param document Input document.
+   * @param document Required. Input document.
    * @param encodingType The encoding type used by the API to calculate offsets.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -436,7 +436,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param document Input document.
+   * @param document Required. Input document.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnalyzeEntitySentimentResponse analyzeEntitySentiment(Document document) {
@@ -467,7 +467,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param document Input document.
+   * @param document Required. Input document.
    * @param encodingType The encoding type used by the API to calculate offsets.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -565,7 +565,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param document Input document.
+   * @param document Required. Input document.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnalyzeSyntaxResponse analyzeSyntax(Document document) {
@@ -593,7 +593,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param document Input document.
+   * @param document Required. Input document.
    * @param encodingType The encoding type used by the API to calculate offsets.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -684,7 +684,7 @@ public class LanguageServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param document Input document.
+   * @param document Required. Input document.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ClassifyTextResponse classifyText(Document document) {
@@ -706,7 +706,10 @@ public class LanguageServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   ClassifyTextRequest request =
-   *       ClassifyTextRequest.newBuilder().setDocument(Document.newBuilder().build()).build();
+   *       ClassifyTextRequest.newBuilder()
+   *           .setDocument(Document.newBuilder().build())
+   *           .setClassificationModelOptions(ClassificationModelOptions.newBuilder().build())
+   *           .build();
    *   ClassifyTextResponse response = languageServiceClient.classifyText(request);
    * }
    * }</pre>
@@ -732,7 +735,10 @@ public class LanguageServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   ClassifyTextRequest request =
-   *       ClassifyTextRequest.newBuilder().setDocument(Document.newBuilder().build()).build();
+   *       ClassifyTextRequest.newBuilder()
+   *           .setDocument(Document.newBuilder().build())
+   *           .setClassificationModelOptions(ClassificationModelOptions.newBuilder().build())
+   *           .build();
    *   ApiFuture<ClassifyTextResponse> future =
    *       languageServiceClient.classifyTextCallable().futureCall(request);
    *   // Do something.
@@ -764,8 +770,8 @@ public class LanguageServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param document Input document.
-   * @param features The enabled features.
+   * @param document Required. Input document.
+   * @param features Required. The enabled features.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnnotateTextResponse annotateText(
@@ -797,8 +803,8 @@ public class LanguageServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param document Input document.
-   * @param features The enabled features.
+   * @param document Required. Input document.
+   * @param features Required. The enabled features.
    * @param encodingType The encoding type used by the API to calculate offsets.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

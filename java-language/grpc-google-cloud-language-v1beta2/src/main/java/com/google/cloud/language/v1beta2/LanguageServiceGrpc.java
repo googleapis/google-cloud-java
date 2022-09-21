@@ -426,7 +426,7 @@ public final class LanguageServiceGrpc {
      *
      * <pre>
      * Analyzes the syntax of the text and provides sentence boundaries and
-     * tokenization along with part-of-speech tags, dependency trees, and other
+     * tokenization along with part of speech tags, dependency trees, and other
      * properties.
      * </pre>
      */
@@ -597,7 +597,7 @@ public final class LanguageServiceGrpc {
      *
      * <pre>
      * Analyzes the syntax of the text and provides sentence boundaries and
-     * tokenization along with part-of-speech tags, dependency trees, and other
+     * tokenization along with part of speech tags, dependency trees, and other
      * properties.
      * </pre>
      */
@@ -714,7 +714,7 @@ public final class LanguageServiceGrpc {
      *
      * <pre>
      * Analyzes the syntax of the text and provides sentence boundaries and
-     * tokenization along with part-of-speech tags, dependency trees, and other
+     * tokenization along with part of speech tags, dependency trees, and other
      * properties.
      * </pre>
      */
@@ -823,7 +823,7 @@ public final class LanguageServiceGrpc {
      *
      * <pre>
      * Analyzes the syntax of the text and provides sentence boundaries and
-     * tokenization along with part-of-speech tags, dependency trees, and other
+     * tokenization along with part of speech tags, dependency trees, and other
      * properties.
      * </pre>
      */
