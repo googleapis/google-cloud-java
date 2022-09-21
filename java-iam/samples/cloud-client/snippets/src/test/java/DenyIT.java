@@ -17,8 +17,8 @@
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
 
-import com.google.iam.v2beta.PoliciesClient;
-import com.google.iam.v2beta.Policy;
+import com.google.iam.v2.PoliciesClient;
+import com.google.iam.v2.Policy;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;

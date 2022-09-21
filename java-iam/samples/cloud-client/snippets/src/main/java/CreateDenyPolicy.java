@@ -16,11 +16,11 @@
 
 // [START iam_create_deny_policy]
 
-import com.google.iam.v2beta.CreatePolicyRequest;
-import com.google.iam.v2beta.DenyRule;
-import com.google.iam.v2beta.PoliciesClient;
-import com.google.iam.v2beta.Policy;
-import com.google.iam.v2beta.PolicyRule;
+import com.google.iam.v2.CreatePolicyRequest;
+import com.google.iam.v2.DenyRule;
+import com.google.iam.v2.PoliciesClient;
+import com.google.iam.v2.Policy;
+import com.google.iam.v2.PolicyRule;
 import com.google.longrunning.Operation;
 import com.google.type.Expr;
 import java.io.IOException;

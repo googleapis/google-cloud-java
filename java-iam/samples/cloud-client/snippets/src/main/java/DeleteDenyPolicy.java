@@ -16,8 +16,8 @@
 
 // [START iam_delete_deny_policy]
 
-import com.google.iam.v2beta.DeletePolicyRequest;
-import com.google.iam.v2beta.PoliciesClient;
+import com.google.iam.v2.DeletePolicyRequest;
+import com.google.iam.v2.PoliciesClient;
 import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.net.URLEncoder;

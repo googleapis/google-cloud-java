@@ -16,9 +16,9 @@
 
 // [START iam_get_deny_policy]
 
-import com.google.iam.v2beta.GetPolicyRequest;
-import com.google.iam.v2beta.PoliciesClient;
-import com.google.iam.v2beta.Policy;
+import com.google.iam.v2.GetPolicyRequest;
+import com.google.iam.v2.PoliciesClient;
+import com.google.iam.v2.Policy;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
