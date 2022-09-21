@@ -6,7 +6,7 @@
   <version>0.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery-data-exchange:current} -->
   <packaging>pom</packaging>
   <parent>
-    <groupId>com.google.api</groupId>
+    <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-java</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
