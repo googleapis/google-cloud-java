@@ -13,11 +13,11 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
     echo "Running for ${line}"
     artifactId=$(echo "${line}" | cut -d ":" -f1)
 
-    if [[ "${artifactId}" =~ ^.grafeas.*$ ]]; then
+    if [[ "${artifactId}" =~ .*grafeas.* ]]; then
       maven_url="https://repo1.maven.org/maven2/io/grafeas/${artifactId}/maven-metadata.xml"
-    elif [[ "${artifactId}" =~ ^.*area120.*$ ]] && [[ "${artifactId}" =~ ^google- ]]; then
+    elif [[ "${artifactId}" =~ .*area120.* ]] && [[ "${artifactId}" =~ ^google- ]]; then
       maven_url="https://repo1.maven.org/maven2/com/google/area120/${artifactId}/maven-metadata.xml"
-    elif [[ "${artifactId}" =~ ^.*analytics.*$ ]] && [[ "${artifactId}" =~ ^google- ]]; then
+    elif [[ "${artifactId}" =~ .*analytics.* ]] && [[ "${artifactId}" =~ ^google- ]]; then
       maven_url="https://repo1.maven.org/maven2/com/google/analytics/${artifactId}/maven-metadata.xml"
     elif [[ "${artifactId}" =~ ^google- ]]; then
       maven_url="https://repo1.maven.org/maven2/com/google/cloud/${artifactId}/maven-metadata.xml"
@@ -25,8 +25,10 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
       maven_url="https://repo1.maven.org/maven2/com/google/api/grpc/${artifactId}/maven-metadata.xml"
     fi
 
-    maven_version=$(curl -s "${maven_url}" | grep 'latest')
-    maven_latest_version=$(echo "$maven_version" | cut -d '>' -f 2 | cut -d '<' -f 1)
+    echo "Downloading ${artifactId} from ${maven_url}"
+
+    maven_version=$(curl -si "${maven_url}" | grep 'latest')
+    maven_latest_version=$(echo "$maven_version" | cut -d '>' -f 2 | cut -d '<' -f 1 | cut -d "-" -f1)
 
     major_version=$(echo "${maven_latest_version}" | cut -d "." -f1)
     minor_version=$(echo "${maven_latest_version}" | cut -d "." -f2)
