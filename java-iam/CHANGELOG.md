@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.1](https://github.com/googleapis/java-iam/compare/v1.6.0...v1.6.1) (2022-09-21)
+
+
+### Dependencies
+
+* Update dependency com.google.protobuf:protobuf-java to v3.21.6 ([#425](https://github.com/googleapis/java-iam/issues/425)) ([61cbdf4](https://github.com/googleapis/java-iam/commit/61cbdf4c4ad3c559670cc39c864dfd03f8303667))
+
 ## [1.6.0](https://github.com/googleapis/java-iam/compare/v1.5.2...v1.6.0) (2022-09-20)
 
 
