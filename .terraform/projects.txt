@@ -1,0 +1,4 @@
+# Modules to be tested when no specific module is given to test.sh as an argument
+java-accessapproval
+java-container
+java-bigqueryconnection

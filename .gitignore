@@ -30,3 +30,14 @@ api_key
 
 # Python utilities
 *.pyc
+
+# Terraform
+*.hcl
+**/.terraform/.terraform/
+**/.terraform/plugins/
+**/.terraform/providers/
+**/.terraform/plugin_path
+*.lock.
+*.tfstate
+*.tfstate.backup
+*.tfstate.lock.info
