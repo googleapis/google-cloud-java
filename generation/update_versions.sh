@@ -45,7 +45,7 @@ count=0
 missing_artifacts=()
 
 for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirname); do
-  # BeyondCorp repos have not release an artifact to maven central
+  # As of 9/21/22: BeyondCorp repos do not have artifacts released to maven central
   if [[ "${path}" =~ google-cloud-gapic-bom ]] || [[ "${path}" =~ CoverageAggregator ]] || [[ "${path}" =~ .*samples.* ]] || [[ "${path}" =~ .*beyondcorp.* ]]; then
     continue
   fi
@@ -69,8 +69,15 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
 
     count=$((count + 1))
     echo "Module #${count} -- Downloading ${artifactId} from ${maven_url}"
+    # Check if the artifact exists in Maven Central, otherwise add to missing_artifacts
     if wget --spider "${maven_url}" 2>/dev/null; then
       metadata_file=$(retry_with_backoff 3 10 curl -s "${maven_url}" -H "Accept:application/xml" --limit-rate 200k)
+
+      # Versioning of artifacts in Maven Central follow SemVer (Major.Minor.Patch-{alpha|beta})
+      # This keeps track of the additional versioning after the PATCH value (alpha/beta)
+      # `cut` normally returns the entire string if the delimiter DNE. The `-s` makes cut return nothing
+      # maven_latest_version stores Major.Minor.Patch or the entire version
+      # maven_latest_trailing stores alpha/beta/etc. or nothing
       maven_metadata_version=$(echo "${metadata_file}" | grep 'latest' | cut -d '>' -f 2 | cut -d '<' -f 1)
       maven_latest_version=$(echo "${maven_metadata_version}"  | cut -d "-" -f1)
       maven_latest_trailing=$(echo "${maven_metadata_version}"  | cut -s -d "-" -f2-)
@@ -81,11 +88,10 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
       patch_version_bump=$((patch_version + 1))
       if [[ -z "${maven_latest_trailing}" ]]; then
         maven_version_bump="${major_version}.${minor_version}.${patch_version_bump}"
-        new_version="${artifactId}:${maven_latest_version}:${maven_version_bump}-SNAPSHOT"
       else
         maven_version_bump="${major_version}.${minor_version}.${patch_version_bump}-${maven_latest_trailing}"
-        new_version="${artifactId}:${maven_latest_version}-${maven_latest_trailing}:${maven_version_bump}-SNAPSHOT"
       fi
+      new_version="${artifactId}:${maven_metadata_version}:${maven_version_bump}-SNAPSHOT"
 
       sed -i "s/${line}/${new_version}/g" "${path}/versions.txt"
     else
