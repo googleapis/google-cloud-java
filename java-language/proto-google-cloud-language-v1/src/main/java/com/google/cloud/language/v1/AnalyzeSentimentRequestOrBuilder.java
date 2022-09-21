@@ -27,7 +27,7 @@ public interface AnalyzeSentimentRequestOrBuilder
    *
    *
    * <pre>
-   * Input document.
+   * Required. Input document.
    * </pre>
    *
    * <code>
@@ -41,7 +41,7 @@ public interface AnalyzeSentimentRequestOrBuilder
    *
    *
    * <pre>
-   * Input document.
+   * Required. Input document.
    * </pre>
    *
    * <code>
@@ -55,7 +55,7 @@ public interface AnalyzeSentimentRequestOrBuilder
    *
    *
    * <pre>
-   * Input document.
+   * Required. Input document.
    * </pre>
    *
    * <code>
