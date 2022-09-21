@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.120.18](https://github.com/googleapis/java-pubsub/compare/v1.120.17...v1.120.18) (2022-09-21)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-core to v2.8.13 ([#1288](https://github.com/googleapis/java-pubsub/issues/1288)) ([708a1df](https://github.com/googleapis/java-pubsub/commit/708a1df692b64d86915133ac4ae87e45f4d669d8))
+* Update dependency com.google.cloud:google-cloud-core to v2.8.14 ([#1291](https://github.com/googleapis/java-pubsub/issues/1291)) ([1c479de](https://github.com/googleapis/java-pubsub/commit/1c479de525a28fc323697d9a4e92f6ee3215a18f))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.9.1 ([#1289](https://github.com/googleapis/java-pubsub/issues/1289)) ([216ba7d](https://github.com/googleapis/java-pubsub/commit/216ba7db4f0fab29c4bf9fc785387b23f64beb5e))
+
 ## [1.120.17](https://github.com/googleapis/java-pubsub/compare/v1.120.16...v1.120.17) (2022-09-20)
 
 
