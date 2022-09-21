@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.9](https://github.com/googleapis/java-tasks/compare/v2.3.8...v2.3.9) (2022-09-21)
+
+
+### Dependencies
+
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.9.1 ([#756](https://github.com/googleapis/java-tasks/issues/756)) ([261ae44](https://github.com/googleapis/java-tasks/commit/261ae44c5a3acf26f7afe6d3f6727d4ccb55a56c))
+
 ## [2.3.8](https://github.com/googleapis/java-tasks/compare/v2.3.7...v2.3.8) (2022-09-15)
 
 
