@@ -2,14 +2,14 @@
 
 set -e
 
-for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirname); do
+error_artifacts=()
+
+for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort -r | xargs dirname); do
   if [[ "${path}" =~ google-cloud-gapic-bom ]] || [[ "${path}" =~ CoverageAggregator ]] || [[ "${path}" =~ .*samples.* ]] || [[ "${path}" =~ .*beyondcorp.* ]]; then
     continue
   fi
 
-  cat "${path}/versions.txt"
-
-  versions_array=($(cat "${path}/versions.txt" | grep -E "^.*:[0-9]+\.[0-9]+\.[0-9]+.*:[0-9]+\.[0-9]+\.[0-9]+.*$"))
+  versions_array=($(grep -E "^.*:[0-9]+\.[0-9]+\.[0-9]+.*:[0-9]+\.[0-9]+\.[0-9]+.*$" "${path}/versions.txt"))
 
   for line in "${versions_array[@]}"; do
     echo "Running for ${line}"
@@ -28,18 +28,23 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
     fi
 
     echo "Downloading ${artifactId} from ${maven_url}"
+    if wget --spider "${maven_url}" 2>/dev/null; then
+      maven_version=$(curl -s "${maven_url}" -H "Accept: application/xml" | grep 'latest')
+      maven_latest_version=$(echo "$maven_version" | cut -d '>' -f 2 | cut -d '<' -f 1 | cut -d "-" -f1)
 
-    maven_version=$(curl -f "${maven_url}" | grep 'latest')
-    maven_latest_version=$(echo "$maven_version" | cut -d '>' -f 2 | cut -d '<' -f 1 | cut -d "-" -f1)
+      major_version=$(echo "${maven_latest_version}" | cut -d "." -f1)
+      minor_version=$(echo "${maven_latest_version}" | cut -d "." -f2)
+      patch_version=$(echo "${maven_latest_version}" | cut -d "." -f3)
+      patch_version_bump=$((patch_version + 1))
+      maven_version_bump="${major_version}.${minor_version}.${patch_version_bump}"
+      new_version="${artifactId}:${maven_latest_version}:${maven_version_bump}-SNAPSHOT"
 
-    major_version=$(echo "${maven_latest_version}" | cut -d "." -f1)
-    minor_version=$(echo "${maven_latest_version}" | cut -d "." -f2)
-    patch_version=$(echo "${maven_latest_version}" | cut -d "." -f3)
-    patch_version_bump=$((patch_version + 1))
-    maven_version_bump="${major_version}.${minor_version}.${patch_version_bump}"
-    new_version="${artifactId}:${maven_latest_version}:${maven_version_bump}-SNAPSHOT"
-
-    sed -i "s/${line}/${new_version}/g" "${path}/versions.txt"
+      sed -i "s/${line}/${new_version}/g" "${path}/versions.txt"
+    else
+      error_artifacts+=("${artifactId}")
+    fi
     echo "Done running for ${line}"
   done
 done
+
+echo "These artifacts don't exist: ${error_artifacts[*]}"
