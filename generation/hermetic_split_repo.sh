@@ -169,7 +169,7 @@ function regenerate_with_synthtool() {
       -it gcr.io/repo-automation-bots/bazel-bot@sha256:bfdcd03c8ce2aec6e3663161a2c9ef5356594780c506011d35d62eecbd3b447e
 }
 
-if true = "${use_synthtool}"; then
+if [ "true" = "${use_synthtool}" ]; then
   regenerate_with_synthtool
 else
   regenerate_with_owlbot
