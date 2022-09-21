@@ -2,6 +2,46 @@
 
 set -e
 
+function retry_with_backoff {
+    attempts_left=$1
+    sleep_seconds=$2
+    shift 2
+    command=$@
+
+
+    # store current flag state
+    flags=$-
+
+    # allow a failures to continue
+    set +e
+    ${command}
+    exit_code=$?
+
+    # restore "e" flag
+    if [[ ${flags} =~ e ]]
+    then set -e
+    else set +e
+    fi
+
+    if [[ $exit_code == 0 ]]
+    then
+        return 0
+    fi
+
+    # failure
+    if [[ ${attempts_left} -gt 0 ]]
+    then
+        echo "failure (${exit_code}), sleeping ${sleep_seconds}..."
+        sleep ${sleep_seconds}
+        new_attempts=$((${attempts_left} - 1))
+        new_sleep=$((${sleep_seconds} * 2))
+        retry_with_backoff ${new_attempts} ${new_sleep} ${command}
+    fi
+
+    return $exit_code
+}
+
+count=0
 missing_artifacts=()
 
 for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirname); do
@@ -13,7 +53,6 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
 
   for line in "${versions_array[@]}"; do
     artifactId=$(echo "${line}" | cut -d ":" -f1)
-    echo "Running for ${artifactId}"
 
     if [[ "${artifactId}" =~ .*grafeas.* ]]; then
       maven_url="https://repo1.maven.org/maven2/io/grafeas/${artifactId}/maven-metadata.xml"
@@ -27,9 +66,10 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
       maven_url="https://repo1.maven.org/maven2/com/google/api/grpc/${artifactId}/maven-metadata.xml"
     fi
 
-    echo "Downloading ${artifactId} from ${maven_url}"
+    count=$((count + 1))
+    echo "Module #${count} -- Downloading ${artifactId} from ${maven_url}"
     if wget --spider "${maven_url}" 2>/dev/null; then
-      metadata_file=$(curl "${maven_url}" -H "Accept: application/xml" --limit-rate 200k)
+      metadata_file=$(retry_with_backoff 3 10 curl -s "${maven_url}" -H "Accept: application/xml" --limit-rate 200k)
       maven_version=$(echo "${metadata_file}" | grep 'latest')
       maven_latest_version=$(echo "$maven_version" | cut -d '>' -f 2 | cut -d '<' -f 1 | cut -d "-" -f1)
 
