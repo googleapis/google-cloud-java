@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.13](https://github.com/googleapis/java-automl/compare/v2.3.12...v2.3.13) (2022-09-21)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-core to v2.8.14 ([#1256](https://github.com/googleapis/java-automl/issues/1256)) ([e9ea57d](https://github.com/googleapis/java-automl/commit/e9ea57ddba44bee46e3431c57481236848f785c6))
+
 ## [2.3.12](https://github.com/googleapis/java-automl/compare/v2.3.11...v2.3.12) (2022-09-20)
 
 
