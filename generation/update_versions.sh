@@ -1,13 +1,13 @@
 #!/bin/bash
 
-set -e
+set +e
 
 for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirname); do
   if [[ "${path}" =~ google-cloud-gapic-bom ]] || [[ "${path}" =~ CoverageAggregator ]] || [[ "${path}" =~ .*samples.* ]] || [[ "${path}" =~ .*beyondcorp.* ]]; then
     continue
   fi
 
-  versions_array=($(grep -E "^.*:[0-9]+\.[0-9]+\.[0-9]+:.*$" "${path}/versions.txt"))
+  versions_array=($(grep -E "^.*:[0-9]+\.[0-9]+\.[0-9]+.*:[0-9]+\.[0-9]+\.[0-9]+.*$" "${path}/versions.txt"))
 
   for line in "${versions_array[@]}"; do
     echo "Running for ${line}"
