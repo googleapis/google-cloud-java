@@ -277,6 +277,23 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 170:
+            {
+              com.google.cloud.dataproc.v1.DataprocMetricConfig.Builder subBuilder = null;
+              if (dataprocMetricConfig_ != null) {
+                subBuilder = dataprocMetricConfig_.toBuilder();
+              }
+              dataprocMetricConfig_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1.DataprocMetricConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dataprocMetricConfig_);
+                dataprocMetricConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1205,6 +1222,61 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     return getMetastoreConfig();
   }
 
+  public static final int DATAPROC_METRIC_CONFIG_FIELD_NUMBER = 21;
+  private com.google.cloud.dataproc.v1.DataprocMetricConfig dataprocMetricConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dataproc metrics configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dataprocMetricConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataprocMetricConfig() {
+    return dataprocMetricConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dataproc metrics configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dataprocMetricConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.DataprocMetricConfig getDataprocMetricConfig() {
+    return dataprocMetricConfig_ == null
+        ? com.google.cloud.dataproc.v1.DataprocMetricConfig.getDefaultInstance()
+        : dataprocMetricConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dataproc metrics configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.DataprocMetricConfigOrBuilder
+      getDataprocMetricConfigOrBuilder() {
+    return getDataprocMetricConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1261,6 +1333,9 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     if (metastoreConfig_ != null) {
       output.writeMessage(20, getMetastoreConfig());
     }
+    if (dataprocMetricConfig_ != null) {
+      output.writeMessage(21, getDataprocMetricConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1314,6 +1389,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (metastoreConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getMetastoreConfig());
+    }
+    if (dataprocMetricConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(21, getDataprocMetricConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1378,6 +1457,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasMetastoreConfig()) {
       if (!getMetastoreConfig().equals(other.getMetastoreConfig())) return false;
     }
+    if (hasDataprocMetricConfig() != other.hasDataprocMetricConfig()) return false;
+    if (hasDataprocMetricConfig()) {
+      if (!getDataprocMetricConfig().equals(other.getDataprocMetricConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1440,6 +1523,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasMetastoreConfig()) {
       hash = (37 * hash) + METASTORE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getMetastoreConfig().hashCode();
+    }
+    if (hasDataprocMetricConfig()) {
+      hash = (37 * hash) + DATAPROC_METRIC_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDataprocMetricConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1664,6 +1751,12 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
         metastoreConfig_ = null;
         metastoreConfigBuilder_ = null;
       }
+      if (dataprocMetricConfigBuilder_ == null) {
+        dataprocMetricConfig_ = null;
+      } else {
+        dataprocMetricConfig_ = null;
+        dataprocMetricConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -1757,6 +1850,11 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
         result.metastoreConfig_ = metastoreConfig_;
       } else {
         result.metastoreConfig_ = metastoreConfigBuilder_.build();
+      }
+      if (dataprocMetricConfigBuilder_ == null) {
+        result.dataprocMetricConfig_ = dataprocMetricConfig_;
+      } else {
+        result.dataprocMetricConfig_ = dataprocMetricConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1874,6 +1972,9 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasMetastoreConfig()) {
         mergeMetastoreConfig(other.getMetastoreConfig());
+      }
+      if (other.hasDataprocMetricConfig()) {
+        mergeDataprocMetricConfig(other.getDataprocMetricConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -5119,6 +5220,214 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
         metastoreConfig_ = null;
       }
       return metastoreConfigBuilder_;
+    }
+
+    private com.google.cloud.dataproc.v1.DataprocMetricConfig dataprocMetricConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.DataprocMetricConfig,
+            com.google.cloud.dataproc.v1.DataprocMetricConfig.Builder,
+            com.google.cloud.dataproc.v1.DataprocMetricConfigOrBuilder>
+        dataprocMetricConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dataproc metrics configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the dataprocMetricConfig field is set.
+     */
+    public boolean hasDataprocMetricConfig() {
+      return dataprocMetricConfigBuilder_ != null || dataprocMetricConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dataproc metrics configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The dataprocMetricConfig.
+     */
+    public com.google.cloud.dataproc.v1.DataprocMetricConfig getDataprocMetricConfig() {
+      if (dataprocMetricConfigBuilder_ == null) {
+        return dataprocMetricConfig_ == null
+            ? com.google.cloud.dataproc.v1.DataprocMetricConfig.getDefaultInstance()
+            : dataprocMetricConfig_;
+      } else {
+        return dataprocMetricConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dataproc metrics configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDataprocMetricConfig(
+        com.google.cloud.dataproc.v1.DataprocMetricConfig value) {
+      if (dataprocMetricConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataprocMetricConfig_ = value;
+        onChanged();
+      } else {
+        dataprocMetricConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dataproc metrics configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDataprocMetricConfig(
+        com.google.cloud.dataproc.v1.DataprocMetricConfig.Builder builderForValue) {
+      if (dataprocMetricConfigBuilder_ == null) {
+        dataprocMetricConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        dataprocMetricConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dataproc metrics configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDataprocMetricConfig(
+        com.google.cloud.dataproc.v1.DataprocMetricConfig value) {
+      if (dataprocMetricConfigBuilder_ == null) {
+        if (dataprocMetricConfig_ != null) {
+          dataprocMetricConfig_ =
+              com.google.cloud.dataproc.v1.DataprocMetricConfig.newBuilder(dataprocMetricConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          dataprocMetricConfig_ = value;
+        }
+        onChanged();
+      } else {
+        dataprocMetricConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dataproc metrics configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDataprocMetricConfig() {
+      if (dataprocMetricConfigBuilder_ == null) {
+        dataprocMetricConfig_ = null;
+        onChanged();
+      } else {
+        dataprocMetricConfig_ = null;
+        dataprocMetricConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dataproc metrics configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.DataprocMetricConfig.Builder
+        getDataprocMetricConfigBuilder() {
+
+      onChanged();
+      return getDataprocMetricConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dataproc metrics configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.DataprocMetricConfigOrBuilder
+        getDataprocMetricConfigOrBuilder() {
+      if (dataprocMetricConfigBuilder_ != null) {
+        return dataprocMetricConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return dataprocMetricConfig_ == null
+            ? com.google.cloud.dataproc.v1.DataprocMetricConfig.getDefaultInstance()
+            : dataprocMetricConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dataproc metrics configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.DataprocMetricConfig,
+            com.google.cloud.dataproc.v1.DataprocMetricConfig.Builder,
+            com.google.cloud.dataproc.v1.DataprocMetricConfigOrBuilder>
+        getDataprocMetricConfigFieldBuilder() {
+      if (dataprocMetricConfigBuilder_ == null) {
+        dataprocMetricConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1.DataprocMetricConfig,
+                com.google.cloud.dataproc.v1.DataprocMetricConfig.Builder,
+                com.google.cloud.dataproc.v1.DataprocMetricConfigOrBuilder>(
+                getDataprocMetricConfig(), getParentForChildren(), isClean());
+        dataprocMetricConfig_ = null;
+      }
+      return dataprocMetricConfigBuilder_;
     }
 
     @java.lang.Override
