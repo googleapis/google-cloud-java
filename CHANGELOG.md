@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.11.3](https://github.com/googleapis/java-datastore/compare/v2.11.2...v2.11.3) (2022-09-21)
+
+
+### Dependencies
+
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.9.1 ([#829](https://github.com/googleapis/java-datastore/issues/829)) ([2ab161e](https://github.com/googleapis/java-datastore/commit/2ab161e1b44475f46adc2fe0e7d9bfcfb813f50f))
+
 ## [2.11.2](https://github.com/googleapis/java-datastore/compare/v2.11.1...v2.11.2) (2022-09-15)
 
 
