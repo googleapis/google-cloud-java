@@ -31,11 +31,11 @@ function retry_with_backoff {
     # failure
     if [[ ${attempts_left} -gt 0 ]]
     then
-        echo "failure (${exit_code}), sleeping ${sleep_seconds}..."
-        sleep ${sleep_seconds}
-        new_attempts=$((${attempts_left} - 1))
-        new_sleep=$((${sleep_seconds} * 2))
-        retry_with_backoff ${new_attempts} ${new_sleep} ${command}
+      echo "failure (${exit_code}), sleeping ${sleep_seconds}..."
+      sleep ${sleep_seconds}
+      new_attempts=$((${attempts_left} - 1))
+      new_sleep=$((${sleep_seconds} * 2))
+      retry_with_backoff ${new_attempts} ${new_sleep} ${command}
     fi
 
     return $exit_code
@@ -45,6 +45,7 @@ count=0
 missing_artifacts=()
 
 for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirname); do
+  # BeyondCorp repos have not release an artifact to maven central
   if [[ "${path}" =~ google-cloud-gapic-bom ]] || [[ "${path}" =~ CoverageAggregator ]] || [[ "${path}" =~ .*samples.* ]] || [[ "${path}" =~ .*beyondcorp.* ]]; then
     continue
   fi
