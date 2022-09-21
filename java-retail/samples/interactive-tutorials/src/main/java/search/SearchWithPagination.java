@@ -65,7 +65,11 @@ public class SearchWithPagination {
     // safely clean up any remaining background resources.
     try (SearchServiceClient client = SearchServiceClient.create()) {
       SearchResponse searchResponseFirstPage = client.search(searchRequest).getPage().getResponse();
-      System.out.println("Search response: " + searchResponseFirstPage);
+      if (searchResponseFirstPage.getTotalSize() == 0) {
+        System.out.println("The search operation returned no matching results.");
+      } else {
+        System.out.println("Search response: " + searchResponseFirstPage);
+      }
 
       // PASTE CALL WITH NEXT PAGE TOKEN HERE:
 
