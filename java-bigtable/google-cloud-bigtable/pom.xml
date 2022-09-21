@@ -201,6 +201,16 @@
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
+      <artifactId>grpc-googleapis</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-rls</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
       <artifactId>grpc-netty-shaded</artifactId>
     </dependency>
     <dependency>
