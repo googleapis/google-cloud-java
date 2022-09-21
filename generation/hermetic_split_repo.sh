@@ -90,6 +90,13 @@ echo "Overriding WORKSPACE to use Protobuf ${PROTOBUF_VERSION} from ${protobuf_c
 sed -i.bak -e "/com_google_protobuf/{N;s|sha256 = .*||;N;s|\"protobuf-.*\"|\"protobuf-${PROTOBUF_VERSION}\"|;N;s|/v.*\"|/v${PROTOBUF_VERSION}\.tar\.gz\"|}" WORKSPACE
 rm WORKSPACE.bak
 
+if grep PROTOBUF_MAVEN_ARTIFACTS WORKSPACE > /dev/null ; then
+  echo "WORKSPACE file has maven_install section defined already."
+else
+  echo "WORKSPACE file does not have maven_install section. Adding it."
+  sed -i $'/_gax_java_version =/{e cat ../../hermetic_maven_install_protobuf_section.txt\n}' WORKSPACE
+fi
+
 if ! grep $PROTOBUF_VERSION WORKSPACE; then
   echo "Could not update Protobuf version section. Please check regular expression in script above."
   exit 1
