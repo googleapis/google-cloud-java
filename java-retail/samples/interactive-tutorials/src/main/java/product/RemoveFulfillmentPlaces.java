@@ -57,6 +57,15 @@ public class RemoveFulfillmentPlaces {
             .setAllowMissing(true)
             .build();
 
+    // To send an out-of-order request assign the invalid RemoveTime here:
+    // Instant instant = LocalDateTime.now().minusDays(1).toInstant(ZoneOffset.UTC);
+    // Timestamp previousDay = Timestamp.newBuilder()
+    //          .setSeconds(instant.getEpochSecond())
+    //          .setNanos(instant.getNano())
+    //          .build();
+    // removeFulfillmentRequest =
+    // removeFulfillmentRequest.toBuilder().setRemoveTime(previousDay).build();
+
     System.out.println("Remove fulfillment request " + removeFulfillmentRequest);
 
     // Initialize client that will be used to send requests. This client only

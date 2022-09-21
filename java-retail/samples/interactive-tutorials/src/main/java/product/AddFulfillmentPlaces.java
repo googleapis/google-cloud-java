@@ -56,6 +56,15 @@ public class AddFulfillmentPlaces {
             .setAllowMissing(true)
             .build();
 
+    // To send an out-of-order request assign the invalid AddTime here:
+    // Instant instant = LocalDateTime.now().minusDays(1).toInstant(ZoneOffset.UTC);
+    // Timestamp previousDay = Timestamp.newBuilder()
+    //          .setSeconds(instant.getEpochSecond())
+    //          .setNanos(instant.getNano())
+    //          .build();
+    // addFulfillmentPlacesRequest =
+    // addFulfillmentPlacesRequest.toBuilder().setAddTime(previousDay).build();
+
     System.out.println("Add fulfillment request " + addFulfillmentPlacesRequest);
 
     // Initialize client that will be used to send requests. This client only
