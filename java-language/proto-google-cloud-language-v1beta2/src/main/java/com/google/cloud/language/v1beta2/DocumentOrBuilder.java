@@ -175,5 +175,63 @@ public interface DocumentOrBuilder
    */
   com.google.protobuf.ByteString getLanguageBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The web URI where the document comes from. This URI is not used for
+   * fetching the content, but as a hint for analyzing the document.
+   * </pre>
+   *
+   * <code>string reference_web_uri = 5;</code>
+   *
+   * @return The referenceWebUri.
+   */
+  java.lang.String getReferenceWebUri();
+  /**
+   *
+   *
+   * <pre>
+   * The web URI where the document comes from. This URI is not used for
+   * fetching the content, but as a hint for analyzing the document.
+   * </pre>
+   *
+   * <code>string reference_web_uri = 5;</code>
+   *
+   * @return The bytes for referenceWebUri.
+   */
+  com.google.protobuf.ByteString getReferenceWebUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates how detected boilerplate(e.g. advertisements, copyright
+   * declarations, banners) should be handled for this document. If not
+   * specified, boilerplate will be treated the same as content.
+   * </pre>
+   *
+   * <code>.google.cloud.language.v1beta2.Document.BoilerplateHandling boilerplate_handling = 6;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for boilerplateHandling.
+   */
+  int getBoilerplateHandlingValue();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates how detected boilerplate(e.g. advertisements, copyright
+   * declarations, banners) should be handled for this document. If not
+   * specified, boilerplate will be treated the same as content.
+   * </pre>
+   *
+   * <code>.google.cloud.language.v1beta2.Document.BoilerplateHandling boilerplate_handling = 6;
+   * </code>
+   *
+   * @return The boilerplateHandling.
+   */
+  com.google.cloud.language.v1beta2.Document.BoilerplateHandling getBoilerplateHandling();
+
   public com.google.cloud.language.v1beta2.Document.SourceCase getSourceCase();
 }

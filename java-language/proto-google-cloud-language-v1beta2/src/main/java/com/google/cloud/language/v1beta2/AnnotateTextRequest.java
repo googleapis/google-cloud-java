@@ -220,6 +220,51 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * @return The classifyText.
      */
     boolean getClassifyText();
+
+    /**
+     *
+     *
+     * <pre>
+     * The model options to use for classification. Defaults to v1 options
+     * if not specified. Only used if `classify_text` is set to true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.language.v1beta2.ClassificationModelOptions classification_model_options = 10;
+     * </code>
+     *
+     * @return Whether the classificationModelOptions field is set.
+     */
+    boolean hasClassificationModelOptions();
+    /**
+     *
+     *
+     * <pre>
+     * The model options to use for classification. Defaults to v1 options
+     * if not specified. Only used if `classify_text` is set to true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.language.v1beta2.ClassificationModelOptions classification_model_options = 10;
+     * </code>
+     *
+     * @return The classificationModelOptions.
+     */
+    com.google.cloud.language.v1beta2.ClassificationModelOptions getClassificationModelOptions();
+    /**
+     *
+     *
+     * <pre>
+     * The model options to use for classification. Defaults to v1 options
+     * if not specified. Only used if `classify_text` is set to true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.language.v1beta2.ClassificationModelOptions classification_model_options = 10;
+     * </code>
+     */
+    com.google.cloud.language.v1beta2.ClassificationModelOptionsOrBuilder
+        getClassificationModelOptionsOrBuilder();
   }
   /**
    *
@@ -227,7 +272,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * All available features for sentiment, syntax, and semantic analysis.
    * Setting each one to true will enable that specific analysis for the input.
-   * Next ID: 10
+   * Next ID: 11
    * </pre>
    *
    * Protobuf type {@code google.cloud.language.v1beta2.AnnotateTextRequest.Features}
@@ -296,6 +341,24 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
             case 48:
               {
                 classifyText_ = input.readBool();
+                break;
+              }
+            case 82:
+              {
+                com.google.cloud.language.v1beta2.ClassificationModelOptions.Builder subBuilder =
+                    null;
+                if (classificationModelOptions_ != null) {
+                  subBuilder = classificationModelOptions_.toBuilder();
+                }
+                classificationModelOptions_ =
+                    input.readMessage(
+                        com.google.cloud.language.v1beta2.ClassificationModelOptions.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(classificationModelOptions_);
+                  classificationModelOptions_ = subBuilder.buildPartial();
+                }
+
                 break;
               }
             default:
@@ -427,6 +490,66 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       return classifyText_;
     }
 
+    public static final int CLASSIFICATION_MODEL_OPTIONS_FIELD_NUMBER = 10;
+    private com.google.cloud.language.v1beta2.ClassificationModelOptions
+        classificationModelOptions_;
+    /**
+     *
+     *
+     * <pre>
+     * The model options to use for classification. Defaults to v1 options
+     * if not specified. Only used if `classify_text` is set to true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.language.v1beta2.ClassificationModelOptions classification_model_options = 10;
+     * </code>
+     *
+     * @return Whether the classificationModelOptions field is set.
+     */
+    @java.lang.Override
+    public boolean hasClassificationModelOptions() {
+      return classificationModelOptions_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The model options to use for classification. Defaults to v1 options
+     * if not specified. Only used if `classify_text` is set to true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.language.v1beta2.ClassificationModelOptions classification_model_options = 10;
+     * </code>
+     *
+     * @return The classificationModelOptions.
+     */
+    @java.lang.Override
+    public com.google.cloud.language.v1beta2.ClassificationModelOptions
+        getClassificationModelOptions() {
+      return classificationModelOptions_ == null
+          ? com.google.cloud.language.v1beta2.ClassificationModelOptions.getDefaultInstance()
+          : classificationModelOptions_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The model options to use for classification. Defaults to v1 options
+     * if not specified. Only used if `classify_text` is set to true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.language.v1beta2.ClassificationModelOptions classification_model_options = 10;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.language.v1beta2.ClassificationModelOptionsOrBuilder
+        getClassificationModelOptionsOrBuilder() {
+      return getClassificationModelOptions();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -456,6 +579,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       if (classifyText_ != false) {
         output.writeBool(6, classifyText_);
       }
+      if (classificationModelOptions_ != null) {
+        output.writeMessage(10, getClassificationModelOptions());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -480,6 +606,11 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       if (classifyText_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, classifyText_);
       }
+      if (classificationModelOptions_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                10, getClassificationModelOptions());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -501,6 +632,11 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       if (getExtractDocumentSentiment() != other.getExtractDocumentSentiment()) return false;
       if (getExtractEntitySentiment() != other.getExtractEntitySentiment()) return false;
       if (getClassifyText() != other.getClassifyText()) return false;
+      if (hasClassificationModelOptions() != other.hasClassificationModelOptions()) return false;
+      if (hasClassificationModelOptions()) {
+        if (!getClassificationModelOptions().equals(other.getClassificationModelOptions()))
+          return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -522,6 +658,10 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExtractEntitySentiment());
       hash = (37 * hash) + CLASSIFY_TEXT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getClassifyText());
+      if (hasClassificationModelOptions()) {
+        hash = (37 * hash) + CLASSIFICATION_MODEL_OPTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getClassificationModelOptions().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -630,7 +770,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * All available features for sentiment, syntax, and semantic analysis.
      * Setting each one to true will enable that specific analysis for the input.
-     * Next ID: 10
+     * Next ID: 11
      * </pre>
      *
      * Protobuf type {@code google.cloud.language.v1beta2.AnnotateTextRequest.Features}
@@ -682,6 +822,12 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
 
         classifyText_ = false;
 
+        if (classificationModelOptionsBuilder_ == null) {
+          classificationModelOptions_ = null;
+        } else {
+          classificationModelOptions_ = null;
+          classificationModelOptionsBuilder_ = null;
+        }
         return this;
       }
 
@@ -715,6 +861,11 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
         result.extractDocumentSentiment_ = extractDocumentSentiment_;
         result.extractEntitySentiment_ = extractEntitySentiment_;
         result.classifyText_ = classifyText_;
+        if (classificationModelOptionsBuilder_ == null) {
+          result.classificationModelOptions_ = classificationModelOptions_;
+        } else {
+          result.classificationModelOptions_ = classificationModelOptionsBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -783,6 +934,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
         }
         if (other.getClassifyText() != false) {
           setClassifyText(other.getClassifyText());
+        }
+        if (other.hasClassificationModelOptions()) {
+          mergeClassificationModelOptions(other.getClassificationModelOptions());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1082,6 +1236,226 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
         classifyText_ = false;
         onChanged();
         return this;
+      }
+
+      private com.google.cloud.language.v1beta2.ClassificationModelOptions
+          classificationModelOptions_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.language.v1beta2.ClassificationModelOptions,
+              com.google.cloud.language.v1beta2.ClassificationModelOptions.Builder,
+              com.google.cloud.language.v1beta2.ClassificationModelOptionsOrBuilder>
+          classificationModelOptionsBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The model options to use for classification. Defaults to v1 options
+       * if not specified. Only used if `classify_text` is set to true.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.language.v1beta2.ClassificationModelOptions classification_model_options = 10;
+       * </code>
+       *
+       * @return Whether the classificationModelOptions field is set.
+       */
+      public boolean hasClassificationModelOptions() {
+        return classificationModelOptionsBuilder_ != null || classificationModelOptions_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The model options to use for classification. Defaults to v1 options
+       * if not specified. Only used if `classify_text` is set to true.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.language.v1beta2.ClassificationModelOptions classification_model_options = 10;
+       * </code>
+       *
+       * @return The classificationModelOptions.
+       */
+      public com.google.cloud.language.v1beta2.ClassificationModelOptions
+          getClassificationModelOptions() {
+        if (classificationModelOptionsBuilder_ == null) {
+          return classificationModelOptions_ == null
+              ? com.google.cloud.language.v1beta2.ClassificationModelOptions.getDefaultInstance()
+              : classificationModelOptions_;
+        } else {
+          return classificationModelOptionsBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The model options to use for classification. Defaults to v1 options
+       * if not specified. Only used if `classify_text` is set to true.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.language.v1beta2.ClassificationModelOptions classification_model_options = 10;
+       * </code>
+       */
+      public Builder setClassificationModelOptions(
+          com.google.cloud.language.v1beta2.ClassificationModelOptions value) {
+        if (classificationModelOptionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          classificationModelOptions_ = value;
+          onChanged();
+        } else {
+          classificationModelOptionsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The model options to use for classification. Defaults to v1 options
+       * if not specified. Only used if `classify_text` is set to true.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.language.v1beta2.ClassificationModelOptions classification_model_options = 10;
+       * </code>
+       */
+      public Builder setClassificationModelOptions(
+          com.google.cloud.language.v1beta2.ClassificationModelOptions.Builder builderForValue) {
+        if (classificationModelOptionsBuilder_ == null) {
+          classificationModelOptions_ = builderForValue.build();
+          onChanged();
+        } else {
+          classificationModelOptionsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The model options to use for classification. Defaults to v1 options
+       * if not specified. Only used if `classify_text` is set to true.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.language.v1beta2.ClassificationModelOptions classification_model_options = 10;
+       * </code>
+       */
+      public Builder mergeClassificationModelOptions(
+          com.google.cloud.language.v1beta2.ClassificationModelOptions value) {
+        if (classificationModelOptionsBuilder_ == null) {
+          if (classificationModelOptions_ != null) {
+            classificationModelOptions_ =
+                com.google.cloud.language.v1beta2.ClassificationModelOptions.newBuilder(
+                        classificationModelOptions_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            classificationModelOptions_ = value;
+          }
+          onChanged();
+        } else {
+          classificationModelOptionsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The model options to use for classification. Defaults to v1 options
+       * if not specified. Only used if `classify_text` is set to true.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.language.v1beta2.ClassificationModelOptions classification_model_options = 10;
+       * </code>
+       */
+      public Builder clearClassificationModelOptions() {
+        if (classificationModelOptionsBuilder_ == null) {
+          classificationModelOptions_ = null;
+          onChanged();
+        } else {
+          classificationModelOptions_ = null;
+          classificationModelOptionsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The model options to use for classification. Defaults to v1 options
+       * if not specified. Only used if `classify_text` is set to true.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.language.v1beta2.ClassificationModelOptions classification_model_options = 10;
+       * </code>
+       */
+      public com.google.cloud.language.v1beta2.ClassificationModelOptions.Builder
+          getClassificationModelOptionsBuilder() {
+
+        onChanged();
+        return getClassificationModelOptionsFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The model options to use for classification. Defaults to v1 options
+       * if not specified. Only used if `classify_text` is set to true.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.language.v1beta2.ClassificationModelOptions classification_model_options = 10;
+       * </code>
+       */
+      public com.google.cloud.language.v1beta2.ClassificationModelOptionsOrBuilder
+          getClassificationModelOptionsOrBuilder() {
+        if (classificationModelOptionsBuilder_ != null) {
+          return classificationModelOptionsBuilder_.getMessageOrBuilder();
+        } else {
+          return classificationModelOptions_ == null
+              ? com.google.cloud.language.v1beta2.ClassificationModelOptions.getDefaultInstance()
+              : classificationModelOptions_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The model options to use for classification. Defaults to v1 options
+       * if not specified. Only used if `classify_text` is set to true.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.language.v1beta2.ClassificationModelOptions classification_model_options = 10;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.language.v1beta2.ClassificationModelOptions,
+              com.google.cloud.language.v1beta2.ClassificationModelOptions.Builder,
+              com.google.cloud.language.v1beta2.ClassificationModelOptionsOrBuilder>
+          getClassificationModelOptionsFieldBuilder() {
+        if (classificationModelOptionsBuilder_ == null) {
+          classificationModelOptionsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.language.v1beta2.ClassificationModelOptions,
+                  com.google.cloud.language.v1beta2.ClassificationModelOptions.Builder,
+                  com.google.cloud.language.v1beta2.ClassificationModelOptionsOrBuilder>(
+                  getClassificationModelOptions(), getParentForChildren(), isClean());
+          classificationModelOptions_ = null;
+        }
+        return classificationModelOptionsBuilder_;
       }
 
       @java.lang.Override

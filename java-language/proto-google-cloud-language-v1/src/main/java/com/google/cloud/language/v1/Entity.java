@@ -283,14 +283,15 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Phone number&lt;br&gt;&lt;br&gt;
+     * Phone number
      * The metadata lists the phone number, formatted according to local
-     * convention, plus whichever additional elements appear in the text:&lt;ul&gt;
-     * &lt;li&gt;&lt;code&gt;number&lt;/code&gt; &amp;ndash; the actual number, broken down into
-     * sections as per local convention&lt;/li&gt; &lt;li&gt;&lt;code&gt;national_prefix&lt;/code&gt;
-     * &amp;ndash; country code, if detected&lt;/li&gt; &lt;li&gt;&lt;code&gt;area_code&lt;/code&gt; &amp;ndash;
-     * region or area code, if detected&lt;/li&gt; &lt;li&gt;&lt;code&gt;extension&lt;/code&gt; &amp;ndash;
-     * phone extension (to be dialed after connection), if detected&lt;/li&gt;&lt;/ul&gt;
+     * convention, plus whichever additional elements appear in the text:
+     * * `number` - the actual number, broken down into sections as per local
+     * convention
+     * * `national_prefix` - country code, if detected
+     * * `area_code` - region or area code, if detected
+     * * `extension` - phone extension (to be dialed after connection), if
+     * detected
      * </pre>
      *
      * <code>PHONE_NUMBER = 9;</code>
@@ -300,19 +301,19 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Address&lt;br&gt;&lt;br&gt;
+     * Address
      * The metadata identifies the street number and locality plus whichever
-     * additional elements appear in the text:&lt;ul&gt;
-     * &lt;li&gt;&lt;code&gt;street_number&lt;/code&gt; &amp;ndash; street number&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;locality&lt;/code&gt; &amp;ndash; city or town&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;street_name&lt;/code&gt; &amp;ndash; street/route name, if detected&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;postal_code&lt;/code&gt; &amp;ndash; postal code, if detected&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;country&lt;/code&gt; &amp;ndash; country, if detected&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;broad_region&lt;/code&gt; &amp;ndash; administrative area, such as the
-     * state, if detected&lt;/li&gt; &lt;li&gt;&lt;code&gt;narrow_region&lt;/code&gt; &amp;ndash; smaller
-     * administrative area, such as county, if detected&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;sublocality&lt;/code&gt; &amp;ndash; used in Asian addresses to demark a
-     * district within a city, if detected&lt;/li&gt;&lt;/ul&gt;
+     * additional elements appear in the text:
+     * * `street_number` - street number
+     * * `locality` - city or town
+     * * `street_name` - street/route name, if detected
+     * * `postal_code` - postal code, if detected
+     * * `country` - country, if detected&lt;
+     * * `broad_region` - administrative area, such as the state, if detected
+     * * `narrow_region` - smaller administrative area, such as county, if
+     * detected
+     * * `sublocality` - used in Asian addresses to demark a district within a
+     * city, if detected
      * </pre>
      *
      * <code>ADDRESS = 10;</code>
@@ -322,11 +323,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Date&lt;br&gt;&lt;br&gt;
-     * The metadata identifies the components of the date:&lt;ul&gt;
-     * &lt;li&gt;&lt;code&gt;year&lt;/code&gt; &amp;ndash; four digit year, if detected&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;month&lt;/code&gt; &amp;ndash; two digit month number, if detected&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;day&lt;/code&gt; &amp;ndash; two digit day number, if detected&lt;/li&gt;&lt;/ul&gt;
+     * Date
+     * The metadata identifies the components of the date:
+     * * `year` - four digit year, if detected
+     * * `month` - two digit month number, if detected
+     * * `day` - two digit day number, if detected
      * </pre>
      *
      * <code>DATE = 11;</code>
@@ -336,7 +337,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Number&lt;br&gt;&lt;br&gt;
+     * Number
      * The metadata is the number itself.
      * </pre>
      *
@@ -347,8 +348,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Price&lt;br&gt;&lt;br&gt;
-     * The metadata identifies the &lt;code&gt;value&lt;/code&gt; and &lt;code&gt;currency&lt;/code&gt;.
+     * Price
+     * The metadata identifies the `value` and `currency`.
      * </pre>
      *
      * <code>PRICE = 13;</code>
@@ -441,14 +442,15 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Phone number&lt;br&gt;&lt;br&gt;
+     * Phone number
      * The metadata lists the phone number, formatted according to local
-     * convention, plus whichever additional elements appear in the text:&lt;ul&gt;
-     * &lt;li&gt;&lt;code&gt;number&lt;/code&gt; &amp;ndash; the actual number, broken down into
-     * sections as per local convention&lt;/li&gt; &lt;li&gt;&lt;code&gt;national_prefix&lt;/code&gt;
-     * &amp;ndash; country code, if detected&lt;/li&gt; &lt;li&gt;&lt;code&gt;area_code&lt;/code&gt; &amp;ndash;
-     * region or area code, if detected&lt;/li&gt; &lt;li&gt;&lt;code&gt;extension&lt;/code&gt; &amp;ndash;
-     * phone extension (to be dialed after connection), if detected&lt;/li&gt;&lt;/ul&gt;
+     * convention, plus whichever additional elements appear in the text:
+     * * `number` - the actual number, broken down into sections as per local
+     * convention
+     * * `national_prefix` - country code, if detected
+     * * `area_code` - region or area code, if detected
+     * * `extension` - phone extension (to be dialed after connection), if
+     * detected
      * </pre>
      *
      * <code>PHONE_NUMBER = 9;</code>
@@ -458,19 +460,19 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Address&lt;br&gt;&lt;br&gt;
+     * Address
      * The metadata identifies the street number and locality plus whichever
-     * additional elements appear in the text:&lt;ul&gt;
-     * &lt;li&gt;&lt;code&gt;street_number&lt;/code&gt; &amp;ndash; street number&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;locality&lt;/code&gt; &amp;ndash; city or town&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;street_name&lt;/code&gt; &amp;ndash; street/route name, if detected&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;postal_code&lt;/code&gt; &amp;ndash; postal code, if detected&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;country&lt;/code&gt; &amp;ndash; country, if detected&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;broad_region&lt;/code&gt; &amp;ndash; administrative area, such as the
-     * state, if detected&lt;/li&gt; &lt;li&gt;&lt;code&gt;narrow_region&lt;/code&gt; &amp;ndash; smaller
-     * administrative area, such as county, if detected&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;sublocality&lt;/code&gt; &amp;ndash; used in Asian addresses to demark a
-     * district within a city, if detected&lt;/li&gt;&lt;/ul&gt;
+     * additional elements appear in the text:
+     * * `street_number` - street number
+     * * `locality` - city or town
+     * * `street_name` - street/route name, if detected
+     * * `postal_code` - postal code, if detected
+     * * `country` - country, if detected&lt;
+     * * `broad_region` - administrative area, such as the state, if detected
+     * * `narrow_region` - smaller administrative area, such as county, if
+     * detected
+     * * `sublocality` - used in Asian addresses to demark a district within a
+     * city, if detected
      * </pre>
      *
      * <code>ADDRESS = 10;</code>
@@ -480,11 +482,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Date&lt;br&gt;&lt;br&gt;
-     * The metadata identifies the components of the date:&lt;ul&gt;
-     * &lt;li&gt;&lt;code&gt;year&lt;/code&gt; &amp;ndash; four digit year, if detected&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;month&lt;/code&gt; &amp;ndash; two digit month number, if detected&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;day&lt;/code&gt; &amp;ndash; two digit day number, if detected&lt;/li&gt;&lt;/ul&gt;
+     * Date
+     * The metadata identifies the components of the date:
+     * * `year` - four digit year, if detected
+     * * `month` - two digit month number, if detected
+     * * `day` - two digit day number, if detected
      * </pre>
      *
      * <code>DATE = 11;</code>
@@ -494,7 +496,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Number&lt;br&gt;&lt;br&gt;
+     * Number
      * The metadata is the number itself.
      * </pre>
      *
@@ -505,8 +507,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Price&lt;br&gt;&lt;br&gt;
-     * The metadata identifies the &lt;code&gt;value&lt;/code&gt; and &lt;code&gt;currency&lt;/code&gt;.
+     * Price
+     * The metadata identifies the `value` and `currency`.
      * </pre>
      *
      * <code>PRICE = 13;</code>
@@ -915,9 +917,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * For calls to [AnalyzeEntitySentiment][] or if
-   * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
-   * true, this field will contain the aggregate sentiment expressed for this
-   * entity in the provided document.
+   * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment]
+   * is set to true, this field will contain the aggregate sentiment expressed
+   * for this entity in the provided document.
    * </pre>
    *
    * <code>.google.cloud.language.v1.Sentiment sentiment = 6;</code>
@@ -933,9 +935,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * For calls to [AnalyzeEntitySentiment][] or if
-   * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
-   * true, this field will contain the aggregate sentiment expressed for this
-   * entity in the provided document.
+   * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment]
+   * is set to true, this field will contain the aggregate sentiment expressed
+   * for this entity in the provided document.
    * </pre>
    *
    * <code>.google.cloud.language.v1.Sentiment sentiment = 6;</code>
@@ -953,9 +955,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * For calls to [AnalyzeEntitySentiment][] or if
-   * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
-   * true, this field will contain the aggregate sentiment expressed for this
-   * entity in the provided document.
+   * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment]
+   * is set to true, this field will contain the aggregate sentiment expressed
+   * for this entity in the provided document.
    * </pre>
    *
    * <code>.google.cloud.language.v1.Sentiment sentiment = 6;</code>
@@ -2257,9 +2259,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
-     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
-     * true, this field will contain the aggregate sentiment expressed for this
-     * entity in the provided document.
+     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment]
+     * is set to true, this field will contain the aggregate sentiment expressed
+     * for this entity in the provided document.
      * </pre>
      *
      * <code>.google.cloud.language.v1.Sentiment sentiment = 6;</code>
@@ -2274,9 +2276,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
-     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
-     * true, this field will contain the aggregate sentiment expressed for this
-     * entity in the provided document.
+     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment]
+     * is set to true, this field will contain the aggregate sentiment expressed
+     * for this entity in the provided document.
      * </pre>
      *
      * <code>.google.cloud.language.v1.Sentiment sentiment = 6;</code>
@@ -2297,9 +2299,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
-     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
-     * true, this field will contain the aggregate sentiment expressed for this
-     * entity in the provided document.
+     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment]
+     * is set to true, this field will contain the aggregate sentiment expressed
+     * for this entity in the provided document.
      * </pre>
      *
      * <code>.google.cloud.language.v1.Sentiment sentiment = 6;</code>
@@ -2322,9 +2324,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
-     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
-     * true, this field will contain the aggregate sentiment expressed for this
-     * entity in the provided document.
+     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment]
+     * is set to true, this field will contain the aggregate sentiment expressed
+     * for this entity in the provided document.
      * </pre>
      *
      * <code>.google.cloud.language.v1.Sentiment sentiment = 6;</code>
@@ -2344,9 +2346,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
-     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
-     * true, this field will contain the aggregate sentiment expressed for this
-     * entity in the provided document.
+     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment]
+     * is set to true, this field will contain the aggregate sentiment expressed
+     * for this entity in the provided document.
      * </pre>
      *
      * <code>.google.cloud.language.v1.Sentiment sentiment = 6;</code>
@@ -2373,9 +2375,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
-     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
-     * true, this field will contain the aggregate sentiment expressed for this
-     * entity in the provided document.
+     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment]
+     * is set to true, this field will contain the aggregate sentiment expressed
+     * for this entity in the provided document.
      * </pre>
      *
      * <code>.google.cloud.language.v1.Sentiment sentiment = 6;</code>
@@ -2396,9 +2398,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
-     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
-     * true, this field will contain the aggregate sentiment expressed for this
-     * entity in the provided document.
+     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment]
+     * is set to true, this field will contain the aggregate sentiment expressed
+     * for this entity in the provided document.
      * </pre>
      *
      * <code>.google.cloud.language.v1.Sentiment sentiment = 6;</code>
@@ -2413,9 +2415,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
-     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
-     * true, this field will contain the aggregate sentiment expressed for this
-     * entity in the provided document.
+     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment]
+     * is set to true, this field will contain the aggregate sentiment expressed
+     * for this entity in the provided document.
      * </pre>
      *
      * <code>.google.cloud.language.v1.Sentiment sentiment = 6;</code>
@@ -2434,9 +2436,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
-     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
-     * true, this field will contain the aggregate sentiment expressed for this
-     * entity in the provided document.
+     * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment]
+     * is set to true, this field will contain the aggregate sentiment expressed
+     * for this entity in the provided document.
      * </pre>
      *
      * <code>.google.cloud.language.v1.Sentiment sentiment = 6;</code>

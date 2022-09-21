@@ -27,7 +27,7 @@ public interface AnnotateTextRequestOrBuilder
    *
    *
    * <pre>
-   * Input document.
+   * Required. Input document.
    * </pre>
    *
    * <code>
@@ -41,7 +41,7 @@ public interface AnnotateTextRequestOrBuilder
    *
    *
    * <pre>
-   * Input document.
+   * Required. Input document.
    * </pre>
    *
    * <code>
@@ -55,7 +55,7 @@ public interface AnnotateTextRequestOrBuilder
    *
    *
    * <pre>
-   * Input document.
+   * Required. Input document.
    * </pre>
    *
    * <code>
@@ -68,7 +68,7 @@ public interface AnnotateTextRequestOrBuilder
    *
    *
    * <pre>
-   * The enabled features.
+   * Required. The enabled features.
    * </pre>
    *
    * <code>
@@ -82,7 +82,7 @@ public interface AnnotateTextRequestOrBuilder
    *
    *
    * <pre>
-   * The enabled features.
+   * Required. The enabled features.
    * </pre>
    *
    * <code>
@@ -96,7 +96,7 @@ public interface AnnotateTextRequestOrBuilder
    *
    *
    * <pre>
-   * The enabled features.
+   * Required. The enabled features.
    * </pre>
    *
    * <code>

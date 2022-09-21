@@ -552,7 +552,7 @@ public class LanguageServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Analyzes the syntax of the text and provides sentence boundaries and tokenization along with
-   * part-of-speech tags, dependency trees, and other properties.
+   * part of speech tags, dependency trees, and other properties.
    *
    * <p>Sample code:
    *
@@ -579,7 +579,7 @@ public class LanguageServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Analyzes the syntax of the text and provides sentence boundaries and tokenization along with
-   * part-of-speech tags, dependency trees, and other properties.
+   * part of speech tags, dependency trees, and other properties.
    *
    * <p>Sample code:
    *
@@ -612,7 +612,7 @@ public class LanguageServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Analyzes the syntax of the text and provides sentence boundaries and tokenization along with
-   * part-of-speech tags, dependency trees, and other properties.
+   * part of speech tags, dependency trees, and other properties.
    *
    * <p>Sample code:
    *
@@ -642,7 +642,7 @@ public class LanguageServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Analyzes the syntax of the text and provides sentence boundaries and tokenization along with
-   * part-of-speech tags, dependency trees, and other properties.
+   * part of speech tags, dependency trees, and other properties.
    *
    * <p>Sample code:
    *
@@ -709,7 +709,10 @@ public class LanguageServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   ClassifyTextRequest request =
-   *       ClassifyTextRequest.newBuilder().setDocument(Document.newBuilder().build()).build();
+   *       ClassifyTextRequest.newBuilder()
+   *           .setDocument(Document.newBuilder().build())
+   *           .setClassificationModelOptions(ClassificationModelOptions.newBuilder().build())
+   *           .build();
    *   ClassifyTextResponse response = languageServiceClient.classifyText(request);
    * }
    * }</pre>
@@ -735,7 +738,10 @@ public class LanguageServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   ClassifyTextRequest request =
-   *       ClassifyTextRequest.newBuilder().setDocument(Document.newBuilder().build()).build();
+   *       ClassifyTextRequest.newBuilder()
+   *           .setDocument(Document.newBuilder().build())
+   *           .setClassificationModelOptions(ClassificationModelOptions.newBuilder().build())
+   *           .build();
    *   ApiFuture<ClassifyTextResponse> future =
    *       languageServiceClient.classifyTextCallable().futureCall(request);
    *   // Do something.

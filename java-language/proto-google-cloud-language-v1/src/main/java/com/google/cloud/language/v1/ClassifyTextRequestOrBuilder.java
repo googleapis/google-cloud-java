@@ -27,7 +27,7 @@ public interface ClassifyTextRequestOrBuilder
    *
    *
    * <pre>
-   * Input document.
+   * Required. Input document.
    * </pre>
    *
    * <code>
@@ -41,7 +41,7 @@ public interface ClassifyTextRequestOrBuilder
    *
    *
    * <pre>
-   * Input document.
+   * Required. Input document.
    * </pre>
    *
    * <code>
@@ -55,7 +55,7 @@ public interface ClassifyTextRequestOrBuilder
    *
    *
    * <pre>
-   * Input document.
+   * Required. Input document.
    * </pre>
    *
    * <code>
@@ -63,4 +63,46 @@ public interface ClassifyTextRequestOrBuilder
    * </code>
    */
   com.google.cloud.language.v1.DocumentOrBuilder getDocumentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Model options to use for classification. Defaults to v1 options if not
+   * specified.
+   * </pre>
+   *
+   * <code>.google.cloud.language.v1.ClassificationModelOptions classification_model_options = 3;
+   * </code>
+   *
+   * @return Whether the classificationModelOptions field is set.
+   */
+  boolean hasClassificationModelOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Model options to use for classification. Defaults to v1 options if not
+   * specified.
+   * </pre>
+   *
+   * <code>.google.cloud.language.v1.ClassificationModelOptions classification_model_options = 3;
+   * </code>
+   *
+   * @return The classificationModelOptions.
+   */
+  com.google.cloud.language.v1.ClassificationModelOptions getClassificationModelOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Model options to use for classification. Defaults to v1 options if not
+   * specified.
+   * </pre>
+   *
+   * <code>.google.cloud.language.v1.ClassificationModelOptions classification_model_options = 3;
+   * </code>
+   */
+  com.google.cloud.language.v1.ClassificationModelOptionsOrBuilder
+      getClassificationModelOptionsOrBuilder();
 }
