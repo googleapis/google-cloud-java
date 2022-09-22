@@ -42,7 +42,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-secretmanager</artifactId>
-  <version>2.3.5</version>
+  <version>2.3.6</version>
 </dependency>
 
 ```
