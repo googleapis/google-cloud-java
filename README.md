@@ -56,13 +56,13 @@ implementation 'com.google.cloud:google-cloud-datastore'
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-datastore:2.11.2'
+implementation 'com.google.cloud:google-cloud-datastore:2.11.3'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-datastore" % "2.11.2"
+libraryDependencies += "com.google.cloud" % "google-cloud-datastore" % "2.11.3"
 ```
 
 ## Authentication
