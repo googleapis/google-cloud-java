@@ -57,9 +57,9 @@ else
   createdProject=false
 fi
 
-# Use the project ID in gcloud set-quota-project
+# Use the project ID in gcloud set-quota-project. Clear the existing quota project directly from
+# the configuration, and re-set.
 gcloud config set project "$GOOGLE_CLOUD_PROJECT"
-# Clear the existing quota project directly from the configuration, and re-set.
 sed -i.bak '/quota_project_id/d' ~/.config/gcloud/application_default_credentials.json
 gcloud auth application-default set-quota-project "$GOOGLE_CLOUD_PROJECT"
 
