@@ -14,3 +14,4 @@ java-monitoring
 java-resourcemanager
 java-secretmanager
 java-speech
+java-trace
