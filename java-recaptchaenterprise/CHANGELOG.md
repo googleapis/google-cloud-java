@@ -1,5 +1,14 @@
 # Changelog
 
+## [3.0.9](https://github.com/googleapis/java-recaptchaenterprise/compare/v3.0.8...v3.0.9) (2022-09-22)
+
+
+### Dependencies
+
+* Update dependency org.springframework.boot:spring-boot-starter-test to v2.7.4 ([#892](https://github.com/googleapis/java-recaptchaenterprise/issues/892)) ([462c054](https://github.com/googleapis/java-recaptchaenterprise/commit/462c054a2731725196d46e976e15004bd9ba87de))
+* Update dependency org.springframework.boot:spring-boot-starter-thymeleaf to v2.7.4 ([#893](https://github.com/googleapis/java-recaptchaenterprise/issues/893)) ([6c3302a](https://github.com/googleapis/java-recaptchaenterprise/commit/6c3302a13240ea2b7c249c8b9930568acf61f837))
+* Update dependency org.springframework.boot:spring-boot-starter-web to v2.7.4 ([#894](https://github.com/googleapis/java-recaptchaenterprise/issues/894)) ([0708e63](https://github.com/googleapis/java-recaptchaenterprise/commit/0708e63b8c17de39fab86c8944b343d50aaaef63))
+
 ## [3.0.8](https://github.com/googleapis/java-recaptchaenterprise/compare/v3.0.7...v3.0.8) (2022-09-15)
 
 
