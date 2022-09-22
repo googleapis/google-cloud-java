@@ -1,0 +1,87 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.speech.v2",
+  "libraryPackage": "com.google.cloud.speech.v2",
+  "services": {
+    "Speech": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SpeechClient",
+          "rpcs": {
+            "BatchRecognize": {
+              "methods": ["batchRecognizeAsync", "batchRecognizeAsync", "batchRecognizeAsync", "batchRecognizeOperationCallable", "batchRecognizeCallable"]
+            },
+            "CreateCustomClass": {
+              "methods": ["createCustomClassAsync", "createCustomClassAsync", "createCustomClassAsync", "createCustomClassOperationCallable", "createCustomClassCallable"]
+            },
+            "CreatePhraseSet": {
+              "methods": ["createPhraseSetAsync", "createPhraseSetAsync", "createPhraseSetAsync", "createPhraseSetOperationCallable", "createPhraseSetCallable"]
+            },
+            "CreateRecognizer": {
+              "methods": ["createRecognizerAsync", "createRecognizerAsync", "createRecognizerAsync", "createRecognizerOperationCallable", "createRecognizerCallable"]
+            },
+            "DeleteCustomClass": {
+              "methods": ["deleteCustomClassAsync", "deleteCustomClassAsync", "deleteCustomClassAsync", "deleteCustomClassOperationCallable", "deleteCustomClassCallable"]
+            },
+            "DeletePhraseSet": {
+              "methods": ["deletePhraseSetAsync", "deletePhraseSetAsync", "deletePhraseSetAsync", "deletePhraseSetOperationCallable", "deletePhraseSetCallable"]
+            },
+            "DeleteRecognizer": {
+              "methods": ["deleteRecognizerAsync", "deleteRecognizerAsync", "deleteRecognizerAsync", "deleteRecognizerOperationCallable", "deleteRecognizerCallable"]
+            },
+            "GetConfig": {
+              "methods": ["getConfig", "getConfig", "getConfig", "getConfigCallable"]
+            },
+            "GetCustomClass": {
+              "methods": ["getCustomClass", "getCustomClass", "getCustomClass", "getCustomClassCallable"]
+            },
+            "GetPhraseSet": {
+              "methods": ["getPhraseSet", "getPhraseSet", "getPhraseSet", "getPhraseSetCallable"]
+            },
+            "GetRecognizer": {
+              "methods": ["getRecognizer", "getRecognizer", "getRecognizer", "getRecognizerCallable"]
+            },
+            "ListCustomClasses": {
+              "methods": ["listCustomClasses", "listCustomClasses", "listCustomClasses", "listCustomClassesPagedCallable", "listCustomClassesCallable"]
+            },
+            "ListPhraseSets": {
+              "methods": ["listPhraseSets", "listPhraseSets", "listPhraseSets", "listPhraseSetsPagedCallable", "listPhraseSetsCallable"]
+            },
+            "ListRecognizers": {
+              "methods": ["listRecognizers", "listRecognizers", "listRecognizers", "listRecognizersPagedCallable", "listRecognizersCallable"]
+            },
+            "Recognize": {
+              "methods": ["recognize", "recognize", "recognize", "recognize", "recognize", "recognizeCallable"]
+            },
+            "StreamingRecognize": {
+              "methods": ["streamingRecognizeCallable"]
+            },
+            "UndeleteCustomClass": {
+              "methods": ["undeleteCustomClassAsync", "undeleteCustomClassAsync", "undeleteCustomClassAsync", "undeleteCustomClassOperationCallable", "undeleteCustomClassCallable"]
+            },
+            "UndeletePhraseSet": {
+              "methods": ["undeletePhraseSetAsync", "undeletePhraseSetAsync", "undeletePhraseSetAsync", "undeletePhraseSetOperationCallable", "undeletePhraseSetCallable"]
+            },
+            "UndeleteRecognizer": {
+              "methods": ["undeleteRecognizerAsync", "undeleteRecognizerAsync", "undeleteRecognizerAsync", "undeleteRecognizerOperationCallable", "undeleteRecognizerCallable"]
+            },
+            "UpdateConfig": {
+              "methods": ["updateConfig", "updateConfig", "updateConfigCallable"]
+            },
+            "UpdateCustomClass": {
+              "methods": ["updateCustomClassAsync", "updateCustomClassAsync", "updateCustomClassOperationCallable", "updateCustomClassCallable"]
+            },
+            "UpdatePhraseSet": {
+              "methods": ["updatePhraseSetAsync", "updatePhraseSetAsync", "updatePhraseSetOperationCallable", "updatePhraseSetCallable"]
+            },
+            "UpdateRecognizer": {
+              "methods": ["updateRecognizerAsync", "updateRecognizerAsync", "updateRecognizerOperationCallable", "updateRecognizerCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

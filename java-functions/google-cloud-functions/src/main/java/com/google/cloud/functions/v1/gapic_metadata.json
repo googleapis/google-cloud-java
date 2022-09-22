@@ -1,0 +1,51 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.functions.v1",
+  "libraryPackage": "com.google.cloud.functions.v1",
+  "services": {
+    "CloudFunctionsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CloudFunctionsServiceClient",
+          "rpcs": {
+            "CallFunction": {
+              "methods": ["callFunction", "callFunction", "callFunction", "callFunctionCallable"]
+            },
+            "CreateFunction": {
+              "methods": ["createFunctionAsync", "createFunctionAsync", "createFunctionAsync", "createFunctionOperationCallable", "createFunctionCallable"]
+            },
+            "DeleteFunction": {
+              "methods": ["deleteFunctionAsync", "deleteFunctionAsync", "deleteFunctionAsync", "deleteFunctionOperationCallable", "deleteFunctionCallable"]
+            },
+            "GenerateDownloadUrl": {
+              "methods": ["generateDownloadUrl", "generateDownloadUrlCallable"]
+            },
+            "GenerateUploadUrl": {
+              "methods": ["generateUploadUrl", "generateUploadUrlCallable"]
+            },
+            "GetFunction": {
+              "methods": ["getFunction", "getFunction", "getFunction", "getFunctionCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "ListFunctions": {
+              "methods": ["listFunctions", "listFunctionsPagedCallable", "listFunctionsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateFunction": {
+              "methods": ["updateFunctionAsync", "updateFunctionAsync", "updateFunctionOperationCallable", "updateFunctionCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

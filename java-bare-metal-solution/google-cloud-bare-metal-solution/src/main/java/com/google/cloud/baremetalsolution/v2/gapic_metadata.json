@@ -1,0 +1,78 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.baremetalsolution.v2",
+  "libraryPackage": "com.google.cloud.baremetalsolution.v2",
+  "services": {
+    "BareMetalSolution": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BareMetalSolutionClient",
+          "rpcs": {
+            "DetachLun": {
+              "methods": ["detachLunAsync", "detachLunAsync", "detachLunAsync", "detachLunAsync", "detachLunAsync", "detachLunOperationCallable", "detachLunCallable"]
+            },
+            "GetInstance": {
+              "methods": ["getInstance", "getInstance", "getInstance", "getInstanceCallable"]
+            },
+            "GetLun": {
+              "methods": ["getLun", "getLun", "getLun", "getLunCallable"]
+            },
+            "GetNetwork": {
+              "methods": ["getNetwork", "getNetwork", "getNetwork", "getNetworkCallable"]
+            },
+            "GetNfsShare": {
+              "methods": ["getNfsShare", "getNfsShare", "getNfsShare", "getNfsShareCallable"]
+            },
+            "GetVolume": {
+              "methods": ["getVolume", "getVolume", "getVolume", "getVolumeCallable"]
+            },
+            "ListInstances": {
+              "methods": ["listInstances", "listInstances", "listInstances", "listInstancesPagedCallable", "listInstancesCallable"]
+            },
+            "ListLuns": {
+              "methods": ["listLuns", "listLuns", "listLuns", "listLunsPagedCallable", "listLunsCallable"]
+            },
+            "ListNetworkUsage": {
+              "methods": ["listNetworkUsage", "listNetworkUsage", "listNetworkUsage", "listNetworkUsageCallable"]
+            },
+            "ListNetworks": {
+              "methods": ["listNetworks", "listNetworks", "listNetworks", "listNetworksPagedCallable", "listNetworksCallable"]
+            },
+            "ListNfsShares": {
+              "methods": ["listNfsShares", "listNfsShares", "listNfsShares", "listNfsSharesPagedCallable", "listNfsSharesCallable"]
+            },
+            "ListVolumes": {
+              "methods": ["listVolumes", "listVolumes", "listVolumes", "listVolumesPagedCallable", "listVolumesCallable"]
+            },
+            "ResetInstance": {
+              "methods": ["resetInstanceAsync", "resetInstanceAsync", "resetInstanceAsync", "resetInstanceOperationCallable", "resetInstanceCallable"]
+            },
+            "ResizeVolume": {
+              "methods": ["resizeVolumeAsync", "resizeVolumeAsync", "resizeVolumeAsync", "resizeVolumeOperationCallable", "resizeVolumeCallable"]
+            },
+            "StartInstance": {
+              "methods": ["startInstanceAsync", "startInstanceAsync", "startInstanceAsync", "startInstanceOperationCallable", "startInstanceCallable"]
+            },
+            "StopInstance": {
+              "methods": ["stopInstanceAsync", "stopInstanceAsync", "stopInstanceAsync", "stopInstanceOperationCallable", "stopInstanceCallable"]
+            },
+            "UpdateInstance": {
+              "methods": ["updateInstanceAsync", "updateInstanceAsync", "updateInstanceOperationCallable", "updateInstanceCallable"]
+            },
+            "UpdateNetwork": {
+              "methods": ["updateNetworkAsync", "updateNetworkAsync", "updateNetworkOperationCallable", "updateNetworkCallable"]
+            },
+            "UpdateNfsShare": {
+              "methods": ["updateNfsShareAsync", "updateNfsShareAsync", "updateNfsShareOperationCallable", "updateNfsShareCallable"]
+            },
+            "UpdateVolume": {
+              "methods": ["updateVolumeAsync", "updateVolumeAsync", "updateVolumeOperationCallable", "updateVolumeCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
