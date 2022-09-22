@@ -30,6 +30,14 @@ jobs:
           cd monorepo/google-cloud-java
           git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
           git push -f monorepo main:monorepo_script_output
+      - name: Generate source level diff
+#        if: ${{ github.event_name != 'pull_request' }}
+        run: |
+          ./templates/generation/generate_split_vs_mono_diff_branch.sh
+          git checkout squashed_split_branch
+          git diff HEAD^ HEAD
+          git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
+          git push -f monorepo squashed_split_branch:split_vs_mono_diff_output
 
   build-3repos:
     runs-on: ubuntu-latest

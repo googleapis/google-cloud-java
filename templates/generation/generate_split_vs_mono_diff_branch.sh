@@ -25,6 +25,6 @@ squash_branch monorepo_script_output $SQAUSHED_SPLIT_BRANCH
 git checkout $SQAUSHED_SPLIT_BRANCH
 git merge $SQAUSHED_MAIN_BRANCH --allow-unrelated-histories  --strategy-option theirs --no-edit --commit
 
-git checkout main
+# git checkout main
 #git branch -D $SQAUSHED_MAIN_BRANCH
 #git branch -D $SQAUSHED_SPLIT_BRANCH
