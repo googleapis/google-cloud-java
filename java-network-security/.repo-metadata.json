@@ -1,0 +1,16 @@
+{
+  "api_shortname": "networksecurity",
+  "name_pretty": "Network Security API",
+  "product_documentation": "https://cloud.google.com/traffic-director/docs/reference/network-security/rest",
+  "api_description": "n/a",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-network-security/latest/index.html",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-network-security",
+  "repo_short": "java-network-security",
+  "distribution_name": "com.google.cloud:google-cloud-network-security",
+  "api_id": "networksecurity.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
