@@ -107,14 +107,14 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_SignBlobResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_SignBlobResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.iam.admin.v1.SignBlobResponse.class,
@@ -135,7 +135,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
    * <code>string key_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.iam.admin.v1.SignBlobResponse.key_id is deprecated. See
-   *     google/iam/admin/v1/iam.proto;l=883
+   *     google/iam/admin/v1/iam.proto;l=1001
    * @return The keyId.
    */
   @java.lang.Override
@@ -163,7 +163,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
    * <code>string key_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.iam.admin.v1.SignBlobResponse.key_id is deprecated. See
-   *     google/iam/admin/v1/iam.proto;l=883
+   *     google/iam/admin/v1/iam.proto;l=1001
    * @return The bytes for keyId.
    */
   @java.lang.Override
@@ -194,7 +194,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
    * <code>bytes signature = 2 [deprecated = true];</code>
    *
    * @deprecated google.iam.admin.v1.SignBlobResponse.signature is deprecated. See
-   *     google/iam/admin/v1/iam.proto;l=889
+   *     google/iam/admin/v1/iam.proto;l=1007
    * @return The signature.
    */
   @java.lang.Override
@@ -386,14 +386,14 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.iam.admin.v1.SignBlobResponse)
       com.google.iam.admin.v1.SignBlobResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_SignBlobResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_SignBlobResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.iam.admin.v1.SignBlobResponse.class,
@@ -426,7 +426,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_SignBlobResponse_descriptor;
     }
 
@@ -548,7 +548,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      * <code>string key_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.iam.admin.v1.SignBlobResponse.key_id is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=883
+     *     google/iam/admin/v1/iam.proto;l=1001
      * @return The keyId.
      */
     @java.lang.Deprecated
@@ -575,7 +575,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      * <code>string key_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.iam.admin.v1.SignBlobResponse.key_id is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=883
+     *     google/iam/admin/v1/iam.proto;l=1001
      * @return The bytes for keyId.
      */
     @java.lang.Deprecated
@@ -602,7 +602,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      * <code>string key_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.iam.admin.v1.SignBlobResponse.key_id is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=883
+     *     google/iam/admin/v1/iam.proto;l=1001
      * @param value The keyId to set.
      * @return This builder for chaining.
      */
@@ -628,7 +628,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      * <code>string key_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.iam.admin.v1.SignBlobResponse.key_id is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=883
+     *     google/iam/admin/v1/iam.proto;l=1001
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -650,7 +650,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      * <code>string key_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.iam.admin.v1.SignBlobResponse.key_id is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=883
+     *     google/iam/admin/v1/iam.proto;l=1001
      * @param value The bytes for keyId to set.
      * @return This builder for chaining.
      */
@@ -679,7 +679,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      * <code>bytes signature = 2 [deprecated = true];</code>
      *
      * @deprecated google.iam.admin.v1.SignBlobResponse.signature is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=889
+     *     google/iam/admin/v1/iam.proto;l=1007
      * @return The signature.
      */
     @java.lang.Override
@@ -699,7 +699,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      * <code>bytes signature = 2 [deprecated = true];</code>
      *
      * @deprecated google.iam.admin.v1.SignBlobResponse.signature is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=889
+     *     google/iam/admin/v1/iam.proto;l=1007
      * @param value The signature to set.
      * @return This builder for chaining.
      */
@@ -725,7 +725,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      * <code>bytes signature = 2 [deprecated = true];</code>
      *
      * @deprecated google.iam.admin.v1.SignBlobResponse.signature is deprecated. See
-     *     google/iam/admin/v1/iam.proto;l=889
+     *     google/iam/admin/v1/iam.proto;l=1007
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

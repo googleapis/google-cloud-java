@@ -99,14 +99,14 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_UndeleteServiceAccountResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_UndeleteServiceAccountResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.iam.admin.v1.UndeleteServiceAccountResponse.class,
@@ -332,14 +332,14 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
       // @@protoc_insertion_point(builder_implements:google.iam.admin.v1.UndeleteServiceAccountResponse)
       com.google.iam.admin.v1.UndeleteServiceAccountResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_UndeleteServiceAccountResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_UndeleteServiceAccountResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.iam.admin.v1.UndeleteServiceAccountResponse.class,
@@ -374,7 +374,7 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_UndeleteServiceAccountResponse_descriptor;
     }
 

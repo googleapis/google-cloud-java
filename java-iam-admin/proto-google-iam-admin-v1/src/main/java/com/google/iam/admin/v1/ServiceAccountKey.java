@@ -169,6 +169,11 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
               keyType_ = rawValue;
               break;
             }
+          case 88:
+            {
+              disabled_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -191,14 +196,14 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_ServiceAccountKey_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_ServiceAccountKey_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.iam.admin.v1.ServiceAccountKey.class,
@@ -561,6 +566,24 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
         : result;
   }
 
+  public static final int DISABLED_FIELD_NUMBER = 11;
+  private boolean disabled_;
+  /**
+   *
+   *
+   * <pre>
+   * The key status.
+   * </pre>
+   *
+   * <code>bool disabled = 11;</code>
+   *
+   * @return The disabled.
+   */
+  @java.lang.Override
+  public boolean getDisabled() {
+    return disabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -607,6 +630,9 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
             .getNumber()) {
       output.writeEnum(10, keyType_);
     }
+    if (disabled_ != false) {
+      output.writeBool(11, disabled_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -648,6 +674,9 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, keyType_);
     }
+    if (disabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, disabled_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -679,6 +708,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     }
     if (keyOrigin_ != other.keyOrigin_) return false;
     if (keyType_ != other.keyType_) return false;
+    if (getDisabled() != other.getDisabled()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -712,6 +742,8 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + keyOrigin_;
     hash = (37 * hash) + KEY_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + keyType_;
+    hash = (37 * hash) + DISABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisabled());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -844,14 +876,14 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(builder_implements:google.iam.admin.v1.ServiceAccountKey)
       com.google.iam.admin.v1.ServiceAccountKeyOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_ServiceAccountKey_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_ServiceAccountKey_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.iam.admin.v1.ServiceAccountKey.class,
@@ -901,12 +933,14 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
 
       keyType_ = 0;
 
+      disabled_ = false;
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_ServiceAccountKey_descriptor;
     }
 
@@ -945,6 +979,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       }
       result.keyOrigin_ = keyOrigin_;
       result.keyType_ = keyType_;
+      result.disabled_ = disabled_;
       onBuilt();
       return result;
     }
@@ -1021,6 +1056,9 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       }
       if (other.keyType_ != 0) {
         setKeyTypeValue(other.getKeyTypeValue());
+      }
+      if (other.getDisabled() != false) {
+        setDisabled(other.getDisabled());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2073,6 +2111,58 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     public Builder clearKeyType() {
 
       keyType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean disabled_;
+    /**
+     *
+     *
+     * <pre>
+     * The key status.
+     * </pre>
+     *
+     * <code>bool disabled = 11;</code>
+     *
+     * @return The disabled.
+     */
+    @java.lang.Override
+    public boolean getDisabled() {
+      return disabled_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The key status.
+     * </pre>
+     *
+     * <code>bool disabled = 11;</code>
+     *
+     * @param value The disabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisabled(boolean value) {
+
+      disabled_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The key status.
+     * </pre>
+     *
+     * <code>bool disabled = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisabled() {
+
+      disabled_ = false;
       onChanged();
       return this;
     }

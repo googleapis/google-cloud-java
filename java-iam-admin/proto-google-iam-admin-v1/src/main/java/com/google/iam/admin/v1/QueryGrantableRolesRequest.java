@@ -120,14 +120,14 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_QueryGrantableRolesRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.iam.admin.v1.IamProto
+    return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_QueryGrantableRolesRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.iam.admin.v1.QueryGrantableRolesRequest.class,
@@ -482,14 +482,14 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
       // @@protoc_insertion_point(builder_implements:google.iam.admin.v1.QueryGrantableRolesRequest)
       com.google.iam.admin.v1.QueryGrantableRolesRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_QueryGrantableRolesRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_QueryGrantableRolesRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.iam.admin.v1.QueryGrantableRolesRequest.class,
@@ -526,7 +526,7 @@ public final class QueryGrantableRolesRequest extends com.google.protobuf.Genera
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.iam.admin.v1.IamProto
+      return com.google.iam.admin.v1.Iam
           .internal_static_google_iam_admin_v1_QueryGrantableRolesRequest_descriptor;
     }
 

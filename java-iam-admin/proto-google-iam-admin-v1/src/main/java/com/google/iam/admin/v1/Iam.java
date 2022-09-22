@@ -18,8 +18,8 @@
 
 package com.google.iam.admin.v1;
 
-public final class IamProto {
-  private IamProto() {}
+public final class Iam {
+  private Iam() {}
 
   public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
 
@@ -99,6 +99,14 @@ public final class IamProto {
       internal_static_google_iam_admin_v1_DeleteServiceAccountKeyRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_iam_admin_v1_DeleteServiceAccountKeyRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_iam_admin_v1_DisableServiceAccountKeyRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_iam_admin_v1_DisableServiceAccountKeyRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_iam_admin_v1_EnableServiceAccountKeyRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_iam_admin_v1_EnableServiceAccountKeyRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_iam_admin_v1_SignBlobRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -201,14 +209,14 @@ public final class IamProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\035google/iam/admin/v1/iam.proto\022\023google."
-          + "iam.admin.v1\032\027google/api/client.proto\032\037g"
-          + "oogle/api/field_behavior.proto\032\031google/a"
-          + "pi/resource.proto\032\036google/iam/v1/iam_pol"
-          + "icy.proto\032\032google/iam/v1/policy.proto\032\033g"
-          + "oogle/protobuf/empty.proto\032 google/proto"
-          + "buf/field_mask.proto\032\037google/protobuf/ti"
-          + "mestamp.proto\032\026google/type/expr.proto\032\034g"
-          + "oogle/api/annotations.proto\"\276\002\n\016ServiceA"
+          + "iam.admin.v1\032\034google/api/annotations.pro"
+          + "to\032\027google/api/client.proto\032\037google/api/"
+          + "field_behavior.proto\032\031google/api/resourc"
+          + "e.proto\032\036google/iam/v1/iam_policy.proto\032"
+          + "\032google/iam/v1/policy.proto\032\033google/prot"
+          + "obuf/empty.proto\032 google/protobuf/field_"
+          + "mask.proto\032\037google/protobuf/timestamp.pr"
+          + "oto\032\026google/type/expr.proto\"\276\002\n\016ServiceA"
           + "ccount\022\014\n\004name\030\001 \001(\t\022\027\n\nproject_id\030\002 \001(\t"
           + "B\003\340A\003\022\026\n\tunique_id\030\004 \001(\tB\003\340A\003\022\022\n\005email\030\005"
           + " \001(\tB\003\340A\003\022\031\n\014display_name\030\006 \001(\tB\003\340A\001\022\020\n\004"
@@ -249,258 +257,272 @@ public final class IamProto {
           + "_TYPE_UNSPECIFIED\020\000\022\020\n\014USER_MANAGED\020\001\022\022\n"
           + "\016SYSTEM_MANAGED\020\002\"V\n\036ListServiceAccountK"
           + "eysResponse\0224\n\004keys\030\001 \003(\0132&.google.iam.a"
-          + "dmin.v1.ServiceAccountKey\"\226\001\n\033GetService"
+          + "dmin.v1.ServiceAccountKey\"\233\001\n\033GetService"
           + "AccountKeyRequest\022,\n\004name\030\001 \001(\tB\036\340A\002\372A\030\n"
-          + "\026iam.googleapis.com/Key\022I\n\017public_key_ty"
+          + "\026iam.googleapis.com/Key\022N\n\017public_key_ty"
           + "pe\030\002 \001(\01620.google.iam.admin.v1.ServiceAc"
-          + "countPublicKeyType\"\304\004\n\021ServiceAccountKey"
-          + "\022\014\n\004name\030\001 \001(\t\022K\n\020private_key_type\030\002 \001(\016"
-          + "21.google.iam.admin.v1.ServiceAccountPri"
-          + "vateKeyType\022F\n\rkey_algorithm\030\010 \001(\0162/.goo"
-          + "gle.iam.admin.v1.ServiceAccountKeyAlgori"
-          + "thm\022\030\n\020private_key_data\030\003 \001(\014\022\027\n\017public_"
-          + "key_data\030\007 \001(\014\0224\n\020valid_after_time\030\004 \001(\013"
-          + "2\032.google.protobuf.Timestamp\0225\n\021valid_be"
-          + "fore_time\030\005 \001(\0132\032.google.protobuf.Timest"
-          + "amp\022@\n\nkey_origin\030\t \001(\0162,.google.iam.adm"
-          + "in.v1.ServiceAccountKeyOrigin\022L\n\010key_typ"
-          + "e\030\n \001(\0162:.google.iam.admin.v1.ListServic"
-          + "eAccountKeysRequest.KeyType:\\\352AY\n\026iam.go"
-          + "ogleapis.com/Key\022?projects/{project}/ser"
-          + "viceAccounts/{service_account}/keys/{key"
-          + "}\"\356\001\n\036CreateServiceAccountKeyRequest\0227\n\004"
-          + "name\030\001 \001(\tB)\340A\002\372A#\n!iam.googleapis.com/S"
-          + "erviceAccount\022K\n\020private_key_type\030\002 \001(\0162"
-          + "1.google.iam.admin.v1.ServiceAccountPriv"
-          + "ateKeyType\022F\n\rkey_algorithm\030\003 \001(\0162/.goog"
-          + "le.iam.admin.v1.ServiceAccountKeyAlgorit"
-          + "hm\"G\n\036UploadServiceAccountKeyRequest\022\014\n\004"
-          + "name\030\001 \001(\t\022\027\n\017public_key_data\030\002 \001(\014\"N\n\036D"
-          + "eleteServiceAccountKeyRequest\022,\n\004name\030\001 "
-          + "\001(\tB\036\340A\002\372A\030\n\026iam.googleapis.com/Key\"j\n\017S"
-          + "ignBlobRequest\0229\n\004name\030\001 \001(\tB+\030\001\340A\002\372A#\n!"
-          + "iam.googleapis.com/ServiceAccount\022\034\n\rbyt"
-          + "es_to_sign\030\002 \001(\014B\005\030\001\340A\002\"=\n\020SignBlobRespo"
-          + "nse\022\022\n\006key_id\030\001 \001(\tB\002\030\001\022\025\n\tsignature\030\002 \001"
-          + "(\014B\002\030\001\"c\n\016SignJwtRequest\0229\n\004name\030\001 \001(\tB+"
-          + "\030\001\340A\002\372A#\n!iam.googleapis.com/ServiceAcco"
-          + "unt\022\026\n\007payload\030\002 \001(\tB\005\030\001\340A\002\"=\n\017SignJwtRe"
-          + "sponse\022\022\n\006key_id\030\001 \001(\tB\002\030\001\022\026\n\nsigned_jwt"
-          + "\030\002 \001(\tB\002\030\001\"\206\002\n\004Role\022\014\n\004name\030\001 \001(\t\022\r\n\005tit"
-          + "le\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022\034\n\024include"
-          + "d_permissions\030\007 \003(\t\0228\n\005stage\030\010 \001(\0162).goo"
-          + "gle.iam.admin.v1.Role.RoleLaunchStage\022\014\n"
-          + "\004etag\030\t \001(\014\022\017\n\007deleted\030\013 \001(\010\"U\n\017RoleLaun"
-          + "chStage\022\t\n\005ALPHA\020\000\022\010\n\004BETA\020\001\022\006\n\002GA\020\002\022\016\n\n"
-          + "DEPRECATED\020\004\022\014\n\010DISABLED\020\005\022\007\n\003EAP\020\006\"\221\001\n\032"
-          + "QueryGrantableRolesRequest\022\037\n\022full_resou"
-          + "rce_name\030\001 \001(\tB\003\340A\002\022+\n\004view\030\002 \001(\0162\035.goog"
-          + "le.iam.admin.v1.RoleView\022\021\n\tpage_size\030\003 "
-          + "\001(\005\022\022\n\npage_token\030\004 \001(\t\"`\n\033QueryGrantabl"
-          + "eRolesResponse\022(\n\005roles\030\001 \003(\0132\031.google.i"
-          + "am.admin.v1.Role\022\027\n\017next_page_token\030\002 \001("
-          + "\t\"\224\001\n\020ListRolesRequest\022\026\n\006parent\030\001 \001(\tB\006"
-          + "\372A\003\n\001*\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030"
-          + "\003 \001(\t\022+\n\004view\030\004 \001(\0162\035.google.iam.admin.v"
-          + "1.RoleView\022\024\n\014show_deleted\030\006 \001(\010\"V\n\021List"
-          + "RolesResponse\022(\n\005roles\030\001 \003(\0132\031.google.ia"
-          + "m.admin.v1.Role\022\027\n\017next_page_token\030\002 \001(\t"
-          + "\"&\n\016GetRoleRequest\022\024\n\004name\030\001 \001(\tB\006\372A\003\n\001*"
-          + "\"e\n\021CreateRoleRequest\022\026\n\006parent\030\001 \001(\tB\006\372"
-          + "A\003\n\001*\022\017\n\007role_id\030\002 \001(\t\022\'\n\004role\030\003 \001(\0132\031.g"
-          + "oogle.iam.admin.v1.Role\"\203\001\n\021UpdateRoleRe"
-          + "quest\022\024\n\004name\030\001 \001(\tB\006\372A\003\n\001*\022\'\n\004role\030\002 \001("
-          + "\0132\031.google.iam.admin.v1.Role\022/\n\013update_m"
-          + "ask\030\003 \001(\0132\032.google.protobuf.FieldMask\"7\n"
-          + "\021DeleteRoleRequest\022\024\n\004name\030\001 \001(\tB\006\372A\003\n\001*"
-          + "\022\014\n\004etag\030\002 \001(\014\"9\n\023UndeleteRoleRequest\022\024\n"
-          + "\004name\030\001 \001(\tB\006\372A\003\n\001*\022\014\n\004etag\030\002 \001(\014\"\311\003\n\nPe"
-          + "rmission\022\014\n\004name\030\001 \001(\t\022\r\n\005title\030\002 \001(\t\022\023\n"
-          + "\013description\030\003 \001(\t\022$\n\030only_in_predefined"
-          + "_roles\030\004 \001(\010B\002\030\001\022D\n\005stage\030\005 \001(\01625.google"
-          + ".iam.admin.v1.Permission.PermissionLaunc"
-          + "hStage\022[\n\032custom_roles_support_level\030\006 \001"
-          + "(\01627.google.iam.admin.v1.Permission.Cust"
-          + "omRolesSupportLevel\022\024\n\014api_disabled\030\007 \001("
-          + "\010\022\032\n\022primary_permission\030\010 \001(\t\"D\n\025Permiss"
-          + "ionLaunchStage\022\t\n\005ALPHA\020\000\022\010\n\004BETA\020\001\022\006\n\002G"
-          + "A\020\002\022\016\n\nDEPRECATED\020\003\"H\n\027CustomRolesSuppor"
-          + "tLevel\022\r\n\tSUPPORTED\020\000\022\013\n\007TESTING\020\001\022\021\n\rNO"
-          + "T_SUPPORTED\020\002\"d\n\037QueryTestablePermission"
-          + "sRequest\022\032\n\022full_resource_name\030\001 \001(\t\022\021\n\t"
-          + "page_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"q\n Q"
-          + "ueryTestablePermissionsResponse\0224\n\013permi"
-          + "ssions\030\001 \003(\0132\037.google.iam.admin.v1.Permi"
-          + "ssion\022\027\n\017next_page_token\030\002 \001(\t\";\n\035QueryA"
-          + "uditableServicesRequest\022\032\n\022full_resource"
-          + "_name\030\001 \001(\t\"\232\001\n\036QueryAuditableServicesRe"
-          + "sponse\022V\n\010services\030\001 \003(\0132D.google.iam.ad"
-          + "min.v1.QueryAuditableServicesResponse.Au"
-          + "ditableService\032 \n\020AuditableService\022\014\n\004na"
-          + "me\030\001 \001(\t\"f\n\021LintPolicyRequest\022\032\n\022full_re"
-          + "source_name\030\001 \001(\t\022&\n\tcondition\030\005 \001(\0132\021.g"
-          + "oogle.type.ExprH\000B\r\n\013lint_object\"\363\002\n\nLin"
-          + "tResult\0224\n\005level\030\001 \001(\0162%.google.iam.admi"
-          + "n.v1.LintResult.Level\022\034\n\024validation_unit"
-          + "_name\030\002 \001(\t\022:\n\010severity\030\003 \001(\0162(.google.i"
-          + "am.admin.v1.LintResult.Severity\022\022\n\nfield"
-          + "_name\030\005 \001(\t\022\027\n\017location_offset\030\006 \001(\005\022\025\n\r"
-          + "debug_message\030\007 \001(\t\"-\n\005Level\022\025\n\021LEVEL_UN"
-          + "SPECIFIED\020\000\022\r\n\tCONDITION\020\003\"b\n\010Severity\022\030"
-          + "\n\024SEVERITY_UNSPECIFIED\020\000\022\t\n\005ERROR\020\001\022\013\n\007W"
-          + "ARNING\020\002\022\n\n\006NOTICE\020\003\022\010\n\004INFO\020\004\022\016\n\nDEPREC"
-          + "ATED\020\005\"K\n\022LintPolicyResponse\0225\n\014lint_res"
-          + "ults\030\001 \003(\0132\037.google.iam.admin.v1.LintRes"
-          + "ult*a\n\032ServiceAccountKeyAlgorithm\022\027\n\023KEY"
-          + "_ALG_UNSPECIFIED\020\000\022\024\n\020KEY_ALG_RSA_1024\020\001"
-          + "\022\024\n\020KEY_ALG_RSA_2048\020\002*l\n\034ServiceAccount"
-          + "PrivateKeyType\022\024\n\020TYPE_UNSPECIFIED\020\000\022\024\n\020"
-          + "TYPE_PKCS12_FILE\020\001\022 \n\034TYPE_GOOGLE_CREDEN"
-          + "TIALS_FILE\020\002*]\n\033ServiceAccountPublicKeyT"
-          + "ype\022\r\n\tTYPE_NONE\020\000\022\026\n\022TYPE_X509_PEM_FILE"
-          + "\020\001\022\027\n\023TYPE_RAW_PUBLIC_KEY\020\002*Y\n\027ServiceAc"
-          + "countKeyOrigin\022\026\n\022ORIGIN_UNSPECIFIED\020\000\022\021"
-          + "\n\rUSER_PROVIDED\020\001\022\023\n\017GOOGLE_PROVIDED\020\002*\037"
-          + "\n\010RoleView\022\t\n\005BASIC\020\000\022\010\n\004FULL\020\0012\263(\n\003IAM\022"
-          + "\256\001\n\023ListServiceAccounts\022/.google.iam.adm"
-          + "in.v1.ListServiceAccountsRequest\0320.googl"
-          + "e.iam.admin.v1.ListServiceAccountsRespon"
-          + "se\"4\202\323\344\223\002\'\022%/v1/{name=projects/*}/servic"
-          + "eAccounts\332A\004name\022\237\001\n\021GetServiceAccount\022-"
-          + ".google.iam.admin.v1.GetServiceAccountRe"
-          + "quest\032#.google.iam.admin.v1.ServiceAccou"
-          + "nt\"6\202\323\344\223\002)\022\'/v1/{name=projects/*/service"
-          + "Accounts/*}\332A\004name\022\301\001\n\024CreateServiceAcco"
-          + "unt\0220.google.iam.admin.v1.CreateServiceA"
-          + "ccountRequest\032#.google.iam.admin.v1.Serv"
-          + "iceAccount\"R\202\323\344\223\002*\"%/v1/{name=projects/*"
-          + "}/serviceAccounts:\001*\332A\037name,account_id,s"
-          + "ervice_account\022\224\001\n\024UpdateServiceAccount\022"
-          + "#.google.iam.admin.v1.ServiceAccount\032#.g"
-          + "oogle.iam.admin.v1.ServiceAccount\"2\202\323\344\223\002"
-          + ",\032\'/v1/{name=projects/*/serviceAccounts/"
-          + "*}:\001*\022\257\001\n\023PatchServiceAccount\022/.google.i"
-          + "am.admin.v1.PatchServiceAccountRequest\032#"
-          + ".google.iam.admin.v1.ServiceAccount\"B\202\323\344"
-          + "\223\002<27/v1/{service_account.name=projects/"
-          + "*/serviceAccounts/*}:\001*\022\230\001\n\024DeleteServic"
-          + "eAccount\0220.google.iam.admin.v1.DeleteSer"
-          + "viceAccountRequest\032\026.google.protobuf.Emp"
-          + "ty\"6\202\323\344\223\002)*\'/v1/{name=projects/*/service"
-          + "Accounts/*}\332A\004name\022\276\001\n\026UndeleteServiceAc"
-          + "count\0222.google.iam.admin.v1.UndeleteServ"
-          + "iceAccountRequest\0323.google.iam.admin.v1."
-          + "UndeleteServiceAccountResponse\";\202\323\344\223\0025\"0"
-          + "/v1/{name=projects/*/serviceAccounts/*}:"
-          + "undelete:\001*\022\233\001\n\024EnableServiceAccount\0220.g"
-          + "oogle.iam.admin.v1.EnableServiceAccountR"
-          + "equest\032\026.google.protobuf.Empty\"9\202\323\344\223\0023\"."
-          + "/v1/{name=projects/*/serviceAccounts/*}:"
-          + "enable:\001*\022\236\001\n\025DisableServiceAccount\0221.go"
-          + "ogle.iam.admin.v1.DisableServiceAccountR"
-          + "equest\032\026.google.protobuf.Empty\":\202\323\344\223\0024\"/"
-          + "/v1/{name=projects/*/serviceAccounts/*}:"
-          + "disable:\001*\022\310\001\n\026ListServiceAccountKeys\0222."
-          + "google.iam.admin.v1.ListServiceAccountKe"
-          + "ysRequest\0323.google.iam.admin.v1.ListServ"
-          + "iceAccountKeysResponse\"E\202\323\344\223\002.\022,/v1/{nam"
-          + "e=projects/*/serviceAccounts/*}/keys\332A\016n"
-          + "ame,key_types\022\277\001\n\024GetServiceAccountKey\0220"
-          + ".google.iam.admin.v1.GetServiceAccountKe"
+          + "countPublicKeyTypeB\003\340A\001\"\326\004\n\021ServiceAccou"
+          + "ntKey\022\014\n\004name\030\001 \001(\t\022K\n\020private_key_type\030"
+          + "\002 \001(\01621.google.iam.admin.v1.ServiceAccou"
+          + "ntPrivateKeyType\022F\n\rkey_algorithm\030\010 \001(\0162"
+          + "/.google.iam.admin.v1.ServiceAccountKeyA"
+          + "lgorithm\022\030\n\020private_key_data\030\003 \001(\014\022\027\n\017pu"
+          + "blic_key_data\030\007 \001(\014\0224\n\020valid_after_time\030"
+          + "\004 \001(\0132\032.google.protobuf.Timestamp\0225\n\021val"
+          + "id_before_time\030\005 \001(\0132\032.google.protobuf.T"
+          + "imestamp\022@\n\nkey_origin\030\t \001(\0162,.google.ia"
+          + "m.admin.v1.ServiceAccountKeyOrigin\022L\n\010ke"
+          + "y_type\030\n \001(\0162:.google.iam.admin.v1.ListS"
+          + "erviceAccountKeysRequest.KeyType\022\020\n\010disa"
+          + "bled\030\013 \001(\010:\\\352AY\n\026iam.googleapis.com/Key\022"
+          + "?projects/{project}/serviceAccounts/{ser"
+          + "vice_account}/keys/{key}\"\356\001\n\036CreateServi"
+          + "ceAccountKeyRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372A"
+          + "#\n!iam.googleapis.com/ServiceAccount\022K\n\020"
+          + "private_key_type\030\002 \001(\01621.google.iam.admi"
+          + "n.v1.ServiceAccountPrivateKeyType\022F\n\rkey"
+          + "_algorithm\030\003 \001(\0162/.google.iam.admin.v1.S"
+          + "erviceAccountKeyAlgorithm\"G\n\036UploadServi"
+          + "ceAccountKeyRequest\022\014\n\004name\030\001 \001(\t\022\027\n\017pub"
+          + "lic_key_data\030\002 \001(\014\"N\n\036DeleteServiceAccou"
+          + "ntKeyRequest\022,\n\004name\030\001 \001(\tB\036\340A\002\372A\030\n\026iam."
+          + "googleapis.com/Key\"O\n\037DisableServiceAcco"
+          + "untKeyRequest\022,\n\004name\030\001 \001(\tB\036\340A\002\372A\030\n\026iam"
+          + ".googleapis.com/Key\"N\n\036EnableServiceAcco"
+          + "untKeyRequest\022,\n\004name\030\001 \001(\tB\036\340A\002\372A\030\n\026iam"
+          + ".googleapis.com/Key\"j\n\017SignBlobRequest\0229"
+          + "\n\004name\030\001 \001(\tB+\030\001\340A\002\372A#\n!iam.googleapis.c"
+          + "om/ServiceAccount\022\034\n\rbytes_to_sign\030\002 \001(\014"
+          + "B\005\030\001\340A\002\"=\n\020SignBlobResponse\022\022\n\006key_id\030\001 "
+          + "\001(\tB\002\030\001\022\025\n\tsignature\030\002 \001(\014B\002\030\001\"c\n\016SignJw"
+          + "tRequest\0229\n\004name\030\001 \001(\tB+\030\001\340A\002\372A#\n!iam.go"
+          + "ogleapis.com/ServiceAccount\022\026\n\007payload\030\002"
+          + " \001(\tB\005\030\001\340A\002\"=\n\017SignJwtResponse\022\022\n\006key_id"
+          + "\030\001 \001(\tB\002\030\001\022\026\n\nsigned_jwt\030\002 \001(\tB\002\030\001\"\206\002\n\004R"
+          + "ole\022\014\n\004name\030\001 \001(\t\022\r\n\005title\030\002 \001(\t\022\023\n\013desc"
+          + "ription\030\003 \001(\t\022\034\n\024included_permissions\030\007 "
+          + "\003(\t\0228\n\005stage\030\010 \001(\0162).google.iam.admin.v1"
+          + ".Role.RoleLaunchStage\022\014\n\004etag\030\t \001(\014\022\017\n\007d"
+          + "eleted\030\013 \001(\010\"U\n\017RoleLaunchStage\022\t\n\005ALPHA"
+          + "\020\000\022\010\n\004BETA\020\001\022\006\n\002GA\020\002\022\016\n\nDEPRECATED\020\004\022\014\n\010"
+          + "DISABLED\020\005\022\007\n\003EAP\020\006\"\221\001\n\032QueryGrantableRo"
+          + "lesRequest\022\037\n\022full_resource_name\030\001 \001(\tB\003"
+          + "\340A\002\022+\n\004view\030\002 \001(\0162\035.google.iam.admin.v1."
+          + "RoleView\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_toke"
+          + "n\030\004 \001(\t\"`\n\033QueryGrantableRolesResponse\022("
+          + "\n\005roles\030\001 \003(\0132\031.google.iam.admin.v1.Role"
+          + "\022\027\n\017next_page_token\030\002 \001(\t\"\224\001\n\020ListRolesR"
+          + "equest\022\026\n\006parent\030\001 \001(\tB\006\372A\003\n\001*\022\021\n\tpage_s"
+          + "ize\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022+\n\004view\030\004 "
+          + "\001(\0162\035.google.iam.admin.v1.RoleView\022\024\n\014sh"
+          + "ow_deleted\030\006 \001(\010\"V\n\021ListRolesResponse\022(\n"
+          + "\005roles\030\001 \003(\0132\031.google.iam.admin.v1.Role\022"
+          + "\027\n\017next_page_token\030\002 \001(\t\"&\n\016GetRoleReque"
+          + "st\022\024\n\004name\030\001 \001(\tB\006\372A\003\n\001*\"e\n\021CreateRoleRe"
+          + "quest\022\026\n\006parent\030\001 \001(\tB\006\372A\003\n\001*\022\017\n\007role_id"
+          + "\030\002 \001(\t\022\'\n\004role\030\003 \001(\0132\031.google.iam.admin."
+          + "v1.Role\"\203\001\n\021UpdateRoleRequest\022\024\n\004name\030\001 "
+          + "\001(\tB\006\372A\003\n\001*\022\'\n\004role\030\002 \001(\0132\031.google.iam.a"
+          + "dmin.v1.Role\022/\n\013update_mask\030\003 \001(\0132\032.goog"
+          + "le.protobuf.FieldMask\"7\n\021DeleteRoleReque"
+          + "st\022\024\n\004name\030\001 \001(\tB\006\372A\003\n\001*\022\014\n\004etag\030\002 \001(\014\"9"
+          + "\n\023UndeleteRoleRequest\022\024\n\004name\030\001 \001(\tB\006\372A\003"
+          + "\n\001*\022\014\n\004etag\030\002 \001(\014\"\311\003\n\nPermission\022\014\n\004name"
+          + "\030\001 \001(\t\022\r\n\005title\030\002 \001(\t\022\023\n\013description\030\003 \001"
+          + "(\t\022$\n\030only_in_predefined_roles\030\004 \001(\010B\002\030\001"
+          + "\022D\n\005stage\030\005 \001(\01625.google.iam.admin.v1.Pe"
+          + "rmission.PermissionLaunchStage\022[\n\032custom"
+          + "_roles_support_level\030\006 \001(\01627.google.iam."
+          + "admin.v1.Permission.CustomRolesSupportLe"
+          + "vel\022\024\n\014api_disabled\030\007 \001(\010\022\032\n\022primary_per"
+          + "mission\030\010 \001(\t\"D\n\025PermissionLaunchStage\022\t"
+          + "\n\005ALPHA\020\000\022\010\n\004BETA\020\001\022\006\n\002GA\020\002\022\016\n\nDEPRECATE"
+          + "D\020\003\"H\n\027CustomRolesSupportLevel\022\r\n\tSUPPOR"
+          + "TED\020\000\022\013\n\007TESTING\020\001\022\021\n\rNOT_SUPPORTED\020\002\"d\n"
+          + "\037QueryTestablePermissionsRequest\022\032\n\022full"
+          + "_resource_name\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022"
+          + "\022\n\npage_token\030\003 \001(\t\"q\n QueryTestablePerm"
+          + "issionsResponse\0224\n\013permissions\030\001 \003(\0132\037.g"
+          + "oogle.iam.admin.v1.Permission\022\027\n\017next_pa"
+          + "ge_token\030\002 \001(\t\";\n\035QueryAuditableServices"
+          + "Request\022\032\n\022full_resource_name\030\001 \001(\t\"\232\001\n\036"
+          + "QueryAuditableServicesResponse\022V\n\010servic"
+          + "es\030\001 \003(\0132D.google.iam.admin.v1.QueryAudi"
+          + "tableServicesResponse.AuditableService\032 "
+          + "\n\020AuditableService\022\014\n\004name\030\001 \001(\t\"f\n\021Lint"
+          + "PolicyRequest\022\032\n\022full_resource_name\030\001 \001("
+          + "\t\022&\n\tcondition\030\005 \001(\0132\021.google.type.ExprH"
+          + "\000B\r\n\013lint_object\"\363\002\n\nLintResult\0224\n\005level"
+          + "\030\001 \001(\0162%.google.iam.admin.v1.LintResult."
+          + "Level\022\034\n\024validation_unit_name\030\002 \001(\t\022:\n\010s"
+          + "everity\030\003 \001(\0162(.google.iam.admin.v1.Lint"
+          + "Result.Severity\022\022\n\nfield_name\030\005 \001(\t\022\027\n\017l"
+          + "ocation_offset\030\006 \001(\005\022\025\n\rdebug_message\030\007 "
+          + "\001(\t\"-\n\005Level\022\025\n\021LEVEL_UNSPECIFIED\020\000\022\r\n\tC"
+          + "ONDITION\020\003\"b\n\010Severity\022\030\n\024SEVERITY_UNSPE"
+          + "CIFIED\020\000\022\t\n\005ERROR\020\001\022\013\n\007WARNING\020\002\022\n\n\006NOTI"
+          + "CE\020\003\022\010\n\004INFO\020\004\022\016\n\nDEPRECATED\020\005\"K\n\022LintPo"
+          + "licyResponse\0225\n\014lint_results\030\001 \003(\0132\037.goo"
+          + "gle.iam.admin.v1.LintResult*a\n\032ServiceAc"
+          + "countKeyAlgorithm\022\027\n\023KEY_ALG_UNSPECIFIED"
+          + "\020\000\022\024\n\020KEY_ALG_RSA_1024\020\001\022\024\n\020KEY_ALG_RSA_"
+          + "2048\020\002*l\n\034ServiceAccountPrivateKeyType\022\024"
+          + "\n\020TYPE_UNSPECIFIED\020\000\022\024\n\020TYPE_PKCS12_FILE"
+          + "\020\001\022 \n\034TYPE_GOOGLE_CREDENTIALS_FILE\020\002*]\n\033"
+          + "ServiceAccountPublicKeyType\022\r\n\tTYPE_NONE"
+          + "\020\000\022\026\n\022TYPE_X509_PEM_FILE\020\001\022\027\n\023TYPE_RAW_P"
+          + "UBLIC_KEY\020\002*Y\n\027ServiceAccountKeyOrigin\022\026"
+          + "\n\022ORIGIN_UNSPECIFIED\020\000\022\021\n\rUSER_PROVIDED\020"
+          + "\001\022\023\n\017GOOGLE_PROVIDED\020\002*\037\n\010RoleView\022\t\n\005BA"
+          + "SIC\020\000\022\010\n\004FULL\020\0012\232+\n\003IAM\022\256\001\n\023ListServiceA"
+          + "ccounts\022/.google.iam.admin.v1.ListServic"
+          + "eAccountsRequest\0320.google.iam.admin.v1.L"
+          + "istServiceAccountsResponse\"4\202\323\344\223\002\'\022%/v1/"
+          + "{name=projects/*}/serviceAccounts\332A\004name"
+          + "\022\237\001\n\021GetServiceAccount\022-.google.iam.admi"
+          + "n.v1.GetServiceAccountRequest\032#.google.i"
+          + "am.admin.v1.ServiceAccount\"6\202\323\344\223\002)\022\'/v1/"
+          + "{name=projects/*/serviceAccounts/*}\332A\004na"
+          + "me\022\301\001\n\024CreateServiceAccount\0220.google.iam"
+          + ".admin.v1.CreateServiceAccountRequest\032#."
+          + "google.iam.admin.v1.ServiceAccount\"R\202\323\344\223"
+          + "\002*\"%/v1/{name=projects/*}/serviceAccount"
+          + "s:\001*\332A\037name,account_id,service_account\022\224"
+          + "\001\n\024UpdateServiceAccount\022#.google.iam.adm"
+          + "in.v1.ServiceAccount\032#.google.iam.admin."
+          + "v1.ServiceAccount\"2\202\323\344\223\002,\032\'/v1/{name=pro"
+          + "jects/*/serviceAccounts/*}:\001*\022\257\001\n\023PatchS"
+          + "erviceAccount\022/.google.iam.admin.v1.Patc"
+          + "hServiceAccountRequest\032#.google.iam.admi"
+          + "n.v1.ServiceAccount\"B\202\323\344\223\002<27/v1/{servic"
+          + "e_account.name=projects/*/serviceAccount"
+          + "s/*}:\001*\022\230\001\n\024DeleteServiceAccount\0220.googl"
+          + "e.iam.admin.v1.DeleteServiceAccountReque"
+          + "st\032\026.google.protobuf.Empty\"6\202\323\344\223\002)*\'/v1/"
+          + "{name=projects/*/serviceAccounts/*}\332A\004na"
+          + "me\022\276\001\n\026UndeleteServiceAccount\0222.google.i"
+          + "am.admin.v1.UndeleteServiceAccountReques"
+          + "t\0323.google.iam.admin.v1.UndeleteServiceA"
+          + "ccountResponse\";\202\323\344\223\0025\"0/v1/{name=projec"
+          + "ts/*/serviceAccounts/*}:undelete:\001*\022\233\001\n\024"
+          + "EnableServiceAccount\0220.google.iam.admin."
+          + "v1.EnableServiceAccountRequest\032\026.google."
+          + "protobuf.Empty\"9\202\323\344\223\0023\"./v1/{name=projec"
+          + "ts/*/serviceAccounts/*}:enable:\001*\022\236\001\n\025Di"
+          + "sableServiceAccount\0221.google.iam.admin.v"
+          + "1.DisableServiceAccountRequest\032\026.google."
+          + "protobuf.Empty\":\202\323\344\223\0024\"//v1/{name=projec"
+          + "ts/*/serviceAccounts/*}:disable:\001*\022\310\001\n\026L"
+          + "istServiceAccountKeys\0222.google.iam.admin"
+          + ".v1.ListServiceAccountKeysRequest\0323.goog"
+          + "le.iam.admin.v1.ListServiceAccountKeysRe"
+          + "sponse\"E\202\323\344\223\002.\022,/v1/{name=projects/*/ser"
+          + "viceAccounts/*}/keys\332A\016name,key_types\022\277\001"
+          + "\n\024GetServiceAccountKey\0220.google.iam.admi"
+          + "n.v1.GetServiceAccountKeyRequest\032&.googl"
+          + "e.iam.admin.v1.ServiceAccountKey\"M\202\323\344\223\0020"
+          + "\022./v1/{name=projects/*/serviceAccounts/*"
+          + "/keys/*}\332A\024name,public_key_type\022\325\001\n\027Crea"
+          + "teServiceAccountKey\0223.google.iam.admin.v"
+          + "1.CreateServiceAccountKeyRequest\032&.googl"
+          + "e.iam.admin.v1.ServiceAccountKey\"]\202\323\344\223\0021"
+          + "\",/v1/{name=projects/*/serviceAccounts/*"
+          + "}/keys:\001*\332A#name,private_key_type,key_al"
+          + "gorithm\022\266\001\n\027UploadServiceAccountKey\0223.go"
+          + "ogle.iam.admin.v1.UploadServiceAccountKe"
           + "yRequest\032&.google.iam.admin.v1.ServiceAc"
-          + "countKey\"M\202\323\344\223\0020\022./v1/{name=projects/*/s"
-          + "erviceAccounts/*/keys/*}\332A\024name,public_k"
-          + "ey_type\022\325\001\n\027CreateServiceAccountKey\0223.go"
-          + "ogle.iam.admin.v1.CreateServiceAccountKe"
-          + "yRequest\032&.google.iam.admin.v1.ServiceAc"
-          + "countKey\"]\202\323\344\223\0021\",/v1/{name=projects/*/s"
-          + "erviceAccounts/*}/keys:\001*\332A#name,private"
-          + "_key_type,key_algorithm\022\266\001\n\027UploadServic"
-          + "eAccountKey\0223.google.iam.admin.v1.Upload"
-          + "ServiceAccountKeyRequest\032&.google.iam.ad"
-          + "min.v1.ServiceAccountKey\">\202\323\344\223\0028\"3/v1/{n"
-          + "ame=projects/*/serviceAccounts/*}/keys:u"
-          + "pload:\001*\022\245\001\n\027DeleteServiceAccountKey\0223.g"
-          + "oogle.iam.admin.v1.DeleteServiceAccountK"
-          + "eyRequest\032\026.google.protobuf.Empty\"=\202\323\344\223\002"
-          + "0*./v1/{name=projects/*/serviceAccounts/"
-          + "*/keys/*}\332A\004name\022\254\001\n\010SignBlob\022$.google.i"
-          + "am.admin.v1.SignBlobRequest\032%.google.iam"
-          + ".admin.v1.SignBlobResponse\"S\210\002\001\202\323\344\223\0025\"0/"
-          + "v1/{name=projects/*/serviceAccounts/*}:s"
-          + "ignBlob:\001*\332A\022name,bytes_to_sign\022\242\001\n\007Sign"
-          + "Jwt\022#.google.iam.admin.v1.SignJwtRequest"
-          + "\032$.google.iam.admin.v1.SignJwtResponse\"L"
-          + "\210\002\001\202\323\344\223\0024\"//v1/{name=projects/*/serviceA"
-          + "ccounts/*}:signJwt:\001*\332A\014name,payload\022\226\001\n"
-          + "\014GetIamPolicy\022\".google.iam.v1.GetIamPoli"
-          + "cyRequest\032\025.google.iam.v1.Policy\"K\202\323\344\223\002:"
-          + "\"8/v1/{resource=projects/*/serviceAccoun"
-          + "ts/*}:getIamPolicy\332A\010resource\022\240\001\n\014SetIam"
-          + "Policy\022\".google.iam.v1.SetIamPolicyReque"
-          + "st\032\025.google.iam.v1.Policy\"U\202\323\344\223\002=\"8/v1/{"
-          + "resource=projects/*/serviceAccounts/*}:s"
-          + "etIamPolicy:\001*\332A\017resource,policy\022\313\001\n\022Tes"
-          + "tIamPermissions\022(.google.iam.v1.TestIamP"
-          + "ermissionsRequest\032).google.iam.v1.TestIa"
-          + "mPermissionsResponse\"`\202\323\344\223\002C\">/v1/{resou"
-          + "rce=projects/*/serviceAccounts/*}:testIa"
-          + "mPermissions:\001*\332A\024resource,permissions\022\267"
-          + "\001\n\023QueryGrantableRoles\022/.google.iam.admi"
-          + "n.v1.QueryGrantableRolesRequest\0320.google"
-          + ".iam.admin.v1.QueryGrantableRolesRespons"
-          + "e\"=\202\323\344\223\002\"\"\035/v1/roles:queryGrantableRoles"
-          + ":\001*\332A\022full_resource_name\022\264\001\n\tListRoles\022%"
-          + ".google.iam.admin.v1.ListRolesRequest\032&."
-          + "google.iam.admin.v1.ListRolesResponse\"X\202"
-          + "\323\344\223\002R\022\t/v1/rolesZ$\022\"/v1/{parent=organiza"
-          + "tions/*}/rolesZ\037\022\035/v1/{parent=projects/*"
-          + "}/roles\022\254\001\n\007GetRole\022#.google.iam.admin.v"
-          + "1.GetRoleRequest\032\031.google.iam.admin.v1.R"
-          + "ole\"a\202\323\344\223\002[\022\022/v1/{name=roles/*}Z$\022\"/v1/{"
-          + "name=organizations/*/roles/*}Z\037\022\035/v1/{na"
-          + "me=projects/*/roles/*}\022\242\001\n\nCreateRole\022&."
-          + "google.iam.admin.v1.CreateRoleRequest\032\031."
-          + "google.iam.admin.v1.Role\"Q\202\323\344\223\002K\"\"/v1/{p"
-          + "arent=organizations/*}/roles:\001*Z\"\"\035/v1/{"
-          + "parent=projects/*}/roles:\001*\022\250\001\n\nUpdateRo"
-          + "le\022&.google.iam.admin.v1.UpdateRoleReque"
-          + "st\032\031.google.iam.admin.v1.Role\"W\202\323\344\223\002Q2\"/"
-          + "v1/{name=organizations/*/roles/*}:\004roleZ"
-          + "%2\035/v1/{name=projects/*/roles/*}:\004role\022\234"
-          + "\001\n\nDeleteRole\022&.google.iam.admin.v1.Dele"
-          + "teRoleRequest\032\031.google.iam.admin.v1.Role"
-          + "\"K\202\323\344\223\002E*\"/v1/{name=organizations/*/role"
-          + "s/*}Z\037*\035/v1/{name=projects/*/roles/*}\022\270\001"
-          + "\n\014UndeleteRole\022(.google.iam.admin.v1.Und"
-          + "eleteRoleRequest\032\031.google.iam.admin.v1.R"
-          + "ole\"c\202\323\344\223\002]\"+/v1/{name=organizations/*/r"
-          + "oles/*}:undelete:\001*Z+\"&/v1/{name=project"
-          + "s/*/roles/*}:undelete:\001*\022\274\001\n\030QueryTestab"
-          + "lePermissions\0224.google.iam.admin.v1.Quer"
-          + "yTestablePermissionsRequest\0325.google.iam"
-          + ".admin.v1.QueryTestablePermissionsRespon"
-          + "se\"3\202\323\344\223\002-\"(/v1/permissions:queryTestabl"
-          + "ePermissions:\001*\022\264\001\n\026QueryAuditableServic"
-          + "es\0222.google.iam.admin.v1.QueryAuditableS"
-          + "ervicesRequest\0323.google.iam.admin.v1.Que"
-          + "ryAuditableServicesResponse\"1\202\323\344\223\002+\"&/v1"
-          + "/iamPolicies:queryAuditableServices:\001*\022\204"
-          + "\001\n\nLintPolicy\022&.google.iam.admin.v1.Lint"
-          + "PolicyRequest\032\'.google.iam.admin.v1.Lint"
-          + "PolicyResponse\"%\202\323\344\223\002\037\"\032/v1/iamPolicies:"
-          + "lintPolicy:\001*\032F\312A\022iam.googleapis.com\322A.h"
-          + "ttps://www.googleapis.com/auth/cloud-pla"
-          + "tformB\232\001\n\027com.google.iam.admin.v1B\010IamPr"
-          + "otoP\001Z8google.golang.org/genproto/google"
-          + "apis/iam/admin/v1;admin\370\001\001\252\002\031Google.Clou"
-          + "d.Iam.Admin.V1\312\002\031Google\\Cloud\\Iam\\Admin\\"
-          + "V1b\006proto3"
+          + "countKey\">\202\323\344\223\0028\"3/v1/{name=projects/*/s"
+          + "erviceAccounts/*}/keys:upload:\001*\022\245\001\n\027Del"
+          + "eteServiceAccountKey\0223.google.iam.admin."
+          + "v1.DeleteServiceAccountKeyRequest\032\026.goog"
+          + "le.protobuf.Empty\"=\202\323\344\223\0020*./v1/{name=pro"
+          + "jects/*/serviceAccounts/*/keys/*}\332A\004name"
+          + "\022\262\001\n\030DisableServiceAccountKey\0224.google.i"
+          + "am.admin.v1.DisableServiceAccountKeyRequ"
+          + "est\032\026.google.protobuf.Empty\"H\202\323\344\223\002;\"6/v1"
+          + "/{name=projects/*/serviceAccounts/*/keys"
+          + "/*}:disable:\001*\332A\004name\022\257\001\n\027EnableServiceA"
+          + "ccountKey\0223.google.iam.admin.v1.EnableSe"
+          + "rviceAccountKeyRequest\032\026.google.protobuf"
+          + ".Empty\"G\202\323\344\223\002:\"5/v1/{name=projects/*/ser"
+          + "viceAccounts/*/keys/*}:enable:\001*\332A\004name\022"
+          + "\254\001\n\010SignBlob\022$.google.iam.admin.v1.SignB"
+          + "lobRequest\032%.google.iam.admin.v1.SignBlo"
+          + "bResponse\"S\210\002\001\202\323\344\223\0025\"0/v1/{name=projects"
+          + "/*/serviceAccounts/*}:signBlob:\001*\332A\022name"
+          + ",bytes_to_sign\022\242\001\n\007SignJwt\022#.google.iam."
+          + "admin.v1.SignJwtRequest\032$.google.iam.adm"
+          + "in.v1.SignJwtResponse\"L\210\002\001\202\323\344\223\0024\"//v1/{n"
+          + "ame=projects/*/serviceAccounts/*}:signJw"
+          + "t:\001*\332A\014name,payload\022\226\001\n\014GetIamPolicy\022\".g"
+          + "oogle.iam.v1.GetIamPolicyRequest\032\025.googl"
+          + "e.iam.v1.Policy\"K\202\323\344\223\002:\"8/v1/{resource=p"
+          + "rojects/*/serviceAccounts/*}:getIamPolic"
+          + "y\332A\010resource\022\240\001\n\014SetIamPolicy\022\".google.i"
+          + "am.v1.SetIamPolicyRequest\032\025.google.iam.v"
+          + "1.Policy\"U\202\323\344\223\002=\"8/v1/{resource=projects"
+          + "/*/serviceAccounts/*}:setIamPolicy:\001*\332A\017"
+          + "resource,policy\022\313\001\n\022TestIamPermissions\022("
+          + ".google.iam.v1.TestIamPermissionsRequest"
+          + "\032).google.iam.v1.TestIamPermissionsRespo"
+          + "nse\"`\202\323\344\223\002C\">/v1/{resource=projects/*/se"
+          + "rviceAccounts/*}:testIamPermissions:\001*\332A"
+          + "\024resource,permissions\022\267\001\n\023QueryGrantable"
+          + "Roles\022/.google.iam.admin.v1.QueryGrantab"
+          + "leRolesRequest\0320.google.iam.admin.v1.Que"
+          + "ryGrantableRolesResponse\"=\202\323\344\223\002\"\"\035/v1/ro"
+          + "les:queryGrantableRoles:\001*\332A\022full_resour"
+          + "ce_name\022\264\001\n\tListRoles\022%.google.iam.admin"
+          + ".v1.ListRolesRequest\032&.google.iam.admin."
+          + "v1.ListRolesResponse\"X\202\323\344\223\002R\022\t/v1/rolesZ"
+          + "$\022\"/v1/{parent=organizations/*}/rolesZ\037\022"
+          + "\035/v1/{parent=projects/*}/roles\022\254\001\n\007GetRo"
+          + "le\022#.google.iam.admin.v1.GetRoleRequest\032"
+          + "\031.google.iam.admin.v1.Role\"a\202\323\344\223\002[\022\022/v1/"
+          + "{name=roles/*}Z$\022\"/v1/{name=organization"
+          + "s/*/roles/*}Z\037\022\035/v1/{name=projects/*/rol"
+          + "es/*}\022\242\001\n\nCreateRole\022&.google.iam.admin."
+          + "v1.CreateRoleRequest\032\031.google.iam.admin."
+          + "v1.Role\"Q\202\323\344\223\002K\"\"/v1/{parent=organizatio"
+          + "ns/*}/roles:\001*Z\"\"\035/v1/{parent=projects/*"
+          + "}/roles:\001*\022\250\001\n\nUpdateRole\022&.google.iam.a"
+          + "dmin.v1.UpdateRoleRequest\032\031.google.iam.a"
+          + "dmin.v1.Role\"W\202\323\344\223\002Q2\"/v1/{name=organiza"
+          + "tions/*/roles/*}:\004roleZ%2\035/v1/{name=proj"
+          + "ects/*/roles/*}:\004role\022\234\001\n\nDeleteRole\022&.g"
+          + "oogle.iam.admin.v1.DeleteRoleRequest\032\031.g"
+          + "oogle.iam.admin.v1.Role\"K\202\323\344\223\002E*\"/v1/{na"
+          + "me=organizations/*/roles/*}Z\037*\035/v1/{name"
+          + "=projects/*/roles/*}\022\270\001\n\014UndeleteRole\022(."
+          + "google.iam.admin.v1.UndeleteRoleRequest\032"
+          + "\031.google.iam.admin.v1.Role\"c\202\323\344\223\002]\"+/v1/"
+          + "{name=organizations/*/roles/*}:undelete:"
+          + "\001*Z+\"&/v1/{name=projects/*/roles/*}:unde"
+          + "lete:\001*\022\274\001\n\030QueryTestablePermissions\0224.g"
+          + "oogle.iam.admin.v1.QueryTestablePermissi"
+          + "onsRequest\0325.google.iam.admin.v1.QueryTe"
+          + "stablePermissionsResponse\"3\202\323\344\223\002-\"(/v1/p"
+          + "ermissions:queryTestablePermissions:\001*\022\264"
+          + "\001\n\026QueryAuditableServices\0222.google.iam.a"
+          + "dmin.v1.QueryAuditableServicesRequest\0323."
+          + "google.iam.admin.v1.QueryAuditableServic"
+          + "esResponse\"1\202\323\344\223\002+\"&/v1/iamPolicies:quer"
+          + "yAuditableServices:\001*\022\204\001\n\nLintPolicy\022&.g"
+          + "oogle.iam.admin.v1.LintPolicyRequest\032\'.g"
+          + "oogle.iam.admin.v1.LintPolicyResponse\"%\202"
+          + "\323\344\223\002\037\"\032/v1/iamPolicies:lintPolicy:\001*\032F\312A"
+          + "\022iam.googleapis.com\322A.https://www.google"
+          + "apis.com/auth/cloud-platformB\220\001\n\027com.goo"
+          + "gle.iam.admin.v1P\001Z8google.golang.org/ge"
+          + "nproto/googleapis/iam/admin/v1;admin\370\001\001\252"
+          + "\002\031Google.Cloud.Iam.Admin.V1\312\002\031Google\\Clo"
+          + "ud\\Iam\\Admin\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
@@ -510,7 +532,6 @@ public final class IamProto {
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.type.ExprProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_iam_admin_v1_ServiceAccount_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -647,6 +668,7 @@ public final class IamProto {
               "ValidBeforeTime",
               "KeyOrigin",
               "KeyType",
+              "Disabled",
             });
     internal_static_google_iam_admin_v1_CreateServiceAccountKeyRequest_descriptor =
         getDescriptor().getMessageTypes().get(15);
@@ -672,8 +694,24 @@ public final class IamProto {
             new java.lang.String[] {
               "Name",
             });
-    internal_static_google_iam_admin_v1_SignBlobRequest_descriptor =
+    internal_static_google_iam_admin_v1_DisableServiceAccountKeyRequest_descriptor =
         getDescriptor().getMessageTypes().get(18);
+    internal_static_google_iam_admin_v1_DisableServiceAccountKeyRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_iam_admin_v1_DisableServiceAccountKeyRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_iam_admin_v1_EnableServiceAccountKeyRequest_descriptor =
+        getDescriptor().getMessageTypes().get(19);
+    internal_static_google_iam_admin_v1_EnableServiceAccountKeyRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_iam_admin_v1_EnableServiceAccountKeyRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_iam_admin_v1_SignBlobRequest_descriptor =
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_iam_admin_v1_SignBlobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_iam_admin_v1_SignBlobRequest_descriptor,
@@ -681,7 +719,7 @@ public final class IamProto {
               "Name", "BytesToSign",
             });
     internal_static_google_iam_admin_v1_SignBlobResponse_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_iam_admin_v1_SignBlobResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_iam_admin_v1_SignBlobResponse_descriptor,
@@ -689,7 +727,7 @@ public final class IamProto {
               "KeyId", "Signature",
             });
     internal_static_google_iam_admin_v1_SignJwtRequest_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_iam_admin_v1_SignJwtRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_iam_admin_v1_SignJwtRequest_descriptor,
@@ -697,14 +735,14 @@ public final class IamProto {
               "Name", "Payload",
             });
     internal_static_google_iam_admin_v1_SignJwtResponse_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_iam_admin_v1_SignJwtResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_iam_admin_v1_SignJwtResponse_descriptor,
             new java.lang.String[] {
               "KeyId", "SignedJwt",
             });
-    internal_static_google_iam_admin_v1_Role_descriptor = getDescriptor().getMessageTypes().get(22);
+    internal_static_google_iam_admin_v1_Role_descriptor = getDescriptor().getMessageTypes().get(24);
     internal_static_google_iam_admin_v1_Role_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_iam_admin_v1_Role_descriptor,
@@ -712,7 +750,7 @@ public final class IamProto {
               "Name", "Title", "Description", "IncludedPermissions", "Stage", "Etag", "Deleted",
             });
     internal_static_google_iam_admin_v1_QueryGrantableRolesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_iam_admin_v1_QueryGrantableRolesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_iam_admin_v1_QueryGrantableRolesRequest_descriptor,
@@ -720,7 +758,7 @@ public final class IamProto {
               "FullResourceName", "View", "PageSize", "PageToken",
             });
     internal_static_google_iam_admin_v1_QueryGrantableRolesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_iam_admin_v1_QueryGrantableRolesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_iam_admin_v1_QueryGrantableRolesResponse_descriptor,
@@ -728,7 +766,7 @@ public final class IamProto {
               "Roles", "NextPageToken",
             });
     internal_static_google_iam_admin_v1_ListRolesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_iam_admin_v1_ListRolesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_iam_admin_v1_ListRolesRequest_descriptor,
@@ -736,7 +774,7 @@ public final class IamProto {
               "Parent", "PageSize", "PageToken", "View", "ShowDeleted",
             });
     internal_static_google_iam_admin_v1_ListRolesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_iam_admin_v1_ListRolesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_iam_admin_v1_ListRolesResponse_descriptor,
@@ -744,7 +782,7 @@ public final class IamProto {
               "Roles", "NextPageToken",
             });
     internal_static_google_iam_admin_v1_GetRoleRequest_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_iam_admin_v1_GetRoleRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_iam_admin_v1_GetRoleRequest_descriptor,
@@ -752,7 +790,7 @@ public final class IamProto {
               "Name",
             });
     internal_static_google_iam_admin_v1_CreateRoleRequest_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_iam_admin_v1_CreateRoleRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_iam_admin_v1_CreateRoleRequest_descriptor,
@@ -760,7 +798,7 @@ public final class IamProto {
               "Parent", "RoleId", "Role",
             });
     internal_static_google_iam_admin_v1_UpdateRoleRequest_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_iam_admin_v1_UpdateRoleRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_iam_admin_v1_UpdateRoleRequest_descriptor,
@@ -768,7 +806,7 @@ public final class IamProto {
               "Name", "Role", "UpdateMask",
             });
     internal_static_google_iam_admin_v1_DeleteRoleRequest_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_iam_admin_v1_DeleteRoleRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_iam_admin_v1_DeleteRoleRequest_descriptor,
@@ -776,7 +814,7 @@ public final class IamProto {
               "Name", "Etag",
             });
     internal_static_google_iam_admin_v1_UndeleteRoleRequest_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_iam_admin_v1_UndeleteRoleRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_iam_admin_v1_UndeleteRoleRequest_descriptor,
@@ -784,7 +822,7 @@ public final class IamProto {
               "Name", "Etag",
             });
     internal_static_google_iam_admin_v1_Permission_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_iam_admin_v1_Permission_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_iam_admin_v1_Permission_descriptor,
@@ -799,7 +837,7 @@ public final class IamProto {
               "PrimaryPermission",
             });
     internal_static_google_iam_admin_v1_QueryTestablePermissionsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_iam_admin_v1_QueryTestablePermissionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_iam_admin_v1_QueryTestablePermissionsRequest_descriptor,
@@ -807,7 +845,7 @@ public final class IamProto {
               "FullResourceName", "PageSize", "PageToken",
             });
     internal_static_google_iam_admin_v1_QueryTestablePermissionsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_iam_admin_v1_QueryTestablePermissionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_iam_admin_v1_QueryTestablePermissionsResponse_descriptor,
@@ -815,7 +853,7 @@ public final class IamProto {
               "Permissions", "NextPageToken",
             });
     internal_static_google_iam_admin_v1_QueryAuditableServicesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_iam_admin_v1_QueryAuditableServicesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_iam_admin_v1_QueryAuditableServicesRequest_descriptor,
@@ -823,7 +861,7 @@ public final class IamProto {
               "FullResourceName",
             });
     internal_static_google_iam_admin_v1_QueryAuditableServicesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_iam_admin_v1_QueryAuditableServicesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_iam_admin_v1_QueryAuditableServicesResponse_descriptor,
@@ -841,7 +879,7 @@ public final class IamProto {
               "Name",
             });
     internal_static_google_iam_admin_v1_LintPolicyRequest_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_iam_admin_v1_LintPolicyRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_iam_admin_v1_LintPolicyRequest_descriptor,
@@ -849,7 +887,7 @@ public final class IamProto {
               "FullResourceName", "Condition", "LintObject",
             });
     internal_static_google_iam_admin_v1_LintResult_descriptor =
-        getDescriptor().getMessageTypes().get(38);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_iam_admin_v1_LintResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_iam_admin_v1_LintResult_descriptor,
@@ -862,7 +900,7 @@ public final class IamProto {
               "DebugMessage",
             });
     internal_static_google_iam_admin_v1_LintPolicyResponse_descriptor =
-        getDescriptor().getMessageTypes().get(39);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_iam_admin_v1_LintPolicyResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_iam_admin_v1_LintPolicyResponse_descriptor,
@@ -880,6 +918,7 @@ public final class IamProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
@@ -889,7 +928,6 @@ public final class IamProto {
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.type.ExprProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

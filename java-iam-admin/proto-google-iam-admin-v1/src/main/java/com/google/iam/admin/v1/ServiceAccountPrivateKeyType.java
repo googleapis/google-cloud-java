@@ -157,7 +157,7 @@ public enum ServiceAccountPrivateKeyType implements com.google.protobuf.Protocol
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.iam.admin.v1.IamProto.getDescriptor().getEnumTypes().get(1);
+    return com.google.iam.admin.v1.Iam.getDescriptor().getEnumTypes().get(1);
   }
 
   private static final ServiceAccountPrivateKeyType[] VALUES = values();
