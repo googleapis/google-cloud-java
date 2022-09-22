@@ -5,4 +5,5 @@ java-compute
 java-containeranalysis
 java-datacatalog
 java-datalabeling
+java-errorreporting
 java-bigqueryconnection
