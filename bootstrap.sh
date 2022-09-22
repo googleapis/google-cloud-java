@@ -105,3 +105,5 @@ git commit -am 'feat: create CoverageAggregator module'
 
 git add --all
 git commit -am 'chore: delete non-auto-generated samples'
+
+cd ../..
