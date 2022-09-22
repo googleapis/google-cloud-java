@@ -8,3 +8,4 @@ java-datacatalog
 java-datalabeling
 java-errorreporting
 java-game-servers
+java-iot
