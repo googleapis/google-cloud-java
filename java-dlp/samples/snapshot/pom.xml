@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-dlp</artifactId>
-      <version>3.7.3</version>
+      <version>3.7.4-SNAPSHOT</version>
     </dependency>
     <!-- {x-version-update-end} -->
 
