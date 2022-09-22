@@ -13,3 +13,4 @@ java-kms
 java-monitoring
 java-resourcemanager
 java-secretmanager
+java-speech
