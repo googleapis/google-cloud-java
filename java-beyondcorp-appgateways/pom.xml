@@ -12,7 +12,7 @@
   </description>
 
   <parent>
-    <groupId>com.google.cloud</groupId>
+    <groupId>com.google.api</groupId>
     <artifactId>google-cloud-java</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
@@ -121,7 +121,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>3.3.0</version>
+        <version>3.4.1</version>
         <reportSets>
           <reportSet>
             <reports>

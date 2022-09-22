@@ -12,7 +12,7 @@
   </description>
 
   <parent>
-    <groupId>com.google.cloud</groupId>
+    <groupId>com.google.api</groupId>
     <artifactId>google-cloud-java</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>

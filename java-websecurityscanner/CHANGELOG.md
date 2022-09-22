@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.2.4](https://github.com/googleapis/java-websecurityscanner/compare/v2.2.3...v2.2.4) (2022-09-15)
+
+
+### Documentation
+
+* Publish Scan Run logging proto for documentation ([#739](https://github.com/googleapis/java-websecurityscanner/issues/739)) ([fe9f602](https://github.com/googleapis/java-websecurityscanner/commit/fe9f60296cdb7cf8fe921597f36892a72056ff00))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#742](https://github.com/googleapis/java-websecurityscanner/issues/742)) ([799689f](https://github.com/googleapis/java-websecurityscanner/commit/799689fca1fd2d336b64a44ab469f678656e3c67))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#746](https://github.com/googleapis/java-websecurityscanner/issues/746)) ([758d749](https://github.com/googleapis/java-websecurityscanner/commit/758d749e5ca6980d160e531b41af21ace21e2a77))
+* Update dependency joda-time:joda-time to v2.11.1 ([#738](https://github.com/googleapis/java-websecurityscanner/issues/738)) ([493d770](https://github.com/googleapis/java-websecurityscanner/commit/493d770ebb615ba78bb7b412f9463b2513ccfb92))
+
 ## [2.2.3](https://github.com/googleapis/java-websecurityscanner/compare/v2.2.2...v2.2.3) (2022-08-16)
 
 

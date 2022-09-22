@@ -19,7 +19,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-workflows</artifactId>
-  <version>2.3.2</version>
+  <version>2.3.3</version>
 </dependency>
 
 ```

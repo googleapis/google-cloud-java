@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.6.4](https://github.com/googleapis/java-redis/compare/v2.6.3...v2.6.4) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#691](https://github.com/googleapis/java-redis/issues/691)) ([cb31108](https://github.com/googleapis/java-redis/commit/cb31108fb9e5f07b1add1b5e0e4277588cf228eb))
+
+## [2.6.3](https://github.com/googleapis/java-redis/compare/v2.6.2...v2.6.3) (2022-09-10)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#686](https://github.com/googleapis/java-redis/issues/686)) ([a0fa17d](https://github.com/googleapis/java-redis/commit/a0fa17df7350c4e69712970d5528b2bf1e8fa481))
+
 ## [2.6.2](https://github.com/googleapis/java-redis/compare/v2.6.1...v2.6.2) (2022-08-03)
 
 

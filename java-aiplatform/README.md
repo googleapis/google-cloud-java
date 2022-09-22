@@ -23,6 +23,13 @@ If you are using Maven, add this to your pom.xml file:
 </dependency>
 ```
 
+If you are using Gradle 5.x or later, add this to your dependencies:
+
+```Groovy
+implementation platform('com.google.cloud:libraries-bom:26.1.1')
+
+implementation 'com.google.cloud:google-cloud-aiplatform'
+```
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy

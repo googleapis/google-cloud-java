@@ -111,16 +111,16 @@ public final class WebSecurityScannerProto {
       "\n=google/cloud/websecurityscanner/v1/web"
           + "_security_scanner.proto\022\"google.cloud.we"
           + "bsecurityscanner.v1\032\034google/api/annotati"
-          + "ons.proto\0324google/cloud/websecurityscann"
-          + "er/v1/crawled_url.proto\0320google/cloud/we"
-          + "bsecurityscanner/v1/finding.proto\032;googl"
-          + "e/cloud/websecurityscanner/v1/finding_ty"
-          + "pe_stats.proto\0324google/cloud/websecurity"
-          + "scanner/v1/scan_config.proto\0321google/clo"
-          + "ud/websecurityscanner/v1/scan_run.proto\032"
-          + "\033google/protobuf/empty.proto\032 google/pro"
-          + "tobuf/field_mask.proto\032\027google/api/clien"
-          + "t.proto\"n\n\027CreateScanConfigRequest\022\016\n\006pa"
+          + "ons.proto\032\027google/api/client.proto\0324goog"
+          + "le/cloud/websecurityscanner/v1/crawled_u"
+          + "rl.proto\0320google/cloud/websecurityscanne"
+          + "r/v1/finding.proto\032;google/cloud/websecu"
+          + "rityscanner/v1/finding_type_stats.proto\032"
+          + "4google/cloud/websecurityscanner/v1/scan"
+          + "_config.proto\0321google/cloud/websecuritys"
+          + "canner/v1/scan_run.proto\032\033google/protobu"
+          + "f/empty.proto\032 google/protobuf/field_mas"
+          + "k.proto\"n\n\027CreateScanConfigRequest\022\016\n\006pa"
           + "rent\030\001 \001(\t\022C\n\013scan_config\030\002 \001(\0132..google"
           + ".cloud.websecurityscanner.v1.ScanConfig\""
           + "\'\n\027DeleteScanConfigRequest\022\014\n\004name\030\001 \001(\t"
@@ -233,6 +233,7 @@ public final class WebSecurityScannerProto {
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
               com.google.cloud.websecurityscanner.v1.CrawledUrlProto.getDescriptor(),
               com.google.cloud.websecurityscanner.v1.FindingProto.getDescriptor(),
               com.google.cloud.websecurityscanner.v1.FindingTypeStatsProto.getDescriptor(),
@@ -240,7 +241,6 @@ public final class WebSecurityScannerProto {
               com.google.cloud.websecurityscanner.v1.ScanRunProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
-              com.google.api.ClientProto.getDescriptor(),
             });
     internal_static_google_cloud_websecurityscanner_v1_CreateScanConfigRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -394,6 +394,7 @@ public final class WebSecurityScannerProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
     com.google.cloud.websecurityscanner.v1.CrawledUrlProto.getDescriptor();
     com.google.cloud.websecurityscanner.v1.FindingProto.getDescriptor();
     com.google.cloud.websecurityscanner.v1.FindingTypeStatsProto.getDescriptor();
@@ -401,7 +402,6 @@ public final class WebSecurityScannerProto {
     com.google.cloud.websecurityscanner.v1.ScanRunProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

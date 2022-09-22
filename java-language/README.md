@@ -12,27 +12,55 @@ Java idiomatic client for [Natural Language][product-docs].
 ## Quickstart
 
 
-If you are using Maven, add this to your pom.xml file:
+```xml
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>libraries-bom</artifactId>
+      <version>26.1.1</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+
+<dependencies>
+  <dependency>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-language</artifactId>
+  </dependency>
+
+```
+
+If you are using Maven without BOM, add this to your dependencies:
 
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-language</artifactId>
-  <version>2.3.4</version>
+  <version>2.3.3</version>
 </dependency>
 ```
 
+If you are using Gradle 5.x or later, add this to your dependencies:
+
+```Groovy
+implementation platform('com.google.cloud:libraries-bom:26.1.1')
+
+implementation 'com.google.cloud:google-cloud-language'
+```
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-language:2.3.4'
+implementation 'com.google.cloud:google-cloud-language:2.3.3'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-language" % "2.3.4"
+libraryDependencies += "com.google.cloud" % "google-cloud-language" % "2.3.3"
 ```
 
 ## Authentication

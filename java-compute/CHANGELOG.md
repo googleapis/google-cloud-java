@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.12.1](https://github.com/googleapis/java-compute/compare/v1.12.0...v1.12.1) (2022-09-15)
+
+
+### Bug Fixes
+
+* **java:** Exclude unused dependencies from gax-grpc ([#721](https://github.com/googleapis/java-compute/issues/721)) ([4da7a1f](https://github.com/googleapis/java-compute/commit/4da7a1f10bb37ff923a20c23f2e7d123e199b10c))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#724](https://github.com/googleapis/java-compute/issues/724)) ([2b41e83](https://github.com/googleapis/java-compute/commit/2b41e8393293b9be22bad1dae87e3a4b0ea9bbf7))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#727](https://github.com/googleapis/java-compute/issues/727)) ([63bfcce](https://github.com/googleapis/java-compute/commit/63bfcce4c520c4886fbd263d53245e3e8553a253))
+
 ## [1.12.0](https://github.com/googleapis/java-compute/compare/v1.11.0...v1.12.0) (2022-08-05)
 
 
