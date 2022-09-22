@@ -11,3 +11,4 @@ java-game-servers
 java-iot
 java-kms
 java-monitoring
+java-resourcemanager
