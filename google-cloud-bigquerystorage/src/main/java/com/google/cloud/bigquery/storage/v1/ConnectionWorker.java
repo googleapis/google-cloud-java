@@ -488,6 +488,12 @@ public class ConnectionWorker implements AutoCloseable {
         // TODO: Handle NOT_ENOUGH_QUOTA.
         // In the close case, the request is in the inflight queue, and will either be returned
         // to the user with an error, or will be resent.
+        log.fine(
+            "Sending "
+                + originalRequestBuilder.getProtoRows().getRows().getSerializedRowsCount()
+                + " rows to stream '"
+                + originalRequestBuilder.getWriteStream()
+                + "'");
         this.streamConnection.send(originalRequestBuilder.build());
       }
     }
@@ -580,6 +586,13 @@ public class ConnectionWorker implements AutoCloseable {
   }
 
   private void requestCallback(AppendRowsResponse response) {
+    log.fine(
+        "Got response on stream '"
+            + response.getWriteStream()
+            + "' "
+            + (response.hasError()
+                ? "error: " + response.getError()
+                : "offset: " + response.getAppendResult().getOffset().getValue()));
     AppendRequestAndResponse requestWrapper;
     this.lock.lock();
     if (response.hasUpdatedSchema()) {
