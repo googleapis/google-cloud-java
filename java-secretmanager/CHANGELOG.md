@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.3.7](https://github.com/googleapis/java-secretmanager/compare/v2.3.6...v2.3.7) (2022-09-22)
+
+
+### Dependencies
+
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.14 ([#846](https://github.com/googleapis/java-secretmanager/issues/846)) ([f2985b5](https://github.com/googleapis/java-secretmanager/commit/f2985b589e2e107f346f2264c837890f1fae8bfc))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.14 ([#847](https://github.com/googleapis/java-secretmanager/issues/847)) ([27f5fa8](https://github.com/googleapis/java-secretmanager/commit/27f5fa8836ecb53b617588e33f48818b773ad65f))
+
 ## [2.3.6](https://github.com/googleapis/java-secretmanager/compare/v2.3.5...v2.3.6) (2022-09-21)
 
 
