@@ -18,7 +18,7 @@ function squash_branch {
   git commit -am 'chore: reset version'
 }
 
-get fetch origin
+git fetch origin
 
 squash_branch main $SQAUSHED_MAIN_BRANCH
 squash_branch monorepo_script_output $SQAUSHED_SPLIT_BRANCH
