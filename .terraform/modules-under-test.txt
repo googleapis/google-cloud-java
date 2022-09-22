@@ -17,3 +17,4 @@ java-speech
 java-trace
 java-translate
 java-video-intelligence
+java-vision
