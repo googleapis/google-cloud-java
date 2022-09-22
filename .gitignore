@@ -40,4 +40,5 @@ api_key
 *.lock.
 *.tfstate
 *.tfstate.backup
+*.tfstate.*.backup
 *.tfstate.lock.info

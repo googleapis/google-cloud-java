@@ -69,6 +69,9 @@ function performTest() {
   popd || exit
 
   # Clean up provisioned resources regardless of exit code
+  if [[ -f "./predestroy.sh" ]]; then
+    source "./predestroy.sh"
+  fi
   terraform destroy -auto-approve || exit
   popd || exit
 
