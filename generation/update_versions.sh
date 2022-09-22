@@ -8,7 +8,6 @@ function retry_with_backoff {
   shift 2
   command=$@
 
-
   # store current flag state
   flags=$-
 
@@ -25,7 +24,7 @@ function retry_with_backoff {
 
   if [[ $exit_code == 0 ]]
   then
-      return 0
+    return 0
   fi
 
   # failure
