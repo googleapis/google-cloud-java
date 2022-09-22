@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.7.3](https://github.com/googleapis/java-dlp/compare/v3.7.2...v3.7.3) (2022-09-22)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-pubsub to v1.120.18 ([#995](https://github.com/googleapis/java-dlp/issues/995)) ([0b3796d](https://github.com/googleapis/java-dlp/commit/0b3796d78eefb1da74806170e2566c2301aa5d93))
+
 ## [3.7.2](https://github.com/googleapis/java-dlp/compare/v3.7.1...v3.7.2) (2022-09-20)
 
 
