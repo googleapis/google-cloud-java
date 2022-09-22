@@ -12,3 +12,4 @@ java-iot
 java-kms
 java-monitoring
 java-resourcemanager
+java-secretmanager
