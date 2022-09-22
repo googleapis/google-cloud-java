@@ -37,8 +37,10 @@ public class FeaturestoreSamplesTest {
 
   private static final String PROJECT_ID = System.getenv("UCAIP_PROJECT_ID");
   private static final int MIN_NODE_COUNT = 1;
-  private static final int MAX_NODE_COUNT = 5;
-  private static final int FIXED_NODE_COUNT = 5;
+  private static final int MAX_NODE_COUNT = 2;
+  private static final int FIXED_NODE_COUNT = 2;
+  private static final String DESCRIPTION = "Test Description";
+  private static final int MONITORING_INTERVAL_DAYS = 1;
   private static final boolean USE_FORCE = true;
   private static final String LOCATION = "us-central1";
   private static final String ENDPOINT = "us-central1-aiplatform.googleapis.com:443";
@@ -87,8 +89,8 @@ public class FeaturestoreSamplesTest {
   public void testCreateFeaturestoreSample()
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
     // Create the featurestore
-    String tempUuid = UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26);
-    String id = String.format("temp_create_featurestore_test_%s", tempUuid);
+    String tempUuid = UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 25);
+    String id = String.format("temp_featurestore_samples_test_%s", tempUuid);
     CreateFeaturestoreFixedNodesSample.createFeaturestoreFixedNodesSample(
         PROJECT_ID, id, FIXED_NODE_COUNT, LOCATION, ENDPOINT, 900);
 
@@ -136,5 +138,83 @@ public class FeaturestoreSamplesTest {
     // Assert
     String listFeaturestoresAsyncResponse = bout.toString();
     assertThat(listFeaturestoresAsyncResponse).contains("List Featurestores Async Response");
+
+    // Create the entity type
+    String entityTypeTempUuid = UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 14);
+    String entityTypeId = String.format("temp_featurestore_samples_test_%s", entityTypeTempUuid);
+    CreateEntityTypeSample.createEntityTypeSample(
+        PROJECT_ID, featurestoreId, entityTypeId, DESCRIPTION, LOCATION, ENDPOINT, TIMEOUT);
+
+    // Assert
+    String createEntityTypeResponse = bout.toString();
+    assertThat(createEntityTypeResponse).contains("Create Entity Type Response");
+
+    // Get the entity type
+    GetEntityTypeSample.getEntityTypeSample(
+        PROJECT_ID, featurestoreId, entityTypeId, LOCATION, ENDPOINT);
+
+    // Assert
+    String getEntityTypeResponse = bout.toString();
+    assertThat(getEntityTypeResponse).contains("Get Entity Type Response");
+
+    // Create the entity type
+    String entityTypeMonitoringTempUuid =
+        UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 14);
+    String entityTypeMonitoringId =
+        String.format("temp_featurestore_samples_test_%s", entityTypeMonitoringTempUuid);
+    CreateEntityTypeMonitoringSample.createEntityTypeMonitoringSample(
+        PROJECT_ID,
+        featurestoreId,
+        entityTypeMonitoringId,
+        DESCRIPTION,
+        MONITORING_INTERVAL_DAYS,
+        LOCATION,
+        ENDPOINT,
+        TIMEOUT);
+
+    // Assert
+    String createEntityTypeMonitoringResponse = bout.toString();
+    assertThat(createEntityTypeMonitoringResponse)
+        .contains("Create Entity Type Monitoring Response");
+
+    // List entity types
+    ListEntityTypesSample.listEntityTypesSample(PROJECT_ID, featurestoreId, LOCATION, ENDPOINT);
+
+    // Assert
+    String listEntityTypeResponse = bout.toString();
+    assertThat(listEntityTypeResponse).contains("List Entity Types Response");
+
+    // Update the entity type
+    UpdateEntityTypeSample.updateEntityTypeSample(
+        PROJECT_ID, featurestoreId, entityTypeId, DESCRIPTION, LOCATION, ENDPOINT);
+
+    // Assert
+    String updateEntityTypeResponse = bout.toString();
+    assertThat(updateEntityTypeResponse).contains("Update Entity Type Response");
+
+    // Update the entity type
+    UpdateEntityTypeMonitoringSample.updateEntityTypeMonitoringSample(
+        PROJECT_ID, featurestoreId, entityTypeId, MONITORING_INTERVAL_DAYS, LOCATION, ENDPOINT);
+
+    // Assert
+    String updateEntityTypeMonitoringResponse = bout.toString();
+    assertThat(updateEntityTypeMonitoringResponse)
+        .contains("Update Entity Type Monitoring Response");
+
+    // List entity types
+    ListEntityTypesAsyncSample.listEntityTypesAsyncSample(
+        PROJECT_ID, featurestoreId, LOCATION, ENDPOINT);
+
+    // Assert
+    String listEntityTypeAsyncResponse = bout.toString();
+    assertThat(listEntityTypeAsyncResponse).contains("List Entity Types Async Response");
+
+    // Delete the entity type
+    DeleteEntityTypeSample.deleteEntityTypeSample(
+        PROJECT_ID, featurestoreId, entityTypeId, LOCATION, ENDPOINT, TIMEOUT);
+
+    // Assert
+    String deleteEntityTypeResponse = bout.toString();
+    assertThat(deleteEntityTypeResponse).contains("Deleted Entity Type");
   }
 }
