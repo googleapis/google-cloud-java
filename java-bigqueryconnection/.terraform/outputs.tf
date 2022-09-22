@@ -1,7 +1,3 @@
-output "project_id" {
-  value = module.project.project_id
-}
-
 output "db_name" {
   value = local.db_name
 }

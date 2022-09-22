@@ -16,119 +16,68 @@
 #
 
 #####################
-# This script uses the Terraform configurations found in the subprojects
+# This script uses the Terraform configurations found in the submodules
 # of this repository to provision a given GCP project with the correct
 # resources, perform integration testing, and then destroying the used
 # resources.
 #
 # Expected Environment Variables:
-#   TF_VAR_folder_id : Folder in which new GCP projects will be created
-#   TF_VAR_billing_account : Billing account to be used for created projects
-#   TF_VAR_project_prefix : Prefix to use for all created GCP projects
+#   GOOGLE_CLOUD_PROJECT :
+#     If defined, no GCP project will be created or destroyed.
+#     If not defined, a GCP project will be created for single-use, then destroyed.
+#
+#   If GOOGLE_CLOUD_PROJECT is not defined, the following environment variables
+#   are used. If not available, their values will be requested by prompt:
+#     TF_VAR_folder_id : Folder in which new GCP projects will be created
+#     TF_VAR_billing_account : Billing account to be used for created GCP projects
+#     TF_VAR_project_prefix : Prefix to use for all created GCP projects
+#
 #####################
 # Single Module Usage:
-# ./.terraform/test.sh <project> :: Tests only the given project
+# ./.terraform/test.sh <module> :: Tests only the given module
 #   ex: ./.terraform/test.sh java-accessapproval
 #
-# All Project Usage:
-# ./.terraform/test.sh :: Tests all projects in projects.txt
-
-function performTest() {
-  # Provision project with configuration found in './<proj>/.terraform' directory
-  pushd ./"$1"/.terraform || exit
-  terraform init || exit
-  terraform plan || exit
-  terraform apply -auto-approve || exit
-
-  # Use the project ID created by Terraform to set env and gcloud set-quota-project
-  GOOGLE_CLOUD_PROJECT=$(terraform output -raw project_id)
-  export GOOGLE_CLOUD_PROJECT
-  gcloud config set project "$GOOGLE_CLOUD_PROJECT"
-  # Clear the existing quota project directly from the configuration, and re-set.
-  sed -i.bak '/quota_project_id/d' ~/.config/gcloud/application_default_credentials.json
-  gcloud auth application-default set-quota-project "$GOOGLE_CLOUD_PROJECT"
-
-  # Set module-specific environment variables for upcoming integration test(s)
-  if [[ -f "./env.sh" ]]; then
-    source "./env.sh"
-  fi
-
-  # Perform integration testing
-  pushd ../ || exit
-  mvn -B ${INTEGRATION_TEST_ARGS} \
-    -ntp \
-    -Penable-integration-tests \
-    -DtrimStackTrace=false \
-    -Dclirr.skip=true \
-    -Denforcer.skip=true \
-    -Dcheckstyle.skip=true \
-    -fae \
-    verify
-
-  exit_code=$?
-  popd || exit
-
-  # Clean up provisioned resources regardless of exit code
-  if [[ -f "./predestroy.sh" ]]; then
-    source "./predestroy.sh"
-  fi
-  terraform destroy -auto-approve || exit
-  popd || exit
-
-  # Stop execution if integration test failed
-  if [[ $exit_code != 0 ]]; then
-    echo "Execution stopped with error in $1"
-    exit
-  fi
-}
-
-# Ensure required environment variables are set.
-if [ -z "${TF_VAR_folder_id+x}" ]; then
-  echo -n "Which GCP folder should be used when creating new GCP projects? Set TF_VAR_folder_id environment variable: "
-  read -r folder_id
-  export TF_VAR_folder_id="${folder_id}"
-fi
-if [ -z "${TF_VAR_billing_account+x}" ]; then
-  echo -n "Which GCP billing account should be assigned to created GCP projects? Set TF_VAR_billing_account environment variable: "
-  read -r billing_acct
-  export TF_VAR_billing_account="${billing_acct}"
-fi
-if [ -z "${TF_VAR_project_prefix+x}" ]; then
-  echo -n "What should be the project prefix for any created GCP project? Set TF_VAR_project_prefix environment variable: "
-  read -r prefix
-  export TF_VAR_project_prefix="${prefix}"
-fi
-
-# Perform gcloud auth login if no current credentials are available.
-if gcloud auth application-default print-access-token &>/dev/null; then
-  true
-else
-  if ! gcloud auth application-default login; then
-    exit
-  fi
-fi
-if gcloud auth print-access-token &>/dev/null; then
-  true
-else
-  if ! gcloud auth login; then
-    exit
-  fi
-fi
+# All Module Usage:
+# ./.terraform/test.sh :: Tests all modules in modules-under-test.txt
 
 # Ensure current directory is root repo folder
 scriptDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 cd "$scriptDir/.." || exit
 
+source ./.terraform/helpers/gcloud-login.sh
+source ./.terraform/helpers/create-project.sh
+source ./.terraform/helpers/test-module.sh
+
+# Create a single-use project if one is not already provided via GOOGLE_CLOUD_PROJECT env var.
+if [ -z "${GOOGLE_CLOUD_PROJECT+x}" ]; then
+  echo "GOOGLE_CLOUD_PROJECT environment variable not set. Creating single-use project!"
+  createProject
+  createdProject=true
+else
+  createdProject=false
+fi
+
+# Use the project ID in gcloud set-quota-project
+gcloud config set project "$GOOGLE_CLOUD_PROJECT"
+# Clear the existing quota project directly from the configuration, and re-set.
+sed -i.bak '/quota_project_id/d' ~/.config/gcloud/application_default_credentials.json
+gcloud auth application-default set-quota-project "$GOOGLE_CLOUD_PROJECT"
+
 if [ -n "$1" ]; then
-  # If shell script given a specific project as its argument
+  # If shell script given a specific module as its argument
   performTest "$1"
 else
-  # Otherwise, iterate through the list found in projects.txt
-  projects="./.terraform/projects.txt"
-  while IFS= read -r project; do
+  # Otherwise, iterate through the list found in modules-under-test.txt
+  while IFS= read -r module; do
     # Ignore lines starting with '#'
-    [[ "$project" =~ ^#.* ]] && continue
+    [[ "$module" =~ ^#.* ]] && continue
 
-    performTest "$project"
-  done <"$projects"
+    performTest "$module"
+  done <"./.terraform/modules-under-test.txt"
+fi
+
+if [ $createdProject ]; then
+  echo "Destroying single-use project $GOOGLE_CLOUD_PROJECT created at start."
+  destroyProject
+  export -n GOOGLE_CLOUD_PROJECT
 fi

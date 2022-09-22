@@ -7,22 +7,12 @@ terraform {
 }
 
 provider "google" {
-  region = var.region
-  zone   = var.zone
-}
-
-module "project" {
-  source          = "./../../.terraform/modules/project"
-  folder_id       = var.folder_id
-  billing_account = var.billing_account
-  region          = var.region
-  zone            = var.zone
-  project_prefix  = var.project_prefix
+  project = var.project_id
+  region  = var.region
+  zone    = var.zone
 }
 
 resource "google_project_service" "accessapproval_api" {
-  project            = module.project.project_id
   service            = "accessapproval.googleapis.com"
   disable_on_destroy = false
-  depends_on         = [module.project]
 }

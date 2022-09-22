@@ -1,10 +1,14 @@
-# Ensure a google provider is available by the calling root module.
 terraform {
   required_providers {
     google = {
       source = "hashicorp/google"
     }
   }
+}
+
+provider "google" {
+  region = var.region
+  zone   = var.zone
 }
 
 resource "random_id" "id" {

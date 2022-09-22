@@ -1,18 +1,6 @@
-variable "project_prefix" {
+variable "project_id" {
   type        = string
-  description = "Prefix to use when creating the GCP project"
-}
-
-variable "folder_id" {
-  type        = string
-  description = "GCP folder ID in which to create the project"
-  sensitive   = true
-}
-
-variable "billing_account" {
-  type        = string
-  description = "GCP Billing Account ID for the test project"
-  sensitive   = true
+  description = "GCP Project ID of the project to be used"
 }
 
 variable "region" {
