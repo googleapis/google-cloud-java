@@ -77,7 +77,7 @@ cp -rp ../../templates/. ./
 
 # Confirm everything is fine so far
 # Need license-checks.xml to validate
-mvn -q -B -ntp validate
+# mvn -q -B -ntp validate
 
 # Add all template files
 git add --all
