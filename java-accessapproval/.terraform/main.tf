@@ -3,9 +3,6 @@ terraform {
     google = {
       source = "hashicorp/google"
     }
-    time = {
-      source = "hashicorp/time"
-    }
   }
 }
 

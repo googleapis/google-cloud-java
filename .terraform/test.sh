@@ -44,6 +44,8 @@ function performTest() {
   GOOGLE_CLOUD_PROJECT=$(terraform output -raw project_id)
   export GOOGLE_CLOUD_PROJECT
   gcloud config set project "$GOOGLE_CLOUD_PROJECT"
+  # Clear the existing quota project directly from the configuration, and re-set.
+  sed -i.bak '/quota_project_id/d' ~/.config/gcloud/application_default_credentials.json
   gcloud auth application-default set-quota-project "$GOOGLE_CLOUD_PROJECT"
 
   # Set module-specific environment variables for upcoming integration test(s)
