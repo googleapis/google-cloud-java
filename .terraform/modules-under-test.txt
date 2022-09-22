@@ -3,4 +3,5 @@ java-accessapproval
 java-container
 java-compute
 java-containeranalysis
+java-datacatalog
 java-bigqueryconnection
