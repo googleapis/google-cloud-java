@@ -18,14 +18,6 @@ jobs:
         run: ./bootstrap.sh
         env:
           USERNAME: ${{ github.actor }}
-      - name: Generate source level diff
-        #        if: ${{ github.event_name != 'pull_request' }}
-        run: |
-          ./templates/generation/generate_split_vs_mono_diff_branch.sh
-          git checkout split_vs_mono_diff_output
-          git diff HEAD^ HEAD
-          git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
-          git push -f monorepo split_vs_mono_diff_output
       - name: Compile
         working-directory: monorepo/google-cloud-java
         run: mvn compile -T C1 -B
@@ -38,6 +30,21 @@ jobs:
           cd monorepo/google-cloud-java
           git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
           git push -f monorepo main:monorepo_script_output
+
+  build-diff:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Generate source level diff
+        #        if: ${{ github.event_name != 'pull_request' }}
+        run: |
+          ./templates/generation/generate_split_vs_mono_diff_branch.sh
+          git checkout split_vs_mono_diff_output
+          git diff HEAD^ HEAD
+          git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
+          git push -f monorepo split_vs_mono_diff_output
+        env:
+          USERNAME: ${{ github.actor }}
 
   build-3repos:
     runs-on: ubuntu-latest
