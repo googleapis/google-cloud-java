@@ -75,10 +75,6 @@ git commit -am 'feat: create aggregator pom'
 # Template files
 cp -rp ../../templates/. ./
 
-# Confirm everything is fine so far
-# Need license-checks.xml to validate
-mvn -q -B -ntp validate
-
 # Add all template files
 git add --all
 git add -f .gitignore
@@ -99,10 +95,6 @@ bash generation/generate_release_please_config.sh
 
 git add --all
 git commit -am 'feat: create release please configuration'
-
-# Confirm everything is fine so far
-# Need license-checks.xml to validate
-mvn -q -B -ntp validate
 
 ./generation/generate_coverage_aggregator.sh
 
