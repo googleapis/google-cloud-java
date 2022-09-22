@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.11.3](https://github.com/googleapis/java-logging/compare/v3.11.2...v3.11.3) (2022-09-22)
+
+
+### Dependencies
+
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.14 ([#1079](https://github.com/googleapis/java-logging/issues/1079)) ([c08c4da](https://github.com/googleapis/java-logging/commit/c08c4da8cf91e4d168ad16038a460ac9ab2bed8e))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.14 ([#1080](https://github.com/googleapis/java-logging/issues/1080)) ([50c979b](https://github.com/googleapis/java-logging/commit/50c979b8d83f2b5f9c74bbb115b7c30e0326211d))
+
 ## [3.11.2](https://github.com/googleapis/java-logging/compare/v3.11.1...v3.11.2) (2022-09-21)
 
 
