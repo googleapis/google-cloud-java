@@ -1,9 +1,10 @@
 # Modules to be tested when no specific module is given to test.sh as an argument
 java-accessapproval
+java-bigqueryconnection
 java-container
 java-compute
 java-containeranalysis
 java-datacatalog
 java-datalabeling
 java-errorreporting
-java-bigqueryconnection
+java-game-servers
