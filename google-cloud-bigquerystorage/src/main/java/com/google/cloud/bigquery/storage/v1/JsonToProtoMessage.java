@@ -201,8 +201,7 @@ public class JsonToProtoMessage {
       String currentScope = jsonScope + "." + jsonName;
       FieldDescriptor field = protoSchema.findFieldByName(jsonLowercaseName);
       if (field == null && !ignoreUnknownFields) {
-        throw new IllegalArgumentException(
-            String.format("JSONObject has fields unknown to BigQuery: %s.", currentScope));
+        throw new Exceptions.JsonDataHasUnknownFieldException(currentScope);
       } else if (field == null) {
         continue;
       }

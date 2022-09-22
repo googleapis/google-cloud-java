@@ -1122,8 +1122,9 @@ public class JsonToProtoMessageTest {
       DynamicMessage protoMsg =
           JsonToProtoMessage.convertJsonToProtoMessage(RepeatedInt64.getDescriptor(), json);
       Assert.fail("Should fail");
-    } catch (IllegalArgumentException e) {
+    } catch (Exceptions.JsonDataHasUnknownFieldException e) {
       assertEquals("JSONObject has fields unknown to BigQuery: root.string.", e.getMessage());
+      assertEquals("root.string", e.getFieldName());
     }
   }
 
