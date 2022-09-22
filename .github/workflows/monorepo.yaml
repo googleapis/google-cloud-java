@@ -37,7 +37,7 @@ jobs:
           git checkout squashed_split_branch
           git diff HEAD^ HEAD
           git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
-          git push -f monorepo squashed_split_branch:split_vs_mono_diff_output
+          git push -f monorepo split_vs_mono_diff_output
 
   build-3repos:
     runs-on: ubuntu-latest

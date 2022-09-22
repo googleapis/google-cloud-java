@@ -3,7 +3,7 @@
 set -ex
 
 SQAUSHED_MAIN_BRANCH=squashed_main_branch
-SQAUSHED_SPLIT_BRANCH=squashed_split_branch
+SQAUSHED_SPLIT_BRANCH=split_vs_mono_diff_output
 
 function squash_branch {
   SOURCE_BRANCH=$1
