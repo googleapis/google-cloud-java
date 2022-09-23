@@ -85,11 +85,6 @@ git add --all
 git add -f .gitignore
 git commit -m 'chore: add template files'
 
-./generation/set_parent_pom.sh
-
-git add --all
-git commit -am 'chore: set parent pom'
-
 ./generation/generate_gapic_bom.sh
 
 # add the gapic bom module to root pom.xml by regenerating aggregator pom
