@@ -1,5 +1,8 @@
 #!/bin/bash
-##
+## This is a helper script invoked by ./generation/diff_files.sh
+## All the inputs to this script are provided by diff_files.sh
+## You do not need to do anything for this script to run.
+
 wget -O sonatypeFile --recursive -nd --no-parent $2
 
 wget -O mavenFile --referer --recursive -nd --no-parent \
