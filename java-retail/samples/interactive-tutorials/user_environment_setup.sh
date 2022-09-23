@@ -48,7 +48,7 @@ then
 else
     service_account_id="${email%@*}"
   # Log out of service account
-    gcloud auth revoke
+    gcloud auth revoke 2>/dev/null
 fi
 echo "$service_account_id"
 
