@@ -89,6 +89,7 @@ public class ControlServiceClientTest {
             .setDisplayName("displayName1714148973")
             .addAllAssociatedServingConfigIds(new ArrayList<String>())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
+            .addAllSearchSolutionUseCase(new ArrayList<SearchSolutionUseCase>())
             .build();
     mockControlService.addResponse(expectedResponse);
 
@@ -136,6 +137,7 @@ public class ControlServiceClientTest {
             .setDisplayName("displayName1714148973")
             .addAllAssociatedServingConfigIds(new ArrayList<String>())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
+            .addAllSearchSolutionUseCase(new ArrayList<SearchSolutionUseCase>())
             .build();
     mockControlService.addResponse(expectedResponse);
 
@@ -251,6 +253,7 @@ public class ControlServiceClientTest {
             .setDisplayName("displayName1714148973")
             .addAllAssociatedServingConfigIds(new ArrayList<String>())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
+            .addAllSearchSolutionUseCase(new ArrayList<SearchSolutionUseCase>())
             .build();
     mockControlService.addResponse(expectedResponse);
 
@@ -295,6 +298,7 @@ public class ControlServiceClientTest {
             .setDisplayName("displayName1714148973")
             .addAllAssociatedServingConfigIds(new ArrayList<String>())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
+            .addAllSearchSolutionUseCase(new ArrayList<SearchSolutionUseCase>())
             .build();
     mockControlService.addResponse(expectedResponse);
 
@@ -336,6 +340,7 @@ public class ControlServiceClientTest {
             .setDisplayName("displayName1714148973")
             .addAllAssociatedServingConfigIds(new ArrayList<String>())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
+            .addAllSearchSolutionUseCase(new ArrayList<SearchSolutionUseCase>())
             .build();
     mockControlService.addResponse(expectedResponse);
 

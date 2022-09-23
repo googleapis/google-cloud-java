@@ -43,8 +43,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ServingConfigServiceClient servingConfigServiceClient =
  *     ServingConfigServiceClient.create()) {
  *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
@@ -85,8 +88,11 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * ServingConfigServiceSettings servingConfigServiceSettings =
  *     ServingConfigServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -98,8 +104,11 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * ServingConfigServiceSettings servingConfigServiceSettings =
  *     ServingConfigServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ServingConfigServiceClient servingConfigServiceClient =
@@ -110,8 +119,11 @@ import javax.annotation.Generated;
  * the wire:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * ServingConfigServiceSettings servingConfigServiceSettings =
  *     ServingConfigServiceSettings.newBuilder()
  *         .setTransportChannelProvider(
@@ -185,8 +197,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
@@ -227,8 +242,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   String parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString();
@@ -269,8 +287,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   CreateServingConfigRequest request =
@@ -301,8 +322,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   CreateServingConfigRequest request =
@@ -332,8 +356,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   ServingConfigName name =
@@ -343,7 +370,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the ServingConfig to delete. Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteServingConfig(ServingConfigName name) {
@@ -363,8 +390,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   String name =
@@ -375,7 +405,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the ServingConfig to delete. Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteServingConfig(String name) {
@@ -393,8 +423,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   DeleteServingConfigRequest request =
@@ -423,8 +456,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   DeleteServingConfigRequest request =
@@ -451,8 +487,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   ServingConfig servingConfig = ServingConfig.newBuilder().build();
@@ -489,8 +528,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   UpdateServingConfigRequest request =
@@ -516,8 +558,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   UpdateServingConfigRequest request =
@@ -546,8 +591,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   ServingConfigName name =
@@ -557,7 +605,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the ServingConfig to get. Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServingConfig getServingConfig(ServingConfigName name) {
@@ -575,8 +623,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   String name =
@@ -587,7 +638,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the ServingConfig to get. Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServingConfig getServingConfig(String name) {
@@ -604,8 +655,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   GetServingConfigRequest request =
@@ -634,8 +688,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   GetServingConfigRequest request =
@@ -662,8 +719,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
@@ -675,7 +735,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The catalog resource name. Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServingConfigsPagedResponse listServingConfigs(CatalogName parent) {
@@ -693,8 +753,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   String parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString();
@@ -706,7 +769,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The catalog resource name. Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServingConfigsPagedResponse listServingConfigs(String parent) {
@@ -722,8 +785,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   ListServingConfigsRequest request =
@@ -754,8 +820,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   ListServingConfigsRequest request =
@@ -785,8 +854,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   ListServingConfigsRequest request =
@@ -827,8 +899,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   ServingConfigName servingConfig =
@@ -838,7 +913,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param servingConfig Required. The source ServingConfig resource name . Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServingConfig addControl(ServingConfigName servingConfig) {
@@ -860,8 +935,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   String servingConfig =
@@ -872,7 +950,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param servingConfig Required. The source ServingConfig resource name . Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServingConfig addControl(String servingConfig) {
@@ -892,8 +970,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   AddControlRequest request =
@@ -925,8 +1006,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   AddControlRequest request =
@@ -955,8 +1039,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   ServingConfigName servingConfig =
@@ -966,7 +1053,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param servingConfig Required. The source ServingConfig resource name . Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServingConfig removeControl(ServingConfigName servingConfig) {
@@ -985,8 +1072,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   String servingConfig =
@@ -997,7 +1087,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param servingConfig Required. The source ServingConfig resource name . Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServingConfig removeControl(String servingConfig) {
@@ -1014,8 +1104,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   RemoveControlRequest request =
@@ -1044,8 +1137,11 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ServingConfigServiceClient servingConfigServiceClient =
    *     ServingConfigServiceClient.create()) {
    *   RemoveControlRequest request =

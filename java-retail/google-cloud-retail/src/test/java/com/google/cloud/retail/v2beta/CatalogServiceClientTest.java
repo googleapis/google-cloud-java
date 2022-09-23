@@ -32,6 +32,7 @@ import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -731,6 +732,58 @@ public class CatalogServiceClientTest {
               .setKey("key106079")
               .build();
       client.removeCatalogAttribute(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchRemoveCatalogAttributesTest() throws Exception {
+    BatchRemoveCatalogAttributesResponse expectedResponse =
+        BatchRemoveCatalogAttributesResponse.newBuilder()
+            .addAllDeletedCatalogAttributes(new ArrayList<String>())
+            .addAllResetCatalogAttributes(new ArrayList<String>())
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    BatchRemoveCatalogAttributesRequest request =
+        BatchRemoveCatalogAttributesRequest.newBuilder()
+            .setAttributesConfig(
+                AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .addAllAttributeKeys(new ArrayList<String>())
+            .build();
+
+    BatchRemoveCatalogAttributesResponse actualResponse =
+        client.batchRemoveCatalogAttributes(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchRemoveCatalogAttributesRequest actualRequest =
+        ((BatchRemoveCatalogAttributesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getAttributesConfig(), actualRequest.getAttributesConfig());
+    Assert.assertEquals(request.getAttributeKeysList(), actualRequest.getAttributeKeysList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchRemoveCatalogAttributesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      BatchRemoveCatalogAttributesRequest request =
+          BatchRemoveCatalogAttributesRequest.newBuilder()
+              .setAttributesConfig(
+                  AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+              .addAllAttributeKeys(new ArrayList<String>())
+              .build();
+      client.batchRemoveCatalogAttributes(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

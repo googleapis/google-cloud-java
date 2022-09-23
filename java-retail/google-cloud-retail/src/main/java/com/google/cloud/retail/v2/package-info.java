@@ -26,8 +26,11 @@
  * <p>Sample for CatalogServiceClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
  *   Catalog catalog = Catalog.newBuilder().build();
  *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -45,8 +48,11 @@
  * <p>Sample for CompletionServiceClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
  *   CompleteQueryRequest request =
  *       CompleteQueryRequest.newBuilder()
@@ -69,8 +75,11 @@
  * <p>Sample for ControlServiceClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ControlServiceClient controlServiceClient = ControlServiceClient.create()) {
  *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
  *   Control control = Control.newBuilder().build();
@@ -86,8 +95,11 @@
  * <p>Sample for PredictionServiceClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
  *   PredictRequest request =
  *       PredictRequest.newBuilder()
@@ -112,8 +124,11 @@
  * <p>Sample for ProductServiceClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
  *   BranchName parent = BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]");
  *   Product product = Product.newBuilder().build();
@@ -132,8 +147,11 @@
  * <p>Sample for SearchServiceClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (SearchServiceClient searchServiceClient = SearchServiceClient.create()) {
  *   SearchRequest request =
  *       SearchRequest.newBuilder()
@@ -172,8 +190,11 @@
  * <p>Sample for ServingConfigServiceClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ServingConfigServiceClient servingConfigServiceClient =
  *     ServingConfigServiceClient.create()) {
  *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
@@ -191,8 +212,11 @@
  * <p>Sample for UserEventServiceClient:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
  *   WriteUserEventRequest request =
  *       WriteUserEventRequest.newBuilder()
