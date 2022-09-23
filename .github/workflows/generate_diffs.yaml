@@ -20,6 +20,7 @@ on:
 name: monorepo-diff
 jobs:
   generate-diffs:
+    if: ${{ github.event_name != 'pull_request' }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -27,7 +28,6 @@ jobs:
         repository: 'googleapis/google-cloud-java'
         fetch-depth: 0
     - name: Run generate-diff script
-      if: ${{ github.event_name != 'pull_request' }}
       run: ./generation/generate_diff.sh
       env:
         USERNAME: ${{ github.actor }}
