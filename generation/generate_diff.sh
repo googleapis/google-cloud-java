@@ -79,5 +79,6 @@ git commit -m "chore: Adding non-java diffs" --no-verify
 git push origin "${diff_non_java_branch}" --force
 
 git checkout "${current_branch}"
+git clean -fd
 
 echo "Done running script"
