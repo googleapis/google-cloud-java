@@ -12,11 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#on:
-#  workflow_dispatch:
-#  schedule:
-#  # every morning
-#  - cron: '0 1 * * *'
 on:
   push:
     branches:
@@ -32,6 +27,7 @@ jobs:
         repository: 'googleapis/google-cloud-java'
         fetch-depth: 0
     - name: Run generate-diff script
+      if: ${{ github.event_name != 'pull_request' }}
       run: ./generation/generate_diff.sh
       env:
         USERNAME: ${{ github.actor }}
