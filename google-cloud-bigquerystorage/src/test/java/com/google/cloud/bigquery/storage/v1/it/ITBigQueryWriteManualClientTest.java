@@ -318,44 +318,6 @@ public class ITBigQueryWriteManualClientTest {
       throws IOException, InterruptedException, ExecutionException,
           Descriptors.DescriptorValidationException {
     String tableName = "JsonTableDefaultSchema";
-    TableFieldSchema TEST_STRING =
-        TableFieldSchema.newBuilder()
-            .setType(TableFieldSchema.Type.STRING)
-            .setMode(TableFieldSchema.Mode.NULLABLE)
-            .setName("test_str")
-            .build();
-    TableFieldSchema TEST_NUMERIC =
-        TableFieldSchema.newBuilder()
-            .setType(TableFieldSchema.Type.NUMERIC)
-            .setMode(TableFieldSchema.Mode.REPEATED)
-            .setName("test_numerics")
-            .build();
-    TableFieldSchema TEST_DATE =
-        TableFieldSchema.newBuilder()
-            .setType(TableFieldSchema.Type.DATETIME)
-            .setMode(TableFieldSchema.Mode.NULLABLE)
-            .setName("test_datetime")
-            .build();
-    TableFieldSchema TEST_REPEATED_BYTESTRING =
-        TableFieldSchema.newBuilder()
-            .setType(TableFieldSchema.Type.BYTES)
-            .setMode(TableFieldSchema.Mode.REPEATED)
-            .setName("test_bytestring_repeated")
-            .build();
-    TableFieldSchema TEST_TIMESTAMP =
-        TableFieldSchema.newBuilder()
-            .setName("test_timeStamp")
-            .setType(TableFieldSchema.Type.TIMESTAMP)
-            .setMode(TableFieldSchema.Mode.NULLABLE)
-            .build();
-    TableSchema tableSchema =
-        TableSchema.newBuilder()
-            .addFields(0, TEST_STRING)
-            .addFields(1, TEST_DATE)
-            .addFields(2, TEST_NUMERIC)
-            .addFields(3, TEST_REPEATED_BYTESTRING)
-            .addFields(4, TEST_TIMESTAMP)
-            .build();
     TableInfo tableInfo =
         TableInfo.newBuilder(
                 TableId.of(DATASET, tableName),
@@ -382,6 +344,8 @@ public class ITBigQueryWriteManualClientTest {
 
     bigquery.create(tableInfo);
     TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
+
+    // Create JsonStreamWriter with newBuilder(streamOrTable, client)
     try (JsonStreamWriter jsonStreamWriter =
         JsonStreamWriter.newBuilder(parent.toString(), client)
             .setIgnoreUnknownFields(true)
@@ -465,6 +429,22 @@ public class ITBigQueryWriteManualClientTest {
       assertEquals("YQ==", currentRow2.get(3).getRepeatedValue().get(0).getStringValue());
       assertEquals("Yg==", currentRow2.get(3).getRepeatedValue().get(1).getStringValue());
       assertEquals(false, iter.hasNext());
+    }
+  }
+
+  @Test
+  public void testJsonStreamWriterWithDefaultSchemaNoTable() {
+    String tableName = "JsonStreamWriterWithDefaultSchemaNoTable";
+    TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
+
+    // Create JsonStreamWriter with newBuilder(streamOrTable, client)
+    try {
+      JsonStreamWriter jsonStreamWriter =
+          JsonStreamWriter.newBuilder(parent.toString(), client)
+              .setIgnoreUnknownFields(true)
+              .build();
+    } catch (Exception exception) {
+      assertTrue(exception.getMessage().contains("it may not exist"));
     }
   }
 
