@@ -32,8 +32,6 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2beta.AddCatalogAttributeRequest;
 import com.google.cloud.retail.v2beta.AttributesConfig;
-import com.google.cloud.retail.v2beta.BatchRemoveCatalogAttributesRequest;
-import com.google.cloud.retail.v2beta.BatchRemoveCatalogAttributesResponse;
 import com.google.cloud.retail.v2beta.Catalog;
 import com.google.cloud.retail.v2beta.CompletionConfig;
 import com.google.cloud.retail.v2beta.GetAttributesConfigRequest;
@@ -132,8 +130,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("catalog", request.getCatalog(), false))
+                              ProtoRestSerializer.create().toBody("catalog", request.getCatalog()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Catalog>newBuilder()
@@ -169,7 +166,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearCatalog().build(), false))
+                                  .toBody("*", request.toBuilder().clearCatalog().build()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -275,7 +272,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("completionConfig", request.getCompletionConfig(), false))
+                                  .toBody("completionConfig", request.getCompletionConfig()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CompletionConfig>newBuilder()
@@ -348,7 +345,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("attributesConfig", request.getAttributesConfig(), false))
+                                  .toBody("attributesConfig", request.getAttributesConfig()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AttributesConfig>newBuilder()
@@ -385,10 +382,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody(
-                                      "*",
-                                      request.toBuilder().clearAttributesConfig().build(),
-                                      false))
+                                  .toBody("*", request.toBuilder().clearAttributesConfig().build()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AttributesConfig>newBuilder()
@@ -425,58 +419,11 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody(
-                                      "*",
-                                      request.toBuilder().clearAttributesConfig().build(),
-                                      false))
+                                  .toBody("*", request.toBuilder().clearAttributesConfig().build()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AttributesConfig>newBuilder()
                       .setDefaultInstance(AttributesConfig.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
-  private static final ApiMethodDescriptor<
-          BatchRemoveCatalogAttributesRequest, BatchRemoveCatalogAttributesResponse>
-      batchRemoveCatalogAttributesMethodDescriptor =
-          ApiMethodDescriptor
-              .<BatchRemoveCatalogAttributesRequest, BatchRemoveCatalogAttributesResponse>
-                  newBuilder()
-              .setFullMethodName(
-                  "google.cloud.retail.v2beta.CatalogService/BatchRemoveCatalogAttributes")
-              .setHttpMethod("POST")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<BatchRemoveCatalogAttributesRequest>newBuilder()
-                      .setPath(
-                          "/v2beta/{attributesConfig=projects/*/locations/*/catalogs/*/attributesConfig}:batchRemoveCatalogAttributes",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<BatchRemoveCatalogAttributesRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(
-                                fields, "attributesConfig", request.getAttributesConfig());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<BatchRemoveCatalogAttributesRequest> serializer =
-                                ProtoRestSerializer.create();
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody(
-                                      "*",
-                                      request.toBuilder().clearAttributesConfig().build(),
-                                      false))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<BatchRemoveCatalogAttributesResponse>newBuilder()
-                      .setDefaultInstance(BatchRemoveCatalogAttributesResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -510,10 +457,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody(
-                                      "*",
-                                      request.toBuilder().clearAttributesConfig().build(),
-                                      false))
+                                  .toBody("*", request.toBuilder().clearAttributesConfig().build()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AttributesConfig>newBuilder()
@@ -541,9 +485,6 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
       addCatalogAttributeCallable;
   private final UnaryCallable<RemoveCatalogAttributeRequest, AttributesConfig>
       removeCatalogAttributeCallable;
-  private final UnaryCallable<
-          BatchRemoveCatalogAttributesRequest, BatchRemoveCatalogAttributesResponse>
-      batchRemoveCatalogAttributesCallable;
   private final UnaryCallable<ReplaceCatalogAttributeRequest, AttributesConfig>
       replaceCatalogAttributeCallable;
 
@@ -646,14 +587,6 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                 .setMethodDescriptor(removeCatalogAttributeMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
-    HttpJsonCallSettings<BatchRemoveCatalogAttributesRequest, BatchRemoveCatalogAttributesResponse>
-        batchRemoveCatalogAttributesTransportSettings =
-            HttpJsonCallSettings
-                .<BatchRemoveCatalogAttributesRequest, BatchRemoveCatalogAttributesResponse>
-                    newBuilder()
-                .setMethodDescriptor(batchRemoveCatalogAttributesMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .build();
     HttpJsonCallSettings<ReplaceCatalogAttributeRequest, AttributesConfig>
         replaceCatalogAttributeTransportSettings =
             HttpJsonCallSettings.<ReplaceCatalogAttributeRequest, AttributesConfig>newBuilder()
@@ -706,11 +639,6 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
             removeCatalogAttributeTransportSettings,
             settings.removeCatalogAttributeSettings(),
             clientContext);
-    this.batchRemoveCatalogAttributesCallable =
-        callableFactory.createUnaryCallable(
-            batchRemoveCatalogAttributesTransportSettings,
-            settings.batchRemoveCatalogAttributesSettings(),
-            clientContext);
     this.replaceCatalogAttributeCallable =
         callableFactory.createUnaryCallable(
             replaceCatalogAttributeTransportSettings,
@@ -734,7 +662,6 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
     methodDescriptors.add(updateAttributesConfigMethodDescriptor);
     methodDescriptors.add(addCatalogAttributeMethodDescriptor);
     methodDescriptors.add(removeCatalogAttributeMethodDescriptor);
-    methodDescriptors.add(batchRemoveCatalogAttributesMethodDescriptor);
     methodDescriptors.add(replaceCatalogAttributeMethodDescriptor);
     return methodDescriptors;
   }
@@ -796,12 +723,6 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
   public UnaryCallable<RemoveCatalogAttributeRequest, AttributesConfig>
       removeCatalogAttributeCallable() {
     return removeCatalogAttributeCallable;
-  }
-
-  @Override
-  public UnaryCallable<BatchRemoveCatalogAttributesRequest, BatchRemoveCatalogAttributesResponse>
-      batchRemoveCatalogAttributesCallable() {
-    return batchRemoveCatalogAttributesCallable;
   }
 
   @Override

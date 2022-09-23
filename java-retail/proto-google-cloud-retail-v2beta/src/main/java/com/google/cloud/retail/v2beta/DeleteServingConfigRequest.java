@@ -120,7 +120,7 @@ public final class DeleteServingConfigRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The resource name of the ServingConfig to delete. Format:
-   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
+   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
    * </pre>
    *
    * <code>
@@ -146,7 +146,7 @@ public final class DeleteServingConfigRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The resource name of the ServingConfig to delete. Format:
-   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
+   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
    * </pre>
    *
    * <code>
@@ -493,7 +493,7 @@ public final class DeleteServingConfigRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The resource name of the ServingConfig to delete. Format:
-     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
+     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
      * </pre>
      *
      * <code>
@@ -518,7 +518,7 @@ public final class DeleteServingConfigRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The resource name of the ServingConfig to delete. Format:
-     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
+     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
      * </pre>
      *
      * <code>
@@ -543,7 +543,7 @@ public final class DeleteServingConfigRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The resource name of the ServingConfig to delete. Format:
-     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
+     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
      * </pre>
      *
      * <code>
@@ -567,7 +567,7 @@ public final class DeleteServingConfigRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The resource name of the ServingConfig to delete. Format:
-     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
+     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
      * </pre>
      *
      * <code>
@@ -587,7 +587,7 @@ public final class DeleteServingConfigRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The resource name of the ServingConfig to delete. Format:
-     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
+     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
      * </pre>
      *
      * <code>

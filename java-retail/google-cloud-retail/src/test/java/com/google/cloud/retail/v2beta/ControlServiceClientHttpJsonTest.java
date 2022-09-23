@@ -86,7 +86,6 @@ public class ControlServiceClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .addAllAssociatedServingConfigIds(new ArrayList<String>())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
-            .addAllSearchSolutionUseCase(new ArrayList<SearchSolutionUseCase>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -138,7 +137,6 @@ public class ControlServiceClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .addAllAssociatedServingConfigIds(new ArrayList<String>())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
-            .addAllSearchSolutionUseCase(new ArrayList<SearchSolutionUseCase>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -272,7 +270,6 @@ public class ControlServiceClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .addAllAssociatedServingConfigIds(new ArrayList<String>())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
-            .addAllSearchSolutionUseCase(new ArrayList<SearchSolutionUseCase>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -282,7 +279,6 @@ public class ControlServiceClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .addAllAssociatedServingConfigIds(new ArrayList<String>())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
-            .addAllSearchSolutionUseCase(new ArrayList<SearchSolutionUseCase>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -319,7 +315,6 @@ public class ControlServiceClientHttpJsonTest {
               .setDisplayName("displayName1714148973")
               .addAllAssociatedServingConfigIds(new ArrayList<String>())
               .addAllSolutionTypes(new ArrayList<SolutionType>())
-              .addAllSearchSolutionUseCase(new ArrayList<SearchSolutionUseCase>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateControl(control, updateMask);
@@ -337,7 +332,6 @@ public class ControlServiceClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .addAllAssociatedServingConfigIds(new ArrayList<String>())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
-            .addAllSearchSolutionUseCase(new ArrayList<SearchSolutionUseCase>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -385,7 +379,6 @@ public class ControlServiceClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .addAllAssociatedServingConfigIds(new ArrayList<String>())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
-            .addAllSearchSolutionUseCase(new ArrayList<SearchSolutionUseCase>())
             .build();
     mockService.addResponse(expectedResponse);
 

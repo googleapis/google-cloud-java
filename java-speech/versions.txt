@@ -8,5 +8,3 @@ grpc-google-cloud-speech-v1p1beta1:0.89.8:0.89.9-SNAPSHOT
 proto-google-cloud-speech-v1:2.5.8:2.5.9-SNAPSHOT
 proto-google-cloud-speech-v1beta1:0.89.8:0.89.9-SNAPSHOT
 proto-google-cloud-speech-v1p1beta1:0.89.8:0.89.9-SNAPSHOT
-proto-google-cloud-speech-v2:2.5.4:2.5.5-SNAPSHOT
-grpc-google-cloud-speech-v2:2.5.4:2.5.5-SNAPSHOT

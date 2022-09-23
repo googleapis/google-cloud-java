@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-apigee-registry</artifactId>
-  <version>0.2.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-apigee-registry:current} -->
+  <version>0.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-apigee-registry:current} -->
   <packaging>jar</packaging>
   <name>Google Registry API</name>
   <url>https://github.com/googleapis/java-apigee-registry</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-apigee-registry-parent</artifactId>
-    <version>0.2.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-apigee-registry:current} -->
+    <version>0.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-apigee-registry:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-apigee-registry</site.installationModule>

@@ -19,20 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-channel</artifactId>
-  <version>3.7.2</version>
+  <version>3.7.4</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-channel:3.7.2'
+implementation 'com.google.cloud:google-cloud-channel:3.7.4'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-channel" % "3.7.2"
+libraryDependencies += "com.google.cloud" % "google-cloud-channel" % "3.7.4"
 ```
 
 ## Authentication

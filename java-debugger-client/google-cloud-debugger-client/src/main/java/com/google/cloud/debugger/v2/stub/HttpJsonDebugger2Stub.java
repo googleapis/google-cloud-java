@@ -87,7 +87,7 @@ public class HttpJsonDebugger2Stub extends Debugger2Stub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("breakpoint", request.getBreakpoint(), false))
+                                  .toBody("breakpoint", request.getBreakpoint()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SetBreakpointResponse>newBuilder()

@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0](https://github.com/googleapis/java-datastream/compare/v1.1.1...v1.2.0) (2022-09-15)
+
+
+### Features
+
+* Added support for BigQuery destination and PostgreSQL source types ([#198](https://github.com/googleapis/java-datastream/issues/198)) ([3209237](https://github.com/googleapis/java-datastream/commit/3209237dd8bcccd90eb4dde85fae59c9101e7676))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#201](https://github.com/googleapis/java-datastream/issues/201)) ([5c7e4a4](https://github.com/googleapis/java-datastream/commit/5c7e4a4e5f3fd72cd45f981d212d872f1311a73e))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#203](https://github.com/googleapis/java-datastream/issues/203)) ([b94f647](https://github.com/googleapis/java-datastream/commit/b94f647c57837d6bc5b9e37f3aa51561e2ee1d3f))
+
 ## [1.1.1](https://github.com/googleapis/java-datastream/compare/v1.1.0...v1.1.1) (2022-07-19)
 
 

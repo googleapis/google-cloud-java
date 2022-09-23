@@ -45,25 +45,23 @@ public final class ControlProto {
           + "pi/field_behavior.proto\032\031google/api/reso"
           + "urce.proto\032\'google/cloud/retail/v2beta/c"
           + "ommon.proto\032/google/cloud/retail/v2beta/"
-          + "search_service.proto\"\201\004\n\007Control\022M\n\nface"
+          + "search_service.proto\"\250\003\n\007Control\022I\n\nface"
           + "t_spec\030\003 \001(\01323.google.cloud.retail.v2bet"
-          + "a.SearchRequest.FacetSpecB\002\030\001H\000\0220\n\004rule\030"
-          + "\004 \001(\0132 .google.cloud.retail.v2beta.RuleH"
-          + "\000\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\031\n\014display_name\030\002 \001"
-          + "(\tB\003\340A\002\022*\n\035associated_serving_config_ids"
-          + "\030\005 \003(\tB\003\340A\003\022H\n\016solution_types\030\006 \003(\0162(.go"
-          + "ogle.cloud.retail.v2beta.SolutionTypeB\006\340"
-          + "A\002\340A\005\022S\n\030search_solution_use_case\030\007 \003(\0162"
-          + "1.google.cloud.retail.v2beta.SearchSolut"
-          + "ionUseCase:q\352An\n\035retail.googleapis.com/C"
-          + "ontrol\022Mprojects/{project}/locations/{lo"
-          + "cation}/catalogs/{catalog}/controls/{con"
-          + "trol}B\t\n\007controlB\325\001\n\036com.google.cloud.re"
-          + "tail.v2betaB\014ControlProtoP\001Z@google.gola"
-          + "ng.org/genproto/googleapis/cloud/retail/"
-          + "v2beta;retail\242\002\006RETAIL\252\002\032Google.Cloud.Re"
-          + "tail.V2Beta\312\002\032Google\\Cloud\\Retail\\V2beta"
-          + "\352\002\035Google::Cloud::Retail::V2betab\006proto3"
+          + "a.SearchRequest.FacetSpecH\000\0220\n\004rule\030\004 \001("
+          + "\0132 .google.cloud.retail.v2beta.RuleH\000\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\005\022\031\n\014display_name\030\002 \001(\tB\003"
+          + "\340A\002\022*\n\035associated_serving_config_ids\030\005 \003"
+          + "(\tB\003\340A\003\022H\n\016solution_types\030\006 \003(\0162(.google"
+          + ".cloud.retail.v2beta.SolutionTypeB\006\340A\002\340A"
+          + "\005:q\352An\n\035retail.googleapis.com/Control\022Mp"
+          + "rojects/{project}/locations/{location}/c"
+          + "atalogs/{catalog}/controls/{control}B\t\n\007"
+          + "controlB\325\001\n\036com.google.cloud.retail.v2be"
+          + "taB\014ControlProtoP\001Z@google.golang.org/ge"
+          + "nproto/googleapis/cloud/retail/v2beta;re"
+          + "tail\242\002\006RETAIL\252\002\032Google.Cloud.Retail.V2Be"
+          + "ta\312\002\032Google\\Cloud\\Retail\\V2beta\352\002\035Google"
+          + "::Cloud::Retail::V2betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -86,7 +84,6 @@ public final class ControlProto {
               "DisplayName",
               "AssociatedServingConfigIds",
               "SolutionTypes",
-              "SearchSolutionUseCase",
               "Control",
             });
     com.google.protobuf.ExtensionRegistry registry =

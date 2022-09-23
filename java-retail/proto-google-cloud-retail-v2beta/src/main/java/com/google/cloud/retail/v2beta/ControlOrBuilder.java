@@ -28,50 +28,34 @@ public interface ControlOrBuilder
    *
    * <pre>
    * A facet specification to perform faceted search.
-   * Note that this field is deprecated and will throw NOT_IMPLEMENTED if
-   * used for creating a control.
    * </pre>
    *
-   * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3 [deprecated = true];
-   * </code>
+   * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3;</code>
    *
-   * @deprecated google.cloud.retail.v2beta.Control.facet_spec is deprecated. See
-   *     google/cloud/retail/v2beta/control.proto;l=51
    * @return Whether the facetSpec field is set.
    */
-  @java.lang.Deprecated
   boolean hasFacetSpec();
   /**
    *
    *
    * <pre>
    * A facet specification to perform faceted search.
-   * Note that this field is deprecated and will throw NOT_IMPLEMENTED if
-   * used for creating a control.
    * </pre>
    *
-   * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3 [deprecated = true];
-   * </code>
+   * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3;</code>
    *
-   * @deprecated google.cloud.retail.v2beta.Control.facet_spec is deprecated. See
-   *     google/cloud/retail/v2beta/control.proto;l=51
    * @return The facetSpec.
    */
-  @java.lang.Deprecated
   com.google.cloud.retail.v2beta.SearchRequest.FacetSpec getFacetSpec();
   /**
    *
    *
    * <pre>
    * A facet specification to perform faceted search.
-   * Note that this field is deprecated and will throw NOT_IMPLEMENTED if
-   * used for creating a control.
    * </pre>
    *
-   * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3 [deprecated = true];
-   * </code>
+   * <code>.google.cloud.retail.v2beta.SearchRequest.FacetSpec facet_spec = 3;</code>
    */
-  @java.lang.Deprecated
   com.google.cloud.retail.v2beta.SearchRequest.FacetSpecOrBuilder getFacetSpecOrBuilder();
 
   /**
@@ -175,13 +159,10 @@ public interface ControlOrBuilder
    *
    *
    * <pre>
-   * Output only. List of [serving
-   * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
-   * associated with this control in the same
-   * [Catalog][google.cloud.retail.v2beta.Catalog].
-   * Note the association is managed via the
-   * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
-   * output only denormalized view.
+   * Output only. List of serving configuration ids that that are associated
+   * with this control. Note the association is managed via the ServingConfig,
+   * this is an output only denormalizeed  view. Assumed to be in the same
+   * catalog.
    * </pre>
    *
    * <code>
@@ -195,13 +176,10 @@ public interface ControlOrBuilder
    *
    *
    * <pre>
-   * Output only. List of [serving
-   * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
-   * associated with this control in the same
-   * [Catalog][google.cloud.retail.v2beta.Catalog].
-   * Note the association is managed via the
-   * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
-   * output only denormalized view.
+   * Output only. List of serving configuration ids that that are associated
+   * with this control. Note the association is managed via the ServingConfig,
+   * this is an output only denormalizeed  view. Assumed to be in the same
+   * catalog.
    * </pre>
    *
    * <code>
@@ -215,13 +193,10 @@ public interface ControlOrBuilder
    *
    *
    * <pre>
-   * Output only. List of [serving
-   * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
-   * associated with this control in the same
-   * [Catalog][google.cloud.retail.v2beta.Catalog].
-   * Note the association is managed via the
-   * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
-   * output only denormalized view.
+   * Output only. List of serving configuration ids that that are associated
+   * with this control. Note the association is managed via the ServingConfig,
+   * this is an output only denormalizeed  view. Assumed to be in the same
+   * catalog.
    * </pre>
    *
    * <code>
@@ -236,13 +211,10 @@ public interface ControlOrBuilder
    *
    *
    * <pre>
-   * Output only. List of [serving
-   * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
-   * associated with this control in the same
-   * [Catalog][google.cloud.retail.v2beta.Catalog].
-   * Note the association is managed via the
-   * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
-   * output only denormalized view.
+   * Output only. List of serving configuration ids that that are associated
+   * with this control. Note the association is managed via the ServingConfig,
+   * this is an output only denormalizeed  view. Assumed to be in the same
+   * catalog.
    * </pre>
    *
    * <code>
@@ -258,11 +230,12 @@ public interface ControlOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The solution types that the control is used for.
-   * Currently we support setting only one type of solution at creation time.
+   * Required. Immutable. The solution types that the serving config is used
+   * for. Currently we support setting only one type of solution at creation
+   * time.
    * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
    * If no solution type is provided at creation time, will default to
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
+   * SOLUTION_TYPE_SEARCH.
    * </pre>
    *
    * <code>
@@ -276,11 +249,12 @@ public interface ControlOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The solution types that the control is used for.
-   * Currently we support setting only one type of solution at creation time.
+   * Required. Immutable. The solution types that the serving config is used
+   * for. Currently we support setting only one type of solution at creation
+   * time.
    * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
    * If no solution type is provided at creation time, will default to
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
+   * SOLUTION_TYPE_SEARCH.
    * </pre>
    *
    * <code>
@@ -294,11 +268,12 @@ public interface ControlOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The solution types that the control is used for.
-   * Currently we support setting only one type of solution at creation time.
+   * Required. Immutable. The solution types that the serving config is used
+   * for. Currently we support setting only one type of solution at creation
+   * time.
    * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
    * If no solution type is provided at creation time, will default to
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
+   * SOLUTION_TYPE_SEARCH.
    * </pre>
    *
    * <code>
@@ -313,11 +288,12 @@ public interface ControlOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The solution types that the control is used for.
-   * Currently we support setting only one type of solution at creation time.
+   * Required. Immutable. The solution types that the serving config is used
+   * for. Currently we support setting only one type of solution at creation
+   * time.
    * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
    * If no solution type is provided at creation time, will default to
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
+   * SOLUTION_TYPE_SEARCH.
    * </pre>
    *
    * <code>
@@ -331,11 +307,12 @@ public interface ControlOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The solution types that the control is used for.
-   * Currently we support setting only one type of solution at creation time.
+   * Required. Immutable. The solution types that the serving config is used
+   * for. Currently we support setting only one type of solution at creation
+   * time.
    * Only `SOLUTION_TYPE_SEARCH` value is supported at the moment.
    * If no solution type is provided at creation time, will default to
-   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2beta.SolutionType.SOLUTION_TYPE_SEARCH].
+   * SOLUTION_TYPE_SEARCH.
    * </pre>
    *
    * <code>
@@ -346,105 +323,6 @@ public interface ControlOrBuilder
    * @return The enum numeric value on the wire of solutionTypes at the given index.
    */
   int getSolutionTypesValue(int index);
-
-  /**
-   *
-   *
-   * <pre>
-   * Specifies the use case for the control.
-   * Affects what condition fields can be set.
-   * Only settable by search controls.
-   * Will default to
-   * [SEARCH_SOLUTION_USE_CASE_SEARCH][google.cloud.retail.v2beta.SearchSolutionUseCase.SEARCH_SOLUTION_USE_CASE_SEARCH]
-   * if not specified. Currently only allow one search_solution_use_case per
-   * control.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.retail.v2beta.SearchSolutionUseCase search_solution_use_case = 7;
-   * </code>
-   *
-   * @return A list containing the searchSolutionUseCase.
-   */
-  java.util.List<com.google.cloud.retail.v2beta.SearchSolutionUseCase>
-      getSearchSolutionUseCaseList();
-  /**
-   *
-   *
-   * <pre>
-   * Specifies the use case for the control.
-   * Affects what condition fields can be set.
-   * Only settable by search controls.
-   * Will default to
-   * [SEARCH_SOLUTION_USE_CASE_SEARCH][google.cloud.retail.v2beta.SearchSolutionUseCase.SEARCH_SOLUTION_USE_CASE_SEARCH]
-   * if not specified. Currently only allow one search_solution_use_case per
-   * control.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.retail.v2beta.SearchSolutionUseCase search_solution_use_case = 7;
-   * </code>
-   *
-   * @return The count of searchSolutionUseCase.
-   */
-  int getSearchSolutionUseCaseCount();
-  /**
-   *
-   *
-   * <pre>
-   * Specifies the use case for the control.
-   * Affects what condition fields can be set.
-   * Only settable by search controls.
-   * Will default to
-   * [SEARCH_SOLUTION_USE_CASE_SEARCH][google.cloud.retail.v2beta.SearchSolutionUseCase.SEARCH_SOLUTION_USE_CASE_SEARCH]
-   * if not specified. Currently only allow one search_solution_use_case per
-   * control.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.retail.v2beta.SearchSolutionUseCase search_solution_use_case = 7;
-   * </code>
-   *
-   * @param index The index of the element to return.
-   * @return The searchSolutionUseCase at the given index.
-   */
-  com.google.cloud.retail.v2beta.SearchSolutionUseCase getSearchSolutionUseCase(int index);
-  /**
-   *
-   *
-   * <pre>
-   * Specifies the use case for the control.
-   * Affects what condition fields can be set.
-   * Only settable by search controls.
-   * Will default to
-   * [SEARCH_SOLUTION_USE_CASE_SEARCH][google.cloud.retail.v2beta.SearchSolutionUseCase.SEARCH_SOLUTION_USE_CASE_SEARCH]
-   * if not specified. Currently only allow one search_solution_use_case per
-   * control.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.retail.v2beta.SearchSolutionUseCase search_solution_use_case = 7;
-   * </code>
-   *
-   * @return A list containing the enum numeric values on the wire for searchSolutionUseCase.
-   */
-  java.util.List<java.lang.Integer> getSearchSolutionUseCaseValueList();
-  /**
-   *
-   *
-   * <pre>
-   * Specifies the use case for the control.
-   * Affects what condition fields can be set.
-   * Only settable by search controls.
-   * Will default to
-   * [SEARCH_SOLUTION_USE_CASE_SEARCH][google.cloud.retail.v2beta.SearchSolutionUseCase.SEARCH_SOLUTION_USE_CASE_SEARCH]
-   * if not specified. Currently only allow one search_solution_use_case per
-   * control.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.retail.v2beta.SearchSolutionUseCase search_solution_use_case = 7;
-   * </code>
-   *
-   * @param index The index of the value to return.
-   * @return The enum numeric value on the wire of searchSolutionUseCase at the given index.
-   */
-  int getSearchSolutionUseCaseValue(int index);
 
   public com.google.cloud.retail.v2beta.Control.ControlCase getControlCase();
 }

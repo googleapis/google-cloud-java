@@ -459,7 +459,7 @@ public interface SearchRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.retail.v2beta.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2beta/search_service.proto;l=586
+   *     google/cloud/retail/v2beta/search_service.proto;l=576
    * @return Whether the dynamicFacetSpec field is set.
    */
   @java.lang.Deprecated
@@ -479,7 +479,7 @@ public interface SearchRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.retail.v2beta.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2beta/search_service.proto;l=586
+   *     google/cloud/retail/v2beta/search_service.proto;l=576
    * @return The dynamicFacetSpec.
    */
   @java.lang.Deprecated
@@ -926,7 +926,7 @@ public interface SearchRequestOrBuilder
    * the same as
    * [UserEvent.page_categories][google.cloud.retail.v2beta.UserEvent.page_categories];
    * To represent full path of category, use '&gt;' sign to separate different
-   * hierarchies. If '&gt;' is part of the category name, replace it with
+   * hierarchies. If '&gt;' is part of the category name, please replace it with
    * other character(s).
    * Category pages include special pages such as sales or promotions. For
    * instance, a special sale page may have the category hierarchy:
@@ -947,7 +947,7 @@ public interface SearchRequestOrBuilder
    * the same as
    * [UserEvent.page_categories][google.cloud.retail.v2beta.UserEvent.page_categories];
    * To represent full path of category, use '&gt;' sign to separate different
-   * hierarchies. If '&gt;' is part of the category name, replace it with
+   * hierarchies. If '&gt;' is part of the category name, please replace it with
    * other character(s).
    * Category pages include special pages such as sales or promotions. For
    * instance, a special sale page may have the category hierarchy:
@@ -968,7 +968,7 @@ public interface SearchRequestOrBuilder
    * the same as
    * [UserEvent.page_categories][google.cloud.retail.v2beta.UserEvent.page_categories];
    * To represent full path of category, use '&gt;' sign to separate different
-   * hierarchies. If '&gt;' is part of the category name, replace it with
+   * hierarchies. If '&gt;' is part of the category name, please replace it with
    * other character(s).
    * Category pages include special pages such as sales or promotions. For
    * instance, a special sale page may have the category hierarchy:
@@ -990,7 +990,7 @@ public interface SearchRequestOrBuilder
    * the same as
    * [UserEvent.page_categories][google.cloud.retail.v2beta.UserEvent.page_categories];
    * To represent full path of category, use '&gt;' sign to separate different
-   * hierarchies. If '&gt;' is part of the category name, replace it with
+   * hierarchies. If '&gt;' is part of the category name, please replace it with
    * other character(s).
    * Category pages include special pages such as sales or promotions. For
    * instance, a special sale page may have the category hierarchy:
@@ -1036,14 +1036,6 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The specification for personalization.
-   * Notice that if both
-   * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
-   * and
-   * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-   * are set.
-   * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-   * will override
-   * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec].
    * </pre>
    *
    * <code>.google.cloud.retail.v2beta.SearchRequest.PersonalizationSpec personalization_spec = 32;
@@ -1057,14 +1049,6 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The specification for personalization.
-   * Notice that if both
-   * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
-   * and
-   * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-   * are set.
-   * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-   * will override
-   * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec].
    * </pre>
    *
    * <code>.google.cloud.retail.v2beta.SearchRequest.PersonalizationSpec personalization_spec = 32;
@@ -1078,14 +1062,6 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The specification for personalization.
-   * Notice that if both
-   * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
-   * and
-   * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-   * are set.
-   * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-   * will override
-   * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec].
    * </pre>
    *
    * <code>.google.cloud.retail.v2beta.SearchRequest.PersonalizationSpec personalization_spec = 32;

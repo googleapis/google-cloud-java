@@ -380,11 +380,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Default value. In this case both product search and faceted search will
-     * be performed. Both
-     * [SearchResponse.SearchResult][google.cloud.retail.v2beta.SearchResponse.SearchResult]
-     * and
-     * [SearchResponse.Facet][google.cloud.retail.v2beta.SearchResponse.Facet]
-     * will be returned.
+     * be performed. Both [SearchResponse.SearchResult] and
+     * [SearchResponse.Facet] will be returned.
      * </pre>
      *
      * <code>SEARCH_MODE_UNSPECIFIED = 0;</code>
@@ -396,11 +393,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Only product search will be performed. The faceted search will be
      * disabled.
-     * Only
-     * [SearchResponse.SearchResult][google.cloud.retail.v2beta.SearchResponse.SearchResult]
-     * will be returned.
-     * [SearchResponse.Facet][google.cloud.retail.v2beta.SearchResponse.Facet]
-     * will not be returned, even if
+     * Only [SearchResponse.SearchResult] will be returned.
+     * [SearchResponse.Facet] will not be returned, even if
      * [SearchRequest.facet_specs][google.cloud.retail.v2beta.SearchRequest.facet_specs]
      * or
      * [SearchRequest.dynamic_facet_spec][google.cloud.retail.v2beta.SearchRequest.dynamic_facet_spec]
@@ -421,9 +415,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * and
      * [SearchRequest.dynamic_facet_spec][google.cloud.retail.v2beta.SearchRequest.dynamic_facet_spec]
      * should be set. Otherwise, an INVALID_ARGUMENT error is returned. Only
-     * [SearchResponse.Facet][google.cloud.retail.v2beta.SearchResponse.Facet]
-     * will be returned.
-     * [SearchResponse.SearchResult][google.cloud.retail.v2beta.SearchResponse.SearchResult]
+     * [SearchResponse.Facet] will be returned. [SearchResponse.SearchResult]
      * will not be returned.
      * </pre>
      *
@@ -438,11 +430,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Default value. In this case both product search and faceted search will
-     * be performed. Both
-     * [SearchResponse.SearchResult][google.cloud.retail.v2beta.SearchResponse.SearchResult]
-     * and
-     * [SearchResponse.Facet][google.cloud.retail.v2beta.SearchResponse.Facet]
-     * will be returned.
+     * be performed. Both [SearchResponse.SearchResult] and
+     * [SearchResponse.Facet] will be returned.
      * </pre>
      *
      * <code>SEARCH_MODE_UNSPECIFIED = 0;</code>
@@ -454,11 +443,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Only product search will be performed. The faceted search will be
      * disabled.
-     * Only
-     * [SearchResponse.SearchResult][google.cloud.retail.v2beta.SearchResponse.SearchResult]
-     * will be returned.
-     * [SearchResponse.Facet][google.cloud.retail.v2beta.SearchResponse.Facet]
-     * will not be returned, even if
+     * Only [SearchResponse.SearchResult] will be returned.
+     * [SearchResponse.Facet] will not be returned, even if
      * [SearchRequest.facet_specs][google.cloud.retail.v2beta.SearchRequest.facet_specs]
      * or
      * [SearchRequest.dynamic_facet_spec][google.cloud.retail.v2beta.SearchRequest.dynamic_facet_spec]
@@ -479,9 +465,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * and
      * [SearchRequest.dynamic_facet_spec][google.cloud.retail.v2beta.SearchRequest.dynamic_facet_spec]
      * should be set. Otherwise, an INVALID_ARGUMENT error is returned. Only
-     * [SearchResponse.Facet][google.cloud.retail.v2beta.SearchResponse.Facet]
-     * will be returned.
-     * [SearchResponse.SearchResult][google.cloud.retail.v2beta.SearchResponse.SearchResult]
+     * [SearchResponse.Facet] will be returned. [SearchResponse.SearchResult]
      * will not be returned.
      * </pre>
      *
@@ -9622,8 +9606,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Unspecified query expansion condition. In this case, server behavior
-       * defaults to
+       * Unspecified query expansion condition. This defaults to
        * [Condition.DISABLED][google.cloud.retail.v2beta.SearchRequest.QueryExpansionSpec.Condition.DISABLED].
        * </pre>
        *
@@ -9659,8 +9642,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Unspecified query expansion condition. In this case, server behavior
-       * defaults to
+       * Unspecified query expansion condition. This defaults to
        * [Condition.DISABLED][google.cloud.retail.v2beta.SearchRequest.QueryExpansionSpec.Condition.DISABLED].
        * </pre>
        *
@@ -10560,8 +10542,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Let CRS decide whether to use personalization based on quality of user
-       * event data.
+       * Let CRS decide whether to use personalization.
        * </pre>
        *
        * <code>AUTO = 1;</code>
@@ -10595,8 +10576,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Let CRS decide whether to use personalization based on quality of user
-       * event data.
+       * Let CRS decide whether to use personalization.
        * </pre>
        *
        * <code>AUTO = 1;</code>
@@ -12734,7 +12714,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.retail.v2beta.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2beta/search_service.proto;l=586
+   *     google/cloud/retail/v2beta/search_service.proto;l=576
    * @return Whether the dynamicFacetSpec field is set.
    */
   @java.lang.Override
@@ -12757,7 +12737,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.retail.v2beta.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2beta/search_service.proto;l=586
+   *     google/cloud/retail/v2beta/search_service.proto;l=576
    * @return The dynamicFacetSpec.
    */
   @java.lang.Override
@@ -13250,7 +13230,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * the same as
    * [UserEvent.page_categories][google.cloud.retail.v2beta.UserEvent.page_categories];
    * To represent full path of category, use '&gt;' sign to separate different
-   * hierarchies. If '&gt;' is part of the category name, replace it with
+   * hierarchies. If '&gt;' is part of the category name, please replace it with
    * other character(s).
    * Category pages include special pages such as sales or promotions. For
    * instance, a special sale page may have the category hierarchy:
@@ -13273,7 +13253,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * the same as
    * [UserEvent.page_categories][google.cloud.retail.v2beta.UserEvent.page_categories];
    * To represent full path of category, use '&gt;' sign to separate different
-   * hierarchies. If '&gt;' is part of the category name, replace it with
+   * hierarchies. If '&gt;' is part of the category name, please replace it with
    * other character(s).
    * Category pages include special pages such as sales or promotions. For
    * instance, a special sale page may have the category hierarchy:
@@ -13296,7 +13276,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * the same as
    * [UserEvent.page_categories][google.cloud.retail.v2beta.UserEvent.page_categories];
    * To represent full path of category, use '&gt;' sign to separate different
-   * hierarchies. If '&gt;' is part of the category name, replace it with
+   * hierarchies. If '&gt;' is part of the category name, please replace it with
    * other character(s).
    * Category pages include special pages such as sales or promotions. For
    * instance, a special sale page may have the category hierarchy:
@@ -13320,7 +13300,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * the same as
    * [UserEvent.page_categories][google.cloud.retail.v2beta.UserEvent.page_categories];
    * To represent full path of category, use '&gt;' sign to separate different
-   * hierarchies. If '&gt;' is part of the category name, replace it with
+   * hierarchies. If '&gt;' is part of the category name, please replace it with
    * other character(s).
    * Category pages include special pages such as sales or promotions. For
    * instance, a special sale page may have the category hierarchy:
@@ -13383,14 +13363,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The specification for personalization.
-   * Notice that if both
-   * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
-   * and
-   * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-   * are set.
-   * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-   * will override
-   * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec].
    * </pre>
    *
    * <code>.google.cloud.retail.v2beta.SearchRequest.PersonalizationSpec personalization_spec = 32;
@@ -13407,14 +13379,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The specification for personalization.
-   * Notice that if both
-   * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
-   * and
-   * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-   * are set.
-   * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-   * will override
-   * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec].
    * </pre>
    *
    * <code>.google.cloud.retail.v2beta.SearchRequest.PersonalizationSpec personalization_spec = 32;
@@ -13433,14 +13397,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The specification for personalization.
-   * Notice that if both
-   * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
-   * and
-   * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-   * are set.
-   * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-   * will override
-   * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec].
    * </pre>
    *
    * <code>.google.cloud.retail.v2beta.SearchRequest.PersonalizationSpec personalization_spec = 32;
@@ -16289,7 +16245,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.retail.v2beta.SearchRequest.dynamic_facet_spec is deprecated. See
-     *     google/cloud/retail/v2beta/search_service.proto;l=586
+     *     google/cloud/retail/v2beta/search_service.proto;l=576
      * @return Whether the dynamicFacetSpec field is set.
      */
     @java.lang.Deprecated
@@ -16311,7 +16267,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.retail.v2beta.SearchRequest.dynamic_facet_spec is deprecated. See
-     *     google/cloud/retail/v2beta/search_service.proto;l=586
+     *     google/cloud/retail/v2beta/search_service.proto;l=576
      * @return The dynamicFacetSpec.
      */
     @java.lang.Deprecated
@@ -17763,7 +17719,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * the same as
      * [UserEvent.page_categories][google.cloud.retail.v2beta.UserEvent.page_categories];
      * To represent full path of category, use '&gt;' sign to separate different
-     * hierarchies. If '&gt;' is part of the category name, replace it with
+     * hierarchies. If '&gt;' is part of the category name, please replace it with
      * other character(s).
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
@@ -17786,7 +17742,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * the same as
      * [UserEvent.page_categories][google.cloud.retail.v2beta.UserEvent.page_categories];
      * To represent full path of category, use '&gt;' sign to separate different
-     * hierarchies. If '&gt;' is part of the category name, replace it with
+     * hierarchies. If '&gt;' is part of the category name, please replace it with
      * other character(s).
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
@@ -17809,7 +17765,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * the same as
      * [UserEvent.page_categories][google.cloud.retail.v2beta.UserEvent.page_categories];
      * To represent full path of category, use '&gt;' sign to separate different
-     * hierarchies. If '&gt;' is part of the category name, replace it with
+     * hierarchies. If '&gt;' is part of the category name, please replace it with
      * other character(s).
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
@@ -17833,7 +17789,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * the same as
      * [UserEvent.page_categories][google.cloud.retail.v2beta.UserEvent.page_categories];
      * To represent full path of category, use '&gt;' sign to separate different
-     * hierarchies. If '&gt;' is part of the category name, replace it with
+     * hierarchies. If '&gt;' is part of the category name, please replace it with
      * other character(s).
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
@@ -17857,7 +17813,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * the same as
      * [UserEvent.page_categories][google.cloud.retail.v2beta.UserEvent.page_categories];
      * To represent full path of category, use '&gt;' sign to separate different
-     * hierarchies. If '&gt;' is part of the category name, replace it with
+     * hierarchies. If '&gt;' is part of the category name, please replace it with
      * other character(s).
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
@@ -17888,7 +17844,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * the same as
      * [UserEvent.page_categories][google.cloud.retail.v2beta.UserEvent.page_categories];
      * To represent full path of category, use '&gt;' sign to separate different
-     * hierarchies. If '&gt;' is part of the category name, replace it with
+     * hierarchies. If '&gt;' is part of the category name, please replace it with
      * other character(s).
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
@@ -17918,7 +17874,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * the same as
      * [UserEvent.page_categories][google.cloud.retail.v2beta.UserEvent.page_categories];
      * To represent full path of category, use '&gt;' sign to separate different
-     * hierarchies. If '&gt;' is part of the category name, replace it with
+     * hierarchies. If '&gt;' is part of the category name, please replace it with
      * other character(s).
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
@@ -17945,7 +17901,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * the same as
      * [UserEvent.page_categories][google.cloud.retail.v2beta.UserEvent.page_categories];
      * To represent full path of category, use '&gt;' sign to separate different
-     * hierarchies. If '&gt;' is part of the category name, replace it with
+     * hierarchies. If '&gt;' is part of the category name, please replace it with
      * other character(s).
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
@@ -17971,7 +17927,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * the same as
      * [UserEvent.page_categories][google.cloud.retail.v2beta.UserEvent.page_categories];
      * To represent full path of category, use '&gt;' sign to separate different
-     * hierarchies. If '&gt;' is part of the category name, replace it with
+     * hierarchies. If '&gt;' is part of the category name, please replace it with
      * other character(s).
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
@@ -18103,14 +18059,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization.
-     * Notice that if both
-     * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
-     * and
-     * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-     * are set.
-     * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-     * will override
-     * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec].
      * </pre>
      *
      * <code>
@@ -18127,14 +18075,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization.
-     * Notice that if both
-     * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
-     * and
-     * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-     * are set.
-     * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-     * will override
-     * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec].
      * </pre>
      *
      * <code>
@@ -18158,14 +18098,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization.
-     * Notice that if both
-     * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
-     * and
-     * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-     * are set.
-     * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-     * will override
-     * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec].
      * </pre>
      *
      * <code>
@@ -18191,14 +18123,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization.
-     * Notice that if both
-     * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
-     * and
-     * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-     * are set.
-     * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-     * will override
-     * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec].
      * </pre>
      *
      * <code>
@@ -18221,14 +18145,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization.
-     * Notice that if both
-     * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
-     * and
-     * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-     * are set.
-     * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-     * will override
-     * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec].
      * </pre>
      *
      * <code>
@@ -18259,14 +18175,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization.
-     * Notice that if both
-     * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
-     * and
-     * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-     * are set.
-     * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-     * will override
-     * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec].
      * </pre>
      *
      * <code>
@@ -18289,14 +18197,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization.
-     * Notice that if both
-     * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
-     * and
-     * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-     * are set.
-     * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-     * will override
-     * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec].
      * </pre>
      *
      * <code>
@@ -18314,14 +18214,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization.
-     * Notice that if both
-     * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
-     * and
-     * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-     * are set.
-     * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-     * will override
-     * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec].
      * </pre>
      *
      * <code>
@@ -18343,14 +18235,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The specification for personalization.
-     * Notice that if both
-     * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec]
-     * and
-     * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-     * are set.
-     * [SearchRequest.personalization_spec][google.cloud.retail.v2beta.SearchRequest.personalization_spec]
-     * will override
-     * [ServingConfig.personalization_spec][google.cloud.retail.v2beta.ServingConfig.personalization_spec].
      * </pre>
      *
      * <code>

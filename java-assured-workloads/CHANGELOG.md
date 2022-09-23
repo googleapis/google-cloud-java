@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-assured-workloads/compare/v2.1.0...v2.2.0) (2022-09-15)
+
+
+### Features
+
+* Add compliant_but_disallowed_services field to the v1beta1 Workload proto ([#476](https://github.com/googleapis/java-assured-workloads/issues/476)) ([99b72cd](https://github.com/googleapis/java-assured-workloads/commit/99b72cdf8d8e37014ebde8cd77c0557d7da23944))
+* Updated v1beta1 analyzeWorkloadMove documentation ([#473](https://github.com/googleapis/java-assured-workloads/issues/473)) ([ad0ba84](https://github.com/googleapis/java-assured-workloads/commit/ad0ba843fadaa1629a4ea13dd0cff1cc797dec7f))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#478](https://github.com/googleapis/java-assured-workloads/issues/478)) ([518155d](https://github.com/googleapis/java-assured-workloads/commit/518155da34e6c707321a1e76dde2e2929a94822b))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#480](https://github.com/googleapis/java-assured-workloads/issues/480)) ([4f07128](https://github.com/googleapis/java-assured-workloads/commit/4f07128cea08e7b8f91cfe1b1f51bd39e51bc8b4))
+
 ## [2.1.0](https://github.com/googleapis/java-assured-workloads/compare/v2.0.1...v2.1.0) (2022-08-09)
 
 

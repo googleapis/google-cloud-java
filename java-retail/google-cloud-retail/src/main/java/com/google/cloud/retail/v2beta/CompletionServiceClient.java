@@ -33,18 +33,15 @@ import javax.annotation.Generated;
 /**
  * Service Description: Auto-completion service for retail.
  *
- * <p>This feature is only available for users who have Retail Search enabled. Enable Retail Search
- * on Cloud Console before using this feature.
+ * <p>This feature is only available for users who have Retail Search enabled. Please enable Retail
+ * Search on Cloud Console before using this feature.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
- * // This snippet has been automatically generated and should be regarded as a code template only.
- * // It will require modifications to work:
- * // - It may require correct/in-range values for request initialization.
- * // - It may require specifying regional endpoints when creating the service client as shown in
- * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
  *   CompleteQueryRequest request =
  *       CompleteQueryRequest.newBuilder()
@@ -90,11 +87,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
- * // This snippet has been automatically generated and should be regarded as a code template only.
- * // It will require modifications to work:
- * // - It may require correct/in-range values for request initialization.
- * // - It may require specifying regional endpoints when creating the service client as shown in
- * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CompletionServiceSettings completionServiceSettings =
  *     CompletionServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -106,11 +100,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
- * // This snippet has been automatically generated and should be regarded as a code template only.
- * // It will require modifications to work:
- * // - It may require correct/in-range values for request initialization.
- * // - It may require specifying regional endpoints when creating the service client as shown in
- * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CompletionServiceSettings completionServiceSettings =
  *     CompletionServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * CompletionServiceClient completionServiceClient =
@@ -121,11 +112,8 @@ import javax.annotation.Generated;
  * the wire:
  *
  * <pre>{@code
- * // This snippet has been automatically generated and should be regarded as a code template only.
- * // It will require modifications to work:
- * // - It may require correct/in-range values for request initialization.
- * // - It may require specifying regional endpoints when creating the service client as shown in
- * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CompletionServiceSettings completionServiceSettings =
  *     CompletionServiceSettings.newBuilder()
  *         .setTransportChannelProvider(
@@ -217,17 +205,14 @@ public class CompletionServiceClient implements BackgroundResource {
   /**
    * Completes the specified prefix with keyword suggestions.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
    *   CompleteQueryRequest request =
    *       CompleteQueryRequest.newBuilder()
@@ -254,17 +239,14 @@ public class CompletionServiceClient implements BackgroundResource {
   /**
    * Completes the specified prefix with keyword suggestions.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
    *   CompleteQueryRequest request =
    *       CompleteQueryRequest.newBuilder()
@@ -296,17 +278,14 @@ public class CompletionServiceClient implements BackgroundResource {
    * <p>The operation is successfully finished only after the imported suggestions are indexed
    * successfully and ready for serving. The process takes hours.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
    *   ImportCompletionDataRequest request =
    *       ImportCompletionDataRequest.newBuilder()
@@ -336,17 +315,14 @@ public class CompletionServiceClient implements BackgroundResource {
    * <p>The operation is successfully finished only after the imported suggestions are indexed
    * successfully and ready for serving. The process takes hours.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
    *   ImportCompletionDataRequest request =
    *       ImportCompletionDataRequest.newBuilder()
@@ -376,17 +352,14 @@ public class CompletionServiceClient implements BackgroundResource {
    * <p>The operation is successfully finished only after the imported suggestions are indexed
    * successfully and ready for serving. The process takes hours.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
    * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
    *   ImportCompletionDataRequest request =
    *       ImportCompletionDataRequest.newBuilder()

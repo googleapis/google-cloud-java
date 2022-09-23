@@ -119,7 +119,7 @@ public class HttpJsonExecutionsStub extends ExecutionsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("execution", request.getExecution(), false))
+                                  .toBody("execution", request.getExecution()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Execution>newBuilder()
@@ -189,7 +189,7 @@ public class HttpJsonExecutionsStub extends ExecutionsStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Execution>newBuilder()

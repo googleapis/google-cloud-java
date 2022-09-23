@@ -349,7 +349,7 @@ public final class ControlServiceGrpc {
      * Updates a Control.
      * [Control][google.cloud.retail.v2beta.Control] cannot be set to a different
      * oneof field, if so an INVALID_ARGUMENT is returned. If the
-     * [Control][google.cloud.retail.v2beta.Control] to update does not exist, a
+     * [Control][google.cloud.retail.v2beta.Control] to delete does not exist, a
      * NOT_FOUND error is returned.
      * </pre>
      */
@@ -377,8 +377,7 @@ public final class ControlServiceGrpc {
      *
      *
      * <pre>
-     * Lists all Controls by their parent
-     * [Catalog][google.cloud.retail.v2beta.Catalog].
+     * Lists all Controls linked to this catalog.
      * </pre>
      */
     public void listControls(
@@ -488,7 +487,7 @@ public final class ControlServiceGrpc {
      * Updates a Control.
      * [Control][google.cloud.retail.v2beta.Control] cannot be set to a different
      * oneof field, if so an INVALID_ARGUMENT is returned. If the
-     * [Control][google.cloud.retail.v2beta.Control] to update does not exist, a
+     * [Control][google.cloud.retail.v2beta.Control] to delete does not exist, a
      * NOT_FOUND error is returned.
      * </pre>
      */
@@ -519,8 +518,7 @@ public final class ControlServiceGrpc {
      *
      *
      * <pre>
-     * Lists all Controls by their parent
-     * [Catalog][google.cloud.retail.v2beta.Catalog].
+     * Lists all Controls linked to this catalog.
      * </pre>
      */
     public void listControls(
@@ -590,7 +588,7 @@ public final class ControlServiceGrpc {
      * Updates a Control.
      * [Control][google.cloud.retail.v2beta.Control] cannot be set to a different
      * oneof field, if so an INVALID_ARGUMENT is returned. If the
-     * [Control][google.cloud.retail.v2beta.Control] to update does not exist, a
+     * [Control][google.cloud.retail.v2beta.Control] to delete does not exist, a
      * NOT_FOUND error is returned.
      * </pre>
      */
@@ -617,8 +615,7 @@ public final class ControlServiceGrpc {
      *
      *
      * <pre>
-     * Lists all Controls by their parent
-     * [Catalog][google.cloud.retail.v2beta.Catalog].
+     * Lists all Controls linked to this catalog.
      * </pre>
      */
     public com.google.cloud.retail.v2beta.ListControlsResponse listControls(
@@ -685,7 +682,7 @@ public final class ControlServiceGrpc {
      * Updates a Control.
      * [Control][google.cloud.retail.v2beta.Control] cannot be set to a different
      * oneof field, if so an INVALID_ARGUMENT is returned. If the
-     * [Control][google.cloud.retail.v2beta.Control] to update does not exist, a
+     * [Control][google.cloud.retail.v2beta.Control] to delete does not exist, a
      * NOT_FOUND error is returned.
      * </pre>
      */
@@ -714,8 +711,7 @@ public final class ControlServiceGrpc {
      *
      *
      * <pre>
-     * Lists all Controls by their parent
-     * [Catalog][google.cloud.retail.v2beta.Catalog].
+     * Lists all Controls linked to this catalog.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

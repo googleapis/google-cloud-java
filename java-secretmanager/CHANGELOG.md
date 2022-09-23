@@ -1,5 +1,48 @@
 # Changelog
 
+## [2.3.7](https://github.com/googleapis/java-secretmanager/compare/v2.3.6...v2.3.7) (2022-09-22)
+
+
+### Dependencies
+
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.14 ([#846](https://github.com/googleapis/java-secretmanager/issues/846)) ([f2985b5](https://github.com/googleapis/java-secretmanager/commit/f2985b589e2e107f346f2264c837890f1fae8bfc))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.14 ([#847](https://github.com/googleapis/java-secretmanager/issues/847)) ([27f5fa8](https://github.com/googleapis/java-secretmanager/commit/27f5fa8836ecb53b617588e33f48818b773ad65f))
+
+## [2.3.6](https://github.com/googleapis/java-secretmanager/compare/v2.3.5...v2.3.6) (2022-09-21)
+
+
+### Dependencies
+
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.9.1 ([#842](https://github.com/googleapis/java-secretmanager/issues/842)) ([4bec542](https://github.com/googleapis/java-secretmanager/commit/4bec542060b480f3e75f0c9dbd39ed24d4c0892f))
+
+## [2.3.5](https://github.com/googleapis/java-secretmanager/compare/v2.3.4...v2.3.5) (2022-09-20)
+
+
+### Dependencies
+
+* Update dependency com.google.protobuf:protobuf-java-util to v3.21.6 ([#832](https://github.com/googleapis/java-secretmanager/issues/832)) ([a2595c8](https://github.com/googleapis/java-secretmanager/commit/a2595c8f98fef63844269d3080cad81d06aa5a9e))
+
+## [2.3.4](https://github.com/googleapis/java-secretmanager/compare/v2.3.3...v2.3.4) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#833](https://github.com/googleapis/java-secretmanager/issues/833)) ([a462455](https://github.com/googleapis/java-secretmanager/commit/a462455a2c0f63479cff12a5f19a7d5b2cd244d8))
+
+## [2.3.3](https://github.com/googleapis/java-secretmanager/compare/v2.3.2...v2.3.3) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#827](https://github.com/googleapis/java-secretmanager/issues/827)) ([b2162a7](https://github.com/googleapis/java-secretmanager/commit/b2162a76e1def8116fc7c01cd95000449f2c9503))
+
+## [2.3.2](https://github.com/googleapis/java-secretmanager/compare/v2.3.1...v2.3.2) (2022-09-06)
+
+
+### Dependencies
+
+* Update dependency com.google.protobuf ([6bf4745](https://github.com/googleapis/java-secretmanager/commit/6bf474519e658e56d015c661574c84c501c2c9b8))
+
 ## [2.3.1](https://github.com/googleapis/java-secretmanager/compare/v2.3.0...v2.3.1) (2022-08-03)
 
 

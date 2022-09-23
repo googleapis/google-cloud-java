@@ -273,37 +273,4 @@ public interface CatalogAttributeOrBuilder
    * @return The recommendationsFilteringOption.
    */
   com.google.cloud.retail.v2beta.RecommendationsFilteringOption getRecommendationsFilteringOption();
-
-  /**
-   *
-   *
-   * <pre>
-   * If EXACT_SEARCHABLE_ENABLED, attribute values will be exact searchable.
-   * This property only applies to textual custom attributes and requires
-   * indexable set to enabled to enable exact-searchable.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.retail.v2beta.CatalogAttribute.ExactSearchableOption exact_searchable_option = 11;
-   * </code>
-   *
-   * @return The enum numeric value on the wire for exactSearchableOption.
-   */
-  int getExactSearchableOptionValue();
-  /**
-   *
-   *
-   * <pre>
-   * If EXACT_SEARCHABLE_ENABLED, attribute values will be exact searchable.
-   * This property only applies to textual custom attributes and requires
-   * indexable set to enabled to enable exact-searchable.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.retail.v2beta.CatalogAttribute.ExactSearchableOption exact_searchable_option = 11;
-   * </code>
-   *
-   * @return The exactSearchableOption.
-   */
-  com.google.cloud.retail.v2beta.CatalogAttribute.ExactSearchableOption getExactSearchableOption();
 }

@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.10.0](https://github.com/googleapis/java-securitycenter/compare/v2.9.0...v2.10.0) (2022-09-16)
+
+
+### Features
+
+* Adding database access information, such as queries field to a finding. A database may be a sub-resource of an instance (as in the case of CloudSQL instances or Cloud Spanner instances), or the database instance itself ([#902](https://github.com/googleapis/java-securitycenter/issues/902)) ([a5848b2](https://github.com/googleapis/java-securitycenter/commit/a5848b27a05732f43aa50198f8cc180442943260))
+* Adding uris to indicator of compromise (IOC) field ([#900](https://github.com/googleapis/java-securitycenter/issues/900)) ([ecf5a85](https://github.com/googleapis/java-securitycenter/commit/ecf5a857d487010ddba073b48e2cadb9e87167c5))
+* ServiceAccountKeyName, serviceAccountDelegationInfo, and principalSubject attributes added to the existing access attribute. These new attributes provide additional context about the principals that are associated with the finding ([#905](https://github.com/googleapis/java-securitycenter/issues/905)) ([d8795ac](https://github.com/googleapis/java-securitycenter/commit/d8795ac0b6e0d16ba4b50d69a72ba4908e6a6ce9))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.14.6 ([#891](https://github.com/googleapis/java-securitycenter/issues/891)) ([78edca7](https://github.com/googleapis/java-securitycenter/commit/78edca7862a86dee1cd720ec39ad2af4c640e6c2))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.14.7 ([#903](https://github.com/googleapis/java-securitycenter/issues/903)) ([7d7bf9e](https://github.com/googleapis/java-securitycenter/commit/7d7bf9ea1cfc72dd1baefc5e8b5194852a53ef52))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.15.0 ([#906](https://github.com/googleapis/java-securitycenter/issues/906)) ([d427911](https://github.com/googleapis/java-securitycenter/commit/d4279118a242021eac86d859562d735149dd37f9))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.16.0 ([#912](https://github.com/googleapis/java-securitycenter/issues/912)) ([88a2980](https://github.com/googleapis/java-securitycenter/commit/88a298061fb73e4572e65c243985e73aea198cfa))
+* Update dependency com.google.cloud:google-cloud-pubsub to v1.120.11 ([#890](https://github.com/googleapis/java-securitycenter/issues/890)) ([b04ae65](https://github.com/googleapis/java-securitycenter/commit/b04ae652fb26e3c4382d85627b98306368f40922))
+* Update dependency com.google.cloud:google-cloud-pubsub to v1.120.12 ([#899](https://github.com/googleapis/java-securitycenter/issues/899)) ([53c1ffb](https://github.com/googleapis/java-securitycenter/commit/53c1ffb3099b9b078234657e5440152efd98d110))
+* Update dependency com.google.cloud:google-cloud-pubsub to v1.120.13 ([#904](https://github.com/googleapis/java-securitycenter/issues/904)) ([1846dd5](https://github.com/googleapis/java-securitycenter/commit/1846dd5d56570f629df4087f12223ca111095a5f))
+* Update dependency com.google.cloud:google-cloud-pubsub to v1.120.14 ([#911](https://github.com/googleapis/java-securitycenter/issues/911)) ([64f530b](https://github.com/googleapis/java-securitycenter/commit/64f530b720edcd2137f046b9c0bb4f2c3d74e82c))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#909](https://github.com/googleapis/java-securitycenter/issues/909)) ([ea2ba2a](https://github.com/googleapis/java-securitycenter/commit/ea2ba2a15b89cabbb59eedc4361473d07f24e6bf))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#916](https://github.com/googleapis/java-securitycenter/issues/916)) ([c51e189](https://github.com/googleapis/java-securitycenter/commit/c51e1896d275444cbd3136fa832fa851f7ca2886))
+* Update dependency com.google.protobuf:protobuf-java-util to v3.21.5 ([#894](https://github.com/googleapis/java-securitycenter/issues/894)) ([1cbbdde](https://github.com/googleapis/java-securitycenter/commit/1cbbdde1ed2cca48522ae6e1704c6a7839f9d334))
+
 ## [2.9.0](https://github.com/googleapis/java-securitycenter/compare/v2.8.0...v2.9.0) (2022-08-06)
 
 

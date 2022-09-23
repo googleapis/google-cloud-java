@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.5.4](https://github.com/googleapis/java-video-live-stream/compare/v0.5.3...v0.5.4) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#90](https://github.com/googleapis/java-video-live-stream/issues/90)) ([469950d](https://github.com/googleapis/java-video-live-stream/commit/469950d2515b0a7fd7cf4dfd465c6254d42aa9b3))
+
+## [0.5.3](https://github.com/googleapis/java-video-live-stream/compare/v0.5.2...v0.5.3) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#85](https://github.com/googleapis/java-video-live-stream/issues/85)) ([85e8d38](https://github.com/googleapis/java-video-live-stream/commit/85e8d38a8852cbb18655c21e9328f7d3cc10ee38))
+
 ## [0.5.2](https://github.com/googleapis/java-video-live-stream/compare/v0.5.1...v0.5.2) (2022-08-12)
 
 

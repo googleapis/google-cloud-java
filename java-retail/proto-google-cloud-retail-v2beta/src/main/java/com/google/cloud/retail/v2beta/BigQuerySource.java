@@ -209,8 +209,9 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-   * Only supported in
-   * [ImportProductsRequest][google.cloud.retail.v2beta.ImportProductsRequest].
+   * Only supported when
+   * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2beta.ImportProductsRequest.reconciliation_mode]
+   * is set to `FULL`.
    * </pre>
    *
    * <code>.google.type.Date partition_date = 6;</code>
@@ -226,8 +227,9 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-   * Only supported in
-   * [ImportProductsRequest][google.cloud.retail.v2beta.ImportProductsRequest].
+   * Only supported when
+   * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2beta.ImportProductsRequest.reconciliation_mode]
+   * is set to `FULL`.
    * </pre>
    *
    * <code>.google.type.Date partition_date = 6;</code>
@@ -246,8 +248,9 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-   * Only supported in
-   * [ImportProductsRequest][google.cloud.retail.v2beta.ImportProductsRequest].
+   * Only supported when
+   * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2beta.ImportProductsRequest.reconciliation_mode]
+   * is set to `FULL`.
    * </pre>
    *
    * <code>.google.type.Date partition_date = 6;</code>
@@ -487,7 +490,8 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
    * * `user_event_ga360`:
    *   The schema is available here:
    *   https://support.google.com/analytics/answer/3437719.
-   * * `user_event_ga4`:
+   * * `user_event_ga4`: This feature is in private preview. Please contact the
+   *   support team for importing Google Analytics 4 events.
    *   The schema is available here:
    *   https://support.google.com/analytics/answer/7029846.
    * Supported values for auto-completion imports:
@@ -529,7 +533,8 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
    * * `user_event_ga360`:
    *   The schema is available here:
    *   https://support.google.com/analytics/answer/3437719.
-   * * `user_event_ga4`:
+   * * `user_event_ga4`: This feature is in private preview. Please contact the
+   *   support team for importing Google Analytics 4 events.
    *   The schema is available here:
    *   https://support.google.com/analytics/answer/7029846.
    * Supported values for auto-completion imports:
@@ -1002,8 +1007,9 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-     * Only supported in
-     * [ImportProductsRequest][google.cloud.retail.v2beta.ImportProductsRequest].
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2beta.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
      * </pre>
      *
      * <code>.google.type.Date partition_date = 6;</code>
@@ -1019,8 +1025,9 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-     * Only supported in
-     * [ImportProductsRequest][google.cloud.retail.v2beta.ImportProductsRequest].
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2beta.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
      * </pre>
      *
      * <code>.google.type.Date partition_date = 6;</code>
@@ -1046,8 +1053,9 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-     * Only supported in
-     * [ImportProductsRequest][google.cloud.retail.v2beta.ImportProductsRequest].
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2beta.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
      * </pre>
      *
      * <code>.google.type.Date partition_date = 6;</code>
@@ -1070,8 +1078,9 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-     * Only supported in
-     * [ImportProductsRequest][google.cloud.retail.v2beta.ImportProductsRequest].
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2beta.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
      * </pre>
      *
      * <code>.google.type.Date partition_date = 6;</code>
@@ -1091,8 +1100,9 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-     * Only supported in
-     * [ImportProductsRequest][google.cloud.retail.v2beta.ImportProductsRequest].
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2beta.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
      * </pre>
      *
      * <code>.google.type.Date partition_date = 6;</code>
@@ -1123,8 +1133,9 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-     * Only supported in
-     * [ImportProductsRequest][google.cloud.retail.v2beta.ImportProductsRequest].
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2beta.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
      * </pre>
      *
      * <code>.google.type.Date partition_date = 6;</code>
@@ -1150,8 +1161,9 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-     * Only supported in
-     * [ImportProductsRequest][google.cloud.retail.v2beta.ImportProductsRequest].
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2beta.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
      * </pre>
      *
      * <code>.google.type.Date partition_date = 6;</code>
@@ -1164,8 +1176,9 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-     * Only supported in
-     * [ImportProductsRequest][google.cloud.retail.v2beta.ImportProductsRequest].
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2beta.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
      * </pre>
      *
      * <code>.google.type.Date partition_date = 6;</code>
@@ -1186,8 +1199,9 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-     * Only supported in
-     * [ImportProductsRequest][google.cloud.retail.v2beta.ImportProductsRequest].
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2beta.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
      * </pre>
      *
      * <code>.google.type.Date partition_date = 6;</code>
@@ -1683,7 +1697,8 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      * * `user_event_ga360`:
      *   The schema is available here:
      *   https://support.google.com/analytics/answer/3437719.
-     * * `user_event_ga4`:
+     * * `user_event_ga4`: This feature is in private preview. Please contact the
+     *   support team for importing Google Analytics 4 events.
      *   The schema is available here:
      *   https://support.google.com/analytics/answer/7029846.
      * Supported values for auto-completion imports:
@@ -1724,7 +1739,8 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      * * `user_event_ga360`:
      *   The schema is available here:
      *   https://support.google.com/analytics/answer/3437719.
-     * * `user_event_ga4`:
+     * * `user_event_ga4`: This feature is in private preview. Please contact the
+     *   support team for importing Google Analytics 4 events.
      *   The schema is available here:
      *   https://support.google.com/analytics/answer/7029846.
      * Supported values for auto-completion imports:
@@ -1765,7 +1781,8 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      * * `user_event_ga360`:
      *   The schema is available here:
      *   https://support.google.com/analytics/answer/3437719.
-     * * `user_event_ga4`:
+     * * `user_event_ga4`: This feature is in private preview. Please contact the
+     *   support team for importing Google Analytics 4 events.
      *   The schema is available here:
      *   https://support.google.com/analytics/answer/7029846.
      * Supported values for auto-completion imports:
@@ -1805,7 +1822,8 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      * * `user_event_ga360`:
      *   The schema is available here:
      *   https://support.google.com/analytics/answer/3437719.
-     * * `user_event_ga4`:
+     * * `user_event_ga4`: This feature is in private preview. Please contact the
+     *   support team for importing Google Analytics 4 events.
      *   The schema is available here:
      *   https://support.google.com/analytics/answer/7029846.
      * Supported values for auto-completion imports:
@@ -1841,7 +1859,8 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      * * `user_event_ga360`:
      *   The schema is available here:
      *   https://support.google.com/analytics/answer/3437719.
-     * * `user_event_ga4`:
+     * * `user_event_ga4`: This feature is in private preview. Please contact the
+     *   support team for importing Google Analytics 4 events.
      *   The schema is available here:
      *   https://support.google.com/analytics/answer/7029846.
      * Supported values for auto-completion imports:
