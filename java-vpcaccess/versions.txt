@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-vpcaccess:2.4.0:2.4.1-SNAPSHOT
-grpc-google-cloud-vpcaccess-v1:2.4.0:2.4.1-SNAPSHOT
-proto-google-cloud-vpcaccess-v1:2.4.0:2.4.1-SNAPSHOT
+google-cloud-vpcaccess:2.4.0:2.4.0
+grpc-google-cloud-vpcaccess-v1:2.4.0:2.4.0
+proto-google-cloud-vpcaccess-v1:2.4.0:2.4.0
