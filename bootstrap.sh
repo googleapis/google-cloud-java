@@ -67,13 +67,17 @@ done
 
 # cwd: monorepo/google-cloud-java
 echo "Working directory: $(pwd)"
-../../templates/generation/print_root_pom.sh > pom.xml
-
-git add pom.xml
-git commit -am 'feat: create aggregator pom'
 
 # Template files
 cp -rp ../../templates/. ./
+
+# Generation files
+cp -rp ../../generation ./
+
+./generation/print_root_pom.sh > pom.xml
+
+git add pom.xml
+git commit -am 'feat: create aggregator pom'
 
 # Add all template files
 git add --all
