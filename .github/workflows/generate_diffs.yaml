@@ -16,7 +16,6 @@ on:
   push:
     branches:
     - main
-  pull_request:
 name: monorepo-diff
 jobs:
   generate-diffs:
