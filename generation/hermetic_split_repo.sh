@@ -48,6 +48,11 @@ else
 fi
 
 googleapis_commits=$(git log -1000 |grep 'Source-Link: https://github.com/googleapis/googleapis/commit' |perl -nle 'print $1 if m|commit/(.+)|')
+if [ -z "${googleapis_commits}" ]; then
+  echo "No history of googleapis commit in commit history"
+  echo "Maybe the library is purely hand-written Java code and no need to regenerate with protoc"
+  exit 1
+fi
 synthtool_commits=$(git log -1000 |grep 'Source-Link: https://github.com/googleapis/synthtool/commit' |perl -nle 'print $1 if m|commit/(.+)|')
 
 popd
@@ -189,8 +194,11 @@ git checkout "origin/${BRANCH}" -- samples README.md .github .kokoro java.header
 git add ./**/*.java
 
 # It's possible that there's no code change.
-git commit -m 'fix: applying a different protobuf' --allow-empty
+git commit -m 'fix: applying a different code generation' --allow-empty
 popd
 
 echo "Changes are ready in workspace/repo. Create a pull request: "
-echo "  cd workspace/repo && gh pr create --draft --base ${BRANCH} --title 'fix: applying a fix to old branch'"
+echo "  cd workspace/repo && gh pr create --draft --base ${BRANCH} \
+    --title 'deps: test building with newer library version'" \
+    --body "'No need to review.'"
+
