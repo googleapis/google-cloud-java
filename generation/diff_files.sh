@@ -60,11 +60,6 @@ for module in $(find . -mindepth 1 -maxdepth 3 -name pom.xml | sort | xargs dirn
   new_string=${string#"$prefix"}
   artifactId=${new_string%"$suffix"}
 
-  #bom and parent artifacts do not have those 4 jars and a pom (javadoc, sources, test, .jar, pom) so just skip them for now. we can use the same logic to compare their jars
-  if [[ "${artifactId}" == *bom* ]] || [[ "${artifactId}" == *parent* ]]; then
-    continue
-  fi
-
   if [[ "${groupId}" == *grafeas* ]]; then
     continue
   fi
