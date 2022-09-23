@@ -40,7 +40,7 @@ function retry_with_backoff {
   return $exit_code
 }
 
-if [[ $(git branch | grep main-diff ]]; then
+if [[ $(git branch | grep main-diff) ]]; then
   git checkout main-diff
 else
   git checkout -b main-diff
