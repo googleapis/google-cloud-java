@@ -40,15 +40,17 @@ function retry_with_backoff {
   return $exit_code
 }
 
-if [[ $(git branch | grep main-diff) ]]; then
-  git checkout main-diff
-else
-  git checkout -b main-diff
-fi
-
+current_branch="main-diff"
 diff_java_branch="main-diff_java"
 diff_non_java_branch="main-diff_non_java"
-git checkout main-diff
+
+if [[ $(git branch | grep "${current_branch}") ]]; then
+  git checkout "${current_branch}"
+else
+  git checkout -b "${current_branch}"
+fi
+
+git checkout "${current_branch}"
 git branch -D "${diff_java_branch}" "${diff_non_java_branch}"
 
 modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | grep 'java' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
@@ -63,29 +65,18 @@ done
 
 ./generation/delete_non_generated_samples.sh
 
-if [[ $(git branch | grep "${diff_java_branch}") ]]; then
-  git checkout "${diff_java_branch}"
-else
-  git checkout -b "${diff_java_branch}"
-fi
+git checkout -b "${diff_java_branch}"
 git add "*.java"
 git commit -m "chore: Adding java diffs" --no-verify
 git push origin "${diff_java_branch}" --force
 
 git stash
-git checkout main-diff
+git checkout "${current_branch}"
 git stash pop
 
-if [[ $(git branch | grep "${diff_non_java_branch}") ]]; then
-  git checkout "${diff_non_java_branch}"
-else
-  git checkout -b "${diff_non_java_branch}"
-fi
+git checkout -b "${diff_non_java_branch}"
 git add .
 git commit -m "chore: Adding non-java diffs" --no-verify
 git push origin "${diff_non_java_branch}" --force
-
-git checkout main-diff
-git clean -fd
 
 echo "Done running script"
