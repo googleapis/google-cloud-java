@@ -17,6 +17,7 @@ package com.google.cloud.bigquery.storage.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.FlowController;
+import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.auto.value.AutoValue;
 import com.google.cloud.bigquery.storage.v1.ConnectionWorker.Load;
 import com.google.common.base.Stopwatch;
@@ -153,24 +154,24 @@ public class ConnectionWorkerPool {
      * The minimum connections each pool created before trying to reuse the previously created
      * connection in multiplexing mode.
      */
-    abstract int minConnectionsPerPool();
+    abstract int minConnectionsPerRegion();
 
     /** The maximum connections per connection pool. */
-    abstract int maxConnectionsPerPool();
+    abstract int maxConnectionsPerRegion();
 
     public static Builder builder() {
       return new AutoValue_ConnectionWorkerPool_Settings.Builder()
-          .setMinConnectionsPerPool(2)
-          .setMaxConnectionsPerPool(10);
+          .setMinConnectionsPerRegion(2)
+          .setMaxConnectionsPerRegion(10);
     }
 
     /** Builder for the options to config {@link ConnectionWorkerPool}. */
     @AutoValue.Builder
     public abstract static class Builder {
       // TODO(gaole) rename to per location for easier understanding.
-      public abstract Builder setMinConnectionsPerPool(int value);
+      public abstract Builder setMinConnectionsPerRegion(int value);
 
-      public abstract Builder setMaxConnectionsPerPool(int value);
+      public abstract Builder setMaxConnectionsPerRegion(int value);
 
       public abstract Settings build();
     }
@@ -192,7 +193,7 @@ public class ConnectionWorkerPool {
     this.traceId = traceId;
     this.client = client;
     this.ownsBigQueryWriteClient = ownsBigQueryWriteClient;
-    this.currentMaxConnectionCount = settings.minConnectionsPerPool();
+    this.currentMaxConnectionCount = settings.minConnectionsPerRegion();
   }
 
   /**
@@ -266,13 +267,13 @@ public class ConnectionWorkerPool {
               ImmutableList.copyOf(connectionWorkerPool));
       if (!existingBestConnection.getLoad().isOverwhelmed()) {
         return existingBestConnection;
-      } else if (currentMaxConnectionCount < settings.maxConnectionsPerPool()) {
+      } else if (currentMaxConnectionCount < settings.maxConnectionsPerRegion()) {
         // At this point, we have reached the connection cap and the selected connection is
         // overwhelmed, we can try scale up the connection pool.
         // The connection count will go up one by one until `maxConnectionsPerPool` is reached.
         currentMaxConnectionCount += 1;
-        if (currentMaxConnectionCount > settings.maxConnectionsPerPool()) {
-          currentMaxConnectionCount = settings.maxConnectionsPerPool();
+        if (currentMaxConnectionCount > settings.maxConnectionsPerRegion()) {
+          currentMaxConnectionCount = settings.maxConnectionsPerRegion();
         }
         return createConnectionWorker(streamWriter.getStreamName(), streamWriter.getProtoSchema());
       } else {
@@ -323,6 +324,20 @@ public class ConnectionWorkerPool {
       // Though atomic integer is super lightweight, add extra if check in case adding future logic.
       testValueCreateConnectionCount.getAndIncrement();
     }
+    // TODO(gaole): figure out a better way to handle header / request body mismatch
+    // currently we use  different header for the client in each connection worker to be different
+    // as the backend require the header to have the same write_stream field as request body.
+    BigQueryWriteClient clientAfterModification = client;
+    if (ownsBigQueryWriteClient) {
+      BigQueryWriteSettings settings = client.getSettings();
+      BigQueryWriteSettings stubSettings =
+          settings
+              .toBuilder()
+              .setHeaderProvider(
+                  FixedHeaderProvider.create("x-goog-request-params", "write_stream=" + streamName))
+              .build();
+      clientAfterModification = BigQueryWriteClient.create(stubSettings);
+    }
     ConnectionWorker connectionWorker =
         new ConnectionWorker(
             streamName,
@@ -331,7 +346,7 @@ public class ConnectionWorkerPool {
             maxInflightBytes,
             limitExceededBehavior,
             traceId,
-            client,
+            clientAfterModification,
             ownsBigQueryWriteClient);
     connectionWorkerPool.add(connectionWorker);
     log.info(

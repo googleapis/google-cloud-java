@@ -96,7 +96,7 @@ public class StreamWriterTest {
         .setWriterSchema(createProtoSchema())
         .setTraceId(TEST_TRACE_ID)
         .setLocation("US")
-        .enableConnectionPool()
+        .setEnableConnectionPool(true)
         .build();
   }
 

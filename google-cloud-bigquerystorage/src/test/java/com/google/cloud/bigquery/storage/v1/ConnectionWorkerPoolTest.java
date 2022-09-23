@@ -146,8 +146,8 @@ public class ConnectionWorkerPoolTest {
       throws IOException, ExecutionException, InterruptedException {
     ConnectionWorkerPool.setOptions(
         Settings.builder()
-            .setMinConnectionsPerPool(2)
-            .setMaxConnectionsPerPool(maxConnections)
+            .setMinConnectionsPerRegion(2)
+            .setMaxConnectionsPerRegion(maxConnections)
             .build());
     ConnectionWorkerPool connectionWorkerPool =
         createConnectionWorkerPool(maxRequests, /*maxBytes=*/ 100000);
@@ -201,7 +201,7 @@ public class ConnectionWorkerPoolTest {
   @Test
   public void testMultiStreamClosed_multiplexingEnabled() throws Exception {
     ConnectionWorkerPool.setOptions(
-        Settings.builder().setMaxConnectionsPerPool(10).setMinConnectionsPerPool(5).build());
+        Settings.builder().setMaxConnectionsPerRegion(10).setMinConnectionsPerRegion(5).build());
     ConnectionWorkerPool connectionWorkerPool =
         createConnectionWorkerPool(/*maxRequests=*/ 3, /*maxBytes=*/ 1000);
 
@@ -250,7 +250,7 @@ public class ConnectionWorkerPoolTest {
   @Test
   public void testMultiStreamAppend_appendWhileClosing() throws Exception {
     ConnectionWorkerPool.setOptions(
-        Settings.builder().setMaxConnectionsPerPool(10).setMinConnectionsPerPool(5).build());
+        Settings.builder().setMaxConnectionsPerRegion(10).setMinConnectionsPerRegion(5).build());
     ConnectionWorkerPool connectionWorkerPool =
         createConnectionWorkerPool(/*maxRequests=*/ 3, /*maxBytes=*/ 100000);
 

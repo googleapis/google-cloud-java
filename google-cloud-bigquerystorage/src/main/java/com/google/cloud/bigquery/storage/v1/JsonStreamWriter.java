@@ -20,6 +20,7 @@ import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializtionError;
+import com.google.cloud.bigquery.storage.v1.StreamWriter.SingleConnectionOrConnectionPool.Kind;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.Descriptors.Descriptor;
@@ -60,6 +61,7 @@ public class JsonStreamWriter implements AutoCloseable {
   private long totalMessageSize = 0;
   private long absTotal = 0;
   private ProtoSchema protoSchema;
+  private boolean enableConnectionPool = false;
 
   /**
    * Constructs the JsonStreamWriter
@@ -69,7 +71,6 @@ public class JsonStreamWriter implements AutoCloseable {
   private JsonStreamWriter(Builder builder)
       throws Descriptors.DescriptorValidationException, IllegalArgumentException, IOException,
           InterruptedException {
-    this.client = builder.client;
     this.descriptor =
         BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(builder.tableSchema);
 
@@ -83,6 +84,8 @@ public class JsonStreamWriter implements AutoCloseable {
         builder.endpoint,
         builder.flowControlSettings,
         builder.traceId);
+    streamWriterBuilder.setEnableConnectionPool(builder.enableConnectionPool);
+    streamWriterBuilder.setLocation(builder.location);
     this.streamWriter = streamWriterBuilder.build();
     this.streamName = builder.streamName;
     this.tableSchema = builder.tableSchema;
@@ -120,8 +123,10 @@ public class JsonStreamWriter implements AutoCloseable {
       throws IOException, DescriptorValidationException {
     // Handle schema updates in a Thread-safe way by locking down the operation
     synchronized (this) {
-      TableSchema updatedSchema = this.streamWriter.getUpdatedSchema();
-      if (updatedSchema != null) {
+      // Update schema only work when connection pool is not enabled.
+      if (this.streamWriter.getConnectionOperationType() == Kind.CONNECTION_WORKER
+          && this.streamWriter.getUpdatedSchema() != null) {
+        TableSchema updatedSchema = this.streamWriter.getUpdatedSchema();
         // Close the StreamWriter
         this.streamWriter.close();
         // Update JsonStreamWriter's TableSchema and Descriptor
@@ -312,6 +317,9 @@ public class JsonStreamWriter implements AutoCloseable {
     private String traceId;
     private boolean ignoreUnknownFields = false;
     private boolean reconnectAfter10M = false;
+    // Indicte whether multiplexing mode is enabled.
+    private boolean enableConnectionPool = false;
+    private String location;
 
     private static String streamPatternString =
         "(projects/[^/]+/datasets/[^/]+/tables/[^/]+)/streams/[^/]+";
@@ -447,6 +455,31 @@ public class JsonStreamWriter implements AutoCloseable {
      */
     public Builder setReconnectAfter10M(boolean reconnectAfter10M) {
       this.reconnectAfter10M = false;
+      return this;
+    }
+
+    /**
+     * Enable multiplexing for this writer. In multiplexing mode tables will share the same
+     * connection if possible until the connection is overwhelmed. This feature is still under
+     * development, please contact write api team before using.
+     *
+     * @param enableConnectionPool
+     * @return Builder
+     */
+    public Builder setEnableConnectionPool(boolean enableConnectionPool) {
+      this.enableConnectionPool = enableConnectionPool;
+      return this;
+    }
+
+    /**
+     * Location of the table this stream writer is targeting. Connection pools are shared by
+     * location.
+     *
+     * @param location
+     * @return Builder
+     */
+    public Builder setLocation(String location) {
+      this.location = location;
       return this;
     }
 

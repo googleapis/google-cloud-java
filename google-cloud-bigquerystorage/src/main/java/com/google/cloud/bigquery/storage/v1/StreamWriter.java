@@ -22,7 +22,6 @@ import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auto.value.AutoOneOf;
 import com.google.auto.value.AutoValue;
-import com.google.cloud.bigquery.storage.v1.StreamWriter.Builder.ConnectionMode;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import io.grpc.Status;
@@ -33,6 +32,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 /**
@@ -180,7 +180,7 @@ public class StreamWriter implements AutoCloseable {
       client = builder.client;
       ownsBigQueryWriteClient = false;
     }
-    if (builder.connectionMode == ConnectionMode.SINGLE_TABLE) {
+    if (!builder.enableConnectionPool) {
       this.singleConnectionOrConnectionPool =
           SingleConnectionOrConnectionPool.ofSingleConnection(
               new ConnectionWorker(
@@ -212,22 +212,31 @@ public class StreamWriter implements AutoCloseable {
                           builder.traceId,
                           client,
                           ownsBigQueryWriteClient)));
-      validateFetchedConnectonPool(client, builder);
+      validateFetchedConnectonPool(builder);
+      // Shut down the passed in client. Internally we will create another client inside connection
+      // pool for every new connection worker.
+      // TODO(gaole): instead of perform close outside of pool approach, change to always create
+      // new client in connection.
+      if (client != singleConnectionOrConnectionPool.connectionWorkerPool().bigQueryWriteClient()
+          && ownsBigQueryWriteClient) {
+        client.shutdown();
+        try {
+          client.awaitTermination(150, TimeUnit.SECONDS);
+        } catch (InterruptedException unused) {
+          // Ignore interruption as this client is not used.
+        }
+        client.close();
+      }
     }
   }
 
   // Validate whether the fetched connection pool matched certain properties.
-  private void validateFetchedConnectonPool(
-      BigQueryWriteClient client, StreamWriter.Builder builder) {
+  private void validateFetchedConnectonPool(StreamWriter.Builder builder) {
     String paramsValidatedFailed = "";
     if (!Objects.equals(
         this.singleConnectionOrConnectionPool.connectionWorkerPool().getTraceId(),
         builder.traceId)) {
       paramsValidatedFailed = "Trace id";
-    } else if (!Objects.equals(
-        this.singleConnectionOrConnectionPool.connectionWorkerPool().bigQueryWriteClient(),
-        client)) {
-      paramsValidatedFailed = "Bigquery write client";
     } else if (!Objects.equals(
         this.singleConnectionOrConnectionPool.connectionWorkerPool().limitExceededBehavior(),
         builder.limitExceededBehavior)) {
@@ -341,19 +350,6 @@ public class StreamWriter implements AutoCloseable {
 
   /** A builder of {@link StreamWriter}s. */
   public static final class Builder {
-    /** Operation mode for the internal connection pool. */
-    public enum ConnectionMode {
-      // Create a connection per given write stream.
-      SINGLE_TABLE,
-      // Share a connection for multiple tables. This mode is only effective in default stream case.
-      // Some key characteristics:
-      //   1. tables within the same pool has to be in the same location.
-      //   2. Close(streamReference) will not close connection immediately until all tables on
-      //      this connection is closed.
-      //   3. Try to use one stream per table at first and share stream later.
-      MULTIPLEXING
-    }
-
     private static final long DEFAULT_MAX_INFLIGHT_REQUESTS = 1000L;
 
     private static final long DEFAULT_MAX_INFLIGHT_BYTES = 100 * 1024 * 1024; // 100Mb.
@@ -379,13 +375,13 @@ public class StreamWriter implements AutoCloseable {
     private FlowController.LimitExceededBehavior limitExceededBehavior =
         FlowController.LimitExceededBehavior.Block;
 
-    private ConnectionMode connectionMode = ConnectionMode.SINGLE_TABLE;
-
     private String traceId = null;
 
     private TableSchema updatedTableSchema = null;
 
     private String location;
+
+    private boolean enableConnectionPool = false;
 
     private Builder(String streamName) {
       this.streamName = Preconditions.checkNotNull(streamName);
@@ -419,8 +415,16 @@ public class StreamWriter implements AutoCloseable {
       return this;
     }
 
-    public Builder enableConnectionPool() {
-      this.connectionMode = ConnectionMode.MULTIPLEXING;
+    /**
+     * Enable multiplexing for this writer. In multiplexing mode tables will share the same
+     * connection if possible until the connection is overwhelmed. This feature is still under
+     * development, please contact write api team before using.
+     *
+     * @param enableConnectionPool
+     * @return Builder
+     */
+    public Builder setEnableConnectionPool(boolean enableConnectionPool) {
+      this.enableConnectionPool = enableConnectionPool;
       return this;
     }
 
