@@ -12,6 +12,13 @@ for module in $modules; do
   echo "Done running for ${module}"
 done
 
-./generation/delete_non_generated_samples.sh
+current_branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
+git checkout -b main-diff_java
+git add "*.java"
+git commit -m "chore: Adding java diffs"
+git checkout "${current_branch}"
+git add .
+git commit -m "chore: Adding non-java diffs"
+git checkout "${current_branch}"
 
 echo "Done running script"
