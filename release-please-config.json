@@ -529,9 +529,9 @@
           "skip-github-release": true
          },
     "java-workflows": {
-          "component": "google-cloud-workflows",
-          "skip-github-release": true
-         }
+      "component": "google-cloud-workflows",
+      "skip-github-release": true
+    }
   },
   "plugins": [
     "maven-workspace"
