@@ -56,8 +56,8 @@ public interface RejoinUserEventsRequestOrBuilder
    * <pre>
    * The type of the user event rejoin to define the scope and range of the user
    * events to be rejoined with the latest product catalog. Defaults to
-   * USER_EVENT_REJOIN_SCOPE_UNSPECIFIED if this field is not set, or set to an
-   * invalid integer value.
+   * `USER_EVENT_REJOIN_SCOPE_UNSPECIFIED` if this field is not set, or set to
+   * an invalid integer value.
    * </pre>
    *
    * <code>
@@ -73,8 +73,8 @@ public interface RejoinUserEventsRequestOrBuilder
    * <pre>
    * The type of the user event rejoin to define the scope and range of the user
    * events to be rejoined with the latest product catalog. Defaults to
-   * USER_EVENT_REJOIN_SCOPE_UNSPECIFIED if this field is not set, or set to an
-   * invalid integer value.
+   * `USER_EVENT_REJOIN_SCOPE_UNSPECIFIED` if this field is not set, or set to
+   * an invalid integer value.
    * </pre>
    *
    * <code>

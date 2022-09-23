@@ -119,7 +119,7 @@ public final class GetControlRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The resource name of the Control to delete. Format:
+   * Required. The resource name of the Control to get. Format:
    * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/controls/{control_id}`
    * </pre>
    *
@@ -145,7 +145,7 @@ public final class GetControlRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The resource name of the Control to delete. Format:
+   * Required. The resource name of the Control to get. Format:
    * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/controls/{control_id}`
    * </pre>
    *
@@ -490,7 +490,7 @@ public final class GetControlRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The resource name of the Control to delete. Format:
+     * Required. The resource name of the Control to get. Format:
      * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/controls/{control_id}`
      * </pre>
      *
@@ -515,7 +515,7 @@ public final class GetControlRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The resource name of the Control to delete. Format:
+     * Required. The resource name of the Control to get. Format:
      * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/controls/{control_id}`
      * </pre>
      *
@@ -540,7 +540,7 @@ public final class GetControlRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The resource name of the Control to delete. Format:
+     * Required. The resource name of the Control to get. Format:
      * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/controls/{control_id}`
      * </pre>
      *
@@ -564,7 +564,7 @@ public final class GetControlRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The resource name of the Control to delete. Format:
+     * Required. The resource name of the Control to get. Format:
      * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/controls/{control_id}`
      * </pre>
      *
@@ -584,7 +584,7 @@ public final class GetControlRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The resource name of the Control to delete. Format:
+     * Required. The resource name of the Control to get. Format:
      * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/controls/{control_id}`
      * </pre>
      *

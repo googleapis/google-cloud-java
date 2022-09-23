@@ -1,34 +1,5 @@
 # Changelog
 
-## [2.3.5](https://github.com/googleapis/java-trace/compare/v2.3.4...v2.3.5) (2022-09-22)
-
-
-### Dependencies
-
-* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.14 ([#861](https://github.com/googleapis/java-trace/issues/861)) ([07e1e59](https://github.com/googleapis/java-trace/commit/07e1e592d620706f5cf4f2a14a7ee58d1117fb8b))
-* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.14 ([#862](https://github.com/googleapis/java-trace/issues/862)) ([73b61ef](https://github.com/googleapis/java-trace/commit/73b61ef49b0513b53b78884d93c2b833a8a0a60e))
-
-## [2.3.4](https://github.com/googleapis/java-trace/compare/v2.3.3...v2.3.4) (2022-09-21)
-
-
-### Dependencies
-
-* Update dependency org.junit.vintage:junit-vintage-engine to v5.9.1 ([#857](https://github.com/googleapis/java-trace/issues/857)) ([4ecc4af](https://github.com/googleapis/java-trace/commit/4ecc4afa185296cfeb5f5057cad0ae7d366712e4))
-
-## [2.3.3](https://github.com/googleapis/java-trace/compare/v2.3.2...v2.3.3) (2022-09-15)
-
-
-### Dependencies
-
-* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#850](https://github.com/googleapis/java-trace/issues/850)) ([ad66f58](https://github.com/googleapis/java-trace/commit/ad66f58fc4d63de826203e20a8b0184f6417561e))
-
-## [2.3.2](https://github.com/googleapis/java-trace/compare/v2.3.1...v2.3.2) (2022-09-09)
-
-
-### Dependencies
-
-* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#845](https://github.com/googleapis/java-trace/issues/845)) ([267ef68](https://github.com/googleapis/java-trace/commit/267ef68767b478a15afe51d4fdeaaace7af4e483))
-
 ## [2.3.1](https://github.com/googleapis/java-trace/compare/v2.3.0...v2.3.1) (2022-07-27)
 
 

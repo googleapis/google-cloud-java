@@ -19,27 +19,26 @@ package com.google.cloud.container.v1.it;
 import com.google.cloud.container.v1.ClusterManagerClient;
 import com.google.container.v1.Cluster;
 import com.google.container.v1.ListClustersResponse;
-import java.io.IOException;
 import java.time.Instant;
 import java.time.OffsetDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 public class Util {
+
   // Cleans existing test resources if any.
   private static final int DELETION_THRESHOLD_TIME_HOURS = 24;
 
   /** tear down any clusters that are older than 24 hours * */
   public static void cleanUpExistingInstanceCluster(
-      String projectId, String zone, ClusterManagerClient client)
-      throws IOException, ExecutionException, InterruptedException {
+      ClusterManagerClient client, String projectId, String zone, String prefix) {
 
     ListClustersResponse clustersResponse = client.listClusters(projectId, zone);
     List<Cluster> clusters = clustersResponse.getClustersList();
 
     for (Cluster cluster : clusters) {
-      if (isCreatedBeforeThresholdTime(cluster.getCreateTime())) {
+      if (isCreatedBeforeThresholdTime(cluster.getCreateTime())
+          && cluster.getName().startsWith(prefix)) {
         client.deleteCluster(projectId, zone, cluster.getName());
       }
     }

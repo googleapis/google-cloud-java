@@ -1,18 +1,5 @@
 # Changelog
 
-## [2.4.0](https://github.com/googleapis/java-vpcaccess/compare/v2.3.2...v2.4.0) (2022-09-15)
-
-
-### Features
-
-* Adds support for configuring scaling settings ([#232](https://github.com/googleapis/java-vpcaccess/issues/232)) ([90f3253](https://github.com/googleapis/java-vpcaccess/commit/90f3253b844469682287bc18cdc72bf073280183))
-
-
-### Dependencies
-
-* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#235](https://github.com/googleapis/java-vpcaccess/issues/235)) ([3aa1c0a](https://github.com/googleapis/java-vpcaccess/commit/3aa1c0abcad0898a9e6c2e738a6455056245c809))
-* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#237](https://github.com/googleapis/java-vpcaccess/issues/237)) ([34c930c](https://github.com/googleapis/java-vpcaccess/commit/34c930c92a39b57d8f4842e024247e56be6154c7))
-
 ## [2.3.2](https://github.com/googleapis/java-vpcaccess/compare/v2.3.1...v2.3.2) (2022-08-09)
 
 

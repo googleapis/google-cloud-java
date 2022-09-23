@@ -33,6 +33,7 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -862,6 +863,62 @@ public class CatalogServiceClientHttpJsonTest {
               .setKey("key106079")
               .build();
       client.removeCatalogAttribute(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchRemoveCatalogAttributesTest() throws Exception {
+    BatchRemoveCatalogAttributesResponse expectedResponse =
+        BatchRemoveCatalogAttributesResponse.newBuilder()
+            .addAllDeletedCatalogAttributes(new ArrayList<String>())
+            .addAllResetCatalogAttributes(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    BatchRemoveCatalogAttributesRequest request =
+        BatchRemoveCatalogAttributesRequest.newBuilder()
+            .setAttributesConfig(
+                AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+            .addAllAttributeKeys(new ArrayList<String>())
+            .build();
+
+    BatchRemoveCatalogAttributesResponse actualResponse =
+        client.batchRemoveCatalogAttributes(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchRemoveCatalogAttributesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BatchRemoveCatalogAttributesRequest request =
+          BatchRemoveCatalogAttributesRequest.newBuilder()
+              .setAttributesConfig(
+                  AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+              .addAllAttributeKeys(new ArrayList<String>())
+              .build();
+      client.batchRemoveCatalogAttributes(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

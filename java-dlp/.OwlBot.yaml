@@ -1,0 +1,47 @@
+# Copyright 2021 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+
+deep-remove-regex:
+- "/grpc-google-.*/src"
+- "/proto-google-.*/src"
+- "/google-.*/src"
+
+deep-preserve-regex:
+- "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeidentifyTemplateNames.java"
+- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectFindingName.java"
+- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectTemplateNames.java"
+- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/OrganizationDeidentifyTemplateName.java"
+- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/OrganizationInspectTemplateName.java"
+- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/OrganizationStoredInfoTypeName.java"
+- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ProjectDeidentifyTemplateName.java"
+- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ProjectInspectTemplateName.java"
+- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ProjectJobTriggerName.java"
+- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ProjectStoredInfoTypeName.java"
+- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StoredInfoTypeNames.java"
+- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UntypedDeidentifyTemplateName.java"
+- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UntypedInspectTemplateName.java"
+- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UntypedStoredInfoTypeName.java"
+
+
+deep-copy-regex:
+- source: "/google/privacy/dlp/(v.*)/.*-java/proto-google-.*/src"
+  dest: "/owl-bot-staging/java-dlp/$1/proto-google-cloud-dlp-$1/src"
+- source: "/google/privacy/dlp/(v.*)/.*-java/grpc-google-.*/src"
+  dest: "/owl-bot-staging/java-dlp/$1/grpc-google-cloud-dlp-$1/src"
+- source: "/google/privacy/dlp/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-dlp/$1/google-cloud-dlp/src"
+
+api-name: dlp

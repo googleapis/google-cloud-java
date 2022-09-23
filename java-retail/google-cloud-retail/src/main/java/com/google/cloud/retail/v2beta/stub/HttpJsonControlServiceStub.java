@@ -85,7 +85,8 @@ public class HttpJsonControlServiceStub extends ControlServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("control", request.getControl()))
+                              ProtoRestSerializer.create()
+                                  .toBody("control", request.getControl(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Control>newBuilder()
@@ -155,7 +156,8 @@ public class HttpJsonControlServiceStub extends ControlServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("control", request.getControl()))
+                              ProtoRestSerializer.create()
+                                  .toBody("control", request.getControl(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Control>newBuilder()

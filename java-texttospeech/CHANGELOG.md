@@ -1,26 +1,5 @@
 # Changelog
 
-## [2.4.5](https://github.com/googleapis/java-texttospeech/compare/v2.4.4...v2.4.5) (2022-09-15)
-
-
-### Bug Fixes
-
-* Empty commit to test out changes to release script ([#747](https://github.com/googleapis/java-texttospeech/issues/747)) ([95ca728](https://github.com/googleapis/java-texttospeech/commit/95ca72898e4ea8a571b83916df9fcfdb15ca4f65))
-
-## [2.4.4](https://github.com/googleapis/java-texttospeech/compare/v2.4.3...v2.4.4) (2022-09-15)
-
-
-### Dependencies
-
-* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#740](https://github.com/googleapis/java-texttospeech/issues/740)) ([18b55e6](https://github.com/googleapis/java-texttospeech/commit/18b55e645014fb78543ba70344fa6b9276ae666f))
-
-## [2.4.3](https://github.com/googleapis/java-texttospeech/compare/v2.4.2...v2.4.3) (2022-09-09)
-
-
-### Dependencies
-
-* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#736](https://github.com/googleapis/java-texttospeech/issues/736)) ([43dc10c](https://github.com/googleapis/java-texttospeech/commit/43dc10c1528a5e769bcc55f86ceb6dfaa8406946))
-
 ## [2.4.2](https://github.com/googleapis/java-texttospeech/compare/v2.4.1...v2.4.2) (2022-08-09)
 
 

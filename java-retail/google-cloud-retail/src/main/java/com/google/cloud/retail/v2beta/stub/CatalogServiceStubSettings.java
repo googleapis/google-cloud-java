@@ -45,6 +45,8 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2beta.AddCatalogAttributeRequest;
 import com.google.cloud.retail.v2beta.AttributesConfig;
+import com.google.cloud.retail.v2beta.BatchRemoveCatalogAttributesRequest;
+import com.google.cloud.retail.v2beta.BatchRemoveCatalogAttributesResponse;
 import com.google.cloud.retail.v2beta.Catalog;
 import com.google.cloud.retail.v2beta.CompletionConfig;
 import com.google.cloud.retail.v2beta.GetAttributesConfigRequest;
@@ -87,17 +89,17 @@ import org.threeten.bp.Duration;
  * <p>For example, to set the total timeout of updateCatalog to 30 seconds:
  *
  * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * CatalogServiceStubSettings.Builder catalogServiceSettingsBuilder =
  *     CatalogServiceStubSettings.newBuilder();
  * catalogServiceSettingsBuilder
  *     .updateCatalogSettings()
  *     .setRetrySettings(
- *         catalogServiceSettingsBuilder
- *             .updateCatalogSettings()
- *             .getRetrySettings()
- *             .toBuilder()
+ *         catalogServiceSettingsBuilder.updateCatalogSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CatalogServiceStubSettings catalogServiceSettings = catalogServiceSettingsBuilder.build();
@@ -129,6 +131,9 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
       addCatalogAttributeSettings;
   private final UnaryCallSettings<RemoveCatalogAttributeRequest, AttributesConfig>
       removeCatalogAttributeSettings;
+  private final UnaryCallSettings<
+          BatchRemoveCatalogAttributesRequest, BatchRemoveCatalogAttributesResponse>
+      batchRemoveCatalogAttributesSettings;
   private final UnaryCallSettings<ReplaceCatalogAttributeRequest, AttributesConfig>
       replaceCatalogAttributeSettings;
 
@@ -241,6 +246,13 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
   public UnaryCallSettings<RemoveCatalogAttributeRequest, AttributesConfig>
       removeCatalogAttributeSettings() {
     return removeCatalogAttributeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchRemoveCatalogAttributes. */
+  public UnaryCallSettings<
+          BatchRemoveCatalogAttributesRequest, BatchRemoveCatalogAttributesResponse>
+      batchRemoveCatalogAttributesSettings() {
+    return batchRemoveCatalogAttributesSettings;
   }
 
   /** Returns the object with the settings used for calls to replaceCatalogAttribute. */
@@ -365,6 +377,8 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
     updateAttributesConfigSettings = settingsBuilder.updateAttributesConfigSettings().build();
     addCatalogAttributeSettings = settingsBuilder.addCatalogAttributeSettings().build();
     removeCatalogAttributeSettings = settingsBuilder.removeCatalogAttributeSettings().build();
+    batchRemoveCatalogAttributesSettings =
+        settingsBuilder.batchRemoveCatalogAttributesSettings().build();
     replaceCatalogAttributeSettings = settingsBuilder.replaceCatalogAttributeSettings().build();
   }
 
@@ -391,6 +405,9 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
         addCatalogAttributeSettings;
     private final UnaryCallSettings.Builder<RemoveCatalogAttributeRequest, AttributesConfig>
         removeCatalogAttributeSettings;
+    private final UnaryCallSettings.Builder<
+            BatchRemoveCatalogAttributesRequest, BatchRemoveCatalogAttributesResponse>
+        batchRemoveCatalogAttributesSettings;
     private final UnaryCallSettings.Builder<ReplaceCatalogAttributeRequest, AttributesConfig>
         replaceCatalogAttributeSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -443,6 +460,7 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
       updateAttributesConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       addCatalogAttributeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       removeCatalogAttributeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchRemoveCatalogAttributesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       replaceCatalogAttributeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -457,6 +475,7 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
               updateAttributesConfigSettings,
               addCatalogAttributeSettings,
               removeCatalogAttributeSettings,
+              batchRemoveCatalogAttributesSettings,
               replaceCatalogAttributeSettings);
       initDefaults(this);
     }
@@ -474,6 +493,8 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
       updateAttributesConfigSettings = settings.updateAttributesConfigSettings.toBuilder();
       addCatalogAttributeSettings = settings.addCatalogAttributeSettings.toBuilder();
       removeCatalogAttributeSettings = settings.removeCatalogAttributeSettings.toBuilder();
+      batchRemoveCatalogAttributesSettings =
+          settings.batchRemoveCatalogAttributesSettings.toBuilder();
       replaceCatalogAttributeSettings = settings.replaceCatalogAttributeSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
@@ -488,6 +509,7 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
               updateAttributesConfigSettings,
               addCatalogAttributeSettings,
               removeCatalogAttributeSettings,
+              batchRemoveCatalogAttributesSettings,
               replaceCatalogAttributeSettings);
     }
 
@@ -565,6 +587,11 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
 
       builder
           .removeCatalogAttributeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchRemoveCatalogAttributesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -648,6 +675,13 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
     public UnaryCallSettings.Builder<RemoveCatalogAttributeRequest, AttributesConfig>
         removeCatalogAttributeSettings() {
       return removeCatalogAttributeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchRemoveCatalogAttributes. */
+    public UnaryCallSettings.Builder<
+            BatchRemoveCatalogAttributesRequest, BatchRemoveCatalogAttributesResponse>
+        batchRemoveCatalogAttributesSettings() {
+      return batchRemoveCatalogAttributesSettings;
     }
 
     /** Returns the builder for the settings used for calls to replaceCatalogAttribute. */

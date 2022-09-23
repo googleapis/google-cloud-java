@@ -835,7 +835,7 @@ public interface UserEventOrBuilder
    * <pre>
    * The categories associated with a category page.
    * To represent full path of category, use '&gt;' sign to separate different
-   * hierarchies. If '&gt;' is part of the category name, please replace it with
+   * hierarchies. If '&gt;' is part of the category name, replace it with
    * other character(s).
    * Category pages include special pages such as sales or promotions. For
    * instance, a special sale page may have the category hierarchy:
@@ -858,7 +858,7 @@ public interface UserEventOrBuilder
    * <pre>
    * The categories associated with a category page.
    * To represent full path of category, use '&gt;' sign to separate different
-   * hierarchies. If '&gt;' is part of the category name, please replace it with
+   * hierarchies. If '&gt;' is part of the category name, replace it with
    * other character(s).
    * Category pages include special pages such as sales or promotions. For
    * instance, a special sale page may have the category hierarchy:
@@ -881,7 +881,7 @@ public interface UserEventOrBuilder
    * <pre>
    * The categories associated with a category page.
    * To represent full path of category, use '&gt;' sign to separate different
-   * hierarchies. If '&gt;' is part of the category name, please replace it with
+   * hierarchies. If '&gt;' is part of the category name, replace it with
    * other character(s).
    * Category pages include special pages such as sales or promotions. For
    * instance, a special sale page may have the category hierarchy:
@@ -905,7 +905,7 @@ public interface UserEventOrBuilder
    * <pre>
    * The categories associated with a category page.
    * To represent full path of category, use '&gt;' sign to separate different
-   * hierarchies. If '&gt;' is part of the category name, please replace it with
+   * hierarchies. If '&gt;' is part of the category name, replace it with
    * other character(s).
    * Category pages include special pages such as sales or promotions. For
    * instance, a special sale page may have the category hierarchy:
