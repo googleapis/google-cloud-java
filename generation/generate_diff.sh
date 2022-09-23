@@ -40,6 +40,9 @@ function retry_with_backoff {
   return $exit_code
 }
 
+[ -z "`git config user.email`" ] && git config --global user.email "${USERNAME:-script}@google.com"
+[ -z "`git config user.name`" ] && git config --global user.name "${USERNAME:-script}"
+
 current_branch="main-diff"
 diff_java_branch="main-diff_java"
 diff_non_java_branch="main-diff_non_java"
@@ -49,8 +52,6 @@ if [[ $(git branch | grep "${current_branch}") ]]; then
 else
   git checkout -b "${current_branch}"
 fi
-
-git checkout "${current_branch}"
 
 if [[ $(git branch | grep "${diff_java_branch}") ]]; then
   git branch -D "${diff_java_branch}"

@@ -31,5 +31,6 @@ jobs:
       with:
         repository: 'googleapis/google-cloud-java'
     - name: Run generate-diff script
-      run: |
-        ./generation/generate_diff.sh
+      run: ./generation/generate_diff.sh
+      env:
+        USERNAME: ${{ github.actor }}
