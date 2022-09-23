@@ -13,12 +13,22 @@ for module in $modules; do
 done
 
 current_branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
-git checkout -b main-diff_java
+
+if [[ $(git branch | grep "main-diff_java") ]]; then
+  git checkout main-diff_java
+else
+  git checkout -b main-diff_java
+fi
 git add "*.java"
-git commit -m "chore: Adding java diffs"
-git checkout "${current_branch}"
+git commit -m "chore: Adding java diffs" --no-verify
+
+if [[ $(git branch | grep "main-diff_non_java") ]]; then
+  git checkout main-diff_non_java
+else
+  git checkout -b main-diff_non_java
+fi
 git add .
-git commit -m "chore: Adding non-java diffs"
+git commit -m "chore: Adding non-java diffs" --no-verify
 git checkout "${current_branch}"
 
 echo "Done running script"
