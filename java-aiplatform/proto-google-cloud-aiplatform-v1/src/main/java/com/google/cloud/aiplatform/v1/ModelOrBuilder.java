@@ -1465,4 +1465,48 @@ public interface ModelOrBuilder
    * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 24;</code>
    */
   com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Source of a model. It can either be automl training pipeline, custom
+   * training pipeline, BigQuery ML, or existing Vertex AI Model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the modelSourceInfo field is set.
+   */
+  boolean hasModelSourceInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Source of a model. It can either be automl training pipeline, custom
+   * training pipeline, BigQuery ML, or existing Vertex AI Model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The modelSourceInfo.
+   */
+  com.google.cloud.aiplatform.v1.ModelSourceInfo getModelSourceInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Source of a model. It can either be automl training pipeline, custom
+   * training pipeline, BigQuery ML, or existing Vertex AI Model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.ModelSourceInfoOrBuilder getModelSourceInfoOrBuilder();
 }
