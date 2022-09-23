@@ -241,6 +241,7 @@ public class ModelServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -305,6 +306,7 @@ public class ModelServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -545,6 +547,7 @@ public class ModelServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -872,6 +875,7 @@ public class ModelServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -939,6 +943,7 @@ public class ModelServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 

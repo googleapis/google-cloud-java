@@ -385,6 +385,23 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 306:
+            {
+              com.google.cloud.aiplatform.v1beta1.ModelSourceInfo.Builder subBuilder = null;
+              if (modelSourceInfo_ != null) {
+                subBuilder = modelSourceInfo_.toBuilder();
+              }
+              modelSourceInfo_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1beta1.ModelSourceInfo.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(modelSourceInfo_);
+                modelSourceInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -4032,6 +4049,64 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     return getEncryptionSpec();
   }
 
+  public static final int MODEL_SOURCE_INFO_FIELD_NUMBER = 38;
+  private com.google.cloud.aiplatform.v1beta1.ModelSourceInfo modelSourceInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Source of a model. It can either be automl training pipeline, custom
+   * training pipeline, BigQuery ML, or existing Vertex AI Model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the modelSourceInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasModelSourceInfo() {
+    return modelSourceInfo_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Source of a model. It can either be automl training pipeline, custom
+   * training pipeline, BigQuery ML, or existing Vertex AI Model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The modelSourceInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ModelSourceInfo getModelSourceInfo() {
+    return modelSourceInfo_ == null
+        ? com.google.cloud.aiplatform.v1beta1.ModelSourceInfo.getDefaultInstance()
+        : modelSourceInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Source of a model. It can either be automl training pipeline, custom
+   * training pipeline, BigQuery ML, or existing Vertex AI Model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ModelSourceInfoOrBuilder
+      getModelSourceInfoOrBuilder() {
+    return getModelSourceInfo();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4126,6 +4201,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
     if (versionUpdateTime_ != null) {
       output.writeMessage(32, getVersionUpdateTime());
+    }
+    if (modelSourceInfo_ != null) {
+      output.writeMessage(38, getModelSourceInfo());
     }
     unknownFields.writeTo(output);
   }
@@ -4246,6 +4324,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (versionUpdateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(32, getVersionUpdateTime());
     }
+    if (modelSourceInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(38, getModelSourceInfo());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4317,6 +4398,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
     if (hasEncryptionSpec()) {
       if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
+    }
+    if (hasModelSourceInfo() != other.hasModelSourceInfo()) return false;
+    if (hasModelSourceInfo()) {
+      if (!getModelSourceInfo().equals(other.getModelSourceInfo())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -4410,6 +4495,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (hasEncryptionSpec()) {
       hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionSpec().hashCode();
+    }
+    if (hasModelSourceInfo()) {
+      hash = (37 * hash) + MODEL_SOURCE_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getModelSourceInfo().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -4672,6 +4761,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         encryptionSpec_ = null;
         encryptionSpecBuilder_ = null;
       }
+      if (modelSourceInfoBuilder_ == null) {
+        modelSourceInfo_ = null;
+      } else {
+        modelSourceInfo_ = null;
+        modelSourceInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -4794,6 +4889,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         result.encryptionSpec_ = encryptionSpec_;
       } else {
         result.encryptionSpec_ = encryptionSpecBuilder_.build();
+      }
+      if (modelSourceInfoBuilder_ == null) {
+        result.modelSourceInfo_ = modelSourceInfo_;
+      } else {
+        result.modelSourceInfo_ = modelSourceInfoBuilder_.build();
       }
       onBuilt();
       return result;
@@ -5001,6 +5101,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       if (other.hasEncryptionSpec()) {
         mergeEncryptionSpec(other.getEncryptionSpec());
+      }
+      if (other.hasModelSourceInfo()) {
+        mergeModelSourceInfo(other.getModelSourceInfo());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -10586,6 +10689,220 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         encryptionSpec_ = null;
       }
       return encryptionSpecBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.ModelSourceInfo modelSourceInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ModelSourceInfo,
+            com.google.cloud.aiplatform.v1beta1.ModelSourceInfo.Builder,
+            com.google.cloud.aiplatform.v1beta1.ModelSourceInfoOrBuilder>
+        modelSourceInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Source of a model. It can either be automl training pipeline, custom
+     * training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the modelSourceInfo field is set.
+     */
+    public boolean hasModelSourceInfo() {
+      return modelSourceInfoBuilder_ != null || modelSourceInfo_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Source of a model. It can either be automl training pipeline, custom
+     * training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The modelSourceInfo.
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelSourceInfo getModelSourceInfo() {
+      if (modelSourceInfoBuilder_ == null) {
+        return modelSourceInfo_ == null
+            ? com.google.cloud.aiplatform.v1beta1.ModelSourceInfo.getDefaultInstance()
+            : modelSourceInfo_;
+      } else {
+        return modelSourceInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Source of a model. It can either be automl training pipeline, custom
+     * training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setModelSourceInfo(com.google.cloud.aiplatform.v1beta1.ModelSourceInfo value) {
+      if (modelSourceInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelSourceInfo_ = value;
+        onChanged();
+      } else {
+        modelSourceInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Source of a model. It can either be automl training pipeline, custom
+     * training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setModelSourceInfo(
+        com.google.cloud.aiplatform.v1beta1.ModelSourceInfo.Builder builderForValue) {
+      if (modelSourceInfoBuilder_ == null) {
+        modelSourceInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        modelSourceInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Source of a model. It can either be automl training pipeline, custom
+     * training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeModelSourceInfo(com.google.cloud.aiplatform.v1beta1.ModelSourceInfo value) {
+      if (modelSourceInfoBuilder_ == null) {
+        if (modelSourceInfo_ != null) {
+          modelSourceInfo_ =
+              com.google.cloud.aiplatform.v1beta1.ModelSourceInfo.newBuilder(modelSourceInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          modelSourceInfo_ = value;
+        }
+        onChanged();
+      } else {
+        modelSourceInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Source of a model. It can either be automl training pipeline, custom
+     * training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearModelSourceInfo() {
+      if (modelSourceInfoBuilder_ == null) {
+        modelSourceInfo_ = null;
+        onChanged();
+      } else {
+        modelSourceInfo_ = null;
+        modelSourceInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Source of a model. It can either be automl training pipeline, custom
+     * training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelSourceInfo.Builder getModelSourceInfoBuilder() {
+
+      onChanged();
+      return getModelSourceInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Source of a model. It can either be automl training pipeline, custom
+     * training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelSourceInfoOrBuilder
+        getModelSourceInfoOrBuilder() {
+      if (modelSourceInfoBuilder_ != null) {
+        return modelSourceInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return modelSourceInfo_ == null
+            ? com.google.cloud.aiplatform.v1beta1.ModelSourceInfo.getDefaultInstance()
+            : modelSourceInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Source of a model. It can either be automl training pipeline, custom
+     * training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ModelSourceInfo,
+            com.google.cloud.aiplatform.v1beta1.ModelSourceInfo.Builder,
+            com.google.cloud.aiplatform.v1beta1.ModelSourceInfoOrBuilder>
+        getModelSourceInfoFieldBuilder() {
+      if (modelSourceInfoBuilder_ == null) {
+        modelSourceInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.ModelSourceInfo,
+                com.google.cloud.aiplatform.v1beta1.ModelSourceInfo.Builder,
+                com.google.cloud.aiplatform.v1beta1.ModelSourceInfoOrBuilder>(
+                getModelSourceInfo(), getParentForChildren(), isClean());
+        modelSourceInfo_ = null;
+      }
+      return modelSourceInfoBuilder_;
     }
 
     @java.lang.Override
