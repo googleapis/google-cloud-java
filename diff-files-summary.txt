@@ -1,0 +1,1122 @@
+--------------------------------------------------------------------------------------------
+google-cloud-accessapproval File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-accessapproval-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-accessapproval-v1 File match success
+--------------------------------------------------------------------------------------------
+google-identity-accesscontextmanager File match success
+--------------------------------------------------------------------------------------------
+grpc-google-identity-accesscontextmanager-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-identity-accesscontextmanager-type File match success
+--------------------------------------------------------------------------------------------
+proto-google-identity-accesscontextmanager-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-aiplatform File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-aiplatform-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-aiplatform-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-aiplatform-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-aiplatform-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-analytics-admin File match success
+--------------------------------------------------------------------------------------------
+grpc-google-analytics-admin-v1alpha File match success
+--------------------------------------------------------------------------------------------
+grpc-google-analytics-admin-v1beta File match success
+--------------------------------------------------------------------------------------------
+proto-google-analytics-admin-v1alpha File match success
+--------------------------------------------------------------------------------------------
+proto-google-analytics-admin-v1beta File match success
+--------------------------------------------------------------------------------------------
+google-analytics-data File match success
+--------------------------------------------------------------------------------------------
+grpc-google-analytics-data-v1alpha File match success
+--------------------------------------------------------------------------------------------
+grpc-google-analytics-data-v1beta File match success
+--------------------------------------------------------------------------------------------
+proto-google-analytics-data-v1alpha File match success
+--------------------------------------------------------------------------------------------
+proto-google-analytics-data-v1beta File match success
+--------------------------------------------------------------------------------------------
+google-cloud-api-gateway File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-api-gateway-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-api-gateway-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-apigee-connect File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-apigee-connect-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-apigee-connect-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-apigee-registry File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-apigee-registry-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-apigee-registry-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-appengine-admin File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-appengine-admin-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-appengine-admin-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-area120-tables-v1alpha1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-area120-tables-v1alpha1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-artifact-registry File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-artifact-registry-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-artifact-registry-v1beta2 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-artifact-registry-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-artifact-registry-v1beta2 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-asset File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-asset-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-asset-v1p1beta1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-asset-v1p2beta1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-asset-v1p5beta1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-asset-v1p7beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-asset-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-asset-v1p1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-asset-v1p2beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-asset-v1p5beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-asset-v1p7beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-assured-workloads File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-assured-workloads-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-assured-workloads-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-assured-workloads-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-assured-workloads-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-automl File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-automl-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-automl-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-automl-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-automl-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-bare-metal-solution File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-bare-metal-solution-v2 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-bare-metal-solution-v2 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-batch File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-batch-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-batch-v1alpha File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-batch-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-batch-v1alpha File match success
+--------------------------------------------------------------------------------------------
+google-cloud-bigquery-data-exchange File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-bigquery-data-exchange-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-bigquery-data-exchange-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-bigqueryconnection File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-bigqueryconnection-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-bigqueryconnection-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-bigqueryconnection-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-bigqueryconnection-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-bigquerydatatransfer File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-bigquerydatatransfer-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-bigquerydatatransfer-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-bigquerymigration File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-bigquerymigration-v2 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-bigquerymigration-v2alpha File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-bigquerymigration-v2 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-bigquerymigration-v2alpha File match success
+--------------------------------------------------------------------------------------------
+google-cloud-bigqueryreservation File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-bigqueryreservation-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-bigqueryreservation-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-billing File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-billing-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-billing-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-billingbudgets File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-billingbudgets-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-billingbudgets-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-billingbudgets-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-billingbudgets-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-binary-authorization File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-binary-authorization-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-binary-authorization-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-binary-authorization-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-binary-authorization-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-certificate-manager File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-certificate-manager-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-certificate-manager-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-channel File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-channel-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-channel-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-build File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-build-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-build-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-cloudcommerceconsumerprocurement File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-cloudcommerceconsumerprocurement-v1alpha1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-cloudcommerceconsumerprocurement-v1alpha1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-compute File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-compute-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-contact-center-insights File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-contact-center-insights-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-contact-center-insights-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-container File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-container-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-container-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-container-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-container-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-containeranalysis File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-containeranalysis-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-containeranalysis-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-containeranalysis-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-containeranalysis-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-data-fusion File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-data-fusion-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-data-fusion-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-data-fusion-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-data-fusion-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-datacatalog File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-datacatalog-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-datacatalog-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-datacatalog-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-datacatalog-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-dataflow File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-dataflow-v1beta3 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-dataflow-v1beta3 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-dataform File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-dataform-v1alpha2 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-dataform-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-dataform-v1alpha2 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-dataform-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-datalabeling File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-datalabeling-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-datalabeling-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-dataplex File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-dataplex-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-dataplex-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-dataproc-metastore File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-dataproc-metastore-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-dataproc-metastore-v1alpha File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-dataproc-metastore-v1beta File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-dataproc-metastore-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-dataproc-metastore-v1alpha File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-dataproc-metastore-v1beta File match success
+--------------------------------------------------------------------------------------------
+google-cloud-dataproc File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-dataproc-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-dataproc-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-datastream File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-datastream-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-datastream-v1alpha1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-datastream-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-datastream-v1alpha1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-debugger-client File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-debugger-client-v2 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-debugger-client-v2 File match success
+--------------------------------------------------------------------------------------------
+proto-google-devtools-source-protos File match success
+--------------------------------------------------------------------------------------------
+google-cloud-deploy File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-deploy-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-deploy-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-dialogflow-cx File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-dialogflow-cx-v3 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-dialogflow-cx-v3beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-dialogflow-cx-v3 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-dialogflow-cx-v3beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-dialogflow File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-dialogflow-v2 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-dialogflow-v2beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-dialogflow-v2 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-dialogflow-v2beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-dlp File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-dlp-v2 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-dlp-v2 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-dms File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-dms-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-dms-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-dns File match success
+--------------------------------------------------------------------------------------------
+google-cloud-document-ai File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-document-ai-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-document-ai-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-document-ai-v1beta2 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-document-ai-v1beta3 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-document-ai-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-document-ai-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-document-ai-v1beta2 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-document-ai-v1beta3 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-domains File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-domains-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-domains-v1alpha2 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-domains-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-domains-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-domains-v1alpha2 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-domains-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+---------------------------------^NEW-DIFF-FOUND^-----------------------------------------
+google-cloud-errorreporting diff:
+1,20c1,20
+< google-cloud-errorreporting-..-beta-javadoc.jar
+< google-cloud-errorreporting-..-beta-javadoc.jar.asc
+< google-cloud-errorreporting-..-beta-javadoc.jar.md
+< google-cloud-errorreporting-..-beta-javadoc.jar.sha
+< google-cloud-errorreporting-..-beta-sources.jar
+< google-cloud-errorreporting-..-beta-sources.jar.asc
+< google-cloud-errorreporting-..-beta-sources.jar.md
+< google-cloud-errorreporting-..-beta-sources.jar.sha
+< google-cloud-errorreporting-..-beta-tests.jar
+< google-cloud-errorreporting-..-beta-tests.jar.asc
+< google-cloud-errorreporting-..-beta-tests.jar.md
+< google-cloud-errorreporting-..-beta-tests.jar.sha
+< google-cloud-errorreporting-..-beta.jar
+< google-cloud-errorreporting-..-beta.jar.asc
+< google-cloud-errorreporting-..-beta.jar.md
+< google-cloud-errorreporting-..-beta.jar.sha
+< google-cloud-errorreporting-..-beta.pom
+< google-cloud-errorreporting-..-beta.pom.asc
+< google-cloud-errorreporting-..-beta.pom.md
+< google-cloud-errorreporting-..-beta.pom.sha
+---
+> google-cloud-errorreporting-..-javadoc.jar
+> google-cloud-errorreporting-..-javadoc.jar.asc
+> google-cloud-errorreporting-..-javadoc.jar.md
+> google-cloud-errorreporting-..-javadoc.jar.sha
+> google-cloud-errorreporting-..-sources.jar
+> google-cloud-errorreporting-..-sources.jar.asc
+> google-cloud-errorreporting-..-sources.jar.md
+> google-cloud-errorreporting-..-sources.jar.sha
+> google-cloud-errorreporting-..-tests.jar
+> google-cloud-errorreporting-..-tests.jar.asc
+> google-cloud-errorreporting-..-tests.jar.md
+> google-cloud-errorreporting-..-tests.jar.sha
+> google-cloud-errorreporting-...jar
+> google-cloud-errorreporting-...jar.asc
+> google-cloud-errorreporting-...jar.md
+> google-cloud-errorreporting-...jar.sha
+> google-cloud-errorreporting-...pom
+> google-cloud-errorreporting-...pom.asc
+> google-cloud-errorreporting-...pom.md
+> google-cloud-errorreporting-...pom.sha
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-error-reporting-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-error-reporting-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-essential-contacts File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-essential-contacts-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-essential-contacts-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-eventarc-publishing File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-eventarc-publishing-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-eventarc-publishing-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-eventarc File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-eventarc-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-eventarc-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-filestore File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-filestore-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-filestore-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-filestore-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-filestore-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-functions File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-functions-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-functions-v2 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-functions-v2alpha File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-functions-v2beta File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-functions-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-functions-v2 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-functions-v2alpha File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-functions-v2beta File match success
+--------------------------------------------------------------------------------------------
+google-cloud-game-servers File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-game-servers-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-game-servers-v1beta File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-game-servers-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-game-servers-v1beta File match success
+--------------------------------------------------------------------------------------------
+google-cloud-gke-backup File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-gke-backup-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-gke-backup-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-gke-connect-gateway File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-gke-connect-gateway-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-gke-connect-gateway-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-gke-multi-cloud File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-gke-multi-cloud-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-gke-multi-cloud-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-gkehub File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-gkehub-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-gkehub-v1alpha File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-gkehub-v1alpha2 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-gkehub-v1beta File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-gkehub-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-gkehub-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-gkehub-v1alpha File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-gkehub-v1alpha2 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-gkehub-v1beta File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-gkehub-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-gsuite-addons File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-gsuite-addons-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-gsuite-addons-v1 File match success
+--------------------------------------------------------------------------------------------
+google-iam-admin File match success
+--------------------------------------------------------------------------------------------
+grpc-google-iam-admin-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-iam-admin-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-iamcredentials File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-iamcredentials-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-iamcredentials-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-ids File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-ids-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-ids-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-iot File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-iot-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-iot-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-kms File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-kms-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-kms-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-language File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-language-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-language-v1beta2 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-language-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-language-v1beta2 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-life-sciences File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-life-sciences-v2beta File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-life-sciences-v2beta File match success
+--------------------------------------------------------------------------------------------
+google-cloud-managed-identities File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-managed-identities-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-managed-identities-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-mediatranslation File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-mediatranslation-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-mediatranslation-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-memcache File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-memcache-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-memcache-v1beta2 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-memcache-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-memcache-v1beta2 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-monitoring-dashboard File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-monitoring-dashboard-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-monitoring-dashboard-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-monitoring File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-monitoring-v3 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-monitoring-v3 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-network-management File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-network-management-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-network-management-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-network-management-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-network-management-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-network-security File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-network-security-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-network-security-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-network-security-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-network-security-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-networkconnectivity File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-networkconnectivity-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-networkconnectivity-v1alpha1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-networkconnectivity-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-networkconnectivity-v1alpha1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-notebooks File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-notebooks-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-notebooks-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-notebooks-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-notebooks-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-notification File match success
+--------------------------------------------------------------------------------------------
+google-cloud-optimization File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-optimization-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-optimization-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-orchestration-airflow File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-orchestration-airflow-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-orchestration-airflow-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-orchestration-airflow-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-orchestration-airflow-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-orgpolicy File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-orgpolicy-v2 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-orgpolicy-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-orgpolicy-v2 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-os-config File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-os-config-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-os-config-v1alpha File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-os-config-v1beta File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-os-config-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-os-config-v1alpha File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-os-config-v1beta File match success
+--------------------------------------------------------------------------------------------
+google-cloud-os-login File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-os-login-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-os-login-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-phishingprotection File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-phishingprotection-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-phishingprotection-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-policy-troubleshooter File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-policy-troubleshooter-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-policy-troubleshooter-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-private-catalog File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-private-catalog-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-private-catalog-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-profiler File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-profiler-v2 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-profiler-v2 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-recaptchaenterprise File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-recaptchaenterprise-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-recaptchaenterprise-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-recaptchaenterprise-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-recaptchaenterprise-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-recommendations-ai File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-recommendations-ai-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-recommendations-ai-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-recommender File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-recommender-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-recommender-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-recommender-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-recommender-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-redis File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-redis-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-redis-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-redis-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-redis-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-resource-settings File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-resource-settings-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-resource-settings-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-resourcemanager File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-resourcemanager-v3 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-resourcemanager-v3 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-retail File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-retail-v2 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-retail-v2alpha File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-retail-v2beta File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-retail-v2 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-retail-v2alpha File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-retail-v2beta File match success
+--------------------------------------------------------------------------------------------
+google-cloud-run File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-run-v2 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-run-v2 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-scheduler File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-scheduler-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-scheduler-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-scheduler-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-scheduler-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-secretmanager File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-secretmanager-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-secretmanager-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-secretmanager-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-secretmanager-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-security-private-ca File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-security-private-ca-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-security-private-ca-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-security-private-ca-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-security-private-ca-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-securitycenter-settings File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-securitycenter-settings-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-securitycenter-settings-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-securitycenter File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-securitycenter-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-securitycenter-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-securitycenter-v1p1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-securitycenter-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-securitycenter-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-securitycenter-v1p1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-service-control File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-service-control-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-service-control-v2 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-service-control-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-service-control-v2 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-service-management File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-service-management-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-service-management-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-service-usage File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-service-usage-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-service-usage-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-service-usage-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-service-usage-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-servicedirectory File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-servicedirectory-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-servicedirectory-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-servicedirectory-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-servicedirectory-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-shell File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-shell-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-shell-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-speech File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-speech-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-speech-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-speech-v1p1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-speech-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-speech-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-speech-v1p1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-storage-transfer File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-storage-transfer-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-storage-transfer-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-talent File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-talent-v4 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-talent-v4beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-talent-v4 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-talent-v4beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-tasks File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-tasks-v2 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-tasks-v2beta2 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-tasks-v2beta3 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-tasks-v2 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-tasks-v2beta2 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-tasks-v2beta3 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-texttospeech File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-texttospeech-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-texttospeech-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-texttospeech-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-texttospeech-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-tpu File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-tpu-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-tpu-v2alpha1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-tpu-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-tpu-v2alpha1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-trace File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-trace-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-trace-v2 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-trace-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-trace-v2 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-translate File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-translate-v3 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-translate-v3beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-translate-v3 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-translate-v3beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-video-intelligence File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-video-intelligence-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-video-intelligence-v1beta2 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-video-intelligence-v1p1beta1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-video-intelligence-v1p2beta1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-video-intelligence-v1p3beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-video-intelligence-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-video-intelligence-v1beta2 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-video-intelligence-v1p1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-video-intelligence-v1p2beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-video-intelligence-v1p3beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-live-stream File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-live-stream-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-live-stream-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-video-stitcher File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-video-stitcher-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-video-stitcher-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-video-transcoder File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-video-transcoder-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-video-transcoder-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-vision File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-vision-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-vision-v1p1beta1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-vision-v1p2beta1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-vision-v1p3beta1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-vision-v1p4beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-vision-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-vision-v1p1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-vision-v1p2beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-vision-v1p3beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-vision-v1p4beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-vmmigration File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-vmmigration-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-vmmigration-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-vpcaccess File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-vpcaccess-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-vpcaccess-v1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-webrisk File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-webrisk-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-webrisk-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-webrisk-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-webrisk-v1beta1 File match success
+--------------------------------------------------------------------------------------------
+google-cloud-websecurityscanner File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-websecurityscanner-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-websecurityscanner-v1alpha File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-websecurityscanner-v1beta File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-websecurityscanner-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-websecurityscanner-v1alpha File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-websecurityscanner-v1beta File match success
+--------------------------------------------------------------------------------------------
+google-cloud-workflow-executions File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-workflow-executions-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-workflow-executions-v1beta File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-workflow-executions-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-workflow-executions-v1beta File match success
+--------------------------------------------------------------------------------------------
+google-cloud-workflows File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-workflows-v1 File match success
+--------------------------------------------------------------------------------------------
+grpc-google-cloud-workflows-v1beta File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-workflows-v1 File match success
+--------------------------------------------------------------------------------------------
+proto-google-cloud-workflows-v1beta File match success
+--------------------------------------------------------------------------------------------
+---------------------------------^NEW-DIFF-FOUND^-----------------------------------------
+google-cloud-java diff:
