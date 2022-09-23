@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+set -e
 
 function retry_with_backoff {
   attempts_left=$1

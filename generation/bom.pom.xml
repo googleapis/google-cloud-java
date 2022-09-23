@@ -47,7 +47,7 @@
 
   <dependencyManagement>
     <dependencies>
-      BOM_ARTIFACT_LIST
+BOM_ARTIFACT_LIST
     </dependencies>
   </dependencyManagement>
 
