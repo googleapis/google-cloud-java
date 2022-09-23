@@ -25,6 +25,10 @@ git add "*.java"
 git commit -m "chore: Adding java diffs" --no-verify
 git push origin "${diff_java_branch}"
 
+git stash
+git checkout "${current_branch}"
+git stash pop
+
 if [[ $(git branch | grep "${diff_non_java_branch}") ]]; then
   git checkout "${diff_non_java_branch}"
 else
