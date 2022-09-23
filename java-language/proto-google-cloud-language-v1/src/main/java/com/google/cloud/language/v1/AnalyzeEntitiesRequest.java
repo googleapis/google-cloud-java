@@ -135,7 +135,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Input document.
+   * Required. Input document.
    * </pre>
    *
    * <code>
@@ -152,7 +152,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Input document.
+   * Required. Input document.
    * </pre>
    *
    * <code>
@@ -171,7 +171,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Input document.
+   * Required. Input document.
    * </pre>
    *
    * <code>
@@ -574,7 +574,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
      * <code>
@@ -590,7 +590,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
      * <code>
@@ -612,7 +612,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
      * <code>
@@ -636,7 +636,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
      * <code>
@@ -657,7 +657,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
      * <code>
@@ -685,7 +685,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
      * <code>
@@ -707,7 +707,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
      * <code>
@@ -723,7 +723,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
      * <code>
@@ -743,7 +743,7 @@ public final class AnalyzeEntitiesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Input document.
+     * Required. Input document.
      * </pre>
      *
      * <code>

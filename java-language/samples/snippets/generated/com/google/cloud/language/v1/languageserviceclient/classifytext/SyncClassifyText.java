@@ -17,6 +17,7 @@
 package com.google.cloud.language.v1.samples;
 
 // [START language_v1_generated_languageserviceclient_classifytext_sync]
+import com.google.cloud.language.v1.ClassificationModelOptions;
 import com.google.cloud.language.v1.ClassifyTextRequest;
 import com.google.cloud.language.v1.ClassifyTextResponse;
 import com.google.cloud.language.v1.Document;
@@ -36,7 +37,10 @@ public class SyncClassifyText {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
       ClassifyTextRequest request =
-          ClassifyTextRequest.newBuilder().setDocument(Document.newBuilder().build()).build();
+          ClassifyTextRequest.newBuilder()
+              .setDocument(Document.newBuilder().build())
+              .setClassificationModelOptions(ClassificationModelOptions.newBuilder().build())
+              .build();
       ClassifyTextResponse response = languageServiceClient.classifyText(request);
     }
   }

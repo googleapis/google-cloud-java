@@ -12,7 +12,7 @@
     Java idiomatic client for Google Cloud Notification for GCS.
   </description>
   <parent>
-    <groupId>com.google.api</groupId>
+    <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-java</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>

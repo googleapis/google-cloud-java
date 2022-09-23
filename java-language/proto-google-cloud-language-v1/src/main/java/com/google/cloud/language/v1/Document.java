@@ -22,6 +22,7 @@ package com.google.cloud.language.v1;
  *
  *
  * <pre>
+ * ################################################################ #
  * Represents the input to API methods.
  * </pre>
  *
@@ -797,6 +798,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * ################################################################ #
    * Represents the input to API methods.
    * </pre>
    *
