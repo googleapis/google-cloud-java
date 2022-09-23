@@ -12,6 +12,8 @@ for module in $modules; do
   echo "Done running for ${module}"
 done
 
+./generation/delete_non_generated_samples.sh
+
 current_branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
 diff_java_branch="main-diff_java"
 diff_non_java_branch="main-diff_non_java"
@@ -23,7 +25,7 @@ else
 fi
 git add "*.java"
 git commit -m "chore: Adding java diffs" --no-verify
-git push origin "${diff_java_branch}"
+git push origin "${diff_java_branch}" --force
 
 git stash
 git checkout "${current_branch}"
@@ -36,7 +38,7 @@ else
 fi
 git add .
 git commit -m "chore: Adding non-java diffs" --no-verify
-git push origin "${diff_non_java_branch}"
+git push origin "${diff_non_java_branch}" --force
 
 git checkout "${current_branch}"
 
