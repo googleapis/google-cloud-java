@@ -51,7 +51,13 @@ else
 fi
 
 git checkout "${current_branch}"
-git branch -D "${diff_java_branch}" "${diff_non_java_branch}"
+
+if [[ $(git branch | grep "${diff_java_branch}") ]]; then
+  git branch -D "${diff_java_branch}"
+fi
+if [[ $(git branch | grep "${diff_non_java_branch}") ]]; then
+  git branch -D "${diff_non_java_branch}"
+fi
 
 modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | grep 'java' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
 
