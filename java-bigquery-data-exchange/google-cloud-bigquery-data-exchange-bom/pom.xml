@@ -7,9 +7,8 @@
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-java</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <relativePath>../../pom.xml</relativePath>
+    <artifactId>google-cloud-shared-config</artifactId>
+    <version>1.5.3</version>
   </parent>
 
   <name>Google Analytics Hub BOM</name>

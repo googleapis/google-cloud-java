@@ -79,8 +79,7 @@ public class HttpJsonController2Stub extends Controller2Stub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().build(), false))
+                              ProtoRestSerializer.create().toBody("*", request.toBuilder().build()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RegisterDebuggeeResponse>newBuilder()
@@ -160,8 +159,7 @@ public class HttpJsonController2Stub extends Controller2Stub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody(
-                                      "*", request.toBuilder().clearDebuggeeId().build(), false))
+                                  .toBody("*", request.toBuilder().clearDebuggeeId().build()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<UpdateActiveBreakpointResponse>newBuilder()

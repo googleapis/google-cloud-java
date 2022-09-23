@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.3.0](https://github.com/googleapis/java-batch/compare/v0.2.2...v0.3.0) (2022-09-15)
+
+
+### Features
+
+* environment variables, disk interfaces ([4f26297](https://github.com/googleapis/java-batch/commit/4f26297dd9d91ad73daa26d4294fd6fabe6f0a48))
+* environment variables, disk interfaces ([4f26297](https://github.com/googleapis/java-batch/commit/4f26297dd9d91ad73daa26d4294fd6fabe6f0a48))
+
+
+### Bug Fixes
+
+* Mark service_account_email as deprecated ([#36](https://github.com/googleapis/java-batch/issues/36)) ([176b6e6](https://github.com/googleapis/java-batch/commit/176b6e6ee8bdb3264a297673b87b5dee74717628))
+
+
+### Documentation
+
+* removing comment from a deprecated field ([176b6e6](https://github.com/googleapis/java-batch/commit/176b6e6ee8bdb3264a297673b87b5dee74717628))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#38](https://github.com/googleapis/java-batch/issues/38)) ([7d5571a](https://github.com/googleapis/java-batch/commit/7d5571aeca1ae9406e38e6c13070e0c5d17b65ab))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#40](https://github.com/googleapis/java-batch/issues/40)) ([fcd0595](https://github.com/googleapis/java-batch/commit/fcd059540e8d5483d008ee86702525462a30d542))
+
 ## [0.2.2](https://github.com/googleapis/java-batch/compare/v0.2.1...v0.2.2) (2022-08-09)
 
 

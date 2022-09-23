@@ -1,5 +1,34 @@
 # Changelog
 
+## [2.3.10](https://github.com/googleapis/java-tasks/compare/v2.3.9...v2.3.10) (2022-09-22)
+
+
+### Dependencies
+
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.14 ([#760](https://github.com/googleapis/java-tasks/issues/760)) ([07561cf](https://github.com/googleapis/java-tasks/commit/07561cfa3086e1c254bdb9fcca417f164cdeeeae))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.14 ([#761](https://github.com/googleapis/java-tasks/issues/761)) ([d30809d](https://github.com/googleapis/java-tasks/commit/d30809df1103191b839c75e877bf2771eafcac51))
+
+## [2.3.9](https://github.com/googleapis/java-tasks/compare/v2.3.8...v2.3.9) (2022-09-21)
+
+
+### Dependencies
+
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.9.1 ([#756](https://github.com/googleapis/java-tasks/issues/756)) ([261ae44](https://github.com/googleapis/java-tasks/commit/261ae44c5a3acf26f7afe6d3f6727d4ccb55a56c))
+
+## [2.3.8](https://github.com/googleapis/java-tasks/compare/v2.3.7...v2.3.8) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#751](https://github.com/googleapis/java-tasks/issues/751)) ([455a7a7](https://github.com/googleapis/java-tasks/commit/455a7a722c4b055c756877cebe6960a3569ff1f7))
+
+## [2.3.7](https://github.com/googleapis/java-tasks/compare/v2.3.6...v2.3.7) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#746](https://github.com/googleapis/java-tasks/issues/746)) ([b39b0b3](https://github.com/googleapis/java-tasks/commit/b39b0b374bc158401d33287f7e88cd2622e342ff))
+
 ## [2.3.6](https://github.com/googleapis/java-tasks/compare/v2.3.5...v2.3.6) (2022-08-05)
 
 

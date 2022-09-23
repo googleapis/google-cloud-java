@@ -1,6 +1,6 @@
 {
   "extends": [
-    "config:base", ":dependencyDashboardApproval"
+    "config:base"
   ],
   "ignoreDeps": [
     "com.google.api:gax-bom",
@@ -14,15 +14,15 @@
   ],
   "packageRules": [
     {
-      "matchPackagePatterns": ["^io.grpc:grpc-"],
+      "packagePatterns": ["^io.grpc:grpc-"],
       "groupName": "gRPC packages"
     },
     {
-      "matchPackagePatterns": ["^com.google.protobuf:protobuf-"],
+      "packagePatterns": ["^com.google.protobuf:protobuf-"],
       "groupName": "Protobuf packages"
     },
     {
-      "matchPackagePatterns": ["^io.opencensus:opencensus-"],
+      "packagePatterns": ["^io.opencensus:opencensus-"],
       "groupName": "OpenCensus packages"
     }
   ]

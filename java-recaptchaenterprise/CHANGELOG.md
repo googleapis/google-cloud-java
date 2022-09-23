@@ -1,5 +1,40 @@
 # Changelog
 
+## [3.0.9](https://github.com/googleapis/java-recaptchaenterprise/compare/v3.0.8...v3.0.9) (2022-09-22)
+
+
+### Dependencies
+
+* Update dependency org.springframework.boot:spring-boot-starter-test to v2.7.4 ([#892](https://github.com/googleapis/java-recaptchaenterprise/issues/892)) ([462c054](https://github.com/googleapis/java-recaptchaenterprise/commit/462c054a2731725196d46e976e15004bd9ba87de))
+* Update dependency org.springframework.boot:spring-boot-starter-thymeleaf to v2.7.4 ([#893](https://github.com/googleapis/java-recaptchaenterprise/issues/893)) ([6c3302a](https://github.com/googleapis/java-recaptchaenterprise/commit/6c3302a13240ea2b7c249c8b9930568acf61f837))
+* Update dependency org.springframework.boot:spring-boot-starter-web to v2.7.4 ([#894](https://github.com/googleapis/java-recaptchaenterprise/issues/894)) ([0708e63](https://github.com/googleapis/java-recaptchaenterprise/commit/0708e63b8c17de39fab86c8944b343d50aaaef63))
+
+## [3.0.8](https://github.com/googleapis/java-recaptchaenterprise/compare/v3.0.7...v3.0.8) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#887](https://github.com/googleapis/java-recaptchaenterprise/issues/887)) ([cb5ef27](https://github.com/googleapis/java-recaptchaenterprise/commit/cb5ef27b2f6065a15ef3394953d5e012069c0a51))
+
+## [3.0.7](https://github.com/googleapis/java-recaptchaenterprise/compare/v3.0.6...v3.0.7) (2022-09-08)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#882](https://github.com/googleapis/java-recaptchaenterprise/issues/882)) ([1f04e9a](https://github.com/googleapis/java-recaptchaenterprise/commit/1f04e9a95f066d42621ab7475ef43eebaa01a737))
+
+## [3.0.6](https://github.com/googleapis/java-recaptchaenterprise/compare/v3.0.5...v3.0.6) (2022-09-06)
+
+
+### Dependencies
+
+* Update dependency io.github.bonigarcia ([8138fb8](https://github.com/googleapis/java-recaptchaenterprise/commit/8138fb8c785d125d7dd2d17ca217e82cd5ea2f2a))
+* Update dependency org.seleniumhq.selenium ([708764b](https://github.com/googleapis/java-recaptchaenterprise/commit/708764b51a135b93eeaa6de976a889b47a5c7135))
+* Update dependency org.seleniumhq.selenium ([bdee535](https://github.com/googleapis/java-recaptchaenterprise/commit/bdee53591b316d4e6167f7416a0eb045db40968e))
+* Update dependency org.springframework.boot ([f25f66c](https://github.com/googleapis/java-recaptchaenterprise/commit/f25f66c3d4de4c8a63dbfbcf3ad58cce7d52184d))
+* Update dependency org.springframework.boot ([31da78f](https://github.com/googleapis/java-recaptchaenterprise/commit/31da78feac855fab7c7dd80adfd1225bcffdf0de))
+* Update dependency org.springframework.boot ([2b89486](https://github.com/googleapis/java-recaptchaenterprise/commit/2b894862ab0e0b206f25b6675b960d9543cbe186))
+
 ## [3.0.5](https://github.com/googleapis/java-recaptchaenterprise/compare/v3.0.4...v3.0.5) (2022-08-04)
 
 

@@ -1,0 +1,53 @@
+name: Googleapis Sync (Hermetic Build)
+on:
+  workflow_dispatch:
+
+jobs:
+  create-pull-request:
+    name: Create pull request for recent googleapis changes
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        repository: 'googleapis/google-cloud-java'
+    - name: Setup workspace
+      run: |
+        mkdir -p "${WORKSPACE}"
+        git config user.email "yoshi-code-bot[bot]@users.noreply.github.com"
+        git config user.name "yoshi-code-bot"
+        
+        git clone --quiet --branch "${BASE_BRANCH}" --depth 1 \
+            https://github.com/googleapis/google-cloud-java \
+            "${WORKSPACE}/google-cloud-java"
+        cd "${WORKSPACE}/google-cloud-java"
+        # This should match the branch name we push to remote in the following steps
+        git checkout -b monorepo_googleapis_change
+      env:
+        WORKSPACE: /tmp/googleapis-sync
+        # Note for cutover to main: update this to main
+        BASE_BRANCH: monorepo_script_output
+    - name: Propagate googleapis commits to google-cloud-java
+      run: |
+        .kokoro/sync_with_googleapis.sh
+      env:
+        WORKSPACE: /tmp/googleapis-sync
+        GOOGLE_CLOUD_JAVA_DIR: /tmp/googleapis-sync/google-cloud-java
+    - name: Push changes to remote repository
+      run: |
+        git remote add origin_with_auth \
+            https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
+        git push -f --set-upstream origin_with_auth monorepo_googleapis_change
+      working-directory: /tmp/googleapis-sync/google-cloud-java
+      env:
+        GITHUB_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
+    - name: Create pull request
+      run: |
+        gh pr create --title='chore: googleapis change propagation via hermetic build' \
+            --body='googleapis change propagation via hermetic build' \
+            --base="${BASE_BRANCH}" \
+            --head=monorepo_googleapis_change
+      working-directory: /tmp/googleapis-sync/google-cloud-java
+      env:
+        GITHUB_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
+        # Note for cutover to main: update this to main
+        BASE_BRANCH: monorepo_script_output

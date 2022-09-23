@@ -98,7 +98,7 @@ public class HttpJsonPolicyTagManagerStub extends PolicyTagManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("taxonomy", request.getTaxonomy(), false))
+                                  .toBody("taxonomy", request.getTaxonomy()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Taxonomy>newBuilder()
@@ -169,7 +169,7 @@ public class HttpJsonPolicyTagManagerStub extends PolicyTagManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("taxonomy", request.getTaxonomy(), false))
+                                  .toBody("taxonomy", request.getTaxonomy()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Taxonomy>newBuilder()
@@ -273,7 +273,7 @@ public class HttpJsonPolicyTagManagerStub extends PolicyTagManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("policyTag", request.getPolicyTag(), false))
+                                  .toBody("policyTag", request.getPolicyTag()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PolicyTag>newBuilder()
@@ -344,7 +344,7 @@ public class HttpJsonPolicyTagManagerStub extends PolicyTagManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("policyTag", request.getPolicyTag(), false))
+                                  .toBody("policyTag", request.getPolicyTag()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PolicyTag>newBuilder()
@@ -450,7 +450,7 @@ public class HttpJsonPolicyTagManagerStub extends PolicyTagManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -488,7 +488,7 @@ public class HttpJsonPolicyTagManagerStub extends PolicyTagManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -526,7 +526,7 @@ public class HttpJsonPolicyTagManagerStub extends PolicyTagManagerStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()

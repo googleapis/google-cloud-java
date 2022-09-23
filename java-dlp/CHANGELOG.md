@@ -1,5 +1,48 @@
 # Changelog
 
+## [3.7.3](https://github.com/googleapis/java-dlp/compare/v3.7.2...v3.7.3) (2022-09-22)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-pubsub to v1.120.18 ([#995](https://github.com/googleapis/java-dlp/issues/995)) ([0b3796d](https://github.com/googleapis/java-dlp/commit/0b3796d78eefb1da74806170e2566c2301aa5d93))
+
+## [3.7.2](https://github.com/googleapis/java-dlp/compare/v3.7.1...v3.7.2) (2022-09-20)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-pubsub to v1.120.17 ([#991](https://github.com/googleapis/java-dlp/issues/991)) ([cda3399](https://github.com/googleapis/java-dlp/commit/cda3399fa8a9d0d98978aec38211931738b83d76))
+
+## [3.7.1](https://github.com/googleapis/java-dlp/compare/v3.7.0...v3.7.1) (2022-09-20)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-pubsub to v1.120.16 ([#983](https://github.com/googleapis/java-dlp/issues/983)) ([692695d](https://github.com/googleapis/java-dlp/commit/692695d57e159bcb5ae5059d636199933240a0ed))
+
+## [3.7.0](https://github.com/googleapis/java-dlp/compare/v3.6.7...v3.7.0) (2022-09-15)
+
+
+### Features
+
+* Add Deidentify action ([#977](https://github.com/googleapis/java-dlp/issues/977)) ([cd0271d](https://github.com/googleapis/java-dlp/commit/cd0271d9a92267855f2073941325b964e484248a))
+
+
+### Bug Fixes
+
+* Update DeIdentificationTest ([#976](https://github.com/googleapis/java-dlp/issues/976)) ([38a3636](https://github.com/googleapis/java-dlp/commit/38a3636274e40d76219ec745ed19ed9eed4f44d2))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-pubsub to v1.120.11 ([#960](https://github.com/googleapis/java-dlp/issues/960)) ([2b588be](https://github.com/googleapis/java-dlp/commit/2b588be096488303bec48ea226c7825ce27f78b3))
+* Update dependency com.google.cloud:google-cloud-pubsub to v1.120.12 ([#969](https://github.com/googleapis/java-dlp/issues/969)) ([d944dbf](https://github.com/googleapis/java-dlp/commit/d944dbf3649465ac4b03b1f1a806ff5deabfb580))
+* Update dependency com.google.cloud:google-cloud-pubsub to v1.120.13 ([#974](https://github.com/googleapis/java-dlp/issues/974)) ([958c2de](https://github.com/googleapis/java-dlp/commit/958c2def31a2d76df46f879684d98ca571acc45e))
+* Update dependency com.google.cloud:google-cloud-pubsub to v1.120.14 ([#982](https://github.com/googleapis/java-dlp/issues/982)) ([72292a6](https://github.com/googleapis/java-dlp/commit/72292a64b07b98549dc8ea7a02134a38361dbf06))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#980](https://github.com/googleapis/java-dlp/issues/980)) ([efb18ab](https://github.com/googleapis/java-dlp/commit/efb18abf70a30721412ab07f2fa547b7e221a815))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#984](https://github.com/googleapis/java-dlp/issues/984)) ([2aeeea3](https://github.com/googleapis/java-dlp/commit/2aeeea30464e70734ed9a845f6e2294ffd44f420))
+
 ## [3.6.7](https://github.com/googleapis/java-dlp/compare/v3.6.6...v3.6.7) (2022-08-05)
 
 

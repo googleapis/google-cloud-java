@@ -3,13 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-errorreporting-bom</artifactId>
-  <version>0.124.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
+  <version>0.124.11-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-java</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <relativePath>../../pom.xml</relativePath>
+    <artifactId>google-cloud-shared-config</artifactId>
+    <version>1.5.3</version>
   </parent>
 
   <name>Google Cloud errorreporting BOM</name>
@@ -53,17 +52,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-errorreporting</artifactId>
-        <version>0.124.5-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
+        <version>0.124.11-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-error-reporting-v1beta1</artifactId>
-        <version>0.90.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-error-reporting-v1beta1:current} -->
+        <version>0.90.11-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-error-reporting-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-error-reporting-v1beta1</artifactId>
-        <version>0.90.5-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-error-reporting-v1beta1:current} -->
+        <version>0.90.11-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-error-reporting-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

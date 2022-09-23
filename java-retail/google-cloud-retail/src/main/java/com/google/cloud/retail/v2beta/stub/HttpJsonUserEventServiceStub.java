@@ -100,7 +100,7 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("userEvent", request.getUserEvent(), false))
+                                  .toBody("userEvent", request.getUserEvent()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<UserEvent>newBuilder()
@@ -172,7 +172,7 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -211,7 +211,7 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -250,7 +250,7 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

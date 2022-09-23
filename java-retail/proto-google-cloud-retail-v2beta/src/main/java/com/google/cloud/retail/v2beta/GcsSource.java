@@ -23,6 +23,7 @@ package com.google.cloud.retail.v2beta;
  *
  * <pre>
  * Google Cloud Storage location for input content.
+ * format.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2beta.GcsSource}
@@ -236,10 +237,10 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * * `user_event_ga360`: Using
    *   https://support.google.com/analytics/answer/3437719.
    * Supported values for control imports:
-   * * `control` (default): One JSON
+   * * 'control' (default): One JSON
    * [Control][google.cloud.retail.v2beta.Control] per line.
    * Supported values for catalog attribute imports:
-   * * `catalog_attribute` (default): One CSV
+   * * 'catalog_attribute' (default): One CSV
    * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute] per line.
    * </pre>
    *
@@ -276,10 +277,10 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * * `user_event_ga360`: Using
    *   https://support.google.com/analytics/answer/3437719.
    * Supported values for control imports:
-   * * `control` (default): One JSON
+   * * 'control' (default): One JSON
    * [Control][google.cloud.retail.v2beta.Control] per line.
    * Supported values for catalog attribute imports:
-   * * `catalog_attribute` (default): One CSV
+   * * 'catalog_attribute' (default): One CSV
    * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute] per line.
    * </pre>
    *
@@ -479,6 +480,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Google Cloud Storage location for input content.
+   * format.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2beta.GcsSource}
@@ -900,10 +902,10 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * * `user_event_ga360`: Using
      *   https://support.google.com/analytics/answer/3437719.
      * Supported values for control imports:
-     * * `control` (default): One JSON
+     * * 'control' (default): One JSON
      * [Control][google.cloud.retail.v2beta.Control] per line.
      * Supported values for catalog attribute imports:
-     * * `catalog_attribute` (default): One CSV
+     * * 'catalog_attribute' (default): One CSV
      * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute] per line.
      * </pre>
      *
@@ -939,10 +941,10 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * * `user_event_ga360`: Using
      *   https://support.google.com/analytics/answer/3437719.
      * Supported values for control imports:
-     * * `control` (default): One JSON
+     * * 'control' (default): One JSON
      * [Control][google.cloud.retail.v2beta.Control] per line.
      * Supported values for catalog attribute imports:
-     * * `catalog_attribute` (default): One CSV
+     * * 'catalog_attribute' (default): One CSV
      * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute] per line.
      * </pre>
      *
@@ -978,10 +980,10 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * * `user_event_ga360`: Using
      *   https://support.google.com/analytics/answer/3437719.
      * Supported values for control imports:
-     * * `control` (default): One JSON
+     * * 'control' (default): One JSON
      * [Control][google.cloud.retail.v2beta.Control] per line.
      * Supported values for catalog attribute imports:
-     * * `catalog_attribute` (default): One CSV
+     * * 'catalog_attribute' (default): One CSV
      * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute] per line.
      * </pre>
      *
@@ -1016,10 +1018,10 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * * `user_event_ga360`: Using
      *   https://support.google.com/analytics/answer/3437719.
      * Supported values for control imports:
-     * * `control` (default): One JSON
+     * * 'control' (default): One JSON
      * [Control][google.cloud.retail.v2beta.Control] per line.
      * Supported values for catalog attribute imports:
-     * * `catalog_attribute` (default): One CSV
+     * * 'catalog_attribute' (default): One CSV
      * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute] per line.
      * </pre>
      *
@@ -1050,10 +1052,10 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * * `user_event_ga360`: Using
      *   https://support.google.com/analytics/answer/3437719.
      * Supported values for control imports:
-     * * `control` (default): One JSON
+     * * 'control' (default): One JSON
      * [Control][google.cloud.retail.v2beta.Control] per line.
      * Supported values for catalog attribute imports:
-     * * `catalog_attribute` (default): One CSV
+     * * 'catalog_attribute' (default): One CSV
      * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute] per line.
      * </pre>
      *

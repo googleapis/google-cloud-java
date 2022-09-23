@@ -54,17 +54,17 @@ import javax.annotation.Generated;
  * <p>For example, to set the total timeout of updateCatalog to 30 seconds:
  *
  * <pre>{@code
- * // This snippet has been automatically generated and should be regarded as a code template only.
- * // It will require modifications to work:
- * // - It may require correct/in-range values for request initialization.
- * // - It may require specifying regional endpoints when creating the service client as shown in
- * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CatalogServiceSettings.Builder catalogServiceSettingsBuilder =
  *     CatalogServiceSettings.newBuilder();
  * catalogServiceSettingsBuilder
  *     .updateCatalogSettings()
  *     .setRetrySettings(
- *         catalogServiceSettingsBuilder.updateCatalogSettings().getRetrySettings().toBuilder()
+ *         catalogServiceSettingsBuilder
+ *             .updateCatalogSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CatalogServiceSettings catalogServiceSettings = catalogServiceSettingsBuilder.build();
@@ -130,13 +130,6 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
   public UnaryCallSettings<RemoveCatalogAttributeRequest, AttributesConfig>
       removeCatalogAttributeSettings() {
     return ((CatalogServiceStubSettings) getStubSettings()).removeCatalogAttributeSettings();
-  }
-
-  /** Returns the object with the settings used for calls to batchRemoveCatalogAttributes. */
-  public UnaryCallSettings<
-          BatchRemoveCatalogAttributesRequest, BatchRemoveCatalogAttributesResponse>
-      batchRemoveCatalogAttributesSettings() {
-    return ((CatalogServiceStubSettings) getStubSettings()).batchRemoveCatalogAttributesSettings();
   }
 
   /** Returns the object with the settings used for calls to replaceCatalogAttribute. */
@@ -317,13 +310,6 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
     public UnaryCallSettings.Builder<RemoveCatalogAttributeRequest, AttributesConfig>
         removeCatalogAttributeSettings() {
       return getStubSettingsBuilder().removeCatalogAttributeSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to batchRemoveCatalogAttributes. */
-    public UnaryCallSettings.Builder<
-            BatchRemoveCatalogAttributesRequest, BatchRemoveCatalogAttributesResponse>
-        batchRemoveCatalogAttributesSettings() {
-      return getStubSettingsBuilder().batchRemoveCatalogAttributesSettings();
     }
 
     /** Returns the builder for the settings used for calls to replaceCatalogAttribute. */

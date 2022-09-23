@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.5.2](https://github.com/googleapis/java-container/compare/v2.5.1...v2.5.2) (2022-09-16)
+
+
+### Bug Fixes
+
+* Change vpc network ([#783](https://github.com/googleapis/java-container/issues/783)) ([c282b17](https://github.com/googleapis/java-container/commit/c282b17e695fff78e8f38709ae468de812233f03))
+
+
+### Documentation
+
+* **owlbot-java:** Explaining why not using formatter in pom.xml ([#1511](https://github.com/googleapis/java-container/issues/1511)) ([#768](https://github.com/googleapis/java-container/issues/768)) ([d365aca](https://github.com/googleapis/java-container/commit/d365aca60c20e6be62148433db74e577bf53e328)), closes [#1502](https://github.com/googleapis/java-container/issues/1502)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#781](https://github.com/googleapis/java-container/issues/781)) ([9331316](https://github.com/googleapis/java-container/commit/9331316f9ce53f43dde9b353952f3ad19cb05ca4))
+
 ## [2.5.1](https://github.com/googleapis/java-container/compare/v2.5.0...v2.5.1) (2022-08-04)
 
 

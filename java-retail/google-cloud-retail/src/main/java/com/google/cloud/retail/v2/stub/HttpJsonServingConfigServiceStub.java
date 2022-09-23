@@ -89,7 +89,7 @@ public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("servingConfig", request.getServingConfig(), false))
+                                  .toBody("servingConfig", request.getServingConfig()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ServingConfig>newBuilder()
@@ -160,7 +160,7 @@ public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("servingConfig", request.getServingConfig(), false))
+                                  .toBody("servingConfig", request.getServingConfig()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ServingConfig>newBuilder()
@@ -265,8 +265,7 @@ public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody(
-                                      "*", request.toBuilder().clearServingConfig().build(), false))
+                                  .toBody("*", request.toBuilder().clearServingConfig().build()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ServingConfig>newBuilder()
@@ -303,8 +302,7 @@ public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody(
-                                      "*", request.toBuilder().clearServingConfig().build(), false))
+                                  .toBody("*", request.toBuilder().clearServingConfig().build()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ServingConfig>newBuilder()

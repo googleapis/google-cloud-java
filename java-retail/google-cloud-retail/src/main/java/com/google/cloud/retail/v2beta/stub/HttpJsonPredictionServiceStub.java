@@ -79,7 +79,7 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearPlacement().build(), false))
+                                  .toBody("*", request.toBuilder().clearPlacement().build()))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PredictResponse>newBuilder()

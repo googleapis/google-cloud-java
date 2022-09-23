@@ -11,8 +11,31 @@ Java idiomatic client for [Cloud Asset Inventory][product-docs].
 
 ## Quickstart
 
+If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
-If you are using Maven, add this to your pom.xml file:
+```xml
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>libraries-bom</artifactId>
+      <version>26.1.2</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+
+<dependencies>
+  <dependency>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-asset</artifactId>
+  </dependency>
+</dependencies>
+
+```
+
+If you are using Maven without BOM, add this to your dependencies:
 
 
 ```xml
@@ -21,8 +44,16 @@ If you are using Maven, add this to your pom.xml file:
   <artifactId>google-cloud-asset</artifactId>
   <version>3.6.0</version>
 </dependency>
+
 ```
 
+If you are using Gradle 5.x or later, add this to your dependencies:
+
+```Groovy
+implementation platform('com.google.cloud:libraries-bom:26.1.2')
+
+implementation 'com.google.cloud:google-cloud-asset'
+```
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
@@ -68,6 +99,29 @@ use this Cloud Asset Inventory Client Library.
 
 
 
+
+
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-asset/tree/main/samples) directory.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| Analyze Iam Policy Example | [source code](https://github.com/googleapis/java-asset/blob/main/samples/snippets/src/main/java/com/example/asset/AnalyzeIamPolicyExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-asset&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/asset/AnalyzeIamPolicyExample.java) |
+| Analyze Iam Policy Longrunning Bigquery Example | [source code](https://github.com/googleapis/java-asset/blob/main/samples/snippets/src/main/java/com/example/asset/AnalyzeIamPolicyLongrunningBigqueryExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-asset&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/asset/AnalyzeIamPolicyLongrunningBigqueryExample.java) |
+| Analyze Iam Policy Longrunning Gcs Example | [source code](https://github.com/googleapis/java-asset/blob/main/samples/snippets/src/main/java/com/example/asset/AnalyzeIamPolicyLongrunningGcsExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-asset&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/asset/AnalyzeIamPolicyLongrunningGcsExample.java) |
+| Batch Get Assets History Example | [source code](https://github.com/googleapis/java-asset/blob/main/samples/snippets/src/main/java/com/example/asset/BatchGetAssetsHistoryExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-asset&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/asset/BatchGetAssetsHistoryExample.java) |
+| Batch Get Effective Iam Policy Example | [source code](https://github.com/googleapis/java-asset/blob/main/samples/snippets/src/main/java/com/example/asset/BatchGetEffectiveIamPolicyExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-asset&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/asset/BatchGetEffectiveIamPolicyExample.java) |
+| Create Feed Example | [source code](https://github.com/googleapis/java-asset/blob/main/samples/snippets/src/main/java/com/example/asset/CreateFeedExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-asset&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/asset/CreateFeedExample.java) |
+| Delete Feed Example | [source code](https://github.com/googleapis/java-asset/blob/main/samples/snippets/src/main/java/com/example/asset/DeleteFeedExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-asset&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/asset/DeleteFeedExample.java) |
+| Export Assets Bigquery Example | [source code](https://github.com/googleapis/java-asset/blob/main/samples/snippets/src/main/java/com/example/asset/ExportAssetsBigqueryExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-asset&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/asset/ExportAssetsBigqueryExample.java) |
+| Export Assets Example | [source code](https://github.com/googleapis/java-asset/blob/main/samples/snippets/src/main/java/com/example/asset/ExportAssetsExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-asset&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/asset/ExportAssetsExample.java) |
+| Get Feed Example | [source code](https://github.com/googleapis/java-asset/blob/main/samples/snippets/src/main/java/com/example/asset/GetFeedExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-asset&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/asset/GetFeedExample.java) |
+| List Assets Example | [source code](https://github.com/googleapis/java-asset/blob/main/samples/snippets/src/main/java/com/example/asset/ListAssetsExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-asset&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/asset/ListAssetsExample.java) |
+| List Feeds Example | [source code](https://github.com/googleapis/java-asset/blob/main/samples/snippets/src/main/java/com/example/asset/ListFeedsExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-asset&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/asset/ListFeedsExample.java) |
+| Search All Iam Policies Example | [source code](https://github.com/googleapis/java-asset/blob/main/samples/snippets/src/main/java/com/example/asset/SearchAllIamPoliciesExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-asset&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/asset/SearchAllIamPoliciesExample.java) |
+| Search All Resources Example | [source code](https://github.com/googleapis/java-asset/blob/main/samples/snippets/src/main/java/com/example/asset/SearchAllResourcesExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-asset&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/asset/SearchAllResourcesExample.java) |
+| Update Feed Example | [source code](https://github.com/googleapis/java-asset/blob/main/samples/snippets/src/main/java/com/example/asset/UpdateFeedExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-asset&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/asset/UpdateFeedExample.java) |
 
 
 

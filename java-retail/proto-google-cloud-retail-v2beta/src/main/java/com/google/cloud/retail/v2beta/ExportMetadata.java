@@ -22,7 +22,7 @@ package com.google.cloud.retail.v2beta;
  *
  *
  * <pre>
- * Metadata related to the progress of the Export operation. This is
+ * Metadata related to the progress of the Export operation. This will be
  * returned by the google.longrunning.Operation.metadata field.
  * </pre>
  *
@@ -412,7 +412,7 @@ public final class ExportMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Metadata related to the progress of the Export operation. This is
+   * Metadata related to the progress of the Export operation. This will be
    * returned by the google.longrunning.Operation.metadata field.
    * </pre>
    *

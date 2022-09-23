@@ -1,5 +1,47 @@
 # Changelog
 
+## [2.3.11](https://github.com/googleapis/java-scheduler/compare/v2.3.10...v2.3.11) (2022-09-22)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-pubsub-bom to v1.120.18 ([#836](https://github.com/googleapis/java-scheduler/issues/836)) ([1e8d0d4](https://github.com/googleapis/java-scheduler/commit/1e8d0d453f297781e00089f8fdc0b8cd7aa7464a))
+
+## [2.3.10](https://github.com/googleapis/java-scheduler/compare/v2.3.9...v2.3.10) (2022-09-20)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-pubsub-bom to v1.120.17 ([#832](https://github.com/googleapis/java-scheduler/issues/832)) ([9ebff00](https://github.com/googleapis/java-scheduler/commit/9ebff00730b4cf64f8fe336412220c2bdebde647))
+
+## [2.3.9](https://github.com/googleapis/java-scheduler/compare/v2.3.8...v2.3.9) (2022-09-20)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-pubsub-bom to v1.120.16 ([#823](https://github.com/googleapis/java-scheduler/issues/823)) ([610b052](https://github.com/googleapis/java-scheduler/commit/610b0522b9d4f4ea583f5ef89e11f63a057f9a7a))
+
+## [2.3.8](https://github.com/googleapis/java-scheduler/compare/v2.3.7...v2.3.8) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#824](https://github.com/googleapis/java-scheduler/issues/824)) ([143a11d](https://github.com/googleapis/java-scheduler/commit/143a11de49036ec39f96e5fa3c162880c724c7fc))
+
+## [2.3.7](https://github.com/googleapis/java-scheduler/compare/v2.3.6...v2.3.7) (2022-09-10)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-pubsub-bom to v1.120.14 ([#819](https://github.com/googleapis/java-scheduler/issues/819)) ([11f64aa](https://github.com/googleapis/java-scheduler/commit/11f64aa6f5f6301572cb1f8db749cd2c0391ab3a))
+
+## [2.3.6](https://github.com/googleapis/java-scheduler/compare/v2.3.5...v2.3.6) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#815](https://github.com/googleapis/java-scheduler/issues/815)) ([1eec01a](https://github.com/googleapis/java-scheduler/commit/1eec01a6020fe14b12ce8c9cb7d5d00af90b78f4))
+
 ## [2.3.5](https://github.com/googleapis/java-scheduler/compare/v2.3.4...v2.3.5) (2022-08-24)
 
 
