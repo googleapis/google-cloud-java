@@ -40,6 +40,17 @@ function retry_with_backoff {
   return $exit_code
 }
 
+if [[ $(git branch | grep main-diff ]]; then
+  git checkout main-diff
+else
+  git checkout -b main-diff
+fi
+
+diff_java_branch="main-diff_java"
+diff_non_java_branch="main-diff_non_java"
+git checkout main-diff
+git branch -D "${diff_java_branch}" "${diff_non_java_branch}"
+
 modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | grep 'java' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
 
 for module in $modules; do
@@ -52,10 +63,6 @@ done
 
 ./generation/delete_non_generated_samples.sh
 
-current_branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
-diff_java_branch="main-diff_java"
-diff_non_java_branch="main-diff_non_java"
-
 if [[ $(git branch | grep "${diff_java_branch}") ]]; then
   git checkout "${diff_java_branch}"
 else
@@ -66,7 +73,7 @@ git commit -m "chore: Adding java diffs" --no-verify
 git push origin "${diff_java_branch}" --force
 
 git stash
-git checkout "${current_branch}"
+git checkout main-diff
 git stash pop
 
 if [[ $(git branch | grep "${diff_non_java_branch}") ]]; then
@@ -78,7 +85,7 @@ git add .
 git commit -m "chore: Adding non-java diffs" --no-verify
 git push origin "${diff_non_java_branch}" --force
 
-git checkout "${current_branch}"
+git checkout main-diff
 git clean -fd
 
 echo "Done running script"
