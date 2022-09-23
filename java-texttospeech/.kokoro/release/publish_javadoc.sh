@@ -28,8 +28,7 @@ fi
 pushd $(dirname "$0")/../../
 
 # install docuploader package
-requirementsFile=$(realpath $(dirname "${BASH_SOURCE[0]}")/../requirements.txt)
-python3 -m pip install --require-hashes -r $requirementsFile
+python3 -m pip install gcp-docuploader
 
 # compile all packages
 mvn clean install -B -q -DskipTests=true
