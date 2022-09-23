@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+set -xe
 
 GENERATION_DIR=$(dirname -- "$0");
 

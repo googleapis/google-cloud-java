@@ -106,4 +106,25 @@ git commit -am 'feat: create CoverageAggregator module'
 git add --all
 git commit -am 'chore: delete non-auto-generated samples'
 
+./generation/set_parent_pom.sh
+
+git add --all
+git commit -am 'chore: set parent pom'
+
+./generation/update_versions.sh
+
+git add --all
+git commit -am 'chore: update versions to latest in maven'
+
+# create a monorepo/diff repo
+cd ..
+cp -R google-cloud-java split
+rm -rf split/.git
+git clone -b main --single-branch https://github.com/googleapis/google-cloud-java.git shadow
+cp -R shadow/.git split/.git
+rm -rf shadow
+mv split diff
+cd diff
+git add --all
+git commit -am 'diff with split repos'
 cd ../..
