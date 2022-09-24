@@ -67,6 +67,11 @@ cp -rp ../../templates/. ./
 # Generation files
 cp -rp ../../generation ./
 
+# Add all template files
+git add --all
+git add -f .gitignore
+git commit -m 'chore: add template files'
+
 ./generation/print_root_pom.sh > pom.xml
 
 git add pom.xml
@@ -78,10 +83,6 @@ bash generation/set_parent_pom.sh
 git add --all
 git commit -am 'feat: point modules to the aggregator pom as parent'
 
-# Add all template files
-git add --all
-git add -f .gitignore
-git commit -m 'chore: add template files'
 
 ./generation/generate_gapic_bom.sh
 

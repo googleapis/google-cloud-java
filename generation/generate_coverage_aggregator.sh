@@ -26,7 +26,7 @@ for pom_file in $(find . -mindepth 2 -maxdepth 3 -name pom.xml | sort); do
   version_line=$(grep --max-count=1 'x-version-update' "${pom_file}")
 
   module_lines+="    <dependency>\n\
-    ${groupId_line}
+    ${groupId_line}\n\
     ${artifactId_line}\n\
     ${version_line}\n\
     </dependency>\n"
