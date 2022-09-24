@@ -30,14 +30,6 @@ do
   cd  ${service}
   git filter-repo --to-subdirectory-filter ${service}
 
-  # Search for <parent> tag in module pom and replace the next three lines -- groupId, artifcatId, and version
-  sed -i.bak -e "/<parent>/{N;s|<groupId>.*<\/groupId>|<groupId>com.google.cloud<\/groupId>|;N;s|<artifactId>.*<\/artifactId>|<artifactId>google-cloud-java<\/artifactId>|;N;s|<version>.*<\/version>|<version>0.0.1-SNAPSHOT<\/version>|;}" ${service}/pom.xml && rm ${service}/pom.xml.bak
-
-  if ls ${service} | grep 'bom'; then
-    BOM=$(ls ${service} | grep 'bom')
-    # Search for <parent> tag in module bom and replace the next three lines -- groupId, artifcatId, and version
-    sed -i.bak -e "/<parent>/{N;s|<groupId>.*<\/groupId>|<groupId>com.google.cloud<\/groupId>|;N;s|<artifactId>.*<\/artifactId>|<artifactId>google-cloud-java<\/artifactId>|;N;s|<version>.*<\/version>|<version>0.0.1-SNAPSHOT<\/version>\n    <relativePath>..\/..\/pom.xml<\/relativePath>|;}" ${service}/${BOM}/pom.xml && rm ${service}/${BOM}/pom.xml.bak
-  fi
   # setup owlbot files correctly to match monorepo configuration
   cp ${service}/.github/.OwlBot.yaml ${service}/.OwlBot.yaml
   rm ${service}/.github/.OwlBot.lock.yaml
@@ -79,6 +71,12 @@ cp -rp ../../generation ./
 
 git add pom.xml
 git commit -am 'feat: create aggregator pom'
+
+# Point modules poms and BOMs to the aggregator pom as parent
+bash generation/set_parent_pom.sh
+
+git add --all
+git commit -am 'feat: point modules to the aggregator pom as parent'
 
 # Add all template files
 git add --all
