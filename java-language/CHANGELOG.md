@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.4.0](https://github.com/googleapis/java-language/compare/v2.3.4...v2.4.0) (2022-09-26)
+
+
+### Features
+
+* Add support for V1 and V2 classification models for the V1 API ([4148969](https://github.com/googleapis/java-language/commit/41489691955887daa9e00a365be6012ce4a57943))
+* Add support for V1 and V2 classification models for the V1Beta2 API ([#895](https://github.com/googleapis/java-language/issues/895)) ([4148969](https://github.com/googleapis/java-language/commit/41489691955887daa9e00a365be6012ce4a57943))
+
+
+### Documentation
+
+* Fix docstring formatting ([#897](https://github.com/googleapis/java-language/issues/897)) ([6267be8](https://github.com/googleapis/java-language/commit/6267be81ff610ef7c0c35320b032260c8b8d5db7))
+
 ## [2.3.4](https://github.com/googleapis/java-language/compare/v2.3.3...v2.3.4) (2022-09-15)
 
 
