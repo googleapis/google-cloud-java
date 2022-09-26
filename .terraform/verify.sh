@@ -53,7 +53,7 @@ function testAll() {
 
   # Perform mvn verify on parent project, excluding the given submodules
   pushd "../" >/dev/null || exit
-  mvnVerify -pl -java-asset,-java-dialogflow,-java-dialogflow-cx,-java-iam-admin,-java-recommender,-java-talent,-java-texttospeech,-java-dataproc,-java-dns,-java-notification,-java-os-login,-java-scheduler
+  mvnVerify -pl -java-dialogflow,-java-dialogflow-cx,-java-recommender,-java-talent,-java-texttospeech,-java-dataproc,-java-dns,-java-notification,-java-os-login,-java-scheduler
   popd >/dev/null || exit
 }
 
