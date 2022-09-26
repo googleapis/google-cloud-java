@@ -21,7 +21,25 @@ for module in $(find . -mindepth 2 -maxdepth 2 -name pom.xml |sort | xargs dirna
   echo "Processing module $module"
   pushd $module
   # Search for <parent> tag in module pom and replace the next three lines -- groupId, artifcatId, and version
-  sed -i.bak -e "/<parent>/{N;s|<groupId>.*</groupId>|<groupId>${parent_group_id}</groupId>|;N;s|<artifactId>.*</artifactId>|<artifactId>${parent_artifact_id}</artifactId>|;N;s|<version>.*</version>|<version>${parent_version}</version>|}" pom.xml
+  sed -i.bak -e "/<parent>/{N;s|<groupId>.*</groupId>|<groupId>${parent_group_id}</groupId>|;N;s|<artifactId>.*</artifactId>|<artifactId>${parent_artifact_id}</artifactId>|;N;s|<version>.*</version>|<version>${parent_version}</version><!-- {x-version-update:google-cloud-java:current} -->|}" pom.xml
   rm pom.xml.bak
   popd
+done
+
+# process all the module's bom module as well, since they refer to the root pom as parent as well
+for module in $(find . -mindepth 3 -maxdepth 3 -name pom.xml |sort | xargs dirname); do
+  # example value of module is "./java-accessapproval/google-cloud-accessapproval-bom/"
+  if [[ "${module}" = *google-cloud-gapic-bom ]] || [[ "${module}" = *CoverageAggregator ]]; then
+    continue
+  fi
+
+  if [[ "${module}" = *bom* ]] ; then
+    echo "Processing module $module"
+    pushd $module
+    # Search for <parent> tag in bom pom and replace the next three lines -- groupId, artifcatId, and version
+    sed -i.bak -e "/<parent>/{N;s|<groupId>.*</groupId>|<groupId>${parent_group_id}</groupId>|;N;s|<artifactId>.*</artifactId>|<artifactId>${parent_artifact_id}</artifactId>|;N;s|<version>.*</version>|<version>${parent_version}</version><!-- {x-version-update:google-cloud-java:current} -->|}" pom.xml
+    rm pom.xml.bak
+    popd
+  fi
+
 done
