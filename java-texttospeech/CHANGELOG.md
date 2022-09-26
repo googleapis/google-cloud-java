@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.6](https://github.com/googleapis/java-texttospeech/compare/v2.4.5...v2.4.6) (2022-09-26)
+
+
+### Dependencies
+
+* Update dependency google-auth to v2.11.1 ([#755](https://github.com/googleapis/java-texttospeech/issues/755)) ([3e794bc](https://github.com/googleapis/java-texttospeech/commit/3e794bc8b9f4a3bc3df25005069d04e731689ba9))
+
 ## [2.4.5](https://github.com/googleapis/java-texttospeech/compare/v2.4.4...v2.4.5) (2022-09-15)
 
 
