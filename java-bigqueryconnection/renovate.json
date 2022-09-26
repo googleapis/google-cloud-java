@@ -10,6 +10,7 @@
     ":maintainLockFilesDisabled",
     ":autodetectPinVersions"
   ],
+  "ignorePaths": [".kokoro/requirements.txt"],
   "packageRules": [
     {
       "packagePatterns": [
