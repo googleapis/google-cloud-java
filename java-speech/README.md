@@ -30,7 +30,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
   <dependency>
       <groupId>org.json</groupId>
       <artifactId>json</artifactId>
-      <version>20220320</version>
+      <version>20220924</version>
   </dependency>
   <dependency>
     <groupId>com.google.cloud</groupId>
