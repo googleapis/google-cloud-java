@@ -21,7 +21,14 @@ for module in $(find . -mindepth 2 -maxdepth 2 -name pom.xml |sort | xargs dirna
   echo "Processing module $module"
   pushd $module
   # Search for <parent> tag in module pom and replace the next three lines -- groupId, artifcatId, and version
-  sed -i.bak -e "/<parent>/{N;s|<groupId>.*</groupId>|<groupId>${parent_group_id}</groupId>|;N;s|<artifactId>.*</artifactId>|<artifactId>${parent_artifact_id}</artifactId>|;N;s|<version>.*</version>|<version>${parent_version}</version>|}" pom.xml
-  rm pom.xml.bak
+  sed -i.bak -e "/<parent>/{N;s|<groupId>.*<\/groupId>|<groupId>${parent_group_id}<\/groupId>|;N;s|<artifactId>.*<\/artifactId>|<artifactId>${parent_artifact_id}<\/artifactId>|;N;s|<version>.*<\/version>|<version>${parent_version}<\/version>|;}" pom.xml && rm pom.xml.bak
+
+  # update the bom projects as well
+  if ls | grep 'bom'; then
+    BOM=$(ls | grep 'bom')
+    # Search for <parent> tag in module bom and replace the next three lines -- groupId, artifcatId, and version
+    sed -i.bak -e "/<parent>/{N;s|<groupId>.*<\/groupId>|<groupId>${parent_group_id}<\/groupId>|;N;s|<artifactId>.*<\/artifactId>|<artifactId>${parent_artifact_id}<\/artifactId>|;N;s|<version>.*<\/version>|<version>${parent_version}<\/version>\n    <relativePath>..\/..\/pom.xml<\/relativePath>|;}" ${BOM}/pom.xml && rm ${BOM}/pom.xml.bak
+  fi
+
   popd
 done
