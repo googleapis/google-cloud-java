@@ -25,7 +25,7 @@ import com.google.cloud.retail.v2.ProductServiceClient;
 import com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest;
 import java.io.IOException;
 import java.util.UUID;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.ExecutionException;
 
 public class RemoveFulfillmentPlaces {
 
@@ -73,11 +73,12 @@ public class RemoveFulfillmentPlaces {
     // completing all of your requests, call the "close" method on the client to
     // safely clean up any remaining background resources.
     try (ProductServiceClient serviceClient = ProductServiceClient.create()) {
-      serviceClient.removeFulfillmentPlacesAsync(removeFulfillmentRequest);
       // This is a long-running operation and its result is not immediately
       // present with get operations,thus we simulate wait with sleep method.
-      System.out.println("Remove fulfillment places, wait 30 seconds.");
-      TimeUnit.SECONDS.sleep(30);
+      System.out.println("Waiting for operation to finish...");
+      serviceClient.removeFulfillmentPlacesAsync(removeFulfillmentRequest).getPollingFuture().get();
+    } catch (ExecutionException e) {
+      System.out.printf("Exception occurred during longrunning operation: %s%n", e.getMessage());
     }
   }
 }

@@ -21,18 +21,14 @@ import static setup.SetupCleanup.deleteProduct;
 import static setup.SetupCleanup.getProduct;
 
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.retail.v2.FulfillmentInfo;
-import com.google.cloud.retail.v2.PriceInfo;
-import com.google.cloud.retail.v2.Product;
+import com.google.cloud.retail.v2.*;
 import com.google.cloud.retail.v2.Product.Availability;
-import com.google.cloud.retail.v2.ProductServiceClient;
-import com.google.cloud.retail.v2.SetInventoryRequest;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Int32Value;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.UUID;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.ExecutionException;
 
 public class SetInventory {
 
@@ -106,12 +102,12 @@ public class SetInventory {
     // completing all of your requests, call the "close" method on the client to
     // safely clean up any remaining background resources.
     try (ProductServiceClient serviceClient = ProductServiceClient.create()) {
-      serviceClient.setInventoryAsync(setInventoryRequest);
+      // This is a long-running operation and its result is not immediately
+      // present with get operations,thus we simulate wait with sleep method.
+      System.out.println("Waiting for operation to finish...");
+      serviceClient.setInventoryAsync(setInventoryRequest).getPollingFuture().get();
+    } catch (ExecutionException e) {
+      System.out.printf("Exception occurred during longrunning operation: %s%n", e.getMessage());
     }
-
-    // This is a long-running operation and its result is not immediately
-    // present with get operations,thus we simulate wait with sleep method.
-    System.out.println("Set inventory, wait 30 seconds.");
-    TimeUnit.SECONDS.sleep(30);
   }
 }

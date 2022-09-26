@@ -64,7 +64,7 @@ public class RemoveFulfillmentPlacesTest {
     String outputResult = bout.toString();
 
     assertThat(outputResult).contains("Remove fulfilment places with current date");
-    assertThat(outputResult).contains("Remove fulfillment places, wait 30 seconds");
+    assertThat(outputResult).contains("Waiting for operation to finish...");
     assertThat(outputResult).contains("Delete product request name");
     assertThat(outputResult).contains("was deleted");
   }

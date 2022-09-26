@@ -65,7 +65,7 @@ public class AddFulfillmentPlacesTest {
     String outputResult = bout.toString();
 
     assertThat(outputResult).contains("Add fulfilment places");
-    assertThat(outputResult).contains("Add fulfillment places, wait 45 seconds");
+    assertThat(outputResult).contains("Waiting for operation to finish...");
   }
 
   @After

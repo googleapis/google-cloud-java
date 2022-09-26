@@ -64,7 +64,7 @@ public class SetInventoryTest {
     String outputResult = bout.toString();
 
     assertThat(outputResult).contains("Set inventory request");
-    assertThat(outputResult).contains("Set inventory, wait 30 seconds");
+    assertThat(outputResult).contains("Waiting for operation to finish...");
   }
 
   @After
