@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-security-private-ca:2.5.3:2.5.3
-grpc-google-cloud-security-private-ca-v1beta1:0.12.3:0.12.3
-grpc-google-cloud-security-private-ca-v1:2.5.3:2.5.3
-proto-google-cloud-security-private-ca-v1beta1:0.12.3:0.12.3
-proto-google-cloud-security-private-ca-v1:2.5.3:2.5.3
+google-cloud-security-private-ca:2.5.3:2.5.4-SNAPSHOT
+grpc-google-cloud-security-private-ca-v1beta1:0.12.3:0.12.4-SNAPSHOT
+grpc-google-cloud-security-private-ca-v1:2.5.3:2.5.4-SNAPSHOT
+proto-google-cloud-security-private-ca-v1beta1:0.12.3:0.12.4-SNAPSHOT
+proto-google-cloud-security-private-ca-v1:2.5.3:2.5.4-SNAPSHOT

@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-iot:2.3.4:2.3.4
-grpc-google-cloud-iot-v1:2.3.4:2.3.4
-proto-google-cloud-iot-v1:2.3.4:2.3.4
+google-cloud-iot:2.3.4:2.3.5-SNAPSHOT
+grpc-google-cloud-iot-v1:2.3.4:2.3.5-SNAPSHOT
+proto-google-cloud-iot-v1:2.3.4:2.3.5-SNAPSHOT

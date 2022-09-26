@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-deploy:1.1.6:1.1.6
-grpc-google-cloud-deploy-v1:1.1.6:1.1.6
-proto-google-cloud-deploy-v1:1.1.6:1.1.6
+google-cloud-deploy:1.1.6:1.1.7-SNAPSHOT
+grpc-google-cloud-deploy-v1:1.1.6:1.1.7-SNAPSHOT
+proto-google-cloud-deploy-v1:1.1.6:1.1.7-SNAPSHOT
