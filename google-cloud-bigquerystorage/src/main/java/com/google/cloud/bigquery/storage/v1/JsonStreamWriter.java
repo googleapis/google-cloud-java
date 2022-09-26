@@ -49,6 +49,7 @@ public class JsonStreamWriter implements AutoCloseable {
       "projects/[^/]+/datasets/[^/]+/tables/[^/]+/streams/[^/]+";
   private static Pattern streamPattern = Pattern.compile(streamPatternString);
   private static final Logger LOG = Logger.getLogger(JsonStreamWriter.class.getName());
+  private static final long UPDATE_SCHEMA_RETRY_INTERVAL_MILLIS = 30100L;
 
   private BigQueryWriteClient client;
   private String streamName;
@@ -77,6 +78,7 @@ public class JsonStreamWriter implements AutoCloseable {
     streamWriterBuilder = StreamWriter.newBuilder(builder.streamName);
     this.protoSchema = ProtoSchemaConverter.convert(this.descriptor);
     this.totalMessageSize = protoSchema.getSerializedSize();
+    this.client = builder.client;
     streamWriterBuilder.setWriterSchema(protoSchema);
     setStreamWriterSettings(
         builder.channelProvider,
@@ -108,6 +110,60 @@ public class JsonStreamWriter implements AutoCloseable {
     return append(jsonArr, -1);
   }
 
+  private void refreshWriter(TableSchema updatedSchema)
+      throws DescriptorValidationException, IOException {
+    Preconditions.checkNotNull(updatedSchema, "updatedSchema is null.");
+    LOG.info("Refresh internal writer due to schema update, stream: " + this.streamName);
+    // Close the StreamWriterf
+    this.streamWriter.close();
+    // Update JsonStreamWriter's TableSchema and Descriptor
+    this.tableSchema = updatedSchema;
+    this.descriptor =
+        BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(updatedSchema);
+    this.protoSchema = ProtoSchemaConverter.convert(this.descriptor);
+    this.totalMessageSize = protoSchema.getSerializedSize();
+    // Create a new underlying StreamWriter with the updated TableSchema and Descriptor
+    this.streamWriter = streamWriterBuilder.setWriterSchema(this.protoSchema).build();
+  }
+
+  private Message buildMessage(JSONObject json)
+      throws InterruptedException, DescriptorValidationException, IOException {
+    try {
+      return JsonToProtoMessage.convertJsonToProtoMessage(
+          this.descriptor, this.tableSchema, json, ignoreUnknownFields);
+    } catch (Exceptions.JsonDataHasUnknownFieldException ex) {
+      // Backend cache for GetWriteStream schema staleness can be 30 seconds, wait a bit before
+      // trying to get the table schema to increase the chance of succeed. This is to avoid
+      // client's invalid datfa caused storm of GetWriteStream.
+      LOG.warning(
+          "Saw Json unknown field "
+              + ex.getFieldName()
+              + ", try to refresh the writer with updated schema, stream: "
+              + streamName);
+      GetWriteStreamRequest writeStreamRequest =
+          GetWriteStreamRequest.newBuilder()
+              .setName(this.streamName)
+              .setView(WriteStreamView.FULL)
+              .build();
+      WriteStream writeStream = client.getWriteStream(writeStreamRequest);
+      refreshWriter(writeStream.getTableSchema());
+      try {
+        return JsonToProtoMessage.convertJsonToProtoMessage(
+            this.descriptor, this.tableSchema, json, ignoreUnknownFields);
+      } catch (Exceptions.JsonDataHasUnknownFieldException exex) {
+        LOG.warning(
+            "First attempt failed, waiting for 30 seconds to retry, stream: " + this.streamName);
+        Thread.sleep(UPDATE_SCHEMA_RETRY_INTERVAL_MILLIS);
+        writeStream = client.getWriteStream(writeStreamRequest);
+        // TODO(yiru): We should let TableSchema return a timestamp so that we can simply
+        //     compare the timestamp to see if the table schema is the same. If it is the
+        //     same, we don't need to go refresh the writer again.
+        refreshWriter(writeStream.getTableSchema());
+        return JsonToProtoMessage.convertJsonToProtoMessage(
+            this.descriptor, this.tableSchema, json, ignoreUnknownFields);
+      }
+    }
+  }
   /**
    * Writes a JSONArray that contains JSONObjects to the BigQuery table by first converting the JSON
    * data to protobuf messages, then using StreamWriter's append() to write the data at the
@@ -126,17 +182,7 @@ public class JsonStreamWriter implements AutoCloseable {
       // Update schema only work when connection pool is not enabled.
       if (this.streamWriter.getConnectionOperationType() == Kind.CONNECTION_WORKER
           && this.streamWriter.getUpdatedSchema() != null) {
-        TableSchema updatedSchema = this.streamWriter.getUpdatedSchema();
-        // Close the StreamWriter
-        this.streamWriter.close();
-        // Update JsonStreamWriter's TableSchema and Descriptor
-        this.tableSchema = updatedSchema;
-        this.descriptor =
-            BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(updatedSchema);
-        this.protoSchema = ProtoSchemaConverter.convert(this.descriptor);
-        this.totalMessageSize = protoSchema.getSerializedSize();
-        // Create a new underlying StreamWriter with the updated TableSchema and Descriptor
-        this.streamWriter = streamWriterBuilder.setWriterSchema(this.protoSchema).build();
+        refreshWriter(this.streamWriter.getUpdatedSchema());
       }
 
       ProtoRows.Builder rowsBuilder = ProtoRows.newBuilder();
@@ -150,9 +196,7 @@ public class JsonStreamWriter implements AutoCloseable {
       for (int i = 0; i < jsonArr.length(); i++) {
         JSONObject json = jsonArr.getJSONObject(i);
         try {
-          Message protoMessage =
-              JsonToProtoMessage.convertJsonToProtoMessage(
-                  this.descriptor, this.tableSchema, json, ignoreUnknownFields);
+          Message protoMessage = buildMessage(json);
           rowsBuilder.addSerializedRows(protoMessage.toByteString());
           currentRequestSize += protoMessage.getSerializedSize();
         } catch (IllegalArgumentException exception) {
@@ -169,6 +213,8 @@ public class JsonStreamWriter implements AutoCloseable {
           } else {
             rowIndexToErrorMessage.put(i, exception.getMessage());
           }
+        } catch (InterruptedException ex) {
+          throw new RuntimeException(ex);
         }
       }
 
@@ -277,7 +323,7 @@ public class JsonStreamWriter implements AutoCloseable {
    */
   public static Builder newBuilder(
       String streamOrTableName, TableSchema tableSchema, BigQueryWriteClient client) {
-    Preconditions.checkNotNull(streamOrTableName, "StreamName is null.");
+    Preconditions.checkNotNull(streamOrTableName, "StreamOrTableName is null.");
     Preconditions.checkNotNull(tableSchema, "TableSchema is null.");
     Preconditions.checkNotNull(client, "BigQuery client is null.");
     return new Builder(streamOrTableName, tableSchema, client);
@@ -359,6 +405,7 @@ public class JsonStreamWriter implements AutoCloseable {
 
         WriteStream writeStream = this.client.getWriteStream(writeStreamRequest);
         TableSchema writeStreamTableSchema = writeStream.getTableSchema();
+
         this.tableSchema = writeStreamTableSchema;
       } else {
         this.tableSchema = tableSchema;

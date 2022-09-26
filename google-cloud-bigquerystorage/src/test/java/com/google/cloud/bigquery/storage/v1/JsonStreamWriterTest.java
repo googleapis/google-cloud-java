@@ -33,6 +33,7 @@ import com.google.cloud.bigquery.storage.test.SchemaTest;
 import com.google.cloud.bigquery.storage.test.Test.FooType;
 import com.google.cloud.bigquery.storage.test.Test.UpdatedFooType;
 import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializtionError;
+import com.google.cloud.bigquery.storage.v1.TableFieldSchema.Mode;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
 import com.google.protobuf.Int64Value;
 import com.google.protobuf.Timestamp;
@@ -67,6 +68,7 @@ public class JsonStreamWriterTest {
   private FakeScheduledExecutorService fakeExecutor;
   private FakeBigQueryWrite testBigQueryWrite;
   private static MockServiceHelper serviceHelper;
+  private BigQueryWriteClient client;
 
   private final TableFieldSchema FOO =
       TableFieldSchema.newBuilder()
@@ -116,14 +118,15 @@ public class JsonStreamWriterTest {
     channelProvider = serviceHelper.createChannelProvider();
     fakeExecutor = new FakeScheduledExecutorService();
     testBigQueryWrite.setExecutor(fakeExecutor);
+    BigQueryWriteSettings settings =
+        BigQueryWriteSettings.newBuilder()
+            .setTransportChannelProvider(channelProvider)
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .build();
+    client = BigQueryWriteClient.create(settings);
     Instant time = Instant.now();
     Timestamp timestamp =
         Timestamp.newBuilder().setSeconds(time.getEpochSecond()).setNanos(time.getNano()).build();
-    // Add enough GetWriteStream response.
-    for (int i = 0; i < 4; i++) {
-      testBigQueryWrite.addResponse(
-          WriteStream.newBuilder().setName(TEST_STREAM).setCreateTime(timestamp).build());
-    }
   }
 
   @After
@@ -133,7 +136,7 @@ public class JsonStreamWriterTest {
 
   private JsonStreamWriter.Builder getTestJsonStreamWriterBuilder(
       String testStream, TableSchema BQTableSchema) {
-    return JsonStreamWriter.newBuilder(testStream, BQTableSchema)
+    return JsonStreamWriter.newBuilder(testStream, BQTableSchema, client)
         .setChannelProvider(channelProvider)
         .setCredentialsProvider(NoCredentialsProvider.create());
   }
@@ -507,8 +510,85 @@ public class JsonStreamWriterTest {
   }
 
   @Test
-  public void testWithoutIgnoreUnknownFields() throws Exception {
+  public void testWithoutIgnoreUnknownFieldsUpdateImmeidateSuccess() throws Exception {
     TableSchema tableSchema = TableSchema.newBuilder().addFields(0, TEST_INT).build();
+    TableSchema updatedSchema =
+        TableSchema.newBuilder()
+            .addFields(0, TEST_INT)
+            .addFields(
+                1,
+                TableFieldSchema.newBuilder()
+                    .setName("test_string")
+                    .setType(TableFieldSchema.Type.STRING)
+                    .setMode(Mode.NULLABLE))
+            .build();
+    // GetWriteStream is called once and the writer is fixed to accept unknown fields.
+    testBigQueryWrite.addResponse(
+        WriteStream.newBuilder().setName(TEST_STREAM).setTableSchema(updatedSchema).build());
+    testBigQueryWrite.addResponse(
+        AppendRowsResponse.newBuilder()
+            .setAppendResult(
+                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)).build())
+            .build());
+    try (JsonStreamWriter writer =
+        getTestJsonStreamWriterBuilder(TEST_STREAM, tableSchema).build()) {
+      JSONObject foo = new JSONObject();
+      foo.put("test_int", 10);
+      JSONObject bar = new JSONObject();
+      bar.put("test_string", "a");
+      JSONArray jsonArr = new JSONArray();
+      jsonArr.put(foo);
+      jsonArr.put(bar);
+      ApiFuture<AppendRowsResponse> appendFuture = writer.append(jsonArr);
+      appendFuture.get();
+    }
+  }
+
+  @Test
+  public void testWithoutIgnoreUnknownFieldsUpdateSecondSuccess() throws Exception {
+    TableSchema tableSchema = TableSchema.newBuilder().addFields(0, TEST_INT).build();
+    TableSchema updatedSchema =
+        TableSchema.newBuilder()
+            .addFields(0, TEST_INT)
+            .addFields(
+                1,
+                TableFieldSchema.newBuilder()
+                    .setName("test_string")
+                    .setType(TableFieldSchema.Type.STRING)
+                    .setMode(Mode.NULLABLE))
+            .build();
+    // GetWriteStream is called twice and got the updated schema
+    testBigQueryWrite.addResponse(
+        WriteStream.newBuilder().setName(TEST_STREAM).setTableSchema(tableSchema).build());
+    testBigQueryWrite.addResponse(
+        WriteStream.newBuilder().setName(TEST_STREAM).setTableSchema(updatedSchema).build());
+    testBigQueryWrite.addResponse(
+        AppendRowsResponse.newBuilder()
+            .setAppendResult(
+                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)).build())
+            .build());
+    try (JsonStreamWriter writer =
+        getTestJsonStreamWriterBuilder(TEST_STREAM, tableSchema).build()) {
+      JSONObject foo = new JSONObject();
+      foo.put("test_int", 10);
+      JSONObject bar = new JSONObject();
+      bar.put("test_string", "a");
+      JSONArray jsonArr = new JSONArray();
+      jsonArr.put(foo);
+      jsonArr.put(bar);
+      ApiFuture<AppendRowsResponse> appendFuture = writer.append(jsonArr);
+      appendFuture.get();
+    }
+  }
+
+  @Test
+  public void testWithoutIgnoreUnknownFieldsUpdateFail() throws Exception {
+    TableSchema tableSchema = TableSchema.newBuilder().addFields(0, TEST_INT).build();
+    // GetWriteStream is called once but failed to update to the right schema.
+    testBigQueryWrite.addResponse(
+        WriteStream.newBuilder().setName(TEST_STREAM).setTableSchema(tableSchema).build());
+    testBigQueryWrite.addResponse(
+        WriteStream.newBuilder().setName(TEST_STREAM).setTableSchema(tableSchema).build());
     try (JsonStreamWriter writer =
         getTestJsonStreamWriterBuilder(TEST_STREAM, tableSchema).build()) {
       JSONObject foo = new JSONObject();
@@ -626,6 +706,10 @@ public class JsonStreamWriterTest {
     jsonArr.put(foo);
     jsonArr.put(foo1);
     jsonArr.put(foo2);
+    testBigQueryWrite.addResponse(
+        WriteStream.newBuilder().setName(TEST_STREAM).setTableSchema(TABLE_SCHEMA).build());
+    testBigQueryWrite.addResponse(
+        WriteStream.newBuilder().setName(TEST_STREAM).setTableSchema(TABLE_SCHEMA).build());
 
     try (JsonStreamWriter writer =
         getTestJsonStreamWriterBuilder(TEST_STREAM, TABLE_SCHEMA).build()) {
