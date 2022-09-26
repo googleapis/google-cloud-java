@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.8.16](https://github.com/googleapis/java-core/compare/v2.8.15...v2.8.16) (2022-09-26)
+
+
+### Dependencies
+
+* Update dependency org.threeten:threetenbp to v1.6.2 ([#929](https://github.com/googleapis/java-core/issues/929)) ([2f797f9](https://github.com/googleapis/java-core/commit/2f797f990eacc112dd982e7a8f9155bc229b7bf3))
+
 ## [2.8.15](https://github.com/googleapis/java-core/compare/v2.8.14...v2.8.15) (2022-09-23)
 
 
