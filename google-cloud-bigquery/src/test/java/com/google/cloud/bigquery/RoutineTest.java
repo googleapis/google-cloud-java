@@ -26,7 +26,9 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.google.common.collect.ImmutableList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -74,6 +76,20 @@ public class RoutineTest {
       ImmutableList.of("gs://foo", "gs://bar", "gs://baz");
 
   private static final String BODY = "body";
+  private static final Map<String, String> userDefinedContext =
+      new HashMap<String, String>() {
+        {
+          put("key1", "value1");
+          put("key2", "value2");
+        }
+      };
+  private static final RemoteFunctionOptions REMOTE_FUNCTION_OPTIONS =
+      RemoteFunctionOptions.newBuilder()
+          .setEndpoint("endpoint")
+          .setConnection("connection")
+          .setUserDefinedContext(userDefinedContext)
+          .setMaxBatchingRows(10L)
+          .build();
 
   private static final RoutineInfo ROUTINE_INFO =
       RoutineInfo.newBuilder(ROUTINE_ID)
@@ -87,6 +103,7 @@ public class RoutineTest {
           .setReturnType(RETURN_TYPE)
           .setImportedLibraries(IMPORTED_LIBRARIES)
           .setBody(BODY)
+          .setRemoteFunctionOptions(REMOTE_FUNCTION_OPTIONS)
           .build();
 
   private static final RoutineInfo ROUTINE_INFO_TVF =
@@ -128,6 +145,7 @@ public class RoutineTest {
             .setReturnType(RETURN_TYPE)
             .setImportedLibraries(IMPORTED_LIBRARIES)
             .setBody(BODY)
+            .setRemoteFunctionOptions(REMOTE_FUNCTION_OPTIONS)
             .build();
     assertEquals(ETAG, builtRoutine.getEtag());
     assertEquals(DETERMINISM_LEVEL, builtRoutine.getDeterminismLevel());
@@ -228,5 +246,6 @@ public class RoutineTest {
     assertEquals(expected.getImportedLibraries(), value.getImportedLibraries());
     assertEquals(expected.getBody(), value.getBody());
     assertEquals(expected.hashCode(), value.hashCode());
+    assertEquals(expected.getRemoteFunctionOptions(), value.getRemoteFunctionOptions());
   }
 }

@@ -130,6 +130,12 @@ public class Routine extends RoutineInfo {
     }
 
     @Override
+    public Builder setRemoteFunctionOptions(RemoteFunctionOptions remoteFunctionOptions) {
+      infoBuilder.setRemoteFunctionOptions(remoteFunctionOptions);
+      return this;
+    }
+
+    @Override
     public Routine build() {
       return new Routine(bigquery, infoBuilder);
     }
