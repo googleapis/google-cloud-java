@@ -83,7 +83,7 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
     count=$((count + 1))
     echo "Module #${count} -- Downloading ${artifactId} from ${maven_url}"
     # Check if the artifact exists in Maven Central, otherwise add to missing_artifacts
-    if wget --spider "${maven_url}" 2>/dev/null; then
+    if curl --output /dev/null --silent --head --fail "${maven_url}"; then
       metadata_file=$(retry_with_backoff 3 10 curl -s "${maven_url}" -H "Accept:application/xml" --limit-rate 200k)
 
       # Versioning of artifacts in Maven Central follow SemVer (Major.Minor.Patch-{alpha|beta})
@@ -110,7 +110,7 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
         new_version="${artifactId}:${maven_metadata_version}:${maven_metadata_version}"
       fi
 
-      sed -i "s/${line}/${new_version}/g" "${path}/versions.txt"
+      sed -i.bak "s/${line}/${new_version}/g" "${path}/versions.txt" && rm "${path}/versions.txt.bak"
     else
       missing_artifacts+=("${artifactId}")
     fi
