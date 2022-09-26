@@ -1,0 +1,5 @@
+generated-main.tf
+generated-outputs.tf
+generated-variables.tf
+generated.tfplan
+generated.tfplan.json

@@ -16,14 +16,11 @@
 #
 
 #####################
-# Expected Current Directory: Root repo directory (/google-cloud-java)
 # Expected Environment Variables:
 #   TF_VAR_folder_id : Folder in which new GCP projects will be created
 #   TF_VAR_billing_account : Billing account to be used for created GCP projects
 #   TF_VAR_project_prefix : Prefix to use for all created GCP projects
 #####################
-
-create_project_dir="./.terraform/modules/create-project"
 
 function createProject() {
   # Ensure required environment variables are set.
@@ -44,7 +41,8 @@ function createProject() {
   fi
 
   # Provision GCP Project
-  pushd "$create_project_dir" || exit
+  scriptDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
+  pushd "$scriptDir/../modules/create-project" >/dev/null || exit
 
   terraform init || exit
   terraform plan || exit
@@ -52,11 +50,12 @@ function createProject() {
   GOOGLE_CLOUD_PROJECT=$(terraform output -raw project_id)
   export GOOGLE_CLOUD_PROJECT
 
-  popd || exit
+  popd >/dev/null || exit
 }
 
 function destroyProject() {
-  pushd "$create_project_dir" || exit
+  scriptDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
+  pushd "$scriptDir/../modules/create-project" >/dev/null || exit
   terraform destroy -auto-approve || exit
-  popd || exit
+  popd >/dev/null || exit
 }

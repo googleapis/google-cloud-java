@@ -38,6 +38,8 @@ fi
 
 RETURN_CODE=0
 
+gcloud projects create does-this-work-234234234 --folder=
+
 case ${JOB_TYPE} in
   integration)
     generate_modified_modules_list

@@ -15,15 +15,4 @@
 # limitations under the License.
 #
 
-echo "Setting environment variables MY_SQL_DATABASE, MY_SQL_INSTANCE, DB_USER, and DB_PWD."
-
-MY_SQL_DATABASE=$(terraform output -raw java_bigqueryconnection_db_name)
-export MY_SQL_DATABASE
-
-MY_SQL_INSTANCE=$(terraform output -raw java_bigqueryconnection_db_instance)
-export MY_SQL_INSTANCE
-
-DB_PWD=$(terraform output -raw java_bigqueryconnection_db_password)
-export DB_PWD
-
-export DB_USER="default"
+terraform state rm 'google_compute_network.redis_vpc'

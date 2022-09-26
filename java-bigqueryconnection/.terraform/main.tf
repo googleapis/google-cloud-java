@@ -6,12 +6,6 @@ terraform {
   }
 }
 
-provider "google" {
-  project = var.project_id
-  region  = var.region
-  zone    = var.zone
-}
-
 resource "google_project_service" "sqladmin_api" {
   service            = "sqladmin.googleapis.com"
   disable_on_destroy = false
@@ -25,8 +19,11 @@ resource "google_project_service" "bigquery_api" {
   disable_on_destroy = false
 }
 
+resource "random_id" "id" {
+  byte_length = 3
+}
 locals {
-  db_name = "mysql-db"
+  db_name = lower("mysql-db-${random_id.id.hex}")
 }
 
 module "mysql-db" {
@@ -35,7 +32,7 @@ module "mysql-db" {
   name                = local.db_name
   database_version    = "MYSQL_8_0"
   deletion_protection = false
-  project_id          = var.project_id
-  zone                = var.zone
+  project_id          = var.inputs.project_id
+  zone                = var.inputs.zone
   depends_on          = [google_project_service.sqladmin_api]
 }

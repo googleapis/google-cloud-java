@@ -1,4 +1,3 @@
-#!/bin/bash
 #
 # Copyright 2022 Google LLC
 #
@@ -15,15 +14,11 @@
 # limitations under the License.
 #
 
-echo "Setting environment variables MY_SQL_DATABASE, MY_SQL_INSTANCE, DB_USER, and DB_PWD."
+# Ensure current directory is repo root.
+helperDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
+pushd "$helperDir/../.." >/dev/null || exit
 
-MY_SQL_DATABASE=$(terraform output -raw java_bigqueryconnection_db_name)
-export MY_SQL_DATABASE
+# Find all directories starting with 'java-', sort them, then join with ':' as the delimiter.
+ls -1 -d java-* | sort | paste -s -d: -
 
-MY_SQL_INSTANCE=$(terraform output -raw java_bigqueryconnection_db_instance)
-export MY_SQL_INSTANCE
-
-DB_PWD=$(terraform output -raw java_bigqueryconnection_db_password)
-export DB_PWD
-
-export DB_USER="default"
+popd >/dev/null || exit

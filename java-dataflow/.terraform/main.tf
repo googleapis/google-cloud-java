@@ -6,7 +6,7 @@ terraform {
   }
 }
 
-resource "google_project_service" "secret_manager_api" {
-  service            = "secretmanager.googleapis.com"
+resource "google_project_service" "dialogflow_api" {
+  service            = "dialogflow.googleapis.com"
   disable_on_destroy = false
 }

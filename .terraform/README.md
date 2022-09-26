@@ -2,15 +2,22 @@
 
 ### Command:
 
-`test.sh [module]`
+```
+test.sh [module][:module ...]
+```
+
+Primary command to be used to
 
 #### Examples:
 
 ```shell
-test.sh java-accessapproval
+test.sh java-accessapproval:java-container:java-vision
 ```
 
-Performs integration testing on the `java-accessapproval` submodule only.
+Performs Terraform setup and integration testing on three submodules, where:
+
+* `:` is the delimiter
+* `java-accessapproval`, `java-container`, and `java-vision` are to be tested
 
 ```shell
 test.sh
