@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-bigquerymigration:0.6.0:0.6.0
-grpc-google-cloud-bigquerymigration-v2alpha:0.6.0:0.6.0
-proto-google-cloud-bigquerymigration-v2alpha:0.6.0:0.6.0
-proto-google-cloud-bigquerymigration-v2:0.6.0:0.6.0
-grpc-google-cloud-bigquerymigration-v2:0.6.0:0.6.0
+google-cloud-bigquerymigration:0.6.0:0.6.1-SNAPSHOT
+grpc-google-cloud-bigquerymigration-v2alpha:0.6.0:0.6.1-SNAPSHOT
+proto-google-cloud-bigquerymigration-v2alpha:0.6.0:0.6.1-SNAPSHOT
+proto-google-cloud-bigquerymigration-v2:0.6.0:0.6.1-SNAPSHOT
+grpc-google-cloud-bigquerymigration-v2:0.6.0:0.6.1-SNAPSHOT
