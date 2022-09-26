@@ -15,7 +15,7 @@ rp_manifest_line=""
 
 for module in $(find . -mindepth 2 -maxdepth 2 -name pom.xml |sort | xargs dirname); do
 
-  if [[ "${module}" = *google-cloud-gapic-bom ]] || [[ "${module}" = *CoverageAggregator ]] || grep -q 'SNAPSHOT<\/version>' "${module}/pom.xml" ; then
+  if [[ "${module}" = *google-cloud-gapic-bom ]] || [[ "${module}" = *CoverageAggregator ]]; then
     continue
   fi
 
@@ -60,28 +60,8 @@ for module in $(find . -mindepth 2 -maxdepth 2 -name pom.xml |sort | xargs dirna
            new_version=$(echo ${old_version} |  awk -F'.' '{print $1"."$2"."$3+1}' |  sed s/[.]$//)
            new_version="${new_version}-SNAPSHOT"
            sed -i.bak -e "s|${artifact_name}:${old_version}:${old_version}|${artifact_name}:${old_version}:${new_version}|" "${version_file}" && rm "${version_file}".bak
-           artifact_directory="${module}/${artifact_name}"
-           mvn -B -ntp -f ${artifact_directory} -U versions:set -DnewVersion=${new_version} -DgenerateBackupPoms=false
          fi
       done
-
-  snapshot_version=$(echo ${module_released_version} |  awk -F'.' '{print $1"."$2"."$3+1}' |  sed s/[.]$//)
-
-  #bumping to snapshot in module bom directory, if it exists
-  bom_directory="${module-name}/${artifactName_config}-bom"
-  if [ -d "${bom_directory}" ]; then
-    mvn -B -ntp -f ${bom_directory} -U versions:set -DnewVersion="${snapshot_version}-SNAPSHOT" -DgenerateBackupPoms=false
-  fi
-
-  #bumping to snapshot in module root pom
-  mvn -B -ntp -f ${module} -U versions:set -DnewVersion="${snapshot_version}-SNAPSHOT"
-  mvn versions:commit
-
-  #specific case
-  if [[ ${module_name} == "java-notification" ]]; then
-    mvn -B -ntp -f ${module} -U versions:set -DnewVersion="${snapshot_version}-beta-SNAPSHOT" -DgenerateBackupPoms=false
-  fi
-
 done
 
 echo "}" >> .release-please-manifest.json

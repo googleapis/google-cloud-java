@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-contact-center-insights:2.3.6:2.3.6
-grpc-google-cloud-contact-center-insights-v1:2.3.6:2.3.6
-proto-google-cloud-contact-center-insights-v1:2.3.6:2.3.6
+google-cloud-contact-center-insights:2.3.6:2.3.7-SNAPSHOT
+grpc-google-cloud-contact-center-insights-v1:2.3.6:2.3.7-SNAPSHOT
+proto-google-cloud-contact-center-insights-v1:2.3.6:2.3.7-SNAPSHOT

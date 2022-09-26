@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-datastream:1.2.0:1.2.0
-grpc-google-cloud-datastream-v1alpha1:0.7.0:0.7.0
-proto-google-cloud-datastream-v1alpha1:0.7.0:0.7.0
-proto-google-cloud-datastream-v1:1.2.0:1.2.0
-grpc-google-cloud-datastream-v1:1.2.0:1.2.0
+google-cloud-datastream:1.2.0:1.2.1-SNAPSHOT
+grpc-google-cloud-datastream-v1alpha1:0.7.0:0.7.1-SNAPSHOT
+proto-google-cloud-datastream-v1alpha1:0.7.0:0.7.1-SNAPSHOT
+proto-google-cloud-datastream-v1:1.2.0:1.2.1-SNAPSHOT
+grpc-google-cloud-datastream-v1:1.2.0:1.2.1-SNAPSHOT

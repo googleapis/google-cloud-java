@@ -40,6 +40,20 @@ function retry_with_backoff {
   return $exit_code
 }
 
+snapshot_flag=''
+while getopts 's' flag; do
+  case "${flag}" in
+    s) snapshot_flag='true' ;;
+    *) snapshot_flag='false' ;;
+  esac
+done
+
+if [[ "${snapshot_flag}" = "true" ]]; then
+  echo "Bump the current version to -SNAPSHOT"
+else
+  echo "Updating current version to latest from Maven"
+fi
+
 count=0
 missing_artifacts=()
 
@@ -69,7 +83,7 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
     count=$((count + 1))
     echo "Module #${count} -- Downloading ${artifactId} from ${maven_url}"
     # Check if the artifact exists in Maven Central, otherwise add to missing_artifacts
-    if wget --spider "${maven_url}" 2>/dev/null; then
+    if curl --output /dev/null --silent --head --fail "${maven_url}"; then
       metadata_file=$(retry_with_backoff 3 10 curl -s "${maven_url}" -H "Accept:application/xml" --limit-rate 200k)
 
       # Versioning of artifacts in Maven Central follow SemVer (Major.Minor.Patch-{alpha|beta})
@@ -78,9 +92,25 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
       # maven_latest_version stores Major.Minor.Patch or the entire version
       # maven_latest_trailing stores alpha/beta/etc. or nothing
       maven_metadata_version=$(echo "${metadata_file}" | grep 'latest' | cut -d '>' -f 2 | cut -d '<' -f 1)
-      new_version="${artifactId}:${maven_metadata_version}:${maven_metadata_version}"
+      maven_latest_version=$(echo "${maven_metadata_version}" | cut -d "-" -f1)
+      maven_latest_trailing=$(echo "${maven_metadata_version}" | cut -s -d "-" -f2-)
 
-      sed -i "s/${line}/${new_version}/g" "${path}/versions.txt"
+      major_version=$(echo "${maven_latest_version}" | cut -d "." -f1)
+      minor_version=$(echo "${maven_latest_version}" | cut -d "." -f2)
+      patch_version=$(echo "${maven_latest_version}" | cut -d "." -f3)
+      patch_version_bump=$((patch_version + 1))
+      if [[ -z "${maven_latest_trailing}" ]]; then
+        maven_version_bump="${major_version}.${minor_version}.${patch_version_bump}"
+      else
+        maven_version_bump="${major_version}.${minor_version}.${patch_version_bump}-${maven_latest_trailing}"
+      fi
+      if [[ "${snapshot_flag}" = "true" ]]; then
+        new_version="${artifactId}:${maven_metadata_version}:${maven_version_bump}-SNAPSHOT"
+      else
+        new_version="${artifactId}:${maven_metadata_version}:${maven_metadata_version}"
+      fi
+
+      sed -i.bak "s/${line}/${new_version}/g" "${path}/versions.txt" && rm "${path}/versions.txt.bak"
     else
       missing_artifacts+=("${artifactId}")
     fi
