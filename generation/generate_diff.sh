@@ -45,6 +45,7 @@ function retry_with_backoff {
 
 current_branch="main-diff"
 diff_java_branch="main-diff_java"
+diff_java_it_branch="main-diff_java_it"
 diff_non_java_branch="main-diff_non_java"
 
 if [[ $(git branch | grep "${current_branch}") ]]; then
@@ -55,6 +56,9 @@ fi
 
 if [[ $(git branch | grep "${diff_java_branch}") ]]; then
   git branch -D "${diff_java_branch}"
+fi
+if [[ $(git branch | grep "${diff_java_it_branch}") ]]; then
+  git branch -D "${diff_java_it_branch}"
 fi
 if [[ $(git branch | grep "${diff_non_java_branch}") ]]; then
   git branch -D "${diff_non_java_branch}"
@@ -71,6 +75,15 @@ for module in $modules; do
 done
 
 ./generation/delete_non_generated_samples.sh
+
+git checkout -b "${diff_java_it_branch}"
+git add "*/src/test/*IT*.java"
+git commit -m "chore: Adding java IT diffs" --no-verify
+git push origin "${diff_java_it_branch}" --force
+
+git stash
+git checkout "${current_branch}"
+git stash pop
 
 git checkout -b "${diff_java_branch}"
 git add "*.java"
