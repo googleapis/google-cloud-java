@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.9](https://github.com/googleapis/java-speech/compare/v2.5.8...v2.5.9) (2022-09-26)
+
+
+### Dependencies
+
+* Update dependency org.json:json to v20220924 ([#961](https://github.com/googleapis/java-speech/issues/961)) ([3e7e424](https://github.com/googleapis/java-speech/commit/3e7e4247fe3357483aab04938766827db84ec739))
+
 ## [2.5.8](https://github.com/googleapis/java-speech/compare/v2.5.7...v2.5.8) (2022-09-20)
 
 
