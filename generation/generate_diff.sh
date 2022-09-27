@@ -44,23 +44,23 @@ function retry_with_backoff {
 [ -z "`git config user.name`" ] && git config --global user.name "${USERNAME:-script}"
 
 current_branch="main-diff"
-diff_java_branch="^main-diff_java$"
-diff_java_it_branch="^main-diff_java_it$"
-diff_non_java_branch="^main-diff_non_java$"
+diff_java_branch="main-diff_java"
+diff_java_it_branch="main-diff_java_it"
+diff_non_java_branch="main-diff_non_java"
 
-if [[ $(git branch | grep "${current_branch}") ]]; then
+if [[ $(git branch | grep "^${current_branch}$") ]]; then
   git checkout "${current_branch}"
 else
   git checkout -b "${current_branch}"
 fi
 
-if [[ $(git branch | grep "${diff_java_branch}") ]]; then
+if [[ $(git branch | grep "^${diff_java_branch}$") ]]; then
   git branch -D "${diff_java_branch}"
 fi
-if [[ $(git branch | grep "${diff_java_it_branch}") ]]; then
+if [[ $(git branch | grep "^${diff_java_it_branch}$") ]]; then
   git branch -D "${diff_java_it_branch}"
 fi
-if [[ $(git branch | grep "${diff_non_java_branch}") ]]; then
+if [[ $(git branch | grep "^${diff_non_java_branch}$") ]]; then
   git branch -D "${diff_non_java_branch}"
 fi
 
