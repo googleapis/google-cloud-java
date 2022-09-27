@@ -46,6 +46,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -168,7 +169,7 @@ class BigtableStackdriverExportUtils {
       // Generate a random number and use the same format "random_number@hostname".
       return "java-" + new SecureRandom().nextInt() + "@" + hostname;
     }
-    return "java-" + jvmName;
+    return "java-" + UUID.randomUUID() + jvmName;
   }
 
   private static MetricKind createMetricKind(Type type) {
