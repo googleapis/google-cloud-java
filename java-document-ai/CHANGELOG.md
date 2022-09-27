@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.7.3](https://github.com/googleapis/java-document-ai/compare/v2.7.2...v2.7.3) (2022-09-27)
+
+
+### Dependencies
+
+* Update dependency jinja2 to v3.1.2 ([#899](https://github.com/googleapis/java-document-ai/issues/899)) ([f8c9a65](https://github.com/googleapis/java-document-ai/commit/f8c9a65e8aab4b9839a7b6d958ffe6e4e0719ff9))
+* Update dependency keyring to v23.9.3 ([#900](https://github.com/googleapis/java-document-ai/issues/900)) ([605daeb](https://github.com/googleapis/java-document-ai/commit/605daeb59de6d963ecbe8bb31d908d576ac2a2fd))
+* Update dependency markupsafe to v2.1.1 ([#897](https://github.com/googleapis/java-document-ai/issues/897)) ([de3ce6e](https://github.com/googleapis/java-document-ai/commit/de3ce6e6a18ebc81adc6a89063afc645a34aa1ee))
+* Update dependency protobuf to v3.20.2 ([#898](https://github.com/googleapis/java-document-ai/issues/898)) ([e1ee0d3](https://github.com/googleapis/java-document-ai/commit/e1ee0d360183c50c7b7d0bcccdff2f41cabcf223))
+* Update dependency pyjwt to v2.5.0 ([#901](https://github.com/googleapis/java-document-ai/issues/901)) ([f22b07c](https://github.com/googleapis/java-document-ai/commit/f22b07c0eb75ad15946a1295dda293b477d3e060))
+* Update dependency requests to v2.28.1 ([#902](https://github.com/googleapis/java-document-ai/issues/902)) ([b8e7a15](https://github.com/googleapis/java-document-ai/commit/b8e7a157c4df913822af8fda28b6dc523ee54329))
+
 ## [2.7.2](https://github.com/googleapis/java-document-ai/compare/v2.7.1...v2.7.2) (2022-09-20)
 
 
