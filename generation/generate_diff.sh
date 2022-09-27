@@ -78,6 +78,8 @@ done
 
 git checkout -b "${diff_java_it_branch}"
 git add "*/src/test/*IT*.java"
+git add "*/src/test/*/integration/*.java"
+git add "*/src/test/*/it/*.java"
 git commit -m "chore: Adding java IT diffs" --no-verify
 git push origin "${diff_java_it_branch}" --force
 
