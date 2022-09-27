@@ -1,6 +1,0 @@
-# Format:
-# module:released-version:current-version
-
-google-cloud-build:3.5.2:3.5.3-SNAPSHOT
-grpc-google-cloud-build-v1:3.5.2:3.5.3-SNAPSHOT
-proto-google-cloud-build-v1:3.5.2:3.5.3-SNAPSHOT
