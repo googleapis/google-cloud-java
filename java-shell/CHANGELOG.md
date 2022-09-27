@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.7](https://github.com/googleapis/java-shell/compare/v2.2.6...v2.2.7) (2022-09-27)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#255](https://github.com/googleapis/java-shell/issues/255)) ([fa9b52a](https://github.com/googleapis/java-shell/commit/fa9b52ad9f0037827e9419d1d3163b71473d7927))
+
 ## [2.2.6](https://github.com/googleapis/java-shell/compare/v2.2.5...v2.2.6) (2022-09-15)
 
 
