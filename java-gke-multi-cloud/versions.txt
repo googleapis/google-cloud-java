@@ -1,6 +1,0 @@
-# Format:
-# module:released-version:current-version
-
-google-cloud-gke-multi-cloud:0.2.2:0.2.3-SNAPSHOT
-proto-google-cloud-gke-multi-cloud-v1:0.2.2:0.2.3-SNAPSHOT
-grpc-google-cloud-gke-multi-cloud-v1:0.2.2:0.2.3-SNAPSHOT
