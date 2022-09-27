@@ -7,7 +7,7 @@
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-java</artifactId>
+    <artifactId>google-cloud-java-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
