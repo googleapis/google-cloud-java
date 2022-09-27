@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.13.0](https://github.com/googleapis/java-bigtable/compare/v2.12.0...v2.13.0) (2022-09-27)
+
+
+### Features
+
+* Add gRPC RLS dependency ([#1248](https://github.com/googleapis/java-bigtable/issues/1248)) ([e829b92](https://github.com/googleapis/java-bigtable/commit/e829b923d97a00dcb55a14b0877bec2c8cf5ece2))
+
+
+### Bug Fixes
+
+* Add a UUID in the task value ([#1430](https://github.com/googleapis/java-bigtable/issues/1430)) ([3bfc7bc](https://github.com/googleapis/java-bigtable/commit/3bfc7bc246488a37b4470e3a75ffdd34f6761804))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-monitoring-bom to v3.4.5 ([#1406](https://github.com/googleapis/java-bigtable/issues/1406)) ([d906729](https://github.com/googleapis/java-bigtable/commit/d906729a4bb9a51907bf4879e8d063d5103565ac))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.14 ([#1411](https://github.com/googleapis/java-bigtable/issues/1411)) ([ef7d741](https://github.com/googleapis/java-bigtable/commit/ef7d7419293f9f046dcf941148a86da713feae17))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.14 ([#1412](https://github.com/googleapis/java-bigtable/issues/1412)) ([dcae319](https://github.com/googleapis/java-bigtable/commit/dcae3195871b78aa6e102c4bc570b18c303c7760))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.9.1 ([#1409](https://github.com/googleapis/java-bigtable/issues/1409)) ([c1e195d](https://github.com/googleapis/java-bigtable/commit/c1e195d4e0470b30d97231c44b09fcb5c4881514))
+
 ## [2.12.0](https://github.com/googleapis/java-bigtable/compare/v2.11.2...v2.12.0) (2022-09-15)
 
 
