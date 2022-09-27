@@ -1,6 +1,0 @@
-# Format:
-# module:released-version:current-version
-
-google-cloud-kms:2.6.4:2.6.5-SNAPSHOT
-grpc-google-cloud-kms-v1:0.97.4:0.97.5-SNAPSHOT
-proto-google-cloud-kms-v1:0.97.4:0.97.5-SNAPSHOT
