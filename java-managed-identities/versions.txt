@@ -1,6 +1,0 @@
-# Format:
-# module:released-version:current-version
-
-google-cloud-managed-identities:1.1.2:1.1.3-SNAPSHOT
-grpc-google-cloud-managed-identities-v1:1.1.2:1.1.3-SNAPSHOT
-proto-google-cloud-managed-identities-v1:1.1.2:1.1.3-SNAPSHOT
