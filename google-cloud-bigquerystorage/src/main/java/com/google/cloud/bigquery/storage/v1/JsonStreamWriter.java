@@ -247,6 +247,15 @@ public class JsonStreamWriter implements AutoCloseable {
   }
 
   /**
+   * Gets the location of the destination
+   *
+   * @return Descriptor
+   */
+  public String getLocation() {
+    return this.streamWriter.getLocation();
+  }
+
+  /**
    * Returns the wait of a request in Client side before sending to the Server. Request could wait
    * in Client because it reached the client side inflight request limit (adjustable when
    * constructing the Writer). The value is the wait time for the last sent request. A constant high
@@ -407,6 +416,7 @@ public class JsonStreamWriter implements AutoCloseable {
         TableSchema writeStreamTableSchema = writeStream.getTableSchema();
 
         this.tableSchema = writeStreamTableSchema;
+        this.location = writeStream.getLocation();
       } else {
         this.tableSchema = tableSchema;
       }
@@ -526,6 +536,10 @@ public class JsonStreamWriter implements AutoCloseable {
      * @return Builder
      */
     public Builder setLocation(String location) {
+      if (this.location != null && !this.location.equals(location)) {
+        throw new IllegalArgumentException(
+            "Specified location " + location + " does not match the system value " + this.location);
+      }
       this.location = location;
       return this;
     }

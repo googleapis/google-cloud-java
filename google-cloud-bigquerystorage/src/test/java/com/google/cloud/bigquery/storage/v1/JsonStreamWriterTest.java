@@ -393,13 +393,46 @@ public class JsonStreamWriterTest {
   public void testCreateDefaultStream() throws Exception {
     TableSchema tableSchema =
         TableSchema.newBuilder().addFields(0, TEST_INT).addFields(1, TEST_STRING).build();
+    testBigQueryWrite.addResponse(
+        WriteStream.newBuilder()
+            .setName(TEST_STREAM)
+            .setLocation("aa")
+            .setTableSchema(tableSchema)
+            .build());
     try (JsonStreamWriter writer =
-        JsonStreamWriter.newBuilder(TEST_TABLE, tableSchema)
+        JsonStreamWriter.newBuilder(TEST_TABLE, client)
             .setChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build()) {
       assertEquals("projects/p/datasets/d/tables/t/_default", writer.getStreamName());
+      assertEquals("aa", writer.getLocation());
     }
+  }
+
+  @Test
+  public void testCreateDefaultStreamWrongLocation() throws Exception {
+    TableSchema tableSchema =
+        TableSchema.newBuilder().addFields(0, TEST_INT).addFields(1, TEST_STRING).build();
+    testBigQueryWrite.addResponse(
+        WriteStream.newBuilder()
+            .setName(TEST_STREAM)
+            .setLocation("aa")
+            .setTableSchema(tableSchema)
+            .build());
+    IllegalArgumentException ex =
+        assertThrows(
+            IllegalArgumentException.class,
+            new ThrowingRunnable() {
+              @Override
+              public void run() throws Throwable {
+                JsonStreamWriter.newBuilder(TEST_TABLE, client)
+                    .setChannelProvider(channelProvider)
+                    .setCredentialsProvider(NoCredentialsProvider.create())
+                    .setLocation("bb")
+                    .build();
+              }
+            });
+    assertEquals("Specified location bb does not match the system value aa", ex.getMessage());
   }
 
   @Test
