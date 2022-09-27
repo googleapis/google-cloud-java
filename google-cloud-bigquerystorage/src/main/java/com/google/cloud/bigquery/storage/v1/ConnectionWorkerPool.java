@@ -25,6 +25,7 @@ import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -324,18 +325,19 @@ public class ConnectionWorkerPool {
       // Though atomic integer is super lightweight, add extra if check in case adding future logic.
       testValueCreateConnectionCount.getAndIncrement();
     }
-    // TODO(gaole): figure out a better way to handle header / request body mismatch
-    // currently we use  different header for the client in each connection worker to be different
+    // currently we use different header for the client in each connection worker to be different
     // as the backend require the header to have the same write_stream field as request body.
     BigQueryWriteClient clientAfterModification = client;
     if (ownsBigQueryWriteClient) {
       BigQueryWriteSettings settings = client.getSettings();
+
+      // Every header to write api is required to set write_stream in the header to help routing
+      // the request to correct region.
+      HashMap<String, String> newHeaders = new HashMap<>();
+      newHeaders.putAll(settings.toBuilder().getHeaderProvider().getHeaders());
+      newHeaders.put("x-goog-request-params", "write_stream=" + streamName);
       BigQueryWriteSettings stubSettings =
-          settings
-              .toBuilder()
-              .setHeaderProvider(
-                  FixedHeaderProvider.create("x-goog-request-params", "write_stream=" + streamName))
-              .build();
+          settings.toBuilder().setHeaderProvider(FixedHeaderProvider.create(newHeaders)).build();
       clientAfterModification = BigQueryWriteClient.create(stubSettings);
     }
     ConnectionWorker connectionWorker =

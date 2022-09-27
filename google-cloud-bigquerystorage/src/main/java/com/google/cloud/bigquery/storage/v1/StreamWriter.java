@@ -33,7 +33,6 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 /**
@@ -67,6 +66,9 @@ public class StreamWriter implements AutoCloseable {
    * is enabled.
    */
   private final SingleConnectionOrConnectionPool singleConnectionOrConnectionPool;
+
+  /** Test only param to tell how many times a client is created. */
+  private static int testOnlyClientCreatedTimes = 0;
 
   /**
    * Static map from {@link ConnectionPoolKey} to connection pool. Note this map is static to be
@@ -169,25 +171,7 @@ public class StreamWriter implements AutoCloseable {
     this.streamName = builder.streamName;
     this.writerSchema = builder.writerSchema;
     this.location = builder.location;
-    boolean ownsBigQueryWriteClient;
-    if (builder.client == null) {
-      BigQueryWriteSettings stubSettings =
-          BigQueryWriteSettings.newBuilder()
-              .setCredentialsProvider(builder.credentialsProvider)
-              .setTransportChannelProvider(builder.channelProvider)
-              .setBackgroundExecutorProvider(builder.executorProvider)
-              .setEndpoint(builder.endpoint)
-              // (b/185842996): Temporily fix this by explicitly providing the header.
-              .setHeaderProvider(
-                  FixedHeaderProvider.create(
-                      "x-goog-request-params", "write_stream=" + this.streamName))
-              .build();
-      client = BigQueryWriteClient.create(stubSettings);
-      ownsBigQueryWriteClient = true;
-    } else {
-      client = builder.client;
-      ownsBigQueryWriteClient = false;
-    }
+    boolean ownsBigQueryWriteClient = builder.client == null;
     if (!builder.enableConnectionPool) {
       this.singleConnectionOrConnectionPool =
           SingleConnectionOrConnectionPool.ofSingleConnection(
@@ -198,7 +182,7 @@ public class StreamWriter implements AutoCloseable {
                   builder.maxInflightBytes,
                   builder.limitExceededBehavior,
                   builder.traceId,
-                  client,
+                  getBigQueryWriteClient(builder),
                   ownsBigQueryWriteClient));
     } else {
       if (builder.location == null || builder.location.isEmpty()) {
@@ -212,29 +196,39 @@ public class StreamWriter implements AutoCloseable {
           SingleConnectionOrConnectionPool.ofConnectionPool(
               connectionPoolMap.computeIfAbsent(
                   ConnectionPoolKey.create(builder.location),
-                  (key) ->
-                      new ConnectionWorkerPool(
+                  (key) -> {
+                    try {
+                      return new ConnectionWorkerPool(
                           builder.maxInflightRequest,
                           builder.maxInflightBytes,
                           builder.limitExceededBehavior,
                           builder.traceId,
-                          client,
-                          ownsBigQueryWriteClient)));
+                          getBigQueryWriteClient(builder),
+                          ownsBigQueryWriteClient);
+                    } catch (IOException e) {
+                      throw new RuntimeException(e);
+                    }
+                  }));
       validateFetchedConnectonPool(builder);
-      // Shut down the passed in client. Internally we will create another client inside connection
-      // pool for every new connection worker.
-      // TODO(gaole): instead of perform close outside of pool approach, change to always create
-      // new client in connection.
-      if (client != singleConnectionOrConnectionPool.connectionWorkerPool().bigQueryWriteClient()
-          && ownsBigQueryWriteClient) {
-        client.shutdown();
-        try {
-          client.awaitTermination(150, TimeUnit.SECONDS);
-        } catch (InterruptedException unused) {
-          // Ignore interruption as this client is not used.
-        }
-        client.close();
-      }
+    }
+  }
+
+  private BigQueryWriteClient getBigQueryWriteClient(Builder builder) throws IOException {
+    if (builder.client == null) {
+      BigQueryWriteSettings stubSettings =
+          BigQueryWriteSettings.newBuilder()
+              .setCredentialsProvider(builder.credentialsProvider)
+              .setTransportChannelProvider(builder.channelProvider)
+              .setEndpoint(builder.endpoint)
+              // (b/185842996): Temporily fix this by explicitly providing the header.
+              .setHeaderProvider(
+                  FixedHeaderProvider.create(
+                      "x-goog-request-params", "write_stream=" + this.streamName))
+              .build();
+      testOnlyClientCreatedTimes++;
+      return BigQueryWriteClient.create(stubSettings);
+    } else {
+      return builder.client;
     }
   }
 
@@ -245,6 +239,10 @@ public class StreamWriter implements AutoCloseable {
         this.singleConnectionOrConnectionPool.connectionWorkerPool().getTraceId(),
         builder.traceId)) {
       paramsValidatedFailed = "Trace id";
+    } else if (!Objects.equals(
+        this.singleConnectionOrConnectionPool.connectionWorkerPool().ownsBigQueryWriteClient(),
+        builder.client == null)) {
+      paramsValidatedFailed = "Whether using passed in clients";
     } else if (!Objects.equals(
         this.singleConnectionOrConnectionPool.connectionWorkerPool().limitExceededBehavior(),
         builder.limitExceededBehavior)) {
@@ -359,6 +357,17 @@ public class StreamWriter implements AutoCloseable {
   @VisibleForTesting
   SingleConnectionOrConnectionPool.Kind getConnectionOperationType() {
     return singleConnectionOrConnectionPool.getKind();
+  }
+
+  @VisibleForTesting
+  static int getTestOnlyClientCreatedTimes() {
+    return testOnlyClientCreatedTimes;
+  }
+
+  @VisibleForTesting
+  static void cleanUp() {
+    testOnlyClientCreatedTimes = 0;
+    connectionPoolMap.clear();
   }
 
   /** A builder of {@link StreamWriter}s. */

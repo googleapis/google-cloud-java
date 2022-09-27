@@ -82,6 +82,7 @@ public class StreamWriterTest {
                 .setCredentialsProvider(NoCredentialsProvider.create())
                 .setTransportChannelProvider(serviceHelper.createChannelProvider())
                 .build());
+    StreamWriter.cleanUp();
   }
 
   @After
@@ -89,6 +90,7 @@ public class StreamWriterTest {
     log.info("tearDown called");
     client.close();
     serviceHelper.stop();
+    StreamWriter.cleanUp();
   }
 
   private StreamWriter getMultiplexingTestStreamWriter() throws IOException {
@@ -720,6 +722,25 @@ public class StreamWriterTest {
     try (StreamWriter streamWriter = getTestStreamWriter()) {
       Assert.assertEquals(streamWriter.getConnectionOperationType(), Kind.CONNECTION_WORKER);
     }
+  }
+
+  @Test
+  public void createStreamWithDifferentWhetherOwnsClient() throws Exception {
+    StreamWriter streamWriter1 = getMultiplexingTestStreamWriter();
+
+    assertThrows(
+        IllegalArgumentException.class,
+        new ThrowingRunnable() {
+          @Override
+          public void run() throws Throwable {
+            StreamWriter.newBuilder(TEST_STREAM)
+                .setWriterSchema(createProtoSchema())
+                .setTraceId(TEST_TRACE_ID)
+                .setLocation("US")
+                .setEnableConnectionPool(true)
+                .build();
+          }
+        });
   }
 
   // Timeout to ensure close() doesn't wait for done callback timeout.
