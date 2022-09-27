@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.4.1](https://github.com/googleapis/java-vpcaccess/compare/v2.4.0...v2.4.1) (2022-09-27)
+
+
+### Dependencies
+
+* Update dependency charset-normalizer to v2.1.1 ([#244](https://github.com/googleapis/java-vpcaccess/issues/244)) ([64948e1](https://github.com/googleapis/java-vpcaccess/commit/64948e1d672babf959edb4c4c3fa452bf42d0be2))
+* Update dependency gcp-releasetool to v1.8.8 ([#242](https://github.com/googleapis/java-vpcaccess/issues/242)) ([b9d74af](https://github.com/googleapis/java-vpcaccess/commit/b9d74af88e450c572ec7ea4d129f32dbcd419a3c))
+* Update dependency google-cloud-core to v2.3.2 ([#243](https://github.com/googleapis/java-vpcaccess/issues/243)) ([32f98e6](https://github.com/googleapis/java-vpcaccess/commit/32f98e6b4092d996ffb820cc411e92d1d8bf4caa))
+
 ## [2.4.0](https://github.com/googleapis/java-vpcaccess/compare/v2.3.2...v2.4.0) (2022-09-15)
 
 
