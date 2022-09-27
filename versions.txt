@@ -2,4 +2,3 @@
 # module:released-version:current-version
 
 google-cloud-java:0.0.0:0.0.1-SNAPSHOT
-
