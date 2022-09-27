@@ -9,6 +9,11 @@ variable "folder_id" {
   sensitive   = true
 }
 
+variable "gcloud_account" {
+  type        = string
+  description = "Account used to sign in to gcloud CLI"
+}
+
 variable "billing_account" {
   type        = string
   description = "GCP Billing Account ID for the test project"

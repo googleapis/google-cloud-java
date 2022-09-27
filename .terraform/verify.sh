@@ -25,7 +25,7 @@ function mvnVerify() {
     -Denforcer.skip=true \
     -Dcheckstyle.skip=true \
     -fae \
-    verify
+    verify || exit
 
   # TODO: Add multiple threads w/ -T 1C
 }

@@ -1,3 +1,4 @@
+generated-env.sh
 generated-main.tf
 generated-outputs.tf
 generated-variables.tf
