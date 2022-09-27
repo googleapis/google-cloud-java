@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.1](https://github.com/googleapis/java-bigquerymigration/compare/v0.6.0...v0.6.1) (2022-09-27)
+
+
+### Dependencies
+
+* Update dependency protobuf to v4 ([#167](https://github.com/googleapis/java-bigquerymigration/issues/167)) ([f98be05](https://github.com/googleapis/java-bigquerymigration/commit/f98be05c762ad185dc26c0a411a670e00b206856))
+
 ## [0.6.0](https://github.com/googleapis/java-bigquerymigration/compare/v0.5.0...v0.6.0) (2022-09-15)
 
 
