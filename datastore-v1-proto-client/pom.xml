@@ -50,7 +50,7 @@
 
     <dependency>
       <groupId>com.google.http-client</groupId>
-      <artifactId>google-http-client-jackson2</artifactId>
+      <artifactId>google-http-client-gson</artifactId>
     </dependency>
 
     <dependency>
