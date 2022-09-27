@@ -1,6 +1,0 @@
-# Format:
-# module:released-version:current-version
-
-google-cloud-eventarc:1.3.4:1.3.5-SNAPSHOT
-grpc-google-cloud-eventarc-v1:1.3.4:1.3.5-SNAPSHOT
-proto-google-cloud-eventarc-v1:1.3.4:1.3.5-SNAPSHOT
