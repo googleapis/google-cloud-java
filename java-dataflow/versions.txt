@@ -1,6 +1,0 @@
-# Format:
-# module:released-version:current-version
-
-google-cloud-dataflow:0.7.2:0.7.3-SNAPSHOT
-grpc-google-cloud-dataflow-v1beta3:0.7.2:0.7.3-SNAPSHOT
-proto-google-cloud-dataflow-v1beta3:0.7.2:0.7.3-SNAPSHOT
