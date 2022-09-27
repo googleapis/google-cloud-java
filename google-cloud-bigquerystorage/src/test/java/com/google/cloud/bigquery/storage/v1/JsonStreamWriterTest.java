@@ -138,7 +138,8 @@ public class JsonStreamWriterTest {
       String testStream, TableSchema BQTableSchema) {
     return JsonStreamWriter.newBuilder(testStream, BQTableSchema, client)
         .setChannelProvider(channelProvider)
-        .setCredentialsProvider(NoCredentialsProvider.create());
+        .setCredentialsProvider(NoCredentialsProvider.create())
+        .setExecutorProvider(InstantiatingExecutorProvider.newBuilder().build());
   }
 
   @Test
@@ -403,6 +404,7 @@ public class JsonStreamWriterTest {
         JsonStreamWriter.newBuilder(TEST_TABLE, client)
             .setChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
+            .setExecutorProvider(InstantiatingExecutorProvider.newBuilder().build())
             .build()) {
       assertEquals("projects/p/datasets/d/tables/t/_default", writer.getStreamName());
       assertEquals("aa", writer.getLocation());
@@ -651,6 +653,7 @@ public class JsonStreamWriterTest {
             .setChannelProvider(channelProvider)
             .setIgnoreUnknownFields(true)
             .setCredentialsProvider(NoCredentialsProvider.create())
+            .setExecutorProvider(InstantiatingExecutorProvider.newBuilder().build())
             .build()) {
       testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
       JSONObject foo = new JSONObject();
@@ -672,6 +675,7 @@ public class JsonStreamWriterTest {
         JsonStreamWriter.newBuilder(TEST_STREAM, tableSchema)
             .setChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
+            .setExecutorProvider(InstantiatingExecutorProvider.newBuilder().build())
             .setFlowControlSettings(
                 FlowControlSettings.newBuilder()
                     .setLimitExceededBehavior(FlowController.LimitExceededBehavior.ThrowException)
@@ -709,6 +713,7 @@ public class JsonStreamWriterTest {
         JsonStreamWriter.newBuilder(TEST_STREAM, tableSchema)
             .setChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
+            .setExecutorProvider(InstantiatingExecutorProvider.newBuilder().build())
             .setFlowControlSettings(
                 FlowControlSettings.newBuilder().setMaxOutstandingRequestBytes(1L).build())
             .build()) {

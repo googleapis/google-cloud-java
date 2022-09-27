@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.storage.v1;
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializtionError;
 import com.google.cloud.bigquery.storage.v1.StreamWriter.SingleConnectionOrConnectionPool.Kind;
@@ -83,6 +84,7 @@ public class JsonStreamWriter implements AutoCloseable {
     setStreamWriterSettings(
         builder.channelProvider,
         builder.credentialsProvider,
+        builder.executorProvider,
         builder.endpoint,
         builder.flowControlSettings,
         builder.traceId);
@@ -270,6 +272,7 @@ public class JsonStreamWriter implements AutoCloseable {
   private void setStreamWriterSettings(
       @Nullable TransportChannelProvider channelProvider,
       @Nullable CredentialsProvider credentialsProvider,
+      @Nullable ExecutorProvider executorProvider,
       @Nullable String endpoint,
       @Nullable FlowControlSettings flowControlSettings,
       @Nullable String traceId) {
@@ -278,6 +281,9 @@ public class JsonStreamWriter implements AutoCloseable {
     }
     if (credentialsProvider != null) {
       streamWriterBuilder.setCredentialsProvider(credentialsProvider);
+    }
+    if (executorProvider != null) {
+      streamWriterBuilder.setExecutorProvider(executorProvider);
     }
     if (endpoint != null) {
       streamWriterBuilder.setEndpoint(endpoint);
@@ -366,6 +372,7 @@ public class JsonStreamWriter implements AutoCloseable {
 
     private TransportChannelProvider channelProvider;
     private CredentialsProvider credentialsProvider;
+    private ExecutorProvider executorProvider;
     private FlowControlSettings flowControlSettings;
     private String endpoint;
     private boolean createDefaultStream = false;
@@ -443,6 +450,18 @@ public class JsonStreamWriter implements AutoCloseable {
     public Builder setCredentialsProvider(CredentialsProvider credentialsProvider) {
       this.credentialsProvider =
           Preconditions.checkNotNull(credentialsProvider, "CredentialsProvider is null.");
+      return this;
+    }
+
+    /**
+     * Setter for the underlying StreamWriter's ExecutorProvider.
+     *
+     * @param executorProvider
+     * @return
+     */
+    public Builder setExecutorProvider(ExecutorProvider executorProvider) {
+      this.executorProvider =
+          Preconditions.checkNotNull(executorProvider, "ExecutorProvider is null.");
       return this;
     }
 
