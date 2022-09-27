@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.6.5](https://github.com/googleapis/java-securitycenter-settings/compare/v0.6.4...v0.6.5) (2022-09-27)
+
+
+### Dependencies
+
+* Update dependency markupsafe to v2.1.1 ([#561](https://github.com/googleapis/java-securitycenter-settings/issues/561)) ([bab5358](https://github.com/googleapis/java-securitycenter-settings/commit/bab5358e2792780495d671626f69560e407b106d))
+* Update dependency protobuf to v3.20.2 ([#562](https://github.com/googleapis/java-securitycenter-settings/issues/562)) ([1f00935](https://github.com/googleapis/java-securitycenter-settings/commit/1f0093504d54d7e8df512af967bfc02b15258637))
+
 ## [0.6.4](https://github.com/googleapis/java-securitycenter-settings/compare/v0.6.3...v0.6.4) (2022-09-15)
 
 
