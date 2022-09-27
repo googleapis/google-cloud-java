@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.6](https://github.com/googleapis/java-networkconnectivity/compare/v1.2.5...v1.2.6) (2022-09-27)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#303](https://github.com/googleapis/java-networkconnectivity/issues/303)) ([6c19fbd](https://github.com/googleapis/java-networkconnectivity/commit/6c19fbdd9967f2cbf4105e77838d4f2dc4d7ab29))
+* Update dependency jinja2 to v3.1.2 ([#297](https://github.com/googleapis/java-networkconnectivity/issues/297)) ([a19a37b](https://github.com/googleapis/java-networkconnectivity/commit/a19a37bcd3d98edb5ab797e0d841946608a29172))
+* Update dependency pyjwt to v2.5.0 ([#299](https://github.com/googleapis/java-networkconnectivity/issues/299)) ([9a3f0c8](https://github.com/googleapis/java-networkconnectivity/commit/9a3f0c848667f747c9705b3a2fd4178239b94620))
+* Update dependency requests to v2.28.1 ([#300](https://github.com/googleapis/java-networkconnectivity/issues/300)) ([a91cd1f](https://github.com/googleapis/java-networkconnectivity/commit/a91cd1f00ef8d052cc5ab34650c94a27aaaec2c6))
+
 ## [1.2.5](https://github.com/googleapis/java-networkconnectivity/compare/v1.2.4...v1.2.5) (2022-09-15)
 
 
