@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.3.6](https://github.com/googleapis/java-trace/compare/v2.3.5...v2.3.6) (2022-09-27)
+
+
+### Dependencies
+
+* Update dependency charset-normalizer to v2.1.1 ([#872](https://github.com/googleapis/java-trace/issues/872)) ([e636f46](https://github.com/googleapis/java-trace/commit/e636f46cb5346cb3e9976296b4a47f91439ddfb6))
+* Update dependency gcp-releasetool to v1.8.8 ([#870](https://github.com/googleapis/java-trace/issues/870)) ([90a0e4f](https://github.com/googleapis/java-trace/commit/90a0e4f8dfecac4225bd697d4ae199e6eaa72247))
+* Update dependency google-cloud-core to v2.3.2 ([#871](https://github.com/googleapis/java-trace/issues/871)) ([00df8ad](https://github.com/googleapis/java-trace/commit/00df8adfa6c60ed1b7bc278273e44ad8b40d8905))
+
 ## [2.3.5](https://github.com/googleapis/java-trace/compare/v2.3.4...v2.3.5) (2022-09-22)
 
 
