@@ -24,6 +24,9 @@ import com.google.cloud.language.v1.AnalyzeSentimentResponse;
 import com.google.cloud.language.v1.AnalyzeSyntaxRequest;
 import com.google.cloud.language.v1.AnalyzeSyntaxResponse;
 import com.google.cloud.language.v1.ClassificationCategory;
+import com.google.cloud.language.v1.ClassificationModelOptions;
+import com.google.cloud.language.v1.ClassificationModelOptions.V2Model;
+import com.google.cloud.language.v1.ClassificationModelOptions.V2Model.ContentCategoriesVersion;
 import com.google.cloud.language.v1.ClassifyTextRequest;
 import com.google.cloud.language.v1.ClassifyTextResponse;
 import com.google.cloud.language.v1.Document;
@@ -124,7 +127,7 @@ public class Analyze {
     // [START language_entities_gcs]
     // Instantiate the Language client com.google.cloud.language.v1.LanguageServiceClient
     try (LanguageServiceClient language = LanguageServiceClient.create()) {
-      // set the GCS Content URI path to the file to be analyzed
+      // Set the GCS Content URI path to the file to be analyzed
       Document doc =
           Document.newBuilder().setGcsContentUri(gcsUri).setType(Type.PLAIN_TEXT).build();
       AnalyzeEntitiesRequest request =
@@ -203,9 +206,9 @@ public class Analyze {
               .setDocument(doc)
               .setEncodingType(EncodingType.UTF16)
               .build();
-      // analyze the syntax in the given text
+      // Analyze the syntax in the given text
       AnalyzeSyntaxResponse response = language.analyzeSyntax(request);
-      // print the response
+      // Print the response
       for (Token token : response.getTokensList()) {
         System.out.printf("\tText: %s\n", token.getText().getContent());
         System.out.printf("\tBeginOffset: %d\n", token.getText().getBeginOffset());
@@ -243,9 +246,9 @@ public class Analyze {
               .setDocument(doc)
               .setEncodingType(EncodingType.UTF16)
               .build();
-      // analyze the syntax in the given text
+      // Analyze the syntax in the given text
       AnalyzeSyntaxResponse response = language.analyzeSyntax(request);
-      // print the response
+      // Print the response
       for (Token token : response.getTokensList()) {
         System.out.printf("\tText: %s\n", token.getText().getContent());
         System.out.printf("\tBeginOffset: %d\n", token.getText().getBeginOffset());
@@ -277,10 +280,17 @@ public class Analyze {
     // [START language_classify_text]
     // Instantiate the Language client com.google.cloud.language.v1.LanguageServiceClient
     try (LanguageServiceClient language = LanguageServiceClient.create()) {
-      // set content to the text string
+      // Set content to the text string
       Document doc = Document.newBuilder().setContent(text).setType(Type.PLAIN_TEXT).build();
-      ClassifyTextRequest request = ClassifyTextRequest.newBuilder().setDocument(doc).build();
-      // detect categories in the given text
+      V2Model v2Model = V2Model.setContentCategoriesVersion(ContentCategoriesVersion.V2).build();
+      ClassificationModelOptions options =
+          ClassificationModelOptions.newBuilder().setV2Model(v2Model).build();
+      ClassifyTextRequest request =
+          ClassifyTextRequest.newBuilder()
+              .setDocument(doc)
+              .setClassificationModelOptions(options)
+              .build();
+      // Detect categories in the given text
       ClassifyTextResponse response = language.classifyText(request);
 
       for (ClassificationCategory category : response.getCategoriesList()) {
@@ -297,11 +307,11 @@ public class Analyze {
     // [START language_classify_gcs]
     // Instantiate the Language client com.google.cloud.language.v1.LanguageServiceClient
     try (LanguageServiceClient language = LanguageServiceClient.create()) {
-      // set the GCS content URI path
+      // Set the GCS content URI path
       Document doc =
           Document.newBuilder().setGcsContentUri(gcsUri).setType(Type.PLAIN_TEXT).build();
       ClassifyTextRequest request = ClassifyTextRequest.newBuilder().setDocument(doc).build();
-      // detect categories in the given file
+      // Detect categories in the given file
       ClassifyTextResponse response = language.classifyText(request);
 
       for (ClassificationCategory category : response.getCategoriesList()) {
@@ -324,7 +334,7 @@ public class Analyze {
               .setDocument(doc)
               .setEncodingType(EncodingType.UTF16)
               .build();
-      // detect entity sentiments in the given string
+      // Detect entity sentiments in the given string
       AnalyzeEntitySentimentResponse response = language.analyzeEntitySentiment(request);
       // Print the response
       for (Entity entity : response.getEntitiesList()) {
@@ -343,7 +353,7 @@ public class Analyze {
     // [END language_entity_sentiment_text]
   }
 
-  /** Identifies the entity sentiments in the the GCS hosted file using the Language Beta API. */
+  /** Identifies the entity sentiments in the GCS hosted file using the Language Beta API. */
   public static void entitySentimentFile(String gcsUri) throws Exception {
     // [START language_entity_sentiment_gcs]
     // Instantiate the Language client com.google.cloud.language.v1.LanguageServiceClient
