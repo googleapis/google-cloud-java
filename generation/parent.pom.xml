@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-java-parent</artifactId>
   <groupId>com.google.cloud</groupId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-shared-config</artifactId>
+    <artifactId>google-cloud-shared-config</artifactId><!-- {x-version-update:google-cloud-shared-config:current} -->
     <version>1.5.3</version>
   </parent>
   <properties>
