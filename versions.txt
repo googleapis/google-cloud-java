@@ -1,0 +1,5 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-java-parent:0.0.0:0.0.1-SNAPSHOT
+
