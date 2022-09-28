@@ -19,9 +19,9 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
   module_name="${path:2}"
 
   if [[ "${module_name}" = "java-grafeas" ]]; then
-    module_line=$(grep -E "^grafeas:[0-9]+\.[0-9]+\.[0-9]+.*:[0-9]+\.[0-9]+\.[0-9]+.*$" "${path}/versions.txt")
+    module_line=$(grep -E "^grafeas:[0-9]+\.[0-9]+\.[0-9]+.*:[0-9]+\.[0-9]+\.[0-9]+.*$" "${version_file}")
   else
-    module_line=$(grep -E "^google-.*:[0-9]+\.[0-9]+\.[0-9]+.*:[0-9]+\.[0-9]+\.[0-9]+.*$" "${path}/versions.txt")
+    module_line=$(grep -E "^google-.*:[0-9]+\.[0-9]+\.[0-9]+.*:[0-9]+\.[0-9]+\.[0-9]+.*$" "${version_file}")
   fi
   artifactName_config=$(echo "${module_line}" | cut -d ":" -f1)
   module_released_version=$(echo "${module_line}" | cut -d ":" -f2)
@@ -40,17 +40,6 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
 
   #adding the line to manifest config file
   echo -e "${rp_manifest_line}" >>.release-please-manifest.json
-
-  #for multi-module libraries, sync the versions to released(non-snapshot):current(snapshot) type
-  cat ${version_file} | while read line; do
-    if [[ ${line} =~ [0-9] ]] && ! [[ ${line} == *"SNAPSHOT"* ]]; then
-      artifact_name=$(echo "${line}" | awk -F':' '{print $1}')
-      old_version=$(echo "${line}" | awk -F':' '{print $3}')
-      new_version=$(echo ${old_version} | awk -F'.' '{print $1"."$2"."$3+1}' | sed s/[.]$//)
-      new_version="${new_version}-SNAPSHOT"
-      sed -i.bak -e "s|${artifact_name}:${old_version}:${old_version}|${artifact_name}:${old_version}:${new_version}|" "${version_file}" && rm "${version_file}".bak
-    fi
-  done
 done
 
 echo "}" >>.release-please-manifest.json
