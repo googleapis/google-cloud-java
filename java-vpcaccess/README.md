@@ -19,7 +19,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-vpcaccess</artifactId>
-  <version>2.4.0</version>
+  <version>2.4.1</version>
 </dependency>
 
 ```
