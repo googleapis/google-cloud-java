@@ -34,6 +34,7 @@ fi
 sed -i "s|\"/grpc-google|\"/${module_name}/grpc-google|" "${OWLBOT_FILE}"
 sed -i "s|\"/proto-google|\"/${module_name}/proto-google|" "${OWLBOT_FILE}"
 sed -i "s|\"/google-\.\*|\"/${module_name}/google-.*|" "${OWLBOT_FILE}"
+sed -i "s|\"/google-cloud|\"/${module_name}/google-cloud|" "${OWLBOT_FILE}"
 sed -i "s|\"/samples|\"/${module_name}/samples|" "${OWLBOT_FILE}"
 
 # In monorepo, the staging directory structure tells the destination module to
