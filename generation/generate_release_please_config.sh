@@ -12,14 +12,13 @@ release_please_config_file="release-please-config.json"
 [ -e "${release_please_manifest_file}" ] && rm "${release_please_manifest_file}"
 [ -e "${release_please_config_file}" ] && rm "${release_please_config_file}"
 
-# Gapic-Bom has not been released (set it as v0.0.0)
-echo -e "{\n${tab}\"google-cloud-gapic-bom\": \"0.0.0\"," >"${release_please_manifest_file}"
+echo "{" > "${release_please_manifest_file}"
 
-# We are manually excluding two modules -- TODO: Update this for any other exclusions
+# We are manually excluding the CoverageAggregator module -- TODO: Update this for any other exclusions
 num_modules=$(find . -mindepth 2 -maxdepth 2 -name pom.xml | wc -l)
-num_modules=$((num_modules - 2))
+num_modules=$((num_modules - 1))
 for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirname); do
-  if [[ "${path}" = *google-cloud-gapic-bom ]] || [[ "${path}" = *CoverageAggregator ]]; then
+  if [[ "${path}" = *CoverageAggregator ]]; then
     continue
   fi
 
@@ -48,17 +47,6 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
     rp_config_line+=",\n"
     num_modules=$((num_modules - 1))
   fi
-
-  #for multi-module libraries, sync the versions to released(non-snapshot):current(snapshot) type
-  cat ${version_file} | while read line; do
-    if [[ ${line} =~ [0-9] ]] && ! [[ ${line} == *"SNAPSHOT"* ]]; then
-      artifact_name=$(echo "${line}" | awk -F':' '{print $1}')
-      old_version=$(echo "${line}" | awk -F':' '{print $3}')
-      new_version=$(echo ${old_version} | awk -F'.' '{print $1"."$2"."$3+1}' | sed s/[.]$//)
-      new_version="${new_version}-SNAPSHOT"
-      sed -i.bak -e "s|${artifact_name}:${old_version}:${old_version}|${artifact_name}:${old_version}:${new_version}|" "${version_file}" && rm "${version_file}".bak
-    fi
-  done
 
   # Adding the line to manifest config file
   echo -e "${rp_manifest_line}" >>"${release_please_manifest_file}"
