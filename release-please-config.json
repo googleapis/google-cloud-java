@@ -149,7 +149,7 @@
           "skip-github-release": true
          },
     "java-containeranalysis": {
-          "component": "proto-google-cloud-containeranalysis-v1",
+          "component": "google-cloud-containeranalysis",
           "skip-github-release": true
          },
     "java-container": {
