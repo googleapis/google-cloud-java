@@ -67,10 +67,10 @@ resource "google_service_account_iam_member" "admin_account_iam" {
 }
 
 # Grant roles to the service account so it has necessary permissions.
-resource "google_project_iam_member" "service_account_editor" {
+resource "google_project_iam_member" "service_account_owner" {
   project    = local.project_id
   # See https://cloud.google.com/iam/docs/understanding-roles#basic
-  role       = "roles/editor"
+  role       = "roles/owner"
   member     = "serviceAccount:${google_service_account.service_account.email}"
   depends_on = [google_service_account.service_account]
 }
@@ -80,4 +80,12 @@ resource "google_project_iam_member" "service_account_projectIamAdmin" {
   role       = "roles/resourcemanager.projectIamAdmin"
   member     = "serviceAccount:${google_service_account.service_account.email}"
   depends_on = [google_service_account.service_account]
+}
+
+resource "time_sleep" "for_90s_allowPermissionsToTakeEffect" {
+  create_duration = "90s"
+  depends_on      = [
+    google_project_iam_member.service_account_owner,
+    google_project_iam_member.service_account_projectIamAdmin
+  ]
 }
