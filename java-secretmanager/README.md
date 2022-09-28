@@ -42,7 +42,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-secretmanager</artifactId>
-  <version>2.3.7</version>
+  <version>2.3.8</version>
 </dependency>
 
 ```
@@ -57,13 +57,13 @@ implementation 'com.google.cloud:google-cloud-secretmanager'
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-secretmanager:2.3.7'
+implementation 'com.google.cloud:google-cloud-secretmanager:2.3.8'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-secretmanager" % "2.3.7"
+libraryDependencies += "com.google.cloud" % "google-cloud-secretmanager" % "2.3.8"
 ```
 
 ## Authentication
