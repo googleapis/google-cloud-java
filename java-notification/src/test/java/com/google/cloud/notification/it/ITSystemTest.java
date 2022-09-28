@@ -38,6 +38,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -56,6 +57,9 @@ public class ITSystemTest {
   private static Storage storageService;
 
   private static final Logger log = Logger.getLogger(ITSystemTest.class.getName());
+  private static final String STORAGE_SERVICE_AGENT =
+      Optional.ofNullable(System.getenv("GOOGLE_STORAGE_SERVICE_AGENT"))
+          .orElse("allAuthenticatedUsers");
   private static final String BUCKET = RemoteStorageHelper.generateBucketName();
   private static final String NAME_SUFFIX = UUID.randomUUID().toString();
   private static String projectId;
@@ -99,7 +103,11 @@ public class ITSystemTest {
 
     Policy policy = topicAdminClient.getIamPolicy(topic.toString());
     Binding binding =
-        Binding.newBuilder().setRole("roles/owner").addMembers("allAuthenticatedUsers").build();
+        Binding.newBuilder()
+            .setRole("roles/owner")
+            .addMembers("serviceAccount:" + STORAGE_SERVICE_AGENT)
+            // .addMembers("allUsers")
+            .build();
     Policy newPolicy =
         topicAdminClient.setIamPolicy(
             topic.toString(), policy.toBuilder().addBindings(binding).build());
@@ -122,8 +130,7 @@ public class ITSystemTest {
     NotificationInfo notification2 =
         notificationService.createNotification(
             BUCKET,
-            NotificationInfo.of(topic)
-                .toBuilder()
+            NotificationInfo.of(topic).toBuilder()
                 .setPayloadFormat(PayloadFormat.JSON_API_V1)
                 .build());
     assertEquals(topic, notification2.getTopic());
