@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-deploy-v1</artifactId>
-  <version>1.1.5-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-deploy-v1:current} -->
+  <version>1.1.7</version><!-- {x-version-update:proto-google-cloud-deploy-v1:current} -->
   <name>proto-google-cloud-deploy-v1</name>
   <description>Proto library for google-cloud-deploy</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-deploy-parent</artifactId>
-    <version>1.1.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-deploy:current} -->
+    <version>1.1.7</version><!-- {x-version-update:google-cloud-deploy:current} -->
   </parent>
   <dependencies>
     <dependency>

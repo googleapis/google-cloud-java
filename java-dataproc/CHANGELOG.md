@@ -1,5 +1,26 @@
 # Changelog
 
+## [4.1.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-dataproc-v4.0.6...google-cloud-dataproc-v4.1.0) (2022-09-28)
+
+
+### Features
+
+* [dataproc] add support for Dataproc metric configuration ([#8433](https://github.com/googleapis/google-cloud-java/issues/8433)) ([56a23e9](https://github.com/googleapis/google-cloud-java/commit/56a23e92dbcac7ebb4fc832d2070e6dcc86c5b55))
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.api.grpc:grpc-google-cloud-dataproc-v1 to v4.0.3 ([#8308](https://github.com/googleapis/google-cloud-java/issues/8308)) ([7c0b478](https://github.com/googleapis/google-cloud-java/commit/7c0b47888634077c6ab0be9dfedc1084a085ff45))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#8325](https://github.com/googleapis/google-cloud-java/issues/8325)) ([01f492b](https://github.com/googleapis/google-cloud-java/commit/01f492be424acdb90edb23ba66656aeff7cf39eb))
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+* owl-bot-staging should not be commited ([#8337](https://github.com/googleapis/google-cloud-java/issues/8337)) ([c9bb4a9](https://github.com/googleapis/google-cloud-java/commit/c9bb4a97aa19032b78c86c951fe9920f24ac4eec))
+
+
+### Dependencies
+
+* reverting renovate bot pull requests ([#8417](https://github.com/googleapis/google-cloud-java/issues/8417)) ([8f0c60b](https://github.com/googleapis/google-cloud-java/commit/8f0c60bde446acccc665eb7894723632eefc3503))
+
 ## [4.0.2](https://github.com/googleapis/java-dataproc/compare/v4.0.1...v4.0.2) (2022-08-09)
 
 
