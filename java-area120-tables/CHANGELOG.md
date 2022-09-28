@@ -1,5 +1,33 @@
 # Changelog
 
+## [0.7.5](https://github.com/googleapis/java-area120-tables/compare/v0.7.4...v0.7.5) (2022-09-28)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#417](https://github.com/googleapis/java-area120-tables/issues/417)) ([f5e167b](https://github.com/googleapis/java-area120-tables/commit/f5e167bbc6f1e0d63cbfd10ce303e1f1e6383c2f))
+* Update dependency certifi to v2022.9.24 ([#401](https://github.com/googleapis/java-area120-tables/issues/401)) ([eaf2def](https://github.com/googleapis/java-area120-tables/commit/eaf2defb1ae91e36987f321c9efc33c3f37f411d))
+* Update dependency charset-normalizer to v2.1.1 ([#405](https://github.com/googleapis/java-area120-tables/issues/405)) ([17f9901](https://github.com/googleapis/java-area120-tables/commit/17f99018186caa74b3e55cd0ec32e343536056f3))
+* Update dependency click to v8.1.3 ([#406](https://github.com/googleapis/java-area120-tables/issues/406)) ([91a21d0](https://github.com/googleapis/java-area120-tables/commit/91a21d01708994af04ee20aa574bd01f0bb83767))
+* Update dependency gcp-releasetool to v1.8.8 ([#402](https://github.com/googleapis/java-area120-tables/issues/402)) ([5e99449](https://github.com/googleapis/java-area120-tables/commit/5e994492f14378833c5a84839b17db653be13c6f))
+* Update dependency google-api-core to v2.10.1 ([#407](https://github.com/googleapis/java-area120-tables/issues/407)) ([3f883bd](https://github.com/googleapis/java-area120-tables/commit/3f883bd0b9c2fdc3c63234829ce132c2796a5596))
+* Update dependency google-auth to v2.12.0 ([#408](https://github.com/googleapis/java-area120-tables/issues/408)) ([6016625](https://github.com/googleapis/java-area120-tables/commit/6016625c0f389f768e4b03ca5b43f896167e1dc7))
+* Update dependency google-cloud-core to v2.3.2 ([#403](https://github.com/googleapis/java-area120-tables/issues/403)) ([5b33196](https://github.com/googleapis/java-area120-tables/commit/5b331966132ec58a31c32954bcdf059ab737b81b))
+* Update dependency google-cloud-storage to v2.5.0 ([#409](https://github.com/googleapis/java-area120-tables/issues/409)) ([52410ba](https://github.com/googleapis/java-area120-tables/commit/52410baf3e637794a1362b5d3e0cdea0dba4cd30))
+* Update dependency google-crc32c to v1.5.0 ([#410](https://github.com/googleapis/java-area120-tables/issues/410)) ([b34c88a](https://github.com/googleapis/java-area120-tables/commit/b34c88ab282f57fbcd0405d4cb157190b8c179e2))
+* Update dependency googleapis-common-protos to v1.56.4 ([#404](https://github.com/googleapis/java-area120-tables/issues/404)) ([58002aa](https://github.com/googleapis/java-area120-tables/commit/58002aac4a9582f010e046d39c0e7091cad3c036))
+* Update dependency importlib-metadata to v4.12.0 ([#419](https://github.com/googleapis/java-area120-tables/issues/419)) ([e8dd837](https://github.com/googleapis/java-area120-tables/commit/e8dd8372e92fe35d30167432a7512f1bf40e118a))
+* Update dependency jeepney to v0.8.0 ([#420](https://github.com/googleapis/java-area120-tables/issues/420)) ([022dfe6](https://github.com/googleapis/java-area120-tables/commit/022dfe696b105059ba44b97b118c7279e915e7e1))
+* Update dependency jinja2 to v3.1.2 ([#421](https://github.com/googleapis/java-area120-tables/issues/421)) ([7418c51](https://github.com/googleapis/java-area120-tables/commit/7418c518673607b68669339de38a6b7bf260a8bf))
+* Update dependency keyring to v23.9.3 ([#422](https://github.com/googleapis/java-area120-tables/issues/422)) ([8be7708](https://github.com/googleapis/java-area120-tables/commit/8be77080ba2bbe4ac66004bf2b920604b30902a0))
+* Update dependency markupsafe to v2.1.1 ([#411](https://github.com/googleapis/java-area120-tables/issues/411)) ([b740eb1](https://github.com/googleapis/java-area120-tables/commit/b740eb1be92d57e638899b9ef3f7d2a1d6ee8e76))
+* Update dependency protobuf to v3.20.2 ([#412](https://github.com/googleapis/java-area120-tables/issues/412)) ([42c3ba3](https://github.com/googleapis/java-area120-tables/commit/42c3ba39c89c42111b668816f42a5fddaa5ace68))
+* Update dependency protobuf to v4 ([#418](https://github.com/googleapis/java-area120-tables/issues/418)) ([111342b](https://github.com/googleapis/java-area120-tables/commit/111342b4ea2a005d75cf3a6f365a0e824508dd63))
+* Update dependency pyjwt to v2.5.0 ([#413](https://github.com/googleapis/java-area120-tables/issues/413)) ([798a546](https://github.com/googleapis/java-area120-tables/commit/798a54609e66e0b9d12ae0c6b9718dbdaa7f8c7f))
+* Update dependency requests to v2.28.1 ([#414](https://github.com/googleapis/java-area120-tables/issues/414)) ([df901a6](https://github.com/googleapis/java-area120-tables/commit/df901a625a582d69ed51d1534d01b3fdc2edd6b1))
+* Update dependency typing-extensions to v4.3.0 ([#415](https://github.com/googleapis/java-area120-tables/issues/415)) ([caf6eb5](https://github.com/googleapis/java-area120-tables/commit/caf6eb5482d3ecec803c6ebe6b6e8426a4163030))
+* Update dependency zipp to v3.8.1 ([#416](https://github.com/googleapis/java-area120-tables/issues/416)) ([121c33a](https://github.com/googleapis/java-area120-tables/commit/121c33ac678dfc4263283f965095bbdcac4d0be9))
+
 ## [0.7.4](https://github.com/googleapis/java-area120-tables/compare/v0.7.3...v0.7.4) (2022-09-15)
 
 
