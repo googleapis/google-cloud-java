@@ -28,7 +28,7 @@ fi
 pushd $(dirname "$0")/../../
 
 # install docuploader package
-python3 -m pip install gcp-docuploader
+python3 -m pip install --require-hashes -r .kokoro/requirements.txt
 
 # compile all packages
 mvn clean install -B -q -DskipTests=true
