@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-filestore-v1</artifactId>
-  <version>1.4.4</version><!-- {x-version-update:proto-google-cloud-filestore-v1:current} -->
+  <version>1.4.5-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-filestore-v1:current} -->
   <name>proto-google-cloud-filestore-v1</name>
   <description>Proto library for google-cloud-filestore</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-filestore-parent</artifactId>
-    <version>1.4.4</version><!-- {x-version-update:google-cloud-filestore:current} -->
+    <version>1.4.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-filestore:current} -->
   </parent>
   <dependencies>
     <dependency>
