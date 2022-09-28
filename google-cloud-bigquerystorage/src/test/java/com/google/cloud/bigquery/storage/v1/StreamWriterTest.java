@@ -725,22 +725,20 @@ public class StreamWriterTest {
   }
 
   @Test
-  public void createStreamWithDifferentWhetherOwnsClient() throws Exception {
-    StreamWriter streamWriter1 = getMultiplexingTestStreamWriter();
+  public void testExtractDatasetName() throws Exception {
+    Assert.assertEquals(
+        StreamWriter.extractDatasetAndProjectName(
+            "projects/project1/datasets/dataset2/tables/something"),
+        "projects/project1/datasets/dataset2/");
 
-    assertThrows(
-        IllegalArgumentException.class,
-        new ThrowingRunnable() {
-          @Override
-          public void run() throws Throwable {
-            StreamWriter.newBuilder(TEST_STREAM)
-                .setWriterSchema(createProtoSchema())
-                .setTraceId(TEST_TRACE_ID)
-                .setLocation("US")
-                .setEnableConnectionPool(true)
-                .build();
-          }
-        });
+    IllegalStateException ex =
+        assertThrows(
+            IllegalStateException.class,
+            () -> {
+              StreamWriter.extractDatasetAndProjectName(
+                  "wrong/projects/project1/wrong/datasets/dataset2/tables/something");
+            });
+    Assert.assertTrue(ex.getMessage().contains("The passed in stream name does not match"));
   }
 
   // Timeout to ensure close() doesn't wait for done callback timeout.

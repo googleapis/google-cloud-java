@@ -33,7 +33,10 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * A BigQuery Stream Writer that can be used to write data into BigQuery Table.
@@ -42,6 +45,12 @@ import java.util.logging.Logger;
  */
 public class StreamWriter implements AutoCloseable {
   private static final Logger log = Logger.getLogger(StreamWriter.class.getName());
+
+  private static String datasetsMatching = "projects/[^/]+/datasets/[^/]+/";
+  private static Pattern streamPattern = Pattern.compile(datasetsMatching);
+
+  // Cache of location info for a given dataset.
+  private static Map<String, String> projectAndDatasetToLocation = new ConcurrentHashMap<>();
 
   /*
    * The identifier of stream to write to.
@@ -167,12 +176,11 @@ public class StreamWriter implements AutoCloseable {
   }
 
   private StreamWriter(Builder builder) throws IOException {
-    BigQueryWriteClient client;
     this.streamName = builder.streamName;
     this.writerSchema = builder.writerSchema;
-    this.location = builder.location;
     boolean ownsBigQueryWriteClient = builder.client == null;
     if (!builder.enableConnectionPool) {
+      this.location = builder.location;
       this.singleConnectionOrConnectionPool =
           SingleConnectionOrConnectionPool.ofSingleConnection(
               new ConnectionWorker(
@@ -185,9 +193,38 @@ public class StreamWriter implements AutoCloseable {
                   getBigQueryWriteClient(builder),
                   ownsBigQueryWriteClient));
     } else {
-      if (builder.location == null || builder.location.isEmpty()) {
-        throw new IllegalArgumentException("Location must be specified for multiplexing client!");
+      BigQueryWriteClient client = getBigQueryWriteClient(builder);
+      String location = builder.location;
+      if (location == null || location.isEmpty()) {
+        // Location is not passed in, try to fetch from RPC
+        String datasetAndProjectName = extractDatasetAndProjectName(builder.streamName);
+        location =
+            projectAndDatasetToLocation.computeIfAbsent(
+                datasetAndProjectName,
+                (key) -> {
+                  GetWriteStreamRequest writeStreamRequest =
+                      GetWriteStreamRequest.newBuilder()
+                          .setName(this.getStreamName())
+                          .setView(WriteStreamView.BASIC)
+                          .build();
+
+                  WriteStream writeStream = client.getWriteStream(writeStreamRequest);
+                  TableSchema writeStreamTableSchema = writeStream.getTableSchema();
+                  String fetchedLocation = writeStream.getLocation();
+                  log.info(
+                      String.format(
+                          "Fethed location %s for stream name %s", fetchedLocation, streamName));
+                  return fetchedLocation;
+                });
+        if (location.isEmpty()) {
+          throw new IllegalStateException(
+              String.format(
+                  "The location is empty for both user passed in value and looked up value for "
+                      + "stream: %s",
+                  streamName));
+        }
       }
+      this.location = location;
       // Assume the connection in the same pool share the same client and trace id.
       // The first StreamWriter for a new stub will create the pool for the other
       // streams in the same region, meaning the per StreamWriter settings are no
@@ -195,21 +232,40 @@ public class StreamWriter implements AutoCloseable {
       this.singleConnectionOrConnectionPool =
           SingleConnectionOrConnectionPool.ofConnectionPool(
               connectionPoolMap.computeIfAbsent(
-                  ConnectionPoolKey.create(builder.location),
+                  ConnectionPoolKey.create(location),
                   (key) -> {
-                    try {
-                      return new ConnectionWorkerPool(
-                          builder.maxInflightRequest,
-                          builder.maxInflightBytes,
-                          builder.limitExceededBehavior,
-                          builder.traceId,
-                          getBigQueryWriteClient(builder),
-                          ownsBigQueryWriteClient);
-                    } catch (IOException e) {
-                      throw new RuntimeException(e);
-                    }
+                    return new ConnectionWorkerPool(
+                        builder.maxInflightRequest,
+                        builder.maxInflightBytes,
+                        builder.limitExceededBehavior,
+                        builder.traceId,
+                        client,
+                        ownsBigQueryWriteClient);
                   }));
       validateFetchedConnectonPool(builder);
+      // Shut down the passed in client. Internally we will create another client inside connection
+      // pool for every new connection worker.
+      if (client != singleConnectionOrConnectionPool.connectionWorkerPool().bigQueryWriteClient()
+          && ownsBigQueryWriteClient) {
+        client.shutdown();
+        try {
+          client.awaitTermination(150, TimeUnit.SECONDS);
+        } catch (InterruptedException unused) {
+          // Ignore interruption as this client is not used.
+        }
+        client.close();
+      }
+    }
+  }
+
+  @VisibleForTesting
+  static String extractDatasetAndProjectName(String streamName) {
+    Matcher streamMatcher = streamPattern.matcher(streamName);
+    if (streamMatcher.find()) {
+      return streamMatcher.group();
+    } else {
+      throw new IllegalStateException(
+          String.format("The passed in stream name does not match standard format %s", streamName));
     }
   }
 

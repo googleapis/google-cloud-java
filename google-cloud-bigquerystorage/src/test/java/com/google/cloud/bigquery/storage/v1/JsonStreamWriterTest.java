@@ -391,7 +391,7 @@ public class JsonStreamWriterTest {
   }
 
   @Test
-  public void testCreateDefaultStream() throws Exception {
+  public void testCreateDefaultStream_withNoSchemaPassedIn() throws Exception {
     TableSchema tableSchema =
         TableSchema.newBuilder().addFields(0, TEST_INT).addFields(1, TEST_STRING).build();
     testBigQueryWrite.addResponse(
@@ -405,6 +405,28 @@ public class JsonStreamWriterTest {
             .setChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .setExecutorProvider(InstantiatingExecutorProvider.newBuilder().build())
+            .build()) {
+      assertEquals("projects/p/datasets/d/tables/t/_default", writer.getStreamName());
+      assertEquals("aa", writer.getLocation());
+    }
+  }
+
+  @Test
+  public void testCreateDefaultStream_withNoClientPassedIn() throws Exception {
+    TableSchema tableSchema =
+        TableSchema.newBuilder().addFields(0, TEST_INT).addFields(1, TEST_STRING).build();
+    testBigQueryWrite.addResponse(
+        WriteStream.newBuilder()
+            .setName(TEST_STREAM)
+            .setLocation("aa")
+            .setTableSchema(tableSchema)
+            .build());
+    try (JsonStreamWriter writer =
+        JsonStreamWriter.newBuilder(TEST_TABLE, tableSchema)
+            .setChannelProvider(channelProvider)
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setExecutorProvider(InstantiatingExecutorProvider.newBuilder().build())
+            .setEnableConnectionPool(true)
             .build()) {
       assertEquals("projects/p/datasets/d/tables/t/_default", writer.getStreamName());
       assertEquals("aa", writer.getLocation());
