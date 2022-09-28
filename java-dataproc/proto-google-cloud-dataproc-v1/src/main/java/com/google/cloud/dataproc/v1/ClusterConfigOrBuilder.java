@@ -706,11 +706,11 @@ public interface ClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Dataproc metrics configuration.
+   * Optional. The config for Dataproc metrics.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 23 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the dataprocMetricConfig field is set.
@@ -720,11 +720,11 @@ public interface ClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Dataproc metrics configuration.
+   * Optional. The config for Dataproc metrics.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 23 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The dataprocMetricConfig.
@@ -734,11 +734,11 @@ public interface ClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Dataproc metrics configuration.
+   * Optional. The config for Dataproc metrics.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 23 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.dataproc.v1.DataprocMetricConfigOrBuilder getDataprocMetricConfigOrBuilder();

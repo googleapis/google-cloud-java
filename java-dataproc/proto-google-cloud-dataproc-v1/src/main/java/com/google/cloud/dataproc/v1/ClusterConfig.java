@@ -277,7 +277,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
-          case 170:
+          case 186:
             {
               com.google.cloud.dataproc.v1.DataprocMetricConfig.Builder subBuilder = null;
               if (dataprocMetricConfig_ != null) {
@@ -1222,17 +1222,17 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     return getMetastoreConfig();
   }
 
-  public static final int DATAPROC_METRIC_CONFIG_FIELD_NUMBER = 21;
+  public static final int DATAPROC_METRIC_CONFIG_FIELD_NUMBER = 23;
   private com.google.cloud.dataproc.v1.DataprocMetricConfig dataprocMetricConfig_;
   /**
    *
    *
    * <pre>
-   * Optional. Dataproc metrics configuration.
+   * Optional. The config for Dataproc metrics.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 23 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the dataprocMetricConfig field is set.
@@ -1245,11 +1245,11 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Dataproc metrics configuration.
+   * Optional. The config for Dataproc metrics.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 23 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The dataprocMetricConfig.
@@ -1264,11 +1264,11 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Dataproc metrics configuration.
+   * Optional. The config for Dataproc metrics.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 23 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -1334,7 +1334,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(20, getMetastoreConfig());
     }
     if (dataprocMetricConfig_ != null) {
-      output.writeMessage(21, getDataprocMetricConfig());
+      output.writeMessage(23, getDataprocMetricConfig());
     }
     unknownFields.writeTo(output);
   }
@@ -1392,7 +1392,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (dataprocMetricConfig_ != null) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(21, getDataprocMetricConfig());
+          com.google.protobuf.CodedOutputStream.computeMessageSize(23, getDataprocMetricConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -5232,11 +5232,11 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Dataproc metrics configuration.
+     * Optional. The config for Dataproc metrics.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 23 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the dataprocMetricConfig field is set.
@@ -5248,11 +5248,11 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Dataproc metrics configuration.
+     * Optional. The config for Dataproc metrics.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 23 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The dataprocMetricConfig.
@@ -5270,11 +5270,11 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Dataproc metrics configuration.
+     * Optional. The config for Dataproc metrics.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 23 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setDataprocMetricConfig(
@@ -5295,11 +5295,11 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Dataproc metrics configuration.
+     * Optional. The config for Dataproc metrics.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 23 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setDataprocMetricConfig(
@@ -5317,11 +5317,11 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Dataproc metrics configuration.
+     * Optional. The config for Dataproc metrics.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 23 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeDataprocMetricConfig(
@@ -5346,11 +5346,11 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Dataproc metrics configuration.
+     * Optional. The config for Dataproc metrics.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 23 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearDataprocMetricConfig() {
@@ -5368,11 +5368,11 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Dataproc metrics configuration.
+     * Optional. The config for Dataproc metrics.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 23 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.dataproc.v1.DataprocMetricConfig.Builder
@@ -5385,11 +5385,11 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Dataproc metrics configuration.
+     * Optional. The config for Dataproc metrics.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 23 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.dataproc.v1.DataprocMetricConfigOrBuilder
@@ -5406,11 +5406,11 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Dataproc metrics configuration.
+     * Optional. The config for Dataproc metrics.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 23 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
