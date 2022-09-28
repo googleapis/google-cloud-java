@@ -148,8 +148,8 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The unique name of the table to which the mutation should be applied.
-   * Values are of the form
+   * Required. The unique name of the table to which the mutation should be
+   * applied. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
    * </pre>
    *
@@ -175,8 +175,8 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The unique name of the table to which the mutation should be applied.
-   * Values are of the form
+   * Required. The unique name of the table to which the mutation should be
+   * applied. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
    * </pre>
    *
@@ -274,9 +274,9 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Changes to be atomically applied to the specified row. Entries are applied
-   * in order, meaning that earlier mutations can be masked by later ones.
-   * Must contain at least one entry and at most 100000.
+   * Required. Changes to be atomically applied to the specified row. Entries
+   * are applied in order, meaning that earlier mutations can be masked by later
+   * ones. Must contain at least one entry and at most 100000.
    * </pre>
    *
    * <code>
@@ -291,9 +291,9 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Changes to be atomically applied to the specified row. Entries are applied
-   * in order, meaning that earlier mutations can be masked by later ones.
-   * Must contain at least one entry and at most 100000.
+   * Required. Changes to be atomically applied to the specified row. Entries
+   * are applied in order, meaning that earlier mutations can be masked by later
+   * ones. Must contain at least one entry and at most 100000.
    * </pre>
    *
    * <code>
@@ -309,9 +309,9 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Changes to be atomically applied to the specified row. Entries are applied
-   * in order, meaning that earlier mutations can be masked by later ones.
-   * Must contain at least one entry and at most 100000.
+   * Required. Changes to be atomically applied to the specified row. Entries
+   * are applied in order, meaning that earlier mutations can be masked by later
+   * ones. Must contain at least one entry and at most 100000.
    * </pre>
    *
    * <code>
@@ -326,9 +326,9 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Changes to be atomically applied to the specified row. Entries are applied
-   * in order, meaning that earlier mutations can be masked by later ones.
-   * Must contain at least one entry and at most 100000.
+   * Required. Changes to be atomically applied to the specified row. Entries
+   * are applied in order, meaning that earlier mutations can be masked by later
+   * ones. Must contain at least one entry and at most 100000.
    * </pre>
    *
    * <code>
@@ -343,9 +343,9 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Changes to be atomically applied to the specified row. Entries are applied
-   * in order, meaning that earlier mutations can be masked by later ones.
-   * Must contain at least one entry and at most 100000.
+   * Required. Changes to be atomically applied to the specified row. Entries
+   * are applied in order, meaning that earlier mutations can be masked by later
+   * ones. Must contain at least one entry and at most 100000.
    * </pre>
    *
    * <code>
@@ -766,8 +766,8 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The unique name of the table to which the mutation should be applied.
-     * Values are of the form
+     * Required. The unique name of the table to which the mutation should be
+     * applied. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
      * </pre>
      *
@@ -792,8 +792,8 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The unique name of the table to which the mutation should be applied.
-     * Values are of the form
+     * Required. The unique name of the table to which the mutation should be
+     * applied. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
      * </pre>
      *
@@ -818,8 +818,8 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The unique name of the table to which the mutation should be applied.
-     * Values are of the form
+     * Required. The unique name of the table to which the mutation should be
+     * applied. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
      * </pre>
      *
@@ -843,8 +843,8 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The unique name of the table to which the mutation should be applied.
-     * Values are of the form
+     * Required. The unique name of the table to which the mutation should be
+     * applied. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
      * </pre>
      *
@@ -864,8 +864,8 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The unique name of the table to which the mutation should be applied.
-     * Values are of the form
+     * Required. The unique name of the table to which the mutation should be
+     * applied. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
      * </pre>
      *
@@ -1073,9 +1073,9 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Entries are applied
-     * in order, meaning that earlier mutations can be masked by later ones.
-     * Must contain at least one entry and at most 100000.
+     * Required. Changes to be atomically applied to the specified row. Entries
+     * are applied in order, meaning that earlier mutations can be masked by later
+     * ones. Must contain at least one entry and at most 100000.
      * </pre>
      *
      * <code>
@@ -1093,9 +1093,9 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Entries are applied
-     * in order, meaning that earlier mutations can be masked by later ones.
-     * Must contain at least one entry and at most 100000.
+     * Required. Changes to be atomically applied to the specified row. Entries
+     * are applied in order, meaning that earlier mutations can be masked by later
+     * ones. Must contain at least one entry and at most 100000.
      * </pre>
      *
      * <code>
@@ -1113,9 +1113,9 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Entries are applied
-     * in order, meaning that earlier mutations can be masked by later ones.
-     * Must contain at least one entry and at most 100000.
+     * Required. Changes to be atomically applied to the specified row. Entries
+     * are applied in order, meaning that earlier mutations can be masked by later
+     * ones. Must contain at least one entry and at most 100000.
      * </pre>
      *
      * <code>
@@ -1133,9 +1133,9 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Entries are applied
-     * in order, meaning that earlier mutations can be masked by later ones.
-     * Must contain at least one entry and at most 100000.
+     * Required. Changes to be atomically applied to the specified row. Entries
+     * are applied in order, meaning that earlier mutations can be masked by later
+     * ones. Must contain at least one entry and at most 100000.
      * </pre>
      *
      * <code>
@@ -1159,9 +1159,9 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Entries are applied
-     * in order, meaning that earlier mutations can be masked by later ones.
-     * Must contain at least one entry and at most 100000.
+     * Required. Changes to be atomically applied to the specified row. Entries
+     * are applied in order, meaning that earlier mutations can be masked by later
+     * ones. Must contain at least one entry and at most 100000.
      * </pre>
      *
      * <code>
@@ -1183,9 +1183,9 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Entries are applied
-     * in order, meaning that earlier mutations can be masked by later ones.
-     * Must contain at least one entry and at most 100000.
+     * Required. Changes to be atomically applied to the specified row. Entries
+     * are applied in order, meaning that earlier mutations can be masked by later
+     * ones. Must contain at least one entry and at most 100000.
      * </pre>
      *
      * <code>
@@ -1209,9 +1209,9 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Entries are applied
-     * in order, meaning that earlier mutations can be masked by later ones.
-     * Must contain at least one entry and at most 100000.
+     * Required. Changes to be atomically applied to the specified row. Entries
+     * are applied in order, meaning that earlier mutations can be masked by later
+     * ones. Must contain at least one entry and at most 100000.
      * </pre>
      *
      * <code>
@@ -1235,9 +1235,9 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Entries are applied
-     * in order, meaning that earlier mutations can be masked by later ones.
-     * Must contain at least one entry and at most 100000.
+     * Required. Changes to be atomically applied to the specified row. Entries
+     * are applied in order, meaning that earlier mutations can be masked by later
+     * ones. Must contain at least one entry and at most 100000.
      * </pre>
      *
      * <code>
@@ -1258,9 +1258,9 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Entries are applied
-     * in order, meaning that earlier mutations can be masked by later ones.
-     * Must contain at least one entry and at most 100000.
+     * Required. Changes to be atomically applied to the specified row. Entries
+     * are applied in order, meaning that earlier mutations can be masked by later
+     * ones. Must contain at least one entry and at most 100000.
      * </pre>
      *
      * <code>
@@ -1282,9 +1282,9 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Entries are applied
-     * in order, meaning that earlier mutations can be masked by later ones.
-     * Must contain at least one entry and at most 100000.
+     * Required. Changes to be atomically applied to the specified row. Entries
+     * are applied in order, meaning that earlier mutations can be masked by later
+     * ones. Must contain at least one entry and at most 100000.
      * </pre>
      *
      * <code>
@@ -1306,9 +1306,9 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Entries are applied
-     * in order, meaning that earlier mutations can be masked by later ones.
-     * Must contain at least one entry and at most 100000.
+     * Required. Changes to be atomically applied to the specified row. Entries
+     * are applied in order, meaning that earlier mutations can be masked by later
+     * ones. Must contain at least one entry and at most 100000.
      * </pre>
      *
      * <code>
@@ -1329,9 +1329,9 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Entries are applied
-     * in order, meaning that earlier mutations can be masked by later ones.
-     * Must contain at least one entry and at most 100000.
+     * Required. Changes to be atomically applied to the specified row. Entries
+     * are applied in order, meaning that earlier mutations can be masked by later
+     * ones. Must contain at least one entry and at most 100000.
      * </pre>
      *
      * <code>
@@ -1352,9 +1352,9 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Entries are applied
-     * in order, meaning that earlier mutations can be masked by later ones.
-     * Must contain at least one entry and at most 100000.
+     * Required. Changes to be atomically applied to the specified row. Entries
+     * are applied in order, meaning that earlier mutations can be masked by later
+     * ones. Must contain at least one entry and at most 100000.
      * </pre>
      *
      * <code>
@@ -1368,9 +1368,9 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Entries are applied
-     * in order, meaning that earlier mutations can be masked by later ones.
-     * Must contain at least one entry and at most 100000.
+     * Required. Changes to be atomically applied to the specified row. Entries
+     * are applied in order, meaning that earlier mutations can be masked by later
+     * ones. Must contain at least one entry and at most 100000.
      * </pre>
      *
      * <code>
@@ -1388,9 +1388,9 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Entries are applied
-     * in order, meaning that earlier mutations can be masked by later ones.
-     * Must contain at least one entry and at most 100000.
+     * Required. Changes to be atomically applied to the specified row. Entries
+     * are applied in order, meaning that earlier mutations can be masked by later
+     * ones. Must contain at least one entry and at most 100000.
      * </pre>
      *
      * <code>
@@ -1409,9 +1409,9 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Entries are applied
-     * in order, meaning that earlier mutations can be masked by later ones.
-     * Must contain at least one entry and at most 100000.
+     * Required. Changes to be atomically applied to the specified row. Entries
+     * are applied in order, meaning that earlier mutations can be masked by later
+     * ones. Must contain at least one entry and at most 100000.
      * </pre>
      *
      * <code>
@@ -1426,9 +1426,9 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Entries are applied
-     * in order, meaning that earlier mutations can be masked by later ones.
-     * Must contain at least one entry and at most 100000.
+     * Required. Changes to be atomically applied to the specified row. Entries
+     * are applied in order, meaning that earlier mutations can be masked by later
+     * ones. Must contain at least one entry and at most 100000.
      * </pre>
      *
      * <code>
@@ -1443,9 +1443,9 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Entries are applied
-     * in order, meaning that earlier mutations can be masked by later ones.
-     * Must contain at least one entry and at most 100000.
+     * Required. Changes to be atomically applied to the specified row. Entries
+     * are applied in order, meaning that earlier mutations can be masked by later
+     * ones. Must contain at least one entry and at most 100000.
      * </pre>
      *
      * <code>

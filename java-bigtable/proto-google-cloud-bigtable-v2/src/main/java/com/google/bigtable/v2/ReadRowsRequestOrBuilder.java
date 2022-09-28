@@ -60,8 +60,8 @@ public interface ReadRowsRequestOrBuilder
    *
    *
    * <pre>
-   * This value specifies routing for replication. If not specified, the
-   * "default" application profile will be used.
+   * This value specifies routing for replication. This API only accepts the
+   * empty value of app_profile_id.
    * </pre>
    *
    * <code>string app_profile_id = 5;</code>
@@ -73,8 +73,8 @@ public interface ReadRowsRequestOrBuilder
    *
    *
    * <pre>
-   * This value specifies routing for replication. If not specified, the
-   * "default" application profile will be used.
+   * This value specifies routing for replication. This API only accepts the
+   * empty value of app_profile_id.
    * </pre>
    *
    * <code>string app_profile_id = 5;</code>
@@ -172,4 +172,29 @@ public interface ReadRowsRequestOrBuilder
    * @return The rowsLimit.
    */
   long getRowsLimit();
+
+  /**
+   *
+   *
+   * <pre>
+   * The view into RequestStats, as described above.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.ReadRowsRequest.RequestStatsView request_stats_view = 6;</code>
+   *
+   * @return The enum numeric value on the wire for requestStatsView.
+   */
+  int getRequestStatsViewValue();
+  /**
+   *
+   *
+   * <pre>
+   * The view into RequestStats, as described above.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.ReadRowsRequest.RequestStatsView request_stats_view = 6;</code>
+   *
+   * @return The requestStatsView.
+   */
+  com.google.bigtable.v2.ReadRowsRequest.RequestStatsView getRequestStatsView();
 }

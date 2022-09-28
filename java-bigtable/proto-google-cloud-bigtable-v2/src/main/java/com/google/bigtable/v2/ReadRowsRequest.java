@@ -40,6 +40,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
   private ReadRowsRequest() {
     tableName_ = "";
     appProfileId_ = "";
+    requestStatsView_ = 0;
   }
 
   @java.lang.Override
@@ -119,6 +120,13 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
               appProfileId_ = s;
               break;
             }
+          case 48:
+            {
+              int rawValue = input.readEnum();
+
+              requestStatsView_ = rawValue;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -153,6 +161,192 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
         .ensureFieldAccessorsInitialized(
             com.google.bigtable.v2.ReadRowsRequest.class,
             com.google.bigtable.v2.ReadRowsRequest.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired view into RequestStats that should be returned in the response.
+   * See also: RequestStats message.
+   * </pre>
+   *
+   * Protobuf enum {@code google.bigtable.v2.ReadRowsRequest.RequestStatsView}
+   */
+  public enum RequestStatsView implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The default / unset value. The API will default to the NONE option below.
+     * </pre>
+     *
+     * <code>REQUEST_STATS_VIEW_UNSPECIFIED = 0;</code>
+     */
+    REQUEST_STATS_VIEW_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Do not include any RequestStats in the response. This will leave the
+     * RequestStats embedded message unset in the response.
+     * </pre>
+     *
+     * <code>REQUEST_STATS_NONE = 1;</code>
+     */
+    REQUEST_STATS_NONE(1),
+    /**
+     *
+     *
+     * <pre>
+     * Include stats related to the efficiency of the read.
+     * </pre>
+     *
+     * <code>REQUEST_STATS_EFFICIENCY = 2;</code>
+     */
+    REQUEST_STATS_EFFICIENCY(2),
+    /**
+     *
+     *
+     * <pre>
+     * Include the full set of available RequestStats in the response,
+     * applicable to this read.
+     * </pre>
+     *
+     * <code>REQUEST_STATS_FULL = 3;</code>
+     */
+    REQUEST_STATS_FULL(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The default / unset value. The API will default to the NONE option below.
+     * </pre>
+     *
+     * <code>REQUEST_STATS_VIEW_UNSPECIFIED = 0;</code>
+     */
+    public static final int REQUEST_STATS_VIEW_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Do not include any RequestStats in the response. This will leave the
+     * RequestStats embedded message unset in the response.
+     * </pre>
+     *
+     * <code>REQUEST_STATS_NONE = 1;</code>
+     */
+    public static final int REQUEST_STATS_NONE_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Include stats related to the efficiency of the read.
+     * </pre>
+     *
+     * <code>REQUEST_STATS_EFFICIENCY = 2;</code>
+     */
+    public static final int REQUEST_STATS_EFFICIENCY_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Include the full set of available RequestStats in the response,
+     * applicable to this read.
+     * </pre>
+     *
+     * <code>REQUEST_STATS_FULL = 3;</code>
+     */
+    public static final int REQUEST_STATS_FULL_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RequestStatsView valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static RequestStatsView forNumber(int value) {
+      switch (value) {
+        case 0:
+          return REQUEST_STATS_VIEW_UNSPECIFIED;
+        case 1:
+          return REQUEST_STATS_NONE;
+        case 2:
+          return REQUEST_STATS_EFFICIENCY;
+        case 3:
+          return REQUEST_STATS_FULL;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<RequestStatsView> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<RequestStatsView>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<RequestStatsView>() {
+              public RequestStatsView findValueByNumber(int number) {
+                return RequestStatsView.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.bigtable.v2.ReadRowsRequest.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final RequestStatsView[] VALUES = values();
+
+    public static RequestStatsView valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private RequestStatsView(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.bigtable.v2.ReadRowsRequest.RequestStatsView)
   }
 
   public static final int TABLE_NAME_FIELD_NUMBER = 1;
@@ -218,8 +412,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * This value specifies routing for replication. If not specified, the
-   * "default" application profile will be used.
+   * This value specifies routing for replication. This API only accepts the
+   * empty value of app_profile_id.
    * </pre>
    *
    * <code>string app_profile_id = 5;</code>
@@ -242,8 +436,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * This value specifies routing for replication. If not specified, the
-   * "default" application profile will be used.
+   * This value specifies routing for replication. This API only accepts the
+   * empty value of app_profile_id.
    * </pre>
    *
    * <code>string app_profile_id = 5;</code>
@@ -380,6 +574,44 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
     return rowsLimit_;
   }
 
+  public static final int REQUEST_STATS_VIEW_FIELD_NUMBER = 6;
+  private int requestStatsView_;
+  /**
+   *
+   *
+   * <pre>
+   * The view into RequestStats, as described above.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.ReadRowsRequest.RequestStatsView request_stats_view = 6;</code>
+   *
+   * @return The enum numeric value on the wire for requestStatsView.
+   */
+  @java.lang.Override
+  public int getRequestStatsViewValue() {
+    return requestStatsView_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The view into RequestStats, as described above.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.ReadRowsRequest.RequestStatsView request_stats_view = 6;</code>
+   *
+   * @return The requestStatsView.
+   */
+  @java.lang.Override
+  public com.google.bigtable.v2.ReadRowsRequest.RequestStatsView getRequestStatsView() {
+    @SuppressWarnings("deprecation")
+    com.google.bigtable.v2.ReadRowsRequest.RequestStatsView result =
+        com.google.bigtable.v2.ReadRowsRequest.RequestStatsView.valueOf(requestStatsView_);
+    return result == null
+        ? com.google.bigtable.v2.ReadRowsRequest.RequestStatsView.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -409,6 +641,11 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appProfileId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, appProfileId_);
     }
+    if (requestStatsView_
+        != com.google.bigtable.v2.ReadRowsRequest.RequestStatsView.REQUEST_STATS_VIEW_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(6, requestStatsView_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -432,6 +669,11 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appProfileId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, appProfileId_);
+    }
+    if (requestStatsView_
+        != com.google.bigtable.v2.ReadRowsRequest.RequestStatsView.REQUEST_STATS_VIEW_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, requestStatsView_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -459,6 +701,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
       if (!getFilter().equals(other.getFilter())) return false;
     }
     if (getRowsLimit() != other.getRowsLimit()) return false;
+    if (requestStatsView_ != other.requestStatsView_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -484,6 +727,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
     }
     hash = (37 * hash) + ROWS_LIMIT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getRowsLimit());
+    hash = (37 * hash) + REQUEST_STATS_VIEW_FIELD_NUMBER;
+    hash = (53 * hash) + requestStatsView_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -647,6 +892,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
       }
       rowsLimit_ = 0L;
 
+      requestStatsView_ = 0;
+
       return this;
     }
 
@@ -687,6 +934,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
         result.filter_ = filterBuilder_.build();
       }
       result.rowsLimit_ = rowsLimit_;
+      result.requestStatsView_ = requestStatsView_;
       onBuilt();
       return result;
     }
@@ -752,6 +1000,9 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
       }
       if (other.getRowsLimit() != 0L) {
         setRowsLimit(other.getRowsLimit());
+      }
+      if (other.requestStatsView_ != 0) {
+        setRequestStatsViewValue(other.getRequestStatsViewValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -913,8 +1164,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * This value specifies routing for replication. If not specified, the
-     * "default" application profile will be used.
+     * This value specifies routing for replication. This API only accepts the
+     * empty value of app_profile_id.
      * </pre>
      *
      * <code>string app_profile_id = 5;</code>
@@ -936,8 +1187,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * This value specifies routing for replication. If not specified, the
-     * "default" application profile will be used.
+     * This value specifies routing for replication. This API only accepts the
+     * empty value of app_profile_id.
      * </pre>
      *
      * <code>string app_profile_id = 5;</code>
@@ -959,8 +1210,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * This value specifies routing for replication. If not specified, the
-     * "default" application profile will be used.
+     * This value specifies routing for replication. This API only accepts the
+     * empty value of app_profile_id.
      * </pre>
      *
      * <code>string app_profile_id = 5;</code>
@@ -981,8 +1232,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * This value specifies routing for replication. If not specified, the
-     * "default" application profile will be used.
+     * This value specifies routing for replication. This API only accepts the
+     * empty value of app_profile_id.
      * </pre>
      *
      * <code>string app_profile_id = 5;</code>
@@ -999,8 +1250,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * This value specifies routing for replication. If not specified, the
-     * "default" application profile will be used.
+     * This value specifies routing for replication. This API only accepts the
+     * empty value of app_profile_id.
      * </pre>
      *
      * <code>string app_profile_id = 5;</code>
@@ -1445,6 +1696,100 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
     public Builder clearRowsLimit() {
 
       rowsLimit_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private int requestStatsView_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The view into RequestStats, as described above.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.ReadRowsRequest.RequestStatsView request_stats_view = 6;</code>
+     *
+     * @return The enum numeric value on the wire for requestStatsView.
+     */
+    @java.lang.Override
+    public int getRequestStatsViewValue() {
+      return requestStatsView_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The view into RequestStats, as described above.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.ReadRowsRequest.RequestStatsView request_stats_view = 6;</code>
+     *
+     * @param value The enum numeric value on the wire for requestStatsView to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestStatsViewValue(int value) {
+
+      requestStatsView_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The view into RequestStats, as described above.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.ReadRowsRequest.RequestStatsView request_stats_view = 6;</code>
+     *
+     * @return The requestStatsView.
+     */
+    @java.lang.Override
+    public com.google.bigtable.v2.ReadRowsRequest.RequestStatsView getRequestStatsView() {
+      @SuppressWarnings("deprecation")
+      com.google.bigtable.v2.ReadRowsRequest.RequestStatsView result =
+          com.google.bigtable.v2.ReadRowsRequest.RequestStatsView.valueOf(requestStatsView_);
+      return result == null
+          ? com.google.bigtable.v2.ReadRowsRequest.RequestStatsView.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The view into RequestStats, as described above.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.ReadRowsRequest.RequestStatsView request_stats_view = 6;</code>
+     *
+     * @param value The requestStatsView to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestStatsView(
+        com.google.bigtable.v2.ReadRowsRequest.RequestStatsView value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      requestStatsView_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The view into RequestStats, as described above.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.ReadRowsRequest.RequestStatsView request_stats_view = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestStatsView() {
+
+      requestStatsView_ = 0;
       onChanged();
       return this;
     }

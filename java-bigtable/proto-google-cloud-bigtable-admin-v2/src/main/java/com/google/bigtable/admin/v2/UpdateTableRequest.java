@@ -143,8 +143,6 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required. The table to update.
    * The table's `name` field is used to identify the table to update.
-   * Format:
-   * `projects/{project}/instances/{instance}/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Table table = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -162,8 +160,6 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required. The table to update.
    * The table's `name` field is used to identify the table to update.
-   * Format:
-   * `projects/{project}/instances/{instance}/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Table table = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -181,8 +177,6 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required. The table to update.
    * The table's `name` field is used to identify the table to update.
-   * Format:
-   * `projects/{project}/instances/{instance}/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
    * </pre>
    *
    * <code>.google.bigtable.admin.v2.Table table = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -633,8 +627,6 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The table to update.
      * The table's `name` field is used to identify the table to update.
-     * Format:
-     * `projects/{project}/instances/{instance}/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table table = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -651,8 +643,6 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The table to update.
      * The table's `name` field is used to identify the table to update.
-     * Format:
-     * `projects/{project}/instances/{instance}/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table table = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -673,8 +663,6 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The table to update.
      * The table's `name` field is used to identify the table to update.
-     * Format:
-     * `projects/{project}/instances/{instance}/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table table = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -699,8 +687,6 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The table to update.
      * The table's `name` field is used to identify the table to update.
-     * Format:
-     * `projects/{project}/instances/{instance}/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table table = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -722,8 +708,6 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The table to update.
      * The table's `name` field is used to identify the table to update.
-     * Format:
-     * `projects/{project}/instances/{instance}/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table table = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -750,8 +734,6 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The table to update.
      * The table's `name` field is used to identify the table to update.
-     * Format:
-     * `projects/{project}/instances/{instance}/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table table = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -774,8 +756,6 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The table to update.
      * The table's `name` field is used to identify the table to update.
-     * Format:
-     * `projects/{project}/instances/{instance}/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table table = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -792,8 +772,6 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The table to update.
      * The table's `name` field is used to identify the table to update.
-     * Format:
-     * `projects/{project}/instances/{instance}/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table table = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -812,8 +790,6 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The table to update.
      * The table's `name` field is used to identify the table to update.
-     * Format:
-     * `projects/{project}/instances/{instance}/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.Table table = 1 [(.google.api.field_behavior) = REQUIRED];

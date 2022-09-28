@@ -4,6 +4,16 @@
   <difference>
     <differenceType>7012</differenceType>
     <className>com/google/bigtable/v2/*OrBuilder</className>
-    <method>* has*(*)</method>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/bigtable/v2/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/bigtable/v2/*OrBuilder</className>
+    <method>boolean has*(*)</method>
   </difference>
 </differences>

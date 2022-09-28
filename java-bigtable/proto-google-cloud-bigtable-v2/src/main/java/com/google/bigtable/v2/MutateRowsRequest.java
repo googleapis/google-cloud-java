@@ -160,10 +160,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Mutations are
-     * applied in order, meaning that earlier mutations can be masked by
-     * later ones.
-     * You must specify at least one mutation.
+     * Required. Changes to be atomically applied to the specified row.
+     * Mutations are applied in order, meaning that earlier mutations can be
+     * masked by later ones. You must specify at least one mutation.
      * </pre>
      *
      * <code>
@@ -175,10 +174,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Mutations are
-     * applied in order, meaning that earlier mutations can be masked by
-     * later ones.
-     * You must specify at least one mutation.
+     * Required. Changes to be atomically applied to the specified row.
+     * Mutations are applied in order, meaning that earlier mutations can be
+     * masked by later ones. You must specify at least one mutation.
      * </pre>
      *
      * <code>
@@ -190,10 +188,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Mutations are
-     * applied in order, meaning that earlier mutations can be masked by
-     * later ones.
-     * You must specify at least one mutation.
+     * Required. Changes to be atomically applied to the specified row.
+     * Mutations are applied in order, meaning that earlier mutations can be
+     * masked by later ones. You must specify at least one mutation.
      * </pre>
      *
      * <code>
@@ -205,10 +202,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Mutations are
-     * applied in order, meaning that earlier mutations can be masked by
-     * later ones.
-     * You must specify at least one mutation.
+     * Required. Changes to be atomically applied to the specified row.
+     * Mutations are applied in order, meaning that earlier mutations can be
+     * masked by later ones. You must specify at least one mutation.
      * </pre>
      *
      * <code>
@@ -220,10 +216,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Mutations are
-     * applied in order, meaning that earlier mutations can be masked by
-     * later ones.
-     * You must specify at least one mutation.
+     * Required. Changes to be atomically applied to the specified row.
+     * Mutations are applied in order, meaning that earlier mutations can be
+     * masked by later ones. You must specify at least one mutation.
      * </pre>
      *
      * <code>
@@ -364,10 +359,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Mutations are
-     * applied in order, meaning that earlier mutations can be masked by
-     * later ones.
-     * You must specify at least one mutation.
+     * Required. Changes to be atomically applied to the specified row.
+     * Mutations are applied in order, meaning that earlier mutations can be
+     * masked by later ones. You must specify at least one mutation.
      * </pre>
      *
      * <code>
@@ -382,10 +376,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Mutations are
-     * applied in order, meaning that earlier mutations can be masked by
-     * later ones.
-     * You must specify at least one mutation.
+     * Required. Changes to be atomically applied to the specified row.
+     * Mutations are applied in order, meaning that earlier mutations can be
+     * masked by later ones. You must specify at least one mutation.
      * </pre>
      *
      * <code>
@@ -401,10 +394,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Mutations are
-     * applied in order, meaning that earlier mutations can be masked by
-     * later ones.
-     * You must specify at least one mutation.
+     * Required. Changes to be atomically applied to the specified row.
+     * Mutations are applied in order, meaning that earlier mutations can be
+     * masked by later ones. You must specify at least one mutation.
      * </pre>
      *
      * <code>
@@ -419,10 +411,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Mutations are
-     * applied in order, meaning that earlier mutations can be masked by
-     * later ones.
-     * You must specify at least one mutation.
+     * Required. Changes to be atomically applied to the specified row.
+     * Mutations are applied in order, meaning that earlier mutations can be
+     * masked by later ones. You must specify at least one mutation.
      * </pre>
      *
      * <code>
@@ -437,10 +428,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Changes to be atomically applied to the specified row. Mutations are
-     * applied in order, meaning that earlier mutations can be masked by
-     * later ones.
-     * You must specify at least one mutation.
+     * Required. Changes to be atomically applied to the specified row.
+     * Mutations are applied in order, meaning that earlier mutations can be
+     * masked by later ones. You must specify at least one mutation.
      * </pre>
      *
      * <code>
@@ -905,10 +895,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Changes to be atomically applied to the specified row. Mutations are
-       * applied in order, meaning that earlier mutations can be masked by
-       * later ones.
-       * You must specify at least one mutation.
+       * Required. Changes to be atomically applied to the specified row.
+       * Mutations are applied in order, meaning that earlier mutations can be
+       * masked by later ones. You must specify at least one mutation.
        * </pre>
        *
        * <code>
@@ -926,10 +915,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Changes to be atomically applied to the specified row. Mutations are
-       * applied in order, meaning that earlier mutations can be masked by
-       * later ones.
-       * You must specify at least one mutation.
+       * Required. Changes to be atomically applied to the specified row.
+       * Mutations are applied in order, meaning that earlier mutations can be
+       * masked by later ones. You must specify at least one mutation.
        * </pre>
        *
        * <code>
@@ -947,10 +935,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Changes to be atomically applied to the specified row. Mutations are
-       * applied in order, meaning that earlier mutations can be masked by
-       * later ones.
-       * You must specify at least one mutation.
+       * Required. Changes to be atomically applied to the specified row.
+       * Mutations are applied in order, meaning that earlier mutations can be
+       * masked by later ones. You must specify at least one mutation.
        * </pre>
        *
        * <code>
@@ -968,10 +955,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Changes to be atomically applied to the specified row. Mutations are
-       * applied in order, meaning that earlier mutations can be masked by
-       * later ones.
-       * You must specify at least one mutation.
+       * Required. Changes to be atomically applied to the specified row.
+       * Mutations are applied in order, meaning that earlier mutations can be
+       * masked by later ones. You must specify at least one mutation.
        * </pre>
        *
        * <code>
@@ -995,10 +981,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Changes to be atomically applied to the specified row. Mutations are
-       * applied in order, meaning that earlier mutations can be masked by
-       * later ones.
-       * You must specify at least one mutation.
+       * Required. Changes to be atomically applied to the specified row.
+       * Mutations are applied in order, meaning that earlier mutations can be
+       * masked by later ones. You must specify at least one mutation.
        * </pre>
        *
        * <code>
@@ -1020,10 +1005,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Changes to be atomically applied to the specified row. Mutations are
-       * applied in order, meaning that earlier mutations can be masked by
-       * later ones.
-       * You must specify at least one mutation.
+       * Required. Changes to be atomically applied to the specified row.
+       * Mutations are applied in order, meaning that earlier mutations can be
+       * masked by later ones. You must specify at least one mutation.
        * </pre>
        *
        * <code>
@@ -1047,10 +1031,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Changes to be atomically applied to the specified row. Mutations are
-       * applied in order, meaning that earlier mutations can be masked by
-       * later ones.
-       * You must specify at least one mutation.
+       * Required. Changes to be atomically applied to the specified row.
+       * Mutations are applied in order, meaning that earlier mutations can be
+       * masked by later ones. You must specify at least one mutation.
        * </pre>
        *
        * <code>
@@ -1074,10 +1057,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Changes to be atomically applied to the specified row. Mutations are
-       * applied in order, meaning that earlier mutations can be masked by
-       * later ones.
-       * You must specify at least one mutation.
+       * Required. Changes to be atomically applied to the specified row.
+       * Mutations are applied in order, meaning that earlier mutations can be
+       * masked by later ones. You must specify at least one mutation.
        * </pre>
        *
        * <code>
@@ -1098,10 +1080,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Changes to be atomically applied to the specified row. Mutations are
-       * applied in order, meaning that earlier mutations can be masked by
-       * later ones.
-       * You must specify at least one mutation.
+       * Required. Changes to be atomically applied to the specified row.
+       * Mutations are applied in order, meaning that earlier mutations can be
+       * masked by later ones. You must specify at least one mutation.
        * </pre>
        *
        * <code>
@@ -1123,10 +1104,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Changes to be atomically applied to the specified row. Mutations are
-       * applied in order, meaning that earlier mutations can be masked by
-       * later ones.
-       * You must specify at least one mutation.
+       * Required. Changes to be atomically applied to the specified row.
+       * Mutations are applied in order, meaning that earlier mutations can be
+       * masked by later ones. You must specify at least one mutation.
        * </pre>
        *
        * <code>
@@ -1148,10 +1128,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Changes to be atomically applied to the specified row. Mutations are
-       * applied in order, meaning that earlier mutations can be masked by
-       * later ones.
-       * You must specify at least one mutation.
+       * Required. Changes to be atomically applied to the specified row.
+       * Mutations are applied in order, meaning that earlier mutations can be
+       * masked by later ones. You must specify at least one mutation.
        * </pre>
        *
        * <code>
@@ -1172,10 +1151,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Changes to be atomically applied to the specified row. Mutations are
-       * applied in order, meaning that earlier mutations can be masked by
-       * later ones.
-       * You must specify at least one mutation.
+       * Required. Changes to be atomically applied to the specified row.
+       * Mutations are applied in order, meaning that earlier mutations can be
+       * masked by later ones. You must specify at least one mutation.
        * </pre>
        *
        * <code>
@@ -1196,10 +1174,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Changes to be atomically applied to the specified row. Mutations are
-       * applied in order, meaning that earlier mutations can be masked by
-       * later ones.
-       * You must specify at least one mutation.
+       * Required. Changes to be atomically applied to the specified row.
+       * Mutations are applied in order, meaning that earlier mutations can be
+       * masked by later ones. You must specify at least one mutation.
        * </pre>
        *
        * <code>
@@ -1213,10 +1190,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Changes to be atomically applied to the specified row. Mutations are
-       * applied in order, meaning that earlier mutations can be masked by
-       * later ones.
-       * You must specify at least one mutation.
+       * Required. Changes to be atomically applied to the specified row.
+       * Mutations are applied in order, meaning that earlier mutations can be
+       * masked by later ones. You must specify at least one mutation.
        * </pre>
        *
        * <code>
@@ -1234,10 +1210,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Changes to be atomically applied to the specified row. Mutations are
-       * applied in order, meaning that earlier mutations can be masked by
-       * later ones.
-       * You must specify at least one mutation.
+       * Required. Changes to be atomically applied to the specified row.
+       * Mutations are applied in order, meaning that earlier mutations can be
+       * masked by later ones. You must specify at least one mutation.
        * </pre>
        *
        * <code>
@@ -1256,10 +1231,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Changes to be atomically applied to the specified row. Mutations are
-       * applied in order, meaning that earlier mutations can be masked by
-       * later ones.
-       * You must specify at least one mutation.
+       * Required. Changes to be atomically applied to the specified row.
+       * Mutations are applied in order, meaning that earlier mutations can be
+       * masked by later ones. You must specify at least one mutation.
        * </pre>
        *
        * <code>
@@ -1274,10 +1248,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Changes to be atomically applied to the specified row. Mutations are
-       * applied in order, meaning that earlier mutations can be masked by
-       * later ones.
-       * You must specify at least one mutation.
+       * Required. Changes to be atomically applied to the specified row.
+       * Mutations are applied in order, meaning that earlier mutations can be
+       * masked by later ones. You must specify at least one mutation.
        * </pre>
        *
        * <code>
@@ -1292,10 +1265,9 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Required. Changes to be atomically applied to the specified row. Mutations are
-       * applied in order, meaning that earlier mutations can be masked by
-       * later ones.
-       * You must specify at least one mutation.
+       * Required. Changes to be atomically applied to the specified row.
+       * Mutations are applied in order, meaning that earlier mutations can be
+       * masked by later ones. You must specify at least one mutation.
        * </pre>
        *
        * <code>
@@ -1381,7 +1353,8 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The unique name of the table to which the mutations should be applied.
+   * Required. The unique name of the table to which the mutations should be
+   * applied.
    * </pre>
    *
    * <code>
@@ -1406,7 +1379,8 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The unique name of the table to which the mutations should be applied.
+   * Required. The unique name of the table to which the mutations should be
+   * applied.
    * </pre>
    *
    * <code>
@@ -1972,7 +1946,8 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The unique name of the table to which the mutations should be applied.
+     * Required. The unique name of the table to which the mutations should be
+     * applied.
      * </pre>
      *
      * <code>
@@ -1996,7 +1971,8 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The unique name of the table to which the mutations should be applied.
+     * Required. The unique name of the table to which the mutations should be
+     * applied.
      * </pre>
      *
      * <code>
@@ -2020,7 +1996,8 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The unique name of the table to which the mutations should be applied.
+     * Required. The unique name of the table to which the mutations should be
+     * applied.
      * </pre>
      *
      * <code>
@@ -2043,7 +2020,8 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The unique name of the table to which the mutations should be applied.
+     * Required. The unique name of the table to which the mutations should be
+     * applied.
      * </pre>
      *
      * <code>
@@ -2062,7 +2040,8 @@ public final class MutateRowsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The unique name of the table to which the mutations should be applied.
+     * Required. The unique name of the table to which the mutations should be
+     * applied.
      * </pre>
      *
      * <code>

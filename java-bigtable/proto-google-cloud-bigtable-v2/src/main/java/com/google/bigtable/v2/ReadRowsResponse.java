@@ -90,6 +90,22 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
               lastScannedRowKey_ = input.readBytes();
               break;
             }
+          case 26:
+            {
+              com.google.bigtable.v2.RequestStats.Builder subBuilder = null;
+              if (requestStats_ != null) {
+                subBuilder = requestStats_.toBuilder();
+              }
+              requestStats_ =
+                  input.readMessage(
+                      com.google.bigtable.v2.RequestStats.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(requestStats_);
+                requestStats_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -2712,6 +2728,102 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     return lastScannedRowKey_;
   }
 
+  public static final int REQUEST_STATS_FIELD_NUMBER = 3;
+  private com.google.bigtable.v2.RequestStats requestStats_;
+  /**
+   *
+   *
+   * <pre>
+   * If requested, provide enhanced query performance statistics. The semantics
+   * dictate:
+   *   * request_stats is empty on every (streamed) response, except
+   *   * request_stats has non-empty information after all chunks have been
+   *     streamed, where the ReadRowsResponse message only contains
+   *     request_stats.
+   *       * For example, if a read request would have returned an empty
+   *         response instead a single ReadRowsResponse is streamed with empty
+   *         chunks and request_stats filled.
+   * Visually, response messages will stream as follows:
+   *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
+   *   &#92;______________________/  &#92;________________________________/
+   *       Primary response         Trailer of RequestStats info
+   * Or if the read did not return any values:
+   *   {chunks: [], request_stats: {...}}
+   *   &#92;________________________________/
+   *      Trailer of RequestStats info
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.RequestStats request_stats = 3;</code>
+   *
+   * @return Whether the requestStats field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestStats() {
+    return requestStats_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If requested, provide enhanced query performance statistics. The semantics
+   * dictate:
+   *   * request_stats is empty on every (streamed) response, except
+   *   * request_stats has non-empty information after all chunks have been
+   *     streamed, where the ReadRowsResponse message only contains
+   *     request_stats.
+   *       * For example, if a read request would have returned an empty
+   *         response instead a single ReadRowsResponse is streamed with empty
+   *         chunks and request_stats filled.
+   * Visually, response messages will stream as follows:
+   *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
+   *   &#92;______________________/  &#92;________________________________/
+   *       Primary response         Trailer of RequestStats info
+   * Or if the read did not return any values:
+   *   {chunks: [], request_stats: {...}}
+   *   &#92;________________________________/
+   *      Trailer of RequestStats info
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.RequestStats request_stats = 3;</code>
+   *
+   * @return The requestStats.
+   */
+  @java.lang.Override
+  public com.google.bigtable.v2.RequestStats getRequestStats() {
+    return requestStats_ == null
+        ? com.google.bigtable.v2.RequestStats.getDefaultInstance()
+        : requestStats_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If requested, provide enhanced query performance statistics. The semantics
+   * dictate:
+   *   * request_stats is empty on every (streamed) response, except
+   *   * request_stats has non-empty information after all chunks have been
+   *     streamed, where the ReadRowsResponse message only contains
+   *     request_stats.
+   *       * For example, if a read request would have returned an empty
+   *         response instead a single ReadRowsResponse is streamed with empty
+   *         chunks and request_stats filled.
+   * Visually, response messages will stream as follows:
+   *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
+   *   &#92;______________________/  &#92;________________________________/
+   *       Primary response         Trailer of RequestStats info
+   * Or if the read did not return any values:
+   *   {chunks: [], request_stats: {...}}
+   *   &#92;________________________________/
+   *      Trailer of RequestStats info
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.RequestStats request_stats = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.v2.RequestStatsOrBuilder getRequestStatsOrBuilder() {
+    return getRequestStats();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2732,6 +2844,9 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     if (!lastScannedRowKey_.isEmpty()) {
       output.writeBytes(2, lastScannedRowKey_);
     }
+    if (requestStats_ != null) {
+      output.writeMessage(3, getRequestStats());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -2746,6 +2861,9 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     }
     if (!lastScannedRowKey_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(2, lastScannedRowKey_);
+    }
+    if (requestStats_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getRequestStats());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2764,6 +2882,10 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
 
     if (!getChunksList().equals(other.getChunksList())) return false;
     if (!getLastScannedRowKey().equals(other.getLastScannedRowKey())) return false;
+    if (hasRequestStats() != other.hasRequestStats()) return false;
+    if (hasRequestStats()) {
+      if (!getRequestStats().equals(other.getRequestStats())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2781,6 +2903,10 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + LAST_SCANNED_ROW_KEY_FIELD_NUMBER;
     hash = (53 * hash) + getLastScannedRowKey().hashCode();
+    if (hasRequestStats()) {
+      hash = (37 * hash) + REQUEST_STATS_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestStats().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2936,6 +3062,12 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       }
       lastScannedRowKey_ = com.google.protobuf.ByteString.EMPTY;
 
+      if (requestStatsBuilder_ == null) {
+        requestStats_ = null;
+      } else {
+        requestStats_ = null;
+        requestStatsBuilder_ = null;
+      }
       return this;
     }
 
@@ -2974,6 +3106,11 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         result.chunks_ = chunksBuilder_.build();
       }
       result.lastScannedRowKey_ = lastScannedRowKey_;
+      if (requestStatsBuilder_ == null) {
+        result.requestStats_ = requestStats_;
+      } else {
+        result.requestStats_ = requestStatsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -3052,6 +3189,9 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       }
       if (other.getLastScannedRowKey() != com.google.protobuf.ByteString.EMPTY) {
         setLastScannedRowKey(other.getLastScannedRowKey());
+      }
+      if (other.hasRequestStats()) {
+        mergeRequestStats(other.getRequestStats());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3509,6 +3649,335 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       lastScannedRowKey_ = getDefaultInstance().getLastScannedRowKey();
       onChanged();
       return this;
+    }
+
+    private com.google.bigtable.v2.RequestStats requestStats_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.v2.RequestStats,
+            com.google.bigtable.v2.RequestStats.Builder,
+            com.google.bigtable.v2.RequestStatsOrBuilder>
+        requestStatsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * If requested, provide enhanced query performance statistics. The semantics
+     * dictate:
+     *   * request_stats is empty on every (streamed) response, except
+     *   * request_stats has non-empty information after all chunks have been
+     *     streamed, where the ReadRowsResponse message only contains
+     *     request_stats.
+     *       * For example, if a read request would have returned an empty
+     *         response instead a single ReadRowsResponse is streamed with empty
+     *         chunks and request_stats filled.
+     * Visually, response messages will stream as follows:
+     *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
+     *   &#92;______________________/  &#92;________________________________/
+     *       Primary response         Trailer of RequestStats info
+     * Or if the read did not return any values:
+     *   {chunks: [], request_stats: {...}}
+     *   &#92;________________________________/
+     *      Trailer of RequestStats info
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.RequestStats request_stats = 3;</code>
+     *
+     * @return Whether the requestStats field is set.
+     */
+    public boolean hasRequestStats() {
+      return requestStatsBuilder_ != null || requestStats_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If requested, provide enhanced query performance statistics. The semantics
+     * dictate:
+     *   * request_stats is empty on every (streamed) response, except
+     *   * request_stats has non-empty information after all chunks have been
+     *     streamed, where the ReadRowsResponse message only contains
+     *     request_stats.
+     *       * For example, if a read request would have returned an empty
+     *         response instead a single ReadRowsResponse is streamed with empty
+     *         chunks and request_stats filled.
+     * Visually, response messages will stream as follows:
+     *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
+     *   &#92;______________________/  &#92;________________________________/
+     *       Primary response         Trailer of RequestStats info
+     * Or if the read did not return any values:
+     *   {chunks: [], request_stats: {...}}
+     *   &#92;________________________________/
+     *      Trailer of RequestStats info
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.RequestStats request_stats = 3;</code>
+     *
+     * @return The requestStats.
+     */
+    public com.google.bigtable.v2.RequestStats getRequestStats() {
+      if (requestStatsBuilder_ == null) {
+        return requestStats_ == null
+            ? com.google.bigtable.v2.RequestStats.getDefaultInstance()
+            : requestStats_;
+      } else {
+        return requestStatsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If requested, provide enhanced query performance statistics. The semantics
+     * dictate:
+     *   * request_stats is empty on every (streamed) response, except
+     *   * request_stats has non-empty information after all chunks have been
+     *     streamed, where the ReadRowsResponse message only contains
+     *     request_stats.
+     *       * For example, if a read request would have returned an empty
+     *         response instead a single ReadRowsResponse is streamed with empty
+     *         chunks and request_stats filled.
+     * Visually, response messages will stream as follows:
+     *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
+     *   &#92;______________________/  &#92;________________________________/
+     *       Primary response         Trailer of RequestStats info
+     * Or if the read did not return any values:
+     *   {chunks: [], request_stats: {...}}
+     *   &#92;________________________________/
+     *      Trailer of RequestStats info
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.RequestStats request_stats = 3;</code>
+     */
+    public Builder setRequestStats(com.google.bigtable.v2.RequestStats value) {
+      if (requestStatsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        requestStats_ = value;
+        onChanged();
+      } else {
+        requestStatsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If requested, provide enhanced query performance statistics. The semantics
+     * dictate:
+     *   * request_stats is empty on every (streamed) response, except
+     *   * request_stats has non-empty information after all chunks have been
+     *     streamed, where the ReadRowsResponse message only contains
+     *     request_stats.
+     *       * For example, if a read request would have returned an empty
+     *         response instead a single ReadRowsResponse is streamed with empty
+     *         chunks and request_stats filled.
+     * Visually, response messages will stream as follows:
+     *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
+     *   &#92;______________________/  &#92;________________________________/
+     *       Primary response         Trailer of RequestStats info
+     * Or if the read did not return any values:
+     *   {chunks: [], request_stats: {...}}
+     *   &#92;________________________________/
+     *      Trailer of RequestStats info
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.RequestStats request_stats = 3;</code>
+     */
+    public Builder setRequestStats(com.google.bigtable.v2.RequestStats.Builder builderForValue) {
+      if (requestStatsBuilder_ == null) {
+        requestStats_ = builderForValue.build();
+        onChanged();
+      } else {
+        requestStatsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If requested, provide enhanced query performance statistics. The semantics
+     * dictate:
+     *   * request_stats is empty on every (streamed) response, except
+     *   * request_stats has non-empty information after all chunks have been
+     *     streamed, where the ReadRowsResponse message only contains
+     *     request_stats.
+     *       * For example, if a read request would have returned an empty
+     *         response instead a single ReadRowsResponse is streamed with empty
+     *         chunks and request_stats filled.
+     * Visually, response messages will stream as follows:
+     *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
+     *   &#92;______________________/  &#92;________________________________/
+     *       Primary response         Trailer of RequestStats info
+     * Or if the read did not return any values:
+     *   {chunks: [], request_stats: {...}}
+     *   &#92;________________________________/
+     *      Trailer of RequestStats info
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.RequestStats request_stats = 3;</code>
+     */
+    public Builder mergeRequestStats(com.google.bigtable.v2.RequestStats value) {
+      if (requestStatsBuilder_ == null) {
+        if (requestStats_ != null) {
+          requestStats_ =
+              com.google.bigtable.v2.RequestStats.newBuilder(requestStats_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          requestStats_ = value;
+        }
+        onChanged();
+      } else {
+        requestStatsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If requested, provide enhanced query performance statistics. The semantics
+     * dictate:
+     *   * request_stats is empty on every (streamed) response, except
+     *   * request_stats has non-empty information after all chunks have been
+     *     streamed, where the ReadRowsResponse message only contains
+     *     request_stats.
+     *       * For example, if a read request would have returned an empty
+     *         response instead a single ReadRowsResponse is streamed with empty
+     *         chunks and request_stats filled.
+     * Visually, response messages will stream as follows:
+     *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
+     *   &#92;______________________/  &#92;________________________________/
+     *       Primary response         Trailer of RequestStats info
+     * Or if the read did not return any values:
+     *   {chunks: [], request_stats: {...}}
+     *   &#92;________________________________/
+     *      Trailer of RequestStats info
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.RequestStats request_stats = 3;</code>
+     */
+    public Builder clearRequestStats() {
+      if (requestStatsBuilder_ == null) {
+        requestStats_ = null;
+        onChanged();
+      } else {
+        requestStats_ = null;
+        requestStatsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If requested, provide enhanced query performance statistics. The semantics
+     * dictate:
+     *   * request_stats is empty on every (streamed) response, except
+     *   * request_stats has non-empty information after all chunks have been
+     *     streamed, where the ReadRowsResponse message only contains
+     *     request_stats.
+     *       * For example, if a read request would have returned an empty
+     *         response instead a single ReadRowsResponse is streamed with empty
+     *         chunks and request_stats filled.
+     * Visually, response messages will stream as follows:
+     *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
+     *   &#92;______________________/  &#92;________________________________/
+     *       Primary response         Trailer of RequestStats info
+     * Or if the read did not return any values:
+     *   {chunks: [], request_stats: {...}}
+     *   &#92;________________________________/
+     *      Trailer of RequestStats info
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.RequestStats request_stats = 3;</code>
+     */
+    public com.google.bigtable.v2.RequestStats.Builder getRequestStatsBuilder() {
+
+      onChanged();
+      return getRequestStatsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If requested, provide enhanced query performance statistics. The semantics
+     * dictate:
+     *   * request_stats is empty on every (streamed) response, except
+     *   * request_stats has non-empty information after all chunks have been
+     *     streamed, where the ReadRowsResponse message only contains
+     *     request_stats.
+     *       * For example, if a read request would have returned an empty
+     *         response instead a single ReadRowsResponse is streamed with empty
+     *         chunks and request_stats filled.
+     * Visually, response messages will stream as follows:
+     *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
+     *   &#92;______________________/  &#92;________________________________/
+     *       Primary response         Trailer of RequestStats info
+     * Or if the read did not return any values:
+     *   {chunks: [], request_stats: {...}}
+     *   &#92;________________________________/
+     *      Trailer of RequestStats info
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.RequestStats request_stats = 3;</code>
+     */
+    public com.google.bigtable.v2.RequestStatsOrBuilder getRequestStatsOrBuilder() {
+      if (requestStatsBuilder_ != null) {
+        return requestStatsBuilder_.getMessageOrBuilder();
+      } else {
+        return requestStats_ == null
+            ? com.google.bigtable.v2.RequestStats.getDefaultInstance()
+            : requestStats_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If requested, provide enhanced query performance statistics. The semantics
+     * dictate:
+     *   * request_stats is empty on every (streamed) response, except
+     *   * request_stats has non-empty information after all chunks have been
+     *     streamed, where the ReadRowsResponse message only contains
+     *     request_stats.
+     *       * For example, if a read request would have returned an empty
+     *         response instead a single ReadRowsResponse is streamed with empty
+     *         chunks and request_stats filled.
+     * Visually, response messages will stream as follows:
+     *    ... -&gt; {chunks: [...]} -&gt; {chunks: [], request_stats: {...}}
+     *   &#92;______________________/  &#92;________________________________/
+     *       Primary response         Trailer of RequestStats info
+     * Or if the read did not return any values:
+     *   {chunks: [], request_stats: {...}}
+     *   &#92;________________________________/
+     *      Trailer of RequestStats info
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.RequestStats request_stats = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.v2.RequestStats,
+            com.google.bigtable.v2.RequestStats.Builder,
+            com.google.bigtable.v2.RequestStatsOrBuilder>
+        getRequestStatsFieldBuilder() {
+      if (requestStatsBuilder_ == null) {
+        requestStatsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.v2.RequestStats,
+                com.google.bigtable.v2.RequestStats.Builder,
+                com.google.bigtable.v2.RequestStatsOrBuilder>(
+                getRequestStats(), getParentForChildren(), isClean());
+        requestStats_ = null;
+      }
+      return requestStatsBuilder_;
     }
 
     @java.lang.Override
