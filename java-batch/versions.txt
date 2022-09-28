@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-batch:0.3.0:0.3.1-SNAPSHOT
-proto-google-cloud-batch-v1:0.3.0:0.3.1-SNAPSHOT
-grpc-google-cloud-batch-v1:0.3.0:0.3.1-SNAPSHOT
-proto-google-cloud-batch-v1alpha:0.3.0:0.3.1-SNAPSHOT
-grpc-google-cloud-batch-v1alpha:0.3.0:0.3.1-SNAPSHOT
+google-cloud-batch:0.3.1:0.3.1
+proto-google-cloud-batch-v1:0.3.1:0.3.1
+grpc-google-cloud-batch-v1:0.3.1:0.3.1
+proto-google-cloud-batch-v1alpha:0.3.1:0.3.1
+grpc-google-cloud-batch-v1alpha:0.3.1:0.3.1
