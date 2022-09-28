@@ -34,8 +34,13 @@ fi
 
 # Always verify whether or not to destroy the project.
 if [[ $(terraform state list) != "" ]]; then
-  echo "Destroy project? (y/N): "
-  read -r shouldDestroy
+  if [[ $1 == "y" ]]; then
+    shouldDestroy="y"
+  else
+    echo "Destroy project? (y/N): "
+    read -r shouldDestroy
+  fi
+
   if [[ "$shouldDestroy" == y* ]] || [[ "$shouldDestroy" == Y* ]]; then
     source ../../helpers/create-project.sh
     destroyProject
@@ -48,7 +53,7 @@ popd >/dev/null || exit
 pushd "$scriptDir" >/dev/null || exit
 
 # Either use given module list, or get a list of all modules in the parent directory.
-if [ -n "$1" ]; then
+if [ -n "$1" ] && [[ $1 != "y" ]]; then
   modules=$1
 else
   modules=$(source ./helpers/list-all-modules.sh)
