@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-networkconnectivity-bom</artifactId>
-  <version>1.2.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-networkconnectivity:current} -->
+  <version>1.2.6</version><!-- {x-version-update:google-cloud-networkconnectivity:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -57,27 +57,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-networkconnectivity</artifactId>
-        <version>1.2.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-networkconnectivity:current} -->
+        <version>1.2.6</version><!-- {x-version-update:google-cloud-networkconnectivity:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-networkconnectivity-v1alpha1</artifactId>
-        <version>0.8.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-networkconnectivity-v1alpha1:current} -->
+        <version>0.8.6</version><!-- {x-version-update:grpc-google-cloud-networkconnectivity-v1alpha1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-networkconnectivity-v1</artifactId>
-        <version>1.2.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-networkconnectivity-v1:current} -->
+        <version>1.2.6</version><!-- {x-version-update:grpc-google-cloud-networkconnectivity-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-networkconnectivity-v1alpha1</artifactId>
-        <version>0.8.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-networkconnectivity-v1alpha1:current} -->
+        <version>0.8.6</version><!-- {x-version-update:proto-google-cloud-networkconnectivity-v1alpha1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-networkconnectivity-v1</artifactId>
-        <version>1.2.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-networkconnectivity-v1:current} -->
+        <version>1.2.6</version><!-- {x-version-update:proto-google-cloud-networkconnectivity-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
