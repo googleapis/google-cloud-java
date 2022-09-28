@@ -1,12 +1,21 @@
 #!/bin/bash
 
-# Fixes the split-repo-style OwlBot configuration to monorepo-style.
+# Adds module directory name into the paths in a OwlBot configuration file so
+# that the paths correctly reference the files under the modules in this monorepo.
+#
 # Usage:
 # set_owlbot_config.sh <.OwlBot.yaml path from the root>
 # Example:
 # $ set_owlbot_config.sh java-dataform/.OwlBot.yaml
+#
+# To apply the change to all OwlBot configuration files in all modules:
 # $ for F in `find . -maxdepth 2 -name '.OwlBot.yaml'`; do sh generation/set_owlbot_config.sh $F; done
 OWLBOT_FILE=$1
+
+if [ -z "${OWLBOT_FILE}" ]; then
+  echo "Please specify file name"
+  exit 1
+fi
 
 if [ ! -r "${OWLBOT_FILE}" ]; then
   echo "File not found"
