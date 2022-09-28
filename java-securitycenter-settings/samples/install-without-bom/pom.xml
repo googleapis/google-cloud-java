@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-securitycenter-settings</artifactId>
-      <version>0.6.4</version>
+      <version>0.6.5</version>
     </dependency>
 
     <dependency>
