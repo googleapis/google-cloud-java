@@ -24,3 +24,15 @@ sed -i "s|\"/grpc-google|\"/${module_name}/grpc-google|" "${OWLBOT_FILE}"
 sed -i "s|\"/proto-google|\"/${module_name}/proto-google|" "${OWLBOT_FILE}"
 sed -i "s|\"/google-\.\*|\"/${module_name}/google-.*|" "${OWLBOT_FILE}"
 sed -i "s|\"/samples|\"/${module_name}/samples|" "${OWLBOT_FILE}"
+
+# Individual modules do not need specify post processor Docker image
+sed -i.bak '/docker/d' "${OWLBOT_FILE}" && rm "${OWLBOT_FILE}.bak"
+sed -i.bak '/image/d' "${OWLBOT_FILE}" && rm "${OWLBOT_FILE}.bak"
+
+# In monorepo, the staging directory structure tells the destination module to
+# which the OwlBot Java postprocessor copies the files.
+if grep --quiet 'owl-bot-staging/$1' "${OWLBOT_FILE}"; then
+  echo "Replace!"
+  #sed -i.bak "s|owl-bot-staging|owl-bot-staging/${module_name}|" "${OWLBOT_FILE}" \
+  #    && rm "${OWLBOT_FILE}.bak"
+fi
