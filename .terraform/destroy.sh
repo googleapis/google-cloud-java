@@ -17,7 +17,6 @@
 scriptDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 
 pushd "$scriptDir/modules/create-project" >/dev/null || exit
-
 # Ensure GCP project environment variables are initialized.
 if [[ -z "${TF_VAR_project_id+x}" ]]; then
   if [[ -z "${GOOGLE_CLOUD_PROJECT+x}" ]]; then
@@ -31,27 +30,9 @@ if [[ -z "${TF_VAR_project_id+x}" ]]; then
   fi
   export TF_VAR_project_id=$GOOGLE_CLOUD_PROJECT
 fi
-
-# Always verify whether or not to destroy the project.
-if [[ $(terraform state list) != "" ]]; then
-  if [[ $1 == "y" ]]; then
-    shouldDestroy="y"
-  else
-    echo "Destroy project? (y/N): "
-    read -r shouldDestroy
-  fi
-
-  if [[ "$shouldDestroy" == y* ]] || [[ "$shouldDestroy" == Y* ]]; then
-    source ../../helpers/create-project.sh
-    destroyProject
-    exit 0
-    # If we've destroyed the project, exit early.
-  fi
-fi
-
 popd >/dev/null || exit
-pushd "$scriptDir" >/dev/null || exit
 
+pushd "$scriptDir" >/dev/null || exit
 # Either use given module list, or get a list of all modules in the parent directory.
 if [ -n "$1" ] && [[ $1 != "y" ]]; then
   modules=$1
@@ -68,5 +49,27 @@ for module in $modules; do
     popd >/dev/null || exit
   fi
 done
-
 terraform destroy -auto-approve || exit
+popd >/dev/null || exit
+
+pushd "$scriptDir/modules/create-project" >/dev/null || exit
+# Always verify whether or not to destroy the project.
+if [[ $(terraform state list) != "" ]]; then
+  if [[ $1 == "y" ]]; then
+    shouldDestroy="y"
+  else
+    echo "Destroy project? (y/N): "
+    read -r shouldDestroy
+  fi
+
+  if [[ "$shouldDestroy" == y* ]] || [[ "$shouldDestroy" == Y* ]]; then
+    # Do not use service account within project when attempting to destroy the project
+    unset GOOGLE_IMPERSONATE_SERVICE_ACCOUNT
+
+    source ../../helpers/create-project.sh
+    destroyProject
+    unset GOOGLE_CLOUD_PROJECT
+    rm ../../generated.auto.tfvars
+  fi
+fi
+popd >/dev/null || exit

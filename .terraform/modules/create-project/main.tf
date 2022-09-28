@@ -82,10 +82,13 @@ resource "google_project_iam_member" "service_account_projectIamAdmin" {
   depends_on = [google_service_account.service_account]
 }
 
-resource "time_sleep" "for_90s_allowPermissionsToTakeEffect" {
-  create_duration = "90s"
+resource "time_sleep" "for_3m_allowPermissionsToTakeEffect" {
+  create_duration = "3m"
   depends_on      = [
     google_project_iam_member.service_account_owner,
     google_project_iam_member.service_account_projectIamAdmin
   ]
+  triggers = {
+    when_project_created = local.project_id
+  }
 }
