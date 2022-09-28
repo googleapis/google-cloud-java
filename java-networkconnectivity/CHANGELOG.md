@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.2.7](https://github.com/googleapis/java-networkconnectivity/compare/v1.2.6...v1.2.7) (2022-09-28)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#308](https://github.com/googleapis/java-networkconnectivity/issues/308)) ([87623b4](https://github.com/googleapis/java-networkconnectivity/commit/87623b4917b47fc53e97464ba64658262e1c72db))
+* Update dependency charset-normalizer to v2.1.1 ([#313](https://github.com/googleapis/java-networkconnectivity/issues/313)) ([698408d](https://github.com/googleapis/java-networkconnectivity/commit/698408db2196530d7295f80297b7d9044cfa1c79))
+* Update dependency click to v8.1.3 ([#314](https://github.com/googleapis/java-networkconnectivity/issues/314)) ([84d6ccb](https://github.com/googleapis/java-networkconnectivity/commit/84d6ccba20c5b4091f76160b389179b61d220e26))
+* Update dependency gcp-releasetool to v1.8.8 ([#309](https://github.com/googleapis/java-networkconnectivity/issues/309)) ([f505c08](https://github.com/googleapis/java-networkconnectivity/commit/f505c089b8ac82aaaa013933829f8cbf8f09313e))
+* Update dependency google-api-core to v2.10.1 ([#315](https://github.com/googleapis/java-networkconnectivity/issues/315)) ([0e7a988](https://github.com/googleapis/java-networkconnectivity/commit/0e7a98871c9c636779e817e00c1ee47a5f56df38))
+* Update dependency google-auth to v2.11.1 ([#310](https://github.com/googleapis/java-networkconnectivity/issues/310)) ([71992c7](https://github.com/googleapis/java-networkconnectivity/commit/71992c79362ee0e8a1bda9517605fcdb7df54c76))
+* Update dependency google-cloud-core to v2.3.2 ([#311](https://github.com/googleapis/java-networkconnectivity/issues/311)) ([bd7c333](https://github.com/googleapis/java-networkconnectivity/commit/bd7c3336556d9f3a21857fdfbb44939903b8935f))
+* Update dependency google-cloud-storage to v2.5.0 ([#316](https://github.com/googleapis/java-networkconnectivity/issues/316)) ([c24f5f4](https://github.com/googleapis/java-networkconnectivity/commit/c24f5f4467d13d2983714a27ee49f2b028667aaa))
+* Update dependency googleapis-common-protos to v1.56.4 ([#312](https://github.com/googleapis/java-networkconnectivity/issues/312)) ([e28cc46](https://github.com/googleapis/java-networkconnectivity/commit/e28cc4636ce41c47105222fb45138bb2d87d359e))
+
 ## [1.2.6](https://github.com/googleapis/java-networkconnectivity/compare/v1.2.5...v1.2.6) (2022-09-27)
 
 
