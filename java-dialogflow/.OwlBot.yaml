@@ -21,7 +21,7 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-dialogflow/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2/ContextManagementSmokeTest.java"
+- "/java-dialogflow/google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2/ContextManagementSmokeTest.java"
 - "/java-dialogflow/proto-google-cloud-dialogflow-v2/src/main/java/com/google/cloud/dialogflow/v2/ConversationModelName.java"
 - "/java-dialogflow/proto-google-cloud-dialogflow-v2/src/main/java/com/google/cloud/dialogflow/v2/ProjectAgentName.java"
 - "/java-dialogflow/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/ConversationModelName.java"

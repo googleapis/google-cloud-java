@@ -20,7 +20,7 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-monitoring/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/ITVPCServiceControlTest.java"
+- "/java-monitoring/google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/ITVPCServiceControlTest.java"
 - "/java-monitoring/proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/AlertPolicyConditionName.java"
 - "/java-monitoring/proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DroppedLabelsOuterClass.java"
 - "/java-monitoring/proto-google-cloud-monitoring-v3/src/main/java/google/monitoring/v3/DroppedLabelsOuterClass.java"

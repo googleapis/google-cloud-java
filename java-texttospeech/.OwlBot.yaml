@@ -21,8 +21,8 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-texttospeech/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/google-cloud-texttospeech/src/test/java/com/google/cloud/texttospeech/v1/TextToSpeechSmokeTest.java"
-- "/google-cloud-texttospeech/src/test/java/com/google/cloud/texttospeech/v1beta1/TextToSpeechSmokeTest.java"
+- "/java-texttospeech/google-cloud-texttospeech/src/test/java/com/google/cloud/texttospeech/v1/TextToSpeechSmokeTest.java"
+- "/java-texttospeech/google-cloud-texttospeech/src/test/java/com/google/cloud/texttospeech/v1beta1/TextToSpeechSmokeTest.java"
 
 
 deep-copy-regex:

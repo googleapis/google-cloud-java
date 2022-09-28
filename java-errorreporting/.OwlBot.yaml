@@ -20,7 +20,7 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-errorreporting/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/google-cloud-errorreporting/src/test/java/com/google/devtools/clouderrorreporting/v1beta1/ITSystemTest.java"
+- "/java-errorreporting/google-cloud-errorreporting/src/test/java/com/google/devtools/clouderrorreporting/v1beta1/ITSystemTest.java"
 - "/java-errorreporting/proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/GroupName.java"
 
 

@@ -20,7 +20,7 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-bigquerydatatransfer/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/google-cloud-bigquerydatatransfer/src/main/java/com/google/cloud/bigquery/datatransfer/v1/SampleApp.java"
+- "/java-bigquerydatatransfer/google-cloud-bigquerydatatransfer/src/main/java/com/google/cloud/bigquery/datatransfer/v1/SampleApp.java"
 - "/java-bigquerydatatransfer/proto-google-cloud-bigquerydatatransfer-v1/src/main/proto/google/cloud/bigquery/datatransfer/v1/resourcestate.proto"
 - "/java-bigquerydatatransfer/proto-google-cloud-bigquerydatatransfer-v1/src/main/proto/google/cloud/bigquery/datatransfer/v1/datasource.proto"
 - "/java-bigquerydatatransfer/proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/UntypedDataSourceName.java"

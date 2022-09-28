@@ -20,7 +20,7 @@ deep-remove-regex:
 - "/java-accessapproval/samples/snippets/generated"
 
 deep-preserve-regex:
-- "/google-cloud-accessapproval/src/test/java/com/google/cloud/accessapproval/v1/it"
+- "/java-accessapproval/google-cloud-accessapproval/src/test/java/com/google/cloud/accessapproval/v1/it"
 
 deep-copy-regex:
 - source: "/google/cloud/accessapproval/(v.*)/.*-java/proto-google-.*/src"

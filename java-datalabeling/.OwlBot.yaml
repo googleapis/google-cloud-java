@@ -20,8 +20,8 @@ deep-remove-regex:
 - "/java-datalabeling/google-.*/src"
 
 deep-preserve-regex:
-- "/google-cloud-datalabeling/src/test/java/com/google/cloud/datalabeling/v1beta1/it/ITSystemTest.java"
-- "/google-cloud-datalabeling/src/test/java/com/google/cloud/datalabeling/it/ITSystemTest.java"
+- "/java-datalabeling/google-cloud-datalabeling/src/test/java/com/google/cloud/datalabeling/v1beta1/it/ITSystemTest.java"
+- "/java-datalabeling/google-cloud-datalabeling/src/test/java/com/google/cloud/datalabeling/it/ITSystemTest.java"
 
 
 deep-copy-regex:
