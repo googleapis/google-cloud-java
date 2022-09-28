@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.5.5](https://github.com/googleapis/java-life-sciences/compare/v0.5.4...v0.5.5) (2022-09-28)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#234](https://github.com/googleapis/java-life-sciences/issues/234)) ([45ce6cc](https://github.com/googleapis/java-life-sciences/commit/45ce6cc4a2a11c5b81f115f852314d3f69343078))
+* Update dependency charset-normalizer to v2.1.1 ([#239](https://github.com/googleapis/java-life-sciences/issues/239)) ([f851bd7](https://github.com/googleapis/java-life-sciences/commit/f851bd7da8410f3582adbe4def90528d05977513))
+* Update dependency click to v8.1.3 ([#240](https://github.com/googleapis/java-life-sciences/issues/240)) ([9fda4ba](https://github.com/googleapis/java-life-sciences/commit/9fda4ba7383bcd8140d727b4ee29433a38184e5d))
+* Update dependency gcp-releasetool to v1.8.8 ([#235](https://github.com/googleapis/java-life-sciences/issues/235)) ([baa744b](https://github.com/googleapis/java-life-sciences/commit/baa744b6bd5a69be3d21ddc0a2071ea705c41e3e))
+* Update dependency google-api-core to v2.10.1 ([#241](https://github.com/googleapis/java-life-sciences/issues/241)) ([5d5cb62](https://github.com/googleapis/java-life-sciences/commit/5d5cb62bba4b3f95fc4c0e46b23651013d3ecbf4))
+* Update dependency google-auth to v2.11.1 ([#236](https://github.com/googleapis/java-life-sciences/issues/236)) ([f8f4c5a](https://github.com/googleapis/java-life-sciences/commit/f8f4c5a267727b5f4eb650856e82574e51775d39))
+* Update dependency google-cloud-core to v2.3.2 ([#237](https://github.com/googleapis/java-life-sciences/issues/237)) ([ab03a21](https://github.com/googleapis/java-life-sciences/commit/ab03a21dfa4661e23962b26a11e1295d5aee74e5))
+* Update dependency google-cloud-storage to v2.5.0 ([#242](https://github.com/googleapis/java-life-sciences/issues/242)) ([3b54274](https://github.com/googleapis/java-life-sciences/commit/3b542748a442a08c9f010b97eed84070a5984024))
+* Update dependency google-crc32c to v1.5.0 ([#243](https://github.com/googleapis/java-life-sciences/issues/243)) ([44a466e](https://github.com/googleapis/java-life-sciences/commit/44a466ea98b0f3c3412346cd2423eafefbf4bcae))
+* Update dependency googleapis-common-protos to v1.56.4 ([#238](https://github.com/googleapis/java-life-sciences/issues/238)) ([c7dfd0e](https://github.com/googleapis/java-life-sciences/commit/c7dfd0eb1f24038f97e13f6e983302daad1a0612))
+* Update dependency importlib-metadata to v4.12.0 ([#250](https://github.com/googleapis/java-life-sciences/issues/250)) ([13433c6](https://github.com/googleapis/java-life-sciences/commit/13433c6858237899029157f874d19ecf8d23a0d6))
+* Update dependency markupsafe to v2.1.1 ([#244](https://github.com/googleapis/java-life-sciences/issues/244)) ([be3f732](https://github.com/googleapis/java-life-sciences/commit/be3f732f871ca2d67aa216c4fa50238e0de86f57))
+* Update dependency protobuf to v3.20.2 ([#245](https://github.com/googleapis/java-life-sciences/issues/245)) ([e06fa36](https://github.com/googleapis/java-life-sciences/commit/e06fa362681858cc2d27b71bc6a06925e03a044a))
+* Update dependency pyjwt to v2.5.0 ([#246](https://github.com/googleapis/java-life-sciences/issues/246)) ([1aeabf4](https://github.com/googleapis/java-life-sciences/commit/1aeabf43c22d826c0439bc14a0a534119bc7ba3d))
+* Update dependency requests to v2.28.1 ([#247](https://github.com/googleapis/java-life-sciences/issues/247)) ([7c5d2d7](https://github.com/googleapis/java-life-sciences/commit/7c5d2d7a4b80916b53b77999bf649b99ac7842ea))
+* Update dependency typing-extensions to v4.3.0 ([#248](https://github.com/googleapis/java-life-sciences/issues/248)) ([b22cfe0](https://github.com/googleapis/java-life-sciences/commit/b22cfe0795f526dcc0d9f17e6072b3ae79d03144))
+
 ## [0.5.4](https://github.com/googleapis/java-life-sciences/compare/v0.5.3...v0.5.4) (2022-09-15)
 
 
