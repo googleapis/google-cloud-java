@@ -1,5 +1,74 @@
 # Changelog
 
+## [2.3.8](https://github.com/googleapis/java-secretmanager/compare/v2.3.7...v2.3.8) (2022-09-28)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#871](https://github.com/googleapis/java-secretmanager/issues/871)) ([704f6ea](https://github.com/googleapis/java-secretmanager/commit/704f6ea37e7ddd9ef608f944d4e2d5d3123d79c1))
+* Update dependency certifi to v2022.9.24 ([#853](https://github.com/googleapis/java-secretmanager/issues/853)) ([a766f63](https://github.com/googleapis/java-secretmanager/commit/a766f63b951be02389fdebdb2f24955375e07662))
+* Update dependency charset-normalizer to v2.1.1 ([#857](https://github.com/googleapis/java-secretmanager/issues/857)) ([7194dfe](https://github.com/googleapis/java-secretmanager/commit/7194dfed17ae9c42a5b7478b9730521024d4dd89))
+* Update dependency click to v8.1.3 ([#865](https://github.com/googleapis/java-secretmanager/issues/865)) ([cd510ec](https://github.com/googleapis/java-secretmanager/commit/cd510ec93782030909ba0b7f533145933e04c48f))
+* Update dependency gcp-releasetool to v1.8.8 ([#854](https://github.com/googleapis/java-secretmanager/issues/854)) ([fadf34f](https://github.com/googleapis/java-secretmanager/commit/fadf34fa2401689c242d1f4e83375be9d9978641))
+* Update dependency google-api-core to v2.10.1 ([#866](https://github.com/googleapis/java-secretmanager/issues/866)) ([ad6b71b](https://github.com/googleapis/java-secretmanager/commit/ad6b71bee2e77f07465c3be49f71bffc2ea2bbda))
+* Update dependency google-auth to v2.12.0 ([#858](https://github.com/googleapis/java-secretmanager/issues/858)) ([b778051](https://github.com/googleapis/java-secretmanager/commit/b7780512cd0d52e2224c6eaf28e11583e3a7290f))
+* Update dependency google-cloud-core to v2.3.2 ([#855](https://github.com/googleapis/java-secretmanager/issues/855)) ([e82616f](https://github.com/googleapis/java-secretmanager/commit/e82616ff253da33b436f0d01cf72fe3e392ae3eb))
+* Update dependency google-cloud-storage to v2.5.0 ([#859](https://github.com/googleapis/java-secretmanager/issues/859)) ([4b67316](https://github.com/googleapis/java-secretmanager/commit/4b6731664a0e71eab5c6b509b0eb199f76ed428b))
+* Update dependency google-crc32c to v1.5.0 ([#860](https://github.com/googleapis/java-secretmanager/issues/860)) ([ccc2cab](https://github.com/googleapis/java-secretmanager/commit/ccc2cabdd641676f3a269f5eb99a6f1f0f304f82))
+* Update dependency googleapis-common-protos to v1.56.4 ([#856](https://github.com/googleapis/java-secretmanager/issues/856)) ([bcf0af9](https://github.com/googleapis/java-secretmanager/commit/bcf0af9b7f29fd9bcc57a06a01a3b7dbcef8cd0b))
+* Update dependency importlib-metadata to v4.12.0 ([#861](https://github.com/googleapis/java-secretmanager/issues/861)) ([c91100b](https://github.com/googleapis/java-secretmanager/commit/c91100b1ab1f5d9513e816679c87033e5f6834e4))
+* Update dependency jeepney to v0.8.0 ([#862](https://github.com/googleapis/java-secretmanager/issues/862)) ([ea77200](https://github.com/googleapis/java-secretmanager/commit/ea77200360d19e349932046e13b84adc49dfe5fb))
+* Update dependency markupsafe to v2.1.1 ([#863](https://github.com/googleapis/java-secretmanager/issues/863)) ([2f83987](https://github.com/googleapis/java-secretmanager/commit/2f83987545d16079dfb0f9ee38127f8cf5c71b4e))
+* Update dependency protobuf to v3.20.2 ([#864](https://github.com/googleapis/java-secretmanager/issues/864)) ([8745302](https://github.com/googleapis/java-secretmanager/commit/8745302f573b73970b98609863e1210f7eeb39c4))
+* Update dependency protobuf to v4 ([#872](https://github.com/googleapis/java-secretmanager/issues/872)) ([9604cf1](https://github.com/googleapis/java-secretmanager/commit/9604cf1223cfe35dac4e2969155c6f376b1d3d36))
+* Update dependency pyjwt to v2.5.0 ([#867](https://github.com/googleapis/java-secretmanager/issues/867)) ([537a64d](https://github.com/googleapis/java-secretmanager/commit/537a64d3329466bb5782a59a6dfab65c1f25ae92))
+* Update dependency requests to v2.28.1 ([#868](https://github.com/googleapis/java-secretmanager/issues/868)) ([92bdf04](https://github.com/googleapis/java-secretmanager/commit/92bdf0421a1d130a5c7ba7fdf1899fdbb99a0151))
+* Update dependency typing-extensions to v4.3.0 ([#869](https://github.com/googleapis/java-secretmanager/issues/869)) ([ca16bc0](https://github.com/googleapis/java-secretmanager/commit/ca16bc03e3de29b2f46b29b0808279fcf8481256))
+* Update dependency zipp to v3.8.1 ([#870](https://github.com/googleapis/java-secretmanager/issues/870)) ([7f543f6](https://github.com/googleapis/java-secretmanager/commit/7f543f657707a9143c23a0ad9427d109a2bc2757))
+
+## [2.3.7](https://github.com/googleapis/java-secretmanager/compare/v2.3.6...v2.3.7) (2022-09-22)
+
+
+### Dependencies
+
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.14 ([#846](https://github.com/googleapis/java-secretmanager/issues/846)) ([f2985b5](https://github.com/googleapis/java-secretmanager/commit/f2985b589e2e107f346f2264c837890f1fae8bfc))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.14 ([#847](https://github.com/googleapis/java-secretmanager/issues/847)) ([27f5fa8](https://github.com/googleapis/java-secretmanager/commit/27f5fa8836ecb53b617588e33f48818b773ad65f))
+
+## [2.3.6](https://github.com/googleapis/java-secretmanager/compare/v2.3.5...v2.3.6) (2022-09-21)
+
+
+### Dependencies
+
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.9.1 ([#842](https://github.com/googleapis/java-secretmanager/issues/842)) ([4bec542](https://github.com/googleapis/java-secretmanager/commit/4bec542060b480f3e75f0c9dbd39ed24d4c0892f))
+
+## [2.3.5](https://github.com/googleapis/java-secretmanager/compare/v2.3.4...v2.3.5) (2022-09-20)
+
+
+### Dependencies
+
+* Update dependency com.google.protobuf:protobuf-java-util to v3.21.6 ([#832](https://github.com/googleapis/java-secretmanager/issues/832)) ([a2595c8](https://github.com/googleapis/java-secretmanager/commit/a2595c8f98fef63844269d3080cad81d06aa5a9e))
+
+## [2.3.4](https://github.com/googleapis/java-secretmanager/compare/v2.3.3...v2.3.4) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#833](https://github.com/googleapis/java-secretmanager/issues/833)) ([a462455](https://github.com/googleapis/java-secretmanager/commit/a462455a2c0f63479cff12a5f19a7d5b2cd244d8))
+
+## [2.3.3](https://github.com/googleapis/java-secretmanager/compare/v2.3.2...v2.3.3) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#827](https://github.com/googleapis/java-secretmanager/issues/827)) ([b2162a7](https://github.com/googleapis/java-secretmanager/commit/b2162a76e1def8116fc7c01cd95000449f2c9503))
+
+## [2.3.2](https://github.com/googleapis/java-secretmanager/compare/v2.3.1...v2.3.2) (2022-09-06)
+
+
+### Dependencies
+
+* Update dependency com.google.protobuf ([6bf4745](https://github.com/googleapis/java-secretmanager/commit/6bf474519e658e56d015c661574c84c501c2c9b8))
+
 ## [2.3.1](https://github.com/googleapis/java-secretmanager/compare/v2.3.0...v2.3.1) (2022-08-03)
 
 

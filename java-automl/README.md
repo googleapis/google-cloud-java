@@ -19,7 +19,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.1.1</version>
+      <version>26.1.2</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -50,17 +50,17 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-automl</artifactId>
-  <version>2.3.7</version>
+  <version>2.3.13</version>
 </dependency>
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery</artifactId>
-  <version>2.15.0</version>
+  <version>2.16.1</version>
 </dependency>
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-storage</artifactId>
-  <version>2.11.3</version>
+  <version>2.12.0</version>
 </dependency>
 
 ```
@@ -68,20 +68,20 @@ If you are using Maven without BOM, add this to your dependencies:
 If you are using Gradle 5.x or later, add this to your dependencies:
 
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.1.1')
+implementation platform('com.google.cloud:libraries-bom:26.1.2')
 
 implementation 'com.google.cloud:google-cloud-automl'
 ```
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-automl:2.3.8'
+implementation 'com.google.cloud:google-cloud-automl:2.3.15'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-automl" % "2.3.8"
+libraryDependencies += "com.google.cloud" % "google-cloud-automl" % "2.3.15"
 ```
 
 ## Authentication

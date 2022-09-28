@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.14.6](https://github.com/googleapis/java-analytics-data/compare/v0.14.5...v0.14.6) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#552](https://github.com/googleapis/java-analytics-data/issues/552)) ([2e2004c](https://github.com/googleapis/java-analytics-data/commit/2e2004cfa2b9a09f825c496574e6165ab58f9cf6))
+
+## [0.14.5](https://github.com/googleapis/java-analytics-data/compare/v0.14.4...v0.14.5) (2022-09-08)
+
+
+### Dependencies
+
+* Update dependency com.google.auth:google-auth-library-oauth2-http to v1.11.0 ([#546](https://github.com/googleapis/java-analytics-data/issues/546)) ([1480fb2](https://github.com/googleapis/java-analytics-data/commit/1480fb275d56b082dd8c31b6b6a2f2ce3c5e3473))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#547](https://github.com/googleapis/java-analytics-data/issues/547)) ([df7d625](https://github.com/googleapis/java-analytics-data/commit/df7d6253d23603c281b346042697ae72fe4d0bcd))
+
+## [0.14.4](https://github.com/googleapis/java-analytics-data/compare/v0.14.3...v0.14.4) (2022-08-31)
+
+
+### Dependencies
+
+* update dependency com.google.auth:google-auth-library-oauth2-http to v1.10.0 ([#537](https://github.com/googleapis/java-analytics-data/issues/537)) ([a752d59](https://github.com/googleapis/java-analytics-data/commit/a752d59cb4fef08bd45d7b5d46009e7a38fed710))
+
 ## [0.14.3](https://github.com/googleapis/java-analytics-data/compare/v0.14.2...v0.14.3) (2022-08-09)
 
 

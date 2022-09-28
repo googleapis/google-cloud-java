@@ -1,5 +1,42 @@
 # Changelog
 
+## [1.2.8](https://github.com/googleapis/java-artifact-registry/compare/v1.2.7...v1.2.8) (2022-09-27)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#316](https://github.com/googleapis/java-artifact-registry/issues/316)) ([819a866](https://github.com/googleapis/java-artifact-registry/commit/819a866011e5cca69e85be1d0509f3250413a032))
+* Update dependency charset-normalizer to v2.1.1 ([#321](https://github.com/googleapis/java-artifact-registry/issues/321)) ([a298d98](https://github.com/googleapis/java-artifact-registry/commit/a298d983d9e4dd383fb3656aef3f92736d9e7d66))
+* Update dependency click to v8.1.3 ([#322](https://github.com/googleapis/java-artifact-registry/issues/322)) ([9548f75](https://github.com/googleapis/java-artifact-registry/commit/9548f756f40b2b66a5a858d0d1793a7c5262df26))
+* Update dependency gcp-releasetool to v1.8.8 ([#317](https://github.com/googleapis/java-artifact-registry/issues/317)) ([8b67ae0](https://github.com/googleapis/java-artifact-registry/commit/8b67ae065a8c8bf8f5c70460163b5234630e8e59))
+* Update dependency google-api-core to v2.10.1 ([#323](https://github.com/googleapis/java-artifact-registry/issues/323)) ([9751c9e](https://github.com/googleapis/java-artifact-registry/commit/9751c9eb7e68cbe11c9cafb9137352230daa6d5e))
+* Update dependency google-auth to v2.11.1 ([#318](https://github.com/googleapis/java-artifact-registry/issues/318)) ([cce54b0](https://github.com/googleapis/java-artifact-registry/commit/cce54b054db5762042707d8033cdf8988e3ade11))
+* Update dependency google-cloud-core to v2.3.2 ([#319](https://github.com/googleapis/java-artifact-registry/issues/319)) ([171cdc1](https://github.com/googleapis/java-artifact-registry/commit/171cdc183898b1cb142f243df74513b50e8a4951))
+* Update dependency google-cloud-storage to v2.5.0 ([#324](https://github.com/googleapis/java-artifact-registry/issues/324)) ([b53929a](https://github.com/googleapis/java-artifact-registry/commit/b53929aa64fc4bff4dc7740af24efe071964c09c))
+* Update dependency google-crc32c to v1.5.0 ([#325](https://github.com/googleapis/java-artifact-registry/issues/325)) ([cbcedfd](https://github.com/googleapis/java-artifact-registry/commit/cbcedfd72339b46be554feab9c37c7398d9aa808))
+* Update dependency googleapis-common-protos to v1.56.4 ([#320](https://github.com/googleapis/java-artifact-registry/issues/320)) ([e7a3558](https://github.com/googleapis/java-artifact-registry/commit/e7a355807e3e78b828534dc0da698e4b7abfda93))
+* Update dependency importlib-metadata to v4.12.0 ([#326](https://github.com/googleapis/java-artifact-registry/issues/326)) ([35e7cd9](https://github.com/googleapis/java-artifact-registry/commit/35e7cd95fe9cf9c2cf5a20740495c9748b60e284))
+* Update dependency jeepney to v0.8.0 ([#327](https://github.com/googleapis/java-artifact-registry/issues/327)) ([15b7e20](https://github.com/googleapis/java-artifact-registry/commit/15b7e20ef651cbc11d2880c3ebfe79769227357c))
+* Update dependency jinja2 to v3.1.2 ([#328](https://github.com/googleapis/java-artifact-registry/issues/328)) ([c61bbdb](https://github.com/googleapis/java-artifact-registry/commit/c61bbdbc94321c38da74006f45dffecc23b97556))
+* Update dependency keyring to v23.9.3 ([#329](https://github.com/googleapis/java-artifact-registry/issues/329)) ([20f8b1b](https://github.com/googleapis/java-artifact-registry/commit/20f8b1be0522380bc65f541e93365db0632535e3))
+* Update dependency markupsafe to v2.1.1 ([#330](https://github.com/googleapis/java-artifact-registry/issues/330)) ([766061b](https://github.com/googleapis/java-artifact-registry/commit/766061bb15839a7c58e3a811a1fd2dd4c2f89bdf))
+* Update dependency protobuf to v3.20.2 ([#331](https://github.com/googleapis/java-artifact-registry/issues/331)) ([fad905f](https://github.com/googleapis/java-artifact-registry/commit/fad905fa42c8c32755882112bf43e31fc4c5fbc8))
+* Update dependency pyjwt to v2.5.0 ([#332](https://github.com/googleapis/java-artifact-registry/issues/332)) ([1822cd1](https://github.com/googleapis/java-artifact-registry/commit/1822cd1e18647b8fc8c6223f7bdc2a67537d79cd))
+
+## [1.2.7](https://github.com/googleapis/java-artifact-registry/compare/v1.2.6...v1.2.7) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#310](https://github.com/googleapis/java-artifact-registry/issues/310)) ([92f86bb](https://github.com/googleapis/java-artifact-registry/commit/92f86bb6ef1cb7d4d0fd5a2cf1a2fd9f623f939e))
+
+## [1.2.6](https://github.com/googleapis/java-artifact-registry/compare/v1.2.5...v1.2.6) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#305](https://github.com/googleapis/java-artifact-registry/issues/305)) ([f452f88](https://github.com/googleapis/java-artifact-registry/commit/f452f884a1dcf86af3a3dbbf09bd08ee677610f1))
+
 ## [1.2.5](https://github.com/googleapis/java-artifact-registry/compare/v1.2.4...v1.2.5) (2022-08-04)
 
 

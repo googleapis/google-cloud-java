@@ -1,5 +1,47 @@
 # Changelog
 
+## [1.2.5](https://github.com/googleapis/java-ids/compare/v1.2.4...v1.2.5) (2022-09-28)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#159](https://github.com/googleapis/java-ids/issues/159)) ([b12119f](https://github.com/googleapis/java-ids/commit/b12119f6a5d723fc56c35815a8dae67e0e22b550))
+* Update dependency certifi to v2022.9.24 ([#146](https://github.com/googleapis/java-ids/issues/146)) ([83c01a2](https://github.com/googleapis/java-ids/commit/83c01a27a6c4fda3d1112d43eeb413608050a382))
+* Update dependency charset-normalizer to v2.1.1 ([#150](https://github.com/googleapis/java-ids/issues/150)) ([2b08416](https://github.com/googleapis/java-ids/commit/2b0841672da19ac355edf56febf79f7e049e7bbf))
+* Update dependency click to v8.1.3 ([#160](https://github.com/googleapis/java-ids/issues/160)) ([a7a3efa](https://github.com/googleapis/java-ids/commit/a7a3efad4d41f42fc616c1a0d90679565077f2e3))
+* Update dependency gcp-releasetool to v1.8.8 ([#147](https://github.com/googleapis/java-ids/issues/147)) ([d9652db](https://github.com/googleapis/java-ids/commit/d9652db938f5ff78fcc22ec07b61044a342dfe6c))
+* Update dependency google-api-core to v2.10.1 ([#162](https://github.com/googleapis/java-ids/issues/162)) ([1e3e214](https://github.com/googleapis/java-ids/commit/1e3e21446fe6c1f334fec792409574d0a888bbbe))
+* Update dependency google-auth to v2.12.0 ([#163](https://github.com/googleapis/java-ids/issues/163)) ([ab375a0](https://github.com/googleapis/java-ids/commit/ab375a07e7ee786c779ea4191fa04edd96f579ff))
+* Update dependency google-cloud-core to v2.3.2 ([#148](https://github.com/googleapis/java-ids/issues/148)) ([4b6bc4a](https://github.com/googleapis/java-ids/commit/4b6bc4a6220b2cbf22d36baf5f5bbffc78e7fe83))
+* Update dependency google-cloud-storage to v2.5.0 ([#164](https://github.com/googleapis/java-ids/issues/164)) ([926117b](https://github.com/googleapis/java-ids/commit/926117b5bc3257c4e91e43f0e46e83de43340a9c))
+* Update dependency google-crc32c to v1.5.0 ([#165](https://github.com/googleapis/java-ids/issues/165)) ([a59fc1b](https://github.com/googleapis/java-ids/commit/a59fc1bb5e099dc5cbb4afa1f9fb6ff5d5eb8865))
+* Update dependency googleapis-common-protos to v1.56.4 ([#149](https://github.com/googleapis/java-ids/issues/149)) ([a0e3ce7](https://github.com/googleapis/java-ids/commit/a0e3ce7135ce4c4f2f5d0a1d6ba78ebb179ee527))
+* Update dependency importlib-metadata to v4.12.0 ([#166](https://github.com/googleapis/java-ids/issues/166)) ([0fdaad4](https://github.com/googleapis/java-ids/commit/0fdaad44e72781c2204692d17efbcf88681b753e))
+* Update dependency jeepney to v0.8.0 ([#167](https://github.com/googleapis/java-ids/issues/167)) ([66d08cc](https://github.com/googleapis/java-ids/commit/66d08cc6a49239c9c46964e4b1c14366bb779fad))
+* Update dependency jinja2 to v3.1.2 ([#151](https://github.com/googleapis/java-ids/issues/151)) ([876ef9f](https://github.com/googleapis/java-ids/commit/876ef9fb34a8118199c1a05e1725347f4038d86f))
+* Update dependency keyring to v23.9.3 ([#152](https://github.com/googleapis/java-ids/issues/152)) ([f705933](https://github.com/googleapis/java-ids/commit/f705933c0709f86deccf3c78f5ef7658ac664993))
+* Update dependency markupsafe to v2.1.1 ([#153](https://github.com/googleapis/java-ids/issues/153)) ([4439d5e](https://github.com/googleapis/java-ids/commit/4439d5efe8350d7522d76ef4fb098f792c0cb869))
+* Update dependency protobuf to v3.20.2 ([#154](https://github.com/googleapis/java-ids/issues/154)) ([cecf62f](https://github.com/googleapis/java-ids/commit/cecf62f3154454c6de3ac6f0e9522ea46c7ae2a2))
+* Update dependency protobuf to v4 ([#168](https://github.com/googleapis/java-ids/issues/168)) ([c6c8ddd](https://github.com/googleapis/java-ids/commit/c6c8dddc7e1b1cab1700bf538e343e92699bfe93))
+* Update dependency pyjwt to v2.5.0 ([#155](https://github.com/googleapis/java-ids/issues/155)) ([bdad85e](https://github.com/googleapis/java-ids/commit/bdad85eca5fe5ef3aaf97057ba2656acb1193ee2))
+* Update dependency requests to v2.28.1 ([#156](https://github.com/googleapis/java-ids/issues/156)) ([63518a2](https://github.com/googleapis/java-ids/commit/63518a2c9d0c1b1a810a98d73c47e56595fecabf))
+* Update dependency typing-extensions to v4.3.0 ([#157](https://github.com/googleapis/java-ids/issues/157)) ([c831760](https://github.com/googleapis/java-ids/commit/c831760616d8d9339be33416c986c0d84b0c1d65))
+* Update dependency zipp to v3.8.1 ([#158](https://github.com/googleapis/java-ids/issues/158)) ([49e2f66](https://github.com/googleapis/java-ids/commit/49e2f66d8dc2793e3dd64cd3751e25dbe555ee93))
+
+## [1.2.4](https://github.com/googleapis/java-ids/compare/v1.2.3...v1.2.4) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#140](https://github.com/googleapis/java-ids/issues/140)) ([d9d8f5b](https://github.com/googleapis/java-ids/commit/d9d8f5b8cf9452c1ffcb9bb18547a0cb5e695986))
+
+## [1.2.3](https://github.com/googleapis/java-ids/compare/v1.2.2...v1.2.3) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#135](https://github.com/googleapis/java-ids/issues/135)) ([2c1b1d8](https://github.com/googleapis/java-ids/commit/2c1b1d8078f69a3729c10b6c72e52d31f6804253))
+
 ## [1.2.2](https://github.com/googleapis/java-ids/compare/v1.2.1...v1.2.2) (2022-08-09)
 
 
