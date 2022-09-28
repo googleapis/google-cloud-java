@@ -1,5 +1,35 @@
 # Changelog
 
+## [1.0.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-bigquery-data-exchange-v0.3.2...google-cloud-bigquery-data-exchange-v1.0.0) (2022-09-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* refactor references to Category message
+* refresh current dataexchange/v1beta1/* directory to include recent change in protos. Removed common directory and use local enum Category
+
+### Features
+
+* [analyticshub] update BigQuery Analytics Hub API v1beta1 client ([#8263](https://github.com/googleapis/google-cloud-java/issues/8263)) ([3301e6d](https://github.com/googleapis/google-cloud-java/commit/3301e6d0580d281242123225b798e3533c1a0e9e))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#8325](https://github.com/googleapis/google-cloud-java/issues/8325)) ([01f492b](https://github.com/googleapis/google-cloud-java/commit/01f492be424acdb90edb23ba66656aeff7cf39eb))
+* owl-bot-staging should not be commited ([#8337](https://github.com/googleapis/google-cloud-java/issues/8337)) ([c9bb4a9](https://github.com/googleapis/google-cloud-java/commit/c9bb4a97aa19032b78c86c951fe9920f24ac4eec))
+* refactor references to Category message ([3301e6d](https://github.com/googleapis/google-cloud-java/commit/3301e6d0580d281242123225b798e3533c1a0e9e))
+* revert reverting [Many APIs] Update WORKSPACE files for rules_gapic, gax_java, generator_java versions ([#8340](https://github.com/googleapis/google-cloud-java/issues/8340)) ([dedef71](https://github.com/googleapis/google-cloud-java/commit/dedef71f600e85b1c38e7110f5ffd44bf2ba32b4))
+
+
+### Documentation
+
+* improve proto documentation. ([3301e6d](https://github.com/googleapis/google-cloud-java/commit/3301e6d0580d281242123225b798e3533c1a0e9e))
+
+
+### Dependencies
+
+* reverting renovate bot pull requests ([#8417](https://github.com/googleapis/google-cloud-java/issues/8417)) ([8f0c60b](https://github.com/googleapis/google-cloud-java/commit/8f0c60bde446acccc665eb7894723632eefc3503))
+
 ## [0.3.2](https://github.com/googleapis/java-bigquery-data-exchange/compare/v0.3.1...v0.3.2) (2022-08-09)
 
 

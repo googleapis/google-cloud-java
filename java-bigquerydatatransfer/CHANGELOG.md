@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.3.15](https://github.com/googleapis/google-cloud-java/compare/google-cloud-bigquerydatatransfer-v2.3.14...google-cloud-bigquerydatatransfer-v2.3.15) (2022-09-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.api.grpc:grpc-google-cloud-bigquerydatatransfer-v1 to v2.3.7 ([#8240](https://github.com/googleapis/google-cloud-java/issues/8240)) ([89780f0](https://github.com/googleapis/google-cloud-java/commit/89780f0cfe370f9421cc0df54136817267433d09))
+* **deps:** update dependency com.google.api.grpc:proto-google-cloud-bigquerydatatransfer-v1 to v2.3.7 ([#8244](https://github.com/googleapis/google-cloud-java/issues/8244)) ([73c6dd9](https://github.com/googleapis/google-cloud-java/commit/73c6dd903d2fc42e21ca26efd603aee20d49ec2e))
+* **deps:** update dependency com.google.cloud:google-cloud-bigquery to v2.15.0 ([#8231](https://github.com/googleapis/google-cloud-java/issues/8231)) ([2c0b9ad](https://github.com/googleapis/google-cloud-java/commit/2c0b9ad05b4ff658ac7a08bde6637653825d2802))
+* **deps:** update dependency com.google.cloud:google-cloud-bigquerydatatransfer-parent to v2.3.7 ([#8253](https://github.com/googleapis/google-cloud-java/issues/8253)) ([e1b78e0](https://github.com/googleapis/google-cloud-java/commit/e1b78e09f2b161d67fca3008f7821dd09254761a))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#8325](https://github.com/googleapis/google-cloud-java/issues/8325)) ([01f492b](https://github.com/googleapis/google-cloud-java/commit/01f492be424acdb90edb23ba66656aeff7cf39eb))
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+* owl-bot-staging should not be commited ([#8337](https://github.com/googleapis/google-cloud-java/issues/8337)) ([c9bb4a9](https://github.com/googleapis/google-cloud-java/commit/c9bb4a97aa19032b78c86c951fe9920f24ac4eec))
+* revert reverting [Many APIs] Update WORKSPACE files for rules_gapic, gax_java, generator_java versions ([#8340](https://github.com/googleapis/google-cloud-java/issues/8340)) ([dedef71](https://github.com/googleapis/google-cloud-java/commit/dedef71f600e85b1c38e7110f5ffd44bf2ba32b4))
+
+
+### Dependencies
+
+* reverting renovate bot pull requests ([#8417](https://github.com/googleapis/google-cloud-java/issues/8417)) ([8f0c60b](https://github.com/googleapis/google-cloud-java/commit/8f0c60bde446acccc665eb7894723632eefc3503))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.120.13 ([#1452](https://github.com/googleapis/google-cloud-java/issues/1452)) ([29121bf](https://github.com/googleapis/google-cloud-java/commit/29121bf24580a21617e10382f6d9ed52f028bd60))
+
 ## [2.3.6](https://github.com/googleapis/java-bigquerydatatransfer/compare/v2.3.5...v2.3.6) (2022-08-24)
 
 

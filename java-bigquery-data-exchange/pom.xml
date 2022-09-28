@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery-data-exchange-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery-data-exchange:current} -->
+  <version>1.0.0</version><!-- {x-version-update:google-cloud-bigquery-data-exchange:current} -->
   <name>Google Analytics Hub Parent</name>
   <url>https://github.com/googleapis/java-bigquery-data-exchange</url>
   <description>

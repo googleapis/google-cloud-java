@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-beyondcorp-appgateways-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-appgateways:current} -->
+  <version>0.1.0</version><!-- {x-version-update:google-cloud-beyondcorp-appgateways:current} -->
   <name>Google BeyondCorp AppGateways Parent</name>
   <url>https://github.com/googleapis/java-beyondcorp-appgateways</url>
   <description>

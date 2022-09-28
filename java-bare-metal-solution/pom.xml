@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bare-metal-solution-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-bare-metal-solution:current} -->
+  <version>0.3.5</version><!-- {x-version-update:google-cloud-bare-metal-solution:current} -->
   <name>Google Bare Metal SOlution Parent</name>
   <url>https://github.com/googleapis/java-bare-metal-solution</url>
   <description>

@@ -1,5 +1,28 @@
 # Changelog
 
+## [3.7.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-asset-v3.6.0...google-cloud-asset-v3.7.0) (2022-09-28)
+
+
+### Features
+
+* [cloudasset] Add client library support for AssetService v1 SavedQuery APIs ([#8426](https://github.com/googleapis/google-cloud-java/issues/8426)) ([a25f16a](https://github.com/googleapis/google-cloud-java/commit/a25f16a93fa10e65036bf593682d0ea91b123261))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:google-cloud-bigquery to v2.15.0 ([#8231](https://github.com/googleapis/google-cloud-java/issues/8231)) ([2c0b9ad](https://github.com/googleapis/google-cloud-java/commit/2c0b9ad05b4ff658ac7a08bde6637653825d2802))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#8325](https://github.com/googleapis/google-cloud-java/issues/8325)) ([01f492b](https://github.com/googleapis/google-cloud-java/commit/01f492be424acdb90edb23ba66656aeff7cf39eb))
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+* owl-bot-staging should not be commited ([#8337](https://github.com/googleapis/google-cloud-java/issues/8337)) ([c9bb4a9](https://github.com/googleapis/google-cloud-java/commit/c9bb4a97aa19032b78c86c951fe9920f24ac4eec))
+* revert reverting [Many APIs] Update WORKSPACE files for rules_gapic, gax_java, generator_java versions ([#8340](https://github.com/googleapis/google-cloud-java/issues/8340)) ([dedef71](https://github.com/googleapis/google-cloud-java/commit/dedef71f600e85b1c38e7110f5ffd44bf2ba32b4))
+
+
+### Dependencies
+
+* reverting renovate bot pull requests ([#8417](https://github.com/googleapis/google-cloud-java/issues/8417)) ([8f0c60b](https://github.com/googleapis/google-cloud-java/commit/8f0c60bde446acccc665eb7894723632eefc3503))
+* update dependency com.google.cloud:google-cloud-core to v2.8.10 ([#1323](https://github.com/googleapis/google-cloud-java/issues/1323)) ([09e03b8](https://github.com/googleapis/google-cloud-java/commit/09e03b8edd47cb3369d4fa9f6017e8ed6e880b50))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.120.13 ([#1322](https://github.com/googleapis/google-cloud-java/issues/1322)) ([b7522b9](https://github.com/googleapis/google-cloud-java/commit/b7522b9ee98cd7d152ce9a7a9cc34f8a4d0ef574))
+
 ## [3.5.0](https://github.com/googleapis/java-asset/compare/v3.4.2...v3.5.0) (2022-08-09)
 
 

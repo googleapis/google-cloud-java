@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.6.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-bigqueryconnection-v2.5.4...google-cloud-bigqueryconnection-v2.6.0) (2022-09-28)
+
+
+### Features
+
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.api.grpc:grpc-google-cloud-bigqueryconnection-v1 to v2.5.1 ([#8304](https://github.com/googleapis/google-cloud-java/issues/8304)) ([155d2d5](https://github.com/googleapis/google-cloud-java/commit/155d2d5fb5e5654d6b687ee50a0970e30db7c332))
+* **deps:** update dependency com.google.api.grpc:grpc-google-cloud-bigqueryconnection-v1beta1 to v0.13.1 ([#8307](https://github.com/googleapis/google-cloud-java/issues/8307)) ([fb36118](https://github.com/googleapis/google-cloud-java/commit/fb361188c509a1f306b2427acbdd847f660718a3))
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+* owl-bot-staging should not be commited ([#8337](https://github.com/googleapis/google-cloud-java/issues/8337)) ([c9bb4a9](https://github.com/googleapis/google-cloud-java/commit/c9bb4a97aa19032b78c86c951fe9920f24ac4eec))
+* revert reverting [Many APIs] Update WORKSPACE files for rules_gapic, gax_java, generator_java versions ([#8340](https://github.com/googleapis/google-cloud-java/issues/8340)) ([dedef71](https://github.com/googleapis/google-cloud-java/commit/dedef71f600e85b1c38e7110f5ffd44bf2ba32b4))
+
+
+### Dependencies
+
+* reverting renovate bot pull requests ([#8417](https://github.com/googleapis/google-cloud-java/issues/8417)) ([8f0c60b](https://github.com/googleapis/google-cloud-java/commit/8f0c60bde446acccc665eb7894723632eefc3503))
+
 ## [2.5.0](https://github.com/googleapis/java-bigqueryconnection/compare/v2.4.1...v2.5.0) (2022-08-09)
 
 

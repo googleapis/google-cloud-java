@@ -1,5 +1,31 @@
 # Changelog
 
+## [0.4.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-batch-v0.3.0...google-cloud-batch-v0.4.0) (2022-09-28)
+
+
+### Features
+
+* environment variables, disk interfaces ([e2fd744](https://github.com/googleapis/google-cloud-java/commit/e2fd744d0b5dcdce2694076366c7267c1d7a870e))
+* environment variables, disk interfaces ([e2fd744](https://github.com/googleapis/google-cloud-java/commit/e2fd744d0b5dcdce2694076366c7267c1d7a870e))
+
+
+### Bug Fixes
+
+* [batch] mark service_account_email as deprecated ([#8273](https://github.com/googleapis/google-cloud-java/issues/8273)) ([96705cb](https://github.com/googleapis/google-cloud-java/commit/96705cbee07049a75ffadcc601484f914b39f309))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#8325](https://github.com/googleapis/google-cloud-java/issues/8325)) ([01f492b](https://github.com/googleapis/google-cloud-java/commit/01f492be424acdb90edb23ba66656aeff7cf39eb))
+* owl-bot-staging should not be commited ([#8337](https://github.com/googleapis/google-cloud-java/issues/8337)) ([c9bb4a9](https://github.com/googleapis/google-cloud-java/commit/c9bb4a97aa19032b78c86c951fe9920f24ac4eec))
+* revert reverting [Many APIs] Update WORKSPACE files for rules_gapic, gax_java, generator_java versions ([#8340](https://github.com/googleapis/google-cloud-java/issues/8340)) ([dedef71](https://github.com/googleapis/google-cloud-java/commit/dedef71f600e85b1c38e7110f5ffd44bf2ba32b4))
+
+
+### Documentation
+
+* removing comment from a deprecated field ([96705cb](https://github.com/googleapis/google-cloud-java/commit/96705cbee07049a75ffadcc601484f914b39f309))
+
+
+### Dependencies
+
+* reverting renovate bot pull requests ([#8417](https://github.com/googleapis/google-cloud-java/issues/8417)) ([8f0c60b](https://github.com/googleapis/google-cloud-java/commit/8f0c60bde446acccc665eb7894723632eefc3503))
+
 ## [0.2.2](https://github.com/googleapis/java-batch/compare/v0.2.1...v0.2.2) (2022-08-09)
 
 
