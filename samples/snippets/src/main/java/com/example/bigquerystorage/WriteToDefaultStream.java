@@ -94,9 +94,15 @@ public class WriteToDefaultStream {
 
   private static class DataWriter {
 
-    private static final int MAX_RETRY_COUNT = 2;
+    private static final int MAX_RETRY_COUNT = 3;
     private static final ImmutableList<Code> RETRIABLE_ERROR_CODES =
-        ImmutableList.of(Code.INTERNAL, Code.ABORTED, Code.CANCELLED);
+        ImmutableList.of(
+            Code.INTERNAL,
+            Code.ABORTED,
+            Code.CANCELLED,
+            Code.FAILED_PRECONDITION,
+            Code.DEADLINE_EXCEEDED,
+            Code.UNAVAILABLE);
 
     // Track the number of in-flight requests to wait for all responses before shutting down.
     private final Phaser inflightRequestCount = new Phaser(1);
