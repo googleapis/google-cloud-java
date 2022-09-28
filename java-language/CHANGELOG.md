@@ -1,5 +1,30 @@
 # Changelog
 
+## [2.5.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-language-v2.4.0...google-cloud-language-v2.5.0) (2022-09-28)
+
+
+### Features
+
+* [language] Add support for V1 and V2 classification models for the V1 API ([8f2889b](https://github.com/googleapis/google-cloud-java/commit/8f2889bd0f886e873fc124124d95a0a9c7fac58f))
+* [language] Add support for V1 and V2 classification models for the V1Beta2 API ([#8431](https://github.com/googleapis/google-cloud-java/issues/8431)) ([8f2889b](https://github.com/googleapis/google-cloud-java/commit/8f2889bd0f886e873fc124124d95a0a9c7fac58f))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#8325](https://github.com/googleapis/google-cloud-java/issues/8325)) ([01f492b](https://github.com/googleapis/google-cloud-java/commit/01f492be424acdb90edb23ba66656aeff7cf39eb))
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+* owl-bot-staging should not be commited ([#8337](https://github.com/googleapis/google-cloud-java/issues/8337)) ([c9bb4a9](https://github.com/googleapis/google-cloud-java/commit/c9bb4a97aa19032b78c86c951fe9920f24ac4eec))
+
+
+### Dependencies
+
+* reverting renovate bot pull requests ([#8417](https://github.com/googleapis/google-cloud-java/issues/8417)) ([8f0c60b](https://github.com/googleapis/google-cloud-java/commit/8f0c60bde446acccc665eb7894723632eefc3503))
+
+
+### Documentation
+
+* [language] fix docstring formatting ([#8451](https://github.com/googleapis/google-cloud-java/issues/8451)) ([f195ebb](https://github.com/googleapis/google-cloud-java/commit/f195ebbc0a94cf2b955fad593ea4a518cac2c650))
+
 ## [2.3.2](https://github.com/googleapis/java-language/compare/v2.3.1...v2.3.2) (2022-08-09)
 
 

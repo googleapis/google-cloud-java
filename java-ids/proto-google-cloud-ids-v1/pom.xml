@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-ids-v1</artifactId>
-  <version>1.2.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-ids-v1:current} -->
+  <version>1.2.5</version><!-- {x-version-update:proto-google-cloud-ids-v1:current} -->
   <name>proto-google-cloud-ids-v1</name>
   <description>Proto library for google-cloud-ids</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-ids-parent</artifactId>
-    <version>1.2.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-ids:current} -->
+    <version>1.2.5</version><!-- {x-version-update:google-cloud-ids:current} -->
   </parent>
   <dependencies>
     <dependency>

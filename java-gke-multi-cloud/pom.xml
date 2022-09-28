@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-gke-multi-cloud-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.2.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-multi-cloud:current} -->
+  <version>0.2.5</version><!-- {x-version-update:google-cloud-gke-multi-cloud:current} -->
   <name>Google Anthos Multicloud Parent</name>
   <url>https://github.com/googleapis/java-gke-multi-cloud</url>
   <description>

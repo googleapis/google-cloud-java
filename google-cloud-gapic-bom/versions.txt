@@ -1,5 +1,5 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-gapic-bom:0.0.0:0.1.0-SNAPSHOT
+google-cloud-gapic-bom:0.1.0:0.1.0
 
