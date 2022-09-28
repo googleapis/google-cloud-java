@@ -33,14 +33,14 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
   else
     module_line=$(grep -E "^google-.*:[0-9]+\.[0-9]+\.[0-9]+.*:[0-9]+\.[0-9]+\.[0-9]+.*$" "${version_file}")
   fi
-  artifactName_config=$(echo "${module_line}" | cut -d ":" -f1)
+  artifact_name=$(echo "${module_line}" | cut -d ":" -f1)
   module_released_version=$(echo "${module_line}" | cut -d ":" -f2)
   module_snapshot_version=$(echo "${module_line}" | cut -d ":" -f3)
 
   # concatenating module name and module version
   rp_manifest_line="${tab}\"${module_name}\": \"${module_released_version}\""
   # Generate the JSON block with formatting
-  rp_config_line+="${tab}${tab}\"${module_name}\": {\n${tab}${tab}${tab}\"component\": \"${artifactName_config}\",\n${tab}${tab}${tab}\"skip-github-release\": true\n${tab}${tab}}"
+  rp_config_line+="${tab}${tab}\"${module_name}\": {\n${tab}${tab}${tab}\"component\": \"${artifact_name}\",\n${tab}${tab}${tab}\"skip-github-release\": true\n${tab}${tab}}"
 
   # adding " , " where it's necessary
   if [[ ${num_modules} -gt 1 ]]; then
