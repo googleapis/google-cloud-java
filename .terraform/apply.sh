@@ -16,5 +16,5 @@
 
 scriptDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 pushd "$scriptDir" >/dev/null || exit
-terraform apply "generated.tfplan"
+terraform apply "generated.tfplan" || exit
 popd >/dev/null || exit
