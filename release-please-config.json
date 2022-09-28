@@ -8,10 +8,6 @@
       "component": "google-cloud-gapic-bom",
       "skip-github-release": true
     },
-    "google-cloud-gapic-bom": {
-      "component": "google-cloud-gapic-bom",
-      "skip-github-release": true
-    },
     "java-accessapproval": {
       "component": "google-cloud-accessapproval",
       "skip-github-release": true
