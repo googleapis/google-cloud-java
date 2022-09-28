@@ -17,6 +17,7 @@
 function mvnVerify() {
   mvn "$@" \
     ${INTEGRATION_TEST_ARGS} \
+    -T 1C \
     -B \
     -ntp \
     -Penable-integration-tests \
@@ -44,7 +45,7 @@ function testSingle() {
 function testAll() {
   # Execute 'env.sh' scripts for any active modules
   IFS=':'
-  for module in $(source ./.terraform/helpers/list-all-modules.sh); do
+  for module in $(source ./helpers/list-all-modules.sh); do
     if [ -f "../$module/.terraform/env.sh" ]; then
       # shellcheck disable=SC1090
       source "../$module/.terraform/env.sh"
@@ -53,7 +54,7 @@ function testAll() {
 
   # Perform mvn verify on parent project, excluding the given submodules
   pushd "../" >/dev/null || exit
-  mvnVerify -pl -java-dialogflow,-java-dialogflow-cx,-java-dns,-java-notification,-java-os-login,-java-recommender,-java-scheduler,-java-talent
+  mvnVerify -pl -java-os-login,-java-recommender,-java-scheduler,-java-talent
   popd >/dev/null || exit
 }
 
