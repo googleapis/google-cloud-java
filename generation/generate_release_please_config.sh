@@ -49,12 +49,12 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
   fi
 
   # Adding the line to manifest config file
-  echo -e "${rp_manifest_line}" >>"${release_please_manifest_file}"
+  echo -e "${rp_manifest_line}" >> "${release_please_manifest_file}"
 done
 
 # End the .json file with the closing bracket
-echo "}" >>"${release_please_manifest_file}"
+echo "}" >> "${release_please_manifest_file}"
 
 # Replace the package list where `ALL_PACKAGES` string is in the release_please_config_raw.json
 awk -v "packagesList=${rp_config_line}" '{gsub(/ALL_PACKAGES/,packagesList)}1' \
-  "${GENERATION_DIR}/release_please_config_raw.json" >"${release_please_config_file}"
+  "${GENERATION_DIR}/release_please_config_raw.json" > "${release_please_config_file}"
