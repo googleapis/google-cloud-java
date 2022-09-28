@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.3.5](https://github.com/googleapis/java-debugger-client/compare/v1.3.4...v1.3.5) (2022-09-28)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#254](https://github.com/googleapis/java-debugger-client/issues/254)) ([13b17a8](https://github.com/googleapis/java-debugger-client/commit/13b17a88360028e3ac7a192d5f262397ad69a5f8))
+* Update dependency certifi to v2022.9.24 ([#234](https://github.com/googleapis/java-debugger-client/issues/234)) ([c79923a](https://github.com/googleapis/java-debugger-client/commit/c79923ac23872fc4a63212cd64ffd3ac72b90468))
+* Update dependency charset-normalizer to v2.1.1 ([#238](https://github.com/googleapis/java-debugger-client/issues/238)) ([e5076ca](https://github.com/googleapis/java-debugger-client/commit/e5076cac52c995fe9171c052237871c4e0e4d657))
+* Update dependency click to v8.1.3 ([#239](https://github.com/googleapis/java-debugger-client/issues/239)) ([9829cf9](https://github.com/googleapis/java-debugger-client/commit/9829cf974859ea4decad1ffac33af16688a622ce))
+* Update dependency gcp-releasetool to v1.8.8 ([#235](https://github.com/googleapis/java-debugger-client/issues/235)) ([511021e](https://github.com/googleapis/java-debugger-client/commit/511021efb279ffa3238dd6ffa201c82826c802f3))
+* Update dependency google-api-core to v2.10.1 ([#240](https://github.com/googleapis/java-debugger-client/issues/240)) ([e67bc85](https://github.com/googleapis/java-debugger-client/commit/e67bc854f7b7cf478eac00cdddf0ad8b5ab591cd))
+* Update dependency google-auth to v2.12.0 ([#241](https://github.com/googleapis/java-debugger-client/issues/241)) ([19b172e](https://github.com/googleapis/java-debugger-client/commit/19b172e08b67b09228e45311577bca1ac9235dd5))
+* Update dependency google-cloud-core to v2.3.2 ([#236](https://github.com/googleapis/java-debugger-client/issues/236)) ([5856ede](https://github.com/googleapis/java-debugger-client/commit/5856ededbbdf282c4a5447a811ebfc82590e087c))
+* Update dependency google-cloud-storage to v2.5.0 ([#242](https://github.com/googleapis/java-debugger-client/issues/242)) ([5b8feb5](https://github.com/googleapis/java-debugger-client/commit/5b8feb547e7333fb3954352e35c7618d8f6a4707))
+* Update dependency google-crc32c to v1.5.0 ([#243](https://github.com/googleapis/java-debugger-client/issues/243)) ([d7c8d76](https://github.com/googleapis/java-debugger-client/commit/d7c8d76a41904fbbc953f14ca3124227ba7d0c6f))
+* Update dependency googleapis-common-protos to v1.56.4 ([#237](https://github.com/googleapis/java-debugger-client/issues/237)) ([b85431c](https://github.com/googleapis/java-debugger-client/commit/b85431cceac7ffa36facfe863f6e31fd5746dde4))
+* Update dependency importlib-metadata to v4.12.0 ([#245](https://github.com/googleapis/java-debugger-client/issues/245)) ([b71c4a5](https://github.com/googleapis/java-debugger-client/commit/b71c4a5a4db8d2d3357d53ac4d78095073739b77))
+* Update dependency jeepney to v0.8.0 ([#246](https://github.com/googleapis/java-debugger-client/issues/246)) ([5919265](https://github.com/googleapis/java-debugger-client/commit/5919265db60c26569308784d6ae7068008932edb))
+* Update dependency jinja2 to v3.1.2 ([#247](https://github.com/googleapis/java-debugger-client/issues/247)) ([b4c7948](https://github.com/googleapis/java-debugger-client/commit/b4c7948f8f5009e151d15e43aa900d6dbe6c22de))
+* Update dependency keyring to v23.9.3 ([#248](https://github.com/googleapis/java-debugger-client/issues/248)) ([0bad1db](https://github.com/googleapis/java-debugger-client/commit/0bad1db18b8ee91f38bf9c54a257b01791b11296))
+* Update dependency markupsafe to v2.1.1 ([#244](https://github.com/googleapis/java-debugger-client/issues/244)) ([9f8820c](https://github.com/googleapis/java-debugger-client/commit/9f8820c54b6af2e5185da74af24404e3fcad590e))
+* Update dependency protobuf to v3.20.2 ([#249](https://github.com/googleapis/java-debugger-client/issues/249)) ([1e351ee](https://github.com/googleapis/java-debugger-client/commit/1e351eea73ce89df8f5d6ba75a5ba7a18ea8bd1d))
+* Update dependency protobuf to v4 ([#255](https://github.com/googleapis/java-debugger-client/issues/255)) ([62b79d2](https://github.com/googleapis/java-debugger-client/commit/62b79d2edcb07a4fa8c15e0d655ab02c4f33cfde))
+* Update dependency pyjwt to v2.5.0 ([#250](https://github.com/googleapis/java-debugger-client/issues/250)) ([ab2643f](https://github.com/googleapis/java-debugger-client/commit/ab2643f1236f93a29c170ee6144dcae82cc79a9b))
+* Update dependency requests to v2.28.1 ([#251](https://github.com/googleapis/java-debugger-client/issues/251)) ([dc14397](https://github.com/googleapis/java-debugger-client/commit/dc14397386b8648967bc294a7293798ec013cec8))
+* Update dependency typing-extensions to v4.3.0 ([#252](https://github.com/googleapis/java-debugger-client/issues/252)) ([3251c32](https://github.com/googleapis/java-debugger-client/commit/3251c32a5396a476bd277d3c24f7e898a0cad75a))
+* Update dependency zipp to v3.8.1 ([#253](https://github.com/googleapis/java-debugger-client/issues/253)) ([a85ab1e](https://github.com/googleapis/java-debugger-client/commit/a85ab1e84cd690c58c8660a36abd80005d256529))
+
 ## [1.3.4](https://github.com/googleapis/java-debugger-client/compare/v1.3.3...v1.3.4) (2022-09-15)
 
 
