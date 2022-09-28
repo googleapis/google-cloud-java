@@ -27,6 +27,10 @@ if [ -z "${GOOGLE_CLOUD_PROJECT+x}" ]; then
   createProject
 fi
 
+if [[ -f ./generated-env.sh ]]; then
+  source ./generated-env.sh
+fi
+
 # Use the project ID in gcloud set-quota-project. Clear the existing quota project directly from
 # the configuration, and re-set.
 gcloud config set project "$GOOGLE_CLOUD_PROJECT"
