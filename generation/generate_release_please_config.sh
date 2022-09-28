@@ -2,8 +2,9 @@
 
 set -e
 
-rm .release-please-manifest.json
-echo -e "{\n\t\"google-cloud-gapic-bom\": \"0.0.0\"," >.release-please-manifest.json
+[ -e ".release-please-manifest.json" ] && rm .release-please-manifest.json
+[ -e "release-please-config.json" ] && rm release-please-config.json
+echo -e "{\n\t\"google-cloud-gapic-bom\": \"0.0.0\"," > .release-please-manifest.json
 
 GENERATION_DIR=$(dirname -- "$0")
 
@@ -44,5 +45,7 @@ done
 
 echo "}" >>.release-please-manifest.json
 
-awk -v "packagesList=$rp_config_line" '{gsub(/ALL_PACKAGES/,packagesList)}1' \
-  ${GENERATION_DIR}/release_please_config_raw.json >release-please-config.json
+rp_config_line=$(echo -e "${rp_config_line}")
+
+awk -v "packagesList=${rp_config_line}" '{gsub(/ALL_PACKAGES/,packagesList)}1' \
+  ${GENERATION_DIR}/release_please_config_raw.json > release-please-config.json

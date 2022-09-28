@@ -120,7 +120,7 @@ done
 echo "These artifacts don't exist: ${missing_artifacts[*]}"
 
 echo "Generating the release-please configurations..."
-./generate_release_please_config.sh
+./generation/generate_release_please_config.sh
 echo "Done generating release-please configurations..."
 
 #TODO: Call a script to copy over the README.md and CHANGELOG.md into monorepo
