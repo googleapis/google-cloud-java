@@ -87,8 +87,10 @@ git stash
 git checkout "${current_branch}"
 git stash pop
 
+# *.java and *.proto are connected -- Adding them to the same branch
 git checkout -b "${diff_java_branch}"
 git add "*.java"
+git add "*.proto"
 git commit -m "chore: Adding java diffs" --no-verify
 git push origin "${diff_java_branch}" --force
 
