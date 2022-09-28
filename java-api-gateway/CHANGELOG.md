@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.3.5](https://github.com/googleapis/java-api-gateway/compare/v2.3.4...v2.3.5) (2022-09-28)
+
+
+### Dependencies
+
+* Update dependency google-auth to v2.12.0 ([#301](https://github.com/googleapis/java-api-gateway/issues/301)) ([3a5318f](https://github.com/googleapis/java-api-gateway/commit/3a5318f63b97af9e7f8f15e3d1cb88a3b94ff9fa))
+* Update dependency google-cloud-storage to v2.5.0 ([#302](https://github.com/googleapis/java-api-gateway/issues/302)) ([b57cdac](https://github.com/googleapis/java-api-gateway/commit/b57cdaca749f3f9c51471365bf61b057af4b705c))
+
 ## [2.3.4](https://github.com/googleapis/java-api-gateway/compare/v2.3.3...v2.3.4) (2022-09-15)
 
 
