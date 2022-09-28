@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.2.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-service-management-v3.1.5...google-cloud-service-management-v3.2.0) (2022-09-28)
+
+
+### Features
+
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#8325](https://github.com/googleapis/google-cloud-java/issues/8325)) ([01f492b](https://github.com/googleapis/google-cloud-java/commit/01f492be424acdb90edb23ba66656aeff7cf39eb))
+* owl-bot-staging should not be commited ([#8337](https://github.com/googleapis/google-cloud-java/issues/8337)) ([c9bb4a9](https://github.com/googleapis/google-cloud-java/commit/c9bb4a97aa19032b78c86c951fe9920f24ac4eec))
+
+
+### Dependencies
+
+* reverting renovate bot pull requests ([#8417](https://github.com/googleapis/google-cloud-java/issues/8417)) ([8f0c60b](https://github.com/googleapis/google-cloud-java/commit/8f0c60bde446acccc665eb7894723632eefc3503))
+
 ## [3.1.3](https://github.com/googleapis/java-service-management/compare/v3.1.2...v3.1.3) (2022-08-02)
 
 

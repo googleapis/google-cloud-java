@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.11.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-securitycenter-v2.10.0...google-cloud-securitycenter-v2.11.0) (2022-09-28)
+
+
+### Features
+
+* [securitycenter] Added parent display name i.e. source display name for a finding as one of the finding attributes ([#8400](https://github.com/googleapis/google-cloud-java/issues/8400)) ([4fe4dcd](https://github.com/googleapis/google-cloud-java/commit/4fe4dcdf24707e2586ff4d7f3110b609cf415925))
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+* serviceAccountKeyName, serviceAccountDelegationInfo, and principalSubject attributes added to the existing access attribute. These new attributes provide additional context about the principals that are associated with the finding ([#905](https://github.com/googleapis/google-cloud-java/issues/905)) ([de80cec](https://github.com/googleapis/google-cloud-java/commit/de80cecfc45cdb7e5fb85c62f333d79db6c08277))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:google-cloud-bigquery to v2.15.0 ([#8231](https://github.com/googleapis/google-cloud-java/issues/8231)) ([2c0b9ad](https://github.com/googleapis/google-cloud-java/commit/2c0b9ad05b4ff658ac7a08bde6637653825d2802))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#8325](https://github.com/googleapis/google-cloud-java/issues/8325)) ([01f492b](https://github.com/googleapis/google-cloud-java/commit/01f492be424acdb90edb23ba66656aeff7cf39eb))
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+* owl-bot-staging should not be commited ([#8337](https://github.com/googleapis/google-cloud-java/issues/8337)) ([c9bb4a9](https://github.com/googleapis/google-cloud-java/commit/c9bb4a97aa19032b78c86c951fe9920f24ac4eec))
+
+
+### Dependencies
+
+* reverting renovate bot pull requests ([#8417](https://github.com/googleapis/google-cloud-java/issues/8417)) ([8f0c60b](https://github.com/googleapis/google-cloud-java/commit/8f0c60bde446acccc665eb7894723632eefc3503))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.120.13 ([#904](https://github.com/googleapis/google-cloud-java/issues/904)) ([3ef7b23](https://github.com/googleapis/google-cloud-java/commit/3ef7b23549cc770529879791f1692040f41533cd))
+
 ## [2.9.0](https://github.com/googleapis/java-securitycenter/compare/v2.8.0...v2.9.0) (2022-08-06)
 
 

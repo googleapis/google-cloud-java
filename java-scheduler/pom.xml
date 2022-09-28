@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-scheduler-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.3.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-scheduler:current} -->
+  <version>2.3.12</version><!-- {x-version-update:google-cloud-scheduler:current} -->
   <name>Google Cloud Scheduler Parent</name>
   <url>https://github.com/googleapis/java-scheduler</url>
   <description>

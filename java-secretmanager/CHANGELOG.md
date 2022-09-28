@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.4.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-secretmanager-v2.3.7...google-cloud-secretmanager-v2.4.0) (2022-09-28)
+
+
+### Features
+
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.api.grpc:grpc-google-cloud-secretmanager-v1 to v2.3.2 ([#8319](https://github.com/googleapis/google-cloud-java/issues/8319)) ([ddc3d02](https://github.com/googleapis/google-cloud-java/commit/ddc3d02a8c174d5b85518632556c4df27e50529e))
+* **deps:** update dependency com.google.api.grpc:grpc-google-cloud-secretmanager-v1beta1 to v2.3.2 ([#8320](https://github.com/googleapis/google-cloud-java/issues/8320)) ([477775a](https://github.com/googleapis/google-cloud-java/commit/477775a7d2de122667db61b023fa61928bc9992a))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#8325](https://github.com/googleapis/google-cloud-java/issues/8325)) ([01f492b](https://github.com/googleapis/google-cloud-java/commit/01f492be424acdb90edb23ba66656aeff7cf39eb))
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+* owl-bot-staging should not be commited ([#8337](https://github.com/googleapis/google-cloud-java/issues/8337)) ([c9bb4a9](https://github.com/googleapis/google-cloud-java/commit/c9bb4a97aa19032b78c86c951fe9920f24ac4eec))
+
+
+### Dependencies
+
+* reverting renovate bot pull requests ([#8417](https://github.com/googleapis/google-cloud-java/issues/8417)) ([8f0c60b](https://github.com/googleapis/google-cloud-java/commit/8f0c60bde446acccc665eb7894723632eefc3503))
+
 ## [2.3.1](https://github.com/googleapis/java-secretmanager/compare/v2.3.0...v2.3.1) (2022-08-03)
 
 

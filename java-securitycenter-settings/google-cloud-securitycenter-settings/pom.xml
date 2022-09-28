@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-securitycenter-settings</artifactId>
-  <version>0.6.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-securitycenter-settings:current} -->
+  <version>0.7.0</version><!-- {x-version-update:google-cloud-securitycenter-settings:current} -->
   <packaging>jar</packaging>
   <name>Google Security Command Center Settings API</name>
   <url>https://github.com/googleapis/java-securitycenter-settings</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-securitycenter-settings-parent</artifactId>
-    <version>0.6.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-securitycenter-settings:current} -->
+    <version>0.7.0</version><!-- {x-version-update:google-cloud-securitycenter-settings:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-securitycenter-settings</site.installationModule>
