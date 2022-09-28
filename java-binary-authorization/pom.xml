@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-binary-authorization-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.2.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-binary-authorization:current} -->
+  <version>1.2.8</version><!-- {x-version-update:google-cloud-binary-authorization:current} -->
   <name>Google Binary Authorization Parent</name>
   <url>https://github.com/googleapis/java-binary-authorization</url>
   <description>
@@ -86,7 +86,7 @@
       <dependency>
         <groupId>io.grafeas</groupId>
         <artifactId>grafeas</artifactId>
-        <version>2.4.3</version>
+        <version>2.4.6</version>
       </dependency>
       <dependency>
         <groupId>io.perfmark</groupId>

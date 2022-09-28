@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-billing:2.3.3:2.3.4-SNAPSHOT
-grpc-google-cloud-billing-v1:2.3.3:2.3.4-SNAPSHOT
-proto-google-cloud-billing-v1:2.3.3:2.3.4-SNAPSHOT
+google-cloud-billing:2.4.0:2.4.0
+grpc-google-cloud-billing-v1:2.4.0:2.4.0
+proto-google-cloud-billing-v1:2.4.0:2.4.0

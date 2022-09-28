@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-channel-parent</artifactId>
   <packaging>pom</packaging>
-  <version>3.7.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-channel:current} -->
+  <version>3.7.5</version><!-- {x-version-update:google-cloud-channel:current} -->
   <name>Google Channel Services Parent</name>
   <url>https://github.com/googleapis/java-</url>
   <description>

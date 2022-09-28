@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-containeranalysis-bom</artifactId>
-  <version>2.4.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
+  <version>2.4.8</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -53,27 +53,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-containeranalysis</artifactId>
-        <version>2.4.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
+        <version>2.4.8</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-containeranalysis-v1beta1</artifactId>
-        <version>0.94.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-containeranalysis-v1beta1:current} -->
+        <version>0.94.8</version><!-- {x-version-update:grpc-google-cloud-containeranalysis-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-containeranalysis-v1</artifactId>
-        <version>2.4.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-containeranalysis-v1:current} -->
+        <version>2.4.8</version><!-- {x-version-update:grpc-google-cloud-containeranalysis-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-containeranalysis-v1</artifactId>
-        <version>2.4.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-containeranalysis-v1:current} -->
+        <version>2.4.8</version><!-- {x-version-update:proto-google-cloud-containeranalysis-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-containeranalysis-v1beta1</artifactId>
-        <version>0.94.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-containeranalysis-v1beta1:current} -->
+        <version>0.94.8</version><!-- {x-version-update:proto-google-cloud-containeranalysis-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
