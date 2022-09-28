@@ -43,10 +43,9 @@ fi
 # Execute 'predestroy.sh' scripts for any active modules
 IFS=':'
 for module in $modules; do
-  if [ -f "../$module/.terraform/predestroy.sh" ]; then
-    pushd "../$module/.terraform" >/dev/null || exit
-    source "./predestroy.sh" &>/dev/null &
-    popd >/dev/null || exit
+  if [[ -f "../$module/.terraform/predestroy.sh" ]]; then
+    # shellcheck disable=SC1090
+    source "../$module/.terraform/predestroy.sh"
   fi
 done
 terraform destroy -auto-approve || exit
