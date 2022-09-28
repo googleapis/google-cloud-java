@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-functions</artifactId>
-  <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-functions:current} -->
+  <version>2.5.3</version><!-- {x-version-update:google-cloud-functions:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Functions</name>
   <url>https://github.com/googleapis/java-functions</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-functions-parent</artifactId>
-    <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-functions:current} -->
+    <version>2.5.3</version><!-- {x-version-update:google-cloud-functions:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-functions</site.installationModule>

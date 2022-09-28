@@ -1,5 +1,26 @@
 # Changelog
 
+## [3.8.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-dlp-v3.7.3...google-cloud-dlp-v3.8.0) (2022-09-28)
+
+
+### Features
+
+* [dlp] add Deidentify action ([#8287](https://github.com/googleapis/google-cloud-java/issues/8287)) ([b718ffa](https://github.com/googleapis/google-cloud-java/commit/b718ffa90f4d0e4c20627e6598ec287bd971a99a))
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#8325](https://github.com/googleapis/google-cloud-java/issues/8325)) ([01f492b](https://github.com/googleapis/google-cloud-java/commit/01f492be424acdb90edb23ba66656aeff7cf39eb))
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+* owl-bot-staging should not be commited ([#8337](https://github.com/googleapis/google-cloud-java/issues/8337)) ([c9bb4a9](https://github.com/googleapis/google-cloud-java/commit/c9bb4a97aa19032b78c86c951fe9920f24ac4eec))
+
+
+### Dependencies
+
+* reverting renovate bot pull requests ([#8417](https://github.com/googleapis/google-cloud-java/issues/8417)) ([8f0c60b](https://github.com/googleapis/google-cloud-java/commit/8f0c60bde446acccc665eb7894723632eefc3503))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.120.13 ([#974](https://github.com/googleapis/google-cloud-java/issues/974)) ([b37407b](https://github.com/googleapis/google-cloud-java/commit/b37407bd176fd1a4fa2eab6696f9da550d123af6))
+
 ## [3.6.7](https://github.com/googleapis/java-dlp/compare/v3.6.6...v3.6.7) (2022-08-05)
 
 
