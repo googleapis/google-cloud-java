@@ -14,10 +14,10 @@
 
 
 deep-remove-regex:
-- "/samples/snippets/generated"
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-dataproc/samples/snippets/generated"
+- "/java-dataproc/grpc-google-.*/src"
+- "/java-dataproc/proto-google-.*/src"
+- "/java-dataproc/google-.*/src"
 
 deep-preserve-regex:
 - "/google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v.*/it/ITSystemTest.java"
