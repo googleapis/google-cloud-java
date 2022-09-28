@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-identity-accesscontextmanager-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.4.2-SNAPSHOT</version><!-- {x-version-update:google-identity-accesscontextmanager:current} -->
+  <version>1.4.4</version><!-- {x-version-update:google-identity-accesscontextmanager:current} -->
   <name>Google Identity Access Context Manager Parent</name>
   <url>https://github.com/googleapis/java-accesscontextmanager</url>
   <description>

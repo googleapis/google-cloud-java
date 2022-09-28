@@ -1,5 +1,33 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-websecurityscanner-v2.2.4...google-cloud-websecurityscanner-v2.3.0) (2022-09-28)
+
+
+### Features
+
+* [websecurityscanner] added NO_STARTING_URL_FOUND_FOR_MANAGED_SCAN to ScanRunWarningTrace.Code ([#8306](https://github.com/googleapis/google-cloud-java/issues/8306)) ([94651cd](https://github.com/googleapis/google-cloud-java/commit/94651cdf2d3bd2936e51444baa2beb40d7094bbe))
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+
+
+### Bug Fixes
+
+* Added fix to return a list of the endpoints that encountered errors during crawl, along with the specific error message when the starting URL returns Http errors ([94651cd](https://github.com/googleapis/google-cloud-java/commit/94651cdf2d3bd2936e51444baa2beb40d7094bbe))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#8325](https://github.com/googleapis/google-cloud-java/issues/8325)) ([01f492b](https://github.com/googleapis/google-cloud-java/commit/01f492be424acdb90edb23ba66656aeff7cf39eb))
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+* GoogleAccount is deprecated ([94651cd](https://github.com/googleapis/google-cloud-java/commit/94651cdf2d3bd2936e51444baa2beb40d7094bbe))
+* owl-bot-staging should not be commited ([#8337](https://github.com/googleapis/google-cloud-java/issues/8337)) ([c9bb4a9](https://github.com/googleapis/google-cloud-java/commit/c9bb4a97aa19032b78c86c951fe9920f24ac4eec))
+
+
+### Documentation
+
+* [websecurityscanner] Publish Scan Run logging proto for documentation ([#8245](https://github.com/googleapis/google-cloud-java/issues/8245)) ([f2bbd02](https://github.com/googleapis/google-cloud-java/commit/f2bbd0205200ad2b7d012b49512d647d6e16e1a2))
+
+
+### Dependencies
+
+* reverting renovate bot pull requests ([#8417](https://github.com/googleapis/google-cloud-java/issues/8417)) ([8f0c60b](https://github.com/googleapis/google-cloud-java/commit/8f0c60bde446acccc665eb7894723632eefc3503))
+* update dependency joda-time:joda-time to v2.11.1 ([#738](https://github.com/googleapis/google-cloud-java/issues/738)) ([367d773](https://github.com/googleapis/google-cloud-java/commit/367d7734fc7187034c48fe2d93db27c07cb6a302))
+
 ## [2.2.3](https://github.com/googleapis/java-websecurityscanner/compare/v2.2.2...v2.2.3) (2022-08-16)
 
 

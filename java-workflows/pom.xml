@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-workflows-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-workflows:current} -->
+  <version>2.3.5</version><!-- {x-version-update:google-cloud-workflows:current} -->
   <name>Google Cloud Workflows Parent</name>
   <url>https://github.com/googleapis/java-</url>
   <description>

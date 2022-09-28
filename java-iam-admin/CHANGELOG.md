@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.0.0](https://github.com/googleapis/google-cloud-java/compare/google-iam-admin-v1.2.5...google-iam-admin-v2.0.0) (2022-09-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* [iam-admin] replace java_outer_classname option with use_java_stubby_library, add DisableServiceAccountKey and EnableServiceAccountKey, and update comments (#8412)
+
+### Features
+
+* [iam-admin] replace java_outer_classname option with use_java_stubby_library, add DisableServiceAccountKey and EnableServiceAccountKey, and update comments ([#8412](https://github.com/googleapis/google-cloud-java/issues/8412)) ([c5e5ef1](https://github.com/googleapis/google-cloud-java/commit/c5e5ef1cd78e33341879d7016ed812c98eded00c))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#8325](https://github.com/googleapis/google-cloud-java/issues/8325)) ([01f492b](https://github.com/googleapis/google-cloud-java/commit/01f492be424acdb90edb23ba66656aeff7cf39eb))
+* owl-bot-staging should not be commited ([#8337](https://github.com/googleapis/google-cloud-java/issues/8337)) ([c9bb4a9](https://github.com/googleapis/google-cloud-java/commit/c9bb4a97aa19032b78c86c951fe9920f24ac4eec))
+
+
+### Dependencies
+
+* reverting renovate bot pull requests ([#8417](https://github.com/googleapis/google-cloud-java/issues/8417)) ([8f0c60b](https://github.com/googleapis/google-cloud-java/commit/8f0c60bde446acccc665eb7894723632eefc3503))
+
 ## [1.2.3](https://github.com/googleapis/java-iam-admin/compare/v1.2.2...v1.2.3) (2022-08-09)
 
 

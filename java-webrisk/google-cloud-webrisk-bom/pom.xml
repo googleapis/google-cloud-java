@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-webrisk-bom</artifactId>
-  <version>2.2.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-webrisk:current} -->
+  <version>2.2.5</version><!-- {x-version-update:google-cloud-webrisk:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -53,27 +53,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-webrisk</artifactId>
-        <version>2.2.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-webrisk:current} -->
+        <version>2.2.5</version><!-- {x-version-update:google-cloud-webrisk:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-webrisk-v1</artifactId>
-        <version>2.2.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-webrisk-v1:current} -->
+        <version>2.2.5</version><!-- {x-version-update:grpc-google-cloud-webrisk-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-webrisk-v1beta1</artifactId>
-        <version>0.39.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-webrisk-v1beta1:current} -->
+        <version>0.39.5</version><!-- {x-version-update:grpc-google-cloud-webrisk-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-webrisk-v1</artifactId>
-        <version>2.2.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-webrisk-v1:current} -->
+        <version>2.2.5</version><!-- {x-version-update:proto-google-cloud-webrisk-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-webrisk-v1beta1</artifactId>
-        <version>0.39.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-webrisk-v1beta1:current} -->
+        <version>0.39.5</version><!-- {x-version-update:proto-google-cloud-webrisk-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-iam-admin:1.2.5:1.2.6-SNAPSHOT
-grpc-google-iam-admin-v1:1.2.5:1.2.6-SNAPSHOT
-proto-google-iam-admin-v1:1.2.5:1.2.6-SNAPSHOT
+google-iam-admin:2.0.0:2.0.0
+grpc-google-iam-admin-v1:2.0.0:2.0.0
+proto-google-iam-admin-v1:2.0.0:2.0.0

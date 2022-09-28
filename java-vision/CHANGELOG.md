@@ -1,5 +1,30 @@
 # Changelog
 
+## [3.2.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-vision-v3.1.1...google-cloud-vision-v3.2.0) (2022-09-28)
+
+
+### Features
+
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#8325](https://github.com/googleapis/google-cloud-java/issues/8325)) ([01f492b](https://github.com/googleapis/google-cloud-java/commit/01f492be424acdb90edb23ba66656aeff7cf39eb))
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+* owl-bot-staging should not be commited ([#8337](https://github.com/googleapis/google-cloud-java/issues/8337)) ([c9bb4a9](https://github.com/googleapis/google-cloud-java/commit/c9bb4a97aa19032b78c86c951fe9920f24ac4eec))
+* Update Java-Vision IT test cases ([#8248](https://github.com/googleapis/google-cloud-java/issues/8248)) ([4adb9f7](https://github.com/googleapis/google-cloud-java/commit/4adb9f7215baec46b444f53b1d6730e3dc2f32cc))
+
+
+### Documentation
+
+* [vision] update comments for image annotator OCR models ([#8388](https://github.com/googleapis/google-cloud-java/issues/8388)) ([f0d6cc8](https://github.com/googleapis/google-cloud-java/commit/f0d6cc8b97644d5af34da7d2cc726c843fd78451))
+
+
+### Dependencies
+
+* reverting renovate bot pull requests ([#8417](https://github.com/googleapis/google-cloud-java/issues/8417)) ([8f0c60b](https://github.com/googleapis/google-cloud-java/commit/8f0c60bde446acccc665eb7894723632eefc3503))
+
 ## [3.1.0](https://github.com/googleapis/java-vision/compare/v3.0.2...v3.1.0) (2022-08-09)
 
 

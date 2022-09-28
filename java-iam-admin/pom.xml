@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-iam-admin-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.2.4-SNAPSHOT</version><!-- {x-version-update:google-iam-admin:current} -->
+  <version>2.0.0</version><!-- {x-version-update:google-iam-admin:current} -->
   <name>Google IAM Admin API Parent</name>
   <url>https://github.com/googleapis/java-iam-admin</url>
   <description>
