@@ -8,7 +8,7 @@
       "component": "google-cloud-gapic-bom",
       "skip-github-release": true
     },
-    ALL_PACKAGES
+ALL_PACKAGES
   },
   "plugins": [
     "maven-workspace"

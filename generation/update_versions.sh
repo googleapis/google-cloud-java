@@ -118,3 +118,9 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
 done
 
 echo "These artifacts don't exist: ${missing_artifacts[*]}"
+
+echo "Generating the release-please configurations..."
+./generate_release_please_config.sh
+echo "Done generating release-please configurations..."
+
+#TODO: Call a script to copy over the README.md and CHANGELOG.md into monorepo
