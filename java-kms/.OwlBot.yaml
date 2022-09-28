@@ -14,18 +14,18 @@
 
 
 deep-remove-regex:
-- "/samples/snippets/generated"
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-kms/samples/snippets/generated"
+- "/java-kms/grpc-google-.*/src"
+- "/java-kms/proto-google-.*/src"
+- "/java-kms/google-.*/src"
 
 deep-preserve-regex:
-- "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/UntypedKeyName.java"
-- "/proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyName.java"
-- "/proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyNames.java"
+- "/java-kms/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-kms/proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/UntypedKeyName.java"
+- "/java-kms/proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyName.java"
+- "/java-kms/proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyNames.java"
 - "/google-cloud-kms/src/test/java/com/google/cloud/kms/it/ITKmsTest.java"
-- "/proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKeyPathName.java"
+- "/java-kms/proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKeyPathName.java"
 
 deep-copy-regex:
 - source: "/google/cloud/kms/(v.*)/.*-java/proto-google-.*/src"

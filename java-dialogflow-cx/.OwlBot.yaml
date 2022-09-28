@@ -14,9 +14,9 @@
 
 
 deep-remove-regex:
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-dialogflow-cx/grpc-google-.*/src"
+- "/java-dialogflow-cx/proto-google-.*/src"
+- "/java-dialogflow-cx/google-.*/src"
 
 deep-preserve-regex:
 - "/google-cloud-dialogflow-cx/src/test/java/com/google/cloud/dialogflow/cx/v.*/it/ITSystemTest.java"

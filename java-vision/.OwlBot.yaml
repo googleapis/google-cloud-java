@@ -14,14 +14,14 @@
 
 
 deep-remove-regex:
-- "/samples/snippets/generated"
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-vision/samples/snippets/generated"
+- "/java-vision/grpc-google-.*/src"
+- "/java-vision/proto-google-.*/src"
+- "/java-vision/google-.*/src"
 
 deep-preserve-regex:
-- "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ImageName.java"
+- "/java-vision/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-vision/proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ImageName.java"
 - "/google-cloud-vision/src/test/java/com/google/cloud/vision/it/ITSystemTest.java"
 - "/google-cloud-vision/src/test/resources/city.jpg"
 - "/google-cloud-vision/src/test/resources/face_no_surprise.jpg"

@@ -14,13 +14,13 @@
 
 
 deep-remove-regex:
-- "/samples/snippets/generated"
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-texttospeech/samples/snippets/generated"
+- "/java-texttospeech/grpc-google-.*/src"
+- "/java-texttospeech/proto-google-.*/src"
+- "/java-texttospeech/google-.*/src"
 
 deep-preserve-regex:
-- "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-texttospeech/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/google-cloud-texttospeech/src/test/java/com/google/cloud/texttospeech/v1/TextToSpeechSmokeTest.java"
 - "/google-cloud-texttospeech/src/test/java/com/google/cloud/texttospeech/v1beta1/TextToSpeechSmokeTest.java"
 

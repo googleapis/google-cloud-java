@@ -14,9 +14,9 @@
 
 
 deep-remove-regex:
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-container/grpc-google-.*/src"
+- "/java-container/proto-google-.*/src"
+- "/java-container/google-.*/src"
 
 deep-preserve-regex:
 - "/google-cloud-container/src/main/java/com/google/cloud/container/v1/SampleApp.java"

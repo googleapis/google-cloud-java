@@ -14,26 +14,26 @@
 
 
 deep-remove-regex:
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-dlp/grpc-google-.*/src"
+- "/java-dlp/proto-google-.*/src"
+- "/java-dlp/google-.*/src"
 
 deep-preserve-regex:
-- "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeidentifyTemplateNames.java"
-- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectFindingName.java"
-- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectTemplateNames.java"
-- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/OrganizationDeidentifyTemplateName.java"
-- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/OrganizationInspectTemplateName.java"
-- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/OrganizationStoredInfoTypeName.java"
-- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ProjectDeidentifyTemplateName.java"
-- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ProjectInspectTemplateName.java"
-- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ProjectJobTriggerName.java"
-- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ProjectStoredInfoTypeName.java"
-- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StoredInfoTypeNames.java"
-- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UntypedDeidentifyTemplateName.java"
-- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UntypedInspectTemplateName.java"
-- "/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UntypedStoredInfoTypeName.java"
+- "/java-dlp/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-dlp/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeidentifyTemplateNames.java"
+- "/java-dlp/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectFindingName.java"
+- "/java-dlp/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectTemplateNames.java"
+- "/java-dlp/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/OrganizationDeidentifyTemplateName.java"
+- "/java-dlp/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/OrganizationInspectTemplateName.java"
+- "/java-dlp/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/OrganizationStoredInfoTypeName.java"
+- "/java-dlp/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ProjectDeidentifyTemplateName.java"
+- "/java-dlp/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ProjectInspectTemplateName.java"
+- "/java-dlp/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ProjectJobTriggerName.java"
+- "/java-dlp/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/ProjectStoredInfoTypeName.java"
+- "/java-dlp/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StoredInfoTypeNames.java"
+- "/java-dlp/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UntypedDeidentifyTemplateName.java"
+- "/java-dlp/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UntypedInspectTemplateName.java"
+- "/java-dlp/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UntypedStoredInfoTypeName.java"
 
 
 deep-copy-regex:

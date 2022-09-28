@@ -14,13 +14,13 @@
 
 
 deep-remove-regex:
-- "/samples/snippets/generated"
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-websecurityscanner/samples/snippets/generated"
+- "/java-websecurityscanner/grpc-google-.*/src"
+- "/java-websecurityscanner/proto-google-.*/src"
+- "/java-websecurityscanner/google-.*/src"
 
 deep-preserve-regex:
-- "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-websecurityscanner/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/it/v1beta/VPCServiceControlNegativeTest.java"
 - "/google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/it/v1beta/VPCServiceControlPositiveTest.java"
 

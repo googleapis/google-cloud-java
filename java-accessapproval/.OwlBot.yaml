@@ -14,10 +14,10 @@
 
 
 deep-remove-regex:
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
-- "/samples/snippets/generated"
+- "/java-accessapproval/grpc-google-.*/src"
+- "/java-accessapproval/proto-google-.*/src"
+- "/java-accessapproval/google-.*/src"
+- "/java-accessapproval/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/google-cloud-accessapproval/src/test/java/com/google/cloud/accessapproval/v1/it"

@@ -14,12 +14,12 @@
 
 
 deep-remove-regex:
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-beyondcorp-appconnectors/grpc-google-.*/src"
+- "/java-beyondcorp-appconnectors/proto-google-.*/src"
+- "/java-beyondcorp-appconnectors/google-.*/src"
 
 deep-preserve-regex:
-- "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-beyondcorp-appconnectors/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/cloud/beyondcorp/appconnectors/(v.*)/.*-java/proto-google-.*/src"

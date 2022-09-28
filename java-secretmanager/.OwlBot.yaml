@@ -14,18 +14,18 @@
 
 
 deep-remove-regex:
-- "/samples/snippets/generated"
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-secretmanager/samples/snippets/generated"
+- "/java-secretmanager/grpc-google-.*/src"
+- "/java-secretmanager/proto-google-.*/src"
+- "/java-secretmanager/google-.*/src"
 
 deep-preserve-regex:
-- "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/proto-google-cloud-secretmanager-v1beta1"
-- "/grpc-google-cloud-secretmanager-v1beta1"
+- "/java-secretmanager/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-secretmanager/proto-google-cloud-secretmanager-v1beta1"
+- "/java-secretmanager/grpc-google-cloud-secretmanager-v1beta1"
 - "/google-cloud-secretmanager/src/main/java/com/google/cloud/secretmanager/v1beta1"
 - "/google-cloud-secretmanager/src/test/java/com/google/cloud/secretmanager/v1beta1"
-- "/proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/TopicName.java"
+- "/java-secretmanager/proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/TopicName.java"
 
 
 deep-copy-regex:

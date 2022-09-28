@@ -14,15 +14,15 @@
 
 
 deep-remove-regex:
-- "/samples/snippets/generated"
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-asset/samples/snippets/generated"
+- "/java-asset/grpc-google-.*/src"
+- "/java-asset/proto-google-.*/src"
+- "/java-asset/google-.*/src"
 
 deep-preserve-regex:
 - "/google-cloud-.*/src/test/java/com/google/cloud/.*/it"
 - "/google-cloud-asset/src/test/java/com/google/cloud/asset/v1/VPCServiceControlTest.java"
-- "/proto-google-cloud-asset-v1/src/main/java/com/google/cloud/asset/v1/ProjectName.java"
+- "/java-asset/proto-google-cloud-asset-v1/src/main/java/com/google/cloud/asset/v1/ProjectName.java"
 
 deep-copy-regex:
 - source: "/google/cloud/asset/(v.*)/.*-java/proto-google-.*/src"

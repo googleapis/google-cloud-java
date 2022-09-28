@@ -14,10 +14,10 @@
 
 
 deep-remove-regex:
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src/main/java/com/google/cloud/aiplatform/v1"
-- "/google-.*/src/main/java/com/google/cloud/aiplatform/v1beta1"
+- "/java-aiplatform/grpc-google-.*/src"
+- "/java-aiplatform/proto-google-.*/src"
+- "/java-aiplatform/google-.*/src/main/java/com/google/cloud/aiplatform/v1"
+- "/java-aiplatform/google-.*/src/main/java/com/google/cloud/aiplatform/v1beta1"
 
 deep-copy-regex:
 - source: "/google/cloud/aiplatform/(v.*)/.*-java/proto-google-.*/src"
