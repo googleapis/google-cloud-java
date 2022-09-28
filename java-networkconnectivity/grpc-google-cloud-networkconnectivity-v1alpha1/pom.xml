@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-networkconnectivity-v1alpha1</artifactId>
-  <version>0.8.7</version><!-- {x-version-update:grpc-google-cloud-networkconnectivity-v1alpha1:current} -->
+  <version>0.8.8-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-networkconnectivity-v1alpha1:current} -->
   <name>grpc-google-cloud-networkconnectivity-v1alpha1</name>
   <description>GRPC library for google-cloud-networkconnectivity</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-networkconnectivity-parent</artifactId>
-    <version>1.2.7</version><!-- {x-version-update:google-cloud-networkconnectivity:current} -->
+    <version>1.2.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-networkconnectivity:current} -->
   </parent>
   <dependencies>
     <dependency>
