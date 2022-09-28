@@ -4,10 +4,6 @@
   "separate-pull-requests": false,
   "include-component-in-tag": true,
   "packages": {
-    "google-cloud-gapic-bom": {
-      "component": "google-cloud-gapic-bom",
-      "skip-github-release": true
-    },
 ALL_PACKAGES
   },
   "plugins": [
