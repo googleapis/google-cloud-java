@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-build</artifactId>
-      <version>3.5.4</version>
+      <version>3.5.5</version>
     </dependency>
 
     <dependency>
