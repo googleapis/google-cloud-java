@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-resourcemanager:1.5.5:1.5.6-SNAPSHOT
-grpc-google-cloud-resourcemanager-v3:1.5.5:1.5.6-SNAPSHOT
-proto-google-cloud-resourcemanager-v3:1.5.5:1.5.6-SNAPSHOT
+google-cloud-resourcemanager:1.5.6:1.5.6
+grpc-google-cloud-resourcemanager-v3:1.5.6:1.5.6
+proto-google-cloud-resourcemanager-v3:1.5.6:1.5.6

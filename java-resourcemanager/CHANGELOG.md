@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.5.6](https://github.com/googleapis/google-cloud-java/compare/google-cloud-resourcemanager-v1.5.5...google-cloud-resourcemanager-v1.5.6) (2022-09-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.api.grpc:grpc-google-cloud-resourcemanager-v3 to v1.5.4 ([#8277](https://github.com/googleapis/google-cloud-java/issues/8277)) ([2632358](https://github.com/googleapis/google-cloud-java/commit/26323586c1c8c9da75cef2481afaef568470e110))
+* **deps:** update dependency com.google.api.grpc:proto-google-cloud-resourcemanager-v3 to v1.5.4 ([#8286](https://github.com/googleapis/google-cloud-java/issues/8286)) ([01ff747](https://github.com/googleapis/google-cloud-java/commit/01ff7472ecc8a48a2d1d3302ab67f7c169008380))
+* **deps:** update dependency com.google.apis:google-api-services-cloudresourcemanager to v1-rev20220828-2.0.0 ([#8255](https://github.com/googleapis/google-cloud-java/issues/8255)) ([7328dac](https://github.com/googleapis/google-cloud-java/commit/7328dacdb916459a0a9b149ffaf9372b2f154b49))
+* **deps:** update dependency com.google.cloud:google-cloud-resourcemanager-parent to v1.5.4 ([#8293](https://github.com/googleapis/google-cloud-java/issues/8293)) ([b35d444](https://github.com/googleapis/google-cloud-java/commit/b35d4442cf9c8ac6c0a458e687135dee43143bc8))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#8325](https://github.com/googleapis/google-cloud-java/issues/8325)) ([01f492b](https://github.com/googleapis/google-cloud-java/commit/01f492be424acdb90edb23ba66656aeff7cf39eb))
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+* owl-bot-staging should not be commited ([#8337](https://github.com/googleapis/google-cloud-java/issues/8337)) ([c9bb4a9](https://github.com/googleapis/google-cloud-java/commit/c9bb4a97aa19032b78c86c951fe9920f24ac4eec))
+
+
+### Dependencies
+
+* reverting renovate bot pull requests ([#8417](https://github.com/googleapis/google-cloud-java/issues/8417)) ([8f0c60b](https://github.com/googleapis/google-cloud-java/commit/8f0c60bde446acccc665eb7894723632eefc3503))
+
 ## [1.5.3](https://github.com/googleapis/java-resourcemanager/compare/v1.5.2...v1.5.3) (2022-08-18)
 
 

@@ -1,5 +1,26 @@
 # Changelog
 
+## [3.1.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-recaptchaenterprise-v3.0.9...google-cloud-recaptchaenterprise-v3.1.0) (2022-09-28)
+
+
+### Features
+
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.api.grpc:grpc-google-cloud-recaptchaenterprise-v1 to v3.0.6 ([#8314](https://github.com/googleapis/google-cloud-java/issues/8314)) ([62dc4dd](https://github.com/googleapis/google-cloud-java/commit/62dc4dd3e6c871462018fb309318d460e6e5a272))
+* **deps:** update dependency com.google.api.grpc:grpc-google-cloud-recaptchaenterprise-v1beta1 to v0.42.6 ([#8318](https://github.com/googleapis/google-cloud-java/issues/8318)) ([c5424fb](https://github.com/googleapis/google-cloud-java/commit/c5424fb47710dd53e06a90eacf0be33a3c88ad43))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#8325](https://github.com/googleapis/google-cloud-java/issues/8325)) ([01f492b](https://github.com/googleapis/google-cloud-java/commit/01f492be424acdb90edb23ba66656aeff7cf39eb))
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+* owl-bot-staging should not be commited ([#8337](https://github.com/googleapis/google-cloud-java/issues/8337)) ([c9bb4a9](https://github.com/googleapis/google-cloud-java/commit/c9bb4a97aa19032b78c86c951fe9920f24ac4eec))
+
+
+### Dependencies
+
+* reverting renovate bot pull requests ([#8417](https://github.com/googleapis/google-cloud-java/issues/8417)) ([8f0c60b](https://github.com/googleapis/google-cloud-java/commit/8f0c60bde446acccc665eb7894723632eefc3503))
+
 ## [3.0.5](https://github.com/googleapis/java-recaptchaenterprise/compare/v3.0.4...v3.0.5) (2022-08-04)
 
 

@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.10.4](https://github.com/googleapis/google-cloud-java/compare/google-cloud-recommendations-ai-v0.10.3...google-cloud-recommendations-ai-v0.10.4) (2022-09-28)
+
+
+### Bug Fixes
+
+* [recommendationengine] Fix recommendationengine resource name configuration ([#8381](https://github.com/googleapis/google-cloud-java/issues/8381)) ([a352332](https://github.com/googleapis/google-cloud-java/commit/a35233240edd9919a0d3929f2354df686161dcc2))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#8325](https://github.com/googleapis/google-cloud-java/issues/8325)) ([01f492b](https://github.com/googleapis/google-cloud-java/commit/01f492be424acdb90edb23ba66656aeff7cf39eb))
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+* owl-bot-staging should not be commited ([#8337](https://github.com/googleapis/google-cloud-java/issues/8337)) ([c9bb4a9](https://github.com/googleapis/google-cloud-java/commit/c9bb4a97aa19032b78c86c951fe9920f24ac4eec))
+
+
+### Dependencies
+
+* reverting renovate bot pull requests ([#8417](https://github.com/googleapis/google-cloud-java/issues/8417)) ([8f0c60b](https://github.com/googleapis/google-cloud-java/commit/8f0c60bde446acccc665eb7894723632eefc3503))
+
 ## [0.10.2](https://github.com/googleapis/java-recommendations-ai/compare/v0.10.1...v0.10.2) (2022-08-12)
 
 

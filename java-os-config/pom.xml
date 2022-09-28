@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-os-config-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.5.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-os-config:current} -->
+  <version>2.5.5</version><!-- {x-version-update:google-cloud-os-config:current} -->
   <name>Google OS Config API Parent</name>
   <url>https://github.com/googleapis/java-os-config</url>
   <description>
