@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.4.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-tpu-v2.3.5...google-cloud-tpu-v2.4.0) (2022-09-28)
+
+
+### Features
+
+* [tpu] Add Secure Boot support to TPU v2alpha1 API ([#8411](https://github.com/googleapis/google-cloud-java/issues/8411)) ([739b86e](https://github.com/googleapis/google-cloud-java/commit/739b86ea3a2cd36e1395eade5544030bcb028859))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#8325](https://github.com/googleapis/google-cloud-java/issues/8325)) ([01f492b](https://github.com/googleapis/google-cloud-java/commit/01f492be424acdb90edb23ba66656aeff7cf39eb))
+* owl-bot-staging should not be commited ([#8337](https://github.com/googleapis/google-cloud-java/issues/8337)) ([c9bb4a9](https://github.com/googleapis/google-cloud-java/commit/c9bb4a97aa19032b78c86c951fe9920f24ac4eec))
+
+
+### Dependencies
+
+* reverting renovate bot pull requests ([#8417](https://github.com/googleapis/google-cloud-java/issues/8417)) ([8f0c60b](https://github.com/googleapis/google-cloud-java/commit/8f0c60bde446acccc665eb7894723632eefc3503))
+
 ## [2.3.3](https://github.com/googleapis/java-tpu/compare/v2.3.2...v2.3.3) (2022-08-09)
 
 
