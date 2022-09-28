@@ -1,9 +1,11 @@
 #!/bin/bash
 
+# Fixes the split-repo-style OwlBot configuration to monorepo-style.
 # Usage:
 # set_owlbot_config.sh <.OwlBot.yaml path from the root>
-# set_owlbot_config.sh java-dataform/.OwlBot.yaml
-
+# Example:
+# $ set_owlbot_config.sh java-dataform/.OwlBot.yaml
+# $ for F in `find . -maxdepth 2 -name '.OwlBot.yaml'`; do sh generation/set_owlbot_config.sh $F; done
 OWLBOT_FILE=$1
 
 if [ ! -r "${OWLBOT_FILE}" ]; then
@@ -25,14 +27,8 @@ sed -i "s|\"/proto-google|\"/${module_name}/proto-google|" "${OWLBOT_FILE}"
 sed -i "s|\"/google-\.\*|\"/${module_name}/google-.*|" "${OWLBOT_FILE}"
 sed -i "s|\"/samples|\"/${module_name}/samples|" "${OWLBOT_FILE}"
 
-# Individual modules do not need specify post processor Docker image
-sed -i.bak '/docker/d' "${OWLBOT_FILE}" && rm "${OWLBOT_FILE}.bak"
-sed -i.bak '/image/d' "${OWLBOT_FILE}" && rm "${OWLBOT_FILE}.bak"
-
 # In monorepo, the staging directory structure tells the destination module to
 # which the OwlBot Java postprocessor copies the files.
 if grep --quiet 'owl-bot-staging/$1' "${OWLBOT_FILE}"; then
-  echo "Replace!"
-  #sed -i.bak "s|owl-bot-staging|owl-bot-staging/${module_name}|" "${OWLBOT_FILE}" \
-  #    && rm "${OWLBOT_FILE}.bak"
+  sed -i "s|owl-bot-staging|owl-bot-staging/${module_name}|" "${OWLBOT_FILE}"
 fi
