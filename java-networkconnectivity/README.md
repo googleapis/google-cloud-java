@@ -19,7 +19,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-networkconnectivity</artifactId>
-  <version>1.2.5</version>
+  <version>1.2.6</version>
 </dependency>
 
 ```
