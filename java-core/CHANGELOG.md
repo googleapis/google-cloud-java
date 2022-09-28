@@ -1,5 +1,34 @@
 # Changelog
 
+## [2.8.17](https://github.com/googleapis/java-core/compare/v2.8.16...v2.8.17) (2022-09-28)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#943](https://github.com/googleapis/java-core/issues/943)) ([c6c511d](https://github.com/googleapis/java-core/commit/c6c511d82534e96fe5b42ad9e4886aaa18efaef3))
+* Update dependency certifi to v2022.9.24 ([#934](https://github.com/googleapis/java-core/issues/934)) ([c756885](https://github.com/googleapis/java-core/commit/c75688575c3c19d0d8a1a2b25c6fe3eb99c229cb))
+* Update dependency charset-normalizer to v2.1.1 ([#938](https://github.com/googleapis/java-core/issues/938)) ([1520f65](https://github.com/googleapis/java-core/commit/1520f65cf6655aed9767d9470e3729a0fc270b9e))
+* Update dependency click to v8.1.3 ([#946](https://github.com/googleapis/java-core/issues/946)) ([6f7a7f5](https://github.com/googleapis/java-core/commit/6f7a7f5f318a7c3586fa79a7a0013bca562b059e))
+* Update dependency com.google.api.grpc:proto-google-common-protos to v2.9.4 ([#945](https://github.com/googleapis/java-core/issues/945)) ([307e406](https://github.com/googleapis/java-core/commit/307e40688d55af3cb96e38972af6035cf846c595))
+* Update dependency gcp-releasetool to v1.8.8 ([#935](https://github.com/googleapis/java-core/issues/935)) ([a5ba3b8](https://github.com/googleapis/java-core/commit/a5ba3b8d6bc43734bb01b0ba04e11b5262db526b))
+* Update dependency google-api-core to v2.10.1 ([#947](https://github.com/googleapis/java-core/issues/947)) ([1f3da64](https://github.com/googleapis/java-core/commit/1f3da6450b1a5093aadaa9f299fc797773cc8480))
+* Update dependency google-auth to v2.12.0 ([#948](https://github.com/googleapis/java-core/issues/948)) ([361da3d](https://github.com/googleapis/java-core/commit/361da3dcaecadd708546447737c5a7c1d9799834))
+* Update dependency google-cloud-core to v2.3.2 ([#936](https://github.com/googleapis/java-core/issues/936)) ([99c0013](https://github.com/googleapis/java-core/commit/99c001309e1f72b84c41b7df55ff26c9f182863a))
+* Update dependency google-cloud-storage to v2.5.0 ([#949](https://github.com/googleapis/java-core/issues/949)) ([cd6cbfb](https://github.com/googleapis/java-core/commit/cd6cbfb3b1c45e2f55d51edee74621a7dbe06401))
+* Update dependency google-crc32c to v1.5.0 ([#950](https://github.com/googleapis/java-core/issues/950)) ([abd5ff9](https://github.com/googleapis/java-core/commit/abd5ff9321304b1238f4dd6fa0b4dd57665b46cc))
+* Update dependency googleapis-common-protos to v1.56.4 ([#937](https://github.com/googleapis/java-core/issues/937)) ([bd7d676](https://github.com/googleapis/java-core/commit/bd7d676c3f221b59768815ccca000c7763aeb7f9))
+* Update dependency importlib-metadata to v4.12.0 ([#951](https://github.com/googleapis/java-core/issues/951)) ([f0d1fe8](https://github.com/googleapis/java-core/commit/f0d1fe8cc2079216b95d8fd24a46de5161801b35))
+* Update dependency jeepney to v0.8.0 ([#952](https://github.com/googleapis/java-core/issues/952)) ([342614b](https://github.com/googleapis/java-core/commit/342614b1275877fb41e8241f0c6061286989df13))
+* Update dependency jinja2 to v3.1.2 ([#953](https://github.com/googleapis/java-core/issues/953)) ([a1542bf](https://github.com/googleapis/java-core/commit/a1542bf8938a72c85b20f97e642dde3666ea0b04))
+* Update dependency keyring to v23.9.3 ([#954](https://github.com/googleapis/java-core/issues/954)) ([34bbdae](https://github.com/googleapis/java-core/commit/34bbdaeb312cce804d92d6b041e3098b8a6c04bc))
+* Update dependency markupsafe to v2.1.1 ([#955](https://github.com/googleapis/java-core/issues/955)) ([cb444b0](https://github.com/googleapis/java-core/commit/cb444b0d274af29ffa3076bd89c42acedf514749))
+* Update dependency protobuf to v3.20.2 ([#956](https://github.com/googleapis/java-core/issues/956)) ([949b4fe](https://github.com/googleapis/java-core/commit/949b4feab38e8b0f0b32ae80067dc07da5a2a383))
+* Update dependency protobuf to v4 ([#944](https://github.com/googleapis/java-core/issues/944)) ([9d379e2](https://github.com/googleapis/java-core/commit/9d379e202dd8bedf0c3bbaab3d3ba593813285d9))
+* Update dependency pyjwt to v2.5.0 ([#939](https://github.com/googleapis/java-core/issues/939)) ([bd4896e](https://github.com/googleapis/java-core/commit/bd4896ed5d0413472ae100b60e5f632506214a97))
+* Update dependency requests to v2.28.1 ([#940](https://github.com/googleapis/java-core/issues/940)) ([f64fef9](https://github.com/googleapis/java-core/commit/f64fef9ef365b43e1ec195db312862000db18627))
+* Update dependency typing-extensions to v4.3.0 ([#941](https://github.com/googleapis/java-core/issues/941)) ([3b8f163](https://github.com/googleapis/java-core/commit/3b8f163789f5cb11a4b461411cb7c1e132439449))
+* Update dependency zipp to v3.8.1 ([#942](https://github.com/googleapis/java-core/issues/942)) ([96ccc51](https://github.com/googleapis/java-core/commit/96ccc51c7107fbbcea6564cdf71fcedb05364761))
+
 ## [2.8.16](https://github.com/googleapis/java-core/compare/v2.8.15...v2.8.16) (2022-09-26)
 
 
