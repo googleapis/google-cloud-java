@@ -15,6 +15,13 @@
 # limitations under the License.
 #
 
-REDIS_NETWORK="$(terraform output -raw java_redis_redis_network)"
-echo "Environment variable 'REDIS_NETWORK' set to '$REDIS_NETWORK'"
+function getOutput() {
+  terraform output -json java_redis || exit
+}
+function parseJson() {
+  python3 -c "import sys, json; print(json.load(sys.stdin)['$1'])"
+}
+
+REDIS_NETWORK=$(getOutput | parseJson redis_network)
+echo "Setting environment variable REDIS_NETWORK=$REDIS_NETWORK"
 export REDIS_NETWORK

@@ -24,18 +24,24 @@ function initializeGeneratedFiles() {
 
   echo "variable \"project_id\" {
     type        = string
-    description = \"GCP Project ID of the project to be used\"
+    description = \"GCP Project ID of the project being used\"
+  }
+
+  variable \"project_number\" {
+    type        = string
+    description = \"GCP Project number of the project being used\"
+    default     = \"us-central1\"
   }
 
   variable \"region\" {
     type        = string
-    description = \"GCP region to deploy resources to.\"
-    default     = \"us-central1\"
+    description = \"GCP region used to deploy resources\"
+    default     = \"us-central1\" # NOTE: Some integration tests have hardcoded this region.
   }
 
   variable \"zone\" {
     type        = string
-    description = \"GCP zone to deploy resources to. Must be a zone in the chosen region.\"
+    description = \"GCP zone used to deploy resources. Must be a zone in the chosen region.\"
     default     = \"us-central1-c\"
   }" >>generated-variables.tf
 
@@ -53,8 +59,9 @@ function initializeGeneratedFiles() {
   }
   locals {
     data = {
-      project_id = var.project_id
-      zone       = var.zone
+      project_id     = var.project_id
+      project_number = var.project_number
+      zone           = var.zone
     }
   }
   " >generated-main.tf
@@ -86,7 +93,10 @@ function appendModule() {
     inputs = local.data
   }" >>generated-main.tf
 
-  appendOutputs "$friendlyName"
+  echo "output \"$friendlyName\" {
+    value = module.$friendlyName
+    sensitive = true
+  }" >>generated-outputs.tf
 }
 
 function appendAllModules() {

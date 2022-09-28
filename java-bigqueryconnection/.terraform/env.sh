@@ -15,15 +15,24 @@
 # limitations under the License.
 #
 
-echo "Setting environment variables MY_SQL_DATABASE, MY_SQL_INSTANCE, DB_USER, and DB_PWD."
+function getOutput() {
+  terraform output -json java_bigqueryconnection || exit
+}
+function parseJson() {
+  python3 -c "import sys, json; print(json.load(sys.stdin)['$1'])"
+}
 
-MY_SQL_DATABASE=$(terraform output -raw java_bigqueryconnection_db_name)
+MY_SQL_DATABASE=$(getOutput | parseJson db_name)
+echo "Setting environment variable MY_SQL_DATABASE=$MY_SQL_DATABASE"
 export MY_SQL_DATABASE
 
-MY_SQL_INSTANCE=$(terraform output -raw java_bigqueryconnection_db_instance)
+MY_SQL_INSTANCE=$(getOutput | parseJson db_instance)
+echo "Setting environment variable MY_SQL_INSTANCE=$MY_SQL_INSTANCE"
 export MY_SQL_INSTANCE
 
-DB_PWD=$(terraform output -raw java_bigqueryconnection_db_password)
+echo "Setting environment variable DB_PWD=<sensitive>"
+DB_PWD=$(getOutput | parseJson db_password)
 export DB_PWD
 
+echo "Setting environment variable DB_USER=default"
 export DB_USER="default"

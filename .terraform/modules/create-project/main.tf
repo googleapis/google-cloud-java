@@ -12,7 +12,7 @@ provider "google" {
 
 resource "random_id" "id" {
   byte_length = 3
-  
+
   # Calculate a new ID (thus destroying the old project and creating
   # a new one) if any of the following input variables has changed.
   keepers = {
@@ -41,6 +41,7 @@ module "project-services" {
   disable_services_on_destroy = false
   depends_on                  = [google_project.project]
   activate_apis               = [
+    "cloudresourcemanager.googleapis.com",
     "iam.googleapis.com",
     "iamcredentials.googleapis.com",
     "serviceusage.googleapis.com",

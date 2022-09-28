@@ -6,17 +6,17 @@ terraform {
   }
 }
 
-resource "google_project_service" "sqladmin_api" {
-  service            = "sqladmin.googleapis.com"
-  disable_on_destroy = false
-}
-resource "google_project_service" "bigquery_connection_api" {
-  service            = "bigqueryconnection.googleapis.com"
-  disable_on_destroy = false
-}
-resource "google_project_service" "bigquery_api" {
-  service            = "bigquery.googleapis.com"
-  disable_on_destroy = false
+module "project-services" {
+  source = "terraform-google-modules/project-factory/google//modules/project_services"
+
+  project_id                  = var.inputs.project_id
+  enable_apis                 = true
+  disable_services_on_destroy = false
+  activate_apis               = [
+    "sqladmin.googleapis.com",
+    "bigqueryconnection.googleapis.com",
+    "bigquery.googleapis.com",
+  ]
 }
 
 resource "random_id" "id" {
@@ -34,5 +34,5 @@ module "mysql-db" {
   deletion_protection = false
   project_id          = var.inputs.project_id
   zone                = var.inputs.zone
-  depends_on          = [google_project_service.sqladmin_api]
+  depends_on          = [module.project-services]
 }
