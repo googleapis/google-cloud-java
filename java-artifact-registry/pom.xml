@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-artifact-registry-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.2.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-artifact-registry:current} -->
+  <version>1.2.8</version><!-- {x-version-update:google-cloud-artifact-registry:current} -->
   <name>Google Artifact Registry Parent</name>
   <url>https://github.com/googleapis/java-artifact-registry</url>
   <description>

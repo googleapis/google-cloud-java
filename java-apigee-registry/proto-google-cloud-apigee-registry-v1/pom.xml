@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-apigee-registry-v1</artifactId>
-  <version>0.2.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-apigee-registry-v1:current} -->
+  <version>0.3.1</version><!-- {x-version-update:proto-google-cloud-apigee-registry-v1:current} -->
   <name>proto-google-cloud-apigee-registry-v1</name>
   <description>Proto library for google-cloud-apigee-registry</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-apigee-registry-parent</artifactId>
-    <version>0.2.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-apigee-registry:current} -->
+    <version>0.3.1</version><!-- {x-version-update:google-cloud-apigee-registry:current} -->
   </parent>
   <dependencies>
     <dependency>
