@@ -2,6 +2,8 @@ syntax = "proto2";
 
 package com.google.cloud.bigquery.storage.test;
 
+import "google/cloud/bigquery/storage/v1/annotations.proto";
+
 message SupportedTypes {
   optional int32 int32_value = 1;
   optional int64 int64_value = 2;
@@ -256,4 +258,16 @@ message AllowUnknownUnsupportedFields {
 
 message FakeFooType {
   optional int32 foo = 1;
+}
+
+message TestNestedFlexibleFieldName {
+  optional string col_c3RyLeWIlw = 1
+  [(.google.cloud.bigquery.storage.v1.column_name) = "str-列"];
+  optional FlexibleNameField col_bmVzdGVkLeWIlw = 2
+  [(.google.cloud.bigquery.storage.v1.column_name) = "nested-列"];
+}
+
+message FlexibleNameField {
+  optional int64 col_aW50LeWIlw = 1
+  [(.google.cloud.bigquery.storage.v1.column_name) = "int-列"];
 }

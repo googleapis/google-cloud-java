@@ -107,7 +107,7 @@ public class BQTableSchemaToProtoDescriptorTest {
 
   @Test
   public void testStructSimple() throws Exception {
-    final TableFieldSchema StringType =
+    final TableFieldSchema stringType =
         TableFieldSchema.newBuilder()
             .setType(TableFieldSchema.Type.STRING)
             .setMode(TableFieldSchema.Mode.NULLABLE)
@@ -118,7 +118,7 @@ public class BQTableSchemaToProtoDescriptorTest {
             .setType(TableFieldSchema.Type.STRUCT)
             .setMode(TableFieldSchema.Mode.NULLABLE)
             .setName("test_field_type")
-            .addFields(0, StringType)
+            .addFields(0, stringType)
             .build();
     final TableSchema tableSchema = TableSchema.newBuilder().addFields(0, tableFieldSchema).build();
     final Descriptor descriptor =
@@ -508,5 +508,33 @@ public class BQTableSchemaToProtoDescriptorTest {
     assertTrue(descriptorToCount.containsKey("root__reuse_lvl1__reuse_lvl2"));
     assertEquals(descriptorToCount.get("root__reuse_lvl1__reuse_lvl2").intValue(), 3);
     isDescriptorEqual(descriptor, ReuseRoot.getDescriptor());
+  }
+
+  @Test
+  public void testNestedFlexibleFieldName() throws Exception {
+    final TableFieldSchema stringField =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.STRING)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .setName("str-列")
+            .build();
+    final TableFieldSchema intField =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.INT64)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .setName("int-列")
+            .build();
+    final TableFieldSchema nestedField =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.STRUCT)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .setName("nested-列")
+            .addFields(0, intField)
+            .build();
+    final TableSchema tableSchema =
+        TableSchema.newBuilder().addFields(0, stringField).addFields(1, nestedField).build();
+    final Descriptor descriptor =
+        BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(tableSchema);
+    isDescriptorEqual(descriptor, TestNestedFlexibleFieldName.getDescriptor());
   }
 }

@@ -197,9 +197,15 @@ public class JsonToProtoMessage {
       String jsonName = jsonNames[i];
       // We want lowercase here to support case-insensitive data writes.
       // The protobuf descriptor that is used is assumed to have all lowercased fields
-      String jsonLowercaseName = jsonName.toLowerCase();
+      String jsonFieldLocator = jsonName.toLowerCase();
+
+      // If jsonName is not compatible with proto naming convention, we should look by its
+      // placeholder name.
+      if (!BigQuerySchemaUtil.isProtoCompatible(jsonFieldLocator)) {
+        jsonFieldLocator = BigQuerySchemaUtil.generatePlaceholderFieldName(jsonFieldLocator);
+      }
       String currentScope = jsonScope + "." + jsonName;
-      FieldDescriptor field = protoSchema.findFieldByName(jsonLowercaseName);
+      FieldDescriptor field = protoSchema.findFieldByName(jsonFieldLocator);
       if (field == null && !ignoreUnknownFields) {
         throw new Exceptions.JsonDataHasUnknownFieldException(currentScope);
       } else if (field == null) {
@@ -209,7 +215,7 @@ public class JsonToProtoMessage {
       if (tableSchema != null) {
         // protoSchema is generated from tableSchema so their field ordering should match.
         fieldSchema = tableSchema.get(field.getIndex());
-        if (!fieldSchema.getName().toLowerCase().equals(field.getName())) {
+        if (!fieldSchema.getName().toLowerCase().equals(BigQuerySchemaUtil.getFieldName(field))) {
           throw new ValidationException(
               "Field at index "
                   + field.getIndex()

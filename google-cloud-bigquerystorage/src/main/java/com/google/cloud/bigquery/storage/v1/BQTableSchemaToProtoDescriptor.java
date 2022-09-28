@@ -20,6 +20,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.DescriptorProtos.DescriptorProto;
 import com.google.protobuf.DescriptorProtos.FieldDescriptorProto;
+import com.google.protobuf.DescriptorProtos.FieldOptions;
 import com.google.protobuf.DescriptorProtos.FileDescriptorProto;
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.Descriptors.Descriptor;
@@ -92,7 +93,11 @@ public class BQTableSchemaToProtoDescriptor {
     List<FieldDescriptorProto> fields = new ArrayList<FieldDescriptorProto>();
     int index = 1;
     for (TableFieldSchema BQTableField : BQTableSchema.getFieldsList()) {
-      String currentScope = scope + "__" + BQTableField.getName();
+      String scopeName =
+          BigQuerySchemaUtil.isProtoCompatible(BQTableField.getName())
+              ? BQTableField.getName()
+              : BigQuerySchemaUtil.generatePlaceholderFieldName(BQTableField.getName());
+      String currentScope = scope + "__" + scopeName;
       if (BQTableField.getType() == TableFieldSchema.Type.STRUCT) {
         ImmutableList<TableFieldSchema> fieldList =
             ImmutableList.copyOf(BQTableField.getFieldsList());
@@ -137,19 +142,26 @@ public class BQTableSchemaToProtoDescriptor {
       TableFieldSchema BQTableField, int index, String scope) {
     TableFieldSchema.Mode mode = BQTableField.getMode();
     String fieldName = BQTableField.getName().toLowerCase();
+
+    FieldDescriptorProto.Builder fieldDescriptor =
+        FieldDescriptorProto.newBuilder()
+            .setName(fieldName)
+            .setNumber(index)
+            .setLabel((FieldDescriptorProto.Label) BQTableSchemaModeMap.get(mode));
+
     if (BQTableField.getType() == TableFieldSchema.Type.STRUCT) {
-      return FieldDescriptorProto.newBuilder()
-          .setName(fieldName)
-          .setTypeName(scope)
-          .setLabel((FieldDescriptorProto.Label) BQTableSchemaModeMap.get(mode))
-          .setNumber(index)
-          .build();
+      fieldDescriptor.setTypeName(scope);
+    } else {
+      fieldDescriptor.setType(
+          (FieldDescriptorProto.Type) BQTableSchemaTypeMap.get(BQTableField.getType()));
     }
-    return FieldDescriptorProto.newBuilder()
-        .setName(fieldName)
-        .setType((FieldDescriptorProto.Type) BQTableSchemaTypeMap.get(BQTableField.getType()))
-        .setLabel((FieldDescriptorProto.Label) BQTableSchemaModeMap.get(mode))
-        .setNumber(index)
-        .build();
+
+    // Sets columnName annotation when field name is not proto comptaible.
+    if (!BigQuerySchemaUtil.isProtoCompatible(fieldName)) {
+      fieldDescriptor.setName(BigQuerySchemaUtil.generatePlaceholderFieldName(fieldName));
+      fieldDescriptor.setOptions(
+          FieldOptions.newBuilder().setExtension(AnnotationsProto.columnName, fieldName).build());
+    }
+    return fieldDescriptor.build();
   }
 }

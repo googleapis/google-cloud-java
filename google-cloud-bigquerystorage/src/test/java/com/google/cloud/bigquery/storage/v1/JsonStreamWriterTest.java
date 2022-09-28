@@ -30,6 +30,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.cloud.bigquery.storage.test.JsonTest;
 import com.google.cloud.bigquery.storage.test.SchemaTest;
+import com.google.cloud.bigquery.storage.test.Test.FlexibleType;
 import com.google.cloud.bigquery.storage.test.Test.FooType;
 import com.google.cloud.bigquery.storage.test.Test.UpdatedFooType;
 import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializtionError;
@@ -181,6 +182,54 @@ public class JsonStreamWriterTest {
         getTestJsonStreamWriterBuilder(TEST_STREAM, TABLE_SCHEMA)
             .setTraceId("test:empty")
             .build()) {
+
+      testBigQueryWrite.addResponse(
+          AppendRowsResponse.newBuilder()
+              .setAppendResult(
+                  AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)).build())
+              .build());
+
+      ApiFuture<AppendRowsResponse> appendFuture = writer.append(jsonArr);
+      assertEquals(0L, appendFuture.get().getAppendResult().getOffset().getValue());
+      appendFuture.get();
+      assertEquals(
+          1,
+          testBigQueryWrite
+              .getAppendRequests()
+              .get(0)
+              .getProtoRows()
+              .getRows()
+              .getSerializedRowsCount());
+      assertEquals(
+          testBigQueryWrite
+              .getAppendRequests()
+              .get(0)
+              .getProtoRows()
+              .getRows()
+              .getSerializedRows(0),
+          expectedProto.toByteString());
+      assertEquals(
+          testBigQueryWrite.getAppendRequests().get(0).getTraceId(), "JsonWriter_test:empty");
+    }
+  }
+
+  @Test
+  public void testFlexibleColumnAppend() throws Exception {
+    TableFieldSchema field =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.STRING)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .setName("test-列")
+            .build();
+    TableSchema tableSchema = TableSchema.newBuilder().addFields(0, field).build();
+    FlexibleType expectedProto = FlexibleType.newBuilder().setColDGVzdC3LiJc("allen").build();
+    JSONObject flexible = new JSONObject();
+    flexible.put("test-列", "allen");
+    JSONArray jsonArr = new JSONArray();
+    jsonArr.put(flexible);
+
+    try (JsonStreamWriter writer =
+        getTestJsonStreamWriterBuilder(TEST_STREAM, tableSchema).setTraceId("test:empty").build()) {
 
       testBigQueryWrite.addResponse(
           AppendRowsResponse.newBuilder()

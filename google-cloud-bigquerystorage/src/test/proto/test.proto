@@ -17,6 +17,8 @@ syntax = "proto2";
 
 package com.google.cloud.bigquery.storage.test;
 
+import "google/cloud/bigquery/storage/v1/annotations.proto";
+
 enum TestEnum {
   TestEnum0 = 0;
   TestEnum1 = 1;
@@ -79,4 +81,9 @@ message DuplicateType {
   optional TestEnum f2 = 2;
   optional ComplicateType f3 = 3;
   optional ComplicateType f4 = 4;
+}
+
+message FlexibleType {
+  optional string col_dGVzdC3liJc = 1
+  [(.google.cloud.bigquery.storage.v1.column_name) = "test-列"];
 }
