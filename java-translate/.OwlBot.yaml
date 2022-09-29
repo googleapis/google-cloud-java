@@ -14,11 +14,11 @@
 
 
 deep-remove-regex:
-- "/samples/snippets/generated"
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src/com/google/cloud/translate/v3"
-- "/google-.*/src/com/google/cloud/translate/v3beta1"
+- "/java-translate/samples/snippets/generated"
+- "/java-translate/grpc-google-.*/src"
+- "/java-translate/proto-google-.*/src"
+- "/java-translate/google-.*/src/com/google/cloud/translate/v3"
+- "/java-translate/google-.*/src/com/google/cloud/translate/v3beta1"
 
 
 deep-copy-regex:

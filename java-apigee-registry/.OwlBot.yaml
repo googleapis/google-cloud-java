@@ -14,13 +14,13 @@
 
 
 deep-remove-regex:
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
-- "/samples/snippets/generated"
+- "/java-apigee-registry/grpc-google-.*/src"
+- "/java-apigee-registry/proto-google-.*/src"
+- "/java-apigee-registry/google-.*/src"
+- "/java-apigee-registry/samples/snippets/generated"
 
 deep-preserve-regex:
-- "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-apigee-registry/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/cloud/apigeeregistry/(v.*)/.*-java/proto-google-.*/src"

@@ -14,9 +14,9 @@
 
 
 deep-remove-regex:
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-cloudbuild/grpc-google-.*/src"
+- "/java-cloudbuild/proto-google-.*/src"
+- "/java-cloudbuild/google-.*/src"
 
 deep-copy-regex:
 - source: "/google/devtools/cloudbuild/(v.*)/.*-java/proto-google-.*/src"

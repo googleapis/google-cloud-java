@@ -14,12 +14,12 @@
 
 
 deep-remove-regex:
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-dataform/grpc-google-.*/src"
+- "/java-dataform/proto-google-.*/src"
+- "/java-dataform/google-.*/src"
 
 deep-preserve-regex:
-- "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-dataform/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/cloud/dataform/(v.*)/.*-java/proto-google-.*/src"

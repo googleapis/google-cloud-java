@@ -14,10 +14,10 @@
 
 
 deep-remove-regex:
-- "/samples/snippets/generated"
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-gsuite-addons/samples/snippets/generated"
+- "/java-gsuite-addons/grpc-google-.*/src"
+- "/java-gsuite-addons/proto-google-.*/src"
+- "/java-gsuite-addons/google-.*/src"
 
 deep-copy-regex:
 - source: "/google/cloud/gsuiteaddons/(v.*)/.*-java/proto-google-.*/src"

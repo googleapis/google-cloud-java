@@ -14,21 +14,21 @@
 
 
 deep-remove-regex:
-- "/samples/snippets/generated"
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-dialogflow/samples/snippets/generated"
+- "/java-dialogflow/grpc-google-.*/src"
+- "/java-dialogflow/proto-google-.*/src"
+- "/java-dialogflow/google-.*/src"
 
 deep-preserve-regex:
-- "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2/ContextManagementSmokeTest.java"
-- "/proto-google-cloud-dialogflow-v2/src/main/java/com/google/cloud/dialogflow/v2/ConversationModelName.java"
-- "/proto-google-cloud-dialogflow-v2/src/main/java/com/google/cloud/dialogflow/v2/ProjectAgentName.java"
-- "/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/ConversationModelName.java"
-- "/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EnvironmentContextName.java"
-- "/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EnvironmentSessionEntityTypeName.java"
-- "/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EnvironmentSessionName.java"
-- "/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/ProjectAgentName.java"
+- "/java-dialogflow/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-dialogflow/google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2/ContextManagementSmokeTest.java"
+- "/java-dialogflow/proto-google-cloud-dialogflow-v2/src/main/java/com/google/cloud/dialogflow/v2/ConversationModelName.java"
+- "/java-dialogflow/proto-google-cloud-dialogflow-v2/src/main/java/com/google/cloud/dialogflow/v2/ProjectAgentName.java"
+- "/java-dialogflow/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/ConversationModelName.java"
+- "/java-dialogflow/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EnvironmentContextName.java"
+- "/java-dialogflow/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EnvironmentSessionEntityTypeName.java"
+- "/java-dialogflow/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EnvironmentSessionName.java"
+- "/java-dialogflow/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/ProjectAgentName.java"
 
 
 deep-copy-regex:

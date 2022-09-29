@@ -14,9 +14,9 @@
 
 
 deep-remove-regex:
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-appengine-admin/grpc-google-.*/src"
+- "/java-appengine-admin/proto-google-.*/src"
+- "/java-appengine-admin/google-.*/src"
 
 deep-copy-regex:
 - source: "/google/appengine/(v.*)/.*-java/proto-google-.*/src"

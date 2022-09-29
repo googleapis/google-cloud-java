@@ -14,18 +14,18 @@
 
 
 deep-remove-regex:
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-os-login/grpc-google-.*/src"
+- "/java-os-login/proto-google-.*/src"
+- "/java-os-login/google-.*/src"
 
 deep-preserve-regex:
-- "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/common/FingerprintName.java"
-- "/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/common/ProjectName.java"
-- "/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/FingerprintName.java"
-- "/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/PosixAccountName.java"
-- "/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/ProjectName.java"
-- "/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/SshPublicKeyName.java"
+- "/java-os-login/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-os-login/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/common/FingerprintName.java"
+- "/java-os-login/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/common/ProjectName.java"
+- "/java-os-login/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/FingerprintName.java"
+- "/java-os-login/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/PosixAccountName.java"
+- "/java-os-login/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/ProjectName.java"
+- "/java-os-login/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/SshPublicKeyName.java"
 
 deep-copy-regex:
 - source: "/google/cloud/oslogin/(v\\d)/.*-java/proto-google-.*/src"
