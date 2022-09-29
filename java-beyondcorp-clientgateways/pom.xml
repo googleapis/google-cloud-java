@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-beyondcorp-clientgateways-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.1.0</version><!-- {x-version-update:google-cloud-beyondcorp-clientgateways:current} -->
+  <version>0.0.1</version><!-- {x-version-update:google-cloud-beyondcorp-clientgateways:current} -->
   <name>Google BeyondCorp ClientGateways Parent</name>
   <url>https://github.com/googleapis/java-beyondcorp-clientgateways</url>
   <description>
