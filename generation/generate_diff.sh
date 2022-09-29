@@ -103,4 +103,6 @@ git add .
 git commit -m "chore: Adding non-java diffs" --no-verify
 git push origin "${diff_non_java_branch}" --force
 
+git checkout "${current_branch}"
+
 echo "Done running script"
