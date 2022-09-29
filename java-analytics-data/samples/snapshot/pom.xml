@@ -40,7 +40,7 @@
     <dependency>
       <groupId>com.google.analytics</groupId>
       <artifactId>google-analytics-data</artifactId>
-      <version>0.14.7-SNAPSHOT</version>
+      <version>0.14.7</version>
     </dependency>
     <!-- {x-version-update-end} -->
     <dependency>
