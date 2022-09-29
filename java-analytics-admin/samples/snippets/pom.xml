@@ -27,7 +27,7 @@
     <dependency>
       <groupId>com.google.analytics</groupId>
       <artifactId>google-analytics-admin</artifactId>
-      <version>0.13.3-SNAPSHOT</version><!-- {x-version-update:google-analytics-admin:current} -->
+      <version>0.13.3</version><!-- {x-version-update:google-analytics-admin:current} -->
     </dependency>
 
     <dependency>
