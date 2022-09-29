@@ -1,5 +1,33 @@
 # Changelog
 
+## [2.3.5](https://github.com/googleapis/java-service-usage/compare/v2.3.4...v2.3.5) (2022-09-29)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#296](https://github.com/googleapis/java-service-usage/issues/296)) ([b1fe76c](https://github.com/googleapis/java-service-usage/commit/b1fe76c7b18652bafc205d2ae72896000e4b84c1))
+* Update dependency certifi to v2022.9.24 ([#279](https://github.com/googleapis/java-service-usage/issues/279)) ([cd762fc](https://github.com/googleapis/java-service-usage/commit/cd762fc71ca5aa0d600727bc2a8716a2486d3c26))
+* Update dependency charset-normalizer to v2.1.1 ([#283](https://github.com/googleapis/java-service-usage/issues/283)) ([a38f295](https://github.com/googleapis/java-service-usage/commit/a38f295c8f1e87e3c3f5c56c4426256eab965cea))
+* Update dependency click to v8.1.3 ([#284](https://github.com/googleapis/java-service-usage/issues/284)) ([c7f550a](https://github.com/googleapis/java-service-usage/commit/c7f550a4571722584c1c5833bbc20c05df6417c2))
+* Update dependency gcp-releasetool to v1.8.8 ([#280](https://github.com/googleapis/java-service-usage/issues/280)) ([30f9930](https://github.com/googleapis/java-service-usage/commit/30f99302c70bd4b0d4be2c18fcca93395a933850))
+* Update dependency google-api-core to v2.10.1 ([#285](https://github.com/googleapis/java-service-usage/issues/285)) ([e344802](https://github.com/googleapis/java-service-usage/commit/e344802b0eb494e04956a231a2925e11dab6e40a))
+* Update dependency google-auth to v2.12.0 ([#286](https://github.com/googleapis/java-service-usage/issues/286)) ([dca4260](https://github.com/googleapis/java-service-usage/commit/dca4260a0c6759b2c2feb083b580490d7f159db3))
+* Update dependency google-cloud-core to v2.3.2 ([#281](https://github.com/googleapis/java-service-usage/issues/281)) ([180b195](https://github.com/googleapis/java-service-usage/commit/180b19556a075162c37d4c41e67d851ebc72b705))
+* Update dependency google-cloud-storage to v2.5.0 ([#287](https://github.com/googleapis/java-service-usage/issues/287)) ([a88f0a5](https://github.com/googleapis/java-service-usage/commit/a88f0a536eebead214a10fd25adee0566bd88d5e))
+* Update dependency google-crc32c to v1.5.0 ([#298](https://github.com/googleapis/java-service-usage/issues/298)) ([97e7242](https://github.com/googleapis/java-service-usage/commit/97e724221861f907f421ddb6470bb28a8cde0a5b))
+* Update dependency googleapis-common-protos to v1.56.4 ([#282](https://github.com/googleapis/java-service-usage/issues/282)) ([efabf3b](https://github.com/googleapis/java-service-usage/commit/efabf3be068e16644e308604e7ddcee19ab06eb4))
+* Update dependency importlib-metadata to v4.12.0 ([#299](https://github.com/googleapis/java-service-usage/issues/299)) ([0b2daf9](https://github.com/googleapis/java-service-usage/commit/0b2daf9f76d926f612b842fea65e16e11e4238c8))
+* Update dependency jeepney to v0.8.0 ([#300](https://github.com/googleapis/java-service-usage/issues/300)) ([8116cce](https://github.com/googleapis/java-service-usage/commit/8116cceb0b9d70c9932808eef56e3b3e5525ca6b))
+* Update dependency jinja2 to v3.1.2 ([#288](https://github.com/googleapis/java-service-usage/issues/288)) ([d9bb2d5](https://github.com/googleapis/java-service-usage/commit/d9bb2d525d8872d146f6fc5eb3db08ed69944f0c))
+* Update dependency keyring to v23.9.3 ([#289](https://github.com/googleapis/java-service-usage/issues/289)) ([179d1a0](https://github.com/googleapis/java-service-usage/commit/179d1a0b2aa3721a3f93cb97128060d991a23aaf))
+* Update dependency markupsafe to v2.1.1 ([#290](https://github.com/googleapis/java-service-usage/issues/290)) ([b334bdf](https://github.com/googleapis/java-service-usage/commit/b334bdff591cf8c24f377ac7eb2aa0cd16a201ce))
+* Update dependency protobuf to v3.20.2 ([#291](https://github.com/googleapis/java-service-usage/issues/291)) ([53a48af](https://github.com/googleapis/java-service-usage/commit/53a48afbcdacbf27433f106f90f13c9b523b0c30))
+* Update dependency protobuf to v4 ([#297](https://github.com/googleapis/java-service-usage/issues/297)) ([c4fa4a4](https://github.com/googleapis/java-service-usage/commit/c4fa4a44ae7aa7ce5b8f68c251b92c7a147fb44a))
+* Update dependency pyjwt to v2.5.0 ([#292](https://github.com/googleapis/java-service-usage/issues/292)) ([fc7ce03](https://github.com/googleapis/java-service-usage/commit/fc7ce03326e41fbf897685ce087fc143b1e03c3d))
+* Update dependency requests to v2.28.1 ([#293](https://github.com/googleapis/java-service-usage/issues/293)) ([4017f95](https://github.com/googleapis/java-service-usage/commit/4017f9551db66175972f30c3b046fe42d61936b0))
+* Update dependency typing-extensions to v4.3.0 ([#294](https://github.com/googleapis/java-service-usage/issues/294)) ([756bd50](https://github.com/googleapis/java-service-usage/commit/756bd50d7de42d63a29b31167141e52572e031e4))
+* Update dependency zipp to v3.8.1 ([#295](https://github.com/googleapis/java-service-usage/issues/295)) ([19d2307](https://github.com/googleapis/java-service-usage/commit/19d23078501a8074cbd54d0c462f4f1c0aad4cb3))
+
 ## [2.3.4](https://github.com/googleapis/java-service-usage/compare/v2.3.3...v2.3.4) (2022-09-15)
 
 
