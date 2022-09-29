@@ -27,35 +27,35 @@ public interface DataprocMetricConfigOrBuilder
    *
    *
    * <pre>
-   * Configuration set of metrics to collect from the cluster
+   * Required. Metrics sources to enable.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dataproc.v1.Metric metrics = 1 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.dataproc.v1.DataprocMetricConfig.Metric metrics = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
-  java.util.List<com.google.cloud.dataproc.v1.Metric> getMetricsList();
+  java.util.List<com.google.cloud.dataproc.v1.DataprocMetricConfig.Metric> getMetricsList();
   /**
    *
    *
    * <pre>
-   * Configuration set of metrics to collect from the cluster
+   * Required. Metrics sources to enable.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dataproc.v1.Metric metrics = 1 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.dataproc.v1.DataprocMetricConfig.Metric metrics = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
-  com.google.cloud.dataproc.v1.Metric getMetrics(int index);
+  com.google.cloud.dataproc.v1.DataprocMetricConfig.Metric getMetrics(int index);
   /**
    *
    *
    * <pre>
-   * Configuration set of metrics to collect from the cluster
+   * Required. Metrics sources to enable.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dataproc.v1.Metric metrics = 1 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.dataproc.v1.DataprocMetricConfig.Metric metrics = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   int getMetricsCount();
@@ -63,24 +63,25 @@ public interface DataprocMetricConfigOrBuilder
    *
    *
    * <pre>
-   * Configuration set of metrics to collect from the cluster
+   * Required. Metrics sources to enable.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dataproc.v1.Metric metrics = 1 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.dataproc.v1.DataprocMetricConfig.Metric metrics = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
-  java.util.List<? extends com.google.cloud.dataproc.v1.MetricOrBuilder> getMetricsOrBuilderList();
+  java.util.List<? extends com.google.cloud.dataproc.v1.DataprocMetricConfig.MetricOrBuilder>
+      getMetricsOrBuilderList();
   /**
    *
    *
    * <pre>
-   * Configuration set of metrics to collect from the cluster
+   * Required. Metrics sources to enable.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dataproc.v1.Metric metrics = 1 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.dataproc.v1.DataprocMetricConfig.Metric metrics = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
-  com.google.cloud.dataproc.v1.MetricOrBuilder getMetricsOrBuilder(int index);
+  com.google.cloud.dataproc.v1.DataprocMetricConfig.MetricOrBuilder getMetricsOrBuilder(int index);
 }

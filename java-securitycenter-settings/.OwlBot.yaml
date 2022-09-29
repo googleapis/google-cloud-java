@@ -14,12 +14,12 @@
 
 
 deep-remove-regex:
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-securitycenter-settings/grpc-google-.*/src"
+- "/java-securitycenter-settings/proto-google-.*/src"
+- "/java-securitycenter-settings/google-.*/src"
 
 deep-preserve-regex:
-- "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-securitycenter-settings/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/cloud/securitycenter/settings/(v.*)/.*-java/proto-google-.*/src"

@@ -14,13 +14,13 @@
 
 
 deep-remove-regex:
-- "/samples/snippets/generated"
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-certificate-manager/samples/snippets/generated"
+- "/java-certificate-manager/grpc-google-.*/src"
+- "/java-certificate-manager/proto-google-.*/src"
+- "/java-certificate-manager/google-.*/src"
 
 deep-preserve-regex:
-- "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-certificate-manager/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/cloud/certificatemanager/(v.*)/.*-java/proto-google-.*/src"

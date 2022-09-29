@@ -14,10 +14,10 @@
 
 
 deep-remove-regex:
-- "/samples/snippets/generated"
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-mediatranslation/samples/snippets/generated"
+- "/java-mediatranslation/grpc-google-.*/src"
+- "/java-mediatranslation/proto-google-.*/src"
+- "/java-mediatranslation/google-.*/src"
 
 deep-copy-regex:
 - source: "/google/cloud/mediatranslation/(v.*)/.*-java/proto-google-.*/src"
