@@ -14,13 +14,13 @@
 
 
 deep-remove-regex:
-- "/samples/snippets/generated"
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-orchestration-airflow/samples/snippets/generated"
+- "/java-orchestration-airflow/grpc-google-.*/src"
+- "/java-orchestration-airflow/proto-google-.*/src"
+- "/java-orchestration-airflow/google-.*/src"
 
 deep-preserve-regex:
-- "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-orchestration-airflow/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/cloud/orchestration/airflow/service/(v.*)/.*-java/proto-google-.*/src"

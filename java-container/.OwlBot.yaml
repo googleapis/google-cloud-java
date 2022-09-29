@@ -14,14 +14,14 @@
 
 
 deep-remove-regex:
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-container/grpc-google-.*/src"
+- "/java-container/proto-google-.*/src"
+- "/java-container/google-.*/src"
 
 deep-preserve-regex:
-- "/google-cloud-container/src/main/java/com/google/cloud/container/v1/SampleApp.java"
-- "/google-cloud-container/src/test/java/com/google/cloud/container/v1/it/ITSystemTest.java"
-- "/google-cloud-container/src/test/java/com/google/cloud/container/v1/it/Util.java"
+- "/java-container/google-cloud-container/src/main/java/com/google/cloud/container/v1/SampleApp.java"
+- "/java-container/google-cloud-container/src/test/java/com/google/cloud/container/v1/it/ITSystemTest.java"
+- "/java-container/google-cloud-container/src/test/java/com/google/cloud/container/v1/it/Util.java"
 
 deep-copy-regex:
 - source: "/google/container/(v.*)/.*-java/proto-google-.*/src"

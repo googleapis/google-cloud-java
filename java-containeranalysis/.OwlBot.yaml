@@ -13,17 +13,17 @@
 # limitations under the License.
 
 deep-remove-regex:
-- "/grpc-google-cloud-containeranalysis-v1/src"
-- "/google-cloud-containeranalysis/src/.*/java/com/google/cloud/devtools/containeranalysis/v1"
-- "/proto-google-cloud-containeranalysis-v1/src"
+- "/java-containeranalysis/grpc-google-cloud-containeranalysis-v1/src"
+- "/java-containeranalysis/google-cloud-containeranalysis/src/.*/java/com/google/cloud/devtools/containeranalysis/v1"
+- "/java-containeranalysis/proto-google-cloud-containeranalysis-v1/src"
 
 # TODO: remove resource name classes in next major update
 deep-preserve-regex:
-- "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/google-cloud-containeranalysis/src/.*/java/com/google/cloud/devtools/containeranalysis/v1beta1"
-- "/proto-google-cloud-containeranalysis-v.*/src/main/java/com/google/containeranalysis/v.*/.*Name.*.java"
-- "/google-cloud-containeranalysis/src/main/java/com/google/cloud/devtools/containeranalysis/v1/GrafeasUtils.java"
-- "/google-cloud-containeranalysis/src/test/java/com/google/cloud/devtools/containeranalysis/v1/ITGrafeasInteropTest.java"
+- "/java-containeranalysis/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-containeranalysis/google-cloud-containeranalysis/src/.*/java/com/google/cloud/devtools/containeranalysis/v1beta1"
+- "/java-containeranalysis/proto-google-cloud-containeranalysis-v.*/src/main/java/com/google/containeranalysis/v.*/.*Name.*.java"
+- "/java-containeranalysis/google-cloud-containeranalysis/src/main/java/com/google/cloud/devtools/containeranalysis/v1/GrafeasUtils.java"
+- "/java-containeranalysis/google-cloud-containeranalysis/src/test/java/com/google/cloud/devtools/containeranalysis/v1/ITGrafeasInteropTest.java"
 
 deep-copy-regex:
 - source: "/google/devtools/containeranalysis/v1/.*-java/proto-google-.*/src"
