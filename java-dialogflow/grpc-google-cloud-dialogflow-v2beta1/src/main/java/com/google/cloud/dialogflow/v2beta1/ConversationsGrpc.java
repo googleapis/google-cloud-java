@@ -321,6 +321,58 @@ public final class ConversationsGrpc {
     return getListMessagesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryRequest,
+          com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse>
+      getSuggestConversationSummaryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SuggestConversationSummary",
+      requestType = com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryRequest.class,
+      responseType = com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryRequest,
+          com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse>
+      getSuggestConversationSummaryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryRequest,
+            com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse>
+        getSuggestConversationSummaryMethod;
+    if ((getSuggestConversationSummaryMethod =
+            ConversationsGrpc.getSuggestConversationSummaryMethod)
+        == null) {
+      synchronized (ConversationsGrpc.class) {
+        if ((getSuggestConversationSummaryMethod =
+                ConversationsGrpc.getSuggestConversationSummaryMethod)
+            == null) {
+          ConversationsGrpc.getSuggestConversationSummaryMethod =
+              getSuggestConversationSummaryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryRequest,
+                          com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "SuggestConversationSummary"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConversationsMethodDescriptorSupplier("SuggestConversationSummary"))
+                      .build();
+        }
+      }
+    }
+    return getSuggestConversationSummaryMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ConversationsStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ConversationsStub> factory =
@@ -480,6 +532,24 @@ public final class ConversationsGrpc {
           getListMessagesMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Suggest summary for a conversation based on specific historical messages.
+     * The range of the messages to be used for summary can be specified in the
+     * request.
+     * </pre>
+     */
+    public void suggestConversationSummary(
+        com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSuggestConversationSummaryMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -525,6 +595,13 @@ public final class ConversationsGrpc {
                       com.google.cloud.dialogflow.v2beta1.ListMessagesRequest,
                       com.google.cloud.dialogflow.v2beta1.ListMessagesResponse>(
                       this, METHODID_LIST_MESSAGES)))
+          .addMethod(
+              getSuggestConversationSummaryMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryRequest,
+                      com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse>(
+                      this, METHODID_SUGGEST_CONVERSATION_SUMMARY)))
           .build();
     }
   }
@@ -667,6 +744,26 @@ public final class ConversationsGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Suggest summary for a conversation based on specific historical messages.
+     * The range of the messages to be used for summary can be specified in the
+     * request.
+     * </pre>
+     */
+    public void suggestConversationSummary(
+        com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSuggestConversationSummaryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -783,6 +880,22 @@ public final class ConversationsGrpc {
         com.google.cloud.dialogflow.v2beta1.ListMessagesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListMessagesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Suggest summary for a conversation based on specific historical messages.
+     * The range of the messages to be used for summary can be specified in the
+     * request.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse
+        suggestConversationSummary(
+            com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSuggestConversationSummaryMethod(), getCallOptions(), request);
     }
   }
 
@@ -909,6 +1022,23 @@ public final class ConversationsGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListMessagesMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Suggest summary for a conversation based on specific historical messages.
+     * The range of the messages to be used for summary can be specified in the
+     * request.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse>
+        suggestConversationSummary(
+            com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSuggestConversationSummaryMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_CONVERSATION = 0;
@@ -917,6 +1047,7 @@ public final class ConversationsGrpc {
   private static final int METHODID_COMPLETE_CONVERSATION = 3;
   private static final int METHODID_BATCH_CREATE_MESSAGES = 4;
   private static final int METHODID_LIST_MESSAGES = 5;
+  private static final int METHODID_SUGGEST_CONVERSATION_SUMMARY = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -972,6 +1103,13 @@ public final class ConversationsGrpc {
               (com.google.cloud.dialogflow.v2beta1.ListMessagesRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.dialogflow.v2beta1.ListMessagesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_SUGGEST_CONVERSATION_SUMMARY:
+          serviceImpl.suggestConversationSummary(
+              (com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse>)
                   responseObserver);
           break;
         default:
@@ -1044,6 +1182,7 @@ public final class ConversationsGrpc {
                       .addMethod(getCompleteConversationMethod())
                       .addMethod(getBatchCreateMessagesMethod())
                       .addMethod(getListMessagesMethod())
+                      .addMethod(getSuggestConversationSummaryMethod())
                       .build();
         }
       }
