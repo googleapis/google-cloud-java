@@ -213,15 +213,16 @@ public class StreamWriter implements AutoCloseable {
                   String fetchedLocation = writeStream.getLocation();
                   log.info(
                       String.format(
-                          "Fethed location %s for stream name %s", fetchedLocation, streamName));
+                          "Fethed location %s for stream name %s, extracted project and dataset name: %s\"",
+                          fetchedLocation, streamName, datasetAndProjectName));
                   return fetchedLocation;
                 });
         if (location.isEmpty()) {
           throw new IllegalStateException(
               String.format(
                   "The location is empty for both user passed in value and looked up value for "
-                      + "stream: %s",
-                  streamName));
+                      + "stream: %s, extracted project and dataset name: %s",
+                  streamName, datasetAndProjectName));
         }
       }
       this.location = location;

@@ -735,8 +735,8 @@ public class ConnectionWorker implements AutoCloseable {
   public abstract static class Load {
     // Consider the load on this worker to be overwhelmed when above some percentage of
     // in-flight bytes or in-flight requests count.
-    private static double overwhelmedInflightCount = 0.5;
-    private static double overwhelmedInflightBytes = 0.6;
+    private static double overwhelmedInflightCount = 0.2;
+    private static double overwhelmedInflightBytes = 0.2;
 
     // Number of in-flight requests bytes in the worker.
     abstract long inFlightRequestsBytes();

@@ -68,6 +68,8 @@ public class ConnectionWorkerPoolTest {
                 .setCredentialsProvider(NoCredentialsProvider.create())
                 .setTransportChannelProvider(serviceHelper.createChannelProvider())
                 .build());
+    ConnectionWorker.Load.setOverwhelmedCountsThreshold(0.5);
+    ConnectionWorker.Load.setOverwhelmedBytesThreshold(0.6);
   }
 
   @Test

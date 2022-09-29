@@ -163,7 +163,7 @@ public class ConnectionWorkerPool {
     public static Builder builder() {
       return new AutoValue_ConnectionWorkerPool_Settings.Builder()
           .setMinConnectionsPerRegion(2)
-          .setMaxConnectionsPerRegion(10);
+          .setMaxConnectionsPerRegion(20);
     }
 
     /** Builder for the options to config {@link ConnectionWorkerPool}. */
