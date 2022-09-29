@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-analytics-admin-v1beta</artifactId>
-  <version>0.13.3</version><!-- {x-version-update:grpc-google-analytics-admin-v1beta:current} -->
+  <version>0.13.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-analytics-admin-v1beta:current} -->
   <name>grpc-google-analytics-admin-v1beta</name>
   <description>GRPC library for google-analytics-admin</description>
   <parent>
     <groupId>com.google.analytics</groupId>
     <artifactId>google-analytics-admin-parent</artifactId>
-    <version>0.13.3</version><!-- {x-version-update:google-analytics-admin:current} -->
+    <version>0.13.4-SNAPSHOT</version><!-- {x-version-update:google-analytics-admin:current} -->
   </parent>
   <dependencies>
     <dependency>
