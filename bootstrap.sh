@@ -30,13 +30,6 @@ do
   cd  ${service}
   git filter-repo --to-subdirectory-filter ${service}
 
-  # Search for <parent> tag in module pom and replace the next three lines -- groupId, artifcatId, and version
-  sed -i.bak -e '/<parent>/{N;s/com.google.cloud/com.google.api/;N;s/google-cloud-shared-config/google-cloud-java/;N;s/<version>.*<\/version>/<version>0.0.1-SNAPSHOT<\/version>/}' ${service}/pom.xml && rm ${service}/pom.xml.bak
-
-  NAME=$(jq -r '.distribution_name' ${service}/.repo-metadata.json | cut -d ':' -f 2)
-  # Search for <parent> tag in module bom and replace the next three lines -- groupId, artifcatId, and version
-  sed -i.bak -e '/<parent>/{N;s/com.google.cloud/com.google.api/;N;s/google-cloud-shared-config/google-cloud-java/;N;s/<version>.*<\/version>/<version>0.0.1-SNAPSHOT<\/version>\n    <relativePath>..\/..\/pom.xml<\/relativePath>/}' ${service}/${NAME}-bom/pom.xml && rm ${service}/${NAME}-bom/pom.xml.bak
-
   # setup owlbot files correctly to match monorepo configuration
   cp ${service}/.github/.OwlBot.yaml ${service}/.OwlBot.yaml
   rm ${service}/.github/.OwlBot.lock.yaml
@@ -67,22 +60,29 @@ done
 
 # cwd: monorepo/google-cloud-java
 echo "Working directory: $(pwd)"
-../../templates/generation/print_root_pom.sh > pom.xml
-
-git add pom.xml
-git commit -am 'feat: create aggregator pom'
 
 # Template files
 cp -rp ../../templates/. ./
 
-# Confirm everything is fine so far
-# Need license-checks.xml to validate
-mvn -q -B -ntp validate
+# Generation files
+cp -rp ../../generation ./
 
 # Add all template files
 git add --all
 git add -f .gitignore
 git commit -m 'chore: add template files'
+
+./generation/print_root_pom.sh > pom.xml
+
+git add pom.xml
+git commit -am 'feat: create aggregator pom'
+
+# Point modules poms and BOMs to the aggregator pom as parent
+bash generation/set_parent_pom.sh
+
+git add --all
+git commit -am 'feat: point modules to the aggregator pom as parent'
+
 
 ./generation/generate_gapic_bom.sh
 
@@ -100,10 +100,6 @@ bash generation/generate_release_please_config.sh
 git add --all
 git commit -am 'feat: create release please configuration'
 
-# Confirm everything is fine so far
-# Need license-checks.xml to validate
-mvn -q -B -ntp validate
-
 ./generation/generate_coverage_aggregator.sh
 
 git add --all
@@ -113,3 +109,21 @@ git commit -am 'feat: create CoverageAggregator module'
 
 git add --all
 git commit -am 'chore: delete non-auto-generated samples'
+
+./generation/update_versions.sh
+
+git add --all
+git commit -am 'chore: update versions to latest in maven'
+
+# create a monorepo/diff repo
+cd ..
+cp -R google-cloud-java split
+rm -rf split/.git
+git clone -b main --single-branch https://github.com/googleapis/google-cloud-java.git shadow
+cp -R shadow/.git split/.git
+rm -rf shadow
+mv split diff
+cd diff
+git add --all
+git commit -am 'diff with split repos'
+cd ../..

@@ -30,6 +30,12 @@ jobs:
           cd monorepo/google-cloud-java
           git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
           git push -f monorepo main:monorepo_script_output
+      - name: Push diff to branch
+#        if: ${{ github.event_name != 'pull_request' }}
+        run: |
+          cd monorepo/diff
+          git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
+          git push -f monorepo main:split_vs_mono_diff_output          
 
   build-3repos:
     runs-on: ubuntu-latest
