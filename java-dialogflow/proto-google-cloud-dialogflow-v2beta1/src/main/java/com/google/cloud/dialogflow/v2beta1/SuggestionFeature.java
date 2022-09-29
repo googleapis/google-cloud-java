@@ -139,7 +139,7 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Run article suggestion model.
+     * Run article suggestion model for chat.
      * </pre>
      *
      * <code>ARTICLE_SUGGESTION = 1;</code>
@@ -159,12 +159,22 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Run smart reply model.
+     * Run smart reply model for chat.
      * </pre>
      *
      * <code>SMART_REPLY = 3;</code>
      */
     SMART_REPLY(3),
+    /**
+     *
+     *
+     * <pre>
+     * Run conversation summarization model for chat.
+     * </pre>
+     *
+     * <code>CONVERSATION_SUMMARIZATION = 8;</code>
+     */
+    CONVERSATION_SUMMARIZATION(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -182,7 +192,7 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Run article suggestion model.
+     * Run article suggestion model for chat.
      * </pre>
      *
      * <code>ARTICLE_SUGGESTION = 1;</code>
@@ -202,12 +212,22 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Run smart reply model.
+     * Run smart reply model for chat.
      * </pre>
      *
      * <code>SMART_REPLY = 3;</code>
      */
     public static final int SMART_REPLY_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Run conversation summarization model for chat.
+     * </pre>
+     *
+     * <code>CONVERSATION_SUMMARIZATION = 8;</code>
+     */
+    public static final int CONVERSATION_SUMMARIZATION_VALUE = 8;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -241,6 +261,8 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
           return FAQ;
         case 3:
           return SMART_REPLY;
+        case 8:
+          return CONVERSATION_SUMMARIZATION;
         default:
           return null;
       }

@@ -75,6 +75,22 @@ public final class ConversationProto {
       internal_static_google_cloud_dialogflow_v2beta1_ListMessagesResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2beta1_ListMessagesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_SuggestConversationSummaryRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_SuggestConversationSummaryRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_SuggestConversationSummaryResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_SuggestConversationSummaryResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_SuggestConversationSummaryResponse_Summary_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_SuggestConversationSummaryResponse_Summary_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_SuggestConversationSummaryResponse_Summary_TextSectionsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_SuggestConversationSummaryResponse_Summary_TextSectionsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -146,57 +162,83 @@ public final class ConversationProto {
           + "age_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"k\n\024Li"
           + "stMessagesResponse\022:\n\010messages\030\001 \003(\0132(.g"
           + "oogle.cloud.dialogflow.v2beta1.Message\022\027"
-          + "\n\017next_page_token\030\002 \001(\t2\202\016\n\rConversation"
-          + "s\022\241\002\n\022CreateConversation\022:.google.cloud."
-          + "dialogflow.v2beta1.CreateConversationReq"
-          + "uest\032-.google.cloud.dialogflow.v2beta1.C"
-          + "onversation\"\237\001\202\323\344\223\002\202\001\"*/v2beta1/{parent="
-          + "projects/*}/conversations:\014conversationZ"
-          + "F\"6/v2beta1/{parent=projects/*/locations"
-          + "/*}/conversations:\014conversation\332A\023parent"
-          + ",conversation\022\201\002\n\021ListConversations\0229.go"
-          + "ogle.cloud.dialogflow.v2beta1.ListConver"
-          + "sationsRequest\032:.google.cloud.dialogflow"
-          + ".v2beta1.ListConversationsResponse\"u\202\323\344\223"
-          + "\002f\022*/v2beta1/{parent=projects/*}/convers"
-          + "ationsZ8\0226/v2beta1/{parent=projects/*/lo"
-          + "cations/*}/conversations\332A\006parent\022\356\001\n\017Ge"
-          + "tConversation\0227.google.cloud.dialogflow."
-          + "v2beta1.GetConversationRequest\032-.google."
-          + "cloud.dialogflow.v2beta1.Conversation\"s\202"
-          + "\323\344\223\002f\022*/v2beta1/{name=projects/*/convers"
-          + "ations/*}Z8\0226/v2beta1/{name=projects/*/l"
-          + "ocations/*/conversations/*}\332A\004name\022\221\002\n\024C"
-          + "ompleteConversation\022<.google.cloud.dialo"
-          + "gflow.v2beta1.CompleteConversationReques"
-          + "t\032-.google.cloud.dialogflow.v2beta1.Conv"
-          + "ersation\"\213\001\202\323\344\223\002~\"3/v2beta1/{name=projec"
-          + "ts/*/conversations/*}:complete:\001*ZD\"?/v2"
-          + "beta1/{name=projects/*/locations/*/conve"
-          + "rsations/*}:complete:\001*\332A\004name\022\275\002\n\023Batch"
-          + "CreateMessages\022;.google.cloud.dialogflow"
-          + ".v2beta1.BatchCreateMessagesRequest\032<.go"
-          + "ogle.cloud.dialogflow.v2beta1.BatchCreat"
-          + "eMessagesResponse\"\252\001\202\323\344\223\002\232\001\"A/v2beta1/{p"
-          + "arent=projects/*/conversations/*}/messag"
-          + "es:batchCreate:\001*ZR\"M/v2beta1/{parent=pr"
-          + "ojects/*/locations/*/conversations/*}/me"
-          + "ssages:batchCreate:\001*\332A\006parent\022\211\002\n\014ListM"
-          + "essages\0224.google.cloud.dialogflow.v2beta"
-          + "1.ListMessagesRequest\0325.google.cloud.dia"
-          + "logflow.v2beta1.ListMessagesResponse\"\213\001\202"
-          + "\323\344\223\002|\0225/v2beta1/{parent=projects/*/conve"
-          + "rsations/*}/messagesZC\022A/v2beta1/{parent"
-          + "=projects/*/locations/*/conversations/*}"
-          + "/messages\332A\006parent\032x\312A\031dialogflow.google"
-          + "apis.com\322AYhttps://www.googleapis.com/au"
-          + "th/cloud-platform,https://www.googleapis"
-          + ".com/auth/dialogflowB\257\001\n#com.google.clou"
-          + "d.dialogflow.v2beta1B\021ConversationProtoP"
-          + "\001ZIgoogle.golang.org/genproto/googleapis"
-          + "/cloud/dialogflow/v2beta1;dialogflow\370\001\001\242"
-          + "\002\002DF\252\002\037Google.Cloud.Dialogflow.V2beta1b\006"
-          + "proto3"
+          + "\n\017next_page_token\030\002 \001(\t\"\277\001\n!SuggestConve"
+          + "rsationSummaryRequest\022D\n\014conversation\030\001 "
+          + "\001(\tB.\340A\002\372A(\n&dialogflow.googleapis.com/C"
+          + "onversation\022>\n\016latest_message\030\003 \001(\tB&\372A#"
+          + "\n!dialogflow.googleapis.com/Message\022\024\n\014c"
+          + "ontext_size\030\004 \001(\005\"\341\003\n\"SuggestConversatio"
+          + "nSummaryResponse\022\\\n\007summary\030\001 \001(\0132K.goog"
+          + "le.cloud.dialogflow.v2beta1.SuggestConve"
+          + "rsationSummaryResponse.Summary\022>\n\016latest"
+          + "_message\030\002 \001(\tB&\372A#\n!dialogflow.googleap"
+          + "is.com/Message\022\024\n\014context_size\030\003 \001(\005\032\206\002\n"
+          + "\007Summary\022\014\n\004text\030\001 \001(\t\022t\n\rtext_sections\030"
+          + "\004 \003(\0132].google.cloud.dialogflow.v2beta1."
+          + "SuggestConversationSummaryResponse.Summa"
+          + "ry.TextSectionsEntry\022B\n\ranswer_record\030\003 "
+          + "\001(\tB+\372A(\n&dialogflow.googleapis.com/Answ"
+          + "erRecord\0323\n\021TextSectionsEntry\022\013\n\003key\030\001 \001"
+          + "(\t\022\r\n\005value\030\002 \001(\t:\0028\0012\215\021\n\rConversations\022"
+          + "\241\002\n\022CreateConversation\022:.google.cloud.di"
+          + "alogflow.v2beta1.CreateConversationReque"
+          + "st\032-.google.cloud.dialogflow.v2beta1.Con"
+          + "versation\"\237\001\202\323\344\223\002\202\001\"*/v2beta1/{parent=pr"
+          + "ojects/*}/conversations:\014conversationZF\""
+          + "6/v2beta1/{parent=projects/*/locations/*"
+          + "}/conversations:\014conversation\332A\023parent,c"
+          + "onversation\022\201\002\n\021ListConversations\0229.goog"
+          + "le.cloud.dialogflow.v2beta1.ListConversa"
+          + "tionsRequest\032:.google.cloud.dialogflow.v"
+          + "2beta1.ListConversationsResponse\"u\202\323\344\223\002f"
+          + "\022*/v2beta1/{parent=projects/*}/conversat"
+          + "ionsZ8\0226/v2beta1/{parent=projects/*/loca"
+          + "tions/*}/conversations\332A\006parent\022\356\001\n\017GetC"
+          + "onversation\0227.google.cloud.dialogflow.v2"
+          + "beta1.GetConversationRequest\032-.google.cl"
+          + "oud.dialogflow.v2beta1.Conversation\"s\202\323\344"
+          + "\223\002f\022*/v2beta1/{name=projects/*/conversat"
+          + "ions/*}Z8\0226/v2beta1/{name=projects/*/loc"
+          + "ations/*/conversations/*}\332A\004name\022\221\002\n\024Com"
+          + "pleteConversation\022<.google.cloud.dialogf"
+          + "low.v2beta1.CompleteConversationRequest\032"
+          + "-.google.cloud.dialogflow.v2beta1.Conver"
+          + "sation\"\213\001\202\323\344\223\002~\"3/v2beta1/{name=projects"
+          + "/*/conversations/*}:complete:\001*ZD\"?/v2be"
+          + "ta1/{name=projects/*/locations/*/convers"
+          + "ations/*}:complete:\001*\332A\004name\022\275\002\n\023BatchCr"
+          + "eateMessages\022;.google.cloud.dialogflow.v"
+          + "2beta1.BatchCreateMessagesRequest\032<.goog"
+          + "le.cloud.dialogflow.v2beta1.BatchCreateM"
+          + "essagesResponse\"\252\001\202\323\344\223\002\232\001\"A/v2beta1/{par"
+          + "ent=projects/*/conversations/*}/messages"
+          + ":batchCreate:\001*ZR\"M/v2beta1/{parent=proj"
+          + "ects/*/locations/*/conversations/*}/mess"
+          + "ages:batchCreate:\001*\332A\006parent\022\211\002\n\014ListMes"
+          + "sages\0224.google.cloud.dialogflow.v2beta1."
+          + "ListMessagesRequest\0325.google.cloud.dialo"
+          + "gflow.v2beta1.ListMessagesResponse\"\213\001\202\323\344"
+          + "\223\002|\0225/v2beta1/{parent=projects/*/convers"
+          + "ations/*}/messagesZC\022A/v2beta1/{parent=p"
+          + "rojects/*/locations/*/conversations/*}/m"
+          + "essages\332A\006parent\022\210\003\n\032SuggestConversation"
+          + "Summary\022B.google.cloud.dialogflow.v2beta"
+          + "1.SuggestConversationSummaryRequest\032C.go"
+          + "ogle.cloud.dialogflow.v2beta1.SuggestCon"
+          + "versationSummaryResponse\"\340\001\202\323\344\223\002\312\001\"Y/v2b"
+          + "eta1/{conversation=projects/*/conversati"
+          + "ons/*}/suggestions:suggestConversationSu"
+          + "mmary:\001*Zj\"e/v2beta1/{conversation=proje"
+          + "cts/*/locations/*/conversations/*}/sugge"
+          + "stions:suggestConversationSummary:\001*\332A\014c"
+          + "onversation\032x\312A\031dialogflow.googleapis.co"
+          + "m\322AYhttps://www.googleapis.com/auth/clou"
+          + "d-platform,https://www.googleapis.com/au"
+          + "th/dialogflowB\257\001\n#com.google.cloud.dialo"
+          + "gflow.v2beta1B\021ConversationProtoP\001ZIgoog"
+          + "le.golang.org/genproto/googleapis/cloud/"
+          + "dialogflow/v2beta1;dialogflow\370\001\001\242\002\002DF\252\002\037"
+          + "Google.Cloud.Dialogflow.V2beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -310,6 +352,42 @@ public final class ConversationProto {
             internal_static_google_cloud_dialogflow_v2beta1_ListMessagesResponse_descriptor,
             new java.lang.String[] {
               "Messages", "NextPageToken",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_SuggestConversationSummaryRequest_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_dialogflow_v2beta1_SuggestConversationSummaryRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_SuggestConversationSummaryRequest_descriptor,
+            new java.lang.String[] {
+              "Conversation", "LatestMessage", "ContextSize",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_SuggestConversationSummaryResponse_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_dialogflow_v2beta1_SuggestConversationSummaryResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_SuggestConversationSummaryResponse_descriptor,
+            new java.lang.String[] {
+              "Summary", "LatestMessage", "ContextSize",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_SuggestConversationSummaryResponse_Summary_descriptor =
+        internal_static_google_cloud_dialogflow_v2beta1_SuggestConversationSummaryResponse_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dialogflow_v2beta1_SuggestConversationSummaryResponse_Summary_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_SuggestConversationSummaryResponse_Summary_descriptor,
+            new java.lang.String[] {
+              "Text", "TextSections", "AnswerRecord",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_SuggestConversationSummaryResponse_Summary_TextSectionsEntry_descriptor =
+        internal_static_google_cloud_dialogflow_v2beta1_SuggestConversationSummaryResponse_Summary_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dialogflow_v2beta1_SuggestConversationSummaryResponse_Summary_TextSectionsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_SuggestConversationSummaryResponse_Summary_TextSectionsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
