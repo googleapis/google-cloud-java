@@ -586,13 +586,18 @@ public class ConnectionWorker implements AutoCloseable {
   }
 
   private void requestCallback(AppendRowsResponse response) {
-    log.fine(
-        "Got response on stream '"
-            + response.getWriteStream()
-            + "' "
-            + (response.hasError()
-                ? "error: " + response.getError()
-                : "offset: " + response.getAppendResult().getOffset().getValue()));
+    if (!response.hasUpdatedSchema()) {
+      log.fine(String.format("Got response on stream %s", response.toString()));
+    } else {
+      AppendRowsResponse responseWithUpdatedSchemaRemoved =
+          response.toBuilder().clearUpdatedSchema().build();
+
+      log.fine(
+          String.format(
+              "Got response with schema updated (omitting updated schema in response here): %s",
+              responseWithUpdatedSchemaRemoved.toString()));
+    }
+
     AppendRequestAndResponse requestWrapper;
     this.lock.lock();
     if (response.hasUpdatedSchema()) {
