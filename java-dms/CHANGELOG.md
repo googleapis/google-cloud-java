@@ -1,5 +1,33 @@
 # Changelog
 
+## [2.2.6](https://github.com/googleapis/java-dms/compare/v2.2.5...v2.2.6) (2022-09-29)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#288](https://github.com/googleapis/java-dms/issues/288)) ([ea294bc](https://github.com/googleapis/java-dms/commit/ea294bc6d6ee4b6283d28d81c484a2a7767fbad0))
+* Update dependency certifi to v2022.9.24 ([#268](https://github.com/googleapis/java-dms/issues/268)) ([546061b](https://github.com/googleapis/java-dms/commit/546061be261a22b76dd045e8cb49900cb8d08c8a))
+* Update dependency charset-normalizer to v2.1.1 ([#272](https://github.com/googleapis/java-dms/issues/272)) ([5e0edab](https://github.com/googleapis/java-dms/commit/5e0edabb23e626894b64e091832b16e7c91fcf6c))
+* Update dependency click to v8.1.3 ([#273](https://github.com/googleapis/java-dms/issues/273)) ([7c342df](https://github.com/googleapis/java-dms/commit/7c342df1ccd41b30c79f35491c1cdc4cfeb95741))
+* Update dependency gcp-releasetool to v1.8.8 ([#269](https://github.com/googleapis/java-dms/issues/269)) ([fd4c2b5](https://github.com/googleapis/java-dms/commit/fd4c2b58b67d8b98a86992b70a693031c5b53d6d))
+* Update dependency google-api-core to v2.10.1 ([#274](https://github.com/googleapis/java-dms/issues/274)) ([8690c7f](https://github.com/googleapis/java-dms/commit/8690c7f98a56e01a142c736cf1ba1135447e826c))
+* Update dependency google-auth to v2.12.0 ([#275](https://github.com/googleapis/java-dms/issues/275)) ([5bbc97e](https://github.com/googleapis/java-dms/commit/5bbc97eb0f6d1bc6e02fb639528e84e9286ae601))
+* Update dependency google-cloud-core to v2.3.2 ([#270](https://github.com/googleapis/java-dms/issues/270)) ([1f12b1b](https://github.com/googleapis/java-dms/commit/1f12b1bd41f00f8fd3800886a19bc1d82370a906))
+* Update dependency google-cloud-storage to v2.5.0 ([#276](https://github.com/googleapis/java-dms/issues/276)) ([790b427](https://github.com/googleapis/java-dms/commit/790b427810c8a847a4a07cafc7f81c3b2eeda89b))
+* Update dependency google-crc32c to v1.5.0 ([#277](https://github.com/googleapis/java-dms/issues/277)) ([08e6c8c](https://github.com/googleapis/java-dms/commit/08e6c8c8f258a6705179cb2a8a94bd3d3f7278fd))
+* Update dependency googleapis-common-protos to v1.56.4 ([#271](https://github.com/googleapis/java-dms/issues/271)) ([6ca60ec](https://github.com/googleapis/java-dms/commit/6ca60ec814fdc63ee8a20070b80bc1594bf1ecde))
+* Update dependency importlib-metadata to v4.12.0 ([#278](https://github.com/googleapis/java-dms/issues/278)) ([adc8bc2](https://github.com/googleapis/java-dms/commit/adc8bc2f4d35fb91590b6510c7d56df32f476c7f))
+* Update dependency jeepney to v0.8.0 ([#279](https://github.com/googleapis/java-dms/issues/279)) ([27aa7c9](https://github.com/googleapis/java-dms/commit/27aa7c9dd929574d5a4be979bd036826459fb905))
+* Update dependency jinja2 to v3.1.2 ([#280](https://github.com/googleapis/java-dms/issues/280)) ([217d80a](https://github.com/googleapis/java-dms/commit/217d80aa65d1de9a9e1883a04d6535823b76f54a))
+* Update dependency keyring to v23.9.3 ([#281](https://github.com/googleapis/java-dms/issues/281)) ([821d0b6](https://github.com/googleapis/java-dms/commit/821d0b6de0209448c820605b2e2754ae201bbe84))
+* Update dependency markupsafe to v2.1.1 ([#282](https://github.com/googleapis/java-dms/issues/282)) ([275421a](https://github.com/googleapis/java-dms/commit/275421a7ca73fd5a9a11a5020973124a81055436))
+* Update dependency protobuf to v3.20.2 ([#283](https://github.com/googleapis/java-dms/issues/283)) ([9cb80eb](https://github.com/googleapis/java-dms/commit/9cb80eb7f600d964041c0f2dd4dd9441f933f5b6))
+* Update dependency protobuf to v4 ([#289](https://github.com/googleapis/java-dms/issues/289)) ([0a6562f](https://github.com/googleapis/java-dms/commit/0a6562fd6a4cd2be3064bfa7914c7e6e2ec0f7f5))
+* Update dependency pyjwt to v2.5.0 ([#284](https://github.com/googleapis/java-dms/issues/284)) ([0abb724](https://github.com/googleapis/java-dms/commit/0abb7241e69ceab08dbf1d515d09dd934cabeaf1))
+* Update dependency requests to v2.28.1 ([#285](https://github.com/googleapis/java-dms/issues/285)) ([df1fe8d](https://github.com/googleapis/java-dms/commit/df1fe8df53de2a301986f242a372b4b09163fa89))
+* Update dependency typing-extensions to v4.3.0 ([#286](https://github.com/googleapis/java-dms/issues/286)) ([4259a65](https://github.com/googleapis/java-dms/commit/4259a6544882dd2d021414fb84e8b775d1cca024))
+* Update dependency zipp to v3.8.1 ([#287](https://github.com/googleapis/java-dms/issues/287)) ([f554ce7](https://github.com/googleapis/java-dms/commit/f554ce7de8c1266ace476a752ef5c7cabd9eb209))
+
 ## [2.2.5](https://github.com/googleapis/java-dms/compare/v2.2.4...v2.2.5) (2022-09-15)
 
 
