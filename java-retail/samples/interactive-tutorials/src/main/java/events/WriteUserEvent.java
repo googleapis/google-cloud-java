@@ -15,7 +15,7 @@
  */
 
 /*
- * Write user events into a catalog from inline source using Retail API
+ * Write user event using Retail API.
  */
 
 package events;
@@ -36,11 +36,11 @@ public class WriteUserEvent {
 
   public static void main(String[] args)
       throws IOException, ExecutionException, InterruptedException {
-    // TODO(developer): Replace these variables before running the sample.
+    // TODO(developer): Set projectId to your Google Cloud Platform project ID.
     String projectId = ServiceOptions.getDefaultProjectId();
     String defaultCatalog =
         String.format("projects/%s/locations/global/catalogs/default_catalog", projectId);
-    // visitorId generated randomly.
+    // visitorId is generated randomly
     String visitorId = UUID.randomUUID().toString();
 
     writeUserEvent(defaultCatalog, visitorId);

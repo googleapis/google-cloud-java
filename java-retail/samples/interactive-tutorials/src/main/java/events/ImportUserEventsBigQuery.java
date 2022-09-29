@@ -38,16 +38,19 @@ import java.util.concurrent.TimeUnit;
 public class ImportUserEventsBigQuery {
 
   public static void main(String[] args) throws IOException, InterruptedException {
-    // TODO(developer): Replace these variables before running the sample.
+    // TODO(developer): Set projectId to your Google Cloud Platform project ID.
     String projectId = ServiceOptions.getDefaultProjectId();
     String defaultCatalog =
         String.format("projects/%s/locations/global/catalogs/default_catalog", projectId);
-    // TO CHECK ERROR HANDLING PASTE THE INVALID CATALOG NAME HERE:
+    // To check error handling use invalid catalog name here:
     // defaultCatalog = "invalid_catalog_name";
+
+    // TODO(developer): Set datasetId to your datasetId
     String datasetId = "user_events";
+    // TODO(developer): Set tableId to your tableId
     String tableId = "events";
-    // TO CHECK ERROR HANDLING USE THE TABLE OF INVALID USER EVENTS:
-    // tableId = "events_some_invalid";
+    // To check error handling use table of invalid user events here:
+    // tableId = "events_some_invalid"
 
     importUserEventsFromBigQuery(projectId, defaultCatalog, datasetId, tableId);
   }

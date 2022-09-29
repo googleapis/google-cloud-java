@@ -15,13 +15,12 @@
  */
 
 /*
- * Create product in a catalog using Retail API
+ * Create, update, get and delete product in a catalog using Retail API.
  */
 
 package product;
 
 import com.google.api.gax.rpc.NotFoundException;
-import com.google.cloud.ServiceOptions;
 import com.google.cloud.retail.v2.CreateProductRequest;
 import com.google.cloud.retail.v2.DeleteProductRequest;
 import com.google.cloud.retail.v2.GetProductRequest;
@@ -37,7 +36,8 @@ import java.util.UUID;
 public class CrudProduct {
 
   public static void main(String[] args) throws IOException {
-    String projectId = ServiceOptions.getDefaultProjectId();
+    // TODO(developer): Set projectId to your Google Cloud Platform project ID.
+    String projectId = "my-project";
     String generatedProductId = UUID.randomUUID().toString();
     String branchName =
         String.format(
