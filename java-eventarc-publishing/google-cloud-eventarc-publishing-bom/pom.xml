@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-eventarc-publishing-bom</artifactId>
-  <version>0.3.5</version><!-- {x-version-update:google-cloud-eventarc-publishing:current} -->
+  <version>0.3.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-eventarc-publishing:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -65,17 +65,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-eventarc-publishing</artifactId>
-        <version>0.3.5</version><!-- {x-version-update:google-cloud-eventarc-publishing:current} -->
+        <version>0.3.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-eventarc-publishing:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-eventarc-publishing-v1</artifactId>
-        <version>0.3.5</version><!-- {x-version-update:grpc-google-cloud-eventarc-publishing-v1:current} -->
+        <version>0.3.6-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-eventarc-publishing-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-eventarc-publishing-v1</artifactId>
-        <version>0.3.5</version><!-- {x-version-update:proto-google-cloud-eventarc-publishing-v1:current} -->
+        <version>0.3.6-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-eventarc-publishing-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
