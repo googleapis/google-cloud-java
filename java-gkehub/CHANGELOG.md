@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.3.5](https://github.com/googleapis/java-gkehub/compare/v1.3.4...v1.3.5) (2022-09-29)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#297](https://github.com/googleapis/java-gkehub/issues/297)) ([e0e4073](https://github.com/googleapis/java-gkehub/commit/e0e407333d6349281f42f0fe9d1d5ad89c0945f7))
+* Update dependency certifi to v2022.9.24 ([#283](https://github.com/googleapis/java-gkehub/issues/283)) ([4522a86](https://github.com/googleapis/java-gkehub/commit/4522a86fe5602a6bf0e1237e1da02d81f855c194))
+* Update dependency charset-normalizer to v2.1.1 ([#287](https://github.com/googleapis/java-gkehub/issues/287)) ([a2d3d90](https://github.com/googleapis/java-gkehub/commit/a2d3d900b0cfb60db6d8325f4b594d47b1c13fc0))
+* Update dependency click to v8.1.3 ([#288](https://github.com/googleapis/java-gkehub/issues/288)) ([6ce465e](https://github.com/googleapis/java-gkehub/commit/6ce465e8fc8ccac3716ba0c95a1457feabe7248d))
+* Update dependency gcp-releasetool to v1.8.8 ([#284](https://github.com/googleapis/java-gkehub/issues/284)) ([dfbb77d](https://github.com/googleapis/java-gkehub/commit/dfbb77d439bbb1428f86238c860d015977180f04))
+* Update dependency google-api-core to v2.10.1 ([#289](https://github.com/googleapis/java-gkehub/issues/289)) ([6335a98](https://github.com/googleapis/java-gkehub/commit/6335a989c45ffe9b80c823c989f2e6453d0ce733))
+* Update dependency google-auth to v2.12.0 ([#290](https://github.com/googleapis/java-gkehub/issues/290)) ([9f7c8ee](https://github.com/googleapis/java-gkehub/commit/9f7c8ee880d742614e94baeba4730efeb88fc2e6))
+* Update dependency google-cloud-core to v2.3.2 ([#285](https://github.com/googleapis/java-gkehub/issues/285)) ([c7b0b3b](https://github.com/googleapis/java-gkehub/commit/c7b0b3b51c6c7289e69bec0574e14aadab317e8b))
+* Update dependency google-cloud-storage to v2.5.0 ([#299](https://github.com/googleapis/java-gkehub/issues/299)) ([83d506f](https://github.com/googleapis/java-gkehub/commit/83d506f3555e1f8e3f6f3b387c96448241b4ed24))
+* Update dependency google-crc32c to v1.5.0 ([#300](https://github.com/googleapis/java-gkehub/issues/300)) ([7702aec](https://github.com/googleapis/java-gkehub/commit/7702aec164d2b2bc52bda95e2813b11b051c3f98))
+* Update dependency googleapis-common-protos to v1.56.4 ([#286](https://github.com/googleapis/java-gkehub/issues/286)) ([28dc853](https://github.com/googleapis/java-gkehub/commit/28dc85344d5e8ce98540bd2b14aed2628237084e))
+* Update dependency importlib-metadata to v4.12.0 ([#301](https://github.com/googleapis/java-gkehub/issues/301)) ([2f3b65a](https://github.com/googleapis/java-gkehub/commit/2f3b65aa134db34519941e286e5b91663b8f298f))
+* Update dependency jeepney to v0.8.0 ([#302](https://github.com/googleapis/java-gkehub/issues/302)) ([ec712d5](https://github.com/googleapis/java-gkehub/commit/ec712d55dbcfa0e2faa2298079c5c7dfe161fbd1))
+* Update dependency jinja2 to v3.1.2 ([#303](https://github.com/googleapis/java-gkehub/issues/303)) ([ac4b47d](https://github.com/googleapis/java-gkehub/commit/ac4b47d8aa3147a6a04a1aeb0d27ed56d7f5b0d1))
+* Update dependency keyring to v23.9.3 ([#304](https://github.com/googleapis/java-gkehub/issues/304)) ([32a3630](https://github.com/googleapis/java-gkehub/commit/32a36305036d4e56ddb2ef359554fddb5bd619d6))
+* Update dependency markupsafe to v2.1.1 ([#291](https://github.com/googleapis/java-gkehub/issues/291)) ([fef26d1](https://github.com/googleapis/java-gkehub/commit/fef26d16cc0ddfa7eef62b7ffab8e34b21cb1f6f))
+* Update dependency protobuf to v3.20.2 ([#292](https://github.com/googleapis/java-gkehub/issues/292)) ([028e006](https://github.com/googleapis/java-gkehub/commit/028e0060211455075f6d6efa77906f65ff0c7b15))
+* Update dependency protobuf to v4 ([#298](https://github.com/googleapis/java-gkehub/issues/298)) ([d07c3da](https://github.com/googleapis/java-gkehub/commit/d07c3da9fb181c4693f065bec5dd8645debd6ef3))
+* Update dependency pyjwt to v2.5.0 ([#293](https://github.com/googleapis/java-gkehub/issues/293)) ([b491fc8](https://github.com/googleapis/java-gkehub/commit/b491fc84df324269ed66d011ebeac73edca09fc2))
+* Update dependency requests to v2.28.1 ([#294](https://github.com/googleapis/java-gkehub/issues/294)) ([7144b6b](https://github.com/googleapis/java-gkehub/commit/7144b6b248f5ebdb8a2049dd1c7562f53c02dc98))
+* Update dependency typing-extensions to v4.3.0 ([#295](https://github.com/googleapis/java-gkehub/issues/295)) ([d2bdbf2](https://github.com/googleapis/java-gkehub/commit/d2bdbf2218be826c151f413a29ed26c7cdfb2ac7))
+* Update dependency zipp to v3.8.1 ([#296](https://github.com/googleapis/java-gkehub/issues/296)) ([e7b3971](https://github.com/googleapis/java-gkehub/commit/e7b397142930a15d541a2567962ba3d7b938a214))
+
 ## [1.3.4](https://github.com/googleapis/java-gkehub/compare/v1.3.3...v1.3.4) (2022-09-15)
 
 
