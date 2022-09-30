@@ -81,7 +81,7 @@ git add "*/src/test/*IT*.java"
 git add "*/src/test/*/integration/*.java"
 git add "*/src/test/*/it/*.java"
 git commit -m "chore: Adding java IT diffs" --no-verify
-git push origin "${diff_java_it_branch}" --force
+#git push origin "${diff_java_it_branch}" --force
 
 git stash
 git checkout "${current_branch}"
@@ -92,7 +92,7 @@ git checkout -b "${diff_java_branch}"
 git add "*.java"
 git add "*.proto"
 git commit -m "chore: Adding java diffs" --no-verify
-git push origin "${diff_java_branch}" --force
+#git push origin "${diff_java_branch}" --force
 
 git stash
 git checkout "${current_branch}"
@@ -110,6 +110,8 @@ done
 
 git add .gitignore
 git commit -m "chore: Ignore excluded files"
+
+exit
 
 git add .
 git commit -m "chore: Adding non-java diffs" --no-verify
