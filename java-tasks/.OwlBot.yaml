@@ -14,17 +14,17 @@
 
 
 deep-remove-regex:
-- "/samples/snippets/generated"
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-tasks/samples/snippets/generated"
+- "/java-tasks/grpc-google-.*/src"
+- "/java-tasks/proto-google-.*/src"
+- "/java-tasks/google-.*/src"
 
 deep-preserve-regex:
-- "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/google-cloud-tasks/src/test/java/com/google/cloud/tasks/v2beta3/CloudTasksSmokeTest.java"
-- "/proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ProjectName.java"
-- "/proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ProjectName.java"
-- "/proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ProjectName.java"
+- "/java-tasks/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-tasks/google-cloud-tasks/src/test/java/com/google/cloud/tasks/v2beta3/CloudTasksSmokeTest.java"
+- "/java-tasks/proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ProjectName.java"
+- "/java-tasks/proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ProjectName.java"
+- "/java-tasks/proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ProjectName.java"
 
 deep-copy-regex:
 - source: "/google/cloud/tasks/(v.*)/.*-java/proto-google-.*/src"

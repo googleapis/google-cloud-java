@@ -14,10 +14,10 @@
 
 
 deep-remove-regex:
-- "/proto-google-.*/src"
+- "/java-accesscontextmanager/proto-google-.*/src"
 
 deep-preserve-regex:
-- "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-accesscontextmanager/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/identity/accesscontextmanager/(v\\d)/.*-java/proto-google-.*/src"

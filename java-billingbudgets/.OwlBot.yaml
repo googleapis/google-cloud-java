@@ -14,9 +14,9 @@
 
 
 deep-remove-regex:
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-billingbudgets/grpc-google-.*/src"
+- "/java-billingbudgets/proto-google-.*/src"
+- "/java-billingbudgets/google-.*/src"
 
 deep-copy-regex:
 - source: "/google/cloud/billing/budgets/(v.*)/.*-java/proto-google-.*/src"

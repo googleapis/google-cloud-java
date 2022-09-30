@@ -14,15 +14,15 @@
 
 
 deep-remove-regex:
-- "/samples/snippets/generated"
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-scheduler/samples/snippets/generated"
+- "/java-scheduler/grpc-google-.*/src"
+- "/java-scheduler/proto-google-.*/src"
+- "/java-scheduler/google-.*/src"
 
 deep-preserve-regex:
-- "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/ProjectName.java"
-- "/proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/ProjectName.java"
+- "/java-scheduler/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-scheduler/proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/ProjectName.java"
+- "/java-scheduler/proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/ProjectName.java"
 
 deep-copy-regex:
 - source: "/google/cloud/scheduler/(v.*)/.*-java/proto-google-.*/src"
