@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>google-cloud-batch-bom</artifactId>
+  <version>0.3.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-batch:current} -->
+  <packaging>pom</packaging>
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-shared-config</artifactId>
+    <version>1.5.3</version>
+  </parent>
+
+  <name>Google Google Cloud Batch BOM</name>
+  <url>https://github.com/googleapis/java-batch</url>
+  <description>
+    BOM for Google Cloud Batch
+  </description>
+
+  <organization>
+    <name>Google LLC</name>
+  </organization>
+
+  <developers>
+    <developer>
+      <id>chingor13</id>
+      <name>Jeff Ching</name>
+      <email>chingor@google.com</email>
+      <organization>Google LLC</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+       <id>neenushaji</id>
+       <name>Neenu Shaji</name>
+       <email>neenushaji@google.com</email>
+       <organization>Google LLC</organization>
+       <roles>
+         <role>Developer</role>
+       </roles>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:https://github.com/googleapis/java-batch.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/java-batch.git</developerConnection>
+    <url>https://github.com/googleapis/java-batch</url>
+  </scm>
+
+  <properties>
+    <maven.antrun.skip>true</maven.antrun.skip>
+  </properties>
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-batch</artifactId>
+        <version>0.3.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-batch:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-batch-v1</artifactId>
+        <version>0.3.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-batch-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-batch-v1alpha</artifactId>
+        <version>0.3.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-batch-v1alpha:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-batch-v1</artifactId>
+        <version>0.3.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-batch-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-batch-v1alpha</artifactId>
+        <version>0.3.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-batch-v1alpha:current} -->
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
