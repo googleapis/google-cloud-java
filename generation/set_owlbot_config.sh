@@ -31,14 +31,14 @@ if [ ! -d "${module_name}" ]; then
 fi
 
 # For deep-remove-regex and deep-preserve-regex fields
-sed -i "s|\"/grpc-google|\"/${module_name}/grpc-google|" "${OWLBOT_FILE}"
-sed -i "s|\"/proto-google|\"/${module_name}/proto-google|" "${OWLBOT_FILE}"
-sed -i "s|\"/google-\.\*|\"/${module_name}/google-.*|" "${OWLBOT_FILE}"
-sed -i "s|\"/google-cloud|\"/${module_name}/google-cloud|" "${OWLBOT_FILE}"
-sed -i "s|\"/samples|\"/${module_name}/samples|" "${OWLBOT_FILE}"
+sed -i.bak "s|\"/grpc-google|\"/${module_name}/grpc-google|" "${OWLBOT_FILE}" && rm "${OWLBOT_FILE}".bak
+sed -i.bak "s|\"/proto-google|\"/${module_name}/proto-google|" "${OWLBOT_FILE}" && rm "${OWLBOT_FILE}".bak
+sed -i.bak "s|\"/google-\.\*|\"/${module_name}/google-.*|" "${OWLBOT_FILE}" && rm "${OWLBOT_FILE}".bak
+sed -i.bak "s|\"/google-cloud|\"/${module_name}/google-cloud|" "${OWLBOT_FILE}" && rm "${OWLBOT_FILE}".bak
+sed -i.bak "s|\"/samples|\"/${module_name}/samples|" "${OWLBOT_FILE}" && rm "${OWLBOT_FILE}".bak
 
 # In monorepo, the staging directory structure tells the destination module to
 # which the OwlBot Java postprocessor copies the files.
 if grep --quiet 'owl-bot-staging/$1' "${OWLBOT_FILE}"; then
-  sed -i "s|owl-bot-staging|owl-bot-staging/${module_name}|" "${OWLBOT_FILE}"
+  sed -i.bak "s|owl-bot-staging|owl-bot-staging/${module_name}|" "${OWLBOT_FILE}" && rm "${OWLBOT_FILE}".bak
 fi
