@@ -110,8 +110,8 @@ git checkout -b "${diff_non_java_branch}"
 git add .
 git reset -- .gitignore
 git reset -- .gitignore.old
-git commit -m "chore: Adding non-java diffs" --no-verify
-git push origin "${diff_non_java_branch}" --force
+#git commit -m "chore: Adding non-java diffs" --no-verify
+#git push origin "${diff_non_java_branch}" --force
 
 rm .gitignore
 mv .gitignore.old .gitignore
