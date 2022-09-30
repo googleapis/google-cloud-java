@@ -115,6 +115,14 @@ git commit -am 'chore: delete non-auto-generated samples'
 git add --all
 git commit -am 'chore: update versions to latest in maven'
 
+./generation/update_owlbot_postprocessor_config.sh
+
+git add --all
+git commit -am 'chore: remove and disable owlbot postprocessor templates'
+
+for F in `find . -maxdepth 2 -name '.OwlBot.yaml'`; do sh generation/set_owlbot_config.sh $F; done
+git commit -am 'chore: set owlbot copy config'
+
 # create a monorepo/diff repo
 cd ..
 cp -R google-cloud-java split
@@ -124,6 +132,31 @@ cp -R shadow/.git split/.git
 rm -rf shadow
 mv split diff
 cd diff
-git add --all
-git commit -am 'diff with split repos'
+
+git add "*/src/main/*" || true
+git commit -m 'split repo - diff src/main' --allow-empty
+
+git add "*/src/test/*" || true
+git commit -m 'split repo - diff src/test' --allow-empty
+
+git add "*/samples/*" || true
+git commit -m 'split repo - diff samples' --allow-empty
+
+git add "**/pom.xml" || true
+git commit -m 'split repo - diff pom.xml' --allow-empty
+
+git add "**/CHANGELOG.md" || true
+git commit -m 'split repo - diff CHANGELOG.md' --allow-empty
+
+git add "**/README.md" || true
+git commit -m 'split repo - diff README.md' --allow-empty
+
+git add "**/.OwlBot.yaml" || true
+git commit -m 'split repo - diff .OwlBot.yaml' --allow-empty
+
+git add "**/versions.txt" || true
+git commit -m 'split repo - diff versions.txt' --allow-empty
+
+git add --all || true
+git commit -am 'split repo - diff everything else' --allow-empty
 cd ../..
