@@ -1,0 +1,19 @@
+# Maven
+target/
+
+# Eclipse
+.classpath
+.project
+.settings
+
+# Intellij
+*.iml
+.idea/
+
+# python utilities
+*.pyc
+__pycache__
+
+.vscode
+
+.flattened-pom.xml
