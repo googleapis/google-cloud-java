@@ -1,0 +1,84 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.certificatemanager.v1",
+  "libraryPackage": "com.google.cloud.certificatemanager.v1",
+  "services": {
+    "CertificateManager": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CertificateManagerClient",
+          "rpcs": {
+            "CreateCertificate": {
+              "methods": ["createCertificateAsync", "createCertificateAsync", "createCertificateAsync", "createCertificateOperationCallable", "createCertificateCallable"]
+            },
+            "CreateCertificateMap": {
+              "methods": ["createCertificateMapAsync", "createCertificateMapAsync", "createCertificateMapAsync", "createCertificateMapOperationCallable", "createCertificateMapCallable"]
+            },
+            "CreateCertificateMapEntry": {
+              "methods": ["createCertificateMapEntryAsync", "createCertificateMapEntryAsync", "createCertificateMapEntryAsync", "createCertificateMapEntryOperationCallable", "createCertificateMapEntryCallable"]
+            },
+            "CreateDnsAuthorization": {
+              "methods": ["createDnsAuthorizationAsync", "createDnsAuthorizationAsync", "createDnsAuthorizationAsync", "createDnsAuthorizationOperationCallable", "createDnsAuthorizationCallable"]
+            },
+            "DeleteCertificate": {
+              "methods": ["deleteCertificateAsync", "deleteCertificateAsync", "deleteCertificateAsync", "deleteCertificateOperationCallable", "deleteCertificateCallable"]
+            },
+            "DeleteCertificateMap": {
+              "methods": ["deleteCertificateMapAsync", "deleteCertificateMapAsync", "deleteCertificateMapAsync", "deleteCertificateMapOperationCallable", "deleteCertificateMapCallable"]
+            },
+            "DeleteCertificateMapEntry": {
+              "methods": ["deleteCertificateMapEntryAsync", "deleteCertificateMapEntryAsync", "deleteCertificateMapEntryAsync", "deleteCertificateMapEntryOperationCallable", "deleteCertificateMapEntryCallable"]
+            },
+            "DeleteDnsAuthorization": {
+              "methods": ["deleteDnsAuthorizationAsync", "deleteDnsAuthorizationAsync", "deleteDnsAuthorizationAsync", "deleteDnsAuthorizationOperationCallable", "deleteDnsAuthorizationCallable"]
+            },
+            "GetCertificate": {
+              "methods": ["getCertificate", "getCertificate", "getCertificate", "getCertificateCallable"]
+            },
+            "GetCertificateMap": {
+              "methods": ["getCertificateMap", "getCertificateMap", "getCertificateMap", "getCertificateMapCallable"]
+            },
+            "GetCertificateMapEntry": {
+              "methods": ["getCertificateMapEntry", "getCertificateMapEntry", "getCertificateMapEntry", "getCertificateMapEntryCallable"]
+            },
+            "GetDnsAuthorization": {
+              "methods": ["getDnsAuthorization", "getDnsAuthorization", "getDnsAuthorization", "getDnsAuthorizationCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListCertificateMapEntries": {
+              "methods": ["listCertificateMapEntries", "listCertificateMapEntries", "listCertificateMapEntries", "listCertificateMapEntriesPagedCallable", "listCertificateMapEntriesCallable"]
+            },
+            "ListCertificateMaps": {
+              "methods": ["listCertificateMaps", "listCertificateMaps", "listCertificateMaps", "listCertificateMapsPagedCallable", "listCertificateMapsCallable"]
+            },
+            "ListCertificates": {
+              "methods": ["listCertificates", "listCertificates", "listCertificates", "listCertificatesPagedCallable", "listCertificatesCallable"]
+            },
+            "ListDnsAuthorizations": {
+              "methods": ["listDnsAuthorizations", "listDnsAuthorizations", "listDnsAuthorizations", "listDnsAuthorizationsPagedCallable", "listDnsAuthorizationsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "UpdateCertificate": {
+              "methods": ["updateCertificateAsync", "updateCertificateAsync", "updateCertificateOperationCallable", "updateCertificateCallable"]
+            },
+            "UpdateCertificateMap": {
+              "methods": ["updateCertificateMapAsync", "updateCertificateMapAsync", "updateCertificateMapOperationCallable", "updateCertificateMapCallable"]
+            },
+            "UpdateCertificateMapEntry": {
+              "methods": ["updateCertificateMapEntryAsync", "updateCertificateMapEntryAsync", "updateCertificateMapEntryOperationCallable", "updateCertificateMapEntryCallable"]
+            },
+            "UpdateDnsAuthorization": {
+              "methods": ["updateDnsAuthorizationAsync", "updateDnsAuthorizationAsync", "updateDnsAuthorizationOperationCallable", "updateDnsAuthorizationCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
