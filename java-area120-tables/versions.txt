@@ -1,0 +1,6 @@
+# Format:
+# module:released-version:current-version
+
+google-area120-tables:0.7.6:0.7.7-SNAPSHOT
+grpc-google-area120-tables-v1alpha1:0.7.6:0.7.7-SNAPSHOT
+proto-google-area120-tables-v1alpha1:0.7.6:0.7.7-SNAPSHOT
