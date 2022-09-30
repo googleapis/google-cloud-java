@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker:
-  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
 - "/grpc-google-.*/src"
@@ -28,8 +26,10 @@ deep-preserve-regex:
 
 deep-copy-regex:
 - source: "/google/devtools/cloudtrace/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-trace-$1/src"
+  dest: "/owl-bot-staging/java-trace/$1/proto-google-cloud-trace-$1/src"
 - source: "/google/devtools/cloudtrace/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-trace-$1/src"
+  dest: "/owl-bot-staging/java-trace/$1/grpc-google-cloud-trace-$1/src"
 - source: "/google/devtools/cloudtrace/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-trace/src"
+  dest: "/owl-bot-staging/java-trace/$1/google-cloud-trace/src"
+
+api-name: cloudtrace
