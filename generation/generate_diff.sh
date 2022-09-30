@@ -100,20 +100,15 @@ git stash pop
 
 git checkout -b "${diff_non_java_branch}"
 
-cp .gitignore .gitignore.old
-ignore_list=( "java-*/.github/" "java-*/.kokoro/" "java-*/.samples/" "java-*/CODE_OF_CONDUCT.md" "java-*/CONTRIBUTING.md" "java-*/LICENSE" "java-*/SECURITY.md" "java-*/java.header" "java-*/license-checks.xml" "java-*/renovate.json" ".gitignore.old")
-
-for ignore in "${ignore_list[@]}"
-do
-  echo "${ignore}" >> .gitignore
-done
-
-git add .gitignore
-git commit -m "chore: Ignore excluded files"
-
-exit
+ignore_list=("java-*/.github/" "java-*/.kokoro/" "java-*/samples/" "java-*/CODE_OF_CONDUCT.md" "java-*/CONTRIBUTING.md" "java-*/LICENSE" "java-*/SECURITY.md" "java-*/java.header" "java-*/license-checks.xml" "java-*/renovate.json")
 
 git add .
+for ignore in "${ignore_list[@]}"
+do
+  git reset $(git diff --name-only --cached | grep "${ignore}")
+done
+
+exit
 git commit -m "chore: Adding non-java diffs" --no-verify
 
 rm .gitignore
