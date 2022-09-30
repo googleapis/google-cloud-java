@@ -41,7 +41,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-recommender</artifactId>
-  <version>2.5.4</version>
+  <version>2.5.5</version>
 </dependency>
 
 ```
