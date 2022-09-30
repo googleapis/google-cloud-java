@@ -1,0 +1,8 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-trace:2.3.6:2.3.6
+grpc-google-cloud-trace-v1:2.3.6:2.3.6
+grpc-google-cloud-trace-v2:2.3.6:2.3.6
+proto-google-cloud-trace-v1:2.3.6:2.3.6
+proto-google-cloud-trace-v2:2.3.6:2.3.6
