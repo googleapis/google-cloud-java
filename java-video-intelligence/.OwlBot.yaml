@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker:
-  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
 - "/samples/snippets/generated"
@@ -26,10 +24,12 @@ deep-preserve-regex:
 
 deep-copy-regex:
 - source: "/google/cloud/videointelligence/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-video-intelligence-$1/src"
+  dest: "/owl-bot-staging/java-video-intelligence/$1/proto-google-cloud-video-intelligence-$1/src"
 - source: "/google/cloud/videointelligence/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-video-intelligence-$1/src"
+  dest: "/owl-bot-staging/java-video-intelligence/$1/grpc-google-cloud-video-intelligence-$1/src"
 - source: "/google/cloud/videointelligence/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-video-intelligence/src"
+  dest: "/owl-bot-staging/java-video-intelligence/$1/google-cloud-video-intelligence/src"
 - source: "/google/cloud/videointelligence/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/$1/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-video-intelligence/$1/samples/snippets/generated"
+
+api-name: videointelligence
