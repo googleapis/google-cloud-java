@@ -1,0 +1,120 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.contactcenterinsights.v1",
+  "libraryPackage": "com.google.cloud.contactcenterinsights.v1",
+  "services": {
+    "ContactCenterInsights": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ContactCenterInsightsClient",
+          "rpcs": {
+            "CalculateIssueModelStats": {
+              "methods": ["calculateIssueModelStats", "calculateIssueModelStats", "calculateIssueModelStats", "calculateIssueModelStatsCallable"]
+            },
+            "CalculateStats": {
+              "methods": ["calculateStats", "calculateStats", "calculateStats", "calculateStatsCallable"]
+            },
+            "CreateAnalysis": {
+              "methods": ["createAnalysisAsync", "createAnalysisAsync", "createAnalysisAsync", "createAnalysisOperationCallable", "createAnalysisCallable"]
+            },
+            "CreateConversation": {
+              "methods": ["createConversation", "createConversation", "createConversation", "createConversationCallable"]
+            },
+            "CreateIssueModel": {
+              "methods": ["createIssueModelAsync", "createIssueModelAsync", "createIssueModelAsync", "createIssueModelOperationCallable", "createIssueModelCallable"]
+            },
+            "CreatePhraseMatcher": {
+              "methods": ["createPhraseMatcher", "createPhraseMatcher", "createPhraseMatcher", "createPhraseMatcherCallable"]
+            },
+            "CreateView": {
+              "methods": ["createView", "createView", "createView", "createViewCallable"]
+            },
+            "DeleteAnalysis": {
+              "methods": ["deleteAnalysis", "deleteAnalysis", "deleteAnalysis", "deleteAnalysisCallable"]
+            },
+            "DeleteConversation": {
+              "methods": ["deleteConversation", "deleteConversation", "deleteConversation", "deleteConversationCallable"]
+            },
+            "DeleteIssueModel": {
+              "methods": ["deleteIssueModelAsync", "deleteIssueModelAsync", "deleteIssueModelAsync", "deleteIssueModelOperationCallable", "deleteIssueModelCallable"]
+            },
+            "DeletePhraseMatcher": {
+              "methods": ["deletePhraseMatcher", "deletePhraseMatcher", "deletePhraseMatcher", "deletePhraseMatcherCallable"]
+            },
+            "DeleteView": {
+              "methods": ["deleteView", "deleteView", "deleteView", "deleteViewCallable"]
+            },
+            "DeployIssueModel": {
+              "methods": ["deployIssueModelAsync", "deployIssueModelAsync", "deployIssueModelAsync", "deployIssueModelOperationCallable", "deployIssueModelCallable"]
+            },
+            "ExportInsightsData": {
+              "methods": ["exportInsightsDataAsync", "exportInsightsDataAsync", "exportInsightsDataAsync", "exportInsightsDataOperationCallable", "exportInsightsDataCallable"]
+            },
+            "GetAnalysis": {
+              "methods": ["getAnalysis", "getAnalysis", "getAnalysis", "getAnalysisCallable"]
+            },
+            "GetConversation": {
+              "methods": ["getConversation", "getConversation", "getConversation", "getConversationCallable"]
+            },
+            "GetIssue": {
+              "methods": ["getIssue", "getIssue", "getIssue", "getIssueCallable"]
+            },
+            "GetIssueModel": {
+              "methods": ["getIssueModel", "getIssueModel", "getIssueModel", "getIssueModelCallable"]
+            },
+            "GetPhraseMatcher": {
+              "methods": ["getPhraseMatcher", "getPhraseMatcher", "getPhraseMatcher", "getPhraseMatcherCallable"]
+            },
+            "GetSettings": {
+              "methods": ["getSettings", "getSettings", "getSettings", "getSettingsCallable"]
+            },
+            "GetView": {
+              "methods": ["getView", "getView", "getView", "getViewCallable"]
+            },
+            "ListAnalyses": {
+              "methods": ["listAnalyses", "listAnalyses", "listAnalyses", "listAnalysesPagedCallable", "listAnalysesCallable"]
+            },
+            "ListConversations": {
+              "methods": ["listConversations", "listConversations", "listConversations", "listConversationsPagedCallable", "listConversationsCallable"]
+            },
+            "ListIssueModels": {
+              "methods": ["listIssueModels", "listIssueModels", "listIssueModels", "listIssueModelsCallable"]
+            },
+            "ListIssues": {
+              "methods": ["listIssues", "listIssues", "listIssues", "listIssuesCallable"]
+            },
+            "ListPhraseMatchers": {
+              "methods": ["listPhraseMatchers", "listPhraseMatchers", "listPhraseMatchers", "listPhraseMatchersPagedCallable", "listPhraseMatchersCallable"]
+            },
+            "ListViews": {
+              "methods": ["listViews", "listViews", "listViews", "listViewsPagedCallable", "listViewsCallable"]
+            },
+            "UndeployIssueModel": {
+              "methods": ["undeployIssueModelAsync", "undeployIssueModelAsync", "undeployIssueModelAsync", "undeployIssueModelOperationCallable", "undeployIssueModelCallable"]
+            },
+            "UpdateConversation": {
+              "methods": ["updateConversation", "updateConversation", "updateConversationCallable"]
+            },
+            "UpdateIssue": {
+              "methods": ["updateIssue", "updateIssue", "updateIssueCallable"]
+            },
+            "UpdateIssueModel": {
+              "methods": ["updateIssueModel", "updateIssueModel", "updateIssueModelCallable"]
+            },
+            "UpdatePhraseMatcher": {
+              "methods": ["updatePhraseMatcher", "updatePhraseMatcher", "updatePhraseMatcherCallable"]
+            },
+            "UpdateSettings": {
+              "methods": ["updateSettings", "updateSettings", "updateSettingsCallable"]
+            },
+            "UpdateView": {
+              "methods": ["updateView", "updateView", "updateViewCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
