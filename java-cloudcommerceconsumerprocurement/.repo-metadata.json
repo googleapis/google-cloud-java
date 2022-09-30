@@ -1,0 +1,16 @@
+{
+  "api_shortname": "cloudcommerceconsumerprocurement",
+  "name_pretty": "Cloud Commerce Consumer Procurement",
+  "product_documentation": "https://cloud.google.com/marketplace/",
+  "api_description": "Find top solutions integrated with Google Cloud to accelerate your digital transformation. Scale and simplify procurement for your organization with online discovery, flexible purchasing, and fulfillment of enterprise-grade cloud solutions.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-cloudcommerceconsumerprocurement/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-cloudcommerceconsumerprocurement",
+  "repo_short": "java-cloudcommerceconsumerprocurement",
+  "distribution_name": "com.google.cloud:google-cloud-cloudcommerceconsumerprocurement",
+  "api_id": "cloudcommerceconsumerprocurement.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
