@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-iamcredentials:2.3.5:2.3.5
-grpc-google-cloud-iamcredentials-v1:2.3.5:2.3.5
-proto-google-cloud-iamcredentials-v1:2.3.5:2.3.5
+google-cloud-iamcredentials:2.3.5:2.3.6-SNAPSHOT
+grpc-google-cloud-iamcredentials-v1:2.3.5:2.3.6-SNAPSHOT
+proto-google-cloud-iamcredentials-v1:2.3.5:2.3.6-SNAPSHOT
