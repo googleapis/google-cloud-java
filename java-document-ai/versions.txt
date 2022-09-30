@@ -1,0 +1,12 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-document-ai:2.7.3:2.7.3
+grpc-google-cloud-document-ai-v1beta1:0.19.3:0.19.3
+grpc-google-cloud-document-ai-v1beta2:0.19.3:0.19.3
+grpc-google-cloud-document-ai-v1beta3:0.19.3:0.19.3
+grpc-google-cloud-document-ai-v1:2.7.3:2.7.3
+proto-google-cloud-document-ai-v1beta1:0.19.3:0.19.3
+proto-google-cloud-document-ai-v1beta2:0.19.3:0.19.3
+proto-google-cloud-document-ai-v1beta3:0.19.3:0.19.3
+proto-google-cloud-document-ai-v1:2.7.3:2.7.3
