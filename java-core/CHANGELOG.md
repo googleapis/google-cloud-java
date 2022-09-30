@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.8.18](https://github.com/googleapis/java-core/compare/v2.8.17...v2.8.18) (2022-09-30)
+
+
+### Dependencies
+
+* Update dependency com.google.protobuf:protobuf-bom to v3.21.7 ([#960](https://github.com/googleapis/java-core/issues/960)) ([1fcd95f](https://github.com/googleapis/java-core/commit/1fcd95f2401b66a79383bd79729595334493b0e4))
+
 ## [2.8.17](https://github.com/googleapis/java-core/compare/v2.8.16...v2.8.17) (2022-09-28)
 
 
