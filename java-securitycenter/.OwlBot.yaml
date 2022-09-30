@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker:
-  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
 - "/samples/snippets/generated"
@@ -31,10 +29,12 @@ deep-preserve-regex:
 
 deep-copy-regex:
 - source: "/google/cloud/securitycenter/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-securitycenter-$1/src"
+  dest: "/owl-bot-staging/java-securitycenter/$1/proto-google-cloud-securitycenter-$1/src"
 - source: "/google/cloud/securitycenter/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-securitycenter-$1/src"
+  dest: "/owl-bot-staging/java-securitycenter/$1/grpc-google-cloud-securitycenter-$1/src"
 - source: "/google/cloud/securitycenter/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-securitycenter/src"
+  dest: "/owl-bot-staging/java-securitycenter/$1/google-cloud-securitycenter/src"
 - source: "/google/cloud/securitycenter/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/$1/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-securitycenter/$1/samples/snippets/generated"
+
+api-name: securitycenter
