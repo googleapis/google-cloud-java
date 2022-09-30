@@ -182,6 +182,16 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
      * <code>BLOCKED_BY_IAP = 4;</code>
      */
     BLOCKED_BY_IAP(4),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that no seeds is found for a scan
+     * </pre>
+     *
+     * <code>NO_STARTING_URL_FOUND_FOR_MANAGED_SCAN = 5;</code>
+     */
+    NO_STARTING_URL_FOUND_FOR_MANAGED_SCAN(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -240,6 +250,16 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
      * <code>BLOCKED_BY_IAP = 4;</code>
      */
     public static final int BLOCKED_BY_IAP_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that no seeds is found for a scan
+     * </pre>
+     *
+     * <code>NO_STARTING_URL_FOUND_FOR_MANAGED_SCAN = 5;</code>
+     */
+    public static final int NO_STARTING_URL_FOUND_FOR_MANAGED_SCAN_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -275,6 +295,8 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
           return TOO_MANY_FUZZ_TASKS;
         case 4:
           return BLOCKED_BY_IAP;
+        case 5:
+          return NO_STARTING_URL_FOUND_FOR_MANAGED_SCAN;
         default:
           return null;
       }
