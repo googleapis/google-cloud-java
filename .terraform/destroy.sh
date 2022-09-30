@@ -33,9 +33,10 @@ if [[ "$terraform_project_id" != "$gcloud_project_id" ]]; then
     exit
   fi
   gcloud config set project "$terraform_project_id"
-  export GOOGLE_CLOUD_PROJECT="$terraform_project_id"
 fi
 
+GOOGLE_CLOUD_PROJECT="$terraform_project_id"
+export GOOGLE_CLOUD_PROJECT
 GOOGLE_IMPERSONATE_SERVICE_ACCOUNT=$(terraform output -raw service_account)
 export GOOGLE_IMPERSONATE_SERVICE_ACCOUNT
 

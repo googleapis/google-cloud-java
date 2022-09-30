@@ -76,15 +76,9 @@ function createProject() {
 }
 
 function deleteProject() {
-  #  scriptDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-  #  pushd "$scriptDir/../modules/create-project" >/dev/null || exit
-  #  terraform destroy -auto-approve || exit
-  #  popd >/dev/null || exit
   if [ -n "${GOOGLE_CLOUD_PROJECT}" ]; then
     gcloud projects delete "$GOOGLE_CLOUD_PROJECT"
     gcloud config unset project
     unset GOOGLE_CLOUD_PROJECT
   fi
-  # TODO
-  true
 }
