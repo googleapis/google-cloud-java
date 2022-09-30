@@ -1,0 +1,105 @@
+# Copyright 2022 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# Github action job to test core java library features on
+# downstream client libraries before they are released.
+on:
+  push:
+    branches:
+    # TODO: Update to main
+    - monorepo_script_output
+  pull_request:
+name: ci
+jobs:
+  units:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [8, 11, 17]
+    steps:
+    - name: Get current date
+      id: date
+      run: echo "::set-output name=date::$(date +'%Y-%m-%d' --utc)"
+    - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
+        distribution: zulu
+        java-version: ${{matrix.java}}
+    - run: java -version
+    - uses: actions/cache@v3
+      id: mvn-cache
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.date }}
+    - run: |
+        mvn -B -ntp \
+            -Dclirr.skip=true \
+            -Denforcer.skip=true \
+            -Dcheckstyle.skip=true \
+            -Dflatten.skip=true \
+            -Danimal.sniffer.skip=true \
+            -T 1C \
+            test
+  windows:
+    runs-on: windows-latest
+    steps:
+    - name: Support longpaths
+      run: git config --system core.longpaths true
+    - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
+        distribution: zulu
+        java-version: 11
+    - run: java -version
+    - run: .kokoro/build.bat
+      env:
+        JOB_TYPE: test
+# TODO: Uncomment the needed Github Actions
+#  dependencies:
+#    runs-on: ubuntu-latest
+#    strategy:
+#      matrix:
+#        java: [8, 11, 17]
+#    steps:
+#    - uses: actions/checkout@v3
+#    - uses: actions/setup-java@v3
+#      with:
+#        distribution: zulu
+#        java-version: ${{matrix.java}}
+#    - run: java -version
+#    - run: .kokoro/dependencies.sh
+#  lint:
+#    runs-on: ubuntu-latest
+#    steps:
+#    - uses: actions/checkout@v3
+#    - uses: actions/setup-java@v3
+#      with:
+#        distribution: zulu
+#        java-version: 11
+#    - run: java -version
+#    - run: .kokoro/build.sh
+#      env:
+#        JOB_TYPE: lint
+#  clirr:
+#    runs-on: ubuntu-latest
+#    steps:
+#    - uses: actions/checkout@v3
+#    - uses: actions/setup-java@v3
+#      with:
+#        distribution: zulu
+#        java-version: 8
+#    - run: java -version
+#    - run: .kokoro/build.sh
+#      env:
+#        JOB_TYPE: clirr
