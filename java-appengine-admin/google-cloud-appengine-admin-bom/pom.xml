@@ -7,8 +7,9 @@
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-shared-config</artifactId>
-    <version>1.5.3</version>
+    <artifactId>google-cloud-java-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <relativePath>../../pom.xml</relativePath>
   </parent>
 
   <name>Google App Engine Admin API BOM</name>
