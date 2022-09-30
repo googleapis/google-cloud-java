@@ -1,0 +1,6 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-datalabeling:0.123.6:0.123.6
+grpc-google-cloud-datalabeling-v1beta1:0.88.6:0.88.6
+proto-google-cloud-datalabeling-v1beta1:0.88.6:0.88.6
