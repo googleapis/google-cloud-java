@@ -98,23 +98,29 @@ git stash
 git checkout "${current_branch}"
 git stash pop
 
+git checkout -b "${diff_non_java_branch}"
+
 cp .gitignore .gitignore.old
-ignore_list=( "*/.github/*" "*/.kokoro/*" "*/.samples/*" "*/CODE_OF_CONDUCT.md" "*/CONTRIBUTING.md" "*/LICENSE" "*/SECURITY.md" "*/java.header" "*/license-checks.xml" "*/renovate.json")
+ignore_list=( "*/.github/*" "*/.kokoro/*" "*/.samples/*" "*/CODE_OF_CONDUCT.md" "*/CONTRIBUTING.md" "*/LICENSE" "*/SECURITY.md" "*/java.header" "*/license-checks.xml" "*/renovate.json" ".gitignore.old")
 
 for ignore in "${ignore_list[@]}"
 do
   echo "${ignore}" >> .gitignore
 done
 
-git checkout -b "${diff_non_java_branch}"
+git add .gitignore
+git commit -m "chore: Ignore excluded files"
+
 git add .
-git reset -- .gitignore
-git reset -- .gitignore.old
-#git commit -m "chore: Adding non-java diffs" --no-verify
-#git push origin "${diff_non_java_branch}" --force
+git commit -m "chore: Adding non-java diffs" --no-verify
 
 rm .gitignore
 mv .gitignore.old .gitignore
+
+git add .gitignore
+git commit -m "chore: Reset .gitignore"
+
+git push origin "${diff_non_java_branch}" --force
 
 git checkout "${current_branch}"
 
