@@ -1,0 +1,16 @@
+{
+  "api_shortname": "datafusion",
+  "name_pretty": "Cloud Data Fusion",
+  "product_documentation": "https://cloud.google.com/data-fusion/docs",
+  "api_description": "is a fully managed, cloud-native, enterprise data integration service for quickly building and managing data pipelines.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/history",
+  "release_level": "stable",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-data-fusion",
+  "repo_short": "java-data-fusion",
+  "distribution_name": "com.google.cloud:google-cloud-data-fusion",
+  "api_id": "datafusion.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
