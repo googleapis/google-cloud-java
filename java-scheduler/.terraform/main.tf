@@ -15,9 +15,8 @@ module "project-services" {
   project_id                  = var.inputs.project_id
   enable_apis                 = true
   disable_services_on_destroy = false
-  depends_on                  = [google_project.project]
   activate_apis               = [
-    "pubusb.googleapis.com",
+    "pubsub.googleapis.com",
     "cloudscheduler.googleapis.com",
     "cloudtrace.googleapis.com",
   ]

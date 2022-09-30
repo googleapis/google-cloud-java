@@ -16,13 +16,6 @@
 #
 
 # Perform gcloud auth login if no current credentials are available.
-if gcloud auth application-default print-access-token &>/dev/null; then
-  true
-else
-  if ! gcloud auth application-default login; then
-    exit
-  fi
-fi
 if gcloud auth print-access-token &>/dev/null; then
   true
 else

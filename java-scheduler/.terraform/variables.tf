@@ -1,5 +1,6 @@
 variable "inputs" {
   type = object({
-    # None required
+    # GCP Project ID
+    project_id = string
   })
 }

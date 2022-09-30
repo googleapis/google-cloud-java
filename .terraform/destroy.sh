@@ -15,25 +15,32 @@
 #
 
 scriptDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-
-pushd "$scriptDir/modules/create-project" >/dev/null || exit
-# Ensure GCP project environment variables are initialized.
-if [[ -z "${TF_VAR_project_id+x}" ]]; then
-  if [[ -z "${GOOGLE_CLOUD_PROJECT+x}" ]]; then
-    if [[ $(terraform state list) == "" ]]; then
-      echo "Terraform is not currently managing a GCP project resource, and GOOGLE_CLOUD_PROJECT is not defined."
-      exit 1
-    fi
-
-    GOOGLE_CLOUD_PROJECT=$(terraform output -raw project_id)
-    export GOOGLE_CLOUD_PROJECT
-  fi
-  export TF_VAR_project_id=$GOOGLE_CLOUD_PROJECT
-fi
-popd >/dev/null || exit
-
 pushd "$scriptDir" >/dev/null || exit
+
+# Ensure GCP project environment variables are initialized.
+if [[ $(terraform state list) == "" ]]; then
+  echo "Nothing to destroy."
+  exit
+fi
+
+# Ensure the gcloud project matches Terraform's current state.
+terraform_project_id=$(terraform output -raw project_id)
+gcloud_project_id=$(gcloud config get project)
+if [[ "$terraform_project_id" != "$gcloud_project_id" ]]; then
+  echo "Do you want to make $terraform_project_id your current gcloud project? (Y/n): "
+  read -r shouldSwitch
+  if [[ "$shouldSwitch" == n* ]] || [[ "$shouldSwitch" == N* ]]; then
+    exit
+  fi
+  gcloud config set project "$terraform_project_id"
+  export GOOGLE_CLOUD_PROJECT="$terraform_project_id"
+fi
+
+GOOGLE_IMPERSONATE_SERVICE_ACCOUNT=$(terraform output -raw service_account)
+export GOOGLE_IMPERSONATE_SERVICE_ACCOUNT
+
 # Either use given module list, or get a list of all modules in the parent directory.
+# TODO: Gather module list from terraform state.
 if [ -n "$1" ] && [[ $1 != "y" ]]; then
   modules=$1
 else
@@ -48,27 +55,17 @@ for module in $modules; do
     source "../$module/.terraform/predestroy.sh"
   fi
 done
+
 terraform destroy -auto-approve || exit
-popd >/dev/null || exit
 
-pushd "$scriptDir/modules/create-project" >/dev/null || exit
 # Always verify whether or not to destroy the project.
-if [[ $(terraform state list) != "" ]]; then
-  if [[ $1 == "y" ]]; then
-    shouldDestroy="y"
-  else
-    echo "Destroy project? (y/N): "
-    read -r shouldDestroy
-  fi
+echo "Delete project ($terraform_project_id)? (y/N): "
+read -r shouldDestroy
+if [[ "$shouldDestroy" == y* ]] || [[ "$shouldDestroy" == Y* ]]; then
+  # Do not use service account when attempting to delete the project
+  unset GOOGLE_IMPERSONATE_SERVICE_ACCOUNT
 
-  if [[ "$shouldDestroy" == y* ]] || [[ "$shouldDestroy" == Y* ]]; then
-    # Do not use service account within project when attempting to destroy the project
-    unset GOOGLE_IMPERSONATE_SERVICE_ACCOUNT
-
-    source ../../helpers/create-project.sh
-    destroyProject
-    unset GOOGLE_CLOUD_PROJECT
-    rm ../../generated.auto.tfvars
-  fi
+  source ../../helpers/create-project.sh
+  deleteProject
+  rm ../../generated.auto.tfvars
 fi
-popd >/dev/null || exit
