@@ -19,7 +19,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-gkehub</artifactId>
-  <version>1.3.4</version>
+  <version>1.3.5</version>
 </dependency>
 
 ```
