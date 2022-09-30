@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-vpcaccess</artifactId>
-  <version>2.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-vpcaccess:current} -->
+  <version>2.4.1</version><!-- {x-version-update:google-cloud-vpcaccess:current} -->
   <packaging>jar</packaging>
   <name>Google Serverless VPC Access</name>
   <url>https://github.com/googleapis/java-vpcaccess</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-vpcaccess-parent</artifactId>
-    <version>2.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-vpcaccess:current} -->
+    <version>2.4.1</version><!-- {x-version-update:google-cloud-vpcaccess:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-vpcaccess</site.installationModule>

@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-document-ai-bom</artifactId>
-  <version>2.6.3-SNAPSHOT</version> <!-- {x-version-update:google-cloud-document-ai:current} -->
+  <version>2.7.3</version> <!-- {x-version-update:google-cloud-document-ai:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -51,47 +51,47 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-document-ai</artifactId>
-        <version>2.6.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-document-ai:current} -->
+        <version>2.7.3</version><!-- {x-version-update:google-cloud-document-ai:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-document-ai-v1beta1</artifactId>
-        <version>0.18.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-document-ai-v1beta1:current} -->
+        <version>0.19.3</version><!-- {x-version-update:grpc-google-cloud-document-ai-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-document-ai-v1beta2</artifactId>
-        <version>0.18.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-document-ai-v1beta2:current} -->
+        <version>0.19.3</version><!-- {x-version-update:grpc-google-cloud-document-ai-v1beta2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-document-ai-v1beta3</artifactId>
-        <version>0.18.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-document-ai-v1beta3:current} -->
+        <version>0.19.3</version><!-- {x-version-update:grpc-google-cloud-document-ai-v1beta3:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-document-ai-v1</artifactId>
-        <version>2.6.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-document-ai-v1:current} -->
+        <version>2.7.3</version><!-- {x-version-update:grpc-google-cloud-document-ai-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-document-ai-v1beta1</artifactId>
-        <version>0.18.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-document-ai-v1beta1:current} -->
+        <version>0.19.3</version><!-- {x-version-update:proto-google-cloud-document-ai-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-document-ai-v1beta2</artifactId>
-        <version>0.18.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-document-ai-v1beta2:current} -->
+        <version>0.19.3</version><!-- {x-version-update:proto-google-cloud-document-ai-v1beta2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-document-ai-v1beta3</artifactId>
-        <version>0.18.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-document-ai-v1beta3:current} -->
+        <version>0.19.3</version><!-- {x-version-update:proto-google-cloud-document-ai-v1beta3:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-document-ai-v1</artifactId>
-        <version>2.6.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-document-ai-v1:current} -->
+        <version>2.7.3</version><!-- {x-version-update:proto-google-cloud-document-ai-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

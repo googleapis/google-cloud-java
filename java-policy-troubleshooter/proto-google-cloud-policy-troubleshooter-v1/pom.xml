@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-policy-troubleshooter-v1</artifactId>
-  <version>1.2.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-policy-troubleshooter-v1:current} -->
+  <version>1.2.5-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-policy-troubleshooter-v1:current} -->
   <name>proto-google-cloud-policy-troubleshooter-v1</name>
   <description>Proto library for google-cloud-policy-troubleshooter</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-policy-troubleshooter-parent</artifactId>
-    <version>1.2.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-policy-troubleshooter:current} -->
+    <version>1.2.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-policy-troubleshooter:current} -->
   </parent>
   <dependencies>
     <dependency>

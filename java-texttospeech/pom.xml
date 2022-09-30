@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-texttospeech-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.4.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-texttospeech:current} -->
+  <version>2.4.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-texttospeech:current} -->
   <name>Google Cloud Text-to-Speech Parent</name>
   <url>https://github.com/googleapis/java-texttospeech</url>
   <description>
@@ -61,27 +61,27 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-texttospeech-v1</artifactId>
-        <version>2.4.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-texttospeech-v1:current} -->
+        <version>2.4.8-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-texttospeech-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-texttospeech-v1beta1</artifactId>
-        <version>0.93.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-texttospeech-v1beta1:current} -->
+        <version>0.93.8-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-texttospeech-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-texttospeech-v1beta1</artifactId>
-        <version>0.93.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-texttospeech-v1beta1:current} -->
+        <version>0.93.8-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-texttospeech-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-texttospeech-v1</artifactId>
-        <version>2.4.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-texttospeech-v1:current} -->
+        <version>2.4.8-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-texttospeech-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-texttospeech</artifactId>
-        <version>2.4.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-texttospeech:current} -->
+        <version>2.4.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-texttospeech:current} -->
       </dependency>
 
       <dependency>

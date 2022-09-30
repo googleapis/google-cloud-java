@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-kms-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.6.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-kms:current} -->
+  <version>2.6.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-kms:current} -->
   <name>Google Cloud KMS Parent</name>
   <url>https://github.com/googleapis/java-kms</url>
   <description>
@@ -61,22 +61,22 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-kms-v1</artifactId>
-        <version>0.97.5-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-kms-v1:current} -->
+        <version>0.97.8-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-kms-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-kms-v1</artifactId>
-        <version>0.97.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-kms-v1:current} -->
+        <version>0.97.8-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-kms-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-kms</artifactId>
-        <version>2.6.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-kms:current} -->
+        <version>2.6.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-kms:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-kms-bom</artifactId>
-        <version>2.6.4</version><!-- {x-version-update:google-cloud-kms-bom:current} -->
+        <version>2.6.7</version><!-- {x-version-update:google-cloud-kms-bom:current} -->
       </dependency>
 
       <dependency>

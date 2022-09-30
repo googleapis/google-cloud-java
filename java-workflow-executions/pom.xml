@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-workflow-executions-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-workflow-executions:current} -->
+  <version>2.3.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-workflow-executions:current} -->
   <name>Google Cloud Workflow Executions Parent</name>
   <url>https://github.com/googleapis/java-</url>
   <description>
@@ -61,27 +61,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-workflow-executions</artifactId>
-        <version>2.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-workflow-executions:current} -->
+        <version>2.3.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-workflow-executions:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-workflow-executions-v1</artifactId>
-        <version>2.3.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-workflow-executions-v1:current} -->
+        <version>2.3.5-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-workflow-executions-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-workflow-executions-v1</artifactId>
-        <version>2.3.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-workflow-executions-v1:current} -->
+        <version>2.3.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-workflow-executions-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-workflow-executions-v1beta</artifactId>
-        <version>0.7.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-workflow-executions-v1beta:current} -->
+        <version>0.7.5-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-workflow-executions-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-workflow-executions-v1beta</artifactId>
-        <version>0.7.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-workflow-executions-v1beta:current} -->
+        <version>0.7.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-workflow-executions-v1beta:current} -->
       </dependency>
 
       <dependency>

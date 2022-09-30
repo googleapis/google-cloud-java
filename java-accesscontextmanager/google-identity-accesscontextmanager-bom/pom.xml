@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-identity-accesscontextmanager-bom</artifactId>
-  <version>1.4.2-SNAPSHOT</version><!-- {x-version-update:google-identity-accesscontextmanager:current} -->
+  <version>1.4.4-SNAPSHOT</version><!-- {x-version-update:google-identity-accesscontextmanager:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -66,22 +66,22 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-identity-accesscontextmanager</artifactId>
-        <version>1.4.2-SNAPSHOT</version><!-- {x-version-update:google-identity-accesscontextmanager:current} -->
+        <version>1.4.4-SNAPSHOT</version><!-- {x-version-update:google-identity-accesscontextmanager:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-identity-accesscontextmanager-v1</artifactId>
-        <version>1.4.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-identity-accesscontextmanager-v1:current} -->
+        <version>1.4.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-identity-accesscontextmanager-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-identity-accesscontextmanager-v1</artifactId>
-        <version>1.4.2-SNAPSHOT</version><!-- {x-version-update:proto-google-identity-accesscontextmanager-v1:current} -->
+        <version>1.4.4-SNAPSHOT</version><!-- {x-version-update:proto-google-identity-accesscontextmanager-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-identity-accesscontextmanager-type</artifactId>
-        <version>1.4.2-SNAPSHOT</version><!-- {x-version-update:proto-google-identity-accesscontextmanager-type:current} -->
+        <version>1.4.4-SNAPSHOT</version><!-- {x-version-update:proto-google-identity-accesscontextmanager-type:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

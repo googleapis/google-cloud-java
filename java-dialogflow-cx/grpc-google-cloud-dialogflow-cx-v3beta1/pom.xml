@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-dialogflow-cx-v3beta1</artifactId>
-  <version>0.14.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dialogflow-cx-v3beta1:current} -->
+  <version>0.14.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dialogflow-cx-v3beta1:current} -->
   <name>grpc-google-cloud-dialogflow-cx-v3beta1</name>
   <description>GRPC library for grpc-google-cloud-dialogflow-cx-v3beta1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-dialogflow-cx-parent</artifactId>
-    <version>0.14.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow-cx:current} -->
+    <version>0.14.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow-cx:current} -->
   </parent>
   <dependencies>
     <dependency>

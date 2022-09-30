@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-game-servers-v1beta</artifactId>
-  <version>0.28.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-game-servers-v1beta:current} -->
+  <version>0.28.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-game-servers-v1beta:current} -->
   <name>grpc-google-cloud-game-servers-v1beta</name>
   <description>GRPC library for grpc-google-cloud-game-servers-v1beta</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-game-servers-parent</artifactId>
-    <version>2.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-game-servers:current} -->
+    <version>2.3.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-game-servers:current} -->
   </parent>
   <dependencies>
     <dependency>

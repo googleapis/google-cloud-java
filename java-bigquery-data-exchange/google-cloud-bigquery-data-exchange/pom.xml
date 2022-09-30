@@ -43,13 +43,12 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-common-protos</artifactId>
+      <artifactId>proto-google-iam-v1</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-iam-v1</artifactId>
+      <artifactId>grpc-google-common-protos</artifactId>
     </dependency>
-
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-bigquery-data-exchange-v1beta1</artifactId>

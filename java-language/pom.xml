@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-language-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-language:current} -->
+  <version>2.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-language:current} -->
   <name>Google Cloud Natural Language Parent</name>
   <url>https://github.com/googleapis/java-language</url>
   <description>
@@ -61,27 +61,27 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-language-v1</artifactId>
-        <version>2.3.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-language-v1:current} -->
+        <version>2.4.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-language-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-language-v1beta2</artifactId>
-        <version>0.90.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-language-v1beta2:current} -->
+        <version>0.91.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-language-v1beta2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-language-v1</artifactId>
-        <version>2.3.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-language-v1:current} -->
+        <version>2.4.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-language-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-language-v1beta2</artifactId>
-        <version>0.90.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-language-v1beta2:current} -->
+        <version>0.91.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-language-v1beta2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-language</artifactId>
-        <version>2.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-language:current} -->
+        <version>2.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-language:current} -->
       </dependency>
 
       <dependency>
