@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker:
-  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
 - "/proto-google-.*/src"
@@ -25,6 +23,8 @@ deep-preserve-regex:
 
 deep-copy-regex:
 - source: "/google/cloud/compute/(v\\d)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-compute-$1/src"
+  dest: "/owl-bot-staging/java-compute/$1/proto-google-cloud-compute-$1/src"
 - source: "/google/cloud/compute/(v\\d)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-compute/src"
+  dest: "/owl-bot-staging/java-compute/$1/google-cloud-compute/src"
+
+api-name: compute
