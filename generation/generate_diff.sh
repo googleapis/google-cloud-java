@@ -111,12 +111,6 @@ done
 exit
 git commit -m "chore: Adding non-java diffs" --no-verify
 
-rm .gitignore
-mv .gitignore.old .gitignore
-
-git add .gitignore
-git commit -m "chore: Reset .gitignore"
-
 git push origin "${diff_non_java_branch}" --force
 
 git checkout "${current_branch}"
