@@ -1,0 +1,54 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.recommender.v1beta1",
+  "libraryPackage": "com.google.cloud.recommender.v1beta1",
+  "services": {
+    "Recommender": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RecommenderClient",
+          "rpcs": {
+            "GetInsight": {
+              "methods": ["getInsight", "getInsight", "getInsight", "getInsightCallable"]
+            },
+            "GetInsightTypeConfig": {
+              "methods": ["getInsightTypeConfig", "getInsightTypeConfig", "getInsightTypeConfig", "getInsightTypeConfigCallable"]
+            },
+            "GetRecommendation": {
+              "methods": ["getRecommendation", "getRecommendation", "getRecommendation", "getRecommendationCallable"]
+            },
+            "GetRecommenderConfig": {
+              "methods": ["getRecommenderConfig", "getRecommenderConfig", "getRecommenderConfig", "getRecommenderConfigCallable"]
+            },
+            "ListInsights": {
+              "methods": ["listInsights", "listInsights", "listInsights", "listInsightsPagedCallable", "listInsightsCallable"]
+            },
+            "ListRecommendations": {
+              "methods": ["listRecommendations", "listRecommendations", "listRecommendations", "listRecommendationsPagedCallable", "listRecommendationsCallable"]
+            },
+            "MarkInsightAccepted": {
+              "methods": ["markInsightAccepted", "markInsightAccepted", "markInsightAccepted", "markInsightAcceptedCallable"]
+            },
+            "MarkRecommendationClaimed": {
+              "methods": ["markRecommendationClaimed", "markRecommendationClaimed", "markRecommendationClaimed", "markRecommendationClaimedCallable"]
+            },
+            "MarkRecommendationFailed": {
+              "methods": ["markRecommendationFailed", "markRecommendationFailed", "markRecommendationFailed", "markRecommendationFailedCallable"]
+            },
+            "MarkRecommendationSucceeded": {
+              "methods": ["markRecommendationSucceeded", "markRecommendationSucceeded", "markRecommendationSucceeded", "markRecommendationSucceededCallable"]
+            },
+            "UpdateInsightTypeConfig": {
+              "methods": ["updateInsightTypeConfig", "updateInsightTypeConfig", "updateInsightTypeConfigCallable"]
+            },
+            "UpdateRecommenderConfig": {
+              "methods": ["updateRecommenderConfig", "updateRecommenderConfig", "updateRecommenderConfigCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
