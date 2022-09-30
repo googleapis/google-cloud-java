@@ -101,7 +101,7 @@ git stash pop
 git checkout -b "${diff_non_java_branch}"
 
 cp .gitignore .gitignore.old
-ignore_list=( "*/.github/*" "*/.kokoro/*" "*/.samples/*" "*/CODE_OF_CONDUCT.md" "*/CONTRIBUTING.md" "*/LICENSE" "*/SECURITY.md" "*/java.header" "*/license-checks.xml" "*/renovate.json" ".gitignore.old")
+ignore_list=( "java-*/.github/" "java-*/.kokoro/" "java-*/.samples/" "java-*/CODE_OF_CONDUCT.md" "java-*/CONTRIBUTING.md" "java-*/LICENSE" "java-*/SECURITY.md" "java-*/java.header" "java-*/license-checks.xml" "java-*/renovate.json" ".gitignore.old")
 
 for ignore in "${ignore_list[@]}"
 do
