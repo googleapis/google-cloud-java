@@ -1,0 +1,201 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.resourcemanager.v3",
+  "libraryPackage": "com.google.cloud.resourcemanager.v3",
+  "services": {
+    "Folders": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "FoldersClient",
+          "rpcs": {
+            "CreateFolder": {
+              "methods": ["createFolderAsync", "createFolderAsync", "createFolderOperationCallable", "createFolderCallable"]
+            },
+            "DeleteFolder": {
+              "methods": ["deleteFolderAsync", "deleteFolderAsync", "deleteFolderAsync", "deleteFolderOperationCallable", "deleteFolderCallable"]
+            },
+            "GetFolder": {
+              "methods": ["getFolder", "getFolder", "getFolder", "getFolderCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "ListFolders": {
+              "methods": ["listFolders", "listFolders", "listFolders", "listFoldersPagedCallable", "listFoldersCallable"]
+            },
+            "MoveFolder": {
+              "methods": ["moveFolderAsync", "moveFolderAsync", "moveFolderAsync", "moveFolderAsync", "moveFolderAsync", "moveFolderOperationCallable", "moveFolderCallable"]
+            },
+            "SearchFolders": {
+              "methods": ["searchFolders", "searchFolders", "searchFoldersPagedCallable", "searchFoldersCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UndeleteFolder": {
+              "methods": ["undeleteFolderAsync", "undeleteFolderAsync", "undeleteFolderAsync", "undeleteFolderOperationCallable", "undeleteFolderCallable"]
+            },
+            "UpdateFolder": {
+              "methods": ["updateFolderAsync", "updateFolderAsync", "updateFolderOperationCallable", "updateFolderCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Organizations": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "OrganizationsClient",
+          "rpcs": {
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetOrganization": {
+              "methods": ["getOrganization", "getOrganization", "getOrganization", "getOrganizationCallable"]
+            },
+            "SearchOrganizations": {
+              "methods": ["searchOrganizations", "searchOrganizations", "searchOrganizationsPagedCallable", "searchOrganizationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Projects": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ProjectsClient",
+          "rpcs": {
+            "CreateProject": {
+              "methods": ["createProjectAsync", "createProjectAsync", "createProjectOperationCallable", "createProjectCallable"]
+            },
+            "DeleteProject": {
+              "methods": ["deleteProjectAsync", "deleteProjectAsync", "deleteProjectAsync", "deleteProjectOperationCallable", "deleteProjectCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetProject": {
+              "methods": ["getProject", "getProject", "getProject", "getProjectCallable"]
+            },
+            "ListProjects": {
+              "methods": ["listProjects", "listProjects", "listProjects", "listProjectsPagedCallable", "listProjectsCallable"]
+            },
+            "MoveProject": {
+              "methods": ["moveProjectAsync", "moveProjectAsync", "moveProjectAsync", "moveProjectAsync", "moveProjectAsync", "moveProjectOperationCallable", "moveProjectCallable"]
+            },
+            "SearchProjects": {
+              "methods": ["searchProjects", "searchProjects", "searchProjectsPagedCallable", "searchProjectsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UndeleteProject": {
+              "methods": ["undeleteProjectAsync", "undeleteProjectAsync", "undeleteProjectAsync", "undeleteProjectOperationCallable", "undeleteProjectCallable"]
+            },
+            "UpdateProject": {
+              "methods": ["updateProjectAsync", "updateProjectAsync", "updateProjectOperationCallable", "updateProjectCallable"]
+            }
+          }
+        }
+      }
+    },
+    "TagBindings": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TagBindingsClient",
+          "rpcs": {
+            "CreateTagBinding": {
+              "methods": ["createTagBindingAsync", "createTagBindingAsync", "createTagBindingOperationCallable", "createTagBindingCallable"]
+            },
+            "DeleteTagBinding": {
+              "methods": ["deleteTagBindingAsync", "deleteTagBindingAsync", "deleteTagBindingAsync", "deleteTagBindingOperationCallable", "deleteTagBindingCallable"]
+            },
+            "ListTagBindings": {
+              "methods": ["listTagBindings", "listTagBindings", "listTagBindings", "listTagBindingsPagedCallable", "listTagBindingsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "TagKeys": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TagKeysClient",
+          "rpcs": {
+            "CreateTagKey": {
+              "methods": ["createTagKeyAsync", "createTagKeyAsync", "createTagKeyOperationCallable", "createTagKeyCallable"]
+            },
+            "DeleteTagKey": {
+              "methods": ["deleteTagKeyAsync", "deleteTagKeyAsync", "deleteTagKeyAsync", "deleteTagKeyOperationCallable", "deleteTagKeyCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetTagKey": {
+              "methods": ["getTagKey", "getTagKey", "getTagKey", "getTagKeyCallable"]
+            },
+            "ListTagKeys": {
+              "methods": ["listTagKeys", "listTagKeys", "listTagKeys", "listTagKeysPagedCallable", "listTagKeysCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateTagKey": {
+              "methods": ["updateTagKeyAsync", "updateTagKeyAsync", "updateTagKeyOperationCallable", "updateTagKeyCallable"]
+            }
+          }
+        }
+      }
+    },
+    "TagValues": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TagValuesClient",
+          "rpcs": {
+            "CreateTagValue": {
+              "methods": ["createTagValueAsync", "createTagValueAsync", "createTagValueOperationCallable", "createTagValueCallable"]
+            },
+            "DeleteTagValue": {
+              "methods": ["deleteTagValueAsync", "deleteTagValueAsync", "deleteTagValueAsync", "deleteTagValueOperationCallable", "deleteTagValueCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetTagValue": {
+              "methods": ["getTagValue", "getTagValue", "getTagValue", "getTagValueCallable"]
+            },
+            "ListTagValues": {
+              "methods": ["listTagValues", "listTagValues", "listTagValues", "listTagValuesPagedCallable", "listTagValuesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateTagValue": {
+              "methods": ["updateTagValueAsync", "updateTagValueAsync", "updateTagValueOperationCallable", "updateTagValueCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
