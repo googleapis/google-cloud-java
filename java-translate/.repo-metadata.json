@@ -1,0 +1,17 @@
+{
+  "api_shortname": "translate",
+  "name_pretty": "Cloud Translation",
+  "product_documentation": "https://cloud.google.com/translate/docs/",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-translate/latest/history",
+  "issue_tracker": "https://issuetracker.google.com/savedsearches/559749",
+  "release_level": "stable",
+  "language": "java",
+  "repo": "googleapis/java-translate",
+  "repo_short": "java-translate",
+  "distribution_name": "com.google.cloud:google-cloud-translate",
+  "api_id": "translation.googleapis.com",
+  "transport": "both",
+  "requires_billing": true,
+  "library_type": "GAPIC_COMBO",
+  "api_description": "can dynamically translate text between thousands of language pairs. Translation lets websites and programs programmatically integrate with the translation service."
+}
