@@ -1,0 +1,133 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-phishingprotection.git",
+        "sha": "f8c569a2b2aae3b0193b34db44e7a6912ea96dfc"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "551681f25e36b11829e87e580281350461f4f3f5",
+        "internalRef": "379784268"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "5d3c52f5db664eee9026db76b5bcb466f3a09ca9"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "phishingprotection",
+        "apiVersion": "v1beta1",
+        "language": "java",
+        "generator": "bazel"
+      }
+    }
+  ],
+  "generatedFiles": [
+    ".github/CODEOWNERS",
+    ".github/ISSUE_TEMPLATE/bug_report.md",
+    ".github/ISSUE_TEMPLATE/feature_request.md",
+    ".github/ISSUE_TEMPLATE/support_request.md",
+    ".github/PULL_REQUEST_TEMPLATE.md",
+    ".github/blunderbuss.yml",
+    ".github/generated-files-bot.yml",
+    ".github/readme/synth.py",
+    ".github/release-please.yml",
+    ".github/snippet-bot.yml",
+    ".github/sync-repo-settings.yaml",
+    ".github/trusted-contribution.yml",
+    ".github/workflows/approve-readme.yaml",
+    ".github/workflows/auto-release.yaml",
+    ".github/workflows/ci.yaml",
+    ".github/workflows/samples.yaml",
+    ".kokoro/build.bat",
+    ".kokoro/build.sh",
+    ".kokoro/coerce_logs.sh",
+    ".kokoro/common.cfg",
+    ".kokoro/common.sh",
+    ".kokoro/continuous/common.cfg",
+    ".kokoro/continuous/java8.cfg",
+    ".kokoro/continuous/readme.cfg",
+    ".kokoro/dependencies.sh",
+    ".kokoro/nightly/common.cfg",
+    ".kokoro/nightly/integration.cfg",
+    ".kokoro/nightly/java11.cfg",
+    ".kokoro/nightly/java7.cfg",
+    ".kokoro/nightly/java8-osx.cfg",
+    ".kokoro/nightly/java8-win.cfg",
+    ".kokoro/nightly/java8.cfg",
+    ".kokoro/nightly/samples.cfg",
+    ".kokoro/populate-secrets.sh",
+    ".kokoro/presubmit/clirr.cfg",
+    ".kokoro/presubmit/common.cfg",
+    ".kokoro/presubmit/dependencies.cfg",
+    ".kokoro/presubmit/integration.cfg",
+    ".kokoro/presubmit/java11.cfg",
+    ".kokoro/presubmit/java7.cfg",
+    ".kokoro/presubmit/java8-osx.cfg",
+    ".kokoro/presubmit/java8-win.cfg",
+    ".kokoro/presubmit/java8.cfg",
+    ".kokoro/presubmit/linkage-monitor.cfg",
+    ".kokoro/presubmit/lint.cfg",
+    ".kokoro/presubmit/samples.cfg",
+    ".kokoro/readme.sh",
+    ".kokoro/release/bump_snapshot.cfg",
+    ".kokoro/release/common.cfg",
+    ".kokoro/release/common.sh",
+    ".kokoro/release/drop.cfg",
+    ".kokoro/release/drop.sh",
+    ".kokoro/release/promote.cfg",
+    ".kokoro/release/promote.sh",
+    ".kokoro/release/publish_javadoc.cfg",
+    ".kokoro/release/publish_javadoc.sh",
+    ".kokoro/release/publish_javadoc11.cfg",
+    ".kokoro/release/publish_javadoc11.sh",
+    ".kokoro/release/snapshot.cfg",
+    ".kokoro/release/snapshot.sh",
+    ".kokoro/release/stage.cfg",
+    ".kokoro/release/stage.sh",
+    ".kokoro/trampoline.sh",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "SECURITY.md",
+    "codecov.yaml",
+    "google-cloud-phishingprotection/src/main/java/com/google/cloud/phishingprotection/v1beta1/PhishingProtectionServiceV1Beta1Client.java",
+    "google-cloud-phishingprotection/src/main/java/com/google/cloud/phishingprotection/v1beta1/PhishingProtectionServiceV1Beta1Settings.java",
+    "google-cloud-phishingprotection/src/main/java/com/google/cloud/phishingprotection/v1beta1/gapic_metadata.json",
+    "google-cloud-phishingprotection/src/main/java/com/google/cloud/phishingprotection/v1beta1/package-info.java",
+    "google-cloud-phishingprotection/src/main/java/com/google/cloud/phishingprotection/v1beta1/stub/GrpcPhishingProtectionServiceV1Beta1CallableFactory.java",
+    "google-cloud-phishingprotection/src/main/java/com/google/cloud/phishingprotection/v1beta1/stub/GrpcPhishingProtectionServiceV1Beta1Stub.java",
+    "google-cloud-phishingprotection/src/main/java/com/google/cloud/phishingprotection/v1beta1/stub/PhishingProtectionServiceV1Beta1Stub.java",
+    "google-cloud-phishingprotection/src/main/java/com/google/cloud/phishingprotection/v1beta1/stub/PhishingProtectionServiceV1Beta1StubSettings.java",
+    "google-cloud-phishingprotection/src/test/java/com/google/cloud/phishingprotection/v1beta1/MockPhishingProtectionServiceV1Beta1.java",
+    "google-cloud-phishingprotection/src/test/java/com/google/cloud/phishingprotection/v1beta1/MockPhishingProtectionServiceV1Beta1Impl.java",
+    "google-cloud-phishingprotection/src/test/java/com/google/cloud/phishingprotection/v1beta1/PhishingProtectionServiceV1Beta1ClientTest.java",
+    "grpc-google-cloud-phishingprotection-v1beta1/src/main/java/com/google/phishingprotection/v1beta1/PhishingProtectionServiceV1Beta1Grpc.java",
+    "java.header",
+    "license-checks.xml",
+    "proto-google-cloud-phishingprotection-v1beta1/src/main/java/com/google/phishingprotection/v1beta1/PhishingProtectionProto.java",
+    "proto-google-cloud-phishingprotection-v1beta1/src/main/java/com/google/phishingprotection/v1beta1/ProjectName.java",
+    "proto-google-cloud-phishingprotection-v1beta1/src/main/java/com/google/phishingprotection/v1beta1/ReportPhishingRequest.java",
+    "proto-google-cloud-phishingprotection-v1beta1/src/main/java/com/google/phishingprotection/v1beta1/ReportPhishingRequestOrBuilder.java",
+    "proto-google-cloud-phishingprotection-v1beta1/src/main/java/com/google/phishingprotection/v1beta1/ReportPhishingResponse.java",
+    "proto-google-cloud-phishingprotection-v1beta1/src/main/java/com/google/phishingprotection/v1beta1/ReportPhishingResponseOrBuilder.java",
+    "proto-google-cloud-phishingprotection-v1beta1/src/main/proto/google/cloud/phishingprotection/v1beta1/phishingprotection.proto",
+    "renovate.json",
+    "samples/install-without-bom/pom.xml",
+    "samples/pom.xml",
+    "samples/snapshot/pom.xml",
+    "samples/snippets/pom.xml"
+  ]
+}
