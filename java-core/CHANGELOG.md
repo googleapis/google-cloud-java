@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.8.19](https://github.com/googleapis/java-core/compare/v2.8.18...v2.8.19) (2022-09-30)
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:proto-google-common-protos to v2.9.5 ([#963](https://github.com/googleapis/java-core/issues/963)) ([1ee2f9a](https://github.com/googleapis/java-core/commit/1ee2f9acd3968b21974a550b6732fe68b18085f4))
+
 ## [2.8.18](https://github.com/googleapis/java-core/compare/v2.8.17...v2.8.18) (2022-09-30)
 
 
