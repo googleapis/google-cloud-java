@@ -50,7 +50,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-automl</artifactId>
-  <version>2.3.13</version>
+  <version>2.3.14</version>
 </dependency>
 <dependency>
   <groupId>com.google.cloud</groupId>
