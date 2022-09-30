@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker:
-  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
 - "/samples/snippets/generated"
@@ -30,15 +28,16 @@ deep-preserve-regex:
 - "/google-cloud-speech/src/test/java/com/google/cloud/speech/v1/SpeechSmokeTest.java"
 - "/google-cloud-speech/src/test/java/com/google/cloud/speech/v1p1beta1/SpeechSmokeTest.java"
 - "/google-cloud-speech/src/test/resources/hello.flac"
-- "/google-cloud-speech/src/test/resources/META-INF/native-image/"
 
 
 deep-copy-regex:
 - source: "/google/cloud/speech/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-speech-$1/src"
+  dest: "/owl-bot-staging/java-speech/$1/proto-google-cloud-speech-$1/src"
 - source: "/google/cloud/speech/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-speech-$1/src"
+  dest: "/owl-bot-staging/java-speech/$1/grpc-google-cloud-speech-$1/src"
 - source: "/google/cloud/speech/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-speech/src"
+  dest: "/owl-bot-staging/java-speech/$1/google-cloud-speech/src"
 - source: "/google/cloud/speech/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/$1/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-speech/$1/samples/snippets/generated"
+
+api-name: speech
