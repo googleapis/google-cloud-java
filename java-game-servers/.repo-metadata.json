@@ -1,0 +1,16 @@
+{
+    "api_shortname": "gameservices",
+    "name_pretty": "Cloud Gaming",
+    "product_documentation": "https://cloud.google.com/docs/games/products/",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-game-servers/latest/history",
+    "issue_tracker": "",
+    "release_level": "stable",
+    "language": "java",
+    "repo": "googleapis/java-game-servers",
+    "repo_short": "java-game-servers",
+    "distribution_name": "com.google.cloud:google-cloud-game-servers",
+    "api_id": "gameservices.googleapis.com",
+    "transport": "grpc",
+    "api_description": "provides access to the Game Services API.",
+    "library_type": "GAPIC_AUTO"
+}
