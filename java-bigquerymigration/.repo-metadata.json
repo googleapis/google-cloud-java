@@ -1,0 +1,16 @@
+{
+  "api_shortname": "bigquerymigration",
+  "name_pretty": "BigQuery Migration",
+  "product_documentation": "https://cloud.google.com/bigquery/docs",
+  "api_description": "BigQuery Migration API",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-bigquerymigration/latest/index.html",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-bigquerymigration",
+  "repo_short": "java-bigquerymigration",
+  "distribution_name": "com.google.cloud:google-cloud-bigquerymigration",
+  "api_id": "bigquerymigration.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
