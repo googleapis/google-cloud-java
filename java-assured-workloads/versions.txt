@@ -1,0 +1,8 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-assured-workloads:2.2.0:2.2.1-SNAPSHOT
+grpc-google-cloud-assured-workloads-v1beta1:0.14.0:0.14.1-SNAPSHOT
+grpc-google-cloud-assured-workloads-v1:2.2.0:2.2.1-SNAPSHOT
+proto-google-cloud-assured-workloads-v1beta1:0.14.0:0.14.1-SNAPSHOT
+proto-google-cloud-assured-workloads-v1:2.2.0:2.2.1-SNAPSHOT
