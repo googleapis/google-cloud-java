@@ -1,0 +1,16 @@
+{
+    "api_shortname": "networkconnectivity",
+    "name_pretty": "Network Connectivity Center",
+    "product_documentation": "https://cloud.google.com/network-connectivity/docs",
+    "api_description": "Google's suite of products that provide enterprise connectivity from your on-premises network or from another cloud provider to your Virtual Private Cloud (VPC) network",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-networkconnectivity/latest/history",
+    "release_level": "stable",
+    "transport": "grpc",
+    "language": "java",
+    "repo": "googleapis/java-networkconnectivity",
+    "repo_short": "java-networkconnectivity",
+    "distribution_name": "com.google.cloud:google-cloud-networkconnectivity",
+    "api_id": "networkconnectivity.googleapis.com",
+    "requires_billing": true,
+    "library_type": "GAPIC_AUTO"
+}

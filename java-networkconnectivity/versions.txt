@@ -1,0 +1,8 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-networkconnectivity:1.2.7:1.2.8-SNAPSHOT
+grpc-google-cloud-networkconnectivity-v1alpha1:0.8.7:0.8.8-SNAPSHOT
+grpc-google-cloud-networkconnectivity-v1:1.2.7:1.2.8-SNAPSHOT
+proto-google-cloud-networkconnectivity-v1alpha1:0.8.7:0.8.8-SNAPSHOT
+proto-google-cloud-networkconnectivity-v1:1.2.7:1.2.8-SNAPSHOT
