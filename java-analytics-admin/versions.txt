@@ -1,0 +1,8 @@
+# Format:
+# module:released-version:current-version
+
+google-analytics-admin:0.13.3:0.13.4-SNAPSHOT
+grpc-google-analytics-admin-v1alpha:0.13.3:0.13.4-SNAPSHOT
+proto-google-analytics-admin-v1alpha:0.13.3:0.13.4-SNAPSHOT
+proto-google-analytics-admin-v1beta:0.13.3:0.13.4-SNAPSHOT
+grpc-google-analytics-admin-v1beta:0.13.3:0.13.4-SNAPSHOT
