@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.9.4](https://github.com/googleapis/java-mediatranslation/compare/v0.9.3...v0.9.4) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#691](https://github.com/googleapis/java-mediatranslation/issues/691)) ([aa557e4](https://github.com/googleapis/java-mediatranslation/commit/aa557e48ca3f4e1f5e8e379db497bd9747a9b13b))
+
+## [0.9.3](https://github.com/googleapis/java-mediatranslation/compare/v0.9.2...v0.9.3) (2022-09-08)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#686](https://github.com/googleapis/java-mediatranslation/issues/686)) ([378e41d](https://github.com/googleapis/java-mediatranslation/commit/378e41dbada7e9e05db89640becbab97b9ed5fc9))
+
 ## [0.9.2](https://github.com/googleapis/java-mediatranslation/compare/v0.9.1...v0.9.2) (2022-08-09)
 
 
