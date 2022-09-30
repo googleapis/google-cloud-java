@@ -1,5 +1,33 @@
 # Changelog
 
+## [0.13.3](https://github.com/googleapis/java-analytics-admin/compare/v0.13.2...v0.13.3) (2022-09-29)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#478](https://github.com/googleapis/java-analytics-admin/issues/478)) ([5b0ef05](https://github.com/googleapis/java-analytics-admin/commit/5b0ef05d6c2e22fb0c518094d588650e4eb01715))
+* Update dependency certifi to v2022.9.24 ([#460](https://github.com/googleapis/java-analytics-admin/issues/460)) ([df4f29a](https://github.com/googleapis/java-analytics-admin/commit/df4f29a71e6a5130295f7a3da7353d6b70a0b86f))
+* Update dependency charset-normalizer to v2.1.1 ([#464](https://github.com/googleapis/java-analytics-admin/issues/464)) ([37b6a5b](https://github.com/googleapis/java-analytics-admin/commit/37b6a5bb80badb18b6b746ae01a4d2b4ca1e63c6))
+* Update dependency click to v8.1.3 ([#465](https://github.com/googleapis/java-analytics-admin/issues/465)) ([a3d2b71](https://github.com/googleapis/java-analytics-admin/commit/a3d2b71af36b0582938d762ac8447c2e219aff62))
+* Update dependency gcp-releasetool to v1.8.8 ([#461](https://github.com/googleapis/java-analytics-admin/issues/461)) ([eaa01d1](https://github.com/googleapis/java-analytics-admin/commit/eaa01d12cdd8df32d969d534b52266657f24552d))
+* Update dependency google-api-core to v2.10.1 ([#466](https://github.com/googleapis/java-analytics-admin/issues/466)) ([285d167](https://github.com/googleapis/java-analytics-admin/commit/285d167551d0d769da1d62ea6a0063a894907222))
+* Update dependency google-auth to v2.12.0 ([#467](https://github.com/googleapis/java-analytics-admin/issues/467)) ([0ceb3ea](https://github.com/googleapis/java-analytics-admin/commit/0ceb3ea1b7ad5742cf0edf409d9642e8e50ba48a))
+* Update dependency google-cloud-core to v2.3.2 ([#462](https://github.com/googleapis/java-analytics-admin/issues/462)) ([23e2ac0](https://github.com/googleapis/java-analytics-admin/commit/23e2ac0177e8d5451ef796d27dcc805c5fc5b4bf))
+* Update dependency google-cloud-storage to v2.5.0 ([#468](https://github.com/googleapis/java-analytics-admin/issues/468)) ([203d660](https://github.com/googleapis/java-analytics-admin/commit/203d660401bb5d0c616df58278a5df0e98d78155))
+* Update dependency google-crc32c to v1.5.0 ([#469](https://github.com/googleapis/java-analytics-admin/issues/469)) ([bf0cc05](https://github.com/googleapis/java-analytics-admin/commit/bf0cc05d3c919ee627a1214a2dcb605614255aa3))
+* Update dependency googleapis-common-protos to v1.56.4 ([#463](https://github.com/googleapis/java-analytics-admin/issues/463)) ([cb04968](https://github.com/googleapis/java-analytics-admin/commit/cb04968a6ff66388ea09c3bd0b1ca9d0947bc7b3))
+* Update dependency importlib-metadata to v4.12.0 ([#470](https://github.com/googleapis/java-analytics-admin/issues/470)) ([8b37c25](https://github.com/googleapis/java-analytics-admin/commit/8b37c25509f5400f18f08c6ff6cd914e1d3a8069))
+* Update dependency jeepney to v0.8.0 ([#471](https://github.com/googleapis/java-analytics-admin/issues/471)) ([70a02c7](https://github.com/googleapis/java-analytics-admin/commit/70a02c71227e2ee4874f5c5378c3bde309808051))
+* Update dependency jinja2 to v3.1.2 ([#472](https://github.com/googleapis/java-analytics-admin/issues/472)) ([984a22e](https://github.com/googleapis/java-analytics-admin/commit/984a22eeb0b3d02a7656d4b5c798fc1cb538e730))
+* Update dependency keyring to v23.9.3 ([#473](https://github.com/googleapis/java-analytics-admin/issues/473)) ([9622e18](https://github.com/googleapis/java-analytics-admin/commit/9622e181913c154d0a94e43e0c939a8fe21b33df))
+* Update dependency markupsafe to v2.1.1 ([#480](https://github.com/googleapis/java-analytics-admin/issues/480)) ([6bf1240](https://github.com/googleapis/java-analytics-admin/commit/6bf12409e89be6f8f9d119db12bc4915b616bb00))
+* Update dependency protobuf to v3.20.2 ([#481](https://github.com/googleapis/java-analytics-admin/issues/481)) ([7ef1871](https://github.com/googleapis/java-analytics-admin/commit/7ef187127457a6320a0d2e2613580159a5310fa5))
+* Update dependency protobuf to v4 ([#479](https://github.com/googleapis/java-analytics-admin/issues/479)) ([fc9d0a3](https://github.com/googleapis/java-analytics-admin/commit/fc9d0a3b3e39978f2da19aec0d4e7f815a71df26))
+* Update dependency pyjwt to v2.5.0 ([#474](https://github.com/googleapis/java-analytics-admin/issues/474)) ([4816406](https://github.com/googleapis/java-analytics-admin/commit/4816406545b8cb7584dd890359dc99475738e35c))
+* Update dependency requests to v2.28.1 ([#475](https://github.com/googleapis/java-analytics-admin/issues/475)) ([18d051c](https://github.com/googleapis/java-analytics-admin/commit/18d051ca8e42d67235876a56fb9c8312d6a66eaa))
+* Update dependency typing-extensions to v4.3.0 ([#476](https://github.com/googleapis/java-analytics-admin/issues/476)) ([21d06a6](https://github.com/googleapis/java-analytics-admin/commit/21d06a6e4cc8b8cb0811130b247a94f9dad0e09a))
+* Update dependency zipp to v3.8.1 ([#477](https://github.com/googleapis/java-analytics-admin/issues/477)) ([3bb00b0](https://github.com/googleapis/java-analytics-admin/commit/3bb00b05de8d5f9bb06dcc7901031fa97eddba5c))
+
 ## [0.13.2](https://github.com/googleapis/java-analytics-admin/compare/v0.13.1...v0.13.2) (2022-09-15)
 
 

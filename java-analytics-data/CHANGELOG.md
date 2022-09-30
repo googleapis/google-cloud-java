@@ -1,5 +1,33 @@
 # Changelog
 
+## [0.14.7](https://github.com/googleapis/java-analytics-data/compare/v0.14.6...v0.14.7) (2022-09-29)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#578](https://github.com/googleapis/java-analytics-data/issues/578)) ([6ce95c5](https://github.com/googleapis/java-analytics-data/commit/6ce95c5c4306369c26c2f0d253ae2c6914906dd5))
+* Update dependency certifi to v2022.9.24 ([#559](https://github.com/googleapis/java-analytics-data/issues/559)) ([a923390](https://github.com/googleapis/java-analytics-data/commit/a9233905d876a553b6c0b6d5474156bf4698c9e0))
+* Update dependency charset-normalizer to v2.1.1 ([#572](https://github.com/googleapis/java-analytics-data/issues/572)) ([6e4f130](https://github.com/googleapis/java-analytics-data/commit/6e4f1304221e41c1a066cb72a837b056c8274197))
+* Update dependency click to v8.1.3 ([#561](https://github.com/googleapis/java-analytics-data/issues/561)) ([3fc77f3](https://github.com/googleapis/java-analytics-data/commit/3fc77f312ca2f0ad2f51c4d79df46fba0a57eb11))
+* Update dependency gcp-releasetool to v1.8.8 ([#560](https://github.com/googleapis/java-analytics-data/issues/560)) ([d2f98b5](https://github.com/googleapis/java-analytics-data/commit/d2f98b5be4ca9de842d76ce9f40f25dcad05be4a))
+* Update dependency google-api-core to v2.10.1 ([#562](https://github.com/googleapis/java-analytics-data/issues/562)) ([90bbb3a](https://github.com/googleapis/java-analytics-data/commit/90bbb3a25fa9882d13411d82cb3355925420c014))
+* Update dependency google-auth to v2.12.0 ([#563](https://github.com/googleapis/java-analytics-data/issues/563)) ([468e5aa](https://github.com/googleapis/java-analytics-data/commit/468e5aa70ce50181e5a65b5c82683cc4f91c7b19))
+* Update dependency google-cloud-core to v2.3.2 ([#580](https://github.com/googleapis/java-analytics-data/issues/580)) ([d343a1e](https://github.com/googleapis/java-analytics-data/commit/d343a1ed8d270fb81cc30aa8c069ea150f741bcf))
+* Update dependency google-cloud-storage to v2.5.0 ([#564](https://github.com/googleapis/java-analytics-data/issues/564)) ([1dc7210](https://github.com/googleapis/java-analytics-data/commit/1dc721000a0ad218462965eb2091753e255f9e59))
+* Update dependency google-crc32c to v1.5.0 ([#565](https://github.com/googleapis/java-analytics-data/issues/565)) ([1c470fd](https://github.com/googleapis/java-analytics-data/commit/1c470fdd0640cd8e640d2d457f98b69f8a91600c))
+* Update dependency googleapis-common-protos to v1.56.4 ([#571](https://github.com/googleapis/java-analytics-data/issues/571)) ([957fba0](https://github.com/googleapis/java-analytics-data/commit/957fba0bc078d8b8241b279828e3c0971d977e77))
+* Update dependency importlib-metadata to v4.12.0 ([#566](https://github.com/googleapis/java-analytics-data/issues/566)) ([426169f](https://github.com/googleapis/java-analytics-data/commit/426169f583bf0bf83397ad783c2a7ae64d70074b))
+* Update dependency jeepney to v0.8.0 ([#567](https://github.com/googleapis/java-analytics-data/issues/567)) ([be87c83](https://github.com/googleapis/java-analytics-data/commit/be87c83fba956f4ac4d7b111ea47d88df8e5d22b))
+* Update dependency jinja2 to v3.1.2 ([#568](https://github.com/googleapis/java-analytics-data/issues/568)) ([92d1f52](https://github.com/googleapis/java-analytics-data/commit/92d1f52fd8dde9c1aad5f464d58b633c4a4f489b))
+* Update dependency keyring to v23.9.3 ([#569](https://github.com/googleapis/java-analytics-data/issues/569)) ([ba5b244](https://github.com/googleapis/java-analytics-data/commit/ba5b244fdbaa2e734c8672d8f9629557c6d4d54a))
+* Update dependency markupsafe to v2.1.1 ([#570](https://github.com/googleapis/java-analytics-data/issues/570)) ([8c52d4a](https://github.com/googleapis/java-analytics-data/commit/8c52d4a4d391fe55f0b8b1482fcf79c488e223d1))
+* Update dependency protobuf to v3.20.2 ([#573](https://github.com/googleapis/java-analytics-data/issues/573)) ([0136c7a](https://github.com/googleapis/java-analytics-data/commit/0136c7a54180af83b334d737d7ae21e3a8493621))
+* Update dependency protobuf to v4 ([#579](https://github.com/googleapis/java-analytics-data/issues/579)) ([c8a4ef5](https://github.com/googleapis/java-analytics-data/commit/c8a4ef50cb79eb3fa2483b3692d878eff44f5614))
+* Update dependency pyjwt to v2.5.0 ([#574](https://github.com/googleapis/java-analytics-data/issues/574)) ([aaef32a](https://github.com/googleapis/java-analytics-data/commit/aaef32a1a4f8cfe36c707ad31772a7a1aff7d179))
+* Update dependency requests to v2.28.1 ([#575](https://github.com/googleapis/java-analytics-data/issues/575)) ([e36085d](https://github.com/googleapis/java-analytics-data/commit/e36085df4ad67764b6b44603aa78588599f8b6fc))
+* Update dependency typing-extensions to v4.3.0 ([#576](https://github.com/googleapis/java-analytics-data/issues/576)) ([4014dbf](https://github.com/googleapis/java-analytics-data/commit/4014dbf40a1f9f1ff7f63594ee25ceba78ff9ca7))
+* Update dependency zipp to v3.8.1 ([#577](https://github.com/googleapis/java-analytics-data/issues/577)) ([3c345e1](https://github.com/googleapis/java-analytics-data/commit/3c345e1b26da1db3892ea5ac67b6fa0702b91b0d))
+
 ## [0.14.6](https://github.com/googleapis/java-analytics-data/compare/v0.14.5...v0.14.6) (2022-09-15)
 
 

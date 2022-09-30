@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.7.6](https://github.com/googleapis/java-area120-tables/compare/v0.7.5...v0.7.6) (2022-09-30)
+
+
+### Dependencies
+
+* Update dependency google-resumable-media to v2.4.0 ([#426](https://github.com/googleapis/java-area120-tables/issues/426)) ([4ecd88e](https://github.com/googleapis/java-area120-tables/commit/4ecd88e4e580f1a02d47f5091df26d1bd631553a))
+* Update dependency protobuf to v3.20.3 ([#427](https://github.com/googleapis/java-area120-tables/issues/427)) ([4687094](https://github.com/googleapis/java-area120-tables/commit/46870947a7da9c2d2c2eeb9745c49e24fef36495))
+
 ## [0.7.5](https://github.com/googleapis/java-area120-tables/compare/v0.7.4...v0.7.5) (2022-09-28)
 
 
