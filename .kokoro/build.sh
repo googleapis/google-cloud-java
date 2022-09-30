@@ -27,6 +27,37 @@ source ${scriptDir}/common.sh
 mkdir -p ${HOME}/.m2
 cp settings.xml ${HOME}/.m2
 
+function assign_modules_to_job() {
+  modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
+  module_list=()
+  num=0
+  for module in $modules
+  do
+    # Add 1 as JOB_NUMBER is 1-indexed instead of 0-indexed
+    mod_num=$((num % NUM_JOBS + 1))
+    if [[ ! "${excluded_modules[*]}" =~ $module ]] && [[ $mod_num -eq $JOB_NUMBER ]]; then
+      module_list+=($module)
+    fi
+    num=$((num + 1))
+  done
+  module_list=$(IFS=, ; echo "${module_list[*]}")
+}
+
+excluded_modules=('CoverageAggregator' 'google-cloud-gapic-bom')
+
+mvn -B -pl "!google-cloud-gapic-bom,!CoverageAggregator" \
+    -ntp \
+    -DtrimStackTrace=false \
+    -Dclirr.skip=true \
+    -Denforcer.skip=true \
+    -Dcheckstyle.skip=true \
+    -Dflatten.skip=true \
+    -Danimal.sniffer.skip=true \
+    -DskipTests=true \
+    -Djacoco.skip=true \
+    -T 1C \
+    install
+
 # if GOOGLE_APPLICATION_CREDENTIALS is specified as a relative path, prepend Kokoro root directory onto it
 if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" && "${GOOGLE_APPLICATION_CREDENTIALS}" != /* ]]; then
   export GOOGLE_APPLICATION_CREDENTIALS=$(realpath ${KOKORO_GFILE_DIR}/${GOOGLE_APPLICATION_CREDENTIALS})
@@ -39,32 +70,82 @@ fi
 RETURN_CODE=0
 
 case ${JOB_TYPE} in
+  test)
+    mvn test -B -ntp -Dclirr.skip=true -Denforcer.skip=true
+    RETURN_CODE=$?
+    ;;
+  lint)
+    mvn com.coveo:fmt-maven-plugin:check -B -ntp
+    RETURN_CODE=$?
+    ;;
+  javadoc)
+    mvn javadoc:javadoc javadoc:test-javadoc -B -ntp
+    RETURN_CODE=$?
+    ;;
   integration)
-    generate_modified_modules_list
-    if [[ ${#modified_module_list[@]} -gt 0 ]]; then
-      # Combine each entry with a comma
-      module_list=$(
-        IFS=,
-        echo "${modified_module_list[*]}"
-      )
-      install_modules
+    TEST_ALL=false
+    # Find the files changed from when the PR branched to the last commit
+    # Filter for java modules and get all the unique elements
+    # grep returns 1 (error code) and exits the pipeline if there is no match
+    # If there is no match, it will return true so the rest of the commands can run
+    modified_files=$(git diff --name-only $KOKORO_GITHUB_PULL_REQUEST_COMMIT $KOKORO_GITHUB_PULL_REQUEST_TARGET_BRANCH)
+    printf "Modified files:\n%s\n" "${modified_files}"
+
+    # If root pom.xml is touched, run ITs on all the modules
+    root_pom_modified=$(echo "${modified_files}" | grep -e '^pom.xml$' || true)
+    if [[ -n $root_pom_modified ]]; then
+      TEST_ALL=true
+      echo "Testing the entire monorepo"
+    else
+      directories=$(echo "${modified_files}" | grep -e 'java-.*' || true)
+      printf "Files in java modules:\n%s\n" "${directories}"
+      if [[ -n $directories ]]; then
+        directories=$(echo "${directories}" | cut -d '/' -f1 | sort -u)
+        dir_list=()
+        for directory in $directories
+        do
+          dir_list+=($directory)
+        done
+        # Combine each entry with a comma
+        module_list=$(IFS=, ; echo "${dir_list[*]}")
+      fi
+      printf "Module List:\n%s\n" "${module_list}"
+    fi
+
+    if [ ${TEST_ALL} ]; then
+      mvn -B ${INTEGRATION_TEST_ARGS} \
+          -ntp \
+          -Penable-integration-tests \
+          -DtrimStackTrace=false \
+          -Dclirr.skip=true \
+          -Denforcer.skip=true \
+          -Dcheckstyle.skip=true \
+          -Dflatten.skip=true \
+          -Danimal.sniffer.skip=true \
+          -Djacoco.skip=true \
+          -DskipUnitTests=true \
+          -fae \
+          -T 1C \
+          verify
+      RETURN_CODE=$?
+    elif [[ -n $module_list ]]; then
       printf "Running Integration Tests for:\n%s\n" "${module_list}"
       mvn -B ${INTEGRATION_TEST_ARGS} \
-        -pl "${module_list},!CoverageAggregator" \
-        -amd \
-        -ntp \
-        -Penable-integration-tests \
-        -DtrimStackTrace=false \
-        -Dclirr.skip=true \
-        -Denforcer.skip=true \
-        -Dcheckstyle.skip=true \
-        -Dflatten.skip=true \
-        -Danimal.sniffer.skip=true \
-        -Djacoco.skip=true \
-        -DskipUnitTests=true \
-        -fae \
-        -T 1C \
-        verify
+          -pl "${module_list}" \
+          -amd \
+          -ntp \
+          -Penable-integration-tests \
+          -DtrimStackTrace=false \
+          -Dclirr.skip=true \
+          -Denforcer.skip=true \
+          -Dcheckstyle.skip=true \
+          -Dflatten.skip=true \
+          -Danimal.sniffer.skip=true \
+          -Djacoco.skip=true \
+          -DskipUnitTests=true \
+          -fae \
+          -T 1C \
+          verify
       RETURN_CODE=$?
       printf "Finished Integration Tests for:\n%s\n" "${module_list}"
     else
@@ -72,69 +153,91 @@ case ${JOB_TYPE} in
     fi
     ;;
   graalvm)
-    generate_graalvm_modules_list
-    install_modules
-    run_graalvm_tests
+    assign_modules_to_job
+    printf "Running GraalVM Native ITs on:\n%s\n" "${module_list[*]}"
+
+    # Run Unit and Integration Tests with Native Image
+    if [[ -n $module_list ]]; then
+      mvn -B ${INTEGRATION_TEST_ARGS} \
+          -pl "${module_list}" \
+          -amd \
+          -ntp \
+          -DtrimStackTrace=false \
+          -Dclirr.skip=true \
+          -Denforcer.skip=true \
+          -Dcheckstyle.skip=true \
+          -Dflatten.skip=true \
+          -Danimal.sniffer.skip=true \
+          -Penable-integration-tests \
+          -Pnative \
+          -fae \
+          verify
+      RETURN_CODE=$?
+      printf "Finished Unit and Integration Tests for GraalVM Native:\n%s\n" "${module_list}"
+    else
+      echo "No Unit and Integration Tests to run for GraalVM Native"
+    fi
     ;;
   graalvm17)
-    generate_graalvm_modules_list
-    install_modules
-    run_graalvm_tests
+    assign_modules_to_job
+    printf "Running GraalVM Native-17 ITs on:\n%s\n" "${module_list[*]}"
+
+    # Run Unit and Integration Tests with Native Image
+    if [[ -n $module_list ]]; then
+      mvn -B ${INTEGRATION_TEST_ARGS} \
+          -pl "${module_list}" \
+          -amd \
+          -ntp \
+          -DtrimStackTrace=false \
+          -Dclirr.skip=true \
+          -Denforcer.skip=true \
+          -Dcheckstyle.skip=true \
+          -Dflatten.skip=true \
+          -Danimal.sniffer.skip=true \
+          -Penable-integration-tests \
+          -Pnative \
+          -fae \
+          verify
+      RETURN_CODE=$?
+      printf "Finished Unit and Integration Tests for GraalVM Native 17:\n%s\n" "${module_list}"
+    else
+      echo "No Unit and Integration Tests to run for GraalVM Native 17"
+    fi
     ;;
   samples)
-    mvn -B \
-      -pl "!CoverageAggregator,!google-cloud-gapic-bom" \
-      -ntp \
-      -DtrimStackTrace=false \
-      -Dclirr.skip=true \
-      -Denforcer.skip=true \
-      -Dcheckstyle.skip=true \
-      -Dflatten.skip=true \
-      -Danimal.sniffer.skip=true \
-      -DskipTests=true \
-      -Djacoco.skip=true \
-      -T 1C \
-      install
+    SAMPLES_DIR=samples
+    # only run ITs in snapshot/ on presubmit PRs. run ITs in all 3 samples/ subdirectories otherwise.
+    if [[ ! -z ${KOKORO_GITHUB_PULL_REQUEST_NUMBER} ]]
+    then
+      SAMPLES_DIR=samples/snapshot
+    fi
 
-    for FILE in ${KOKORO_GFILE_DIR}/secret_manager/*-samples-secrets; do
-      [[ -f "${FILE}" ]] || continue
-      source "${FILE}"
-    done
+    if [[ -f ${SAMPLES_DIR}/pom.xml ]]
+    then
+        for FILE in ${KOKORO_GFILE_DIR}/secret_manager/*-samples-secrets; do
+          [[ -f "$FILE" ]] || continue
+          source "$FILE"
+        done
 
-    modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
-    for module in $modules; do
-      if [[ ! "${excluded_modules[*]}" =~ $module ]]; then
-        printf "Running now for %s\n" "${module}"
-        pushd $module
-        SAMPLES_DIR=samples
-        # only run ITs in snapshot/ on presubmit PRs. run ITs in all 3 samples/ submodules otherwise.
-        if [[ ! -z ${KOKORO_GITHUB_PULL_REQUEST_NUMBER} ]]; then
-          SAMPLES_DIR=samples/snapshot
-        fi
-
-        if [[ -f ${SAMPLES_DIR}/pom.xml ]]; then
-          pushd ${SAMPLES_DIR}
-          mvn -B \
-            -ntp \
-            -DtrimStackTrace=false \
-            -Dclirr.skip=true \
-            -Denforcer.skip=true \
-            -Dcheckstyle.skip=true \
-            -Dflatten.skip=true \
-            -Danimal.sniffer.skip=true \
-            -fae \
-            verify
-          RETURN_CODE=$?
-          popd
-        else
-          echo "no sample pom.xml found - skipping sample tests"
-        fi
+        pushd ${SAMPLES_DIR}
+        mvn -B \
+          -ntp \
+          -DtrimStackTrace=false \
+          -Dclirr.skip=true \
+          -fae \
+          verify
+        RETURN_CODE=$?
         popd
-      fi
-    done
+    else
+        echo "no sample pom.xml found - skipping sample tests"
+    fi
     ;;
-  *) ;;
-
+  clirr)
+    mvn -B -ntp -Denforcer.skip=true clirr:check
+    RETURN_CODE=$?
+    ;;
+  *)
+    ;;
 esac
 
 if [ "${REPORT_COVERAGE}" == "true" ]; then

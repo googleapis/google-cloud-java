@@ -21,18 +21,17 @@ name: readme
 jobs:
   update:
     runs-on: ubuntu-latest
-    if: github.repository_owner == 'googleapis'
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-python@v4
+    - uses: actions/setup-python@v2
       with:
         python-version: '3.7'
         architecture: 'x64'
     - run: python3 -m pip install requests
     - run: python3 generate-readme.py
-    - uses: googleapis/code-suggester@v4
+    - uses: googleapis/code-suggester@v3
       env:
-        ACCESS_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
+        ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         command: pr
         upstream_owner: googleapis

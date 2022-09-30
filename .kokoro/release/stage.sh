@@ -28,7 +28,6 @@ create_settings_xml_file "settings.xml"
 
 mvn clean deploy -B \
   -DskipTests=true \
-  -Dclirr.skip=true \
   --settings ${MAVEN_SETTINGS_FILE} \
   -Dgpg.executable=gpg \
   -Dgpg.passphrase=${GPG_PASSPHRASE} \

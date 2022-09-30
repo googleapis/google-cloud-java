@@ -30,7 +30,14 @@ pushd $(dirname "$0")/../../
 # install docuploader package
 python3 -m pip install gcp-docuploader
 
+apt-get update
+# install jq to extract field from json file
+apt-get install -y jq
+
 doclet_name="java-docfx-doclet-1.7.0.jar"
+
+# compile all packages
+#mvn clean install -B -q -DskipTests -Dcheckstyle.skip -Denforcer.skip=true -T 1C
 
 # Retrieve list of modules from aggregator pom
 modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
@@ -41,18 +48,16 @@ do
   # Proceed if module is not excluded
   if [[ ! "${excluded_modules[*]}" =~ $module ]]; then
     pushd $module
-    # Extract Cloud RAD module name from `distribution_name` in .repo-metadata.json
-    NAME=$(grep -o '"distribution_name": "[^"]*' .repo-metadata.json | grep -o '[^"]*$' | cut -d ':' -f 2)
+    # Extract Cloud RAD module name
+    NAME=$(jq -r '.distribution_name' .repo-metadata.json | cut -d ':' -f 2)
     # Extract (current) version from versions.txt and remove `-SNAPSHOT`
     VERSION=$(grep ${NAME}: versions.txt | cut -d: -f3 | sed -e 's/-SNAPSHOT//g')
     echo "Running for ${NAME}-${VERSION}"
 
     # cloud RAD generation
     mvn clean javadoc:aggregate -B -P docFX -DdocletPath=${KOKORO_GFILE_DIR}/${doclet_name}
-    # include CHANGELOG if exists
-    if [ -e CHANGELOG.md ]; then
-      cp CHANGELOG.md target/docfx-yml/history.md
-    fi
+    # include CHANGELOG
+    cp CHANGELOG.md target/docfx-yml/history.md
 
     pushd target/docfx-yml
 

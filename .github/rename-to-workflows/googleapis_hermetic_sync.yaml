@@ -24,7 +24,8 @@ jobs:
         git checkout -b monorepo_googleapis_change
       env:
         WORKSPACE: /tmp/googleapis-sync
-        BASE_BRANCH: main
+        # Note for cutover to main: update this to main
+        BASE_BRANCH: monorepo_script_output
     - name: Propagate googleapis commits to google-cloud-java
       run: |
         .kokoro/sync_with_googleapis.sh
@@ -49,4 +50,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
         # Note for cutover to main: update this to main
-        BASE_BRANCH: main
+        BASE_BRANCH: monorepo_script_output

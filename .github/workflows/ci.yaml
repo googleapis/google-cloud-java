@@ -16,7 +16,8 @@
 on:
   push:
     branches:
-    - main
+    # TODO: Update to main
+    - monorepo_script_output
   pull_request:
 name: ci
 jobs:
@@ -60,18 +61,8 @@ jobs:
       with:
         distribution: zulu
         java-version: 11
-        cache: 'maven'
     - run: java -version
-    - run: |
-        mvn -B -ntp \
-            -Dclirr.skip=true \
-            -Denforcer.skip=true \
-            -Dcheckstyle.skip=true \
-            -Dflatten.skip=true \
-            -Danimal.sniffer.skip=true \
-            -T 1C \
-            test
-      shell: bash
+    - run: .kokoro/build.bat
       env:
         JOB_TYPE: test
 # TODO: Uncomment the needed Github Actions

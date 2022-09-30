@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
+#     https://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -12,21 +12,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-on:
-  push:
-    branches:
-    - main
-name: monorepo-diff
-jobs:
-  generate-diffs:
-    if: ${{ github.event_name != 'pull_request' }}
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-      with:
-        repository: 'googleapis/google-cloud-java'
-        fetch-depth: 0
-    - name: Run generate-diff script
-      run: ./generation/generate_diff.sh
-      env:
-        USERNAME: ${{ github.actor }}
+import synthtool as s
+from synthtool.languages import java
+
+
+for library in s.get_staging_dirs():
+    # put any special-case replacements here
+    s.move(library)
+
+s.remove_staging_dirs()
+java.common_templates(excludes=[
+    ".github/*",
+    ".kokoro/*",
+    ".samples/*",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "SECURITY.md",
+    "java.header",
+    "license-checks.xml",
+    "renovate.json"
+])
