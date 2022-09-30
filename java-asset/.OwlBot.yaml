@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker:
-  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
 - "/samples/snippets/generated"
@@ -28,10 +26,12 @@ deep-preserve-regex:
 
 deep-copy-regex:
 - source: "/google/cloud/asset/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-asset-$1/src"
+  dest: "/owl-bot-staging/java-asset/$1/proto-google-cloud-asset-$1/src"
 - source: "/google/cloud/asset/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-asset-$1/src"
+  dest: "/owl-bot-staging/java-asset/$1/grpc-google-cloud-asset-$1/src"
 - source: "/google/cloud/asset/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-asset/src"
+  dest: "/owl-bot-staging/java-asset/$1/google-cloud-asset/src"
 - source: "/google/cloud/asset/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/$1/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-asset/$1/samples/snippets/generated"
+
+api-name: cloudasset
