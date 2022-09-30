@@ -19,7 +19,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-vmmigration</artifactId>
-  <version>1.3.2</version>
+  <version>1.3.3</version>
 </dependency>
 
 ```
