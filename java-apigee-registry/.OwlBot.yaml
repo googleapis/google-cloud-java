@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker:
-  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
 - "/grpc-google-.*/src"
@@ -26,10 +24,11 @@ deep-preserve-regex:
 
 deep-copy-regex:
 - source: "/google/cloud/apigeeregistry/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-apigee-registry-$1/src"
+  dest: "/owl-bot-staging/java-apigee-registry/$1/proto-google-cloud-apigee-registry-$1/src"
 - source: "/google/cloud/apigeeregistry/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-apigee-registry-$1/src"
+  dest: "/owl-bot-staging/java-apigee-registry/$1/grpc-google-cloud-apigee-registry-$1/src"
 - source: "/google/cloud/apigeeregistry/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-apigee-registry/src"
+  dest: "/owl-bot-staging/java-apigee-registry/$1/google-cloud-apigee-registry/src"
 - source: "/google/cloud/apigeeregistry/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/$1/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-apigee-registry/$1/samples/snippets/generated"
+api-name: apigee-registry
