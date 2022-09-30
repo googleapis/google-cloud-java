@@ -22,7 +22,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerymigration</artifactId>
-  <version>0.6.0</version>
+  <version>0.6.1</version>
 </dependency>
 
 ```
