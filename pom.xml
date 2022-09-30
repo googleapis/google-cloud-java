@@ -19,6 +19,7 @@
   </properties>
 
   <modules>
+    <module>google-cloud-gapic-bom</module>
     <module>java-accessapproval</module>
     <module>java-accesscontextmanager</module>
     <module>java-aiplatform</module>
