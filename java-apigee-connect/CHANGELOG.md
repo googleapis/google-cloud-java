@@ -1,5 +1,33 @@
 # Changelog
 
+## [2.3.5](https://github.com/googleapis/java-apigee-connect/compare/v2.3.4...v2.3.5) (2022-09-30)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#240](https://github.com/googleapis/java-apigee-connect/issues/240)) ([0cc9cc7](https://github.com/googleapis/java-apigee-connect/commit/0cc9cc758de55ea64e3a26c7d02e70d3b707f8f6))
+* Update dependency certifi to v2022.9.24 ([#219](https://github.com/googleapis/java-apigee-connect/issues/219)) ([75dd75d](https://github.com/googleapis/java-apigee-connect/commit/75dd75d12af92481c37dafdfb8c62c6255152c4f))
+* Update dependency charset-normalizer to v2.1.1 ([#223](https://github.com/googleapis/java-apigee-connect/issues/223)) ([6976e6c](https://github.com/googleapis/java-apigee-connect/commit/6976e6cff9578dc18e2d613bd66551864e742080))
+* Update dependency click to v8.1.3 ([#224](https://github.com/googleapis/java-apigee-connect/issues/224)) ([a9d2ac4](https://github.com/googleapis/java-apigee-connect/commit/a9d2ac449b9483c63bafc78847585131e8ef0c26))
+* Update dependency gcp-releasetool to v1.8.8 ([#220](https://github.com/googleapis/java-apigee-connect/issues/220)) ([7dcd53a](https://github.com/googleapis/java-apigee-connect/commit/7dcd53ab630f773af78269ae2967b00a06b48815))
+* Update dependency google-api-core to v2.10.1 ([#225](https://github.com/googleapis/java-apigee-connect/issues/225)) ([5112087](https://github.com/googleapis/java-apigee-connect/commit/5112087056a14ae53ecd432f899881522e9cdb05))
+* Update dependency google-auth to v2.12.0 ([#226](https://github.com/googleapis/java-apigee-connect/issues/226)) ([ddc7536](https://github.com/googleapis/java-apigee-connect/commit/ddc75360bb4577406fd84612f1a3c16caf693634))
+* Update dependency google-cloud-core to v2.3.2 ([#221](https://github.com/googleapis/java-apigee-connect/issues/221)) ([1410a4f](https://github.com/googleapis/java-apigee-connect/commit/1410a4f7acbb3cf19b5997513cb7516c1f3971c1))
+* Update dependency google-cloud-storage to v2.5.0 ([#227](https://github.com/googleapis/java-apigee-connect/issues/227)) ([67a4ceb](https://github.com/googleapis/java-apigee-connect/commit/67a4ceb847cdf4b4bdbec1eb182996fb262b73fc))
+* Update dependency google-crc32c to v1.5.0 ([#228](https://github.com/googleapis/java-apigee-connect/issues/228)) ([b7d71d3](https://github.com/googleapis/java-apigee-connect/commit/b7d71d381cf7f52ba8df0a03c8362189fef9ea0a))
+* Update dependency googleapis-common-protos to v1.56.4 ([#222](https://github.com/googleapis/java-apigee-connect/issues/222)) ([73f4c93](https://github.com/googleapis/java-apigee-connect/commit/73f4c931b72be22f8b6b4f9cef4fd50c93dc17e2))
+* Update dependency importlib-metadata to v4.12.0 ([#229](https://github.com/googleapis/java-apigee-connect/issues/229)) ([c52f847](https://github.com/googleapis/java-apigee-connect/commit/c52f847fa5cf3e7be2bfde78839c083a3daba441))
+* Update dependency jeepney to v0.8.0 ([#230](https://github.com/googleapis/java-apigee-connect/issues/230)) ([9205fbf](https://github.com/googleapis/java-apigee-connect/commit/9205fbf1d25fb1c3ee1d7dfba800e3bd362367bb))
+* Update dependency jinja2 to v3.1.2 ([#231](https://github.com/googleapis/java-apigee-connect/issues/231)) ([e9d2e0c](https://github.com/googleapis/java-apigee-connect/commit/e9d2e0c1e481702ef742f8270078814aea6b3b59))
+* Update dependency keyring to v23.9.3 ([#232](https://github.com/googleapis/java-apigee-connect/issues/232)) ([ee0b82b](https://github.com/googleapis/java-apigee-connect/commit/ee0b82ba737a3b70c078fea5c5b956d17aa0195e))
+* Update dependency markupsafe to v2.1.1 ([#233](https://github.com/googleapis/java-apigee-connect/issues/233)) ([07c2c60](https://github.com/googleapis/java-apigee-connect/commit/07c2c606a8aee6f818ba5f2f70f56f4957220770))
+* Update dependency protobuf to v3.20.2 ([#234](https://github.com/googleapis/java-apigee-connect/issues/234)) ([e1fef2b](https://github.com/googleapis/java-apigee-connect/commit/e1fef2bbec7255fdee1853f87ce1fcdd3fbb2498))
+* Update dependency protobuf to v4 ([#241](https://github.com/googleapis/java-apigee-connect/issues/241)) ([f150d3d](https://github.com/googleapis/java-apigee-connect/commit/f150d3d601f9441abb1419b3f768a5565cef3c07))
+* Update dependency pyjwt to v2.5.0 ([#235](https://github.com/googleapis/java-apigee-connect/issues/235)) ([c24d074](https://github.com/googleapis/java-apigee-connect/commit/c24d074721888b20e3919fc5cb3e04381dbc2071))
+* Update dependency requests to v2.28.1 ([#237](https://github.com/googleapis/java-apigee-connect/issues/237)) ([7323e50](https://github.com/googleapis/java-apigee-connect/commit/7323e504207213b66812446cded0d9bf2e551b09))
+* Update dependency typing-extensions to v4.3.0 ([#238](https://github.com/googleapis/java-apigee-connect/issues/238)) ([fbaa335](https://github.com/googleapis/java-apigee-connect/commit/fbaa33513a1cb94f7bc60d120792164db85e29fd))
+* Update dependency zipp to v3.8.1 ([#239](https://github.com/googleapis/java-apigee-connect/issues/239)) ([ca351c3](https://github.com/googleapis/java-apigee-connect/commit/ca351c3ea742b9ed16599b29574ee3d9225bb724))
+
 ## [2.3.4](https://github.com/googleapis/java-apigee-connect/compare/v2.3.3...v2.3.4) (2022-09-15)
 
 
