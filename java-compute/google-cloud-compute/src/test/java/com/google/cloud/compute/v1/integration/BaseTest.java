@@ -22,9 +22,8 @@ public class BaseTest {
   protected static final String DEFAULT_PROJECT = ServiceOptions.getDefaultProjectId();
   protected static final String DEFAULT_ZONE = "us-central1-a";
   protected static final String DEFAULT_REGION = "us-west1";
-  protected static final String COMPUTE_PREFIX = "it-test-compute";
 
   public static String generateRandomName(String placeholder) {
-    return COMPUTE_PREFIX + "-" + placeholder + "-" + UUID.randomUUID().toString().substring(0, 8);
+    return "gapic-" + placeholder + UUID.randomUUID().toString().substring(0, 8);
   }
 }
