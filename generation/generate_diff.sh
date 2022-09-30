@@ -76,6 +76,14 @@ done
 
 ./generation/delete_non_generated_samples.sh
 
+cp .gitignore .gitignore.old
+ignore_list=( "*/.github/*" "*/.kokoro/*" "*/.samples/*" "*/CODE_OF_CONDUCT.md" "*/CONTRIBUTING.md" "*/LICENSE" "*/SECURITY.md" "*/java.header" "*/license-checks.xml" "*/renovate.json")
+
+for ignore in "${ignore_list[@]}"
+do
+  echo "${ignore}" >> .gitignore
+done
+
 git checkout -b "${diff_java_it_branch}"
 git add "*/src/test/*IT*.java"
 git add "*/src/test/*/integration/*.java"
@@ -100,9 +108,16 @@ git stash pop
 
 git checkout -b "${diff_non_java_branch}"
 git add .
+git reset -- .gitignore
+git reset -- .gitignore.old
 git commit -m "chore: Adding non-java diffs" --no-verify
 git push origin "${diff_non_java_branch}" --force
 
+git stash
 git checkout "${current_branch}"
+git stash pop
+
+rm .gitignore
+mv .gitignore.old .gitignore
 
 echo "Done running script"
