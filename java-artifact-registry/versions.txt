@@ -1,0 +1,8 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-artifact-registry:1.2.8:1.2.8
+grpc-google-cloud-artifact-registry-v1beta2:0.8.8:0.8.8
+grpc-google-cloud-artifact-registry-v1:1.2.8:1.2.8
+proto-google-cloud-artifact-registry-v1beta2:0.8.8:0.8.8
+proto-google-cloud-artifact-registry-v1:1.2.8:1.2.8
