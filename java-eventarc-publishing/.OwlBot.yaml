@@ -14,12 +14,12 @@
 
 
 deep-remove-regex:
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-eventarc-publishing/grpc-google-.*/src"
+- "/java-eventarc-publishing/proto-google-.*/src"
+- "/java-eventarc-publishing/google-.*/src"
 
 deep-preserve-regex:
-- "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-eventarc-publishing/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/cloud/eventarc/publishing/(v.*)/.*-java/proto-google-.*/src"

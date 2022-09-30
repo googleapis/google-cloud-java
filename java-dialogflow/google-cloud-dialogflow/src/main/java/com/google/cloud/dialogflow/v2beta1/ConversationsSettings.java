@@ -113,6 +113,12 @@ public class ConversationsSettings extends ClientSettings<ConversationsSettings>
     return ((ConversationsStubSettings) getStubSettings()).listMessagesSettings();
   }
 
+  /** Returns the object with the settings used for calls to suggestConversationSummary. */
+  public UnaryCallSettings<SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>
+      suggestConversationSummarySettings() {
+    return ((ConversationsStubSettings) getStubSettings()).suggestConversationSummarySettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -275,6 +281,13 @@ public class ConversationsSettings extends ClientSettings<ConversationsSettings>
             ListMessagesRequest, ListMessagesResponse, ListMessagesPagedResponse>
         listMessagesSettings() {
       return getStubSettingsBuilder().listMessagesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to suggestConversationSummary. */
+    public UnaryCallSettings.Builder<
+            SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>
+        suggestConversationSummarySettings() {
+      return getStubSettingsBuilder().suggestConversationSummarySettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

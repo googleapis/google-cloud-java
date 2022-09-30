@@ -732,6 +732,98 @@ public class ConversationsClientTest {
   }
 
   @Test
+  public void suggestConversationSummaryTest() throws Exception {
+    SuggestConversationSummaryResponse expectedResponse =
+        SuggestConversationSummaryResponse.newBuilder()
+            .setSummary(SuggestConversationSummaryResponse.Summary.newBuilder().build())
+            .setLatestMessage(
+                MessageName.ofProjectConversationMessageName(
+                        "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+                    .toString())
+            .setContextSize(1116903569)
+            .build();
+    mockConversations.addResponse(expectedResponse);
+
+    ConversationName conversation =
+        ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]");
+
+    SuggestConversationSummaryResponse actualResponse =
+        client.suggestConversationSummary(conversation);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConversations.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SuggestConversationSummaryRequest actualRequest =
+        ((SuggestConversationSummaryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(conversation.toString(), actualRequest.getConversation());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void suggestConversationSummaryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConversations.addException(exception);
+
+    try {
+      ConversationName conversation =
+          ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]");
+      client.suggestConversationSummary(conversation);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void suggestConversationSummaryTest2() throws Exception {
+    SuggestConversationSummaryResponse expectedResponse =
+        SuggestConversationSummaryResponse.newBuilder()
+            .setSummary(SuggestConversationSummaryResponse.Summary.newBuilder().build())
+            .setLatestMessage(
+                MessageName.ofProjectConversationMessageName(
+                        "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+                    .toString())
+            .setContextSize(1116903569)
+            .build();
+    mockConversations.addResponse(expectedResponse);
+
+    String conversation = "conversation740154499";
+
+    SuggestConversationSummaryResponse actualResponse =
+        client.suggestConversationSummary(conversation);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConversations.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SuggestConversationSummaryRequest actualRequest =
+        ((SuggestConversationSummaryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(conversation, actualRequest.getConversation());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void suggestConversationSummaryExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConversations.addException(exception);
+
+    try {
+      String conversation = "conversation740154499";
+      client.suggestConversationSummary(conversation);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =

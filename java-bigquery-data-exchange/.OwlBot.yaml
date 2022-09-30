@@ -14,12 +14,12 @@
 
 
 deep-remove-regex:
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-bigquery-data-exchange/grpc-google-.*/src"
+- "/java-bigquery-data-exchange/proto-google-.*/src"
+- "/java-bigquery-data-exchange/google-.*/src"
 
 deep-preserve-regex:
-- "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-bigquery-data-exchange/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/cloud/bigquery/dataexchange/(v.*)/.*-java/proto-google-.*/src"

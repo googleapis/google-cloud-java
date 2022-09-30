@@ -14,9 +14,9 @@
 
 
 deep-remove-regex:
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-artifact-registry/grpc-google-.*/src"
+- "/java-artifact-registry/proto-google-.*/src"
+- "/java-artifact-registry/google-.*/src"
 
 deep-copy-regex:
 - source: "/google/devtools/artifactregistry/(v.*)/.*-java/proto-google-.*/src"
