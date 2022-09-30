@@ -1,0 +1,6 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-securitycenter-settings:0.6.5:0.6.5
+grpc-google-cloud-securitycenter-settings-v1beta1:0.6.5:0.6.5
+proto-google-cloud-securitycenter-settings-v1beta1:0.6.5:0.6.5
