@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker:
-  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
 - "/grpc-google-.*/src"
@@ -22,8 +20,10 @@ deep-remove-regex:
 
 deep-copy-regex:
 - source: "/google/analytics/data/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-analytics-data-$1/src"
+  dest: "/owl-bot-staging/java-analytics-data/$1/proto-google-analytics-data-$1/src"
 - source: "/google/analytics/data/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-analytics-data-$1/src"
+  dest: "/owl-bot-staging/java-analytics-data/$1/grpc-google-analytics-data-$1/src"
 - source: "/google/analytics/data/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-analytics-data/src"
+  dest: "/owl-bot-staging/java-analytics-data/$1/google-analytics-data/src"
+
+api-name: analyticsdata
