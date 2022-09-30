@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.9](https://github.com/googleapis/java-secretmanager/compare/v2.3.8...v2.3.9) (2022-09-30)
+
+
+### Dependencies
+
+* Update dependency com.google.protobuf:protobuf-java-util to v3.21.7 ([#876](https://github.com/googleapis/java-secretmanager/issues/876)) ([6d296f3](https://github.com/googleapis/java-secretmanager/commit/6d296f37bb1b37d7f93c331b325aecb0a28bdd6e))
+
 ## [2.3.8](https://github.com/googleapis/java-secretmanager/compare/v2.3.7...v2.3.8) (2022-09-28)
 
 
