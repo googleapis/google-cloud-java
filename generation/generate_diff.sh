@@ -105,7 +105,7 @@ ignore_list=("java-*/.github/" "java-*/.kokoro/" "java-*/samples/" "java-*/CODE_
 git add .
 for ignore in "${ignore_list[@]}"
 do
-  git reset $(git diff --name-only --cached | grep "${ignore}")
+  git reset "${ignore}"
 done
 
 exit
