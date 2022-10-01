@@ -7,6 +7,8 @@ set -xe
 [ -z "`git config user.email`" ] && git config --global user.email "${USERNAME:-script}@google.com"
 [ -z "`git config user.name`" ] && git config --global user.name "${USERNAME:-script}"
 
+cd "$(dirname "$0")"
+
 rm -rf monorepo
 mkdir monorepo
 
