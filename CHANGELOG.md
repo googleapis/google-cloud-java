@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.11.4](https://github.com/googleapis/java-logging/compare/v3.11.3...v3.11.4) (2022-10-01)
+
+
+### Bug Fixes
+
+* Add flush() calls in samples ([#1116](https://github.com/googleapis/java-logging/issues/1116)) ([6d3cb5b](https://github.com/googleapis/java-logging/commit/6d3cb5bf787409d44ba8c0d4c20fb6810a8d1d88))
+
 ## [3.11.3](https://github.com/googleapis/java-logging/compare/v3.11.2...v3.11.3) (2022-09-22)
 
 

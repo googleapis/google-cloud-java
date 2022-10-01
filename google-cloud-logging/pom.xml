@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-logging</artifactId>
-  <version>3.11.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
+  <version>3.11.4</version><!-- {x-version-update:google-cloud-logging:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Logging</name>
   <url>https://github.com/googleapis/java-logging</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-logging-parent</artifactId>
-    <version>3.11.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
+    <version>3.11.4</version><!-- {x-version-update:google-cloud-logging:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-logging</site.installationModule>
