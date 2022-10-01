@@ -119,8 +119,6 @@ git commit -am 'chore: remove and disable owlbot postprocessor templates'
 for F in `find . -maxdepth 2 -name '.OwlBot.yaml'`; do sh ../../set_owlbot_config.sh $F; done
 git commit -am 'chore: set owlbot copy config'
 
-mvn clean install
-
 # create a monorepo/diff repo
 cd ..
 cp -R google-cloud-java split
