@@ -1,0 +1,41 @@
+name: Bootstrap
+on:
+  schedule:
+    - cron: '0 1 * * *' # nightly at 1 am UTC
+  push:
+    branches: [ main ]
+    paths:
+      - generation/**
+  pull_request:
+    branches: [ main ]
+    paths:
+      - generation/**
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Generate
+        run: ./generation/bootstrap.sh
+        env:
+          USERNAME: ${{ github.actor }}
+      - name: Compile
+        working-directory: monorepo/google-cloud-java
+        run: mvn compile -T C1 -B
+      - name: Unit Tests
+        working-directory: monorepo/google-cloud-java
+        run: mvn test -T C1 -B
+      - name: Push monorepo to branch
+        if: ${{ github.event_name != 'pull_request' }}
+        run: |
+          cd monorepo/google-cloud-java
+          git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
+          git push -f monorepo main:bootstrap_output
+      - name: Push diff to branch
+        run: |
+          cd monorepo/diff
+          git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
+          git push -f monorepo main:boootstrap_output_diff_${{ github.event_name }}
