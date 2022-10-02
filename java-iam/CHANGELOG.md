@@ -1,5 +1,43 @@
 # Changelog
 
+## [1.6.2](https://github.com/googleapis/java-iam/compare/v1.6.1...v1.6.2) (2022-10-02)
+
+
+### Documentation
+
+* **samples:** Update package names to match v2 ([#424](https://github.com/googleapis/java-iam/issues/424)) ([7fda749](https://github.com/googleapis/java-iam/commit/7fda74962365073996bf1f0a6229bbf8984d1d09))
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#459](https://github.com/googleapis/java-iam/issues/459)) ([3984974](https://github.com/googleapis/java-iam/commit/3984974630ccd0921f12d276dbc22eb6798e74a9))
+* Update dependency certifi to v2022.9.24 ([#440](https://github.com/googleapis/java-iam/issues/440)) ([e0ebd9e](https://github.com/googleapis/java-iam/commit/e0ebd9e20a25e6edf7b913dea0943909ec28effb))
+* Update dependency charset-normalizer to v2.1.1 ([#444](https://github.com/googleapis/java-iam/issues/444)) ([4bac18b](https://github.com/googleapis/java-iam/commit/4bac18bd92702502730b878f10dcb12b39dfa1cf))
+* Update dependency click to v8.1.3 ([#445](https://github.com/googleapis/java-iam/issues/445)) ([e21bea2](https://github.com/googleapis/java-iam/commit/e21bea21af318e34220a649e9ec4bd9214f11feb))
+* Update dependency com.google.apis:google-api-services-cloudresourcemanager to v3-rev20220911-2.0.0 ([#435](https://github.com/googleapis/java-iam/issues/435)) ([63a136b](https://github.com/googleapis/java-iam/commit/63a136b56dff577ac1e630293c80bd10539c1930))
+* Update dependency com.google.apis:google-api-services-cloudresourcemanager to v3-rev20220925-2.0.0 ([#439](https://github.com/googleapis/java-iam/issues/439)) ([85b1d0f](https://github.com/googleapis/java-iam/commit/85b1d0f68950095c3ffd1ecda7eedc82ac5a92b1))
+* Update dependency com.google.cloud:google-iam-policy to v1.6.1 ([#434](https://github.com/googleapis/java-iam/issues/434)) ([b468d86](https://github.com/googleapis/java-iam/commit/b468d86fdeb55b3f463a5c03c61f37f467bfeef6))
+* Update dependency com.google.protobuf:protobuf-java to v3.21.7 ([#463](https://github.com/googleapis/java-iam/issues/463)) ([a58810f](https://github.com/googleapis/java-iam/commit/a58810f3f6fc641b74cb92d358f71f9461ad9664))
+* Update dependency gcp-releasetool to v1.8.8 ([#441](https://github.com/googleapis/java-iam/issues/441)) ([89469a8](https://github.com/googleapis/java-iam/commit/89469a845e62479ab0f34a219486020d398aaf70))
+* Update dependency google-api-core to v2.10.1 ([#446](https://github.com/googleapis/java-iam/issues/446)) ([69dbd0d](https://github.com/googleapis/java-iam/commit/69dbd0d656656943851a9f5b159b4de0f7665a5d))
+* Update dependency google-auth to v2.12.0 ([#447](https://github.com/googleapis/java-iam/issues/447)) ([10fed85](https://github.com/googleapis/java-iam/commit/10fed85610182533b695fe741fe8e158e7b3799a))
+* Update dependency google-cloud-core to v2.3.2 ([#442](https://github.com/googleapis/java-iam/issues/442)) ([709e0b4](https://github.com/googleapis/java-iam/commit/709e0b407610ee5fec6bb38b695504c245f5d003))
+* Update dependency google-cloud-storage to v2.5.0 ([#448](https://github.com/googleapis/java-iam/issues/448)) ([4ef1f8e](https://github.com/googleapis/java-iam/commit/4ef1f8e6f5317ba339b94613a120d540acd90f57))
+* Update dependency google-crc32c to v1.5.0 ([#449](https://github.com/googleapis/java-iam/issues/449)) ([e54b847](https://github.com/googleapis/java-iam/commit/e54b8479589cb2350356c78c2f2a44a841e8f904))
+* Update dependency googleapis-common-protos to v1.56.4 ([#443](https://github.com/googleapis/java-iam/issues/443)) ([d060a5b](https://github.com/googleapis/java-iam/commit/d060a5b90ba189f1118b4ad899c7a0e9ad39bf44))
+* Update dependency importlib-metadata to v4.12.0 ([#450](https://github.com/googleapis/java-iam/issues/450)) ([248b90a](https://github.com/googleapis/java-iam/commit/248b90a6f715d881856a50e55df45b19a695ff32))
+* Update dependency io.grpc:grpc-protobuf to v1.49.2 ([#464](https://github.com/googleapis/java-iam/issues/464)) ([406e890](https://github.com/googleapis/java-iam/commit/406e89048c62e264dcf93ef5c940734e7367a00f))
+* Update dependency io.grpc:grpc-stub to v1.49.2 ([#465](https://github.com/googleapis/java-iam/issues/465)) ([8735303](https://github.com/googleapis/java-iam/commit/8735303fc9eb7b1198ce2a2019e33ad5f63ec1cf))
+* Update dependency jeepney to v0.8.0 ([#451](https://github.com/googleapis/java-iam/issues/451)) ([0721ab8](https://github.com/googleapis/java-iam/commit/0721ab835c3a0588632916e70b2d92ff51824de6))
+* Update dependency jinja2 to v3.1.2 ([#452](https://github.com/googleapis/java-iam/issues/452)) ([514f80c](https://github.com/googleapis/java-iam/commit/514f80c8f051a8bb2f2fbf19d0e130c12b70ee9a))
+* Update dependency markupsafe to v2.1.1 ([#454](https://github.com/googleapis/java-iam/issues/454)) ([d6123a7](https://github.com/googleapis/java-iam/commit/d6123a709b01e1c40ce8423ebd70ed5a6c4ae4a0))
+* Update dependency protobuf to v3.20.2 ([#455](https://github.com/googleapis/java-iam/issues/455)) ([c9a631a](https://github.com/googleapis/java-iam/commit/c9a631ac0ba852fee31ddd458bb40bd78a081b75))
+* Update dependency protobuf to v4 ([#460](https://github.com/googleapis/java-iam/issues/460)) ([7738293](https://github.com/googleapis/java-iam/commit/773829323697e3c5785eb9b7bf7000fd296921b7))
+* Update dependency pyjwt to v2.5.0 ([#461](https://github.com/googleapis/java-iam/issues/461)) ([5f1659f](https://github.com/googleapis/java-iam/commit/5f1659f2cb1a20d9a034e1f6214ec793d2ef908c))
+* Update dependency requests to v2.28.1 ([#456](https://github.com/googleapis/java-iam/issues/456)) ([c390fee](https://github.com/googleapis/java-iam/commit/c390fee02a5545c567d45cc4375a5eb549d9765f))
+* Update dependency typing-extensions to v4.3.0 ([#457](https://github.com/googleapis/java-iam/issues/457)) ([913effd](https://github.com/googleapis/java-iam/commit/913effd62b170e96ebd74456b02692f462cedc40))
+* Update dependency zipp to v3.8.1 ([#458](https://github.com/googleapis/java-iam/issues/458)) ([5afe18a](https://github.com/googleapis/java-iam/commit/5afe18a7c6c0ef89b603455cea5569be71b27173))
+
 ## [1.6.1](https://github.com/googleapis/java-iam/compare/v1.6.0...v1.6.1) (2022-09-21)
 
 
