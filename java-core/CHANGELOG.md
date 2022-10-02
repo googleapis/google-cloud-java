@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.8.20](https://github.com/googleapis/java-core/compare/v2.8.19...v2.8.20) (2022-10-02)
+
+
+### Dependencies
+
+* Update dependency com.google.api:gax-bom to v2.19.2 ([#969](https://github.com/googleapis/java-core/issues/969)) ([1151449](https://github.com/googleapis/java-core/commit/1151449c061ab51c45982444db5f9da9d2ce4fb7))
+* Update dependency com.google.api.grpc:proto-google-common-protos to v2.9.6 ([#967](https://github.com/googleapis/java-core/issues/967)) ([4a7b524](https://github.com/googleapis/java-core/commit/4a7b524fa366484825bedbc0a4f86d4551a6a0e8))
+* Update dependency io.grpc:grpc-bom to v1.49.2 ([#966](https://github.com/googleapis/java-core/issues/966)) ([b7738aa](https://github.com/googleapis/java-core/commit/b7738aa71fb9cf0994e4ad1dae4bae433754cda0))
+
 ## [2.8.19](https://github.com/googleapis/java-core/compare/v2.8.18...v2.8.19) (2022-09-30)
 
 
