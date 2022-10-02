@@ -19,9 +19,6 @@
             "GetPolicy": {
               "methods": ["getPolicy", "getPolicy", "getPolicyCallable"]
             },
-            "ListApplicablePolicies": {
-              "methods": ["listApplicablePolicies", "listApplicablePolicies", "listApplicablePoliciesPagedCallable", "listApplicablePoliciesCallable"]
-            },
             "ListPolicies": {
               "methods": ["listPolicies", "listPolicies", "listPoliciesPagedCallable", "listPoliciesCallable"]
             },

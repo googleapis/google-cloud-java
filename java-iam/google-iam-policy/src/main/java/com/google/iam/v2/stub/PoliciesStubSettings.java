@@ -16,7 +16,6 @@
 
 package com.google.iam.v2.stub;
 
-import static com.google.iam.v2.PoliciesClient.ListApplicablePoliciesPagedResponse;
 import static com.google.iam.v2.PoliciesClient.ListPoliciesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -55,8 +54,6 @@ import com.google.common.collect.Lists;
 import com.google.iam.v2.CreatePolicyRequest;
 import com.google.iam.v2.DeletePolicyRequest;
 import com.google.iam.v2.GetPolicyRequest;
-import com.google.iam.v2.ListApplicablePoliciesRequest;
-import com.google.iam.v2.ListApplicablePoliciesResponse;
 import com.google.iam.v2.ListPoliciesRequest;
 import com.google.iam.v2.ListPoliciesResponse;
 import com.google.iam.v2.Policy;
@@ -120,11 +117,6 @@ public class PoliciesStubSettings extends StubSettings<PoliciesStubSettings> {
   private final UnaryCallSettings<DeletePolicyRequest, Operation> deletePolicySettings;
   private final OperationCallSettings<DeletePolicyRequest, Policy, PolicyOperationMetadata>
       deletePolicyOperationSettings;
-  private final PagedCallSettings<
-          ListApplicablePoliciesRequest,
-          ListApplicablePoliciesResponse,
-          ListApplicablePoliciesPagedResponse>
-      listApplicablePoliciesSettings;
 
   private static final PagedListDescriptor<ListPoliciesRequest, ListPoliciesResponse, Policy>
       LIST_POLICIES_PAGE_STR_DESC =
@@ -162,48 +154,6 @@ public class PoliciesStubSettings extends StubSettings<PoliciesStubSettings> {
             }
           };
 
-  private static final PagedListDescriptor<
-          ListApplicablePoliciesRequest, ListApplicablePoliciesResponse, Policy>
-      LIST_APPLICABLE_POLICIES_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListApplicablePoliciesRequest, ListApplicablePoliciesResponse, Policy>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListApplicablePoliciesRequest injectToken(
-                ListApplicablePoliciesRequest payload, String token) {
-              return ListApplicablePoliciesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListApplicablePoliciesRequest injectPageSize(
-                ListApplicablePoliciesRequest payload, int pageSize) {
-              return ListApplicablePoliciesRequest.newBuilder(payload)
-                  .setPageSize(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListApplicablePoliciesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListApplicablePoliciesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Policy> extractResources(ListApplicablePoliciesResponse payload) {
-              return payload.getPoliciesList() == null
-                  ? ImmutableList.<Policy>of()
-                  : payload.getPoliciesList();
-            }
-          };
-
   private static final PagedListResponseFactory<
           ListPoliciesRequest, ListPoliciesResponse, ListPoliciesPagedResponse>
       LIST_POLICIES_PAGE_STR_FACT =
@@ -218,30 +168,6 @@ public class PoliciesStubSettings extends StubSettings<PoliciesStubSettings> {
               PageContext<ListPoliciesRequest, ListPoliciesResponse, Policy> pageContext =
                   PageContext.create(callable, LIST_POLICIES_PAGE_STR_DESC, request, context);
               return ListPoliciesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListApplicablePoliciesRequest,
-          ListApplicablePoliciesResponse,
-          ListApplicablePoliciesPagedResponse>
-      LIST_APPLICABLE_POLICIES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListApplicablePoliciesRequest,
-              ListApplicablePoliciesResponse,
-              ListApplicablePoliciesPagedResponse>() {
-            @Override
-            public ApiFuture<ListApplicablePoliciesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListApplicablePoliciesRequest, ListApplicablePoliciesResponse>
-                    callable,
-                ListApplicablePoliciesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListApplicablePoliciesResponse> futureResponse) {
-              PageContext<ListApplicablePoliciesRequest, ListApplicablePoliciesResponse, Policy>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_APPLICABLE_POLICIES_PAGE_STR_DESC, request, context);
-              return ListApplicablePoliciesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -287,15 +213,6 @@ public class PoliciesStubSettings extends StubSettings<PoliciesStubSettings> {
   public OperationCallSettings<DeletePolicyRequest, Policy, PolicyOperationMetadata>
       deletePolicyOperationSettings() {
     return deletePolicyOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listApplicablePolicies. */
-  public PagedCallSettings<
-          ListApplicablePoliciesRequest,
-          ListApplicablePoliciesResponse,
-          ListApplicablePoliciesPagedResponse>
-      listApplicablePoliciesSettings() {
-    return listApplicablePoliciesSettings;
   }
 
   public PoliciesStub createStub() throws IOException {
@@ -410,7 +327,6 @@ public class PoliciesStubSettings extends StubSettings<PoliciesStubSettings> {
     updatePolicyOperationSettings = settingsBuilder.updatePolicyOperationSettings().build();
     deletePolicySettings = settingsBuilder.deletePolicySettings().build();
     deletePolicyOperationSettings = settingsBuilder.deletePolicyOperationSettings().build();
-    listApplicablePoliciesSettings = settingsBuilder.listApplicablePoliciesSettings().build();
   }
 
   /** Builder for PoliciesStubSettings. */
@@ -432,11 +348,6 @@ public class PoliciesStubSettings extends StubSettings<PoliciesStubSettings> {
     private final OperationCallSettings.Builder<
             DeletePolicyRequest, Policy, PolicyOperationMetadata>
         deletePolicyOperationSettings;
-    private final PagedCallSettings.Builder<
-            ListApplicablePoliciesRequest,
-            ListApplicablePoliciesResponse,
-            ListApplicablePoliciesPagedResponse>
-        listApplicablePoliciesSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -446,7 +357,6 @@ public class PoliciesStubSettings extends StubSettings<PoliciesStubSettings> {
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -466,8 +376,6 @@ public class PoliciesStubSettings extends StubSettings<PoliciesStubSettings> {
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -486,8 +394,6 @@ public class PoliciesStubSettings extends StubSettings<PoliciesStubSettings> {
       updatePolicyOperationSettings = OperationCallSettings.newBuilder();
       deletePolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deletePolicyOperationSettings = OperationCallSettings.newBuilder();
-      listApplicablePoliciesSettings =
-          PagedCallSettings.newBuilder(LIST_APPLICABLE_POLICIES_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -495,8 +401,7 @@ public class PoliciesStubSettings extends StubSettings<PoliciesStubSettings> {
               getPolicySettings,
               createPolicySettings,
               updatePolicySettings,
-              deletePolicySettings,
-              listApplicablePoliciesSettings);
+              deletePolicySettings);
       initDefaults(this);
     }
 
@@ -511,7 +416,6 @@ public class PoliciesStubSettings extends StubSettings<PoliciesStubSettings> {
       updatePolicyOperationSettings = settings.updatePolicyOperationSettings.toBuilder();
       deletePolicySettings = settings.deletePolicySettings.toBuilder();
       deletePolicyOperationSettings = settings.deletePolicyOperationSettings.toBuilder();
-      listApplicablePoliciesSettings = settings.listApplicablePoliciesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -519,8 +423,7 @@ public class PoliciesStubSettings extends StubSettings<PoliciesStubSettings> {
               getPolicySettings,
               createPolicySettings,
               updatePolicySettings,
-              deletePolicySettings,
-              listApplicablePoliciesSettings);
+              deletePolicySettings);
     }
 
     private static Builder createDefault() {
@@ -574,11 +477,6 @@ public class PoliciesStubSettings extends StubSettings<PoliciesStubSettings> {
           .deletePolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
-
-      builder
-          .listApplicablePoliciesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .createPolicyOperationSettings()
@@ -719,15 +617,6 @@ public class PoliciesStubSettings extends StubSettings<PoliciesStubSettings> {
     public OperationCallSettings.Builder<DeletePolicyRequest, Policy, PolicyOperationMetadata>
         deletePolicyOperationSettings() {
       return deletePolicyOperationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to listApplicablePolicies. */
-    public PagedCallSettings.Builder<
-            ListApplicablePoliciesRequest,
-            ListApplicablePoliciesResponse,
-            ListApplicablePoliciesPagedResponse>
-        listApplicablePoliciesSettings() {
-      return listApplicablePoliciesSettings;
     }
 
     @Override

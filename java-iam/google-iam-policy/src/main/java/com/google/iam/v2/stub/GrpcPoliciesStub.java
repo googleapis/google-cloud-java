@@ -16,7 +16,6 @@
 
 package com.google.iam.v2.stub;
 
-import static com.google.iam.v2.PoliciesClient.ListApplicablePoliciesPagedResponse;
 import static com.google.iam.v2.PoliciesClient.ListPoliciesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -30,8 +29,6 @@ import com.google.common.collect.ImmutableMap;
 import com.google.iam.v2.CreatePolicyRequest;
 import com.google.iam.v2.DeletePolicyRequest;
 import com.google.iam.v2.GetPolicyRequest;
-import com.google.iam.v2.ListApplicablePoliciesRequest;
-import com.google.iam.v2.ListApplicablePoliciesResponse;
 import com.google.iam.v2.ListPoliciesRequest;
 import com.google.iam.v2.ListPoliciesResponse;
 import com.google.iam.v2.Policy;
@@ -98,19 +95,6 @@ public class GrpcPoliciesStub extends PoliciesStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<
-          ListApplicablePoliciesRequest, ListApplicablePoliciesResponse>
-      listApplicablePoliciesMethodDescriptor =
-          MethodDescriptor
-              .<ListApplicablePoliciesRequest, ListApplicablePoliciesResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.iam.v2.Policies/ListApplicablePolicies")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ListApplicablePoliciesRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListApplicablePoliciesResponse.getDefaultInstance()))
-              .build();
-
   private final UnaryCallable<ListPoliciesRequest, ListPoliciesResponse> listPoliciesCallable;
   private final UnaryCallable<ListPoliciesRequest, ListPoliciesPagedResponse>
       listPoliciesPagedCallable;
@@ -124,10 +108,6 @@ public class GrpcPoliciesStub extends PoliciesStub {
   private final UnaryCallable<DeletePolicyRequest, Operation> deletePolicyCallable;
   private final OperationCallable<DeletePolicyRequest, Policy, PolicyOperationMetadata>
       deletePolicyOperationCallable;
-  private final UnaryCallable<ListApplicablePoliciesRequest, ListApplicablePoliciesResponse>
-      listApplicablePoliciesCallable;
-  private final UnaryCallable<ListApplicablePoliciesRequest, ListApplicablePoliciesPagedResponse>
-      listApplicablePoliciesPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -218,18 +198,6 @@ public class GrpcPoliciesStub extends PoliciesStub {
                   return params.build();
                 })
             .build();
-    GrpcCallSettings<ListApplicablePoliciesRequest, ListApplicablePoliciesResponse>
-        listApplicablePoliciesTransportSettings =
-            GrpcCallSettings
-                .<ListApplicablePoliciesRequest, ListApplicablePoliciesResponse>newBuilder()
-                .setMethodDescriptor(listApplicablePoliciesMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("attachment_point", String.valueOf(request.getAttachmentPoint()));
-                      return params.build();
-                    })
-                .build();
 
     this.listPoliciesCallable =
         callableFactory.createUnaryCallable(
@@ -267,16 +235,6 @@ public class GrpcPoliciesStub extends PoliciesStub {
             settings.deletePolicyOperationSettings(),
             clientContext,
             operationsStub);
-    this.listApplicablePoliciesCallable =
-        callableFactory.createUnaryCallable(
-            listApplicablePoliciesTransportSettings,
-            settings.listApplicablePoliciesSettings(),
-            clientContext);
-    this.listApplicablePoliciesPagedCallable =
-        callableFactory.createPagedCallable(
-            listApplicablePoliciesTransportSettings,
-            settings.listApplicablePoliciesSettings(),
-            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -332,18 +290,6 @@ public class GrpcPoliciesStub extends PoliciesStub {
   public OperationCallable<DeletePolicyRequest, Policy, PolicyOperationMetadata>
       deletePolicyOperationCallable() {
     return deletePolicyOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListApplicablePoliciesRequest, ListApplicablePoliciesResponse>
-      listApplicablePoliciesCallable() {
-    return listApplicablePoliciesCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListApplicablePoliciesRequest, ListApplicablePoliciesPagedResponse>
-      listApplicablePoliciesPagedCallable() {
-    return listApplicablePoliciesPagedCallable;
   }
 
   @Override

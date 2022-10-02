@@ -64,14 +64,6 @@ public final class PolicyProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_iam_v2_DeletePolicyRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_iam_v2_ListApplicablePoliciesRequest_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_iam_v2_ListApplicablePoliciesRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_iam_v2_ListApplicablePoliciesResponse_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_iam_v2_ListApplicablePoliciesResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_iam_v2_PolicyOperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_iam_v2_PolicyOperationMetadata_fieldAccessorTable;
@@ -114,44 +106,34 @@ public final class PolicyProto {
           + "id\030\003 \001(\t\"A\n\023UpdatePolicyRequest\022*\n\006polic"
           + "y\030\001 \001(\0132\025.google.iam.v2.PolicyB\003\340A\002\";\n\023D"
           + "eletePolicyRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\021\n"
-          + "\004etag\030\002 \001(\tB\003\340A\001\"u\n\035ListApplicablePolici"
-          + "esRequest\022\035\n\020attachment_point\030\001 \001(\tB\003\340A\002"
-          + "\022\016\n\006filter\030\002 \001(\t\022\022\n\npage_token\030\003 \001(\t\022\021\n\t"
-          + "page_size\030\004 \001(\005\"x\n\036ListApplicablePolicie"
-          + "sResponse\022\'\n\010policies\030\001 \003(\0132\025.google.iam"
-          + ".v2.Policy\022\024\n\014inaccessible\030\002 \003(\t\022\027\n\017next"
-          + "_page_token\030\003 \001(\t\"J\n\027PolicyOperationMeta"
-          + "data\022/\n\013create_time\030\001 \001(\0132\032.google.proto"
-          + "buf.Timestamp2\224\010\n\010Policies\022\203\001\n\014ListPolic"
-          + "ies\022\".google.iam.v2.ListPoliciesRequest\032"
-          + "#.google.iam.v2.ListPoliciesResponse\"*\202\323"
-          + "\344\223\002\033\022\031/v2/{parent=policies/*/*}\332A\006parent"
-          + "\022m\n\tGetPolicy\022\037.google.iam.v2.GetPolicyR"
-          + "equest\032\025.google.iam.v2.Policy\"(\202\323\344\223\002\033\022\031/"
-          + "v2/{name=policies/*/*/*}\332A\004name\022\272\001\n\014Crea"
-          + "tePolicy\022\".google.iam.v2.CreatePolicyReq"
-          + "uest\032\035.google.longrunning.Operation\"g\202\323\344"
-          + "\223\002#\"\031/v2/{parent=policies/*/*}:\006policy\332A"
-          + "\027parent,policy,policy_id\312A!\n\006Policy\022\027Pol"
-          + "icyOperationMetadata\022\247\001\n\014UpdatePolicy\022\"."
-          + "google.iam.v2.UpdatePolicyRequest\032\035.goog"
-          + "le.longrunning.Operation\"T\202\323\344\223\002*\032 /v2/{p"
-          + "olicy.name=policies/*/*/*}:\006policy\312A!\n\006P"
-          + "olicy\022\027PolicyOperationMetadata\022\237\001\n\014Delet"
-          + "ePolicy\022\".google.iam.v2.DeletePolicyRequ"
-          + "est\032\035.google.longrunning.Operation\"L\202\323\344\223"
-          + "\002\033*\031/v2/{name=policies/*/*/*}\332A\004name\312A!\n"
-          + "\006Policy\022\027PolicyOperationMetadata\022\301\001\n\026Lis"
-          + "tApplicablePolicies\022,.google.iam.v2.List"
-          + "ApplicablePoliciesRequest\032-.google.iam.v"
-          + "2.ListApplicablePoliciesResponse\"J\202\323\344\223\0021"
-          + "\022//v2/{attachment_point=*}:listApplicabl"
-          + "ePolicies\332A\020attachment_point\032F\312A\022iam.goo"
-          + "gleapis.com\322A.https://www.googleapis.com"
-          + "/auth/cloud-platformB\200\001\n\021com.google.iam."
-          + "v2B\013PolicyProtoP\001Z0google.golang.org/gen"
-          + "proto/googleapis/iam/v2;iam\252\002\023Google.Clo"
-          + "ud.Iam.V2\312\002\023Google\\Cloud\\Iam\\V2b\006proto3"
+          + "\004etag\030\002 \001(\tB\003\340A\001\"J\n\027PolicyOperationMetad"
+          + "ata\022/\n\013create_time\030\001 \001(\0132\032.google.protob"
+          + "uf.Timestamp2\320\006\n\010Policies\022\203\001\n\014ListPolici"
+          + "es\022\".google.iam.v2.ListPoliciesRequest\032#"
+          + ".google.iam.v2.ListPoliciesResponse\"*\202\323\344"
+          + "\223\002\033\022\031/v2/{parent=policies/*/*}\332A\006parent\022"
+          + "m\n\tGetPolicy\022\037.google.iam.v2.GetPolicyRe"
+          + "quest\032\025.google.iam.v2.Policy\"(\202\323\344\223\002\033\022\031/v"
+          + "2/{name=policies/*/*/*}\332A\004name\022\272\001\n\014Creat"
+          + "ePolicy\022\".google.iam.v2.CreatePolicyRequ"
+          + "est\032\035.google.longrunning.Operation\"g\202\323\344\223"
+          + "\002#\"\031/v2/{parent=policies/*/*}:\006policy\332A\027"
+          + "parent,policy,policy_id\312A!\n\006Policy\022\027Poli"
+          + "cyOperationMetadata\022\247\001\n\014UpdatePolicy\022\".g"
+          + "oogle.iam.v2.UpdatePolicyRequest\032\035.googl"
+          + "e.longrunning.Operation\"T\202\323\344\223\002*\032 /v2/{po"
+          + "licy.name=policies/*/*/*}:\006policy\312A!\n\006Po"
+          + "licy\022\027PolicyOperationMetadata\022\237\001\n\014Delete"
+          + "Policy\022\".google.iam.v2.DeletePolicyReque"
+          + "st\032\035.google.longrunning.Operation\"L\202\323\344\223\002"
+          + "\033*\031/v2/{name=policies/*/*/*}\332A\004name\312A!\n\006"
+          + "Policy\022\027PolicyOperationMetadata\032F\312A\022iam."
+          + "googleapis.com\322A.https://www.googleapis."
+          + "com/auth/cloud-platformB\200\001\n\021com.google.i"
+          + "am.v2B\013PolicyProtoP\001Z0google.golang.org/"
+          + "genproto/googleapis/iam/v2;iam\252\002\023Google."
+          + "Cloud.Iam.V2\312\002\023Google\\Cloud\\Iam\\V2b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -244,24 +226,8 @@ public final class PolicyProto {
             new java.lang.String[] {
               "Name", "Etag",
             });
-    internal_static_google_iam_v2_ListApplicablePoliciesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(8);
-    internal_static_google_iam_v2_ListApplicablePoliciesRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_iam_v2_ListApplicablePoliciesRequest_descriptor,
-            new java.lang.String[] {
-              "AttachmentPoint", "Filter", "PageToken", "PageSize",
-            });
-    internal_static_google_iam_v2_ListApplicablePoliciesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(9);
-    internal_static_google_iam_v2_ListApplicablePoliciesResponse_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_iam_v2_ListApplicablePoliciesResponse_descriptor,
-            new java.lang.String[] {
-              "Policies", "Inaccessible", "NextPageToken",
-            });
     internal_static_google_iam_v2_PolicyOperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_iam_v2_PolicyOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_iam_v2_PolicyOperationMetadata_descriptor,

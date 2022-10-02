@@ -16,7 +16,6 @@
 
 package com.google.iam.v2;
 
-import static com.google.iam.v2.PoliciesClient.ListApplicablePoliciesPagedResponse;
 import static com.google.iam.v2.PoliciesClient.ListPoliciesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -395,57 +394,6 @@ public class PoliciesClientHttpJsonTest {
       client.deletePolicyAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
-    }
-  }
-
-  @Test
-  public void listApplicablePoliciesTest() throws Exception {
-    Policy responsesElement = Policy.newBuilder().build();
-    ListApplicablePoliciesResponse expectedResponse =
-        ListApplicablePoliciesResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllPolicies(Arrays.asList(responsesElement))
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    String attachmentPoint = "attachmentPoint-4653";
-
-    ListApplicablePoliciesPagedResponse pagedListResponse =
-        client.listApplicablePolicies(attachmentPoint);
-
-    List<Policy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getPoliciesList().get(0), resources.get(0));
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void listApplicablePoliciesExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String attachmentPoint = "attachmentPoint-4653";
-      client.listApplicablePolicies(attachmentPoint);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
     }
   }
 }

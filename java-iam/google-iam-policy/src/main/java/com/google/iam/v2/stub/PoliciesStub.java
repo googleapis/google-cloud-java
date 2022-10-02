@@ -16,7 +16,6 @@
 
 package com.google.iam.v2.stub;
 
-import static com.google.iam.v2.PoliciesClient.ListApplicablePoliciesPagedResponse;
 import static com.google.iam.v2.PoliciesClient.ListPoliciesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -25,8 +24,6 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.iam.v2.CreatePolicyRequest;
 import com.google.iam.v2.DeletePolicyRequest;
 import com.google.iam.v2.GetPolicyRequest;
-import com.google.iam.v2.ListApplicablePoliciesRequest;
-import com.google.iam.v2.ListApplicablePoliciesResponse;
 import com.google.iam.v2.ListPoliciesRequest;
 import com.google.iam.v2.ListPoliciesResponse;
 import com.google.iam.v2.Policy;
@@ -90,17 +87,6 @@ public abstract class PoliciesStub implements BackgroundResource {
 
   public UnaryCallable<DeletePolicyRequest, Operation> deletePolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: deletePolicyCallable()");
-  }
-
-  public UnaryCallable<ListApplicablePoliciesRequest, ListApplicablePoliciesPagedResponse>
-      listApplicablePoliciesPagedCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: listApplicablePoliciesPagedCallable()");
-  }
-
-  public UnaryCallable<ListApplicablePoliciesRequest, ListApplicablePoliciesResponse>
-      listApplicablePoliciesCallable() {
-    throw new UnsupportedOperationException("Not implemented: listApplicablePoliciesCallable()");
   }
 
   @Override

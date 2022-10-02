@@ -68,6 +68,16 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
+        <groupId>com.google.protobuf</groupId>
+        <artifactId>protobuf-bom</artifactId>
+        <version>3.21.7</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <!-- This should not depend on this, because the shared dependencies BOM
+          includes proto-google-iam-v1 from this repository. Avoid circular
+          dependencies -->
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
         <version>3.0.3</version>

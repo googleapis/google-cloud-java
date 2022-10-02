@@ -64,9 +64,9 @@ public interface DeletePolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The expected `etag` of the policy to delete. If the value does
-   * not match the value that is stored in IAM, the request fails with a `409`
-   * error code and `ABORTED` status.
+   * Optional. The expected `etag` of the policy to delete. If the value does not match
+   * the value that is stored in IAM, the request fails with a `409` error code
+   * and `ABORTED` status.
    * If you omit this field, the policy is deleted regardless of its current
    * `etag`.
    * </pre>
@@ -80,9 +80,9 @@ public interface DeletePolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The expected `etag` of the policy to delete. If the value does
-   * not match the value that is stored in IAM, the request fails with a `409`
-   * error code and `ABORTED` status.
+   * Optional. The expected `etag` of the policy to delete. If the value does not match
+   * the value that is stored in IAM, the request fails with a `409` error code
+   * and `ABORTED` status.
    * If you omit this field, the policy is deleted regardless of its current
    * `etag`.
    * </pre>

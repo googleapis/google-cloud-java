@@ -68,8 +68,8 @@ public interface PolicyOrBuilder
    *
    *
    * <pre>
-   * Immutable. The globally unique ID of the `Policy`. Assigned automatically
-   * when the `Policy` is created.
+   * Immutable. The globally unique ID of the `Policy`. Assigned automatically when the
+   * `Policy` is created.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -81,8 +81,8 @@ public interface PolicyOrBuilder
    *
    *
    * <pre>
-   * Immutable. The globally unique ID of the `Policy`. Assigned automatically
-   * when the `Policy` is created.
+   * Immutable. The globally unique ID of the `Policy`. Assigned automatically when the
+   * `Policy` is created.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -95,8 +95,7 @@ public interface PolicyOrBuilder
    *
    *
    * <pre>
-   * Output only. The kind of the `Policy`. Always contains the value
-   * `DenyPolicy`.
+   * Output only. The kind of the `Policy`. Always contains the value `DenyPolicy`.
    * </pre>
    *
    * <code>string kind = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -108,8 +107,7 @@ public interface PolicyOrBuilder
    *
    *
    * <pre>
-   * Output only. The kind of the `Policy`. Always contains the value
-   * `DenyPolicy`.
+   * Output only. The kind of the `Policy`. Always contains the value `DenyPolicy`.
    * </pre>
    *
    * <code>string kind = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -322,8 +320,7 @@ public interface PolicyOrBuilder
    *
    *
    * <pre>
-   * Output only. The time when the `Policy` was deleted. Empty if the policy is
-   * not deleted.
+   * Output only. The time when the `Policy` was deleted. Empty if the policy is not deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -336,8 +333,7 @@ public interface PolicyOrBuilder
    *
    *
    * <pre>
-   * Output only. The time when the `Policy` was deleted. Empty if the policy is
-   * not deleted.
+   * Output only. The time when the `Policy` was deleted. Empty if the policy is not deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -350,8 +346,7 @@ public interface PolicyOrBuilder
    *
    *
    * <pre>
-   * Output only. The time when the `Policy` was deleted. Empty if the policy is
-   * not deleted.
+   * Output only. The time when the `Policy` was deleted. Empty if the policy is not deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -419,8 +414,8 @@ public interface PolicyOrBuilder
    *
    *
    * <pre>
-   * Immutable. Specifies that this policy is managed by an authority and can
-   * only be modified by that authority. Usage is restricted.
+   * Immutable. Specifies that this policy is managed by an authority and can only be
+   * modified by that authority. Usage is restricted.
    * </pre>
    *
    * <code>string managing_authority = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -432,8 +427,8 @@ public interface PolicyOrBuilder
    *
    *
    * <pre>
-   * Immutable. Specifies that this policy is managed by an authority and can
-   * only be modified by that authority. Usage is restricted.
+   * Immutable. Specifies that this policy is managed by an authority and can only be
+   * modified by that authority. Usage is restricted.
    * </pre>
    *
    * <code>string managing_authority = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>

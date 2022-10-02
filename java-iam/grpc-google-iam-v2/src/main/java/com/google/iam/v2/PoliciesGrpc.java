@@ -234,54 +234,6 @@ public final class PoliciesGrpc {
     return getDeletePolicyMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.iam.v2.ListApplicablePoliciesRequest,
-          com.google.iam.v2.ListApplicablePoliciesResponse>
-      getListApplicablePoliciesMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListApplicablePolicies",
-      requestType = com.google.iam.v2.ListApplicablePoliciesRequest.class,
-      responseType = com.google.iam.v2.ListApplicablePoliciesResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.iam.v2.ListApplicablePoliciesRequest,
-          com.google.iam.v2.ListApplicablePoliciesResponse>
-      getListApplicablePoliciesMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.iam.v2.ListApplicablePoliciesRequest,
-            com.google.iam.v2.ListApplicablePoliciesResponse>
-        getListApplicablePoliciesMethod;
-    if ((getListApplicablePoliciesMethod = PoliciesGrpc.getListApplicablePoliciesMethod) == null) {
-      synchronized (PoliciesGrpc.class) {
-        if ((getListApplicablePoliciesMethod = PoliciesGrpc.getListApplicablePoliciesMethod)
-            == null) {
-          PoliciesGrpc.getListApplicablePoliciesMethod =
-              getListApplicablePoliciesMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.iam.v2.ListApplicablePoliciesRequest,
-                          com.google.iam.v2.ListApplicablePoliciesResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "ListApplicablePolicies"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.iam.v2.ListApplicablePoliciesRequest.getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.iam.v2.ListApplicablePoliciesResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new PoliciesMethodDescriptorSupplier("ListApplicablePolicies"))
-                      .build();
-        }
-      }
-    }
-    return getListApplicablePoliciesMethod;
-  }
-
   /** Creates a new async stub that supports all call types for the service */
   public static PoliciesStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<PoliciesStub> factory =
@@ -382,8 +334,7 @@ public final class PoliciesGrpc {
      * Updates the specified policy.
      * You can update only the rules and the display name for the policy.
      * To update a policy, you should use a read-modify-write loop:
-     * 1. Use [GetPolicy][google.iam.v2.Policies.GetPolicy] to read the current
-     * version of the policy.
+     * 1. Use [GetPolicy][google.iam.v2.Policies.GetPolicy] to read the current version of the policy.
      * 2. Modify the policy as needed.
      * 3. Use `UpdatePolicy` to write the updated policy.
      * This pattern helps prevent conflicts between concurrent updates.
@@ -408,29 +359,6 @@ public final class PoliciesGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeletePolicyMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves all the policies that are attached to the specified resource,
-     * or anywhere in the ancestry of the resource. For example, for a project
-     * this endpoint would return all the `denyPolicy` kind policies attached to
-     * the project, its parent folder (if any), and its parent organization (if
-     * any).
-     * The endpoint requires the same permissions that it would take to call
-     * `ListPolicies` or `GetPolicy`.
-     * The main reason to use this endpoint is as a policy admin to debug access
-     * issues for a resource.
-     * </pre>
-     */
-    public void listApplicablePolicies(
-        com.google.iam.v2.ListApplicablePoliciesRequest request,
-        io.grpc.stub.StreamObserver<com.google.iam.v2.ListApplicablePoliciesResponse>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getListApplicablePoliciesMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -465,13 +393,6 @@ public final class PoliciesGrpc {
                   new MethodHandlers<
                       com.google.iam.v2.DeletePolicyRequest, com.google.longrunning.Operation>(
                       this, METHODID_DELETE_POLICY)))
-          .addMethod(
-              getListApplicablePoliciesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v2.ListApplicablePoliciesRequest,
-                      com.google.iam.v2.ListApplicablePoliciesResponse>(
-                      this, METHODID_LIST_APPLICABLE_POLICIES)))
           .build();
     }
   }
@@ -549,8 +470,7 @@ public final class PoliciesGrpc {
      * Updates the specified policy.
      * You can update only the rules and the display name for the policy.
      * To update a policy, you should use a read-modify-write loop:
-     * 1. Use [GetPolicy][google.iam.v2.Policies.GetPolicy] to read the current
-     * version of the policy.
+     * 1. Use [GetPolicy][google.iam.v2.Policies.GetPolicy] to read the current version of the policy.
      * 2. Modify the policy as needed.
      * 3. Use `UpdatePolicy` to write the updated policy.
      * This pattern helps prevent conflicts between concurrent updates.
@@ -577,31 +497,6 @@ public final class PoliciesGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeletePolicyMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves all the policies that are attached to the specified resource,
-     * or anywhere in the ancestry of the resource. For example, for a project
-     * this endpoint would return all the `denyPolicy` kind policies attached to
-     * the project, its parent folder (if any), and its parent organization (if
-     * any).
-     * The endpoint requires the same permissions that it would take to call
-     * `ListPolicies` or `GetPolicy`.
-     * The main reason to use this endpoint is as a policy admin to debug access
-     * issues for a resource.
-     * </pre>
-     */
-    public void listApplicablePolicies(
-        com.google.iam.v2.ListApplicablePoliciesRequest request,
-        io.grpc.stub.StreamObserver<com.google.iam.v2.ListApplicablePoliciesResponse>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListApplicablePoliciesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -673,8 +568,7 @@ public final class PoliciesGrpc {
      * Updates the specified policy.
      * You can update only the rules and the display name for the policy.
      * To update a policy, you should use a read-modify-write loop:
-     * 1. Use [GetPolicy][google.iam.v2.Policies.GetPolicy] to read the current
-     * version of the policy.
+     * 1. Use [GetPolicy][google.iam.v2.Policies.GetPolicy] to read the current version of the policy.
      * 2. Modify the policy as needed.
      * 3. Use `UpdatePolicy` to write the updated policy.
      * This pattern helps prevent conflicts between concurrent updates.
@@ -697,27 +591,6 @@ public final class PoliciesGrpc {
         com.google.iam.v2.DeletePolicyRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeletePolicyMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves all the policies that are attached to the specified resource,
-     * or anywhere in the ancestry of the resource. For example, for a project
-     * this endpoint would return all the `denyPolicy` kind policies attached to
-     * the project, its parent folder (if any), and its parent organization (if
-     * any).
-     * The endpoint requires the same permissions that it would take to call
-     * `ListPolicies` or `GetPolicy`.
-     * The main reason to use this endpoint is as a policy admin to debug access
-     * issues for a resource.
-     * </pre>
-     */
-    public com.google.iam.v2.ListApplicablePoliciesResponse listApplicablePolicies(
-        com.google.iam.v2.ListApplicablePoliciesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListApplicablePoliciesMethod(), getCallOptions(), request);
     }
   }
 
@@ -789,8 +662,7 @@ public final class PoliciesGrpc {
      * Updates the specified policy.
      * You can update only the rules and the display name for the policy.
      * To update a policy, you should use a read-modify-write loop:
-     * 1. Use [GetPolicy][google.iam.v2.Policies.GetPolicy] to read the current
-     * version of the policy.
+     * 1. Use [GetPolicy][google.iam.v2.Policies.GetPolicy] to read the current version of the policy.
      * 2. Modify the policy as needed.
      * 3. Use `UpdatePolicy` to write the updated policy.
      * This pattern helps prevent conflicts between concurrent updates.
@@ -814,28 +686,6 @@ public final class PoliciesGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeletePolicyMethod(), getCallOptions()), request);
     }
-
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves all the policies that are attached to the specified resource,
-     * or anywhere in the ancestry of the resource. For example, for a project
-     * this endpoint would return all the `denyPolicy` kind policies attached to
-     * the project, its parent folder (if any), and its parent organization (if
-     * any).
-     * The endpoint requires the same permissions that it would take to call
-     * `ListPolicies` or `GetPolicy`.
-     * The main reason to use this endpoint is as a policy admin to debug access
-     * issues for a resource.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.iam.v2.ListApplicablePoliciesResponse>
-        listApplicablePolicies(com.google.iam.v2.ListApplicablePoliciesRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListApplicablePoliciesMethod(), getCallOptions()), request);
-    }
   }
 
   private static final int METHODID_LIST_POLICIES = 0;
@@ -843,7 +693,6 @@ public final class PoliciesGrpc {
   private static final int METHODID_CREATE_POLICY = 2;
   private static final int METHODID_UPDATE_POLICY = 3;
   private static final int METHODID_DELETE_POLICY = 4;
-  private static final int METHODID_LIST_APPLICABLE_POLICIES = 5;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -887,12 +736,6 @@ public final class PoliciesGrpc {
           serviceImpl.deletePolicy(
               (com.google.iam.v2.DeletePolicyRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
-          break;
-        case METHODID_LIST_APPLICABLE_POLICIES:
-          serviceImpl.listApplicablePolicies(
-              (com.google.iam.v2.ListApplicablePoliciesRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.iam.v2.ListApplicablePoliciesResponse>)
-                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -961,7 +804,6 @@ public final class PoliciesGrpc {
                       .addMethod(getCreatePolicyMethod())
                       .addMethod(getUpdatePolicyMethod())
                       .addMethod(getDeletePolicyMethod())
-                      .addMethod(getListApplicablePoliciesMethod())
                       .build();
         }
       }

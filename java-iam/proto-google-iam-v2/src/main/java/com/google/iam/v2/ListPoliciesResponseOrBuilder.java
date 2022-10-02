@@ -78,8 +78,7 @@ public interface ListPoliciesResponseOrBuilder
    *
    *
    * <pre>
-   * A page token that you can use in a
-   * [ListPoliciesRequest][google.iam.v2.ListPoliciesRequest] to retrieve the
+   * A page token that you can use in a [ListPoliciesRequest][google.iam.v2.ListPoliciesRequest] to retrieve the
    * next page. If this field is omitted, there are no additional pages.
    * </pre>
    *
@@ -92,8 +91,7 @@ public interface ListPoliciesResponseOrBuilder
    *
    *
    * <pre>
-   * A page token that you can use in a
-   * [ListPoliciesRequest][google.iam.v2.ListPoliciesRequest] to retrieve the
+   * A page token that you can use in a [ListPoliciesRequest][google.iam.v2.ListPoliciesRequest] to retrieve the
    * next page. If this field is omitted, there are no additional pages.
    * </pre>
    *

@@ -16,7 +16,6 @@
 
 package com.google.iam.v2;
 
-import static com.google.iam.v2.PoliciesClient.ListApplicablePoliciesPagedResponse;
 import static com.google.iam.v2.PoliciesClient.ListPoliciesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -351,52 +350,6 @@ public class PoliciesClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  public void listApplicablePoliciesTest() throws Exception {
-    Policy responsesElement = Policy.newBuilder().build();
-    ListApplicablePoliciesResponse expectedResponse =
-        ListApplicablePoliciesResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllPolicies(Arrays.asList(responsesElement))
-            .build();
-    mockPolicies.addResponse(expectedResponse);
-
-    String attachmentPoint = "attachmentPoint-686994899";
-
-    ListApplicablePoliciesPagedResponse pagedListResponse =
-        client.listApplicablePolicies(attachmentPoint);
-
-    List<Policy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getPoliciesList().get(0), resources.get(0));
-
-    List<AbstractMessage> actualRequests = mockPolicies.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ListApplicablePoliciesRequest actualRequest =
-        ((ListApplicablePoliciesRequest) actualRequests.get(0));
-
-    Assert.assertEquals(attachmentPoint, actualRequest.getAttachmentPoint());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void listApplicablePoliciesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockPolicies.addException(exception);
-
-    try {
-      String attachmentPoint = "attachmentPoint-686994899";
-      client.listApplicablePolicies(attachmentPoint);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
     }
   }
 }

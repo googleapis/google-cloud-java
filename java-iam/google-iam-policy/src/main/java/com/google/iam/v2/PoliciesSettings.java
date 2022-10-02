@@ -16,7 +16,6 @@
 
 package com.google.iam.v2;
 
-import static com.google.iam.v2.PoliciesClient.ListApplicablePoliciesPagedResponse;
 import static com.google.iam.v2.PoliciesClient.ListPoliciesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -116,15 +115,6 @@ public class PoliciesSettings extends ClientSettings<PoliciesSettings> {
   public OperationCallSettings<DeletePolicyRequest, Policy, PolicyOperationMetadata>
       deletePolicyOperationSettings() {
     return ((PoliciesStubSettings) getStubSettings()).deletePolicyOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to listApplicablePolicies. */
-  public PagedCallSettings<
-          ListApplicablePoliciesRequest,
-          ListApplicablePoliciesResponse,
-          ListApplicablePoliciesPagedResponse>
-      listApplicablePoliciesSettings() {
-    return ((PoliciesStubSettings) getStubSettings()).listApplicablePoliciesSettings();
   }
 
   public static final PoliciesSettings create(PoliciesStubSettings stub) throws IOException {
@@ -284,15 +274,6 @@ public class PoliciesSettings extends ClientSettings<PoliciesSettings> {
     public OperationCallSettings.Builder<DeletePolicyRequest, Policy, PolicyOperationMetadata>
         deletePolicyOperationSettings() {
       return getStubSettingsBuilder().deletePolicyOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to listApplicablePolicies. */
-    public PagedCallSettings.Builder<
-            ListApplicablePoliciesRequest,
-            ListApplicablePoliciesResponse,
-            ListApplicablePoliciesPagedResponse>
-        listApplicablePoliciesSettings() {
-      return getStubSettingsBuilder().listApplicablePoliciesSettings();
     }
 
     @Override
