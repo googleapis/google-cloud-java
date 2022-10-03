@@ -154,6 +154,7 @@
     <module>java-workflows</module>
   </modules>
 
+  
   <build>
     <plugins>
       <!-- jacoco code coverage -->
