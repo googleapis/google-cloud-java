@@ -1,5 +1,33 @@
 # Changelog
 
+## [2.4.7](https://github.com/googleapis/java-containeranalysis/compare/v2.4.6...v2.4.7) (2022-09-20)
+
+
+### Dependencies
+
+* Update dependency io.grafeas:grafeas to v2.4.5 ([#940](https://github.com/googleapis/java-containeranalysis/issues/940)) ([bcf5bf5](https://github.com/googleapis/java-containeranalysis/commit/bcf5bf58416e6a83747d126b37f0d9997191bc4d))
+
+## [2.4.6](https://github.com/googleapis/java-containeranalysis/compare/v2.4.5...v2.4.6) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#936](https://github.com/googleapis/java-containeranalysis/issues/936)) ([0c4a48b](https://github.com/googleapis/java-containeranalysis/commit/0c4a48b33fca9123742dca86736fa811544103f5))
+
+## [2.4.5](https://github.com/googleapis/java-containeranalysis/compare/v2.4.4...v2.4.5) (2022-09-10)
+
+
+### Dependencies
+
+* Update dependency io.grafeas:grafeas to v2.4.4 ([#930](https://github.com/googleapis/java-containeranalysis/issues/930)) ([81e44ce](https://github.com/googleapis/java-containeranalysis/commit/81e44ceab03cdda9135885ed63c44b6c343eb0e8))
+
+## [2.4.4](https://github.com/googleapis/java-containeranalysis/compare/v2.4.3...v2.4.4) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#927](https://github.com/googleapis/java-containeranalysis/issues/927)) ([a01ef4a](https://github.com/googleapis/java-containeranalysis/commit/a01ef4ae09bde48652daa78fb4af0e57836fd394))
+
 ## [2.4.3](https://github.com/googleapis/java-containeranalysis/compare/v2.4.2...v2.4.3) (2022-08-03)
 
 

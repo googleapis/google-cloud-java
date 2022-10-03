@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.6.1](https://github.com/googleapis/java-bigquerymigration/compare/v0.6.0...v0.6.1) (2022-09-27)
+
+
+### Dependencies
+
+* Update dependency protobuf to v4 ([#167](https://github.com/googleapis/java-bigquerymigration/issues/167)) ([f98be05](https://github.com/googleapis/java-bigquerymigration/commit/f98be05c762ad185dc26c0a411a670e00b206856))
+
+## [0.6.0](https://github.com/googleapis/java-bigquerymigration/compare/v0.5.0...v0.6.0) (2022-09-15)
+
+
+### Features
+
+* Add MySQL dialect to bigquerymigration v2 client library ([#154](https://github.com/googleapis/java-bigquerymigration/issues/154)) ([e7d9c5f](https://github.com/googleapis/java-bigquerymigration/commit/e7d9c5f1a4ebc3929456349a34a6bf5ecebc39ab))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#160](https://github.com/googleapis/java-bigquerymigration/issues/160)) ([eed9ffb](https://github.com/googleapis/java-bigquerymigration/commit/eed9ffbbf56a982d97bb38a1fec373fffd3b906f))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#162](https://github.com/googleapis/java-bigquerymigration/issues/162)) ([9e8c0c6](https://github.com/googleapis/java-bigquerymigration/commit/9e8c0c63282761fd857b85409af798aa39d23981))
+
 ## [0.5.0](https://github.com/googleapis/java-bigquerymigration/compare/v0.4.1...v0.5.0) (2022-08-02)
 
 

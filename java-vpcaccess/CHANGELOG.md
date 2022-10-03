@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.4.1](https://github.com/googleapis/java-vpcaccess/compare/v2.4.0...v2.4.1) (2022-09-27)
+
+
+### Dependencies
+
+* Update dependency charset-normalizer to v2.1.1 ([#244](https://github.com/googleapis/java-vpcaccess/issues/244)) ([64948e1](https://github.com/googleapis/java-vpcaccess/commit/64948e1d672babf959edb4c4c3fa452bf42d0be2))
+* Update dependency gcp-releasetool to v1.8.8 ([#242](https://github.com/googleapis/java-vpcaccess/issues/242)) ([b9d74af](https://github.com/googleapis/java-vpcaccess/commit/b9d74af88e450c572ec7ea4d129f32dbcd419a3c))
+* Update dependency google-cloud-core to v2.3.2 ([#243](https://github.com/googleapis/java-vpcaccess/issues/243)) ([32f98e6](https://github.com/googleapis/java-vpcaccess/commit/32f98e6b4092d996ffb820cc411e92d1d8bf4caa))
+
+## [2.4.0](https://github.com/googleapis/java-vpcaccess/compare/v2.3.2...v2.4.0) (2022-09-15)
+
+
+### Features
+
+* Adds support for configuring scaling settings ([#232](https://github.com/googleapis/java-vpcaccess/issues/232)) ([90f3253](https://github.com/googleapis/java-vpcaccess/commit/90f3253b844469682287bc18cdc72bf073280183))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#235](https://github.com/googleapis/java-vpcaccess/issues/235)) ([3aa1c0a](https://github.com/googleapis/java-vpcaccess/commit/3aa1c0abcad0898a9e6c2e738a6455056245c809))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#237](https://github.com/googleapis/java-vpcaccess/issues/237)) ([34c930c](https://github.com/googleapis/java-vpcaccess/commit/34c930c92a39b57d8f4842e024247e56be6154c7))
+
 ## [2.3.2](https://github.com/googleapis/java-vpcaccess/compare/v2.3.1...v2.3.2) (2022-08-09)
 
 

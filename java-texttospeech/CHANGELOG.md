@@ -1,5 +1,58 @@
 # Changelog
 
+## [2.4.7](https://github.com/googleapis/java-texttospeech/compare/v2.4.6...v2.4.7) (2022-09-28)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#781](https://github.com/googleapis/java-texttospeech/issues/781)) ([e27616a](https://github.com/googleapis/java-texttospeech/commit/e27616ae9ccdac0ddb21fb59488321b3d982f11d))
+* Update dependency certifi to v2022.9.24 ([#763](https://github.com/googleapis/java-texttospeech/issues/763)) ([57a8297](https://github.com/googleapis/java-texttospeech/commit/57a82979c18eb7eb2ed544bd22996bce011abe45))
+* Update dependency charset-normalizer to v2.1.1 ([#771](https://github.com/googleapis/java-texttospeech/issues/771)) ([a74a78f](https://github.com/googleapis/java-texttospeech/commit/a74a78f3777d2a7e15fc0eb9499c822da19de78c))
+* Update dependency click to v8.1.3 ([#772](https://github.com/googleapis/java-texttospeech/issues/772)) ([fc5f87e](https://github.com/googleapis/java-texttospeech/commit/fc5f87e2434bc8b9eeddc57a53cb0c9bdaf70763))
+* Update dependency gcp-releasetool to v1.8.8 ([#764](https://github.com/googleapis/java-texttospeech/issues/764)) ([99488eb](https://github.com/googleapis/java-texttospeech/commit/99488ebc095e6f67510595932e6f30383c588a64))
+* Update dependency google-api-core to v2.10.1 ([#773](https://github.com/googleapis/java-texttospeech/issues/773)) ([7a197f4](https://github.com/googleapis/java-texttospeech/commit/7a197f4144fc55ee40446865972012d7382d3ac2))
+* Update dependency google-cloud-core to v2.3.2 ([#765](https://github.com/googleapis/java-texttospeech/issues/765)) ([8dd2b99](https://github.com/googleapis/java-texttospeech/commit/8dd2b993ca2d41080ef2e2bb9bd861d25be7ef82))
+* Update dependency google-cloud-storage to v2.5.0 ([#774](https://github.com/googleapis/java-texttospeech/issues/774)) ([df69ce9](https://github.com/googleapis/java-texttospeech/commit/df69ce93f916c79812a3fa311eaa63bcfe508cb0))
+* Update dependency google-crc32c to v1.5.0 ([#775](https://github.com/googleapis/java-texttospeech/issues/775)) ([3aaa349](https://github.com/googleapis/java-texttospeech/commit/3aaa349f486c6f23c499462b1ebbd37de3009676))
+* Update dependency googleapis-common-protos to v1.56.4 ([#770](https://github.com/googleapis/java-texttospeech/issues/770)) ([63592ef](https://github.com/googleapis/java-texttospeech/commit/63592ef4d03d883479d2dcea58dd08b8f31608bc))
+* Update dependency importlib-metadata to v4.12.0 ([#776](https://github.com/googleapis/java-texttospeech/issues/776)) ([e07df92](https://github.com/googleapis/java-texttospeech/commit/e07df92551841d5b93a213f954e65ee40f4d1fc6))
+* Update dependency jeepney to v0.8.0 ([#777](https://github.com/googleapis/java-texttospeech/issues/777)) ([e96b692](https://github.com/googleapis/java-texttospeech/commit/e96b692c8e88a3649f140f5ea1a6cac7817410e6))
+* Update dependency markupsafe to v2.1.1 ([#783](https://github.com/googleapis/java-texttospeech/issues/783)) ([b04831f](https://github.com/googleapis/java-texttospeech/commit/b04831fe29271de1cb8be9d62be8749c5175757a))
+* Update dependency protobuf to v3.20.2 ([#784](https://github.com/googleapis/java-texttospeech/issues/784)) ([9d44095](https://github.com/googleapis/java-texttospeech/commit/9d44095af3c3015e8b97c683bf87d52561aa0798))
+* Update dependency protobuf to v4 ([#782](https://github.com/googleapis/java-texttospeech/issues/782)) ([6de410b](https://github.com/googleapis/java-texttospeech/commit/6de410b14fd47a6764b428fbb731732a9cd1bae4))
+* Update dependency pyjwt to v2.5.0 ([#767](https://github.com/googleapis/java-texttospeech/issues/767)) ([f8d23b1](https://github.com/googleapis/java-texttospeech/commit/f8d23b108b5e065bfbfb1f1dcf8a445d2135c879))
+* Update dependency requests to v2.28.1 ([#778](https://github.com/googleapis/java-texttospeech/issues/778)) ([c98a040](https://github.com/googleapis/java-texttospeech/commit/c98a04054cbc4f37394fdda501c2008ec40010b6))
+* Update dependency typing-extensions to v4.3.0 ([#779](https://github.com/googleapis/java-texttospeech/issues/779)) ([0b16827](https://github.com/googleapis/java-texttospeech/commit/0b1682742dc6ad9b9b9ec9c794736bca922d616b))
+* Update dependency zipp to v3.8.1 ([#780](https://github.com/googleapis/java-texttospeech/issues/780)) ([825896b](https://github.com/googleapis/java-texttospeech/commit/825896b7fa7946e03ecd296baade0fbeb7cb7918))
+
+## [2.4.6](https://github.com/googleapis/java-texttospeech/compare/v2.4.5...v2.4.6) (2022-09-26)
+
+
+### Dependencies
+
+* Update dependency google-auth to v2.11.1 ([#755](https://github.com/googleapis/java-texttospeech/issues/755)) ([3e794bc](https://github.com/googleapis/java-texttospeech/commit/3e794bc8b9f4a3bc3df25005069d04e731689ba9))
+
+## [2.4.5](https://github.com/googleapis/java-texttospeech/compare/v2.4.4...v2.4.5) (2022-09-15)
+
+
+### Bug Fixes
+
+* Empty commit to test out changes to release script ([#747](https://github.com/googleapis/java-texttospeech/issues/747)) ([95ca728](https://github.com/googleapis/java-texttospeech/commit/95ca72898e4ea8a571b83916df9fcfdb15ca4f65))
+
+## [2.4.4](https://github.com/googleapis/java-texttospeech/compare/v2.4.3...v2.4.4) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#740](https://github.com/googleapis/java-texttospeech/issues/740)) ([18b55e6](https://github.com/googleapis/java-texttospeech/commit/18b55e645014fb78543ba70344fa6b9276ae666f))
+
+## [2.4.3](https://github.com/googleapis/java-texttospeech/compare/v2.4.2...v2.4.3) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#736](https://github.com/googleapis/java-texttospeech/issues/736)) ([43dc10c](https://github.com/googleapis/java-texttospeech/commit/43dc10c1528a5e769bcc55f86ceb6dfaa8406946))
+
 ## [2.4.2](https://github.com/googleapis/java-texttospeech/compare/v2.4.1...v2.4.2) (2022-08-09)
 
 

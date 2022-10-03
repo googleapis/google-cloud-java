@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.1.1](https://github.com/googleapis/java-vision/compare/v3.1.0...v3.1.1) (2022-09-16)
+
+
+### Bug Fixes
+
+* Update IT Test Case Results ([#976](https://github.com/googleapis/java-vision/issues/976)) ([3272c49](https://github.com/googleapis/java-vision/commit/3272c49bbbdd25f53ebca812b84eceaaa160bd84))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-core to v2.8.10 ([#977](https://github.com/googleapis/java-vision/issues/977)) ([579608b](https://github.com/googleapis/java-vision/commit/579608b8500d829412d231375c595ec32416f337))
+* Update dependency com.google.cloud:google-cloud-core to v2.8.11 ([#980](https://github.com/googleapis/java-vision/issues/980)) ([fe12d4e](https://github.com/googleapis/java-vision/commit/fe12d4ed5868117590ed18063e1942110bb4eda6))
+* Update dependency com.google.cloud:google-cloud-core to v2.8.9 ([#973](https://github.com/googleapis/java-vision/issues/973)) ([167bbab](https://github.com/googleapis/java-vision/commit/167bbab7825cd006678525f64f1a76d9f4e86079))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#981](https://github.com/googleapis/java-vision/issues/981)) ([ad1e601](https://github.com/googleapis/java-vision/commit/ad1e601f1be075df8ce2e4f587619104526271ab))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#985](https://github.com/googleapis/java-vision/issues/985)) ([22b5933](https://github.com/googleapis/java-vision/commit/22b59334fb03ef4657c15dbfbf707133f56c21ad))
+* Update dependency com.google.cloud:google-cloud-storage to v2.11.3 ([#964](https://github.com/googleapis/java-vision/issues/964)) ([eefc2b7](https://github.com/googleapis/java-vision/commit/eefc2b72fe980974ad64da1846f769d6efeb336c))
+* Update spring.version to v2.7.3 ([#974](https://github.com/googleapis/java-vision/issues/974)) ([2a370a9](https://github.com/googleapis/java-vision/commit/2a370a9dde948155a7c69460b27cd35350883606))
+
 ## [3.1.0](https://github.com/googleapis/java-vision/compare/v3.0.2...v3.1.0) (2022-08-09)
 
 

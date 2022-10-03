@@ -1,5 +1,33 @@
 # Changelog
 
+## [0.3.4](https://github.com/googleapis/java-run/compare/v0.3.3...v0.3.4) (2022-09-27)
+
+
+### Dependencies
+
+* Update dependency jeepney to v0.8.0 ([#80](https://github.com/googleapis/java-run/issues/80)) ([82e6df5](https://github.com/googleapis/java-run/commit/82e6df5922d2ba1a1e0c629fea85934b5fe425e3))
+* Update dependency jinja2 to v3.1.2 ([#84](https://github.com/googleapis/java-run/issues/84)) ([dfcaaa3](https://github.com/googleapis/java-run/commit/dfcaaa3839c9f413eb641e0ee5ddfb1aa3ab0d83))
+* Update dependency keyring to v23.9.3 ([#85](https://github.com/googleapis/java-run/issues/85)) ([ab910c4](https://github.com/googleapis/java-run/commit/ab910c496522254c2268d15e48beaff8c403f00f))
+* Update dependency markupsafe to v2.1.1 ([#81](https://github.com/googleapis/java-run/issues/81)) ([68841c9](https://github.com/googleapis/java-run/commit/68841c95682d64e717b9d8a12d6730a99fe3b2a3))
+* Update dependency protobuf to v3.20.2 ([#86](https://github.com/googleapis/java-run/issues/86)) ([f39936b](https://github.com/googleapis/java-run/commit/f39936bfa92010ce1ee43413f44cb90fa1587fa5))
+* Update dependency pyjwt to v2.5.0 ([#82](https://github.com/googleapis/java-run/issues/82)) ([8787ee9](https://github.com/googleapis/java-run/commit/8787ee93acd10d0611e8fe25b74f0053a101fd4b))
+* Update dependency requests to v2.28.1 ([#87](https://github.com/googleapis/java-run/issues/87)) ([1c5a6ee](https://github.com/googleapis/java-run/commit/1c5a6eed7a876db66601790aa7d264c8e1a9a440))
+* Update dependency typing-extensions to v4.3.0 ([#83](https://github.com/googleapis/java-run/issues/83)) ([eeadb53](https://github.com/googleapis/java-run/commit/eeadb5308c65d55a8ea8317c507dd2ec9ab14e34))
+
+## [0.3.3](https://github.com/googleapis/java-run/compare/v0.3.2...v0.3.3) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#74](https://github.com/googleapis/java-run/issues/74)) ([0acb312](https://github.com/googleapis/java-run/commit/0acb31280d8fa956b1d675ac98e8922e189bb467))
+
+## [0.3.2](https://github.com/googleapis/java-run/compare/v0.3.1...v0.3.2) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#69](https://github.com/googleapis/java-run/issues/69)) ([17e4563](https://github.com/googleapis/java-run/commit/17e456321c83bb3966823e4a4b109fd1883af461))
+
 ## [0.3.1](https://github.com/googleapis/java-run/compare/v0.3.0...v0.3.1) (2022-08-02)
 
 
