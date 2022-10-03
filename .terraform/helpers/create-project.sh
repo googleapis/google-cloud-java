@@ -70,9 +70,10 @@ function createProject() {
   randomSuffix=$RANDOM
   projectId="${TF_VAR_project_prefix}"-"${randomSuffix}"
   gcloud projects create --folder="$TF_VAR_folder_id" "$projectId" || exit
+  echo "Waiting for 1 minute to allow default Cloud API services to be enabled."
+  sleep 1m
   gcloud services enable cloudresourcemanager.googleapis.com
   gcloud beta billing projects link "$projectId" --billing-account="$TF_VAR_billing_account"
-  sleep 30s
   gcloud config set project "$projectId"
   GOOGLE_CLOUD_PROJECT=$projectId
 }
