@@ -25,11 +25,11 @@ createProject
 
 # If Terraform was previously configured to work with a different project,
 # then remove the previous Terraform state.
-if [[ $(terraform output -raw project_id &>/dev/null) ]]; then
-  prev_project_id=$(terraform output -raw project_id)
+prev_project_id=$(terraform output -raw project_id 2>/dev/null)
+if [[ $? -eq 0 ]]; then
   if [[ "$prev_project_id" != "$GOOGLE_CLOUD_PROJECT" ]]; then
     if [[ -f terraform.tfstate ]]; then
-      remove terraform.tfstate
+      rm terraform.tfstate
     fi
   fi
 fi
@@ -54,16 +54,14 @@ service_account_email="$service_account_name@$GOOGLE_CLOUD_PROJECT.iam.gservicea
 gcloud iam service-accounts describe "$service_account_email" &>/dev/null
 if [[ $? -ne 0 ]]; then
   gcloud iam service-accounts create "$service_account_name"
-  # Assign permissions to the service account.
-  gcloud projects add-iam-policy-binding "$GOOGLE_CLOUD_PROJECT" \
-    --member="serviceAccount:$service_account_email" \
-    --role="roles/owner" >/dev/null
-  gcloud projects add-iam-policy-binding "$GOOGLE_CLOUD_PROJECT" \
-    --member="serviceAccount:$service_account_email" \
-    --role="roles/resourcemanager.projectIamAdmin" >/dev/null
-  echo "Waiting for 30s to allow service account permissions to be enabled."
-  sleep 30s
 fi
+# Assign permissions to the service account.
+gcloud projects add-iam-policy-binding "$GOOGLE_CLOUD_PROJECT" \
+  --member="serviceAccount:$service_account_email" \
+  --role="roles/owner" >/dev/null
+gcloud projects add-iam-policy-binding "$GOOGLE_CLOUD_PROJECT" \
+  --member="serviceAccount:$service_account_email" \
+  --role="roles/resourcemanager.projectIamAdmin" >/dev/null
 
 # See https://cloud.google.com/blog/topics/developers-practitioners/using-google-cloud-service-account-impersonation-your-terraform-code
 export GOOGLE_IMPERSONATE_SERVICE_ACCOUNT=$service_account_email

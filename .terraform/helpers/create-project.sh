@@ -75,7 +75,7 @@ function createProject() {
   gcloud beta billing projects link "$projectId" --billing-account="$TF_VAR_billing_account"
   GOOGLE_CLOUD_PROJECT=$projectId
   echo "Waiting for 30s to allow default Cloud API services to be enabled."
-  sleep 30s
+  sleep 30
 }
 
 function deleteProject() {

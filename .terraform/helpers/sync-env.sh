@@ -15,7 +15,7 @@
 #
 
 # Ensure the gcloud project matches Terraform's current state.
-terraform_project_id=$(terraform output -raw project_id) || exit
+terraform_project_id=$(terraform output -raw project_id || exit)
 gcloud_project_id=$(gcloud config get project) || ""
 if [[ "$terraform_project_id" != "$gcloud_project_id" ]]; then
   echo -n "Do you want to make $terraform_project_id your current gcloud project? (Y/n): "
