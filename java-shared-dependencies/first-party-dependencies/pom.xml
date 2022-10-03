@@ -56,7 +56,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <site.installationModule>${project.artifactId}</site.installationModule>
     <grpc.version>1.49.2</grpc.version>
-    <gax.version>2.19.1</gax.version>
+    <gax.version>2.19.2</gax.version>
     <grpc-gcp.version>1.2.1</grpc-gcp.version>
     <gson.version>2.9.1</gson.version>
     <guava.version>31.1-jre</guava.version>
