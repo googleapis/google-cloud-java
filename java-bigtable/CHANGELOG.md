@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.14.0](https://github.com/googleapis/java-bigtable/compare/v2.13.0...v2.14.0) (2022-10-03)
+
+
+### Features
+
+* Publish the RequestStats proto ([#1400](https://github.com/googleapis/java-bigtable/issues/1400)) ([e989200](https://github.com/googleapis/java-bigtable/commit/e989200980510b14d602925df7430e01bc2f8db7))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#1446](https://github.com/googleapis/java-bigtable/issues/1446)) ([81034c5](https://github.com/googleapis/java-bigtable/commit/81034c51722d973cf5545feb33665b4e08265303))
+
 ## [2.13.0](https://github.com/googleapis/java-bigtable/compare/v2.12.0...v2.13.0) (2022-09-27)
 
 
