@@ -81,8 +81,8 @@ public class ITSystemTest {
 
   @AfterClass
   public static void tearDown() {
-    // client.deleteJob(JOB_NAME);
-    // publisherClient.deleteTopic(TOPIC_NAME);
+    client.deleteJob(JOB_NAME);
+    publisherClient.deleteTopic(TOPIC_NAME);
     publisherClient.close();
     client.close();
   }
