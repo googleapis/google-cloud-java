@@ -72,13 +72,13 @@ git commit -m 'chore: add template files'
 ../../print_root_pom.sh > pom.xml
 
 git add pom.xml
-git commit -am 'feat: create aggregator pom'
+git commit -am 'chore: create aggregator pom'
 
 # Point modules poms and BOMs to the aggregator pom as parent
 bash ../../set_parent_pom.sh
 
 git add --all
-git commit -am 'feat: point modules to the aggregator pom as parent'
+git commit -am 'chore: point modules to the aggregator pom as parent'
 
 ../../generate_gapic_bom.sh
 
@@ -86,7 +86,7 @@ git commit -am 'feat: point modules to the aggregator pom as parent'
 ../../print_root_pom.sh > pom.xml
 
 git add google-cloud-gapic-bom/pom.xml
-git commit -am 'feat: create google-cloud-gapic-bom'
+git commit -am 'chore: create google-cloud-gapic-bom'
 
 cp ../../gapic_bom_versions.txt google-cloud-gapic-bom/versions.txt
 
@@ -94,12 +94,12 @@ cp ../../gapic_bom_versions.txt google-cloud-gapic-bom/versions.txt
 bash ../../generate_release_please_config.sh
 
 git add --all
-git commit -am 'feat: create release please configuration'
+git commit -am 'chore: create release please configuration'
 
 ../../generate_coverage_aggregator.sh
 
 git add --all
-git commit -am 'feat: create CoverageAggregator module'
+git commit -am 'chore: create CoverageAggregator module'
 
 ../../delete_non_generated_samples.sh
 
