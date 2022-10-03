@@ -1,6 +1,57 @@
 # Changelog
 
 
+## [3.0.4](https://github.com/googleapis/java-shared-dependencies/compare/v3.0.3...v3.0.4) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#816](https://github.com/googleapis/java-shared-dependencies/issues/816)) ([3f6c408](https://github.com/googleapis/java-shared-dependencies/commit/3f6c408210c931c286235f61c7aadea5bf5cfe4d))
+* Update dependency certifi to v2022.9.24 ([#818](https://github.com/googleapis/java-shared-dependencies/issues/818)) ([5f04b97](https://github.com/googleapis/java-shared-dependencies/commit/5f04b97c2343146600e8c9ee65afdeb58f5743a6))
+* Update dependency charset-normalizer to v2.1.1 ([#822](https://github.com/googleapis/java-shared-dependencies/issues/822)) ([6997c5a](https://github.com/googleapis/java-shared-dependencies/commit/6997c5acad937ebe3594330de73261a424d42cf3))
+* Update dependency click to v8.1.3 ([#823](https://github.com/googleapis/java-shared-dependencies/issues/823)) ([42bf9f8](https://github.com/googleapis/java-shared-dependencies/commit/42bf9f834fdafea60f2be7ccbf7d363e058cd7c2))
+* Update dependency com.google.protobuf:protobuf-bom to v3.21.7 ([#837](https://github.com/googleapis/java-shared-dependencies/issues/837)) ([d31e507](https://github.com/googleapis/java-shared-dependencies/commit/d31e5077c7e036de5e238e9a611df7ced527574a))
+* Update dependency gcp-releasetool to v1.8.8 ([#819](https://github.com/googleapis/java-shared-dependencies/issues/819)) ([8245d97](https://github.com/googleapis/java-shared-dependencies/commit/8245d975fb12e81454ec7664f9a7c9809bbac697))
+* Update dependency gcp-releasetool to v1.8.9 ([#846](https://github.com/googleapis/java-shared-dependencies/issues/846)) ([04e3283](https://github.com/googleapis/java-shared-dependencies/commit/04e32831c6e87c372444901013a747d2d02ce38d))
+* Update dependency google-api-core to v2.10.1 ([#824](https://github.com/googleapis/java-shared-dependencies/issues/824)) ([818b9aa](https://github.com/googleapis/java-shared-dependencies/commit/818b9aa2ac99d8b1f9b39a74b626122aed5f1d94))
+* Update dependency google-auth to v2.12.0 ([#825](https://github.com/googleapis/java-shared-dependencies/issues/825)) ([07c544b](https://github.com/googleapis/java-shared-dependencies/commit/07c544b5e0fa9f7110bbc957570f7a405962072e))
+* Update dependency google-cloud-core to v2.3.2 ([#820](https://github.com/googleapis/java-shared-dependencies/issues/820)) ([2a219e8](https://github.com/googleapis/java-shared-dependencies/commit/2a219e86f187ba5ad72f2570bd58ca6100128c43))
+* Update dependency google-cloud-storage to v2.5.0 ([#826](https://github.com/googleapis/java-shared-dependencies/issues/826)) ([bb10d18](https://github.com/googleapis/java-shared-dependencies/commit/bb10d1858a515f09d365362ffa0110a5b362c96b))
+* Update dependency google-crc32c to v1.5.0 ([#827](https://github.com/googleapis/java-shared-dependencies/issues/827)) ([7e5dae6](https://github.com/googleapis/java-shared-dependencies/commit/7e5dae60d667cb84b9ee4f6c977bdc35e79e4cf6))
+* Update dependency google-resumable-media to v2.4.0 ([#838](https://github.com/googleapis/java-shared-dependencies/issues/838)) ([ad82d63](https://github.com/googleapis/java-shared-dependencies/commit/ad82d6378f64039da383509638fb4782908eb4bc))
+* Update dependency googleapis-common-protos to v1.56.4 ([#821](https://github.com/googleapis/java-shared-dependencies/issues/821)) ([93d7745](https://github.com/googleapis/java-shared-dependencies/commit/93d77458c9bbf84ec367cdb4caaa41e6f71675c6))
+* Update dependency importlib-metadata to v4.12.0 ([#832](https://github.com/googleapis/java-shared-dependencies/issues/832)) ([ee19fb1](https://github.com/googleapis/java-shared-dependencies/commit/ee19fb1ca5a2a2e1985297e3b72d44de68bc72e3))
+* Update dependency importlib-metadata to v4.13.0 ([#843](https://github.com/googleapis/java-shared-dependencies/issues/843)) ([d2ede60](https://github.com/googleapis/java-shared-dependencies/commit/d2ede601eee8c875780c7eb5924623537480c509))
+* Update dependency importlib-metadata to v5 ([#845](https://github.com/googleapis/java-shared-dependencies/issues/845)) ([03ac7e8](https://github.com/googleapis/java-shared-dependencies/commit/03ac7e800274c5f58d2bc4ddd0561bfcdea1bb27))
+* Update dependency io.grpc:grpc-bom to v1.49.1 ([#802](https://github.com/googleapis/java-shared-dependencies/issues/802)) ([b8c54bf](https://github.com/googleapis/java-shared-dependencies/commit/b8c54bf8f1ddecc788cee151f8afe42de45bdc9d))
+* Update dependency io.grpc:grpc-bom to v1.49.2 ([#842](https://github.com/googleapis/java-shared-dependencies/issues/842)) ([1b1cfa2](https://github.com/googleapis/java-shared-dependencies/commit/1b1cfa27d05f7732da12721305cf41dcbebda232))
+* Update dependency jeepney to v0.8.0 ([#833](https://github.com/googleapis/java-shared-dependencies/issues/833)) ([15d2f9f](https://github.com/googleapis/java-shared-dependencies/commit/15d2f9f52b5a3259db0813df3d2424e256ccb372))
+* Update dependency jinja2 to v3.1.2 ([#834](https://github.com/googleapis/java-shared-dependencies/issues/834)) ([c188f95](https://github.com/googleapis/java-shared-dependencies/commit/c188f95acdb3349f1c4b3ed56e5fffb75e8fbc8d))
+* Update dependency keyring to v23.9.3 ([#828](https://github.com/googleapis/java-shared-dependencies/issues/828)) ([b185aaa](https://github.com/googleapis/java-shared-dependencies/commit/b185aaae716d4d97cb64f0426cac0e778f11223d))
+* Update dependency markupsafe to v2.1.1 ([#829](https://github.com/googleapis/java-shared-dependencies/issues/829)) ([add2825](https://github.com/googleapis/java-shared-dependencies/commit/add2825bd34cd80f529dbe0dadb3c84219177916))
+* Update dependency org.threeten:threetenbp to v1.6.2 ([#808](https://github.com/googleapis/java-shared-dependencies/issues/808)) ([2d2eabd](https://github.com/googleapis/java-shared-dependencies/commit/2d2eabd14d8150207885ea47280c0f7ff3d2962f))
+* Update dependency protobuf to v3.20.2 ([#830](https://github.com/googleapis/java-shared-dependencies/issues/830)) ([5afa76f](https://github.com/googleapis/java-shared-dependencies/commit/5afa76f9ef4705aecba49abc7bb93982fb1ecf3e))
+* Update dependency protobuf to v3.20.3 ([#839](https://github.com/googleapis/java-shared-dependencies/issues/839)) ([d9fc7dd](https://github.com/googleapis/java-shared-dependencies/commit/d9fc7ddd3e663458e6ea3f78a3c6241377df0319))
+* Update dependency protobuf to v4 ([#817](https://github.com/googleapis/java-shared-dependencies/issues/817)) ([ee8d154](https://github.com/googleapis/java-shared-dependencies/commit/ee8d154287ccd256b4dcfa48f28f5ec61a91fe3e))
+* Update dependency pyjwt to v2.5.0 ([#812](https://github.com/googleapis/java-shared-dependencies/issues/812)) ([4d4528e](https://github.com/googleapis/java-shared-dependencies/commit/4d4528e8ce269d49b99d2dbc4fcda2dc37a058cb))
+* Update dependency requests to v2.28.1 ([#813](https://github.com/googleapis/java-shared-dependencies/issues/813)) ([a3a8d89](https://github.com/googleapis/java-shared-dependencies/commit/a3a8d89b0117007a7108553c70aa82dd289e1691))
+* Update dependency typing-extensions to v4.3.0 ([#814](https://github.com/googleapis/java-shared-dependencies/issues/814)) ([da875e5](https://github.com/googleapis/java-shared-dependencies/commit/da875e5e91fa9d8c177e6c3afc9e34242eb914b7))
+* Update dependency zipp to v3.8.1 ([#815](https://github.com/googleapis/java-shared-dependencies/issues/815)) ([15585fd](https://github.com/googleapis/java-shared-dependencies/commit/15585fd0216013fe93be011f93f391f6269aa777))
+* Update gax.version to v2.19.2 ([#847](https://github.com/googleapis/java-shared-dependencies/issues/847)) ([c4afe1f](https://github.com/googleapis/java-shared-dependencies/commit/c4afe1fdc88af29ab039cea618d52c15c90e43e9))
+* Update google.common-protos.version to v2.9.3 ([#803](https://github.com/googleapis/java-shared-dependencies/issues/803)) ([a3e8e5e](https://github.com/googleapis/java-shared-dependencies/commit/a3e8e5eb53a8da14abf3b8d81a4f34fbb2f3b8f9))
+* Update google.common-protos.version to v2.9.5 ([#831](https://github.com/googleapis/java-shared-dependencies/issues/831)) ([1c901db](https://github.com/googleapis/java-shared-dependencies/commit/1c901db8a7740afaec3e809e51d4d369fbf469c4))
+* Update google.common-protos.version to v2.9.6 ([#844](https://github.com/googleapis/java-shared-dependencies/issues/844)) ([9e156be](https://github.com/googleapis/java-shared-dependencies/commit/9e156be59bd89959f04252c3045b8cd7a8be8070))
+* Update google.core.version to v2.8.13 ([#804](https://github.com/googleapis/java-shared-dependencies/issues/804)) ([45ae571](https://github.com/googleapis/java-shared-dependencies/commit/45ae57142bd6d5334eedd46243736b200a459795))
+* Update google.core.version to v2.8.14 ([#805](https://github.com/googleapis/java-shared-dependencies/issues/805)) ([02c9397](https://github.com/googleapis/java-shared-dependencies/commit/02c9397a84bf3fcca8d04e4c9867cc47689abde2))
+* Update google.core.version to v2.8.15 ([#807](https://github.com/googleapis/java-shared-dependencies/issues/807)) ([980856c](https://github.com/googleapis/java-shared-dependencies/commit/980856c43981992a3d08f69eac83aeada752d244))
+* Update google.core.version to v2.8.16 ([#810](https://github.com/googleapis/java-shared-dependencies/issues/810)) ([c2b2c9a](https://github.com/googleapis/java-shared-dependencies/commit/c2b2c9a327fd588f69524bb93a17e5d4ae8f5a42))
+* Update google.core.version to v2.8.17 ([#835](https://github.com/googleapis/java-shared-dependencies/issues/835)) ([3def21d](https://github.com/googleapis/java-shared-dependencies/commit/3def21df2e4253e3df0da064b6c4e472df079d2b))
+* Update google.core.version to v2.8.18 ([#840](https://github.com/googleapis/java-shared-dependencies/issues/840)) ([46566dc](https://github.com/googleapis/java-shared-dependencies/commit/46566dc18c4b1ed41c482b4ce21b92651e2f9dc5))
+* Update google.core.version to v2.8.19 ([#841](https://github.com/googleapis/java-shared-dependencies/issues/841)) ([99afde9](https://github.com/googleapis/java-shared-dependencies/commit/99afde97ea498f549eb75cc58c4ed88edf81b20d))
+* Update google.core.version to v2.8.20 ([#848](https://github.com/googleapis/java-shared-dependencies/issues/848)) ([c980c4f](https://github.com/googleapis/java-shared-dependencies/commit/c980c4fdfc8890d812b4881ba5b87bfd21269a5f))
+* Update iam.version to v1.6.1 ([#806](https://github.com/googleapis/java-shared-dependencies/issues/806)) ([a50158d](https://github.com/googleapis/java-shared-dependencies/commit/a50158d3b83cf8e02d8ee08c94e512b5669a927b))
+* Update iam.version to v1.6.2 ([#849](https://github.com/googleapis/java-shared-dependencies/issues/849)) ([e43ac96](https://github.com/googleapis/java-shared-dependencies/commit/e43ac96bc189a096a9311c9b03e85c86bea07e99))
+
 ## [3.0.3](https://github.com/googleapis/java-shared-dependencies/compare/v3.0.2...v3.0.3) (2022-09-14)
 
 
