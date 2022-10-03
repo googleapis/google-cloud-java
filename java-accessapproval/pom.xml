@@ -82,7 +82,7 @@
         <scope>import</scope>
       </dependency>
 
-      <!-- Test dependencies -->
+      <!-- Test related dependencies -->
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
