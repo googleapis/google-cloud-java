@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.23.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.22.0...v2.23.0) (2022-10-03)
+
+
+### Features
+
+* return list of row errors from append ([df7c6e9](https://github.com/googleapis/java-bigquerystorage/commit/df7c6e9816d43eac196d77604bc99db6115de670))
+
+
+### Bug Fixes
+
+* return row-level error information via an AppendSerializtionError exception ([df7c6e9](https://github.com/googleapis/java-bigquerystorage/commit/df7c6e9816d43eac196d77604bc99db6115de670))
+
 ## [2.22.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.21.0...v2.22.0) (2022-09-29)
 
 
