@@ -534,6 +534,10 @@
          }
   },
   "plugins": [
+    {
+      "type": "group-priority",
+      "groups": ["snapshot"]
+    },
     "maven-workspace"
   ]
 }
