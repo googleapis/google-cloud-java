@@ -66,7 +66,7 @@ if [[ "$shouldDestroy" == y* ]] || [[ "$shouldDestroy" == Y* ]]; then
   # Do not use service account when attempting to delete the project
   unset GOOGLE_IMPERSONATE_SERVICE_ACCOUNT
 
-  source ../../helpers/create-project.sh
+  source ./helpers/create-project.sh
   deleteProject
-  rm ../../generated.auto.tfvars
+  rm ./generated.auto.tfvars
 fi

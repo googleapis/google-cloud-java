@@ -23,3 +23,10 @@ else
     exit
   fi
 fi
+if gcloud auth application-default print-access-token &>/dev/null; then
+  true
+else
+  if ! gcloud auth application-default login; then
+    exit
+  fi
+fi
