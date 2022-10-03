@@ -46,6 +46,7 @@ service_account_email="$service_account_name@$GOOGLE_CLOUD_PROJECT.iam.gservicea
 gcloud_account=$(gcloud config get account)
 if [[ ! $(gcloud iam service-accounts describe "$service_account_email") ]]; then
   gcloud iam service-accounts create "$service_account_name"
+  sleep 10s
 fi
 # Assign permission for current gcloud account to impersonate a service account.
 gcloud projects add-iam-policy-binding "$GOOGLE_CLOUD_PROJECT" \
