@@ -1,7 +1,7 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-java:0.0.0:1.0.0-SNAPSHOT
-google-cloud-accessapproval:2.4.8:2.4.9-SNAPSHOT
-grpc-google-cloud-accessapproval-v1:2.4.8:2.4.9-SNAPSHOT
-proto-google-cloud-accessapproval-v1:2.4.8:2.4.9-SNAPSHOT
+google-cloud-java:1.0.0:1.0.0
+google-cloud-accessapproval:3.0.0:3.0.0
+grpc-google-cloud-accessapproval-v1:3.0.0:3.0.0
+proto-google-cloud-accessapproval-v1:3.0.0:3.0.0

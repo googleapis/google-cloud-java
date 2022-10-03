@@ -5,7 +5,7 @@
   <parent>
     <artifactId>google-cloud-java-parent</artifactId>
     <groupId>com.google.cloud</groupId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.0.0</version><!-- {x-version-update:google-cloud-java:current} -->
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
