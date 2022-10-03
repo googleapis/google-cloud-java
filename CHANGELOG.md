@@ -1,5 +1,34 @@
 # Changelog
 
+## [2.11.5](https://github.com/googleapis/java-datastore/compare/v2.11.4...v2.11.5) (2022-10-03)
+
+
+### Dependencies
+
+* Convert from `JacksonFactory` to `GsonFactory` ([#780](https://github.com/googleapis/java-datastore/issues/780)) ([d24cae2](https://github.com/googleapis/java-datastore/commit/d24cae20c2c69327b8f097cc56fcb48b5f61c358))
+* Update dependency cachetools to v5 ([#863](https://github.com/googleapis/java-datastore/issues/863)) ([74320c1](https://github.com/googleapis/java-datastore/commit/74320c18bc9ad95fd366a1be5fc2d95105944833))
+* Update dependency certifi to v2022.9.24 ([#842](https://github.com/googleapis/java-datastore/issues/842)) ([1631a67](https://github.com/googleapis/java-datastore/commit/1631a67d037f1b1e09a6653a4867d51a6412f6bb))
+* Update dependency charset-normalizer to v2.1.1 ([#854](https://github.com/googleapis/java-datastore/issues/854)) ([8814084](https://github.com/googleapis/java-datastore/commit/881408421e7c9cea5712e9c7c315ab4671c15d49))
+* Update dependency click to v8.1.3 ([#855](https://github.com/googleapis/java-datastore/issues/855)) ([5935e6e](https://github.com/googleapis/java-datastore/commit/5935e6e871724965f05817a6739369e40b59809b))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#866](https://github.com/googleapis/java-datastore/issues/866)) ([af1d1eb](https://github.com/googleapis/java-datastore/commit/af1d1eb3bc3dbbb6637ad6bc686ed9fc7c5b9bd5))
+* Update dependency gcp-releasetool to v1.8.8 ([#843](https://github.com/googleapis/java-datastore/issues/843)) ([10b4e44](https://github.com/googleapis/java-datastore/commit/10b4e449ebdf238ad882842ca75ef5477a0d0292))
+* Update dependency google-api-core to v2.10.1 ([#856](https://github.com/googleapis/java-datastore/issues/856)) ([874166e](https://github.com/googleapis/java-datastore/commit/874166e9d2bff6c61f280494fc6b82845e66257b))
+* Update dependency google-auth to v2.12.0 ([#857](https://github.com/googleapis/java-datastore/issues/857)) ([d832df6](https://github.com/googleapis/java-datastore/commit/d832df63ebbc259a9d86818d6dfdcbfe29dd27ce))
+* Update dependency google-cloud-core to v2.3.2 ([#852](https://github.com/googleapis/java-datastore/issues/852)) ([14aad83](https://github.com/googleapis/java-datastore/commit/14aad838b7edd572ca1df6f67cc1988722c3dee5))
+* Update dependency google-cloud-storage to v2.5.0 ([#858](https://github.com/googleapis/java-datastore/issues/858)) ([17f47bc](https://github.com/googleapis/java-datastore/commit/17f47bcb368887291c41ac863743c46feae3c2cf))
+* Update dependency google-crc32c to v1.5.0 ([#859](https://github.com/googleapis/java-datastore/issues/859)) ([dd58916](https://github.com/googleapis/java-datastore/commit/dd58916e895c6b9e5449a562a53ddca0c33cf530))
+* Update dependency googleapis-common-protos to v1.56.4 ([#853](https://github.com/googleapis/java-datastore/issues/853)) ([416e157](https://github.com/googleapis/java-datastore/commit/416e157a51caaa11b21b0d43ac94a2bd76e4de14))
+* Update dependency importlib-metadata to v4.12.0 ([#860](https://github.com/googleapis/java-datastore/issues/860)) ([0a15a3f](https://github.com/googleapis/java-datastore/commit/0a15a3fc5294b5e8d7b0b86fcd6f65739eb700ca))
+* Update dependency jinja2 to v3.1.2 ([#861](https://github.com/googleapis/java-datastore/issues/861)) ([9fc4af5](https://github.com/googleapis/java-datastore/commit/9fc4af50bc7f69d080a29d4e772026f990e02fe8))
+* Update dependency keyring to v23.9.3 ([#862](https://github.com/googleapis/java-datastore/issues/862)) ([620e5f2](https://github.com/googleapis/java-datastore/commit/620e5f2ebc33a14ebf106bdc8e3731e1ce1bd449))
+* Update dependency markupsafe to v2.1.1 ([#844](https://github.com/googleapis/java-datastore/issues/844)) ([8d64f16](https://github.com/googleapis/java-datastore/commit/8d64f16e20fa8c3e15d48fb44657b412bb55bdc1))
+* Update dependency protobuf to v3.20.2 ([#845](https://github.com/googleapis/java-datastore/issues/845)) ([7b46721](https://github.com/googleapis/java-datastore/commit/7b46721d8db483348decb27818de67feb19851c5))
+* Update dependency protobuf to v4 ([#864](https://github.com/googleapis/java-datastore/issues/864)) ([0bf85e9](https://github.com/googleapis/java-datastore/commit/0bf85e9355dff9321bd84038c1bad249b5a92531))
+* Update dependency pyjwt to v2.5.0 ([#846](https://github.com/googleapis/java-datastore/issues/846)) ([e4edcd1](https://github.com/googleapis/java-datastore/commit/e4edcd1e4c3079ab579d15c7b47e110fb99b6674))
+* Update dependency requests to v2.28.1 ([#847](https://github.com/googleapis/java-datastore/issues/847)) ([08ca8e5](https://github.com/googleapis/java-datastore/commit/08ca8e5af44a4b2b1cfae8996b2f7edfe7109204))
+* Update dependency typing-extensions to v4.3.0 ([#848](https://github.com/googleapis/java-datastore/issues/848)) ([2197874](https://github.com/googleapis/java-datastore/commit/219787455d34a2667587f9577368c36811c0c58b))
+* Update dependency zipp to v3.8.1 ([#849](https://github.com/googleapis/java-datastore/issues/849)) ([18db303](https://github.com/googleapis/java-datastore/commit/18db3030ad51ae0db6465717ee432460b67f696a))
+
 ## [2.11.4](https://github.com/googleapis/java-datastore/compare/v2.11.3...v2.11.4) (2022-09-22)
 
 
