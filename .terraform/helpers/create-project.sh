@@ -30,7 +30,7 @@ function createProject() {
 
   currentProject=$(gcloud config get project)
   if [ -n "${currentProject}" ]; then
-    echo "Do you want to use the current gcloud project ($currentProject)? (Y|n)"
+    echo -n "Do you want to use the current gcloud project ($currentProject)? (Y|n)"
     read -r shouldUseCurrent
     if [[ "$shouldUseCurrent" != n* ]] && [[ "$shouldUseCurrent" != N* ]]; then
       GOOGLE_CLOUD_PROJECT=$currentProject
@@ -39,7 +39,7 @@ function createProject() {
     fi
   fi
 
-  echo "GOOGLE_CLOUD_PROJECT not set. Do you want to create a project? (Y|n): "
+  echo -n "GOOGLE_CLOUD_PROJECT not set. Do you want to create a project? (Y|n): "
   read -r shouldCreate
   if [[ "$shouldCreate" == n* ]] || [[ "$shouldCreate" == N* ]]; then
     echo "Project required. Exiting."
@@ -71,6 +71,7 @@ function createProject() {
   projectId="${TF_VAR_project_prefix}"-"${randomSuffix}"
   gcloud projects create --folder="$TF_VAR_folder_id" "$projectId" || exit
   gcloud beta billing projects link "$projectId" --billing-account="$TF_VAR_billing_account"
+  gcloud services enable cloudresourcemanager.googleapis.com
   gcloud config set project "$projectId"
   GOOGLE_CLOUD_PROJECT=$projectId
 }

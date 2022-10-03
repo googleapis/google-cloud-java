@@ -24,10 +24,10 @@ if [[ $(terraform state list) == "" ]]; then
 fi
 
 # Ensure the gcloud project matches Terraform's current state.
-terraform_project_id=$(terraform output -raw project_id)
-gcloud_project_id=$(gcloud config get project)
+terraform_project_id=$(terraform output -raw project_id) || exit
+gcloud_project_id=$(gcloud config get project) || ""
 if [[ "$terraform_project_id" != "$gcloud_project_id" ]]; then
-  echo "Do you want to make $terraform_project_id your current gcloud project? (Y/n): "
+  echo -n "Do you want to make $terraform_project_id your current gcloud project? (Y/n): "
   read -r shouldSwitch
   if [[ "$shouldSwitch" == n* ]] || [[ "$shouldSwitch" == N* ]]; then
     exit
@@ -60,7 +60,7 @@ done
 terraform destroy -auto-approve || exit
 
 # Always verify whether or not to destroy the project.
-echo "Delete project ($terraform_project_id)? (y/N): "
+echo -n "Delete project ($terraform_project_id)? (y/N): "
 read -r shouldDestroy
 if [[ "$shouldDestroy" == y* ]] || [[ "$shouldDestroy" == Y* ]]; then
   # Do not use service account when attempting to delete the project
