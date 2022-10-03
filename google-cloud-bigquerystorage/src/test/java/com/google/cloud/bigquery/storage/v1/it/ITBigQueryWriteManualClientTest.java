@@ -28,6 +28,7 @@ import com.google.cloud.bigquery.*;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.storage.test.Test.*;
 import com.google.cloud.bigquery.storage.v1.*;
+import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializtionError;
 import com.google.cloud.bigquery.storage.v1.Exceptions.OffsetAlreadyExists;
 import com.google.cloud.bigquery.storage.v1.Exceptions.OffsetOutOfRange;
 import com.google.cloud.bigquery.storage.v1.Exceptions.SchemaMismatchedException;
@@ -311,6 +312,73 @@ public class ITBigQueryWriteManualClientTest {
       assertEquals("ddd", iter.next().get(0).getStringValue());
       assertEquals(false, iter.hasNext());
     }
+  }
+
+  @Test
+  public void testRowErrors()
+      throws IOException, InterruptedException, ExecutionException,
+          Descriptors.DescriptorValidationException {
+    String tableName = "_default";
+    TableInfo tableInfo =
+        TableInfo.newBuilder(
+                TableId.of(DATASET, tableName),
+                StandardTableDefinition.of(
+                    Schema.of(
+                        com.google.cloud.bigquery.Field.newBuilder(
+                                "foo", StandardSQLTypeName.STRING)
+                            .setMaxLength(10L)
+                            .build())))
+            .build();
+    bigquery.create(tableInfo);
+    TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
+    WriteStream writeStream =
+        client.createWriteStream(
+            CreateWriteStreamRequest.newBuilder()
+                .setParent(parent.toString())
+                .setWriteStream(
+                    WriteStream.newBuilder().setType(WriteStream.Type.COMMITTED).build())
+                .build());
+    StreamWriter streamWriter =
+        StreamWriter.newBuilder(writeStream.getName())
+            .setWriterSchema(ProtoSchemaConverter.convert(FooType.getDescriptor()))
+            .build();
+    LOG.info("Sending three messages");
+    ApiFuture<AppendRowsResponse> futureResponse =
+        streamWriter.append(
+            CreateProtoRows(new String[] {"aaabbbcccddd", "bbb", "cccdddeeefffggg"}), -1);
+    AppendRowsResponse actualResponse = null;
+    try {
+      actualResponse = futureResponse.get();
+    } catch (Throwable t) {
+      assertTrue(t instanceof ExecutionException);
+      t = t.getCause();
+      assertTrue(t instanceof AppendSerializtionError);
+      AppendSerializtionError e = (AppendSerializtionError) t;
+      LOG.info("Found row errors on stream: " + e.getStreamName());
+      assertEquals(
+          "Field foo: STRING(10) has maximum length 10 but got a value with length 12 on field foo.",
+          e.getRowIndexToErrorMessage().get(0));
+      assertEquals(
+          "Field foo: STRING(10) has maximum length 10 but got a value with length 15 on field foo.",
+          e.getRowIndexToErrorMessage().get(2));
+      for (Map.Entry<Integer, String> entry : e.getRowIndexToErrorMessage().entrySet()) {
+        LOG.info("Bad row index: " + entry.getKey() + ", has problem: " + entry.getValue());
+      }
+    }
+    assertEquals(null, actualResponse);
+    LOG.info("Resending with three good messages");
+    ApiFuture<AppendRowsResponse> futureResponse1 =
+        streamWriter.append(CreateProtoRows(new String[] {"aaa", "bbb", "ccc"}), -1);
+    assertEquals(3, futureResponse1.get().getAppendResult().getOffset().getValue());
+
+    TableResult result =
+        bigquery.listTableData(tableInfo.getTableId(), BigQuery.TableDataListOption.startIndex(0L));
+    Iterator<FieldValueList> iter = result.getValues().iterator();
+    FieldValueList currentRow = iter.next();
+    assertEquals("aaa", currentRow.get(0).getStringValue());
+    assertEquals("bbb", iter.next().get(0).getStringValue());
+    assertEquals("ccc", iter.next().get(0).getStringValue());
+    assertEquals(false, iter.hasNext());
   }
 
   @Test

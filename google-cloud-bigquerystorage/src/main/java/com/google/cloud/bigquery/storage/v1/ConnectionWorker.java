@@ -21,6 +21,7 @@ import com.google.api.gax.batching.FlowController;
 import com.google.auto.value.AutoValue;
 import com.google.cloud.bigquery.storage.util.Errors;
 import com.google.cloud.bigquery.storage.v1.AppendRowsRequest.ProtoData;
+import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializtionError;
 import com.google.cloud.bigquery.storage.v1.StreamConnection.DoneCallback;
 import com.google.cloud.bigquery.storage.v1.StreamConnection.RequestCallback;
 import com.google.common.annotations.VisibleForTesting;
@@ -32,7 +33,9 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Comparator;
 import java.util.Deque;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
@@ -633,6 +636,15 @@ public class ConnectionWorker implements AutoCloseable {
           Exceptions.toStorageException(response.getError(), null);
       if (storageException != null) {
         requestWrapper.appendResult.setException(storageException);
+      } else if (response.getRowErrorsCount() > 0) {
+        Map<Integer, String> rowIndexToErrorMessage = new HashMap<>();
+        for (int i = 0; i < response.getRowErrorsCount(); i++) {
+          RowError rowError = response.getRowErrors(i);
+          rowIndexToErrorMessage.put(Math.toIntExact(rowError.getIndex()), rowError.getMessage());
+        }
+        AppendSerializtionError exception =
+            new AppendSerializtionError(streamName, rowIndexToErrorMessage);
+        requestWrapper.appendResult.setException(exception);
       } else {
         StatusRuntimeException exception =
             new StatusRuntimeException(
