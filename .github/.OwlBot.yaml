@@ -22,6 +22,10 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/BigQuerySchemaUtil.java"
+- "google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1/BigQuerySchemaUtilTest.java"
+- "google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1/ConnectionWorkerPoolTest.java"
+- "google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1/ConnectionWorkerTest.java"
 - "/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v.*/BigQueryReadSettings.java"
 - "/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v.*/BigQueryReadClient.java"
 - "/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/util"

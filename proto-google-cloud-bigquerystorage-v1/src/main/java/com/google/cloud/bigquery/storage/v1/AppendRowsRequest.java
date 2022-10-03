@@ -58,95 +58,6 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     return this.unknownFields;
   }
 
-  private AppendRowsRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              writeStream_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.protobuf.Int64Value.Builder subBuilder = null;
-              if (offset_ != null) {
-                subBuilder = offset_.toBuilder();
-              }
-              offset_ =
-                  input.readMessage(com.google.protobuf.Int64Value.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(offset_);
-                offset_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.bigquery.storage.v1.AppendRowsRequest.ProtoData.Builder subBuilder =
-                  null;
-              if (rowsCase_ == 4) {
-                subBuilder =
-                    ((com.google.cloud.bigquery.storage.v1.AppendRowsRequest.ProtoData) rows_)
-                        .toBuilder();
-              }
-              rows_ =
-                  input.readMessage(
-                      com.google.cloud.bigquery.storage.v1.AppendRowsRequest.ProtoData.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.bigquery.storage.v1.AppendRowsRequest.ProtoData) rows_);
-                rows_ = subBuilder.buildPartial();
-              }
-              rowsCase_ = 4;
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              traceId_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.storage.v1.StorageProto
         .internal_static_google_cloud_bigquery_storage_v1_AppendRowsRequest_descriptor;
@@ -283,78 +194,6 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private ProtoData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.cloud.bigquery.storage.v1.ProtoSchema.Builder subBuilder = null;
-                if (writerSchema_ != null) {
-                  subBuilder = writerSchema_.toBuilder();
-                }
-                writerSchema_ =
-                    input.readMessage(
-                        com.google.cloud.bigquery.storage.v1.ProtoSchema.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(writerSchema_);
-                  writerSchema_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 18:
-              {
-                com.google.cloud.bigquery.storage.v1.ProtoRows.Builder subBuilder = null;
-                if (rows_ != null) {
-                  subBuilder = rows_.toBuilder();
-                }
-                rows_ =
-                    input.readMessage(
-                        com.google.cloud.bigquery.storage.v1.ProtoRows.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(rows_);
-                  rows_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -509,7 +348,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       if (rows_ != null) {
         output.writeMessage(2, getRows());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -524,7 +363,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       if (rows_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getRows());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -548,7 +387,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       if (hasRows()) {
         if (!getRows().equals(other.getRows())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -567,7 +406,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         hash = (37 * hash) + ROWS_FIELD_NUMBER;
         hash = (53 * hash) + getRows().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -702,17 +541,10 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
 
       // Construct using
       // com.google.cloud.bigquery.storage.v1.AppendRowsRequest.ProtoData.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -830,7 +662,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         if (other.hasRows()) {
           mergeRows(other.getRows());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -850,19 +682,43 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.bigquery.storage.v1.AppendRowsRequest.ProtoData parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getWriterSchemaFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getRowsFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.bigquery.storage.v1.AppendRowsRequest.ProtoData)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1318,7 +1174,19 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ProtoData(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1640,7 +1508,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traceId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, traceId_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1663,7 +1531,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traceId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, traceId_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1693,7 +1561,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1720,7 +1588,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1855,17 +1723,10 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     }
 
     // Construct using com.google.cloud.bigquery.storage.v1.AppendRowsRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1878,6 +1739,9 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       } else {
         offset_ = null;
         offsetBuilder_ = null;
+      }
+      if (protoRowsBuilder_ != null) {
+        protoRowsBuilder_.clear();
       }
       traceId_ = "";
 
@@ -1997,7 +1861,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2017,18 +1881,55 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.bigquery.storage.v1.AppendRowsRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                writeStream_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getOffsetFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 34:
+              {
+                input.readMessage(getProtoRowsFieldBuilder().getBuilder(), extensionRegistry);
+                rowsCase_ = 4;
+                break;
+              } // case 34
+            case 50:
+              {
+                traceId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.bigquery.storage.v1.AppendRowsRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2766,7 +2667,18 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AppendRowsRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
