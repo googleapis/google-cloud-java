@@ -62,158 +62,6 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private LogSink(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              destination_ = s;
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              filter_ = s;
-              break;
-            }
-          case 48:
-            {
-              int rawValue = input.readEnum();
-
-              outputVersionFormat_ = rawValue;
-              break;
-            }
-          case 66:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              writerIdentity_ = s;
-              break;
-            }
-          case 72:
-            {
-              includeChildren_ = input.readBool();
-              break;
-            }
-          case 98:
-            {
-              com.google.logging.v2.BigQueryOptions.Builder subBuilder = null;
-              if (optionsCase_ == 12) {
-                subBuilder = ((com.google.logging.v2.BigQueryOptions) options_).toBuilder();
-              }
-              options_ =
-                  input.readMessage(
-                      com.google.logging.v2.BigQueryOptions.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.logging.v2.BigQueryOptions) options_);
-                options_ = subBuilder.buildPartial();
-              }
-              optionsCase_ = 12;
-              break;
-            }
-          case 106:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 114:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 130:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                exclusions_ = new java.util.ArrayList<com.google.logging.v2.LogExclusion>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              exclusions_.add(
-                  input.readMessage(
-                      com.google.logging.v2.LogExclusion.parser(), extensionRegistry));
-              break;
-            }
-          case 146:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 152:
-            {
-              disabled_ = input.readBool();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        exclusions_ = java.util.Collections.unmodifiableList(exclusions_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.logging.v2.LoggingConfigProto
         .internal_static_google_logging_v2_LogSink_descriptor;
@@ -1137,7 +985,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     if (disabled_ != false) {
       output.writeBool(19, disabled_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1185,7 +1033,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     if (disabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, disabled_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1225,7 +1073,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1272,7 +1120,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1403,19 +1251,10 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.logging.v2.LogSink.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getExclusionsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1433,16 +1272,20 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
 
       if (exclusionsBuilder_ == null) {
         exclusions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        exclusions_ = null;
         exclusionsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       outputVersionFormat_ = 0;
 
       writerIdentity_ = "";
 
       includeChildren_ = false;
 
+      if (bigqueryOptionsBuilder_ != null) {
+        bigqueryOptionsBuilder_.clear();
+      }
       if (createTimeBuilder_ == null) {
         createTime_ = null;
       } else {
@@ -1641,7 +1484,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1656,17 +1499,110 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.logging.v2.LogSink parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 26:
+              {
+                destination_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 42:
+              {
+                filter_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            case 48:
+              {
+                outputVersionFormat_ = input.readEnum();
+
+                break;
+              } // case 48
+            case 66:
+              {
+                writerIdentity_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 66
+            case 72:
+              {
+                includeChildren_ = input.readBool();
+
+                break;
+              } // case 72
+            case 98:
+              {
+                input.readMessage(getBigqueryOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                optionsCase_ = 12;
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 106
+            case 114:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 114
+            case 130:
+              {
+                com.google.logging.v2.LogExclusion m =
+                    input.readMessage(
+                        com.google.logging.v2.LogExclusion.parser(), extensionRegistry);
+                if (exclusionsBuilder_ == null) {
+                  ensureExclusionsIsMutable();
+                  exclusions_.add(m);
+                } else {
+                  exclusionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 130
+            case 146:
+              {
+                description_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 146
+            case 152:
+              {
+                disabled_ = input.readBool();
+
+                break;
+              } // case 152
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.logging.v2.LogSink) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3743,7 +3679,18 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LogSink(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
