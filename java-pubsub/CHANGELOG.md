@@ -1,5 +1,38 @@
 # Changelog
 
+## [1.120.19](https://github.com/googleapis/java-pubsub/compare/v1.120.18...v1.120.19) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#1324](https://github.com/googleapis/java-pubsub/issues/1324)) ([72b6d5f](https://github.com/googleapis/java-pubsub/commit/72b6d5f7ce6b464c1f1653699178e989c7eb6a75))
+* Update dependency certifi to v2022.9.24 ([#1303](https://github.com/googleapis/java-pubsub/issues/1303)) ([dc05237](https://github.com/googleapis/java-pubsub/commit/dc052371a1a83a194cb0098f93a8e8dd57d8e5d4))
+* Update dependency charset-normalizer to v2.1.1 ([#1308](https://github.com/googleapis/java-pubsub/issues/1308)) ([fedf2e1](https://github.com/googleapis/java-pubsub/commit/fedf2e1f98bf77de6d6cac18e745819e8250df57))
+* Update dependency click to v8.1.3 ([#1309](https://github.com/googleapis/java-pubsub/issues/1309)) ([0ddcb5b](https://github.com/googleapis/java-pubsub/commit/0ddcb5b324ecc4e3a8cc98bc2ef0d210061a79d5))
+* Update dependency com.google.cloud:google-cloud-core to v2.8.15 ([#1299](https://github.com/googleapis/java-pubsub/issues/1299)) ([11f220c](https://github.com/googleapis/java-pubsub/commit/11f220ca32bf82c87746837e12ae878ee9578704))
+* Update dependency com.google.cloud:google-cloud-core to v2.8.16 ([#1301](https://github.com/googleapis/java-pubsub/issues/1301)) ([186c794](https://github.com/googleapis/java-pubsub/commit/186c79497057847aa577b47d169e3535274b0a2d))
+* Update dependency com.google.cloud:google-cloud-core to v2.8.17 ([#1326](https://github.com/googleapis/java-pubsub/issues/1326)) ([361a2f2](https://github.com/googleapis/java-pubsub/commit/361a2f2ae44098d280c1244479954638d4321a69))
+* Update dependency com.google.cloud:google-cloud-core to v2.8.18 ([#1328](https://github.com/googleapis/java-pubsub/issues/1328)) ([ae23532](https://github.com/googleapis/java-pubsub/commit/ae23532092c80e3b4abe8e1b51f2ef67bb991428))
+* Update dependency com.google.cloud:google-cloud-core to v2.8.20 ([#1329](https://github.com/googleapis/java-pubsub/issues/1329)) ([c37b88e](https://github.com/googleapis/java-pubsub/commit/c37b88e209dd1d58035385676d7c1dfca0da2c4e))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#1330](https://github.com/googleapis/java-pubsub/issues/1330)) ([0f6cc6c](https://github.com/googleapis/java-pubsub/commit/0f6cc6c01e6afeb717487e7435575d243bd0203d))
+* Update dependency com.google.protobuf:protobuf-java-util to v3.21.7 ([#1327](https://github.com/googleapis/java-pubsub/issues/1327)) ([6355eb0](https://github.com/googleapis/java-pubsub/commit/6355eb0ed1fa94a36fbb0169e4b6dc7faed165ff))
+* Update dependency gcp-releasetool to v1.8.8 ([#1304](https://github.com/googleapis/java-pubsub/issues/1304)) ([1c7c6eb](https://github.com/googleapis/java-pubsub/commit/1c7c6eb10a184919d36f7738f4594cd7aff9f87b))
+* Update dependency google-api-core to v2.10.1 ([#1310](https://github.com/googleapis/java-pubsub/issues/1310)) ([14725f2](https://github.com/googleapis/java-pubsub/commit/14725f248082c4397b0058d25984a61a9bf2c5c9))
+* Update dependency google-auth to v2.11.1 ([#1305](https://github.com/googleapis/java-pubsub/issues/1305)) ([a6954d1](https://github.com/googleapis/java-pubsub/commit/a6954d1cf17cb0247e5e153001ec983fb957b410))
+* Update dependency google-auth to v2.12.0 ([#1313](https://github.com/googleapis/java-pubsub/issues/1313)) ([ffcebe4](https://github.com/googleapis/java-pubsub/commit/ffcebe43542d4ab3b2cea1c2dcb5e6b345c4905b))
+* Update dependency google-cloud-core to v2.3.2 ([#1306](https://github.com/googleapis/java-pubsub/issues/1306)) ([fbb4460](https://github.com/googleapis/java-pubsub/commit/fbb44605794a350889ae300f697b76ed9ff41af2))
+* Update dependency importlib-metadata to v4.12.0 ([#1314](https://github.com/googleapis/java-pubsub/issues/1314)) ([e319df0](https://github.com/googleapis/java-pubsub/commit/e319df0bce76b1d8ba25b410225377d624070926))
+* Update dependency jeepney to v0.8.0 ([#1315](https://github.com/googleapis/java-pubsub/issues/1315)) ([5ed336e](https://github.com/googleapis/java-pubsub/commit/5ed336ef0b29fa89a1a508fbc2d3870b5ecff6d3))
+* Update dependency jinja2 to v3.1.2 ([#1316](https://github.com/googleapis/java-pubsub/issues/1316)) ([14ecdc6](https://github.com/googleapis/java-pubsub/commit/14ecdc6f3492e404957f1b16744a4928198d9e92))
+* Update dependency keyring to v23.9.3 ([#1317](https://github.com/googleapis/java-pubsub/issues/1317)) ([3e783d4](https://github.com/googleapis/java-pubsub/commit/3e783d47e8face65ef33b5bc7ca0bf7f0e35ca02))
+* Update dependency markupsafe to v2.1.1 ([#1318](https://github.com/googleapis/java-pubsub/issues/1318)) ([ecd9c76](https://github.com/googleapis/java-pubsub/commit/ecd9c76e2a9cce5c7f9dd6e9a8b84f748f69666a))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.14 ([#1297](https://github.com/googleapis/java-pubsub/issues/1297)) ([7e7ce60](https://github.com/googleapis/java-pubsub/commit/7e7ce60533386afdcd1b313603c468125ad0cb7d))
+* Update dependency protobuf to v3.20.2 ([#1319](https://github.com/googleapis/java-pubsub/issues/1319)) ([f5123fa](https://github.com/googleapis/java-pubsub/commit/f5123fa69ec7ac191d13c86823d105332853d944))
+* Update dependency pyjwt to v2.5.0 ([#1320](https://github.com/googleapis/java-pubsub/issues/1320)) ([a568462](https://github.com/googleapis/java-pubsub/commit/a568462b971908eb3424c9bbb5f49a6543c80fd3))
+* Update dependency requests to v2.28.1 ([#1321](https://github.com/googleapis/java-pubsub/issues/1321)) ([41b105a](https://github.com/googleapis/java-pubsub/commit/41b105a798aa9bcf2ce7ccde34efe119e76d963b))
+* Update dependency typing-extensions to v4.3.0 ([#1322](https://github.com/googleapis/java-pubsub/issues/1322)) ([288cd7e](https://github.com/googleapis/java-pubsub/commit/288cd7eaf90e219c735a89822e3858085e8423fd))
+* Update dependency zipp to v3.8.1 ([#1323](https://github.com/googleapis/java-pubsub/issues/1323)) ([e78a284](https://github.com/googleapis/java-pubsub/commit/e78a284cf07b9bac56087bbbb9f940ee976a3b4a))
+
 ## [1.120.18](https://github.com/googleapis/java-pubsub/compare/v1.120.17...v1.120.18) (2022-09-21)
 
 
