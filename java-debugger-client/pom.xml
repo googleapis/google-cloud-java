@@ -69,22 +69,22 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-debugger-client</artifactId>
-        <version>1.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-debugger-client:current} -->
+        <version>1.3.3</version><!-- {x-version-update:google-cloud-debugger-client:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-debugger-client-v2</artifactId>
-        <version>1.3.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-debugger-client-v2:current} -->
+        <version>1.3.3</version><!-- {x-version-update:grpc-google-cloud-debugger-client-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-debugger-client-v2</artifactId>
-        <version>1.3.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-debugger-client-v2:current} -->
+        <version>1.3.3</version><!-- {x-version-update:proto-google-cloud-debugger-client-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-devtools-source-protos</artifactId>
-        <version>1.3.3-SNAPSHOT</version><!-- {x-version-update:proto-google-devtools-source-protos:current} -->
+        <version>1.3.3</version><!-- {x-version-update:proto-google-devtools-source-protos:current} -->
       </dependency>
 
       <dependency>

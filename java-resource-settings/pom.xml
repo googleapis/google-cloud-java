@@ -69,17 +69,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-resource-settings</artifactId>
-        <version>1.3.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-resource-settings:current} -->
+        <version>1.3.2</version><!-- {x-version-update:google-cloud-resource-settings:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-resource-settings-v1</artifactId>
-        <version>1.3.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-resource-settings-v1:current} -->
+        <version>1.3.2</version><!-- {x-version-update:grpc-google-cloud-resource-settings-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-resource-settings-v1</artifactId>
-        <version>1.3.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-resource-settings-v1:current} -->
+        <version>1.3.2</version><!-- {x-version-update:proto-google-cloud-resource-settings-v1:current} -->
       </dependency>
 
       <dependency>

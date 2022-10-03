@@ -69,17 +69,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dataplex</artifactId>
-        <version>1.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataplex:current} -->
+        <version>1.1.1</version><!-- {x-version-update:google-cloud-dataplex:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dataplex-v1</artifactId>
-        <version>1.1.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataplex-v1:current} -->
+        <version>1.1.1</version><!-- {x-version-update:grpc-google-cloud-dataplex-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dataplex-v1</artifactId>
-        <version>1.1.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataplex-v1:current} -->
+        <version>1.1.1</version><!-- {x-version-update:proto-google-cloud-dataplex-v1:current} -->
       </dependency>
 
       <dependency>

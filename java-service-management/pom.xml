@@ -61,17 +61,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-service-management</artifactId>
-        <version>3.1.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-management:current} -->
+        <version>3.1.4</version><!-- {x-version-update:google-cloud-service-management:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-service-management-v1</artifactId>
-        <version>3.1.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-service-management-v1:current} -->
+        <version>3.1.4</version><!-- {x-version-update:proto-google-cloud-service-management-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-service-management-v1</artifactId>
-        <version>3.1.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-service-management-v1:current} -->
+        <version>3.1.4</version><!-- {x-version-update:grpc-google-cloud-service-management-v1:current} -->
       </dependency>
 
       <dependency>
