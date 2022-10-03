@@ -23,9 +23,10 @@ source ./helpers/gcloud-login.sh
 source ./helpers/create-project.sh
 createProject
 
+# If Terraform was previously configured to work with a different project,
+# then remove the previous Terraform state.
 if [[ $(terraform output -raw project_id &>/dev/null) ]]; then
   prev_project_id=$(terraform output -raw project_id)
-  # Remove previous Terraform state if the project has changed.
   if [[ "$prev_project_id" != "$GOOGLE_CLOUD_PROJECT" ]]; then
     if [[ -f terraform.tfstate ]]; then
       remove terraform.tfstate
@@ -40,6 +41,7 @@ sed -i.bak '/quota_project_id/d' ~/.config/gcloud/application_default_credential
 gcloud auth application-default set-quota-project "$GOOGLE_CLOUD_PROJECT"
 
 # Assign permission for current gcloud account to impersonate a service account.
+gcloud_account=$(gcloud config get account)
 gcloud projects add-iam-policy-binding "$GOOGLE_CLOUD_PROJECT" \
   --member="user:$gcloud_account" \
   --role="roles/iam.serviceAccountTokenCreator" >/dev/null
@@ -48,8 +50,9 @@ gcloud projects add-iam-policy-binding "$GOOGLE_CLOUD_PROJECT" \
 project_number=$(gcloud projects describe "$GOOGLE_CLOUD_PROJECT" --format 'value(projectNumber)')
 service_account_name="terraform-service-account"
 service_account_email="$service_account_name@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com"
-gcloud_account=$(gcloud config get account)
-if [[ ! $(gcloud iam service-accounts describe "$service_account_email" &>/dev/null) ]]; then
+# If it doesn't already exist, create the service account.
+gcloud iam service-accounts describe "$service_account_email" &>/dev/null
+if [[ $? -ne 0 ]]; then
   gcloud iam service-accounts create "$service_account_name"
   # Assign permissions to the service account.
   gcloud projects add-iam-policy-binding "$GOOGLE_CLOUD_PROJECT" \
@@ -73,7 +76,8 @@ project_id = \"$GOOGLE_CLOUD_PROJECT\"
 gcloud_account = \"$gcloud_account\"
 service_account = \"$service_account_email\"
 " >generated.auto.tfvars
-
 terraform fmt -list=false generated.auto.tfvars
+
+# See https://www.terraform.io/cli/commands/plan
 terraform plan -out generated.tfplan || exit
 terraform show -json generated.tfplan >generated.tfplan.json
