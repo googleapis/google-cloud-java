@@ -19,12 +19,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud.datastore</groupId>
   <artifactId>datastore-v1-proto-client</artifactId>
-  <version>2.11.5</version><!-- {x-version-update:datastore-v1-proto-client:current} -->
+  <version>2.11.6-SNAPSHOT</version><!-- {x-version-update:datastore-v1-proto-client:current} -->
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-datastore-parent</artifactId>
-    <version>2.11.5</version><!-- {x-version-update:google-cloud-datastore:current} -->
+    <version>2.11.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore:current} -->
   </parent>
 
   <packaging>jar</packaging>
