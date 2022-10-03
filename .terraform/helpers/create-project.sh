@@ -30,7 +30,7 @@ function createProject() {
 
   currentProject=$(gcloud config get project)
   if [ -n "${currentProject}" ]; then
-    echo -n "Do you want to use the current gcloud project ($currentProject)? (Y|n)"
+    echo -n "Do you want to use the current gcloud project ($currentProject)? (Y|n): "
     read -r shouldUseCurrent
     if [[ "$shouldUseCurrent" != n* ]] && [[ "$shouldUseCurrent" != N* ]]; then
       GOOGLE_CLOUD_PROJECT=$currentProject
@@ -70,12 +70,12 @@ function createProject() {
   randomSuffix=$RANDOM
   projectId="${TF_VAR_project_prefix}"-"${randomSuffix}"
   gcloud projects create --folder="$TF_VAR_folder_id" "$projectId" || exit
-  echo "Waiting for 1 minute to allow default Cloud API services to be enabled."
-  sleep 1m
+  gcloud config set project "$projectId"
   gcloud services enable cloudresourcemanager.googleapis.com
   gcloud beta billing projects link "$projectId" --billing-account="$TF_VAR_billing_account"
-  gcloud config set project "$projectId"
   GOOGLE_CLOUD_PROJECT=$projectId
+  echo "Waiting for 30s to allow default Cloud API services to be enabled."
+  sleep 30s
 }
 
 function deleteProject() {

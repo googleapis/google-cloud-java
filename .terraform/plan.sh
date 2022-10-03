@@ -39,26 +39,28 @@ gcloud config set project "$GOOGLE_CLOUD_PROJECT"
 sed -i.bak '/quota_project_id/d' ~/.config/gcloud/application_default_credentials.json
 gcloud auth application-default set-quota-project "$GOOGLE_CLOUD_PROJECT"
 
+# Assign permission for current gcloud account to impersonate a service account.
+gcloud projects add-iam-policy-binding "$GOOGLE_CLOUD_PROJECT" \
+  --member="user:$gcloud_account" \
+  --role="roles/iam.serviceAccountTokenCreator" >/dev/null
+
 # Set up service account for impersonation
 project_number=$(gcloud projects describe "$GOOGLE_CLOUD_PROJECT" --format 'value(projectNumber)')
 service_account_name="terraform-service-account"
 service_account_email="$service_account_name@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com"
 gcloud_account=$(gcloud config get account)
-if [[ ! $(gcloud iam service-accounts describe "$service_account_email") ]]; then
+if [[ ! $(gcloud iam service-accounts describe "$service_account_email" &>/dev/null) ]]; then
   gcloud iam service-accounts create "$service_account_name"
-  sleep 10s
+  # Assign permissions to the service account.
+  gcloud projects add-iam-policy-binding "$GOOGLE_CLOUD_PROJECT" \
+    --member="serviceAccount:$service_account_email" \
+    --role="roles/owner" >/dev/null
+  gcloud projects add-iam-policy-binding "$GOOGLE_CLOUD_PROJECT" \
+    --member="serviceAccount:$service_account_email" \
+    --role="roles/resourcemanager.projectIamAdmin" >/dev/null
+  echo "Waiting for 30s to allow service account permissions to be enabled."
+  sleep 30s
 fi
-# Assign permission for current gcloud account to impersonate a service account.
-gcloud projects add-iam-policy-binding "$GOOGLE_CLOUD_PROJECT" \
-  --member="user:$gcloud_account" \
-  --role="roles/iam.serviceAccountTokenCreator" >/dev/null
-# Assign permissions to the service account.
-gcloud projects add-iam-policy-binding "$GOOGLE_CLOUD_PROJECT" \
-  --member="serviceAccount:$service_account_email" \
-  --role="roles/owner" >/dev/null
-gcloud projects add-iam-policy-binding "$GOOGLE_CLOUD_PROJECT" \
-  --member="serviceAccount:$service_account_email" \
-  --role="roles/resourcemanager.projectIamAdmin" >/dev/null
 
 # See https://cloud.google.com/blog/topics/developers-practitioners/using-google-cloud-service-account-impersonation-your-terraform-code
 export GOOGLE_IMPERSONATE_SERVICE_ACCOUNT=$service_account_email
