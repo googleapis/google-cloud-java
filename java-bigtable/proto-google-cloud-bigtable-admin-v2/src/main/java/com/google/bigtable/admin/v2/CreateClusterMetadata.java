@@ -50,110 +50,6 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
     return this.unknownFields;
   }
 
-  private CreateClusterMetadata(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.bigtable.admin.v2.CreateClusterRequest.Builder subBuilder = null;
-              if (originalRequest_ != null) {
-                subBuilder = originalRequest_.toBuilder();
-              }
-              originalRequest_ =
-                  input.readMessage(
-                      com.google.bigtable.admin.v2.CreateClusterRequest.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(originalRequest_);
-                originalRequest_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (requestTime_ != null) {
-                subBuilder = requestTime_.toBuilder();
-              }
-              requestTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(requestTime_);
-                requestTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (finishTime_ != null) {
-                subBuilder = finishTime_.toBuilder();
-              }
-              finishTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(finishTime_);
-                finishTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                tables_ =
-                    com.google.protobuf.MapField.newMapField(TablesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<
-                      java.lang.String,
-                      com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress>
-                  tables__ =
-                      input.readMessage(
-                          TablesDefaultEntryHolder.defaultEntry.getParserForType(),
-                          extensionRegistry);
-              tables_.getMutableMap().put(tables__.getKey(), tables__.getValue());
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.admin.v2.BigtableInstanceAdminProto
         .internal_static_google_bigtable_admin_v2_CreateClusterMetadata_descriptor;
@@ -258,62 +154,6 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private TableProgress(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16:
-              {
-                estimatedSizeBytes_ = input.readInt64();
-                break;
-              }
-            case 24:
-              {
-                estimatedCopiedBytes_ = input.readInt64();
-                break;
-              }
-            case 32:
-              {
-                int rawValue = input.readEnum();
-
-                state_ = rawValue;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -604,7 +444,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
               .getNumber()) {
         output.writeEnum(4, state_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -625,7 +465,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, state_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -644,7 +484,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       if (getEstimatedSizeBytes() != other.getEstimatedSizeBytes()) return false;
       if (getEstimatedCopiedBytes() != other.getEstimatedCopiedBytes()) return false;
       if (state_ != other.state_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -661,7 +501,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getEstimatedCopiedBytes());
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + state_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -795,17 +635,10 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
 
       // Construct using
       // com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -913,7 +746,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
         if (other.state_ != 0) {
           setStateValue(other.getStateValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -928,19 +761,49 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16:
+                {
+                  estimatedSizeBytes_ = input.readInt64();
+
+                  break;
+                } // case 16
+              case 24:
+                {
+                  estimatedCopiedBytes_ = input.readInt64();
+
+                  break;
+                } // case 24
+              case 32:
+                {
+                  state_ = input.readEnum();
+
+                  break;
+                } // case 32
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1153,7 +1016,19 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new TableProgress(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1489,7 +1364,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetTables(), TablesDefaultEntryHolder.defaultEntry, 4);
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1520,7 +1395,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, tables__);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1549,7 +1424,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       if (!getFinishTime().equals(other.getFinishTime())) return false;
     }
     if (!internalGetTables().equals(other.internalGetTables())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1576,7 +1451,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + TABLES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetTables().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1725,17 +1600,10 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
     }
 
     // Construct using com.google.bigtable.admin.v2.CreateClusterMetadata.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1865,7 +1733,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
         mergeFinishTime(other.getFinishTime());
       }
       internalGetMutableTables().mergeFrom(other.internalGetTables());
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1880,18 +1748,63 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.bigtable.admin.v2.CreateClusterMetadata parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getOriginalRequestFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getRequestTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getFinishTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String,
+                        com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress>
+                    tables__ =
+                        input.readMessage(
+                            TablesDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableTables()
+                    .getMutableMap()
+                    .put(tables__.getKey(), tables__.getValue());
+                break;
+              } // case 34
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.bigtable.admin.v2.CreateClusterMetadata) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2720,7 +2633,18 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CreateClusterMetadata(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

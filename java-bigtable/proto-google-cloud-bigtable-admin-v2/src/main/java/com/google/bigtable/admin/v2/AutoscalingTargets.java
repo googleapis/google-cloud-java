@@ -50,55 +50,6 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private AutoscalingTargets(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 16:
-            {
-              cpuUtilizationPercent_ = input.readInt32();
-              break;
-            }
-          case 24:
-            {
-              storageUtilizationGibPerNode_ = input.readInt32();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.admin.v2.InstanceProto
         .internal_static_google_bigtable_admin_v2_AutoscalingTargets_descriptor;
@@ -178,7 +129,7 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
     if (storageUtilizationGibPerNode_ != 0) {
       output.writeInt32(3, storageUtilizationGibPerNode_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -194,7 +145,7 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(3, storageUtilizationGibPerNode_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -212,7 +163,7 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
 
     if (getCpuUtilizationPercent() != other.getCpuUtilizationPercent()) return false;
     if (getStorageUtilizationGibPerNode() != other.getStorageUtilizationGibPerNode()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -227,7 +178,7 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getCpuUtilizationPercent();
     hash = (37 * hash) + STORAGE_UTILIZATION_GIB_PER_NODE_FIELD_NUMBER;
     hash = (53 * hash) + getStorageUtilizationGibPerNode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -356,17 +307,10 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.bigtable.admin.v2.AutoscalingTargets.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -461,7 +405,7 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
       if (other.getStorageUtilizationGibPerNode() != 0) {
         setStorageUtilizationGibPerNode(other.getStorageUtilizationGibPerNode());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -476,17 +420,43 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.bigtable.admin.v2.AutoscalingTargets parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16:
+              {
+                cpuUtilizationPercent_ = input.readInt32();
+
+                break;
+              } // case 16
+            case 24:
+              {
+                storageUtilizationGibPerNode_ = input.readInt32();
+
+                break;
+              } // case 24
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.bigtable.admin.v2.AutoscalingTargets) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -650,7 +620,18 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AutoscalingTargets(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -55,98 +55,6 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
     return this.unknownFields;
   }
 
-  private RestoreTableMetadata(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 16:
-            {
-              int rawValue = input.readEnum();
-
-              sourceType_ = rawValue;
-              break;
-            }
-          case 26:
-            {
-              com.google.bigtable.admin.v2.BackupInfo.Builder subBuilder = null;
-              if (sourceInfoCase_ == 3) {
-                subBuilder = ((com.google.bigtable.admin.v2.BackupInfo) sourceInfo_).toBuilder();
-              }
-              sourceInfo_ =
-                  input.readMessage(
-                      com.google.bigtable.admin.v2.BackupInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.bigtable.admin.v2.BackupInfo) sourceInfo_);
-                sourceInfo_ = subBuilder.buildPartial();
-              }
-              sourceInfoCase_ = 3;
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              optimizeTableOperationName_ = s;
-              break;
-            }
-          case 42:
-            {
-              com.google.bigtable.admin.v2.OperationProgress.Builder subBuilder = null;
-              if (progress_ != null) {
-                subBuilder = progress_.toBuilder();
-              }
-              progress_ =
-                  input.readMessage(
-                      com.google.bigtable.admin.v2.OperationProgress.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(progress_);
-                progress_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.admin.v2.BigtableTableAdminProto
         .internal_static_google_bigtable_admin_v2_RestoreTableMetadata_descriptor;
@@ -469,7 +377,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
     if (progress_ != null) {
       output.writeMessage(5, getProgress());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -498,7 +406,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
     if (progress_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getProgress());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -530,7 +438,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -559,7 +467,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -689,17 +597,10 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
     }
 
     // Construct using com.google.bigtable.admin.v2.RestoreTableMetadata.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -709,6 +610,9 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
 
       sourceType_ = 0;
 
+      if (backupInfoBuilder_ != null) {
+        backupInfoBuilder_.clear();
+      }
       optimizeTableOperationName_ = "";
 
       if (progressBuilder_ == null) {
@@ -837,7 +741,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -852,18 +756,61 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.bigtable.admin.v2.RestoreTableMetadata parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 16:
+              {
+                sourceType_ = input.readEnum();
+
+                break;
+              } // case 16
+            case 26:
+              {
+                input.readMessage(getBackupInfoFieldBuilder().getBuilder(), extensionRegistry);
+                sourceInfoCase_ = 3;
+                break;
+              } // case 26
+            case 34:
+              {
+                optimizeTableOperationName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getProgressFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.bigtable.admin.v2.RestoreTableMetadata) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1592,7 +1539,18 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RestoreTableMetadata(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

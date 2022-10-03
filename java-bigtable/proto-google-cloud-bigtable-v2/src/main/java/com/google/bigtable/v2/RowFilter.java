@@ -77,219 +77,6 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private RowFilter(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.bigtable.v2.RowFilter.Chain.Builder subBuilder = null;
-              if (filterCase_ == 1) {
-                subBuilder = ((com.google.bigtable.v2.RowFilter.Chain) filter_).toBuilder();
-              }
-              filter_ =
-                  input.readMessage(
-                      com.google.bigtable.v2.RowFilter.Chain.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.bigtable.v2.RowFilter.Chain) filter_);
-                filter_ = subBuilder.buildPartial();
-              }
-              filterCase_ = 1;
-              break;
-            }
-          case 18:
-            {
-              com.google.bigtable.v2.RowFilter.Interleave.Builder subBuilder = null;
-              if (filterCase_ == 2) {
-                subBuilder = ((com.google.bigtable.v2.RowFilter.Interleave) filter_).toBuilder();
-              }
-              filter_ =
-                  input.readMessage(
-                      com.google.bigtable.v2.RowFilter.Interleave.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.bigtable.v2.RowFilter.Interleave) filter_);
-                filter_ = subBuilder.buildPartial();
-              }
-              filterCase_ = 2;
-              break;
-            }
-          case 26:
-            {
-              com.google.bigtable.v2.RowFilter.Condition.Builder subBuilder = null;
-              if (filterCase_ == 3) {
-                subBuilder = ((com.google.bigtable.v2.RowFilter.Condition) filter_).toBuilder();
-              }
-              filter_ =
-                  input.readMessage(
-                      com.google.bigtable.v2.RowFilter.Condition.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.bigtable.v2.RowFilter.Condition) filter_);
-                filter_ = subBuilder.buildPartial();
-              }
-              filterCase_ = 3;
-              break;
-            }
-          case 34:
-            {
-              filter_ = input.readBytes();
-              filterCase_ = 4;
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              filterCase_ = 5;
-              filter_ = s;
-              break;
-            }
-          case 50:
-            {
-              filter_ = input.readBytes();
-              filterCase_ = 6;
-              break;
-            }
-          case 58:
-            {
-              com.google.bigtable.v2.ColumnRange.Builder subBuilder = null;
-              if (filterCase_ == 7) {
-                subBuilder = ((com.google.bigtable.v2.ColumnRange) filter_).toBuilder();
-              }
-              filter_ =
-                  input.readMessage(com.google.bigtable.v2.ColumnRange.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.bigtable.v2.ColumnRange) filter_);
-                filter_ = subBuilder.buildPartial();
-              }
-              filterCase_ = 7;
-              break;
-            }
-          case 66:
-            {
-              com.google.bigtable.v2.TimestampRange.Builder subBuilder = null;
-              if (filterCase_ == 8) {
-                subBuilder = ((com.google.bigtable.v2.TimestampRange) filter_).toBuilder();
-              }
-              filter_ =
-                  input.readMessage(
-                      com.google.bigtable.v2.TimestampRange.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.bigtable.v2.TimestampRange) filter_);
-                filter_ = subBuilder.buildPartial();
-              }
-              filterCase_ = 8;
-              break;
-            }
-          case 74:
-            {
-              filter_ = input.readBytes();
-              filterCase_ = 9;
-              break;
-            }
-          case 80:
-            {
-              filter_ = input.readInt32();
-              filterCase_ = 10;
-              break;
-            }
-          case 88:
-            {
-              filter_ = input.readInt32();
-              filterCase_ = 11;
-              break;
-            }
-          case 96:
-            {
-              filter_ = input.readInt32();
-              filterCase_ = 12;
-              break;
-            }
-          case 104:
-            {
-              filter_ = input.readBool();
-              filterCase_ = 13;
-              break;
-            }
-          case 113:
-            {
-              filter_ = input.readDouble();
-              filterCase_ = 14;
-              break;
-            }
-          case 122:
-            {
-              com.google.bigtable.v2.ValueRange.Builder subBuilder = null;
-              if (filterCase_ == 15) {
-                subBuilder = ((com.google.bigtable.v2.ValueRange) filter_).toBuilder();
-              }
-              filter_ =
-                  input.readMessage(com.google.bigtable.v2.ValueRange.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.bigtable.v2.ValueRange) filter_);
-                filter_ = subBuilder.buildPartial();
-              }
-              filterCase_ = 15;
-              break;
-            }
-          case 128:
-            {
-              filter_ = input.readBool();
-              filterCase_ = 16;
-              break;
-            }
-          case 136:
-            {
-              filter_ = input.readBool();
-              filterCase_ = 17;
-              break;
-            }
-          case 144:
-            {
-              filter_ = input.readBool();
-              filterCase_ = 18;
-              break;
-            }
-          case 154:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              filterCase_ = 19;
-              filter_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.v2.DataProto.internal_static_google_bigtable_v2_RowFilter_descriptor;
   }
@@ -403,60 +190,6 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private Chain(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  filters_ = new java.util.ArrayList<com.google.bigtable.v2.RowFilter>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                filters_.add(
-                    input.readMessage(
-                        com.google.bigtable.v2.RowFilter.parser(), extensionRegistry));
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          filters_ = java.util.Collections.unmodifiableList(filters_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.bigtable.v2.DataProto
           .internal_static_google_bigtable_v2_RowFilter_Chain_descriptor;
@@ -568,7 +301,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < filters_.size(); i++) {
         output.writeMessage(1, filters_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -580,7 +313,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < filters_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, filters_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -596,7 +329,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       com.google.bigtable.v2.RowFilter.Chain other = (com.google.bigtable.v2.RowFilter.Chain) obj;
 
       if (!getFiltersList().equals(other.getFiltersList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -611,7 +344,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + FILTERS_FIELD_NUMBER;
         hash = (53 * hash) + getFiltersList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -742,19 +475,10 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.bigtable.v2.RowFilter.Chain.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getFiltersFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -762,10 +486,11 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         if (filtersBuilder_ == null) {
           filters_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          filters_ = null;
           filtersBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -881,7 +606,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -896,17 +621,44 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.bigtable.v2.RowFilter.Chain parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.bigtable.v2.RowFilter m =
+                      input.readMessage(
+                          com.google.bigtable.v2.RowFilter.parser(), extensionRegistry);
+                  if (filtersBuilder_ == null) {
+                    ensureFiltersIsMutable();
+                    filters_.add(m);
+                  } else {
+                    filtersBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.bigtable.v2.RowFilter.Chain) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1329,7 +1081,19 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Chain(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1549,60 +1313,6 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private Interleave(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  filters_ = new java.util.ArrayList<com.google.bigtable.v2.RowFilter>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                filters_.add(
-                    input.readMessage(
-                        com.google.bigtable.v2.RowFilter.parser(), extensionRegistry));
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          filters_ = java.util.Collections.unmodifiableList(filters_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.bigtable.v2.DataProto
           .internal_static_google_bigtable_v2_RowFilter_Interleave_descriptor;
@@ -1814,7 +1524,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < filters_.size(); i++) {
         output.writeMessage(1, filters_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1826,7 +1536,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < filters_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, filters_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1843,7 +1553,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
           (com.google.bigtable.v2.RowFilter.Interleave) obj;
 
       if (!getFiltersList().equals(other.getFiltersList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1858,7 +1568,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + FILTERS_FIELD_NUMBER;
         hash = (53 * hash) + getFiltersList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1990,19 +1700,10 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.bigtable.v2.RowFilter.Interleave.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getFiltersFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -2010,10 +1711,11 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         if (filtersBuilder_ == null) {
           filters_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          filters_ = null;
           filtersBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -2129,7 +1831,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2144,17 +1846,44 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.bigtable.v2.RowFilter.Interleave parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.bigtable.v2.RowFilter m =
+                      input.readMessage(
+                          com.google.bigtable.v2.RowFilter.parser(), extensionRegistry);
+                  if (filtersBuilder_ == null) {
+                    ensureFiltersIsMutable();
+                    filters_.add(m);
+                  } else {
+                    filtersBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.bigtable.v2.RowFilter.Interleave) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2937,7 +2666,19 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Interleave(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -3113,90 +2854,6 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private Condition(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.bigtable.v2.RowFilter.Builder subBuilder = null;
-                if (predicateFilter_ != null) {
-                  subBuilder = predicateFilter_.toBuilder();
-                }
-                predicateFilter_ =
-                    input.readMessage(com.google.bigtable.v2.RowFilter.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(predicateFilter_);
-                  predicateFilter_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 18:
-              {
-                com.google.bigtable.v2.RowFilter.Builder subBuilder = null;
-                if (trueFilter_ != null) {
-                  subBuilder = trueFilter_.toBuilder();
-                }
-                trueFilter_ =
-                    input.readMessage(com.google.bigtable.v2.RowFilter.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(trueFilter_);
-                  trueFilter_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 26:
-              {
-                com.google.bigtable.v2.RowFilter.Builder subBuilder = null;
-                if (falseFilter_ != null) {
-                  subBuilder = falseFilter_.toBuilder();
-                }
-                falseFilter_ =
-                    input.readMessage(com.google.bigtable.v2.RowFilter.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(falseFilter_);
-                  falseFilter_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3393,7 +3050,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       if (falseFilter_ != null) {
         output.writeMessage(3, getFalseFilter());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -3411,7 +3068,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       if (falseFilter_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getFalseFilter());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3439,7 +3096,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       if (hasFalseFilter()) {
         if (!getFalseFilter().equals(other.getFalseFilter())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3462,7 +3119,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + FALSE_FILTER_FIELD_NUMBER;
         hash = (53 * hash) + getFalseFilter().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3598,17 +3255,10 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.bigtable.v2.RowFilter.Condition.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -3734,7 +3384,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
         if (other.hasFalseFilter()) {
           mergeFalseFilter(other.getFalseFilter());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3749,17 +3399,50 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.bigtable.v2.RowFilter.Condition parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getPredicateFilterFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getTrueFilterFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(getFalseFilterFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.bigtable.v2.RowFilter.Condition) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -4387,7 +4070,19 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Condition(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -5620,7 +5315,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
     if (filterCase_ == 19) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, filter_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -5720,7 +5415,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
     if (filterCase_ == 19) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, filter_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -5799,7 +5494,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -5893,7 +5588,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -6048,22 +5743,33 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.bigtable.v2.RowFilter.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (chainBuilder_ != null) {
+        chainBuilder_.clear();
+      }
+      if (interleaveBuilder_ != null) {
+        interleaveBuilder_.clear();
+      }
+      if (conditionBuilder_ != null) {
+        conditionBuilder_.clear();
+      }
+      if (columnRangeFilterBuilder_ != null) {
+        columnRangeFilterBuilder_.clear();
+      }
+      if (timestampRangeFilterBuilder_ != null) {
+        timestampRangeFilterBuilder_.clear();
+      }
+      if (valueRangeFilterBuilder_ != null) {
+        valueRangeFilterBuilder_.clear();
+      }
       filterCase_ = 0;
       filter_ = null;
       return this;
@@ -6328,7 +6034,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -6343,17 +6049,150 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.bigtable.v2.RowFilter parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getChainFieldBuilder().getBuilder(), extensionRegistry);
+                filterCase_ = 1;
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getInterleaveFieldBuilder().getBuilder(), extensionRegistry);
+                filterCase_ = 2;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getConditionFieldBuilder().getBuilder(), extensionRegistry);
+                filterCase_ = 3;
+                break;
+              } // case 26
+            case 34:
+              {
+                filter_ = input.readBytes();
+                filterCase_ = 4;
+                break;
+              } // case 34
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                filterCase_ = 5;
+                filter_ = s;
+                break;
+              } // case 42
+            case 50:
+              {
+                filter_ = input.readBytes();
+                filterCase_ = 6;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getColumnRangeFilterFieldBuilder().getBuilder(), extensionRegistry);
+                filterCase_ = 7;
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    getTimestampRangeFilterFieldBuilder().getBuilder(), extensionRegistry);
+                filterCase_ = 8;
+                break;
+              } // case 66
+            case 74:
+              {
+                filter_ = input.readBytes();
+                filterCase_ = 9;
+                break;
+              } // case 74
+            case 80:
+              {
+                filter_ = input.readInt32();
+                filterCase_ = 10;
+                break;
+              } // case 80
+            case 88:
+              {
+                filter_ = input.readInt32();
+                filterCase_ = 11;
+                break;
+              } // case 88
+            case 96:
+              {
+                filter_ = input.readInt32();
+                filterCase_ = 12;
+                break;
+              } // case 96
+            case 104:
+              {
+                filter_ = input.readBool();
+                filterCase_ = 13;
+                break;
+              } // case 104
+            case 113:
+              {
+                filter_ = input.readDouble();
+                filterCase_ = 14;
+                break;
+              } // case 113
+            case 122:
+              {
+                input.readMessage(
+                    getValueRangeFilterFieldBuilder().getBuilder(), extensionRegistry);
+                filterCase_ = 15;
+                break;
+              } // case 122
+            case 128:
+              {
+                filter_ = input.readBool();
+                filterCase_ = 16;
+                break;
+              } // case 128
+            case 136:
+              {
+                filter_ = input.readBool();
+                filterCase_ = 17;
+                break;
+              } // case 136
+            case 144:
+              {
+                filter_ = input.readBool();
+                filterCase_ = 18;
+                break;
+              } // case 144
+            case 154:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                filterCase_ = 19;
+                filter_ = s;
+                break;
+              } // case 154
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.bigtable.v2.RowFilter) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -9128,7 +8967,18 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RowFilter(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
