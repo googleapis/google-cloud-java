@@ -19,7 +19,6 @@ locals {
     service_account = var.service_account
   }
 }
-
 module "project-services" {
   source = "terraform-google-modules/project-factory/google//modules/project_services"
 
@@ -33,57 +32,6 @@ module "project-services" {
     "serviceusage.googleapis.com",
   ]
 }
-
-resource "random_id" "id" {
-  byte_length = 3
-  keepers     = {
-    project_id = local.data.project_id
-  }
-}
-# Create a service account in the project.
-#resource "google_service_account" "service_account" {
-#  project    = random_id.id.keepers.project_id
-#  account_id = lower("terraform-sa-${random_id.id.hex}")
-#}
-
-# Grant the current gcloud account permission to impersonate the new service account.
-#resource "google_service_account_iam_member" "impersonation_permission" {
-#  service_account_id = google_service_account.service_account.name
-#  role               = "roles/iam.serviceAccountTokenCreator"
-#  member             = "user:${var.gcloud_account}"
-#  depends_on         = [
-#    google_service_account.service_account
-#  ]
-#}
-
-# Grant roles to the service account so it has necessary permissions.
-#resource "google_project_iam_member" "service_account_owner" {
-#  project    = local.data.project_id
-#  # See https://cloud.google.com/iam/docs/understanding-roles#basic
-#  role       = "roles/owner"
-#  member     = "serviceAccount:${google_service_account.service_account.email}"
-#  depends_on = [google_service_account.service_account]
-#}
-#resource "google_project_iam_member" "service_account_projectIamAdmin" {
-#  project    = local.data.project_id
-#  # See https://cloud.google.com/iam/docs/understanding-roles#resourcemanager.projectIamAdmin
-#  role       = "roles/resourcemanager.projectIamAdmin"
-#  member     = "serviceAccount:${google_service_account.service_account.email}"
-#  depends_on = [google_service_account.service_account]
-#}
-#resource "null_resource" "impersonation" {
-#  provisioner "local-exec" {
-#    command = "./helpers/impersonate-service-account.sh ${google_service_account.service_account.email}"
-#  }
-#  triggers = {
-#    service_account = google_service_account.service_account.email
-#  }
-#  depends_on = [
-#    google_service_account.service_account,
-#    google_service_account_iam_member.impersonation_permission
-#  ]
-#}
-
 resource "time_sleep" "for_1m_allowPermissionsToTakeEffect" {
   create_duration = "1m"
   depends_on      = [module.project-services]

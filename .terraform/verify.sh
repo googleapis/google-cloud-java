@@ -31,12 +31,16 @@ function mvnVerify() {
   # TODO: Add multiple threads w/ -T 1C
 }
 
-function testSingle() {
+function modifyEnvironment() {
   # Set module-specific environment variables for upcoming integration test(s)
   if [[ -f "../$1/.terraform/env.sh" ]]; then
     # shellcheck disable=SC1090
     source "../$1/.terraform/env.sh"
   fi
+}
+
+function testSingle() {
+  modifyEnvironment "$1"
   pushd "../$1" >/dev/null || exit
   mvnVerify
   popd >/dev/null || exit
@@ -46,10 +50,7 @@ function testAll() {
   # Execute 'env.sh' scripts for any active modules
   IFS=':'
   for module in $(source ./helpers/list-all-modules.sh); do
-    if [ -f "../$module/.terraform/env.sh" ]; then
-      # shellcheck disable=SC1090
-      source "../$module/.terraform/env.sh"
-    fi
+    modifyEnvironment "$module"
   done
 
   # Perform mvn verify on parent project, excluding the given submodules
