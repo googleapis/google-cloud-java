@@ -22,27 +22,27 @@ package com.google.datastore.v1;
  *
  *
  * <pre>
- * The response for [Datastore.RunQuery][google.datastore.v1.Datastore.RunQuery].
+ * The response for [Datastore.RunAggregationQuery][google.datastore.v1.Datastore.RunAggregationQuery].
  * </pre>
  *
- * Protobuf type {@code google.datastore.v1.RunQueryResponse}
+ * Protobuf type {@code google.datastore.v1.RunAggregationQueryResponse}
  */
-public final class RunQueryResponse extends com.google.protobuf.GeneratedMessageV3
+public final class RunAggregationQueryResponse extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.datastore.v1.RunQueryResponse)
-    RunQueryResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.datastore.v1.RunAggregationQueryResponse)
+    RunAggregationQueryResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use RunQueryResponse.newBuilder() to construct.
-  private RunQueryResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use RunAggregationQueryResponse.newBuilder() to construct.
+  private RunAggregationQueryResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private RunQueryResponse() {}
+  private RunAggregationQueryResponse() {}
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new RunQueryResponse();
+    return new RunAggregationQueryResponse();
   }
 
   @java.lang.Override
@@ -52,29 +52,29 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.v1.DatastoreProto
-        .internal_static_google_datastore_v1_RunQueryResponse_descriptor;
+        .internal_static_google_datastore_v1_RunAggregationQueryResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.datastore.v1.DatastoreProto
-        .internal_static_google_datastore_v1_RunQueryResponse_fieldAccessorTable
+        .internal_static_google_datastore_v1_RunAggregationQueryResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.datastore.v1.RunQueryResponse.class,
-            com.google.datastore.v1.RunQueryResponse.Builder.class);
+            com.google.datastore.v1.RunAggregationQueryResponse.class,
+            com.google.datastore.v1.RunAggregationQueryResponse.Builder.class);
   }
 
   public static final int BATCH_FIELD_NUMBER = 1;
-  private com.google.datastore.v1.QueryResultBatch batch_;
+  private com.google.datastore.v1.AggregationResultBatch batch_;
   /**
    *
    *
    * <pre>
-   * A batch of query results (always present).
+   * A batch of aggregation results. Always present.
    * </pre>
    *
-   * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
+   * <code>.google.datastore.v1.AggregationResultBatch batch = 1;</code>
    *
    * @return Whether the batch field is set.
    */
@@ -86,33 +86,35 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A batch of query results (always present).
+   * A batch of aggregation results. Always present.
    * </pre>
    *
-   * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
+   * <code>.google.datastore.v1.AggregationResultBatch batch = 1;</code>
    *
    * @return The batch.
    */
   @java.lang.Override
-  public com.google.datastore.v1.QueryResultBatch getBatch() {
-    return batch_ == null ? com.google.datastore.v1.QueryResultBatch.getDefaultInstance() : batch_;
+  public com.google.datastore.v1.AggregationResultBatch getBatch() {
+    return batch_ == null
+        ? com.google.datastore.v1.AggregationResultBatch.getDefaultInstance()
+        : batch_;
   }
   /**
    *
    *
    * <pre>
-   * A batch of query results (always present).
+   * A batch of aggregation results. Always present.
    * </pre>
    *
-   * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
+   * <code>.google.datastore.v1.AggregationResultBatch batch = 1;</code>
    */
   @java.lang.Override
-  public com.google.datastore.v1.QueryResultBatchOrBuilder getBatchOrBuilder() {
+  public com.google.datastore.v1.AggregationResultBatchOrBuilder getBatchOrBuilder() {
     return getBatch();
   }
 
   public static final int QUERY_FIELD_NUMBER = 2;
-  private com.google.datastore.v1.Query query_;
+  private com.google.datastore.v1.AggregationQuery query_;
   /**
    *
    *
@@ -120,7 +122,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
    * The parsed form of the `GqlQuery` from the request, if it was set.
    * </pre>
    *
-   * <code>.google.datastore.v1.Query query = 2;</code>
+   * <code>.google.datastore.v1.AggregationQuery query = 2;</code>
    *
    * @return Whether the query field is set.
    */
@@ -135,13 +137,13 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
    * The parsed form of the `GqlQuery` from the request, if it was set.
    * </pre>
    *
-   * <code>.google.datastore.v1.Query query = 2;</code>
+   * <code>.google.datastore.v1.AggregationQuery query = 2;</code>
    *
    * @return The query.
    */
   @java.lang.Override
-  public com.google.datastore.v1.Query getQuery() {
-    return query_ == null ? com.google.datastore.v1.Query.getDefaultInstance() : query_;
+  public com.google.datastore.v1.AggregationQuery getQuery() {
+    return query_ == null ? com.google.datastore.v1.AggregationQuery.getDefaultInstance() : query_;
   }
   /**
    *
@@ -150,10 +152,10 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
    * The parsed form of the `GqlQuery` from the request, if it was set.
    * </pre>
    *
-   * <code>.google.datastore.v1.Query query = 2;</code>
+   * <code>.google.datastore.v1.AggregationQuery query = 2;</code>
    */
   @java.lang.Override
-  public com.google.datastore.v1.QueryOrBuilder getQueryOrBuilder() {
+  public com.google.datastore.v1.AggregationQueryOrBuilder getQueryOrBuilder() {
     return getQuery();
   }
 
@@ -202,10 +204,11 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.datastore.v1.RunQueryResponse)) {
+    if (!(obj instanceof com.google.datastore.v1.RunAggregationQueryResponse)) {
       return super.equals(obj);
     }
-    com.google.datastore.v1.RunQueryResponse other = (com.google.datastore.v1.RunQueryResponse) obj;
+    com.google.datastore.v1.RunAggregationQueryResponse other =
+        (com.google.datastore.v1.RunAggregationQueryResponse) obj;
 
     if (hasBatch() != other.hasBatch()) return false;
     if (hasBatch()) {
@@ -239,71 +242,71 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     return hash;
   }
 
-  public static com.google.datastore.v1.RunQueryResponse parseFrom(java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.datastore.v1.RunAggregationQueryResponse parseFrom(
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.datastore.v1.RunQueryResponse parseFrom(
+  public static com.google.datastore.v1.RunAggregationQueryResponse parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.datastore.v1.RunQueryResponse parseFrom(
+  public static com.google.datastore.v1.RunAggregationQueryResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.datastore.v1.RunQueryResponse parseFrom(
+  public static com.google.datastore.v1.RunAggregationQueryResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.datastore.v1.RunQueryResponse parseFrom(byte[] data)
+  public static com.google.datastore.v1.RunAggregationQueryResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.datastore.v1.RunQueryResponse parseFrom(
+  public static com.google.datastore.v1.RunAggregationQueryResponse parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.datastore.v1.RunQueryResponse parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
+  public static com.google.datastore.v1.RunAggregationQueryResponse parseFrom(
+      java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.datastore.v1.RunQueryResponse parseFrom(
+  public static com.google.datastore.v1.RunAggregationQueryResponse parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.datastore.v1.RunQueryResponse parseDelimitedFrom(
+  public static com.google.datastore.v1.RunAggregationQueryResponse parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.datastore.v1.RunQueryResponse parseDelimitedFrom(
+  public static com.google.datastore.v1.RunAggregationQueryResponse parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.datastore.v1.RunQueryResponse parseFrom(
+  public static com.google.datastore.v1.RunAggregationQueryResponse parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.datastore.v1.RunQueryResponse parseFrom(
+  public static com.google.datastore.v1.RunAggregationQueryResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -320,7 +323,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.datastore.v1.RunQueryResponse prototype) {
+  public static Builder newBuilder(com.google.datastore.v1.RunAggregationQueryResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -338,31 +341,31 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The response for [Datastore.RunQuery][google.datastore.v1.Datastore.RunQuery].
+   * The response for [Datastore.RunAggregationQuery][google.datastore.v1.Datastore.RunAggregationQuery].
    * </pre>
    *
-   * Protobuf type {@code google.datastore.v1.RunQueryResponse}
+   * Protobuf type {@code google.datastore.v1.RunAggregationQueryResponse}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.datastore.v1.RunQueryResponse)
-      com.google.datastore.v1.RunQueryResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.datastore.v1.RunAggregationQueryResponse)
+      com.google.datastore.v1.RunAggregationQueryResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.datastore.v1.DatastoreProto
-          .internal_static_google_datastore_v1_RunQueryResponse_descriptor;
+          .internal_static_google_datastore_v1_RunAggregationQueryResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.datastore.v1.DatastoreProto
-          .internal_static_google_datastore_v1_RunQueryResponse_fieldAccessorTable
+          .internal_static_google_datastore_v1_RunAggregationQueryResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.datastore.v1.RunQueryResponse.class,
-              com.google.datastore.v1.RunQueryResponse.Builder.class);
+              com.google.datastore.v1.RunAggregationQueryResponse.class,
+              com.google.datastore.v1.RunAggregationQueryResponse.Builder.class);
     }
 
-    // Construct using com.google.datastore.v1.RunQueryResponse.newBuilder()
+    // Construct using com.google.datastore.v1.RunAggregationQueryResponse.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -390,17 +393,17 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.datastore.v1.DatastoreProto
-          .internal_static_google_datastore_v1_RunQueryResponse_descriptor;
+          .internal_static_google_datastore_v1_RunAggregationQueryResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.google.datastore.v1.RunQueryResponse getDefaultInstanceForType() {
-      return com.google.datastore.v1.RunQueryResponse.getDefaultInstance();
+    public com.google.datastore.v1.RunAggregationQueryResponse getDefaultInstanceForType() {
+      return com.google.datastore.v1.RunAggregationQueryResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.datastore.v1.RunQueryResponse build() {
-      com.google.datastore.v1.RunQueryResponse result = buildPartial();
+    public com.google.datastore.v1.RunAggregationQueryResponse build() {
+      com.google.datastore.v1.RunAggregationQueryResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -408,9 +411,9 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     }
 
     @java.lang.Override
-    public com.google.datastore.v1.RunQueryResponse buildPartial() {
-      com.google.datastore.v1.RunQueryResponse result =
-          new com.google.datastore.v1.RunQueryResponse(this);
+    public com.google.datastore.v1.RunAggregationQueryResponse buildPartial() {
+      com.google.datastore.v1.RunAggregationQueryResponse result =
+          new com.google.datastore.v1.RunAggregationQueryResponse(this);
       if (batchBuilder_ == null) {
         result.batch_ = batch_;
       } else {
@@ -460,16 +463,17 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.datastore.v1.RunQueryResponse) {
-        return mergeFrom((com.google.datastore.v1.RunQueryResponse) other);
+      if (other instanceof com.google.datastore.v1.RunAggregationQueryResponse) {
+        return mergeFrom((com.google.datastore.v1.RunAggregationQueryResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.datastore.v1.RunQueryResponse other) {
-      if (other == com.google.datastore.v1.RunQueryResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.datastore.v1.RunAggregationQueryResponse other) {
+      if (other == com.google.datastore.v1.RunAggregationQueryResponse.getDefaultInstance())
+        return this;
       if (other.hasBatch()) {
         mergeBatch(other.getBatch());
       }
@@ -531,20 +535,20 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.datastore.v1.QueryResultBatch batch_;
+    private com.google.datastore.v1.AggregationResultBatch batch_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.datastore.v1.QueryResultBatch,
-            com.google.datastore.v1.QueryResultBatch.Builder,
-            com.google.datastore.v1.QueryResultBatchOrBuilder>
+            com.google.datastore.v1.AggregationResultBatch,
+            com.google.datastore.v1.AggregationResultBatch.Builder,
+            com.google.datastore.v1.AggregationResultBatchOrBuilder>
         batchBuilder_;
     /**
      *
      *
      * <pre>
-     * A batch of query results (always present).
+     * A batch of aggregation results. Always present.
      * </pre>
      *
-     * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
+     * <code>.google.datastore.v1.AggregationResultBatch batch = 1;</code>
      *
      * @return Whether the batch field is set.
      */
@@ -555,17 +559,17 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A batch of query results (always present).
+     * A batch of aggregation results. Always present.
      * </pre>
      *
-     * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
+     * <code>.google.datastore.v1.AggregationResultBatch batch = 1;</code>
      *
      * @return The batch.
      */
-    public com.google.datastore.v1.QueryResultBatch getBatch() {
+    public com.google.datastore.v1.AggregationResultBatch getBatch() {
       if (batchBuilder_ == null) {
         return batch_ == null
-            ? com.google.datastore.v1.QueryResultBatch.getDefaultInstance()
+            ? com.google.datastore.v1.AggregationResultBatch.getDefaultInstance()
             : batch_;
       } else {
         return batchBuilder_.getMessage();
@@ -575,12 +579,12 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A batch of query results (always present).
+     * A batch of aggregation results. Always present.
      * </pre>
      *
-     * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
+     * <code>.google.datastore.v1.AggregationResultBatch batch = 1;</code>
      */
-    public Builder setBatch(com.google.datastore.v1.QueryResultBatch value) {
+    public Builder setBatch(com.google.datastore.v1.AggregationResultBatch value) {
       if (batchBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -597,12 +601,13 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A batch of query results (always present).
+     * A batch of aggregation results. Always present.
      * </pre>
      *
-     * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
+     * <code>.google.datastore.v1.AggregationResultBatch batch = 1;</code>
      */
-    public Builder setBatch(com.google.datastore.v1.QueryResultBatch.Builder builderForValue) {
+    public Builder setBatch(
+        com.google.datastore.v1.AggregationResultBatch.Builder builderForValue) {
       if (batchBuilder_ == null) {
         batch_ = builderForValue.build();
         onChanged();
@@ -616,16 +621,16 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A batch of query results (always present).
+     * A batch of aggregation results. Always present.
      * </pre>
      *
-     * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
+     * <code>.google.datastore.v1.AggregationResultBatch batch = 1;</code>
      */
-    public Builder mergeBatch(com.google.datastore.v1.QueryResultBatch value) {
+    public Builder mergeBatch(com.google.datastore.v1.AggregationResultBatch value) {
       if (batchBuilder_ == null) {
         if (batch_ != null) {
           batch_ =
-              com.google.datastore.v1.QueryResultBatch.newBuilder(batch_)
+              com.google.datastore.v1.AggregationResultBatch.newBuilder(batch_)
                   .mergeFrom(value)
                   .buildPartial();
         } else {
@@ -642,10 +647,10 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A batch of query results (always present).
+     * A batch of aggregation results. Always present.
      * </pre>
      *
-     * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
+     * <code>.google.datastore.v1.AggregationResultBatch batch = 1;</code>
      */
     public Builder clearBatch() {
       if (batchBuilder_ == null) {
@@ -662,12 +667,12 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A batch of query results (always present).
+     * A batch of aggregation results. Always present.
      * </pre>
      *
-     * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
+     * <code>.google.datastore.v1.AggregationResultBatch batch = 1;</code>
      */
-    public com.google.datastore.v1.QueryResultBatch.Builder getBatchBuilder() {
+    public com.google.datastore.v1.AggregationResultBatch.Builder getBatchBuilder() {
 
       onChanged();
       return getBatchFieldBuilder().getBuilder();
@@ -676,17 +681,17 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A batch of query results (always present).
+     * A batch of aggregation results. Always present.
      * </pre>
      *
-     * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
+     * <code>.google.datastore.v1.AggregationResultBatch batch = 1;</code>
      */
-    public com.google.datastore.v1.QueryResultBatchOrBuilder getBatchOrBuilder() {
+    public com.google.datastore.v1.AggregationResultBatchOrBuilder getBatchOrBuilder() {
       if (batchBuilder_ != null) {
         return batchBuilder_.getMessageOrBuilder();
       } else {
         return batch_ == null
-            ? com.google.datastore.v1.QueryResultBatch.getDefaultInstance()
+            ? com.google.datastore.v1.AggregationResultBatch.getDefaultInstance()
             : batch_;
       }
     }
@@ -694,33 +699,33 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A batch of query results (always present).
+     * A batch of aggregation results. Always present.
      * </pre>
      *
-     * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
+     * <code>.google.datastore.v1.AggregationResultBatch batch = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.datastore.v1.QueryResultBatch,
-            com.google.datastore.v1.QueryResultBatch.Builder,
-            com.google.datastore.v1.QueryResultBatchOrBuilder>
+            com.google.datastore.v1.AggregationResultBatch,
+            com.google.datastore.v1.AggregationResultBatch.Builder,
+            com.google.datastore.v1.AggregationResultBatchOrBuilder>
         getBatchFieldBuilder() {
       if (batchBuilder_ == null) {
         batchBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.datastore.v1.QueryResultBatch,
-                com.google.datastore.v1.QueryResultBatch.Builder,
-                com.google.datastore.v1.QueryResultBatchOrBuilder>(
+                com.google.datastore.v1.AggregationResultBatch,
+                com.google.datastore.v1.AggregationResultBatch.Builder,
+                com.google.datastore.v1.AggregationResultBatchOrBuilder>(
                 getBatch(), getParentForChildren(), isClean());
         batch_ = null;
       }
       return batchBuilder_;
     }
 
-    private com.google.datastore.v1.Query query_;
+    private com.google.datastore.v1.AggregationQuery query_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.datastore.v1.Query,
-            com.google.datastore.v1.Query.Builder,
-            com.google.datastore.v1.QueryOrBuilder>
+            com.google.datastore.v1.AggregationQuery,
+            com.google.datastore.v1.AggregationQuery.Builder,
+            com.google.datastore.v1.AggregationQueryOrBuilder>
         queryBuilder_;
     /**
      *
@@ -729,7 +734,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      * The parsed form of the `GqlQuery` from the request, if it was set.
      * </pre>
      *
-     * <code>.google.datastore.v1.Query query = 2;</code>
+     * <code>.google.datastore.v1.AggregationQuery query = 2;</code>
      *
      * @return Whether the query field is set.
      */
@@ -743,13 +748,15 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      * The parsed form of the `GqlQuery` from the request, if it was set.
      * </pre>
      *
-     * <code>.google.datastore.v1.Query query = 2;</code>
+     * <code>.google.datastore.v1.AggregationQuery query = 2;</code>
      *
      * @return The query.
      */
-    public com.google.datastore.v1.Query getQuery() {
+    public com.google.datastore.v1.AggregationQuery getQuery() {
       if (queryBuilder_ == null) {
-        return query_ == null ? com.google.datastore.v1.Query.getDefaultInstance() : query_;
+        return query_ == null
+            ? com.google.datastore.v1.AggregationQuery.getDefaultInstance()
+            : query_;
       } else {
         return queryBuilder_.getMessage();
       }
@@ -761,9 +768,9 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      * The parsed form of the `GqlQuery` from the request, if it was set.
      * </pre>
      *
-     * <code>.google.datastore.v1.Query query = 2;</code>
+     * <code>.google.datastore.v1.AggregationQuery query = 2;</code>
      */
-    public Builder setQuery(com.google.datastore.v1.Query value) {
+    public Builder setQuery(com.google.datastore.v1.AggregationQuery value) {
       if (queryBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -783,9 +790,9 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      * The parsed form of the `GqlQuery` from the request, if it was set.
      * </pre>
      *
-     * <code>.google.datastore.v1.Query query = 2;</code>
+     * <code>.google.datastore.v1.AggregationQuery query = 2;</code>
      */
-    public Builder setQuery(com.google.datastore.v1.Query.Builder builderForValue) {
+    public Builder setQuery(com.google.datastore.v1.AggregationQuery.Builder builderForValue) {
       if (queryBuilder_ == null) {
         query_ = builderForValue.build();
         onChanged();
@@ -802,12 +809,15 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      * The parsed form of the `GqlQuery` from the request, if it was set.
      * </pre>
      *
-     * <code>.google.datastore.v1.Query query = 2;</code>
+     * <code>.google.datastore.v1.AggregationQuery query = 2;</code>
      */
-    public Builder mergeQuery(com.google.datastore.v1.Query value) {
+    public Builder mergeQuery(com.google.datastore.v1.AggregationQuery value) {
       if (queryBuilder_ == null) {
         if (query_ != null) {
-          query_ = com.google.datastore.v1.Query.newBuilder(query_).mergeFrom(value).buildPartial();
+          query_ =
+              com.google.datastore.v1.AggregationQuery.newBuilder(query_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           query_ = value;
         }
@@ -825,7 +835,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      * The parsed form of the `GqlQuery` from the request, if it was set.
      * </pre>
      *
-     * <code>.google.datastore.v1.Query query = 2;</code>
+     * <code>.google.datastore.v1.AggregationQuery query = 2;</code>
      */
     public Builder clearQuery() {
       if (queryBuilder_ == null) {
@@ -845,9 +855,9 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      * The parsed form of the `GqlQuery` from the request, if it was set.
      * </pre>
      *
-     * <code>.google.datastore.v1.Query query = 2;</code>
+     * <code>.google.datastore.v1.AggregationQuery query = 2;</code>
      */
-    public com.google.datastore.v1.Query.Builder getQueryBuilder() {
+    public com.google.datastore.v1.AggregationQuery.Builder getQueryBuilder() {
 
       onChanged();
       return getQueryFieldBuilder().getBuilder();
@@ -859,13 +869,15 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      * The parsed form of the `GqlQuery` from the request, if it was set.
      * </pre>
      *
-     * <code>.google.datastore.v1.Query query = 2;</code>
+     * <code>.google.datastore.v1.AggregationQuery query = 2;</code>
      */
-    public com.google.datastore.v1.QueryOrBuilder getQueryOrBuilder() {
+    public com.google.datastore.v1.AggregationQueryOrBuilder getQueryOrBuilder() {
       if (queryBuilder_ != null) {
         return queryBuilder_.getMessageOrBuilder();
       } else {
-        return query_ == null ? com.google.datastore.v1.Query.getDefaultInstance() : query_;
+        return query_ == null
+            ? com.google.datastore.v1.AggregationQuery.getDefaultInstance()
+            : query_;
       }
     }
     /**
@@ -875,19 +887,19 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      * The parsed form of the `GqlQuery` from the request, if it was set.
      * </pre>
      *
-     * <code>.google.datastore.v1.Query query = 2;</code>
+     * <code>.google.datastore.v1.AggregationQuery query = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.datastore.v1.Query,
-            com.google.datastore.v1.Query.Builder,
-            com.google.datastore.v1.QueryOrBuilder>
+            com.google.datastore.v1.AggregationQuery,
+            com.google.datastore.v1.AggregationQuery.Builder,
+            com.google.datastore.v1.AggregationQueryOrBuilder>
         getQueryFieldBuilder() {
       if (queryBuilder_ == null) {
         queryBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.datastore.v1.Query,
-                com.google.datastore.v1.Query.Builder,
-                com.google.datastore.v1.QueryOrBuilder>(
+                com.google.datastore.v1.AggregationQuery,
+                com.google.datastore.v1.AggregationQuery.Builder,
+                com.google.datastore.v1.AggregationQueryOrBuilder>(
                 getQuery(), getParentForChildren(), isClean());
         query_ = null;
       }
@@ -905,24 +917,24 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.datastore.v1.RunQueryResponse)
+    // @@protoc_insertion_point(builder_scope:google.datastore.v1.RunAggregationQueryResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:google.datastore.v1.RunQueryResponse)
-  private static final com.google.datastore.v1.RunQueryResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.datastore.v1.RunAggregationQueryResponse)
+  private static final com.google.datastore.v1.RunAggregationQueryResponse DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.datastore.v1.RunQueryResponse();
+    DEFAULT_INSTANCE = new com.google.datastore.v1.RunAggregationQueryResponse();
   }
 
-  public static com.google.datastore.v1.RunQueryResponse getDefaultInstance() {
+  public static com.google.datastore.v1.RunAggregationQueryResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<RunQueryResponse> PARSER =
-      new com.google.protobuf.AbstractParser<RunQueryResponse>() {
+  private static final com.google.protobuf.Parser<RunAggregationQueryResponse> PARSER =
+      new com.google.protobuf.AbstractParser<RunAggregationQueryResponse>() {
         @java.lang.Override
-        public RunQueryResponse parsePartialFrom(
+        public RunAggregationQueryResponse parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -941,17 +953,17 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
         }
       };
 
-  public static com.google.protobuf.Parser<RunQueryResponse> parser() {
+  public static com.google.protobuf.Parser<RunAggregationQueryResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<RunQueryResponse> getParserForType() {
+  public com.google.protobuf.Parser<RunAggregationQueryResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.datastore.v1.RunQueryResponse getDefaultInstanceForType() {
+  public com.google.datastore.v1.RunAggregationQueryResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

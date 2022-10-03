@@ -52,81 +52,6 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private CommitResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                mutationResults_ =
-                    new java.util.ArrayList<com.google.datastore.v1.MutationResult>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              mutationResults_.add(
-                  input.readMessage(
-                      com.google.datastore.v1.MutationResult.parser(), extensionRegistry));
-              break;
-            }
-          case 32:
-            {
-              indexUpdates_ = input.readInt32();
-              break;
-            }
-          case 66:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (commitTime_ != null) {
-                subBuilder = commitTime_.toBuilder();
-              }
-              commitTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(commitTime_);
-                commitTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        mutationResults_ = java.util.Collections.unmodifiableList(mutationResults_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.v1.DatastoreProto
         .internal_static_google_datastore_v1_CommitResponse_descriptor;
@@ -304,7 +229,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
     if (commitTime_ != null) {
       output.writeMessage(8, getCommitTime());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -322,7 +247,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
     if (commitTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getCommitTime());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -343,7 +268,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
     if (hasCommitTime()) {
       if (!getCommitTime().equals(other.getCommitTime())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -364,7 +289,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + COMMIT_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCommitTime().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -493,19 +418,10 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.datastore.v1.CommitResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getMutationResultsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -513,10 +429,11 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       if (mutationResultsBuilder_ == null) {
         mutationResults_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        mutationResults_ = null;
         mutationResultsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       indexUpdates_ = 0;
 
       if (commitTimeBuilder_ == null) {
@@ -650,7 +567,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       if (other.hasCommitTime()) {
         mergeCommitTime(other.getCommitTime());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -665,17 +582,56 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.datastore.v1.CommitResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26:
+              {
+                com.google.datastore.v1.MutationResult m =
+                    input.readMessage(
+                        com.google.datastore.v1.MutationResult.parser(), extensionRegistry);
+                if (mutationResultsBuilder_ == null) {
+                  ensureMutationResultsIsMutable();
+                  mutationResults_.add(m);
+                } else {
+                  mutationResultsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 32:
+              {
+                indexUpdates_ = input.readInt32();
+
+                break;
+              } // case 32
+            case 66:
+              {
+                input.readMessage(getCommitTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.datastore.v1.CommitResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1323,7 +1279,18 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CommitResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

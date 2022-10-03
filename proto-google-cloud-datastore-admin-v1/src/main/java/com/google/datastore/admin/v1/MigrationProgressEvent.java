@@ -54,101 +54,6 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
     return this.unknownFields;
   }
 
-  private MigrationProgressEvent(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              int rawValue = input.readEnum();
-
-              step_ = rawValue;
-              break;
-            }
-          case 18:
-            {
-              com.google.datastore.admin.v1.MigrationProgressEvent.PrepareStepDetails.Builder
-                  subBuilder = null;
-              if (stepDetailsCase_ == 2) {
-                subBuilder =
-                    ((com.google.datastore.admin.v1.MigrationProgressEvent.PrepareStepDetails)
-                            stepDetails_)
-                        .toBuilder();
-              }
-              stepDetails_ =
-                  input.readMessage(
-                      com.google.datastore.admin.v1.MigrationProgressEvent.PrepareStepDetails
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.datastore.admin.v1.MigrationProgressEvent.PrepareStepDetails)
-                        stepDetails_);
-                stepDetails_ = subBuilder.buildPartial();
-              }
-              stepDetailsCase_ = 2;
-              break;
-            }
-          case 26:
-            {
-              com.google.datastore.admin.v1.MigrationProgressEvent.RedirectWritesStepDetails.Builder
-                  subBuilder = null;
-              if (stepDetailsCase_ == 3) {
-                subBuilder =
-                    ((com.google.datastore.admin.v1.MigrationProgressEvent
-                                .RedirectWritesStepDetails)
-                            stepDetails_)
-                        .toBuilder();
-              }
-              stepDetails_ =
-                  input.readMessage(
-                      com.google.datastore.admin.v1.MigrationProgressEvent.RedirectWritesStepDetails
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.datastore.admin.v1.MigrationProgressEvent.RedirectWritesStepDetails)
-                        stepDetails_);
-                stepDetails_ = subBuilder.buildPartial();
-              }
-              stepDetailsCase_ = 3;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.admin.v1.MigrationProto
         .internal_static_google_datastore_admin_v1_MigrationProgressEvent_descriptor;
@@ -415,52 +320,6 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
       return this.unknownFields;
     }
 
-    private PrepareStepDetails(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                int rawValue = input.readEnum();
-
-                concurrencyMode_ = rawValue;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.datastore.admin.v1.MigrationProto
           .internal_static_google_datastore_admin_v1_MigrationProgressEvent_PrepareStepDetails_descriptor;
@@ -541,7 +400,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
               .getNumber()) {
         output.writeEnum(1, concurrencyMode_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -556,7 +415,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, concurrencyMode_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -574,7 +433,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
           (com.google.datastore.admin.v1.MigrationProgressEvent.PrepareStepDetails) obj;
 
       if (concurrencyMode_ != other.concurrencyMode_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -587,7 +446,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CONCURRENCY_MODE_FIELD_NUMBER;
       hash = (53 * hash) + concurrencyMode_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -722,17 +581,10 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
 
       // Construct using
       // com.google.datastore.admin.v1.MigrationProgressEvent.PrepareStepDetails.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -831,7 +683,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
         if (other.concurrencyMode_ != 0) {
           setConcurrencyModeValue(other.getConcurrencyModeValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -846,20 +698,37 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.datastore.admin.v1.MigrationProgressEvent.PrepareStepDetails parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  concurrencyMode_ = input.readEnum();
+
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.datastore.admin.v1.MigrationProgressEvent.PrepareStepDetails)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1010,7 +879,19 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new PrepareStepDetails(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1097,52 +978,6 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
       return this.unknownFields;
     }
 
-    private RedirectWritesStepDetails(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                int rawValue = input.readEnum();
-
-                concurrencyMode_ = rawValue;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.datastore.admin.v1.MigrationProto
           .internal_static_google_datastore_admin_v1_MigrationProgressEvent_RedirectWritesStepDetails_descriptor;
@@ -1221,7 +1056,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
               .getNumber()) {
         output.writeEnum(1, concurrencyMode_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1236,7 +1071,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, concurrencyMode_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1255,7 +1090,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
           (com.google.datastore.admin.v1.MigrationProgressEvent.RedirectWritesStepDetails) obj;
 
       if (concurrencyMode_ != other.concurrencyMode_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1268,7 +1103,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CONCURRENCY_MODE_FIELD_NUMBER;
       hash = (53 * hash) + concurrencyMode_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1410,17 +1245,10 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
 
       // Construct using
       // com.google.datastore.admin.v1.MigrationProgressEvent.RedirectWritesStepDetails.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1523,7 +1351,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
         if (other.concurrencyMode_ != 0) {
           setConcurrencyModeValue(other.getConcurrencyModeValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1538,20 +1366,37 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.datastore.admin.v1.MigrationProgressEvent.RedirectWritesStepDetails
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  concurrencyMode_ = input.readEnum();
+
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.datastore.admin.v1.MigrationProgressEvent.RedirectWritesStepDetails)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1698,7 +1543,19 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new RedirectWritesStepDetails(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1958,7 +1815,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
           (com.google.datastore.admin.v1.MigrationProgressEvent.RedirectWritesStepDetails)
               stepDetails_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1985,7 +1842,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
               (com.google.datastore.admin.v1.MigrationProgressEvent.RedirectWritesStepDetails)
                   stepDetails_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -2014,7 +1871,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2039,7 +1896,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2170,17 +2027,10 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
     }
 
     // Construct using com.google.datastore.admin.v1.MigrationProgressEvent.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -2188,6 +2038,12 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
       super.clear();
       step_ = 0;
 
+      if (prepareStepDetailsBuilder_ != null) {
+        prepareStepDetailsBuilder_.clear();
+      }
+      if (redirectWritesStepDetailsBuilder_ != null) {
+        redirectWritesStepDetailsBuilder_.clear();
+      }
       stepDetailsCase_ = 0;
       stepDetails_ = null;
       return this;
@@ -2302,7 +2158,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2317,18 +2173,51 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.datastore.admin.v1.MigrationProgressEvent parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                step_ = input.readEnum();
+
+                break;
+              } // case 8
+            case 18:
+              {
+                input.readMessage(
+                    getPrepareStepDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                stepDetailsCase_ = 2;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getRedirectWritesStepDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                stepDetailsCase_ = 3;
+                break;
+              } // case 26
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.datastore.admin.v1.MigrationProgressEvent) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2973,7 +2862,18 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MigrationProgressEvent(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

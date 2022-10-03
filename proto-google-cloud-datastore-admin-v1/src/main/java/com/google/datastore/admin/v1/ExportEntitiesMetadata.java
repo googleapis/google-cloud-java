@@ -52,116 +52,6 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
     return this.unknownFields;
   }
 
-  private ExportEntitiesMetadata(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.datastore.admin.v1.CommonMetadata.Builder subBuilder = null;
-              if (common_ != null) {
-                subBuilder = common_.toBuilder();
-              }
-              common_ =
-                  input.readMessage(
-                      com.google.datastore.admin.v1.CommonMetadata.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(common_);
-                common_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              com.google.datastore.admin.v1.Progress.Builder subBuilder = null;
-              if (progressEntities_ != null) {
-                subBuilder = progressEntities_.toBuilder();
-              }
-              progressEntities_ =
-                  input.readMessage(
-                      com.google.datastore.admin.v1.Progress.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(progressEntities_);
-                progressEntities_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              com.google.datastore.admin.v1.Progress.Builder subBuilder = null;
-              if (progressBytes_ != null) {
-                subBuilder = progressBytes_.toBuilder();
-              }
-              progressBytes_ =
-                  input.readMessage(
-                      com.google.datastore.admin.v1.Progress.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(progressBytes_);
-                progressBytes_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.datastore.admin.v1.EntityFilter.Builder subBuilder = null;
-              if (entityFilter_ != null) {
-                subBuilder = entityFilter_.toBuilder();
-              }
-              entityFilter_ =
-                  input.readMessage(
-                      com.google.datastore.admin.v1.EntityFilter.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(entityFilter_);
-                entityFilter_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              outputUrlPrefix_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.admin.v1.DatastoreAdminProto
         .internal_static_google_datastore_admin_v1_ExportEntitiesMetadata_descriptor;
@@ -455,7 +345,7 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outputUrlPrefix_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, outputUrlPrefix_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -479,7 +369,7 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outputUrlPrefix_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, outputUrlPrefix_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -512,7 +402,7 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
       if (!getEntityFilter().equals(other.getEntityFilter())) return false;
     }
     if (!getOutputUrlPrefix().equals(other.getOutputUrlPrefix())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -541,7 +431,7 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
     }
     hash = (37 * hash) + OUTPUT_URL_PREFIX_FIELD_NUMBER;
     hash = (53 * hash) + getOutputUrlPrefix().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -670,17 +560,10 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
     }
 
     // Construct using com.google.datastore.admin.v1.ExportEntitiesMetadata.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -826,7 +709,7 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
         outputUrlPrefix_ = other.outputUrlPrefix_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -841,18 +724,62 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.datastore.admin.v1.ExportEntitiesMetadata parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getCommonFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    getProgressEntitiesFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getProgressBytesFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getEntityFilterFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                outputUrlPrefix_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.datastore.admin.v1.ExportEntitiesMetadata) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1757,7 +1684,18 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ExportEntitiesMetadata(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
