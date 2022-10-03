@@ -174,9 +174,7 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The API calculates the beginning offset of the content in the original
-   * document according to the
-   * [EncodingType][google.cloud.language.v1.EncodingType] specified in the API
-   * request.
+   * document according to the [EncodingType][google.cloud.language.v1.EncodingType] specified in the API request.
    * </pre>
    *
    * <code>int32 begin_offset = 2;</code>
@@ -629,9 +627,7 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The API calculates the beginning offset of the content in the original
-     * document according to the
-     * [EncodingType][google.cloud.language.v1.EncodingType] specified in the API
-     * request.
+     * document according to the [EncodingType][google.cloud.language.v1.EncodingType] specified in the API request.
      * </pre>
      *
      * <code>int32 begin_offset = 2;</code>
@@ -647,9 +643,7 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The API calculates the beginning offset of the content in the original
-     * document according to the
-     * [EncodingType][google.cloud.language.v1.EncodingType] specified in the API
-     * request.
+     * document according to the [EncodingType][google.cloud.language.v1.EncodingType] specified in the API request.
      * </pre>
      *
      * <code>int32 begin_offset = 2;</code>
@@ -668,9 +662,7 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The API calculates the beginning offset of the content in the original
-     * document according to the
-     * [EncodingType][google.cloud.language.v1.EncodingType] specified in the API
-     * request.
+     * document according to the [EncodingType][google.cloud.language.v1.EncodingType] specified in the API request.
      * </pre>
      *
      * <code>int32 begin_offset = 2;</code>

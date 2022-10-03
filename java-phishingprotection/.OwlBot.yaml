@@ -14,13 +14,13 @@
 
 
 deep-remove-regex:
-- "/samples/snippets/generated"
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-phishingprotection/samples/snippets/generated"
+- "/java-phishingprotection/grpc-google-.*/src"
+- "/java-phishingprotection/proto-google-.*/src"
+- "/java-phishingprotection/google-.*/src"
 
 deep-preserve-regex:
-- "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-phishingprotection/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/cloud/phishingprotection/(v.*)/.*-java/proto-google-.*/src"

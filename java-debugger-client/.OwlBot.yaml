@@ -14,12 +14,12 @@
 
 
 deep-remove-regex:
-- "/grpc-google-.*/src"
-- "/proto-google-cloud.*/src"
-- "/google-.*/src"
+- "/java-debugger-client/grpc-google-.*/src"
+- "/java-debugger-client/proto-google-cloud.*/src"
+- "/java-debugger-client/google-.*/src"
 
 deep-preserve-regex:
-- "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-debugger-client/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/devtools/clouddebugger/(v.*)/.*-java/proto-google-.*/src"
