@@ -23,22 +23,7 @@ if [[ $(terraform state list) == "" ]]; then
   exit
 fi
 
-# Ensure the gcloud project matches Terraform's current state.
-terraform_project_id=$(terraform output -raw project_id) || exit
-gcloud_project_id=$(gcloud config get project) || ""
-if [[ "$terraform_project_id" != "$gcloud_project_id" ]]; then
-  echo -n "Do you want to make $terraform_project_id your current gcloud project? (Y/n): "
-  read -r shouldSwitch
-  if [[ "$shouldSwitch" == n* ]] || [[ "$shouldSwitch" == N* ]]; then
-    exit
-  fi
-  gcloud config set project "$terraform_project_id"
-fi
-
-GOOGLE_CLOUD_PROJECT="$terraform_project_id"
-export GOOGLE_CLOUD_PROJECT
-GOOGLE_IMPERSONATE_SERVICE_ACCOUNT=$(terraform output -raw service_account)
-export GOOGLE_IMPERSONATE_SERVICE_ACCOUNT
+source ./helpers/sync-env.sh
 
 # Either use given module list, or get a list of all modules in the parent directory.
 # TODO: Gather module list from terraform state.

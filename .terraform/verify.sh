@@ -62,9 +62,7 @@ function testAll() {
 scriptDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 pushd "$scriptDir" >/dev/null || exit
 
-if [ -z "${GOOGLE_CLOUD_PROJECT+x}" ]; then
-  source generated-env.sh || exit
-fi
+source ./helpers/sync-env.sh
 
 if [ -n "$1" ]; then
   # If given a specific module list, only perform integration tests on those.
