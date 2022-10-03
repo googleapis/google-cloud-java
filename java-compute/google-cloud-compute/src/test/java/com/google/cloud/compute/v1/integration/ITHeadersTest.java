@@ -26,6 +26,7 @@ import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 import java.io.IOException;
 import java.net.InetSocketAddress;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -80,11 +81,19 @@ public class ITHeadersTest {
       future.get(5, TimeUnit.SECONDS);
     } catch (InterruptedException | ExecutionException e) {
       e.printStackTrace();
-    } catch (TimeoutException e) {; // expected
+    } catch (TimeoutException e) {
+      ; // expected
     }
     future.cancel(true);
 
-    Assert.assertTrue(headers.get("X-goog-api-client").get(0).contains("rest/"));
+    List<String> clientIdentificationHeader = headers.get("X-goog-api-client");
+    Assert.assertNotNull(
+        "X-goog-api-client header missing. Headers found: " + String.join(", ", headers.keySet()),
+        clientIdentificationHeader);
+    Assert.assertTrue(
+        "X-goog-api-client header contains no values.", clientIdentificationHeader.size() > 0);
+    Assert.assertTrue(clientIdentificationHeader.get(0).contains("rest/"));
+
     Assert.assertTrue(headers.get("Content-type").get(0).contains("application/json"));
   }
 }
