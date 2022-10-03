@@ -1,5 +1,57 @@
 # Changelog
 
+## [0.3.1](https://github.com/googleapis/java-batch/compare/v0.3.0...v0.3.1) (2022-09-28)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#62](https://github.com/googleapis/java-batch/issues/62)) ([10f1cc8](https://github.com/googleapis/java-batch/commit/10f1cc8cbcf2d5f443d82363d1c3604e1151f441))
+* Update dependency certifi to v2022.9.24 ([#46](https://github.com/googleapis/java-batch/issues/46)) ([16fd4f4](https://github.com/googleapis/java-batch/commit/16fd4f4a658e290cce519c3d72350e3dab86eb62))
+* Update dependency charset-normalizer to v2.1.1 ([#50](https://github.com/googleapis/java-batch/issues/50)) ([75906e4](https://github.com/googleapis/java-batch/commit/75906e488c0882d853e1fe63315e96c80cb376d7))
+* Update dependency click to v8.1.3 ([#51](https://github.com/googleapis/java-batch/issues/51)) ([3bc6542](https://github.com/googleapis/java-batch/commit/3bc6542e1a7abbcf4f343dc59f02a3aac72e723e))
+* Update dependency gcp-releasetool to v1.8.8 ([#47](https://github.com/googleapis/java-batch/issues/47)) ([2175cf4](https://github.com/googleapis/java-batch/commit/2175cf4ffca873cea9da59128489067a9e41bf28))
+* Update dependency google-api-core to v2.10.1 ([#52](https://github.com/googleapis/java-batch/issues/52)) ([1684933](https://github.com/googleapis/java-batch/commit/168493370fd14c9eb2180290ff9103666cecd823))
+* Update dependency google-auth to v2.12.0 ([#53](https://github.com/googleapis/java-batch/issues/53)) ([ead1241](https://github.com/googleapis/java-batch/commit/ead12418259ef0176de25a00c252d1c0bf41888e))
+* Update dependency google-cloud-core to v2.3.2 ([#48](https://github.com/googleapis/java-batch/issues/48)) ([716b8d8](https://github.com/googleapis/java-batch/commit/716b8d8ebe91eb8adab03f1771092c68ffd75e61))
+* Update dependency google-cloud-storage to v2.5.0 ([#54](https://github.com/googleapis/java-batch/issues/54)) ([b0e2745](https://github.com/googleapis/java-batch/commit/b0e2745af18d096045c6ebeca6bd5c5ffe668e09))
+* Update dependency google-crc32c to v1.5.0 ([#55](https://github.com/googleapis/java-batch/issues/55)) ([a20c8ab](https://github.com/googleapis/java-batch/commit/a20c8ab1f645b4f33322cf6f45a020b049a2c9db))
+* Update dependency googleapis-common-protos to v1.56.4 ([#49](https://github.com/googleapis/java-batch/issues/49)) ([62c0202](https://github.com/googleapis/java-batch/commit/62c0202829949b10e2e4ff3add4ccd6f2fafbb3a))
+* Update dependency importlib-metadata to v4.12.0 ([#63](https://github.com/googleapis/java-batch/issues/63)) ([3a88cb3](https://github.com/googleapis/java-batch/commit/3a88cb3b120e3016d50444e76f6f429b530c5269))
+* Update dependency jeepney to v0.8.0 ([#64](https://github.com/googleapis/java-batch/issues/64)) ([a4c5676](https://github.com/googleapis/java-batch/commit/a4c56762d9a420324b25ff39656f7f0395b5f16a))
+* Update dependency jinja2 to v3.1.2 ([#65](https://github.com/googleapis/java-batch/issues/65)) ([3e58704](https://github.com/googleapis/java-batch/commit/3e5870427d17335fd3c09718e6f4b7f30a0852cb))
+* Update dependency keyring to v23.9.3 ([#66](https://github.com/googleapis/java-batch/issues/66)) ([3630bdc](https://github.com/googleapis/java-batch/commit/3630bdc13d4f54c3119a502d9b41015842952fb7))
+* Update dependency markupsafe to v2.1.1 ([#56](https://github.com/googleapis/java-batch/issues/56)) ([58cf14a](https://github.com/googleapis/java-batch/commit/58cf14a781e701485d9a6725ea007684c7926563))
+* Update dependency protobuf to v3.20.2 ([#57](https://github.com/googleapis/java-batch/issues/57)) ([ee2f20d](https://github.com/googleapis/java-batch/commit/ee2f20d01967b4ab6cf5e02f47c94395bac480b8))
+* Update dependency protobuf to v4 ([#67](https://github.com/googleapis/java-batch/issues/67)) ([74ab05f](https://github.com/googleapis/java-batch/commit/74ab05f2bc8932ee67c4cd065008ce669a3c4a05))
+* Update dependency pyjwt to v2.5.0 ([#58](https://github.com/googleapis/java-batch/issues/58)) ([54bc183](https://github.com/googleapis/java-batch/commit/54bc18356ce1edd5ee1efece4e86164242f1d4cd))
+* Update dependency requests to v2.28.1 ([#59](https://github.com/googleapis/java-batch/issues/59)) ([316c948](https://github.com/googleapis/java-batch/commit/316c948b9e744348caf57ca50ecd2f4715796026))
+* Update dependency typing-extensions to v4.3.0 ([#60](https://github.com/googleapis/java-batch/issues/60)) ([d0cc0ec](https://github.com/googleapis/java-batch/commit/d0cc0ec46212296513feb6f75e623a0943248793))
+* Update dependency zipp to v3.8.1 ([#61](https://github.com/googleapis/java-batch/issues/61)) ([c9443db](https://github.com/googleapis/java-batch/commit/c9443db4847f37671d6451f87d6912f20b36cc53))
+
+## [0.3.0](https://github.com/googleapis/java-batch/compare/v0.2.2...v0.3.0) (2022-09-15)
+
+
+### Features
+
+* environment variables, disk interfaces ([4f26297](https://github.com/googleapis/java-batch/commit/4f26297dd9d91ad73daa26d4294fd6fabe6f0a48))
+* environment variables, disk interfaces ([4f26297](https://github.com/googleapis/java-batch/commit/4f26297dd9d91ad73daa26d4294fd6fabe6f0a48))
+
+
+### Bug Fixes
+
+* Mark service_account_email as deprecated ([#36](https://github.com/googleapis/java-batch/issues/36)) ([176b6e6](https://github.com/googleapis/java-batch/commit/176b6e6ee8bdb3264a297673b87b5dee74717628))
+
+
+### Documentation
+
+* removing comment from a deprecated field ([176b6e6](https://github.com/googleapis/java-batch/commit/176b6e6ee8bdb3264a297673b87b5dee74717628))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#38](https://github.com/googleapis/java-batch/issues/38)) ([7d5571a](https://github.com/googleapis/java-batch/commit/7d5571aeca1ae9406e38e6c13070e0c5d17b65ab))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#40](https://github.com/googleapis/java-batch/issues/40)) ([fcd0595](https://github.com/googleapis/java-batch/commit/fcd059540e8d5483d008ee86702525462a30d542))
+
 ## [0.2.2](https://github.com/googleapis/java-batch/compare/v0.2.1...v0.2.2) (2022-08-09)
 
 

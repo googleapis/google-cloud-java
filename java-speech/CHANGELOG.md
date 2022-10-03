@@ -1,5 +1,40 @@
 # Changelog
 
+## [2.5.9](https://github.com/googleapis/java-speech/compare/v2.5.8...v2.5.9) (2022-09-26)
+
+
+### Dependencies
+
+* Update dependency org.json:json to v20220924 ([#961](https://github.com/googleapis/java-speech/issues/961)) ([3e7e424](https://github.com/googleapis/java-speech/commit/3e7e4247fe3357483aab04938766827db84ec739))
+
+## [2.5.8](https://github.com/googleapis/java-speech/compare/v2.5.7...v2.5.8) (2022-09-20)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-storage to v2.12.0 ([#955](https://github.com/googleapis/java-speech/issues/955)) ([6909b77](https://github.com/googleapis/java-speech/commit/6909b776c2d549d1866e8e739ccd41e8e02d00cb))
+
+## [2.5.7](https://github.com/googleapis/java-speech/compare/v2.5.6...v2.5.7) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#951](https://github.com/googleapis/java-speech/issues/951)) ([a618141](https://github.com/googleapis/java-speech/commit/a618141430c6944348b096db20f6b8f7c657eb1d))
+
+## [2.5.6](https://github.com/googleapis/java-speech/compare/v2.5.5...v2.5.6) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#946](https://github.com/googleapis/java-speech/issues/946)) ([6e4186d](https://github.com/googleapis/java-speech/commit/6e4186dceb56a61393850751e65146ffbf952b0a))
+
+## [2.5.5](https://github.com/googleapis/java-speech/compare/v2.5.4...v2.5.5) (2022-09-06)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud ([16e6b56](https://github.com/googleapis/java-speech/commit/16e6b56194cb50ff1934e8000316088347bbdeaa))
+
 ## [2.5.4](https://github.com/googleapis/java-speech/compare/v2.5.3...v2.5.4) (2022-08-09)
 
 

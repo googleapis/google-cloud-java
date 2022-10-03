@@ -1,5 +1,52 @@
 # Changelog
 
+## [2.7.3](https://github.com/googleapis/java-document-ai/compare/v2.7.2...v2.7.3) (2022-09-27)
+
+
+### Dependencies
+
+* Update dependency jinja2 to v3.1.2 ([#899](https://github.com/googleapis/java-document-ai/issues/899)) ([f8c9a65](https://github.com/googleapis/java-document-ai/commit/f8c9a65e8aab4b9839a7b6d958ffe6e4e0719ff9))
+* Update dependency keyring to v23.9.3 ([#900](https://github.com/googleapis/java-document-ai/issues/900)) ([605daeb](https://github.com/googleapis/java-document-ai/commit/605daeb59de6d963ecbe8bb31d908d576ac2a2fd))
+* Update dependency markupsafe to v2.1.1 ([#897](https://github.com/googleapis/java-document-ai/issues/897)) ([de3ce6e](https://github.com/googleapis/java-document-ai/commit/de3ce6e6a18ebc81adc6a89063afc645a34aa1ee))
+* Update dependency protobuf to v3.20.2 ([#898](https://github.com/googleapis/java-document-ai/issues/898)) ([e1ee0d3](https://github.com/googleapis/java-document-ai/commit/e1ee0d360183c50c7b7d0bcccdff2f41cabcf223))
+* Update dependency pyjwt to v2.5.0 ([#901](https://github.com/googleapis/java-document-ai/issues/901)) ([f22b07c](https://github.com/googleapis/java-document-ai/commit/f22b07c0eb75ad15946a1295dda293b477d3e060))
+* Update dependency requests to v2.28.1 ([#902](https://github.com/googleapis/java-document-ai/issues/902)) ([b8e7a15](https://github.com/googleapis/java-document-ai/commit/b8e7a157c4df913822af8fda28b6dc523ee54329))
+
+## [2.7.2](https://github.com/googleapis/java-document-ai/compare/v2.7.1...v2.7.2) (2022-09-20)
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:grpc-google-common-protos to v2.9.3 ([#891](https://github.com/googleapis/java-document-ai/issues/891)) ([916c7f1](https://github.com/googleapis/java-document-ai/commit/916c7f17e98f32a5cdd0e89c747d778a005a16ba))
+
+## [2.7.1](https://github.com/googleapis/java-document-ai/compare/v2.7.0...v2.7.1) (2022-09-20)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-storage to v2.12.0 ([#883](https://github.com/googleapis/java-document-ai/issues/883)) ([3a75167](https://github.com/googleapis/java-document-ai/commit/3a751672199a65ddc3784282bdc24d95d1608904))
+
+## [2.7.0](https://github.com/googleapis/java-document-ai/compare/v2.6.2...v2.7.0) (2022-09-16)
+
+
+### Features
+
+* Added Barcode support ([a4a1ecf](https://github.com/googleapis/java-document-ai/commit/a4a1ecfd7f310358176dc506d76622a5ab33720f))
+* Added corrected_key_text, correct_value_text to FormField object in document.proto ([a4a1ecf](https://github.com/googleapis/java-document-ai/commit/a4a1ecfd7f310358176dc506d76622a5ab33720f))
+* Added field_mask to ProcessRequest object in document_processor_service.proto ([a4a1ecf](https://github.com/googleapis/java-document-ai/commit/a4a1ecfd7f310358176dc506d76622a5ab33720f))
+* Added integer_values, float_values and non_present to Entity object in document.proto ([a4a1ecf](https://github.com/googleapis/java-document-ai/commit/a4a1ecfd7f310358176dc506d76622a5ab33720f))
+* Added OperationMetadata resource ([a4a1ecf](https://github.com/googleapis/java-document-ai/commit/a4a1ecfd7f310358176dc506d76622a5ab33720f))
+* Added parent_ids to Revision object in document.proto ([a4a1ecf](https://github.com/googleapis/java-document-ai/commit/a4a1ecfd7f310358176dc506d76622a5ab33720f))
+* Added Processor Management and Processor Version support to v1 library ([a4a1ecf](https://github.com/googleapis/java-document-ai/commit/a4a1ecfd7f310358176dc506d76622a5ab33720f))
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:grpc-google-common-protos to v2.9.2 ([#876](https://github.com/googleapis/java-document-ai/issues/876)) ([7a40a4d](https://github.com/googleapis/java-document-ai/commit/7a40a4d81bd0379b8ed144ebb07069636b25d7c1))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#881](https://github.com/googleapis/java-document-ai/issues/881)) ([71c023d](https://github.com/googleapis/java-document-ai/commit/71c023d7ff69013069ef95f3aeb942b20d9c9a88))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#882](https://github.com/googleapis/java-document-ai/issues/882)) ([4004115](https://github.com/googleapis/java-document-ai/commit/4004115df394709e94df62983fd460e4bd43691d))
+* Update dependency com.google.cloud:google-cloud-storage to v2.11.3 ([#867](https://github.com/googleapis/java-document-ai/issues/867)) ([8f66f32](https://github.com/googleapis/java-document-ai/commit/8f66f32841bc8d57ef902a9348e2e64fa1b3c2d0))
+
 ## [2.6.2](https://github.com/googleapis/java-document-ai/compare/v2.6.1...v2.6.2) (2022-08-09)
 
 

@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.3.0](https://github.com/googleapis/java-storage-transfer/compare/v1.2.2...v1.3.0) (2022-09-15)
+
+
+### Features
+
+* add AWS S3 compatible data source ([6769f28](https://github.com/googleapis/java-storage-transfer/commit/6769f28fbcff6e33d25978686c306f450de41faf))
+* Add default retry configuration ([#188](https://github.com/googleapis/java-storage-transfer/issues/188)) ([6769f28](https://github.com/googleapis/java-storage-transfer/commit/6769f28fbcff6e33d25978686c306f450de41faf))
+* add DeleteTransferJob operation ([6769f28](https://github.com/googleapis/java-storage-transfer/commit/6769f28fbcff6e33d25978686c306f450de41faf))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#190](https://github.com/googleapis/java-storage-transfer/issues/190)) ([5c75867](https://github.com/googleapis/java-storage-transfer/commit/5c75867cbd30005ac7fd3ede46a48793772a999a))
+
+## [1.2.2](https://github.com/googleapis/java-storage-transfer/compare/v1.2.1...v1.2.2) (2022-09-08)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#183](https://github.com/googleapis/java-storage-transfer/issues/183)) ([2f86587](https://github.com/googleapis/java-storage-transfer/commit/2f86587cb9a2cba95eb6f9c1a6d0d308711e5043))
+
 ## [1.2.1](https://github.com/googleapis/java-storage-transfer/compare/v1.2.0...v1.2.1) (2022-07-26)
 
 

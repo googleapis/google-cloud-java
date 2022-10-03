@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.2.7](https://github.com/googleapis/java-binary-authorization/compare/v1.2.6...v1.2.7) (2022-09-20)
+
+
+### Dependencies
+
+* Update dependency io.grafeas:grafeas to v2.4.5 ([#269](https://github.com/googleapis/java-binary-authorization/issues/269)) ([8a9a66d](https://github.com/googleapis/java-binary-authorization/commit/8a9a66dcc9fd417fcaaa3d06c432a6e4a2f50347))
+
+## [1.2.6](https://github.com/googleapis/java-binary-authorization/compare/v1.2.5...v1.2.6) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#266](https://github.com/googleapis/java-binary-authorization/issues/266)) ([0ab7733](https://github.com/googleapis/java-binary-authorization/commit/0ab77337543942c8bdd5e9ae554790ca826931a8))
+
+## [1.2.5](https://github.com/googleapis/java-binary-authorization/compare/v1.2.4...v1.2.5) (2022-09-10)
+
+
+### Dependencies
+
+* Update dependency io.grafeas:grafeas to v2.4.4 ([#261](https://github.com/googleapis/java-binary-authorization/issues/261)) ([398de26](https://github.com/googleapis/java-binary-authorization/commit/398de26209ee8d1caad5fc949a76f97a94dfd88a))
+
+## [1.2.4](https://github.com/googleapis/java-binary-authorization/compare/v1.2.3...v1.2.4) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#258](https://github.com/googleapis/java-binary-authorization/issues/258)) ([4c82113](https://github.com/googleapis/java-binary-authorization/commit/4c821131fc5a8aed8f9e86231115c6f1d283b512))
+
 ## [1.2.3](https://github.com/googleapis/java-binary-authorization/compare/v1.2.2...v1.2.3) (2022-08-11)
 
 

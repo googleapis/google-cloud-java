@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.9.4](https://github.com/googleapis/java-datacatalog/compare/v1.9.3...v1.9.4) (2022-09-17)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#858](https://github.com/googleapis/java-datacatalog/issues/858)) ([2bc752f](https://github.com/googleapis/java-datacatalog/commit/2bc752f13c8b219dc1d2e5c58ff6eaf22fe3cd97))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#861](https://github.com/googleapis/java-datacatalog/issues/861)) ([2869313](https://github.com/googleapis/java-datacatalog/commit/2869313e0e894ca11d9b0ea5afedd89fca3963d4))
+
+## [1.9.3](https://github.com/googleapis/java-datacatalog/compare/v1.9.2...v1.9.3) (2022-08-31)
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java-util to v3.21.5 ([#845](https://github.com/googleapis/java-datacatalog/issues/845)) ([93c5bfc](https://github.com/googleapis/java-datacatalog/commit/93c5bfc1a24027bcd1e9f898585c2de9fdd59d11))
+
 ## [1.9.2](https://github.com/googleapis/java-datacatalog/compare/v1.9.1...v1.9.2) (2022-08-11)
 
 

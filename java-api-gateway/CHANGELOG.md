@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.3.5](https://github.com/googleapis/java-api-gateway/compare/v2.3.4...v2.3.5) (2022-09-28)
+
+
+### Dependencies
+
+* Update dependency google-auth to v2.12.0 ([#301](https://github.com/googleapis/java-api-gateway/issues/301)) ([3a5318f](https://github.com/googleapis/java-api-gateway/commit/3a5318f63b97af9e7f8f15e3d1cb88a3b94ff9fa))
+* Update dependency google-cloud-storage to v2.5.0 ([#302](https://github.com/googleapis/java-api-gateway/issues/302)) ([b57cdac](https://github.com/googleapis/java-api-gateway/commit/b57cdaca749f3f9c51471365bf61b057af4b705c))
+
+## [2.3.4](https://github.com/googleapis/java-api-gateway/compare/v2.3.3...v2.3.4) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#295](https://github.com/googleapis/java-api-gateway/issues/295)) ([d67e01b](https://github.com/googleapis/java-api-gateway/commit/d67e01bb5a8146ceec301182e425f2c261c9fc25))
+
+## [2.3.3](https://github.com/googleapis/java-api-gateway/compare/v2.3.2...v2.3.3) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#291](https://github.com/googleapis/java-api-gateway/issues/291)) ([8500622](https://github.com/googleapis/java-api-gateway/commit/8500622f10b3785109dba767ea5fef6c3955bbc7))
+
 ## [2.3.2](https://github.com/googleapis/java-api-gateway/compare/v2.3.1...v2.3.2) (2022-08-09)
 
 
