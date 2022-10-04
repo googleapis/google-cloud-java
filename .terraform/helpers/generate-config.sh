@@ -27,7 +27,7 @@ function appendModule() {
   echo "module \"$friendlyName\" {
     source = \"./../$1/.terraform\"
     inputs = local.data
-    depends_on = [time_sleep.for_1m_allowPermissionsToTakeEffect]
+    depends_on = [time_sleep.for_1m_allowBaseCloudApisToFullyEnable]
   }" >>generated-main.tf
 
   # Append the given module to the generated-output.tf file to provide

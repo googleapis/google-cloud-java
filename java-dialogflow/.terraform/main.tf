@@ -5,16 +5,18 @@ terraform {
     }
   }
 }
+module "project-services" {
+  source = "terraform-google-modules/project-factory/google//modules/project_services"
 
-resource "google_project_service" "dialogflow_api" {
-  service            = "dialogflow.googleapis.com"
-  disable_on_destroy = false
+  project_id                  = var.inputs.project_id
+  enable_apis                 = var.inputs.should_enable_apis_on_apply
+  disable_services_on_destroy = var.inputs.should_disable_apis_on_destroy
+  activate_apis               = ["dialogflow.googleapis.com"]
 }
-
 resource "google_dialogflow_agent" "design_time_agent" {
   display_name          = "google-cloud-java-tests"
   default_language_code = "en"
   time_zone             = "America/Los_Angeles"
   match_mode            = "MATCH_MODE_HYBRID"
-  depends_on            = [google_project_service.dialogflow_api]
+  depends_on            = [module.project-services]
 }

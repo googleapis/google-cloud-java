@@ -13,18 +13,20 @@ provider "google" {
 }
 locals {
   data = {
-    project_id      = var.project_id
-    project_number  = var.project_number
-    zone            = var.zone
-    service_account = var.service_account
+    project_id                     = var.project_id
+    project_number                 = var.project_number
+    zone                           = var.zone
+    service_account                = var.service_account
+    should_enable_apis_on_apply    = var.should_enable_apis_on_apply
+    should_disable_apis_on_destroy = var.should_disable_apis_on_destroy
   }
 }
 module "project-services" {
   source = "terraform-google-modules/project-factory/google//modules/project_services"
 
   project_id                  = local.data.project_id
-  enable_apis                 = true
-  disable_services_on_destroy = false
+  enable_apis                 = local.data.should_enable_apis_on_apply
+  disable_services_on_destroy = local.data.should_disable_apis_on_destroy
   activate_apis               = [
     "cloudresourcemanager.googleapis.com",
     "iam.googleapis.com",
@@ -32,7 +34,7 @@ module "project-services" {
     "serviceusage.googleapis.com",
   ]
 }
-resource "time_sleep" "for_1m_allowPermissionsToTakeEffect" {
+resource "time_sleep" "for_1m_allowBaseCloudApisToFullyEnable" {
   create_duration = "1m"
   depends_on      = [module.project-services]
   triggers        = {

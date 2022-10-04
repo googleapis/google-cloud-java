@@ -3,19 +3,19 @@ terraform {
     google = { source = "hashicorp/google" }
   }
 }
-resource "google_project_service" "pubsub_api" {
-  service            = "pubsub.googleapis.com"
-  disable_on_destroy = false
+module "project-services" {
+  source = "terraform-google-modules/project-factory/google//modules/project_services"
+
+  project_id                  = var.inputs.project_id
+  enable_apis                 = var.inputs.should_enable_apis_on_apply
+  disable_services_on_destroy = var.inputs.should_disable_apis_on_destroy
+  activate_apis               = [
+    "cloudasset.googleapis.com",
+    "cloudresourcemanager.googleapis.com",
+    "pubsub.googleapis.com",
+  ]
 }
-resource "google_project_service" "asset_api" {
-  service            = "cloudasset.googleapis.com"
-  disable_on_destroy = false
-}
-resource "google_project_service" "cloudresourcemanager_api" {
-  service            = "cloudresourcemanager.googleapis.com"
-  disable_on_destroy = false
-}
-resource "time_sleep" "wait_90_seconds" {
-  depends_on      = [google_project_service.pubsub_api]
+resource "time_sleep" "for_90s_allowPubsubToFullyEnable" {
+  depends_on      = [module.project-services]
   create_duration = "90s"
 }

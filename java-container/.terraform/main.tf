@@ -6,19 +6,19 @@ terraform {
   }
 }
 
-resource "google_project_service" "container_api" {
-  service            = "container.googleapis.com"
-  disable_on_destroy = false
-}
-resource "google_project_service" "compute_api" {
-  service            = "compute.googleapis.com"
-  disable_on_destroy = false
+module "project-services" {
+  source = "terraform-google-modules/project-factory/google//modules/project_services"
+
+  project_id                  = var.inputs.project_id
+  enable_apis                 = var.inputs.should_enable_apis_on_apply
+  disable_services_on_destroy = var.inputs.should_disable_apis_on_destroy
+  activate_apis               = [
+    "compute.googleapis.com",
+    "container.googleapis.com",
+  ]
 }
 resource "google_compute_network" "java_container_network" {
   name                    = "java-container-network"
   auto_create_subnetworks = true
-  depends_on              = [
-    google_project_service.compute_api,
-    google_project_service.container_api
-  ]
+  depends_on              = [module.project-services]
 }

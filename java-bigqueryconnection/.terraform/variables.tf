@@ -1,9 +1,12 @@
 variable "inputs" {
   type = object({
-    # GCP Project ID of the project to be used
-    project_id = string
+    project_id                     = string
+    should_enable_apis_on_apply    = bool
+    should_disable_apis_on_destroy = bool
 
-    # GCP zone to deploy resources to. Must be a zone in the chosen region.
-    zone = string
+    # GCP zone and region in which to deploy the SQL database.
+    # Zone must be in the chosen region.
+    zone   = string
+    region = string
   })
 }

@@ -5,17 +5,19 @@ terraform {
     }
   }
 }
+module "project-services" {
+  source = "terraform-google-modules/project-factory/google//modules/project_services"
 
-resource "google_project_service" "dataproc_api" {
-  service            = "dataproc.googleapis.com"
-  disable_on_destroy = false
-}
-resource "google_project_service" "compute_api" {
-  service            = "compute.googleapis.com"
-  disable_on_destroy = false
+  project_id                  = var.inputs.project_id
+  enable_apis                 = var.inputs.should_enable_apis_on_apply
+  disable_services_on_destroy = var.inputs.should_disable_apis_on_destroy
+  activate_apis               = [
+    "compute.googleapis.com",
+    "dataproc.googleapis.com"
+  ]
 }
 data "google_compute_default_service_account" "default" {
-  depends_on = [google_project_service.compute_api]
+  depends_on = [module.project-services]
 }
 resource "google_project_iam_member" "dataproc_iam" {
   project = var.inputs.project_id
