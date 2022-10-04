@@ -55,7 +55,7 @@ function testAll() {
 
   # Perform mvn verify on parent project, excluding the given submodules
   pushd "../" >/dev/null || exit
-  mvnVerify -pl -java-os-login,-java-recommender,-java-scheduler,-java-talent
+  mvnVerify -pl -:google-cloud-os-login,-:google-cloud-recommender,-:google-cloud-talent
   popd >/dev/null || exit
 }
 
