@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.23.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.23.0...v2.23.1) (2022-10-04)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([77bf65b](https://github.com/googleapis/java-bigquerystorage/commit/77bf65b94e324712ff957cb709d393c1f825ebcf))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.17.0 ([#1821](https://github.com/googleapis/java-bigquerystorage/issues/1821)) ([8747079](https://github.com/googleapis/java-bigquerystorage/commit/87470799a55b60d671af977dca14140e9f6d94c6))
+
 ## [2.23.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.22.0...v2.23.0) (2022-10-03)
 
 
