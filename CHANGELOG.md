@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.17.0](https://github.com/googleapis/java-bigquery/compare/v2.16.1...v2.17.0) (2022-10-03)
+
+
+### Features
+
+* Add remote function options to routine metadata ([#2291](https://github.com/googleapis/java-bigquery/issues/2291)) ([d30670e](https://github.com/googleapis/java-bigquery/commit/d30670ee2edf498b0335f3dfdec3487f5627a9f3))
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.5.5 ([#2328](https://github.com/googleapis/java-bigquery/issues/2328)) ([6e48ec2](https://github.com/googleapis/java-bigquery/commit/6e48ec22f98f95cc93a6a0e2a068d8a4d8c822ca))
+* Update dependency com.google.apis:google-api-services-bigquery to v2-rev20220913-2.0.0 ([#2287](https://github.com/googleapis/java-bigquery/issues/2287)) ([fa33184](https://github.com/googleapis/java-bigquery/commit/fa331844dc1862120867d73ad87d87587a388576))
+* Update dependency com.google.apis:google-api-services-bigquery to v2-rev20220924-2.0.0 ([#2325](https://github.com/googleapis/java-bigquery/issues/2325)) ([82c2097](https://github.com/googleapis/java-bigquery/commit/82c2097a866804ffb95a871087438fc163e8b77c))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#2327](https://github.com/googleapis/java-bigquery/issues/2327)) ([188c779](https://github.com/googleapis/java-bigquery/commit/188c77995cad31b328cfbf745df164f4ac70b692))
+* Update dependency gcp-releasetool to v1.8.9 ([#2326](https://github.com/googleapis/java-bigquery/issues/2326)) ([52dfd13](https://github.com/googleapis/java-bigquery/commit/52dfd13a4d311526c784397f50ca5cf45b60f2a5))
+* Update dependency importlib-metadata to v4.13.0 ([#2323](https://github.com/googleapis/java-bigquery/issues/2323)) ([4c7e089](https://github.com/googleapis/java-bigquery/commit/4c7e089f281c7147cd468fbdbd19cd7238b49be3))
+* Update dependency importlib-metadata to v5 ([#2324](https://github.com/googleapis/java-bigquery/issues/2324)) ([bd43cf4](https://github.com/googleapis/java-bigquery/commit/bd43cf42443feba02d7970d3dd17c11d1b64872c))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.14 ([#2288](https://github.com/googleapis/java-bigquery/issues/2288)) ([959519c](https://github.com/googleapis/java-bigquery/commit/959519cd9e5910ba7d93cce00c318ed322dcaf23))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.14 ([#2289](https://github.com/googleapis/java-bigquery/issues/2289)) ([3cf7ef8](https://github.com/googleapis/java-bigquery/commit/3cf7ef83d891480bf80fcb1879ca86e9e053304e))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.9.1 ([#2285](https://github.com/googleapis/java-bigquery/issues/2285)) ([65fac18](https://github.com/googleapis/java-bigquery/commit/65fac188db2514ae620fb5146055591cfe6ac995))
+
 ## [2.16.1](https://github.com/googleapis/java-bigquery/compare/v2.16.0...v2.16.1) (2022-09-15)
 
 
