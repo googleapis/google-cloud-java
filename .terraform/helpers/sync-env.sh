@@ -14,8 +14,19 @@
 # limitations under the License.
 #
 
+if ! terraform output -json project_id &>/dev/null; then
+  if ! terraform refresh &>/dev/null; then
+    echo "No terraform state found."
+    exit 1
+  fi
+  if ! terraform output -json project_id &>/dev/null; then
+    echo "No project found in terraform state."
+    exit 1
+  fi
+fi
+
 # Ensure the gcloud project matches Terraform's current state.
-terraform_project_id=$(terraform output -raw project_id || exit)
+terraform_project_id=$(terraform output -raw project_id)
 gcloud_project_id=$(gcloud config get project) || ""
 if [[ "$terraform_project_id" != "$gcloud_project_id" ]]; then
   echo -n "Do you want to make $terraform_project_id your current gcloud project? (Y/n): "
