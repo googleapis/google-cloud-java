@@ -1,9 +1,17 @@
 # Packages
+.Python
 dist
 bin
 var
 sdist
 target
+eggs/
+.eggs/
+sdist/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
 # Unit test / coverage reports
 .coverage
@@ -29,6 +37,22 @@ docs/
 api_key
 
 # Python utilities
-*.pyc
+__pycache__/
+*.py[cod]
+*$py.class
 
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# New client generation
+generation/new_client/workspace
+
+# Monorepo repository generation
 monorepo/
