@@ -10,7 +10,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-shared-config</artifactId>
-    <version>1.5.3</version><!-- {x-version-update:google-cloud-shared-config:current} -->
+    <version>1.5.3</version>
   </parent>
   <properties>
     <maven.compiler.source>11</maven.compiler.source>
