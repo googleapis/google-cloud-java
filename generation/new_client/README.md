@@ -1,19 +1,27 @@
-# Script to create a new client library module in google-cloud-java monorepo
+# New Google Client Library Generation
 
-This tool is for repository maintainers only. Not for library users.
+The script allows you to create a new client library module in the
+google-cloud-java monorepo.
+
+**This tool is for repository maintainers only. Not for library users.**
 
 ## Prerequisites
 
+This section is only needed for the first run of this script. If it's already
+done, go to "Run client generation script" section.
+
+
+### Environment
+
 Use Linux environment.
 
-Install Docker
+Install Docker.
 
 ### Checkout google-cloud-java repository
 
 ```
 $ git clone https://github.com/googleapis/google-cloud-java
 ```
-
 
 ### Install pyenv
 
@@ -55,7 +63,8 @@ Installed Python-3.9.13 to /usr/local/google/home/suztomo/.pyenv/versions/3.9.13
 Conform `python3.9` command is available:
 
 ```
-suztomo@suztomo:~$ which python3.9
+$ pyenv local 3.9.13
+$ which python3.9
 /usr/local/google/home/suztomo/.pyenv/shims/python3.9
 ```
 
@@ -69,16 +78,13 @@ $ python3.9 -m pip install -r generation/new_client/requirements.txt
 
 ## Run client generation script
 
-You will run new-client.py script with the following parameters
+You will run new-client.py script with the following parameters.
+Collect them from the ticket before running the command.
 
 ### API short name
 
 For convenience of the subsequent commands, define a variable for API short name.
 Get the value from the DevRel Services page (Example: `apikeys`):
-
-```
-$ API_SHORT_NAME=apikeys
-```
 
 ### proto path
 
@@ -125,15 +131,14 @@ Use "java"
 Use "https://github.com/googleapis/google-cloud-java"
 
 
-### The command example
+### Example arguments
 
-The script is in generation/new_client.
+Run `new-client.py` with the arguments above:
 
 ```
 $ cd generation/new_client
-$ API_SHORT_NAME=apikeys
 $ python3.9 new-client.py generate \
-  --api_shortname=${API_SHORT_NAME} \
+  --api_shortname=apikeys \
   --proto-path=google/api/apikeys \
   --name-pretty="API Keys API" \
   --product-docs="https://cloud.google.com/api-keys/" \
@@ -144,6 +149,18 @@ $ python3.9 new-client.py generate \
   --monorepo-url="https://github.com/googleapis/google-cloud-java"
 ```
 
+The command creates `workspace` directory in which it prepares the changes for
+the new module in the monorepo. At the end, it shows you to create a pull
+request in the monorepo:
+
+```
+Prepared new library in workspace/monorepo/java-apikeys
+Please create a pull request from that directory:
+  $ cd /usr/local/google/home/suztomo/google-cloud-java/generation/new_client/workspace/monorepo
+  $ gh pr create --title 'feat: [apikeys] new module for apikeys
+```
+
+Create a pull request from the change.
 
 # Principles
 

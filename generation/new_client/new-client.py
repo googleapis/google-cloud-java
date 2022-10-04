@@ -312,9 +312,9 @@ def generate(
     # part of client library generation process.
 
     print(f"Prepared new library in {workdir}")
-    print(f"Please create a pull request from that directory:"
-          f" cd {workdir_parent} && gh pr create "
-          f"--title 'feat: [{api_shortname}] new module for {api_shortname}")
+    print(f"Please create a pull request from that directory:\n"
+          f"  $ cd {workdir_parent}\n"
+          f"  $ gh pr create --title 'feat: [{api_shortname}] new module for {api_shortname}")
 
 if __name__ == "__main__":
     main()
