@@ -27,6 +27,7 @@ import com.google.protobuf.Descriptors;
 import com.google.protobuf.Descriptors.Descriptor;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
 import com.google.protobuf.Message;
+import com.google.rpc.Code;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -221,7 +222,11 @@ public class JsonStreamWriter implements AutoCloseable {
       }
 
       if (!rowIndexToErrorMessage.isEmpty()) {
-        throw new AppendSerializtionError(streamName, rowIndexToErrorMessage);
+        throw new AppendSerializtionError(
+            Code.INVALID_ARGUMENT.getNumber(),
+            "Append serialization failed for writer: " + streamName,
+            streamName,
+            rowIndexToErrorMessage);
       }
       final ApiFuture<AppendRowsResponse> appendResponseFuture =
           this.streamWriter.append(rowsBuilder.build(), offset);

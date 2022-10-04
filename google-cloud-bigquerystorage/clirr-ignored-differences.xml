@@ -60,4 +60,9 @@
     <className>com/google/cloud/bigquery/storage/v1/ConnectionWorkerPool$Settings$Builder</className>
     <method>com.google.cloud.bigquery.storage.v1.ConnectionWorkerPool$Settings$Builder setMinConnectionsPerRegion(int)</method>
   </difference>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/bigquery/storage/v1/Exceptions$AppendSerializtionError</className>
+    <method>Exceptions$AppendSerializtionError(java.lang.String, java.util.Map)</method>
+  </difference>
 </differences>

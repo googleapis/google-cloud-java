@@ -217,15 +217,20 @@ public final class Exceptions {
 
   /**
    * This exception is thrown from {@link JsonStreamWriter#append()} when the client side Json to
-   * Proto serializtion fails. The exception contains a Map of indexes of faulty lines and the
-   * corresponding error message.
+   * Proto serializtion fails. It can also be thrown by the server in case rows contains invalid
+   * data. The exception contains a Map of indexes of faulty rows and the corresponding error
+   * message.
    */
-  public static class AppendSerializtionError extends RuntimeException {
+  public static class AppendSerializtionError extends StatusRuntimeException {
     private final Map<Integer, String> rowIndexToErrorMessage;
     private final String streamName;
 
-    public AppendSerializtionError(String streamName, Map<Integer, String> rowIndexToErrorMessage) {
-      super(String.format("Append serialization failed for writer: %s", streamName));
+    public AppendSerializtionError(
+        int codeValue,
+        String description,
+        String streamName,
+        Map<Integer, String> rowIndexToErrorMessage) {
+      super(Status.fromCodeValue(codeValue).withDescription(description));
       this.rowIndexToErrorMessage = rowIndexToErrorMessage;
       this.streamName = streamName;
     }

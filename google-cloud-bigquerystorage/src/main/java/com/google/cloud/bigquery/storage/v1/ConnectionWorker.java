@@ -643,7 +643,11 @@ public class ConnectionWorker implements AutoCloseable {
           rowIndexToErrorMessage.put(Math.toIntExact(rowError.getIndex()), rowError.getMessage());
         }
         AppendSerializtionError exception =
-            new AppendSerializtionError(streamName, rowIndexToErrorMessage);
+            new AppendSerializtionError(
+                response.getError().getCode(),
+                response.getError().getMessage(),
+                streamName,
+                rowIndexToErrorMessage);
         requestWrapper.appendResult.setException(exception);
       } else {
         StatusRuntimeException exception =
