@@ -20,7 +20,7 @@ function initializeGeneratedFiles() {
 }
 
 function appendModule() {
-  friendlyName=$(echo "$1" | tr '-' _)
+  friendlyName=$(source ./helpers/get-output-friendly-name.sh "$1")
 
   # Append the given module to the generated-main.tf configuration to be
   # included in the project's resources during 'terraform apply'.

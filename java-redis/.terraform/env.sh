@@ -15,13 +15,9 @@
 # limitations under the License.
 #
 
-function getOutput() {
-  terraform output -json java_redis || exit
-}
-function parseJson() {
-  python3 -c "import sys, json; print(json.load(sys.stdin)['$1'])"
-}
+# Current working directory will be <repo-root>/.terraform/
+source ./helpers/get-module-output.sh
 
-REDIS_NETWORK=$(getOutput | parseJson redis_network)
+REDIS_NETWORK=$(getModuleOutput java-redis redis_network)
 echo "Setting environment variable REDIS_NETWORK=$REDIS_NETWORK"
 export REDIS_NETWORK

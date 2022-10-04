@@ -15,23 +15,19 @@
 # limitations under the License.
 #
 
-function getOutput() {
-  terraform output -json java_bigqueryconnection || exit
-}
-function parseJson() {
-  python3 -c "import sys, json; print(json.load(sys.stdin)['$1'])"
-}
+# Current working directory will be <repo-root>/.terraform/
+source ./helpers/get-module-output.sh
 
-MY_SQL_DATABASE=$(getOutput | parseJson db_name)
+MY_SQL_DATABASE=$(getModuleOutput java-bigqueryconnection db_name)
 echo "Setting environment variable MY_SQL_DATABASE=$MY_SQL_DATABASE"
 export MY_SQL_DATABASE
 
-MY_SQL_INSTANCE=$(getOutput | parseJson db_instance)
+MY_SQL_INSTANCE=$(getModuleOutput java-bigqueryconnection db_instance)
 echo "Setting environment variable MY_SQL_INSTANCE=$MY_SQL_INSTANCE"
 export MY_SQL_INSTANCE
 
 echo "Setting environment variable DB_PWD=<sensitive>"
-DB_PWD=$(getOutput | parseJson db_password)
+DB_PWD=$(getModuleOutput java-bigqueryconnection db_password)
 export DB_PWD
 
 echo "Setting environment variable DB_USER=default"

@@ -12,6 +12,10 @@ provider "google" {
   zone    = var.zone
 }
 locals {
+  # Objects with additional key-value entries may be passed as variables
+  # to modules needing an object with only a subset of those entries.
+  # So this 'data' object is a superset of key-value entries that may be
+  # needed, and we pass it to every module.
   data = {
     project_id                     = var.project_id
     project_number                 = var.project_number

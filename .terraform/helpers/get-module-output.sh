@@ -1,4 +1,3 @@
-#!/bin/bash
 #
 # Copyright 2022 Google LLC
 #
@@ -15,9 +14,18 @@
 # limitations under the License.
 #
 
-# Current working directory will be <repo-root>/.terraform/
-source ./helpers/get-module-output.sh
+# Get the output object in JSON format for the given module.
+function getOutput() {
+  friendlyName=$(source ./helpers/get-output-friendly-name.sh "$1")
+  terraform output -json "$friendlyName" || exit
+}
 
-GOOGLE_STORAGE_SERVICE_AGENT=$(getModuleOutput java-notification storage_service_agent)
-echo "Setting environment variable GOOGLE_STORAGE_SERVICE_AGENT=$GOOGLE_STORAGE_SERVICE_AGENT"
-export GOOGLE_STORAGE_SERVICE_AGENT
+# Parse stdin and get the value associated with the given key.
+function parseJson() {
+  python3 -c "import sys, json; print(json.load(sys.stdin)['$1'])"
+}
+
+# Example use: ./get-module-output.sh java-redis redis_network
+function getModuleOutput() {
+  getOutput "$1" | parseJson "$2"
+}

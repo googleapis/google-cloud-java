@@ -1,4 +1,3 @@
-#!/bin/bash
 #
 # Copyright 2022 Google LLC
 #
@@ -15,9 +14,4 @@
 # limitations under the License.
 #
 
-# Current working directory will be <repo-root>/.terraform/
-source ./helpers/get-module-output.sh
-
-GOOGLE_STORAGE_SERVICE_AGENT=$(getModuleOutput java-notification storage_service_agent)
-echo "Setting environment variable GOOGLE_STORAGE_SERVICE_AGENT=$GOOGLE_STORAGE_SERVICE_AGENT"
-export GOOGLE_STORAGE_SERVICE_AGENT
+echo "$1" | tr '-' _
