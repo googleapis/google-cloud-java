@@ -274,7 +274,7 @@ def generate(
     #
     subprocess.check_call(
         ["bash", "-x", "generation/update_owlbot_postprocessor_config.sh"],
-        cwd=workdir
+        cwd=workdir_parent
     )
 
     subprocess.check_call(["git", "add", "."], cwd=workdir)
