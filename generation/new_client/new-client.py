@@ -325,6 +325,12 @@ def generate(
         cwd=monorepo_root
     )
 
+    # Remove irrelevant changes in other modules
+    subprocess.check_call(
+        ["git", "checkout", "--", "."],
+        cwd=monorepo_root
+    )
+
     # It seems generate_release_please_config.sh is not ready to run as
     # part of client library generation process.
 
