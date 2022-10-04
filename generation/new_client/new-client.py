@@ -315,8 +315,18 @@ def generate(
         cwd=monorepo_root,
     )
 
+    subprocess.check_call(
+        [
+            "bash",
+            "-x",
+            "generation/generate_release_please_config.sh"
+        ],
+        cwd=monorepo_root,
+    )
+
     subprocess.check_call([
-        "git", "add", "pom.xml", "google-cloud-gapic-bom/pom.xml", ],
+        "git", "add", "pom.xml", "google-cloud-gapic-bom/pom.xml",
+        "release-please-config.json", ".release-please-manifest.json"],
         cwd=monorepo_root)
 
     subprocess.check_call(
