@@ -13,16 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from repo_splitter.java.module import Module
 from jinja2 import Environment, FileSystemLoader
 import os
 import pathlib
-from typing import List
 
 root_directory = pathlib.Path(
     os.path.realpath(os.path.dirname(os.path.realpath(__file__)))
 )
-print(root_directory)
 jinja_env = Environment(loader=FileSystemLoader(str(root_directory / "templates")))
 
 

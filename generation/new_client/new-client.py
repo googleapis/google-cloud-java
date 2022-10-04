@@ -20,8 +20,7 @@ import subprocess
 import sys
 
 import click
-from jinja2 import Environment, FileSystemLoader
-from repo_splitter.java import module, pom, templates
+from repo_splitter.java import templates
 
 
 @click.group(invoke_without_command=False)
