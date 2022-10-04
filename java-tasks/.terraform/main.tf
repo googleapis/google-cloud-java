@@ -14,6 +14,6 @@ module "project-services" {
   activate_apis               = ["cloudtasks.googleapis.com"]
 }
 resource "time_sleep" "for_90s_allowTasksToFullyEnable" {
-  depends_on      = [google_project_service.tasks_api]
+  depends_on      = [module.project-services]
   create_duration = "90s"
 }
