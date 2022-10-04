@@ -1,5 +1,47 @@
 # Changelog
 
+## [2.5.5](https://github.com/googleapis/java-recommender/compare/v2.5.4...v2.5.5) (2022-09-29)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#837](https://github.com/googleapis/java-recommender/issues/837)) ([d8df7d3](https://github.com/googleapis/java-recommender/commit/d8df7d320c405453fc961f78e61d8c5679d1f3ef))
+* Update dependency certifi to v2022.9.24 ([#816](https://github.com/googleapis/java-recommender/issues/816)) ([60b737c](https://github.com/googleapis/java-recommender/commit/60b737cde9185ae2e7d0850cf162090c784f0386))
+* Update dependency charset-normalizer to v2.1.1 ([#820](https://github.com/googleapis/java-recommender/issues/820)) ([f35d57d](https://github.com/googleapis/java-recommender/commit/f35d57d33e58a87239405d56fbcda52e9bd37115))
+* Update dependency click to v8.1.3 ([#821](https://github.com/googleapis/java-recommender/issues/821)) ([32920b3](https://github.com/googleapis/java-recommender/commit/32920b37d7d16a6533e0e303b944a832559916e3))
+* Update dependency gcp-releasetool to v1.8.8 ([#817](https://github.com/googleapis/java-recommender/issues/817)) ([5ac1979](https://github.com/googleapis/java-recommender/commit/5ac19791892702962d1c69d529c08e682a79f7e6))
+* Update dependency google-api-core to v2.10.1 ([#822](https://github.com/googleapis/java-recommender/issues/822)) ([4104a5e](https://github.com/googleapis/java-recommender/commit/4104a5ed31f5a27c66c65516b6fc1347fbdbb42a))
+* Update dependency google-auth to v2.12.0 ([#823](https://github.com/googleapis/java-recommender/issues/823)) ([e9d801a](https://github.com/googleapis/java-recommender/commit/e9d801a71e7222b404488508670bc6441a1b850e))
+* Update dependency google-cloud-core to v2.3.2 ([#818](https://github.com/googleapis/java-recommender/issues/818)) ([5962e16](https://github.com/googleapis/java-recommender/commit/5962e16bda5b8b6a6af1a3a8495803902f6d826d))
+* Update dependency google-cloud-storage to v2.5.0 ([#824](https://github.com/googleapis/java-recommender/issues/824)) ([0d79dfd](https://github.com/googleapis/java-recommender/commit/0d79dfdbefa00fdf3a3d1998e1b3f9a25db96a93))
+* Update dependency google-crc32c to v1.5.0 ([#825](https://github.com/googleapis/java-recommender/issues/825)) ([231ac04](https://github.com/googleapis/java-recommender/commit/231ac0433d3bd11e7fe0dbb365f39d0542bf21a8))
+* Update dependency googleapis-common-protos to v1.56.4 ([#819](https://github.com/googleapis/java-recommender/issues/819)) ([1668703](https://github.com/googleapis/java-recommender/commit/16687032911bc5e8cbdfcf5e93c1098a2d1a6876))
+* Update dependency importlib-metadata to v4.12.0 ([#829](https://github.com/googleapis/java-recommender/issues/829)) ([634eba3](https://github.com/googleapis/java-recommender/commit/634eba3acf3bbd4a9b03907513ba0d25c4cfc9df))
+* Update dependency jeepney to v0.8.0 ([#830](https://github.com/googleapis/java-recommender/issues/830)) ([81e4f1e](https://github.com/googleapis/java-recommender/commit/81e4f1e59e7654593b1bb484e64cac8c8e76c5b3))
+* Update dependency jinja2 to v3.1.2 ([#831](https://github.com/googleapis/java-recommender/issues/831)) ([1ad577e](https://github.com/googleapis/java-recommender/commit/1ad577e50c4c5d5f1ce753a2cd93b916147af2aa))
+* Update dependency keyring to v23.9.3 ([#832](https://github.com/googleapis/java-recommender/issues/832)) ([de25462](https://github.com/googleapis/java-recommender/commit/de254626b0cc1813f7b591f00ec53fe3ef662183))
+* Update dependency markupsafe to v2.1.1 ([#826](https://github.com/googleapis/java-recommender/issues/826)) ([8e67f03](https://github.com/googleapis/java-recommender/commit/8e67f0375ffffd113be81274c18b7956e3295f6b))
+* Update dependency protobuf to v3.20.2 ([#827](https://github.com/googleapis/java-recommender/issues/827)) ([8338ac2](https://github.com/googleapis/java-recommender/commit/8338ac29aff3ae8213fe5275834f0ef17fe5acba))
+* Update dependency protobuf to v4 ([#838](https://github.com/googleapis/java-recommender/issues/838)) ([91f6e0e](https://github.com/googleapis/java-recommender/commit/91f6e0e0d204c72bd36a81dfdbb00cf4dce5a800))
+* Update dependency pyjwt to v2.5.0 ([#833](https://github.com/googleapis/java-recommender/issues/833)) ([914d671](https://github.com/googleapis/java-recommender/commit/914d671e95d799ef8badc660fb8c44439f3c4bef))
+* Update dependency requests to v2.28.1 ([#834](https://github.com/googleapis/java-recommender/issues/834)) ([f5ccb6b](https://github.com/googleapis/java-recommender/commit/f5ccb6b82fb95f5f7d74e9c8eeae30fafe630ee2))
+* Update dependency typing-extensions to v4.3.0 ([#835](https://github.com/googleapis/java-recommender/issues/835)) ([c74a73e](https://github.com/googleapis/java-recommender/commit/c74a73e03b471b43fc160fbfcfa8b6c96a9683fe))
+* Update dependency zipp to v3.8.1 ([#836](https://github.com/googleapis/java-recommender/issues/836)) ([7eb6e2a](https://github.com/googleapis/java-recommender/commit/7eb6e2aa004982f3f55f897457e53b0e9d87d502))
+
+## [2.5.4](https://github.com/googleapis/java-recommender/compare/v2.5.3...v2.5.4) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#809](https://github.com/googleapis/java-recommender/issues/809)) ([049bc2a](https://github.com/googleapis/java-recommender/commit/049bc2aaebcee044743c50ebeb09c333c2ad1bf2))
+
+## [2.5.3](https://github.com/googleapis/java-recommender/compare/v2.5.2...v2.5.3) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#804](https://github.com/googleapis/java-recommender/issues/804)) ([8686f09](https://github.com/googleapis/java-recommender/commit/8686f09b430508a639b99fb293c437a75f760f20))
+
 ## [2.5.2](https://github.com/googleapis/java-recommender/compare/v2.5.1...v2.5.2) (2022-08-09)
 
 

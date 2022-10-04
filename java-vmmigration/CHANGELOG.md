@@ -1,5 +1,47 @@
 # Changelog
 
+## [1.3.3](https://github.com/googleapis/java-vmmigration/compare/v1.3.2...v1.3.3) (2022-09-29)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#162](https://github.com/googleapis/java-vmmigration/issues/162)) ([77c22ac](https://github.com/googleapis/java-vmmigration/commit/77c22acfe58ec2c2b866dd19f56b58dc5bb1a33e))
+* Update dependency certifi to v2022.9.24 ([#142](https://github.com/googleapis/java-vmmigration/issues/142)) ([721763e](https://github.com/googleapis/java-vmmigration/commit/721763eabfffbdeadc6628e814d26f49c17ee66b))
+* Update dependency charset-normalizer to v2.1.1 ([#146](https://github.com/googleapis/java-vmmigration/issues/146)) ([bdecd87](https://github.com/googleapis/java-vmmigration/commit/bdecd872f389a93242e00ffc1a82039a5a33487c))
+* Update dependency click to v8.1.3 ([#147](https://github.com/googleapis/java-vmmigration/issues/147)) ([a19722c](https://github.com/googleapis/java-vmmigration/commit/a19722c28a814b5b8ce7b77c4c9d5bd8729a63b1))
+* Update dependency gcp-releasetool to v1.8.8 ([#143](https://github.com/googleapis/java-vmmigration/issues/143)) ([a7dc73d](https://github.com/googleapis/java-vmmigration/commit/a7dc73de155c7e50893fb137254de1b08c30140c))
+* Update dependency google-api-core to v2.10.1 ([#148](https://github.com/googleapis/java-vmmigration/issues/148)) ([7dda791](https://github.com/googleapis/java-vmmigration/commit/7dda791598fc5351870cc451dadf8986d4e2084c))
+* Update dependency google-auth to v2.12.0 ([#149](https://github.com/googleapis/java-vmmigration/issues/149)) ([d9b12c7](https://github.com/googleapis/java-vmmigration/commit/d9b12c70e7e2a64e3796129f12e07b110803a64b))
+* Update dependency google-cloud-core to v2.3.2 ([#144](https://github.com/googleapis/java-vmmigration/issues/144)) ([af80785](https://github.com/googleapis/java-vmmigration/commit/af807857e21fc8da2f66c571d11df3b7ba213774))
+* Update dependency google-cloud-storage to v2.5.0 ([#150](https://github.com/googleapis/java-vmmigration/issues/150)) ([d9e83e4](https://github.com/googleapis/java-vmmigration/commit/d9e83e4e0abb1f4bc52f610fe880ba2772d0e89e))
+* Update dependency google-crc32c to v1.5.0 ([#151](https://github.com/googleapis/java-vmmigration/issues/151)) ([13a6a00](https://github.com/googleapis/java-vmmigration/commit/13a6a0048112a806dc16e5f01197d4662ac67170))
+* Update dependency googleapis-common-protos to v1.56.4 ([#145](https://github.com/googleapis/java-vmmigration/issues/145)) ([63f13fb](https://github.com/googleapis/java-vmmigration/commit/63f13fbf5655fa565d3785c3041739ccae483448))
+* Update dependency importlib-metadata to v4.12.0 ([#152](https://github.com/googleapis/java-vmmigration/issues/152)) ([bdc40b1](https://github.com/googleapis/java-vmmigration/commit/bdc40b1924c43bf79ec19b8a5187ae458ed5e6b3))
+* Update dependency jeepney to v0.8.0 ([#153](https://github.com/googleapis/java-vmmigration/issues/153)) ([c03c9f9](https://github.com/googleapis/java-vmmigration/commit/c03c9f92cec401704a66ba5e2bc9e3f677e6a4b3))
+* Update dependency jinja2 to v3.1.2 ([#154](https://github.com/googleapis/java-vmmigration/issues/154)) ([ac14b55](https://github.com/googleapis/java-vmmigration/commit/ac14b55ee3bdd6543d5279178e94eeb41529b072))
+* Update dependency keyring to v23.9.3 ([#155](https://github.com/googleapis/java-vmmigration/issues/155)) ([315618e](https://github.com/googleapis/java-vmmigration/commit/315618ee160dd8b393a77423ca86ddb43b73a5c6))
+* Update dependency markupsafe to v2.1.1 ([#156](https://github.com/googleapis/java-vmmigration/issues/156)) ([f838c49](https://github.com/googleapis/java-vmmigration/commit/f838c493ed52ab6ad66b1e18aad9694a0dffebe1))
+* Update dependency protobuf to v3.20.2 ([#157](https://github.com/googleapis/java-vmmigration/issues/157)) ([c842310](https://github.com/googleapis/java-vmmigration/commit/c84231030dc8ebd216cf717a58ab9a622d1826f5))
+* Update dependency protobuf to v4 ([#163](https://github.com/googleapis/java-vmmigration/issues/163)) ([f012128](https://github.com/googleapis/java-vmmigration/commit/f012128f07a5c856010c387d0a3270464a0b9cc6))
+* Update dependency pyjwt to v2.5.0 ([#158](https://github.com/googleapis/java-vmmigration/issues/158)) ([32c9bac](https://github.com/googleapis/java-vmmigration/commit/32c9bacd2ac71a9088e3138910a3dbd851d8cd5d))
+* Update dependency requests to v2.28.1 ([#159](https://github.com/googleapis/java-vmmigration/issues/159)) ([2b10606](https://github.com/googleapis/java-vmmigration/commit/2b1060617e28dc2628f66a84a42ec1aedf9a8b5a))
+* Update dependency typing-extensions to v4.3.0 ([#160](https://github.com/googleapis/java-vmmigration/issues/160)) ([6260776](https://github.com/googleapis/java-vmmigration/commit/62607760daa01f91786f863371e0d86a888ee599))
+* Update dependency zipp to v3.8.1 ([#161](https://github.com/googleapis/java-vmmigration/issues/161)) ([d5a5a51](https://github.com/googleapis/java-vmmigration/commit/d5a5a510da3a69f53938f18b3e56978af46d11cf))
+
+## [1.3.2](https://github.com/googleapis/java-vmmigration/compare/v1.3.1...v1.3.2) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#136](https://github.com/googleapis/java-vmmigration/issues/136)) ([867d73d](https://github.com/googleapis/java-vmmigration/commit/867d73d50cba77715437bd602fcb4b727cb046c0))
+
+## [1.3.1](https://github.com/googleapis/java-vmmigration/compare/v1.3.0...v1.3.1) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#132](https://github.com/googleapis/java-vmmigration/issues/132)) ([b0ddaa2](https://github.com/googleapis/java-vmmigration/commit/b0ddaa285c713892aa2ebfd364a16d078b27d250))
+
 ## [1.3.0](https://github.com/googleapis/java-vmmigration/compare/v1.2.1...v1.3.0) (2022-08-09)
 
 

@@ -1,5 +1,32 @@
 # Changelog
 
+## [2.4.0](https://github.com/googleapis/java-language/compare/v2.3.4...v2.4.0) (2022-09-26)
+
+
+### Features
+
+* Add support for V1 and V2 classification models for the V1 API ([4148969](https://github.com/googleapis/java-language/commit/41489691955887daa9e00a365be6012ce4a57943))
+* Add support for V1 and V2 classification models for the V1Beta2 API ([#895](https://github.com/googleapis/java-language/issues/895)) ([4148969](https://github.com/googleapis/java-language/commit/41489691955887daa9e00a365be6012ce4a57943))
+
+
+### Documentation
+
+* Fix docstring formatting ([#897](https://github.com/googleapis/java-language/issues/897)) ([6267be8](https://github.com/googleapis/java-language/commit/6267be81ff610ef7c0c35320b032260c8b8d5db7))
+
+## [2.3.4](https://github.com/googleapis/java-language/compare/v2.3.3...v2.3.4) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#890](https://github.com/googleapis/java-language/issues/890)) ([9359998](https://github.com/googleapis/java-language/commit/93599989f1b8ba59bf32c0542a1c537a3bac6a67))
+
+## [2.3.3](https://github.com/googleapis/java-language/compare/v2.3.2...v2.3.3) (2022-09-08)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#885](https://github.com/googleapis/java-language/issues/885)) ([cd8a4d0](https://github.com/googleapis/java-language/commit/cd8a4d03904a15cd8994b73f179f5bff391c97fe))
+
 ## [2.3.2](https://github.com/googleapis/java-language/compare/v2.3.1...v2.3.2) (2022-08-09)
 
 

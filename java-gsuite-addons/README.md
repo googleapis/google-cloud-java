@@ -19,20 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-gsuite-addons</artifactId>
-  <version>2.3.2</version>
+  <version>2.3.4</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-gsuite-addons:2.3.2'
+implementation 'com.google.cloud:google-cloud-gsuite-addons:2.3.4'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-gsuite-addons" % "2.3.2"
+libraryDependencies += "com.google.cloud" % "google-cloud-gsuite-addons" % "2.3.4"
 ```
 
 ## Authentication
