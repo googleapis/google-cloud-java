@@ -96,7 +96,7 @@ public class HttpJsonPublisherStub extends PublisherStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearName().build()))
+                              .toBody("*", request.toBuilder().clearName().build(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Topic>newBuilder()
@@ -130,7 +130,8 @@ public class HttpJsonPublisherStub extends PublisherStub {
                       })
                   .setRequestBodyExtractor(
                       request ->
-                          ProtoRestSerializer.create().toBody("*", request.toBuilder().build()))
+                          ProtoRestSerializer.create()
+                              .toBody("*", request.toBuilder().build(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Topic>newBuilder()
@@ -166,7 +167,7 @@ public class HttpJsonPublisherStub extends PublisherStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearTopic().build()))
+                                  .toBody("*", request.toBuilder().clearTopic().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PublishResponse>newBuilder()
@@ -411,7 +412,7 @@ public class HttpJsonPublisherStub extends PublisherStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -488,7 +489,7 @@ public class HttpJsonPublisherStub extends PublisherStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()

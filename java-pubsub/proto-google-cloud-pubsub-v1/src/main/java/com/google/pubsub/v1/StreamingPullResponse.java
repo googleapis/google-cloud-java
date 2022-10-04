@@ -53,115 +53,6 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
     return this.unknownFields;
   }
 
-  private StreamingPullResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                receivedMessages_ = new java.util.ArrayList<com.google.pubsub.v1.ReceivedMessage>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              receivedMessages_.add(
-                  input.readMessage(
-                      com.google.pubsub.v1.ReceivedMessage.parser(), extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation.Builder
-                  subBuilder = null;
-              if (modifyAckDeadlineConfirmation_ != null) {
-                subBuilder = modifyAckDeadlineConfirmation_.toBuilder();
-              }
-              modifyAckDeadlineConfirmation_ =
-                  input.readMessage(
-                      com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(modifyAckDeadlineConfirmation_);
-                modifyAckDeadlineConfirmation_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.pubsub.v1.StreamingPullResponse.SubscriptionProperties.Builder subBuilder =
-                  null;
-              if (subscriptionProperties_ != null) {
-                subBuilder = subscriptionProperties_.toBuilder();
-              }
-              subscriptionProperties_ =
-                  input.readMessage(
-                      com.google.pubsub.v1.StreamingPullResponse.SubscriptionProperties.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(subscriptionProperties_);
-                subscriptionProperties_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation.Builder
-                  subBuilder = null;
-              if (acknowledgeConfirmation_ != null) {
-                subBuilder = acknowledgeConfirmation_.toBuilder();
-              }
-              acknowledgeConfirmation_ =
-                  input.readMessage(
-                      com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(acknowledgeConfirmation_);
-                acknowledgeConfirmation_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        receivedMessages_ = java.util.Collections.unmodifiableList(receivedMessages_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.PubsubProto
         .internal_static_google_pubsub_v1_StreamingPullResponse_descriptor;
@@ -374,85 +265,6 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private AcknowledgeConfirmation(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  ackIds_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                ackIds_.add(s);
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  invalidAckIds_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                invalidAckIds_.add(s);
-                break;
-              }
-            case 26:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                  unorderedAckIds_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000004;
-                }
-                unorderedAckIds_.add(s);
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          ackIds_ = ackIds_.getUnmodifiableView();
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          invalidAckIds_ = invalidAckIds_.getUnmodifiableView();
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          unorderedAckIds_ = unorderedAckIds_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -680,7 +492,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
       for (int i = 0; i < unorderedAckIds_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, unorderedAckIds_.getRaw(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -713,7 +525,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
         size += dataSize;
         size += 1 * getUnorderedAckIdsList().size();
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -732,7 +544,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
       if (!getAckIdsList().equals(other.getAckIdsList())) return false;
       if (!getInvalidAckIdsList().equals(other.getInvalidAckIdsList())) return false;
       if (!getUnorderedAckIdsList().equals(other.getUnorderedAckIdsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -755,7 +567,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
         hash = (37 * hash) + UNORDERED_ACK_IDS_FIELD_NUMBER;
         hash = (53 * hash) + getUnorderedAckIdsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -890,17 +702,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
 
       // Construct using
       // com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1042,7 +847,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1057,19 +862,52 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureAckIdsIsMutable();
+                  ackIds_.add(s);
+                  break;
+                } // case 10
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureInvalidAckIdsIsMutable();
+                  invalidAckIds_.add(s);
+                  break;
+                } // case 18
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureUnorderedAckIdsIsMutable();
+                  unorderedAckIds_.add(s);
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1623,7 +1461,19 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new AcknowledgeConfirmation(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1792,72 +1642,6 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
       return this.unknownFields;
     }
 
-    private ModifyAckDeadlineConfirmation(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  ackIds_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                ackIds_.add(s);
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  invalidAckIds_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                invalidAckIds_.add(s);
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          ackIds_ = ackIds_.getUnmodifiableView();
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          invalidAckIds_ = invalidAckIds_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.pubsub.v1.PubsubProto
           .internal_static_google_pubsub_v1_StreamingPullResponse_ModifyAckDeadlineConfirmation_descriptor;
@@ -2020,7 +1804,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
       for (int i = 0; i < invalidAckIds_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, invalidAckIds_.getRaw(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2045,7 +1829,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
         size += dataSize;
         size += 1 * getInvalidAckIdsList().size();
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2064,7 +1848,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
 
       if (!getAckIdsList().equals(other.getAckIdsList())) return false;
       if (!getInvalidAckIdsList().equals(other.getInvalidAckIdsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2083,7 +1867,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
         hash = (37 * hash) + INVALID_ACK_IDS_FIELD_NUMBER;
         hash = (53 * hash) + getInvalidAckIdsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2224,17 +2008,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
 
       // Construct using
       // com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -2362,7 +2139,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2377,20 +2154,45 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureAckIdsIsMutable();
+                  ackIds_.add(s);
+                  break;
+                } // case 10
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureInvalidAckIdsIsMutable();
+                  invalidAckIds_.add(s);
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2777,7 +2579,19 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ModifyAckDeadlineConfirmation(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2860,55 +2674,6 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
       return this.unknownFields;
     }
 
-    private SubscriptionProperties(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                exactlyOnceDeliveryEnabled_ = input.readBool();
-                break;
-              }
-            case 16:
-              {
-                messageOrderingEnabled_ = input.readBool();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.pubsub.v1.PubsubProto
           .internal_static_google_pubsub_v1_StreamingPullResponse_SubscriptionProperties_descriptor;
@@ -2980,7 +2745,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
       if (messageOrderingEnabled_ != false) {
         output.writeBool(2, messageOrderingEnabled_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2996,7 +2761,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
       if (messageOrderingEnabled_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, messageOrderingEnabled_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3014,7 +2779,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
 
       if (getExactlyOnceDeliveryEnabled() != other.getExactlyOnceDeliveryEnabled()) return false;
       if (getMessageOrderingEnabled() != other.getMessageOrderingEnabled()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3030,7 +2795,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
           (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExactlyOnceDeliveryEnabled());
       hash = (37 * hash) + MESSAGE_ORDERING_ENABLED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMessageOrderingEnabled());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3164,17 +2929,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
 
       // Construct using
       // com.google.pubsub.v1.StreamingPullResponse.SubscriptionProperties.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -3276,7 +3034,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
         if (other.getMessageOrderingEnabled() != false) {
           setMessageOrderingEnabled(other.getMessageOrderingEnabled());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3291,19 +3049,43 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.pubsub.v1.StreamingPullResponse.SubscriptionProperties parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  exactlyOnceDeliveryEnabled_ = input.readBool();
+
+                  break;
+                } // case 8
+              case 16:
+                {
+                  messageOrderingEnabled_ = input.readBool();
+
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.pubsub.v1.StreamingPullResponse.SubscriptionProperties)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -3446,7 +3228,19 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new SubscriptionProperties(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -3738,7 +3532,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
     if (acknowledgeConfirmation_ != null) {
       output.writeMessage(5, getAcknowledgeConfirmation());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -3763,7 +3557,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(5, getAcknowledgeConfirmation());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -3794,7 +3588,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
     if (hasSubscriptionProperties()) {
       if (!getSubscriptionProperties().equals(other.getSubscriptionProperties())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -3821,7 +3615,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + SUBSCRIPTION_PROPERTIES_FIELD_NUMBER;
       hash = (53 * hash) + getSubscriptionProperties().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -3951,19 +3745,10 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
     }
 
     // Construct using com.google.pubsub.v1.StreamingPullResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getReceivedMessagesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -3971,10 +3756,11 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
       super.clear();
       if (receivedMessagesBuilder_ == null) {
         receivedMessages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        receivedMessages_ = null;
         receivedMessagesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (acknowledgeConfirmationBuilder_ == null) {
         acknowledgeConfirmation_ = null;
       } else {
@@ -4130,7 +3916,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
       if (other.hasSubscriptionProperties()) {
         mergeSubscriptionProperties(other.getSubscriptionProperties());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -4145,17 +3931,65 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.pubsub.v1.StreamingPullResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.pubsub.v1.ReceivedMessage m =
+                    input.readMessage(
+                        com.google.pubsub.v1.ReceivedMessage.parser(), extensionRegistry);
+                if (receivedMessagesBuilder_ == null) {
+                  ensureReceivedMessagesIsMutable();
+                  receivedMessages_.add(m);
+                } else {
+                  receivedMessagesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 26:
+              {
+                input.readMessage(
+                    getModifyAckDeadlineConfirmationFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getSubscriptionPropertiesFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getAcknowledgeConfirmationFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.pubsub.v1.StreamingPullResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -5205,7 +5039,18 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new StreamingPullResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

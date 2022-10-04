@@ -104,7 +104,7 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Subscription>newBuilder()
@@ -174,7 +174,8 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("*", request.toBuilder().build()))
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Subscription>newBuilder()
@@ -280,7 +281,8 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearSubscription().build()))
+                                  .toBody(
+                                      "*", request.toBuilder().clearSubscription().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -315,7 +317,7 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearSubscription().build()))
+                              .toBody("*", request.toBuilder().clearSubscription().build(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Empty>newBuilder()
@@ -348,7 +350,7 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearSubscription().build()))
+                              .toBody("*", request.toBuilder().clearSubscription().build(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<PullResponse>newBuilder()
@@ -385,7 +387,8 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearSubscription().build()))
+                                  .toBody(
+                                      "*", request.toBuilder().clearSubscription().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -489,7 +492,7 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build()))
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Snapshot>newBuilder()
@@ -525,7 +528,8 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("*", request.toBuilder().build()))
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Snapshot>newBuilder()
@@ -591,7 +595,7 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearSubscription().build()))
+                              .toBody("*", request.toBuilder().clearSubscription().build(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<SeekResponse>newBuilder()
@@ -631,7 +635,7 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -708,7 +712,7 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()

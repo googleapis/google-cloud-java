@@ -93,7 +93,8 @@ public class HttpJsonSchemaServiceStub extends SchemaServiceStub {
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("schema", request.getSchema()))
+                              ProtoRestSerializer.create()
+                                  .toBody("schema", request.getSchema(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Schema>newBuilder()
@@ -231,7 +232,7 @@ public class HttpJsonSchemaServiceStub extends SchemaServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ValidateSchemaResponse>newBuilder()
@@ -267,7 +268,7 @@ public class HttpJsonSchemaServiceStub extends SchemaServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build()))
+                                  .toBody("*", request.toBuilder().clearParent().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ValidateMessageResponse>newBuilder()
@@ -307,7 +308,7 @@ public class HttpJsonSchemaServiceStub extends SchemaServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -384,7 +385,7 @@ public class HttpJsonSchemaServiceStub extends SchemaServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build()))
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()
