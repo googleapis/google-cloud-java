@@ -16,10 +16,12 @@
 from jinja2 import Environment, FileSystemLoader
 import os
 import pathlib
+from typing import List
 
 root_directory = pathlib.Path(
     os.path.realpath(os.path.dirname(os.path.realpath(__file__)))
 )
+print(root_directory)
 jinja_env = Environment(loader=FileSystemLoader(str(root_directory / "templates")))
 
 
