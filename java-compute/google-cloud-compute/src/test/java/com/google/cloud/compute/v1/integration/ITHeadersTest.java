@@ -86,9 +86,10 @@ public class ITHeadersTest {
     }
     future.cancel(true);
 
+    Assert.assertNotNull("Request not processed. Headers not initialized.", headers);
     List<String> clientIdentificationHeader = headers.get("X-goog-api-client");
     Assert.assertNotNull(
-        "X-goog-api-client header missing. Headers found: " + String.join(", ", headers.keySet()),
+        "X-goog-api-client header missing. Found: " + String.join(", ", headers.keySet()),
         clientIdentificationHeader);
     Assert.assertTrue(
         "X-goog-api-client header contains no values.", clientIdentificationHeader.size() > 0);
