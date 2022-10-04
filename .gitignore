@@ -53,3 +53,6 @@ venv.bak/
 
 # New client generation
 generation/new_client/workspace
+
+# Monorepo repository generation
+monorepo/
