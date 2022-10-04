@@ -38,6 +38,8 @@ public class ITSystemTest {
 
   private RecommenderClient client;
   private static final String PROJECT = ServiceOptions.getDefaultProjectId();
+  private static final String DISABLE_IAM_RECOMMENDATION_COUNT_TEST_ENV_NAME =
+      "DISABLE_IAM_RECOMMENDATION_COUNT_TEST";
   private static final String LOCATION = "global";
   private static final String RECOMMENDER = "google.iam.policy.Recommender";
   private static final String FORMATTED_PARENT =
@@ -64,8 +66,11 @@ public class ITSystemTest {
         ListRecommendationsRequest.newBuilder().setParent(FORMATTED_PARENT).setFilter("").build();
     List<Recommendation> recommendations =
         Lists.newArrayList(client.listRecommendations(request).iterateAll());
-    assertThat(recommendations.size() > 0).isTrue();
-    assertThat(recommendations.contains(null)).isFalse();
+
+    assertThat(recommendations).doesNotContain(null);
+    if (!shouldSkipIamRecommendationCountTest()) {
+      assertThat(recommendations).isNotEmpty();
+    }
   }
 
   @Test(expected = InvalidArgumentException.class)
@@ -119,5 +124,17 @@ public class ITSystemTest {
       assertThat(StatusRuntimeException.class).isEqualTo(e.getCause().getClass());
       assertThat(e.getCause().getMessage()).contains(RESOURCE_MAY_NOT_EXISTS);
     }
+  }
+
+  public static boolean shouldSkipIamRecommendationCountTest() {
+    String value =
+        System.getProperty(
+            DISABLE_IAM_RECOMMENDATION_COUNT_TEST_ENV_NAME,
+            System.getenv(DISABLE_IAM_RECOMMENDATION_COUNT_TEST_ENV_NAME));
+
+    if (value == null) {
+      return false;
+    }
+    return Boolean.parseBoolean(value);
   }
 }
