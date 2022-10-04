@@ -77,8 +77,9 @@ public class ITSystemTest {
   private static final ProjectName PROJECT_NAME = ProjectName.of(PROJECT_ID);
   private static final ProjectAgentName PROJECT_AGENT_NAME = ProjectAgentName.of(PROJECT_ID);
   private static final String DEFAULT_DISPLAY_NAME = "google-cloud-java-tests";
-  private static final String DISPLAY_NAME =
-      System.getProperty("dialogflow.agent", DEFAULT_DISPLAY_NAME);
+  private static final String LEGACY_AGENT_ENV_NAME = "dialogflow.agent";
+  private static final String AGENT_ENV_NAME = "DIALOGFLOW_AGENT";
+  private static final String DISPLAY_NAME = getDialogFlowAgentDisplayName();
   private static final String TIME_ZONE = "America/Los_Angeles";
   private static final String DEFAULT_LANGUAGE_CODE = "en";
   private static final String ENTITY_NAME = "test-entity-" + ID;
@@ -299,5 +300,15 @@ public class ITSystemTest {
         GetContextRequest.newBuilder().setName(CONTEXT_NAME.toString()).build();
     Context actualContext = contextsClient.getContext(request);
     assertEquals(context.getName(), actualContext.getName());
+  }
+
+  private static String getDialogFlowAgentDisplayName() {
+    String name = System.getProperty(AGENT_ENV_NAME, System.getenv(AGENT_ENV_NAME));
+    if (name != null) return name;
+
+    name = System.getProperty(LEGACY_AGENT_ENV_NAME, System.getenv(LEGACY_AGENT_ENV_NAME));
+    if (name != null) return name;
+
+    return DEFAULT_DISPLAY_NAME;
   }
 }
