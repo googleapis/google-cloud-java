@@ -73,14 +73,19 @@ public class ITHeadersTest {
   }
 
   @Test
-  public void testHeaders() throws TimeoutException, ExecutionException, InterruptedException {
+  public void testHeaders() {
     OperationFuture<Operation, Operation> future =
         addressesClient.insertAsync(
             "testProject", "testRegion", Address.newBuilder().setName("testName").build());
+    try {
+      future.get(5, TimeUnit.SECONDS);
+    } catch (InterruptedException | ExecutionException e) {
+      e.printStackTrace();
+    } catch (TimeoutException e) {
+      ; // expected
+    }
+    future.cancel(true);
 
-    future.get(30, TimeUnit.SECONDS);
-
-    Assert.assertNotNull("Server did not process request headers.", headers);
     List<String> clientIdentificationHeader = headers.get("X-goog-api-client");
     Assert.assertNotNull(
         "X-goog-api-client header missing. Headers found: " + String.join(", ", headers.keySet()),
