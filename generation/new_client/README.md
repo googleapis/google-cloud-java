@@ -154,10 +154,11 @@ the new module in the monorepo. At the end, it shows you to create a pull
 request in the monorepo:
 
 ```
+...
 Prepared new library in workspace/monorepo/java-apikeys
 Please create a pull request from that directory:
   $ cd /usr/local/google/home/suztomo/google-cloud-java/generation/new_client/workspace/monorepo
-  $ gh pr create --title 'feat: [apikeys] new module for apikeys
+  $ gh pr create --title 'feat: [apikeys] new module for apikeys'
 ```
 
 Create a pull request from the change.

@@ -271,9 +271,14 @@ def generate(
                           cwd=workdir)
     subprocess.check_call(["rm", "-fr", ".kokoro"],
                           cwd=workdir)
-    #
+
+    # Remove irrelevant files from templates
     subprocess.check_call(
         ["bash", "-x", "generation/update_owlbot_postprocessor_config.sh"],
+        cwd=workdir_parent
+    )
+    subprocess.check_call(
+        ["bash", "-x", "generation/delete_non_generated_samples.sh"],
         cwd=workdir_parent
     )
 
