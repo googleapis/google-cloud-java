@@ -251,7 +251,7 @@ def generate(
         ],
         cwd=workdir,
     )
-    workdir_parent=(workdir / '..').resolve()
+    monorepo_root=(workdir / '..').resolve()
     print("Running the post-processor...")
     subprocess.check_call(
         [
@@ -259,27 +259,30 @@ def generate(
             "run",
             "--rm",
             "-v",
-            f"{workdir_parent}:/workspace",
+            f"{monorepo_root}:/workspace",
             "--user",
             f"{user}:{group}",
             owlbot_image,
         ],
-        cwd=workdir_parent,
+        cwd=monorepo_root,
     )
     # In monorpeo, .github and .kokoro under the module is unused
+    print("Removing unnecessary files")
     subprocess.check_call(["rm", "-fr", ".github"],
                           cwd=workdir)
     subprocess.check_call(["rm", "-fr", ".kokoro"],
+                          cwd=workdir)
+    subprocess.check_call(["rm", "-f", ".gitignore"],
                           cwd=workdir)
 
     # Remove irrelevant files from templates
     subprocess.check_call(
         ["bash", "-x", "generation/update_owlbot_postprocessor_config.sh"],
-        cwd=workdir_parent
+        cwd=monorepo_root
     )
     subprocess.check_call(
         ["bash", "-x", "generation/delete_non_generated_samples.sh"],
-        cwd=workdir_parent
+        cwd=monorepo_root
     )
 
     subprocess.check_call(["git", "add", "."], cwd=workdir)
@@ -294,13 +297,13 @@ def generate(
             "-x",
             "generation/generate_gapic_bom.sh",
         ],
-        cwd=workdir_parent,
+        cwd=monorepo_root,
     )
 
     print("Regenerating CoverageAggregator module and root pom.xml")
 
     # This script takes care of updating the root pom.xml
-    os.system(f"cd {workdir_parent} && generation/print_root_pom.sh > pom.xml")
+    os.system(f"cd {monorepo_root} && generation/print_root_pom.sh > pom.xml")
 
     # This script updates every module's pom sets the root as parent
     subprocess.check_call(
@@ -309,17 +312,17 @@ def generate(
             "-x",
             "generation/set_parent_pom.sh"
         ],
-        cwd=workdir_parent,
+        cwd=monorepo_root,
     )
 
     subprocess.check_call([
         "git", "add", "pom.xml", "google-cloud-gapic-bom/pom.xml", ],
-        cwd=workdir_parent)
+        cwd=monorepo_root)
 
     subprocess.check_call(
         ["git", "commit", "-m",
          f"build: add the {api_shortname} module to monorepo"],
-        cwd=workdir_parent
+        cwd=monorepo_root
     )
 
     # It seems generate_release_please_config.sh is not ready to run as
@@ -327,7 +330,7 @@ def generate(
 
     print(f"Prepared new library in {workdir}")
     print(f"Please create a pull request from that directory:\n"
-          f"  $ cd {workdir_parent}\n"
+          f"  $ cd {monorepo_root}\n"
           f"  $ gh pr create --title 'feat: [{api_shortname}] new module for {api_shortname}'")
 
 if __name__ == "__main__":
