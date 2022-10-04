@@ -271,6 +271,11 @@ def generate(
                           cwd=workdir)
     subprocess.check_call(["rm", "-fr", ".kokoro"],
                           cwd=workdir)
+    #
+    subprocess.check_call(
+        ["bash", "-x", "generation/update_owlbot_postprocessor_config.sh"],
+        cwd=workdir
+    )
 
     subprocess.check_call(["git", "add", "."], cwd=workdir)
     subprocess.check_call(
@@ -301,10 +306,15 @@ def generate(
         ],
         cwd=workdir_parent,
     )
+
+    subprocess.check_call([
+        "git", "add", "pom.xml", "google-cloud-gapic-bom/pom.xml", ],
+        cwd=workdir_parent)
+
     subprocess.check_call(
-        ["git", "commit", "-a", "-m",
+        ["git", "commit", "-m",
          f"build: add the {api_shortname} module to monorepo"],
-        cwd=workdir
+        cwd=workdir_parent
     )
 
     # It seems generate_release_please_config.sh is not ready to run as
