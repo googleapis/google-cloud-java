@@ -148,7 +148,7 @@ public class ITSystemTest {
   public void runJobTest() throws Exception {
     RunJobRequest jobRequest = RunJobRequest.newBuilder().setName(JOB_NAME).build();
 
-    retryOnceIfResourceExhausted(
+    retryTwiceIfResourceExhausted(
         () -> {
           ApiFuture<Job> job = client.runJobCallable().futureCall(jobRequest);
           while (true) {
@@ -161,8 +161,8 @@ public class ITSystemTest {
         });
   }
 
-  private static void retryOnceIfResourceExhausted(Callable<Void> callable) throws Exception {
-    retryIfResourceExhausted(callable, 1);
+  private static void retryTwiceIfResourceExhausted(Callable<Void> callable) throws Exception {
+    retryIfResourceExhausted(callable, 2);
   }
 
   private static void retryIfResourceExhausted(Callable<Void> callable, int retries)
@@ -173,7 +173,7 @@ public class ITSystemTest {
       if (retries == 0) {
         throw ex;
       }
-      TimeUnit.SECONDS.sleep(30);
+      TimeUnit.SECONDS.sleep(60);
       retryIfResourceExhausted(callable, retries - 1);
     }
   }
