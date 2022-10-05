@@ -31,4 +31,4 @@ api_key
 # Python utilities
 *.pyc
 
-monorepo/
+monorepo
