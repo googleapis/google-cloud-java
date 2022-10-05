@@ -26,16 +26,26 @@ fi
 source ./helpers/sync-env.sh
 
 # Either use given module list, or get a list of all modules in the parent directory.
-# TODO: Gather module list from terraform state.
 if [ -n "$1" ] && [[ $1 != "y" ]]; then
   modules=$1
 else
   modules=$(source ./helpers/list-all-modules.sh)
 fi
 
+# Exit code 0 if list $1 contains entry $2.
+function contains() {
+  echo "$1" | grep -w -q "$2"
+}
+
 # Execute 'predestroy.sh' scripts for any active modules
+activeModules=$(terraform state list | awk -F'[/.]' '{print $2}' | uniq)
 IFS=':'
 for module in $modules; do
+  friendlyName=$(source ./helpers/get-output-friendly-name.sh "$module")
+  if ! contains "$activeModules" "$friendlyName"; then
+    continue # Skip unless active.
+  fi
+
   if [[ -f "../$module/.terraform/predestroy.sh" ]]; then
     # shellcheck disable=SC1090
     source "../$module/.terraform/predestroy.sh"
