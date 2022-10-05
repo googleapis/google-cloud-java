@@ -6,7 +6,7 @@ set -e
 
 bom_lines=""
 # For modules that produce BOMs
-for bom_directory in $(find . -name 'google-*-bom' | sort); do
+for bom_directory in $(find . -name 'google-*-bom' | sort --dictionary-order); do
   if [[ "${bom_directory}" = *google-cloud-gapic-bom ]]; then
     continue
   fi
@@ -41,7 +41,7 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
 done
 
 # For originally-handwritten modules that do not produce a BOM
-for module in $(find . -mindepth 2 -maxdepth 2 -name pom.xml |sort | xargs dirname); do
+for module in $(find . -mindepth 2 -maxdepth 2 -name pom.xml |sort --dictionary-order | xargs dirname); do
   if ls ${module}/*-bom 1> /dev/null 2>&1; then
     continue
   fi
