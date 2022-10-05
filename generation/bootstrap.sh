@@ -80,6 +80,11 @@ bash ../../set_parent_pom.sh
 git add --all
 git commit -am 'chore: point modules to the aggregator pom as parent'
 
+../../consolidate_dependency_management.sh
+
+git add --all
+git commit -am 'chore: consolidate dependency management to parent'
+
 ../../generate_gapic_bom.sh
 
 # add the gapic bom module to root pom.xml by regenerating aggregator pom
