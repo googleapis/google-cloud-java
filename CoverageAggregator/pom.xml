@@ -124,13 +124,13 @@
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-bigquery-data-exchange</artifactId>
-      <version>0.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery-data-exchange:current} -->
+      <artifactId>google-cloud-bigqueryconnection</artifactId>
+      <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigqueryconnection:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-bigqueryconnection</artifactId>
-      <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigqueryconnection:current} -->
+      <artifactId>google-cloud-bigquery-data-exchange</artifactId>
+      <version>0.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery-data-exchange:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
@@ -149,13 +149,13 @@
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-billing</artifactId>
-      <version>2.3.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-billing:current} -->
+      <artifactId>google-cloud-billingbudgets</artifactId>
+      <version>2.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-billingbudgets:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-billingbudgets</artifactId>
-      <version>2.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-billingbudgets:current} -->
+      <artifactId>google-cloud-billing</artifactId>
+      <version>2.3.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-billing:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
@@ -194,18 +194,13 @@
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-container</artifactId>
-      <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-container:current} -->
-    </dependency>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-containeranalysis</artifactId>
       <version>2.4.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-data-fusion</artifactId>
-      <version>1.3.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-data-fusion:current} -->
+      <artifactId>google-cloud-container</artifactId>
+      <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-container:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
@@ -224,6 +219,11 @@
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-data-fusion</artifactId>
+      <version>1.3.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-data-fusion:current} -->
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-datalabeling</artifactId>
       <version>0.123.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-datalabeling:current} -->
     </dependency>
@@ -234,13 +234,13 @@
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-dataproc-metastore</artifactId>
-      <version>2.4.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc-metastore:current} -->
+      <artifactId>google-cloud-dataproc</artifactId>
+      <version>4.0.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-dataproc</artifactId>
-      <version>4.0.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc:current} -->
+      <artifactId>google-cloud-dataproc-metastore</artifactId>
+      <version>2.4.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc-metastore:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
@@ -304,13 +304,13 @@
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-eventarc-publishing</artifactId>
-      <version>0.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-eventarc-publishing:current} -->
+      <artifactId>google-cloud-eventarc</artifactId>
+      <version>1.3.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-eventarc:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-eventarc</artifactId>
-      <version>1.3.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-eventarc:current} -->
+      <artifactId>google-cloud-eventarc-publishing</artifactId>
+      <version>0.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-eventarc-publishing:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
@@ -339,13 +339,13 @@
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-gke-multi-cloud</artifactId>
-      <version>0.2.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-multi-cloud:current} -->
+      <artifactId>google-cloud-gkehub</artifactId>
+      <version>1.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-gkehub:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-gkehub</artifactId>
-      <version>1.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-gkehub:current} -->
+      <artifactId>google-cloud-gke-multi-cloud</artifactId>
+      <version>0.2.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-multi-cloud:current} -->
     </dependency>
     <dependency>
       <groupId>io.grafeas</groupId>
@@ -419,6 +419,11 @@
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-networkconnectivity</artifactId>
+      <version>1.2.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-networkconnectivity:current} -->
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-network-management</artifactId>
       <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-network-management:current} -->
     </dependency>
@@ -426,11 +431,6 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-network-security</artifactId>
       <version>0.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-network-security:current} -->
-    </dependency>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-networkconnectivity</artifactId>
-      <version>1.2.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-networkconnectivity:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
@@ -509,13 +509,13 @@
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-resource-settings</artifactId>
-      <version>1.3.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-resource-settings:current} -->
+      <artifactId>google-cloud-resourcemanager</artifactId>
+      <version>1.5.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-resourcemanager</artifactId>
-      <version>1.5.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
+      <artifactId>google-cloud-resource-settings</artifactId>
+      <version>1.3.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-resource-settings:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
@@ -539,8 +539,8 @@
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-security-private-ca</artifactId>
-      <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-security-private-ca:current} -->
+      <artifactId>google-cloud-securitycenter</artifactId>
+      <version>2.9.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-securitycenter:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
@@ -549,13 +549,18 @@
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-securitycenter</artifactId>
-      <version>2.9.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-securitycenter:current} -->
+      <artifactId>google-cloud-security-private-ca</artifactId>
+      <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-security-private-ca:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-service-control</artifactId>
       <version>1.3.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-control:current} -->
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-servicedirectory</artifactId>
+      <version>2.4.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-servicedirectory:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
@@ -566,11 +571,6 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-service-usage</artifactId>
       <version>2.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-usage:current} -->
-    </dependency>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-servicedirectory</artifactId>
-      <version>2.4.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-servicedirectory:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
