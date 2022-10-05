@@ -614,6 +614,53 @@ public final class CloudDeployGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.AbandonReleaseRequest,
+          com.google.cloud.deploy.v1.AbandonReleaseResponse>
+      getAbandonReleaseMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AbandonRelease",
+      requestType = com.google.cloud.deploy.v1.AbandonReleaseRequest.class,
+      responseType = com.google.cloud.deploy.v1.AbandonReleaseResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.AbandonReleaseRequest,
+          com.google.cloud.deploy.v1.AbandonReleaseResponse>
+      getAbandonReleaseMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.deploy.v1.AbandonReleaseRequest,
+            com.google.cloud.deploy.v1.AbandonReleaseResponse>
+        getAbandonReleaseMethod;
+    if ((getAbandonReleaseMethod = CloudDeployGrpc.getAbandonReleaseMethod) == null) {
+      synchronized (CloudDeployGrpc.class) {
+        if ((getAbandonReleaseMethod = CloudDeployGrpc.getAbandonReleaseMethod) == null) {
+          CloudDeployGrpc.getAbandonReleaseMethod =
+              getAbandonReleaseMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.deploy.v1.AbandonReleaseRequest,
+                          com.google.cloud.deploy.v1.AbandonReleaseResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AbandonRelease"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.AbandonReleaseRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.AbandonReleaseResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudDeployMethodDescriptorSupplier("AbandonRelease"))
+                      .build();
+        }
+      }
+    }
+    return getAbandonReleaseMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.deploy.v1.ApproveRolloutRequest,
           com.google.cloud.deploy.v1.ApproveRolloutResponse>
       getApproveRolloutMethod;
@@ -784,6 +831,132 @@ public final class CloudDeployGrpc {
       }
     }
     return getCreateRolloutMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.RetryJobRequest, com.google.cloud.deploy.v1.RetryJobResponse>
+      getRetryJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RetryJob",
+      requestType = com.google.cloud.deploy.v1.RetryJobRequest.class,
+      responseType = com.google.cloud.deploy.v1.RetryJobResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.RetryJobRequest, com.google.cloud.deploy.v1.RetryJobResponse>
+      getRetryJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.deploy.v1.RetryJobRequest, com.google.cloud.deploy.v1.RetryJobResponse>
+        getRetryJobMethod;
+    if ((getRetryJobMethod = CloudDeployGrpc.getRetryJobMethod) == null) {
+      synchronized (CloudDeployGrpc.class) {
+        if ((getRetryJobMethod = CloudDeployGrpc.getRetryJobMethod) == null) {
+          CloudDeployGrpc.getRetryJobMethod =
+              getRetryJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.deploy.v1.RetryJobRequest,
+                          com.google.cloud.deploy.v1.RetryJobResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RetryJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.RetryJobRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.RetryJobResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(new CloudDeployMethodDescriptorSupplier("RetryJob"))
+                      .build();
+        }
+      }
+    }
+    return getRetryJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.ListJobRunsRequest,
+          com.google.cloud.deploy.v1.ListJobRunsResponse>
+      getListJobRunsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListJobRuns",
+      requestType = com.google.cloud.deploy.v1.ListJobRunsRequest.class,
+      responseType = com.google.cloud.deploy.v1.ListJobRunsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.ListJobRunsRequest,
+          com.google.cloud.deploy.v1.ListJobRunsResponse>
+      getListJobRunsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.deploy.v1.ListJobRunsRequest,
+            com.google.cloud.deploy.v1.ListJobRunsResponse>
+        getListJobRunsMethod;
+    if ((getListJobRunsMethod = CloudDeployGrpc.getListJobRunsMethod) == null) {
+      synchronized (CloudDeployGrpc.class) {
+        if ((getListJobRunsMethod = CloudDeployGrpc.getListJobRunsMethod) == null) {
+          CloudDeployGrpc.getListJobRunsMethod =
+              getListJobRunsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.deploy.v1.ListJobRunsRequest,
+                          com.google.cloud.deploy.v1.ListJobRunsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListJobRuns"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.ListJobRunsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.ListJobRunsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(new CloudDeployMethodDescriptorSupplier("ListJobRuns"))
+                      .build();
+        }
+      }
+    }
+    return getListJobRunsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.GetJobRunRequest, com.google.cloud.deploy.v1.JobRun>
+      getGetJobRunMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetJobRun",
+      requestType = com.google.cloud.deploy.v1.GetJobRunRequest.class,
+      responseType = com.google.cloud.deploy.v1.JobRun.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.GetJobRunRequest, com.google.cloud.deploy.v1.JobRun>
+      getGetJobRunMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.deploy.v1.GetJobRunRequest, com.google.cloud.deploy.v1.JobRun>
+        getGetJobRunMethod;
+    if ((getGetJobRunMethod = CloudDeployGrpc.getGetJobRunMethod) == null) {
+      synchronized (CloudDeployGrpc.class) {
+        if ((getGetJobRunMethod = CloudDeployGrpc.getGetJobRunMethod) == null) {
+          CloudDeployGrpc.getGetJobRunMethod =
+              getGetJobRunMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.deploy.v1.GetJobRunRequest,
+                          com.google.cloud.deploy.v1.JobRun>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetJobRun"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.GetJobRunRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.JobRun.getDefaultInstance()))
+                      .setSchemaDescriptor(new CloudDeployMethodDescriptorSupplier("GetJobRun"))
+                      .build();
+        }
+      }
+    }
+    return getGetJobRunMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1064,6 +1237,21 @@ public final class CloudDeployGrpc {
      *
      *
      * <pre>
+     * Abandons a Release in the Delivery Pipeline.
+     * </pre>
+     */
+    public void abandonRelease(
+        com.google.cloud.deploy.v1.AbandonReleaseRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.AbandonReleaseResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAbandonReleaseMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Approves a Rollout.
      * </pre>
      */
@@ -1115,6 +1303,47 @@ public final class CloudDeployGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCreateRolloutMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retries the specified Job in a Rollout.
+     * </pre>
+     */
+    public void retryJob(
+        com.google.cloud.deploy.v1.RetryJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.RetryJobResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRetryJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists JobRuns in a given project and location.
+     * </pre>
+     */
+    public void listJobRuns(
+        com.google.cloud.deploy.v1.ListJobRunsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.ListJobRunsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListJobRunsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single JobRun.
+     * </pre>
+     */
+    public void getJobRun(
+        com.google.cloud.deploy.v1.GetJobRunRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.JobRun> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetJobRunMethod(), responseObserver);
     }
 
     /**
@@ -1215,6 +1444,13 @@ public final class CloudDeployGrpc {
                       com.google.cloud.deploy.v1.CreateReleaseRequest,
                       com.google.longrunning.Operation>(this, METHODID_CREATE_RELEASE)))
           .addMethod(
+              getAbandonReleaseMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.deploy.v1.AbandonReleaseRequest,
+                      com.google.cloud.deploy.v1.AbandonReleaseResponse>(
+                      this, METHODID_ABANDON_RELEASE)))
+          .addMethod(
               getApproveRolloutMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -1240,6 +1476,25 @@ public final class CloudDeployGrpc {
                   new MethodHandlers<
                       com.google.cloud.deploy.v1.CreateRolloutRequest,
                       com.google.longrunning.Operation>(this, METHODID_CREATE_ROLLOUT)))
+          .addMethod(
+              getRetryJobMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.deploy.v1.RetryJobRequest,
+                      com.google.cloud.deploy.v1.RetryJobResponse>(this, METHODID_RETRY_JOB)))
+          .addMethod(
+              getListJobRunsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.deploy.v1.ListJobRunsRequest,
+                      com.google.cloud.deploy.v1.ListJobRunsResponse>(
+                      this, METHODID_LIST_JOB_RUNS)))
+          .addMethod(
+              getGetJobRunMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.deploy.v1.GetJobRunRequest,
+                      com.google.cloud.deploy.v1.JobRun>(this, METHODID_GET_JOB_RUN)))
           .addMethod(
               getGetConfigMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1480,6 +1735,23 @@ public final class CloudDeployGrpc {
      *
      *
      * <pre>
+     * Abandons a Release in the Delivery Pipeline.
+     * </pre>
+     */
+    public void abandonRelease(
+        com.google.cloud.deploy.v1.AbandonReleaseRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.AbandonReleaseResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAbandonReleaseMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Approves a Rollout.
      * </pre>
      */
@@ -1538,6 +1810,51 @@ public final class CloudDeployGrpc {
           getChannel().newCall(getCreateRolloutMethod(), getCallOptions()),
           request,
           responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retries the specified Job in a Rollout.
+     * </pre>
+     */
+    public void retryJob(
+        com.google.cloud.deploy.v1.RetryJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.RetryJobResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRetryJobMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists JobRuns in a given project and location.
+     * </pre>
+     */
+    public void listJobRuns(
+        com.google.cloud.deploy.v1.ListJobRunsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.ListJobRunsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListJobRunsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single JobRun.
+     * </pre>
+     */
+    public void getJobRun(
+        com.google.cloud.deploy.v1.GetJobRunRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.JobRun> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetJobRunMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1748,6 +2065,19 @@ public final class CloudDeployGrpc {
      *
      *
      * <pre>
+     * Abandons a Release in the Delivery Pipeline.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.AbandonReleaseResponse abandonRelease(
+        com.google.cloud.deploy.v1.AbandonReleaseRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAbandonReleaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Approves a Rollout.
      * </pre>
      */
@@ -1794,6 +2124,45 @@ public final class CloudDeployGrpc {
         com.google.cloud.deploy.v1.CreateRolloutRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateRolloutMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retries the specified Job in a Rollout.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.RetryJobResponse retryJob(
+        com.google.cloud.deploy.v1.RetryJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRetryJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists JobRuns in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.ListJobRunsResponse listJobRuns(
+        com.google.cloud.deploy.v1.ListJobRunsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListJobRunsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single JobRun.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.JobRun getJobRun(
+        com.google.cloud.deploy.v1.GetJobRunRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetJobRunMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2007,6 +2376,20 @@ public final class CloudDeployGrpc {
      *
      *
      * <pre>
+     * Abandons a Release in the Delivery Pipeline.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.deploy.v1.AbandonReleaseResponse>
+        abandonRelease(com.google.cloud.deploy.v1.AbandonReleaseRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAbandonReleaseMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Approves a Rollout.
      * </pre>
      */
@@ -2061,6 +2444,47 @@ public final class CloudDeployGrpc {
      *
      *
      * <pre>
+     * Retries the specified Job in a Rollout.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.deploy.v1.RetryJobResponse>
+        retryJob(com.google.cloud.deploy.v1.RetryJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRetryJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists JobRuns in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.deploy.v1.ListJobRunsResponse>
+        listJobRuns(com.google.cloud.deploy.v1.ListJobRunsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListJobRunsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single JobRun.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.deploy.v1.JobRun>
+        getJobRun(com.google.cloud.deploy.v1.GetJobRunRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetJobRunMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the configuration for a location.
      * </pre>
      */
@@ -2084,11 +2508,15 @@ public final class CloudDeployGrpc {
   private static final int METHODID_LIST_RELEASES = 10;
   private static final int METHODID_GET_RELEASE = 11;
   private static final int METHODID_CREATE_RELEASE = 12;
-  private static final int METHODID_APPROVE_ROLLOUT = 13;
-  private static final int METHODID_LIST_ROLLOUTS = 14;
-  private static final int METHODID_GET_ROLLOUT = 15;
-  private static final int METHODID_CREATE_ROLLOUT = 16;
-  private static final int METHODID_GET_CONFIG = 17;
+  private static final int METHODID_ABANDON_RELEASE = 13;
+  private static final int METHODID_APPROVE_ROLLOUT = 14;
+  private static final int METHODID_LIST_ROLLOUTS = 15;
+  private static final int METHODID_GET_ROLLOUT = 16;
+  private static final int METHODID_CREATE_ROLLOUT = 17;
+  private static final int METHODID_RETRY_JOB = 18;
+  private static final int METHODID_LIST_JOB_RUNS = 19;
+  private static final int METHODID_GET_JOB_RUN = 20;
+  private static final int METHODID_GET_CONFIG = 21;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2177,6 +2605,12 @@ public final class CloudDeployGrpc {
               (com.google.cloud.deploy.v1.CreateReleaseRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_ABANDON_RELEASE:
+          serviceImpl.abandonRelease(
+              (com.google.cloud.deploy.v1.AbandonReleaseRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.AbandonReleaseResponse>)
+                  responseObserver);
+          break;
         case METHODID_APPROVE_ROLLOUT:
           serviceImpl.approveRollout(
               (com.google.cloud.deploy.v1.ApproveRolloutRequest) request,
@@ -2198,6 +2632,23 @@ public final class CloudDeployGrpc {
           serviceImpl.createRollout(
               (com.google.cloud.deploy.v1.CreateRolloutRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_RETRY_JOB:
+          serviceImpl.retryJob(
+              (com.google.cloud.deploy.v1.RetryJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.RetryJobResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_JOB_RUNS:
+          serviceImpl.listJobRuns(
+              (com.google.cloud.deploy.v1.ListJobRunsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.ListJobRunsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_JOB_RUN:
+          serviceImpl.getJobRun(
+              (com.google.cloud.deploy.v1.GetJobRunRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.JobRun>) responseObserver);
           break;
         case METHODID_GET_CONFIG:
           serviceImpl.getConfig(
@@ -2281,10 +2732,14 @@ public final class CloudDeployGrpc {
                       .addMethod(getListReleasesMethod())
                       .addMethod(getGetReleaseMethod())
                       .addMethod(getCreateReleaseMethod())
+                      .addMethod(getAbandonReleaseMethod())
                       .addMethod(getApproveRolloutMethod())
                       .addMethod(getListRolloutsMethod())
                       .addMethod(getGetRolloutMethod())
                       .addMethod(getCreateRolloutMethod())
+                      .addMethod(getRetryJobMethod())
+                      .addMethod(getListJobRunsMethod())
+                      .addMethod(getGetJobRunMethod())
                       .addMethod(getGetConfigMethod())
                       .build();
         }
