@@ -57,164 +57,6 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
     return this.unknownFields;
   }
 
-  private DeliveryPipeline(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              uid_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                annotations_ =
-                    com.google.protobuf.MapField.newMapField(
-                        AnnotationsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> annotations__ =
-                  input.readMessage(
-                      AnnotationsDefaultEntryHolder.defaultEntry.getParserForType(),
-                      extensionRegistry);
-              annotations_.getMutableMap().put(annotations__.getKey(), annotations__.getValue());
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 50:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 66:
-            {
-              com.google.cloud.deploy.v1.SerialPipeline.Builder subBuilder = null;
-              if (pipelineCase_ == 8) {
-                subBuilder = ((com.google.cloud.deploy.v1.SerialPipeline) pipeline_).toBuilder();
-              }
-              pipeline_ =
-                  input.readMessage(
-                      com.google.cloud.deploy.v1.SerialPipeline.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.deploy.v1.SerialPipeline) pipeline_);
-                pipeline_ = subBuilder.buildPartial();
-              }
-              pipelineCase_ = 8;
-              break;
-            }
-          case 82:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              etag_ = s;
-              break;
-            }
-          case 90:
-            {
-              com.google.cloud.deploy.v1.PipelineCondition.Builder subBuilder = null;
-              if (condition_ != null) {
-                subBuilder = condition_.toBuilder();
-              }
-              condition_ =
-                  input.readMessage(
-                      com.google.cloud.deploy.v1.PipelineCondition.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(condition_);
-                condition_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.deploy.v1.CloudDeployProto
         .internal_static_google_cloud_deploy_v1_DeliveryPipeline_descriptor;
@@ -467,9 +309,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Google Cloud Deploy.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -492,9 +332,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Google Cloud Deploy.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -508,9 +346,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Google Cloud Deploy.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -529,9 +365,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Google Cloud Deploy.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -941,6 +775,25 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int SUSPENDED_FIELD_NUMBER = 12;
+  private boolean suspended_;
+  /**
+   *
+   *
+   * <pre>
+   * When suspended, no new releases or rollouts can be created,
+   * but in-progress ones will complete.
+   * </pre>
+   *
+   * <code>bool suspended = 12;</code>
+   *
+   * @return The suspended.
+   */
+  @java.lang.Override
+  public boolean getSuspended() {
+    return suspended_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -983,7 +836,10 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
     if (condition_ != null) {
       output.writeMessage(11, getCondition());
     }
-    unknownFields.writeTo(output);
+    if (suspended_ != false) {
+      output.writeBool(12, suspended_);
+    }
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1038,7 +894,10 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
     if (condition_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getCondition());
     }
-    size += unknownFields.getSerializedSize();
+    if (suspended_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, suspended_);
+    }
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1072,6 +931,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
       if (!getCondition().equals(other.getCondition())) return false;
     }
     if (!getEtag().equals(other.getEtag())) return false;
+    if (getSuspended() != other.getSuspended()) return false;
     if (!getPipelineCase().equals(other.getPipelineCase())) return false;
     switch (pipelineCase_) {
       case 8:
@@ -1080,7 +940,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1119,6 +979,8 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    hash = (37 * hash) + SUSPENDED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSuspended());
     switch (pipelineCase_) {
       case 8:
         hash = (37 * hash) + SERIAL_PIPELINE_FIELD_NUMBER;
@@ -1127,7 +989,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1282,17 +1144,10 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.deploy.v1.DeliveryPipeline.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1318,6 +1173,9 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
         updateTime_ = null;
         updateTimeBuilder_ = null;
       }
+      if (serialPipelineBuilder_ != null) {
+        serialPipelineBuilder_.clear();
+      }
       if (conditionBuilder_ == null) {
         condition_ = null;
       } else {
@@ -1325,6 +1183,8 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
         conditionBuilder_ = null;
       }
       etag_ = "";
+
+      suspended_ = false;
 
       pipelineCase_ = 0;
       pipeline_ = null;
@@ -1386,6 +1246,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
         result.condition_ = conditionBuilder_.build();
       }
       result.etag_ = etag_;
+      result.suspended_ = suspended_;
       result.pipelineCase_ = pipelineCase_;
       onBuilt();
       return result;
@@ -1463,6 +1324,9 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
         etag_ = other.etag_;
         onChanged();
       }
+      if (other.getSuspended() != false) {
+        setSuspended(other.getSuspended());
+      }
       switch (other.getPipelineCase()) {
         case SERIAL_PIPELINE:
           {
@@ -1474,7 +1338,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1489,17 +1353,107 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.deploy.v1.DeliveryPipeline parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                uid_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                description_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> annotations__ =
+                    input.readMessage(
+                        AnnotationsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableAnnotations()
+                    .getMutableMap()
+                    .put(annotations__.getKey(), annotations__.getValue());
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getSerialPipelineFieldBuilder().getBuilder(), extensionRegistry);
+                pipelineCase_ = 8;
+                break;
+              } // case 66
+            case 82:
+              {
+                etag_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 82
+            case 90:
+              {
+                input.readMessage(getConditionFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 90
+            case 96:
+              {
+                suspended_ = input.readBool();
+
+                break;
+              } // case 96
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.deploy.v1.DeliveryPipeline) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1875,9 +1829,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Google Cloud Deploy.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -1900,9 +1852,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Google Cloud Deploy.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -1916,9 +1866,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Google Cloud Deploy.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -1937,9 +1885,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Google Cloud Deploy.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -1965,9 +1911,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Google Cloud Deploy.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -1989,9 +1933,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Google Cloud Deploy.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -2012,9 +1954,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Google Cloud Deploy.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -3186,6 +3126,61 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private boolean suspended_;
+    /**
+     *
+     *
+     * <pre>
+     * When suspended, no new releases or rollouts can be created,
+     * but in-progress ones will complete.
+     * </pre>
+     *
+     * <code>bool suspended = 12;</code>
+     *
+     * @return The suspended.
+     */
+    @java.lang.Override
+    public boolean getSuspended() {
+      return suspended_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When suspended, no new releases or rollouts can be created,
+     * but in-progress ones will complete.
+     * </pre>
+     *
+     * <code>bool suspended = 12;</code>
+     *
+     * @param value The suspended to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSuspended(boolean value) {
+
+      suspended_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When suspended, no new releases or rollouts can be created,
+     * but in-progress ones will complete.
+     * </pre>
+     *
+     * <code>bool suspended = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSuspended() {
+
+      suspended_ = false;
+      onChanged();
+      return this;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
@@ -3218,7 +3213,18 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DeliveryPipeline(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
