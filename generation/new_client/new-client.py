@@ -180,7 +180,7 @@ def generate(
 
     # create owlbot.py
     templates.render(
-        template_name="new-client/owlbot.py.j2",
+        template_name="owlbot.py.j2",
         output_name=str(workdir / "owlbot.py"),
         should_include_templates=True,
         template_excludes=[],
@@ -190,7 +190,7 @@ def generate(
     owlbot_yaml_location_from_module = ".OwlBot.yaml"
     # create owlbot config
     templates.render(
-        template_name="new-client/owlbot.yaml.monorepo.j2",
+        template_name="owlbot.yaml.monorepo.j2",
         output_name=str(workdir / owlbot_yaml_location_from_module),
         artifact_name=distribution_name_short,
         proto_path=proto_path,
