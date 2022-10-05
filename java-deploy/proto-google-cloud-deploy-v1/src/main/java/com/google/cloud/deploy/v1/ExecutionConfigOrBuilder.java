@@ -274,6 +274,53 @@ public interface ExecutionConfigOrBuilder
    */
   com.google.protobuf.ByteString getArtifactStorageBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Execution timeout for a Cloud Build Execution. This must be between 10m and
+   * 24h in seconds format.
+   * If unspecified, a default timeout of 1h is used.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration execution_timeout = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the executionTimeout field is set.
+   */
+  boolean hasExecutionTimeout();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Execution timeout for a Cloud Build Execution. This must be between 10m and
+   * 24h in seconds format.
+   * If unspecified, a default timeout of 1h is used.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration execution_timeout = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The executionTimeout.
+   */
+  com.google.protobuf.Duration getExecutionTimeout();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Execution timeout for a Cloud Build Execution. This must be between 10m and
+   * 24h in seconds format.
+   * If unspecified, a default timeout of 1h is used.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration execution_timeout = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.DurationOrBuilder getExecutionTimeoutOrBuilder();
+
   public com.google.cloud.deploy.v1.ExecutionConfig.ExecutionEnvironmentCase
       getExecutionEnvironmentCase();
 }

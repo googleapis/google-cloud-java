@@ -105,9 +105,7 @@ public interface DeliveryPipelineOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Google Cloud Deploy.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -118,9 +116,7 @@ public interface DeliveryPipelineOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Google Cloud Deploy.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -134,9 +130,7 @@ public interface DeliveryPipelineOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Google Cloud Deploy.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -147,9 +141,7 @@ public interface DeliveryPipelineOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Google Cloud Deploy.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -165,9 +157,7 @@ public interface DeliveryPipelineOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Google Cloud Deploy.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -461,6 +451,20 @@ public interface DeliveryPipelineOrBuilder
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * When suspended, no new releases or rollouts can be created,
+   * but in-progress ones will complete.
+   * </pre>
+   *
+   * <code>bool suspended = 12;</code>
+   *
+   * @return The suspended.
+   */
+  boolean getSuspended();
 
   public com.google.cloud.deploy.v1.DeliveryPipeline.PipelineCase getPipelineCase();
 }
