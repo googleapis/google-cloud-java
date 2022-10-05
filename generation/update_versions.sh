@@ -123,4 +123,6 @@ echo "Generating the release-please configurations..."
 ./generation/generate_release_please_config.sh
 echo "Done generating release-please configurations..."
 
-#TODO: Call a script to copy over the README.md and CHANGELOG.md into monorepo
+echo "Copying over the README and CHANGELOG files"
+./generation/copy_readme_changelog.sh
+echo "Done copying over the README and CHANGELOG files"

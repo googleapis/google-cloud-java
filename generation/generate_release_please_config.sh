@@ -17,7 +17,7 @@ echo "{" > "${release_please_manifest_file}"
 # We are manually excluding the CoverageAggregator module -- TODO: Update this for any other exclusions
 num_modules=$(find . -mindepth 2 -maxdepth 2 -name pom.xml | wc -l)
 num_modules=$((num_modules - 1))
-for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirname); do
+for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort --dictionary-order | xargs dirname); do
   if [[ "${path}" = *CoverageAggregator ]]; then
     continue
   fi
