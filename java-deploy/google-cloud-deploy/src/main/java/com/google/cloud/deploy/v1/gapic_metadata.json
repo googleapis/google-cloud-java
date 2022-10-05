@@ -10,6 +10,9 @@
         "grpc": {
           "libraryClient": "CloudDeployClient",
           "rpcs": {
+            "AbandonRelease": {
+              "methods": ["abandonRelease", "abandonRelease", "abandonRelease", "abandonReleaseCallable"]
+            },
             "ApproveRollout": {
               "methods": ["approveRollout", "approveRollout", "approveRollout", "approveRolloutCallable"]
             },
@@ -37,6 +40,15 @@
             "GetDeliveryPipeline": {
               "methods": ["getDeliveryPipeline", "getDeliveryPipeline", "getDeliveryPipeline", "getDeliveryPipelineCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetJobRun": {
+              "methods": ["getJobRun", "getJobRun", "getJobRun", "getJobRunCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetRelease": {
               "methods": ["getRelease", "getRelease", "getRelease", "getReleaseCallable"]
             },
@@ -49,6 +61,12 @@
             "ListDeliveryPipelines": {
               "methods": ["listDeliveryPipelines", "listDeliveryPipelines", "listDeliveryPipelines", "listDeliveryPipelinesPagedCallable", "listDeliveryPipelinesCallable"]
             },
+            "ListJobRuns": {
+              "methods": ["listJobRuns", "listJobRuns", "listJobRuns", "listJobRunsPagedCallable", "listJobRunsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
             "ListReleases": {
               "methods": ["listReleases", "listReleases", "listReleases", "listReleasesPagedCallable", "listReleasesCallable"]
             },
@@ -57,6 +75,15 @@
             },
             "ListTargets": {
               "methods": ["listTargets", "listTargets", "listTargets", "listTargetsPagedCallable", "listTargetsCallable"]
+            },
+            "RetryJob": {
+              "methods": ["retryJob", "retryJob", "retryJob", "retryJobCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
             "UpdateDeliveryPipeline": {
               "methods": ["updateDeliveryPipelineAsync", "updateDeliveryPipelineAsync", "updateDeliveryPipelineOperationCallable", "updateDeliveryPipelineCallable"]

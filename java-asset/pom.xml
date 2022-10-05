@@ -113,6 +113,14 @@
         <artifactId>google-cloud-asset</artifactId>
         <version>3.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-asset:current} -->
       </dependency>
+
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-shared-dependencies</artifactId>
+        <version>3.0.4</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-orgpolicy-v1</artifactId>
@@ -132,6 +140,13 @@
         <groupId>io.perfmark</groupId>
         <artifactId>perfmark-api</artifactId>
         <version>0.25.0</version>
+      </dependency>
+
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.13.2</version>
+        <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>

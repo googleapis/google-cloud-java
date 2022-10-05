@@ -83,6 +83,14 @@
         <artifactId>grpc-google-cloud-artifact-registry-v1beta2</artifactId>
         <version>0.8.6-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-artifact-registry-v1beta2:current} -->
       </dependency>
+
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-shared-dependencies</artifactId>
+        <version>3.0.4</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 

@@ -17,6 +17,8 @@
 package com.google.cloud.deploy.v1.stub;
 
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListReleasesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListRolloutsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListTargetsPagedResponse;
@@ -36,6 +38,8 @@ import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.deploy.v1.AbandonReleaseRequest;
+import com.google.cloud.deploy.v1.AbandonReleaseResponse;
 import com.google.cloud.deploy.v1.ApproveRolloutRequest;
 import com.google.cloud.deploy.v1.ApproveRolloutResponse;
 import com.google.cloud.deploy.v1.Config;
@@ -48,11 +52,15 @@ import com.google.cloud.deploy.v1.DeleteTargetRequest;
 import com.google.cloud.deploy.v1.DeliveryPipeline;
 import com.google.cloud.deploy.v1.GetConfigRequest;
 import com.google.cloud.deploy.v1.GetDeliveryPipelineRequest;
+import com.google.cloud.deploy.v1.GetJobRunRequest;
 import com.google.cloud.deploy.v1.GetReleaseRequest;
 import com.google.cloud.deploy.v1.GetRolloutRequest;
 import com.google.cloud.deploy.v1.GetTargetRequest;
+import com.google.cloud.deploy.v1.JobRun;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesRequest;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesResponse;
+import com.google.cloud.deploy.v1.ListJobRunsRequest;
+import com.google.cloud.deploy.v1.ListJobRunsResponse;
 import com.google.cloud.deploy.v1.ListReleasesRequest;
 import com.google.cloud.deploy.v1.ListReleasesResponse;
 import com.google.cloud.deploy.v1.ListRolloutsRequest;
@@ -61,10 +69,21 @@ import com.google.cloud.deploy.v1.ListTargetsRequest;
 import com.google.cloud.deploy.v1.ListTargetsResponse;
 import com.google.cloud.deploy.v1.OperationMetadata;
 import com.google.cloud.deploy.v1.Release;
+import com.google.cloud.deploy.v1.RetryJobRequest;
+import com.google.cloud.deploy.v1.RetryJobResponse;
 import com.google.cloud.deploy.v1.Rollout;
 import com.google.cloud.deploy.v1.Target;
 import com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.UpdateTargetRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -614,6 +633,42 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<AbandonReleaseRequest, AbandonReleaseResponse>
+      abandonReleaseMethodDescriptor =
+          ApiMethodDescriptor.<AbandonReleaseRequest, AbandonReleaseResponse>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/AbandonRelease")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AbandonReleaseRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/deliveryPipelines/*/releases/*}:abandon",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AbandonReleaseRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AbandonReleaseRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AbandonReleaseResponse>newBuilder()
+                      .setDefaultInstance(AbandonReleaseResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ApproveRolloutRequest, ApproveRolloutResponse>
       approveRolloutMethodDescriptor =
           ApiMethodDescriptor.<ApproveRolloutRequest, ApproveRolloutResponse>newBuilder()
@@ -762,6 +817,111 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<RetryJobRequest, RetryJobResponse>
+      retryJobMethodDescriptor =
+          ApiMethodDescriptor.<RetryJobRequest, RetryJobResponse>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/RetryJob")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RetryJobRequest>newBuilder()
+                      .setPath(
+                          "/v1/{rollout=projects/*/locations/*/deliveryPipelines/*/releases/*/rollouts/*}:retryJob",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RetryJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "rollout", request.getRollout());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RetryJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearRollout().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RetryJobResponse>newBuilder()
+                      .setDefaultInstance(RetryJobResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListJobRunsRequest, ListJobRunsResponse>
+      listJobRunsMethodDescriptor =
+          ApiMethodDescriptor.<ListJobRunsRequest, ListJobRunsResponse>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/ListJobRuns")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListJobRunsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/deliveryPipelines/*/releases/*/rollouts/*}/jobRuns",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListJobRunsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListJobRunsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListJobRunsResponse>newBuilder()
+                      .setDefaultInstance(ListJobRunsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetJobRunRequest, JobRun> getJobRunMethodDescriptor =
+      ApiMethodDescriptor.<GetJobRunRequest, JobRun>newBuilder()
+          .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/GetJobRun")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<GetJobRunRequest>newBuilder()
+                  .setPath(
+                      "/v1/{name=projects/*/locations/*/deliveryPipelines/*/releases/*/rollouts/*/jobRuns/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetJobRunRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetJobRunRequest> serializer =
+                            ProtoRestSerializer.create();
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<JobRun>newBuilder()
+                  .setDefaultInstance(JobRun.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
   private static final ApiMethodDescriptor<GetConfigRequest, Config> getConfigMethodDescriptor =
       ApiMethodDescriptor.<GetConfigRequest, Config>newBuilder()
           .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/GetConfig")
@@ -793,6 +953,183 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                   .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
+
+  private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListLocationsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*}/locations",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListLocationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListLocationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListLocationsResponse>newBuilder()
+                      .setDefaultInstance(ListLocationsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetLocationRequest, Location>
+      getLocationMethodDescriptor =
+          ApiMethodDescriptor.<GetLocationRequest, Location>newBuilder()
+              .setFullMethodName("google.cloud.location.Locations/GetLocation")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetLocationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetLocationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetLocationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Location>newBuilder()
+                      .setDefaultInstance(Location.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<SetIamPolicyRequest, Policy>
+      setIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+              .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetIamPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{resource=projects/*/locations/*/deliveryPipelines/*}:setIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/locations/*/targets/*}:setIamPolicy")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetIamPolicyRequest, Policy>
+      getIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+              .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetIamPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{resource=projects/*/locations/*/deliveryPipelines/*}:getIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/locations/*/targets/*}:getIamPolicy")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setFullMethodName("google.iam.v1.IAMPolicy/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{resource=projects/*/locations/*/deliveryPipelines/*}:testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/locations/*/targets/*}:testIamPermissions")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestIamPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private final UnaryCallable<ListDeliveryPipelinesRequest, ListDeliveryPipelinesResponse>
       listDeliveryPipelinesCallable;
@@ -834,6 +1171,7 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
   private final UnaryCallable<CreateReleaseRequest, Operation> createReleaseCallable;
   private final OperationCallable<CreateReleaseRequest, Release, OperationMetadata>
       createReleaseOperationCallable;
+  private final UnaryCallable<AbandonReleaseRequest, AbandonReleaseResponse> abandonReleaseCallable;
   private final UnaryCallable<ApproveRolloutRequest, ApproveRolloutResponse> approveRolloutCallable;
   private final UnaryCallable<ListRolloutsRequest, ListRolloutsResponse> listRolloutsCallable;
   private final UnaryCallable<ListRolloutsRequest, ListRolloutsPagedResponse>
@@ -842,7 +1180,20 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
   private final UnaryCallable<CreateRolloutRequest, Operation> createRolloutCallable;
   private final OperationCallable<CreateRolloutRequest, Rollout, OperationMetadata>
       createRolloutOperationCallable;
+  private final UnaryCallable<RetryJobRequest, RetryJobResponse> retryJobCallable;
+  private final UnaryCallable<ListJobRunsRequest, ListJobRunsResponse> listJobRunsCallable;
+  private final UnaryCallable<ListJobRunsRequest, ListJobRunsPagedResponse>
+      listJobRunsPagedCallable;
+  private final UnaryCallable<GetJobRunRequest, JobRun> getJobRunCallable;
   private final UnaryCallable<GetConfigRequest, Config> getConfigCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
+  private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -960,6 +1311,12 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
             .setMethodDescriptor(createReleaseMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<AbandonReleaseRequest, AbandonReleaseResponse>
+        abandonReleaseTransportSettings =
+            HttpJsonCallSettings.<AbandonReleaseRequest, AbandonReleaseResponse>newBuilder()
+                .setMethodDescriptor(abandonReleaseMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<ApproveRolloutRequest, ApproveRolloutResponse>
         approveRolloutTransportSettings =
             HttpJsonCallSettings.<ApproveRolloutRequest, ApproveRolloutResponse>newBuilder()
@@ -981,11 +1338,53 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
             .setMethodDescriptor(createRolloutMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<RetryJobRequest, RetryJobResponse> retryJobTransportSettings =
+        HttpJsonCallSettings.<RetryJobRequest, RetryJobResponse>newBuilder()
+            .setMethodDescriptor(retryJobMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<ListJobRunsRequest, ListJobRunsResponse> listJobRunsTransportSettings =
+        HttpJsonCallSettings.<ListJobRunsRequest, ListJobRunsResponse>newBuilder()
+            .setMethodDescriptor(listJobRunsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<GetJobRunRequest, JobRun> getJobRunTransportSettings =
+        HttpJsonCallSettings.<GetJobRunRequest, JobRun>newBuilder()
+            .setMethodDescriptor(getJobRunMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
     HttpJsonCallSettings<GetConfigRequest, Config> getConfigTransportSettings =
         HttpJsonCallSettings.<GetConfigRequest, Config>newBuilder()
             .setMethodDescriptor(getConfigMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
+        listLocationsTransportSettings =
+            HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+                .setMethodDescriptor(listLocationsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
+        HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
+            .setMethodDescriptor(getLocationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
 
     this.listDeliveryPipelinesCallable =
         callableFactory.createUnaryCallable(
@@ -1089,6 +1488,9 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
             settings.createReleaseOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.abandonReleaseCallable =
+        callableFactory.createUnaryCallable(
+            abandonReleaseTransportSettings, settings.abandonReleaseSettings(), clientContext);
     this.approveRolloutCallable =
         callableFactory.createUnaryCallable(
             approveRolloutTransportSettings, settings.approveRolloutSettings(), clientContext);
@@ -1110,9 +1512,41 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
             settings.createRolloutOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.retryJobCallable =
+        callableFactory.createUnaryCallable(
+            retryJobTransportSettings, settings.retryJobSettings(), clientContext);
+    this.listJobRunsCallable =
+        callableFactory.createUnaryCallable(
+            listJobRunsTransportSettings, settings.listJobRunsSettings(), clientContext);
+    this.listJobRunsPagedCallable =
+        callableFactory.createPagedCallable(
+            listJobRunsTransportSettings, settings.listJobRunsSettings(), clientContext);
+    this.getJobRunCallable =
+        callableFactory.createUnaryCallable(
+            getJobRunTransportSettings, settings.getJobRunSettings(), clientContext);
     this.getConfigCallable =
         callableFactory.createUnaryCallable(
             getConfigTransportSettings, settings.getConfigSettings(), clientContext);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.getLocationCallable =
+        callableFactory.createUnaryCallable(
+            getLocationTransportSettings, settings.getLocationSettings(), clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1134,11 +1568,20 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
     methodDescriptors.add(listReleasesMethodDescriptor);
     methodDescriptors.add(getReleaseMethodDescriptor);
     methodDescriptors.add(createReleaseMethodDescriptor);
+    methodDescriptors.add(abandonReleaseMethodDescriptor);
     methodDescriptors.add(approveRolloutMethodDescriptor);
     methodDescriptors.add(listRolloutsMethodDescriptor);
     methodDescriptors.add(getRolloutMethodDescriptor);
     methodDescriptors.add(createRolloutMethodDescriptor);
+    methodDescriptors.add(retryJobMethodDescriptor);
+    methodDescriptors.add(listJobRunsMethodDescriptor);
+    methodDescriptors.add(getJobRunMethodDescriptor);
     methodDescriptors.add(getConfigMethodDescriptor);
+    methodDescriptors.add(listLocationsMethodDescriptor);
+    methodDescriptors.add(getLocationMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -1271,6 +1714,11 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
   }
 
   @Override
+  public UnaryCallable<AbandonReleaseRequest, AbandonReleaseResponse> abandonReleaseCallable() {
+    return abandonReleaseCallable;
+  }
+
+  @Override
   public UnaryCallable<ApproveRolloutRequest, ApproveRolloutResponse> approveRolloutCallable() {
     return approveRolloutCallable;
   }
@@ -1302,8 +1750,60 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
   }
 
   @Override
+  public UnaryCallable<RetryJobRequest, RetryJobResponse> retryJobCallable() {
+    return retryJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListJobRunsRequest, ListJobRunsResponse> listJobRunsCallable() {
+    return listJobRunsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListJobRunsRequest, ListJobRunsPagedResponse> listJobRunsPagedCallable() {
+    return listJobRunsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetJobRunRequest, JobRun> getJobRunCallable() {
+    return getJobRunCallable;
+  }
+
+  @Override
   public UnaryCallable<GetConfigRequest, Config> getConfigCallable() {
     return getConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return getLocationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

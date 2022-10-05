@@ -181,6 +181,21 @@
         <artifactId>grpc-google-cloud-speech-v1p1beta1</artifactId>
         <version>0.89.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-speech-v1p1beta1:current} -->
       </dependency>
+
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-shared-dependencies</artifactId>
+        <version>3.0.4</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.13.2</version>
+        <scope>test</scope>
+      </dependency>
       <dependency>
         <groupId>com.google.truth</groupId>
         <artifactId>truth</artifactId>
