@@ -1,29 +1,8 @@
 {
   "extends": [
-    "config:base", ":dependencyDashboardApproval"
+    "config:base"
   ],
-  "ignoreDeps": [
-    "com.google.api:gax-bom",
-    "com.google.guava:guava",
-    "com.google.guava:guava-testlib",
-    "com.google.protobuf:protobuf-java",
-    "com.google.protobuf:protobuf-java-util",
-    "io.opencensus:opencensus-api",
-    "io.opencensus:opencensus-contrib-grpc-util",
-    "io.opencensus:opencensus-contrib-http-util"
-  ],
-  "packageRules": [
-    {
-      "matchPackagePatterns": ["^io.grpc:grpc-"],
-      "groupName": "gRPC packages"
-    },
-    {
-      "matchPackagePatterns": ["^com.google.protobuf:protobuf-"],
-      "groupName": "Protobuf packages"
-    },
-    {
-      "matchPackagePatterns": ["^io.opencensus:opencensus-"],
-      "groupName": "OpenCensus packages"
-    }
+  "includePaths": [
+    "pom.xml"
   ]
 }
