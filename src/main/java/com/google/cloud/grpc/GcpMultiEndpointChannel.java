@@ -253,6 +253,7 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
       }
     });
 
+    final Set<String> existingPools = new HashSet<>(pools.keySet());
     currentEndpoints.clear();
     // TODO: Support the same endpoint in different MultiEndpoint to use different channel
     //       credentials.
@@ -293,9 +294,12 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
           new EndpointStateMonitor(channel, e);
           return channel;
         });
-        // Communicate current state to MultiEndpoints.
-        checkPoolState(pools.get(endpoint), endpoint);
       });
+    });
+    existingPools.retainAll(currentEndpoints);
+    existingPools.forEach(e -> {
+      // Communicate current state to MultiEndpoints.
+      checkPoolState(pools.get(e), e);
     });
     defaultMultiEndpoint = multiEndpoints.get(meOptions.get(0).getName());
 
