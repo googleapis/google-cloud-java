@@ -5,12 +5,6 @@
   <artifactId>google-cloud-accessapproval-bom</artifactId>
   <version>2.4.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-accessapproval:current} -->
   <packaging>pom</packaging>
-  <parent>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-java-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
-    <relativePath>../../pom.xml</relativePath>
-  </parent>
 
   <name>Google Cloud Access Approval BOM</name>
   <url>https://github.com/googleapis/java-accessapproval</url>

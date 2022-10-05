@@ -5,12 +5,6 @@
   <artifactId>google-cloud-optimization-bom</artifactId>
   <version>1.1.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-optimization:current} -->
   <packaging>pom</packaging>
-  <parent>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-java-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
-    <relativePath>../../pom.xml</relativePath>
-  </parent>
 
   <name>Google Cloud Fleet Routing BOM</name>
   <url>https://github.com/googleapis/java-optimization</url>

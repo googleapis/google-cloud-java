@@ -5,12 +5,6 @@
   <artifactId>google-cloud-datacatalog-bom</artifactId>
   <version>1.9.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
   <packaging>pom</packaging>
-  <parent>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-java-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
-    <relativePath>../../pom.xml</relativePath>
-  </parent>
 
   <name>Google Cloud Data Catalog BOM</name>
   <url>https://github.com/googleapis/java-datacatalog</url>

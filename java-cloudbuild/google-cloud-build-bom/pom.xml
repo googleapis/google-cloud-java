@@ -5,12 +5,6 @@
   <artifactId>google-cloud-build-bom</artifactId>
   <version>3.5.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-build:current} -->
   <packaging>pom</packaging>
-  <parent>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-java-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
-    <relativePath>../../pom.xml</relativePath>
-  </parent>
 
   <name>Google Cloud Build BOM</name>
   <url>https://github.com/googleapis/java-cloudbuild</url>
