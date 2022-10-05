@@ -16,8 +16,8 @@
 #
 
 # Ensure current directory is same as script.
-scriptDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-pushd "$scriptDir" >/dev/null || exit
+helperDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
+pushd "$helperDir/.." >/dev/null || exit
 
 source ./helpers/gcloud-login.sh
 source ./helpers/create-project.sh

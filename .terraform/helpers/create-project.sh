@@ -46,33 +46,29 @@ function createProject() {
     exit 1
   fi
 
-  TF_VAR_gcloud_account=$(gcloud config get account)
-  export TF_VAR_gcloud_account
-
   # Ensure required environment variables are set.
   if [ -z "${TF_VAR_folder_id}" ]; then
-    echo -n "TF_VAR_folder_id not set. GCP Folder ID: "
+    echo -n "GOOGLE_CLOUD_FOLDER_ID not set. GCP Folder ID: "
     read -r folder_id
-    export TF_VAR_folder_id="${folder_id}"
+    export GOOGLE_CLOUD_FOLDER_ID="${folder_id}"
   fi
   if [ -z "${TF_VAR_billing_account}" ]; then
-    echo -n "TF_VAR_billing_account not set. GCP Billing Account ID: "
+    echo -n "GOOGLE_CLOUD_BILLING_ACCOUNT not set. GCP Billing Account ID: "
     read -r billing_acct
-    export TF_VAR_billing_account="${billing_acct}"
+    export GOOGLE_CLOUD_BILLING_ACCOUNT="${billing_acct}"
   fi
   if [ -z "${TF_VAR_project_prefix}" ]; then
-    echo -n "TF_VAR_project_prefix not set. Prefix for New Project: "
+    echo -n "GOOGLE_CLOUD_PROJECT_PREFIX not set. Prefix for New Project: "
     read -r prefix
-    export TF_VAR_project_prefix="${prefix}"
+    export GOOGLE_CLOUD_PROJECT_PREFIX="${prefix}"
   fi
 
   # Provision GCP Project
-  randomSuffix=$RANDOM
-  projectId="${TF_VAR_project_prefix}"-"${randomSuffix}"
-  gcloud projects create --folder="$TF_VAR_folder_id" "$projectId" || exit
+  projectId="${GOOGLE_CLOUD_PROJECT_PREFIX}"-"$RANDOM"
+  gcloud projects create --folder="$GOOGLE_CLOUD_FOLDER_ID" "$projectId" || exit
   gcloud config set project "$projectId"
   gcloud services enable cloudresourcemanager.googleapis.com
-  gcloud beta billing projects link "$projectId" --billing-account="$TF_VAR_billing_account"
+  gcloud beta billing projects link "$projectId" --billing-account="$GOOGLE_CLOUD_BILLING_ACCOUNT"
   GOOGLE_CLOUD_PROJECT=$projectId
   echo "Waiting for 30s to allow default Cloud API services to be enabled."
   sleep 30

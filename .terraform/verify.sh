@@ -27,8 +27,6 @@ function mvnVerify() {
     -Dcheckstyle.skip=true \
     -fae \
     verify || exit
-
-  # TODO: Add multiple threads w/ -T 1C
 }
 
 function modifyEnvironment() {

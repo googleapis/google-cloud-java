@@ -13,10 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-scriptDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-pushd "$scriptDir" >/dev/null || exit
 
-source ./setup.sh "$1"
-source ./verify.sh "$1"
+# Ensure current directory is same as script.
+helperDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
+pushd "$helperDir/.." >/dev/null || exit
+
+source ./helpers/generate-config.sh "$1"
+terraform fmt >/dev/null
+terraform init
 
 popd >/dev/null || exit
