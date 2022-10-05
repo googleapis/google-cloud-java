@@ -103,6 +103,7 @@ import java.nio.file.Files;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -838,8 +839,8 @@ public final class SpannerIntegrationTest {
     // Because of the delay the leader MultiEndpoint should still use leader endpoint.
     sleep(switchingDelayMs - marginMs);
     readQuery.run();
-    assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(0);
     assertThat(getOkCallsCount(fakeRegistry, leaderEndpoint)).isEqualTo(5);
+    assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(0);
 
     // But after the delay, it should switch to the follower endpoint.
     sleep(2 * marginMs);
@@ -847,6 +848,46 @@ public final class SpannerIntegrationTest {
     readQuery.run();
     assertThat(getOkCallsCount(fakeRegistry, leaderEndpoint)).isEqualTo(5);
     assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(1);
+
+    // Remove leader endpoint from the leader multi-endpoint. east1, east4 -> east1.
+    leaderOpts = GcpMultiEndpointOptions.newBuilder(Collections.singletonList(followerEndpoint))
+        .withName("leader")
+        .withChannelConfigurator(configurator)
+        .withRecoveryTimeout(Duration.ofSeconds(3))
+        .withSwitchingDelay(Duration.ofMillis(switchingDelayMs))
+        .build();
+
+    opts = new ArrayList<>();
+    opts.add(leaderOpts);
+    opts.add(followerOpts);
+
+    gcpMultiEndpointChannel.setMultiEndpoints(opts);
+
+    // Bring the leader endpoint back. east1 -> east4, east1.
+    leaderOpts = GcpMultiEndpointOptions.newBuilder(leaderEndpoints)
+        .withName("leader")
+        .withChannelConfigurator(configurator)
+        .withRecoveryTimeout(Duration.ofSeconds(3))
+        .withSwitchingDelay(Duration.ofMillis(switchingDelayMs))
+        .build();
+
+    opts = new ArrayList<>();
+    opts.add(leaderOpts);
+    opts.add(followerOpts);
+
+    gcpMultiEndpointChannel.setMultiEndpoints(opts);
+
+    // Because of the delay the leader MultiEndpoint should still use follower endpoint.
+    sleep(switchingDelayMs - marginMs);
+    readQuery.run();
+    assertThat(getOkCallsCount(fakeRegistry, leaderEndpoint)).isEqualTo(5);
+    assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(2);
+
+    // But after the delay, it should switch back to the leader endpoint.
+    sleep(2 * marginMs);
+    readQuery.run();
+    assertThat(getOkCallsCount(fakeRegistry, leaderEndpoint)).isEqualTo(6);
+    assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(2);
 
     gcpMultiEndpointChannel.shutdown();
     spanner.close();
