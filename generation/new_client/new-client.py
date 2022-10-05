@@ -318,11 +318,19 @@ def generate(
         ],
         cwd=monorepo_root,
     )
+    print("Regenerating CoverageAggregator")
+    subprocess.check_call(
+        [
+            "bash", "generation/generate_coverage_aggregator.sh"
+        ],
+        cwd=monorepo_root,
+    )
 
     # Add the files to commit
     subprocess.check_call([
         "git", "add", "pom.xml", "google-cloud-gapic-bom/pom.xml",
-        "release-please-config.json", ".release-please-manifest.json"],
+        "release-please-config.json", ".release-please-manifest.json",
+        "CoverageAggregator/pom.xml"],
         cwd=monorepo_root)
 
     subprocess.check_call(
