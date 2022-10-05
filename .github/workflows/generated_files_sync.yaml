@@ -25,9 +25,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Generate root pom.xml files
+    - name: Generate root pom.xml file
       run: |
         sh generation/print_root_pom.sh > pom.xml
     - name: Fail if there's any difference
       run: git --no-pager diff --exit-code
+
+  gapic-bom:
+    name: gapic-bom does not have diff from generated one
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Generate google-cloud-gapic-bom/pom.xml
+      run: |
+        bash generation/generate_gapic_bom.sh
+    - name: Fail if there's any difference
+      run: git --no-pager diff --exit-code
+
 
