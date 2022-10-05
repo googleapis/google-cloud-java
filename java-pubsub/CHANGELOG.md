@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.120.20](https://github.com/googleapis/java-pubsub/compare/v1.120.19...v1.120.20) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([7c3ea60](https://github.com/googleapis/java-pubsub/commit/7c3ea6016e4288beab722a0c53c5ea132794e2bd))
+
 ## [1.120.19](https://github.com/googleapis/java-pubsub/compare/v1.120.18...v1.120.19) (2022-10-03)
 
 
