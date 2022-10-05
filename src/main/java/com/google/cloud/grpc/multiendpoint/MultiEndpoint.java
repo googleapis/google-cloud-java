@@ -206,9 +206,7 @@ public final class MultiEndpoint {
       topEndpoint = endpointsMap.values().stream().min(comparingInt(Endpoint::getPriority));
     }
 
-    if (topEndpoint.isPresent()) {
-      updateCurrentEndpoint(current, topEndpoint.get().getId());
-    }
+    topEndpoint.ifPresent(endpoint -> updateCurrentEndpoint(current, endpoint.getId()));
   }
 
   private synchronized void updateCurrentEndpoint(Endpoint current, String newCurrentId) {
@@ -224,6 +222,10 @@ public final class MultiEndpoint {
     }
 
     switchTo = newCurrentId;
+    if (switchTo.equals(currentId)) {
+      return;
+    }
+
     if (scheduledSwitch == null || scheduledSwitch.isDone()) {
       scheduledSwitch =
           executor.schedule(this::switchCurrentEndpoint, switchingDelay.toMillis(), MILLISECONDS);

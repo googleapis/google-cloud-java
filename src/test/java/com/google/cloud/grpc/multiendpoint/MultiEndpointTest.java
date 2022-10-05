@@ -441,6 +441,38 @@ public final class MultiEndpointTest {
   }
 
   @Test
+  public void setEndpointAvailable_doNotSwitchPreemptively() throws InterruptedException {
+    MultiEndpoint multiEndpoint = initWithDelays(threeEndpoints, RECOVERY_MS, DELAY_MS);
+
+    // All unavailable after recovery timeout.
+    sleep(RECOVERY_MS + MARGIN_MS);
+
+    // Only second endpoint is available.
+    multiEndpoint.setEndpointAvailable(threeEndpoints.get(1), true);
+
+    // After switching delay the second should be current.
+    sleep(DELAY_MS + MARGIN_MS);
+    assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(1));
+
+    // Third becomes available. This shouldn't schedule the switch as second is still
+    // the most preferable.
+    multiEndpoint.setEndpointAvailable(threeEndpoints.get(2), true);
+
+    sleep(DELAY_MS / 2);
+    // Halfway to switch delay the first endpoint becomes available.
+    multiEndpoint.setEndpointAvailable(threeEndpoints.get(0), true);
+
+    sleep(DELAY_MS / 2 + MARGIN_MS);
+    // After complete switching delay since third become available, the second should still be
+    // current because we didn't schedule the switch when third became available.
+    assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(1));
+
+    sleep(DELAY_MS / 2);
+    // But after switching delay passed since first became available it should become current.
+    assertThat(multiEndpoint.getCurrentId()).isEqualTo(threeEndpoints.get(0));
+  }
+
+  @Test
   public void setEndpoints_switchingDelayed() throws InterruptedException {
     MultiEndpoint multiEndpoint = initWithDelays(threeEndpoints, RECOVERY_MS, DELAY_MS);
     // All endpoints are available.
