@@ -21,18 +21,27 @@ on:
 name: Generated Files Sync
 jobs:
   root-pom:
-    name: Ensure root pom.xml does not have diff from generated one
+    name: root pom.xml does not have diff from generated one
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - name: Generate root pom.xml file
       run: |
-        sh generation/print_root_pom.sh > pom.xml
+        bash generation/print_root_pom.sh > pom.xml
     - name: Fail if there's any difference
       run: git --no-pager diff --exit-code
-
+  release-please-config:
+    name: Release Please config files do not have diff from generated ones
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Generate .release-please-manifest.json and release-please-config.json
+      run: |
+        bash generation/generate_release_please_config.sh
+    - name: Fail if there's any difference
+      run: git --no-pager diff --exit-code
   gapic-bom:
-    name: gapic-bom does not have diff from generated one
+    name: google-cloud-gapic-bom does not have diff from generated one
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -41,5 +50,3 @@ jobs:
         bash generation/generate_gapic_bom.sh
     - name: Fail if there's any difference
       run: git --no-pager diff --exit-code
-
-
