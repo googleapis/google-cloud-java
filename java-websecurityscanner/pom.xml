@@ -93,21 +93,6 @@
         <artifactId>google-cloud-websecurityscanner</artifactId>
         <version>2.2.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-websecurityscanner:current} -->
       </dependency>
-
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>3.0.3</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.13.2</version>
-        <scope>test</scope>
-      </dependency>
       <dependency>
         <groupId>joda-time</groupId>
         <artifactId>joda-time</artifactId>

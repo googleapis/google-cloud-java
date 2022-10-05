@@ -83,24 +83,10 @@
         <artifactId>google-cloud-scheduler</artifactId>
         <version>2.3.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-scheduler:current} -->
       </dependency>
-
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>3.0.3</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
       <dependency>
         <groupId>io.perfmark</groupId>
         <artifactId>perfmark-api</artifactId>
         <version>0.25.0</version>
-      </dependency>
-      <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.13.2</version>
-        <scope>test</scope>
       </dependency>
       <!-- google-cloud-pubsub is used for testing -->
       <dependency>

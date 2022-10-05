@@ -103,21 +103,6 @@
         <artifactId>proto-google-cloud-document-ai-v1beta3</artifactId>
         <version>0.18.3-SNAPSHOT</version> <!-- {x-version-update:proto-google-cloud-document-ai-v1beta3:current} -->
       </dependency>
-
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>3.0.3</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.13.2</version>
-        <scope>test</scope>
-      </dependency>
     </dependencies>
   </dependencyManagement>
 

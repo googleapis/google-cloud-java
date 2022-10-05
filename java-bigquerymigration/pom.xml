@@ -91,14 +91,6 @@
         <artifactId>proto-google-cloud-bigquerymigration-v2alpha</artifactId>
         <version>0.5.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerymigration-v2alpha:current} -->
       </dependency>
-
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>3.0.3</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
     </dependencies>
   </dependencyManagement>
 
