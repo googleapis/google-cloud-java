@@ -50,124 +50,6 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
     return this.unknownFields;
   }
 
-  private WebhookResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.dialogflow.cx.v3.WebhookResponse.FulfillmentResponse.Builder
-                  subBuilder = null;
-              if (fulfillmentResponse_ != null) {
-                subBuilder = fulfillmentResponse_.toBuilder();
-              }
-              fulfillmentResponse_ =
-                  input.readMessage(
-                      com.google.cloud.dialogflow.cx.v3.WebhookResponse.FulfillmentResponse
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(fulfillmentResponse_);
-                fulfillmentResponse_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.dialogflow.cx.v3.PageInfo.Builder subBuilder = null;
-              if (pageInfo_ != null) {
-                subBuilder = pageInfo_.toBuilder();
-              }
-              pageInfo_ =
-                  input.readMessage(
-                      com.google.cloud.dialogflow.cx.v3.PageInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(pageInfo_);
-                pageInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.dialogflow.cx.v3.SessionInfo.Builder subBuilder = null;
-              if (sessionInfo_ != null) {
-                subBuilder = sessionInfo_.toBuilder();
-              }
-              sessionInfo_ =
-                  input.readMessage(
-                      com.google.cloud.dialogflow.cx.v3.SessionInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sessionInfo_);
-                sessionInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.protobuf.Struct.Builder subBuilder = null;
-              if (payload_ != null) {
-                subBuilder = payload_.toBuilder();
-              }
-              payload_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(payload_);
-                payload_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              transitionCase_ = 5;
-              transition_ = s;
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              transitionCase_ = 6;
-              transition_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.WebhookProto
         .internal_static_google_cloud_dialogflow_cx_v3_WebhookResponse_descriptor;
@@ -303,69 +185,6 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private FulfillmentResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  messages_ =
-                      new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3.ResponseMessage>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                messages_.add(
-                    input.readMessage(
-                        com.google.cloud.dialogflow.cx.v3.ResponseMessage.parser(),
-                        extensionRegistry));
-                break;
-              }
-            case 16:
-              {
-                int rawValue = input.readEnum();
-
-                mergeBehavior_ = rawValue;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          messages_ = java.util.Collections.unmodifiableList(messages_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -687,7 +506,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
               .getNumber()) {
         output.writeEnum(2, mergeBehavior_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -705,7 +524,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, mergeBehavior_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -723,7 +542,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
 
       if (!getMessagesList().equals(other.getMessagesList())) return false;
       if (mergeBehavior_ != other.mergeBehavior_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -740,7 +559,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
       }
       hash = (37 * hash) + MERGE_BEHAVIOR_FIELD_NUMBER;
       hash = (53 * hash) + mergeBehavior_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -875,19 +694,10 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
 
       // Construct using
       // com.google.cloud.dialogflow.cx.v3.WebhookResponse.FulfillmentResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getMessagesFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -895,10 +705,11 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
         super.clear();
         if (messagesBuilder_ == null) {
           messages_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          messages_ = null;
           messagesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         mergeBehavior_ = 0;
 
         return this;
@@ -1028,7 +839,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
         if (other.mergeBehavior_ != 0) {
           setMergeBehaviorValue(other.getMergeBehaviorValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1043,19 +854,51 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dialogflow.cx.v3.WebhookResponse.FulfillmentResponse parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.dialogflow.cx.v3.ResponseMessage m =
+                      input.readMessage(
+                          com.google.cloud.dialogflow.cx.v3.ResponseMessage.parser(),
+                          extensionRegistry);
+                  if (messagesBuilder_ == null) {
+                    ensureMessagesIsMutable();
+                    messages_.add(m);
+                  } else {
+                    messagesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              case 16:
+                {
+                  mergeBehavior_ = input.readEnum();
+
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dialogflow.cx.v3.WebhookResponse.FulfillmentResponse)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1562,7 +1405,19 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new FulfillmentResponse(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2021,7 +1876,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
     if (transitionCase_ == 6) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, transition_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -2048,7 +1903,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
     if (transitionCase_ == 6) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, transition_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -2091,7 +1946,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2130,7 +1985,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2259,17 +2114,10 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
     }
 
     // Construct using com.google.cloud.dialogflow.cx.v3.WebhookResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -2437,7 +2285,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2452,18 +2300,70 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dialogflow.cx.v3.WebhookResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(
+                    getFulfillmentResponseFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getPageInfoFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getSessionInfoFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getPayloadFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                transitionCase_ = 5;
+                transition_ = s;
+                break;
+              } // case 42
+            case 50:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                transitionCase_ = 6;
+                transition_ = s;
+                break;
+              } // case 50
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.dialogflow.cx.v3.WebhookResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3596,7 +3496,18 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new WebhookResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
