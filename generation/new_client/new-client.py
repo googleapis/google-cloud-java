@@ -277,11 +277,11 @@ def generate(
 
     # Remove irrelevant files from templates
     subprocess.check_call(
-        ["bash", "-x", "generation/update_owlbot_postprocessor_config.sh"],
+        ["bash", "generation/update_owlbot_postprocessor_config.sh"],
         cwd=monorepo_root
     )
     subprocess.check_call(
-        ["bash", "-x", "generation/delete_non_generated_samples.sh"],
+        ["bash", "generation/delete_non_generated_samples.sh"],
         cwd=monorepo_root
     )
 
@@ -293,9 +293,7 @@ def generate(
     print("Regenerating the BOM")
     subprocess.check_call(
         [
-            "bash",
-            "-x",
-            "generation/generate_gapic_bom.sh",
+            "bash", "generation/generate_gapic_bom.sh",
         ],
         cwd=monorepo_root,
     )
@@ -308,22 +306,20 @@ def generate(
     # This script updates every module's pom sets the root as parent
     subprocess.check_call(
         [
-            "bash",
-            "-x",
-            "generation/set_parent_pom.sh"
+            "bash", "generation/set_parent_pom.sh"
         ],
         cwd=monorepo_root,
     )
 
+    print("Regenerating Release Please config files")
     subprocess.check_call(
         [
-            "bash",
-            "-x",
-            "generation/generate_release_please_config.sh"
+            "bash", "generation/generate_release_please_config.sh"
         ],
         cwd=monorepo_root,
     )
 
+    # Add the files to commit
     subprocess.check_call([
         "git", "add", "pom.xml", "google-cloud-gapic-bom/pom.xml",
         "release-please-config.json", ".release-please-manifest.json"],

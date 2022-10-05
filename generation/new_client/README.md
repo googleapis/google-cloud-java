@@ -150,8 +150,8 @@ $ python3.9 new-client.py generate \
 ```
 
 The command creates `workspace` directory in which it prepares the changes for
-the new module in the monorepo. At the end, it shows you to create a pull
-request in the monorepo:
+the new module in the monorepo. At the end (~ 10 minutes), it tells you to
+create a pull request in the monorepo:
 
 ```
 ...
@@ -168,4 +168,7 @@ Create a pull request from the change.
 The script should finish creating a pull request even when the newly created
 module fails to compile. This gives the user flexibility to fix things in the
 created pull request.
+
+
+
 
