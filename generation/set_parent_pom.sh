@@ -21,13 +21,18 @@ for module in $(find . -mindepth 2 -maxdepth 2 -name pom.xml |sort | xargs dirna
   echo "Processing module $module"
   pushd $module
   # Search for <parent> tag in module pom and replace the next three lines -- groupId, artifcatId, and version
-  sed -i.bak -e "/<parent>/{N;s|<groupId>.*<\/groupId>|<groupId>${parent_group_id}<\/groupId>|;N;s|<artifactId>.*<\/artifactId>|<artifactId>${parent_artifact_id}<\/artifactId>|;N;s|<version>.*<\/version>|<version>${parent_version}<\/version><!-- {x-version-update:google-cloud-java:current} -->|;}" pom.xml && rm pom.xml.bak
+  perl_command="s/\s*<parent>.*?<\/parent>/\n\n  <parent>\n    <groupId>${parent_group_id}<\/groupId>\n    <artifactId>${parent_artifact_id}<\/artifactId>\n    <version>${parent_version}<\/version><!-- {x-version-update:google-cloud-java:current} -->\n  <\/parent>/s"
+  # execute the replacement in pom.xml
+  perl -0pe "$perl_command" pom.xml > pom.xml.new && rm pom.xml && mv pom.xml.new pom.xml
 
-  # update the bom projects as well
-  if ls | grep 'bom'; then
-    BOM=$(ls | grep 'bom')
+  # update the bom projects as well by removing parent
+  if ls -1 | grep 'bom'; then
+    BOM=$(ls -1 | grep 'bom')'/pom.xml'
+    echo the bom is $BOM
     # Search for <parent> tag in module bom and replace the next three lines -- groupId, artifcatId, and version
-    sed -i.bak -e "/<parent>/{N;s|<groupId>.*<\/groupId>|<groupId>${parent_group_id}<\/groupId>|;N;s|<artifactId>.*<\/artifactId>|<artifactId>${parent_artifact_id}<\/artifactId>|;N;s|<version>.*<\/version>|<version>${parent_version}<\/version><!-- {x-version-update:google-cloud-java:current} -->\n    <relativePath>..\/..\/pom.xml<\/relativePath>|;}" ${BOM}/pom.xml && rm ${BOM}/pom.xml.bak
+    perl_command="s/\s*<parent>.*?<\/parent>//s"
+    # execute the replacement in pom.xml
+    perl -0pe "$perl_command" "$BOM" > "$BOM".new && rm "$BOM" && mv "$BOM".new "$BOM"
   fi
 
   popd
