@@ -19,6 +19,14 @@ import synthtool.languages.java as java
 AUTOSYNTH_MULTIPLE_COMMITS = True
 
 java.common_templates(excludes=[
-    'README.md',
-    'renovate.json'
+    ".github/*",
+    ".kokoro/*",
+    ".samples/*",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "SECURITY.md",
+    "java.header",
+    "license-checks.xml",
+    "renovate.json"
 ])

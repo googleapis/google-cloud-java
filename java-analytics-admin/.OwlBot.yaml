@@ -14,9 +14,9 @@
 
 
 deep-remove-regex:
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-analytics-admin/grpc-google-.*/src"
+- "/java-analytics-admin/proto-google-.*/src"
+- "/java-analytics-admin/google-.*/src"
 
 deep-copy-regex:
 - source: "/google/analytics/admin/(v.*)/.*-java/proto-google-.*/src"

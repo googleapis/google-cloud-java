@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.2.7](https://github.com/googleapis/java-shell/compare/v2.2.6...v2.2.7) (2022-09-27)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#255](https://github.com/googleapis/java-shell/issues/255)) ([fa9b52a](https://github.com/googleapis/java-shell/commit/fa9b52ad9f0037827e9419d1d3163b71473d7927))
+
+## [2.2.6](https://github.com/googleapis/java-shell/compare/v2.2.5...v2.2.6) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#249](https://github.com/googleapis/java-shell/issues/249)) ([7515d3d](https://github.com/googleapis/java-shell/commit/7515d3dd5f80e775ca82a8f5e344d0d26927e7d3))
+
+## [2.2.5](https://github.com/googleapis/java-shell/compare/v2.2.4...v2.2.5) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#244](https://github.com/googleapis/java-shell/issues/244)) ([726c1d5](https://github.com/googleapis/java-shell/commit/726c1d57c68064fcb8590059e969ec881dac5173))
+
 ## [2.2.4](https://github.com/googleapis/java-shell/compare/v2.2.3...v2.2.4) (2022-08-11)
 
 

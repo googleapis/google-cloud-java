@@ -1,5 +1,48 @@
 # Changelog
 
+## [0.123.15](https://github.com/googleapis/java-notification/compare/v0.123.14...v0.123.15) (2022-09-22)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-pubsub-bom to v1.120.18 ([#684](https://github.com/googleapis/java-notification/issues/684)) ([4181b4c](https://github.com/googleapis/java-notification/commit/4181b4c4a6918a0910a12279b811af8265056a0c))
+
+## [0.123.14](https://github.com/googleapis/java-notification/compare/v0.123.13...v0.123.14) (2022-09-20)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-pubsub-bom to v1.120.17 ([#680](https://github.com/googleapis/java-notification/issues/680)) ([fa7491e](https://github.com/googleapis/java-notification/commit/fa7491ea71d6a3d569897f33304ff17d05f60cd1))
+
+## [0.123.13](https://github.com/googleapis/java-notification/compare/v0.123.12...v0.123.13) (2022-09-20)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-pubsub-bom to v1.120.16 ([#670](https://github.com/googleapis/java-notification/issues/670)) ([ac12a3f](https://github.com/googleapis/java-notification/commit/ac12a3fa5b97dccd1cd8cb6aa4c717c90b445415))
+* Update dependency com.google.cloud:google-cloud-storage to v2.12.0 ([#673](https://github.com/googleapis/java-notification/issues/673)) ([558d46c](https://github.com/googleapis/java-notification/commit/558d46c04ba9992ddf9ad5bd3443377bb58fa20f))
+
+## [0.123.12](https://github.com/googleapis/java-notification/compare/v0.123.11...v0.123.12) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#671](https://github.com/googleapis/java-notification/issues/671)) ([ec441b9](https://github.com/googleapis/java-notification/commit/ec441b9a329a08f7f86392b99fdbe6ceb5c1be5a))
+
+## [0.123.11](https://github.com/googleapis/java-notification/compare/v0.123.10...v0.123.11) (2022-09-10)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-pubsub-bom to v1.120.14 ([#666](https://github.com/googleapis/java-notification/issues/666)) ([b4b12f8](https://github.com/googleapis/java-notification/commit/b4b12f83e9a7cc68228ef6204f5cf6ee33a551a3))
+
+## [0.123.10](https://github.com/googleapis/java-notification/compare/v0.123.9...v0.123.10) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#661](https://github.com/googleapis/java-notification/issues/661)) ([849e026](https://github.com/googleapis/java-notification/commit/849e026c541cea61ce7b62f1f6cd3429396b776f))
+
 ## [0.123.9](https://github.com/googleapis/java-notification/compare/v0.123.8...v0.123.9) (2022-08-24)
 
 

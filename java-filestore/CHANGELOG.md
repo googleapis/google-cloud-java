@@ -1,5 +1,48 @@
 # Changelog
 
+## [1.4.4](https://github.com/googleapis/java-filestore/compare/v1.4.3...v1.4.4) (2022-09-28)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#251](https://github.com/googleapis/java-filestore/issues/251)) ([8d5e258](https://github.com/googleapis/java-filestore/commit/8d5e25828e9034cf58229df25de8c5213e8a9b64))
+* Update dependency certifi to v2022.9.24 ([#229](https://github.com/googleapis/java-filestore/issues/229)) ([10a8a0b](https://github.com/googleapis/java-filestore/commit/10a8a0bfff1b8f1721246cbb501ff2e97b08cc9d))
+* Update dependency charset-normalizer to v2.1.1 ([#234](https://github.com/googleapis/java-filestore/issues/234)) ([5a66efa](https://github.com/googleapis/java-filestore/commit/5a66efa2fbfb08eabb99314ff1dba1aa5c4bd7f9))
+* Update dependency click to v8.1.3 ([#235](https://github.com/googleapis/java-filestore/issues/235)) ([55830c5](https://github.com/googleapis/java-filestore/commit/55830c55f43ef09a0febd2f1d7fbccad7f9f5a3f))
+* Update dependency gcp-releasetool to v1.8.8 ([#230](https://github.com/googleapis/java-filestore/issues/230)) ([3715834](https://github.com/googleapis/java-filestore/commit/3715834a3ec6a18b9dd2d2822e0ae7dc59b9f40e))
+* Update dependency google-api-core to v2.10.1 ([#237](https://github.com/googleapis/java-filestore/issues/237)) ([947a93c](https://github.com/googleapis/java-filestore/commit/947a93cf78fc6489916d8268c83ab88f75aceff0))
+* Update dependency google-auth to v2.11.1 ([#231](https://github.com/googleapis/java-filestore/issues/231)) ([e720510](https://github.com/googleapis/java-filestore/commit/e7205102bd769358bf7ba1f7711088133ade7e5b))
+* Update dependency google-auth to v2.12.0 ([#238](https://github.com/googleapis/java-filestore/issues/238)) ([ad4e7a6](https://github.com/googleapis/java-filestore/commit/ad4e7a6b5465bb89578bf02dbbb2c339d75b392d))
+* Update dependency google-cloud-core to v2.3.2 ([#232](https://github.com/googleapis/java-filestore/issues/232)) ([bd12970](https://github.com/googleapis/java-filestore/commit/bd12970cc74e33c0f42b1b52fad7fe7bdf28d31f))
+* Update dependency google-cloud-storage to v2.5.0 ([#239](https://github.com/googleapis/java-filestore/issues/239)) ([9a04aa3](https://github.com/googleapis/java-filestore/commit/9a04aa30c267140d85a21550400b596c69a6cb5f))
+* Update dependency google-crc32c to v1.5.0 ([#240](https://github.com/googleapis/java-filestore/issues/240)) ([96533bb](https://github.com/googleapis/java-filestore/commit/96533bb6c300488ce9505f11053c13da6177f056))
+* Update dependency googleapis-common-protos to v1.56.4 ([#233](https://github.com/googleapis/java-filestore/issues/233)) ([bbe00ea](https://github.com/googleapis/java-filestore/commit/bbe00eacd8dced0d014173350c11c9ec8560997d))
+* Update dependency importlib-metadata to v4.12.0 ([#241](https://github.com/googleapis/java-filestore/issues/241)) ([48b7d83](https://github.com/googleapis/java-filestore/commit/48b7d83b167be0eb02cf355b9ebca19be9f7fb15))
+* Update dependency jeepney to v0.8.0 ([#242](https://github.com/googleapis/java-filestore/issues/242)) ([bebd5fc](https://github.com/googleapis/java-filestore/commit/bebd5fc9f1259f40ee8ecc5a8de0c0765d288d64))
+* Update dependency jinja2 to v3.1.2 ([#243](https://github.com/googleapis/java-filestore/issues/243)) ([c31b5a4](https://github.com/googleapis/java-filestore/commit/c31b5a48662d262f6519c3138f8d594d1bec92de))
+* Update dependency keyring to v23.9.3 ([#244](https://github.com/googleapis/java-filestore/issues/244)) ([6bf6fe3](https://github.com/googleapis/java-filestore/commit/6bf6fe3392cb3db74cbc7cbdc93af56e1db35d60))
+* Update dependency markupsafe to v2.1.1 ([#245](https://github.com/googleapis/java-filestore/issues/245)) ([0c333cb](https://github.com/googleapis/java-filestore/commit/0c333cb510550cdc8ba123c58bb225014100cf2f))
+* Update dependency protobuf to v3.20.2 ([#246](https://github.com/googleapis/java-filestore/issues/246)) ([cb0bc71](https://github.com/googleapis/java-filestore/commit/cb0bc71ec629bd4175b2118d4d88b857eb9d7512))
+* Update dependency protobuf to v4 ([#252](https://github.com/googleapis/java-filestore/issues/252)) ([7b1f574](https://github.com/googleapis/java-filestore/commit/7b1f5745e027ade81abaedd846a6827e4c1cfb94))
+* Update dependency pyjwt to v2.5.0 ([#247](https://github.com/googleapis/java-filestore/issues/247)) ([fd19e36](https://github.com/googleapis/java-filestore/commit/fd19e36c5428a5950b68f6a02f1cd39a4d16ea73))
+* Update dependency requests to v2.28.1 ([#248](https://github.com/googleapis/java-filestore/issues/248)) ([cd9fc3a](https://github.com/googleapis/java-filestore/commit/cd9fc3a169b7a92d36dcdfc508082a05400b06bd))
+* Update dependency typing-extensions to v4.3.0 ([#249](https://github.com/googleapis/java-filestore/issues/249)) ([8182c92](https://github.com/googleapis/java-filestore/commit/8182c9270b49f732ddc0bf76c38150a9d7df8a23))
+* Update dependency zipp to v3.8.1 ([#250](https://github.com/googleapis/java-filestore/issues/250)) ([6b549dd](https://github.com/googleapis/java-filestore/commit/6b549dd695f0ebf564711f8d0b2c5318464314f7))
+
+## [1.4.3](https://github.com/googleapis/java-filestore/compare/v1.4.2...v1.4.3) (2022-09-15)
+
+
+### Bug Fixes
+
+* Set longer polling timeouts for filestore RestoreInstance ([#214](https://github.com/googleapis/java-filestore/issues/214)) ([05dce75](https://github.com/googleapis/java-filestore/commit/05dce7591b66fef4c5b261ba9c4bf4a27fa2d3b9))
+* set longer polling timeouts for filestore UpdateInstance ([05dce75](https://github.com/googleapis/java-filestore/commit/05dce7591b66fef4c5b261ba9c4bf4a27fa2d3b9))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#222](https://github.com/googleapis/java-filestore/issues/222)) ([5bfcbde](https://github.com/googleapis/java-filestore/commit/5bfcbdeb6185fec0b19f826e79cce61633521fa8))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#224](https://github.com/googleapis/java-filestore/issues/224)) ([bf24076](https://github.com/googleapis/java-filestore/commit/bf24076854261274484c4ff5b08d314c00cf3471))
+
 ## [1.4.2](https://github.com/googleapis/java-filestore/compare/v1.4.1...v1.4.2) (2022-08-09)
 
 

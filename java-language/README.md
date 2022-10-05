@@ -11,8 +11,30 @@ Java idiomatic client for [Natural Language][product-docs].
 
 ## Quickstart
 
+If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
-If you are using Maven, add this to your pom.xml file:
+```xml
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>libraries-bom</artifactId>
+      <version>26.1.2</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+
+<dependencies>
+  <dependency>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-language</artifactId>
+  </dependency>
+
+```
+
+If you are using Maven without BOM, add this to your dependencies:
 
 
 ```xml
@@ -21,18 +43,26 @@ If you are using Maven, add this to your pom.xml file:
   <artifactId>google-cloud-language</artifactId>
   <version>2.3.4</version>
 </dependency>
+
 ```
 
+If you are using Gradle 5.x or later, add this to your dependencies:
+
+```Groovy
+implementation platform('com.google.cloud:libraries-bom:26.1.2')
+
+implementation 'com.google.cloud:google-cloud-language'
+```
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-language:2.3.4'
+implementation 'com.google.cloud:google-cloud-language:2.4.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-language" % "2.3.4"
+libraryDependencies += "com.google.cloud" % "google-cloud-language" % "2.4.0"
 ```
 
 ## Authentication
@@ -100,6 +130,18 @@ for (String text : texts) {
 
 In [AnalyzeSentiment.java](https://github.com/googleapis/google-cloud-java/blob/master/google-cloud-examples/src/main/java/com/google/cloud/examples/language/snippets/AnalyzeSentiment.java) we put the code shown above into a complete program.
 
+
+
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-language/tree/main/samples) directory.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| Analyze Beta | [source code](https://github.com/googleapis/java-language/blob/main/samples/snippets/src/main/java/beta/example/language/AnalyzeBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-language&page=editor&open_in_editor=samples/snippets/src/main/java/beta/example/language/AnalyzeBeta.java) |
+| Analyze | [source code](https://github.com/googleapis/java-language/blob/main/samples/snippets/src/main/java/com/example/language/Analyze.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-language&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/language/Analyze.java) |
+| Quickstart Sample | [source code](https://github.com/googleapis/java-language/blob/main/samples/snippets/src/main/java/com/example/language/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-language&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/language/QuickstartSample.java) |
+| Set Endpoint | [source code](https://github.com/googleapis/java-language/blob/main/samples/snippets/src/main/java/com/example/language/SetEndpoint.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-language&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/language/SetEndpoint.java) |
 
 
 

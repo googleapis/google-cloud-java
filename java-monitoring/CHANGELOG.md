@@ -1,5 +1,33 @@
 # Changelog
 
+## [3.4.5](https://github.com/googleapis/java-monitoring/compare/v3.4.4...v3.4.5) (2022-09-20)
+
+
+### Dependencies
+
+* Update dependency com.google.protobuf:protobuf-java-util to v3.21.6 ([#926](https://github.com/googleapis/java-monitoring/issues/926)) ([e61e14c](https://github.com/googleapis/java-monitoring/commit/e61e14c8657f2aa6545ec0c8a08c9b4eebe1ee58))
+
+## [3.4.4](https://github.com/googleapis/java-monitoring/compare/v3.4.3...v3.4.4) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#927](https://github.com/googleapis/java-monitoring/issues/927)) ([804aed6](https://github.com/googleapis/java-monitoring/commit/804aed6206156580c1de7174d73c606ed8dfd899))
+
+## [3.4.3](https://github.com/googleapis/java-monitoring/compare/v3.4.2...v3.4.3) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#922](https://github.com/googleapis/java-monitoring/issues/922)) ([447e9c1](https://github.com/googleapis/java-monitoring/commit/447e9c10d11934a732112af0ac20b3146396c5e1))
+
+## [3.4.2](https://github.com/googleapis/java-monitoring/compare/v3.4.1...v3.4.2) (2022-08-31)
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java-util to v3.21.5 ([#910](https://github.com/googleapis/java-monitoring/issues/910)) ([c9f0f96](https://github.com/googleapis/java-monitoring/commit/c9f0f9602209c077d614245f87e06527b897d461))
+
 ## [3.4.1](https://github.com/googleapis/java-monitoring/compare/v3.4.0...v3.4.1) (2022-08-11)
 
 

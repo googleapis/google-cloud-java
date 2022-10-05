@@ -805,6 +805,108 @@ public class ConversationsClientHttpJsonTest {
   }
 
   @Test
+  public void suggestConversationSummaryTest() throws Exception {
+    SuggestConversationSummaryResponse expectedResponse =
+        SuggestConversationSummaryResponse.newBuilder()
+            .setSummary(SuggestConversationSummaryResponse.Summary.newBuilder().build())
+            .setLatestMessage(
+                MessageName.ofProjectConversationMessageName(
+                        "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+                    .toString())
+            .setContextSize(1116903569)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ConversationName conversation =
+        ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]");
+
+    SuggestConversationSummaryResponse actualResponse =
+        client.suggestConversationSummary(conversation);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void suggestConversationSummaryExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ConversationName conversation =
+          ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]");
+      client.suggestConversationSummary(conversation);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void suggestConversationSummaryTest2() throws Exception {
+    SuggestConversationSummaryResponse expectedResponse =
+        SuggestConversationSummaryResponse.newBuilder()
+            .setSummary(SuggestConversationSummaryResponse.Summary.newBuilder().build())
+            .setLatestMessage(
+                MessageName.ofProjectConversationMessageName(
+                        "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+                    .toString())
+            .setContextSize(1116903569)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String conversation = "projects/project-5228/conversations/conversation-5228";
+
+    SuggestConversationSummaryResponse actualResponse =
+        client.suggestConversationSummary(conversation);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void suggestConversationSummaryExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String conversation = "projects/project-5228/conversations/conversation-5228";
+      client.suggestConversationSummary(conversation);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =

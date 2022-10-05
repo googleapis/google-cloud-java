@@ -19,20 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-optimization</artifactId>
-  <version>1.1.9</version>
+  <version>1.1.11</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-optimization:1.1.9'
+implementation 'com.google.cloud:google-cloud-optimization:1.1.11'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-optimization" % "1.1.9"
+libraryDependencies += "com.google.cloud" % "google-cloud-optimization" % "1.1.11"
 ```
 
 ## Authentication

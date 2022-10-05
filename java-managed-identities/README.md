@@ -19,7 +19,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-managed-identities</artifactId>
-  <version>1.1.2</version>
+  <version>1.1.4</version>
 </dependency>
 
 ```
@@ -27,13 +27,13 @@ If you are using Maven, add this to your pom.xml file:
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-managed-identities:1.1.3'
+implementation 'com.google.cloud:google-cloud-managed-identities:1.1.4'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-managed-identities" % "1.1.3"
+libraryDependencies += "com.google.cloud" % "google-cloud-managed-identities" % "1.1.4"
 ```
 
 ## Authentication

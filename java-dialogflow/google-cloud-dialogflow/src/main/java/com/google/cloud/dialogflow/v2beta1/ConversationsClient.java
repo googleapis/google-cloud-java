@@ -1190,6 +1190,148 @@ public class ConversationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Suggest summary for a conversation based on specific historical messages. The range of the
+   * messages to be used for summary can be specified in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
+   *   ConversationName conversation =
+   *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]");
+   *   SuggestConversationSummaryResponse response =
+   *       conversationsClient.suggestConversationSummary(conversation);
+   * }
+   * }</pre>
+   *
+   * @param conversation Required. The conversation to fetch suggestion for. Format:
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/conversations/&lt;Conversation
+   *     ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SuggestConversationSummaryResponse suggestConversationSummary(
+      ConversationName conversation) {
+    SuggestConversationSummaryRequest request =
+        SuggestConversationSummaryRequest.newBuilder()
+            .setConversation(conversation == null ? null : conversation.toString())
+            .build();
+    return suggestConversationSummary(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Suggest summary for a conversation based on specific historical messages. The range of the
+   * messages to be used for summary can be specified in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
+   *   String conversation =
+   *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]").toString();
+   *   SuggestConversationSummaryResponse response =
+   *       conversationsClient.suggestConversationSummary(conversation);
+   * }
+   * }</pre>
+   *
+   * @param conversation Required. The conversation to fetch suggestion for. Format:
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/conversations/&lt;Conversation
+   *     ID&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SuggestConversationSummaryResponse suggestConversationSummary(String conversation) {
+    SuggestConversationSummaryRequest request =
+        SuggestConversationSummaryRequest.newBuilder().setConversation(conversation).build();
+    return suggestConversationSummary(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Suggest summary for a conversation based on specific historical messages. The range of the
+   * messages to be used for summary can be specified in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
+   *   SuggestConversationSummaryRequest request =
+   *       SuggestConversationSummaryRequest.newBuilder()
+   *           .setConversation(
+   *               ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]")
+   *                   .toString())
+   *           .setLatestMessage(
+   *               MessageName.ofProjectConversationMessageName(
+   *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+   *                   .toString())
+   *           .setContextSize(1116903569)
+   *           .build();
+   *   SuggestConversationSummaryResponse response =
+   *       conversationsClient.suggestConversationSummary(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SuggestConversationSummaryResponse suggestConversationSummary(
+      SuggestConversationSummaryRequest request) {
+    return suggestConversationSummaryCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Suggest summary for a conversation based on specific historical messages. The range of the
+   * messages to be used for summary can be specified in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
+   *   SuggestConversationSummaryRequest request =
+   *       SuggestConversationSummaryRequest.newBuilder()
+   *           .setConversation(
+   *               ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]")
+   *                   .toString())
+   *           .setLatestMessage(
+   *               MessageName.ofProjectConversationMessageName(
+   *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+   *                   .toString())
+   *           .setContextSize(1116903569)
+   *           .build();
+   *   ApiFuture<SuggestConversationSummaryResponse> future =
+   *       conversationsClient.suggestConversationSummaryCallable().futureCall(request);
+   *   // Do something.
+   *   SuggestConversationSummaryResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>
+      suggestConversationSummaryCallable() {
+    return stub.suggestConversationSummaryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:

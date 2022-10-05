@@ -1,5 +1,36 @@
 # Changelog
 
+## [3.5.5](https://github.com/googleapis/java-cloudbuild/compare/v3.5.4...v3.5.5) (2022-09-27)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#809](https://github.com/googleapis/java-cloudbuild/issues/809)) ([ca6c52a](https://github.com/googleapis/java-cloudbuild/commit/ca6c52af55b9894ea45e218c64710517b906656e))
+* Update dependency certifi to v2022.9.24 ([#799](https://github.com/googleapis/java-cloudbuild/issues/799)) ([22c4ae8](https://github.com/googleapis/java-cloudbuild/commit/22c4ae84de213398bc7ba81953d0c4fa8d5f7654))
+* Update dependency google-auth to v2.11.1 ([#800](https://github.com/googleapis/java-cloudbuild/issues/800)) ([4a8e780](https://github.com/googleapis/java-cloudbuild/commit/4a8e7808320ed561667cbc76e9ca3323781594bc))
+* Update dependency jinja2 to v3.1.2 ([#801](https://github.com/googleapis/java-cloudbuild/issues/801)) ([0ccbc5a](https://github.com/googleapis/java-cloudbuild/commit/0ccbc5ab0f2d18474f18fd0c84d85ddead5676d3))
+* Update dependency keyring to v23.9.3 ([#802](https://github.com/googleapis/java-cloudbuild/issues/802)) ([5a0da57](https://github.com/googleapis/java-cloudbuild/commit/5a0da57d3211f49a3d6b61a0310dca850f2d739e))
+* Update dependency markupsafe to v2.1.1 ([#803](https://github.com/googleapis/java-cloudbuild/issues/803)) ([3246c6c](https://github.com/googleapis/java-cloudbuild/commit/3246c6cfc1101da3bb1706bfb0ec5a5882729924))
+* Update dependency protobuf to v3.20.2 ([#804](https://github.com/googleapis/java-cloudbuild/issues/804)) ([571aabe](https://github.com/googleapis/java-cloudbuild/commit/571aabed6eceb3d86d73d03e7fb2d98a751875de))
+* Update dependency pyjwt to v2.5.0 ([#805](https://github.com/googleapis/java-cloudbuild/issues/805)) ([9de32d3](https://github.com/googleapis/java-cloudbuild/commit/9de32d3bfea0b614333ea8601269539c38256863))
+* Update dependency requests to v2.28.1 ([#806](https://github.com/googleapis/java-cloudbuild/issues/806)) ([affd465](https://github.com/googleapis/java-cloudbuild/commit/affd4651305327b69b6577b3ed3cffb8153447cd))
+* Update dependency typing-extensions to v4.3.0 ([#807](https://github.com/googleapis/java-cloudbuild/issues/807)) ([f7b3b2c](https://github.com/googleapis/java-cloudbuild/commit/f7b3b2cfcfc4c6e9bdb5cf70cb6fa0faa4503375))
+* Update dependency zipp to v3.8.1 ([#808](https://github.com/googleapis/java-cloudbuild/issues/808)) ([8549944](https://github.com/googleapis/java-cloudbuild/commit/8549944a8c2769929a564222409a186c70daf404))
+
+## [3.5.4](https://github.com/googleapis/java-cloudbuild/compare/v3.5.3...v3.5.4) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#792](https://github.com/googleapis/java-cloudbuild/issues/792)) ([31995f4](https://github.com/googleapis/java-cloudbuild/commit/31995f42ac9d4904a16f9660facf1ff82c7df2f6))
+
+## [3.5.3](https://github.com/googleapis/java-cloudbuild/compare/v3.5.2...v3.5.3) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#787](https://github.com/googleapis/java-cloudbuild/issues/787)) ([ae125a8](https://github.com/googleapis/java-cloudbuild/commit/ae125a8dd95463afe5186935017be25a40602461))
+
 ## [3.5.2](https://github.com/googleapis/java-cloudbuild/compare/v3.5.1...v3.5.2) (2022-08-02)
 
 

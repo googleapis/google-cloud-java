@@ -14,10 +14,10 @@
 
 
 deep-remove-regex:
-- "/samples/snippets/generated"
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-gkehub/samples/snippets/generated"
+- "/java-gkehub/grpc-google-.*/src"
+- "/java-gkehub/proto-google-.*/src"
+- "/java-gkehub/google-.*/src"
 
 deep-copy-regex:
 - source: "/google/cloud/gkehub/v1/.*-java/proto-google-.*/src"
