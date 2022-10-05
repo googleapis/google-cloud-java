@@ -50,118 +50,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
     return this.unknownFields;
   }
 
-  private DeidentifyConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.privacy.dlp.v2.InfoTypeTransformations.Builder subBuilder = null;
-              if (transformationCase_ == 1) {
-                subBuilder =
-                    ((com.google.privacy.dlp.v2.InfoTypeTransformations) transformation_)
-                        .toBuilder();
-              }
-              transformation_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.InfoTypeTransformations.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.privacy.dlp.v2.InfoTypeTransformations) transformation_);
-                transformation_ = subBuilder.buildPartial();
-              }
-              transformationCase_ = 1;
-              break;
-            }
-          case 18:
-            {
-              com.google.privacy.dlp.v2.RecordTransformations.Builder subBuilder = null;
-              if (transformationCase_ == 2) {
-                subBuilder =
-                    ((com.google.privacy.dlp.v2.RecordTransformations) transformation_).toBuilder();
-              }
-              transformation_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.RecordTransformations.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.privacy.dlp.v2.RecordTransformations) transformation_);
-                transformation_ = subBuilder.buildPartial();
-              }
-              transformationCase_ = 2;
-              break;
-            }
-          case 26:
-            {
-              com.google.privacy.dlp.v2.TransformationErrorHandling.Builder subBuilder = null;
-              if (transformationErrorHandling_ != null) {
-                subBuilder = transformationErrorHandling_.toBuilder();
-              }
-              transformationErrorHandling_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.TransformationErrorHandling.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(transformationErrorHandling_);
-                transformationErrorHandling_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.privacy.dlp.v2.ImageTransformations.Builder subBuilder = null;
-              if (transformationCase_ == 4) {
-                subBuilder =
-                    ((com.google.privacy.dlp.v2.ImageTransformations) transformation_).toBuilder();
-              }
-              transformation_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.ImageTransformations.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.privacy.dlp.v2.ImageTransformations) transformation_);
-                transformation_ = subBuilder.buildPartial();
-              }
-              transformationCase_ = 4;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_DeidentifyConfig_descriptor;
@@ -473,7 +361,7 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
     if (transformationCase_ == 4) {
       output.writeMessage(4, (com.google.privacy.dlp.v2.ImageTransformations) transformation_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -502,7 +390,7 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, (com.google.privacy.dlp.v2.ImageTransformations) transformation_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -537,7 +425,7 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -568,7 +456,7 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -697,22 +585,24 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.privacy.dlp.v2.DeidentifyConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (infoTypeTransformationsBuilder_ != null) {
+        infoTypeTransformationsBuilder_.clear();
+      }
+      if (recordTransformationsBuilder_ != null) {
+        recordTransformationsBuilder_.clear();
+      }
+      if (imageTransformationsBuilder_ != null) {
+        imageTransformationsBuilder_.clear();
+      }
       if (transformationErrorHandlingBuilder_ == null) {
         transformationErrorHandling_ = null;
       } else {
@@ -848,7 +738,7 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -863,17 +753,59 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.privacy.dlp.v2.DeidentifyConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(
+                    getInfoTypeTransformationsFieldBuilder().getBuilder(), extensionRegistry);
+                transformationCase_ = 1;
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    getRecordTransformationsFieldBuilder().getBuilder(), extensionRegistry);
+                transformationCase_ = 2;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getTransformationErrorHandlingFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getImageTransformationsFieldBuilder().getBuilder(), extensionRegistry);
+                transformationCase_ = 4;
+                break;
+              } // case 34
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.privacy.dlp.v2.DeidentifyConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1800,7 +1732,18 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DeidentifyConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

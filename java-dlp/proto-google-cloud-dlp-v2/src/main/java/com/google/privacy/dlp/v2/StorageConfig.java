@@ -50,126 +50,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private StorageConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 18:
-            {
-              com.google.privacy.dlp.v2.DatastoreOptions.Builder subBuilder = null;
-              if (typeCase_ == 2) {
-                subBuilder = ((com.google.privacy.dlp.v2.DatastoreOptions) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.DatastoreOptions.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.privacy.dlp.v2.DatastoreOptions) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 2;
-              break;
-            }
-          case 26:
-            {
-              com.google.privacy.dlp.v2.CloudStorageOptions.Builder subBuilder = null;
-              if (typeCase_ == 3) {
-                subBuilder = ((com.google.privacy.dlp.v2.CloudStorageOptions) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.CloudStorageOptions.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.privacy.dlp.v2.CloudStorageOptions) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 3;
-              break;
-            }
-          case 34:
-            {
-              com.google.privacy.dlp.v2.BigQueryOptions.Builder subBuilder = null;
-              if (typeCase_ == 4) {
-                subBuilder = ((com.google.privacy.dlp.v2.BigQueryOptions) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.BigQueryOptions.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.privacy.dlp.v2.BigQueryOptions) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 4;
-              break;
-            }
-          case 50:
-            {
-              com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.Builder subBuilder = null;
-              if (timespanConfig_ != null) {
-                subBuilder = timespanConfig_.toBuilder();
-              }
-              timespanConfig_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(timespanConfig_);
-                timespanConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 74:
-            {
-              com.google.privacy.dlp.v2.HybridOptions.Builder subBuilder = null;
-              if (typeCase_ == 9) {
-                subBuilder = ((com.google.privacy.dlp.v2.HybridOptions) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.HybridOptions.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.privacy.dlp.v2.HybridOptions) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 9;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpStorage
         .internal_static_google_privacy_dlp_v2_StorageConfig_descriptor;
@@ -427,96 +307,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private TimespanConfig(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.protobuf.Timestamp.Builder subBuilder = null;
-                if (startTime_ != null) {
-                  subBuilder = startTime_.toBuilder();
-                }
-                startTime_ =
-                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(startTime_);
-                  startTime_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 18:
-              {
-                com.google.protobuf.Timestamp.Builder subBuilder = null;
-                if (endTime_ != null) {
-                  subBuilder = endTime_.toBuilder();
-                }
-                endTime_ =
-                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(endTime_);
-                  endTime_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 26:
-              {
-                com.google.privacy.dlp.v2.FieldId.Builder subBuilder = null;
-                if (timestampField_ != null) {
-                  subBuilder = timestampField_.toBuilder();
-                }
-                timestampField_ =
-                    input.readMessage(
-                        com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(timestampField_);
-                  timestampField_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 32:
-              {
-                enableAutoPopulationOfTimespanConfig_ = input.readBool();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -806,7 +596,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       if (enableAutoPopulationOfTimespanConfig_ != false) {
         output.writeBool(4, enableAutoPopulationOfTimespanConfig_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -829,7 +619,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedOutputStream.computeBoolSize(
                 4, enableAutoPopulationOfTimespanConfig_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -859,7 +649,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (getEnableAutoPopulationOfTimespanConfig()
           != other.getEnableAutoPopulationOfTimespanConfig()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -886,7 +676,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       hash =
           (53 * hash)
               + com.google.protobuf.Internal.hashBoolean(getEnableAutoPopulationOfTimespanConfig());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1019,17 +809,10 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1162,7 +945,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         if (other.getEnableAutoPopulationOfTimespanConfig() != false) {
           setEnableAutoPopulationOfTimespanConfig(other.getEnableAutoPopulationOfTimespanConfig());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1177,18 +960,56 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.privacy.dlp.v2.StorageConfig.TimespanConfig parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getTimestampFieldFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 26
+              case 32:
+                {
+                  enableAutoPopulationOfTimespanConfig_ = input.readBool();
+
+                  break;
+                } // case 32
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.privacy.dlp.v2.StorageConfig.TimespanConfig) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2090,7 +1911,19 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new TimespanConfig(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2424,7 +2257,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     if (typeCase_ == 9) {
       output.writeMessage(9, (com.google.privacy.dlp.v2.HybridOptions) type_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -2456,7 +2289,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               9, (com.google.privacy.dlp.v2.HybridOptions) type_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -2492,7 +2325,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2527,7 +2360,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2656,22 +2489,27 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.privacy.dlp.v2.StorageConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (datastoreOptionsBuilder_ != null) {
+        datastoreOptionsBuilder_.clear();
+      }
+      if (cloudStorageOptionsBuilder_ != null) {
+        cloudStorageOptionsBuilder_.clear();
+      }
+      if (bigQueryOptionsBuilder_ != null) {
+        bigQueryOptionsBuilder_.clear();
+      }
+      if (hybridOptionsBuilder_ != null) {
+        hybridOptionsBuilder_.clear();
+      }
       if (timespanConfigBuilder_ == null) {
         timespanConfig_ = null;
       } else {
@@ -2819,7 +2657,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2834,17 +2672,63 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.privacy.dlp.v2.StorageConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18:
+              {
+                input.readMessage(
+                    getDatastoreOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 2;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getCloudStorageOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 3;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getBigQueryOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 4;
+                break;
+              } // case 34
+            case 50:
+              {
+                input.readMessage(getTimespanConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 74:
+              {
+                input.readMessage(getHybridOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 9;
+                break;
+              } // case 74
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.privacy.dlp.v2.StorageConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3854,7 +3738,18 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new StorageConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
